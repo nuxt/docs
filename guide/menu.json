@@ -3,5 +3,10 @@
     { "name": "What is Nuxt.js ?", "to": "" },
     { "name": "Contribution Guide", "to": "/contribution-guide" },
     { "name": "Release Notes", "to": "/release-notes" }
+  ],
+  "Getting Started": [
+    { "name": "Installation", "to": "/installation" },
+    { "name": "Directory Structure", "to": "/directory-structure" },
+    { "name": "Configuration", "to": "/configuration" }
   ]
 }

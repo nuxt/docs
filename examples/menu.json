@@ -1,3 +1,14 @@
 {
-  
+  "Essentials": [
+    { "name": "Hello world", "to": "" },
+    { "name": "Custom Routes", "to": "/custom-routes" },
+    { "name": "Global CSS", "to": "/global-css" },
+    { "name": "Custom Loading", "to": "/custom-loading" },
+    { "name": "Extend the App", "to": "/extend-app" }
+  ],
+  "Advanced": [
+    { "name": "Routes transitions", "to": "/routes-transitions" },
+    { "name": "Async Datas", "to": "/async-datas" },
+    { "name": "Vuex Store", "to": "/vuex-store" }
+  ]
 }
