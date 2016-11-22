@@ -1,0 +1,7 @@
+{
+  "Prologue": [
+    { "name": "What is Nuxt.js ?", "to": "" },
+    { "name": "Contribution Guide", "to": "/contribution-guide" },
+    { "name": "Release Notes", "to": "/release-notes" }
+  ]
+}
