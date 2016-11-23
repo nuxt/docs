@@ -7,13 +7,13 @@ title: What is Nuxt.js ?
 <p align="center"><img align="center" src="https://raw.githubusercontent.com/nuxt/nuxt.js/master/examples/hello-world/static/nuxt.png"/></p>
 > Nuxt.js is a minimalistic framework for server-rendered Vue applications (inspired by [Next.js](https://github.com/zeit/next.js))
 
-## 🚧 Under development, 1.0 will be release soon :fire:
+### 🚧 Under development, 1.0 will be release soon :fire:
 
-## 🎬 Video: [1 minute demo](https://www.youtube.com/watch?v=kmf-p-pTi40)
+### 🎬 Video: [1 minute demo](https://www.youtube.com/watch?v=kmf-p-pTi40)
 
-## 🐦 Twitter: [@nuxt_js](https://twitter.com/nuxt_js)
+### 🐦 Twitter: [@nuxt_js](https://twitter.com/nuxt_js)
 
-## 📓 How to use
+### 📓 How to use
 
 ```
 $ npm install nuxt --save
