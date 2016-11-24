@@ -4,156 +4,31 @@ title: What is Nuxt.js ?
 
 # What is Nuxt.js ?
 
-<p align="center"><img align="center" src="https://raw.githubusercontent.com/nuxt/nuxt.js/master/examples/hello-world/static/nuxt.png"/></p>
-> Nuxt.js is a minimalistic framework for server-rendered Vue applications (inspired by [Next.js](https://github.com/zeit/next.js))
+> Nuxt.js is a minimalistic framework for server-rendered Vue applications
 
-### 🚧 Under development, 1.0 will be release soon :fire:
+<div class="video">
+  <iframe class="youtube" src="https://www.youtube.com/embed/kmf-p-pTi40?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
 
-### 🎬 Video: [1 minute demo](https://www.youtube.com/watch?v=kmf-p-pTi40)
+## Introduction
 
-### 🐦 Twitter: [@nuxt_js](https://twitter.com/nuxt_js)
+Writing web application with [Vue.js](https://vuejs.org) is great, but when it's about configuring Webpack and Babel to be able to write `*.vue` files component, it's a bit less enjoyable.
 
-### 📓 How to use
+_What about writing a server-rendered web application with Vue.js and using the `*.vue` files?_
 
-```
-$ npm install nuxt --save
-```
+We will add more Webpack configuration (you will need a server bundle file), adding a `preFetch` method to fetch the data from the server-side (like [vue-hackernews2.0](https://github.com/vuejs/vue-hackernews-2.0)), creating a node.js server and using `vue-server-renderer`...
 
-Add a script to your package.json like this:
+## Nuxt.js to the rescue!
 
-```json
-{
-  "scripts": {
-    "start": "nuxt"
-  }
-}
-```
+> The 25th of October 2016, the team behind [zeit.co](http://zeit.co/), announced [Next.js](https://zeit.co/blog/next), a framework for server-rendered React applications.
 
-After that, the file-system is the main API. Every .vue file becomes a route that gets automatically processed and rendered.
+Few hours after the announcement of Next.js, the idea of creating server-rendered Vue.js applications the same way as Next.js became inevitable:  **Nuxt.js was born**.
 
-Populate `./pages/index.vue` inside your project:
+Writing a server-rendered Vue.js application with Nuxt.js is easy:
+- No need to write Webpack/Babel configuration
+- No need to create a node.js server
+- Writing `*.vue` files, because it rocks
+- Creating new routes by adding a file in the `pages/` directory
+- Accessing the server data inside the routes components easily
 
-```html
-<template>
-  <h1>Hello {{ name }}!</h1>
-</template>
-
-<script>
-export default {
-  data: () => {
-    return { name: 'world' }
-  }
-}
-</script>
-```
-
-And then run:
-```bash
-npm start
-```
-
-Go to [http://localhost:3000](http://localhost:3000)
-
-So far, we get:
-
-- Automatic transpilation and bundling (with webpack and babel)
-- Hot code reloading
-- Server rendering and indexing of `./pages`
-- Static file serving. `./static/` is mapped to `/`
-- Config file `nuxt.config.js`
-- Code splitting via webpack
-
-## Using nuxt.js programmatically
-
-Nuxt is built on the top of ES2015, which makes the code more enjoyable and cleaner to read. It doesn't make use of any transpilers and depends upon Core V8 implemented features.
-For these reasons, nuxt.js targets Node.js `4.0` or higher (you might want to launch node with the `--harmony-proxies` flag if you running `node <= 6.5.0` )
-
-```js
-const Nuxt = require('nuxt')
-
-const options = {
-  routes: [], // see examples/custom-routes
-  css: ['/dist/bootstrap.css'] // see examples/global-css
-  store: true // see examples/vuex-store
-  plugins: ['public/plugin.js'], // see examples/plugins-vendor
-  loading: false or { color: 'blue', failedColor: 'red' } or 'components/my-spinner' // see examples/custom-loading
-  build: {
-    vendor: ['axios'] // see examples/plugins-vendor
-  }
-}
-
-// Launch nuxt build with given options
-new Nuxt(options)
-.then((nuxt) => {
-  // You can use nuxt.render(req, res) or nuxt.renderRoute(route, context)
-})
-.catch((error) {
-  // If an error appended while building the project
-})
-```
-
-
-## Using nuxt.js as a middleware
-
-You might want to use your own server with you configurations, your API and everything awesome your created with. That's why you can use nuxt.js as a middleware. It's recommended to use it at the end of your middlewares since it will handle the rendering of your web application and won't call next()
-
-```js
-app.use(nuxt.render)
-```
-
-## Render a specific route
-
-This is mostly used for tests purpose but who knows!
-
-```js
-nuxt.renderRoute('/about', context)
-.then(function ({ html, error }) {
-  // You can check error to know if your app displayed the error page for this route
-  // Useful to set the correct status status code if an error appended:
-  if (error) {
-    return res.status(error.statusCode || 500).send(html)
-  }
-  res.send(html)
-})
-.catch(function (error) {
-  // And error appended while rendering the route
-})
-```
-
-## Examples
-
-Please take a look at the examples/ folder.
-If you want to launch one example to see it live:
-
-```bash
-cd node_modules/nuxt/
-bin/nuxt examples/hello-world
-# Go to http://localhost:3000
-```
-
-## Production deployment
-
-To deploy, instead of running nuxt, you probably want to build ahead of time. Therefore, building and starting are separate commands:
-
-```bash
-nuxt build
-nuxt start
-```
-
-For example, to deploy with [`now`](https://zeit.co/now) a `package.json` like follows is recommended:
-```json
-{
-  "name": "my-app",
-  "dependencies": {
-    "nuxt": "latest"
-  },
-  "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start"
-  }
-}
-```
-Then run `now` and enjoy!
-
-Note: we recommend putting `.nuxt` in `.npmignore` or `.gitignore`.
+If you want to try using Nuxt.js, start from the [Installation Section](/guide/installation) and follow the guide.
