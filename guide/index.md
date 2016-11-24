@@ -4,7 +4,7 @@ title: What is Nuxt.js ?
 
 # What is Nuxt.js ?
 
-> Nuxt.js is a minimalistic framework for server-rendered Vue applications
+> Nuxt.js is a minimalistic framework for server-rendered Vue.js applications
 
 <div class="video">
   <iframe class="youtube" src="https://www.youtube.com/embed/kmf-p-pTi40?rel=0" frameborder="0" allowfullscreen></iframe>
