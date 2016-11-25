@@ -8,5 +8,16 @@
     { "name": "Installation", "to": "/installation" },
     { "name": "Directory Structure", "to": "/directory-structure" },
     { "name": "Configuration", "to": "/configuration" }
+  ],
+  "Pages Components": [
+    { "name": "Usage", "to": "/pages-components" },
+    { "name": "Context", "to": "/context" },
+    { "name": "data(context)", "to": "/data-context" },
+    { "name": "fetch(context)", "to": "/fetch-context" },
+    { "name": "Transitions", "to": "/fetch-context" }
+  ],
+  "Advanced": [
+    { "name": "Custom Routes", "to": "/custom-routes" },
+    { "name": "Vuex Store", "to": "/vuex-store" }
   ]
 }
