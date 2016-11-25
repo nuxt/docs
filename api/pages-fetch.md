@@ -4,7 +4,7 @@ title: page.fetch
 
 # Pages fetch
 
-<p class="info">This method is advised to be used with the `store` and *only* for dispatching store actions.</p>
+<p class="Alert Alert--blue">This method is advised to be used with the `store` and *only* for dispatching store actions.</p>
 
 The `fetch` option, *if set*, is called every time before loading the component. It is called from the server-side or before navigating to the corresponding route.
 
