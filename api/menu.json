@@ -1,0 +1,14 @@
+{
+  "Nuxt Module": [
+    { "name": "Usage", "to": "" }
+  ],
+  "pages/*.vue": [
+    { "name": "Option: data", "to": "/pages-data" },
+    { "name": "Option: fetch", "to": "/pages-fetch" },
+    { "name": "Option: transition", "to": "/pages-transition" },
+    { "name": "_app.vue", "to": "/pages-layout" },
+    { "name": "_error.vue", "to": "/pages-error" },
+    { "name": "_error-debug.vue", "to": "/pages-error-debug" },
+    { "name": "_*.vue", "to": "/pages/hidden" }
+  ]
+}
