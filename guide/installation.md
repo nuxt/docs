@@ -6,6 +6,10 @@ title: Installation
 
 > Nuxt.js is really easy to get started with, to start with a simple project, we will only need the `nuxt` dependency.
 
+# Table of Contents
+1. [Using Nuxt.js starter template](#using-nuxt-js-starter-template)
+2. [Starting from scratch](#starting-from-scratch)
+
 ## Using Nuxt.js starter template
 
 To start quickly, we created a [vue-cli](https://github.com/vuejs/vue-cli) template for Nuxt.js.

@@ -1,5 +1,5 @@
 ---
-title: Fetching data in pages
+title: page.data
 ---
 
 # Pages data

@@ -1,5 +1,5 @@
 ---
-title: Fetching data in pages
+title: page.fetch
 ---
 
 # Pages fetch
@@ -29,7 +29,7 @@ export default {
 }
 ```
 
-In the `store/index.js`:
+In `store/index.js`:
 
 ```js
 // ...
