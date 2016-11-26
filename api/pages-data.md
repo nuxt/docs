@@ -6,7 +6,7 @@ title: page.data
 
 Nuxt.js supercharges the pages component by overwriting the [Vue.js data](https://vuejs.org/v2/api/#data) option. This way, the page component can make asynchronous operations before returning the component real data.
 
-The `data` option is called every time before loading the component. It is called from the server-side or before navigating to the corresponding route.
+<div class="Alert Alert--blue">The `data` option is called every time before loading the component. It is called from the server-side or before navigating to the corresponding route.</div>
 
 ## data(context)
 
@@ -16,6 +16,8 @@ The `data` option is called every time before loading the component. It is calle
 - **Return:** `Object | Promise`
 
 ### Details
+
+<div class="Alert Alert--orange">You do **not** have access to `this` (component instance) inside `data` because it is called before initiating the page component.</div>
 
 The data method receives the context as the first argument, you can use it to fetch some data and return the component data. To make the data method asynchronous, Nuxt.js offers you 2 ways, choose the one you're the most familiar with:
 
