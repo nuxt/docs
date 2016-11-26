@@ -17,7 +17,7 @@ Nuxt.js supercharges the pages component by overwriting the [Vue.js data](https:
 
 ### Details
 
-<div class="Alert Alert--orange">You do **not** have access to `this` (component instance) inside `data` because it is called before initiating the page component.</div>
+<div class="Alert Alert--orange">You do **NOT** have access of the component instance trough `this` inside `data` because it is called **before initiating** the component.</div>
 
 The data method receives the context as the first argument, you can use it to fetch some data and return the component data. To make the data method asynchronous, Nuxt.js offers you 2 ways, choose the one you're the most familiar with:
 
