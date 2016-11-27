@@ -46,3 +46,5 @@ actions: {
 ```
 
 When the page will be rendered, the store will be filled and we will be able to show the `$store.state` inside the template.
+
+To see it in action: [examples/routes-transitions](/examples/routes-transitions)
