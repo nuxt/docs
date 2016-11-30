@@ -4,14 +4,6 @@ title: What is Nuxt.js ?
 
 # What is Nuxt.js ?
 
-> Nuxt.js is a minimalistic framework for server-rendered Vue.js applications
-
-<div class="video">
-  <iframe class="youtube" src="https://www.youtube.com/embed/kmf-p-pTi40?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
-
-## Introduction
-
 Writing web application with [Vue.js](https://vuejs.org) is great, but when it's about configuring Webpack and Babel to be able to write `*.vue` files component, it's a bit less enjoyable.
 
 _What about writing a server-rendered web application with Vue.js and using the `*.vue` files?_

@@ -1,6 +1,18 @@
 {
   "Nuxt Module": [
-    { "name": "Usage", "to": "" }
+    { "name": "Usage", "to": "" },
+    { "name": "Render", "to": "nuxt-render" },
+    { "name": "RenderRoute", "to": "/nuxt-renderroute" }
+  ],
+  "Configuration": [
+    { "name": "Build", "to": "/configuration-build" },
+    { "name": "CSS", "to": "/configuration-css" },
+    { "name": "Env", "to": "/configuration-env" },
+    { "name": "Generate", "to": "/configuration-generate" },
+    { "name": "Head", "to": "/configuration-head" },
+    { "name": "Loading", "to": "/configuration-loading" },
+    { "name": "Plugins", "to": "/configuration-plugins" },
+    { "name": "Router", "to": "/configuration-router" }
   ],
   "pages/*.vue": [
     { "name": "Option: data", "to": "/pages-data" },
@@ -10,5 +22,14 @@
     { "name": "_error.vue", "to": "/pages-error" },
     { "name": "_error-debug.vue", "to": "/pages-error-debug" },
     { "name": "_*.vue", "to": "/pages/hidden" }
+  ],
+  "store": [
+    { "name": "nuxtServerInit", "to": "/store-nuxtserverinit" }
+  ],
+  "Commands": [
+    { "name": "Nuxt", "to": "/commands-nuxt" },
+    { "name": "Nuxt build", "to": "/commands-nuxt-build" },
+    { "name": "Nuxt start", "to": "/commands-nuxt-start" },
+    { "name": "Nuxt generate", "to": "/commands-nuxt-generate" }
   ]
 }

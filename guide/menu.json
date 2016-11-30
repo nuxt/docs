@@ -6,18 +6,22 @@
   ],
   "Getting Started": [
     { "name": "Installation", "to": "/installation" },
-    { "name": "Directory Structure", "to": "/directory-structure" },
-    { "name": "Configuration", "to": "/configuration" }
+    { "name": "Directory structure", "to": "/directory-structure" },
+    { "name": "Configuration", "to": "/configuration" },
+    { "name": "Routing", "to": "/routing" },
+    { "name": "Context", "to": "/context" }
   ],
-  "Pages Components": [
-    { "name": "Usage", "to": "/pages-components" },
-    { "name": "Context", "to": "/context" },
-    { "name": "data(context)", "to": "/data-context" },
-    { "name": "fetch(context)", "to": "/fetch-context" },
-    { "name": "Transitions", "to": "/fetch-context" }
+  "Customization": [
+    { "name": "Extend the app", "to": "/extend-the-app" },
+    { "name": "SEO HTML Head", "to": "/seo-html-head" },
+    { "name": "Custom routes", "to": "/custom-routes" },
+    { "name": "Routes transitions", "to": "/routes-transitions" },
+    { "name": "Loading component", "to": "/loading-component" }
   ],
   "Advanced": [
-    { "name": "Custom Routes", "to": "/custom-routes" },
-    { "name": "Vuex Store", "to": "/vuex-store" }
+    { "name": "Async datas", "to": "/async-datas" },
+    { "name": "Vuex store", "to": "/vuex-store" },
+    { "name": "Commands", "to": "/commands" },
+    { "name": "Testing", "to": "/testing" }
   ]
 }
