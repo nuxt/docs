@@ -7,22 +7,22 @@
   "Getting Started": [
     { "name": "Installation", "to": "/installation" },
     { "name": "Directory structure", "to": "/directory-structure" },
-    { "name": "Configuration", "to": "/configuration" },
     { "name": "Routing", "to": "/routing" },
-    { "name": "Context", "to": "/context" }
+    { "name": "Context", "to": "/context" },
+    { "name": "Deployment", "to": "/deployment" }
   ],
   "Customization": [
-    { "name": "Plugins", "to": "/plugins" },
-    { "name": "Extend the app", "to": "/extend-the-app" },
-    { "name": "SEO HTML Head", "to": "/seo-html-head" },
+    { "name": "Configuration", "to": "/configuration" },
     { "name": "Custom routes", "to": "/custom-routes" },
+    { "name": "Layouts", "to": "/layouts" },
+    { "name": "Loading component", "to": "/loading-component" },
+    { "name": "Plugins", "to": "/plugins" },
     { "name": "Routes transitions", "to": "/routes-transitions" },
-    { "name": "Loading component", "to": "/loading-component" }
+    { "name": "SEO HTML Head", "to": "/seo-html-head" }
   ],
   "Advanced": [
     { "name": "Async datas", "to": "/async-datas" },
     { "name": "Vuex store", "to": "/vuex-store" },
-    { "name": "Deployment", "to": "/deployment" },
     { "name": "Testing", "to": "/testing" }
   ]
 }
