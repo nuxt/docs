@@ -15,6 +15,7 @@
     { "name": "Router", "to": "/configuration-router" }
   ],
   "pages": [
+    { "name": "Context", "to": "/pages-context" },
     { "name": "Option: data", "to": "/pages-data" },
     { "name": "Option: fetch", "to": "/pages-fetch" },
     { "name": "Option: transition", "to": "/pages-transition" },
