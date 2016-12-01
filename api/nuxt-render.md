@@ -2,7 +2,7 @@
 title: Nuxt.js Module
 ---
 
-## nuxt.render(req, res)
+# nuxt.render(req, res)
 
 You can use Nuxt.js as a middleware with `nuxt.render` for you node.js server.
 
