@@ -7,6 +7,6 @@ livedemo: https://hello-world.nuxtjs.org
 liveedit: https://hyperdev.com/#!/project/nuxt-hello-world
 ---
 
-## Usage
+## Documentation
 
-Create a file index.vue within the directory /pages
+> Documentation is coming soon
