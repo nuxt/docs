@@ -19,9 +19,9 @@
     { "name": "Option: data", "to": "/pages-data" },
     { "name": "Option: fetch", "to": "/pages-fetch" },
     { "name": "Option: transition", "to": "/pages-transition" },
-    { "name": "_app.vue", "to": "/pages-layout" },
-    { "name": "_error.vue", "to": "/pages-error" },
-    { "name": "_*.vue", "to": "/pages/hidden" }
+    { "name": "_app.vue", "to": "/pages-layout-app" },
+    { "name": "_error.vue", "to": "/pages-layout-error" },
+    { "name": "_*.vue", "to": "/pages-hidden" }
   ],
   "store": [
     { "name": "Action nuxtServerInit", "to": "/store-nuxtserverinit" }
