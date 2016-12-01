@@ -1,8 +1,8 @@
 {
   "Nuxt Module": [
     { "name": "Usage", "to": "" },
-    { "name": "Render", "to": "nuxt-render" },
-    { "name": "RenderRoute", "to": "/nuxt-renderroute" }
+    { "name": "Render", "to": "/nuxt-render" },
+    { "name": "RenderRoute", "to": "/nuxt-render-route" }
   ],
   "Configuration": [
     { "name": "Build", "to": "/configuration-build" },
