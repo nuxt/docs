@@ -14,7 +14,7 @@
     { "name": "Plugins", "to": "/configuration-plugins" },
     { "name": "Router", "to": "/configuration-router" }
   ],
-  "pages/*.vue": [
+  "pages": [
     { "name": "Option: data", "to": "/pages-data" },
     { "name": "Option: fetch", "to": "/pages-fetch" },
     { "name": "Option: transition", "to": "/pages-transition" },

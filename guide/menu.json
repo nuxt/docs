@@ -12,6 +12,7 @@
     { "name": "Context", "to": "/context" }
   ],
   "Customization": [
+    { "name": "Plugins", "to": "/plugins" },
     { "name": "Extend the app", "to": "/extend-the-app" },
     { "name": "SEO HTML Head", "to": "/seo-html-head" },
     { "name": "Custom routes", "to": "/custom-routes" },
@@ -21,7 +22,7 @@
   "Advanced": [
     { "name": "Async datas", "to": "/async-datas" },
     { "name": "Vuex store", "to": "/vuex-store" },
-    { "name": "Commands", "to": "/commands" },
+    { "name": "Deployment", "to": "/deployment" },
     { "name": "Testing", "to": "/testing" }
   ]
 }
