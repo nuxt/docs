@@ -2,4 +2,4 @@
 title: Nuxt.js Module
 ---
 
-## Using Nuxt as a module
+## Using Nuxt.js Programmaticaly

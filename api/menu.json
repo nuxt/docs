@@ -20,11 +20,10 @@
     { "name": "Option: transition", "to": "/pages-transition" },
     { "name": "_app.vue", "to": "/pages-layout" },
     { "name": "_error.vue", "to": "/pages-error" },
-    { "name": "_error-debug.vue", "to": "/pages-error-debug" },
     { "name": "_*.vue", "to": "/pages/hidden" }
   ],
   "store": [
-    { "name": "nuxtServerInit", "to": "/store-nuxtserverinit" }
+    { "name": "Action nuxtServerInit", "to": "/store-nuxtserverinit" }
   ],
   "Commands": [
     { "name": "Nuxt", "to": "/commands-nuxt" },

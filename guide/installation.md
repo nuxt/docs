@@ -90,7 +90,7 @@ Let's create our first page in `pages/index.vue`:
 
 Now if we refresh the url, we can see `Hello world` displayed on the browser.
 
-*Info: Nuxt.js will listen on the files changes inside the `pages` directory, so no need to restart the application when adding new pages!*
+<p class="Alert">Info: Nuxt.js will listen on the files changes inside the `pages` directory, so no need to restart the application when adding new pages</p>
 
 ### What's next?
 
