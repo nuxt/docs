@@ -1,6 +1,5 @@
 ---
 title: Directory Structure
-description: Nuxt.js Directory Structure for a classic project.
 ---
 
 # Directory Structure
@@ -63,3 +62,5 @@ Excepted for the full options structure above, the rest of the structure is comp
 ## Shortcuts
 
 <div class="Alert Alert--light"><b>TIPS</b> : The shortcut ```~``` is provide with Nuxt.js. You can use it to access the root directory of your app.<br><u>Example</u> : ~/api/user.js</div>
+
+> Documentation is coming soon
