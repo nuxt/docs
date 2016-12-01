@@ -12,7 +12,7 @@ description: Nuxt.js Directory Structure for a classic project.
 2. [Full Options Directory Structure](#full-options-directory-structure)
 3. [Recommended Directory Structure](#recommended-directory-structure)
 
-<div class="Alert Alert--blue"><b>TIPS</b> : The shortcut ```~``` is provide with Nuxt.js. You can use it to access the root directory of your app.<br><u>Example</u> : ~static/favicon.ico</div>
+<div class="Alert Alert--blue"><b>TIPS</b> : The shortcut ```~``` is provide with Nuxt.js. You can use it to access the root directory of your app.<br><u>Example</u> : ~/api/user.js</div>
 
 ## Required Directory Structure
 
@@ -26,7 +26,7 @@ Nuxt.js doesn't required a lot of files to work properly. However, it requires a
 
 ## Full Options Directory Structure
 
-> Need to be written and explain that static and store are convention names
+> Need to be written and explain that static and store folders are convention named
 
 ```bash
 |--- pages
