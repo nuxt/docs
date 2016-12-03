@@ -4,17 +4,19 @@ title: Directory Structure
 
 # Directory Structure
 
-> Nuxt.js doesn't require a lot of directory structure convention. It lets you free to define most of the directory structure with your own convention to make your development experience more enjoyable.
+> Nuxt.js doesn't require a lot of directory structure convention. It is free to define most of the directory structure with its own convention.
 
 # Table of Contents
-1. [Required Directory Structure](#required-directory-structure)
-2. [Full Options Directory Structure](#full-options-directory-structure)
+1. [Minimum Required Directory Structure](#minimum-required-directory-structure)
+2. [Required Directory Structure with Options](#required-directory-structure-with-options)
 3. [Recommended Directory Structure](#recommended-directory-structure)
-4. [Shortcuts](#shortcuts)
+4. [Directories Aliases](#directories-aliases)
 
-## Required Directory Structure
+## Minimum Required Directory Structure
 
-Nuxt.js doesn't required a lot of files to work properly. However, it requires at least an index.vue file inside the ```/pages``` folder for initiate the main route (/) of your project and of course a package.json file.
+Nuxt.js doesn't required a lot of files to work properly. However, it requires at least an index.vue file inside the ```/pages``` folder.
+It will automatically generate the main route (/) of the application.
+Checkout the [Hello-World example](/examples) to get started.
 
 ```bash
 |-- pages
@@ -22,9 +24,10 @@ Nuxt.js doesn't required a lot of files to work properly. However, it requires a
 |-- package.json
 ```
 
-## Full Options Directory Structure
+## Required Directory Structure with Options
 
-> Need to be written and explain that static and store folders are convention named
+Static files and [Vuex Store](/guide/vuex-store) options are already implemented inside the Nuxt.js framework.
+Creating a static folder or store folder will activate the option from the framework automatically.
 
 ```bash
 |--- pages
@@ -39,7 +42,7 @@ Nuxt.js doesn't required a lot of files to work properly. However, it requires a
 
 ## Recommended Directory Structure
 
-Excepted for the full options structure above, the rest of the structure is completely free of convention. However the Nuxt.js team give you a recommended directory structure.
+Excepted for the required directory structure above, the rest of the structure is completely free of convention. However the Nuxt.js team gives a recommended directory structure.
 
 ```bash
 |--- assets
@@ -59,8 +62,20 @@ Excepted for the full options structure above, the rest of the structure is comp
 ```
 
 
-## Shortcuts
+## Directories Aliases
 
-<div class="Alert Alert--light"><b>TIPS</b> : The shortcut ```~``` is provide with Nuxt.js. You can use it to access the root directory of your app.<br><u>Example</u> : ~/api/user.js</div>
+| Alias | Directory |
+|-----|------|
+| ~ | / |
+| ~assets | /assets |
+| ~components | /components |
+| ~pages | /pages |
+| ~plugins | /plugins |
+| ~static | /static |
+| ~store | /store |
 
-> Documentation is coming soon
+Examples of how to link an image from ```static``` folder into a .vue file in ```/pages/user/me.vue```
+
+```html
+<img src="~static/img/logo.png" alt="Logo"/>
+```

@@ -1,7 +1,7 @@
 ---
-title: Context
+title: Static files
 ---
 
-# Context
+# Static files
 
 > Documentation is coming soon

@@ -8,7 +8,8 @@
     { "name": "Installation", "to": "/installation" },
     { "name": "Directory structure", "to": "/directory-structure" },
     { "name": "Routing", "to": "/routing" },
-    { "name": "Context", "to": "/context" },
+    { "name": "Pages", "to": "/pages" },
+    { "name": "Static files", "to": "/static-files" },
     { "name": "Deployment", "to": "/deployment" }
   ],
   "Customization": [
