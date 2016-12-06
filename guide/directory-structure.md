@@ -14,7 +14,7 @@ title: Directory Structure
 
 ## Minimum Required Directory Structure
 
-Nuxt.js doesn't required a lot of files to work properly. However, it requires at least an index.vue file inside the ```/pages``` folder.
+Nuxt.js doesn't require a lot of files to work properly. However, it requires at least an index.vue file inside the ```/pages``` folder.
 It will automatically generate the main route (/) of the application.
 Checkout the [Hello-World example](/examples) to get started.
 
