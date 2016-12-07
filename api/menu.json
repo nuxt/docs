@@ -6,6 +6,7 @@
   ],
   "Configuration": [
     { "name": "Build", "to": "/configuration-build" },
+    { "name": "Cache", "to": "/configuration-cache" },
     { "name": "CSS", "to": "/configuration-css" },
     { "name": "Env", "to": "/configuration-env" },
     { "name": "Generate", "to": "/configuration-generate" },
