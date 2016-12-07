@@ -11,8 +11,9 @@ Example with Express.js:
 const app = require('express')()
 const Nuxt = require('nuxt')
 
-new Nuxt()
-.then((nuxt) => {
+const nuxt = new Nuxt()
+nuxt.build()
+.then(() => {
   // Render every route with Nuxt.js
   app.use(nuxt.render)
   // Server listening

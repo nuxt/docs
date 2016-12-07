@@ -12,25 +12,16 @@ You can require Nuxt.js like this:
 const Nuxt = require('nuxt')
 ```
 
-### Nuxt(options, [callback])
+### Nuxt(options)
 
 To see the list of options to give to Nuxt.js, see the configuration section.
 
 ```js
 const options = {}
 
-new Nuxt(options)
-.then((nuxt) => {
+const nuxt = new Nuxt(options)
+nuxt.build()
+.then(() => {
   // We can use nuxt.render(req, res) or nuxt.renderRoute(route, context)
-})
-.catch((error) {
-  // If an error appended while building the project
-})
-```
-
-With a callback:
-```js
-new Nuxt(options, function (err, nuxt) {
-  // ...
 })
 ```
