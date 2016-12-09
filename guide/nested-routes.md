@@ -1,7 +1,7 @@
 ---
-title: Async Datas
+title: Nested Routes
 ---
 
-# Async Datas
+# Nested Routes
 
 > Documentation is coming soon

@@ -1,7 +1,7 @@
 ---
-title: Static files
+title: Async Data
 ---
 
-# Static files
+# Async Data
 
 > Documentation is coming soon

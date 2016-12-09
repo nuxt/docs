@@ -4,6 +4,8 @@ title: What is Nuxt.js ?
 
 # What is Nuxt.js ?
 
+> Explain the tool + the benefits wanted + vison of the project
+
 Writing web application with [Vue.js](https://vuejs.org) is great, but when it's about configuring Webpack and Babel to be able to write `*.vue` files component, it's a bit less enjoyable.
 
 _What about writing a server-rendered web application with Vue.js and using the `*.vue` files?_

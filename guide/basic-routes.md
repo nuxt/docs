@@ -1,8 +1,8 @@
 ---
-title: Routing
+title: Basic Routes
 ---
 
-# Routing
+# Basic Routes
 
 > Nuxt.js routing is based on [vue-router]().
 It generates the application routes by following the structure of the pages folder.
