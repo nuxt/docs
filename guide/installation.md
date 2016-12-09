@@ -12,12 +12,19 @@ title: Installation
 
 ## Using Nuxt.js starter template
 
-To start quickly, the Nuxt.js team has created [vue-cli starter template](https://github.com/nuxt/starter).
+To start quickly, the Nuxt.js team has created [starter template](https://github.com/nuxt/starter).
 
-If [vue-cli](https://github.com/vuejs/vue-cli) is not installed, please install it with `npm install -g vue-cli`:
+Download the .zip starter template [here](https://github.com/nuxt/starter/archive/source.zip) or install it with vue-cli:
 
 ```bash
 $ vue init nuxt/starter <project-name>
+```
+
+> If [vue-cli](https://github.com/vuejs/vue-cli) is not installed, please install it with `npm install -g vue-cli`
+
+then install the dependencies:
+
+```bash
 $ cd <project-name>
 $ npm install
 ```
@@ -28,7 +35,7 @@ $ npm run dev
 ```
 The application is now running on http://localhost:3000
 
-<p class="Alert">Info: Nuxt.js will listen on the files changes inside the `pages` directory, so no need to restart the application when adding new pages</p>
+<p class="Alert">Nuxt.js will listen on the files changes inside the `pages` directory, so no need to restart the application when adding new pages</p>
 
 To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
 
@@ -85,6 +92,6 @@ $ npm run dev
 ```
 The application is now running on http://localhost:3000
 
-<p class="Alert">Info: Nuxt.js will listen on the files changes inside the `pages` directory, so no need to restart the application when adding new pages</p>
+<p class="Alert">Nuxt.js will listen on the files changes inside the `pages` directory, so no need to restart the application when adding new pages</p>
 
 To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
