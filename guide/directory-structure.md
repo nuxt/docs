@@ -4,6 +4,9 @@ title: Directory Structure
 
 # Directory Structure
 
+> Change this to explain in details the structure of a starter template
+
+
 > Nuxt.js doesn't require a lot of directory structure convention. It is free to define most of the directory structure with its own convention.
 
 # Table of Contents

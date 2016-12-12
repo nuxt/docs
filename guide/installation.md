@@ -14,7 +14,7 @@ title: Installation
 
 To start quickly, the Nuxt.js team has created [starter template](https://github.com/nuxt/starter).
 
-Download the .zip starter template [here](https://github.com/nuxt/starter/archive/source.zip) or install it with vue-cli:
+[Download the .zip](https://github.com/nuxt/starter/archive/source.zip) starter template or install it with vue-cli:
 
 ```bash
 $ vue init nuxt/starter <project-name>

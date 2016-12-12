@@ -1,20 +1,15 @@
 {
   "Prologue": [
     { "name": "What is Nuxt.js ?", "to": "" },
+    { "name": "Core Concepts", "to": "/core-concepts" },
     { "name": "Contribution Guide", "to": "/contribution-guide" },
     { "name": "Release Notes", "to": "/release-notes" }
-  ],
-  "Core concepts": [
-    { "name": "The Nuxt Instance", "to": "/the-nuxt-instance" },
-    { "name": "Server Rendered App", "to": "/server-rendered-app" },
-    { "name": "Static Generated App", "to": "/static-generated-app" }
   ],
   "Getting Started": [
     { "name": "Installation", "to": "/installation" },
     { "name": "Directory structure", "to": "/directory-structure" },
     { "name": "Configuration", "to": "/configuration" },
-    { "name": "Development environment", "to": "/development-environment" },
-    { "name": "Production Deployment", "to": "/production-deployment" },
+    { "name": "Commands", "to": "/commands" },
     { "name": "Unit Testing", "to": "/unit-testing" }
   ],
   "Router": [
