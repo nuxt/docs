@@ -1,0 +1,21 @@
+{
+  "iso": "en",
+  "links": {
+    "guide": "Guide",
+    "api": "API",
+    "examples": "Examples",
+    "ecosystem": "Ecosystem",
+    "github": "Github",
+    "twitter": "Twitter",
+    "blog": "Blog",
+    "vuejs": "Vue.js",
+    "vue_jobs": "Vue Jobs",
+    "get_started": "get started"
+  },
+  "homepage": {
+    "title": "Universal Vue.js Applications"
+  },
+  "footer": {
+    "authors": "Made by Chopin Brothers"
+  }
+}
