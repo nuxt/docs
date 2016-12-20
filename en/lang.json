@@ -17,5 +17,8 @@
   },
   "footer": {
     "authors": "Made by Chopin Brothers"
+  },
+  "guide": {
+    "release_notes": "Release Notes"
   }
 }
