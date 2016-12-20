@@ -1,16 +1,17 @@
 {
   "iso": "en",
   "links": {
-    "guide": "Guide",
     "api": "API",
+    "blog": "Blog",
     "examples": "Examples",
     "ecosystem": "Ecosystem",
+    "get_started": "get started",
     "github": "Github",
+    "guide": "Guide",
+    "homepage": "Home page",
     "twitter": "Twitter",
-    "blog": "Blog",
     "vuejs": "Vue.js",
-    "vue_jobs": "Vue Jobs",
-    "get_started": "get started"
+    "vue_jobs": "Vue Jobs"
   },
   "homepage": {
     "title": "Universal Vue.js Applications"
