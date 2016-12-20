@@ -1,11 +1,15 @@
 {
-  "Prologue": [
-    { "name": "What is Nuxt.js ?", "to": "" },
-    { "name": "Core Concepts", "to": "/core-concepts" },
-    { "name": "Contribution Guide", "to": "/contribution-guide" },
-    { "name": "Release Notes", "to": "/release-notes" }
-  ],
   "Getting Started": [
+    {
+      "name": "Introduction",
+      "to": "",
+      "contents": [
+        { "name": "What is Nuxt.js ?", "to": "#what-is-nuxt" },
+        { "name": "The Nuxt Instance", "to": "#the-nuxt-instance" },
+        { "name": "Server Rendered App", "to": "#server-rendered-app" },
+        { "name": "Static Generated App", "to": "#static-generated-app" }
+      ]
+    },
     { "name": "Installation", "to": "/installation" },
     { "name": "Directory structure", "to": "/directory-structure" },
     { "name": "Configuration", "to": "/configuration" },
@@ -23,15 +27,19 @@
     { "name": "Layouts", "to": "/layouts" },
     { "name": "HTML Head", "to": "/html-head" }
   ],
-  "Resources": [
-    { "name": "Assets", "to": "/assets" },
-    { "name": "External Modules", "to": "/external-modules" }
-  ],
   "Data": [
     { "name": "Async data", "to": "/async-data" },
     { "name": "Vuex store", "to": "/vuex-store" }
   ],
-  "Miscellaneous": [
+  "Resources": [
+    { "name": "Assets", "to": "/assets" },
+    { "name": "External Modules", "to": "/external-modules" }
+  ],
+  "Dev Tools": [
     { "name": "Unit Testing", "to": "/unit-testing" }
+  ],
+  "Miscellaneous": [
+    { "name": "Contribution Guide", "to": "/contribution-guide" },
+    { "name": "Release Notes", "to": "/release-notes" }
   ]
 }
