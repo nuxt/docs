@@ -16,7 +16,8 @@
     { "name": "Basic Routes", "to": "/basic-routes" },
     { "name": "Dynamic Routes", "to": "/dynamic-routes" },
     { "name": "Nested Routes", "to": "/nested-routes" },
-    { "name": "Transitions", "to": "/routes-transitions" }
+    { "name": "Transitions", "to": "/routes-transitions" },
+    { "name": "Middleware", "to": "/routes-middleware" }
   ],
   "Views": [
     { "name": "Pages", "to": "/pages" },
