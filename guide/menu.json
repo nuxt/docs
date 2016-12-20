@@ -9,8 +9,7 @@
     { "name": "Installation", "to": "/installation" },
     { "name": "Directory structure", "to": "/directory-structure" },
     { "name": "Configuration", "to": "/configuration" },
-    { "name": "Commands", "to": "/commands" },
-    { "name": "Unit Testing", "to": "/unit-testing" }
+    { "name": "Commands", "to": "/commands" }
   ],
   "Router": [
     { "name": "Basic Routes", "to": "/basic-routes" },
@@ -31,5 +30,8 @@
   "Data": [
     { "name": "Async data", "to": "/async-data" },
     { "name": "Vuex store", "to": "/vuex-store" }
+  ],
+  "Miscellaneous": [
+    { "name": "Unit Testing", "to": "/unit-testing" }
   ]
 }
