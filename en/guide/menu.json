@@ -1,45 +1,73 @@
-{
-  "Getting Started": [
-    {
-      "name": "Introduction",
-      "to": "",
-      "contents": [
-        { "name": "What is Nuxt.js ?", "to": "#what-is-nuxt" },
-        { "name": "The Nuxt Instance", "to": "#the-nuxt-instance" },
-        { "name": "Server Rendered App", "to": "#server-rendered-app" },
-        { "name": "Static Generated App", "to": "#static-generated-app" }
-      ]
-    },
-    { "name": "Installation", "to": "/installation" },
-    { "name": "Directory structure", "to": "/directory-structure" },
-    { "name": "Configuration", "to": "/configuration" },
-    { "name": "Commands", "to": "/commands" }
-  ],
-  "Router": [
-    { "name": "Basic Routes", "to": "/basic-routes" },
-    { "name": "Dynamic Routes", "to": "/dynamic-routes" },
-    { "name": "Nested Routes", "to": "/nested-routes" },
-    { "name": "Transitions", "to": "/routes-transitions" },
-    { "name": "Middleware", "to": "/routes-middleware" }
-  ],
-  "Views": [
-    { "name": "Pages", "to": "/pages" },
-    { "name": "Layouts", "to": "/layouts" },
-    { "name": "HTML Head", "to": "/html-head" }
-  ],
-  "Data": [
-    { "name": "Async data", "to": "/async-data" },
-    { "name": "Vuex store", "to": "/vuex-store" }
-  ],
-  "Resources": [
-    { "name": "Assets", "to": "/assets" },
-    { "name": "External Modules", "to": "/external-modules" }
-  ],
-  "Dev Tools": [
-    { "name": "Unit Testing", "to": "/unit-testing" }
-  ],
-  "Miscellaneous": [
-    { "name": "Contribution Guide", "to": "/contribution-guide" },
-    { "name": "Release Notes", "to": "/release-notes" }
-  ]
-}
+[
+  {
+    "title": "Getting Started",
+    "links": [
+      {
+        "name": "Introduction",
+        "to": "",
+        "contents": [
+          { "name": "What is Nuxt.js ?", "to": "#what-is-nuxt-js-" },
+          { "name": "The Nuxt Instance", "to": "#the-nuxt-instance" },
+          { "name": "Server Rendered App", "to": "#server-rendered-app" },
+          { "name": "Static Generated App", "to": "#static-generated-app" }
+        ]
+      },
+      {
+        "name": "Installation",
+        "to": "/installation",
+        "contents": [
+          { "name": "Using Nuxt.js starter template", "to": "#using-nuxt-js-starter-template" },
+          { "name": "Starting from scratch", "to": "#starting-from-scratch" }
+        ]
+      },
+      { "name": "Directory structure", "to": "/directory-structure" },
+      { "name": "Configuration", "to": "/configuration" },
+      { "name": "Commands", "to": "/commands" }
+    ]
+  },
+  {
+    "title": "Router",
+    "links": [
+      { "name": "Basic Routes", "to": "/basic-routes" },
+      { "name": "Dynamic Routes", "to": "/dynamic-routes" },
+      { "name": "Nested Routes", "to": "/nested-routes" },
+      { "name": "Transitions", "to": "/routes-transitions" },
+      { "name": "Middleware", "to": "/routes-middleware" }
+    ]
+  },
+  {
+    "title": "Views",
+    "links": [
+      { "name": "Pages", "to": "/pages" },
+      { "name": "Layouts", "to": "/layouts" },
+      { "name": "HTML Head", "to": "/html-head" }
+    ]
+  },
+  {
+    "title": "Data",
+    "links": [
+      { "name": "Async data", "to": "/async-data" },
+      { "name": "Vuex store", "to": "/vuex-store" }
+    ]
+  },
+  {
+    "title": "Resources",
+    "links": [
+      { "name": "Assets", "to": "/assets" },
+      { "name": "External Modules", "to": "/external-modules" }
+    ]
+  },
+  {
+    "title": "Dev Tools",
+    "links": [
+      { "name": "Unit Testing", "to": "/unit-testing" }
+    ]
+  },
+  {
+    "title": "Miscellaneous",
+    "links": [
+      { "name": "Contribution Guide", "to": "/contribution-guide" },
+      { "name": "Release Notes", "to": "/release-notes" }
+    ]
+  }
+]

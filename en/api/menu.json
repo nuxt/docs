@@ -1,36 +1,51 @@
-{
-  "Nuxt Module": [
-    { "name": "Usage", "to": "" },
-    { "name": "Render", "to": "/nuxt-render" },
-    { "name": "RenderRoute", "to": "/nuxt-render-route" }
-  ],
-  "Configuration": [
-    { "name": "Build", "to": "/configuration-build" },
-    { "name": "Cache", "to": "/configuration-cache" },
-    { "name": "CSS", "to": "/configuration-css" },
-    { "name": "Env", "to": "/configuration-env" },
-    { "name": "Generate", "to": "/configuration-generate" },
-    { "name": "Head", "to": "/configuration-head" },
-    { "name": "Loading", "to": "/configuration-loading" },
-    { "name": "Plugins", "to": "/configuration-plugins" },
-    { "name": "Router", "to": "/configuration-router" }
-  ],
-  "pages": [
-    { "name": "Context", "to": "/pages-context" },
-    { "name": "Option: data", "to": "/pages-data" },
-    { "name": "Option: fetch", "to": "/pages-fetch" },
-    { "name": "Option: transition", "to": "/pages-transition" },
-    { "name": "_app.vue", "to": "/pages-layout-app" },
-    { "name": "_error.vue", "to": "/pages-layout-error" },
-    { "name": "_*.vue", "to": "/pages-hidden" }
-  ],
-  "store": [
-    { "name": "Action nuxtServerInit", "to": "/store-nuxtserverinit" }
-  ],
-  "Commands": [
-    { "name": "Nuxt", "to": "/commands-nuxt" },
-    { "name": "Nuxt build", "to": "/commands-nuxt-build" },
-    { "name": "Nuxt start", "to": "/commands-nuxt-start" },
-    { "name": "Nuxt generate", "to": "/commands-nuxt-generate" }
-  ]
-}
+[
+  {
+    "title": "Nuxt Module",
+    "links": [
+      { "name": "Usage", "to": "" },
+      { "name": "Render", "to": "/nuxt-render" },
+      { "name": "RenderRoute", "to": "/nuxt-render-route" }
+    ]
+  },
+  {
+    "title": "Configuration",
+    "links": [
+      { "name": "Build", "to": "/configuration-build" },
+      { "name": "Cache", "to": "/configuration-cache" },
+      { "name": "CSS", "to": "/configuration-css" },
+      { "name": "Env", "to": "/configuration-env" },
+      { "name": "Generate", "to": "/configuration-generate" },
+      { "name": "Head", "to": "/configuration-head" },
+      { "name": "Loading", "to": "/configuration-loading" },
+      { "name": "Plugins", "to": "/configuration-plugins" },
+      { "name": "Router", "to": "/configuration-router" }
+    ]
+  },
+  {
+    "title": "Pages",
+    "links": [
+      { "name": "Context", "to": "/pages-context" },
+      { "name": "Option: data", "to": "/pages-data" },
+      { "name": "Option: fetch", "to": "/pages-fetch" },
+      { "name": "Option: transition", "to": "/pages-transition" },
+      { "name": "_app.vue", "to": "/pages-layout-app" },
+      { "name": "_error.vue", "to": "/pages-layout-error" },
+      { "name": "_*.vue", "to": "/pages-hidden" }
+    ]
+  },
+  {
+    "title": "Store",
+    "links": [
+      { "name": "Action nuxtServerInit", "to": "/store-nuxtserverinit" }
+    ]
+  },
+  {
+    "title": "Commands",
+    "links": [
+      { "name": "Nuxt", "to": "/commands-nuxt" },
+      { "name": "Nuxt build", "to": "/commands-nuxt-build" },
+      { "name": "Nuxt start", "to": "/commands-nuxt-start" },
+      { "name": "Nuxt generate", "to": "/commands-nuxt-generate" }
+    ]
+  }
+]
