@@ -6,13 +6,6 @@ title: Commands
 
 > Explain commands
 
-# Table of Contents
-1. [Introduction](#introduction)
-2. [Development Environment](#development-environment)
-3. [Production Deployment](#production-deployment)
-
-## Introduction
-
 package.json
 
 ## Development Environment
@@ -23,7 +16,30 @@ nuxt
 
 ### Server Rendered App
 
-nuxt build && nuxt start
+To deploy, instead of running nuxt, you probably want to build ahead of time. Therefore, building and starting are separate commands:
+
+```bash
+nuxt build
+nuxt start
+```
+
+For example, to deploy with [`now`](https://zeit.co/now) a `package.json` like follows is recommended:
+```json
+{
+  "name": "my-app",
+  "dependencies": {
+    "nuxt": "latest"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start"
+  }
+}
+```
+Then run `now` and enjoy!
+
+Note: we recommend putting `.nuxt` in `.npmignore` or `.gitignore`.
 
 ### Static Generated App
 

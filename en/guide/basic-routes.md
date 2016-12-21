@@ -4,82 +4,38 @@ title: Basic Routes
 
 # Basic Routes
 
-> Nuxt.js routing is based on [vue-router]().
-It generates the application routes by following the structure of the pages folder.
+Nuxt.js generates automatically the `vue-router` configuration according to your file tree of `.vue` files inside the `pages/` directory.
 
-# Table of Contents
-1. [Basic Usage](#basic-usage)
-2. [Advanced Usage](#advanced-usage)
-
-## Basic Usage
-
-Nuxt.js parses the pages folder and creates the vue-router configuration.
-It links each component with the appropriate path and push them into the routes array.
-
-This directory structure:
+This file tree:
 
 ```bash
-|-- pages
-    |-- posts
-        |-- index.vue
-        |-- welcome.vue
-    |-- about.vue
-    |-- index.vue
+pages/
+--| team/
+-----| index.vue
+-----| about.vue
+--| index.vue
 ```
 
-will become:
+will automatically generate:
 
 ```js
-routes: [
-  {
-    path: '/posts',
-    component: '~pages/posts/index.vue'
-  },
-  {
-    path: '/posts/welcome',
-    component: '~pages/posts/welcome.vue'
-  },  
-  {
-    path: '/about',
-    component: '~pages/about.vue'
-  },
-  {
-    path: '/',
-    component: '~pages/index.vue'
-  }
-]
+router: {
+  routes: [
+    {
+      name: 'index',
+      path: '/',
+      component: 'pages/index.vue'
+    },
+    {
+      name: 'team',
+      path: '/team',
+      component: 'pages/team/index.vue'
+    },
+    {
+      name: 'team-about',
+      path: '/team/about',
+      component: 'pages/team/about.vue'
+    }
+  ]
+}
 ```
-
-## Advanced Usage
-
-Nuxt.js routing system allows to define exceptions.
-
-### Hidden pages
-
-It is possible to specify hidden pages by an underscore prefix.
-These pages are not interpreted by Nuxt.js routing system.
-
-This directory structure:
-
-```bash
-|-- pages
-    |-- _about.vue
-    |-- index.vue
-```
-
-will become:
-
-```js
-routes: [
-  {
-    path: '/',
-    component: '~pages/index.vue'
-  }
-]
-```
-
-### Custom routes
-
-Custom routing is also available but recommended for advanced usage.
-
-It requires an other configuration settings: [Custom Routes Documentation](/guide/custom-routes)
