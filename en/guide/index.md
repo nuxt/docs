@@ -23,11 +23,11 @@ As a framework, Nuxt.js comes will a lot of features to help you in your develop
 
 ## The Nuxt Instance
 
-### Constructor
+#### Constructor
 
-### Build
+#### Build
 
-### Diagram
+#### Diagram
 
 ## Server Rendered App
 

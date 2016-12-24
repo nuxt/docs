@@ -4,65 +4,49 @@ title: Directory Structure
 
 # Directory Structure
 
-> Change this to explain in details the structure of a starter template
+> The default Nuxt.js application structure is intended to provide a great starting point for both large and small applications.
 
+#### The Assets Directory
 
-> Nuxt.js doesn't require a lot of directory structure convention. It is free to define most of the directory structure with its own convention.
+All yours development assets
 
-# Table of Contents
-1. [Minimum Required Directory Structure](#minimum-required-directory-structure)
-2. [Required Directory Structure with Options](#required-directory-structure-with-options)
-3. [Recommended Directory Structure](#recommended-directory-structure)
-4. [Directories Aliases](#directories-aliases)
+#### The Components Directory
 
-## Minimum Required Directory Structure
+Vue.js components (not SSR)
 
-Nuxt.js doesn't require a lot of files to work properly. However, it requires at least an index.vue file inside the ```/pages``` folder.
-It will automatically generate the main route (/) of the application.
-Checkout the [Hello-World example](/examples) to get started.
+#### The Layouts Directory
 
-```bash
-|-- pages
-    |-- index.vue
-|-- package.json
-```
+View Layouts
 
-## Required Directory Structure with Options
+#### The Middleware Directory
 
-Static files and [Vuex Store](/guide/vuex-store) options are already implemented inside the Nuxt.js framework.
-Creating a static folder or store folder will activate the option from the framework automatically.
+Pages middleware
 
-```bash
-|--- pages
-    |--- index.vue
-|--- static
-    |--- favicon.ico
-|--- store
-    |--- index.js
-|--- nuxt.config.js
-|--- package.json
-```
+#### The Pages Directory
 
-## Recommended Directory Structure
+This is the Router API
 
-Excepted for the required directory structure above, the rest of the structure is completely free of convention. However the Nuxt.js team gives a recommended directory structure.
+#### The Plugins Directory
 
-```bash
-|--- assets
-    |--- global.css
-|--- components
-    |--- nav.vue
-|--- pages
-    |--- index.vue
-|--- plugins
-    |--- filters.js
-|--- static
-    |--- favicon.ico
-|--- store
-    |--- index.js
-|--- nuxt.config.js
-|--- package.json
-```
+Vendors and External modules
+
+#### The Static Directory
+
+Static files option is implemented inside the Nuxt.js framework.
+Creating a static folder will activate the option from the framework automatically.
+
+#### The Store Directory
+
+[Vuex Store](/guide/vuex-store) option is implemented inside the Nuxt.js framework.
+Creating a store folder will activate the option from the framework automatically.
+
+#### The nuxt.config.js File
+
+Custom config for nuxt
+
+#### The package.json File
+
+Dependencies file
 
 
 ## Directories Aliases
@@ -76,9 +60,3 @@ Excepted for the required directory structure above, the rest of the structure i
 | ~plugins | /plugins |
 | ~static | /static |
 | ~store | /store |
-
-Examples of how to link an image from ```static``` folder into a .vue file in ```/pages/user/me.vue```
-
-```html
-<img src="~static/img/logo.png" alt="Logo"/>
-```
