@@ -26,7 +26,7 @@ router: {
       component: 'pages/users.vue',
       children: [
         {
-          path: ':id',
+          path: ':id?',
           component: 'pages/users/_id.vue',
           name: 'users-id'
         }
