@@ -20,6 +20,7 @@ module.exports = async function ({ req, res }, getFiles) {
   if (!process.env.GH_HOOK_SECRET || !req.headers['x-hub-signature']) {
     return send(res, 501)
   }
+  console.log('Received GitHub Hook', req.headers['x-gitHub-delivery'])
   // Check if X-Hub-Signature matches our secret
   let hmac = crypto.createHmac('sha1', process.env.GH_HOOK_SECRET)
   hmac.update(JSON.stringify(body))
@@ -36,9 +37,11 @@ module.exports = async function ({ req, res }, getFiles) {
     return send(res, 501)
   }
   const clonePath = resolve(os.tmpdir(), uuid())
+  console.log('Clone repository...')
   await gitClone('https://github.com/nuxt/docs.git', clonePath)
   mergeDirs(clonePath, resolve(__dirname), 'overwrite')
   await getFiles()
   await rimraf(clonePath)
+  console.log('Docs file updated!')
   send(res, 200, 'OK')
 }
