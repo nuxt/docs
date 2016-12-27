@@ -48,7 +48,6 @@ Custom config for nuxt
 
 Dependencies file
 
-
 ## Directories Aliases
 
 | Alias | Directory |
