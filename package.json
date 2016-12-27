@@ -33,8 +33,6 @@
     "merge-dirs": "^0.2.1",
     "micro": "^6.1.0",
     "pify": "^2.3.0",
-    "request": "^2.79.0",
-    "request-promise-native": "^1.0.3",
     "rimraf": "^2.5.4",
     "simple-git": "^1.65.0",
     "uuid": "^3.0.1"
