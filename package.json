@@ -30,6 +30,7 @@
     "glob": "^7.1.1",
     "highlight.js": "^9.9.0",
     "marked": "^0.3.6",
+    "merge-dirs": "^0.2.1",
     "micro": "^6.1.0",
     "pify": "^2.3.0",
     "request": "^2.79.0",
