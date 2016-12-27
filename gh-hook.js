@@ -26,7 +26,7 @@ module.exports = async function ({ req, res }, getFiles) {
   hmac.update(JSON.stringify(body))
   let signature = 'sha1=' + hmac.digest('hex')
   if (req.headers['x-hub-signature'] !== signature) {
-    return send(res, 403)
+    return send(res, 403, 'Bad signature')
   }
   // Accept only push hook events
   if (req.headers['x-github-event'] === 'ping') {
@@ -34,7 +34,7 @@ module.exports = async function ({ req, res }, getFiles) {
   }
   // Only push event authorized
   if (req.headers['x-github-event'] !== 'push') {
-    return send(res, 501)
+    return send(res, 501, 'Not push event')
   }
   const clonePath = resolve(os.tmpdir(), uuid())
   console.log('Clone repository...')
