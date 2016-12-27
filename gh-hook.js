@@ -16,7 +16,6 @@ mergeDirs = mergeDirs.default ? mergeDirs.default : mergeDirs
 // Refresh documentation files (pull from Github)
 module.exports = async function ({ req, res }, getFiles) {
   const body = await json(req)
-  console.log(body)
   // Only for production
   if (!process.env.GH_HOOK_SECRET || !req.headers['x-hub-signature']) {
     return send(res, 501)
@@ -38,7 +37,6 @@ module.exports = async function ({ req, res }, getFiles) {
   }
   const clonePath = resolve(os.tmpdir(), uuid())
   await gitClone('https://github.com/nuxt/docs.git', clonePath)
-  console.log('clonePath', clonePath)
   mergeDirs(clonePath, resolve(__dirname), 'overwrite')
   await getFiles()
   await rimraf(clonePath)
