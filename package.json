@@ -1,0 +1,48 @@
+{
+  "name": "nuxt-docs",
+  "version": "1.0.0",
+  "description": "Nuxt.js documentation files",
+  "scripts": {
+    "dev": "nodemon --harmony api.js",
+    "lint": "eslint *.js",
+    "start": "node --harmony api.js",
+    "deploy": "now --env GH_HOOK_SECRET=@docs-api-hook-secret --env NODE_ENV=production --alias docs.api.nuxtjs.org",
+    "precommit": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuxt/docs.git"
+  },
+  "keywords": [
+    "nuxt",
+    "nuxt.js",
+    "vue",
+    "micro"
+  ],
+  "author": "Chopin brothers (@Atinux & @alexchopin)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nuxt/docs/issues"
+  },
+  "homepage": "https://github.com/nuxt/docs#readme",
+  "dependencies": {
+    "front-matter": "^2.1.1",
+    "glob": "^7.1.1",
+    "highlight.js": "^9.9.0",
+    "marked": "^0.3.6",
+    "micro": "^6.1.0",
+    "pify": "^2.3.0",
+    "request": "^2.79.0",
+    "request-promise-native": "^1.0.3",
+    "rimraf": "^2.5.4",
+    "simple-git": "^1.65.0",
+    "uuid": "^3.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.12.2",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "nodemon": "^1.11.0"
+  }
+}
