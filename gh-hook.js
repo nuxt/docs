@@ -38,7 +38,8 @@ module.exports = async function ({ req, res }, getFiles) {
   }
   const clonePath = resolve(os.tmpdir(), uuid())
   await gitClone('https://github.com/nuxt/docs.git', clonePath)
-  mergeDirs(clonePath, resolve(__dirname, 'test'), 'overwrite')
+  console.log('clonePath', clonePath)
+  mergeDirs(clonePath, resolve(__dirname), 'overwrite')
   await getFiles()
   await rimraf(clonePath)
   send(res, 200, 'OK')
