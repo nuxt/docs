@@ -1,10 +1,9 @@
 ---
 title: Basic Routes
+description: Nuxt.js generates automatically the vue-router configuration according to your file tree of .vue files inside the pages directory.
 ---
 
-# Basic Routes
-
-Nuxt.js generates automatically the `vue-router` configuration according to your file tree of `.vue` files inside the `pages/` directory.
+> Nuxt.js generates automatically the `vue-router` configuration according to your file tree of `.vue` files inside the `pages/` directory.
 
 This file tree:
 

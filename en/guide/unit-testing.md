@@ -1,8 +1,7 @@
 ---
-title: Testing
+title: Unit Testing
+description: TODO
 ---
-
-# Testing
 
 ## Add testing to your `nuxt` app using `ava` and `jsdom`
 

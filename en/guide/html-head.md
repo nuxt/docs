@@ -1,8 +1,7 @@
 ---
 title: HTML Head
+description: Nuxt.js uses vue-meta to update the headers and html attributes of your applications.
 ---
-
-# HTML Head
 
 Nuxt.js uses [`vue-meta`](https://github.com/declandewet/vue-meta) to update the `headers` and `html attributes` of your applications.
 

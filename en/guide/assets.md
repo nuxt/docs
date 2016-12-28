@@ -1,14 +1,9 @@
 ---
 title: Assets
+description: Nuxt.js let you define the CSS files/modules/libraries you want to set as globals (included in every pages)
 ---
 
 # Assets
-
-> Explain how to use assets properly with Nuxt
-
-# Table of Contents
-1. [Static assets](#static-assets)
-2. [Webpacked assets](#webpacked-assets)
 
 > Nuxt.js let you define the CSS files/modules/libraries you want to set as globals (included in every pages).
 

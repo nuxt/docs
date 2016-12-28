@@ -1,8 +1,7 @@
 ---
 title: Contribution Guide
+description: Any contribution to Nuxt.js is more than welcome!
 ---
-
-# Contributing to Nuxt.js
 
 > Any contribution to Nuxt.js is more than welcome!
 

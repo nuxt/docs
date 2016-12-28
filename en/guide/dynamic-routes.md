@@ -1,8 +1,7 @@
 ---
-title: Custom Routes
+title: Dynamic Routes
+description: To define a dynamic route with a param in Nuxt.js, you need to define a .vue file prefixed by an underscore.
 ---
-
-# Custom Routes
 
 To define a dynamic route with a param, you need to define a `.vue` file **prefixed by an underscore**.
 
