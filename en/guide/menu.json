@@ -4,25 +4,7 @@
     "links": [
       {
         "name": "Introduction",
-        "to": "",
-        "contents": [
-          {
-            "name": "What is Nuxt.js ?",
-            "to": "#what-is-nuxt-js-"
-          },
-          {
-            "name": "The Nuxt Instance",
-            "to": "#the-nuxt-instance"
-          },
-          {
-            "name": "Server Rendered App",
-            "to": "#server-rendered-app"
-          },
-          {
-            "name": "Static Generated App",
-            "to": "#static-generated-app"
-          }
-        ]
+        "to": ""
       },
       {
         "name": "Installation",
