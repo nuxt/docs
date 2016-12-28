@@ -1,9 +1,9 @@
 ---
 title: Dynamic Routes
-description: To define a dynamic route with a param in Nuxt.js, you need to define a .vue file prefixed by an underscore.
+description: To define a dynamic route with a param in Nuxt.js, you need to define a Vue file prefixed by an underscore.
 ---
 
-To define a dynamic route with a param, you need to define a `.vue` file **prefixed by an underscore**.
+To define a dynamic route with a param, you need to define a Vue file **prefixed by an underscore**.
 
 This file tree:
 
@@ -43,6 +43,7 @@ If the validate method does not return `true`, Nuxt.js will automatically load t
 <script>
 export default {
   validate ({ params }) {
+    // Must be a number
     return /^\d+$/.test(params.id)
   }
 }
