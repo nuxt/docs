@@ -19,3 +19,25 @@ In addition, we also provide an other deployment option called: *nuxt generate* 
 We believe that option could be the next big step in the development of Web Application with microservices.
 
 As a framework, Nuxt.js comes will a lot of features to help you in your development between the client side and the server side such as Asynchronous Data, Middleware, Layouts, etc.
+
+## The Nuxt Instance
+
+### Constructor
+
+> Documentation is coming soon
+
+### Build
+
+> Documentation is coming soon
+
+### Diagram
+
+> Documentation is coming soon
+
+## Server Rendered App
+
+> Documentation is coming soon
+
+## Static Generated App
+
+> Documentation is coming soon
