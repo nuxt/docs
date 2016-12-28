@@ -4,21 +4,21 @@ description: Nuxt.js uses the transition component to let you create amazing tra
 youtube: https://www.youtube.com/embed/RIXOzJWFfc8
 ---
 
-> Nuxt.js uses the  [`<transition>`](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your routes.
+> Nuxt.js uses the  [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your routes.
 
 ## Usage
 
-**Nuxt.js default transition name is `page`.**
+**Nuxt.js default transition name is `"page"`.**
 
-To add a fade transition to every page of your application, we need a CSS file that is shared across all our routes, so we start by creating a file in the `assets/` folder.
+To add a fade transition to every page of your application, we need a CSS file that is shared across all our routes, so we start by creating a file in the `assets` folder.
 
-`assets/main.css`:
+Our global css in `assets/main.css`:
 ```css
 .page-enter-active, .page-leave-active {
-  transition: opacity .5s
+  transition: opacity .5s;
 }
 .page-enter, .page-leave-active {
-  opacity: 0
+  opacity: 0;
 }
 ```
 
@@ -33,7 +33,7 @@ module.exports = {
 
 And voilà! A nice fade animation will be shown between every routes.
 
-## The `transition` key
+## The transition Key
 
 You can update the defaults transition settings by adding the `transition` key in you `nuxt.config.js` file.
 
@@ -72,22 +72,22 @@ The following properties that the `transition` key can have:
 
 You can also define methods in the `transition`, these are for the [JavaScript hooks](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks):
 
-- `beforeEnter: function (el) { ... }`
-- `enter: function (el, done) { ... }`
-- `afterEnter: function (el) { ... }`
-- `enterCancelled: function (el) { ... }`
-- `beforeLeave: function (el) { ... }`
-- `leave: function (el, done) { ... }`
-- `afterLeave: function (el) { ... }`
-- `leaveCancelled: function (el) { ... }`
+- beforeEnter(el)
+- enter(el, done)
+- afterEnter(el)
+- enterCancelled(el)
+- beforeLeave(el)
+- leave(el, done)
+- afterLeave(el)
+- leaveCancelled(el)
 
 *Note: it’s also a good idea to explicitly add `css: false` for JavaScript-only transitions so that Vue can skip the CSS detection. This also prevents CSS rules from accidentally interfering with the transition.*
 
-## Custom transition on a specific route
+## Transition for a Specific Page
 
-To define a custom transition for a specific route, simply add the `transition` key to the page component:
+To define a custom transition for a specific route, simply add the `transition` key to the page component.
 
-`pages/about.vue`:
+Set the `bounce` transition for the `pages/about.vue` page:
 ```html
 <template>
   <div class="container">
@@ -103,9 +103,8 @@ export default {
 </script>
 ```
 
-And then we add the CSS animation for this custom transition:
+And then we add the CSS animation for this custom transition in `assets/main.css`:
 ```css
-/* assets/main.css */
 .bounce-enter-active {
   animation: bounce-in .8s;
 }
@@ -126,12 +125,11 @@ And then we add the CSS animation for this custom transition:
 
 *Note: you can also the set `transition` key as an object in page components*
 
-## Dynamic transition
+## Dynamic Transition
 
-To create a dynamic transition between two route depending on the route parameters, set the `transition` key as a `function`.
+To create a dynamic transition between two routes depending on the route parameters, set the `transition` key as a `function`.
 
-Example:
-`pages/posts.vue`
+Example of a dynamic transition for the `pages/posts.vue` page:
 ```html
 <script>
 export default {
@@ -142,3 +140,8 @@ export default {
 }
 </script>
 ```
+
+Transitions applied on navigation:
+- `/` to `/posts` => `slide-left`
+- `/posts` to `/posts?page=3` => `slide-left`
+- `/posts?page=3` to `/posts?page=2` => `slide-right`

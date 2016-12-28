@@ -81,15 +81,53 @@
       },
       {
         "name": "Dynamic Routes",
-        "to": "/dynamic-routes"
+        "to": "/dynamic-routes",
+        "contents": [
+          {
+            "name": "Directory Structure",
+            "to": "#directory-structure"
+          },
+          {
+            "name": "Validate Route Params",
+            "to": "#validate-route-params"
+          }
+        ]
       },
       {
         "name": "Nested Routes",
-        "to": "/nested-routes"
+        "to": "/nested-routes",
+        "contents": [
+          {
+            "name": "Directory Structure",
+            "to": "#directory-structure"
+          },
+          {
+            "name": "Dynamic Nested Routes",
+            "to": "#dynamic-nested-routes"
+          }
+        ]
       },
       {
         "name": "Transitions",
-        "to": "/routes-transitions"
+        "to": "/routes-transitions",
+        "contents": [
+          {
+            "name": "Usage",
+            "to": "#usage"
+          },
+          {
+            "name": "The transition Key",
+            "to": "#the-transition-key"
+          },
+          {
+            "name": "Transition for a Specific Page",
+            "to": "#transition-for-a-specific-page"
+          },
+          {
+            "name": "Dynamic Transition",
+            "to": "#dynamic-transition"
+          }
+        ]
       },
       {
         "name": "Middleware",
