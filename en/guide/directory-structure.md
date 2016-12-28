@@ -3,51 +3,65 @@ title: Directory Structure
 description: The default Nuxt.js application structure is intended to provide a great starting point for both large and small applications.
 ---
 
-> The default Nuxt.js application structure is intended to provide a great starting point for both large and small applications.
+> The default Nuxt.js application structure is intended to provide a great starting point for both small and large applications. Of course, you are free to organize your application however you like.
 
-#### The Assets Directory
+## Directories
 
-All yours development assets
+### The Assets Directory
 
-#### The Components Directory
+The `assets` directory contains your un-compiled assets such as LESS, SASS, or JavaScript.
 
-Vue.js components (not SSR)
+### The Components Directory
 
-#### The Layouts Directory
+The `components` directory contains your Vue.js Components. Nuxt.js doesn't supercharge the data method on these components.
 
-View Layouts
+### The Layouts Directory
 
-#### The Middleware Directory
+The `layouts` directory contains your Application Layouts.
 
-Pages middleware
+_This directory can not be renamed._
 
-#### The Pages Directory
+### The Middleware Directory
 
-This is the Router API
+_Coming soon_
 
-#### The Plugins Directory
+### The Pages Directory
 
-Vendors and External modules
+The `pages` directory contains your Application Views and Routes. The framework reads all the `.vue` files inside this directory and create the router of your application.
 
-#### The Static Directory
+_This directory can not be renamed._
 
-Static files option is implemented inside the Nuxt.js framework.
-Creating a static folder will activate the option from the framework automatically.
+### The Plugins Directory
 
-#### The Store Directory
+The `plugins` directory contains your Javascript plugins that you want to run before instantiating the root vue.js application.
 
-[Vuex Store](/guide/vuex-store) option is implemented inside the Nuxt.js framework.
-Creating a store folder will activate the option from the framework automatically.
+### The Static Directory
 
-#### The nuxt.config.js File
+The `static` directory contains your static files. Each files inside this directory is mapped to /.
 
-Custom config for nuxt
+**Example:** /static/robots.txt is mapped as /robots.txt
 
-#### The package.json File
+_This directory can not be renamed._
 
-Dependencies file
+### The Store Directory
 
-## Directories Aliases
+The `store` directory contains your [Vuex Store](/guide/vuex-store) files. Vuex Store option is implemented in the Nuxt.js framework. Creating a `index.js` file in this directory activate the option in the framework automatically.
+
+_This directory can not be renamed._
+
+### The nuxt.config.js File
+
+The `nuxt.config.js` file contains your Nuxt.js custom configuration.
+
+_This file can not be renamed._
+
+### The package.json File
+
+The `package.json` file contains your Application dependencies and scripts.
+
+_This file can not be renamed._
+
+## Aliases
 
 | Alias | Directory |
 |-----|------|
