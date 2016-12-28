@@ -2,7 +2,6 @@ const fs = require('fs')
 const micro = require('micro')
 const pify = require('pify')
 const glob = pify(require('glob'))
-const chokidar = require('chokidar')
 const marked = require('marked')
 const highlightjs = require('highlight.js')
 const fm = require('front-matter')
@@ -123,6 +122,7 @@ function watchFiles () {
     ignoreInitial: true,
     ignored: 'node_modules/**/*'
   }
+  const chokidar = require('chokidar')
   // Doc Pages
   chokidar.watch('*/**/*.md', options)
   .on('add', (path) => getDocFile(path))
