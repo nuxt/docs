@@ -129,8 +129,12 @@
         "to": "/assets"
       },
       {
-        "name": "External Modules",
-        "to": "/external-modules"
+        "name": "Plugins",
+        "to": "/plugins"
+      },
+      {
+        "name": "Static",
+        "to": "/static"
       }
     ]
   },

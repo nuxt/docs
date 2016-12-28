@@ -1,7 +1,6 @@
 ---
 title: Pages
+description: Documentation is coming soon
 ---
-
-# Pages
 
 > Documentation is coming soon

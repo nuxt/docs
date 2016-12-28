@@ -1,8 +1,7 @@
 ---
 title: Layouts
+description: Nuxt.js allows you to extend the main layout or create custom layout by adding them in the layouts directory.
 ---
-
-# Layouts
 
 > Nuxt.js allows you to extend the main layout or create custom layout by adding them in the `layouts/` directory
 

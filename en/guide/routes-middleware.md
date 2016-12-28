@@ -1,7 +1,6 @@
 ---
 title: Routes Middleware
+description: Documentation is coming soon.
 ---
-
-# Routes Middleware
 
 > Documentation is coming soon

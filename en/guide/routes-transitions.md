@@ -1,14 +1,12 @@
 ---
 title: Routes Transitions
+description: Nuxt.js uses the transition component to let you create amazing transitions/animations between your routes.
+youtube: https://www.youtube.com/embed/RIXOzJWFfc8
 ---
-
-# Routes Transitions
 
 > Nuxt.js uses the  [`<transition>`](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your routes.
 
 ## Usage
-
-🎬 [Demonstration video](https://www.youtube.com/watch?v=RIXOzJWFfc8)
 
 **Nuxt.js default transition name is `page`.**
 

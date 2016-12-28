@@ -1,8 +1,7 @@
 ---
 title: Commands
+description: Nuxt.js comes with commands.
 ---
-
-# Commands
 
 > Explain commands
 

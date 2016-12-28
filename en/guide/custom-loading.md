@@ -1,8 +1,7 @@
 ---
 title: Custom Loading
+description: Nuxt.js uses it's own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
 ---
-
-# Custom Loading
 
 > Nuxt.js uses it's own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
 
