@@ -1,17 +1,13 @@
 const micro = require('micro')
 const crypto = require('crypto')
 const os = require('os')
-const git = require('simple-git')()
 const uuid = require('uuid/v4')
 const pify = require('pify')
 const rimraf = pify(require('rimraf'))
-let mergeDirs = require('merge-dirs')
-const gitClone = pify(git.clone.bind(git))
+const download = require('download')
 const { resolve } = require('path')
 const json = micro.json
 const send = micro.send
-// Fix merge-dirs default export
-mergeDirs = mergeDirs.default ? mergeDirs.default : mergeDirs
 
 // Refresh documentation files (pull from Github)
 module.exports = async function ({ req, res }, getFiles) {
@@ -36,12 +32,12 @@ module.exports = async function ({ req, res }, getFiles) {
   if (req.headers['x-github-event'] !== 'push') {
     return send(res, 501, 'Not push event')
   }
-  const clonePath = resolve(os.tmpdir(), uuid())
-  console.log('Clone repository...')
-  await gitClone('https://github.com/nuxt/docs.git', clonePath)
-  mergeDirs(clonePath, resolve(__dirname), 'overwrite')
-  await getFiles()
-  await rimraf(clonePath)
+  let clonePath = resolve(os.tmpdir(), uuid())
+  console.log('Download repository...')
+  await download('https://github.com/nuxt/docs/archive/master.zip', clonePath, { extract: true })
+  clonePath = resolve(clonePath, 'docs-master')
+  await getFiles(clonePath)
   console.log('Docs file updated!')
+  await rimraf(clonePath)
   send(res, 200, 'OK')
 }

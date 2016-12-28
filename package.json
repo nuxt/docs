@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Nuxt.js documentation files",
   "scripts": {
-    "dev": "nodemon --harmony api.js",
+    "dev": "nodemon --watch *.js --exec 'node --harmony api.js'",
     "lint": "eslint *.js",
     "start": "node --harmony api.js",
-    "deploy": "now --env GH_HOOK_SECRET=@docs-api-hook-secret --env NODE_ENV=production --alias docs.api.nuxtjs.org",
+    "deploy": "now --env GH_HOOK_SECRET=@docs-api-hook-secret --env NODE_ENV=production",
     "precommit": "npm run lint"
   },
   "repository": {
@@ -26,18 +26,19 @@
   },
   "homepage": "https://github.com/nuxt/docs#readme",
   "dependencies": {
+    "download": "^5.0.2",
     "front-matter": "^2.1.1",
     "glob": "^7.1.1",
     "highlight.js": "^9.9.0",
     "marked": "^0.3.6",
-    "merge-dirs": "^0.2.1",
     "micro": "^6.1.0",
+    "now-logs": "^0.0.5",
     "pify": "^2.3.0",
     "rimraf": "^2.5.4",
-    "simple-git": "^1.65.0",
     "uuid": "^3.0.1"
   },
   "devDependencies": {
+    "chokidar": "^1.6.1",
     "eslint": "^3.12.2",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.0",
