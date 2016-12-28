@@ -16,7 +16,7 @@ module.exports = async function ({ req, res }, getFiles) {
   if (!process.env.GH_HOOK_SECRET || !req.headers['x-hub-signature']) {
     return send(res, 501)
   }
-  console.log('Received GitHub Hook', req.headers['x-gitHub-delivery'])
+  console.log('Received GitHub Hook', req.headers['x-github-delivery'])
   // Check if X-Hub-Signature matches our secret
   let hmac = crypto.createHmac('sha1', process.env.GH_HOOK_SECRET)
   hmac.update(JSON.stringify(body))
