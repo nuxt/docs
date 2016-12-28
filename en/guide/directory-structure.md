@@ -11,6 +11,8 @@ description: The default Nuxt.js application structure is intended to provide a 
 
 The `assets` directory contains your un-compiled assets such as LESS, SASS, or JavaScript.
 
+[More documentation about Assets integration](/guide/assets)
+
 ### The Components Directory
 
 The `components` directory contains your Vue.js Components. Nuxt.js doesn't supercharge the data method on these components.
@@ -20,6 +22,8 @@ The `components` directory contains your Vue.js Components. Nuxt.js doesn't supe
 The `layouts` directory contains your Application Layouts.
 
 _This directory can not be renamed._
+
+[More documentation about Layouts integration](/guide/layouts)
 
 ### The Middleware Directory
 
@@ -31,9 +35,13 @@ The `pages` directory contains your Application Views and Routes. The framework 
 
 _This directory can not be renamed._
 
+[More documentation about Pages integration](/guide/pages)
+
 ### The Plugins Directory
 
 The `plugins` directory contains your Javascript plugins that you want to run before instantiating the root vue.js application.
+
+[More documentation about Plugins integration](/guide/plugins)
 
 ### The Static Directory
 
@@ -43,17 +51,23 @@ The `static` directory contains your static files. Each files inside this direct
 
 _This directory can not be renamed._
 
+[More documentation about Static integration](/guide/static)
+
 ### The Store Directory
 
-The `store` directory contains your [Vuex Store](/guide/vuex-store) files. Vuex Store option is implemented in the Nuxt.js framework. Creating a `index.js` file in this directory activate the option in the framework automatically.
+The `store` directory contains your [Vuex Store](http://vuex.vuejs.org) files. Vuex Store option is implemented in the Nuxt.js framework. Creating a `index.js` file in this directory activate the option in the framework automatically.
 
 _This directory can not be renamed._
+
+[More documentation about Store integration](/guide/vuex-store)
 
 ### The nuxt.config.js File
 
 The `nuxt.config.js` file contains your Nuxt.js custom configuration.
 
 _This file can not be renamed._
+
+[More documentation about nuxt.config.js integration](/guide/configuration)
 
 ### The package.json File
 
