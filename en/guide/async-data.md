@@ -3,18 +3,21 @@ title: Async Data
 description: Nuxt.js supercharges the data method from vue.js to let you handle async operation before setting the component data.
 ---
 
-## data (context)
-
 > Nuxt.js *supercharges* the `data` method from vue.js to let you handle async operation before setting the component data.
 
-`data` is called every time before loading the component (*only if attached to a route*). It can be called from the server-side or before navigating to the corresponding route.
+## The data Method
 
-The `data` method receives the context as the first argument, you can use it to fetch some data and return the component data. To make the data method asynchronous, Nuxt.js offers you 2 ways, choose the one you're the most familiar with:
+`data` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives [the context](/api/pages-context) as the first argument, you can use it to fetch some data and return the component data.
 
-1. returning a `Promise`, Nuxt.js will wait for the promise to be resolved before rendering the Component
-2. Define a second argument which is a callback method to be called like this: `callback(err, data)`
+<div class="Alert Alert--orange">You do **NOT** have access of the component instance trough `this` inside `data` because it is called **before initiating** the component.</div>
 
-Example with returning a `Promise`:
+To make the data method asynchronous, nuxt.js offers you different ways, choose the one you're the most familiar with:
+
+1. returning a `Promise`, nuxt.js will wait for the promise to be resolved before rendering the component.
+2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await))
+3. Define a callback as second argument. It has to be called like this: `callback(err, data)`
+
+### Returning a Promise
 ```js
 export default {
   data ({ params }) {
@@ -26,7 +29,17 @@ export default {
 }
 ```
 
-Example with using the `callback` argument:
+### Using async/await
+```js
+export default {
+  async data ({ params }) {
+    let { data } = await axios.get(`https://my-api/posts/${params.id}`)
+    return { title: data.title }
+  }
+}
+```
+
+### Using a callback
 ```js
 export default {
   data ({ params }, callback) {
@@ -38,7 +51,21 @@ export default {
 }
 ```
 
-And then, you can display the data inside your template:
+### Returning an Object
+
+If you don't need to do any asynchronous call, you can simply return an object:
+
+```js
+export default {
+  data (context) {
+    return { foo: 'bar' }
+  }
+}
+```
+
+### Displaying the data
+
+When the data method set, you can display the data inside your template like you used to do:
 
 ```html
 <template>
@@ -46,25 +73,11 @@ And then, you can display the data inside your template:
 </template>
 ```
 
-## Context
+## The Context
 
-List of all the available keys in `context`:
+To see the list of available keys in `context`, take a look at the [pages context guide](/guide/pages#the-context).
 
-| Key | Type | Available | Description |
-|-----|------|--------------|-------------|
-| `isClient` | Boolean | Client & Server | Boolean to let you know if you're actually renderer from the client-side |
-| `isServer` | Boolean | Client & Server | Boolean to let you know if you're actually renderer from the server-side |
-| `isDev` | Boolean | Client & Server | Boolean to let you know if you're in dev mode, can be useful for caching some data in production |
-| `route` | [vue-router route](https://router.vuejs.org/en/api/route-object.html) | Client & Server | `vue-router` route instance [see documentation](https://router.vuejs.org/en/api/route-object.html) |
-| `store` | [vuex store](http://vuex.vuejs.org/en/api.html#vuexstore-instance-properties) | Client & Server | `Vuex.Store` instance. **Available only if `store: true` is set in `nuxt.config.js`** |
-| `params` | Object | Client & Server | Alias of route.params |
-| `query` | Object | Client & Server | Alias of route.query |
-| `req` | [http.Request](https://nodejs.org/api/http.html#http_class_http_incomingmessage) | Server | Request from the node.js server. If nuxt is used as a middleware, the req object might be different depending of the framework you're using. |
-| `res` | [http.Response](https://nodejs.org/api/http.html#http_class_http_serverresponse) | Server | Response from the node.js server. If nuxt is used as a middleware, the res object might be different depending of the framework you're using. |
-| `redirect` | Function | Client & Server | Use this method to redirect the user to another route, the status code is used on the server-side, default to 302. `redirect([status,] path [, query])` |
-| `error` | Function | Client & Server | Use this method to show the error page: `error(params)`. The `params` should have the fields `statusCode` and `message`. |
-
-## Handling errors
+## Handling Errors
 
 Nuxt.js add the `error(params)` method in the `context`, you can call it to display the error page. `params.statusCode` will be also used to render the proper status code form the server-side.
 
@@ -83,7 +96,7 @@ export default {
 }
 ```
 
-If you're using the `callback` argument, you can call it directly with the error, Nuxt.js will call the `error` method for you:
+If you're using the `callback` argument, you can call it directly with the error, nuxt.js will call the `error` method for you:
 ```js
 export default {
   data ({ params }, callback) {
@@ -97,3 +110,5 @@ export default {
   }
 }
 ```
+
+To customize the error page, take a look at the [layout section](/guide/layouts#error-page).

@@ -20,24 +20,41 @@ We believe that option could be the next big step in the development of Web Appl
 
 As a framework, Nuxt.js comes will a lot of features to help you in your development between the client side and the server side such as Asynchronous Data, Middleware, Layouts, etc.
 
-## The Nuxt Instance
+## How it Works
 
-### Constructor
+Vue + Vue-Router + Vuex*
++
+Webpack + Vue-Loader
++
+Babel (ES6)
 
-> Documentation is coming soon
+* Included only when using the store feature.
 
-### Build
+## Features
 
-> Documentation is coming soon
-
-### Diagram
-
-> Documentation is coming soon
+- Write Vue files
+- Hot reloading
+- Code Splitting
+- Server-side rendering
+- ES6/ES7 transpilation
+- Minification of JS/CSS
+- Pre-processor (JSX, SASS, LESS, Stylus, etc)
+- ...
 
 ## Server Rendered App
+
+You can use nuxt.js as a framework to handle all the UI rendering of your project.
+
+If you already have a server, you can plug nuxt.js by using it as a middleware, there is no restriction at all when using nuxt for developing your Universal Web Applications.
 
 > Documentation is coming soon
 
 ## Static Generated App
+
+The big innovation of nuxt.js comes here: nuxt generate
+-> render all the static files at build time and save every route to a HTML file
+-> you can host you generated web application on any static hosting
+
+Make it dynamic with Cloud functions (AWS Lambda)
 
 > Documentation is coming soon

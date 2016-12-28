@@ -3,15 +3,17 @@ title: Vuex Store
 description: Using a store to manage the state is important to every big application, that's why nuxt.js implement Vuex in its core.
 ---
 
-> Using a store to manage the state is important to every big application, that's why nuxt.js implement Vuex in its core.
+> Using a store to manage the state is important to every big application, that's why nuxt.js implement [vuex]()https://github.com/vuejs/vuex in its core.
 
-## Activating the store
+## Activate the Store
 
-Nuxt.js will try to `require('./store/index.js')`, if exists, it will import `Vuex`, add it to the vendors and add the `store` option to the root `Vue` instance.
+Nuxt.js will try to `require('./store/index.js')`, if exists, it will:
 
-## Create the store folder
+1. Import Vuex
+2. Add `vuex` module in the vendors bundle
+3. Add the `store` option to the root `Vue` instance.
 
-Let's create a file `store/index.js`:
+To activate the store, we create the `store/index.js` file:
 
 ```js
 import Vue from 'vue'
@@ -33,11 +35,9 @@ const store = new Vuex.Store({
 export default store
 ```
 
-> We don't need to install `Vuex` since it's shipped with nuxt.js
+> We don't need to install `vuex` since it's shipped with nuxt.js
 
-## Voilà !
-
-We can now use `this.$store` inside our `.vue` files.
+We can now use `this.$store` inside our components:
 
 ```html
 <template>
@@ -45,35 +45,60 @@ We can now use `this.$store` inside our `.vue` files.
 </template>
 ```
 
-## fetch (context)
+## The fetch Method
 
-> Used to fill the store before rendering the page
+> The fetch method is used to fill the store before rendering the page, it's like the data method except it doesn't set the component data.
 
-The `fetch` method, *if set*, is called every time before loading the component (*only if attached to a route*). It can be called from the server-side or before navigating to the corresponding route.
+The `fetch` method, *if set*, is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route.
 
-The `fetch` method receives the context as the first argument, we can use it to fetch some data and fill the store. To make the fetch method asynchronous, **return a Promise**, nuxt.js will wait for the promise to be resolved before rendering the Component.
+The `fetch` method receives [the context](/api/pages-context) as the first argument, we can use it to fetch some data and fill the store. To make the fetch method asynchronous, **return a Promise**, nuxt.js will wait for the promise to be resolved before rendering the Component.
 
-For example:
-```js
+Example of `pages/index.vue`:
+```html
+<template>
+  <h1>Stars: {{ $store.state.stars }}</h1>
+</template>
+
+<script>
 export default {
   fetch ({ store, params }) {
-    return axios.get('http://my-url')
+    return axios.get('http://my-api/stars')
     .then((res) => {
-      store.commit('setUser', res.data)
+      store.commit('setStars', res.data)
     })
   }
 }
+</script>
 ```
 
-## Context
+You can also use async/await to make your code cleaner:
 
-To see the list of available keys in `context`, take a look at [this documentation](https://github.com/nuxt/nuxt.js/tree/master/examples/async-data#context).
+```html
+<template>
+  <h1>Stars: {{ $store.state.stars }}</h1>
+</template>
 
-## Action `nuxtServerInit`
+<script>
+export default {
+  async fetch ({ store, params }) {
+    let { data } = await axios.get('http://my-api/stars')
+    store.commit('setStars', data)
+  }
+}
+</script>
+```
 
-If we define the action `nuxtServerInit` in our store, Nuxt.js will call it with the context. It can be useful when having some data on the server we want to give directly to the client-side, for example, the authenticated user:
+## The Context
+
+To see the list of available keys in `context`, take a look at the [pages context guide](/guide/pages#the-context).
+
+## The nuxtServerInit Action
+
+If the action `nuxtServerInit` is defined in the store, nuxt.js will call it with the context (only from the server-side). It's useful when we have some data on the server we want to give directly to the client-side.
+
+For example, let's say we have a session store and we can access the connected user trough `req.authUser`. To give the authenticated user to our store, we update our `store/index.js` to the following:
+
 ```js
-// store/index.js
 actions: {
   nuxtServerInit ({ commit }, { req }) {
     if (req.authUser) {
@@ -83,4 +108,4 @@ actions: {
 }
 ```
 
-The context given to `nuxtServerInit` is the same as the `data` of `fetch` method except `context.redirect()` and `context.error()` are omitted.
+The context is given to `nuxtServerInit` as the 2nd argument, it is the same as the `data` or `fetch` method except that `context.redirect()` and `context.error()` are omitted.

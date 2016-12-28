@@ -22,7 +22,7 @@ nuxt build
 nuxt start
 ```
 
-For example, to deploy with [`now`](https://zeit.co/now) a `package.json` like follows is recommended:
+For example, to deploy with [now.sh](https://zeit.co/now) a `package.json` like follows is recommended:
 ```json
 {
   "name": "my-app",

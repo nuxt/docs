@@ -144,15 +144,61 @@
       },
       {
         "name": "Layouts",
-        "to": "/layouts"
+        "to": "/layouts",
+        "contents": [
+          {
+            "name": "Default Layout",
+            "to": "#default-layout"
+          },
+          {
+            "name": "Error Page",
+            "to": "#error-page"
+          },
+          {
+            "name": "Custom Layout",
+            "to": "#custom-layout"
+          }
+        ]
       },
       {
         "name": "Custom Loading",
-        "to": "/custom-loading"
+        "to": "/custom-loading",
+        "contents": [
+          {
+            "name": "Disable the Progress Bar",
+            "to": "#disable-the-progress-bar"
+          },
+          {
+            "name": "Customize the Progress Bar",
+            "to": "#customize-the-progress-bar"
+          },
+          {
+            "name": "Use a Custom Loading Component",
+            "to": "#use-a-custom-loading-component"
+          }
+        ]
       },
       {
         "name": "HTML Head",
-        "to": "/html-head"
+        "to": "/html-head",
+        "contents": [
+          {
+            "name": "Title",
+            "to": "#title"
+          },
+          {
+            "name": "Meta Tags",
+            "to": "#meta-tags"
+          },
+          {
+            "name": "Using Page Data",
+            "to": "#using-page-data"
+          },
+          {
+            "name": "Defaults Meta",
+            "to": "#defaults-meta"
+          }
+        ]
       }
     ]
   },
@@ -161,11 +207,43 @@
     "links": [
       {
         "name": "Async data",
-        "to": "/async-data"
+        "to": "/async-data",
+        "contents": [
+          {
+            "name": "The data Method",
+            "to": "#the-data-method"
+          },
+          {
+            "name": "The Context",
+            "to": "#the-context"
+          },
+          {
+            "name": "Handling Errors",
+            "to": "#handling-errors"
+          }
+        ]
       },
       {
         "name": "Vuex store",
-        "to": "/vuex-store"
+        "to": "/vuex-store",
+        "contents": [
+          {
+            "name": "Activate the Store",
+            "to": "#activate-the-store"
+          },
+          {
+            "name": "The fetch Method",
+            "to": "#the-fetch-method"
+          },
+          {
+            "name": "The Context",
+            "to": "#the-context"
+          },
+          {
+            "name": "The nuxtServerInit Action",
+            "to": "#the-nuxtserverinit-action"
+          }
+        ]
       }
     ]
   },
@@ -189,6 +267,10 @@
   {
     "title": "Dev Tools",
     "links": [
+      {
+        "name": "ESLint",
+        "to": "/eslint"
+      },
       {
         "name": "Unit Testing",
         "to": "/unit-testing"

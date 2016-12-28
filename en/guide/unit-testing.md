@@ -65,10 +65,11 @@ let server = null
 // Init Nuxt.js and create a server listening on localhost:4000
 test.before('Init Nuxt.js', async t => {
   const rootDir = resolve(__dirname, '..')
-  let config = require(resolve(rootDir, 'nuxt.config.js'))
+  let config = {}
+  try { config = require(resolve(rootDir, 'nuxt.config.js')) } catch (e) {}
   config.rootDir = rootDir // project folder
   config.dev = false // production build
-  nuxt = new Nuxt(options)
+  nuxt = new Nuxt(config)
   await nuxt.build()
   server = new nuxt.Server(nuxt)
   server.listen(4000, 'localhost')
