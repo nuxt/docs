@@ -5,20 +5,38 @@ description: The Nuxt.js default configuration covers most of usages. However, t
 
 > The Nuxt.js default configuration covers most of usages. However, the nuxt.config.js file allows you to overwrite it.
 
-#### build
+### build
 
-#### cache
+> Description is coming soon
 
-#### css
+### cache
 
-#### env
+> Description is coming soon
 
-#### generate
+### css
 
-#### head
+> Description is coming soon
 
-#### loading
+### env
 
-#### plugins
+> Description is coming soon
 
-#### router
+### generate
+
+> Description is coming soon
+
+### head
+
+> Description is coming soon
+
+### loading
+
+> Description is coming soon
+
+### plugins
+
+> Description is coming soon
+
+### router
+
+> Description is coming soon
