@@ -151,6 +151,9 @@ const server = micro(async function (req, res) {
       console.error(e)
     }
   }
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
   if (req.url.indexOf('/menu') === 0) {
     let lang = req.url.split('/')[2]
     if (lang && _MENU_[lang]) return send(res, 200, _MENU_[lang])
