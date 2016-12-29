@@ -19,12 +19,12 @@
             "to": "#features"
           },
           {
-            "name": "Server Rendered App",
-            "to": "#server-rendered-app"
+            "name": "Server Rendered",
+            "to": "#server-rendered"
           },
           {
-            "name": "Static Generated App",
-            "to": "#static-generated-app"
+            "name": "Static Generated",
+            "to": "#static-generated"
           }
         ]
       },

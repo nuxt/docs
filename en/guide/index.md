@@ -32,7 +32,7 @@ Nuxt.js includes theses following to create a rich web application development:
 
 A total of only **28kb min+gzip** (31kb with vuex).
 
-Under the hook we use [Webpack](https://github.com/webpack/webpack) with [vue-Loader](https://github.com/vuejs/vue-loader) and [babel-loader](https://github.com/babel/babel-loader) to bundle, code-split and minify your code.
+Under the hood we use [Webpack](https://github.com/webpack/webpack) with [vue-Loader](https://github.com/vuejs/vue-loader) and [babel-loader](https://github.com/babel/babel-loader) to bundle, code-split and minify your code.
 
 ## Features
 
@@ -42,12 +42,13 @@ Under the hook we use [Webpack](https://github.com/webpack/webpack) with [vue-Lo
 - Powerful Routing System with Asynchronous Data
 - Static File Serving
 - ES6/ES7 Transpilation
-- Bundle and minify of your JS & CSS
+- Bundling and minifying of your JS & CSS
 - Managing Head Elements
 - Hot reloading in Development
+- ESLint Integration
 - Pre-processor: SASS, LESS, Stylus, etc
 
-## Server Rendered App
+## Server Rendered
 
 You can use nuxt.js as a framework to handle all the UI rendering of your project.
 
@@ -55,12 +56,38 @@ If you already have a server, you can plug nuxt.js by using it as a middleware, 
 
 > Documentation is coming soon
 
-## Static Generated App
+## Static Generated
 
-The big innovation of nuxt.js comes here: nuxt generate
--> render all the static files at build time and save every route to a HTML file
--> you can host you generated web application on any static hosting
+The big innovation of nuxt.js comes here: `nuxt generate`
 
-Make it dynamic with Cloud functions (AWS Lambda)
+When building your application it will generate the HTML of every of your routes to store it in a file.
 
-> Documentation is coming soon
+Example:
+
+```bash
+-| pages/
+----| about.vue
+----| index.vue
+```
+
+Will generate:
+```
+-| dist/
+----| about/
+------| index.html
+----| index.html
+```
+
+This way, you can host you generated web application on any static hosting!
+
+The best example is this website, it's generated and hosted on Github Pages:
+- [Source code](https://github.com/nuxt/nuxtjs.org)
+- [Generated code](https://github.com/nuxt/nuxtjs.org/tree/gh-pages)
+
+And because we don't want to generate the page every time we update the [docs repository](https://github.com/nuxt/docs), every push made to it launches an AWS Lambda function which:
+1. Clone the [nuxtjs.org repository](https://github.com/nuxt/nuxtjs.org)
+2. Install the dependencies (`npm install`)
+3. Run `nuxt generate`
+4. Push the `dist` folder to the `gh-pages` branch
+
+We now have a **Serverless Static Generated Web Application** :)
