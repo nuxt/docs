@@ -11,8 +11,12 @@
             "to": "#what-is-nuxt-js-"
           },
           {
-            "name": "The Nuxt Instance",
-            "to": "#the-nuxt-instance"
+            "name": "How it Works",
+            "to": "#how-it-works"
+          },
+          {
+            "name": "Features",
+            "to": "#features"
           },
           {
             "name": "Server Rendered App",

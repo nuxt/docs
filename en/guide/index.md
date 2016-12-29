@@ -22,24 +22,30 @@ As a framework, Nuxt.js comes will a lot of features to help you in your develop
 
 ## How it Works
 
-Vue + Vue-Router + Vuex*
-+
-Webpack + Vue-Loader
-+
-Babel (ES6)
+![Vue with Webpack and Babel](http://i.imgur.com/avEUftE.png)
 
-* Included only when using the store feature.
+Nuxt.js includes theses following to create a rich web application development:
+- [Vue 2](https://github.com/vuejs/vue)
+- [Vue-Router](https://github.com/vuejs/vue-router)
+- [Vuex](https://github.com/vuejs/vuex) (included only when using the [store option](/guide/vuex-store))
+- [Vue-Meta](https://github.com/declandewet/vue-meta)
+
+A total of only **28kb min+gzip** (31kb with vuex).
+
+Under the hook we use [Webpack](https://github.com/webpack/webpack) with [vue-Loader](https://github.com/vuejs/vue-loader) and [babel-loader](https://github.com/babel/babel-loader) to bundle, code-split and minify your code.
 
 ## Features
 
-- Write Vue files
-- Hot reloading
-- Code Splitting
-- Server-side rendering
-- ES6/ES7 transpilation
-- Minification of JS/CSS
-- Pre-processor (JSX, SASS, LESS, Stylus, etc)
-- ...
+- Write Vue Files
+- Automatic Code Splitting
+- Server-Side Rendering
+- Powerful Routing System with Asynchronous Data
+- Static File Serving
+- ES6/ES7 Transpilation
+- Bundle and minify of your JS & CSS
+- Managing Head Elements
+- Hot reloading in Development
+- Pre-processor: SASS, LESS, Stylus, etc
 
 ## Server Rendered App
 

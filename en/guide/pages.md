@@ -12,7 +12,9 @@ Clés spéciales des pages components:
 - fetch
 - middleware -> route vers middleware
 - validate -> route vers dynamic routes
-- scrollToTop 
+- scrollToTop
+
+- Pre-processor (SASS, Stylus, etc.)
 
 Expliquer la liste des options
 
