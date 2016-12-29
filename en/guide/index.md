@@ -84,10 +84,12 @@ The best example is this website, it's generated and hosted on Github Pages:
 - [Source code](https://github.com/nuxt/nuxtjs.org)
 - [Generated code](https://github.com/nuxt/nuxtjs.org/tree/gh-pages)
 
-And because we don't want to generate the page every time we update the [docs repository](https://github.com/nuxt/docs), every push made to it launches an AWS Lambda function which:
+We don't want to generate manually the application every time we update the [docs repository](https://github.com/nuxt/docs), so each push made calls an AWS Lambda function which:
 1. Clone the [nuxtjs.org repository](https://github.com/nuxt/nuxtjs.org)
-2. Install the dependencies (`npm install`)
+2. Install the dependencies via `npm install`
 3. Run `nuxt generate`
 4. Push the `dist` folder to the `gh-pages` branch
 
 We now have a **Serverless Static Generated Web Application** :)
+
+We can go further by thinking of an e-commerce web application made with `nuxt generate` and hosted on a CDN, and every time a product is out of stock or back in stock, we regenerate the web app, but if the user navigate trough the web app in the meantime, it will be up to date thanks to the API calls made to the e-commerce API. No need to have multiple instances of a server + a cache anymore!
