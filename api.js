@@ -156,6 +156,8 @@ const server = micro(async function (req, res) {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
   if (req.url.indexOf('/menu') === 0) {
     let lang = req.url.split('/')[2]
+    let category = req.url.split('/')[3]
+    if (lang && category && _MENU_[lang] && _MENU_[lang][category]) return send(res, 200, _MENU_[lang][category])
     if (lang && _MENU_[lang]) return send(res, 200, _MENU_[lang])
     else if (lang) return send(res, 404, 'Language not found')
     return send(res, 200, _MENU_)
