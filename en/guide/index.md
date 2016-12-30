@@ -52,9 +52,11 @@ Under the hood we use [Webpack](https://github.com/webpack/webpack) with [vue-Lo
 
 You can use nuxt.js as a framework to handle all the UI rendering of your project.
 
-If you already have a server, you can plug nuxt.js by using it as a middleware, there is no restriction at all when using nuxt for developing your Universal Web Applications.
+When launching `nuxt`, it will start a development server with hot-reloading and vue-server-renderer configured to automatically server-render your application.
 
-> Documentation is coming soon
+Take a look at [the commands](/guide/commands) to learn more about it.
+
+If you already have a server, you can plug nuxt.js by using it as a middleware, there is no restriction at all when using nuxt.js for developing your Universal Web Applications, see the [Using Nuxt.js Programmatically](/api) guide.
 
 ## Static Generated
 
