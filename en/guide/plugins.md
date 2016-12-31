@@ -1,25 +1,7 @@
 ---
 title: Plugins
-description: Nuxt.js allows you to add modules inside the vendor.bundle.js file generated to reduce the size of the app bundle. It's really useful when using external modules (like axios for example)
+description: Nuxt.js lets you add modules inside the vendor.bundle.js file generated to reduce the size of the app bundle. It's really useful when using external modules (like axios for example)
 ---
-
-## Configuration: `build.vendor`
-
-> Nuxt.js allows you to add modules inside the `vendor.bundle.js` file generated to reduce the size of the app bundle. It's really useful when using external modules (like `axios` for example)
-
-To add a module/file inside the vendor bundle, add the `build.vendor` key inside `nuxt.config.js`:
-```js
-const { join } = require('path')
-
-module.exports = {
-  build: {
-    vendor: [
-      'axios', // node module
-      join(__dirname, './js/my-library.js') // custom file
-    ]
-  }
-}
-```
 
 ## Configuration: `plugins`
 
