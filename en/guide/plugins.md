@@ -3,11 +3,11 @@ title: Plugins
 description: Nuxt.js lets you add modules inside the vendor.bundle.js file generated to reduce the size of the app bundle. It's really useful when using external modules (like axios for example)
 ---
 
-## Configuration: `plugins`
+> Nuxt.js allows you to define js plugins to be ran before instantiating the root vue.js application, it can be to use your own library or external modules
 
-> Nuxt.js allows you to define js plugins to be ran before instantiating the root vue.js application
+## Use an External Module
 
-I want to use [vue-notifications](https://github.com/se-panfilov/vue-notifications) to validate the data in my inputs, I need to setup the plugin before launching the app.
+If you want to use [vue-notifications](https://github.com/se-panfilov/vue-notifications) to display notification in my application, I need to setup the plugin before launching the app.
 
 File `plugins/vue-notifications.js`:
 ```js
@@ -19,8 +19,6 @@ Vue.use(VueNotifications)
 
 Then, I add my file inside the `plugins` key of `nuxt.config.js`:
 ```js
-const { join } = require('path')
-
 module.exports = {
   build: {
     vendor: ['vue-notifications']
