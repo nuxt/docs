@@ -65,12 +65,16 @@
         "to": "/commands",
         "contents": [
           {
-            "name": "Development Environment",
-            "to": "#development-environment"
+            "name": "List of Commands",
+            "to": "#list-of-commands"
           },
           {
             "name": "Production Deployment",
             "to": "#production-deployment"
+          },
+          {
+            "name": "Static Hosting Deployment",
+            "to": "#static-hosting-deployment"
           }
         ]
       }
