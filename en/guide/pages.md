@@ -1,7 +1,9 @@
 ---
 title: Pages
-description: Documentation is coming soon
+description: The page` directory lets you create every kind of routes simply by creating Vue files. These components comes with a set of features to let you bootstrap and maintain your application with ease.
 ---
+
+> The `pages` directory lets you create every kind of routes simply by creating Vue files. These components comes with a set of features to let you bootsrap and maintain your isomorphic application with ease.
 
 Expliquer que le dossier pages est special et que chaque component est surchargé par Nuxt.js pour supprimer la diff client/server.
 
