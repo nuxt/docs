@@ -290,7 +290,21 @@
       },
       {
         "name": "Plugins",
-        "to": "/plugins"
+        "to": "/plugins",
+        "contents": [
+          {
+            "name": "Use External Modules",
+            "to": "#use-external-modules"
+          },
+          {
+            "name": "Use Vue Plugins",
+            "to": "#use-vue-plugins"
+          },
+          {
+            "name": "Only for Browsers",
+            "to": "#only-for-browsers"
+          }
+        ]
       }
     ]
   },

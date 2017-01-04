@@ -1,13 +1,54 @@
 ---
 title: Plugins
-description: Nuxt.js lets you add modules inside the vendor.bundle.js file generated to reduce the size of the app bundle. It's really useful when using external modules (like axios for example)
+description: Nuxt.js allows you to define js plugins to be ran before instantiating the root vue.js application, it can be to use your own library or external modules.
 ---
 
-> Nuxt.js allows you to define js plugins to be ran before instantiating the root vue.js application, it can be to use your own library or external modules
+> Nuxt.js allows you to define js plugins to be ran before instantiating the root vue.js application, it can be to use your own library or external modules.
 
-## Use an External Module
+## Use External Modules
 
-If you want to use [vue-notifications](https://github.com/se-panfilov/vue-notifications) to display notification in my application, I need to setup the plugin before launching the app.
+We may want to use external modules in our application, one great example is [axios](https://github.com/mzabriskie/axios) for making HTTP request for both server and client.
+
+We install it via NPM:
+
+```bash
+npm install --save axios
+```
+
+Then, we can use it directly in our pages:
+
+```html
+<template>
+  <h1>{{ title }}</h1>
+</template>
+
+<script>
+import axios from 'axios'
+
+export default {
+  async data ({ params }) {
+    let { data } = await axios.get(`https://my-api/posts/${params.id}`)
+    return { title: data.title }
+  }
+}
+</script>
+```
+
+But there is **one problem here**, if we import axios in another page, it will be included again for the page bundle. We want to include `axios` only once in our application, for this, we use the `build.vendor` key in our `nuxt.config.js`:
+
+```js
+module.exports = {
+  build: {
+    vendor: ['axios']
+  }
+}
+```
+
+Then, I can import `axios` anywhere without having to worry about making the bundle bigger!
+
+## Use Vue Plugins
+
+If we want to use [vue-notifications](https://github.com/se-panfilov/vue-notifications) to display notification in our application, we need to setup the plugin before launching the app.
 
 File `plugins/vue-notifications.js`:
 ```js
@@ -17,34 +58,39 @@ import VueNotifications from 'vue-notifications'
 Vue.use(VueNotifications)
 ```
 
-Then, I add my file inside the `plugins` key of `nuxt.config.js`:
+Then, we add the file inside the `plugins` key of `nuxt.config.js`:
+```js
+module.exports = {
+  plugins: ['~plugins/vue-notifications']
+}
+```
+
+To learn more about the `plugins` configuration key, check out the [plugins api](/api/configuration-plugins).
+
+Actually, `vue-notifications` will be included in the app bundle, but because it's a library, we want to include it in the vendor bundle for better caching.
+
+We can update our `nuxt.config.js` to add `vue-notifications` in the vendor bundle:
 ```js
 module.exports = {
   build: {
     vendor: ['vue-notifications']
   },
-  plugins: [ '~plugins/vue-notifications' ]
+  plugins: ['~plugins/vue-notifications']
 }
 ```
 
-I use `~plugins` here because nuxt.js create an alias for the `plugins/` folder, it's equivalent to: `join(__dirname, './plugins/vue-notifications.js')`
+## Only for Browsers
 
-I added `vue-notifications` in the `vendor` key to make sure that it won't be included in any other build if I call `require('vue-notifications')` in a component.
-
-### Only in browser build
-
-Some plugins might work only in the browser, for this, you can use the `process.BROWSER_BUILD` variable to check if the plugin will run from the server or from the client.
+Some plugins might work **only for the browser**, you can use the `process.BROWSER` variable to check if the plugin will run from the client-side.
 
 Example:
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
 
-if (process.BROWSER_BUILD) {
+if (process.BROWSER) {
   Vue.use(VueNotifications)
 }
 ```
 
-### Only in server build
-
-In case you need to require some libraries only for the server, you can use the `process.SERVER_BUILD` variable set to `true` when webpack is creating the `server.bundle.js` file.
+In case you need to require some libraries only for the server, you can use the `process.SERVER` variable set to `true` when webpack is creating the `server.bundle.js` file.
