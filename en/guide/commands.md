@@ -50,9 +50,33 @@ For example, to deploy with [now.sh](https://zeit.co/now) a `package.json` like 
   }
 }
 ```
+
 Then run `now` and enjoy!
 
 Note: we recommend putting `.nuxt` in `.npmignore` or `.gitignore`.
+
+### Heroku Deployment
+
+We recommend you to read the [Heroku documentation for node.js](https://devcenter.heroku.com/articles/nodejs-support).
+
+First, we need to tell Heroku to install the `devDependencies` of the project (to be able to launch `npm run build`):
+```bash
+heroku config:set NPM_CONFIG_PRODUCTION=false
+```
+
+Then, we tell Heroku to launch `npm run build` via the `postinstall` script in our `package.json`:
+```js
+"scripts": {
+  "dev": "nuxt",
+  "postinstall": "nuxt build",
+  "start": "nuxt start",
+}
+```
+
+Finally, we can push the app on Heroku with:
+```bash
+git push heroku master
+```
 
 ## Static Hosting Deployment
 
