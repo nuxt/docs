@@ -258,6 +258,10 @@
             "to": "#activate-the-store"
           },
           {
+            "name": "Modules Files",
+            "to": "#modules-files"
+          },
+          {
             "name": "The fetch Method",
             "to": "#the-fetch-method"
           },
