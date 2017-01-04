@@ -1,15 +1,15 @@
 ---
 title: Static
-description: Nuxt have a static directory for static files serving.
+description: Nuxt.js has a static directory for static files serving.
 ---
 
-> Nuxt have a `static` directory for static files serving.
+> Nuxt has a `static` directory for static files serving.
 
 If you don't want to use [Webpacked Assets](/guide/assets) from the `assets` directory, you can create and use the `static` directory in your project root directory.
 
 These files will be automatically serve by Nuxt and accessible in your project root URL.
 
-This option is helpful for some files like robots.txt for example.
+This option is helpful for files like `robots.txt` or `sitemap.xml`.
 
 From your code you can then reference those files with `/` URLs:
 
