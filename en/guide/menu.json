@@ -263,12 +263,12 @@
         "to": "/assets"
       },
       {
-        "name": "Plugins",
-        "to": "/plugins"
-      },
-      {
         "name": "Static",
         "to": "/static"
+      },
+      {
+        "name": "Plugins",
+        "to": "/plugins"
       }
     ]
   },
