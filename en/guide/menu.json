@@ -151,6 +151,10 @@
         "to": "/pages",
         "contents": [
           {
+            "name": "Special Keys",
+            "to": "#special-keys"
+          },
+          {
             "name": "A Simple Page",
             "to": "#a-simple-page"
           },
@@ -159,8 +163,8 @@
             "to": "#using-pre-processors"
           },
           {
-            "name": "Custom Layout",
-            "to": "#custom-layout"
+            "name": "Using JSX",
+            "to": "#using-jsx"
           }
         ]
       },

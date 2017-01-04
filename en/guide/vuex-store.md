@@ -90,7 +90,7 @@ export default {
 
 ## The Context
 
-To see the list of available keys in `context`, take a look at the [pages context guide](/guide/pages#the-context).
+To see the list of available keys in `context`, take a look at the [pages context api](/api/pages-context).
 
 ## The nuxtServerInit Action
 

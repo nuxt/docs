@@ -21,5 +21,11 @@
       { "name": "Plugins", "to": "/configuration-plugins" },
       { "name": "Router", "to": "/configuration-router" }
     ]
+  },
+  {
+    "title": "Pages",
+    "links": [
+      { "name": "Context", "to": "/pages-context" }
+    ]
   }
 ]

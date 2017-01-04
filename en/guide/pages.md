@@ -5,7 +5,22 @@ description: The pages directory lets you create every kind of routes simply by 
 
 > The `pages` directory lets you create every kind of routes simply by creating Vue files. These components comes with a set of features to let you bootsrap and maintain your isomorphic application with ease.
 
-Expliquer que le dossier pages est special et que chaque component est surchargé par Nuxt.js pour supprimer la diff client/server.
+## Special Keys
+
+Every page component is a Vue component, but nuxt.js adds special keys to make the development of your universal application the easiest way possible.
+
+List of all the available keys
+
+| Attribute | Description |
+|-----------|-------------|
+| data | The most important key, it has the same purpose as [Vue data](https://vuejs.org/v2/api/#Options-Data) but it can be asynchronous and receives the context as argument, please read the [async data documentation](/guide/async-data) to learn how it works. |
+| fetch | Used to fill the store before rendering the page, it's like the data method except it doesn't set the component data. See the [fetch method documentation](/guide/vuex-store#the-fetch-method). |
+| layout | Specify a layout defined in the `layouts` directory, see [layouts documentation](/guide/layouts). |
+| transition | Set a specific transition for the page, see [routes transitions](/guide/routes-transitions). |
+| scrollToTop | Boolean, by default: `false`. Specify if you want the page to scroll to the top before rendering the page, it's used for [nested routes](/guide/nested-routes). |
+| validate | Validator function for a [dynamic route](/guide/dynamic-routes#validate-route-params). |
+| middleware | Set a middleware for this page, the middleware will be called before rendering the page, see [routes middleware](/guide/routes-middleware). |
+
 
 ## A Simple Page
 
@@ -35,34 +50,66 @@ export default {
 
 ## Using Pre-Processors
 
-Clés spéciales des pages components:
-- layout -> route vers layouts
-- transition -> lien vers route transitions
-- data
-- fetch
-- middleware -> route vers middleware
-- validate -> route vers dynamic routes
-- scrollToTop
+Thanks to [vue-loader](http://vue-loader.vuejs.org/en/configurations/pre-processors.html), you can use any kind of pre-processors for your `<template>`, `<script>` or `<style>`: simply use the `lang` attribute.
 
-- Pre-processor (SASS, Stylus, etc.)
+Example of our `pages/index.vue` using [Pug](https://github.com/pugjs/pug), [CoffeeScript](http://coffeescript.org) and [Sass](http://sass-lang.com/):
 
-Expliquer la liste des options
+```html
+<template lang="pug">
+  h1.red Hello {{ name }}!
+</template>
 
-## The Context
+<script lang="coffee">
+module.exports = data: ->
+  { name: 'World' }
+</script>
 
-List of all the available keys in `context`:
+<style lang="sass">
+.red
+  color: red
+</style>
+```
 
-| Key | Type | Available | Description |
-|-----|------|--------------|-------------|
-| `isClient` | Boolean | Client & Server | Boolean to let you know if you're actually renderer from the client-side |
-| `isServer` | Boolean | Client & Server | Boolean to let you know if you're actually renderer from the server-side |
-| `isDev` | Boolean | Client & Server | Boolean to let you know if you're in dev mode, can be useful for caching some data in production |
-| `route` | [vue-router route](https://router.vuejs.org/en/api/route-object.html) | Client & Server | `vue-router` route instance [see documentation](https://router.vuejs.org/en/api/route-object.html) |
-| `store` | [vuex store](http://vuex.vuejs.org/en/api.html#vuexstore-instance-properties) | Client & Server | `Vuex.Store` instance. **Available only if `store: true` is set in `nuxt.config.js`** |
-| `env` | Object | Client & Server | Environment variables set in `nuxt.config.js`, see [env api](/api/configuration-env)  |
-| `params` | Object | Client & Server | Alias of route.params |
-| `query` | Object | Client & Server | Alias of route.query |
-| `req` | [http.Request](https://nodejs.org/api/http.html#http_class_http_incomingmessage) | Server | Request from the node.js server. If nuxt is used as a middleware, the req object might be different depending of the framework you're using. *Not available via `nuxt generate`*. |
-| `res` | [http.Response](https://nodejs.org/api/http.html#http_class_http_serverresponse) | Server | Response from the node.js server. If nuxt is used as a middleware, the res object might be different depending of the framework you're using. *Not available via `nuxt generate`*. |
-| `redirect` | Function | Client & Server | Use this method to redirect the user to another route, the status code is used on the server-side, default to 302. `redirect([status,] path [, query])` |
-| `error` | Function | Client & Server | Use this method to show the error page: `error(params)`. The `params` should have the fields `statusCode` and `message`. |
+To be able to use these pre-processors, we need to install their webpack loaders:
+```bash
+npm install --save-dev pug@2.0.0-beta6 pug-loader coffee-script coffee-loader node-sass sass-loader
+```
+
+## Using JSX
+
+If you want to use JSX in your components, first, you need to install the Babel plugins for JSX:
+
+```bash
+npm install --save-dev babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx babel-helper-vue-jsx-merge-props
+```
+
+Then, in your `nuxt.config.js`, tell nuxt.js to use the [transform-vue-jsx](https://github.com/vuejs/babel-plugin-transform-vue-jsx) plugin:
+
+```js
+module.exports = {
+  build: {
+    babel: {
+      plugins: ['transform-vue-jsx']
+    }
+  }
+}
+```
+
+To learn more about the babel option, take a look at the [build config documentation](/api/configuration-build).
+
+You can now use JSX in your `render` method of your components:
+
+```html
+<script>
+export default {
+  data () {
+    return { name: 'World' }
+  },
+  render (h) {
+    return <h1 class="red">{this.name}</h1>
+  }
+}
+</script>
+```
+
+You can learn more how to use it in the [JSX section](https://vuejs.org/v2/guide/render-function.html#JSX) of the Vue.js documentation.
