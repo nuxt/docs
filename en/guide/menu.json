@@ -148,7 +148,21 @@
     "links": [
       {
         "name": "Pages",
-        "to": "/pages"
+        "to": "/pages",
+        "contents": [
+          {
+            "name": "A Simple Page",
+            "to": "#a-simple-page"
+          },
+          {
+            "name": "Using Pre-Processors",
+            "to": "#using-pre-processors"
+          },
+          {
+            "name": "Custom Layout",
+            "to": "#custom-layout"
+          }
+        ]
       },
       {
         "name": "Layouts",
