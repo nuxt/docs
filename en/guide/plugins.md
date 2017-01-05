@@ -5,6 +5,8 @@ description: Nuxt.js allows you to define js plugins to be ran before instantiat
 
 > Nuxt.js allows you to define js plugins to be ran before instantiating the root vue.js application, it can be to use your own library or external modules.
 
+<div class="Alert">It is important to know that in any Vue [instance lifecycle](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram), only `beforeCreate` and `created` hooks are called **both from client-side and server-side**. All other hooks are called only from the client-side.</div>
+
 ## Use External Modules
 
 We may want to use external modules in our application, one great example is [axios](https://github.com/mzabriskie/axios) for making HTTP request for both server and client.
