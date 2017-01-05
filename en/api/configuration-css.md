@@ -1,25 +1,30 @@
 ---
 title: Configuration CSS
+description: Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every pages).
 ---
 
 # Css
 
-> Nuxt.js let you define the CSS files/modules/libraries you want to set as globals (included in every pages).
+> Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every pages).
 
-In `nuxt.config.js` file, add the CSS resources:
+- Type: `Array`
+ - `String | Object`
+
+If the key is an object, the keys are:
+- src: `String` (path of the file)
+- lang: `String` ([pre-processor used](/guide/pages#using-pre-processors))
+
+In `nuxt.config.js`, add the CSS resources:
 
 ```js
-const { resolve } = require('path')
-
 module.exports = {
   css: [
     // Load a node.js module
     'hover.css/css/hover-min.css',
-    // node.js module but we specify the lang
+    // node.js module but we specify the pre-processor
     { src: 'bulma', lang: 'sass' },
     // Css file in the project
-    // It is important to give an absolute path
-    resolve(__dirname, 'assets/css/main.css')
+    '~assets/css/main.css'
   ]
 }
 ```
