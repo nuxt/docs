@@ -22,7 +22,7 @@ As a framework, Nuxt.js comes will a lot of features to help you in your develop
 
 ## How it Works
 
-![Vue with Webpack and Babel](http://i.imgur.com/avEUftE.png)
+![Vue with Webpack and Babel](https://i.imgur.com/avEUftE.png)
 
 Nuxt.js includes theses following to create a rich web application development:
 - [Vue 2](https://github.com/vuejs/vue)
