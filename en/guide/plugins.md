@@ -81,16 +81,16 @@ module.exports = {
 
 ## Only for Browsers
 
-Some plugins might work **only for the browser**, you can use the `process.BROWSER` variable to check if the plugin will run from the client-side.
+Some plugins might work **only for the browser**, you can use the `process.BROWSER_BUILD` variable to check if the plugin will run from the client-side.
 
 Example:
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
 
-if (process.BROWSER) {
+if (process.BROWSER_BUILD) {
   Vue.use(VueNotifications)
 }
 ```
 
-In case you need to require some libraries only for the server, you can use the `process.SERVER` variable set to `true` when webpack is creating the `server.bundle.js` file.
+In case you need to require some libraries only for the server, you can use the `process.SERVER_BUILD` variable set to `true` when webpack is creating the `server.bundle.js` file.
