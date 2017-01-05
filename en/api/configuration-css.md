@@ -10,7 +10,7 @@ description: Nuxt.js lets you define the CSS files/modules/libraries you want to
 - Type: `Array`
  - `String | Object`
 
-If the key is an object, the keys are:
+If the item is an object, the properties are:
 - src: `String` (path of the file)
 - lang: `String` ([pre-processor used](/guide/pages#using-pre-processors))
 
