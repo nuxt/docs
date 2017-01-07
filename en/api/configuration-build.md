@@ -1,10 +1,11 @@
 ---
 title: Configuration BUILD
+description: Nuxt.js lets you configure the webpack options for building for you web application as you want.
 ---
 
 # Build
 
-> Documentation is coming soon
+> Nuxt.js lets you configure the webpack options for building for you web application as you want.
 
 ## build.vendor
 
