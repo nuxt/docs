@@ -1,0 +1,32 @@
+{
+  "iso": "en",
+  "links": {
+    "api": "API",
+    "blog": "Blog",
+    "chat": "Chat",
+    "download": "Download",
+    "examples": "Examples",
+    "ecosystem": "Ecosystem",
+    "get_started": "get started",
+    "github": "Github",
+    "guide": "Guide",
+    "homepage": "Home page",
+    "live_demo": "Live Demo",
+    "live_edit": "Live Edit",
+    "twitter": "Twitter",
+    "vuejs": "Vue.js",
+    "vue_jobs": "Vue Jobs"
+  },
+  "homepage": {
+    "title": "Universal Vue.js Applications"
+  },
+  "footer": {
+    "authors": "Made by Chopin Brothers"
+  },
+  "guide": {
+    "release_notes": "Release Notes"
+  },
+  "examples": {
+    "source_code": "Source Code"
+  }
+}
