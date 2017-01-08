@@ -21,10 +21,10 @@
     "title": "Универсальные приложения на Vue.js"
   },
   "footer": {
-    "authors": "Made by Chopin Brothers"
+    "authors": "Создано братьями Chopin"
   },
   "guide": {
-    "release_notes": "Release Notes"
+    "release_notes": "Замечания о релизе"
   },
   "examples": {
     "source_code": "Исходный код"
