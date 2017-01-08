@@ -1,13 +1,13 @@
 ---
-title: Dynamic Routes
-description: To define a dynamic route with a param in Nuxt.js, you need to define a Vue file prefixed by an underscore.
+title: Динамический роутинг
+description: Чтобы объвить денимический роуты с параметром (param) в Nuxt.js, вам необходимо создать Vue файл с префиксом: _
 ---
 
-> To define a dynamic route with a param, you need to define a Vue file **prefixed by an underscore**.
+> Чтобы определить динамический маршрут с помощью param, Вы должны определить файл Vue **prefixed by an underscore**.
 
 ## Directory Structure
 
-This file tree:
+Это струтура файлов:
 
 ```bash
 pages/
@@ -16,7 +16,7 @@ pages/
 -----| index.vue
 ```
 
-will automatically generate:
+автоматически сгенерирует:
 
 ```js
 router: {
@@ -35,24 +35,23 @@ router: {
 }
 ```
 
-## Validate Route Params
+## Валидация параметров роута
 
 ```js
 validate({ params, query }) {
-  return true // if the params are valid
-  return false // will stop Nuxt.js to render the route and display the error page
+  return true // если этот параметр валиден
+  return false // остановит Nuxt.js, чтобы представить маршрут и вывести на экран ошибочную страницу
 }
 ```
 
-Nuxt.js lets you define a validator method inside your dynamic route component (In this example: `pages/users/_id.vue`).
-
-If the validate method does not return `true`, Nuxt.js will automatically load the 404 error page.
+Nuxt.js позволяет Вам определять метод проверки валидности в своем динамическом компоненте маршрута (В этом примере: `pages/users/_id.vue`).
+Если метод валидации не возвратит `true`, Nuxt.js автоматически отобразит 404 страницу ошибки.
 
 ```js
 <script>
 export default {
   validate ({ params }) {
-    // Must be a number
+    // Должен быть номером
     return /^\d+$/.test(params.id)
   }
 }
