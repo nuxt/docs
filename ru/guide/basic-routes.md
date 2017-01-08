@@ -4,7 +4,7 @@ description: Nuxt.js использует файловую систему для
 --- 
 Nuxt.js автоматически генерирует конфигурацию [vue-router](https://github.com/vuejs/vue-router) согласно структуре файлов и каталогов в директории `pages`
 
-Стрктура:
+Структура:
 
 ```bash
 pages/
