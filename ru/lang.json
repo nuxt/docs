@@ -1,24 +1,24 @@
 {
-  "iso": "en",
+  "iso": "ru",
   "links": {
     "api": "API",
-    "blog": "Blog",
-    "chat": "Chat",
-    "download": "Download",
-    "examples": "Examples",
-    "ecosystem": "Ecosystem",
-    "get_started": "get started",
+    "blog": "Блог",
+    "chat": "Чат",
+    "download": "Скачать",
+    "examples": "Примеры",
+    "ecosystem": "Экосистема",
+    "get_started": "начало работы",
     "github": "Github",
-    "guide": "Guide",
-    "homepage": "Home page",
-    "live_demo": "Live Demo",
-    "live_edit": "Live Edit",
+    "guide": "Руководство",
+    "homepage": "Главная",
+    "live_demo": "Живое демо",
+    "live_edit": "Живое редактирование",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Vue Jobs"
   },
   "homepage": {
-    "title": "Universal Vue.js Applications"
+    "title": "Универсальные приложения на Vue.js"
   },
   "footer": {
     "authors": "Made by Chopin Brothers"
@@ -27,6 +27,6 @@
     "release_notes": "Release Notes"
   },
   "examples": {
-    "source_code": "Source Code"
+    "source_code": "Исходный код"
   }
 }
