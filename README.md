@@ -1,3 +1,7 @@
+Официальный русский перевод документации Nuxt.js (основная часть).
+
+Russian translation of primary Nuxt.js documentation site. Supported by Translation Gang. Primary maintainer Grigoriy Beziuk.
+
 # Nuxt.js Documentation
 
 > This is where the documentation is stored and served as an API
