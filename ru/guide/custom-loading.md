@@ -1,13 +1,13 @@
 ---
-title: Custom Loading
-description: Nuxt.js uses it's own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
+title: Индикатор загрузки
+description: Nuxt.js использует свой компонент для отображения прогресса загрузки между маршрутами. Вы можете изменить его, отключить или создать собственный.
 ---
 
-> Nuxt.js uses it's own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
+> Nuxt.js использует свой компонент для отображения прогресса загрузки между маршрутами. Вы можете изменить его, отключить или создать собственный.
 
-## Disable the Progress Bar
+## Отключение индикатора загрузки
 
-If you don't want to display the progress bar between the routes, simply add `loading: false` in your `nuxt.config.js` file:
+Если вы не хотите отображать индикатор загрузки в переходах между маршрутами, просто установите `loading: false` в файле `nuxt.config.js`:
 
 ```js
 module.exports = {
@@ -15,18 +15,18 @@ module.exports = {
 }
 ```
 
-## Customize the Progress Bar
+## Изменение индикатора загрузки
 
-List of properties to customize the progress bar.
+Список параметров для изменения индикатора загрузки.
 
-| Key | Type | Default | Description |
+| Ключ | Тип | По-умолчанию | Описание |
 |-----|------|---------|-------------|
-| `color` | String | `'black'` | CSS color of the progress bar |
-| `failedColor` | String | `'red'` | CSS color of the progress bar when an error appended while rendering the route (if `data` or `fetch` sent back an error for example). |
-| `height` | String | `'2px'` | Height of the progress bar (used in the `style` property of the progress bar) |
-| `duration` | Number | `5000` | In ms, the maximum duration of the progress bar, Nuxt.js assumes that the route will be rendered before 5 seconds. |
+| `color` | String | `'black'` | CSS-цвет индикатора загрузки |
+| `failedColor` | String | `'red'` | CSS-цвет индикатора загрузки в случае возникновения ошибки при рендеринге маршрута (например, если методы `data` или `fetch` вернули ошибку). |
+| `height` | String | `'2px'` | Высота индикатора загрузки (используется в свойстве `style` индикатора) |
+| `duration` | Number | `5000` | В мс, максимальная продолжительность работы индикатора. Nuxt.js предполагает, что маршрут будет отрендерен в течение 5 сек. |
 
-For a blue progress bar with 5px of height, we update the `nuxt.config.js` to the following:
+Для создания синего индикатора загрузки высотой 5 пикселей, измените `nuxt.config.js` следующим образом:
 
 ```js
 module.exports = {
@@ -37,24 +37,24 @@ module.exports = {
 }
 ```
 
-## Use a Custom Loading Component
+## Создание собственного индикатора
 
-You can create your own component that Nuxt.js will call instead of its default component. To do so, you need to give a path to your component in the `loading` option. Then, your component will be called directly by Nuxt.js.
+Вы можете создать собственный компонент, который Nuxt.js будет отображать вместо своего. Для этого просто укажите путь к компоненту в параметре `loading`.
 
-**Your component has to expose some of theses methods:**
+**Ваш собственный компонент должен содержать некоторые из следующих методов:**
 
-| Method | Required | Description |
+| Метод | Обязательный | Описание |
 |--------|----------|-------------|
-| `start()` | Required | Called when a route changes, this is here where you display your component. |
-| `finish()` | Required | Called when a route is loaded (and data fetched), this is here where you hide your component. |
-| `fail()` | *Optional* | Called when a route couldn't be loaded (failed to fetch data for example). |
-| `increase(num)` | *Optional* | Called during loading the route component, `num` is an Integer < 100. |
+| `start()` | Да | Вызывается при изменении текущего маршрута, чтобы отобразить индикатор. |
+| `finish()` | Да | Вызывается, когда маршрут и его данные загружены, чтобы скрыть индикатор. |
+| `fail()` | *Нет* | Вызывается, когда маршрут не может быть загружен (например, ошибка загрузки данных). |
+| `increase(num)` | *Нет* | Вызывается во время загрузки компонента маршрута, `num` — число < 100. |
 
-We can create our custom component in `components/loading.vue`:
+Мы можем создать собственный индикатор в `components/loading.vue`:
 ```html
 <template lang="html">
-  <div class="loading-page" v-if="loading">
-    <p>Loading...</p>
+  <div class="page-loader" v-if="loading">
+    <p>Загрузка...</p>
   </div>
 </template>
 
@@ -75,7 +75,7 @@ export default {
 </script>
 
 <style scoped>
-.loading-page {
+.page-loader {
   position: fixed;
   top: 0;
   left: 0;
@@ -90,7 +90,7 @@ export default {
 </style>
 ```
 
-Then, we update our `nuxt.config.js` to tell Nuxt.js to use our component:
+Затем указываем в `nuxt.config.js` параметр `loading`:
 
 ```js
 module.exports = {
