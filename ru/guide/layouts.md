@@ -1,38 +1,38 @@
 ---
-title: Layouts
-description: Nuxt.js lets you extend the main layout or create custom layouts by adding them in the layouts directory.
+title: Шаблоны
+description: Nuxt.js позволяет расширять основной шаблон и создавать собственные, просто добавляя их в папку /layouts.
 ---
 
-> Nuxt.js lets you extend the main layout or create custom layouts by adding them in the `layouts` directory.
+> Nuxt.js позволяет расширять основной шаблон и создавать собственные, просто добавляя их в папку `layouts`.
 
-## Default Layout
+## Основной шаблон
 
-> You can extend the main layout by adding a `layouts/default.vue` file.
+> Вы можете расширить основной шаблон, добавив файл `layouts/default.vue`.
 
-*Make sure to add the `<nuxt>` component when creating a layout to display the page component.*
+*Убедитесь в том, что компонент `<nuxt>` прописан в шаблоне страницы.*
 
-The default layout source code is:
+Код обычного шаблона таков:
 ```html
 <template>
   <nuxt/>
 </template>
 ```
 
-## Error Page
+## Страница ошибки
 
-> You can customize the error page by adding a `layouts/error.vue` file.
+> Вы можете изменить страницу ошибки, добавив файл `layouts/error.vue`.
 
-This layout is special since you should not include `<nuxt/>` inside its template. You must see this layout as a component displayed when an error occurs (404, 500, etc).
+Это — специальный шаблон, поскольку компонент `<nuxt/>` не должен присутствовать в нём. Представляйте себе этот шаблон как отдельный компонент, который отображается во время возникновения ошибки (404, 500, т.п.)
 
-The default error page source code is [available on Github](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
+Исходный код для стандартной страницы ошибки [доступен на Гитхабе Github](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
 
-Example of a custom error page in `layouts/error.vue`:
+Пример кода страницы ошибки в `layouts/error.vue`:
 ```html
 <template>
   <div class="container">
-    <h1 v-if="error.statusCode === 404">Page not found</h1>
-    <h1 v-else>An error occurred</h1>
-    <nuxt-link to="/">Home page</nuxt-link>
+    <h1 v-if="error.statusCode === 404">Страница не найдена</h1>
+    <h1 v-else>Произошла ошибка</h1>
+    <nuxt-link to="/">Вернуться на главную</nuxt-link>
   </div>
 </template>
 
@@ -43,23 +43,23 @@ export default {
 </script>
 ```
 
-## Custom Layout
+## Индивидуальный шаблон
 
-> Every file (*first level*) in the `layouts` directory will create a custom layout accessible with the `layout` property in the page component.
+> Каждый файл *первого уровня* в папке `layouts` будет создавать индивидуальный шаблон, доступный через свойство `layout` в компоненте страницы.
 
-*Make sure to add the `<nuxt/>` component when creating a layout to display the page component.*
+*Убедитесь в том, что компонент `<nuxt>` прописан в шаблоне страницы.*
 
-Example of `layouts/blog.vue`:
+Пример шаблона в `layouts/blog.vue`:
 ```html
 <template>
   <div>
-    <div>My blog navigation bar here</div>
+    <h1>Мой блог</h1>
     <nuxt/>
   </div>
 </template>
 ```
 
-And then in `pages/posts.vue`, you can tell Nuxt.js to use your custom layout:
+Затем в `pages/posts.vue` вы можете сказать Nuxt.js использовать созданный шаблон:
 ```html
 <script>
 export default {
@@ -68,4 +68,4 @@ export default {
 </script>
 ```
 
-Check the [demonstration video](https://www.youtube.com/watch?v=YOKnSTp7d38) to see it in action.
+Смотрите живой пример в [демонстрационном видео](https://www.youtube.com/watch?v=YOKnSTp7d38).
