@@ -64,12 +64,23 @@ First, we need to tell Heroku to install the `devDependencies` of the project (t
 heroku config:set NPM_CONFIG_PRODUCTION=false
 ```
 
-Then, we tell Heroku to launch `npm run build` via the `postinstall` script in our `package.json`:
+Also, we want our application to listen on the port `0.0.0.0` and run in production mode:
+```bash
+heroku config:set HOST=0.0.0.0
+heroku config:set NODE_ENV=production
+```
+
+You should see this in your Heroku dashboard (Settings section):
+
+![nuxt config vars Heroku](http://i.imgur.com/EEKl6aS.png)
+
+Then, we tell Heroku to launch `npm run build` via the `heroku-postbuild` script in our `package.json`:
 ```js
 "scripts": {
   "dev": "nuxt",
-  "postinstall": "nuxt build",
+  "build": "nuxt build",
   "start": "nuxt start",
+  "heroku-postbuild": "npm run build"
 }
 ```
 
@@ -77,6 +88,8 @@ Finally, we can push the app on Heroku with:
 ```bash
 git push heroku master
 ```
+
+Voilà! Your nuxt.js application is now hosted on Heroku!
 
 ## Static Hosting Deployment
 
