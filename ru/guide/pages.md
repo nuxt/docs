@@ -1,5 +1,5 @@
 ---
-title: Pages
+title: Страницы
 description: The pages directory lets you create every kind of routes simply by creating Vue files. These components comes with a set of features to let you bootstrap and maintain your application with ease.
 ---
 
