@@ -94,9 +94,9 @@ module.exports = {
 }
 ```
 
-To learn more about the babel option, take a look at the [build config documentation](/api/configuration-build).
+Чтобы узнать больше об опции babel, прочитайте [конфигурация build](/api/configuration-build).
 
-You can now use JSX in your `render` method of your components:
+Теперь вы можете использовать JSX в методе `render` у компонентов.
 
 ```html
 <script>
@@ -111,4 +111,4 @@ export default {
 </script>
 ```
 
-You can learn more how to use it in the [JSX section](https://vuejs.org/v2/guide/render-function.html#JSX) of the Vue.js documentation.
+Узнайте больше в [разделе JSX](https://vuejs.org/v2/guide/render-function.html#JSX) документации Vue.js.
