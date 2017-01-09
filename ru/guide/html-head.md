@@ -1,45 +1,45 @@
 ---
-title: HTML Head
-description: Nuxt.js uses vue-meta to update the headers and html attributes of your applications.
+title: HTML Мета теги
+description: Nuxt.js использует vue-meta для обновления содержимого headers и html атрибутов приложения.
 ---
 
-Nuxt.js uses [vue-meta](https://github.com/declandewet/vue-meta) to update the `headers` and `html attributes` of your application.
+Nuxt.js использует [vue-meta](https://github.com/declandewet/vue-meta) для обновления содержимого headers и html атрибутов приложения.
 
-Nuxt.js configures `vue-meta` with these options:
+Nuxt.js конфигурирует `vue-meta` с такими опциями:
 ```js
 {
-  keyName: 'head', // the component option name that vue-meta looks for meta info on.
-  attribute: 'n-head', // the attribute name vue-meta adds to the tags it observes
-  ssrAttribute: 'n-head-ssr', // the attribute name that lets vue-meta know that meta info has already been server-rendered
-  tagIDKeyName: 'hid' // the property name that vue-meta uses to determine whether to overwrite or append a tag
+  keyName: 'head', // имя опции указанное в компоненте, в котором vue-meta ищет meta информацию.
+  attribute: 'n-head', // название атрибута vue-meta добавляемое к тегам, за которыми он наблюдает
+  ssrAttribute: 'n-head-ssr', // название атрибута, которое позволяет vue-meta понимать, что meta информация уже была представлена сервером
+  tagIDKeyName: 'hid' // имя свойства, на основе которого vue-meta определит, перезаписать или добавить тег (Аналог id)
 }
 ```
 
-## Title
+## Заголовок (title)
 
-To update the title of the page, just add `head.title` in your page component.
+Чтобы обновить заголовок страницы, просто добавьте 'head.title' в своем компоненте страницы.
 
-To set the page title of `pages/index.vue`:
+Установим название страницы 'pages/index.vue':
 
 ```html
 <template>
-  <h1>Home page</h1>
+  <h1>Домашнаяя страница</h1>
 </template>
 
 <script>
 export default {
   head: {
-    title: 'Home page'
+    title: 'Домашнаяя страница'
   }
 }
 </script>
 ```
 
-## Meta Tags
+## Мета теги
 
-To know the list of options you can give to `head`, take a look at [vue-meta documentation](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
+Чтобы понять весь список опций кдоступных для `head` прочтите [vue-meta документацию](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
 
-Example of a custom viewport with a custom Google font:
+К примеру установим свой viewport и шрифт из Google font:
 ```js
 head: {
   meta: [
@@ -52,16 +52,16 @@ head: {
 }
 ```
 
-## Using Page Data
+## Используя `data` компонента
 
-You might want to use the component data to display different headers, like a post title for example. Just use `head` as a function and you can use `this` inside to access your component data.
+Можно использовать `data` компонента, чтобы выводить на экран различные динамические заголовки, например такой как заголовок статьи. Просто используйте 'head' как функцию, и Вы можете использовать 'this' внутри этой функции чтобы получить доступ к `data`.
 
-Example of displaying the post title:
+Пример вывода заголовка статьи:
 ```html
 <script>
 export default {
   async data ({ params }) {
-    // fetch the post from the API
+    // возъмем статью из API
     let { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   },
@@ -74,9 +74,8 @@ export default {
 </script>
 ```
 
-## Defaults Meta
-
-Nuxt.js let you define all default meta for your application inside `nuxt.config.js`, use the same `head` property:
+## Meta - базовые значения
+Nuxt.js позволяет определить базовое значение meta для всего приложения в 'nuxt.config.js', используя свойство 'head':
 
 ```js
 module.exports = {
@@ -85,10 +84,10 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Meta description' }
+      { hid: 'description', name: 'description', content: 'Мета описание' }
     ]
   }
 }
 ```
 
-<p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+<p class="Alert">Чтобы избежать любого дублирования, в дочернем компоненте, дайте уникальный идентификатор со 'скрытым' ключом, [читать побробнее](https://github.com/declandewet/vue-meta#lists-of-tags).</p>

@@ -1,83 +1,83 @@
 ---
-title: Directory Structure
-description: The default Nuxt.js application structure is intended to provide a great starting point for both large and small applications.
+title: Структура каталогов
+description: Структура каталогов приложения Nuxt.js по умолчанию имеет все, чтобы обеспечить максимальное удобство для начала разработки как больших так и маленьких приложений
 ---
 
-> The default Nuxt.js application structure is intended to provide a great starting point for both small and large applications. Of course, you are free to organize your application however you like.
+> Структура каталогов приложения Nuxt.js по умолчанию несет в себе все необходимое, для того чтобы обеспечить максимальное удобство начала разработки как больших так и маленьких приложений. Однако, Вы можете организовать структуру своего приложения по собственному желанию.
 
-## Directories
+## Каталоги
 
-### The Assets Directory
+### Каталог `Assets`
 
-The `assets` directory contains your un-compiled assets such as LESS, SASS, or JavaScript.
+Каталог `Assets` содержит нескомпилированные файлы такие как LESS, SASS, или JavaScript.
 
-[More documentation about Assets integration](/guide/assets)
+[Больше документации о Assets](/guide/assets)
 
-### The Components Directory
+### Каталог `Components`
 
-The `components` directory contains your Vue.js Components. Nuxt.js doesn't supercharge the data method on these components.
+Каталог `Components` содержит Ваши Vue.js компоненты. Nuxt.js не подгружает метод `data` на этих компонентах. (от переводчика: Речь об [асинхронной подгрузке `data`](/guide/async-data))
 
-### The Layouts Directory
+### Каталог `Layouts`
 
-The `layouts` directory contains your Application Layouts.
+Каталог `Layouts` содержит в себе шаблоны приложения
 
-_This directory can not be renamed._
+_Этот каталог не может быть переименован._
 
-[More documentation about Layouts integration](/guide/layouts)
+[Больше документации о Layouts](/guide/layouts)
 
-### The Middleware Directory
+### Каталог `Middleware`
 
-_Coming soon_
+_Скоро будет_
 
-### The Pages Directory
+### Каталог `Pages`
 
-The `pages` directory contains your Application Views and Routes. The framework reads all the `.vue` files inside this directory and create the router of your application.
+Каталог `pages` содержит Представления Приложения и Маршруты. Платформа читает все '.vue' файлы в этом каталоге, и создает маршрутизатор всего приложения
 
-_This directory can not be renamed._
+_Этот каталог не может быть переименован._
 
-[More documentation about Pages integration](/guide/pages)
+[Больше документации о Pages](/guide/pages)
 
-### The Plugins Directory
+### Каталог `Plugins`
 
-The `plugins` directory contains your Javascript plugins that you want to run before instantiating the root vue.js application.
+Каталог `plugins` содержит Ваши Javascript плагины, которые необходимо выполнить прежде, чем инстанцировать корень vue.js приложения.
 
-[More documentation about Plugins integration](/guide/plugins)
+[Больше документации о Plugins](/guide/plugins)
 
-### The Static Directory
+### Каталог Static
 
-The `static` directory contains your static files. Each files inside this directory is mapped to /.
+Каталог `Static` содержит Ваши статические файлы. Каждый файл в этом каталоге отображен на `/`.
 
-**Example:** /static/robots.txt is mapped as /robots.txt
+**Пример:** /static/robots.txt будет доступен как /robots.txt
 
-_This directory can not be renamed._
+_Этот каталог не может быть переименован._
 
-[More documentation about Static integration](/guide/static)
+[Больше документации о Static](/guide/static)
 
-### The Store Directory
+### Store каталог
 
-The `store` directory contains your [Vuex Store](http://vuex.vuejs.org) files. Vuex Store option is implemented in the Nuxt.js framework. Creating a `index.js` file in this directory activate the option in the framework automatically.
+Каталог `store` может содержать файлы [Vuex хранилища](http://vuex.vuejs.org). Vuex хранилище является опциональным в Nuxt.js. Для того что-бы использовать его, создайте `index.js` файл в этом каталоге и Vuex автоматически будет активирован фреймворком.
 
-_This directory can not be renamed._
+_Этот каталог не может быть переименован._
 
-[More documentation about Store integration](/guide/vuex-store)
+[Больше документации о Store](/guide/vuex-store)
 
-### The nuxt.config.js File
+### nuxt.config.js файл
 
-The `nuxt.config.js` file contains your Nuxt.js custom configuration.
+Файл `nuxt.config.js` содержит пользовательскую конфигурацию Nuxt.js.
 
-_This file can not be renamed._
+_Этот файл не может быть переименован._
 
-[More documentation about nuxt.config.js integration](/guide/configuration)
+[Больше документации о nuxt.config.js](/guide/configuration)
 
-### The package.json File
+### package.json файл
 
-The `package.json` file contains your Application dependencies and scripts.
+Файл `package.json` содержит зависимости от приложения и скрипты.
 
-_This file can not be renamed._
+_Этот файл не может быть переименован._
 
-## Aliases
+## Алиасы
 
-| Alias | Directory |
+| Алиас | Каталог |
 |-----|------|
 | ~ | / |
 | ~assets | /assets |
