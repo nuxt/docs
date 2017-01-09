@@ -54,7 +54,7 @@ nuxt start
 
 Затем запустите `now` и наслаждайтесь!
 
-Заметка: вы рекомендует добавить `.nuxt` в `.npmignore` или `.gitignore`.
+Заметка: рекомендуем добавить `.nuxt` в `.npmignore` или `.gitignore`.
 
 ### Развёртывание с Heroku
 
@@ -74,7 +74,7 @@ heroku config:set NPM_CONFIG_PRODUCTION=false
 }
 ```
 
-Наконец, мы можем запушить приложение в Heroku:
+Наконец, мы можем добавить приложение в Heroku:
 ```bash
 git push heroku master
 ```
@@ -104,6 +104,6 @@ surge dist/
 
 Вуаля :)
 
-Если у вас есть проект с [динамическими маршрутами](/guide/dynamic-routes), взгляните на [генерацию конфигурации](/api/configuration-generate), чтобы указать nuxt.js, как генерировать эти динамические маршруты.
+Если у вас есть проект с [динамическими маршрутами](/guide/dynamic-routes), взгляните на [генерацию конфигурации](/api/configuration-generate), чтобы указать Nuxt.js, как генерировать эти динамические маршруты.
 
 <div class="Alert">В случае генерации веб-приложения через `nuxt generate`, [контекст](/api/pages-context), определённый для [data()](/guide/async-data#the-data-method) и [fetch()](/guide/vuex-store#the-fetch-method), не будет содержать `req` и `res`.</div>
