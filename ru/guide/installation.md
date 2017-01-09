@@ -1,53 +1,54 @@
 ---
-title: Installation
-description: Nuxt.js is really easy to get started with. A simple project only need the nuxt dependency in your package.json file.
+title: Установка
+description: С Nuxt.js действительно очень просто начать работать. Простой проект требует лишь указания зависимости nuxt в package.json.
 ---
 
-> Nuxt.js is really easy to get started with. A simple project only need the `nuxt` dependency.
+> Начать работу с Nuxt.js действительно очень легко. Простой проект требует лишь указания зависимости `nuxt` в package.json.
 
-## Using Nuxt.js starter template
+## Использование стартового шаблона Nuxt.js
 
-To start quickly, the Nuxt.js team has created [starter template](https://github.com/nuxt/starter).
+Для быстрого запуска приложения команда Nuxt.js создала [стартовый шаблон](https://github.com/nuxt/starter).
 
-[Download the .zip](https://github.com/nuxt/starter/archive/source.zip) starter template or install it with vue-cli:
+[Скачайте .zip](https://github.com/nuxt/starter/archive/source.zip), или установите стартовый шаблон с помощью vue-cli:
 
 ```bash
 $ vue init nuxt/starter <project-name>
 ```
 
-> If [vue-cli](https://github.com/vuejs/vue-cli) is not installed, please install it with `npm install -g vue-cli`
+> Если [vue-cli](https://github.com/vuejs/vue-cli) ещё не установлен, это можно сделать так: `npm install -g vue-cli`
 
-then install the dependencies:
+затем установите зависимости:
 
 ```bash
 $ cd <project-name>
 $ npm install
 ```
 
-and launch the project with:
+и запустите проект:
 ```bash
 $ npm run dev
 ```
-The application is now running on http://localhost:3000
+Теперь приложение доступно по адресу http://localhost:3000
 
-<p class="Alert">Nuxt.js will listen on the files changes inside the `pages` directory, so no need to restart the application when adding new pages</p>
+<p class="Alert">Nuxt.js отслеживает изменения файлов внутри папки `pages`, поэтому перезапускать приложение после добавления новых страниц не нужно.</p>
 
-To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
+Узнать больше о структуре папок проекта можно в разделе [Структура папок](/guide/directory-structure).
 
-## Starting from scratch
+## Создание с нуля
 
-Creating a Nuxt.js application from scratch is also really easy, it only needs *1 file and 1 directory*. Let's create an empty directory to start working on the application:
+Начать приложение Nuxt.js с нуля также очень просто — необходимы лишь *1 файл и 1 папка*.
+Давайте создадим новую папку:
 
 ```bash
 $ mkdir <project-name>
 $ cd <project-name>
 ```
 
-*Info: replace project-name by the name of the project.*
+*Подсказка: замените project-name на название своего проекта.*
 
-### The package.json
+### Файл package.json
 
-The project needs a `package.json` file to specify how to start `nuxt`:
+Проекту необходим файл `package.json`, чтобы запустить `nuxt`:
 ```json
 {
   "name": "my-app",
@@ -56,37 +57,37 @@ The project needs a `package.json` file to specify how to start `nuxt`:
   }
 }
 ```
-`scripts` will launch Nuxt.js via `npm run dev`.
+Раздел `scripts` запускает Nuxt.js командой `npm run dev`.
 
-### Installing `nuxt`
+### Установка `nuxt`
 
-Once the `package.json` has been created, add `nuxt` to the project via NPM:
+После создания `package.json` добавьте `nuxt` в свой проект через NPM:
 ```bash
 npm install --save nuxt
 ```
 
-### The `pages` directory
+### Папка `pages`
 
-Nuxt.js will transform every `*.vue` file inside the `pages` directory as a route for the application.
+Nuxt.js преобразовывает файлы `*.vue` папки `pages` в роуты приложения.
 
-Create the `pages` directory:
+Создайте папку `pages`:
 ```bash
 $ mkdir pages
 ```
 
-then create the first page in `pages/index.vue`:
+затем создайте первую страницу `pages/index.vue`:
 ```html
 <template>
   <h1>Hello world!</h1>
 </template>
 ```
 
-and launch the project with:
+и запустите приложение:
 ```bash
 $ npm run dev
 ```
-The application is now running on http://localhost:3000
+Теперь приложение доступно по адресу http://localhost:3000
 
-<p class="Alert">Nuxt.js will listen on the files changes inside the `pages` directory, so no need to restart the application when adding new pages</p>
+<p class="Alert">Nuxt.js отслеживает изменения файлов внутри папки `pages`, поэтому перезапускать приложение после добавления новых страниц не нужно.</p>
 
-To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
+Узнать больше о структуре папок проекта можно в разделе [Структура папок](/guide/directory-structure).
