@@ -18,13 +18,19 @@
     "vue_jobs": "Vue Jobs"
   },
   "homepage": {
-    "title": "Universal Vue.js Applications"
+    "title": "Universal Vue.js Applications",
+    "meta": {
+      "title": "Nuxt.js - Universal Vue.js Applications",
+      "description": "Nuxt.js is a minimal framework for creating Vue.js applications with server side rendering, code-splitting, hot-reloading, static generation and more!"
+    }
   },
   "footer": {
     "authors": "Made by Chopin Brothers"
   },
   "guide": {
-    "release_notes": "Release Notes"
+    "release_notes": "Release Notes",
+    "contribute": "Caught a mistake or want to contribute to the documentation?",
+    "edit_on_github": "Edit this page on Github!"
   },
   "examples": {
     "source_code": "Source Code"
