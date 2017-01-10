@@ -1,7 +1,7 @@
 ---
-title: Configuration ENV
+title: Конфигурация ENV
 ---
 
 # Env
 
-> Documentation is coming soon
+> Документация скоро будет

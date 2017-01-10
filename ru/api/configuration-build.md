@@ -1,17 +1,17 @@
 ---
-title: Configuration BUILD
-description: Nuxt.js lets you configure the webpack options for building for you web application as you want.
+title: Конфигурация BUILD
+description: Nuxt.js позволяет конфигурировать опции webpack'а на ваше усмотрение
 ---
 
 # Build
 
-> Nuxt.js lets you configure the webpack options for building for you web application as you want.
+> Nuxt.js позволяет конфигурировать опции webpack'а на ваше усмотрение
 
 ## build.vendor
 
-> Nuxt.js lets you add modules inside the `vendor.bundle.js` file generated to reduce the size of the app bundle. It's really useful when using external modules (like `axios` for example)
+> Nuxt.js позволяет добавлять модули в генерируемый файл `vendor.bundle.js`, чтобы уменьшить размер финального приложения. Это действительно полезно при использовании внешних модулей (например, `axios`).
 
-To add a module/file inside the vendor bundle, add the `build.vendor` key inside `nuxt.config.js`:
+Для добавления стороннего модуля/файла внутрь приложения, создайте параметр `build.vendor` внутри `nuxt.config.js`:
 
 ```js
 module.exports = {
@@ -21,7 +21,7 @@ module.exports = {
 }
 ```
 
-You can also give a path to a file, like a custom lib you created:
+Вы можете также указать путь к файлу, например, к своей собственной библиотеке:
 ```js
 module.exports = {
   build: {

@@ -1,32 +1,32 @@
 ---
-title: Configuration CSS
-description: Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every pages).
+title: Конфигурация CSS
+description: Nuxt.js позволяет указать глобальные CSS-файлы/модули/библиотеки (подключённые к каждой странице)
 ---
 
-# Css
+# CSS
 
-> Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every pages).
+> Nuxt.js позволяет указать глобальные CSS-файлы/модули/библиотеки (подключённые к каждой странице)
 
 - Type: `Array`
  - `String | Object`
 
-If the item is an object, the properties are:
-- src: `String` (path of the file)
-- lang: `String` ([pre-processor used](/guide/pages#using-pre-processors))
+Если элемент типа объект, то параметры следующие:
+- src: `String` (путь к файлу)
+- lang: `String` ([используется пре-процессор](/guide/pages#using-pre-processors))
 
-In `nuxt.config.js`, add the CSS resources:
+В `nuxt.config.js` добавьте ресурсы CSS:
 
 ```js
 module.exports = {
   css: [
-    // Load a node.js module
+    // Загрузить модуль node.js
     'hover.css/css/hover-min.css',
-    // node.js module but we specify the pre-processor
+    // модуль node.js, но с указанием пре-процессора
     { src: 'bulma', lang: 'sass' },
-    // Css file in the project
+    // CSS-файл в проекте
     '~assets/css/main.css'
   ]
 }
 ```
 
-<p class="Alert">**In production**, all CSS will be minified and extracted in a file named `styles.css` and added in the `<head>` of the page.</p>
+<p class="Alert">**В продакшн-версии приложения** весь CSS-код будет минимизирован, скомпилирован в файл `styles.css` и добавлен в блок страницы `<head>`.</p>

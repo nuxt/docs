@@ -1,27 +1,26 @@
 ---
-title: Nuxt.js Module
+title: Модуль Nuxt.js
 ---
 
-# Using Nuxt.js Programmaticaly
+# Программное использование Nuxt.js
 
-You might want to use your own server with your middlewares and your API. That's why you can use Nuxt.js programmaticaly.
-Nuxt.js is built on the top of ES2015, which makes the code more enjoyable and cleaner to read. It doesn't make use of any transpilers and depends upon Core V8 implemented features. For these reasons, Nuxt.js targets Node.js `4.0` or higher.
+Вероятно, вы захотите использовать свой сервер со своим ПО и API. Для этого вы можете использовать Nuxt.js программно.
+Nuxt.js написан на ES2015, из-за чего его код приятен и хорошо читаем. Транспилеры не используются, и всю работу выполняет сам движок Core V8. Поэтому Nuxt.js требует Node.js версии `4.0` или выше.
 
-You can require Nuxt.js like this:
+Подключить Nuxt.js можно так:
 ```js
 const Nuxt = require('nuxt')
 ```
 
-### Nuxt(options)
+### Опции Nuxt
 
-To see the list of options to give to Nuxt.js, see the configuration section.
-
+Чтобы узнать о возможных опциях для Nuxt.js, см. раздел конфигурации.
 ```js
 const options = {}
 
 const nuxt = new Nuxt(options)
 nuxt.build()
 .then(() => {
-  // We can use nuxt.render(req, res) or nuxt.renderRoute(route, context)
+  // Здесь можно использовать nuxt.render(req, res) или nuxt.renderRoute(route, context)
 })
 ```

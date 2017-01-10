@@ -1,7 +1,7 @@
 ---
-title: Configuration CACHE
+title: Конфигурация CACHE
 ---
 
 # Cache
 
-> Documentation is coming soon
+> Документация скоро будет
