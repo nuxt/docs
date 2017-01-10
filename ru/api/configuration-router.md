@@ -1,7 +1,7 @@
 ---
-title: Configuration ROUTER
+title: Конфигурация ROUTER
 ---
 
 # Router
 
-> Documentation is coming soon
+> Документация скоро будет

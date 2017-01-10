@@ -1,32 +1,32 @@
 ---
-title: Pages
-description: The pages directory lets you create every kind of routes simply by creating Vue files. These components comes with a set of features to let you bootstrap and maintain your application with ease.
+title: Страницы
+description: Папка /pages позволяет создавать любой вид маршрута, просто создавая Vue-файлы. Эти компоненты обладают свойствами, с помощью которых можно легко создавать и поддерживать приложение.
 ---
 
-> The `pages` directory lets you create every kind of routes simply by creating Vue files. These components comes with a set of features to let you bootsrap and maintain your isomorphic application with ease.
+> Папка `pages` позволяет создавать любой вид маршрута, просто создавая Vue-файлы. Эти компоненты обладают свойствами, с помощью которых можно легко создавать и поддерживать приложение.
 
-## Special Keys
+## Специальные ключи
 
-Every page component is a Vue component, but nuxt.js adds special keys to make the development of your universal application the easiest way possible.
+Каждая страница — это компонент Vue, но Nuxt.js ещё добавляет и специальные ключи, чтобы сделать процесс разработки приложения как можно проще.
 
-List of all the available keys
+Список всех доступных ключей
 
-| Attribute | Description |
+| Атрибут | Описание |
 |-----------|-------------|
-| data | The most important key, it has the same purpose as [Vue data](https://vuejs.org/v2/api/#Options-Data) but it can be asynchronous and receives the context as argument, please read the [async data documentation](/guide/async-data) to learn how it works. |
-| fetch | Used to fill the store before rendering the page, it's like the data method except it doesn't set the component data. See the [fetch method documentation](/guide/vuex-store#the-fetch-method). |
-| layout | Specify a layout defined in the `layouts` directory, see [layouts documentation](/guide/layouts). |
-| transition | Set a specific transition for the page, see [routes transitions](/guide/routes-transitions). |
-| scrollToTop | Boolean, by default: `false`. Specify if you want the page to scroll to the top before rendering the page, it's used for [nested routes](/guide/nested-routes). |
-| validate | Validator function for a [dynamic route](/guide/dynamic-routes#validate-route-params). |
-| middleware | Set a middleware for this page, the middleware will be called before rendering the page, see [routes middleware](/guide/routes-middleware). |
+| data | Самый важный ключ, с тем же предназначением, что и [Vue data](https://vuejs.org/v2/api/#Options-Data), но может быть асинхронным и принимать контекст в виде аргумента. Пожалуйста, прочитайте про [асинхронные данные](/guide/async-data), чтобы понять, как именно это работает. |
+| fetch | Используется для заполнения хранилища перед рендерингом страницы. Примерно как метод data, за исключением того, что значение data у компонента в данном случае не устанавливается. См. [метод fetch](/guide/vuex-store#the-fetch-method). |
+| layout | Назначает шаблон, определённый в папке `layouts`. См. [шаблоны](/guide/layouts). |
+| transition | Устанавливает переход для страницы. См. [переходы маршрутов](/guide/routes-transitions). |
+| scrollToTop | Булевское значение, по-умолчанию — `false`. Используйте, если страница должна проскроллиться наверх перед рендерингом. Используется для [вложенных маршрутов](/guide/nested-routes). |
+| validate | Функция-валидатор для [динамического маршрута](/guide/dynamic-routes#validate-route-params). |
+| middleware | Устанавливает промежуточный код для конкретной страницы, который выполняется перед рендерингом страницы. См [промежуточный код маршрутов](/guide/routes-middleware). |
 
 
-## A Simple Page
+## Простая страница
 
-A page component is a Vue component with some superpowers, first, let's have a simple component displaying a red title "Hello World!".
+Компонент страницы — это компонент Vue с дополнительной супер-силой. Сперва, давайте создадим простой компонент, показывающий красный заголовок "Hello World!"
 
-We create our first page `pages/index.vue`:
+Назовём первую страницу `pages/index.vue`:
 
 ```html
 <template>
@@ -48,11 +48,12 @@ export default {
 </style>
 ```
 
-## Using Pre-Processors
+## Использование пре-процессоров
 
-Thanks to [vue-loader](http://vue-loader.vuejs.org/en/configurations/pre-processors.html), you can use any kind of pre-processors for your `<template>`, `<script>` or `<style>`: simply use the `lang` attribute.
+Благодаря [vue-loader](http://vue-loader.vuejs.org/en/configurations/pre-processors.html) вы можете использовать любой тип пре-процессоров для `<template>`, `<script>` or `<style>`, просто добавив к ним атрибут `lang`.
 
-Example of our `pages/index.vue` using [Pug](https://github.com/pugjs/pug), [CoffeeScript](http://coffeescript.org) and [Sass](http://sass-lang.com/):
+Например, наша страница `pages/index.vue` будет использовать [Pug](https://github.com/pugjs/pug),
+[CoffeeScript](http://coffeescript.org) и [Sass](http://sass-lang.com/):
 
 ```html
 <template lang="pug">
@@ -70,21 +71,19 @@ module.exports = data: ->
 </style>
 ```
 
-To be able to use these pre-processors, we need to install their webpack loaders:
+Чтобы использовать пре-процессоры, нужно просто установить их загрузчики для webpack:
 ```bash
 npm install --save-dev pug@2.0.0-beta6 pug-loader coffee-script coffee-loader node-sass sass-loader
 ```
 
-## Using JSX
+## Использование JSX
 
-If you want to use JSX in your components, first, you need to install the Babel plugins for JSX:
-
+Чтобы использовать JSX в компонентах, установите плагин Babel для JSX:
 ```bash
 npm install --save-dev babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx babel-helper-vue-jsx-merge-props
 ```
 
-Then, in your `nuxt.config.js`, tell nuxt.js to use the [transform-vue-jsx](https://github.com/vuejs/babel-plugin-transform-vue-jsx) plugin:
-
+Затем добавьте название плагина [transform-vue-jsx](https://github.com/vuejs/babel-plugin-transform-vue-jsx) в `nuxt.config.js`:
 ```js
 module.exports = {
   build: {
@@ -95,9 +94,9 @@ module.exports = {
 }
 ```
 
-To learn more about the babel option, take a look at the [build config documentation](/api/configuration-build).
+Чтобы узнать больше об опции babel, прочитайте [конфигурацию build](/api/configuration-build).
 
-You can now use JSX in your `render` method of your components:
+Теперь вы можете использовать JSX в методе `render` у компонентов.
 
 ```html
 <script>
@@ -112,4 +111,4 @@ export default {
 </script>
 ```
 
-You can learn more how to use it in the [JSX section](https://vuejs.org/v2/guide/render-function.html#JSX) of the Vue.js documentation.
+Узнайте больше в [разделе JSX](https://vuejs.org/v2/guide/render-function.html#JSX) документации к Vue.js.

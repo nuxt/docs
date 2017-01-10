@@ -4,4 +4,4 @@ title: Configuration GENERATE
 
 # Generate
 
-> Documentation is coming soon
+> Документация скоро будет

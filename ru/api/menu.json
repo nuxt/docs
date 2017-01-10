@@ -1,15 +1,15 @@
 [
   {
-    "title": "Nuxt Module",
+    "title": "Модуль Nuxt",
     "links": [
-      { "name": "Usage", "to": "" },
+      { "name": "Использование", "to": "" },
       { "name": "Render", "to": "/nuxt-render" },
       { "name": "RenderRoute", "to": "/nuxt-render-route" },
       { "name": "RenderAndGetWindow", "to": "/nuxt-render-and-get-window" }
     ]
   },
   {
-    "title": "Configuration",
+    "title": "Конфигурация",
     "links": [
       { "name": "Build", "to": "/configuration-build" },
       { "name": "Cache", "to": "/configuration-cache" },
@@ -23,9 +23,9 @@
     ]
   },
   {
-    "title": "Pages",
+    "title": "Страницы",
     "links": [
-      { "name": "Context", "to": "/pages-context" }
+      { "name": "Контекст (Context)", "to": "/pages-context" }
     ]
   }
 ]

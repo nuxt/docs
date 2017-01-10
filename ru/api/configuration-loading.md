@@ -1,7 +1,7 @@
 ---
-title: Configuration LOADING
+title: Конфигурация LOADING
 ---
 
 # Loading
 
-> Documentation is coming soon
+> Документация скоро будет

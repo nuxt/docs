@@ -1,8 +1,8 @@
 ---
 title: ESLint
-description: Nuxt.js integrates ESLint to maintains your web application code quality with ease.
+description: Nuxt.js интегрируется с ESLint, чтобы с лёгкостью поддерживать качество кода вашего веб-приложения.
 ---
 
-> Nuxt.js integrates ESLint to maintains your web application code quality with ease.
+> Nuxt.js интегрируется с ESLint, чтобы лёгко и непринуждённо поддерживать качество кода вашего веб-приложения.
 
-*Feature coming soon.*
+*Будет совсем скоро*

@@ -1,7 +1,7 @@
 ---
-title: Configuration HEAD
+title: Конфигурация HEAD
 ---
 
 # Head
 
-> Documentation is coming soon
+> Документация скоро будет

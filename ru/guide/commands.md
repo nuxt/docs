@@ -1,20 +1,21 @@
 ---
-title: Commands
-description: Nuxt.js comes with a set of useful commands, both for development and production purpose.
+title: Команды
+description: Nuxt.js поставляется с набором полезных команд как для разрабатываемого, так и для финального продукта.
 ---
 
-> Nuxt.js comes with a set of useful commands, both for development and production purpose.
+> Nuxt.js поставляется с набором полезных команд как для разрабатываемого, так и для финального продукта.
 
-## List of Commands
+## Список команд
 
-| Command | Description |
+| Команда | Описание |
 |---------|-------------|
-| nuxt | Launch a development server on [localhost:3000](http://localhost:3000) with hot-reloading. |
-| nuxt build | Build your application with webpack and minify the JS & CSS (for production). |
-| nuxt start | Start the server in production mode (`nuxt build` has to be ran before). |
-| nuxt generate | Build the application and generate every route as a HTML file (used for static hosting). |
+| nuxt | Запустить сервер разработки [localhost:3000](http://localhost:3000) с горячей заменой модулей (hot-reloading). |
+| nuxt&nbsp;build | Собрать приложение Webpack'ом и минифицировать JS & CSS (для финальной версии). |
+| nuxt&nbsp;start | Запустить сервер в продакшн-режиме (сперва необходимо запустить `nuxt build`). |
+| nuxt&nbsp;generate | Собрать приложение и сгенерировать каждый маршрут в виде HTML файла (используется в случае статического хостинга). |
 
-You should put these commands in the `package.json`:
+
+Вы должны добавить эти команды в файл `package.json`:
 
 ```json
 "scripts": {
@@ -25,18 +26,18 @@ You should put these commands in the `package.json`:
 }
 ```
 
-Then, you can launch your commands via `npm run <command>` (example: `npm run dev`).
+Затем вы можете запускать команды с помощью `npm run <command>` (например: `npm run dev`).
 
-## Production Deployment
+## Продуктовая выкладка
 
-To deploy, instead of running nuxt, you probably want to build ahead of time. Therefore, building and starting are separate commands:
+Вероятно, вы захотите избежать запуска Nuxt при развёртывании на сервере. Для этого команды сборки и запуска приложения выполняются раздельно друг от друга:
 
 ```bash
 nuxt build
 nuxt start
 ```
 
-For example, to deploy with [now.sh](https://zeit.co/now) a `package.json` like follows is recommended:
+Например, чтобы развернуть на [now.sh](https://zeit.co/now), рекомендуется следующий вид `package.json`:
 ```json
 {
   "name": "my-app",
@@ -51,20 +52,20 @@ For example, to deploy with [now.sh](https://zeit.co/now) a `package.json` like 
 }
 ```
 
-Then run `now` and enjoy!
+Затем запустите `now` и наслаждайтесь!
 
-Note: we recommend putting `.nuxt` in `.npmignore` or `.gitignore`.
+Заметка: рекомендуем добавить `.nuxt` в `.npmignore` или `.gitignore`.
 
-### Heroku Deployment
+### Развёртывание с Heroku
 
-We recommend you to read the [Heroku documentation for node.js](https://devcenter.heroku.com/articles/nodejs-support).
+Мы рекомендуем прочитать [документацию Heroku для node.js](https://devcenter.heroku.com/articles/nodejs-support).
 
-First, we need to tell Heroku to install the `devDependencies` of the project (to be able to launch `npm run build`):
+Сперва вам нужно сказать Heroku установить `devDependencies` проекта (чтобы запускать `npm run build`):
 ```bash
 heroku config:set NPM_CONFIG_PRODUCTION=false
 ```
 
-Then, we tell Heroku to launch `npm run build` via the `postinstall` script in our `package.json`:
+Затем мы говорим Heroku запустить `npm run build` через скрипт `postinstall` в нашем `package.json`:
 ```js
 "scripts": {
   "dev": "nuxt",
@@ -73,36 +74,36 @@ Then, we tell Heroku to launch `npm run build` via the `postinstall` script in o
 }
 ```
 
-Finally, we can push the app on Heroku with:
+Наконец, мы можем добавить приложение в Heroku:
 ```bash
 git push heroku master
 ```
 
-## Static Hosting Deployment
+## Развёртывание на статическом хостинге
 
-Nuxt.js gives you the possibility to host your web application on any static hosting like [surge.sh](https://surge.sh/) for example.
+Nuxt.js даёт вам возможность хостить ваше веб-приложение на любом статическом хостинге. Например,  [surge.sh](https://surge.sh/).
 
-To deploy on surge.sh, first install it on your computer:
+Чтобы развернуть на сервисе surge.sh, сперва нужно установить его:
 ```bash
 npm install -g surge
 ```
 
-Then, we tell nuxt.js to generate our web application:
+Затем мы говорим nuxt.js сгенерировать наше веб-приложение:
 
 ```bash
 npm run generate
 ```
 
-It will create a `dist` folder with everything inside ready to be deployed on a static hosting.
+Будет создана папка `dist` со всем необходимым и готовым к выкладке на статический хостинг.
 
-We can then deploy it to surge.sh:
+Теперь мы можем выложить приложение на surge.sh:
 
 ```bash
 surge dist/
 ```
 
-Voilà :)
+Вуаля :)
 
-If you have a project with [dynamic routes](/guide/dynamic-routes), take a look at the [generate configuration](/api/configuration-generate) to tell nuxt.js how to generate these dynamic routes.
+Если у вас есть проект с [динамическими маршрутами](/guide/dynamic-routes), взгляните на [генерацию конфигурации](/api/configuration-generate), чтобы указать Nuxt.js, как генерировать эти динамические маршруты.
 
-<div class="Alert">When generating your web application with `nuxt generate`, [the context](/api/pages-context) given to [data()](/guide/async-data#the-data-method) and [fetch()](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.</div>
+<div class="Alert">В случае генерации веб-приложения через `nuxt generate`, [контекст](/api/pages-context), определённый для [data()](/guide/async-data#the-data-method) и [fetch()](/guide/vuex-store#the-fetch-method), не будет содержать `req` и `res`.</div>

@@ -1,12 +1,12 @@
 ---
-title: Nuxt.js Module
+title: Модуль Nuxt.js
 ---
 
 # nuxt.render(req, res)
 
-You can use Nuxt.js as a middleware with `nuxt.render` for you node.js server.
+Вы можете использовать Nuxt.js с помощью `nuxt.render` для сервера node.js.
 
-Example with Express.js:
+Пример с Express.js:
 ```js
 const app = require('express')()
 const Nuxt = require('nuxt')
@@ -14,11 +14,11 @@ const Nuxt = require('nuxt')
 const nuxt = new Nuxt()
 nuxt.build()
 .then(() => {
-  // Render every route with Nuxt.js
+  // Рендерить каждый маршрут с Nuxt.js
   app.use(nuxt.render)
-  // Server listening
+  // Запустить сервер
   app.listen(3000)
 })
 ```
 
-<p class="Alert">It's recommended to call **nuxt.render** at the end of your middlewares since it will handle the rendering of your web application and won't call next()</p>
+<p class="Alert">Рекомендуется вызываать **nuxt.render** в конце выполнения вашего кода, поскольку фреймворк отвечает за рендеринг вашего веб-приложения и не будет вызывать next()</p>
