@@ -1,6 +1,5 @@
 ---
 title: Асинхронные данные
-description: Nuxt.js supercharges the data method from vue.js to let you handle async operation before setting the component data.
 description: Nuxt.js перехватывает метод data от vue.js, чтобы позволить обрабатать асинхронные задачи прежде, чем установить data.
 ---
 
