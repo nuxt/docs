@@ -1,7 +1,7 @@
 ---
-title: Nuxt.js Module
+title: Модуль Nuxt.js
 ---
 
 # nuxt.renderAndGetWindow()
 
-> Documentation is coming soon
+> Документация скоро будет

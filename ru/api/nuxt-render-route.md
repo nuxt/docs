@@ -1,7 +1,7 @@
 ---
-title: Nuxt.js Module
+title: Модуль Nuxt.js
 ---
 
 # nuxt.renderRoute()
 
-> Documentation is coming soon
+> Документация скоро будет

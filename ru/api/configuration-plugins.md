@@ -1,7 +1,7 @@
 ---
-title: Configuration PLUGINS
+title: Конфигурация PLUGINS
 ---
 
 # Plugins
 
-> Documentation is coming soon
+> Документация скоро будет
