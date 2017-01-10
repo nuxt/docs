@@ -1,23 +1,23 @@
 ---
-title: Plugins
-description: Nuxt.js allows you to define js plugins to be ran before instantiating the root vue.js application, it can be to use your own library or external modules.
+title: Плагины
+description: Nuxt.js позволяет подключать JS-плагины, которые будут запущены перед созданием экземпляра корневого приложения Vue.js. Это могут быть ваши собственные библиотеки или другие внешние модули.
 ---
 
-> Nuxt.js allows you to define js plugins to be ran before instantiating the root vue.js application, it can be to use your own library or external modules.
+> Nuxt.js позволяет подключать JS-плагины, которые будут запущены перед созданием экземпляра корневого приложения Vue.js. Это могут быть ваши собственные библиотеки или другие внешние модули.
 
-<div class="Alert">It is important to know that in any Vue [instance lifecycle](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram), only `beforeCreate` and `created` hooks are called **both from client-side and server-side**. All other hooks are called only from the client-side.</div>
+<div class="Alert">Важно помнить, что в любом [жизненном цикле экземпляра Vue](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram) только хуки `beforeCreate` и `created` вызываются **как на стороне клиента, так и стороне сервера**. Все другие хуки выхываются только на клиенской стороне.</div>
 
-## Use External Modules
+## Использование внешних модулей
 
-We may want to use external modules in our application, one great example is [axios](https://github.com/mzabriskie/axios) for making HTTP request for both server and client.
+Вероятно, вы захотите использовать внешние модули в приложении. Хороший пример для создания HTTP-запросов как для клиентской стороны, так и для серверной — [axios](https://github.com/mzabriskie/axios).
 
-We install it via NPM:
+Установим модуль `axios` через NPM:
 
 ```bash
 npm install --save axios
 ```
 
-Then, we can use it directly in our pages:
+Далее мы можем использовать его в приложении:
 
 ```html
 <template>
@@ -36,7 +36,7 @@ export default {
 </script>
 ```
 
-But there is **one problem here**, if we import axios in another page, it will be included again for the page bundle. We want to include `axios` only once in our application, for this, we use the `build.vendor` key in our `nuxt.config.js`:
+Однако существует **единственная проблема**: если подключить модуль на другой странице, он будет повторно добавлен в финальный код приложения. Мы же хотим подключить `axios` лишь единожды, поэтому будем использовать свойство `build.vendor` в файле `nuxt.config.js`:
 
 ```js
 module.exports = {
@@ -46,13 +46,13 @@ module.exports = {
 }
 ```
 
-Then, I can import `axios` anywhere without having to worry about making the bundle bigger!
+После чего мы может испортировать `axios` в любом месте без проблем, размер финального кода приложения не увеличится.
 
-## Use Vue Plugins
+## Использование плагинов Vue
 
-If we want to use [vue-notifications](https://github.com/se-panfilov/vue-notifications) to display notification in our application, we need to setup the plugin before launching the app.
+Если мы хотим использовать [vue-notifications](https://github.com/se-panfilov/vue-notifications) для отображения уведомлений, нам нужно установить плагин до запуска приложения.
 
-File `plugins/vue-notifications.js`:
+Файл `plugins/vue-notifications.js`:
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
@@ -60,18 +60,18 @@ import VueNotifications from 'vue-notifications'
 Vue.use(VueNotifications)
 ```
 
-Then, we add the file inside the `plugins` key of `nuxt.config.js`:
+Затем в `nuxt.config.js` мы добавляем ссылку на файл плагина в свойстве `plugins`:
 ```js
 module.exports = {
   plugins: ['~plugins/vue-notifications']
 }
 ```
 
-To learn more about the `plugins` configuration key, check out the [plugins api](/api/configuration-plugins).
+Чтобы узнать больше о свойстве `plugins` в конфигурации проекта, взгляните на [API плагинов](/api/configuration-plugins).
 
-Actually, `vue-notifications` will be included in the app bundle, but because it's a library, we want to include it in the vendor bundle for better caching.
+Вообще, `vue-notifications` будет добавлен к финальному коду вашего приложения, но поскольку это библиотека, мы бы предпочли добавить код плагина в отдельный файл, содержащий код и возможных других внешних библиотек.
 
-We can update our `nuxt.config.js` to add `vue-notifications` in the vendor bundle:
+Для этого добавим значение `vue-notifications` в файл `nuxt.config.js` в свойство `buid.vendor`:
 ```js
 module.exports = {
   build: {
@@ -81,11 +81,11 @@ module.exports = {
 }
 ```
 
-## Only for Browsers
+## Только для браузеров
 
-Some plugins might work **only for the browser**, you can use the `process.BROWSER_BUILD` variable to check if the plugin will run from the client-side.
+Некоторые плагины могут работать **только в браузерах**. Вы можете использовать переменную `process.BROWSER_BUILD`, чтобы проверить, что плагин будет работать на стороне клиента.
 
-Example:
+Пример:
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
@@ -95,4 +95,4 @@ if (process.BROWSER_BUILD) {
 }
 ```
 
-In case you need to require some libraries only for the server, you can use the `process.SERVER_BUILD` variable set to `true` when webpack is creating the `server.bundle.js` file.
+Если вам нужны некоторые библиотеки только для серверной стороны, вы можете использовать переменную `process.SERVER_BUILD` во время того, как webpack создаёт файл `server.bundle.js`.
