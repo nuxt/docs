@@ -1,22 +1,22 @@
 ---
-title: Static
-description: Nuxt.js has a static directory for static files serving.
+title: Статика
+description: У Nuxt.js есть статический каталог для статической отдачи файлов под названием `static`.
 ---
 
-> Nuxt has a `static` directory for static files serving.
+> У Nuxt есть 'статический' каталог для статической отдачи файлов под названием `static`.
 
-If you don't want to use [Webpacked Assets](/guide/assets) from the `assets` directory, you can create and use the `static` directory in your project root directory.
+Если Вы не хотите использовать [Webpacked Assets](/guide/assets) из `assets` каталога, то можно создать и использовать каталог 'static' в корневом каталоге проекта.
 
-These files will be automatically serve by Nuxt and accessible in your project root URL.
+Nuxt автоматически сделает доступными эти файлы через URL
 
-This option is helpful for files like `robots.txt` or `sitemap.xml`.
+Эта опция полезна для файлов таких как 'robots.txt' или 'sitemap.xml'.
 
-From your code you can then reference those files with `/` URLs:
+В коде проекта эти файлы будут доступны с `/` (корневыми) URL-ми
 
 ```html
-<!-- Static image from static directory -->
+<!-- Статическое изображение из директории `static`-->
 <img src="/my-image.png"/>
 
-<!-- Webpacked image from assets directory -->
+<!-- Изображение через Webpack из папки `assets`-->
 <img src="/assets/my-image-2.png"/>
 ```

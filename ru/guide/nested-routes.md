@@ -1,16 +1,15 @@
 ---
-title: Nested Routes
-description: Nuxt.js lets you create nested route by using the children routes of vue-router.
+title: Вложеные маршруты
+description: Nuxt.js позволяет вам создавать вложенные маршруты при помощи дочерних путей vue-router.
 ---
 
-> Nuxt.js lets you create nested route by using the children routes of vue-router.
+> Nuxt.js позволяет Вам создавать вложенные маршруты при помощи дочерних путей vue-router.
 
-## Directory Structure
+## Структура директорий
+Чтобы определить вложенный маршрут, Вы должны создать файл Vue **с таким же имеменем как каталог** которые содержат Ваши дочерние представления.
+> Не забывайте писать `<nuxt-child></nuxt-child>` в Вашем родительском файле Vue.
 
-To define a nested route, you need to create a Vue file with the **same name as the directory** which contain your children views.
-> Don't forget to write `<nuxt-child></nuxt-child>` inside your parent Vue file.
-
-This file tree:
+Эта струтура файлов:
 
 ```bash
 pages/
@@ -18,8 +17,7 @@ pages/
 -----| _id.vue
 --| users.vue
 ```
-
-will automatically generate:
+автоматически сгенерирует:
 
 ```js
 router: {
@@ -38,8 +36,7 @@ router: {
   ]
 }
 ```
-
-As you can see the children has the path `:id?` which makes it optional, if you want to make it required, create an `index.vue` file in the `users` directory:
+Сейчас Вы видите, что у дочерних элементов есть путь ':id?' который является дополнительным, но если Вы хотите сделать его обязательным, создайте 'index.vue' в каталоге 'users':
 
 ```bash
 pages/
@@ -49,7 +46,7 @@ pages/
 --| users.vue
 ```
 
-Nuxt.js will generate:
+Nuxt.js сгенерирует:
 
 ```js
 router: {
@@ -74,11 +71,10 @@ router: {
 }
 ```
 
-## Dynamic Nested Routes
+## Динамические вложенные пути
+> Этот сценарий не так распространен, но с Nuxt.js он тоже возможен: наличие динамических дочерних элементов в динамических родителях.
 
-> This scenario should not often append, but it is possible with Nuxt.js: having dynamic children inside dynamic parents.
-
-This file tree:
+Эта структура файлов:
 
 ```bash
 pages/
@@ -92,7 +88,7 @@ pages/
 --| index.vue
 ```
 
-will automatically generate:
+автоматически сгенерирует:
 
 ```js
 router: {
