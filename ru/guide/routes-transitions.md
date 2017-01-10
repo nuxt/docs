@@ -1,18 +1,18 @@
 ---
-title: Routes Transitions
-description: Nuxt.js uses the transition component to let you create amazing transitions/animations between your routes.
+title: Переходы между маршрутами
+description: Nuxt.js использует компонент transition, который позволяет создавать поразительную анимацию при переходах между маршрутами.
 youtube: https://www.youtube.com/embed/RIXOzJWFfc8
 ---
 
-> Nuxt.js uses the  [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your routes.
+> Nuxt.js использует компонент [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components), который позволяет создавать поразительную анимацию при переходах между маршрутами
 
-## Usage
+## Использование
 
-**Nuxt.js default transition name is `"page"`.**
+**По-умолчанию, название анимации для перехода в Nuxt.js — `"page"`.**
 
-To add a fade transition to every page of your application, we need a CSS file that is shared across all our routes, so we start by creating a file in the `assets` folder.
+Чтобы добавить анимацию для перехода между любыми страницами приложения, необходим CSS-файл, который является общим для всех маршрутов. Создадим такой файл в папке `assets`:
 
-Our global css in `assets/main.css`:
+Общий CSS-код в `assets/main.css`:
 ```css
 .page-enter-active, .page-leave-active {
   transition: opacity .5s;
@@ -22,7 +22,7 @@ Our global css in `assets/main.css`:
 }
 ```
 
-We add its path in our `nuxt.config.js` file:
+Добавить путь к файлу в `nuxt.config.js`:
 ```js
 module.exports = {
   css: [
@@ -31,11 +31,11 @@ module.exports = {
 }
 ```
 
-And voilà! A nice fade animation will be shown between every routes.
+И вуаля! Все маршруты меняют друг друга с красивым эффектом затухания.
 
-## The transition Key
+## Свойство `transition`
 
-You can update the defaults transition settings by adding the `transition` key in you `nuxt.config.js` file.
+Вы можете изменить стандартные настройки перезодов, добавив свойство `transition` в файл `nuxt.config.js`:
 
 ```js
 module.exports = {
@@ -48,31 +48,31 @@ module.exports = {
 }
 ```
 
-Nuxt.js will use these settings to set the component as follows:
+Nuxt.js будет использовать эти настройки для создания компонента перехода:
 ```html
 <transition name="test" mode="out-in">
 ```
 
-To learn more about the Vue.js `<transition>` component: http://vuejs.org/v2/guide/transitions.html
+Узнать больше о компоненте `<transition>` библиотеки Vue.js: http://vuejs.org/v2/guide/transitions.html
 
-The following properties that the `transition` key can have:
+Следующие параметры могут быть использованы для `transition`:
 
-| key  | Type | Default | definition |
+| Имя  | Тип | По-умолчанию | Описание |
 |------|------|---------|-----------|
-| `name` | String | `"page"` | The transition name applied on all the routes transitions. |
-| `mode` | String | `"out-in"` | The transition mode applied on all routes, see [Vue.js documentation](http://vuejs.org/v2/guide/transitions.html#Transition-Modes). |
-| `css` | Boolean | `true` | Whether to apply CSS transition classes. Defaults to true. If set to false, will only trigger JavaScript hooks registered via component events. |
-| `type` | String | `n/a` | Specify the type of transition events to wait for to determine transition end timing. Available values are "transition" and "animation". By default, it will automatically detect the type that has a longer duration. |
-| `enterClass` | String | `n/a` | The starting state of the transition class. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `enterToClass` | String | `n/a` | The ending state for the transition. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `enterActiveClass` | String | `n/a` | The class applied across the entire transition duration. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `leaveClass` | String | `n/a` | The starting state of the transition class. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `leaveToClass` | String | `n/a` | The ending state for the transition. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `leaveActiveClass` | String | `n/a` | The class applied across the entire transition duration. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
+| `name` | Строка | `"page"` | Название перехода, применяется для всех маршрутов приложения. |
+| `mode` | Строка | `"out-in"` | Режим перехода, применяется для всех маршрутов приложения [документация Vue.js](http://vuejs.org/v2/guide/transitions.html#Transition-Modes). |
+| `css` | Булевское | `true` | Указывает, добавлять или нет CSS-класс для анимации перехода. По-умолчанию — true. Если установлен в false, то будет вызываеться только JavaScript-хуки, которые зарегистрированы через события компонентов. |
+| `type` | Строка | `n/a` | Тип события, которое вызывается при завершении анимации перехода. Доступные значения: "transition" и "animation". Если не указан, то автоматически будет выбран с дольшей продолжительностью. |
+| `enterClass` | Строка | `n/a` | Название CSS-класса для начального состояния анимации перехода. См. [документацию Vue.js](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
+| `enterToClass` | Строка | `n/a` | Название CSS-класса для конечного состояния анимации перехода. См. [документацию Vue.js](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
+| `enterActiveClass` | Строка | `n/a` | Название CSS-класса, применяемого в течение анимации перехода. См. [документацию Vue.js](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
+| `leaveClass` | Строка | `n/a` | Название CSS-класса для начального состояния анимации перехода. См. [документацию Vue.js](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
+| `leaveToClass` | Строка | `n/a` | Название CSS-класса для конечного состояния анимации перехода. См. [документацию Vue.js](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
+| `leaveActiveClass` | Строка | `n/a` | Название CSS-класса, применяемого в течение анимации перехода. См. [документацию Vue.js](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
 
-*Note: if the `transition` key is set as a string, it will be used as the `transition.name`.*
+*Заметка: если свойство `transition` принимает в качестве значения строку, оно будет использовано в качестве `transition.name`.*
 
-You can also define methods in the `transition`, these are for the [JavaScript hooks](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks):
+Вы также можете определить методы внутри `transition`, которые используются для [хуков JavaScript](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks)
 
 - beforeEnter(el)
 - enter(el, done)
@@ -83,18 +83,18 @@ You can also define methods in the `transition`, these are for the [JavaScript h
 - afterLeave(el)
 - leaveCancelled(el)
 
-*Note: it’s also a good idea to explicitly add `css: false` for JavaScript-only transitions so that Vue can skip the CSS detection. This also prevents CSS rules from accidentally interfering with the transition.*
+*Заметка: хорошей идеей является явное задание `css: false` для тех переходов, которые выполняются только с помощью JavaScript. В этом случае Vue не будет стараться определить наличие CSS для анимации. Такой подход также избавляет от возможного вмешательства CSS-стилей в происходящую анимацию.*
 
-## Transition for a Specific Page
+## Анимация переходов для отдельных страниц
 
-To define a custom transition for a specific route, simply add the `transition` key to the page component.
+Чтобы создать уникальную анимацияю перехода для отдельной страницы, просто добавьте свойство `transition` в компонет страницы.
 
-Set the `bounce` transition for the `pages/about.vue` page:
+Например, установить эффект перехода `bounce` для страницы `pages/about.vue`:
 ```html
 <template>
   <div class="container">
-    <h1>About page</h1>
-    <nuxt-link to="/">Home page</nuxt-link>
+    <h1>О компании</h1>
+    <nuxt-link to="/">На главную</nuxt-link>
   </div>
 </template>
 
@@ -105,7 +105,7 @@ export default {
 </script>
 ```
 
-And then we add the CSS animation for this custom transition in `assets/main.css`:
+Затем добавтье CSS-стили для указанной анимации перехода в файл `assets/main.css`:
 ```css
 .bounce-enter-active {
   animation: bounce-in .8s;
@@ -125,13 +125,13 @@ And then we add the CSS animation for this custom transition in `assets/main.css
 }
 ```
 
-*Note: you can also the set `transition` key as an object in page components*
+*Заметка: вы также можете указать свойство `transition` в виде объекта в компоненте страницы, точно так же, как в файле конфигурации приложение.*
 
-## Dynamic Transition
+## Динамическия переходы
 
-To create a dynamic transition between two routes depending on the route parameters, set the `transition` key as a `function`.
+Для создания динамического перехода между маршрутами, который зависит от параметров маршрута, установите свойство `transition` в значение `function`.
 
-Example of a dynamic transition for the `pages/posts.vue` page:
+Пример динамического перехода для страницы `pages/posts.vue`:
 ```html
 <script>
 export default {
@@ -143,7 +143,7 @@ export default {
 </script>
 ```
 
-Transitions applied on navigation:
-- `/` to `/posts` => `slide-left`
-- `/posts` to `/posts?page=3` => `slide-left`
-- `/posts?page=3` to `/posts?page=2` => `slide-right`
+В итоге, следующие эффекты перехода будут применяться, в зависимости от маршрута:
+- `/` к `/posts` => `slide-left`
+- `/posts` к `/posts?page=3` => `slide-left`
+- `/posts?page=3` к `/posts?page=2` => `slide-right`
