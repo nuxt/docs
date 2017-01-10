@@ -3,7 +3,7 @@
     "title": "FAQ",
     "links": [
       { "name": "Intro", "to": "" },
-      { "name": "Heroku", "to": "/heroku-deployment" }
+      { "name": "How to deploy on Heroku?", "to": "/heroku-deployment" }
     ]
   }
 ]
