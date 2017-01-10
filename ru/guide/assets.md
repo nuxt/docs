@@ -5,9 +5,9 @@ description: По-умолчанию, Nuxt.js использует vue-loader, f
 
 > По-умолчанию, Nuxt.js использует vue-loader, file-loader и url-loader для Webpack'а, чтобы обрабатывать файлы с исходным кодом.
 
-By default, [vue-loader](http://vue-loader.vuejs.org/en/) automatically processes your style and template files with `css-loader` and the Vue template compiler. In this compilation process, all asset URLs such as `<img src="...">`, `background: url(...)` and CSS `@import` are resolved as module dependencies.
+По-умолчанию, [vue-loader](http://vue-loader.vuejs.org/en/) автоматически обрабатывает файлы стилей и шаблонов совместно с `css-loader` и компилятором шаблонов Vue. В этом процессе все URL файлов, такие как `<img src="...">`, `background: url(...)` и CSS `@import`, трактуются как модульные зависимости.
 
-For example, we have this file tree:
+Например, у нас следующая структура файлов:
 
 ```bash
 -| assets/
@@ -16,28 +16,28 @@ For example, we have this file tree:
 ----| index.vue
 ```
 
-In my CSS, if I use `url('~assets/image.png')`, it will be translated into `require('~assets/image.png')`.
+Если в CSS мы используем `url('~assets/image.png')`, то эта строчка будет преобразована в `require('~assets/image.png')`.
 
-Or if in my `pages/index.vue`, I use:
+Если код страницы `pages/index.vue` следующий:
 ```html
 <template>
   <img src="~assets/image.png">
 </template>
 ```
 
-It will be compiled into:
+То он будет преобразован к виду:
 
 ```js
 createElement('img', { attrs: { src: require('~assets/image.png') }})
 ```
 
-Because `.png` is not a JavaScript file, nuxt.js configures Webpack to use [file-loader](https://github.com/webpack/file-loader) and [url-loader](https://github.com/webpack/url-loader) to handle them for you.
+Из-за того, что `.png` — не JavaScript-файл, то Nuxt.js конфигурирует Webpack таким образом, чтобы [file-loader](https://github.com/webpack/file-loader) и [url-loader](https://github.com/webpack/url-loader) сделали преобразования вместо вас.
 
-The benefits of them are:
-- `file-loader` lets you designate where to copy and place the asset file, and how to name it using version hashes for better caching.
-- `url-loader` allows you to conditionally inline a file as base-64 data URL if they are smaller than a given threshold. This can reduce the amount of HTTP requests for trivial files. If the file is larger than the threshold, it automatically falls back to `file-loader`.
+Это даёт нам следующие плюшки:
+- `file-loader` позволяет указать, куда копировать файлс с исходным кодом и как его назвать с использованием хеша для правильного кеширования.
+- `url-loader` позволяет (по условию) сконвертировать и включить содержимое файла в формате base-64 в случае, если его размер не превосходит допустимый размер. Подоный подход уменьшает количество HTTP-запросов при наличие обычных файлов. Если размер файла больше допустимого размера, процесс автоматически переходит к `file-loader`.
 
-Actually, Nuxt.js default loaders configuration is:
+Конфигурация Nuxt.js по-умолчанию следующая:
 
 ```js
 [
@@ -45,7 +45,7 @@ Actually, Nuxt.js default loaders configuration is:
     test: /\.(png|jpe?g|gif|svg)$/,
     loader: 'url-loader',
     query: {
-      limit: 1000, // 1KO
+      limit: 1000, // 1 KO
       name: 'img/[name].[hash:7].[ext]'
     }
   },
@@ -60,9 +60,9 @@ Actually, Nuxt.js default loaders configuration is:
 ]
 ```
 
-Which means that every file below 1 KO will be inlined as base-64 data URL. Otherwise, the image/font will be copied in its corresponding folder (under the `.nuxt` directory) with a name containing a version hashes for better caching.
+Такая конфигурация означает, что каждый файл с размером, меньшим 1 KO, будет преобразован в формат base-64 и подставлен вместо URL. В противном случае, изображение/шрифт будут скопированы в соответствующую под-папку папки `.nuxt` и переименованы с использованием хеша, содержащего версию файла для правильного кеширования.
 
-When launching our application with `nuxt`, our template in `pages/index.vue`:
+При запуске приложения с помощью `nuxt`, шаблон `pages/index.vue`:
 
 ```html
 <template>
@@ -70,9 +70,9 @@ When launching our application with `nuxt`, our template in `pages/index.vue`:
 </template>
 ```
 
-Will be generated into:
+Будет преобразован в:
 ```html
 <img src="/_nuxt/img/image.0c61159.png">
 ```
 
-If you want to update these loaders or disable them, please take a look at the [loaders configuration](/api/configuration-build).
+Если вы хотите обновить эти загрузчики или отключить их, пожалуйста, обратитесь к [конфигурации загрузчиков](/api/configuration-build).
