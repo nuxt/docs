@@ -3,6 +3,8 @@ title: Heroku Deployment
 description: How to deploy Nuxt on Heroku?
 ---
 
+# How to deploy Nuxt on Heroku?
+
 We recommend you to read the [Heroku documentation for node.js](https://devcenter.heroku.com/articles/nodejs-support).
 
 First, we need to tell Heroku to install the `devDependencies` of the project (to be able to launch `npm run build`):
