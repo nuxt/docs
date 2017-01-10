@@ -1,11 +1,10 @@
 ---
-title: Basic Routes
-description: Nuxt.js use the file-system to generate the routes of your web applications, it's as simple as PHP to create routes.
----
+title: Основы маршрутизации
+description: Nuxt.js использует файловую систему для генерации маршрутов веб-приложения, это также просто как в PHP.
+--- 
+Nuxt.js автоматически генерирует конфигурацию [vue-router](https://github.com/vuejs/vue-router) согласно структуре файлов и каталогов в директории `pages`
 
-Nuxt.js generates automatically the [vue-router](https://github.com/vuejs/vue-router) configuration according to your file tree of Vue files inside the `pages` directory.
-
-This file tree:
+Структура файлов:
 
 ```bash
 pages/
@@ -15,7 +14,7 @@ pages/
 --| index.vue
 ```
 
-will automatically generate:
+автоматически сгенерирует:
 
 ```js
 router: {
