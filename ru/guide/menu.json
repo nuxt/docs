@@ -1,79 +1,79 @@
 [
   {
-    "title": "Getting Started",
+    "title": "Начало работы",
     "links": [
       {
-        "name": "Introduction",
+        "name": "Введение",
         "to": "",
         "contents": [
           {
-            "name": "What is Nuxt.js ?",
+            "name": "Что такое Nuxt.js?",
             "to": "#what-is-nuxt-js-"
           },
           {
-            "name": "How it Works",
+            "name": "Как это работает",
             "to": "#how-it-works"
           },
           {
-            "name": "Features",
+            "name": "Особенности",
             "to": "#features"
           },
           {
-            "name": "Server Rendered",
+            "name": "Серверный рендеринг",
             "to": "#server-rendered"
           },
           {
-            "name": "Static Generated",
+            "name": "Генерация статики",
             "to": "#static-generated"
           }
         ]
       },
       {
-        "name": "Installation",
+        "name": "Установка",
         "to": "/installation",
         "contents": [
           {
-            "name": "Using Nuxt.js starter template",
+            "name": "Использование стартового шаблона Nuxt.js",
             "to": "#using-nuxt-js-starter-template"
           },
           {
-            "name": "Starting from scratch",
+            "name": "Приложение с нуля",
             "to": "#starting-from-scratch"
           }
         ]
       },
       {
-        "name": "Directory structure",
+        "name": "Структура папок",
         "to": "/directory-structure",
         "contents": [
           {
-            "name": "Directories",
+            "name": "Папки",
             "to": "#directories"
           },
           {
-            "name": "Aliases",
+            "name": "Псевдонимы",
             "to": "#aliases"
           }
         ]
       },
       {
-        "name": "Configuration",
+        "name": "Конфигурация",
         "to": "/configuration"
       },
       {
-        "name": "Commands",
+        "name": "Команды",
         "to": "/commands",
         "contents": [
           {
-            "name": "List of Commands",
+            "name": "Список команд",
             "to": "#list-of-commands"
           },
           {
-            "name": "Production Deployment",
+            "name": "Развёртывание на продакшн-сервере",
             "to": "#production-deployment"
           },
           {
-            "name": "Static Hosting Deployment",
+            "name": "Развёртывание на статичном хостинге",
             "to": "#static-hosting-deployment"
           }
         ]
@@ -81,46 +81,46 @@
     ]
   },
   {
-    "title": "Router",
+    "title": "Маршрут",
     "links": [
       {
-        "name": "Basic Routes",
+        "name": "Базовые маршруты",
         "to": "/basic-routes"
       },
       {
-        "name": "Dynamic Routes",
+        "name": "Динамические маршруты",
         "to": "/dynamic-routes",
         "contents": [
           {
-            "name": "Directory Structure",
+            "name": "Структура папок",
             "to": "#directory-structure"
           },
           {
-            "name": "Validate Route Params",
+            "name": "Валидация параметров маршрутов",
             "to": "#validate-route-params"
           }
         ]
       },
       {
-        "name": "Nested Routes",
+        "name": "Вложенные маршруты",
         "to": "/nested-routes",
         "contents": [
           {
-            "name": "Directory Structure",
+            "name": "Структура папок",
             "to": "#directory-structure"
           },
           {
-            "name": "Dynamic Nested Routes",
+            "name": "Динамические вложенные маршруты",
             "to": "#dynamic-nested-routes"
           }
         ]
       },
       {
-        "name": "Transitions",
+        "name": "Переходы маршрутов",
         "to": "/routes-transitions",
         "contents": [
           {
-            "name": "Usage",
+            "name": "Использование",
             "to": "#usage"
           },
           {
@@ -128,11 +128,11 @@
             "to": "#the-transition-key"
           },
           {
-            "name": "Transition for a Specific Page",
+            "name": "Переход для конкретной страницы",
             "to": "#transition-for-a-specific-page"
           },
           {
-            "name": "Dynamic Transition",
+            "name": "Динамический переход",
             "to": "#dynamic-transition"
           }
         ]
@@ -144,62 +144,62 @@
     ]
   },
   {
-    "title": "Views",
+    "title": "Представления",
     "links": [
       {
-        "name": "Pages",
+        "name": "Страницы",
         "to": "/pages",
         "contents": [
           {
-            "name": "Special Keys",
+            "name": "Специальные ключи",
             "to": "#special-keys"
           },
           {
-            "name": "A Simple Page",
+            "name": "Простая страница",
             "to": "#a-simple-page"
           },
           {
-            "name": "Using Pre-Processors",
+            "name": "Использование пре-процессоров",
             "to": "#using-pre-processors"
           },
           {
-            "name": "Using JSX",
+            "name": "Использование JSX",
             "to": "#using-jsx"
           }
         ]
       },
       {
-        "name": "Layouts",
+        "name": "Шаблоны",
         "to": "/layouts",
         "contents": [
           {
-            "name": "Default Layout",
+            "name": "Основной шаблон",
             "to": "#default-layout"
           },
           {
-            "name": "Error Page",
+            "name": "Страница ошибки",
             "to": "#error-page"
           },
           {
-            "name": "Custom Layout",
+            "name": "Индивидуальный шаблон",
             "to": "#custom-layout"
           }
         ]
       },
       {
-        "name": "Custom Loading",
+        "name": "Индикатор загрузки",
         "to": "/custom-loading",
         "contents": [
           {
-            "name": "Disable the Progress Bar",
+            "name": "Отключение индикатора загрузки",
             "to": "#disable-the-progress-bar"
           },
           {
-            "name": "Customize the Progress Bar",
+            "name": "Изменение индикатора загрузки",
             "to": "#customize-the-progress-bar"
           },
           {
-            "name": "Use a Custom Loading Component",
+            "name": "Создание своего индикатора загрузки",
             "to": "#use-a-custom-loading-component"
           }
         ]
@@ -209,19 +209,19 @@
         "to": "/html-head",
         "contents": [
           {
-            "name": "Title",
+            "name": "Заголовок (title)",
             "to": "#title"
           },
           {
-            "name": "Meta Tags",
+            "name": "Мета-теги",
             "to": "#meta-tags"
           },
           {
-            "name": "Using Page Data",
+            "name": "Использование данных страницы",
             "to": "#using-page-data"
           },
           {
-            "name": "Defaults Meta",
+            "name": "Meta-значения по-умолчанию",
             "to": "#defaults-meta"
           }
         ]
@@ -229,32 +229,32 @@
     ]
   },
   {
-    "title": "Data",
+    "title": "Данные",
     "links": [
       {
-        "name": "Async data",
+        "name": "Асинхронные данные",
         "to": "/async-data",
         "contents": [
           {
-            "name": "The data Method",
+            "name": "Метод data",
             "to": "#the-data-method"
           },
           {
-            "name": "The Context",
+            "name": "Контекст (context)",
             "to": "#the-context"
           },
           {
-            "name": "Handling Errors",
+            "name": "Обработка ошибок",
             "to": "#handling-errors"
           }
         ]
       },
       {
-        "name": "Vuex store",
+        "name": "Хранилище Vuex store",
         "to": "/vuex-store",
         "contents": [
           {
-            "name": "Activate the Store",
+            "name": "Активация хранилища",
             "to": "#activate-the-store"
           },
           {
@@ -262,15 +262,15 @@
             "to": "#modules-files"
           },
           {
-            "name": "The fetch Method",
+            "name": "Метод fetch",
             "to": "#the-fetch-method"
           },
           {
-            "name": "The Context",
+            "name": "Контекст (context)",
             "to": "#the-context"
           },
           {
-            "name": "The nuxtServerInit Action",
+            "name": "Действие nuxtServerInit",
             "to": "#the-nuxtserverinit-action"
           }
         ]
@@ -278,30 +278,30 @@
     ]
   },
   {
-    "title": "Resources",
+    "title": "Ресурсы",
     "links": [
       {
-        "name": "Assets",
+        "name": "Файлы исходного кода",
         "to": "/assets"
       },
       {
-        "name": "Static",
+        "name": "Статические файлы",
         "to": "/static"
       },
       {
-        "name": "Plugins",
+        "name": "Плагины",
         "to": "/plugins",
         "contents": [
           {
-            "name": "Use External Modules",
+            "name": "Использование внешних модулей",
             "to": "#use-external-modules"
           },
           {
-            "name": "Use Vue Plugins",
+            "name": "Использование плагинов Vue",
             "to": "#use-vue-plugins"
           },
           {
-            "name": "Only for Browsers",
+            "name": "Только для браузеров",
             "to": "#only-for-browsers"
           }
         ]
@@ -309,27 +309,27 @@
     ]
   },
   {
-    "title": "Dev Tools",
+    "title": "Иструменты разработчика",
     "links": [
       {
         "name": "ESLint",
         "to": "/eslint"
       },
       {
-        "name": "Unit Testing",
+        "name": "Модульное тестирование",
         "to": "/unit-testing"
       }
     ]
   },
   {
-    "title": "Miscellaneous",
+    "title": "Разное",
     "links": [
       {
-        "name": "Contribution Guide",
+        "name": "Помощь в разработке",
         "to": "/contribution-guide"
       },
       {
-        "name": "Release Notes",
+        "name": "Примечания к релизам",
         "to": "/release-notes"
       }
     ]
