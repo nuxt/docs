@@ -21,7 +21,7 @@ You should put these commands in the `package.json`:
   "dev": "nuxt",
   "build": "nuxt build",
   "start": "nuxt start",
-  "generate" "nuxt generate"
+  "generate": "nuxt generate"
 }
 ```
 
