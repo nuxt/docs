@@ -1,13 +1,13 @@
 ---
 title: Installation
-description: Nuxt.js is really easy to get started with. A simple project only need the nuxt dependency in your package.json file.
+description: Nuxt.js is really easy to get started with. A simple project only need the `nuxt` dependency.
 ---
 
 > Nuxt.js is really easy to get started with. A simple project only need the `nuxt` dependency.
 
 ## Using Nuxt.js starter template
 
-To start quickly, the Nuxt.js team has created [starter template](https://github.com/nuxt/starter).
+To start quickly, the Nuxt.js team has created a [starter template](https://github.com/nuxt/starter).
 
 [Download the .zip](https://github.com/nuxt/starter/archive/source.zip) starter template or install it with vue-cli:
 

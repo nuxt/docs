@@ -17,6 +17,18 @@ renderer.code = (code, language) => {
   const highlighted = validLang ? highlightjs.highlight(language, code).value : code
   return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`
 }
+renderer.heading = (text, level) => {
+  const patt = /\s?{([^}]+)}$/
+  let link = patt.exec(text)
+
+  if (link && link.length && link[1]) {
+    text = text.replace(patt, '')
+    link = link[1]
+  } else {
+    link = text.toLowerCase().replace(/[^\wА-яіІїЇєЄ\u4e00-\u9eff一-龠ぁ-ゔァ-ヴー々〆〤\u3130-\u318F\uAC00-\uD7AF]+/gi, '-')
+  }
+  return '<h' + level + ' id="' + link + '">' + text + '</h' + level + '>'
+}
 marked.setOptions({ renderer })
 
 // Fetch doc and menu files
