@@ -1,6 +1,6 @@
 ---
-title: Routes Middleware
-description: Documentation is coming soon.
+title: Middleware для маршрутизации
+description: Документация скоро будет.
 ---
 
-> Feature & Documentation coming soon!
+> Фича и документация для неё — скоро будет ;)

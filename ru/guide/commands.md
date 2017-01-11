@@ -56,28 +56,6 @@ nuxt start
 
 Заметка: рекомендуем добавить `.nuxt` в `.npmignore` или `.gitignore`.
 
-### Развёртывание с Heroku
-
-Мы рекомендуем прочитать [документацию Heroku для node.js](https://devcenter.heroku.com/articles/nodejs-support).
-
-Сперва вам нужно сказать Heroku установить `devDependencies` проекта (чтобы запускать `npm run build`):
-```bash
-heroku config:set NPM_CONFIG_PRODUCTION=false
-```
-
-Затем мы говорим Heroku запустить `npm run build` через скрипт `postinstall` в нашем `package.json`:
-```js
-"scripts": {
-  "dev": "nuxt",
-  "postinstall": "nuxt build",
-  "start": "nuxt start",
-}
-```
-
-Наконец, мы можем добавить приложение в Heroku:
-```bash
-git push heroku master
-```
 
 ## Развёртывание на статическом хостинге
 
