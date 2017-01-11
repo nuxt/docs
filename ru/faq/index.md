@@ -1,13 +1,13 @@
 ---
-title: External resources
-description: How to use external resources with Nuxt.js?
+title: Внешние ресурсы
+description: Как использовать внешние ресурсы с Nuxt.js?
 ---
 
-# How to use external resources?
+# Как использовать внешние ресурсы?
 
-## Global Settings
+## Глобальные настройки
 
-Include your resources in the nuxt.config.js file:
+Включите ваши ресурсы в файле nuxt.config.js:
 
 ```js
 module.exports = {
@@ -22,13 +22,13 @@ module.exports = {
 }
 ```
 
-## Local Settings
+## Локальные настройки
 
-Include your resources in your .vue file inside the pages directory:
+Включите ваши ресурсы в файле .vue в каталоге pages:
 
 ```html
 <template>
-  <h1>About page with jQuery and Roboto font</h1>
+  <h1>Страница About, использующая jQuery и шрифт Roboto</h1>
 </template>
 
 <script>
