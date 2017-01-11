@@ -8,15 +8,15 @@
         "contents": [
           {
             "name": "Что такое Nuxt.js?",
-            "to": "#what-is-nuxt-js-"
+            "to": "#что-такое-nuxt-js-"
           },
           {
             "name": "Как это работает",
-            "to": "#how-it-works"
+            "to": "#как-это-работает"
           },
           {
             "name": "Особенности",
-            "to": "#features"
+            "to": "#возможности"
           },
           {
             "name": "Серверный рендеринг",
@@ -24,7 +24,7 @@
           },
           {
             "name": "Генерация статики",
-            "to": "#static-generated"
+            "to": "#статическая-генерация"
           }
         ]
       },
@@ -34,11 +34,11 @@
         "contents": [
           {
             "name": "Использование стартового шаблона Nuxt.js",
-            "to": "#using-nuxt-js-starter-template"
+            "to": "#использование-стартового-шаблона-nuxt-js"
           },
           {
             "name": "Приложение с нуля",
-            "to": "#starting-from-scratch"
+            "to": "#создание-с-нуля"
           }
         ]
       },
@@ -48,11 +48,11 @@
         "contents": [
           {
             "name": "Папки",
-            "to": "#directories"
+            "to": "#каталоги"
           },
           {
             "name": "Псевдонимы",
-            "to": "#aliases"
+            "to": "#псевдонимы"
           }
         ]
       },
@@ -66,15 +66,15 @@
         "contents": [
           {
             "name": "Список команд",
-            "to": "#list-of-commands"
+            "to": "#список-команд"
           },
           {
             "name": "Развёртывание на продакшн-сервере",
-            "to": "#production-deployment"
+            "to": "#продуктовая-выкладка"
           },
           {
             "name": "Развёртывание на статичном хостинге",
-            "to": "#static-hosting-deployment"
+            "to": "#разв-ртывание-на-статическом-хостинге"
           }
         ]
       }
@@ -93,11 +93,11 @@
         "contents": [
           {
             "name": "Структура папок",
-            "to": "#directory-structure"
+            "to": "#структура-директорий"
           },
           {
             "name": "Валидация параметров маршрутов",
-            "to": "#validate-route-params"
+            "to": "#валидация-параметров-пути"
           }
         ]
       },
@@ -107,11 +107,11 @@
         "contents": [
           {
             "name": "Структура папок",
-            "to": "#directory-structure"
+            "to": "#структура-директорий"
           },
           {
             "name": "Динамические вложенные маршруты",
-            "to": "#dynamic-nested-routes"
+            "to": "#динамические-вложенные-пути"
           }
         ]
       },
@@ -121,19 +121,19 @@
         "contents": [
           {
             "name": "Использование",
-            "to": "#usage"
+            "to": "#использование"
           },
           {
-            "name": "The transition Key",
-            "to": "#the-transition-key"
+            "name": "свойство `transition`",
+            "to": "#свойство-code-transition-code-"
           },
           {
             "name": "Переход для конкретной страницы",
-            "to": "#transition-for-a-specific-page"
+            "to": "#анимация-переходов-для-отдельных-страниц"
           },
           {
             "name": "Динамический переход",
-            "to": "#dynamic-transition"
+            "to": "#динамическия-переходы"
           }
         ]
       },
@@ -152,19 +152,19 @@
         "contents": [
           {
             "name": "Специальные ключи",
-            "to": "#special-keys"
+            "to": "#специальные-атрибуты"
           },
           {
             "name": "Простая страница",
-            "to": "#a-simple-page"
+            "to": "#простая-страница"
           },
           {
             "name": "Использование пре-процессоров",
-            "to": "#using-pre-processors"
+            "to": "#использование-пре-процессоров"
           },
           {
             "name": "Использование JSX",
-            "to": "#using-jsx"
+            "to": "#использование-jsx"
           }
         ]
       },
@@ -174,15 +174,15 @@
         "contents": [
           {
             "name": "Основной шаблон",
-            "to": "#default-layout"
+            "to": "#основной-шаблон"
           },
           {
             "name": "Страница ошибки",
-            "to": "#error-page"
+            "to": "#страница-ошибки"
           },
           {
             "name": "Индивидуальный шаблон",
-            "to": "#custom-layout"
+            "to": "#индивидуальный-шаблон"
           }
         ]
       },
@@ -192,15 +192,15 @@
         "contents": [
           {
             "name": "Отключение индикатора загрузки",
-            "to": "#disable-the-progress-bar"
+            "to": "#отключение-индикатора-загрузки"
           },
           {
             "name": "Изменение индикатора загрузки",
-            "to": "#customize-the-progress-bar"
+            "to": "#изменение-индикатора-загрузки"
           },
           {
             "name": "Создание своего индикатора загрузки",
-            "to": "#use-a-custom-loading-component"
+            "to": "#создание-собственного-индикатора"
           }
         ]
       },
@@ -210,19 +210,19 @@
         "contents": [
           {
             "name": "Заголовок (title)",
-            "to": "#title"
+            "to": "#заголовок-title-"
           },
           {
             "name": "Мета-теги",
-            "to": "#meta-tags"
+            "to": "#мета-теги"
           },
           {
             "name": "Использование данных страницы",
-            "to": "#using-page-data"
+            "to": "#используя-code-data-code-компонента"
           },
           {
             "name": "Meta-значения по-умолчанию",
-            "to": "#defaults-meta"
+            "to": "#meta-базовые-значения"
           }
         ]
       }
@@ -237,15 +237,15 @@
         "contents": [
           {
             "name": "Метод data",
-            "to": "#the-data-method"
+            "to": "#метод-code-data-code-"
           },
           {
             "name": "Контекст (context)",
-            "to": "#the-context"
+            "to": "#контекст"
           },
           {
             "name": "Обработка ошибок",
-            "to": "#handling-errors"
+            "to": "#обработка-ошибок"
           }
         ]
       },
@@ -255,23 +255,23 @@
         "contents": [
           {
             "name": "Активация хранилища",
-            "to": "#activate-the-store"
+            "to": "#активация-хранилища"
           },
           {
-            "name": "Modules Files",
-            "to": "#modules-files"
+            "name": "Файлы модулей",
+            "to": "#файлы-модулей"
           },
           {
             "name": "Метод fetch",
-            "to": "#the-fetch-method"
+            "to": "#метод-fetch"
           },
           {
             "name": "Контекст (context)",
-            "to": "#the-context"
+            "to": "#контекст"
           },
           {
             "name": "Действие nuxtServerInit",
-            "to": "#the-nuxtserverinit-action"
+            "to": "#действие-nuxtserverinit"
           }
         ]
       }
@@ -294,15 +294,15 @@
         "contents": [
           {
             "name": "Использование внешних модулей",
-            "to": "#use-external-modules"
+            "to": "#использование-внешних-модулей"
           },
           {
             "name": "Использование плагинов Vue",
-            "to": "#use-vue-plugins"
+            "to": "#использование-плагинов-vue"
           },
           {
             "name": "Только для браузеров",
-            "to": "#only-for-browsers"
+            "to": "#только-для-браузеров"
           }
         ]
       }
