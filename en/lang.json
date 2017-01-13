@@ -20,6 +20,10 @@
     "vuejs": "Vue.js",
     "vue_jobs": "Vue Jobs"
   },
+  "text": {
+    "version": "Version",
+    "search": "Search"
+  },
   "homepage": {
     "title": "Universal Vue.js Applications",
     "meta": {
