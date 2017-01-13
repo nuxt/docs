@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Frequently Asked Questions",
+    "links": [
+      { "name": "How to use external resources?", "to": "" },
+      { "name": "How to add postcss plugins?", "to": "/postcss-plugins" },
+      { "name": "How to deploy on Heroku?", "to": "/heroku-deployment" }
+    ]
+  }
+]
