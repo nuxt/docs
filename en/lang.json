@@ -14,7 +14,9 @@
     "homepage": "Home page",
     "live_demo": "Live Demo",
     "live_edit": "Live Edit",
+    "search": "Search",
     "twitter": "Twitter",
+    "version": "Version",
     "vuejs": "Vue.js",
     "vue_jobs": "Vue Jobs"
   },
