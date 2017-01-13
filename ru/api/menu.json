@@ -25,7 +25,7 @@
   {
     "title": "Страницы",
     "links": [
-      { "name": "Контекст (Context)", "to": "/pages-context" }
+      { "name": "Контекст (сontext)", "to": "/pages-context" }
     ]
   }
 ]
