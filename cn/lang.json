@@ -12,8 +12,8 @@
     "github": "Github",
     "guide": "教程",
     "homepage": "首页",
-    "live_demo": "Live Demo",
-    "live_edit": "Live Edit",
+    "live_demo": "在线 Demo",
+    "live_edit": "在线编辑",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "工作机会"
@@ -22,7 +22,7 @@
     "title": "Vue.js 通用应用框架",
     "meta": {
       "title": "Nuxt.js - Vue.js 通用应用框架",
-      "description": "Nuxt.js是一个基于Vue.js的轻量级应用框架，可用来创建服务端渲染(SSR)应用，也可充当静态站点引擎生成静态站点应用，具有优雅的代码结构分层和热加载等特性。"
+      "description": "Nuxt.js 是一个基于 Vue.js 的轻量级应用框架，可用来创建服务端渲染 (SSR) 应用，也可充当静态站点引擎生成静态站点应用，具有优雅的代码结构分层和热加载等特性。"
     }
   },
   "footer": {
@@ -30,8 +30,8 @@
   },
   "guide": {
     "release_notes": "版本信息",
-    "contribute": "如何提交问题或文档贡献?",
-    "edit_on_github": "在Github编辑此页面!"
+    "contribute": "如何提交问题或文档贡献？",
+    "edit_on_github": "在 Github 编辑此页面！"
   },
   "examples": {
     "source_code": "源码"
