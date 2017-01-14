@@ -1,11 +1,11 @@
 ---
-title: Postcss plugins
-description: How to add postcss plugins?
+title: Postcss插件
+description: 如何添加postcss相关插件?
 ---
 
-# How to add postcss plugins?
+# 如何添加postcss相关插件?
 
-In your nuxt.config.js file:
+可在`nuxt.config.js`文件增加以下配置来添加postcss插件:
 
 ```js
 module.exports = {

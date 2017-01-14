@@ -1,23 +1,22 @@
 ---
-title: Async Data
-description: Nuxt.js supercharges the data method from vue.js to let you handle async operation before setting the component data.
+title: 异步数据
+description: Nuxt.js 扩展增强了vue.js原有的data方法，使得我们可以在设置组件的数据之前能异步获取或处理数据。
 ---
 
-> Nuxt.js *supercharges* the `data` method from vue.js to let you handle async operation before setting the component data.
+> Nuxt.js *扩展增强*了vue.js原有的data方法，使得我们可以在设置组件的数据之前能异步获取或处理数据。
 
-## The data Method
+## data方法
 
-`data` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives [the context](/api/pages-context) as the first argument, you can use it to fetch some data and return the component data.
+`data` 方法会在组件（**限于页面组件**）每次加载之前被调用。它可以在服务端或路由更新之前被调用。在这个方法被调用的时候，第一个参数被设定为当前页面的[上下文对象](/api/pages-context)，你可以利用`data`方法来获取数据并返回给当前组件。
+<div class="Alert Alert--orange">注意：由于`data`方法是在组件 **初始化** 前被调用的，所以在方法内是没有办法通过`this`来引用组件的实例对象。</div>
 
-<div class="Alert Alert--orange">You do **NOT** have access of the component instance trough `this` inside `data` because it is called **before initiating** the component.</div>
+nuxt.js提供了几种不同的方法来让`data`方法异步化，你可以选择自己熟悉的一种来用：
 
-To make the data method asynchronous, nuxt.js offers you different ways, choose the one you're the most familiar with:
+1. 返回一个 `Promise`, nuxt.js会等待该`Promise`被解析之后才会设置组件的数据，从而渲染组件.
+2. 使用 [async或await](https://github.com/lukehoban/ecmascript-asyncawait) ([了解更多](https://zeit.co/blog/async-and-await))
+3. 为第二个参数指定一个回调函数. 注：该回调函数需符合通用的nodejs回调函数的形式: `callback(err, data)`
 
-1. returning a `Promise`, nuxt.js will wait for the promise to be resolved before rendering the component.
-2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await))
-3. Define a callback as second argument. It has to be called like this: `callback(err, data)`
-
-### Returning a Promise
+### 返回 `Promise`
 ```js
 export default {
   data ({ params }) {
@@ -29,7 +28,7 @@ export default {
 }
 ```
 
-### Using async/await
+### 使用 `async或await`
 ```js
 export default {
   async data ({ params }) {
@@ -39,7 +38,7 @@ export default {
 }
 ```
 
-### Using a callback
+### 使用 `回调函数`
 ```js
 export default {
   data ({ params }, callback) {
@@ -51,9 +50,9 @@ export default {
 }
 ```
 
-### Returning an Object
+### 返回 `对象`
 
-If you don't need to do any asynchronous call, you can simply return an object:
+如果组件的数据不需要异步获取或处理，可以直接返回指定的字面对象作为组件的数据。
 
 ```js
 export default {
@@ -63,9 +62,9 @@ export default {
 }
 ```
 
-### Displaying the data
+### 数据的展示
 
-When the data method set, you can display the data inside your template like you used to do:
+`data`方法被设置之后，可以在模板中显示数据，如：
 
 ```html
 <template>
@@ -73,15 +72,15 @@ When the data method set, you can display the data inside your template like you
 </template>
 ```
 
-## The Context
+## 上下文对象 `context`
 
-To see the list of available keys in `context`, take a look at the [pages context api](/api/pages-context).
+`data`方法的第一个参数指向当前页面的上下文对象 `context`，可通过 [页面上下文对象API](/api/pages-context) 来了解该对象的所有属性和方法。
 
-## Handling Errors
+## 错误处理
 
-Nuxt.js add the `error(params)` method in the `context`, you can call it to display the error page. `params.statusCode` will be also used to render the proper status code form the server-side.
+Nuxt.js在上下文对象`context`中提供了一个 `error(params)` 方法，你可以通过调用该方法来显示错误信息页面。`params.statusCode` 可用于指定服务端返回的请求状态码。
 
-Example with a `Promise`:
+以返回 `Promise`的方式举个栗子:
 ```js
 export default {
   data ({ params, error }) {
@@ -96,7 +95,7 @@ export default {
 }
 ```
 
-If you're using the `callback` argument, you can call it directly with the error, nuxt.js will call the `error` method for you:
+如果你使用`回调函数`的方式, 你可以将错误的信息对象直接传给该回调函数， nuxt.js内部会自动调用 `error` 方法:
 ```js
 export default {
   data ({ params }, callback) {
@@ -111,4 +110,4 @@ export default {
 }
 ```
 
-To customize the error page, take a look at the [layout section](/guide/layouts#error-page).
+如果你想定制nuxt.js默认的错误提示页面，请猛击[页面布局](/guide/layouts#error-page)

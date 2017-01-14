@@ -1,10 +1,10 @@
 [
   {
-    "title": "Frequently Asked Questions",
+    "title": "常见问题答疑",
     "links": [
-      { "name": "How to use external resources?", "to": "" },
-      { "name": "How to add postcss plugins?", "to": "/postcss-plugins" },
-      { "name": "How to deploy on Heroku?", "to": "/heroku-deployment" }
+      { "name": "如何使用外部资源?", "to": "" },
+      { "name": "如何添加postcss的相关插件?", "to": "/postcss-plugins" },
+      { "name": "如何在Heroku上部署?", "to": "/heroku-deployment" }
     ]
   }
 ]

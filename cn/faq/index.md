@@ -1,13 +1,13 @@
 ---
-title: External resources
-description: How to use external resources with Nuxt.js?
+title: 外部资源
+description: 如何在Nuxt.js应用中使用外部资源？
 ---
 
-# How to use external resources?
+# 如何在Nuxt.js应用中使用外部资源？
 
-## Global Settings
+## 全局配置
 
-Include your resources in the nuxt.config.js file:
+在nuxt.config.js中配置你想引用的资源文件:
 
 ```js
 module.exports = {
@@ -22,9 +22,9 @@ module.exports = {
 }
 ```
 
-## Local Settings
+## 局部配置
 
-Include your resources in your .vue file inside the pages directory:
+可在`pages`目录内的`.vue`文件中引用外部资源，如下所示：
 
 ```html
 <template>

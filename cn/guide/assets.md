@@ -1,13 +1,13 @@
 ---
 title: Assets
-description: Nuxt uses vue-loader, file-loader and url-loader for Webpack by default for strong assets serving.
+description: 默认情况下Nuxt使用 vue-loader、file-loader 以及 url-loader 这三个Webpack加载器来处理文件的加载和引用.
 ---
 
-> Nuxt uses Webpack file-loader and url-loader by default for strong assets serving.
+> Nuxt默认使用file-loader 以及 url-loader 这两个Webpack加载器来处理资源文件的加载和引用.
 
-By default, [vue-loader](http://vue-loader.vuejs.org/en/) automatically processes your style and template files with `css-loader` and the Vue template compiler. In this compilation process, all asset URLs such as `<img src="...">`, `background: url(...)` and CSS `@import` are resolved as module dependencies.
+默认情况下, [vue-loader](http://vue-loader.vuejs.org/en/)自动使用`css-loader`和Vue模板编译器来编译处理vue文件中的样式和模板。在此编译过程中，所有的资源URL例如`<img src="...">`、 `background: url(...)` 和 CSS中的 `@import` 均会被解析成模块通过`require`引用。
 
-For example, we have this file tree:
+举个栗子, 假设我们有以下文件目录结构:
 
 ```bash
 -| assets/
@@ -16,28 +16,28 @@ For example, we have this file tree:
 ----| index.vue
 ```
 
-In my CSS, if I use `url('~assets/image.png')`, it will be translated into `require('~assets/image.png')`.
+如果我们在CSS代码中使用 `url('~assets/image.png')`, 那么编译后它将被转换成 `require('~assets/image.png')`.
 
-Or if in my `pages/index.vue`, I use:
+又或者如果我们在 `pages/index.vue` 中使用以下代码引用图片资源:
 ```html
 <template>
   <img src="~assets/image.png">
 </template>
 ```
 
-It will be compiled into:
+那么编译后会被转换成:
 
 ```js
 createElement('img', { attrs: { src: require('~assets/image.png') }})
 ```
 
-Because `.png` is not a JavaScript file, nuxt.js configures Webpack to use [file-loader](https://github.com/webpack/file-loader) and [url-loader](https://github.com/webpack/url-loader) to handle them for you.
+`.png` 并非JavaScript文件, 因此nuxt.js通过配置Webpack使用[file-loader](https://github.com/webpack/file-loader) 和 [url-loader](https://github.com/webpack/url-loader) 这两个加载器来处理此类引用.
 
-The benefits of them are:
-- `file-loader` lets you designate where to copy and place the asset file, and how to name it using version hashes for better caching.
-- `url-loader` allows you to conditionally inline a file as base-64 data URL if they are smaller than a given threshold. This can reduce the amount of HTTP requests for trivial files. If the file is larger than the threshold, it automatically falls back to `file-loader`.
+这样做的好处有:
+- `file-loader` 能让你指定从什么地方拷贝资源文件以及发布后放到哪个目录去，并能让你使用版本哈希码来重命名发布后的文件来实现增量更新和更好的缓存策略。
+- `url-loader` 能根据你指定的文件大小阈值，来判断一个文件是转换成内联的base-64码（如果该文件尺寸小于该阈值）还是使用`file-loader`来降级处理。小文件base-64化能有效减少HTTP请求数。
 
-Actually, Nuxt.js default loaders configuration is:
+实际上, Nuxt.js 默认的加载器配置如下:
 
 ```js
 [
@@ -60,9 +60,9 @@ Actually, Nuxt.js default loaders configuration is:
 ]
 ```
 
-Which means that every file below 1 KO will be inlined as base-64 data URL. Otherwise, the image/font will be copied in its corresponding folder (under the `.nuxt` directory) with a name containing a version hashes for better caching.
+也即文件（图片或字体）的尺寸小于1K的时候，它将会被转换成base-64 data URL来内联引用；否则它将被拷贝至指定的子目录（在`.nuxt`目录下），并被重命名（加上7位的哈希码作为版本标识）以实现更好的缓存策略。
 
-When launching our application with `nuxt`, our template in `pages/index.vue`:
+当用`nuxt`命令运行我们的应用时，`pages/index.vue` 中的模板代码：
 
 ```html
 <template>
@@ -70,9 +70,9 @@ When launching our application with `nuxt`, our template in `pages/index.vue`:
 </template>
 ```
 
-Will be generated into:
+将被编译生成:
 ```html
 <img src="/_nuxt/img/image.0c61159.png">
 ```
 
-If you want to update these loaders or disable them, please take a look at the [loaders configuration](/api/configuration-build).
+如果你想更新这些加载器的配置或者禁用他们，请参考[loaders 配置](/api/configuration-build)。
