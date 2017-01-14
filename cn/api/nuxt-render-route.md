@@ -1,7 +1,7 @@
 ---
-title: Nuxt.js Module
+title: Nuxt.js 模块
 ---
 
 # nuxt.renderRoute()
 
-> Documentation is coming soon
+> 文档正在编写中，敬请期待

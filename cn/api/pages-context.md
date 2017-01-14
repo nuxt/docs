@@ -1,23 +1,23 @@
 ---
-title: Pages Context
-description: The context is an helpful object given to methods for abstracting the client/server difference.
+title: 页面上下文
+description: 上下文是一个很有用的对象，包含很多用于抽象化客户端、服务端之间差异的方法。
 ---
 
-# Context
+# 上下文
 
-List of all the available keys in `context`:
+`context` 变量的可用属性一览：
 
-| Key | Type | Available | Description |
+| 属性字段 | 类型 | 可用 | 描述 |
 |-----|------|--------------|-------------|
-| `isClient` | Boolean | Client & Server | Boolean to let you know if you're actually renderer from the client-side |
-| `isServer` | Boolean | Client & Server | Boolean to let you know if you're actually renderer from the server-side |
-| `isDev` | Boolean | Client & Server | Boolean to let you know if you're in dev mode, can be useful for caching some data in production |
-| `route` | [vue-router route](https://router.vuejs.org/en/api/route-object.html) | Client & Server | `vue-router` route instance [see documentation](https://router.vuejs.org/en/api/route-object.html) |
-| `store` | [vuex store](http://vuex.vuejs.org/en/api.html#vuexstore-instance-properties) | Client & Server | `Vuex.Store` instance. **Available only if `store: true` is set in `nuxt.config.js`** |
-| `env` | Object | Client & Server | Environment variables set in `nuxt.config.js`, see [env api](/api/configuration-env)  |
-| `params` | Object | Client & Server | Alias of route.params |
-| `query` | Object | Client & Server | Alias of route.query |
-| `req` | [http.Request](https://nodejs.org/api/http.html#http_class_http_incomingmessage) | Server | Request from the node.js server. If nuxt is used as a middleware, the req object might be different depending of the framework you're using. *Not available via `nuxt generate`*. |
-| `res` | [http.Response](https://nodejs.org/api/http.html#http_class_http_serverresponse) | Server | Response from the node.js server. If nuxt is used as a middleware, the res object might be different depending of the framework you're using. *Not available via `nuxt generate`*. |
-| `redirect` | Function | Client & Server | Use this method to redirect the user to another route, the status code is used on the server-side, default to 302. `redirect([status,] path [, query])` |
-| `error` | Function | Client & Server | Use this method to show the error page: `error(params)`. The `params` should have the fields `statusCode` and `message`. |
+| `isClient` | Boolean | 客户端 & 服务端 | 是否来自客户端渲染 |
+| `isServer` | Boolean | 客户端 & 服务端 | 是否来自服务端渲染 |
+| `isDev` | Boolean | 客户端 & 服务端 | 是否是开发(dev) 模式，在生产环境的数据缓存中用到 |
+| `route` | [vue-router 路由](https://router.vuejs.org/en/api/route-object.html) | 客户端 & 服务端 | `vue-router` 路由实例 [见文档](https://router.vuejs.org/en/api/route-object.html) |
+| `store` | [vuex store](http://vuex.vuejs.org/en/api.html#vuexstore-instance-properties) | 客户端 & 服务端 | `Vuex.Store` 实例。**只有 `nuxt.config.js` 中设置 `store: true` 才可用 ** |
+| `env` | Object | 客户端 & 服务端 | `nuxt.config.js` 中配置的环境变量, 见 [环境变量 api](/api/configuration-env)  |
+| `params` | Object | 客户端 & 服务端 | route.params 的别名 |
+| `query` | Object | 客户端 & 服务端 | route.query 的别名 |
+| `req` | [http.Request](https://nodejs.org/api/http.html#http_class_http_incomingmessage) | 服务端 | Node.js API 的 Request 对象。如果 nuxt 以中间件形式使用的话，这个对象就根据你所使用的框架而定。*`nuxt generate` 不可用*。 |
+| `res` | [http.Response](https://nodejs.org/api/http.html#http_class_http_serverresponse) | 服务端 | Node.js API 的 Request 对象。如果 nuxt 以中间件形式使用的话，这个对象就根据你所使用的框架而定。*`nuxt generate` 不可用*。 |
+| `redirect` | Function | 客户端 & 服务端 | 用这个方法重定向用户请求到另一个路由。状态码在服务端被使用，默认 302。`redirect([status,] path [, query])` |
+| `error` | Function | 客户端 & 服务端 | 用这个方法展示错误页：`error(params)`。`params` 参数应该包含 `statusCode` 和 `message` 字段。 |

@@ -1,21 +1,21 @@
 ---
-title: Nuxt.js Module
-description: You can use nuxt.js programmaticaly to use it as a middleware giving you the freedom of creating your own server for rendering your web applications.
+title: Nuxt.js 模块
+description: 你可以在自己的服务端中，把 Nuxt.js 当成中间件去渲染你的 web 应用。
 ---
 
-# Using Nuxt.js Programmaticaly
+# 以编程形式使用 Nuxt.js
 
-You might want to use your own server with your middleware and your API. That's why you can use Nuxt.js programmaticaly.
-Nuxt.js is built on the top of ES2015, which makes the code more enjoyable and cleaner to read. It doesn't make use of any transpilers and depends upon Core V8 implemented features. For these reasons, Nuxt.js targets Node.js `4.0` or higher.
+如果你打算用自己的中间件和 API 运行你的服务端的话，欢迎以编程的形式使用 Nuxt.js。
+因为 Nuxt.js 基于 ES2015 编写，所以它的代码相对来说更有趣、更易读。它没用到任何的转译器，只依赖于 V8 内核中已经实现的功能。因此，Nuxt.js 需要 Node.js `4.0` 或更高的运行环境。
 
-You can require Nuxt.js like this:
+你可以这样引入 Nuxt.js:
 ```js
 const Nuxt = require('nuxt')
 ```
 
 ### Nuxt(options)
 
-To see the list of options to give to Nuxt.js, see the configuration section.
+想了解 Nuxt.js 所有的可选项，请查阅「配置」章节的文章。
 
 ```js
 const options = {}
@@ -23,6 +23,6 @@ const options = {}
 const nuxt = new Nuxt(options)
 nuxt.build()
 .then(() => {
-  // We can use nuxt.render(req, res) or nuxt.renderRoute(route, context)
+  // 这里可以用 nuxt.render(req, res) 或者 nuxt.renderRoute(route, context)
 })
 ```

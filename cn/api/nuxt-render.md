@@ -1,12 +1,12 @@
 ---
-title: Nuxt.js Module
+title: Nuxt.js 模块
 ---
 
 # nuxt.render(req, res)
 
-You can use Nuxt.js as a middleware with `nuxt.render` for you node.js server.
+你可以通过 `nuxt.render` 函数，把 Nuxt.js 变成你 Node.js 服务端的中间件。
 
-Example with Express.js:
+Express.js 结合实例:
 ```js
 const app = require('express')()
 const Nuxt = require('nuxt')
@@ -14,11 +14,11 @@ const Nuxt = require('nuxt')
 const nuxt = new Nuxt()
 nuxt.build()
 .then(() => {
-  // Render every route with Nuxt.js
+  // 用 Nuxt.js 渲染每个路由
   app.use(nuxt.render)
-  // Server listening
+  // 服务端监听
   app.listen(3000)
 })
 ```
 
-<p class="Alert">It's recommended to call **nuxt.render** at the end of your middlewares since it will handle the rendering of your web application and won't call next()</p>
+<p class="Alert">建议把 **nuxt.render** 放到中间件列表的最后面，因为它不会再调用 next() 方法，而是直接处理你 web 应用的页面渲染。</p>

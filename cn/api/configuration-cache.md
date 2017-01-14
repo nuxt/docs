@@ -1,7 +1,7 @@
 ---
-title: Configuration CACHE
+title: 配置缓存
 ---
 
-# Cache
+# 缓存
 
-> Documentation is coming soon
+> 文档正在编写中，敬请期待

@@ -1,7 +1,7 @@
 ---
-title: Configuration ENV
+title: 配置环境变量
 ---
 
-# Env
+# 环境变量
 
-> Documentation is coming soon
+> 文档正在编写中，敬请期待
