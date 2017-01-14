@@ -6,7 +6,7 @@ github: custom-loading
 
 ## Documentation
 
-> Nuxt.js uses it's own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
+> Nuxt.js uses its own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
 
 ### Disable Nuxt.js progress bar
 
