@@ -1,23 +1,23 @@
 ---
-title: Async Datas
-description: Async Datas example with Nuxt.js
+title: 异步数据
+description: Nuxt.js 的异步数据示例
 github: async-data
 ---
 
-## Documentation
+## 文档
 
 ### data (context)
 
-> Nuxt.js *supercharges* the `data` method from vue.js to let you handle async operation before setting the component data.
+> Nuxt.js *增强了* vue.js 的 `data` 方法，让你可以在设置组件数据之前执行异步操作。
 
-`data` is called every time before loading the component (*only if attached to a route*). It can be called from the server-side or before navigating to the corresponding route.
+`data` 在每次组件加载之前都会被调用（*前提是有绑定到路由上*）。它会从服务端被调用，或者在导航至相对应的路由之前。
 
-The `data` method receives the context as the first argument, you can use it to fetch some data and return the component data. To make the data method asynchronous, Nuxt.js offers you 2 ways, choose the one you're the most familiar with:
+这个 `data` 方法接收的第一个参数是上下文对象 (context)，你可以在方法内获取一些数据，并且最后返回组件数据。如果想异步获取数据的话，Nuxt.js 提供了两种方式，你可以根据喜好选择：
 
-1. returning a `Promise`, Nuxt.js will wait for the promise to be resolved before rendering the Component
-2. Define a second argument which is a callback method to be called like this: `callback(err, data)`
+1. 返回一个 `Promise`，Nuxt.js 会等这个 promise 完成后再渲染组件
+2. 第二个参数提供了一个回调函数：`callback(err, data)`
 
-Example with returning a `Promise`:
+返回 `Promise` 的示例：
 ```js
 export default {
   data ({ params }) {
@@ -29,7 +29,7 @@ export default {
 }
 ```
 
-Example with using the `callback` argument:
+使用回调函数 `callback` 参数的示例：
 ```js
 export default {
   data ({ params }, callback) {
@@ -41,7 +41,7 @@ export default {
 }
 ```
 
-And then, you can display the data inside your template:
+然后，你就可以在模板里写上想展示的数据啦：
 
 ```html
 <template>
@@ -49,29 +49,30 @@ And then, you can display the data inside your template:
 </template>
 ```
 
-### Context
+### 上下文
 
-List of all the available keys in `context`:
+`context` 变量的可用属性一览：
 
-| Key | Type | Available | Description |
+| 属性字段 | 类型 | 可用 | 描述 |
 |-----|------|--------------|-------------|
-| `isClient` | Boolean | Client & Server | Boolean to let you know if you're actually renderer from the client-side |
-| `isServer` | Boolean | Client & Server | Boolean to let you know if you're actually renderer from the server-side |
-| `isDev` | Boolean | Client & Server | Boolean to let you know if you're in dev mode, can be useful for caching some data in production |
-| `route` | [vue-router route](https://router.vuejs.org/en/api/route-object.html) | Client & Server | `vue-router` route instance [see documentation](https://router.vuejs.org/en/api/route-object.html) |
-| `store` | [vuex store](http://vuex.vuejs.org/en/api.html#vuexstore-instance-properties) | Client & Server | `Vuex.Store` instance. **Available only if `store: true` is set in `nuxt.config.js`** |
-| `params` | Object | Client & Server | Alias of route.params |
-| `query` | Object | Client & Server | Alias of route.query |
-| `req` | [http.Request](https://nodejs.org/api/http.html#http_class_http_incomingmessage) | Server | Request from the node.js server. If nuxt is used as a middleware, the req object might be different depending of the framework you're using. |
-| `res` | [http.Response](https://nodejs.org/api/http.html#http_class_http_serverresponse) | Server | Response from the node.js server. If nuxt is used as a middleware, the res object might be different depending of the framework you're using. |
-| `redirect` | Function | Client & Server | Use this method to redirect the user to another route, the status code is used on the server-side, default to 302. `redirect([status,] path [, query])` |
-| `error` | Function | Client & Server | Use this method to show the error page: `error(params)`. The `params` should have the fields `statusCode` and `message`. |
+| `isClient` | Boolean | 客户端 & 服务端 | 是否来自客户端渲染 |
+| `isServer` | Boolean | 客户端 & 服务端 | 是否来自服务端渲染 |
+| `isDev` | Boolean | 客户端 & 服务端 | 是否是开发(dev) 模式，在生产环境的数据缓存中用到 |
+| `route` | [vue-router 路由](https://router.vuejs.org/en/api/route-object.html) | 客户端 & 服务端 | `vue-router` 路由实例 [见文档](https://router.vuejs.org/en/api/route-object.html) |
+| `store` | [vuex 数据流](http://vuex.vuejs.org/en/api.html#vuexstore-instance-properties) | 客户端 & 服务端 | `Vuex.Store` 实例。**只有 `nuxt.config.js` 中设置 `store: true` 才可用 ** |
+| `env` | Object | 客户端 & 服务端 | `nuxt.config.js` 中配置的环境变量, 见 [环境变量 api](/api/configuration-env)  |
+| `params` | Object | 客户端 & 服务端 | route.params 的别名 |
+| `query` | Object | 客户端 & 服务端 | route.query 的别名 |
+| `req` | [http.Request](https://nodejs.org/api/http.html#http_class_http_incomingmessage) | 服务端 | Node.js API 的 Request 对象。如果 nuxt 以中间件形式使用的话，这个对象就根据你所使用的框架而定。*`nuxt generate` 不可用*。 |
+| `res` | [http.Response](https://nodejs.org/api/http.html#http_class_http_serverresponse) | 服务端 | Node.js API 的 Request 对象。如果 nuxt 以中间件形式使用的话，这个对象就根据你所使用的框架而定。*`nuxt generate` 不可用*。 |
+| `redirect` | Function | 客户端 & 服务端 | 用这个方法重定向用户请求到另一个路由。状态码在服务端被使用，默认 302。`redirect([status,] path [, query])` |
+| `error` | Function | 客户端 & 服务端 | 用这个方法展示错误页：`error(params)`。`params` 参数应该包含 `statusCode` 和 `message` 字段。 |
 
-### Handling errors
+### 错误处理
 
-Nuxt.js add the `error(params)` method in the `context`, you can call it to display the error page. `params.statusCode` will be also used to render the proper status code form the server-side.
+Nuxt.js 在上下文对象 `context` 里添加了一个 `error(params)` 方法，你可以通过调用它来展示错误页面。服务端会根据 `params.statusCode` 渲染出相应的状态码。
 
-Example with a `Promise`:
+返回 `Promise` 的示例：
 ```js
 export default {
   data ({ params, error }) {
@@ -86,7 +87,7 @@ export default {
 }
 ```
 
-If you're using the `callback` argument, you can call it directly with the error, Nuxt.js will call the `error` method for you:
+如果你使用回调函数 `callback` 的话，你可以把传错误对象传进去，Nuxt.js 会自动帮你调用 `error` 方法：
 ```js
 export default {
   data ({ params }, callback) {

@@ -1,36 +1,38 @@
 ---
-title: Plugins
+title: 组件
 description: Using external modules and plugins with nuxt.js
 github: plugins-vendor
 ---
 
-## Documentation
+## 文档
 
-### Configuration: `build.vendor`
+### 配置：`build.vendor`
 
-> Nuxt.js allows you to add modules inside the `vendor.bundle.js` file generated to reduce the size of the app bundle. It's really useful when using external modules (like `axios` for example)
+> Nuxt.js 允许你在自动生成的 `vendor.bundle.js` 文件中添加一些模块，以减少应用 bundle 的体积。这里说的是一些你所依赖的第三方模块 (比如 `axios`)
 
-To add a module/file inside the vendor bundle, add the `build.vendor` key inside `nuxt.config.js`:
+想要把模块打包进 vendor bundle，你可以在 `nuxt.config.js` 的 `build.vendor` 字段中配置：
+
 ```js
 const { join } = require('path')
 
 module.exports = {
   build: {
     vendor: [
-      'axios', // node module
-      join(__dirname, './js/my-library.js') // custom file
+      'axios', // node 模块
+      join(__dirname, './js/my-library.js') // 自定义文件
     ]
   }
 }
 ```
 
-### Configuration: `plugins`
+### 配置：`plugins`
 
-> Nuxt.js allows you to define js plugins to be ran before instantiating the root vue.js application
+> Nuxt.js 允许你定义一些 JS 插件，它们会在 vue.js 根应用初始化之前被调用。
 
-I want to use [vue-notifications](https://github.com/se-panfilov/vue-notifications) to validate the data in my inputs, I need to setup the plugin before launching the app.
+比如我想用 [vue-notifications](https://github.com/se-panfilov/vue-notifications) 去校验用户输入数据，我就需要在程序运行前配置好这个插件。
 
-File `plugins/vue-notifications.js`:
+`plugins/vue-notifications.js` 文件：
+
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
@@ -38,7 +40,8 @@ import VueNotifications from 'vue-notifications'
 Vue.use(VueNotifications)
 ```
 
-Then, I add my file inside the `plugins` key of `nuxt.config.js`:
+然后在 `nuxt.config.js` 的 `plugins` 字段中配置：
+
 ```js
 const { join } = require('path')
 
@@ -50,13 +53,13 @@ module.exports = {
 }
 ```
 
-I use `~plugins` here because nuxt.js create an alias for the `plugins/` folder, it's equivalent to: `join(__dirname, './plugins/vue-notifications.js')`
+我在这里用 `~plugins` 的原因是 nuxt.js 给 `plugins/` 目录创建了一个别名，这与 `join(__dirname, './plugins/vue-notifications.js')` 等价。
 
-I added `vue-notifications` in the `vendor` key to make sure that it won't be included in any other build if I call `require('vue-notifications')` in a component.
+我在 `vendor` 字段里添加了 `vue-notifications`，以确保我在组件中调用 `require('vue-notifications')` 时，它不会被打包进其它的 build 里。
 
-#### Only in browser build
+#### 只在浏览器 build 里
 
-Some plugins might work only in the browser, for this, you can use the `process.BROWSER_BUILD` variable to check if the plugin will run from the server or from the client.
+有些插件可能只是在浏览器里使用，所以你可以用 `process.BROWSER_BUILD` 变量来检查插件是从客户端还是服务端运行。
 
 Example:
 ```js
@@ -68,6 +71,6 @@ if (process.BROWSER_BUILD) {
 }
 ```
 
-#### Only in server build
+#### 只在服务端 build 里
 
-In case you need to require some libraries only for the server, you can use the `process.SERVER_BUILD` variable set to `true` when webpack is creating the `server.bundle.js` file.
+如果你需要引入一些只在服务端运行的库，你可以用 `process.SERVER_BUILD` 变量，当 webpack 创建 `server.bundle.js` 文件时，它会被设为 `true`。

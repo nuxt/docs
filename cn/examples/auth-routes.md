@@ -1,37 +1,38 @@
 ---
-title: Auth Routes
-description: Authenticated routes example with Nuxt.js
+title: 路由鉴权
+description: Nuxt.js 的路由鉴权示例
 github: auth-routes
 livedemo: https://auth-routes.nuxtjs.org
 liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 ---
 
-# Documentation
+# 文档
 
-> Nuxt.js can be used to create authenticated routes easily.
+> Nuxt.js 可以很轻松地创建需要鉴权的路由。
 
-## Using Express and Sessions
+## 使用 Express 和 Sessions
 
-To add the sessions feature in our application, we will use `express` and `express-session`, for this, we need to use Nuxt.js programmatically.
+想要给应用添加 sessions 特性的话，我们将要用到 `express` and `express-session`。因此，我们需要以编程形式使用 Nuxt.js。
 
-First, we install the depedencies:
+首先，我们先安装依赖包：
 ```bash
 yarn add express express-session body-parser whatwg-fetch
 ```
 
-*We will talk about `whatwg-fetch` later.*
+*我们待会会讲到 `whatwg-fetch`。*
 
-Then we create our `server.js`:
+然后创建 `server.js`：
+
 ```js
 const Nuxt = require('nuxt')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const app = require('express')()
 
-// Body parser, to access req.body
+// Body parser，用来封装 req.body
 app.use(bodyParser.json())
 
-// Sessions to create req.session
+// Sessions 来创建 req.session
 app.use(session({
   secret: 'super-secret-key',
   resave: false,
@@ -39,7 +40,7 @@ app.use(session({
   cookie: { maxAge: 60000 }
 }))
 
-// POST /api/login to log in the user and add him to the req.session.authUser
+// 发起 POST /api/login 请求完成用户登录，并添加该用户到 req.session.authUser
 app.post('/api/login', function (req, res) {
   if (req.body.username === 'demo' && req.body.password === 'demo') {
     req.session.authUser = { username: 'demo' }
@@ -48,16 +49,16 @@ app.post('/api/login', function (req, res) {
   res.status(401).json({ error: 'Bad credentials' })
 })
 
-// POST /api/logout to log out the user and remove it from the req.session
+// 发起 POST /api/logout 请求注销当前用户，并从 req.session 中移除
 app.post('/api/logout', function (req, res) {
   delete req.session.authUser
   res.json({ ok: true })
 })
 
-// We instantiate Nuxt.js with the options
+// 我们用这些选项初始化 Nuxt.js：
 const isProd = process.env.NODE_ENV === 'production'
 const nuxt = new Nuxt({ dev: !isProd })
-// No build in production
+// 生产模式不需要 build
 const promise = (isProd ? Promise.resolve() : nuxt.build())
 promise.then(() => {
   app.use(nuxt.render)
@@ -70,7 +71,8 @@ promise.then(() => {
 })
 ```
 
-And we update our `package.json` scripts:
+然后更新我们的 `package.json` 脚本：
+
 ```json
 // ...
 "scripts": {
@@ -81,11 +83,11 @@ And we update our `package.json` scripts:
 // ...
 ```
 
-## Using the store
+## 使用数据流(store)
 
-We need a global state to let our application if the user is connected **across the pages**.
+我们的应用需要一个全局的状态树，让**每个页面**都知道用户是否已登录。
 
-To let Nuxt.js use Vuex, we create a `store/index.js` file:
+为了让 Nuxt.js 使用 Vuex，我们创建一个 `store/index.js` 文件：
 
 ```js
 import Vue from 'vue'
@@ -93,7 +95,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-// Polyfill for window.fetch()
+// window.fetch() 的 Polyfill
 require('whatwg-fetch')
 
 const store = new Vuex.Store({
@@ -117,16 +119,17 @@ const store = new Vuex.Store({
 export default store
 ```
 
-1. We import `Vue` and `Vuex` (included in Nuxt.js) and we tell Vue to use Vuex to let us use `$store` in our components
-2. We `require('whatwg-fetch')` to polyfill the `fetch()` method across all browsers (see [fetch repo](https://github.com/github/fetch))
-3. We create our `SET_USER` mutation which will set the `state.authUser` to the conntected user
-4. We export our store instance to Nuxt.js can inject it to our main application
+1. 为了让 Vue 使用 Vuex，我们引入 `Vue` 和 `Vuex`（Nuxt.js 已包含），这样组件内就多了个 `$store` 属性了
+2. 为了让 `fetch()` 函数在所有浏览器可用，我们引入 `require('whatwg-fetch')`（见 [fetch 代码库](https://github.com/github/fetch))
+3. 我们新建一个 `SET_USER` mutation，它会把当前已登录的用户对象注入到 `state.authUser` 中
+4. 我们导出状态树 (store) 实例，让 Nuxt.js 可以把它注入到我们的应用中
 
 ### nuxtServerInit() action
 
-Nuxt.js will call a specific action called `nuxtServerInit` with the context in argument, so when the app will be loaded, the store will be already filled with some data we can get from the server.
+Nuxt.js 会以上下文对象作为参数，调用一个特别的 action，叫做 `nuxtServerInit`。所以当应用完毕时，一些我们从服务器获取到的数据就会被填充到这个状态树 (store) 上。
 
-In our `store/index.js`, we can add the `nuxtServerInit` action:
+在 `store/index.js` 文件中，我们添加这个 `nuxtServerInit` action：
+
 ```js
 nuxtServerInit ({ commit }, { req }) {
   if (req.session && req.session.authUser) {
@@ -137,11 +140,12 @@ nuxtServerInit ({ commit }, { req }) {
 
 ### login() action
 
-We add a `login` action which will be called from our pages component to log in the user:
+我们添加一个登录 `login` action，它会在用户登录的时候被页面组件调用：
+
 ```js
 login ({ commit }, { username, password }) {
   return fetch('/api/login', {
-    // Send the client cookies to the server
+    // 发送客户端 cookies 到服务端
     credentials: 'same-origin',
     method: 'POST',
     headers: {
@@ -170,7 +174,7 @@ login ({ commit }, { username, password }) {
 ```js
 logout ({ commit }) {
   return fetch('/api/logout', {
-    // Send the client cookies to the server
+    // 发送客户端 cookies 到服务端
     credentials: 'same-origin',
     method: 'POST'
   })
@@ -180,24 +184,24 @@ logout ({ commit }) {
 }
 ```
 
-## Pages components
+## 页面 (pages) 组件
 
-Then we can use `$store.state.authUser` in our pages components to check if the user is connected in our application or not.
+然后我们在页面组件内使用 `$store.state.authUser` 变量，来检查用户是否已登录。
 
-### Redirect user if not connected
+### 如果没登录则跳转
 
-Let's add a `/secret` route where only the connected user can see its content:
+我们来试着添加一个只有登录用户可见的 `/secret` 路由：
 ```html
 <template>
   <div>
-    <h1>Super secret page</h1>
-    <router-link to="/">Back to the home page</router-link>
+    <h1>超级隐私的页面</h1>
+    <router-link to="/">返回主页</router-link>
   </div>
 </template>
 
 <script>
 export default {
-  // we use fetch() because we do not need to set data to this component
+  // 这里只用 fetch() 方法，因为我们不需要在这个组件中设置 data
   fetch ({ store, redirect }) {
     if (!store.state.authUser) {
       return redirect('/')
@@ -207,4 +211,4 @@ export default {
 </script>
 ```
 
-We can see in the `fetch` method that we call `redirect('/')` when our user is not connected.
+在 `fetch` 方法中可以看到，如果用户没登录，我们会直接调 `redirect('/')` 跳转页面回首页。

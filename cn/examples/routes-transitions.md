@@ -1,21 +1,22 @@
 ---
-title: Routes transitions
-description: Routes transitions example with Nuxt.js
+title: 路由过渡动效
+description: Nuxt.js 的路由过渡动效示例
 github: routes-transitions
 youtube: https://www.youtube.com/embed/RIXOzJWFfc8
 ---
 
-## Documentation
+## 文档
 
-> Nuxt.js uses the  [`<transition>`](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to allow you to create amazing transitions between your routes.
+> Nuxt.js 用  [`<transition>`](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) 组件，让你能创建一些酷炫的路由过渡动效。
 
-### Usage
+### 使用
 
-The default transition name Nuxt.js uses is `page`.
+Nuxt.js 默认使用的过渡名称 (transition name) 就是 `page`。
 
-To add a fade transition to every page of your application, we need a CSS file that is shared across all our routes, so we start by creating a file in the `assets/` folder.
+如果想让每一个页面的切换都有淡出 (fade) 效果，我们需要创建一个所有路由共用的 CSS 文件。所以我们可以在 `assets/` 目录下创建这个文件：
 
 `assets/main.css`:
+
 ```css
 .page-enter-active, .page-leave-active {
   transition: opacity .5s
@@ -25,7 +26,8 @@ To add a fade transition to every page of your application, we need a CSS file t
 }
 ```
 
-We add it in our `nuxt.config.js` file:
+然后添加到 `nuxt.config.js` 文件中：
+
 ```js
 module.exports = {
   css: [
@@ -34,16 +36,16 @@ module.exports = {
 }
 ```
 
-And voilà! A nice fade animation will be shown between every routes.
+大功告成！现在每个路由切换，都会有一个漂亮的淡出 (fade) 动画了。
 
-### The `transition` key
+### `transition` 字段
 
-You can update the defaults transition settings by adding the `transition` key in you `nuxt.config.js` file.
+你可以在 `nuxt.config.js` 文件中添加 `transition` 字段，来修改默认的过渡设定。
 
 ```js
 module.exports = {
   transition: 'test'
-  // or
+  // 或
   transition: {
     name: 'test',
     mode: 'out-in'
@@ -51,32 +53,32 @@ module.exports = {
 }
 ```
 
-Nuxt.js will use these settings to set the component as follows:
+Nuxt.js 会这样使用上面配的设定：
 ```html
 <transition name="test" mode="out-in">
 ```
 
-To learn more about the Vue.js `<transition>` component: http://vuejs.org/v2/guide/transitions.html
+想了解更多关于 `<transition>` 组件的内容请看：http://vuejs.org/v2/guide/transitions.html
 
-The following properties that the `transition` key can have:
+`transition` 允许配置的字段介绍：
 
-| key  | Default | definition |
+| 属性字段 | 默认值 | 定义 |
 |------|------------|-----------|
-| `name` | `page` | The transition name applied on all the routes transitions. |
-| `mode` | `out-in` | The transition mode applied on all routes, see [Vue.js documentation](http://vuejs.org/v2/guide/transitions.html#Transition-Modes). |
+| `name` | `page` | 所有路由过渡都会用到的过渡名称 |
+| `mode` | `out-in` | 所有路由都用到的过渡模式，见 [Vue.js 使用文档](http://vuejs.org/v2/guide/transitions.html#Transition-Modes)。 |
 
-*Note: if the `transition` key is set as a string, it will be used as the `transition.name`.*
+*注意：如果 `transition` 字段是字符串的话，它就等同于 `transition.name`。*
 
-### Custom transition on a specific route
+### 给某个特定路由自定义过渡特效
 
-To define a custom transition for a specific route, simply add the `transition` key to the page component:
+如果想给某个路由自定义过渡特效的话，只要在该页面组件中配置 `transition` 字段即可：
 
 `pages/about.vue`:
 ```html
 <template>
   <div class="container">
-    <h1>About page</h1>
-    <router-link to="/">Home page</router-link>
+    <h1>关于页</h1>
+    <router-link to="/">首页</router-link>
   </div>
 </template>
 
@@ -87,7 +89,8 @@ export default {
 </script>
 ```
 
-And then we add the CSS animation for this custom transition:
+然后我们给这个自定义过渡加上 CSS 动画：
+
 ```css
 /* assets/main.css */
 .bounce-enter-active {
@@ -108,4 +111,4 @@ And then we add the CSS animation for this custom transition:
 }
 ```
 
-*Note: you can also the set `transition` key as an object in page components*
+*注意：在页面组件中，你也同样给 `transition` 字段传对象*

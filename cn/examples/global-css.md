@@ -1,42 +1,42 @@
 ---
-title: Global CSS
-description: Global CSS example with Nuxt.js
+title: 全局 CSS
+description: Nuxt.js 的全局 CSS 示例
 github: global-css
 ---
 
-## Documentation
+## 文档
 
-> Nuxt.js let you define the CSS files/modules/libraries you want to set as globals (included in every pages).
+> Nuxt.js 让你可以定义全局 CSS 文件、模块、库（每个页面都会被引入）。
 
-### Usage
+### 使用
 
-In `nuxt.config.js` file, add the CSS resources:
+在 `nuxt.config.js` 中添加 CSS 资源：
 
 ```js
 const { resolve } = require('path')
 
 module.exports = {
   css: [
-    // Load a node.js module
+    // 加载一个 node.js 模块
     'hover.css/css/hover-min.css',
-    // node.js module but we specify the lang
+    // 同样加载一个 node.js 模块，不过我们定义所需的预处理器
     { src: 'bulma', lang: 'sass' },
-    // Css file in the project
-    // It is important to give an absolute path
+    // 项目中的 CSS 文件
+    // 最好是能提供一个绝对路径
     resolve(__dirname, 'css/main.css')
   ]
 }
 ```
 
-### Production
+### 生产环境
 
-In production, they will be minified and extracted in a file named `styles.css` and added in the `<head>` of the page.
+在生产环境中，所有的 CSS 都会被压缩和提取到一个叫 `styles.css` 的文件中，这个文件会在页面的 `<head>` 标签中引用。
 
-To launch the demo in production mode so you can see the `<head>` populated with the `<link>` tag:
+如果以生产模式启动这个 demo 的话，你就会看到 `<head>` 标签中多了一个 `<link>` 标签：
 
 ```bash
 npm run build
 npm start
 ```
 
-Go to [http://localhost:3000](http://localhost:3000) and check the source code.
+打开 [http://localhost:3000](http://localhost:3000) 然后查看源代码即可。

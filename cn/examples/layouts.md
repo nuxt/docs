@@ -1,9 +1,9 @@
 ---
-title: Layouts
-description: Layouts example with Nuxt.js
+title: 布局
+description: Nuxt.js 的布局示例
 github: custom-layouts
 livedemo: https://nuxt-custom-layouts.gomix.me/
 liveedit: https://gomix.com/#!/project/nuxt-custom-layouts
 ---
 
-[Layouts documentation](/guide/layouts)
+[布局的相关文档](/guide/layouts)

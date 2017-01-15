@@ -1,12 +1,12 @@
 ---
 title: Hello World
-description: Hello World example with Nuxt.js
+description: Nuxt.js 的 Hello World 示例
 github: hello-world
 youtube: https://www.youtube.com/embed/kmf-p-pTi40
 livedemo: https://hello-world.nuxtjs.org
 liveedit: https://gomix.com/#!/project/nuxt-hello-world
 ---
 
-## Documentation
+## 文档
 
-> Documentation is coming soon
+> 文档正在编写中，敬请期待

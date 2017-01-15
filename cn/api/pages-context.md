@@ -13,7 +13,7 @@ description: 上下文是一个很有用的对象，包含很多用于抽象化�
 | `isServer` | Boolean | 客户端 & 服务端 | 是否来自服务端渲染 |
 | `isDev` | Boolean | 客户端 & 服务端 | 是否是开发(dev) 模式，在生产环境的数据缓存中用到 |
 | `route` | [vue-router 路由](https://router.vuejs.org/en/api/route-object.html) | 客户端 & 服务端 | `vue-router` 路由实例 [见文档](https://router.vuejs.org/en/api/route-object.html) |
-| `store` | [vuex store](http://vuex.vuejs.org/en/api.html#vuexstore-instance-properties) | 客户端 & 服务端 | `Vuex.Store` 实例。**只有 `nuxt.config.js` 中设置 `store: true` 才可用 ** |
+| `store` | [vuex 数据流](http://vuex.vuejs.org/en/api.html#vuexstore-instance-properties) | 客户端 & 服务端 | `Vuex.Store` 实例。**只有 `nuxt.config.js` 中设置 `store: true` 才可用 ** |
 | `env` | Object | 客户端 & 服务端 | `nuxt.config.js` 中配置的环境变量, 见 [环境变量 api](/api/configuration-env)  |
 | `params` | Object | 客户端 & 服务端 | route.params 的别名 |
 | `query` | Object | 客户端 & 服务端 | route.query 的别名 |

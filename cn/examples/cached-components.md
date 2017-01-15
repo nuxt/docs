@@ -1,27 +1,27 @@
 ---
-title: Cached Components
-description: Cached Components example with Nuxt.js
+title: 缓存组件
+description: Nuxt.js 的组件缓存示例
 github: cached-components
 ---
 
-## Documentation
+## 文档
 
-> Nuxt.js use [lru-cache](https://github.com/isaacs/node-lru-cache) to allows cached components for better render performances
+> Nuxt.js 用 [lru-cache](https://github.com/isaacs/node-lru-cache) 来缓存组件，以获取更好的渲染性能
 
 ### Usage
 
-Use the `cache` key in your `nuxt.config.js`:
+在 `nuxt.config.js` 中 配置 `cache` 字段：
 ```js
 module.exports = {
   cache: true
 }
 ```
 
-`cache` can be a Boolean of an Object, if an object, you can use theses keys:
+`cache` 可以是布尔值或者对象。如果传对象的话，你可以用以下这些字段：
 
-| key  | Optional? | Type | Default | definition |
+| 属性字段  | 可选？ | 类型 | 默认值 | 定义 |
 |------|------------|-----|---------|------------|
-| `max` | Optional | Integer | 1000 | The maximum size of the cached components, when the 1001 is added, the first one added will be removed from the cache to let space for the new one. |
-| `maxAge` | Optional | Integer | 900000 | Maximum age in ms, default to 15 minutes. |
+| `max` | 可选 | Integer | 1000 | 组件缓存的最大数量。当第 1001 个组件被缓存时，最旧的那个就会从缓存里被移除。 |
+| `maxAge` | 可选 | Integer | 900000 | 最大缓存时间值（单位毫秒 ms），默认是 15 分钟。 |
 
-Other options: https://github.com/isaacs/node-lru-cache#options
+其它可选项：https://github.com/isaacs/node-lru-cache#options

@@ -1,16 +1,16 @@
 ---
-title: Custom Loading Component
-description: Custom Loading Component example with Nuxt.js
+title: 自定义组件加载
+description: Nuxt.js 的自定义组件加载示例
 github: custom-loading
 ---
 
-## Documentation
+## 文档
 
-> Nuxt.js uses it's own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
+> Nuxt.js 使用自带组件，以进度条的形式表示路由间的切换。你可以自由定制，自己写一个组件，或者禁用这个效果。
 
-### Disable Nuxt.js progress bar
+### 禁用 Nuxt.js 自带的进度条
 
-If you don't want to display the progress bar between the routes, just add `loading: false` in your `nuxt.config.js` file:
+如果你不想显示路由切换时出现的进度条的话，可以在 `nuxt.config.js` 中 配置 `loading: false` 参数：
 ```js
 // nuxt.config.js
 module.exports = {
@@ -18,18 +18,18 @@ module.exports = {
 }
 ```
 
-### Customize Nuxt.js progress bar
+### 定制 Nuxt.js 进度条
 
-Here are the properties you can customize for Nuxt.js progress bar.
+这些是 Nuxt.js 进度条可以配置的参数。
 
-| Key | Type | Default | Description |
+| 属性字段 | 类型 | 默认值 | 描述 |
 |-----|------|---------|-------------|
-| `color` | String | `'black'` | CSS color of the progress bar |
-| `failedColor` | String | `'red'` | CSS color of the progress bar when an error appended during rendering the route (if `data` or `fetch` sent back an error for example). |
-| `height` | String | `'2px'` | Height of the progress bar (used in the `style` property of the progress bar) |
-| `duration` | Number | `5000` | In ms, the maximum duration of the progress bar, Nuxt.js assumes that the route will be rendered before 5 seconds. |
+| `color` | String | `'black'` | 进度条的 CSS 颜色值 |
+| `failedColor` | String | `'red'` | 当路由渲染出现错误时，进度条的 CSS 颜色值 (例如 `data` 或者 `fetch` 返回了错误) |
+| `height` | String | `'2px'` | 进度条高度值 (进度条的 `style` 属性会用到) |
+| `duration` | Number | `5000` | 进度条最大持续时间（单位毫秒 ms）。Nuxt.js 预计路由渲染不会超过 5 秒钟。 |
 
-Example:
+示例：
 ```js
 // nuxt.config.js
 module.exports = {
@@ -40,21 +40,21 @@ module.exports = {
 }
 ```
 
-### Create a custom loading component
+### 创建一个自定义的加载组件
 
-You can create your own component that Nuxt.js will call instead of its default component. To do so, you need to give a path to your component in the `loading` option.
+如果不喜欢 Nuxt.js 自带的进度条的话，你也可以创建一个属于自己的加载组件。做法很简单，只需给 `loading` 字段传入你的组件文件路径即可。
 
-Your custom component will be called by Nuxt.js, so make sure your component exposes some of theses methods:
+因为 Nuxt.js 会自动调用你自定义的组件，所以请确保你的组件提供以下几个方法：
 
-| Method | Required | Description |
+| 方法 | 可选？ | 描述 |
 |--------|-------------|
-| `start()` | Required | Called when a route changes, this is here where you should show your component. |
-| `finish()` | Required | Called when a route is loaded (and data fetched), this is here where you should hide your component. |
-| `fail()` | *Optional* | Called when a route could not be loaded (failed to fetch data for example). |
-| `increase(num)` | *Optional* | Called during loading the route component, `num` is an Integer < 100. |
+| `start()` | 必填项 | 当路由改变时会被调用，此时你应该显示你的组件。 |
+| `finish()` | 必填项 | 当路由加载完毕（和数据获取完毕）时被调用，此时你应该隐藏你的组件。 |
+| `fail()` | *可选* | 当路由加载失败（例如数据获取出错）时被调用。 |
+| `increase(num)` | *可选* | 路由加载期间被调用，`num` 是 Integer，小于 100。 |
 
 
-Example:
+示例：
 ```js
 // nuxt.config.js
 module.exports = {
@@ -62,11 +62,11 @@ module.exports = {
 }
 ```
 
-And then, in `components/loading.vue`:
+然后在 `components/loading.vue` 中：
 ```html
 <template lang="html">
   <div class="loading-page" v-if="loading">
-    <p>Loading...</p>
+    <p>加载中...</p>
   </div>
 </template>
 

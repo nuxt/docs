@@ -1,20 +1,20 @@
 ---
-title: Vuex Store
-description: Vuex Store example with Nuxt.js
+title: Vuex 状态树
+description: Nuxt.js 的 Vuex 状态树示例
 github: vuex-store
 ---
 
-## Documentation
+## 文档
 
-> Using a store to manage the state is important to every big application, that's why nuxt.js implement Vuex in its core.
+> 对于每个大项目来说，使用状态树 (store) 管理状态 (state) 十分有必要。这就是为什么 nuxt.js 内核实现了 Vuex。
 
-### Activating the store
+### 使用状态树 (store)
 
-Nuxt.js will try to `require('./store/index.js')`, if exists, it will import `Vuex`, add it to the vendors and add the `store` option to the root `Vue` instance.
+Nuxt.js 会试着 `require('./store/index.js')`。如果该文件存在，它会引入 `Vuex`，加到 vendors 中去并在 `Vue` 根实例中添加 `store` 变量。
 
-### Create the store folder
+### 新建状态树 (store) 目录
 
-Let's create a file `store/index.js`:
+我们来新建 `store/index.js` 文件：
 
 ```js
 import Vue from 'vue'
@@ -36,11 +36,11 @@ const store = new Vuex.Store({
 export default store
 ```
 
-> We don't need to install `Vuex` since it's shipped with nuxt.js
+> 我们不需要安装 `Vuex` 因为 nuxt.js 已经自带了
 
-### Voilà !
+### 就是这样！
 
-We can now use `this.$store` inside our `.vue` files.
+现在我们可以在 `.vue` 文件中使用 `this.$store` 变量啦。
 
 ```html
 <template>
@@ -50,13 +50,13 @@ We can now use `this.$store` inside our `.vue` files.
 
 ### fetch (context)
 
-> Used to fill the store before rendering the page
+> 会在渲染页面前被调用，作用是填充状态树 (store) 数据
 
-The `fetch` method, *if set*, is called every time before loading the component (*only if attached to a route*). It can be called from the server-side or before navigating to the corresponding route.
+如果设置 `fetch` 函数的话，它就会在组件加载前被调用（*前提是被绑定到一个路由上*）。它可能会被服务端调用，或者在跳转到相对应的路由前被调用。
 
-The `fetch` method receives the context as the first argument, we can use it to fetch some data and fill the store. To make the fetch method asynchronous, **return a Promise**, nuxt.js will wait for the promise to be resolved before rendering the Component.
+这个 `fetch` 函数接收的第一个参数是上下文对象 (context)，我们可以用它来获取一些数据并填充状态树 (store)。为了让获取过程可以异步，你需要**返回一个 Promise**，nuxt.js 会等这个 promise 完成后再渲染组件。
 
-For example:
+示例：
 ```js
 export default {
   fetch ({ store, params }) {
@@ -68,13 +68,13 @@ export default {
 }
 ```
 
-### Context
+### 上下文
 
-To see the list of available keys in `context`, take a look at [this example](examples/async-datas).
+想了解 `context` 变量的所有属性的话，请查阅 [这个示例](examples/async-datas)。
 
 ### Action `nuxtServerInit`
 
-If we define the action `nuxtServerInit` in our store, Nuxt.js will call it with the context. It can be useful when having some data on the server we want to give directly to the client-side, for example, the authenticated user:
+如果我们在 store 文件中定义一个 `nuxtServerInit` action 的话，Nuxt.js 就会带着上下文 (context) 调用这个函数。当我们想要把服务端的一些数据传递给客户端，比如已登录的用户对象，就可以这么做：
 ```js
 // store/index.js
 actions: {
@@ -86,4 +86,4 @@ actions: {
 }
 ```
 
-The context given to `nuxtServerInit` is the same as the `data` of `fetch` method except `context.redirect()` and `context.error()` are omitted.
+`nuxtServerInit` 函数接收的上下文对象和 `fetch` 的一样，但不包括 `context.redirect()` 和 `context.error()`。

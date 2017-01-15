@@ -6,7 +6,7 @@ title: Nuxt.js 模块
 
 你可以通过 `nuxt.render` 函数，把 Nuxt.js 变成你 Node.js 服务端的中间件。
 
-Express.js 结合实例:
+Express.js 结合示例:
 ```js
 const app = require('express')()
 const Nuxt = require('nuxt')
