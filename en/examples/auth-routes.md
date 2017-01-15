@@ -14,7 +14,7 @@ liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 
 To add the sessions feature in our application, we will use `express` and `express-session`, for this, we need to use Nuxt.js programmatically.
 
-First, we install the depedencies:
+First, we install the dependencies:
 ```bash
 yarn add express express-session body-parser whatwg-fetch
 ```
@@ -83,7 +83,7 @@ And we update our `package.json` scripts:
 
 ## Using the store
 
-We need a global state to let our application if the user is connected **across the pages**.
+We need a global state to let our application know if the user is connected **across the pages**.
 
 To let Nuxt.js use Vuex, we create a `store/index.js` file:
 

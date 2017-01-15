@@ -69,7 +69,7 @@ List of all the available keys in `context`:
 
 ### Handling errors
 
-Nuxt.js add the `error(params)` method in the `context`, you can call it to display the error page. `params.statusCode` will be also used to render the proper status code form the server-side.
+Nuxt.js add the `error(params)` method in the `context`, you can call it to display the error page. `params.statusCode` will be also used to render the proper status code from the server-side.
 
 Example with a `Promise`:
 ```js
