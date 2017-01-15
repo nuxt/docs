@@ -316,8 +316,8 @@
         "to": "/eslint"
       },
       {
-        "name": "Unit Testing",
-        "to": "/unit-testing"
+        "name": "Tests",
+        "to": "/tests"
       }
     ]
   },
