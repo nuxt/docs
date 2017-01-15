@@ -21,7 +21,7 @@
   {
     "title": "Advanced",
     "links": [
-      { "name": "Async Datas", "to": "/async-datas" },
+      { "name": "Async Data", "to": "/async-data" },
       { "name": "Auth Routes", "to": "/auth-routes" },
       { "name": "Vuex Store", "to": "/vuex-store" },
       { "name": "Testing", "to": "/testing" }
