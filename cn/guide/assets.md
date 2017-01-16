@@ -1,13 +1,13 @@
 ---
 title: Assets
-description: 默认情况下Nuxt使用 vue-loader、file-loader 以及 url-loader 这三个Webpack加载器来处理文件的加载和引用.
+description: 默认情况下 Nuxt 使用 vue-loader、file-loader 以及 url-loader 这三个Webpack加载器来处理文件的加载和引用。
 ---
 
-> Nuxt默认使用file-loader 以及 url-loader 这两个Webpack加载器来处理资源文件的加载和引用.
+> Nuxt 默认使用file-loader 以及 url-loader 这两个Webpack加载器来处理资源文件的加载和引用。
 
-默认情况下, [vue-loader](http://vue-loader.vuejs.org/en/)自动使用`css-loader`和Vue模板编译器来编译处理vue文件中的样式和模板。在此编译过程中，所有的资源URL例如`<img src="...">`、 `background: url(...)` 和 CSS中的 `@import` 均会被解析成模块通过`require`引用。
+默认情况下, [vue-loader](http://vue-loader.vuejs.org/en/)自动使用 `css-loader` 和Vue模板编译器来编译处理vue文件中的样式和模板。在此编译过程中，所有的资源URL例如 `<img src="...">`、 `background: url(...)` 和 CSS中的 `@import` 均会被解析成模块通过 `require` 引用。
 
-举个栗子, 假设我们有以下文件目录结构:
+举个栗子, 假设我们有以下文件目录结构：
 
 ```bash
 -| assets/
@@ -16,28 +16,28 @@ description: 默认情况下Nuxt使用 vue-loader、file-loader 以及 url-loade
 ----| index.vue
 ```
 
-如果我们在CSS代码中使用 `url('~assets/image.png')`, 那么编译后它将被转换成 `require('~assets/image.png')`.
+如果我们在CSS代码中使用 `url('~assets/image.png')`, 那么编译后它将被转换成 `require('~assets/image.png')`。
 
-又或者如果我们在 `pages/index.vue` 中使用以下代码引用图片资源:
+又或者如果我们在 `pages/index.vue` 中使用以下代码引用图片资源：
 ```html
 <template>
   <img src="~assets/image.png">
 </template>
 ```
 
-那么编译后会被转换成:
+那么编译后会被转换成：
 
 ```js
 createElement('img', { attrs: { src: require('~assets/image.png') }})
 ```
 
-`.png` 并非JavaScript文件, 因此nuxt.js通过配置Webpack使用[file-loader](https://github.com/webpack/file-loader) 和 [url-loader](https://github.com/webpack/url-loader) 这两个加载器来处理此类引用.
+`.png` 并非JavaScript文件, 因此 Nuxt.js 通过配置Webpack使用[file-loader](https://github.com/webpack/file-loader) 和 [url-loader](https://github.com/webpack/url-loader) 这两个加载器来处理此类引用。
 
-这样做的好处有:
+这样做的好处有：
 - `file-loader` 能让你指定从什么地方拷贝资源文件以及发布后放到哪个目录去，并能让你使用版本哈希码来重命名发布后的文件来实现增量更新和更好的缓存策略。
 - `url-loader` 能根据你指定的文件大小阈值，来判断一个文件是转换成内联的base-64码（如果该文件尺寸小于该阈值）还是使用`file-loader`来降级处理。小文件base-64化能有效减少HTTP请求数。
 
-实际上, Nuxt.js 默认的加载器配置如下:
+实际上, Nuxt.js 默认的加载器配置如下：
 
 ```js
 [
@@ -60,9 +60,9 @@ createElement('img', { attrs: { src: require('~assets/image.png') }})
 ]
 ```
 
-也即文件（图片或字体）的尺寸小于1K的时候，它将会被转换成base-64 data URL来内联引用；否则它将被拷贝至指定的子目录（在`.nuxt`目录下），并被重命名（加上7位的哈希码作为版本标识）以实现更好的缓存策略。
+也即文件（图片或字体）的尺寸小于1K的时候，它将会被转换成 Base-64 data URL 来内联引用；否则它将被拷贝至指定的子目录（在 `.nuxt` 目录下），并被重命名（加上7位的哈希码作为版本标识）以实现更好的缓存策略。
 
-当用`nuxt`命令运行我们的应用时，`pages/index.vue` 中的模板代码：
+当用 `nuxt` 命令运行我们的应用时，`pages/index.vue` 中的模板代码：
 
 ```html
 <template>
@@ -70,7 +70,7 @@ createElement('img', { attrs: { src: require('~assets/image.png') }})
 </template>
 ```
 
-将被编译生成:
+将被编译生成：
 ```html
 <img src="/_nuxt/img/image.0c61159.png">
 ```

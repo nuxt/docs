@@ -1,8 +1,8 @@
 ---
 title: ESLint
-description: Nuxt.js integrates ESLint to maintains your web application code quality with ease.
+description: Nuxt.js 集成了 ESLint 来保证应用代码的规范和质量。
 ---
 
-> Nuxt.js integrates ESLint to maintains your web application code quality with ease.
+> Nuxt.js 集成了 ESLint 来保证应用代码的规范和质量。
 
-*Feature coming soon.*
+*未完待续*

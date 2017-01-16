@@ -1,60 +1,60 @@
 ---
-title: Configuration
-description: The Nuxt.js default configuration covers most of usages. However, the nuxt.config.js file lets you overwrite it.
+title: 配置
+description: Nuxt.js 默认的配置涵盖了大部分使用情形，可通过 nuxt.config.js 来覆盖默认的配置。
 ---
 
-> The Nuxt.js default configuration covers most of usages. However, the nuxt.config.js file lets you overwrite it.
+> Nuxt.js 默认的配置涵盖了大部分使用情形，可通过 nuxt.config.js 来覆盖默认的配置。
 
 ### build
 
-This option lets you add modules inside the vendor.bundle.js file generated to reduce the size of the app bundle. It's really useful when using external modules
+Nuxt.js 允许你在自动生成的 `vendor.bundle.js` 文件中添加一些模块，以减少应用 bundle 的体积。如果你的应用依赖第三方模块，这个配置项是十分实用的。
 
-[Documentation about build integration](/api/configuration-build)
+[关于 build 配置项的详细文档](/api/configuration-build)
 
 ### cache
 
-This option lets you enable cached components for better render performances.
+该配置项让你开启组件缓存策略以提升渲染性能。
 
-[Documentation about cache integration](/api/configuration-cache)
+[关于 cache 配置项的详细文档](/api/configuration-cache)
 
 ### css
 
-This option lets you define the CSS files/modules/libraries you want to set as globals (included in every pages).
+该配置项用于定义应用的全局（所有页面均需引用的）样式文件、模块或第三方库。
 
-[Documentation about css integration](/api/configuration-css)
+[关于 css 配置项的详细文档](/api/configuration-css)
 
 ### env
 
-This option lets you define environment variables available both client and server side.
+该配置项用于定义应用客户端和服务端的环境变量。
 
-[Documentation about env integration](/api/configuration-env)
+[关于 env 配置项的详细文档](/api/configuration-env)
 
 ### generate
 
-This option lets you to define each params value for every dynamic routes in your application that Nuxt.js transforms into HTML files.
+该配置项用于定义每个动态路由的参数，Nuxt.js 依据这些路由配置生成对应目录结构的静态文件。
 
-[Documentation about generate integration](/api/configuration-generate)
+[关于 generate 配置项的详细文档](/api/configuration-generate)
 
 ### head
 
-This option lets you to define all the defaults metas for your application.
+该配置项用于配置应用默认的meta标签。
 
-[Documentation about head integration](/api/configuration-head)
+[关于 head 配置项的详细文档](/api/configuration-head)
 
 ### loading
 
-This option lets you to customize the loading component load by default with Nuxt.js.
+该配置项用于个性化定制 Nuxt.js 使用的加载组件。
 
-[Documentation about loading integration](/api/configuration-loading)
+[关于 loading 配置项的详细文档](/api/configuration-loading)
 
 ### plugins
 
-This option lets you to define Javascript plugins to be ran before instantiating the root vue.js application.
+该配置项用于配置那些需要在 `根vue.js应用` 实例化之前需要运行的 Javascript 插件。
 
-[Documentation about plugins integration](/api/configuration-plugins)
+[关于 plugins 配置项的详细文档](/api/configuration-plugins)
 
 ### router
 
-This option lets you to overwrite the default Nuxt.js configuration of vue-router.
+该配置项可用于覆盖 Nuxt.js 默认的 `vue-router` 配置。
 
-[Documentation about router integration](/api/configuration-router)
+[关于 router 配置项的详细文档](/api/configuration-router)

@@ -1,45 +1,44 @@
 ---
-title: HTML Head
-description: Nuxt.js uses vue-meta to update the headers and html attributes of your applications.
+title: HTML 头部
+description: Nuxt.js 使用 vue-meta 来更新维护页面HTML头部的内容。
 ---
 
-Nuxt.js uses [vue-meta](https://github.com/declandewet/vue-meta) to update the `headers` and `html attributes` of your application.
+Nuxt.js 使用了 [`vue-meta`](https://github.com/declandewet/vue-meta) 更新应用的 `头部标签(Head)` and `html 属性`。
 
-Nuxt.js configures `vue-meta` with these options:
+Nuxt.js 使用以下参数配置 `vue-meta`:
 ```js
 {
-  keyName: 'head', // the component option name that vue-meta looks for meta info on.
-  attribute: 'n-head', // the attribute name vue-meta adds to the tags it observes
-  ssrAttribute: 'n-head-ssr', // the attribute name that lets vue-meta know that meta info has already been server-rendered
-  tagIDKeyName: 'hid' // the property name that vue-meta uses to determine whether to overwrite or append a tag
+  keyName: 'head', // 设置 meta 信息的组件对象的字段，vue-meta 会根据这 key 值获取 meta 信息
+  attribute: 'n-head', // vue-meta 在监听标签时所添加的属性名
+  ssrAttribute: 'n-head-ssr', // 让 vue-meta 获知 meta 信息已完成服务端渲染的属性名
+  tagIDKeyName: 'hid' // 让 vue-meta 用来决定是否覆盖还是追加 tag 的属性名
 }
 ```
 
-## Title
+## 页面标题
 
-To update the title of the page, just add `head.title` in your page component.
+想要更新页面的标题，在你的页面组件中增加 `head.title` 变量即可。
 
-To set the page title of `pages/index.vue`:
-
+`pages/index.vue`
 ```html
 <template>
-  <h1>Home page</h1>
+  <h1>主页 🚀</h1>
 </template>
 
 <script>
 export default {
   head: {
-    title: 'Home page'
+    title: '主页 🚀'
   }
 }
 </script>
 ```
 
-## Meta Tags
+## meta 标签
 
-To know the list of options you can give to `head`, take a look at [vue-meta documentation](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
+想了解 `head` 变量的所有可选项的话，请查阅 [`vue-meta` 使用文档](https://github.com/declandewet/vue-meta#recognized-metainfo-properties)。
 
-Example of a custom viewport with a custom Google font:
+一个使用自定义 `viewport` 和 `谷歌字体` 的配置示例：
 ```js
 head: {
   meta: [
@@ -52,18 +51,20 @@ head: {
 }
 ```
 
-## Using Page Data
+## 绑定数据
 
-You might want to use the component data to display different headers, like a post title for example. Just use `head` as a function and you can use `this` inside to access your component data.
+如果你希望某些头部标签能显示组件的页面组件数据 `data` 的值，比如某一篇文章的标题。你只需给 `head` 字段传一个返回对象的函数，然后在函数里使用 `this` 变量访问你的数据。
 
-Example of displaying the post title:
+显示文章标题的示例：
 ```html
 <script>
 export default {
-  async data ({ params }) {
-    // fetch the post from the API
-    let { data } = await axios.get(`https://my-api/posts/${params.id}`)
-    return { title: data.title }
+  data ({ params }) {
+    // 从 API 接口获取文章数据
+    return axios.get(`https://my-api/posts/${params.id}`)
+    .then((res) => {
+      return { title: res.data.title }
+    })
   },
   head () {
     return {
@@ -74,10 +75,9 @@ export default {
 </script>
 ```
 
-## Defaults Meta
+## 默认 meta 标签
 
-Nuxt.js let you define all default meta for your application inside `nuxt.config.js`, use the same `head` property:
-
+Nuxt.js 允许你在 `nuxt.config.js` 里定义应用所需的所有默认 meta 标签，在 `head` 字段里配置就可以了：
 ```js
 module.exports = {
   head: {
@@ -91,4 +91,4 @@ module.exports = {
 }
 ```
 
-<p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+<p class="Alert">注意：为了避免meta标签的重复定义发生不必要的覆盖现象，建议利用 `hid` 键为meta标签配一个唯一的标识编号。请阅读[关于 `vue-meta` 的更多信息](https://github.com/declandewet/vue-meta#lists-of-tags)。</p>

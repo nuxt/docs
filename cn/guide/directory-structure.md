@@ -1,83 +1,85 @@
 ---
-title: Directory Structure
-description: The default Nuxt.js application structure is intended to provide a great starting point for both large and small applications.
+title: 目录结构
+description: Nuxt.js 的应用目录架构提供了良好的代码分层结构，适用于开发或大或小的应用。
 ---
 
-> The default Nuxt.js application structure is intended to provide a great starting point for both small and large applications. Of course, you are free to organize your application however you like.
+> Nuxt.js 的应用目录架构提供了良好的代码分层结构，适用于开发或大或小的应用。 当然，你也可以根据自己的偏好组织应用代码。
 
-## Directories
+## 目录
 
-### The Assets Directory
+### 资源目录
 
-The `assets` directory contains your un-compiled assets such as LESS, SASS, or JavaScript.
+资源目录 `assets` 用于组织未编译的静态资源如 `LESS`、`SASS` 或 `JavaScript`。
 
-[More documentation about Assets integration](/guide/assets)
+[关于 assets 目录的更多信息](/guide/assets)
 
-### The Components Directory
+### 组件目录
 
-The `components` directory contains your Vue.js Components. Nuxt.js doesn't supercharge the data method on these components.
+组件目录 `components` 用于组织应用的 Vue.js 组件。Nuxt.js 不会扩展增强该目录下 Vue.js 组件的 `data` 方法。
 
-### The Layouts Directory
+### 布局目录
 
-The `layouts` directory contains your Application Layouts.
+布局目录 `layouts` 用于组织应用的布局组件。
 
-_This directory can not be renamed._
+_该目录名为Nuxt.js保留的，不可更改。_
 
-[More documentation about Layouts integration](/guide/layouts)
+[关于布局的更多信息](/guide/layouts)
 
-### The Middleware Directory
+### 中间件目录
 
-_Coming soon_
+_未完待续_
 
-### The Pages Directory
+### 页面目录
 
-The `pages` directory contains your Application Views and Routes. The framework reads all the `.vue` files inside this directory and create the router of your application.
+页面目录 `pages` 用于组织应用的路由及视图。Nuxt.js 框架读取该目录下所有的 `.vue` 文件并自动生成对应的路由配置。
 
-_This directory can not be renamed._
+_该目录名为Nuxt.js保留的，不可更改。_
 
-[More documentation about Pages integration](/guide/pages)
+[关于页面的更多信息](/guide/pages)
 
-### The Plugins Directory
+### 插件目录
 
-The `plugins` directory contains your Javascript plugins that you want to run before instantiating the root vue.js application.
+插件目录 `plugins` 用于组织那些需要在 `根vue.js应用` 实例化之前需要运行的 Javascript 插件。
 
-[More documentation about Plugins integration](/guide/plugins)
+[关于插件的更多信息](/guide/plugins)
 
-### The Static Directory
+### 静态文件目录
 
-The `static` directory contains your static files. Each files inside this directory is mapped to /.
+静态文件目录 `static` 用于存放应用的静态文件，此类文件不会被 Nuxt.js 调用webpack进行构建编译处理。
+服务器启动的时候，该目录下的文件会映射至应用的根路径 `/` 下。
 
-**Example:** /static/robots.txt is mapped as /robots.txt
+**举个栗子:** /static/robots.txt 映射至 /robots.txt
 
-_This directory can not be renamed._
+_该目录名为Nuxt.js保留的，不可更改。_
 
-[More documentation about Static integration](/guide/static)
+[关于静态文件的更多信息](/guide/static)
 
-### The Store Directory
+### Store 目录
 
-The `store` directory contains your [Vuex Store](http://vuex.vuejs.org) files. Vuex Store option is implemented in the Nuxt.js framework. Creating a `index.js` file in this directory activate the option in the framework automatically.
+`store` 目录用于组织应用的 [Vuex Store](http://vuex.vuejs.org) 文件。
+Nuxt.js 框架集成了 [Vuex Store](http://vuex.vuejs.org) 的相关功能配置，在 `store` 目录下创建一个 `index.js` 文件可激活这些配置。
 
-_This directory can not be renamed._
+_该目录名为Nuxt.js保留的，不可更改。_
 
-[More documentation about Store integration](/guide/vuex-store)
+[关于 store 的更多信息](/guide/vuex-store)
 
-### The nuxt.config.js File
+### nuxt.config.js 文件
 
-The `nuxt.config.js` file contains your Nuxt.js custom configuration.
+`nuxt.config.js` 文件用于组织Nuxt.js 应用的个性化配置，以便覆盖默认配置。
 
-_This file can not be renamed._
+_该文件名为Nuxt.js保留的，不可更改。_
 
-[More documentation about nuxt.config.js integration](/guide/configuration)
+[关于 nuxt.config.js 的更多信息](/guide/configuration)
 
-### The package.json File
+### package.json 文件
 
-The `package.json` file contains your Application dependencies and scripts.
+`package.json` 文件用于描述应用的依赖关系和对外暴露的脚本接口。
 
-_This file can not be renamed._
+_该文件名为Nuxt.js保留的，不可更改。_
 
-## Aliases
+## 别名
 
-| Alias | Directory |
+| 别名 | 目录 |
 |-----|------|
 | ~ | / |
 | ~assets | /assets |

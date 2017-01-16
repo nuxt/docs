@@ -1,19 +1,21 @@
 ---
-title: Contribution Guide
-description: Any contribution to Nuxt.js is more than welcome!
+title: 开源贡献指引
+description: 欢迎为 Nuxt.js 做出开源贡献！
 ---
 
-> Any contribution to Nuxt.js is more than welcome!
+> 欢迎为 Nuxt.js 做出开源贡献！
 
-## Reporting Issues
+## 提交问题
 
-A great way to contribute to the project is to send a detailed report when you encounter an issue. We always appreciate a well-written bug report, and will thank you for it! Before reporting an issue, please read carefully the documentation and search if any issue for your problem doesn't already exist: https://github.com/nuxt/nuxt.js/issues
+开源贡献的其中一种方式是为项目提交问题的详细报告，以方便我们不断地迭代优化项目。
+我们欢迎并感谢大家提交有良好书写习惯且能够清晰描述问题的报告！遇到问题的时候，麻烦先详细阅读 Nuxt.js 的文档，并在 https://github.com/nuxt/nuxt.js/issues 上查找是否已有相同或类似的问题。
 
 ## Pull Requests
 
-We'd love to see your pull requests, even if it's just to fix a typo. Any significant improvement should be documented as [a GitHub issue](https://github.com/nuxt/nuxt.js/issues) before anybody starts working on it.
+欢迎大家提 PR（ `源码拉取请求` ），即便是修复一个拼写错误。
+任何重要的问题修复或特性开发，在开始编码之前请先提 [Github issue](https://github.com/nuxt/nuxt.js/issues)，以便大家知悉，避免重复的功能开发或问题修复。
 
-### Convention
+### 惯例
 
-- For a fix, the branch name should be `fix-XXX` where XXX is the issue number or the name of what your fix does
-- For a feature, the branch name should be `feature-XXX` where XXX is the issue number associated to this feature request
+- 问题修复，分支命名为 `fix-XXX`，其中的 `XXX` 对应问题在 [Github issue](https://github.com/nuxt/nuxt.js/issues) 中的编号或名称。
+- 特性开发，分支命名为 `feature-XXX`，其中的 `XXX` 对应特性在 [Github issue](https://github.com/nuxt/nuxt.js/issues) 中的编号或名称。
