@@ -16,16 +16,16 @@
       { "name": "CSS", "to": "/configuration-css" },
       { "name": "环境变量", "to": "/configuration-env" },
       { "name": "Generate", "to": "/configuration-generate" },
-      { "name": "Head", "to": "/configuration-head" },
-      { "name": "Loading", "to": "/configuration-loading" },
-      { "name": "Plugins", "to": "/configuration-plugins" },
-      { "name": "Router", "to": "/configuration-router" }
+      { "name": "HTML头", "to": "/configuration-head" },
+      { "name": "加载组件", "to": "/configuration-loading" },
+      { "name": "插件", "to": "/configuration-plugins" },
+      { "name": "路由", "to": "/configuration-router" }
     ]
   },
   {
     "title": "页面",
     "links": [
-      { "name": "上下文", "to": "/pages-context" }
+      { "name": "上下文对象", "to": "/pages-context" }
     ]
   }
 ]

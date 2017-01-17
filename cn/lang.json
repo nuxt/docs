@@ -4,6 +4,7 @@
     "api": "API",
     "blog": "博客",
     "chat": "聊天",
+    "documentation": "文档",
     "download": "下载",
     "examples": "示例",
     "ecosystem": "更多",
@@ -17,6 +18,10 @@
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "工作机会"
+  },
+  "text": {
+    "search": "搜索",
+    "version": "版本"
   },
   "homepage": {
     "title": "Vue.js 通用应用框架",

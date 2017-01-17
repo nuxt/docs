@@ -4,6 +4,7 @@
     "api": "API",
     "blog": "Blog",
     "chat": "Chat",
+    "documentation": "Documentation",
     "download": "Download",
     "examples": "Examples",
     "ecosystem": "Ecosystem",
@@ -17,6 +18,10 @@
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Vue Jobs"
+  },
+  "text": {
+    "search": "Search",
+    "version": "Version"
   },
   "homepage": {
     "title": "Universal Vue.js Applications",

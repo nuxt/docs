@@ -35,7 +35,7 @@ module.exports = {
 
 ## Свойство `transition`
 
-Вы можете изменить стандартные настройки перезодов, добавив свойство `transition` в файл `nuxt.config.js`:
+Вы можете изменить стандартные настройки переходов, добавив свойство `transition` в файл `nuxt.config.js`:
 
 ```js
 module.exports = {

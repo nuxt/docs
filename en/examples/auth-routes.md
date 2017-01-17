@@ -2,7 +2,7 @@
 title: Auth Routes
 description: Authenticated routes example with Nuxt.js
 github: auth-routes
-livedemo: https://auth-routes.nuxtjs.org
+livedemo: https://nuxt-auth-routes.gomix.me
 liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 ---
 

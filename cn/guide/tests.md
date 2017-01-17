@@ -1,11 +1,11 @@
 ---
-title: 单元测试
-description: 单元测试是 Web 应用开发过程中不可获取的工作。Nuxt.js 尽量帮助你简化这部分工作。
+title: 测试
+description: 测试是 Web 应用开发过程中不可获取的工作。Nuxt.js 尽量帮助你简化这部分工作。
 ---
 
-> 单元测试是 Web 应用开发过程中不可获取的工作。Nuxt.js 尽量帮助你简化这部分工作。
+> 测试是 Web 应用开发过程中不可获取的工作。Nuxt.js 尽量帮助你简化这部分工作。
 
-## 应用的单元测试
+## End-to-End 测试
 
 [`ava`](https://github.com/avajs/ava) 是一个很强大的 JavaScript 测试框架，结合 [`jsdom`](https://github.com/tmpvar/jsdom)，我们就可以轻松地给 `nuxt` 应用进行端对端测试。
 

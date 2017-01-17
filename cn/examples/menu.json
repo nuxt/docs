@@ -21,7 +21,7 @@
   {
     "title": "高级",
     "links": [
-      { "name": "异步数据", "to": "/async-datas" },
+      { "name": "异步数据", "to": "/async-data" },
       { "name": "路由鉴权", "to": "/auth-routes" },
       { "name": "Vuex 状态树", "to": "/vuex-store" },
       { "name": "测试", "to": "/testing" }

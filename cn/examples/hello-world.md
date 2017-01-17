@@ -5,8 +5,5 @@ github: hello-world
 youtube: https://www.youtube.com/embed/kmf-p-pTi40
 livedemo: https://hello-world.nuxtjs.org
 liveedit: https://gomix.com/#!/project/nuxt-hello-world
+documentation: /guide/installation#starting-from-scratch
 ---
-
-## 文档
-
-> 文档正在编写中，敬请期待

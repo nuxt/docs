@@ -1,11 +1,11 @@
 ---
-title: Unit Testing
+title: Tests
 description: Testing your application is part of the web development. Nuxt.js helps you to make it as easy as possible.
 ---
 
 > Testing your application is part of the web development. Nuxt.js helps you to make it as easy as possible.
 
-## Testing your application
+## End-to-End Testing
 
 [Ava](https://github.com/avajs/ava) is a powerful JavaScript testing framework, mixed with [jsdom](https://github.com/tmpvar/jsdom), we can use them to do end-to-end testing easily.
 
