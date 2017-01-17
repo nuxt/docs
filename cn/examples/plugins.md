@@ -29,7 +29,7 @@ module.exports = {
 
 > Nuxt.js 允许你定义一些 JS 插件，它们会在 vue.js 根应用初始化之前被调用。
 
-比如我想用 [vue-notifications](https://github.com/se-panfilov/vue-notifications) 去校验用户输入数据，我就需要在程序运行前配置好这个插件。
+比如我想用 [vue-notifications](https://github.com/se-panfilov/vue-notifications) 显示应用的通知信息，我就需要在程序运行前配置好这个插件。
 
 `plugins/vue-notifications.js` 文件：
 
@@ -61,7 +61,7 @@ module.exports = {
 
 有些插件可能只是在浏览器里使用，所以你可以用 `process.BROWSER_BUILD` 变量来检查插件是从客户端还是服务端运行。
 
-Example:
+举个栗子：
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'

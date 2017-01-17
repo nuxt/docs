@@ -1,6 +1,6 @@
 ---
-title: Routes Middleware
-description: Documentation is coming soon.
+title: 路由中间件
+description: 文档正在补充完善中。
 ---
 
-> Feature & Documentation coming soon!
+> 文档正在补充完善中。

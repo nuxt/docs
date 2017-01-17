@@ -1,22 +1,20 @@
 ---
-title: Static
-description: Nuxt.js has a static directory for static files serving.
+title: 静态文件
+description: Nuxt.js 预设使用 static 的目录用于组织应用的静态文件。
 ---
 
-> Nuxt has a `static` directory for static files serving.
+> Nuxt.js 预设使用 static 的目录用于组织应用的静态文件。
 
-If you don't want to use [Webpacked Assets](/guide/assets) from the `assets` directory, you can create and use the `static` directory in your project root directory.
+如果你的静态资源文件需要 Webpack 做构建编译处理，可以放到 [Assets 目录](/guide/assets)，否则可以放到 `static` 目录中去。
 
-These files will be automatically serve by Nuxt and accessible in your project root URL.
+Nuxt 服务器启动的时候，该目录下的文件会映射至应用的根路径 `/` 下，像 `robots.txt` 或 `sitemap.xml` 这种类型的文件就很适合放到 `static` 目录中。
 
-This option is helpful for files like `robots.txt` or `sitemap.xml`.
-
-From your code you can then reference those files with `/` URLs:
+你可以在代码中使用根路径 `/` 结合资源相对路径来引用静态资源：
 
 ```html
-<!-- Static image from static directory -->
+<!-- 引用 static 目录下的图片 -->
 <img src="/my-image.png"/>
 
-<!-- Webpacked image from assets directory -->
+<!-- 引用 assets 目录下经过 webpack 构建处理后的图片 -->
 <img src="/assets/my-image-2.png"/>
 ```

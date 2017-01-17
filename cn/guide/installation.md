@@ -5,7 +5,7 @@ description: Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt` 
 
 > Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt` 添加为依赖组件即可。
 
-## 使用 Nuxt.js 的 starter 模板
+## 使用 Nuxt.js 的新手模板
 
 为了便于大家快速使用，Nuxt.js提供了一个 [starter 模板](https://github.com/nuxt/starter)。
 

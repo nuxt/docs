@@ -1,33 +1,38 @@
 ---
-title: Unit Testing
-description: Testing your application is part of the web development. Nuxt.js helps you to make it as easy as possible.
+title: 单元测试
+description: 单元测试是 Web 应用开发过程中不可获取的工作。Nuxt.js 尽量帮助你简化这部分工作。
 ---
 
-> Testing your application is part of the web development. Nuxt.js helps you to make it as easy as possible.
+> 单元测试是 Web 应用开发过程中不可获取的工作。Nuxt.js 尽量帮助你简化这部分工作。
 
-## Testing your application
+## 应用的单元测试
 
-[Ava](https://github.com/avajs/ava) is a powerful JavaScript testing framework, mixed with [jsdom](https://github.com/tmpvar/jsdom), we can use them to do end-to-end testing easily.
+[`ava`](https://github.com/avajs/ava) 是一个很强大的 JavaScript 测试框架，结合 [`jsdom`](https://github.com/tmpvar/jsdom)，我们就可以轻松地给 `nuxt` 应用进行端对端测试。
 
-First, we need to add ava and jsdom as development dependencies:
+首先，我们需要添加 `ava` 和 `jsdom` 作为项目的开发依赖：
+
 ```bash
 npm install --save-dev ava jsdom
 ```
 
-And add a test script to our `package.json`:
+然后在 `package.json` 中添加测试脚本：
+
+__package.json__
 
 ```javascript
+// ...
 "scripts": {
   "test": "ava",
 }
+// ...
 ```
 
-We are going to write our tests in the `test` folder:
+接下来我们可以在 `test` 目录下编写单元测试的逻辑代码：
 ```bash
 mkdir test
 ```
 
-Let's says we have a page in `pages/index.vue`:
+假设我们有这样一个页面 `pages/index.vue`：
 ```html
 <template>
   <h1 class="red">Hello {{ name }}!</h1>
@@ -48,42 +53,42 @@ export default {
 </style>
 ```
 
-When we launch our app with `npm run dev` and open [http://localhost:3000](http://localhost:3000), we can see our red `Hello world!` title.
+当我们利用 `npm run dev` 启动开发服务器的时候，用浏览器打开 [http://localhost:3000](http://localhost:3000)，我们能看到红色的 `Hello world` 标题。
 
-We add our test file `test/index.test.js`:
+添加一个单元测试文件 `test/index.test.js`：
 
 ```js
 import test from 'ava'
 import Nuxt from 'nuxt'
 import { resolve } from 'path'
 
-// We keep the nuxt and server instance
-// So we can close them at the end of the test
+// 我们用两个变量保留 nuxt 和 server 实例的引用
+// 这样可以在单元测试结束之后关掉它们
 let nuxt = null
 let server = null
 
-// Init Nuxt.js and create a server listening on localhost:4000
+// 初始化 Nuxt.js 并创建一个监听 localhost:4000 的服务器
 test.before('Init Nuxt.js', async t => {
   const rootDir = resolve(__dirname, '..')
   let config = {}
   try { config = require(resolve(rootDir, 'nuxt.config.js')) } catch (e) {}
-  config.rootDir = rootDir // project folder
-  config.dev = false // production build
+  config.rootDir = rootDir // 项目目录
+  config.dev = false // 生产构建模式
   nuxt = new Nuxt(config)
   await nuxt.build()
   server = new nuxt.Server(nuxt)
   server.listen(4000, 'localhost')
 })
 
-// Example of testing only generated html
-test('Route / exits and render HTML', async t => {
+// 测试生成的html
+test('路由 / 有效且能渲染 HTML', async t => {
   let context = {}
   const { html } = await nuxt.renderRoute('/', context)
   t.true(html.includes('<h1 class="red">Hello world!</h1>'))
 })
 
-// Example of testing via dom checking
-test('Route / exits and render HTML with CSS applied', async t => {
+// 测试元素的有效性
+test('路由 / 有效且渲染的HTML有特定的CSS样式', async t => {
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
   t.not(element, null)
@@ -92,16 +97,17 @@ test('Route / exits and render HTML with CSS applied', async t => {
   t.is(window.getComputedStyle(element).color, 'red')
 })
 
-// Close server and ask nuxt to stop listening to file changes
+// 关掉服务器和Nuxt实例，停止文件监听。
 test.after('Closing server and nuxt.js', t => {
   server.close()
   nuxt.close()
 })
 ```
 
-We can now launch our tests:
+运行上面的单元测试：
 ```bash
 npm test
 ```
 
-Actually, jsdom has some limitations because of it does not use any browser behind but it will cover most of our tests. If you want to use a browser to test your application, you might want to check [Nightwatch.js](http://nightwatchjs.org).
+实际上 `jsdom` 会有一定的限制性，因为它背后并没有使用任何的浏览器引擎，但是也能涵盖大部分关于 dom元素 的测试了。
+如果想使用真实的浏览器引擎来测试你的应用，推荐瞅瞅 [Nightwatch.js](http://nightwatchjs.org)。

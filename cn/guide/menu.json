@@ -1,79 +1,79 @@
 [
   {
-    "title": "Getting Started",
+    "title": "开始使用",
     "links": [
       {
-        "name": "Introduction",
+        "name": "关于 Nuxt.js",
         "to": "",
         "contents": [
           {
-            "name": "What is Nuxt.js ?",
+            "name": "Nuxt.js 是什么？",
             "to": "#what-is-nuxt-js-"
           },
           {
-            "name": "How it Works",
+            "name": "如何运作？",
             "to": "#how-it-works"
           },
           {
-            "name": "Features",
+            "name": "特 性",
             "to": "#features"
           },
           {
-            "name": "Server Rendered",
+            "name": "服务端渲染",
             "to": "#server-rendered"
           },
           {
-            "name": "Static Generated",
+            "name": "静态化",
             "to": "#static-generated"
           }
         ]
       },
       {
-        "name": "Installation",
+        "name": "安 装",
         "to": "/installation",
         "contents": [
           {
-            "name": "Using Nuxt.js starter template",
+            "name": "使用 Nuxt.js 新手模板",
             "to": "#using-nuxt-js-starter-template"
           },
           {
-            "name": "Starting from scratch",
+            "name": "从头开始新建 Nuxt 应用",
             "to": "#starting-from-scratch"
           }
         ]
       },
       {
-        "name": "Directory structure",
+        "name": "目录结构",
         "to": "/directory-structure",
         "contents": [
           {
-            "name": "Directories",
+            "name": "目 录",
             "to": "#directories"
           },
           {
-            "name": "Aliases",
+            "name": "别 名",
             "to": "#aliases"
           }
         ]
       },
       {
-        "name": "Configuration",
+        "name": "配 置",
         "to": "/configuration"
       },
       {
-        "name": "Commands",
+        "name": "命 令",
         "to": "/commands",
         "contents": [
           {
-            "name": "List of Commands",
+            "name": "命令列表",
             "to": "#list-of-commands"
           },
           {
-            "name": "Production Deployment",
+            "name": "生产部署",
             "to": "#production-deployment"
           },
           {
-            "name": "Static Hosting Deployment",
+            "name": "静态化部署",
             "to": "#static-hosting-deployment"
           }
         ]
@@ -81,147 +81,147 @@
     ]
   },
   {
-    "title": "Router",
+    "title": "路由",
     "links": [
       {
-        "name": "Basic Routes",
+        "name": "基础路由",
         "to": "/basic-routes"
       },
       {
-        "name": "Dynamic Routes",
+        "name": "动态路由",
         "to": "/dynamic-routes",
         "contents": [
           {
-            "name": "Directory Structure",
+            "name": "目录结构",
             "to": "#directory-structure"
           },
           {
-            "name": "Validate Route Params",
+            "name": "路由参数校验",
             "to": "#validate-route-params"
           }
         ]
       },
       {
-        "name": "Nested Routes",
+        "name": "内嵌子路由",
         "to": "/nested-routes",
         "contents": [
           {
-            "name": "Directory Structure",
+            "name": "目录结构",
             "to": "#directory-structure"
           },
           {
-            "name": "Dynamic Nested Routes",
+            "name": "动态内嵌子路由",
             "to": "#dynamic-nested-routes"
           }
         ]
       },
       {
-        "name": "Transitions",
+        "name": "页面过渡动效",
         "to": "/routes-transitions",
         "contents": [
           {
-            "name": "Usage",
+            "name": "使用方法",
             "to": "#usage"
           },
           {
-            "name": "The transition Key",
+            "name": "动效配置项",
             "to": "#the-transition-key"
           },
           {
-            "name": "Transition for a Specific Page",
+            "name": "为特定页面个性化动效",
             "to": "#transition-for-a-specific-page"
           },
           {
-            "name": "Dynamic Transition",
+            "name": "动态过渡动效",
             "to": "#dynamic-transition"
           }
         ]
       },
       {
-        "name": "Middleware",
+        "name": "中间件",
         "to": "/routes-middleware"
       }
     ]
   },
   {
-    "title": "Views",
+    "title": "视 图",
     "links": [
       {
-        "name": "Pages",
+        "name": "页 面",
         "to": "/pages",
         "contents": [
           {
-            "name": "Special Keys",
+            "name": "保留配置项",
             "to": "#special-keys"
           },
           {
-            "name": "A Simple Page",
+            "name": "一个简单的页面",
             "to": "#a-simple-page"
           },
           {
-            "name": "Using Pre-Processors",
+            "name": "使用预处理器",
             "to": "#using-pre-processors"
           },
           {
-            "name": "Using JSX",
+            "name": "使用 JSX",
             "to": "#using-jsx"
           }
         ]
       },
       {
-        "name": "Layouts",
+        "name": "布 局",
         "to": "/layouts",
         "contents": [
           {
-            "name": "Default Layout",
+            "name": "默认布局",
             "to": "#default-layout"
           },
           {
-            "name": "Error Page",
+            "name": "错误页面",
             "to": "#error-page"
           },
           {
-            "name": "Custom Layout",
+            "name": "个性化布局",
             "to": "#custom-layout"
           }
         ]
       },
       {
-        "name": "Custom Loading",
+        "name": "个性化加载组件",
         "to": "/custom-loading",
         "contents": [
           {
-            "name": "Disable the Progress Bar",
+            "name": "禁用加载进度条",
             "to": "#disable-the-progress-bar"
           },
           {
-            "name": "Customize the Progress Bar",
+            "name": "定制加载进度条",
             "to": "#customize-the-progress-bar"
           },
           {
-            "name": "Use a Custom Loading Component",
+            "name": "使用自定义的加载组件",
             "to": "#use-a-custom-loading-component"
           }
         ]
       },
       {
-        "name": "HTML Head",
+        "name": "HTML 头",
         "to": "/html-head",
         "contents": [
           {
-            "name": "Title",
+            "name": "页面标题",
             "to": "#title"
           },
           {
-            "name": "Meta Tags",
+            "name": "Meta标签",
             "to": "#meta-tags"
           },
           {
-            "name": "Using Page Data",
+            "name": "使用 Page 数据",
             "to": "#using-page-data"
           },
           {
-            "name": "Defaults Meta",
+            "name": "默认Meta标签",
             "to": "#defaults-meta"
           }
         ]
@@ -229,48 +229,48 @@
     ]
   },
   {
-    "title": "Data",
+    "title": "数 据",
     "links": [
       {
-        "name": "Async data",
+        "name": "异步数据",
         "to": "/async-data",
         "contents": [
           {
-            "name": "The data Method",
+            "name": "data 方法",
             "to": "#the-data-method"
           },
           {
-            "name": "The Context",
+            "name": "上下文对象",
             "to": "#the-context"
           },
           {
-            "name": "Handling Errors",
+            "name": "错误处理",
             "to": "#handling-errors"
           }
         ]
       },
       {
-        "name": "Vuex store",
+        "name": "Vuex 状态树",
         "to": "/vuex-store",
         "contents": [
           {
-            "name": "Activate the Store",
+            "name": "使用状态树",
             "to": "#activate-the-store"
           },
           {
-            "name": "Modules Files",
+            "name": "状态树模块化",
             "to": "#modules-files"
           },
           {
-            "name": "The fetch Method",
+            "name": "fetch 方法",
             "to": "#the-fetch-method"
           },
           {
-            "name": "The Context",
+            "name": "上下文对象",
             "to": "#the-context"
           },
           {
-            "name": "The nuxtServerInit Action",
+            "name": "nuxtServerInit Action",
             "to": "#the-nuxtserverinit-action"
           }
         ]
@@ -278,30 +278,30 @@
     ]
   },
   {
-    "title": "Resources",
+    "title": "资 源",
     "links": [
       {
-        "name": "Assets",
+        "name": "可构建资源",
         "to": "/assets"
       },
       {
-        "name": "Static",
+        "name": "静态资源",
         "to": "/static"
       },
       {
-        "name": "Plugins",
+        "name": "插 件",
         "to": "/plugins",
         "contents": [
           {
-            "name": "Use External Modules",
+            "name": "使用第三方模块",
             "to": "#use-external-modules"
           },
           {
-            "name": "Use Vue Plugins",
+            "name": "使用 Vue 插件",
             "to": "#use-vue-plugins"
           },
           {
-            "name": "Only for Browsers",
+            "name": "仅在客户端使用的插件",
             "to": "#only-for-browsers"
           }
         ]
@@ -309,27 +309,27 @@
     ]
   },
   {
-    "title": "Dev Tools",
+    "title": "开发辅助",
     "links": [
       {
         "name": "ESLint",
         "to": "/eslint"
       },
       {
-        "name": "Unit Testing",
+        "name": "单元测试",
         "to": "/unit-testing"
       }
     ]
   },
   {
-    "title": "Miscellaneous",
+    "title": "其他东东",
     "links": [
       {
-        "name": "Contribution Guide",
+        "name": "开源贡献指引",
         "to": "/contribution-guide"
       },
       {
-        "name": "Release Notes",
+        "name": "版本记录",
         "to": "/release-notes"
       }
     ]

@@ -124,11 +124,11 @@ export default store
 3. 我们新建一个 `SET_USER` mutation，它会把当前已登录的用户对象注入到 `state.authUser` 中
 4. 我们导出状态树 (store) 实例，让 Nuxt.js 可以把它注入到我们的应用中
 
-### nuxtServerInit() action
+### nuxtServerInit() 方法
 
-Nuxt.js 会以上下文对象作为参数，调用一个特别的 action，叫做 `nuxtServerInit`。所以当应用完毕时，一些我们从服务器获取到的数据就会被填充到这个状态树 (store) 上。
+Nuxt.js 会以上下文对象作为参数，调用一个特别的方法，叫做 `nuxtServerInit`。所以当应用完毕时，一些我们从服务器获取到的数据就会被填充到这个状态树 (store) 上。
 
-在 `store/index.js` 文件中，我们添加这个 `nuxtServerInit` action：
+在 `store/index.js` 文件中，我们添加这个 `nuxtServerInit` 方法：
 
 ```js
 nuxtServerInit ({ commit }, { req }) {
@@ -138,9 +138,9 @@ nuxtServerInit ({ commit }, { req }) {
 }
 ```
 
-### login() action
+### login() 方法
 
-我们添加一个登录 `login` action，它会在用户登录的时候被页面组件调用：
+我们添加一个登录 `login` 方法，它会在用户登录的时候被页面组件调用：
 
 ```js
 login ({ commit }, { username, password }) {
@@ -169,7 +169,7 @@ login ({ commit }, { username, password }) {
 }
 ```
 
-### logout() method
+### logout() 方法
 
 ```js
 logout ({ commit }) {

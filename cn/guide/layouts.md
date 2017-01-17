@@ -1,38 +1,38 @@
 ---
-title: Layouts
-description: Nuxt.js lets you extend the main layout or create custom layouts by adding them in the layouts directory.
+title: 布局
+description: 你可以扩展 Nuxt.js 的主布局，或者在 layouts 目录下新增个性化布局。 
 ---
 
-> Nuxt.js lets you extend the main layout or create custom layouts by adding them in the `layouts` directory.
+> 你可以扩展 Nuxt.js 的主布局，或者在 `layouts` 目录下新增个性化布局。 
 
-## Default Layout
+## 默认布局
 
-> You can extend the main layout by adding a `layouts/default.vue` file.
+> 扩展主布局只需要增加 `layouts/default.vue` 文件。
 
-*Make sure to add the `<nuxt>` component when creating a layout to display the page component.*
+*请确保在布局文件里面增加 `<nuxt/>` 组件用于显示页面非布局内容。*
 
-The default layout source code is:
+默认的布局源码为：
 ```html
 <template>
   <nuxt/>
 </template>
 ```
 
-## Error Page
+## 错误页面
 
-> You can customize the error page by adding a `layouts/error.vue` file.
+> 你可以通过编辑 `layouts/error.vue` 文件来定制化错误页面.
 
-This layout is special since you should not include `<nuxt/>` inside its template. You must see this layout as a component displayed when an error occurs (404, 500, etc).
+这个布局文件不需要包含 `<nuxt/>` 标签。你可以把这个布局文件当成是显示应用错误（404，500等）的组件。
 
-The default error page source code is [available on Github](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
+默认的错误页面源码在 [这里](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
 
-Example of a custom error page in `layouts/error.vue`:
+举一个个性化错误页面的栗子 `layouts/error.vue`:
 ```html
 <template>
   <div class="container">
-    <h1 v-if="error.statusCode === 404">Page not found</h1>
-    <h1 v-else>An error occurred</h1>
-    <nuxt-link to="/">Home page</nuxt-link>
+    <h1 v-if="error.statusCode === 404">页面不存在</h1>
+    <h1 v-else>应用发生错误异常</h1>
+    <nuxt-link to="/">首 页</nuxt-link>
   </div>
 </template>
 
@@ -43,23 +43,23 @@ export default {
 </script>
 ```
 
-## Custom Layout
+## 个性化布局
 
-> Every file (*first level*) in the `layouts` directory will create a custom layout accessible with the `layout` property in the page component.
+> `layouts` *根*目录下的所有文件都属于个性化布局文件，可以在页面组件中利用 `layout` 属性来引用。
 
-*Make sure to add the `<nuxt/>` component when creating a layout to display the page component.*
+*请确保在布局文件里面增加 `<nuxt/>` 组件用于显示页面非布局内容。*
 
-Example of `layouts/blog.vue`:
+举个栗子 `layouts/blog.vue`:
 ```html
 <template>
   <div>
-    <div>My blog navigation bar here</div>
+    <div>这里是博客导航</div>
     <nuxt/>
   </div>
 </template>
 ```
 
-And then in `pages/posts.vue`, you can tell Nuxt.js to use your custom layout:
+在 `pages/posts.vue` 里， 可以指定页面组件使用 blog 布局。
 ```html
 <script>
 export default {
@@ -68,4 +68,4 @@ export default {
 </script>
 ```
 
-Check the [demonstration video](https://www.youtube.com/watch?v=YOKnSTp7d38) to see it in action.
+看下 [示例视频](https://www.youtube.com/watch?v=YOKnSTp7d38) 立刻体验下。

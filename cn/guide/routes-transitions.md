@@ -1,28 +1,30 @@
 ---
-title: Routes Transitions
-description: Nuxt.js uses the transition component to let you create amazing transitions/animations between your routes.
+title: 路由过渡动效
+description: Nuxt.js 使用 Vue.js 的 transition 组件来实现路由切换时的过渡动效。
 youtube: https://www.youtube.com/embed/RIXOzJWFfc8
 ---
 
-> Nuxt.js uses the  [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your routes.
+> Nuxt.js 使用 Vue.js 的[&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components)组件来实现路由切换时的过渡动效。
 
-## Usage
+## 使用方法
 
-**Nuxt.js default transition name is `"page"`.**
+**Nuxt.js 默认使用的过渡名称 (transition name) 就是 `page`**。
 
-To add a fade transition to every page of your application, we need a CSS file that is shared across all our routes, so we start by creating a file in the `assets` folder.
+如果想让每一个页面的切换都有淡出 (fade) 效果，我们需要创建一个所有路由共用的 CSS 文件。所以我们可以在 `assets/` 目录下创建这个文件：
 
-Our global css in `assets/main.css`:
+`assets/main.css`:
+
 ```css
 .page-enter-active, .page-leave-active {
-  transition: opacity .5s;
+  transition: opacity .5s
 }
 .page-enter, .page-leave-active {
-  opacity: 0;
+  opacity: 0
 }
 ```
 
-We add its path in our `nuxt.config.js` file:
+然后添加到 `nuxt.config.js` 文件中：
+
 ```js
 module.exports = {
   css: [
@@ -31,16 +33,16 @@ module.exports = {
 }
 ```
 
-And voilà! A nice fade animation will be shown between every routes.
+大功告成！现在每个路由切换，都会有一个漂亮的淡出 (fade) 动画了。
 
-## The transition Key
+## `transition` 字段
 
-You can update the defaults transition settings by adding the `transition` key in you `nuxt.config.js` file.
+你可以在 `nuxt.config.js` 文件中添加 `transition` 字段，来修改默认的过渡设定。
 
 ```js
 module.exports = {
   transition: 'test'
-  // or
+  // 或
   transition: {
     name: 'test',
     mode: 'out-in'
@@ -48,31 +50,31 @@ module.exports = {
 }
 ```
 
-Nuxt.js will use these settings to set the component as follows:
+Nuxt.js 会这样使用上面配的设定：
 ```html
 <transition name="test" mode="out-in">
 ```
 
-To learn more about the Vue.js `<transition>` component: http://vuejs.org/v2/guide/transitions.html
+想了解更多关于 `<transition>` 组件的内容请看：http://vuejs.org/v2/guide/transitions.html
 
-The following properties that the `transition` key can have:
+`transition` 允许配置的字段介绍：
 
-| key  | Type | Default | definition |
+| 属性字段  | 类型 | 默认值 | 描述 |
 |------|------|---------|-----------|
-| `name` | String | `"page"` | The transition name applied on all the routes transitions. |
-| `mode` | String | `"out-in"` | The transition mode applied on all routes, see [Vue.js documentation](http://vuejs.org/v2/guide/transitions.html#Transition-Modes). |
-| `css` | Boolean | `true` | Whether to apply CSS transition classes. Defaults to true. If set to false, will only trigger JavaScript hooks registered via component events. |
-| `type` | String | `n/a` | Specify the type of transition events to wait for to determine transition end timing. Available values are "transition" and "animation". By default, it will automatically detect the type that has a longer duration. |
-| `enterClass` | String | `n/a` | The starting state of the transition class. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `enterToClass` | String | `n/a` | The ending state for the transition. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `enterActiveClass` | String | `n/a` | The class applied across the entire transition duration. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `leaveClass` | String | `n/a` | The starting state of the transition class. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `leaveToClass` | String | `n/a` | The ending state for the transition. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `leaveActiveClass` | String | `n/a` | The class applied across the entire transition duration. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
+| `name` | String | `"page"` | 所有路由过渡都会用到的过渡名称。 |
+| `mode` | String | `"out-in"` | 所有路由都用到的过渡模式，见 [Vue.js transition 使用文档](http://vuejs.org/v2/guide/transitions.html#Transition-Modes)。 |
+| `css` | Boolean | `true` | 是否给页面组件根元素添加 CSS 过渡类名。如果值为 `false`，路由过渡时将触发页面组件事件注册的 Javascript 钩子方法。|
+| `type` | String | `n/a` | 指定过滤动效事件的类型，用于判断过渡结束的时间点。值可以是 "transition" 或 "animation"。 默认情况下, Nuxt.js 会自动侦测动效事件的类型。|
+| `enterClass` | String | `n/a` | 目标路由动效开始时的类名。 详情请参考 [Vue.js transition 使用文档](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) 。|
+| `enterToClass` | String | `n/a` | 目标路由动效结束时的类名。 详情请参考 [Vue.js transition 使用文档](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) 。 |
+| `enterActiveClass` | String | `n/a` | 目标路由过渡过程中的类名。详情请参考 [Vue.js transition 使用文档](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) 。 |
+| `leaveClass` | String | `n/a` | 当前路由动效开始时的类名。 详情请参考 [Vue.js transition 使用文档](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) 。 |
+| `leaveToClass` | String | `n/a` | 当前路由动效结束时的类名。 详情请参考 [Vue.js transition 使用文档](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) 。 |
+| `leaveActiveClass` | String | `n/a` | 当前路由动效过程中的类名。详情请参考 [Vue.js transition 使用文档](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) 。|
 
-*Note: if the `transition` key is set as a string, it will be used as the `transition.name`.*
+*注意：如果 `transition` 字段是字符串的话，它就等同于 `transition.name`。*
 
-You can also define methods in the `transition`, these are for the [JavaScript hooks](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks):
+你也可以在页面组件事件里面使用 Javascript 来控制过渡动效，可以称之为 [JavaScript 钩子方法](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks)：
 
 - beforeEnter(el)
 - enter(el, done)
@@ -83,18 +85,18 @@ You can also define methods in the `transition`, these are for the [JavaScript h
 - afterLeave(el)
 - leaveCancelled(el)
 
-*Note: it’s also a good idea to explicitly add `css: false` for JavaScript-only transitions so that Vue can skip the CSS detection. This also prevents CSS rules from accidentally interfering with the transition.*
+*注意：如果使用纯 Javascript 控制路由过渡动效，建议将 `transition` 组件的 `css` 属性的值设置为 `false`。这样可以避免 Vue 做 CSS 动效相关的侦测逻辑，同时防止 CSS 影响到过渡的动效。*
 
-## Transition for a Specific Page
+## 给某个特定页面自定义过渡特效
 
-To define a custom transition for a specific route, simply add the `transition` key to the page component.
+如果想给某个页面自定义过渡特效的话，只要在该页面组件中配置 `transition` 字段即可：
 
-Set the `bounce` transition for the `pages/about.vue` page:
+`pages/about.vue`:
 ```html
 <template>
   <div class="container">
-    <h1>About page</h1>
-    <nuxt-link to="/">Home page</nuxt-link>
+    <h1>关于页</h1>
+    <router-link to="/">首页</router-link>
   </div>
 </template>
 
@@ -105,8 +107,10 @@ export default {
 </script>
 ```
 
-And then we add the CSS animation for this custom transition in `assets/main.css`:
+然后我们给这个自定义过渡加上 CSS 动画：
+
 ```css
+/* assets/main.css */
 .bounce-enter-active {
   animation: bounce-in .8s;
 }
@@ -125,13 +129,13 @@ And then we add the CSS animation for this custom transition in `assets/main.css
 }
 ```
 
-*Note: you can also the set `transition` key as an object in page components*
+*注意：在页面组件中，你也同样给 `transition` 字段传对象*
 
-## Dynamic Transition
+## 动态过渡动效
 
-To create a dynamic transition between two routes depending on the route parameters, set the `transition` key as a `function`.
+如果想根据路由的参数来动态设置两个路由的过渡动效，需要将页面的 `transition` 字段配置成函数。
 
-Example of a dynamic transition for the `pages/posts.vue` page:
+以 `pages/posts.vue` 页面举个动态过渡动效的例子：
 ```html
 <script>
 export default {
@@ -143,7 +147,7 @@ export default {
 </script>
 ```
 
-Transitions applied on navigation:
-- `/` to `/posts` => `slide-left`
-- `/posts` to `/posts?page=3` => `slide-left`
-- `/posts?page=3` to `/posts?page=2` => `slide-right`
+这时页面导航的动效如下：
+- 从 `/` 导航至 `/posts` ，动效为 `slide-left`
+- 从 `/posts` 导航至 `/posts?page=3`，动效为 `slide-left`
+- 从 `/posts?page=3` 导航至 `/posts?page=2`，动效为 `slide-right`

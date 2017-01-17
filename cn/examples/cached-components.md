@@ -8,7 +8,7 @@ github: cached-components
 
 > Nuxt.js 用 [lru-cache](https://github.com/isaacs/node-lru-cache) 来缓存组件，以获取更好的渲染性能
 
-### Usage
+### 使用方法
 
 在 `nuxt.config.js` 中 配置 `cache` 字段：
 ```js

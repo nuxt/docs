@@ -1,16 +1,17 @@
 ---
-title: Nested Routes
-description: Nuxt.js lets you create nested route by using the children routes of vue-router.
+title: 内套子路由
+description: 你可以通过 vue-router 的子路由创建 Nuxt.js 应用的内嵌子路由。
 ---
 
-> Nuxt.js lets you create nested route by using the children routes of vue-router.
+> 你可以通过 vue-router 的子路由创建 Nuxt.js 应用的内嵌子路由。
 
-## Directory Structure
+## 目录结构
 
-To define a nested route, you need to create a Vue file with the **same name as the directory** which contain your children views.
-> Don't forget to write `<nuxt-child></nuxt-child>` inside your parent Vue file.
+创建内嵌子路由，你需要添加一个 Vue 文件，同时添加一个**与该文件同名**的目录用来存放子视图。
 
-This file tree:
+> 别忘了在父级 Vue 文件内增加 `<nuxt-child></nuxt-child>`。
+
+文件结构如：
 
 ```bash
 pages/
@@ -19,7 +20,7 @@ pages/
 --| users.vue
 ```
 
-will automatically generate:
+Nuxt.js 生成对应的路由配置如下：
 
 ```js
 router: {
@@ -39,8 +40,9 @@ router: {
 }
 ```
 
-As you can see the children has the path `:id?` which makes it optional, if you want to make it required, create an `index.vue` file in the `users` directory:
+如你所见，子路由配置里的 `:id?` 表示该子路由是可选的，如何你想设置成必选的，可以在 `users` 目录下添加一个 `index.vue` 文件。
 
+文件结构变成：
 ```bash
 pages/
 --| users/
@@ -49,7 +51,7 @@ pages/
 --| users.vue
 ```
 
-Nuxt.js will generate:
+Nuxt.js 生成对应的路由配置如下：
 
 ```js
 router: {
@@ -74,11 +76,11 @@ router: {
 }
 ```
 
-## Dynamic Nested Routes
+## 动态内嵌子路由
 
-> This scenario should not often append, but it is possible with Nuxt.js: having dynamic children inside dynamic parents.
+> 这个应用场景比较少见，但是 Nuxt.js 仍然支持：在动态路由下配置动态子路由。
 
-This file tree:
+举个栗子，假设页面的文件目录结构如下：
 
 ```bash
 pages/
@@ -92,7 +94,7 @@ pages/
 --| index.vue
 ```
 
-will automatically generate:
+Nuxt.js 生成对应的路由配置为：
 
 ```js
 router: {

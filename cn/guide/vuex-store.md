@@ -1,23 +1,23 @@
 ---
-title: Vuex Store
-description: Using a store to manage the state is important for every big application, that's why nuxt.js implement Vuex in its core.
+title: Vuex 状态树
+description: 对于每个大项目来说，使用状态树 (store) 管理状态 (state) 十分有必要。这就是为什么 Nuxt.js 内核实现了 Vuex。
 ---
 
-> Using a store to manage the state is important to every big application, that's why nuxt.js implement [vuex]()https://github.com/vuejs/vuex in its core.
+> 对于每个大项目来说，使用状态树 (store) 管理状态 (state) 十分有必要。这就是为什么 Nuxt.js 内核实现了 [Vuex](https://github.com/vuejs/vuex)。
 
-## Activate the Store
+## 使用状态树
 
-Nuxt.js will look for the `store` directory, if it exists, it will:
+Nuxt.js 会尝试找到应用根目录下的 `store` 目录，如果该目录存在，它将做以下的事情：
 
-1. Import Vuex
-2. Add `vuex` module in the vendors bundle
-3. Add the `store` option to the root `Vue` instance.
+1. 引用 `vuex` 模块
+2. 将 `vuex` 模块 加到 vendors 构建配置中去
+3. 设置 `Vue` 根实例的 `store` 配置项
 
-Nuxt.js lets you have 2 styles of store, choose the one you prefer:
-- **Normal:** `store/index.js` returns a store instance
-- **Modules:** every `.js` file inside the `store` directory is transformed as a [namespaced module](http://vuex.vuejs.org/en/modules.html) (`index` being the root module)
+Nuxt.js 支持两种使用 `store` 的方式，你可以择一使用：
+- **普通方式：** `store/index.js` 返回一个 Vuex.Store 实例
+- **模块方式：** `store` 目录下的每个 `.js` 文件会被转换成为状态树[指定命名的子模块](http://vuex.vuejs.org/en/modules.html) （当然，`index` 是根模块）
 
-To activate the store with the normal style, we create the `store/index.js` file and export the store instance:
+使用普通方式的状态树，需要要添加 `store/index.js` 文件，并对外暴露一个 Vuex.Store 实例：
 
 ```js
 import Vue from 'vue'
@@ -39,9 +39,9 @@ const store = new Vuex.Store({
 export default store
 ```
 
-> We don't need to install `vuex` since it's shipped with nuxt.js
+> Nuxt.js 内置引用了 `vuex` 模块，所以不需要额外安装。
 
-We can now use `this.$store` inside our components:
+现在我们可以在组件里面通过 `this.$store` 来使用状态树：
 
 ```html
 <template>
@@ -49,11 +49,11 @@ We can now use `this.$store` inside our components:
 </template>
 ```
 
-## Modules Files
+## 状态树模块化
 
-> Nuxt.js lets you have a `store` directory with every file corresponding to a module.
+> 状态树还可以拆分成为模块，`store` 目录下的每个 `.js` 文件会被转换成为状态树[指定命名的子模块](http://vuex.vuejs.org/en/modules.html)
 
-If you want this option, export the state, mutations and actions in `store/index.js` instead of a store instance:
+使用**状态树模块化**的方式，`store/index.js` 不需要返回 Vuex.Store 实例，而应该直接将 `state`、`mutations` 和 `actions` 暴露出来：
 
 ```js
 export const state = {
@@ -67,7 +67,7 @@ export const mutations = {
 }
 ```
 
-Then, you can have a `store/todos.js` file:
+其他的模块文件也需要采用类似的方式，如 `store/todos.js` 文件：
 ```js
 export const state = {
   list: []
@@ -86,7 +86,7 @@ export const mutations = {
 }
 ```
 
-And in your `pages/todos.vue`, using the `todos` module:
+在页面组件 `pages/todos.vue`， 可以像下面这样使用 `todos` 模块：
 
 ```html
 <template>
@@ -125,17 +125,17 @@ export default {
 </style>
 ```
 
-<div class="Alert">You can also have modules by exporting a store instance, you will have to add them manually on your store.</div>
+<div class="Alert">你也可以在模块文件里返回 Vuex.Store 实例，但是这种情况下你需要手工设置应用的状态树。</div>
 
-## The fetch Method
+## fetch 方法
 
-> The fetch method is used to fill the store before rendering the page, it's like the data method except it doesn't set the component data.
+> fetch 方法会在渲染页面前被调用，作用是填充状态树 (store) 数据，与 data 方法类似，不同的是它不会设置组件的数据。
 
-The `fetch` method, *if set*, is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route.
+如果页面组件设置了 `fetch` 方法，它会在组件每次加载前被调用（在服务端或切换至目标路由之前）。
 
-The `fetch` method receives [the context](/api/pages-context) as the first argument, we can use it to fetch some data and fill the store. To make the fetch method asynchronous, **return a Promise**, nuxt.js will wait for the promise to be resolved before rendering the Component.
+`fetch` 方法的第一个参数是页面组件的[上下文对象](/api/pages-context) `context`，我们可以用 `fetch` 方法来获取数据填充应用的状态树。为了让获取过程可以异步，你需要**返回一个 Promise**，Nuxt.js 会等这个 promise 完成后再渲染组件。
 
-Example of `pages/index.vue`:
+举个栗子 `pages/index.vue`：
 ```html
 <template>
   <h1>Stars: {{ $store.state.stars }}</h1>
@@ -153,7 +153,7 @@ export default {
 </script>
 ```
 
-You can also use async/await to make your code cleaner:
+你也可以使用 `async` 或 `await` 的模式简化代码如下：
 
 ```html
 <template>
@@ -170,15 +170,15 @@ export default {
 </script>
 ```
 
-## The Context
+## 上下文对象
 
-To see the list of available keys in `context`, take a look at the [pages context api](/api/pages-context).
+想了解 `context` 变量的所有属性的话，请查阅 [页面上下文对象API](/api/pages-context)。
 
-## The nuxtServerInit Action
+## nuxtServerInit 方法
 
-If the action `nuxtServerInit` is defined in the store, nuxt.js will call it with the context (only from the server-side). It's useful when we have some data on the server we want to give directly to the client-side.
+如果在状态树中指定了 `nuxtServerInit` 方法，Nuxt.js 调用它的时候会将页面的上下文对象作为第2个参数传给它（服务端调用时才会酱紫哟）。当我们想将服务端的一些数据传到客户端时，这个方法是灰常好用的。
 
-For example, let's say we have a session store and we can access the connected user trough `req.authUser`. To give the authenticated user to our store, we update our `store/index.js` to the following:
+举个栗子，假设我们服务端的会话状态树里可以通过 `req.authUser` 来访问当前登录的用户。将该登录用户信息传给客户端的状态树，我们只需更新 `store/index.js` 如下：
 
 ```js
 actions: {
@@ -189,5 +189,4 @@ actions: {
   }
 }
 ```
-
-The context is given to `nuxtServerInit` as the 2nd argument, it is the same as the `data` or `fetch` method except that `context.redirect()` and `context.error()` are omitted.
+`nuxtServerInit` 方法接收的上下文对象和 `fetch` 的一样，但不包括 `context.redirect()` 和 `context.error()`。

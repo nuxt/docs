@@ -21,7 +21,7 @@ Nuxt.js 预设了利用Vue.js开发**服务端渲染**的应用所需要的各�
 
 既然是框架，Nuxt.js 为 `客户端/服务端` 这种典型的应用架构模式提供了许多有用的特性，例如异步数据、中间件、布局，等等。
 
-## Nuxt.js 应用是如何构建的？
+## Nuxt.js 框架是如何运作的？
 
 ![基于Vue、Webpack和Babel](https://i.imgur.com/avEUftE.png)
 
