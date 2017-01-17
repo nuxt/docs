@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Nuxt 模块",
+    "links": [
+      { "name": "用法", "to": "" },
+      { "name": "渲染", "to": "/nuxt-render" },
+      { "name": "RenderRoute", "to": "/nuxt-render-route" },
+      { "name": "RenderAndGetWindow", "to": "/nuxt-render-and-get-window" }
+    ]
+  },
+  {
+    "title": "配置",
+    "links": [
+      { "name": "构建", "to": "/configuration-build" },
+      { "name": "缓存", "to": "/configuration-cache" },
+      { "name": "CSS", "to": "/configuration-css" },
+      { "name": "环境变量", "to": "/configuration-env" },
+      { "name": "Generate", "to": "/configuration-generate" },
+      { "name": "HTML头", "to": "/configuration-head" },
+      { "name": "加载组件", "to": "/configuration-loading" },
+      { "name": "插件", "to": "/configuration-plugins" },
+      { "name": "路由", "to": "/configuration-router" }
+    ]
+  },
+  {
+    "title": "页面",
+    "links": [
+      { "name": "上下文对象", "to": "/pages-context" }
+    ]
+  }
+]
