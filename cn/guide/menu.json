@@ -8,23 +8,23 @@
         "contents": [
           {
             "name": "Nuxt.js 是什么？",
-            "to": "#what-is-nuxt-js-"
+            "to": "#nuxt-js-是什么-"
           },
           {
             "name": "如何运作？",
-            "to": "#how-it-works"
+            "to": "#nuxt-js-框架是如何运作的-"
           },
           {
             "name": "特 性",
-            "to": "#features"
+            "to": "#特性"
           },
           {
             "name": "服务端渲染",
-            "to": "#server-rendered"
+            "to": "#服务端渲染"
           },
           {
             "name": "静态化",
-            "to": "#static-generated"
+            "to": "#静态化"
           }
         ]
       },
@@ -34,11 +34,11 @@
         "contents": [
           {
             "name": "使用 Nuxt.js 新手模板",
-            "to": "#using-nuxt-js-starter-template"
+            "to": "#使用-nuxt-js-的新手模板"
           },
           {
             "name": "从头开始新建 Nuxt 应用",
-            "to": "#starting-from-scratch"
+            "to": "#从头开始新建项目"
           }
         ]
       },
@@ -48,11 +48,11 @@
         "contents": [
           {
             "name": "目 录",
-            "to": "#directories"
+            "to": "#目录"
           },
           {
             "name": "别 名",
-            "to": "#aliases"
+            "to": "#别名"
           }
         ]
       },
@@ -66,15 +66,15 @@
         "contents": [
           {
             "name": "命令列表",
-            "to": "#list-of-commands"
+            "to": "#命令列表"
           },
           {
             "name": "生产部署",
-            "to": "#production-deployment"
+            "to": "#发布部署"
           },
           {
             "name": "静态化部署",
-            "to": "#static-hosting-deployment"
+            "to": "#静态站点部署"
           }
         ]
       }
@@ -93,11 +93,11 @@
         "contents": [
           {
             "name": "目录结构",
-            "to": "#directory-structure"
+            "to": "#目录结构"
           },
           {
             "name": "路由参数校验",
-            "to": "#validate-route-params"
+            "to": "#路由参数校验"
           }
         ]
       },
@@ -107,11 +107,11 @@
         "contents": [
           {
             "name": "目录结构",
-            "to": "#directory-structure"
+            "to": "#目录结构"
           },
           {
             "name": "动态内嵌子路由",
-            "to": "#dynamic-nested-routes"
+            "to": "#动态内嵌子路由"
           }
         ]
       },
@@ -121,19 +121,19 @@
         "contents": [
           {
             "name": "使用方法",
-            "to": "#usage"
+            "to": "#使用方法"
           },
           {
             "name": "动效配置项",
-            "to": "#the-transition-key"
+            "to": "#-code-transition-code-字段"
           },
           {
             "name": "为特定页面个性化动效",
-            "to": "#transition-for-a-specific-page"
+            "to": "#给某个特定页面自定义过渡特效"
           },
           {
             "name": "动态过渡动效",
-            "to": "#dynamic-transition"
+            "to": "#动态过渡动效"
           }
         ]
       },
@@ -152,19 +152,19 @@
         "contents": [
           {
             "name": "保留配置项",
-            "to": "#special-keys"
+            "to": "#页面组件特殊的键"
           },
           {
             "name": "一个简单的页面",
-            "to": "#a-simple-page"
+            "to": "#一个简单的页面"
           },
           {
             "name": "使用预处理器",
-            "to": "#using-pre-processors"
+            "to": "#预处理器"
           },
           {
             "name": "使用 JSX",
-            "to": "#using-jsx"
+            "to": "#使用-jsx"
           }
         ]
       },
@@ -174,15 +174,15 @@
         "contents": [
           {
             "name": "默认布局",
-            "to": "#default-layout"
+            "to": "#默认布局"
           },
           {
             "name": "错误页面",
-            "to": "#error-page"
+            "to": "#错误页面"
           },
           {
             "name": "个性化布局",
-            "to": "#custom-layout"
+            "to": "#个性化布局"
           }
         ]
       },
@@ -192,15 +192,15 @@
         "contents": [
           {
             "name": "禁用加载进度条",
-            "to": "#disable-the-progress-bar"
+            "to": "#禁用加载组件"
           },
           {
             "name": "定制加载进度条",
-            "to": "#customize-the-progress-bar"
+            "to": "#定制化加载进度条"
           },
           {
             "name": "使用自定义的加载组件",
-            "to": "#use-a-custom-loading-component"
+            "to": "#自定义加载组件"
           }
         ]
       },
@@ -210,19 +210,19 @@
         "contents": [
           {
             "name": "页面标题",
-            "to": "#title"
+            "to": "#页面标题"
           },
           {
             "name": "Meta标签",
-            "to": "#meta-tags"
+            "to": "#meta-标签"
           },
           {
             "name": "使用 Page 数据",
-            "to": "#using-page-data"
+            "to": "#绑定数据"
           },
           {
             "name": "默认Meta标签",
-            "to": "#defaults-meta"
+            "to": "#默认-meta-标签"
           }
         ]
       }
@@ -237,15 +237,15 @@
         "contents": [
           {
             "name": "data 方法",
-            "to": "#the-data-method"
+            "to": "#data方法"
           },
           {
             "name": "上下文对象",
-            "to": "#the-context"
+            "to": "#上下文对象-code-context-code-"
           },
           {
             "name": "错误处理",
-            "to": "#handling-errors"
+            "to": "#错误处理"
           }
         ]
       },
@@ -255,23 +255,23 @@
         "contents": [
           {
             "name": "使用状态树",
-            "to": "#activate-the-store"
+            "to": "#使用状态树"
           },
           {
             "name": "状态树模块化",
-            "to": "#modules-files"
+            "to": "#状态树模块化"
           },
           {
             "name": "fetch 方法",
-            "to": "#the-fetch-method"
+            "to": "#fetch-方法"
           },
           {
             "name": "上下文对象",
-            "to": "#the-context"
+            "to": "#上下文对象"
           },
           {
-            "name": "nuxtServerInit Action",
-            "to": "#the-nuxtserverinit-action"
+            "name": "nuxtServerInit 方法",
+            "to": "#nuxtserverinit-方法"
           }
         ]
       }
@@ -294,15 +294,15 @@
         "contents": [
           {
             "name": "使用第三方模块",
-            "to": "#use-external-modules"
+            "to": "#使用第三方模块"
           },
           {
             "name": "使用 Vue 插件",
-            "to": "#use-vue-plugins"
+            "to": "#使用-vue-插件"
           },
           {
             "name": "仅在客户端使用的插件",
-            "to": "#only-for-browsers"
+            "to": "#只在浏览器里使用的插件"
           }
         ]
       }
