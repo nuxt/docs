@@ -39,7 +39,6 @@ module.exports = {
 
 ## 自定义加载组件
 
-You can create your own component that Nuxt.js will call instead of its default component. To do so, you need to give a path to your component in the `loading` option. Then, your component will be called directly by Nuxt.js.
 你可以新建一个加载组件替代 Nuxt.js 默认的。
 使用自己的加载组件，需要在 `loading` 配置项里指定组件的路径，Nuxt.js 会自动调用该组件。
 
