@@ -7,24 +7,20 @@ description: How to edit HOST and PORT with Nuxt.js?
 
 You can configure the PORT with 2 different ways:
 - Via a env variables
-```json
-{
-  "scripts": {
+```js
+"scripts": {
     "dev": "HOST=0.0.0.0 PORT=3333 nuxt"
-  }
 }
 ```
 - Via a nuxt config in the `package.json`:
-```json
-{
-  "config": {
+```js
+"config": {
     "nuxt": {
       "host": "0.0.0.0",
       "port": "3333"
     }
-  },
-  "scripts": {
+},
+"scripts": {
     "dev": "nuxt"
-  }
 }
 ```
