@@ -45,7 +45,6 @@ Under the hood we use [Webpack](https://github.com/webpack/webpack) with [vue-Lo
 - Bundling and minifying of your JS & CSS
 - Managing Head Elements
 - Hot reloading in Development
-- ESLint Integration
 - Pre-processor: SASS, LESS, Stylus, etc
 
 ## Server Rendered

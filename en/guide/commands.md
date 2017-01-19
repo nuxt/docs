@@ -27,7 +27,21 @@ You should put these commands in the `package.json`:
 
 Then, you can launch your commands via `npm run <command>` (example: `npm run dev`).
 
+## Development Environment
+
+To launch Nuxt in development mode with the hot reloading:
+
+```bash
+nuxt
+// OR
+npm run dev
+```
+
 ## Production Deployment
+
+Nuxt.js lets your choose between 2 modes to deploy your application: Server Rendered or Static Generated.
+
+### Server Rendered Deployment
 
 To deploy, instead of running nuxt, you probably want to build ahead of time. Therefore, building and starting are separate commands:
 
@@ -36,7 +50,7 @@ nuxt build
 nuxt start
 ```
 
-For example, to deploy with [now.sh](https://zeit.co/now) a `package.json` like follows is recommended:
+The `package.json` like follows is recommended:
 ```json
 {
   "name": "my-app",
@@ -51,20 +65,13 @@ For example, to deploy with [now.sh](https://zeit.co/now) a `package.json` like 
 }
 ```
 
-Then run `now` and enjoy!
-
 Note: we recommend putting `.nuxt` in `.npmignore` or `.gitignore`.
 
-## Static Hosting Deployment
+### Static Generated Deployment
 
-Nuxt.js gives you the possibility to host your web application on any static hosting like [surge.sh](https://surge.sh/) for example.
+Nuxt.js gives you the possibility to host your web application on any static hosting.
 
-To deploy on surge.sh, first install it on your computer:
-```bash
-npm install -g surge
-```
-
-Then, we tell nuxt.js to generate our web application:
+To generate our web application into static files:
 
 ```bash
 npm run generate
@@ -72,14 +79,6 @@ npm run generate
 
 It will create a `dist` folder with everything inside ready to be deployed on a static hosting.
 
-We can then deploy it to surge.sh:
+If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take a look at the [generate configuration](/api/configuration-generate) to tell nuxt.js how to generate these dynamic routes.
 
-```bash
-surge dist/
-```
-
-Voilà :)
-
-If you have a project with [dynamic routes](/guide/dynamic-routes), take a look at the [generate configuration](/api/configuration-generate) to tell nuxt.js how to generate these dynamic routes.
-
-<div class="Alert">When generating your web application with `nuxt generate`, [the context](/api/pages-context) given to [data()](/guide/async-data#the-data-method) and [fetch()](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.</div>
+<div class="Alert">When generating your web application with `nuxt generate`, [the context](/api) given to [data()](/guide/async-data#the-data-method) and [fetch()](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.</div>

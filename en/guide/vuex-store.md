@@ -13,11 +13,13 @@ Nuxt.js will look for the `store` directory, if it exists, it will:
 2. Add `vuex` module in the vendors bundle
 3. Add the `store` option to the root `Vue` instance.
 
-Nuxt.js lets you have 2 styles of store, choose the one you prefer:
-- **Normal:** `store/index.js` returns a store instance
+Nuxt.js lets you have 2 modes of store, choose the one you prefer:
+- **Classic:** `store/index.js` returns a store instance
 - **Modules:** every `.js` file inside the `store` directory is transformed as a [namespaced module](http://vuex.vuejs.org/en/modules.html) (`index` being the root module)
 
-To activate the store with the normal style, we create the `store/index.js` file and export the store instance:
+## Classic mode
+
+To activate the store with the classic mode, we create the `store/index.js` file and export the store instance:
 
 ```js
 import Vue from 'vue'
@@ -49,7 +51,7 @@ We can now use `this.$store` inside our components:
 </template>
 ```
 
-## Modules Files
+## Modules mode
 
 > Nuxt.js lets you have a `store` directory with every file corresponding to a module.
 
@@ -131,48 +133,7 @@ export default {
 
 > The fetch method is used to fill the store before rendering the page, it's like the data method except it doesn't set the component data.
 
-The `fetch` method, *if set*, is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route.
-
-The `fetch` method receives [the context](/api/pages-context) as the first argument, we can use it to fetch some data and fill the store. To make the fetch method asynchronous, **return a Promise**, nuxt.js will wait for the promise to be resolved before rendering the Component.
-
-Example of `pages/index.vue`:
-```html
-<template>
-  <h1>Stars: {{ $store.state.stars }}</h1>
-</template>
-
-<script>
-export default {
-  fetch ({ store, params }) {
-    return axios.get('http://my-api/stars')
-    .then((res) => {
-      store.commit('setStars', res.data)
-    })
-  }
-}
-</script>
-```
-
-You can also use async/await to make your code cleaner:
-
-```html
-<template>
-  <h1>Stars: {{ $store.state.stars }}</h1>
-</template>
-
-<script>
-export default {
-  async fetch ({ store, params }) {
-    let { data } = await axios.get('http://my-api/stars')
-    store.commit('setStars', data)
-  }
-}
-</script>
-```
-
-## The Context
-
-To see the list of available keys in `context`, take a look at the [pages context api](/api/pages-context).
+More information about the fetch method: [API Pages fetch](/api/pages-fetch)
 
 ## The nuxtServerInit Action
 

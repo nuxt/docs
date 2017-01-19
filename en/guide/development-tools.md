@@ -1,6 +1,6 @@
 ---
-title: Tests
-description: Testing your application is part of the web development. Nuxt.js helps you to make it as easy as possible.
+title: Development Tools
+description: Nuxt.js helps you to make your web development enjoyable.
 ---
 
 > Testing your application is part of the web development. Nuxt.js helps you to make it as easy as possible.
@@ -105,3 +105,7 @@ npm test
 ```
 
 Actually, jsdom has some limitations because of it does not use any browser behind but it will cover most of our tests. If you want to use a browser to test your application, you might want to check [Nightwatch.js](http://nightwatchjs.org).
+
+## ESLint
+
+> Documentation is coming soon.

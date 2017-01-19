@@ -1,9 +1,11 @@
 ---
 title: Assets
-description: Nuxt uses vue-loader, file-loader and url-loader for Webpack by default for strong assets serving.
+description: Nuxt uses vue-loader, file-loader and url-loader for Webpack by default for strong assets serving, but you can also use Static directory for static assets.
 ---
 
-> Nuxt uses Webpack file-loader and url-loader by default for strong assets serving.
+> Nuxt uses vue-loader, file-loader and url-loader for Webpack by default for strong assets serving, but you can also use Static directory for static assets.
+
+## Webpacked
 
 By default, [vue-loader](http://vue-loader.vuejs.org/en/) automatically processes your style and template files with `css-loader` and the Vue template compiler. In this compilation process, all asset URLs such as `<img src="...">`, `background: url(...)` and CSS `@import` are resolved as module dependencies.
 
@@ -76,3 +78,21 @@ Will be generated into:
 ```
 
 If you want to update these loaders or disable them, please take a look at the [loaders configuration](/api/configuration-build).
+
+## Static
+
+If you don't want to use Webpacked Assets from the `assets` directory, you can create and use the `static` directory in your project root directory.
+
+These files will be automatically serve by Nuxt and accessible in your project root URL.
+
+This option is helpful for files like `robots.txt` or `sitemap.xml`.
+
+From your code you can then reference those files with `/` URLs:
+
+```html
+<!-- Static image from static directory -->
+<img src="/my-image.png"/>
+
+<!-- Webpacked image from assets directory -->
+<img src="/assets/my-image-2.png"/>
+```
