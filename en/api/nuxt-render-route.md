@@ -1,5 +1,6 @@
 ---
-title: Nuxt.js Module
+title: "API: nuxt.renderRoute()"
+description: Documentation is coming soon.
 ---
 
 # nuxt.renderRoute()

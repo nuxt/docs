@@ -1,5 +1,6 @@
 ---
-title: Nuxt.js Module
+title: "API: nuxt.renderAndGetWindow()"
+description: Documentation is coming soon.
 ---
 
 # nuxt.renderAndGetWindow()

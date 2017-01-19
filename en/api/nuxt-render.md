@@ -1,5 +1,6 @@
 ---
-title: Nuxt.js Module
+title: "API: nuxt.render(req, res)"
+description: You can use Nuxt.js as a middleware with nuxt.render for you node.js server.
 ---
 
 # nuxt.render(req, res)

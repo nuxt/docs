@@ -1,7 +1,8 @@
 ---
-title: Configuration ROUTER
+title: "API: The router Property"
+description: Documentation is coming soon.
 ---
 
-# Router
+# The router Property
 
 > Documentation is coming soon
