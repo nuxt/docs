@@ -1,8 +1,8 @@
 ---
-title: "API: The env Property"
+title: "API: The plugins Property"
 description: Documentation is coming soon.
 ---
 
-# The env Property
+# The plugins Property
 
 > Documentation is coming soon

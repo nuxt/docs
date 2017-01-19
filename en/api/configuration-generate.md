@@ -1,7 +1,8 @@
 ---
-title: Configuration GENERATE
+title: "API: The generate Property"
+description: Documentation is coming soon.
 ---
 
-# Generate
+# The generate Property
 
 > Documentation is coming soon

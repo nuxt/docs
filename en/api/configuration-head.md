@@ -1,7 +1,23 @@
 ---
-title: Configuration HEAD
+title: "API: The head Property"
+description: Nuxt.js let you define all default meta for your application inside nuxt.config.js.
 ---
 
-# Head
+# The head Property
 
-> Documentation is coming soon
+Nuxt.js let you define all default meta for your application inside `nuxt.config.js`, use the same `head` property:
+
+```js
+module.exports = {
+  head: {
+    titleTemplate: '%s - Nuxt.js',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: 'Meta description' }
+    ]
+  }
+}
+```
+
+To know the list of options you can give to `head`, take a look at [vue-meta documentation](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
