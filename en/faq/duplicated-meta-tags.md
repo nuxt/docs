@@ -9,7 +9,7 @@ This is a "feature" of [vue-meta](https://github.com/declandewet/vue-meta), plea
 
 > To avoid any duplication when used in child component, please give a unique identifier with the hid key, please [read more](https://github.com/declandewet/vue-meta#lists-of-tags) about it.
 
-So for the meta description, you should add the unique identifier `hid` so vue-meta will not that it has to erase the default tag.
+For the meta description, you need to add the unique identifier `hid` so vue-meta will know that it has to overwrite the default tag.
 
 Your `nuxt.config.js`:
 ```js
@@ -38,3 +38,5 @@ export default {
   }
 }
 ```
+
+To learn how to use the `head` property in your pages, please see the [HTML head documentation](/guide/views/#html-head).

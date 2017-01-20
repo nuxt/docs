@@ -15,7 +15,7 @@ if (process.BROWSER_BUILD) {
 }
 ```
 
-nuxt.config.js
+Don't forget to add your library in the [vendor bundle](/api/configuration-build#build-vendor) in your `nuxt.config.js`:
 ```js
   build: {
     vendor: ['external_library']

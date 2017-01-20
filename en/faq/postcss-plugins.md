@@ -5,7 +5,7 @@ description: How to add postcss plugins?
 
 # How to add postcss plugins?
 
-In your nuxt.config.js file:
+In your `nuxt.config.js` file:
 
 ```js
 module.exports = {
