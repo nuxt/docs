@@ -8,7 +8,8 @@
       { "name": "How to add postcss plugins?", "to": "/postcss-plugins" },
       { "name": "How to extend webpack config?", "to": "/extend-webpack" },
       { "name": "How to add webpack plugins?", "to": "/webpack-plugins" },
-      { "name": "How to edit HOST and PORT?", "to": "/host-port" }
+      { "name": "How to edit HOST and PORT?", "to": "/host-port" },
+      { "name": "How to use Google Analytics?", "to": "/google-analytics" }
     ]
   },
   {
