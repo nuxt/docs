@@ -30,7 +30,20 @@
   {
     "title": "Configuration",
     "links": [
-      { "name": "build", "to": "/configuration-build" },
+      {
+        "name": "build",
+        "to": "/configuration-build",
+        "contents": [
+          { "name": "analyze", "to": "#analyze" },
+          { "name": "babel", "to": "#babel" },
+          { "name": "extend", "to": "#extend" },
+          { "name": "filenames", "to": "#filenames" },
+          { "name": "loaders", "to": "#loaders" },
+          { "name": "plugins", "to": "#plugins" },
+          { "name": "postcss", "to": "#postcss" },
+          { "name": "vendor", "to": "#vendor" }
+        ]
+      },
       { "name": "cache", "to": "/configuration-cache" },
       { "name": "css", "to": "/configuration-css" },
       { "name": "env", "to": "/configuration-env" },

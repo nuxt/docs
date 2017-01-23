@@ -7,6 +7,8 @@ description: Nuxt.js uses the transition component to let you create amazing tra
 
 > Nuxt.js uses the  [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your pages.
 
+- **Type:** `String` or `Object` or `Function`
+
 To define a custom transition for a specific route, simply add the `transition` key to the page component.
 
 ```js

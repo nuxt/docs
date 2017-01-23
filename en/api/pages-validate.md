@@ -7,6 +7,8 @@ description: Nuxt.js lets you define a validator method inside your dynamic rout
 
 > Nuxt.js lets you define a validator method inside your dynamic route component.
 
+- **Type:** `Function`
+
 ```js
 validate({ params, query }) {
   return true // if the params are valid

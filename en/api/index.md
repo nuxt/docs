@@ -7,6 +7,8 @@ description: Nuxt.js supercharges the data method from vue.js to let you handle 
 
 > Nuxt.js *supercharges* the `data` method from vue.js to let you handle async operation before setting the component data.
 
+- **Type:** `Function`
+
 `data` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives the **context** as the first argument, you can use it to fetch some data and return the component data.
 
 ```js
