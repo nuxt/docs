@@ -11,7 +11,7 @@ description: Nuxt.js comes with a set of useful commands, both for development a
 |---------|-------------|
 | nuxt | Launch a development server on [localhost:3000](http://localhost:3000) with hot-reloading. |
 | nuxt build | Build your application with webpack and minify the JS & CSS (for production). |
-| nuxt start | Start the server in production mode (`nuxt build` has to be ran before). |
+| nuxt start | Start the server in production mode (After running `nuxt build`). |
 | nuxt generate | Build the application and generate every route as a HTML file (used for static hosting). |
 
 You should put these commands in the `package.json`:
