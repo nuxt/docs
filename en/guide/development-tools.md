@@ -128,8 +128,7 @@ module.exports = {
   extends: 'standard',
   // required to lint *.vue files
   plugins: [
-    'html',
-    'promise'
+    'html'
   ],
   // add your custom rules here
   rules: {},
