@@ -9,9 +9,10 @@ description: Nuxt.js lets you customize the webpack configuration for building y
 
 ## analyze
 
-> Nuxt.js use [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer) to let you see your bundles and how optimize them.
+> Nuxt.js use [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer) to let you visualize your bundles and how to optimize them.
 
-- **Type:** `Boolean` or `Object` (Default: `false`)
+- Type: `Boolean` or `Object`
+- Default: `false`
 
 If an object, see available properties [here](https://github.com/th0r/webpack-bundle-analyzer#as-plugin).
 
@@ -28,44 +29,194 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**INFO:** You can use the command `nuxt build --analyzer` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)</p>
+<p class="Alert Alert--teal">**INFO:** You can use the command `nuxt build --analyzer` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)</p>
 
 ## babel
 
-- **Type:** `Object`
+- Type: `Object`
 
-> Documentation coming soon
+> Customize babel configuration for JS and Vue files.
+
+Default:
+```js
+{
+  plugins: [
+    'transform-async-to-generator',
+    'transform-runtime'
+  ],
+  presets: [
+    ['es2015', { modules: false }],
+    'stage-2'
+  ]
+}
+```
+
+Example (`nuxt.config.js`):
+```js
+module.exports = {
+  build: {
+    babel: {
+      presets: ['es2015', 'stage-0']
+    }
+  }
+}
+```
 
 ## extend
 
-- **Type:** `Function`
+- Type: `Function`
 
-> Documentation coming soon
+> Extend the webpack configuration manually for the client & server bundles.
+
+The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are:
+1. Webpack config object
+2. Object with the folowing keys (all boolean): `dev`, `isClient`, `isServer`
+
+Example (`nuxt.config.js`):
+```js
+module.exports = {
+  build: {
+    extend (config, { isClient }) {
+      // Extend only webpack config for client-bundle
+      if (isClient) {
+        config.devtool = 'eval-source-map'
+      }
+    }
+  }
+}
+```
+
+If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/webpack).
 
 ## filenames
 
-- **Type:** `Object`
+- Type: `Object`
 
-> Documentation coming soon
+> Customize bundle filenames
+
+Default:
+```js
+{
+  css: 'style.css',
+  vendor: 'vendor.bundle.js',
+  app: 'nuxt.bundle.js'
+}
+```
+
+Example (`nuxt.config.js`):
+```js
+module.exports = {
+  build: {
+    filenames: {
+      css: 'app.css',
+      vendor: 'vendor.js',
+      app: 'app.js'
+    }
+  }
+}
+```
 
 ## loaders
 
-- **Type:** `Array`
-  - **Items:**: `Object`
+- Type: `Array`
+  - Items: `Object`
 
-> Documentation coming soon
+> Cusomize webpack loaders
+
+Default:
+```js
+[
+  {
+    test: /\.(png|jpe?g|gif|svg)$/,
+    loader: 'url-loader',
+    query: {
+      limit: 1000, // 1KO
+      name: 'img/[name].[hash:7].[ext]'
+    }
+  },
+  {
+    test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+    loader: 'url-loader',
+    query: {
+      limit: 1000, // 1 KO
+      name: 'fonts/[name].[hash:7].[ext]'
+    }
+  }
+]
+```
+
+Example (`nuxt.config.js`):
+```js
+module.exports = {
+  build: {
+    loaders: [
+      {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000, // 10KO
+          name: 'img/[name].[hash].[ext]'
+        }
+      }
+    ]
+  }
+}
+```
+
+<p class="Alert Alert--orange">When the loaders are defined in the `nuxt.config.js`, the default loaders will be overwritten.</p>
 
 ## plugins
 
-- **Type:** `Array`
+- Type: `Array`
+- Default: `[]`
 
-> Documentation coming soon
+> Add Webpack plugins
+
+Example (`nuxt.config.js`):
+```js
+const webpack = require('webpack')
+
+module.exports = {
+  build: {
+    plugins: [
+      new webpack.DefinePlugin({
+        'process.VERSION': require('./package.json').version
+      })
+    ]
+  }
+}
+```
 
 ## postcss
 
 - **Type:** `Array`
 
-> Documentation coming soon
+> Customize [postcss](https://github.com/postcss/postcss) options
+
+Default:
+```js
+[
+  require('autoprefixer')({
+    browsers: ['last 3 versions']
+  })
+]
+```
+
+Example (`nuxt.config.js`):
+```js
+module.exports = {
+  build: {
+    postcss: [
+      require('postcss-nested')(),
+      require('postcss-responsive-type')(),
+      require('postcss-hexrgba')(),
+      require('autoprefixer')({
+        browsers: ['last 3 versions']
+      })
+    ]
+  }
+}
+```
 
 ## vendor
 

@@ -5,9 +5,13 @@ description: Nuxt.js uses it's own component to show a progress bar between the 
 
 # The loading Property
 
+- Type: `Boolean` or `Object` or `String`
+
 > Nuxt.js uses it's own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
 
 ## Disable the Progress Bar
+
+- Type: `Boolean`
 
 If you don't want to display the progress bar between the routes, simply add `loading: false` in your `nuxt.config.js` file:
 
@@ -18,6 +22,8 @@ module.exports = {
 ```
 
 ## Customize the Progress Bar
+
+- Type: `Object`
 
 List of properties to customize the progress bar.
 
@@ -40,6 +46,8 @@ module.exports = {
 ```
 
 ## Use a Custom Loading Component
+
+- Type: `String`
 
 You can create your own component that Nuxt.js will call instead of its default component. To do so, you need to give a path to your component in the `loading` option. Then, your component will be called directly by Nuxt.js.
 
@@ -96,6 +104,6 @@ Then, we update our `nuxt.config.js` to tell Nuxt.js to use our component:
 
 ```js
 module.exports = {
-  loading: 'components/loading.vue'
+  loading: '~components/loading.vue'
 }
 ```
