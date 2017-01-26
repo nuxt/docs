@@ -55,7 +55,7 @@ When launching `nuxt`, it will start a development server with hot-reloading and
 
 Take a look at [the commands](/guide/commands) to learn more about it.
 
-If you already have a server, you can plug nuxt.js by using it as a middleware, there is no restriction at all when using nuxt.js for developing your Universal Web Applications, see the [Using Nuxt.js Programmatically](/api) guide.
+If you already have a server, you can plug nuxt.js by using it as a middleware, there is no restriction at all when using nuxt.js for developing your Universal Web Applications, see the [Using Nuxt.js Programmatically](/api/nuxt) guide.
 
 ## Static Generated
 

@@ -113,7 +113,7 @@ Nuxt.js lets you create nested route by using the children routes of vue-router.
 
 To define a nested route, you need to create a Vue file with the **same name as the directory** which contain your children views.
 
-**Don't forget to write `<nuxt-child></nuxt-child>` inside the parent component (.vue file).**
+<p class="Alert Alert--info">Don't forget to write `<nuxt-child/>` inside the parent component (.vue file).</p>
 
 This file tree:
 
@@ -215,7 +215,7 @@ Nuxt.js uses the  [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.htm
 
 ### Global Settings
 
-**Nuxt.js default transition name is `"page"`.**
+<p class="Alert Alert--info">Nuxt.js default transition name is `"page"`.</p>
 
 To add a fade transition to every page of your application, we need a CSS file that is shared across all our routes, so we start by creating a file in the `assets` folder.
 
@@ -238,7 +238,7 @@ module.exports = {
 }
 ```
 
-More information about the transition key: [API Configuration transition](/api/configuration-transition)
+More information about the transition key: [API Configuration transition](/api/pages-transition)
 
 ### Page Settings
 

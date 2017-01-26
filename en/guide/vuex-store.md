@@ -13,7 +13,7 @@ Nuxt.js will look for the `store` directory, if it exists, it will:
 2. Add `vuex` module in the vendors bundle
 3. Add the `store` option to the root `Vue` instance.
 
-Nuxt.js lets you have 2 modes of store, choose the one you prefer:
+Nuxt.js lets you have **2 modes of store**, choose the one you prefer:
 - **Classic:** `store/index.js` returns a store instance
 - **Modules:** every `.js` file inside the `store` directory is transformed as a [namespaced module](http://vuex.vuejs.org/en/modules.html) (`index` being the root module)
 
@@ -22,10 +22,7 @@ Nuxt.js lets you have 2 modes of store, choose the one you prefer:
 To activate the store with the classic mode, we create the `store/index.js` file and export the store instance:
 
 ```js
-import Vue from 'vue'
 import Vuex from 'vuex'
-
-Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
@@ -139,13 +136,13 @@ More information about the fetch method: [API Pages fetch](/api/pages-fetch)
 
 If the action `nuxtServerInit` is defined in the store, nuxt.js will call it with the context (only from the server-side). It's useful when we have some data on the server we want to give directly to the client-side.
 
-For example, let's say we have a session store and we can access the connected user trough `req.authUser`. To give the authenticated user to our store, we update our `store/index.js` to the following:
+For example, let's say we have sessions on the server-side and we can access the connected user trough `req.session.user`. To give the authenticated user to our store, we update our `store/index.js` to the following:
 
 ```js
 actions: {
   nuxtServerInit ({ commit }, { req }) {
-    if (req.authUser) {
-      commit('user', req.authUser)
+    if (req.session.user) {
+      commit('user', req.session.user)
     }
   }
 }

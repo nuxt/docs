@@ -108,4 +108,48 @@ jsdom has some limitations because it does not use a browser. However, it will c
 
 ## ESLint
 
-> Documentation is coming soon.
+> ESLint is a great tool to keep your code clean
+
+You can add [ESLint](http://eslint.org) pretty easily with nuxt.js, first, you need to add the npm dependencies:
+
+```bash
+npm install --save-dev eslint eslint-config-standard eslint-plugin-html eslint-plugin-promise eslint-plugin-standard
+```
+
+Then, you can configure ESLint via a `.eslintrc.js` file in your root project directory:
+```js
+module.exports = {
+  root: true,
+  parser: 'babel-eslint',
+  env: {
+    browser: true,
+    node: true
+  },
+  extends: 'standard',
+  // required to lint *.vue files
+  plugins: [
+    'html',
+    'promise'
+  ],
+  // add your custom rules here
+  rules: {},
+  globals: {}
+}
+```
+
+Then, you can add a `lint` script in your `package.json`:
+
+```js
+"scripts": {
+  "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+}
+```
+
+You can now launch:
+```bash
+npm run lint
+```
+
+ESLint will lint every of your JavaScript and Vue files while ignoring your ignored files defined in your `.gitignore`.
+
+<p class="Alert Alert--info">One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before commiting your code.</p>

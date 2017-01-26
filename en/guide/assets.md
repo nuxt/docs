@@ -77,7 +77,7 @@ Will be generated into:
 <img src="/_nuxt/img/image.0c61159.png">
 ```
 
-If you want to update these loaders or disable them, please take a look at the [loaders configuration](/api/configuration-build).
+If you want to update these loaders or disable them, please take a look at the [loaders configuration](/api/configuration-build#loaders).
 
 ## Static
 

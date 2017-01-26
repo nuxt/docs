@@ -23,7 +23,7 @@ The `layouts` directory contains your Application Layouts.
 
 _This directory can not be renamed._
 
-[More documentation about Layouts integration](/guide/layouts)
+[More documentation about Layouts integration](/guide/views#layouts)
 
 ### The Middleware Directory
 
@@ -35,7 +35,7 @@ The `pages` directory contains your Application Views and Routes. The framework 
 
 _This directory can not be renamed._
 
-[More documentation about Pages integration](/guide/pages)
+[More documentation about Pages integration](/guide/views)
 
 ### The Plugins Directory
 
@@ -51,7 +51,7 @@ The `static` directory contains your static files. Each files inside this direct
 
 _This directory can not be renamed._
 
-[More documentation about Static integration](/guide/static)
+[More documentation about Static integration](/guide/assets#static)
 
 ### The Store Directory
 

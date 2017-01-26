@@ -7,7 +7,7 @@ description: Nuxt.js supercharges the data method from vue.js to let you handle 
 
 ## The data Method
 
-`data` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives [the context](/api) as the first argument, you can use it to fetch some data and return the component data.
+`data` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives [the context](/api#context) as the first argument, you can use it to fetch some data and return the component data.
 
 <div class="Alert Alert--orange">You do **NOT** have access of the component instance trough `this` inside `data` because it is called **before initiating** the component.</div>
 
