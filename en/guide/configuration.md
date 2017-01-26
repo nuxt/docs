@@ -76,3 +76,9 @@ This option lets you to overwrite the default Nuxt.js configuration of vue-route
 This option lets you define the source directory of your nuxt.js application.
 
 [Documentation about srcDir integration](/api/configuration-srcdir)
+
+### transition
+
+This option lets you define the default properties of the pages transitions.
+
+[Documentation about transition integration](/api/configuration-transition)
