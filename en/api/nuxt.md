@@ -13,7 +13,7 @@ You can require Nuxt.js like this:
 const Nuxt = require('nuxt')
 ```
 
-### Nuxt(options)
+## Nuxt(options)
 
 To see the list of options to give to Nuxt.js, see the configuration section.
 
@@ -25,4 +25,12 @@ nuxt.build()
 .then(() => {
   // We can use nuxt.render(req, res) or nuxt.renderRoute(route, context)
 })
+```
+
+### Debug logs
+
+If you want to display nuxt.js logs, you can add to the top of your file:
+
+```js
+process.env.DEBUG = 'nuxt:*'
 ```

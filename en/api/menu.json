@@ -46,6 +46,7 @@
       },
       { "name": "cache", "to": "/configuration-cache" },
       { "name": "css", "to": "/configuration-css" },
+      { "name": "dev", "to": "/configuration-dev" },
       { "name": "env", "to": "/configuration-env" },
       { "name": "generate", "to": "/configuration-generate" },
       { "name": "head", "to": "/configuration-head" },
@@ -57,7 +58,18 @@
         ]
       },
       { "name": "plugins", "to": "/configuration-plugins" },
-      { "name": "router", "to": "/configuration-router" }
+      { "name": "rootDir", "to": "/configuration-rootdir" },
+      {
+        "name": "router",
+        "to": "/configuration-router",
+        "contents": [
+          { "name": "base", "to": "#base" },
+          { "name": "linkActiveClass", "to": "#linkactiveclass" },
+          { "name": "scrollBehavior", "to": "#scrollbehavior" },
+          { "name": "extendRoutes", "to": "#extendroutes" }
+        ]
+      },
+      { "name": "srcDir", "to": "/configuration-srcdir" }
     ]
   },
   {
