@@ -79,10 +79,46 @@ export const mutations = {
       done: false
     })
   },
+  delete (state, { todo }) {
+    state.list.splice(state.list.indexOf(todo), 1)
+  },
   toggle (state, todo) {
     todo.done = !todo.done
   }
 }
+```
+
+The store will be as such:
+```js
+new Vuex.Store({
+  state: { counter: 0 },
+  mutations: {
+    increment (state) {
+      state.counter++
+    }
+  },
+  modules: {
+    todos: {
+      state: {
+        list: []
+      },
+      mutations: {
+        add (state, { text }) {
+          state.list.push({
+            text,
+            done: false
+          })
+        },
+        delete (state, { todo }) {
+          state.list.splice(state.list.indexOf(todo), 1)
+        },
+        toggle (state, { todo }) {
+          todo.done = !todo.done
+        }
+      }
+    }
+  }
+})
 ```
 
 And in your `pages/todos.vue`, using the `todos` module:
