@@ -17,7 +17,7 @@ Example with Express.js:
 ```js
 const Nuxt = require('nuxt')
 const app = require('express')()
-const isProd = const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.NODE_ENV === 'production'
 const port = process.env.PORT || 3000
 
 // We instantiate Nuxt.js with the options
