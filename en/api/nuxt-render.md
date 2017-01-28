@@ -7,25 +7,25 @@ description: You can use Nuxt.js as a middleware for your node.js server.
 
 - Type: `Function`
 - Arguments:
-  1. [Request](https://nodejs.org/api/http.html)
-  2. [Response](https://nodejs.org/api/http.html)
+  1. [Request](https://nodejs.org/api/http.html#http_class_http_incomingmessage)
+  2. [Response](https://nodejs.org/api/http.html#http_class_http_serverresponse)
 - Returns: `Promise`
 
-> You can use Nuxt.js as a middleware with `nuxt.render` for your node.js server.
+> You can use nuxt.js as a middleware with `nuxt.render` for your node.js server.
 
-Example with Express.js:
+Example with [Express.js](https://github.com/expressjs/express):
 ```js
 const Nuxt = require('nuxt')
 const app = require('express')()
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = (process.env.NODE_ENV === 'production')
 const port = process.env.PORT || 3000
 
-// We instantiate Nuxt.js with the options
+// We instantiate buxt.js with the options
 let config = require('./nuxt.config.js')
 config.dev = !isProd
 const nuxt = new Nuxt(config)
 
-// Render every route with Nuxt.js
+// Render every route with nuxt.js
 app.use(nuxt.render)
 
 // Build only in dev mode with hot-reloading
