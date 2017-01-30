@@ -19,7 +19,7 @@ export default {
 }
 ```
 
-<div class="Alert Alert--orange">You do **NOT** have access of the component instance trough `this` inside `data` because it is called **before initiating** the component.</div>
+<div class="Alert Alert--orange">You do **NOT** have access of the component instance through `this` inside `data` because it is called **before initiating** the component.</div>
 
 ## Context
 
