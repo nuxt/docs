@@ -9,7 +9,7 @@ description: Get the window from a given url of a nuxt.js application.
 - Argument: `String`
   1. `String`: url to render
   2. *Optional*, `Object`: options
-    - virtualConsole: `Boolean` (default: `false`)
+    - virtualConsole: `Boolean` (default: `true`)
 - Returns: `Promise`
   - Returns: `window`
 
