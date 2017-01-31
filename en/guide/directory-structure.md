@@ -85,4 +85,10 @@ _This file can not be renamed._
 | ~pages | /pages |
 | ~plugins | /plugins |
 | ~static | /static |
-| ~store | /store |
+
+Aliases which link to files:
+
+| Alias | Usage | Description |
+|-------|------|--------------|
+| ~store | `const store = require('~store')` | Import the `vuex` store instance. |
+| ~router | `const store = require('~router')`| Import the `vue-router` instance. |
