@@ -27,6 +27,8 @@ nuxt.build()
 })
 ```
 
+You can take a look at the [nuxt-express](https://github.com/nuxt/express) and [adonuxt](https://github.com/nuxt/adonuxt) starters to start quickly.
+
 ### Debug logs
 
 If you want to display nuxt.js logs, you can add to the top of your file:
