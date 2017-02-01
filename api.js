@@ -1,5 +1,6 @@
 const fs = require('fs')
 const micro = require('micro')
+const axios = require('axios')
 const pify = require('pify')
 const glob = pify(require('glob'))
 const marked = require('marked')
@@ -30,6 +31,26 @@ renderer.heading = (text, level) => {
   return '<h' + level + ' id="' + link + '">' + text + '</h' + level + '>'
 }
 marked.setOptions({ renderer })
+
+// Fetch releases
+let RELEASES = []
+async function getReleases () {
+  console.log('Fetching releases...')
+  let options = { url: 'https://api.github.com/repos/nuxt/nuxt.js/releases' }
+  if (process.env.GITHUB_TOKEN) {
+    options.headers = { 'Authorization': `token ${process.env.GITHUB_TOKEN}` }
+  }
+  const res = await axios(options)
+  RELEASES = res.data.filter((r) => !r.draft).map((release) => {
+    return {
+      name: release.name,
+      date: release.published_at,
+      body: marked(release.body)
+    }
+  })
+  // Refresh every 15 minutes
+  setTimeout(getReleases, 15 * 60 * 1000)
+}
 
 // Fetch doc and menu files
 let _DOC_FILES_ = {}
@@ -166,6 +187,11 @@ const server = micro(async function (req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+  // Releases
+  if (req.url === '/releases') {
+    return send(res, 200, RELEASES)
+  }
+  // Menu
   if (req.url.indexOf('/menu') === 0) {
     let lang = req.url.split('/')[2]
     let category = req.url.split('/')[3]
@@ -174,6 +200,7 @@ const server = micro(async function (req, res) {
     else if (lang) return send(res, 404, 'Language not found')
     return send(res, 200, _MENU_)
   }
+  // Lang
   if (req.url.indexOf('/lang') === 0) {
     let lang = req.url.split('/')[2]
     if (lang && _LANG_[lang]) return send(res, 200, _LANG_[lang])
@@ -191,6 +218,7 @@ const server = micro(async function (req, res) {
 })
 
 getFiles()
+.then(() => getReleases())
 .then(() => {
   if (process.env.NODE_ENV !== 'production') {
     watchFiles()
