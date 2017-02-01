@@ -6,7 +6,7 @@
     "dev": "nodemon --watch *.js --exec 'node --harmony api.js'",
     "lint": "eslint *.js",
     "start": "node --harmony api.js",
-    "deploy": "now --env GH_HOOK_SECRET=@docs-api-hook-secret --env NODE_ENV=production --alias docs.api.nuxtjs.org",
+    "deploy": "now --alias",
     "precommit": "npm run lint"
   },
   "repository": {
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/nuxt/docs#readme",
   "dependencies": {
+    "axios": "^0.15.3",
     "download": "^5.0.2",
     "front-matter": "^2.1.1",
     "glob": "^7.1.1",
