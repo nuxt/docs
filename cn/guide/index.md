@@ -1,9 +1,9 @@
 ---
 title: 关于 Nuxt.js
-description: "2016年10月25日, zeit.co背后的团队对外发布了Next.js, 一个React的服务端渲染应用框架。几小时后, 和Next.js异曲同工的想法，一个基于Vue.js的服务端渲染应用框架应运而生且接踵而来，我们称之为： Nuxt.js。"
+description: "2016 年 10 月 25 日, zeit.co 背后的团队对外发布了 Next.js，一个 React 的服务端渲染应用框架。几小时后，与 Next.js 异曲同工，一个基于 Vue.js 的服务端渲染应用框架应运而生，我们称之为：Nuxt.js。"
 ---
 
-> 2016年10月25日, [zeit.co](https://zeit.co/)背后的团队对外发布了[Next.js](https://zeit.co/blog/next), 一个React的服务端渲染应用框架。几小时后, 和Next.js异曲同工的想法，一个基于[Vue.js](https://vuejs.org)的服务端渲染应用框架应运而生且接踵而来，我们称之为： **Nuxt.js**。
+> 2016 年 10 月 25 日，[zeit.co](https://zeit.co/) 背后的团队对外发布了 [Next.js](https://zeit.co/blog/next)，一个 React 的服务端渲染应用框架。几小时后，与 Next.js 异曲同工，一个基于 [Vue.js](https://vuejs.org) 的服务端渲染应用框架应运而生，我们称之为：**Nuxt.js**。
 
 ## Nuxt.js 是什么？
 
@@ -11,29 +11,29 @@ Nuxt.js 是一个基于 Vue.js 的通用应用框架。
 
 通过对客户端/服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 **UI渲染**。
 
-我们的目标是创建一个灵活的应用框架，你可以基于它初始化新项目的基础结构代码，或者在已有Node.js项目中使用 Nuxt.js。
+我们的目标是创建一个灵活的应用框架，你可以基于它初始化新项目的基础结构代码，或者在已有 Node.js 项目中使用 Nuxt.js。
 
 Nuxt.js 预设了利用Vue.js开发**服务端渲染**的应用所需要的各种配置。
 
-除此之外，我们还提供了一种开发选项命令叫：*nuxt generate*。为基于Vue.js的应用提供生成对应的静态站点的功能。
+除此之外，我们还提供了一种命令叫：*nuxt generate*，为基于 Vue.js 的应用提供生成对应的静态站点的功能。
 
-我们相信这个开发选项所提供的功能，为开发集成各种微服务（miscroservices）的Web应用迈开了新的脚步。
+我们相信这个命令所提供的功能，是向开发集成各种微服务（miscroservices）的 Web 应用迈开的新一步。
 
-既然是框架，Nuxt.js 为 `客户端/服务端` 这种典型的应用架构模式提供了许多有用的特性，例如异步数据、中间件、布局，等等。
+作为框架，Nuxt.js 为 `客户端/服务端` 这种典型的应用架构模式提供了许多有用的特性，例如异步数据加载、中间件支持、布局支持等。
 
 ## Nuxt.js 框架是如何运作的？
 
-![基于Vue、Webpack和Babel](https://i.imgur.com/avEUftE.png)
+![基于 Vue、Webpack 和 Babel](https://i.imgur.com/avEUftE.png)
 
-Nuxt.js 集成了以下组件/框架，用于开发完整而强大的Web应用：
+Nuxt.js 集成了以下组件/框架，用于开发完整而强大的 Web 应用：
 - [Vue 2](https://github.com/vuejs/vue)
 - [Vue-Router](https://github.com/vuejs/vue-router)
 - [Vuex](https://github.com/vuejs/vuex) (included only when using the [store option](/guide/vuex-store))
 - [Vue-Meta](https://github.com/declandewet/vue-meta)
 
-压缩并gzip后，总代码大小为: **28kb** （如果使用了vuex特性的话为31kb）。
+压缩并 gzip 后，总代码大小为：**28kb** （如果使用了 Vuex 特性的话为 31kb）。
 
-另外，Nuxt.js 使用[Webpack](https://github.com/webpack/webpack) 和 [vue-Loader](https://github.com/vuejs/vue-loader) 、 [babel-loader](https://github.com/babel/babel-loader) 来处理代码的自动化构建工作（如打包、代码分层、压缩等等）。
+另外，Nuxt.js 使用 [Webpack](https://github.com/webpack/webpack) 和 [vue-loader](https://github.com/vuejs/vue-loader) 、 [babel-loader](https://github.com/babel/babel-loader) 来处理代码的自动化构建工作（如打包、代码分层、压缩等等）。
 
 ## 特性
 
