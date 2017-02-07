@@ -1,31 +1,85 @@
 [
   {
-    "title": "Nuxt Module",
+    "title": "Pages",
     "links": [
-      { "name": "Usage", "to": "" },
-      { "name": "Render", "to": "/nuxt-render" },
-      { "name": "RenderRoute", "to": "/nuxt-render-route" },
-      { "name": "RenderAndGetWindow", "to": "/nuxt-render-and-get-window" }
+      { "name": "data", "to": "/" },
+      { "name": "fetch", "to": "/pages-fetch" },
+      { "name": "head", "to": "/pages-head" },
+      { "name": "layout", "to": "/pages-layout" },
+      { "name": "middleware", "to": "/pages-middleware" },
+      { "name": "scrollToTop", "to": "/pages-scrolltotop" },
+      {
+        "name": "transition", "to": "/pages-transition",
+        "contents": [
+          { "name": "String", "to": "#string" },
+          { "name": "Object", "to": "#object" },
+          { "name": "Function", "to": "#function" }
+        ]
+      },
+      { "name": "validate", "to": "/pages-validate" }
+    ]
+  },
+  {
+    "title": "Components",
+    "links": [
+      { "name": "nuxt", "to": "/components-nuxt" },
+      { "name": "nuxt-child", "to": "/components-nuxt-child" },
+      { "name": "nuxt-link", "to": "/components-nuxt-link" }
     ]
   },
   {
     "title": "Configuration",
     "links": [
-      { "name": "Build", "to": "/configuration-build" },
-      { "name": "Cache", "to": "/configuration-cache" },
-      { "name": "CSS", "to": "/configuration-css" },
-      { "name": "Env", "to": "/configuration-env" },
-      { "name": "Generate", "to": "/configuration-generate" },
-      { "name": "Head", "to": "/configuration-head" },
-      { "name": "Loading", "to": "/configuration-loading" },
-      { "name": "Plugins", "to": "/configuration-plugins" },
-      { "name": "Router", "to": "/configuration-router" }
+      {
+        "name": "build",
+        "to": "/configuration-build",
+        "contents": [
+          { "name": "analyze", "to": "#analyze" },
+          { "name": "babel", "to": "#babel" },
+          { "name": "extend", "to": "#extend" },
+          { "name": "filenames", "to": "#filenames" },
+          { "name": "loaders", "to": "#loaders" },
+          { "name": "plugins", "to": "#plugins" },
+          { "name": "postcss", "to": "#postcss" },
+          { "name": "vendor", "to": "#vendor" }
+        ]
+      },
+      { "name": "cache", "to": "/configuration-cache" },
+      { "name": "css", "to": "/configuration-css" },
+      { "name": "dev", "to": "/configuration-dev" },
+      { "name": "env", "to": "/configuration-env" },
+      { "name": "generate", "to": "/configuration-generate" },
+      { "name": "head", "to": "/configuration-head" },
+      { "name": "loading", "to": "/configuration-loading",
+        "contents": [
+          { "name": "Disable the Progress Bar", "to": "#disable-the-progress-bar" },
+          { "name": "Customize the Progress Bar", "to": "#customize-the-progress-bar" },
+          { "name": "Use a Custom Loading Component", "to": "#use-a-custom-loading-component" }
+        ]
+      },
+      { "name": "plugins", "to": "/configuration-plugins" },
+      { "name": "rootDir", "to": "/configuration-rootdir" },
+      {
+        "name": "router",
+        "to": "/configuration-router",
+        "contents": [
+          { "name": "base", "to": "#base" },
+          { "name": "linkActiveClass", "to": "#linkactiveclass" },
+          { "name": "scrollBehavior", "to": "#scrollbehavior" },
+          { "name": "extendRoutes", "to": "#extendroutes" }
+        ]
+      },
+      { "name": "srcDir", "to": "/configuration-srcdir" },
+      { "name": "transition", "to": "/configuration-transition" }
     ]
   },
   {
-    "title": "Pages",
+    "title": "Nuxt Module",
     "links": [
-      { "name": "Context", "to": "/pages-context" }
+      { "name": "Usage", "to": "/nuxt" },
+      { "name": "render", "to": "/nuxt-render" },
+      { "name": "renderRoute", "to": "/nuxt-render-route" },
+      { "name": "renderAndGetWindow", "to": "/nuxt-render-and-get-window" }
     ]
   }
 ]
