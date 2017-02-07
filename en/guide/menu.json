@@ -1,336 +1,105 @@
 [
   {
+    "title": "Prologue",
+    "links": [
+      {
+        "to": "", "name": "Introduction",
+        "contents": [
+          { "to": "#what-is-nuxt-js-", "name": "What is Nuxt.js ?" },
+          { "to": "#how-it-works", "name": "How it Works" },
+          { "to": "#features", "name": "Features" },
+          { "to": "#server-rendered", "name": "Server Rendered" },
+          { "to": "#static-generated", "name": "Static Generated" }
+        ]
+      },
+      { "to": "/contribution-guide", "name": "Contribution Guide" },
+      { "to": "/release-notes", "name": "Release Notes" }
+    ]
+  },
+  {
     "title": "Getting Started",
     "links": [
       {
-        "name": "Introduction",
-        "to": "",
+        "to": "/installation", "name": "Installation",
         "contents": [
-          {
-            "name": "What is Nuxt.js ?",
-            "to": "#what-is-nuxt-js-"
-          },
-          {
-            "name": "How it Works",
-            "to": "#how-it-works"
-          },
-          {
-            "name": "Features",
-            "to": "#features"
-          },
-          {
-            "name": "Server Rendered",
-            "to": "#server-rendered"
-          },
-          {
-            "name": "Static Generated",
-            "to": "#static-generated"
-          }
+          { "to": "#using-nuxt-js-starter-template", "name": "Using Nuxt.js starter template" },
+          { "to": "#starting-from-scratch", "name": "Starting from scratch" }
         ]
       },
       {
-        "name": "Installation",
-        "to": "/installation",
+        "to": "/directory-structure", "name": "Directory structure",
         "contents": [
-          {
-            "name": "Using Nuxt.js starter template",
-            "to": "#using-nuxt-js-starter-template"
-          },
-          {
-            "name": "Starting from scratch",
-            "to": "#starting-from-scratch"
-          }
+          { "to": "#directories", "name": "Directories" },
+          { "to": "#aliases", "name": "Aliases" }
+        ]
+      },
+      { "to": "/configuration", "name": "Configuration" },
+      {
+        "to": "/routing", "name": "Routing",
+        "contents": [
+          { "to": "#basic-routes", "name": "Basic Routes" },
+          { "to": "#dynamic-routes", "name": "Dynamic Routes" },
+          { "to": "#nested-routes", "name": "Nested Routes" },
+          { "to": "#dynamic-nested-routes", "name": "Dynamic Nested Routes" },
+          { "to": "#transitions", "name": "Transitions" },
+          { "to": "#middleware", "name": "Middleware" }
         ]
       },
       {
-        "name": "Directory structure",
-        "to": "/directory-structure",
+        "to": "/views", "name": "Views",
         "contents": [
-          {
-            "name": "Directories",
-            "to": "#directories"
-          },
-          {
-            "name": "Aliases",
-            "to": "#aliases"
-          }
+          { "to": "#pages", "name": "Pages" },
+          { "to": "#layouts", "name": "Layouts" },
+          { "to": "#html-head", "name": "HTML Head" }
         ]
       },
       {
-        "name": "Configuration",
-        "to": "/configuration"
-      },
-      {
-        "name": "Commands",
-        "to": "/commands",
+        "to": "/async-data", "name": "Async Data",
         "contents": [
-          {
-            "name": "List of Commands",
-            "to": "#list-of-commands"
-          },
-          {
-            "name": "Production Deployment",
-            "to": "#production-deployment"
-          },
-          {
-            "name": "Static Hosting Deployment",
-            "to": "#static-hosting-deployment"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Router",
-    "links": [
-      {
-        "name": "Basic Routes",
-        "to": "/basic-routes"
-      },
-      {
-        "name": "Dynamic Routes",
-        "to": "/dynamic-routes",
-        "contents": [
-          {
-            "name": "Directory Structure",
-            "to": "#directory-structure"
-          },
-          {
-            "name": "Validate Route Params",
-            "to": "#validate-route-params"
-          }
+          { "to": "#the-data-method", "name": "The data Method" },
+          { "to": "#the-context", "name": "The Context" },
+          { "to": "#handling-errors", "name": "Handling Errors" }
         ]
       },
       {
-        "name": "Nested Routes",
-        "to": "/nested-routes",
+        "to": "/assets", "name": "Assets",
         "contents": [
-          {
-            "name": "Directory Structure",
-            "to": "#directory-structure"
-          },
-          {
-            "name": "Dynamic Nested Routes",
-            "to": "#dynamic-nested-routes"
-          }
+          { "to": "#webpacked", "name": "Webpacked" },
+          { "to": "#static", "name": "Static" }
         ]
       },
       {
-        "name": "Transitions",
-        "to": "/routes-transitions",
+        "to": "/plugins", "name": "Plugins",
         "contents": [
-          {
-            "name": "Usage",
-            "to": "#usage"
-          },
-          {
-            "name": "The transition Key",
-            "to": "#the-transition-key"
-          },
-          {
-            "name": "Transition for a Specific Page",
-            "to": "#transition-for-a-specific-page"
-          },
-          {
-            "name": "Dynamic Transition",
-            "to": "#dynamic-transition"
-          }
+          { "to": "#external-packages", "name": "External Packages" },
+          { "to": "#vue-plugins", "name": "Vue Plugins" },
+          { "to": "#client-side-only", "name": "Client-side only" }
         ]
       },
       {
-        "name": "Middleware",
-        "to": "/routes-middleware"
-      }
-    ]
-  },
-  {
-    "title": "Views",
-    "links": [
-      {
-        "name": "Pages",
-        "to": "/pages",
+        "to": "/vuex-store", "name": "Vuex Store",
         "contents": [
-          {
-            "name": "Special Keys",
-            "to": "#special-keys"
-          },
-          {
-            "name": "A Simple Page",
-            "to": "#a-simple-page"
-          },
-          {
-            "name": "Using Pre-Processors",
-            "to": "#using-pre-processors"
-          },
-          {
-            "name": "Using JSX",
-            "to": "#using-jsx"
-          }
+          { "to": "#activate-the-store", "name": "Activate the Store" },
+          { "to": "#classic-mode", "name": "Classic mode" },
+          { "to": "#modules-mode", "name": "Modules mode" },
+          { "to": "#the-fetch-method", "name": "The fetch Method" },
+          { "to": "#the-nuxtserverinit-action", "name": "The nuxtServerInit Action" }
         ]
       },
       {
-        "name": "Layouts",
-        "to": "/layouts",
+        "to": "/commands", "name": "Commands",
         "contents": [
-          {
-            "name": "Default Layout",
-            "to": "#default-layout"
-          },
-          {
-            "name": "Error Page",
-            "to": "#error-page"
-          },
-          {
-            "name": "Custom Layout",
-            "to": "#custom-layout"
-          }
+          { "to": "#list-of-commands", "name": "List of Commands" },
+          { "to": "#development-environment", "name": "Developemnt Enviroment" },
+          { "to": "#production-deployment", "name": "Production Deployment" }
         ]
       },
       {
-        "name": "Custom Loading",
-        "to": "/custom-loading",
+        "to": "/development-tools", "name": "Development Tools",
         "contents": [
-          {
-            "name": "Disable the Progress Bar",
-            "to": "#disable-the-progress-bar"
-          },
-          {
-            "name": "Customize the Progress Bar",
-            "to": "#customize-the-progress-bar"
-          },
-          {
-            "name": "Use a Custom Loading Component",
-            "to": "#use-a-custom-loading-component"
-          }
+          { "to": "#end-to-end-testing", "name": "End-to-End Testing" },
+          { "to": "#eslint", "name": "ESLint" }
         ]
-      },
-      {
-        "name": "HTML Head",
-        "to": "/html-head",
-        "contents": [
-          {
-            "name": "Title",
-            "to": "#title"
-          },
-          {
-            "name": "Meta Tags",
-            "to": "#meta-tags"
-          },
-          {
-            "name": "Using Page Data",
-            "to": "#using-page-data"
-          },
-          {
-            "name": "Defaults Meta",
-            "to": "#defaults-meta"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Data",
-    "links": [
-      {
-        "name": "Async data",
-        "to": "/async-data",
-        "contents": [
-          {
-            "name": "The data Method",
-            "to": "#the-data-method"
-          },
-          {
-            "name": "The Context",
-            "to": "#the-context"
-          },
-          {
-            "name": "Handling Errors",
-            "to": "#handling-errors"
-          }
-        ]
-      },
-      {
-        "name": "Vuex store",
-        "to": "/vuex-store",
-        "contents": [
-          {
-            "name": "Activate the Store",
-            "to": "#activate-the-store"
-          },
-          {
-            "name": "Modules Files",
-            "to": "#modules-files"
-          },
-          {
-            "name": "The fetch Method",
-            "to": "#the-fetch-method"
-          },
-          {
-            "name": "The Context",
-            "to": "#the-context"
-          },
-          {
-            "name": "The nuxtServerInit Action",
-            "to": "#the-nuxtserverinit-action"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Resources",
-    "links": [
-      {
-        "name": "Assets",
-        "to": "/assets"
-      },
-      {
-        "name": "Static",
-        "to": "/static"
-      },
-      {
-        "name": "Plugins",
-        "to": "/plugins",
-        "contents": [
-          {
-            "name": "Use External Modules",
-            "to": "#use-external-modules"
-          },
-          {
-            "name": "Use Vue Plugins",
-            "to": "#use-vue-plugins"
-          },
-          {
-            "name": "Only for Browsers",
-            "to": "#only-for-browsers"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Dev Tools",
-    "links": [
-      {
-        "name": "ESLint",
-        "to": "/eslint"
-      },
-      {
-        "name": "Tests",
-        "to": "/tests"
-      }
-    ]
-  },
-  {
-    "title": "Miscellaneous",
-    "links": [
-      {
-        "name": "Contribution Guide",
-        "to": "/contribution-guide"
-      },
-      {
-        "name": "Release Notes",
-        "to": "/release-notes"
       }
     ]
   }

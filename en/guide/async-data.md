@@ -7,7 +7,7 @@ description: Nuxt.js supercharges the data method from vue.js to let you handle 
 
 ## The data Method
 
-`data` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives [the context](/api/pages-context) as the first argument, you can use it to fetch some data and return the component data.
+`data` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives [the context](/api#context) as the first argument, you can use it to fetch some data and return the component data.
 
 <div class="Alert Alert--orange">You do **NOT** have access of the component instance trough `this` inside `data` because it is called **before initiating** the component.</div>
 
@@ -75,7 +75,7 @@ When the data method set, you can display the data inside your template like you
 
 ## The Context
 
-To see the list of available keys in `context`, take a look at the [pages context api](/api/pages-context).
+To see the list of available keys in `context`, take a look at the [API Pages data](/api).
 
 ## Handling Errors
 
@@ -111,4 +111,4 @@ export default {
 }
 ```
 
-To customize the error page, take a look at the [layout section](/guide/layouts#error-page).
+To customize the error page, take a look at the [VIEWS layouts section](/guide/views#layouts).
