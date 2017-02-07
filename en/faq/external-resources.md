@@ -7,7 +7,7 @@ description: How to use external resources with Nuxt.js?
 
 ## Global Settings
 
-Include your resources in the nuxt.config.js file:
+Include your resources in the `nuxt.config.js` file:
 
 ```js
 module.exports = {

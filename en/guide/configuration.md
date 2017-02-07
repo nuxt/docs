@@ -23,6 +23,12 @@ This option lets you define the CSS files/modules/libraries you want to set as g
 
 [Documentation about css integration](/api/configuration-css)
 
+### dev
+
+This option lets you define the development or production mode of nuxt.js
+
+[Documentation about dev integration](/api/configuration-dev)
+
 ### env
 
 This option lets you define environment variables available both client and server side.
@@ -53,8 +59,26 @@ This option lets you to define Javascript plugins to be ran before instantiating
 
 [Documentation about plugins integration](/api/configuration-plugins)
 
+### rootDir
+
+This option lets you define the workspace of your nuxt.js application.
+
+[Documentation about rootDir integration](/api/configuration-rootdir)
+
 ### router
 
 This option lets you to overwrite the default Nuxt.js configuration of vue-router.
 
 [Documentation about router integration](/api/configuration-router)
+
+### srcDir
+
+This option lets you define the source directory of your nuxt.js application.
+
+[Documentation about srcDir integration](/api/configuration-srcdir)
+
+### transition
+
+This option lets you define the default properties of the pages transitions.
+
+[Documentation about transition integration](/api/configuration-transition)

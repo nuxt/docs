@@ -4,6 +4,7 @@
     "api": "API",
     "blog": "Блог",
     "chat": "Чат",
+    "documentation": "документация",
     "download": "Скачать",
     "examples": "Примеры",
     "ecosystem": "Экосистема",
@@ -19,6 +20,12 @@
     "vue_jobs": "Vue Jobs"
   },
   "text": {
+    "an_error_occured": "An error occured",
+    "api_page_not_found": "API page not found",
+    "example_file": "Example Files",
+    "please_wait": "Please wait...",
+    "please_define_title": "Please define a title in the front matter",
+    "please_define_description": "Please define a description in the front matter",
     "search": "Поиск",
     "version": "Версия"
   },

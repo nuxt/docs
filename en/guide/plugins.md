@@ -7,9 +7,9 @@ description: Nuxt.js allows you to define js plugins to be ran before instantiat
 
 <div class="Alert">It is important to know that in any Vue [instance lifecycle](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram), only `beforeCreate` and `created` hooks are called **both from client-side and server-side**. All other hooks are called only from the client-side.</div>
 
-## Use External Modules
+## External Packages
 
-We may want to use external modules in our application, one great example is [axios](https://github.com/mzabriskie/axios) for making HTTP request for both server and client.
+We may want to use external packages/modules in our application, one great example is [axios](https://github.com/mzabriskie/axios) for making HTTP request for both server and client.
 
 We install it via NPM:
 
@@ -48,7 +48,7 @@ module.exports = {
 
 Then, I can import `axios` anywhere without having to worry about making the bundle bigger!
 
-## Use Vue Plugins
+## Vue Plugins
 
 If we want to use [vue-notifications](https://github.com/se-panfilov/vue-notifications) to display notification in our application, we need to setup the plugin before launching the app.
 
@@ -81,7 +81,7 @@ module.exports = {
 }
 ```
 
-## Only for Browsers
+## Client-side only
 
 Some plugins might work **only for the browser**, you can use the `process.BROWSER_BUILD` variable to check if the plugin will run from the client-side.
 
