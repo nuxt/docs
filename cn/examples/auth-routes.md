@@ -2,7 +2,7 @@
 title: 路由鉴权
 description: Nuxt.js 的路由鉴权示例
 github: auth-routes
-livedemo: https://auth-routes.nuxtjs.org
+livedemo: https://nuxt-auth-routes.gomix.me
 liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 ---
 
@@ -83,7 +83,7 @@ promise.then(() => {
 // ...
 ```
 
-## 使用数据流(store)
+## 使用状态树数据（store）
 
 我们的应用需要一个全局的状态树，让**每个页面**都知道用户是否已登录。
 
@@ -184,7 +184,7 @@ logout ({ commit }) {
 }
 ```
 
-## 页面 (pages) 组件
+## 页面组件
 
 然后我们在页面组件内使用 `$store.state.authUser` 变量，来检查用户是否已登录。
 

@@ -2,7 +2,7 @@
   {
     "title": "基本",
     "links": [
-      { "name": "Hello world", "to": "/hello-world" },
+      { "name": "Hello world", "to": "" },
       { "name": "SEO HTML 头部", "to": "/seo-html-head" }
     ]
   },
