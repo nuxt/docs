@@ -29,4 +29,4 @@ Vue.use(VueNotifications)
 
 每次你需要使用 `Vue.use()` 时，你需要在 `plugins/` 目录下创建相应的插件文件，并在 `nuxt.config.js` 中的 `plugins` 配置项中配置插件的路径。
 
-想了解更多关于使用插件的信息，请移步 [插件使用指引](/guide/plugins#vue-plugins)。
+想了解更多关于使用插件的信息，请移步 [插件使用指引](/guide/plugins#使用-vue-插件)。

@@ -52,9 +52,9 @@
       { "name": "head", "to": "/configuration-head" },
       { "name": "loading", "to": "/configuration-loading",
         "contents": [
-          { "name": "Disable the Progress Bar", "to": "#禁用加载进度条" },
-          { "name": "Customize the Progress Bar", "to": "#个性化加载进度条" },
-          { "name": "Use a Custom Loading Component", "to": "#自定义加载组件" }
+          { "name": "禁用加载进度条", "to": "#禁用加载进度条" },
+          { "name": "个性化加载进度条", "to": "#个性化加载进度条" },
+          { "name": "自定义加载组件", "to": "#自定义加载组件" }
         ]
       },
       { "name": "plugins", "to": "/configuration-plugins" },
@@ -66,6 +66,7 @@
           { "name": "base", "to": "#base" },
           { "name": "linkActiveClass", "to": "#linkactiveclass" },
           { "name": "scrollBehavior", "to": "#scrollbehavior" },
+          { "name": "middleware", "to": "#middleware" },
           { "name": "extendRoutes", "to": "#extendroutes" }
         ]
       },

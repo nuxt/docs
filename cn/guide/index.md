@@ -28,7 +28,7 @@ Nuxt.js 预设了利用Vue.js开发**服务端渲染**的应用所需要的各�
 Nuxt.js 集成了以下组件/框架，用于开发完整而强大的 Web 应用：
 - [Vue 2](https://github.com/vuejs/vue)
 - [Vue-Router](https://github.com/vuejs/vue-router)
-- [Vuex](https://github.com/vuejs/vuex) (included only when using the [store option](/guide/vuex-store))
+- [Vuex](https://github.com/vuejs/vuex) (当配置了 [Vuex 状态树配置项](/guide/vuex-store) 时才会引入)
 - [Vue-Meta](https://github.com/declandewet/vue-meta)
 
 压缩并 gzip 后，总代码大小为：**28kb** （如果使用了 Vuex 特性的话为 31kb）。
@@ -57,7 +57,7 @@ Nuxt.js 集成了以下组件/框架，用于开发完整而强大的 Web 应用
 
 可以查看 Nuxt.js 提供的各种 [命令](/guide/commands) 以了解更多的信息。
 
-如果你的项目有自己的Web服务器（例如用express.js启动的Web服务），你仍然可以将 Nuxt.js 当作是中间件来使用，负责UI渲染部分的功能。在开发通用的Web应用过程中，Nuxt.js 是可插拔的，没有太多的限制，可通过 [开发编码中使用Nuxt.js](/api) 了解更多的信息。
+如果你的项目有自己的Web服务器（例如用 Express.js 启动的Web服务），你仍然可以将 Nuxt.js 当作是中间件来使用，负责UI渲染部分的功能。在开发通用的Web应用过程中，Nuxt.js 是可插拔的，没有太多的限制，可通过 [开发编码中使用Nuxt.js](/api/nuxt) 了解更多的信息。
 
 ## 静态化
 
@@ -83,7 +83,7 @@ Nuxt.js 集成了以下组件/框架，用于开发完整而强大的 Web 应用
 
 静态化可以让你在任何一个静态站点服务商托管你的Web应用。
 
-Nuxt.js的官网[nuxtjs.org]就是一个绝佳的例子, 它静态化后托管于Github Pages：
+Nuxt.js 的官网就是一个绝佳的例子, 它静态化后托管于Github Pages：
 - [源码](https://github.com/nuxt/nuxtjs.org)
 - [静态化后的文件](https://github.com/nuxt/nuxtjs.org/tree/gh-pages)
 

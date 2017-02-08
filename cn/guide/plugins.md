@@ -50,7 +50,7 @@ module.exports = {
 
 ## 使用 Vue 插件
 
-加入我们想使用 [vue-notifications](https://github.com/se-panfilov/vue-notifications) 显示应用的通知信息，我们需要在程序运行前配置好这个插件。
+假如我们想使用 [vue-notifications](https://github.com/se-panfilov/vue-notifications) 显示应用的通知信息，我们需要在程序运行前配置好这个插件。
 
 首先增加文件 `plugins/vue-notifications.js`：
 ```js

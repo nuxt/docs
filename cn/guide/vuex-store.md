@@ -17,6 +17,8 @@ Nuxt.js 支持两种使用 `store` 的方式，你可以择一使用：
 - **普通方式：** `store/index.js` 返回一个 Vuex.Store 实例
 - **模块方式：** `store` 目录下的每个 `.js` 文件会被转换成为状态树[指定命名的子模块](http://vuex.vuejs.org/en/modules.html) （当然，`index` 是根模块）
 
+### 普通方式
+
 使用普通方式的状态树，需要要添加 `store/index.js` 文件，并对外暴露一个 Vuex.Store 实例：
 
 ```js
@@ -49,7 +51,7 @@ export default store
 </template>
 ```
 
-## 状态树模块化
+### 模块方式
 
 > 状态树还可以拆分成为模块，`store` 目录下的每个 `.js` 文件会被转换成为状态树[指定命名的子模块](http://vuex.vuejs.org/en/modules.html)
 
@@ -68,6 +70,7 @@ export const mutations = {
 ```
 
 其他的模块文件也需要采用类似的方式，如 `store/todos.js` 文件：
+
 ```js
 export const state = {
   list: []
@@ -80,10 +83,47 @@ export const mutations = {
       done: false
     })
   },
+  delete (state, { todo }) {
+    state.list.splice(state.list.indexOf(todo), 1)
+  },
   toggle (state, todo) {
     todo.done = !todo.done
   }
 }
+```
+
+最终的状态树大概如下：
+
+```js
+new Vuex.Store({
+  state: { counter: 0 },
+  mutations: {
+    increment (state) {
+      state.counter++
+    }
+  },
+  modules: {
+    todos: {
+      state: {
+        list: []
+      },
+      mutations: {
+        add (state, { text }) {
+          state.list.push({
+            text,
+            done: false
+          })
+        },
+        delete (state, { todo }) {
+          state.list.splice(state.list.indexOf(todo), 1)
+        },
+        toggle (state, { todo }) {
+          todo.done = !todo.done
+        }
+      }
+    }
+  }
+})
 ```
 
 在页面组件 `pages/todos.vue`， 可以像下面这样使用 `todos` 模块：
@@ -131,60 +171,19 @@ export default {
 
 > fetch 方法会在渲染页面前被调用，作用是填充状态树 (store) 数据，与 data 方法类似，不同的是它不会设置组件的数据。
 
-如果页面组件设置了 `fetch` 方法，它会在组件每次加载前被调用（在服务端或切换至目标路由之前）。
-
-`fetch` 方法的第一个参数是页面组件的[上下文对象](/api/pages-context) `context`，我们可以用 `fetch` 方法来获取数据填充应用的状态树。为了让获取过程可以异步，你需要**返回一个 Promise**，Nuxt.js 会等这个 promise 完成后再渲染组件。
-
-举个栗子 `pages/index.vue`：
-```html
-<template>
-  <h1>Stars: {{ $store.state.stars }}</h1>
-</template>
-
-<script>
-export default {
-  fetch ({ store, params }) {
-    return axios.get('http://my-api/stars')
-    .then((res) => {
-      store.commit('setStars', res.data)
-    })
-  }
-}
-</script>
-```
-
-你也可以使用 `async` 或 `await` 的模式简化代码如下：
-
-```html
-<template>
-  <h1>Stars: {{ $store.state.stars }}</h1>
-</template>
-
-<script>
-export default {
-  async fetch ({ store, params }) {
-    let { data } = await axios.get('http://my-api/stars')
-    store.commit('setStars', data)
-  }
-}
-</script>
-```
-
-## 上下文对象
-
-想了解 `context` 变量的所有属性的话，请查阅 [页面上下文对象API](/api/pages-context)。
+关于 `fetch` 方法的更多信息，请参考 [页面 fetch 方法API](/api/pages-fetch)。
 
 ## nuxtServerInit 方法
 
 如果在状态树中指定了 `nuxtServerInit` 方法，Nuxt.js 调用它的时候会将页面的上下文对象作为第2个参数传给它（服务端调用时才会酱紫哟）。当我们想将服务端的一些数据传到客户端时，这个方法是灰常好用的。
 
-举个栗子，假设我们服务端的会话状态树里可以通过 `req.authUser` 来访问当前登录的用户。将该登录用户信息传给客户端的状态树，我们只需更新 `store/index.js` 如下：
+举个例子，假设我们服务端的会话状态树里可以通过 `req.session.user` 来访问当前登录的用户。将该登录用户信息传给客户端的状态树，我们只需更新 `store/index.js` 如下：
 
 ```js
 actions: {
   nuxtServerInit ({ commit }, { req }) {
-    if (req.authUser) {
-      commit('user', req.authUser)
+    if (req.session.user) {
+      commit('user', req.session.user)
     }
   }
 }

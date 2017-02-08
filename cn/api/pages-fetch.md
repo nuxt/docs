@@ -11,7 +11,7 @@ description: fetch 方法用于在渲染页面前填充应用的状态树（stor
 
 如果页面组件设置了 `fetch` 方法，它会在组件每次加载前被调用（在服务端或切换至目标路由之前）。
 
-`fetch` 方法的第一个参数是页面组件的[上下文对象](/api/#context) `context`，我们可以用 `fetch` 方法来获取数据填充应用的状态树。为了让获取过程可以异步，你需要**返回一个 Promise**，Nuxt.js 会等这个 promise 完成后再渲染组件。
+`fetch` 方法的第一个参数是页面组件的[上下文对象](/api/#上下文对象) `context`，我们可以用 `fetch` 方法来获取数据填充应用的状态树。为了让获取过程可以异步，你需要**返回一个 Promise**，Nuxt.js 会等这个 promise 完成后再渲染组件。
 
 例如 `pages/index.vue`：
 ```html

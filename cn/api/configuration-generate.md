@@ -15,9 +15,9 @@ description: 配置 Nuxt.js 应用生成静态站点的具体方式。
 
 - 类型： `Object`
   - 键类型： `String` (路由路径)
-  - 值类型： `Array` or `Function`
+  - 值类型： `Array` 或 `Function`
 
-当使用 [动态路由](/guide/routing#dynamic-routes) 时，你需要为每个动态的路由定义至少一个对应的参数映射。
+当使用 [动态路由](/guide/routing#动态路由) 时，你需要为每个动态的路由定义至少一个对应的参数映射。
 
 例如：
 

@@ -92,6 +92,35 @@ module.exports = {
 
 > 该配置项的值会被直接传给 vue-router 的[构造器](https://router.vuejs.org/zh-cn/api/options.html)。
 
+## middleware
+
+- 类型： `String` 或 `Array`
+  - 数值元素类型: `String`
+
+为应用的每个页面设置默认的中间件。
+
+例如：
+
+`nuxt.config.js`
+```js
+module.exports = {
+  router: {
+    // 在每页渲染前运行 middleware/user-agent.js 中间件的逻辑
+    middleware: 'user-agent'
+  }
+}
+```
+
+`middleware/user-agent.js`
+```js
+export default function (context) {
+  // 给上下文对象增加 userAgent 属性（增加的属性可在 `data` 和 `fetch` 方法中获取）
+  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+}
+```
+
+了解更多关于中间件的信息，请参考 [中间件指引文档](/guide/routing#中间件)。
+
 ## extendRoutes
 
 - 类型： `Function`

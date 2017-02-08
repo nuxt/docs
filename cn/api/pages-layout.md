@@ -21,4 +21,4 @@ export default {
 
 看下 [示例视频](https://www.youtube.com/watch?v=YOKnSTp7d38) 立刻体验下。
 
-想进一步了解页面布局在 Nuxt.js 里面是如何运作的话，请参考 [布局文档](/guide/views#layouts)。
+想进一步了解页面布局在 Nuxt.js 里面是如何运作的话，请参考 [布局文档](/guide/views#布局)。

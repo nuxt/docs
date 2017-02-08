@@ -23,7 +23,7 @@ module.exports = {
 
 然后， 我们可以通过以下两种方式来使用 `baseUrl` 变量：
 1. 通过 `process.env.baseUrl`
-2. 通过 `context.baseUrl`，请参考 [context api](/api#context)
+2. 通过 `context.baseUrl`，请参考 [context api](/api#上下文对象)
 
 你可以使用 `env` 属性配置第三方服务的公钥信息。
 

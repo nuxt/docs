@@ -12,7 +12,7 @@ description: Nuxt.js 让你可以配置全局的 CSS 文件、模块、库（每
 
 如果传入的是对象的话，其属性是：
 - src: `String` (文件路径)
-- lang: `String` ([所需的预处理器](/guide/pages#using-pre-processors))
+- lang: `String` ([所需的预处理器](/faq/pre-processors))
 
 在 `nuxt.config.js` 中添加 CSS 资源：
 

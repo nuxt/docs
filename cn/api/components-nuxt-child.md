@@ -5,7 +5,7 @@ description: 显示当前页面
 
 # &lt;nuxt-child&gt; 组件
 
-> 该组件用于显示[嵌套路由]((/guide/routing#nested-routes))场景下的页面内容。
+> 该组件用于显示[嵌套路由](/guide/routing#嵌套路由)场景下的页面内容。
 
 例如：
 
