@@ -37,4 +37,4 @@ heroku config:set NODE_ENV=production
 git push heroku master
 ```
 
-嘿嘿！现在你的 nuxt.js 已成功部署至 Heroku！
+嘿嘿！现在你的 nuxt.js 应用已成功部署至 Heroku！

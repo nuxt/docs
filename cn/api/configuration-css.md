@@ -1,18 +1,18 @@
 ---
-title: 配置 CSS
-description: Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every pages).
+title: "API: CSS 配置"
+description: Nuxt.js 让你可以配置全局的 CSS 文件、模块、库（每个页面都会被引入）。
 ---
 
-# Css
+# CSS 配置
 
-> Nuxt.js 让你可以定义全局 CSS 文件、模块、库（每个页面都会被引入）。
+> Nuxt.js 让你可以配置全局 CSS 文件、模块、库（每个页面都会被引入）。
 
 - 类型: `Array`
- - `String | Object`
+ - 数组元素类型：`String | Object`
 
 如果传入的是对象的话，其属性是：
 - src: `String` (文件路径)
-- lang: `String` ([所需的预处理器](/guide/pages#using-pre-processors))
+- lang: `String` ([所需的预处理器](/faq/pre-processors))
 
 在 `nuxt.config.js` 中添加 CSS 资源：
 

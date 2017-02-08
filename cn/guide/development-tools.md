@@ -1,11 +1,11 @@
 ---
-title: 测试
-description: 测试是 Web 应用开发过程中不可获取的工作。Nuxt.js 尽量帮助你简化这部分工作。
+title: 开发工具
+description: Nuxt.js 可让你的 Web 开发过程更愉悦。
 ---
 
-> 测试是 Web 应用开发过程中不可获取的工作。Nuxt.js 尽量帮助你简化这部分工作。
+> 测试是 Web 应用开发过程中不可获缺的工作。Nuxt.js 尽量帮助你简化这部分工作。
 
-## End-to-End 测试
+## 端对端测试
 
 [`ava`](https://github.com/avajs/ava) 是一个很强大的 JavaScript 测试框架，结合 [`jsdom`](https://github.com/tmpvar/jsdom)，我们就可以轻松地给 `nuxt` 应用进行端对端测试。
 
@@ -111,3 +111,50 @@ npm test
 
 实际上 `jsdom` 会有一定的限制性，因为它背后并没有使用任何的浏览器引擎，但是也能涵盖大部分关于 dom元素 的测试了。
 如果想使用真实的浏览器引擎来测试你的应用，推荐瞅瞅 [Nightwatch.js](http://nightwatchjs.org)。
+
+## ESLint
+
+> ESLint 是一个很棒的工具，帮助我们提升代码的规范和质量。
+
+在 Nuxt.js 中集成 [ESLint](http://eslint.org) 是非常简单的，首先我们需要安装 ESLint 的一系列依赖包：
+
+```bash
+npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-html eslint-plugin-promise eslint-plugin-standard
+```
+
+然后, 在项目根目录下创建 `.eslintrc.js` 文件用于配置 ESLint：
+```js
+module.exports = {
+  root: true,
+  parser: 'babel-eslint',
+  env: {
+    browser: true,
+    node: true
+  },
+  extends: 'standard',
+  // 校验 .vue 文件
+  plugins: [
+    'html'
+  ],
+  // 自定义规则
+  rules: {},
+  globals: {}
+}
+```
+
+最后，我们在 `package.json` 文件中添加一个 `lint` 脚本命令：
+
+```js
+"scripts": {
+  "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+}
+```
+
+通过以上配置，可使用以下命令对项目的代码进行 ESLint 校验：
+```bash
+npm run lint
+```
+
+ESLint 会校验应用所有的 JavaScript 和 Vue 文件，除了在 `.gitignore` 中忽略了的之外。
+
+<p class="Alert Alert--info">有个最佳实践是在 `package.json` 中增加 `"precommit": "npm run lint"` ，这样可以实现每次提交代码之前自动进行代码检测校验。</p>

@@ -1,7 +1,9 @@
 ---
-title: Assets
+title: 资源文件
 description: 默认情况下 Nuxt 使用 vue-loader、file-loader 以及 url-loader 这三个Webpack加载器来处理文件的加载和引用。
 ---
+
+## Webpack 构建
 
 > Nuxt 默认使用file-loader 以及 url-loader 这两个Webpack加载器来处理资源文件的加载和引用。
 
@@ -31,7 +33,7 @@ description: 默认情况下 Nuxt 使用 vue-loader、file-loader 以及 url-loa
 createElement('img', { attrs: { src: require('~assets/image.png') }})
 ```
 
-`.png` 并非JavaScript文件, 因此 Nuxt.js 通过配置Webpack使用[file-loader](https://github.com/webpack/file-loader) 和 [url-loader](https://github.com/webpack/url-loader) 这两个加载器来处理此类引用。
+`.png` 并非 JavaScript 文件, 因此 Nuxt.js 通过配置Webpack使用[file-loader](https://github.com/webpack/file-loader) 和 [url-loader](https://github.com/webpack/url-loader) 这两个加载器来处理此类引用。
 
 这样做的好处有：
 - `file-loader` 能让你指定从什么地方拷贝资源文件以及发布后放到哪个目录去，并能让你使用版本哈希码来重命名发布后的文件来实现增量更新和更好的缓存策略。
@@ -76,3 +78,19 @@ createElement('img', { attrs: { src: require('~assets/image.png') }})
 ```
 
 如果你想更新这些加载器的配置或者禁用他们，请参考[loaders 配置](/api/configuration-build)。
+
+## 静态文件
+
+如果你的静态资源文件需要 Webpack 做构建编译处理，可以放到 `assets` 目录，否则可以放到 `static` 目录中去。
+
+Nuxt 服务器启动的时候，该目录下的文件会映射至应用的根路径 `/` 下，像 `robots.txt` 或 `sitemap.xml` 这种类型的文件就很适合放到 `static` 目录中。
+
+你可以在代码中使用根路径 `/` 结合资源相对路径来引用静态资源：
+
+```html
+<!-- 引用 static 目录下的图片 -->
+<img src="/my-image.png"/>
+
+<!-- 引用 assets 目录下经过 webpack 构建处理后的图片 -->
+<img src="/assets/my-image-2.png"/>
+```

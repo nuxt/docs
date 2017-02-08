@@ -23,7 +23,7 @@ description: Nuxt.js 的应用目录架构提供了良好的代码分层结构�
 
 _该目录名为Nuxt.js保留的，不可更改。_
 
-[关于布局的更多信息](/guide/layouts)
+[关于布局的更多信息](/guide/views#布局)
 
 ### 中间件目录
 
@@ -35,7 +35,7 @@ _未完待续_
 
 _该目录名为Nuxt.js保留的，不可更改。_
 
-[关于页面的更多信息](/guide/pages)
+[关于页面的更多信息](/guide/views)
 
 ### 插件目录
 
@@ -45,14 +45,14 @@ _该目录名为Nuxt.js保留的，不可更改。_
 
 ### 静态文件目录
 
-静态文件目录 `static` 用于存放应用的静态文件，此类文件不会被 Nuxt.js 调用webpack进行构建编译处理。
+静态文件目录 `static` 用于存放应用的静态文件，此类文件不会被 Nuxt.js 调用 Webpack 进行构建编译处理。
 服务器启动的时候，该目录下的文件会映射至应用的根路径 `/` 下。
 
-**举个栗子:** /static/robots.txt 映射至 /robots.txt
+**举个例子:** /static/robots.txt 映射至 /robots.txt
 
 _该目录名为Nuxt.js保留的，不可更改。_
 
-[关于静态文件的更多信息](/guide/static)
+[关于静态文件的更多信息](/guide/assets#静态文件)
 
 ### Store 目录
 
@@ -88,3 +88,10 @@ _该文件名为Nuxt.js保留的，不可更改。_
 | ~plugins | /plugins |
 | ~static | /static |
 | ~store | /store |
+
+文件别名：
+
+| 别名 | 使用方法 | 描述 |
+|-------|------|--------------|
+| ~store | `const store = require('~store')` | 导入 `vuex` 状态树实例。 |
+| ~router | `const store = require('~router')`| 导入 `vue-router` 实例。 |
