@@ -92,6 +92,35 @@ module.exports = {
 
 > This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
 
+## middleware
+
+- Type: `String` or `Array`
+  - Items: `String`
+
+Set the default(s) middleware for every pages of the application.
+
+Example:
+
+`nuxt.config.js`
+```js
+module.exports = {
+  router: {
+    // Run the middleware/user-agent.js on every pages
+    middleware: 'user-agent'
+  }
+}
+```
+
+`middleware/user-agent.js`
+```js
+export default function (context) {
+  // Add the userAgent property in the context (available in `data` and `fetch`)
+  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+}
+```
+
+To learn more about the middleware, see the [middleware guide](/guide/routing#middleware).
+
 ## extendRoutes
 
 - Type: `Function`

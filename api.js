@@ -40,14 +40,18 @@ async function getReleases () {
   if (process.env.GITHUB_TOKEN) {
     options.headers = { 'Authorization': `token ${process.env.GITHUB_TOKEN}` }
   }
-  const res = await axios(options)
-  RELEASES = res.data.filter((r) => !r.draft).map((release) => {
-    return {
-      name: release.name,
-      date: release.published_at,
-      body: marked(release.body)
-    }
-  })
+  try {
+    const res = await axios(options)
+    RELEASES = res.data.filter((r) => !r.draft).map((release) => {
+      return {
+        name: release.name,
+        date: release.published_at,
+        body: marked(release.body)
+      }
+    })
+  } catch (e) {
+    console.error('Could not fetch nuxt.js release notes.')
+  }
   // Refresh every 15 minutes
   setTimeout(getReleases, 15 * 60 * 1000)
 }

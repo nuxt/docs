@@ -66,6 +66,7 @@
           { "name": "base", "to": "#base" },
           { "name": "linkActiveClass", "to": "#linkactiveclass" },
           { "name": "scrollBehavior", "to": "#scrollbehavior" },
+          { "name": "middleware", "to": "#middleware" },
           { "name": "extendRoutes", "to": "#extendroutes" }
         ]
       },
