@@ -265,4 +265,45 @@ More information about the transition property: [API Pages transition](/api/page
 
 ## Middleware
 
-> Feature & Documentation coming soon!
+> The middleware lets you define custom function to be ran before rendering a page or a group of pages.
+
+**Every middleware should be placed in the `middleware/` directory.** The filename will be the name of the middleware (`middleware/auth.js` will be the `auth` middleware).
+
+A middleware receive [the context](/api#the-context) as first argument:
+
+```js
+export default function (context) {
+  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+}
+```
+
+The middleware will be executed in series in this order:
+1. `nuxt.config.js`
+2. Matched layouts
+3. Matched pages
+
+A middleware can be asynchronous, simply return a `Promise` or use the 2nd `callback` argument:
+
+`middleware/stats.js`
+```js
+import axios from 'axios'
+
+export default function ({ route }) {
+  return axios.post('http://my-stats-api.com', {
+    url: route.fullPath
+  })
+}
+```
+
+Then, in your `nuxt.config.js`, layout or page, use the `middleware` key:
+
+`nuxt.config.js`
+```js
+module.exports = {
+  middleware: 'stats'
+}
+```
+
+The `stats` middleware will be called for every route changes.
+
+To see a real-life example using the middleware, please see [example-auth0](https://github.com/nuxt/example-auth0) on GitHub.
