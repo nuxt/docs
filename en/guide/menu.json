@@ -8,6 +8,7 @@
           { "to": "#what-is-nuxt-js-", "name": "What is Nuxt.js ?" },
           { "to": "#how-it-works", "name": "How it Works" },
           { "to": "#features", "name": "Features" },
+          { "to": "#schema", "name": "Schema" },
           { "to": "#server-rendered", "name": "Server Rendered" },
           { "to": "#static-generated", "name": "Static Generated" }
         ]
