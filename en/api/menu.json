@@ -48,7 +48,14 @@
       { "name": "css", "to": "/configuration-css" },
       { "name": "dev", "to": "/configuration-dev" },
       { "name": "env", "to": "/configuration-env" },
-      { "name": "generate", "to": "/configuration-generate" },
+      {
+        "name": "generate",
+        "to": "/configuration-generate",
+        "contents": [
+          { "name": "dir", "to": "#dir" },
+          { "name": "routeParams", "to": "#routeparams" },
+        ]
+      },
       { "name": "head", "to": "/configuration-head" },
       { "name": "loading", "to": "/configuration-loading",
         "contents": [

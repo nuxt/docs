@@ -11,6 +11,13 @@ description: Configure the generation of your universal web application to a sta
 
 When launching `nuxt generate` or calling `nuxt.generate()`, nuxt.js will use the configuration defined in the `generate` property.
 
+## dir
+
+- Type: 'Sring'
+- Default: `'dist'`
+
+Directory name created by `nuxt generate`.
+
 ## routeParams
 
 - Type: `Object`
