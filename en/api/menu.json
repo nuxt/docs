@@ -53,11 +53,13 @@
         "to": "/configuration-generate",
         "contents": [
           { "name": "dir", "to": "#dir" },
-          { "name": "routeParams", "to": "#routeparams" },
+          { "name": "routeParams", "to": "#routeparams" }
         ]
       },
       { "name": "head", "to": "/configuration-head" },
-      { "name": "loading", "to": "/configuration-loading",
+      {
+        "name": "loading",
+        "to": "/configuration-loading",
         "contents": [
           { "name": "Disable the Progress Bar", "to": "#disable-the-progress-bar" },
           { "name": "Customize the Progress Bar", "to": "#customize-the-progress-bar" },
