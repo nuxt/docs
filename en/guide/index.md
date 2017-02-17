@@ -49,7 +49,7 @@ Under the hood we use [Webpack](https://github.com/webpack/webpack) with [vue-Lo
 
 ## Schema
 
-Here a schema how what is called by nuxt.js when the server is called or when the user navigate trough the app via `<nuxt-link>`:
+This schema shows what is called by nuxt.js when the server is called or when the user navigate through the app via `<nuxt-link>`:
 
 ![nuxt-schema](/nuxt-schema.png)
 
