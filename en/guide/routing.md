@@ -300,7 +300,9 @@ Then, in your `nuxt.config.js`, layout or page, use the `middleware` key:
 `nuxt.config.js`
 ```js
 module.exports = {
-  middleware: 'stats'
+  router: {
+    middleware: 'stats'
+  }  
 }
 ```
 
