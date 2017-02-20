@@ -86,7 +86,7 @@ router: {
 }
 ```
 
-As you can see the route named `users-id` has the path `:id?` which makes it optional, if you want to make it required, create an `index.vue` file in the `users` directory.
+As you can see the route named `users-id` has the path `:id?` which makes it optional, if you want to make it required, create an `index.vue` file in the `users/_id` directory.
 
 ### Validate Route Params
 
