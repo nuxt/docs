@@ -11,6 +11,13 @@ description: 配置 Nuxt.js 应用生成静态站点的具体方式。
 
 当运行 `nuxt generate` 命令或在编码中调用 `nuxt.generate()` 时，Nuxt.js 会使用 `generate` 属性的配置。
 
+## dir
+
+- 类型： 'Sring'
+- 默认值： `'dist'`
+
+`nuxt generate` 生成的目录名称。
+
 ## routeParams
 
 - 类型： `Object`
