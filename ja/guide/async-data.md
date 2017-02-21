@@ -1,23 +1,45 @@
 ---
-title: Async Data
-description: Nuxt.js supercharges the data method from vue.js to let you handle async operation before setting the component data.
+title: 非同期なデータ
+description: Nuxt.js は、コンポーネントのデータをセットする前に非同期の処理を行えるようにするために、Vue.js の data メソッドを過給します
 ---
 
-> Nuxt.js *supercharges* the `data` method from vue.js to let you handle async operation before setting the component data.
+<!-- title: Async Data -->
+<!-- description: Nuxt.js supercharges the data method from vue.js to let you handle async operation before setting the component data. -->
 
-## The data Method
+<!-- \> Nuxt.js *supercharges* the `data` method from vue.js to let you handle async operation before setting the component data. -->
 
-`data` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives [the context](/api#context) as the first argument, you can use it to fetch some data and return the component data.
+> Nuxt.js は、コンポーネントのデータをセットする前に非同期の処理を行えるようにするために、Vue.js の `data` メソッドを *過給* します（訳注: supercharges をうまく訳せませんでした。原文は Nuxt.js *supercharges* the `data` method from vue.js to let you handle async operation before setting the component data.）
 
-<div class="Alert Alert--orange">You do **NOT** have access of the component instance trough `this` inside `data` because it is called **before initiating** the component.</div>
+<!-- ## The data Method -->
+
+## data メソッド
+
+<!-- `data` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives [the context](/api#context) as the first argument, you can use it to fetch some data and return the component data. -->
+
+`data` メソッドはコンポーネント（ページコンポーネントに限ります）が読み込まれる前に毎回呼び出されます。サーバーサイドレンダリングや、ユーザーがページを遷移する前にも呼び出されます。そしてこのメソッドは第一引数として [context](/api#context) を受け取り、context を、データをフェッチしたりコンポーネントのデータを返すために使うことができます。
+
+<!-- <div class="Alert Alert--orange">You do **NOT** have access of the component instance trough `this` inside `data` because it is called **before initiating** the component.</div> -->
+
+<div class="Alert Alert--orange">`data` メソッド内の `this` を通してコンポーネントのインスタンスにアクセスすることは **できません**。それはコンポーネントがインスタンス化される前に data メソッドが呼び出されるためです。</div>
+
+<!-- To make the data method asynchronous, nuxt.js offers you different ways, choose the one you're the most familiar with: -->
 
 To make the data method asynchronous, nuxt.js offers you different ways, choose the one you're the most familiar with:
 
-1. returning a `Promise`, nuxt.js will wait for the promise to be resolved before rendering the component.
-2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await))
-3. Define a callback as second argument. It has to be called like this: `callback(err, data)`
+Nuxt.js では data メソッドを非同期にするために、いくつかの異なるやり方があるので、最もなじむものを選択してください:
 
-### Returning a Promise
+<!-- 1. returning a `Promise`, nuxt.js will wait for the promise to be resolved before rendering the component. -->
+<!-- 2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await)) -->
+<!-- 3. Define a callback as second argument. It has to be called like this: `callback(err, data)` -->
+
+1. `Promise` を返す。Nuxt.js はコンポーネントがレンダリングされる前に Promise が解決されるまで待ちます。
+2. [async/await](https://github.com/lukehoban/ecmascript-asyncawait) を使う。（[より深く理解する](https://zeit.co/blog/async-and-await)）
+3. 第二引数としてコールバックを定義する。右のように呼び出される必要があります: `callback(err, data)`
+
+<!-- ### Returning a Promise -->
+
+### Promise を返す
+
 ```js
 export default {
   data ({ params }) {
@@ -29,7 +51,10 @@ export default {
 }
 ```
 
-### Using async/await
+<!-- ### Using async/await -->
+
+### async/await を使う
+
 ```js
 export default {
   async data ({ params }) {
@@ -39,7 +64,10 @@ export default {
 }
 ```
 
-### Using a callback
+<!-- ### Using a callback -->
+
+### コールバックを使う
+
 ```js
 export default {
   data ({ params }, callback) {
@@ -51,9 +79,13 @@ export default {
 }
 ```
 
-### Returning an Object
+<!-- ### Returning an Object -->
 
-If you don't need to do any asynchronous call, you can simply return an object:
+### オブジェクトを返す
+
+<!-- If you don't need to do any asynchronous call, you can simply return an object: -->
+
+もし非同期に実行する必要がなければ、シンプルにオブジェクトを返せば良いです:
 
 ```js
 export default {
@@ -63,9 +95,13 @@ export default {
 }
 ```
 
-### Displaying the data
+<!-- ### Displaying the data -->
 
-When the data method set, you can display the data inside your template like you used to do:
+### データを表示する
+
+<!-- When the data method set, you can display the data inside your template like you used to do: -->
+
+data メソッドがセットされると、下記のように template の内側でデータを表示することができます:
 
 ```html
 <template>
@@ -73,15 +109,40 @@ When the data method set, you can display the data inside your template like you
 </template>
 ```
 
-## The Context
+<!-- ## The Context -->
 
-To see the list of available keys in `context`, take a look at the [API Pages data](/api).
+## コンテキスト
 
-## Handling Errors
+<!-- To see the list of available keys in `context`, take a look at the [API Pages data](/api). -->
 
-Nuxt.js add the `error(params)` method in the `context`, you can call it to display the error page. `params.statusCode` will be also used to render the proper status code form the server-side.
+`context` 内で利用できるキーの一覧を確認するには [ページ data API](/api) をご覧ください。
 
-Example with a `Promise`:
+<!-- ## Handling Errors -->
+
+## エラー処理
+
+<!-- Nuxt.js add the `error(params)` method in the `context`, you can call it to display the error page. `params.statusCode` will be also used to render the proper status code form the server-side. -->
+
+Nuxt.js は `context` の中に `error(params)` メソッドを追加しました。これを呼び出すことでエラーページを表示できます。
+
+<!-- Example with a `Promise`: -->
+
+`Promise` を使った例:
+
+<!-- ```js -->
+<!-- export default { -->
+<!--   data ({ params, error }) { -->
+<!--     return axios.get(`https://my-api/posts/${params.id}`) -->
+<!--     .then((res) => { -->
+<!--       return { title: res.data.title } -->
+<!--     }) -->
+<!--     .catch((e) => { -->
+<!--       error({ statusCode: 404, message: 'Post not found' }) -->
+<!--     }) -->
+<!--   } -->
+<!-- } -->
+<!-- ``` -->
+
 ```js
 export default {
   data ({ params, error }) {
@@ -90,13 +151,30 @@ export default {
       return { title: res.data.title }
     })
     .catch((e) => {
-      error({ statusCode: 404, message: 'Post not found' })
+      error({ statusCode: 404, message: 'ページが見つかりません' })
     })
   }
 }
 ```
 
-If you're using the `callback` argument, you can call it directly with the error, nuxt.js will call the `error` method for you:
+<!-- If you're using the `callback` argument, you can call it directly with the error, nuxt.js will call the `error` method for you: -->
+
+`callback` 引数を使っているときは、直接、エラー内容と共に callback を呼び出すことができ、そうすると Nuxt.js は `error` メソッドを実行します。
+
+<!-- ```js -->
+<!-- export default { -->
+<!--   data ({ params }, callback) { -->
+<!--     axios.get(`https://my-api/posts/${params.id}`) -->
+<!--     .then((res) => { -->
+<!--       callback(null, { title: res.data.title }) -->
+<!--     }) -->
+<!--     .catch((e) => { -->
+<!--       callback({ statusCode: 404, message: 'Post not found' }) -->
+<!--     }) -->
+<!--   } -->
+<!-- } -->
+<!-- ``` -->
+
 ```js
 export default {
   data ({ params }, callback) {
@@ -105,10 +183,12 @@ export default {
       callback(null, { title: res.data.title })
     })
     .catch((e) => {
-      callback({ statusCode: 404, message: 'Post not found' })
+      callback({ statusCode: 404, message: 'ページが見つかりません' })
     })
   }
 }
 ```
 
-To customize the error page, take a look at the [VIEWS layouts section](/guide/views#layouts).
+<!-- To customize the error page, take a look at the [VIEWS layouts section](/guide/views#layouts). -->
+
+エラーページをカスタマイズするためには [ビューページのレイアウトセクション](/guide/views#layouts) を参照してください。
