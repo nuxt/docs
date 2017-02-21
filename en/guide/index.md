@@ -47,6 +47,12 @@ Under the hood we use [Webpack](https://github.com/webpack/webpack) with [vue-Lo
 - Hot reloading in Development
 - Pre-processor: SASS, LESS, Stylus, etc
 
+## Schema
+
+This schema shows what is called by nuxt.js when the server is called or when the user navigate through the app via `<nuxt-link>`:
+
+![nuxt-schema](/nuxt-schema.png)
+
 ## Server Rendered
 
 You can use nuxt.js as a framework to handle all the UI rendering of your project.

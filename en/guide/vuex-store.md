@@ -3,7 +3,7 @@ title: Vuex Store
 description: Using a store to manage the state is important for every big application, that's why nuxt.js implement Vuex in its core.
 ---
 
-> Using a store to manage the state is important to every big application, that's why nuxt.js implement [vuex]()https://github.com/vuejs/vuex in its core.
+> Using a store to manage the state is important to every big application, that's why nuxt.js implement [vuex](https://github.com/vuejs/vuex) in its core.
 
 ## Activate the Store
 
@@ -183,5 +183,7 @@ actions: {
   }
 }
 ```
+
+> If you are using the _Modules_ mode of the Vuex store, only the primary module (in `store/index.js`) will receive this action. You'll need to chain your module actions from there.
 
 The context is given to `nuxtServerInit` as the 2nd argument, it is the same as the `data` or `fetch` method except that `context.redirect()` and `context.error()` are omitted.
