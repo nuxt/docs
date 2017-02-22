@@ -66,6 +66,14 @@
           { "name": "Use a Custom Loading Component", "to": "#use-a-custom-loading-component" }
         ]
       },
+      {
+        "name": "performance",
+        "to": "/configuration-performance",
+        "contents": [
+          { "name": "gzip", "to": "#gzip" },
+          { "name": "prefetch", "to": "#prefetch" }
+        ]
+      },
       { "name": "plugins", "to": "/configuration-plugins" },
       { "name": "rootDir", "to": "/configuration-rootdir" },
       {
