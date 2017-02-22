@@ -40,14 +40,7 @@ module.exports = {
 Default:
 ```js
 {
-  plugins: [
-    'transform-async-to-generator',
-    'transform-runtime'
-  ],
-  presets: [
-    ['es2015', { modules: false }],
-    'stage-2'
-  ]
+  presets: ['vue-app']
 }
 ```
 
@@ -97,9 +90,9 @@ If you want to see more about our default webpack configuration, take a look at 
 Default:
 ```js
 {
-  css: 'style.css',
-  vendor: 'vendor.bundle.js',
-  app: 'nuxt.bundle.js'
+  css: 'style.[hash].css',
+  vendor: 'vendor.bundle.[hash].js',
+  app: 'nuxt.bundle.[chunkhash].js'
 }
 ```
 
@@ -108,9 +101,9 @@ Example (`nuxt.config.js`):
 module.exports = {
   build: {
     filenames: {
-      css: 'app.css',
-      vendor: 'vendor.js',
-      app: 'app.js'
+      css: 'app.[hash].css',
+      vendor: 'vendor.[hash].js',
+      app: 'app.[chunkhash].js'
     }
   }
 }
