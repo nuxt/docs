@@ -135,6 +135,11 @@ nuxtServerInit ({ commit }, { req }) {
 }
 ```
 
+To make the data method asynchronous, nuxt.js offers you different ways, choose the one you're the most familiar with:
+
+1. returning a `Promise`, nuxt.js will wait for the promise to be resolved before rendering the component.
+2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await))
+
 ### login() action
 
 We add a `login` action which will be called from our pages component to log in the user:
