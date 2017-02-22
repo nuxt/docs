@@ -12,7 +12,7 @@ description: Nuxt.js lets you define the CSS files/modules/libraries you want to
 
 If the item is an object, the properties are:
 - src: `String` (path of the file)
-- lang: `String` ([pre-processor used](/guide/pages#using-pre-processors))
+- lang: `String` ([pre-processor used](/faq/pre-processors))
 
 In `nuxt.config.js`, add the CSS resources:
 
