@@ -48,9 +48,18 @@
       { "name": "css", "to": "/configuration-css" },
       { "name": "dev", "to": "/configuration-dev" },
       { "name": "env", "to": "/configuration-env" },
-      { "name": "generate", "to": "/configuration-generate" },
+      {
+        "name": "generate",
+        "to": "/configuration-generate",
+        "contents": [
+          { "name": "dir", "to": "#dir" },
+          { "name": "routeParams", "to": "#routeparams" }
+        ]
+      },
       { "name": "head", "to": "/configuration-head" },
-      { "name": "loading", "to": "/configuration-loading",
+      {
+        "name": "loading",
+        "to": "/configuration-loading",
         "contents": [
           { "name": "禁用加载进度条", "to": "#禁用加载进度条" },
           { "name": "个性化加载进度条", "to": "#个性化加载进度条" },

@@ -86,7 +86,7 @@ router: {
 }
 ```
 
-你会发现名称为 `users-id` 的路由路径带有 `:id?` 参数，表示该路由是可选的（译者注：也即 `nuxt generate` 时如果不[配置该路由参数的数据映射](/api/configuration-generate#routeParams)，不会生成对应的 `dist/users` 目录）。如果你想将它设置为必选的路由，需要在 `users` 目录内创建一个 `index.vue` 文件。
+你会发现名称为 `users-id` 的路由路径带有 `:id?` 参数，表示该路由是可选的（译者注：也即 `nuxt generate` 时如果不[配置该路由参数的数据映射](/api/configuration-generate#routeParams)，不会生成对应的 `dist/users` 目录）。如果你想将它设置为必选的路由，需要在 `users/_id` 目录内创建一个 `index.vue` 文件。
 
 ### 路由参数校验
 
@@ -265,4 +265,46 @@ export default {
 
 ## 中间件
 
-> 未完待续！
+> 中间件允许您定义一个自定义函数运行在一个页面或一组页面渲染之前。
+
+每一个中间件应放置在 `middleware/` 目录。文件名的名称将成为中间件名称(`middleware/auth.js`将成为 `auth` 中间件)。
+
+一个中间件接收 [context](/api/#上下文对象) 作为第一个参数：
+
+```javascript
+export default function (context) {
+  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+}
+```  
+
+中间件执行流程顺序：
+
+1. `nuxt.config.js`
+2. 匹配布局
+3. 匹配页面
+
+中间件可以异步执行,只需要返回一个 `Promise` 或使用第2个 `callback` 作为第一个参数：
+
+`middleware/stats.js`
+
+```javascript
+import axios from 'axios'
+
+export default function ({ route }) {
+  return axios.post('http://my-stats-api.com', {
+    url: route.fullPath
+  })
+}
+``` 
+
+然后在你的 `nuxt.config.js` 中的 layouts 或者 pages 中使用中间件:
+
+```javascript
+module.exports = {
+  middleware: 'stats'
+}
+```
+
+`stats` 中间件将在每个路由改变时被调用。
+
+如果你想看到一个使用中间件的真实例子，请参阅在 GitHub 上的[example-auth0](https://github.com/nuxt/example-auth0)。

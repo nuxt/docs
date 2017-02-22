@@ -49,6 +49,12 @@ Nuxt.js 集成了以下组件/框架，用于开发完整而强大的 Web 应用
 - 集成ESLint
 - 支持各种样式预处理器： SASS、LESS、 Stylus等等
 
+## 流程图
+
+下图阐述了 Nuxt.js 应用一个完整的服务器请求到渲染（或用户通过 `<nuxt-link>` 切换路由渲染页面）的流程：
+
+![nuxt-schema](/nuxt-schema.png)
+
 ## 服务端渲染
 
 你可以使用 Nuxt.js 作为你项目的UI渲染框架。
