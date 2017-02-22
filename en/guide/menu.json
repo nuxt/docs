@@ -51,7 +51,8 @@
         "contents": [
           { "to": "#pages", "name": "Pages" },
           { "to": "#layouts", "name": "Layouts" },
-          { "to": "#html-head", "name": "HTML Head" }
+          { "to": "#html-head", "name": "HTML Head" },
+          { "to": "#document", "name": "Document" }
         ]
       },
       {

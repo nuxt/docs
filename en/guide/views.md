@@ -163,3 +163,38 @@ More information about the head method: [API Configuration head](/api/configurat
 More information about the head method: [API Pages head](/api/pages-head)
 
 <p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+
+## Document
+
+> You can customise the main document with nuxt.js
+
+To extend the html template, create a `app.html` at the root of your project.
+
+The default template is:
+
+```html
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }}>
+  <head>
+    {{ HEAD }}
+  </head>
+  <body {{ BODY_ATTRS }}>
+    {{ APP }}
+  </body>
+</html>
+```
+
+One example if to add conditional CSS classes for IE:
+
+```html
+<!DOCTYPE html>
+<!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
+  <head>
+    {{ HEAD }}
+  </head>
+  <body {{ BODY_ATTRS }}>
+    {{ APP }}
+  </body>
+</html>
+```
