@@ -24,7 +24,9 @@ module.exports = {
     // node.js module but we specify the pre-processor
     { src: 'bulma', lang: 'sass' },
     // Css file in the project
-    '~assets/css/main.css'
+    '~assets/css/main.css',
+    // Sass file in the project
+    { src: '~assets/css/main.scss', lang: 'scss' } // scss instead of sass
   ]
 }
 ```
