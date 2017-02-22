@@ -13,7 +13,7 @@ When launching `nuxt generate` or calling `nuxt.generate()`, nuxt.js will use th
 
 ## dir
 
-- Type: 'Sring'
+- Type: `String`
 - Default: `'dist'`
 
 Directory name created by `nuxt generate`.
