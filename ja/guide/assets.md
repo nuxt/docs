@@ -118,7 +118,7 @@ file-loader と url-loader の役割:
 
 <!-- ## Static -->
 
-## 静的なファイル
+## Webpack で扱わない静的ファイル
 
 <!-- If you don't want to use Webpacked Assets from the `assets` directory, you can create and use the `static` directory in your project root directory. -->
 
