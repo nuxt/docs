@@ -1,6 +1,6 @@
 ---
 title: アセット
-description: Nuxt.js はアセットファイルを配信するために Webpack のローダーとしてデフォルトで vue-loader、file-loader 及び url-loader を使いますが、静的ファイルのためのディレクトリを使うこともできます。
+description: Nuxt.js はアセットファイルを配信するために（デフォルトでは）Webpack のローダーとして vue-loader、file-loader 及び url-loader を使います。しかし Webpack の取り扱う対象としない静的ファイル専用のディレクトリを使うこともできます。
 ---
 
 <!-- title: Assets -->
@@ -8,15 +8,15 @@ description: Nuxt.js はアセットファイルを配信するために Webpack
 
 <!-- \> Nuxt uses vue-loader, file-loader and url-loader for Webpack by default for strong assets serving, but you can also use Static directory for static assets. -->
 
-> Nuxt.js はアセットファイルを配信するために Webpack のローダーとしてデフォルトで vue-loader、file-loader 及び url-loader を使いますが、静的ファイルのためのディレクトリを使うこともできます。
+> Nuxt.js はアセットファイルを配信するために（デフォルトでは）Webpack のローダーとして vue-loader、file-loader 及び url-loader を使います。しかし Webpack の取り扱う対象としない静的ファイル専用のディレクトリを使うこともできます。
 
 <!-- ## Webpacked -->
 
-## Webpack
+## Webpack で取り扱う
 
 <!-- By default, [vue-loader](http://vue-loader.vuejs.org/en/) automatically processes your style and template files with `css-loader` and the Vue template compiler. In this compilation process, all asset URLs such as `<img src="...">`, `background: url(...)` and CSS `@import` are resolved as module dependencies. -->
 
-デフォルトでは [vue-loader](http://vue-loader.vuejs.org/en/) がスタイルやテンプレートファイルを `css-loader` や Vue テンプレートコンパイラを用いて自動的に処理します。このコンパイル処理の中で、`<img src="...">` や `background: url(...)` や CSS `@import` などの全ての URL はモジュールの依存関係のように解決されます。
+デフォルトでは [vue-loader](http://vue-loader.vuejs.org/en/) は `css-loader` 及び Vue テンプレートコンパイラを用いて、スタイルやテンプレートファイルを処理します。このコンパイル処理の中で、`<img src="...">` や `background: url(...)` や CSS `@import` などのすべての URL はモジュールの依存関係のように解決されます。
 
 <!-- For example, we have this file tree: -->
 
@@ -53,17 +53,17 @@ createElement('img', { attrs: { src: require('~assets/image.png') }})
 
 <!-- Because `.png` is not a JavaScript file, nuxt.js configures Webpack to use [file-loader](https://github.com/webpack/file-loader) and [url-loader](https://github.com/webpack/url-loader) to handle them for you. -->
 
-`.png` は JavaScript ファイルではないため、Nuxt.js は Webpack が PNG ファイルを扱えるように [file-loader](https://github.com/webpack/file-loader) と [url-loader](https://github.com/webpack/url-loader) を使う設定を行います。
+PNG ファイル JavaScript ファイルではないため、Nuxt.js は Webpack が PNG ファイルを扱えるように [file-loader](https://github.com/webpack/file-loader) と [url-loader](https://github.com/webpack/url-loader) を使う設定を行います。
 
 <!-- The benefits of them are: -->
 
-file-loader と url-loader を使うメリット:
+file-loader と url-loader の役割:
 
 <!-- - `file-loader` lets you designate where to copy and place the asset file, and how to name it using version hashes for better caching. -->
 <!-- - `url-loader` allows you to conditionally inline a file as base-64 data URL if they are smaller than a given threshold. This can reduce a number of HTTP requests for trivial files. If the file is larger than the threshold, it automatically falls back to `file-loader`. -->
 
-- `file-loader` はアセットファイルをどこにコピーし配置すべきか、また、より良いキャッシングのためにバージョンのハッシュ値を使って、なんというファイル名にすべきかを指定します。
-- `url-loader` はもしファイルサイズが閾値よりも小さければ、ファイルを BASE64 データとして埋め込みます。これにより小さなファイルを取得するための HTTP リクエストの数を減らすことができます。もしファイルサイズが閾値よりも大きければ、自動的に `file-loader` にフォールバックします。
+- `file-loader` はアセットファイルをどこにコピーし配置すべきか、また、ファイル名をどうすべきかを決定します。ファイル名は上手にキャッシュするためにバージョンのハッシュ値を含める等を行います。
+- `url-loader` はもしファイルサイズが閾値よりも小さければ、ファイルの内容を Base64 エンコードして埋め込みます。こうすると小さなファイルを取得するための HTTP リクエストの数を減らすことができます。一方で、もしファイルサイズが閾値よりも大きければ、自動的に `file-loader` にフォールバックします。
 
 <!-- Actually, Nuxt.js default loaders configuration is: -->
 
@@ -92,11 +92,11 @@ file-loader と url-loader を使うメリット:
 
 <!-- Which means that every file below 1 KO will be inlined as base-64 data URL. Otherwise, the image/font will be copied in its corresponding folder (under the `.nuxt` directory) with a name containing a version hashes for better caching. -->
 
-ファイルサイズが 1KO を下回るファイルはすべて base-64 データとして埋め込まれます。反対に 1KO を上回る画像やフォントは（`.nuxt` ディレクトリ配下の）対応するディレクトリにより良いキャッシングのためのバージョンのハッシュ値を含んだファイル名でコピーされます。
+ファイルサイズが 1KB を下回るファイルはすべて Base64 エンコードされて埋め込まれます。反対に 1KB を上回る画像やフォントは（`.nuxt` ディレクトリ配下の）対応するディレクトリにコピーされます。このときファイル名はうまくキャッシュさせるためにバージョンのハッシュ値を含んだものになります。
 
 <!-- When launching our application with `nuxt`, our template in `pages/index.vue`: -->
 
-アプリケーションを `nuxt` コマンドで起動するとき、`pages/index.vue` 内のテンプレートは下記のようになっていて:
+アプリケーションを `nuxt` コマンドで起動するとき、`pages/index.vue` 内のテンプレートは下記のようになっており:
 
 ```html
 <template>
