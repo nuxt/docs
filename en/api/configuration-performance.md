@@ -28,7 +28,7 @@ module.exports = {
 - Type: `Boolean`
 - Default: `true`
 
-Nuxt.js uses the [prefetch](https://www.w3.org/TR/resource-hints/#dfn-prefetch) strategy to pre-fetch the pages bundle that will be required when navigating to the next page. When the user will click on a link, nuxt.js will already have pre-fetched the page and the navigation will fill like instant will keeping the code splitted.
+In production, nuxt.js uses the [prefetch](https://www.w3.org/TR/resource-hints/#dfn-prefetch) strategy to pre-fetch the pages bundle that will be required when navigating to the next page. When the user will click on a link, nuxt.js will already have pre-fetched the page and the navigation will fill like instant will keeping the code splitted.
 
 Example of the `prefetch` feature (in the `<head>` of the page rendered):
 ```html
