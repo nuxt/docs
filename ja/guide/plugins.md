@@ -1,6 +1,6 @@
 ---
 title: プラグイン
-description: Nuxt.js ではルートの Vue.js アプリケーションがインスタンス化される前に実行される js プラグインを定義することができます。プラグインとして自前のライブラリや外部モジュールを使うことができます。
+description: Nuxt.js では js プラグインを定義することができ、それはルートの Vue.js アプリケーションがインスタンス化される前に実行されます。プラグインとして自前のライブラリを指定することも、外部のモジュールを指定することもできます。
 ---
 
 <!-- title: Plugins -->
@@ -8,23 +8,23 @@ description: Nuxt.js ではルートの Vue.js アプリケーションがイン
 
 <!-- \> Nuxt.js allows you to define js plugins to be ran before instantiating the root vue.js application, it can be to use your own library or external modules. -->
 
-> Nuxt.js ではルートの Vue.js アプリケーションがインスタンス化される前に実行される js プラグインを定義することができます。プラグインとして自前のライブラリや外部モジュールを使うことができます。
+> Nuxt.js では js プラグインを定義することができ、それはルートの Vue.js アプリケーションがインスタンス化される前に実行されます。プラグインとして自前のライブラリを指定することも、外部のモジュールを指定することもできます。
 
 <!-- <div class="Alert">It is important to know that in any Vue [instance lifecycle](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram), only `beforeCreate` and `created` hooks are called **both from client-side and server-side**. All other hooks are called only from the client-side.</div> -->
 
-<div class="Alert">どの Vue [インスタンスのライフサイクル](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram) においても、`beforeCreate` と `created` フックのみが **クライアントサイドとサーバーサイドの両方** で呼び出されることを知っておくことはとても重要です。それ以外の全てのフックはクライアントサイドでのみ呼び出されます。</div>
+<div class="Alert">Vue インスタンスの [ライフサイクル](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram) において、`beforeCreate` と `created` フックのみが **クライアントサイドとサーバーサイドの両方** で呼び出されることに注意してください。それ以外のすべてのフックはクライアントサイドでのみ呼び出されます。</div>
 
 <!-- ## External Packages -->
 
-## 外部パッケージ
+## 外部パッケージの利用
 
 <!-- We may want to use external packages/modules in our application, one great example is [axios](https://github.com/mzabriskie/axios) for making HTTP request for both server and client. -->
 
-アプリケーションに外部パッケージ/モジュールを使いたいときがあるかもしれません。例えばサーバーでもクライアントでも HTTP リクエストを送れるようにするための [axios](https://github.com/mzabriskie/axios) が良い例です。
+アプリケーションに外部パッケージ/モジュールを使いたいときがあるでしょう。例えばサーバーでもクライアントでも HTTP リクエストを送れる [axios](https://github.com/mzabriskie/axios) などが良い例です。
 
 <!-- We install it via NPM: -->
 
-NPM 経由でインストールします:
+外部パッケージは NPM 経由でインストールします:
 
 ```bash
 npm install --save axios
@@ -32,7 +32,7 @@ npm install --save axios
 
 <!-- Then, we can use it directly in our pages: -->
 
-そしてページ内で直接それを使うことができます:
+そうすると次のようにページ内で直接それを使うことができます:
 
 ```html
 <template>
@@ -53,7 +53,7 @@ export default {
 
 <!-- But there is **one problem here**, if we import axios in another page, it will be included again for the page bundle. We want to include `axios` only once in our application, for this, we use the `build.vendor` key in our `nuxt.config.Js`: -->
 
-しかし、**ひとつ問題があって**、仮に別のページで axios をインポートすると、そのページでもまたインクルードされてしまいます。この問題に対して、`axios` をアプリケーション内で一度だけインクルードしたいと思い、`nuxt.config.js` 内で `build.vendor` キーを使うようにしました。
+ただしここで **ひとつ問題があり**、もし別のページでも import axios と書くと、axios は重複してバンドルファイルに含まれてしまいます。そこで `axios` をアプリケーション内で一度だけインクルードするには `nuxt.config.js` 内で `build.vendor` キーを使います:
 
 ```js
 module.exports = {
@@ -65,7 +65,7 @@ module.exports = {
 
 <!-- Then, I can import `axios` anywhere without having to worry about making the bundle bigger! -->
 
-こうするとバンドルファイルが膨れ上がる心配なしに `axios` をどこでもインポートできます。
+こうすれば、バンドルファイルが膨れ上がることなく、どの場所にも `import axios` と書くことができます。
 
 <!-- ## Vue Plugins -->
 
@@ -77,7 +77,7 @@ module.exports = {
 
 <!-- File `plugins/vue-notifications.js`: -->
 
-`plugins/vue-notifications.js` ファイルを次のようにします:
+そのためには `plugins/vue-notifications.js` ファイルを次のように記述します:
 
 ```js
 import Vue from 'vue'
@@ -102,11 +102,11 @@ module.exports = {
 
 <!-- Actually, `vue-notifications` will be included in the app bundle, but because it's a library, we want to include it in the vendor bundle for better caching. -->
 
-実は `vue-notifications` は app bundle ファイルに含まれます。しかしライブラリなので、うまくキャッシュさせるために vendor bundle ファイルに含めたいとします。
+さて、上の書き方では、実は `vue-notifications` は app というバンドルファイルに含まれます。しかし `vue-notifications` はライブラリなので、vendor というバンドルファイルに含めて、うまくキャッシュさせたいと考えます。
 
 <!-- We can update our `nuxt.config.js` to add `vue-notifications` in the vendor bundle: -->
 
-`nuxt.config.js` を更新して vendor bundle の中に `vue-notifications` を入れます:
+そうするには `nuxt.config.js` を更新して vendor というバンドルファイルの設定の中に `vue-notifications` を入れます:
 
 ```js
 module.exports = {
@@ -119,13 +119,15 @@ module.exports = {
 
 <!-- ## Client-side only -->
 
-## クライアントサイドのみ
+## クライアントサイド限定のライブラリ利用
 
 <!-- Some plugins might work **only for the browser**, you can use the `process.BROWSER_BUILD` variable to check if the plugin will run from the client-side. -->
 
-いくつかのプラグインは **ブラウザでのみ** 動作します。`process.BROWSER_BUILD` 変数を使って、そのプラグインがクライアントサイドで動作するか確認することができます。
+プラグインのいくつかは **ブラウザでのみ** 動かしたいとします。その場合は `process.BROWSER_BUILD` 変数を使って、あるプラグインをクライアントサイドで動作させることが可能です。
 
-Example:
+<!-- Example: -->
+
+例:
 
 ```js
 import Vue from 'vue'
@@ -138,4 +140,4 @@ if (process.BROWSER_BUILD) {
 
 <!-- In case you need to require some libraries only for the server, you can use the `process.SERVER_BUILD` variable set to `true` when webpack is creating the `server.bundle.js` file. -->
 
-もしサーバーサイドでのみライブラリを読み込む必要がある場合は、Webpack が `server.bundle.js` ファイルを作成するときに `true` がセットされる `process.SERVER_BUILD` 変数を使うことができます。
+逆に、サーバーサイドでのみライブラリを読み込む必要がある場合は、`process.SERVER_BUILD` 変数を使うことができます。これは Webpack が `server.bundle.js` ファイルを作成するタイミングで `true` がセットされる変数です。
