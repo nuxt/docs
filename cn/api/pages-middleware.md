@@ -35,4 +35,4 @@ export default function ({ store, redirect }) {
 }
 ``` 
 
-想了解更多关于使用中间件的信息，请移步 [中间件指引](/guide/routing#middleware)。
+想了解更多关于使用中间件的信息，请移步 [中间件指引](/guide/routing#中间件)。
