@@ -1,6 +1,6 @@
 ---
 title: 貢献ガイド
-description: "Nuxt.js へのどんな貢献も大歓迎します！"
+description: Nuxt.js への貢献はどんなものでも大歓迎です！
 ---
 
 <!-- title: Contribution Guide -->
@@ -8,7 +8,7 @@ description: "Nuxt.js へのどんな貢献も大歓迎します！"
 
 <!-- \> Any contribution to Nuxt.js is more than welcome! -->
 
-Nuxt.js へのどんな貢献も大歓迎します！
+Nuxt.js への貢献はどんなものでも大歓迎です！
 
 <!-- ## Reporting Issues -->
 
@@ -24,7 +24,7 @@ Nuxt.js へのどんな貢献も大歓迎します！
 
 <!-- We'd love to see your pull requests, even if it's just to fix a typo. Any significant improvement should be documented as [a GitHub issue](https://github.com/nuxt/nuxt.js/issues) before anybody starts working on it. -->
 
-たとえそれが単にタイポの修正であっても、ぜひプルリクエストを送ってください。どんな重要な改善であっても、誰かが手を動かし始める前に [GitHub issue](https://github.com/nuxt/nuxt.js/issues) に記載してください。
+たとえそれが単にタイプミスの修正であっても、ぜひプルリクエストを送ってください。どんな重要な改善であっても、誰かが手を動かし始める前に [GitHub issue](https://github.com/nuxt/nuxt.js/issues) に記載してください。
 
 <!-- ### Convention -->
 
