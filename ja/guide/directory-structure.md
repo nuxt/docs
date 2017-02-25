@@ -16,7 +16,7 @@ description: デフォルトの Nuxt.js アプリケーションの構造は、�
 
 <!-- ### The Assets Directory -->
 
-### アセットディレクトリ
+### assets ディレクトリ
 
 <!-- The `assets` directory contains your un-compiled assets such as LESS, SASS, or JavaScript. -->
 
@@ -24,19 +24,19 @@ description: デフォルトの Nuxt.js アプリケーションの構造は、�
 
 <!-- [More documentation about Assets integration](/guide/assets) -->
 
-アセットファイルの統合についてより深く理解するには [こちらのドキュメント](/guide/assets) を参照してください。
+アセットの取り扱いについてより深く理解するには [アセットに関するドキュメント](/guide/assets) を参照してください。
 
 <!-- ### The Components Directory -->
 
-### コンポーネントディレクトリ
+### components ディレクトリ
 
 <!-- The `components` directory contains your Vue.js Components. Nuxt.js doesn't supercharge the data method on these components. -->
 
-`components` ディレクトリには Vue.js のコンポーネントファイルを入れます。Nuxt.js はそれらのコンポーネントの data メソッドに過給しません（訳に自信なし。原文は Nuxt.js doesn't supercharge the data method on these components.）
+`components` ディレクトリには Vue.js のコンポーネントファイルを入れます。Nuxt.js は `components` ディレクトリ内のコンポーネントの data メソッドについては手を加えません。
 
 <!-- ### The Layouts Directory -->
 
-### レイアウトディレクトリ
+### layouts ディレクトリ
 
 <!-- The `layouts` directory contains your Application Layouts. -->
 
@@ -48,7 +48,7 @@ _このディレクトリ名は変更できません。_
 
 <!-- [More documentation about Layouts integration](/guide/views#layouts) -->
 
-レイアウトファイルの統合についてより深く理解するには [こちらのドキュメント](/guide/views#layouts) を参照してください。
+レイアウトの取り扱いついてより深く理解するには [レイアウトに関するドキュメント](/guide/views#layouts) を参照してください。
 
 <!-- ### The Middleware Directory -->
 
@@ -58,11 +58,11 @@ _Coming soon_
 
 <!-- ### The Pages Directory -->
 
-### ページディレクトリ
+### pages ディレクトリ
 
 <!-- The `pages` directory contains your Application Views and Routes. The framework reads all the `.vue` files inside this directory and create the router of your application. -->
 
-`pages` ディレクトリにはアプリケーションのビュー及びルーティングファイルを入れます。Nuxt.js フレームワークはこのディレクトリ内の全ての `.vue` ファイルを読み込み、アプリケーションのルーターを作成します。
+`pages` ディレクトリにはアプリケーションのビュー及びルーティングファイルを入れます。Nuxt.js フレームワークはこのディレクトリ内のすべての `.vue` ファイルを読み込み、アプリケーションのルーターを作成します。
 
 <!-- _This directory can not be renamed._ -->
 
@@ -70,11 +70,11 @@ _このディレクトリ名は変更できません。_
 
 <!-- [More documentation about Pages integration](/guide/views) -->
 
-ページファイルの統合についてより深く理解するには [こちらのドキュメント](/guide/views) を参照してください。
+ページの取り扱いについてより深く理解するには [ページに関するドキュメント](/guide/views) を参照してください。
 
 <!-- ### The Plugins Directory -->
 
-### プラグインディレクトリ
+### plugins ディレクトリ
 
 <!-- The `plugins` directory contains your Javascript plugins that you want to run before instantiating the root vue.js application. -->
 
@@ -82,11 +82,11 @@ _このディレクトリ名は変更できません。_
 
 <!-- [More documentation about Plugins integration](/guide/plugins) -->
 
-プラグインの統合についてより深く理解するには [こちらのドキュメント](/guide/plugins) を参照してください。
+プラグインについてより深く理解するには [プラグインに関するドキュメント](/guide/plugins) を参照してください。
 
 <!-- ### The Static Directory -->
 
-### スタティックディレクトリ
+### static ディレクトリ
 
 <!-- The `static` directory contains your static files. Each files inside this directory is mapped to /. -->
 
@@ -102,15 +102,15 @@ _このディレクトリ名は変更できません。_
 
 <!-- [More documentation about Static integration](/guide/assets#static) -->
 
-静的なファイルの統合についてより深く理解するには [こちらのドキュメント](/guide/assets#static) を参照してください。
+静的なファイルの取り扱いについてより深く理解するには [静的なファイルに関するドキュメント](/guide/assets#static) を参照してください。
 
 <!-- ### The Store Directory -->
 
-### ストアディレクトリ
+### store ディレクトリ
 
 <!-- The `store` directory contains your [Vuex Store](http://vuex.vuejs.org) files. Vuex Store option is implemented in the Nuxt.js framework. Creating a `index.js` file in this directory activate the option in the framework automatically. -->
 
-`store` ディレクトリには [Vuex Store](http://vuex.vuejs.org) のファイルを入れます。Vuex Store は Nuxt.js フレームワークではオプションとして実装されています。このディレクトリ内に `index.js` ファイルを作成すると、Nuxt.js フレームワーク内でこのオプションが自動的に有効になります。
+`store` ディレクトリには [Vuex ストア](http://vuex.vuejs.org) のファイルを入れます。Vuex ストアは Nuxt.js フレームワークではオプションとして実装されています。このディレクトリ内に `index.js` ファイルを作成すると、Nuxt.js フレームワーク内でこのオプションが自動的に有効になります。
 
 <!-- _This directory can not be renamed._ -->
 
@@ -118,7 +118,7 @@ _このディレクトリ名は変更できません。_
 
 <!-- [More documentation about Store integration](/guide/vuex-store) -->
 
-ストアファイルの統合についてより深く理解するには [こちらのドキュメント](/guide/vuex-store) を参照してください。
+ストアの取り扱いについてより深く理解するには [ストアに関するドキュメント](/guide/vuex-store) を参照してください。
 
 <!-- ### The nuxt.config.js File -->
 
@@ -134,7 +134,7 @@ _このファイル名は変更できません。_
 
 <!-- [More documentation about nuxt.config.js integration](/guide/configuration) -->
 
-nuxt.config.js についてより深く理解するには [こちらのドキュメント](/guide/configuration) を参照してください。
+nuxt.config.js についてより深く理解するには [nuxt.config.js に関するドキュメント](/guide/configuration) を参照してください。
 
 <!-- ### The package.json File -->
 
@@ -181,5 +181,5 @@ _このファイル名は変更できません。_
 
 | エイリアス | 使い方 | 説明 |
 |-------|------|--------------|
-| ~store | `const store = require('~store')` | `vuex` ストアのインスタンスをインポートします |
-| ~router | `const router = require('~router')`| `vue-router` のインスタンスをインポートします |
+| ~store | `const store = require('~store')` | `vuex` ストアのインスタンスをインポートします。 |
+| ~router | `const router = require('~router')`| `vue-router` のインスタンスをインポートします。 |
