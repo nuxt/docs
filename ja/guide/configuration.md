@@ -1,6 +1,6 @@
 ---
 title: 設定
-description: Nuxt.js ではデフォルトの設定でほとんどのユースケースをカバーしています。しかし nuxt.config.js で設定を上書きすることができます。
+description: Nuxt.js ではデフォルトの設定でほとんどのユースケースをカバーしていますが nuxt.config.js で設定を上書きすることができます。
 ---
 
 <!-- title: Configuration -->
@@ -8,13 +8,13 @@ description: Nuxt.js ではデフォルトの設定でほとんどのユース�
 
 <!-- \> The Nuxt.js default configuration covers most of usages. However, the nuxt.config.js file lets you overwrite it. -->
 
-> Nuxt.js ではデフォルトの設定でほとんどのユースケースをカバーしています。しかし nuxt.config.js で設定を上書きすることができます。
+> Nuxt.js ではデフォルトの設定でほとんどのユースケースをカバーしていますが nuxt.config.js で設定を上書きすることができます。
 
 ### build
 
 <!-- This option lets you add modules inside the vendor.bundle.js file generated to reduce the size of the app bundle. It's really useful when using external modules -->
 
-このオプションで、アプリケーションのバンドルファイルのサイズを削減するために生成される vendor.bundle.js ファイル内にモジュールを追加できます。外部のモジュールを使うときに役に立ちます。
+このオプションで vendor.bundle.js ファイルにモジュールを追加できます。vendor.bundle.js は app バンドルファイルのサイズを削減するために生成されるものです。外部のモジュールを使うときに役立ちます。
 
 <!-- [Documentation about build integration](/api/configuration-build) -->
 
@@ -65,6 +65,8 @@ description: Nuxt.js ではデフォルトの設定でほとんどのユース�
 <!-- This option lets you to define each params value for every dynamic routes in your application that Nuxt.js transforms into HTML files. -->
 
 このオプションで、Nuxt.js が HTML ファイルに変換するアプリケーション内の動的なルーティングのためのパラメータを指定できます。（訳に自信なし。原文は This option lets you to define each params value for every dynamic routes in your application that Nuxt.js transforms into HTML files.）
+
+このオプションで、アプリケーション内の動的なルーティングごとにパラメータを指定できます。Nuxt.js はそれらのパラメータを変換して HTML ファイルに入れます。
 
 <!-- [Documentation about generate integration](/api/configuration-generate) -->
 
@@ -124,7 +126,7 @@ description: Nuxt.js ではデフォルトの設定でほとんどのユース�
 
 <!-- This option lets you define the source directory of your nuxt.js application. -->
 
-このオプションで、Nuxt.js のソースディレクトリを指定できます。
+このオプションで、アプリケーションのソースディレクトリを指定できます。
 
 <!-- [Documentation about srcDir integration](/api/configuration-srcdir) -->
 
@@ -134,7 +136,7 @@ description: Nuxt.js ではデフォルトの設定でほとんどのユース�
 
 <!-- This option lets you define the default properties of the pages transitions. -->
 
-このオプションで、ページ間の遷移のデフォルト設定を指定できます。
+このオプションで、ページ間のトランジションのデフォルト設定を指定できます。
 
 <!-- [Documentation about transition integration](/api/configuration-transition) -->
 
