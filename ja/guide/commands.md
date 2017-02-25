@@ -1,6 +1,6 @@
 ---
 title: コマンド
-description: Nuxt.js はひととおりの便利コマンドを備えています。開発用途のものもプロダクション用途のものもあります。
+description: Nuxt.js は便利コマンドのセットを備えています。開発用途のものもプロダクション用途のものも含まれています。
 ---
 
 <!-- title: Commands -->
@@ -8,7 +8,7 @@ description: Nuxt.js はひととおりの便利コマンドを備えていま�
 
 <!-- \> Nuxt.js comes with a set of useful commands, both for development and production purpose. -->
 
-> Nuxt.js はひととおりの便利コマンドを備えています。開発用途のものもプロダクション用途のものもあります。
+> Nuxt.js は便利コマンドのセットを備えています。開発用途のものもプロダクション用途のものも含まれています。
 
 <!-- ## List of Commands -->
 
@@ -79,7 +79,7 @@ Nuxt.js ではアプリケーションをデプロイするための 2つのモ�
 
 <!-- To deploy, instead of running nuxt, you probably want to build ahead of time. Therefore, building and starting are separate commands: -->
 
-デプロイするために、nuxt コマンドを実行するのではなく、前もってビルドしたいと思われるでしょう。そのような理由から、ビルドとサーバー起動は分離されています:
+デプロイするために、nuxt コマンドを実行するのではなく、前もってビルドしておきたいと思われるでしょう。そのような理由から、ビルドコマンドとサーバー起動のコマンドは分かれています:
 
 ```bash
 nuxt build
@@ -106,7 +106,7 @@ nuxt start
 
 <!-- Note: we recommend putting `.nuxt` in `.npmignore` or `.gitignore`. -->
 
-メモ: `.npmignore` または `.gitignore` 内に `.nuxt` を書いておくことをお勧めします。
+メモ: `.npmignore` または `.gitignore` 内に `.nuxt` を書いておくと良いでしょう。
 
 <!-- ### Static Generated Deployment -->
 
@@ -114,7 +114,7 @@ nuxt start
 
 <!-- Nuxt.js gives you the possibility to host your web application on any static hosting. -->
 
-Nuxt.js により、静的なファイルのホスティングサービスで、ウェブアプリケーションをホストすることができます。
+Nuxt.js を使うと、どんな静的なファイルのホスティングサービスでも、ウェブアプリケーションをホストすることができます。
 
 <!-- To generate our web application into static files: -->
 
@@ -134,4 +134,4 @@ npm run generate
 
 <!-- <div class="Alert">When generating your web application with `nuxt generate`, [the context](/api#context) given to [data()](/guide/async-data#the-data-method) and [fetch()](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.</div> -->
 
-<div class="Alert">`nuxt generate` でウェブアプリケーションを生成するときは、[data()](/guide/async-data#the-data-method) や [fetch()](/guide/vuex-store#the-fetch-method) に渡される [context](/api#context) は `req` 及び `res` を持ちません。</div>
+<div class="Alert">`nuxt generate` でウェブアプリケーションを生成するときは、[data()](/guide/async-data#the-data-method) や [fetch()](/guide/vuex-store#the-fetch-method) に渡される [context](/api#context) は `req` 及び `res` を持たなくなります。</div>
