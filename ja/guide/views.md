@@ -1,6 +1,6 @@
 ---
 title: ビュー
-description: ビューセクションでは Nuxt.js アプリケーションの特定のルートにデータとビューを設定するために必要なこと全てを説明します（ページ、レイアウト、HTML の head タグのメタ情報などを含みます）
+description: このセクションでは Nuxt.js アプリケーションの特定のルートにデータとビューを設定するために必要なことすべてを説明します（ページ、レイアウト、HTML の head タグのメタ情報などを含みます）
 ---
 
 <!-- title: Views -->
@@ -8,7 +8,7 @@ description: ビューセクションでは Nuxt.js アプリケーションの�
 
 <!-- \> The Views section describes all you need to configure data and views for a specific route in your Nuxt.js application. (Pages, layouts and HTML Head) -->
 
-> ビューセクションでは Nuxt.js アプリケーションの特定のルートにデータとビューを設定するために必要なこと全てを説明します（ページ、レイアウト、HTML の head タグのメタ情報などを含みます）
+> このセクションでは Nuxt.js アプリケーションの特定のルートにデータとビューを設定するために必要なことすべてを説明します（ページ、レイアウト、HTML の head タグのメタ情報などを含みます）
 
 <!-- ## Pages -->
 
@@ -16,7 +16,7 @@ description: ビューセクションでは Nuxt.js アプリケーションの�
 
 <!-- Every Page component is a Vue component, but Nuxt.js adds special keys to make the development of your universal application the easiest way possible. -->
 
-全てのページコンポーネントは Vue コンポーネントですが、Nuxt.js はユニバーサルなアプリケーションを最も簡単なやり方で開発することを可能にために、特別なキーを追加します。  
+すべてのページコンポーネントは Vue コンポーネントですが、Nuxt.js はユニバーサルなアプリケーションを最も簡単なやり方で開発することを可能にために、特別なキーを追加します。  
 
 <!-- ```html -->
 <!-- <template> -->
@@ -89,9 +89,9 @@ export default {
 
 | 属性 | 説明 |
 |-----------|-------------|
-| data | 最も重要なキーであり [Vue data](https://vuejs.org/v2/api/#Options-Data) と同じ意義を持っています。しかし非同期に動作し、また引数として context を受け取ります。どのように動作するかを知るには [非同期データに関するドキュメント](/guide/async-data) を参照してください。 |
+| data | 最も重要なキーであり [Vue.js の data オプション](https://vuejs.org/v2/api/#Options-Data) と同じ意義を持っています。しかし（訳注: Nuxt.js が data に手を加えているため）非同期に動作し、また引数として context を受け取ります。どのように動作するかを知るには [非同期データに関するドキュメント](/guide/async-data) を参照してください。 |
 | fetch | ページがレンダリングされる前に、データをストアに入れるために使います。コンポーネントのデータをセットすること以外は data メソッドと似ています。[ページのフェッチ API に関するドキュメント](/api/pages-fetch) を参照してください。 |
-| head | 現在のページの特定のメタタグを設定します。[ページの head API に関するドキュメント](/api/pages-head) を参照してください。 |
+| head | 現在のページの特定のメタタグを設定します。[ページの head API](/api/pages-head) を参照してください。 |
 | layout | `layouts` ディレクトリ内のレイアウトを指定します。[ページのレイアウト API に関するドキュメント](/api/pages-layout) を参照してください。 |
 | transition | ページに特定のトランジションを設定します。[ページのトランジション API に関するドキュメント](/api/pages-transition) を参照してください。 |
 | scrollToTop | ブーリアンで指定し、デフォルトは `false` です。ページをレンダリングする前にトップまでスクロールさせるか否かを指定します。これは [ネストしたルーティング](/guide/routing#nested-routes) で使われます。 |
@@ -100,7 +100,7 @@ export default {
 
 <!-- More information about the pages properties usage: [API Pages](/api) -->
 
-ページのプロパティの使い方についてより深く理解したいときは [ページ API](/api) を参照してください。
+ページのプロパティの使い方についてより深く理解するには [ページ API](/api) を参照してください。
 
 <!-- ## Layouts -->
 
@@ -296,7 +296,7 @@ head: {
 
 <!-- More information about the head method: [API Configuration head](/api/configuration-head) -->
 
-head メソッドについてより深く理解するためには [head 設定 API](/api/configuration-head) を参照してください。
+head メソッドについてより深く理解するには [head 設定 API](/api/configuration-head) を参照してください。
 
 <!-- ### Custom Meta Tags for a Page -->
 
@@ -308,4 +308,4 @@ head メソッドについてより深く理解するためには [head 設定 A
 
 <!-- <p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://github.com/declandewet/vue-meta#lists-of-tags).</p> -->
 
-<p class="Alert">子コンポーネントで利用されたときにメタ情報が重複してしまうことを避けるために `hid` キーでユニーク識別子を与えてください。また、これについてより深く理解するためには [こちら](https://github.com/declandewet/vue-meta#lists-of-tags) を参照してください。</p>
+<p class="Alert">子コンポーネントで利用されたときにメタ情報が重複してしまうことを避けるために `hid` キーでユニーク識別子を与えてください。また、これについてより深く理解するには [こちら](https://github.com/declandewet/vue-meta#lists-of-tags) を参照してください。</p>
