@@ -124,7 +124,7 @@ Nuxt.js をプロジェクトの UI レンダリング全体を担うフレー�
 
 <!-- The big innovation of nuxt.js comes here: `nuxt generate` -->
 
-`nuxt generate` という Nuxt.js の大きなイノベーションがやってきます。
+Nuxt.js による大きなイノベーションがやってきました。それが `nuxt generate` です。
 
 <!-- When building your application it will generate the HTML of every of your routes to store it in a file. -->
 
@@ -185,4 +185,4 @@ Nuxt.js をプロジェクトの UI レンダリング全体を担うフレー�
 
 <!-- We can go further by thinking of an e-commerce web application made with `nuxt generate` and hosted on a CDN, and every time a product is out of stock or back in stock, we regenerate the web app. But if the user navigates through the web app in the meantime, it will be up to date thanks to the API calls made to the e-commerce API. No need to have multiple instances of a server + a cache anymore! -->
 
-さらに進めて `nuxt generate` で生成された E コマースのウェブアプリケーションを考えてみましょう。そのアプリケーションは CDN でホストされ、商品が在庫切れになったり入荷されたりするたびにアプリケーションが再生成されます。ユーザーがアプリケーション遷移している間に、在庫の状態が（再生成のおかげで）最新の状態になるのです。つまり、サーバーでいろいろなインスタンスを起動したり、キャッシュを持ったりする必要がなくなるのです！
+さらに進めて `nuxt generate` で生成された E コマースのウェブアプリケーションを考えてみましょう。そのアプリケーションは CDN でホストされ、商品が在庫切れになったり入荷されたりするたびにアプリケーションが再生成されます。ユーザーがアプリケーション遷移している間に、在庫の状態が（再生成のおかげで）最新の状態になるのです。つまり、サーバーでいろいろなインスタンスを起動したり、キャッシュを持ったりする必要がもうないのです！
