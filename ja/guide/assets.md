@@ -114,7 +114,7 @@ file-loader と url-loader の役割:
 
 <!-- If you want to update these loaders or disable them, please take a look at the [loaders configuration](/api/configuration-build#loaders). -->
 
-これらのローダーの設定を更新したり、ローダーを使わないようにしたいするには、[ローダー設定](/api/configuration-build#loaders) を参照してください。
+これらのローダーの設定を更新したり、ローダーを使わないようにするには、[ローダー設定](/api/configuration-build#loaders) を参照してください。
 
 <!-- ## Static -->
 
