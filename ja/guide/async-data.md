@@ -1,6 +1,6 @@
 ---
 title: 非同期なデータ
-description: Nuxt.js は、コンポーネントのデータをセットする前に非同期の処理を行えるようにするために、Vue.js の data メソッドを過給します
+description: Nuxt.js はコンポーネントのデータをセットする前に非同期の処理を行えるようにするために、Vue.js の data メソッドに手を加えています。
 ---
 
 <!-- title: Async Data -->
@@ -8,7 +8,7 @@ description: Nuxt.js は、コンポーネントのデータをセットする�
 
 <!-- \> Nuxt.js *supercharges* the `data` method from vue.js to let you handle async operation before setting the component data. -->
 
-> Nuxt.js は、コンポーネントのデータをセットする前に非同期の処理を行えるようにするために、Vue.js の `data` メソッドを *過給* します（訳注: supercharges をうまく訳せませんでした。原文は Nuxt.js *supercharges* the `data` method from vue.js to let you handle async operation before setting the component data.）
+> Nuxt.js はコンポーネントのデータをセットする前に非同期の処理を行えるようにするために、Vue.js の `data` メソッドに手を加えています。
 
 <!-- ## The data Method -->
 
@@ -24,9 +24,7 @@ description: Nuxt.js は、コンポーネントのデータをセットする�
 
 <!-- To make the data method asynchronous, nuxt.js offers you different ways, choose the one you're the most familiar with: -->
 
-To make the data method asynchronous, nuxt.js offers you different ways, choose the one you're the most familiar with:
-
-Nuxt.js では data メソッドを非同期にするために、いくつかの異なるやり方があるので、最もなじむものを選択してください:
+Nuxt.js では data メソッドを非同期にするために、いくつかの異なるやり方があるので、お好きなものを選んでください:
 
 <!-- 1. returning a `Promise`, nuxt.js will wait for the promise to be resolved before rendering the component. -->
 <!-- 2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await)) -->
@@ -85,7 +83,7 @@ export default {
 
 <!-- If you don't need to do any asynchronous call, you can simply return an object: -->
 
-もし非同期に実行する必要がなければ、シンプルにオブジェクトを返せば良いです:
+もし非同期に実行する必要がなければ、シンプルにオブジェクトを返すことができます:
 
 ```js
 export default {
@@ -115,7 +113,7 @@ data メソッドがセットされると、下記のように template の内�
 
 <!-- To see the list of available keys in `context`, take a look at the [API Pages data](/api). -->
 
-`context` 内で利用できるキーの一覧を確認するには [ページ data API](/api) をご覧ください。
+`context` 内で利用できるキーの一覧を確認するには [ページ data API](/api) を参照してください。
 
 <!-- ## Handling Errors -->
 
@@ -123,7 +121,7 @@ data メソッドがセットされると、下記のように template の内�
 
 <!-- Nuxt.js add the `error(params)` method in the `context`, you can call it to display the error page. `params.statusCode` will be also used to render the proper status code form the server-side. -->
 
-Nuxt.js は `context` の中に `error(params)` メソッドを追加しました。これを呼び出すことでエラーページを表示できます。
+Nuxt.js は `context` の中に `error(params)` メソッドを追加しています。これを呼び出すことでエラーページを表示できます。
 
 <!-- Example with a `Promise`: -->
 
