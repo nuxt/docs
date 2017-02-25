@@ -1,6 +1,6 @@
 ---
 title: インストール
-description: Nuxt.js はとても簡単に始められます。シンプルなプロジェクトでは必要な依存ライブラリは `nuxt` だけです。
+description: Nuxt.js はとても簡単に始められます。シンプルなプロジェクトでは必要な依存パッケージは `nuxt` だけです。
 ---
 
 <!-- title: Installation -->
@@ -8,7 +8,7 @@ description: Nuxt.js はとても簡単に始められます。シンプルな�
 
 <!-- \> Nuxt.js is really easy to get started with. A simple project only need the `nuxt` dependency. -->
 
-Nuxt.js はとても簡単に始められます。シンプルなプロジェクトでは必要な依存ライブラリは `nuxt` だけです。
+Nuxt.js はとても簡単に始められます。シンプルなプロジェクトでは必要な依存パッケージは `nuxt` だけです。
 
 <!-- ## Using Nuxt.js starter template -->
 
