@@ -58,7 +58,7 @@ router: {
 
 <!-- To define a dynamic route with a param, you need to define a .vue file OR a directory **prefixed by an underscore**. -->
 
-パラメータを使って動的なルーティングを定義するには、.vue ファイル名またはディレクトリ名に **アンダースコアのプレフィックス** を付ける必要があります。
+パラメータを使って動的なルーティングを定義するには .vue ファイル名またはディレクトリ名に **アンダースコアのプレフィックス** を付ける必要があります。
 
 <!-- This file tree: -->
 
@@ -107,7 +107,7 @@ router: {
 
 <!-- As you can see the route named `users-id` has the path `:id?` which makes it optional, if you want to make it required, create an `index.vue` file in the `users` directory. -->
 
-`user-id` と名付けられたルートに `:id?` というパスがありますが、これはこの `:id` が必須ではないことを表します。もし必須にしたい場合は `users` ディレクトリ内に `index.vue` ファイルを作成してください（訳注: `users/_id` ディレクトリ内に `index.vue` ファイルを作成するのでは？）
+`user-id` と名付けられたルートに `:id?` というパスがありますが、これはこの `:id` が必須ではないことを表します。もし必須にしたい場合は `users/_id` ディレクトリ内に `index.vue` ファイルを作成してください。
 
 <!-- ### Validate Route params -->
 
@@ -208,7 +208,7 @@ router: {
 
 <!-- This scenario should not often append, but it is possible with Nuxt.js: having dynamic children inside dynamic parents. -->
 
-このシナリオはあまり追加すべきではないのですが、Nuxt.js では動的な親ルーティングの中に動的な子ルーティングを持つことが可能です（訳注: 前半部分がうまく訳せませんでした。原文は This scenario should not often append, but it is possible with Nuxt.js: having dynamic children inside dynamic parents.）
+あまり頻繁に使うべきではありませんが、Nuxt.js では動的な親ルーティングの中に動的な子ルーティングを持つことが可能です。
 
 <!-- This file tree: -->
 
@@ -287,7 +287,7 @@ Nuxt.js では [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#T
 
 <!-- To add a fade transition to every page of your application, we need a CSS file that is shared across all our routes, so we start by creating a file in the `assets` folder. -->
 
-アプリケーションの全てのページでフェードさせるトランジションを定義には、ルーティング全体に適用されている CSS ファイルが必要です。まずは `assets` ディレクトリ内にファイルを作成するところから始めます:
+アプリケーションのすべてのページでフェードさせるトランジションを定義には、ルーティング全体に適用されている CSS ファイルが必要です。まずは `assets` ディレクトリ内にファイルを作成するところから始めます:
 
 <!-- Our global css in `assets/main.css`: -->
 
@@ -316,7 +316,7 @@ module.exports = {
 
 <!-- More information about the transition key: [API Configuration transition](/api/pages-transition) -->
 
-トランジションについてより深く理解したい場合は [トランジションを設定する API](/api/pages-transition) を参照してください。
+トランジションについてより深く理解したい場合は [トランジション設定 API](/api/pages-transition) を参照してください。
 
 <!-- ### Page Settings -->
 
@@ -418,7 +418,7 @@ module.exports = {
 
 <!-- The `stats` middleware will be called for every route changes. -->
 
-`stats` ミドルウェアは全てのルート変更時に呼び出されるようになります。
+`stats` ミドルウェアはすべてのルート変更時に呼び出されるようになります。
 
 <!-- To see a real-life example using the middleware, please see [example-auth0](https://github.com/nuxt/example-auth0) on GitHub. -->
 

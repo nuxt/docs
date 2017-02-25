@@ -52,7 +52,7 @@ _このディレクトリ名は変更できません。_
 
 <!-- ### The Middleware Directory -->
 
-### ミドルウェアディレクトリ
+### middleware ディレクトリ
 
 _Coming soon_
 
