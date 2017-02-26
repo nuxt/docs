@@ -186,7 +186,7 @@ jsdom はブラウザを使っていないため制約がいくつかありま�
 
 <!-- \> ESLint is a great tool to keep your code clean -->
 
-> ESLint はコードを綺麗に保てるすごいツールです。
+> ESLint はコードを綺麗に保てる優れたツールです。
 
 <!-- You can add [ESLint](http://eslint.org) pretty easily with nuxt.js, first, you need to add the npm dependencies: -->
 

@@ -119,7 +119,7 @@ module.exports = {
 
 <!-- ## Client-side only -->
 
-## クライアントサイド限定のライブラリ利用
+## クライアントサイド限定のプラグイン利用
 
 <!-- Some plugins might work **only for the browser**, you can use the `process.BROWSER_BUILD` variable to check if the plugin will run from the client-side. -->
 

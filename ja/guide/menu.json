@@ -1,104 +1,104 @@
 [
   {
-    "title": "Prologue",
+    "title": "プロローグ",
     "links": [
       {
-        "to": "", "name": "Introduction",
+        "to": "", "name": "はじめに",
         "contents": [
-          { "to": "#what-is-nuxt-js-", "name": "What is Nuxt.js ?" },
-          { "to": "#how-it-works", "name": "How it Works" },
-          { "to": "#features", "name": "Features" },
-          { "to": "#schema", "name": "Schema" },
-          { "to": "#server-rendered", "name": "Server Rendered" },
-          { "to": "#static-generated", "name": "Static Generated" }
+          { "to": "#nuxt-js-とは何か-", "name": "Nuxt.js とは何か？" },
+          { "to": "#どのように動作するか-", "name": "どのように動作するか？" },
+          { "to": "#主な機能", "name": "主な機能" },
+          { "to": "#図解", "name": "図解" },
+          { "to": "#サーバーサイドレンダリング", "name": "サーバーサイドレンダリング" },
+          { "to": "#静的ファイルの生成", "name": "静的ファイルの生成" }
         ]
       },
-      { "to": "/contribution-guide", "name": "Contribution Guide" },
-      { "to": "/release-notes", "name": "Release Notes" }
+      { "to": "/contribution-guide", "name": "貢献ガイド" },
+      { "to": "/release-notes", "name": "リリースノート" }
     ]
   },
   {
-    "title": "Getting Started",
+    "title": "はじめる",
     "links": [
       {
-        "to": "/installation", "name": "Installation",
+        "to": "/installation", "name": "インストール",
         "contents": [
-          { "to": "#using-nuxt-js-starter-template", "name": "Using Nuxt.js starter template" },
-          { "to": "#starting-from-scratch", "name": "Starting from scratch" }
+          { "to": "#nuxt-js-を使ったスターターテンプレート", "name": "Nuxt.js を使ったスターターテンプレート" },
+          { "to": "#スクラッチから始める", "name": "スクラッチから始める" }
         ]
       },
       {
-        "to": "/directory-structure", "name": "Directory structure",
+        "to": "/directory-structure", "name": "ディレクトリ構造",
         "contents": [
-          { "to": "#directories", "name": "Directories" },
-          { "to": "#aliases", "name": "Aliases" }
+          { "to": "#ディレクトリ", "name": "ディレクトリ" },
+          { "to": "#エイリアス-別名-", "name": "エイリアス（別名）" }
         ]
       },
-      { "to": "/configuration", "name": "Configuration" },
+      { "to": "/configuration", "name": "設定" },
       {
-        "to": "/routing", "name": "Routing",
+        "to": "/routing", "name": "ルーティング",
         "contents": [
-          { "to": "#basic-routes", "name": "Basic Routes" },
-          { "to": "#dynamic-routes", "name": "Dynamic Routes" },
-          { "to": "#nested-routes", "name": "Nested Routes" },
-          { "to": "#dynamic-nested-routes", "name": "Dynamic Nested Routes" },
-          { "to": "#transitions", "name": "Transitions" },
-          { "to": "#middleware", "name": "Middleware" }
-        ]
-      },
-      {
-        "to": "/views", "name": "Views",
-        "contents": [
-          { "to": "#pages", "name": "Pages" },
-          { "to": "#layouts", "name": "Layouts" },
-          { "to": "#html-head", "name": "HTML Head" }
+          { "to": "#ルーティングの基礎", "name": "ルーティングの基礎" },
+          { "to": "#動的なルーティング", "name": "動的なルーティング" },
+          { "to": "#ネストしたルーティング", "name": "ネストしたルーティング" },
+          { "to": "#動的でネストしたルーティング", "name": "動的でネストしたルーティング" },
+          { "to": "#トランジション", "name": "トランジション" },
+          { "to": "#ミドルウェア", "name": "ミドルウェア" }
         ]
       },
       {
-        "to": "/async-data", "name": "Async Data",
+        "to": "/views", "name": "ビュー",
         "contents": [
-          { "to": "#the-data-method", "name": "The data Method" },
-          { "to": "#the-context", "name": "The Context" },
-          { "to": "#handling-errors", "name": "Handling Errors" }
+          { "to": "#ページ", "name": "ページ" },
+          { "to": "#レイアウト", "name": "レイアウト" },
+          { "to": "#html-の-head-情報", "name": "HTML の head 情報" }
         ]
       },
       {
-        "to": "/assets", "name": "Assets",
+        "to": "/async-data", "name": "非同期なデータ",
         "contents": [
-          { "to": "#webpacked", "name": "Webpacked" },
-          { "to": "#static", "name": "Static" }
+          { "to": "#data-メソッド", "name": "data メソッド" },
+          { "to": "#コンテキスト", "name": "コンテキスト" },
+          { "to": "#エラー処理", "name": "エラー処理" }
         ]
       },
       {
-        "to": "/plugins", "name": "Plugins",
+        "to": "/assets", "name": "アセット",
         "contents": [
-          { "to": "#external-packages", "name": "External Packages" },
-          { "to": "#vue-plugins", "name": "Vue Plugins" },
-          { "to": "#client-side-only", "name": "Client-side only" }
+          { "to": "#webpack-で取り扱う", "name": "Webpack で取り扱う" },
+          { "to": "#webpack-で扱わない静的ファイル", "name": "Webpack で扱わない静的ファイル" }
         ]
       },
       {
-        "to": "/vuex-store", "name": "Vuex Store",
+        "to": "/plugins", "name": "プラグイン",
         "contents": [
-          { "to": "#activate-the-store", "name": "Activate the Store" },
-          { "to": "#classic-mode", "name": "Classic mode" },
-          { "to": "#modules-mode", "name": "Modules mode" },
-          { "to": "#the-fetch-method", "name": "The fetch Method" },
-          { "to": "#the-nuxtserverinit-action", "name": "The nuxtServerInit Action" }
+          { "to": "#外部パッケージの利用", "name": "外部パッケージの利用" },
+          { "to": "#vue-プラグイン", "name": "Vue プラグイン" },
+          { "to": "#クライアントサイド限定のプラグイン利用", "name": "クライアントサイド限定のプラグイン利用" }
         ]
       },
       {
-        "to": "/commands", "name": "Commands",
+        "to": "/vuex-store", "name": "Vuex ストア",
         "contents": [
-          { "to": "#list-of-commands", "name": "List of Commands" },
-          { "to": "#development-environment", "name": "Developemnt Enviroment" },
-          { "to": "#production-deployment", "name": "Production Deployment" }
+          { "to": "#ストアを有効にする", "name": "ストアを有効にする" },
+          { "to": "#クラシックモード", "name": "クラシックモード" },
+          { "to": "#モジュールモード", "name": "モジュールモード" },
+          { "to": "#fetch-メソッド", "name": "fetch メソッド" },
+          { "to": "#nuxtserverinit-アクション", "name": "nuxtServerInit アクション" }
         ]
       },
       {
-        "to": "/development-tools", "name": "Development Tools",
+        "to": "/commands", "name": "コマンド",
         "contents": [
-          { "to": "#end-to-end-testing", "name": "End-to-End Testing" },
+          { "to": "#コマンド一覧", "name": "コマンド一覧" },
+          { "to": "#開発環境", "name": "開発環境" },
+          { "to": "#プロダクションのデプロイ", "name": "プロダクションのデプロイ" }
+        ]
+      },
+      {
+        "to": "/development-tools", "name": "開発ツール",
+        "contents": [
+          { "to": "#エンドツーエンドテスト", "name": "エンドツーエンドテスト" },
           { "to": "#eslint", "name": "ESLint" }
         ]
       }

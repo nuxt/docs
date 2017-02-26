@@ -30,8 +30,8 @@ Nuxt.js では data メソッドを非同期にするために、いくつかの
 <!-- 2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await)) -->
 <!-- 3. Define a callback as second argument. It has to be called like this: `callback(err, data)` -->
 
-1. `Promise` を返す。Nuxt.js はコンポーネントがレンダリングされる前に Promise が解決されるまで待ちます。
-2. [async/await](https://github.com/lukehoban/ecmascript-asyncawait) を使う。（[より深く理解する](https://zeit.co/blog/async-and-await)）
+1. `Promise` を返す。Nuxt.js はコンポーネントがレンダリングされる前に Promise が解決されるまで待ちます
+2. [async/await](https://github.com/lukehoban/ecmascript-asyncawait) を使う（[より深く理解する](https://zeit.co/blog/async-and-await)）
 3. 第二引数としてコールバックを定義する。右のように呼び出される必要があります: `callback(err, data)`
 
 <!-- ### Returning a Promise -->
@@ -189,4 +189,4 @@ export default {
 
 <!-- To customize the error page, take a look at the [VIEWS layouts section](/guide/views#layouts). -->
 
-エラーページをカスタマイズするためには [ビューページのレイアウトセクション](/guide/views#layouts) を参照してください。
+エラーページをカスタマイズするには [ビューのレイアウトセクション](/guide/views#layouts) を参照してください。

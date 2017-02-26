@@ -89,14 +89,14 @@ export default {
 
 | 属性 | 説明 |
 |-----------|-------------|
-| data | 最も重要なキーであり [Vue.js の data オプション](https://vuejs.org/v2/api/#Options-Data) と同じ意義を持っています。しかし（訳注: Nuxt.js が data に手を加えているため）非同期に動作し、また引数として context を受け取ります。どのように動作するかを知るには [非同期データに関するドキュメント](/guide/async-data) を参照してください。 |
-| fetch | ページがレンダリングされる前に、データをストアに入れるために使います。コンポーネントのデータをセットすること以外は data メソッドと似ています。[ページのフェッチ API に関するドキュメント](/api/pages-fetch) を参照してください。 |
-| head | 現在のページの特定のメタタグを設定します。[ページの head API](/api/pages-head) を参照してください。 |
-| layout | `layouts` ディレクトリ内のレイアウトを指定します。[ページのレイアウト API に関するドキュメント](/api/pages-layout) を参照してください。 |
-| transition | ページに特定のトランジションを設定します。[ページのトランジション API に関するドキュメント](/api/pages-transition) を参照してください。 |
-| scrollToTop | ブーリアンで指定し、デフォルトは `false` です。ページをレンダリングする前にトップまでスクロールさせるか否かを指定します。これは [ネストしたルーティング](/guide/routing#nested-routes) で使われます。 |
-| validate | [動的なルーティング](/guide/routing#dynamic-routes) のためのバリデーション関数です。 |
-| middleware | このページのためにミドルウェアを設定し、ミドルウェアはページがレンダリングされる前に呼び出されます。[ルーティングのミドルウェア](/guide/routing#middleware) を参照してください。 |
+| data | 最も重要なキーであり [Vue.js の data オプション](https://vuejs.org/v2/api/#Options-Data) と同じ意義を持っています。しかし（訳注: Nuxt.js が data に手を加えているため）非同期に動作し、また引数として context を受け取ります。どのように動作するかを知るには [非同期データに関するドキュメント](/guide/async-data) を参照してください |
+| fetch | ページがレンダリングされる前に、データをストアに入れるために使います。コンポーネントのデータをセットすること以外は data メソッドと似ています。[ページのフェッチ API に関するドキュメント](/api/pages-fetch) を参照してください |
+| head | 現在のページの特定のメタタグを設定します。[ページの head API](/api/pages-head) を参照してください |
+| layout | `layouts` ディレクトリ内のレイアウトを指定します。[ページのレイアウト API に関するドキュメント](/api/pages-layout) を参照してください |
+| transition | ページに特定のトランジションを設定します。[ページのトランジション API に関するドキュメント](/api/pages-transition) を参照してください |
+| scrollToTop | ブーリアンで指定し、デフォルトは `false` です。ページをレンダリングする前にトップまでスクロールさせるか否かを指定します。これは [ネストしたルーティング](/guide/routing#nested-routes) で使われます |
+| validate | [動的なルーティング](/guide/routing#dynamic-routes) のためのバリデーション関数です |
+| middleware | このページのためにミドルウェアを設定し、ミドルウェアはページがレンダリングされる前に呼び出されます。[ルーティングのミドルウェア](/guide/routing#middleware) を参照してください |
 
 <!-- More information about the pages properties usage: [API Pages](/api) -->
 

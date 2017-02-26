@@ -142,7 +142,7 @@ nuxt.config.js についてより深く理解するには [nuxt.config.js に関
 
 <!-- The `package.json` file contains your Application dependencies and scripts. -->
 
-`package.json` ファイルにはアプリケーションが依存するライブラリやスクリプトを記述します。
+`package.json` ファイルにはアプリケーションが依存するパッケージやスクリプトを記述します。
 
 <!-- _This file can not be renamed._ -->
 
@@ -181,5 +181,5 @@ _このファイル名は変更できません。_
 
 | エイリアス | 使い方 | 説明 |
 |-------|------|--------------|
-| ~store | `const store = require('~store')` | `vuex` ストアのインスタンスをインポートします。 |
-| ~router | `const router = require('~router')`| `vue-router` のインスタンスをインポートします。 |
+| ~store | `const store = require('~store')` | `vuex` ストアのインスタンスをインポートします |
+| ~router | `const router = require('~router')`| `vue-router` のインスタンスをインポートします |

@@ -12,7 +12,7 @@ description: "2016年10月25日、zeit.co のチームが React アプリケー�
 
 <!-- ## What is Nuxt.js ? -->
 
-## Nuxt.js とは何ですか？
+## Nuxt.js とは何か？
 
 <!-- Nuxt.js is a framework for creating Universal Vue.js Applications. -->
 
@@ -120,7 +120,7 @@ Nuxt.js をプロジェクトの UI レンダリング全体を担うフレー�
 
 <!-- ## Static Generated -->
 
-## 静的な生成
+## 静的ファイルの生成
 
 <!-- The big innovation of nuxt.js comes here: `nuxt generate` -->
 
@@ -162,8 +162,8 @@ Nuxt.js による大きなイノベーションがやってきました。それ
 <!-- - [Source code](https://github.com/nuxt/nuxtjs.org) -->
 <!-- - [Generated code](https://github.com/nuxt/nuxtjs.org/tree/gh-pages) -->
 
-- [ソースコード](https://github.com/nuxt/nuxtjs.org) -->
-- [生成されたコード](https://github.com/nuxt/nuxtjs.org/tree/gh-pages) -->
+- [ソースコード](https://github.com/nuxt/nuxtjs.org)
+- [生成されたコード](https://github.com/nuxt/nuxtjs.org/tree/gh-pages)
 
 <!-- We don't want to manually generate the application every time we update the [docs repository](https://github.com/nuxt/docs), so each push made calls an AWS Lambda function which: -->
 
@@ -175,7 +175,7 @@ Nuxt.js による大きなイノベーションがやってきました。それ
 <!-- 4. Push the `dist` folder to the `gh-pages` Branch -->
 
 1. [nuxtjs.org リポジトリ](https://github.com/nuxt/nuxtjs.org) をクローンする
-2. `npm install` で依存しているライブラリをインストールする
+2. `npm install` で依存しているパッケージをインストールする
 3. `nuxt generate` を実行する
 4. `dist` フォルダーを `gh-pages` ブランチにプッシュする
 

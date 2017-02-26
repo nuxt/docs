@@ -23,8 +23,8 @@ description: Nuxt.js は便利コマンドのセットを備えています。�
 
 | コマンド | 説明 |
 |---------|-------------|
-| nuxt | 開発サーバーを [localhost:3000](http://localhost:3000) で起動します。このサーバーはホットリローディングします。 |
-| nuxt build | アプリケーションを Webpack でビルドし、JS と CSS をプロダクション向けにミニファイします。 |
+| nuxt | 開発サーバーを [localhost:3000](http://localhost:3000) で起動します。このサーバーはホットリローディングします |
+| nuxt build | アプリケーションを Webpack でビルドし、JS と CSS をプロダクション向けにミニファイします |
 | nuxt start | プロダクションモードでサーバーを起動します（`nuxt build` 後に実行してください） |
 | nuxt generate | アプリケーションをビルドして、ルートごとに HTML ファイルを生成します（静的ファイルのホスティングに用います） |
 
@@ -67,7 +67,7 @@ npm run dev
 
 <!-- ## Production Deployment -->
 
-## プロダクション環境へのデプロイ
+## プロダクションのデプロイ
 
 <!-- Nuxt.js lets your choose between 2 modes to deploy your application: Server Rendered or Static Generated. -->
 

@@ -32,7 +32,7 @@ $ vue init nuxt/starter <project-name>
 
 <!-- then install the dependencies: -->
 
-それから依存するライブラリをインストールしてください:
+それから依存するパッケージをインストールしてください:
 
 ```bash
 $ cd <project-name>
@@ -53,7 +53,7 @@ $ npm run dev
 
 <!-- <p class="Alert">Nuxt.js will listen on the files changes inside the `pages` directory, so no need to restart the application when adding new pages</p> -->
 
-<p class="Alert">Nuxt.js は `pages` ディレクトリ内のファイルの更新を監視します。そのため、新しいページを追加したときにアプリケーションを再起動する必要はありません</p>
+<p class="Alert">Nuxt.js は `pages` ディレクトリ内のファイルの更新を監視します。そのため、新しいページを追加したときにアプリケーションを再起動する必要はありません。</p>
 
 <!-- To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure). -->
 
@@ -149,7 +149,7 @@ $ npm run dev
 
 <!-- <p class="Alert">Nuxt.js will listen on the files changes inside the `pages` directory, so no need to restart the application when adding new pages</p> -->
 
-<p class="Alert">Nuxt.js は `pages` ディレクトリ内のファイルの更新を監視します。そのため新しいページを追加した場合にアプリケーションを再起動する必要はありません</p>
+<p class="Alert">Nuxt.js は `pages` ディレクトリ内のファイルの更新を監視します。そのため新しいページを追加した場合にアプリケーションを再起動する必要はありません。</p>
 
 <!-- To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure). -->
 
