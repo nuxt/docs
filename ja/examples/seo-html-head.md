@@ -1,7 +1,10 @@
 ---
-title: SEO HTML Head
-description: SEO HTML Head example with Nuxt.js
+title: HTML の haad 情報
+description: SEO のために HTML の head 情報を設定する例
 github: head-elements
 livedemo: https://head-elements.nuxtjs.org
-documentation: /guide/views#html-head
+documentation: /guide/views#html-の-head-情報
 ---
+
+<!-- title: SEO HTML Head -->
+<!-- description: SEO HTML Head example with Nuxt.js -->
