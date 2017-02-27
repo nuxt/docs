@@ -1,6 +1,9 @@
 ---
 title: コンポーネントのキャッシュ
-description: Nuxt.js のコンポーネントのキャッシュの例
+description: コンポーネントのキャッシュを行う例
 github: cached-components
 documentation: /api/configuration-cache
 ---
+
+<!-- title: Cached Components -->
+<!-- description: Cached Components example with Nuxt.js -->
