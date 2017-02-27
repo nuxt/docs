@@ -1,15 +1,26 @@
 ---
-title: "API: The layout Property"
-description: Every file (first level) in the layouts directory will create a custom layout accessible with the layout property in the page component.
+title: "API: layout プロパティ"
+description: layouts ディレクトリの（第一階層の）すべてのファイルはページコンポーネントの layout プロパティで利用できるカスタムレイアウトを作ります。
 ---
 
-# The layout Property
+<!-- title: "API: The layout Property" -->
+<!-- description: Every file (first level) in the layouts directory will create a custom layout accessible with the layout property in the page component. -->
 
-> Every file (first level) in the layouts directory will create a custom layout accessible with the layout property in the page component.
+<!-- # The layout Property -->
 
-- **Type:** `String` (default: `'default'`)
+# layout プロパティ
 
-Use the `layout` key in your pages components to define which layout to use:
+<!-- \> Every file (first level) in the layouts directory will create a custom layout accessible with the layout property in the page component. -->
+
+> layouts ディレクトリの（第一階層の）すべてのファイルはページコンポーネントの layout プロパティで利用できるカスタムレイアウトを作ります。
+
+<!-- - **Type:** `String` (default: `'default'`) -->
+
+- **タイプ:** `文字列`（デフォルト: `'default'`）
+
+<!-- Use the `layout` key in your pages components to define which layout to use: -->
+
+どのレイアウトを使うか指定するために、ページコンポーネントで `layout` キーを使ってください:
 
 ```js
 export default {
@@ -17,8 +28,13 @@ export default {
 }
 ```
 
-In this example, Nuxt.js will include the `layouts/blog.vue` file as a layout for this page component.
+<!-- In this example, Nuxt.js will include the `layouts/blog.vue` file as a layout for this page component. -->
 
-Check the [demonstration video](https://www.youtube.com/watch?v=YOKnSTp7d38) to see it in action.
+この例では Nuxt.js は `layouts/blog.vue` ファイルをこのページコンポーネントのレイアウトとしてインクルードします。
 
-To understand how the layouts work with nuxt.js, take a look at the [layout documentation](/guide/views#layouts).
+<!-- Check the [demonstration video](https://www.youtube.com/watch?v=YOKnSTp7d38) to see it in action. -->
+
+動作する様子を [デモ動画](https://www.youtube.com/watch?v=YOKnSTp7d38) で確認してみてください。
+
+<!-- To understand how the layouts work with nuxt.js, take a look at the [layout documentation](/guide/views#layouts). -->
+Nuxt.js でレイアウトがどのように動作するかをより深く理解するには [layout ドキュメント](/guide/views#layouts) を参照してください。
