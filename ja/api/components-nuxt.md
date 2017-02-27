@@ -1,13 +1,22 @@
 ---
-title: "API: The <nuxt> Component"
-description: Display the page components inside a layout.
+title: "API: <nuxt> コンポーネント"
+description: レイアウト内でページコンポーネントを表示します。
 ---
 
-# The &lt;nuxt&gt; Component
+<!-- title: "API: The <nuxt> Component" -->
+<!-- description: Display the page components inside a layout. -->
 
-> This component is used only in [layouts](/guide/views#layouts) to display the page components.
+<!-- # The &lt;nuxt&gt; Component -->
 
-Example (`layouts/default.vue`):
+# &lt;nuxt&gt; コンポーネント
+
+<!-- \> This component is used only in [layouts](/guide/views#layouts) to display the page components. -->
+
+> このコンポーネントは [レイアウト](/guide/views#layouts) 内でのみ、ページコンポーネントを表示するために使われます。
+
+<!-- Example (`layouts/default.vue`): -->
+
+例（`layouts/default.vue`）:
 
 ```html
 <template>
@@ -19,4 +28,6 @@ Example (`layouts/default.vue`):
 </template>
 ```
 
-To see an example, take a look at the [layouts example](/examples/layouts).
+<!-- To see an example, take a look at the [layouts example](/examples/layouts). -->
+
+例が見たいときは [レイアウトの例](/examples/layouts) を参照してください。
