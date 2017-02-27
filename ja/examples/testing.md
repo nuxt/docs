@@ -1,6 +1,9 @@
 ---
-title: Testing
-description: Testing example with Nuxt.js
+title: テスト
+description: テストの例
 github: with-ava
-documentation: /guide/development-tools#end-to-end-testing
+documentation: /guide/development-tools#エンドツーエンドテスト
 ---
+
+<!-- title: Testing -->
+<!-- description: Testing example with Nuxt.js -->
