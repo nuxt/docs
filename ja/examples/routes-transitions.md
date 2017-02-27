@@ -1,8 +1,11 @@
 ---
-title: Routes transitions
-description: Routes transitions example with Nuxt.js
+title: トランジション
+description: ページ間を遷移する際のトランジションの例
 github: routes-transitions
 youtube: https://www.youtube.com/embed/RIXOzJWFfc8
 livedemo: https://routes-transitions.nuxtjs.org
-documentation: /guide/routing#transitions
+documentation: /guide/routing#トランジション
 ---
+
+<!-- title: Routes transitions -->
+<!-- description: Routes transitions example with Nuxt.js -->
