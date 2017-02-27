@@ -149,7 +149,7 @@ export default {
 
 <!-- ## Nested Routes -->
 
-## ネストしたルーティング
+## ルーティングのネスト
 
 <!-- Nuxt.js lets you create nested route by using the children routes of vue-router. -->
 
