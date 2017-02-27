@@ -1,6 +1,6 @@
 ---
 title: "API: transition プロパティ"
-description: Nuxt.js では transition コンポーネントを使って、ページ間を遷移する際のイイ感じのトランジション/アニメーションを行うことができます。
+description: Nuxt.js では transition コンポーネントを使って、ページ間を遷移する際のトランジション/アニメーションを行うことができます。
 ---
 
 <!-- title: "API: The transition Property" -->
@@ -12,7 +12,7 @@ description: Nuxt.js では transition コンポーネントを使って、ペ�
 
 <!-- \> Nuxt.js uses the  [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your pages. -->
 
-> Nuxt.js は [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) コンポーネントを使って、ページ間を遷移する際のイイ感じのトランジション/アニメーションを行うことができます。
+> Nuxt.js は [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) コンポーネントを使って、ページ間を遷移する際のトランジション/アニメーションを行うことができます。
 
 <!-- - **Type:** `String` or `Object` or `Function` -->
 
@@ -60,7 +60,7 @@ export default {
 
 <!-- Nuxt.js will use these settings to set the component as follows: -->
 
-Nuxt.js はこれらの設定を、下記のようにコンポーネントをセットするために使います:
+上のように設定されると、コンポーネントは次のようにセットされます:
 
 ```html
 <transition name="test">
@@ -85,7 +85,7 @@ export default {
 
 <!-- Nuxt.js will use these settings to set the component as follows: -->
 
-Nuxt.js はこれらの設定を、下記のようにコンポーネントをセットするために使います:
+上のように設定されると、コンポーネントは次のようにセットされます:
 
 ```html
 <transition name="test" mode="out-in">
@@ -93,7 +93,7 @@ Nuxt.js はこれらの設定を、下記のようにコンポーネントをセ
 
 <!-- The following properties that the `transition` object can have: -->
 
-`transition` オブジェクトが持つことができるプロパティは次のとおり:
+`transition` オブジェクトが持つことができるプロパティは以下のとおり:
 
 <!-- | key  | Type | Default | definition | -->
 <!-- |------|------|---------|-----------| -->
@@ -123,7 +123,7 @@ Nuxt.js はこれらの設定を、下記のようにコンポーネントをセ
 
 <!-- You can also define methods in the `transition`, these are for the [JavaScript hooks](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks): -->
 
-`transition` の中でメソッドを定義することもでき、メソッドは [JavaScript フック](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks) に使われます:
+`transition` の中でメソッドを定義することもでき、メソッドは [JavaScript フック](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks) で使われます:
 
 - beforeEnter(el)
 - enter(el, done)
@@ -157,7 +157,7 @@ export default {
 
 <!-- Transitions applied on navigation: -->
 
-トランジションはページ遷移時に適用されます:
+トランジションは各ページ遷移時に次のように適用されます:
 
 <!-- - `/` to `/posts` => `slide-left` -->
 <!-- - `/posts` to `/posts?page=3` => `slide-left` -->
