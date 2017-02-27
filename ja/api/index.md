@@ -1,6 +1,6 @@
 ---
 title: "API: data メソッド"
-description: Nuxt.js は Vue.js の data メソッドに手を加えて、コンポーネントのデータがセットされる前に非同期処理を取り扱えるようにしています。
+description: Nuxt.js は Vue.js の data メソッドに手を加えて、コンポーネントのデータがセットされる前に非同期処理を行えるようにしています。
 ---
 
 <!-- title: "API: The data Method" -->
@@ -12,13 +12,15 @@ description: Nuxt.js は Vue.js の data メソッドに手を加えて、コン
 
 <!-- \> Nuxt.js *supercharges* the `data` method from vue.js to let you handle async operation before setting the component data. -->
 
-> Nuxt.js は Vue.js の `data` メソッドに手を加えて、コンポーネントのデータがセットされる前に非同期処理を取り扱えるようにしています。
+> Nuxt.js は Vue.js の `data` メソッドに手を加えて、コンポーネントのデータがセットされる前に非同期処理を行えるようにしています。
 
-- **Type:** `Function`
+<!-- - **Type:** `Function` -->
+
+- **タイプ:** `関数`
 
 <!-- `data` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives the **context** as the first argument, you can use it to fetch some data and return the component data. -->
 
-`data` はコンポーネントがローディングされる前に毎回呼び出されます（ページコンポーネントに限ります）。サーバーサイドもしくは（訳注: クライアントサイドでは）対応するルートへナビゲーションする前に呼び出されます。このメソッドは **context** を第一引数として受け取り、context を使ってデータを取得してコンポーネントデータを返すことができます。
+`data` はコンポーネントがローディングされる前に毎回呼び出されます（ページコンポーネントに限ります）。サーバーサイドもしくは（訳注: クライアントサイドでは）ユーザーがページ遷移する前に呼び出されます。このメソッドは **context** を第一引数として受け取り、context を使ってデータを取得してコンポーネントのデータを返すことができます。
 
 ```js
 export default {
@@ -30,9 +32,11 @@ export default {
 
 <!-- <div class="Alert Alert--orange">You do **NOT** have access of the component instance through `this` inside `data` because it is called **before initiating** the component.</div> -->
 
-<div class="Alert Alert--orange">`data` メソッド内で、コンポーネントのインスタンスに `this` を経由してアクセスしては**いけません**。なぜならそれはコンポーネントが **インスタンス化される前に** 呼び出されるからです。</div>
+<div class="Alert Alert--orange">`data` メソッド内で、コンポーネントのインスタンスに `this` を経由してアクセスしては**いけません**。なぜなら `data` メソッドはコンポーネントが **インスタンス化される前に** 呼び出されるためです。</div>
 
-## Context
+<!-- ## Context -->
+
+## コンテキスト
 
 <!-- List of all the available keys in `context`: -->
 
@@ -63,7 +67,7 @@ export default {
 | `env` | オブジェクト | クライアント＆サーバー | `nuxt.config.js` でセットされた環境変数。詳細は [env API](/api/configuration-env) を参照してください |
 | `params` | オブジェクト | クライアント＆サーバー | route.params のエイリアス |
 | `query` | オブジェクト | クライアント＆サーバー | route.query のエイリアス |
-| `req` | [http.Request](https://nodejs.org/api/http.html#http_class_http_incomingmessage) | サーバー | Node.js サーバーのリクエスト。Nuxt.js をミドルウェアとして使っているとき、req オブジェクトは利用しているフレームワークによって異なるかもしれません。*`nuxt generate` からは利用できません* |
-| `res` | [http.Response](https://nodejs.org/api/http.html#http_class_http_serverresponse) | サーバー | Node.js サーバーのレスポンス。Nuxt.js をミドルウェアとして使っているとき、req オブジェクトは利用しているフレームワークによって異なるかもしれません。*`nuxt generate` からは利用できません* |
-| `redirect` | 関数 | クライアント＆サーバー | 別のルートにリダイレクトさせたいときに使います。サーバーサイドで使われるステータスコードはデフォルトで 302 です。`redirect([status,] path [, query])` |
+| `req` | [http.Request](https://nodejs.org/api/http.html#http_class_http_incomingmessage) | サーバー | Node.js サーバーのリクエスト。Nuxt.js をミドルウェアとして使っているとき、req オブジェクトは利用しているフレームワークによって異なります。*`nuxt generate` からは利用できません* |
+| `res` | [http.Response](https://nodejs.org/api/http.html#http_class_http_serverresponse) | サーバー | Node.js サーバーのレスポンス。Nuxt.js をミドルウェアとして使っているとき、res オブジェクトは利用しているフレームワークによって異なります。*`nuxt generate` からは利用できません* |
+| `redirect` | 関数 | クライアント＆サーバー | 別のルートにリダイレクトさせたいときに使います。サーバーサイドで使われるステータスコードはデフォルトで 302 です: `redirect([status,] path [, query])` |
 | `error` | 関数 | クライアント＆サーバー | エラーページを表示させたいときに使います: `error(params)`。`params` は `statusCode` と `message` というフィールドを持っている必要があります |
