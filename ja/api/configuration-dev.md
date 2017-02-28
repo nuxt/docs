@@ -1,24 +1,45 @@
 ---
-title: "API: The dev Property"
-description: Define the development or production mode.
+title: "API: dev プロパティ"
+description: 開発モードかプロダクションモードかを指定します。
 ---
 
-# The dev Property
+<!-- title: "API: The dev Property" -->
+<!-- description: Define the development or production mode. -->
 
-- Type: `Boolean`
-- Default: `true`
+<!-- # The dev Property -->
 
-> Define the development or production mode of nuxt.js
+# dev プロパティ
 
-This property is overwritten by [nuxt commands](/guide/commands):
-- `dev` is forced to `true` with `nuxt`
-- `dev` is force to `false` with `nuxt build`, `nuxt start` and `nuxt generate`
+<!-- - Type: `Boolean` -->
+<!-- - Default: `true` -->
 
-This property should be used when using [nuxt.js programmatically](/api/nuxt):
+- タイプ: `ブーリアン`
+- デフォルト: `true`
 
-Example:
+<!-- \> Define the development or production mode of nuxt.js -->
+
+> Nuxt.js の開発モードなのかプロダクションモードなのかを指定します。
+
+<!-- This property is overwritten by [nuxt commands](/guide/commands): -->
+
+このプロパティは [nuxt コマンド](/guide/commands) によって上書きされます:
+
+<!-- - `dev` is forced to `true` with `nuxt` -->
+<!-- - `dev` is force to `false` with `nuxt build`, `nuxt start` and `nuxt generate` -->
+
+- `dev` は `nuxt` コマンドで強制的に `true` になります
+- `dev` は `nuxt build`、`nuxt start`、`nuxt generate` コマンドで強制的に `false` になります
+
+<!-- This property should be used when using [nuxt.js programmatically](/api/nuxt): -->
+
+このプロパティは [nuxt.js programmatically](/api/nuxt) を用いるときに使われるべきです:
+
+<!-- Example: -->
+
+例:
 
 `nuxt.config.js`
+
 ```js
 module.exports = {
   dev: (process.env.NODE_ENV !== 'production')
@@ -26,17 +47,42 @@ module.exports = {
 ```
 
 `server.js`
+
+<!-- ```js -->
+<!-- const Nuxt = require('nuxt') -->
+<!-- const app = require('express')() -->
+<!-- const port = process.env.PORT || 3000 -->
+
+<!-- // We instantiate Nuxt.js with the options -->
+<!-- let config = require('./nuxt.config.js') -->
+<!-- const nuxt = new Nuxt(config) -->
+<!-- app.use(nuxt.render) -->
+
+<!-- // Build only in dev mode -->
+<!-- if (config.dev) { -->
+<!--   nuxt.build() -->
+<!--   .catch((error) => { -->
+<!--     console.error(error) -->
+<!--     process.exit(1) -->
+<!--   }) -->
+<!-- } -->
+
+<!-- // Listen the server -->
+<!-- app.listen(port, '0.0.0.0') -->
+<!-- console.log('Server listening on localhost:' + port) -->
+<!-- ``` -->
+
 ```js
 const Nuxt = require('nuxt')
 const app = require('express')()
 const port = process.env.PORT || 3000
 
-// We instantiate Nuxt.js with the options
+// Nuxt.js をオプションを用いてインスタンス化する
 let config = require('./nuxt.config.js')
 const nuxt = new Nuxt(config)
 app.use(nuxt.render)
 
-// Build only in dev mode
+// 開発モードのときのみビルドする
 if (config.dev) {
   nuxt.build()
   .catch((error) => {
@@ -45,12 +91,15 @@ if (config.dev) {
   })
 }
 
-// Listen the server
+// サーバーを Listen する
 app.listen(port, '0.0.0.0')
 console.log('Server listening on localhost:' + port)
 ```
 
-Then in your `package.json`:
+<!-- Then in your `package.json`: -->
+
+それから `package.json` に次のように書きます:
+
 ```json
 {
   "scripts": {
