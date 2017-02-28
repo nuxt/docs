@@ -1,6 +1,6 @@
 ---
 title: "API: build プロパティ"
-description: Nuxt.js ではウェブアプリケーションを好きなようにビルドできるよう Webpack 設定をカスタマイズできます。
+description: Nuxt.js ではウェブアプリケーションを自由にビルドできるよう Webpack 設定をカスタマイズできます。
 ---
 
 <!-- title: "API: The build Property" -->
@@ -12,13 +12,13 @@ description: Nuxt.js ではウェブアプリケーションを好きなよう�
 
 <!-- \> Nuxt.js lets you customize the webpack configuration for building your web application as you want. -->
 
-> Nuxt.js ではウェブアプリケーションを好きなようにビルドできるよう Webpack 設定をカスタマイズできます。
+> Nuxt.js ではウェブアプリケーションを自由にビルドできるよう Webpack 設定をカスタマイズできます。
 
 ## analyze
 
 <!-- \> Nuxt.js use [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer) to let you visualize your bundles and how to optimize them. -->
 
-> Nuxt.js はバンドルファイルと最適化の仕方を視覚化するために [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer) を用います。
+> Nuxt.js では [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer) を使ってバンドルファイルと最適化の仕方を視覚化できます。
 
 <!-- - Type: `Boolean` or `Object` -->
 <!-- - Default: `false` -->
@@ -60,7 +60,7 @@ module.exports = {
 
 <!-- <p class="Alert Alert--teal">**INFO:** You can use the command `nuxt build --analyzer` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)</p> -->
 
-<p class="Alert Alert--teal">**メモ:** アプリケーションをビルドしてバンドルアナライザを [http://localhost:8888](http://localhost:8888) で起動するために、`nuxt build --analyzer` または `nuxt build -a` コマンドを使うことができます。</p>
+<p class="Alert Alert--teal">**情報:** `nuxt build --analyzer` または `nuxt build -a` コマンドを使って、アプリケーションをビルドしてバンドルアナライザを [http://localhost:8888](http://localhost:8888) で起動できます。</p>
 
 ## babel
 
@@ -115,7 +115,7 @@ module.exports = {
 
 <!-- The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are: -->
 
-拡張は二度呼び出されます。一度はサーバーのバンドルのため、一度はクライアントのバンドルのためです。メソッドの引数:
+extend メソッドは一度はサーバーのバンドルのため、一度はクライアントのバンドルのため、つまり二度呼び出されます。メソッドの引数は次のとおり:
 
 <!-- 1. Webpack config object -->
 <!-- 2. Object with the folowing keys (all boolean): `dev`, `isClient`, `isServer` -->
@@ -332,7 +332,7 @@ module.exports = {
 
 <!-- \> Nuxt.js lets you add modules inside the `vendor.bundle.js` file generated to reduce the size of the app bundle. It's really useful when using external modules (like `axios` for example) -->
 
-> Nuxt.js では、 app バンドルファイルのサイズを小さくするために生成される `vendor.bundle.js` ファイル内にモジュールを追加できます。外部モジュール（例えば `axios` など）を使うときにとても役に立ちます。
+> Nuxt.js では `vendor.bundle.js` ファイル内にモジュールを追加できます。このファイルは app バンドルファイルのサイズを小さくするために生成します。外部モジュール（例えば `axios` など）を使うときにとても便利です。
 
 <!-- - **Type:** `Array` -->
 <!--   - **Items:** `String` -->
@@ -354,7 +354,7 @@ module.exports = {
 
 <!-- You can also give a path to a file, like a custom lib you created: -->
 
-自分で作成したカスタムライブラリなど、パスを指定することもできます:
+ファイルへのパスを指定することもできます。例えば自分で作成した独自ライブラリを使いたいときなどはファイルへのパスを指定します:
 
 ```js
 module.exports = {
