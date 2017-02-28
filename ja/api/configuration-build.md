@@ -1,27 +1,56 @@
 ---
-title: "API: The build Property"
-description: Nuxt.js lets you customize the webpack configuration for building your web application as you want.
+title: "API: build プロパティ"
+description: Nuxt.js ではウェブアプリケーションを好きなようにビルドできるよう Webpack 設定をカスタマイズできます。
 ---
 
-# The build Property
+<!-- title: "API: The build Property" -->
+<!-- description: Nuxt.js lets you customize the webpack configuration for building your web application as you want. -->
 
-> Nuxt.js lets you customize the webpack configuration for building your web application as you want.
+<!-- # The build Property -->
+
+# build プロパティ
+
+<!-- \> Nuxt.js lets you customize the webpack configuration for building your web application as you want. -->
+
+> Nuxt.js ではウェブアプリケーションを好きなようにビルドできるよう Webpack 設定をカスタマイズできます。
 
 ## analyze
 
-> Nuxt.js use [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer) to let you visualize your bundles and how to optimize them.
+<!-- \> Nuxt.js use [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer) to let you visualize your bundles and how to optimize them. -->
 
-- Type: `Boolean` or `Object`
-- Default: `false`
+> Nuxt.js はバンドルファイルと最適化の仕方を視覚化するために [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer) を用います。
 
-If an object, see available properties [here](https://github.com/th0r/webpack-bundle-analyzer#as-plugin).
+<!-- - Type: `Boolean` or `Object` -->
+<!-- - Default: `false` -->
 
-Example (`nuxt.config.js`):
+- タイプ: `ブーリアン` または `オブジェクト`
+- デフォルト: `false`
+
+<!-- If an object, see available properties [here](https://github.com/th0r/webpack-bundle-analyzer#as-plugin). -->
+
+オブジェクトの場合は、利用できるプロパティは [こちら](https://github.com/th0r/webpack-bundle-analyzer#as-plugin) を参照してください。
+
+<!-- Example (`nuxt.config.js`): -->
+
+例（`nuxt.config.js`）:
+
+<!-- ```js -->
+<!-- module.exports = { -->
+<!--   build: { -->
+<!--     analyze: true -->
+<!--     // or -->
+<!--     analyze: { -->
+<!--       analyzerMode: 'static' -->
+<!--     } -->
+<!--   } -->
+<!-- } -->
+<!-- ``` -->
+
 ```js
 module.exports = {
   build: {
     analyze: true
-    // or
+    // または
     analyze: {
       analyzerMode: 'static'
     }
@@ -29,15 +58,24 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**INFO:** You can use the command `nuxt build --analyzer` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)</p>
+<!-- <p class="Alert Alert--teal">**INFO:** You can use the command `nuxt build --analyzer` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)</p> -->
+
+<p class="Alert Alert--teal">**メモ:** アプリケーションをビルドしてバンドルアナライザを [http://localhost:8888](http://localhost:8888) で起動するために、`nuxt build --analyzer` または `nuxt build -a` コマンドを使うことができます。</p>
 
 ## babel
 
-- Type: `Object`
+<!-- - Type: `Object` -->
 
-> Customize babel configuration for JS and Vue files.
+- タイプ: `オブジェクト`
 
-Default:
+<!-- \> Customize babel configuration for JS and Vue files. -->
+
+> JS や Vue ファイルのために babel の設定をカスタマイズします。
+
+<!-- Default: -->
+
+デフォルト:
+
 ```js
 {
   plugins: [
@@ -51,7 +89,10 @@ Default:
 }
 ```
 
-Example (`nuxt.config.js`):
+<!-- Example (`nuxt.config.js`): -->
+
+例（`nuxt.config.js`）:
+
 ```js
 module.exports = {
   build: {
@@ -64,20 +105,46 @@ module.exports = {
 
 ## extend
 
-- Type: `Function`
+<!-- - Type: `Function` -->
 
-> Extend the webpack configuration manually for the client & server bundles.
+- タイプ: `関数`
 
-The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are:
-1. Webpack config object
-2. Object with the folowing keys (all boolean): `dev`, `isClient`, `isServer`
+<!-- \> Extend the webpack configuration manually for the client & server bundles. -->
 
-Example (`nuxt.config.js`):
+クライアント及びサーバーのバンドルについて Webpack の設定を手動で拡張します。
+
+<!-- The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are: -->
+
+拡張は二度呼び出されます。一度はサーバーのバンドルのため、一度はクライアントのバンドルのためです。メソッドの引数:
+
+<!-- 1. Webpack config object -->
+<!-- 2. Object with the folowing keys (all boolean): `dev`, `isClient`, `isServer` -->
+
+1. Webpack 設定オブジェクト
+2. 次のキーを持つオブジェクト（すべてブーリアン）: `dev`, `isClient`, `isServer`
+
+<!-- Example (`nuxt.config.js`): -->
+
+例（`nuxt.config.js`）:
+
+<!-- ```js -->
+<!-- module.exports = { -->
+<!--   build: { -->
+<!--     extend (config, { isClient }) { -->
+<!--       // Extend only webpack config for client-bundle -->
+<!--       if (isClient) { -->
+<!--         config.devtool = 'eval-source-map' -->
+<!--       } -->
+<!--     } -->
+<!--   } -->
+<!-- } -->
+<!-- ``` -->
+
 ```js
 module.exports = {
   build: {
     extend (config, { isClient }) {
-      // Extend only webpack config for client-bundle
+      // クライアントのバンドルの Webpack 設定のみを拡張する
       if (isClient) {
         config.devtool = 'eval-source-map'
       }
@@ -86,15 +153,24 @@ module.exports = {
 }
 ```
 
-If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/webpack).
+<!-- If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/webpack). -->
+
+デフォルトの Webpack の設定についてもう少し見てみたい場合は Nuxt.js の [webpack ディレクトリ](https://github.com/nuxt/nuxt.js/tree/master/lib/webpack) を参照してください。
 
 ## filenames
 
-- Type: `Object`
+<!-- - Type: `Object` -->
 
-> Customize bundle filenames
+- タイプ: `オブジェクト`
 
-Default:
+<!-- \> Customize bundle filenames -->
+
+> バンドルのファイル名をカスタマイズします。
+
+<!-- Default: -->
+
+デフォルト:
+
 ```js
 {
   css: 'style.css',
@@ -103,7 +179,10 @@ Default:
 }
 ```
 
-Example (`nuxt.config.js`):
+<!-- Example (`nuxt.config.js`): -->
+
+例（`nuxt.config.js`）:
+
 ```js
 module.exports = {
   build: {
@@ -118,12 +197,20 @@ module.exports = {
 
 ## loaders
 
-- Type: `Array`
-  - Items: `Object`
+<!-- - Type: `Array` -->
+<!--   - Items: `Object` -->
 
-> Cusomize webpack loaders
+- タイプ: `配列`
+  - 要素: `オブジェクト`
 
-Default:
+<!-- \> Cusomize webpack loaders -->
+
+> Webpack のローダーをカスタマイズします。
+
+<!-- Default: -->
+
+デフォルト:
+
 ```js
 [
   {
@@ -145,7 +232,10 @@ Default:
 ]
 ```
 
-Example (`nuxt.config.js`):
+<!-- Example (`nuxt.config.js`): -->
+
+例（`nuxt.config.js`）:
+
 ```js
 module.exports = {
   build: {
@@ -163,16 +253,26 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--orange">When the loaders are defined in the `nuxt.config.js`, the default loaders will be overwritten.</p>
+<!-- <p class="Alert Alert--orange">When the loaders are defined in the `nuxt.config.js`, the default loaders will be overwritten.</p> -->
+
+<p class="Alert Alert--orange">loaders が `nuxt.config.js` で定義されているときは、デフォルトのローダー設定は上書きされます。</p>
 
 ## plugins
 
-- Type: `Array`
-- Default: `[]`
+<!-- - Type: `Array` -->
+<!-- - Default: `[]` -->
 
-> Add Webpack plugins
+- タイプ: `配列`
+- デフォルト: `[]`
 
-Example (`nuxt.config.js`):
+<!-- \> Add Webpack plugins -->
+
+> Webpack のプラグインを追加します。
+
+<!-- Example (`nuxt.config.js`): -->
+
+例（`nuxt.config.js`）:
+
 ```js
 const webpack = require('webpack')
 
@@ -189,11 +289,18 @@ module.exports = {
 
 ## postcss
 
-- **Type:** `Array`
+<!-- - **Type:** `Array` -->
 
-> Customize [postcss](https://github.com/postcss/postcss) options
+- **タイプ:** `配列`
 
-Default:
+<!-- \> Customize [postcss](https://github.com/postcss/postcss) options -->
+
+> [postcss](https://github.com/postcss/postcss) オプションをカスタマイズします。
+
+<!-- Default: -->
+
+デフォルト:
+
 ```js
 [
   require('autoprefixer')({
@@ -202,7 +309,10 @@ Default:
 ]
 ```
 
-Example (`nuxt.config.js`):
+<!-- Example (`nuxt.config.js`): -->
+
+例（`nuxt.config.js`）:
+
 ```js
 module.exports = {
   build: {
@@ -220,12 +330,19 @@ module.exports = {
 
 ## vendor
 
-> Nuxt.js lets you add modules inside the `vendor.bundle.js` file generated to reduce the size of the app bundle. It's really useful when using external modules (like `axios` for example)
+<!-- \> Nuxt.js lets you add modules inside the `vendor.bundle.js` file generated to reduce the size of the app bundle. It's really useful when using external modules (like `axios` for example) -->
 
-- **Type:** `Array`
- - **Items:** `String`
+> Nuxt.js では、 app バンドルファイルのサイズを小さくするために生成される `vendor.bundle.js` ファイル内にモジュールを追加できます。外部モジュール（例えば `axios` など）を使うときにとても役に立ちます。
 
-To add a module/file inside the vendor bundle, add the `build.vendor` key inside `nuxt.config.js`:
+<!-- - **Type:** `Array` -->
+<!--   - **Items:** `String` -->
+
+- **タイプ:** `配列`
+  - **要素:** `文字列`
+
+<!-- To add a module/file inside the vendor bundle, add the `build.vendor` key inside `nuxt.config.js`: -->
+
+vendor バンドルファイル内にモジュール/ファイルを追加するには、`nuxt.config.js` 内の `build.vendor` キーに追加します:
 
 ```js
 module.exports = {
@@ -235,7 +352,10 @@ module.exports = {
 }
 ```
 
-You can also give a path to a file, like a custom lib you created:
+<!-- You can also give a path to a file, like a custom lib you created: -->
+
+自分で作成したカスタムライブラリなど、パスを指定することもできます:
+
 ```js
 module.exports = {
   build: {
