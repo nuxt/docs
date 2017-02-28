@@ -52,7 +52,7 @@ module.exports = {
   css: [
     // node.js モジュールをロード
     'hover.css/css/hover-min.css',
-    // node.js モジュールだがプリプロセッサを指定
+    // node.js モジュール。プリプロセッサを指定
     { src: 'bulma', lang: 'sass' },
     // プロジェクト内の CSS ファイル
     '~assets/css/main.css'
@@ -62,4 +62,4 @@ module.exports = {
 
 <!-- <p class="Alert">**In production**, all CSS will be minified and extracted in a file named `styles.css` and added in the `<head>` of the page.</p> -->
 
-<p class="Alert">**プロダクションでは**、すべての CSS はミニファイされ `styles.css` というファイルに抽出されます。そして、ページの `<head>` タグに追加されます。</p>
+<p class="Alert">**プロダクションでは**、すべての CSS はミニファイされ `styles.css` というファイルに抽出されます。そしてページの `<head>` タグ内に `style.css` を読み込む link タグが追加されます。</p>
