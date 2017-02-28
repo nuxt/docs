@@ -27,12 +27,12 @@ description: 開発モードかプロダクションモードかを指定しま�
 <!-- - `dev` is forced to `true` with `nuxt` -->
 <!-- - `dev` is force to `false` with `nuxt build`, `nuxt start` and `nuxt generate` -->
 
-- `dev` は `nuxt` コマンドで強制的に `true` になります
-- `dev` は `nuxt build`、`nuxt start`、`nuxt generate` コマンドで強制的に `false` になります
+- `nuxt` コマンドを使うときは `dev` は強制的に `true` になります
+- `nuxt build`、`nuxt start`、`nuxt generate` コマンドを使うときは `dev` は強制的に `false` になります
 
 <!-- This property should be used when using [nuxt.js programmatically](/api/nuxt): -->
 
-このプロパティは [nuxt.js programmatically](/api/nuxt) を用いるときに使われるべきです:
+このプロパティは [Nuxt.js をプログラムで使う](/api/nuxt) ときに合わせて使うと良いです:
 
 <!-- Example: -->
 
@@ -77,7 +77,7 @@ const Nuxt = require('nuxt')
 const app = require('express')()
 const port = process.env.PORT || 3000
 
-// Nuxt.js をオプションを用いてインスタンス化する
+// Nuxt.js をオプションを使ってインスタンス化する
 let config = require('./nuxt.config.js')
 const nuxt = new Nuxt(config)
 app.use(nuxt.render)
