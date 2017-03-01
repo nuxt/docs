@@ -20,7 +20,7 @@ description: ユニバーサルなウェブアプリケーションから静的�
 
 <!-- When launching `nuxt generate` or calling `nuxt.generate()`, nuxt.js will use the configuration defined in the `generate` property. -->
 
-`nuxt generate` を実行するか `nuxt.generate()` を呼び出したときに、Nuxt.js は `generete` プロパティで定義された設定を使います。
+`nuxt generate` コマンドを実行するか `nuxt.generate()` を呼び出したとき、Nuxt.js は `generete` プロパティで定義された設定を使います。
 
 ## dir
 
@@ -36,15 +36,17 @@ description: ユニバーサルなウェブアプリケーションから静的�
 
 ## routeParams
 
-- Type: `Object`
-  - Key: `String` (route path)
-  - Value: `Array` or `Function`
+<!-- - Type: `Object` -->
+<!--   - Key: `String` (route path) -->
+<!--   - Value: `Array` or `Function` -->
 
 - タイプType: `オブジェクト`
   - キー: `文字列`（ルートのパス）
   - 値: `配列` または `関数`
 
-[動的なルーティング](/guide/routing#dynamic-routes) を使うときは、生成するためにパラメータとそれぞれの動的なルートとのマッピングを定義する必要があります。
+<!-- When using [dynamic routes](/guide/routing#dynamic-routes), you need to define a mapping of params for each dynamic route to generate. -->
+
+[動的なルーティング](/guide/routing#dynamic-routes) を使うときは、パラメータとそれぞれの動的なルートとのマッピングを定義する必要があります。
 
 <!-- Example: -->
 
@@ -63,7 +65,7 @@ Nuxt.js によって生成されるルートは `/` と `/users/:id` です。
 
 <!-- If you try to launch `nuxt generate`, the terminal will exit with an error: -->
 
-`nuxt generate` を実行しようとすると、ターミナルはエラーで終了するでしょう:
+上のような設定で `nuxt generate` コマンドを実行しようとすると、ターミナルはエラー終了するでしょう:
 
 ```bash
 Could not generate the dynamic route /users/:id, please add the mapping params in nuxt.config.js (generate.routeParams).
@@ -71,7 +73,7 @@ Could not generate the dynamic route /users/:id, please add the mapping params i
 
 <!-- We add the mapping for `/users/:id` in `nuxt.config.js`: -->
 
-`nuxt.config.js` 内に `/users/:id` のマッピングを追加します:
+そこで `nuxt.config.js` 内に `/users/:id` のマッピングを追加します:
 
 ```js
 module.exports = {
@@ -89,7 +91,7 @@ module.exports = {
 
 <!-- Then when we launch `nuxt generate`: -->
 
-それから `nuxt generate` を実行します:
+そして `nuxt generate` を実行します:
 
 ```bash
 [nuxt] Generating...
@@ -113,8 +115,8 @@ nuxt:generate HTML Files generated in 7.6s +6ms
 <!-- 1. Use a `Function` which returns a `Promise` -->
 <!-- 2. Use a `Function` with a callback(err, params) -->
 
-1. `Promise` を返す `関数` を使ってください
-2. コールバックと一緒に `関数` を使ってください
+1. `Promise` を返す `関数` を使う
+2. コールバックと一緒に `関数` を使う
 
 <!-- ### Function which returns a Promise -->
 
