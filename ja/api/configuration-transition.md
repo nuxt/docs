@@ -1,15 +1,27 @@
 ---
-title: "API: The transition Property"
-description: Set the default properties of the pages transitions.
+title: "API: transition プロパティ"
+description: ページのトランジションのデフォルト設定を指定します。
 ---
 
-# The transition Property
+<!-- title: "API: The transition Property" -->
+<!-- description: Set the default properties of the pages transitions. -->
 
-- Type: `String` or `Object`
+<!-- # The transition Property -->
 
-> Used to set the default properties of the pages transitions.
+# transition プロパティ
 
-Default:
+<!-- - Type: `String` or `Object` -->
+
+- タイプ: `文字列` または `オブジェクト`
+
+<!-- \> Used to set the default properties of the pages transitions. -->
+
+> ページのトランジションのデフォルト設定を指定するために使われます。
+
+<!-- Default: -->
+
+デフォルト:
+
 ```js
 {
   name: 'page',
@@ -17,12 +29,28 @@ Default:
 }
 ```
 
-Example (`nuxt.config.js`):
+<!-- Example (`nuxt.config.js`): -->
+
+例（`nuxt.config.js`）:
+
+<!-- ```js -->
+<!-- module.exports = { -->
+<!--   transition: 'page' -->
+<!--   // or -->
+<!--   transition: { -->
+<!--     name: 'page', -->
+<!--     mode: 'out-in', -->
+<!--     beforeEnter (el) { -->
+<!--       console.log('Before enter...'); -->
+<!--     } -->
+<!--   } -->
+<!-- } -->
+<!-- ``` -->
 
 ```js
 module.exports = {
   transition: 'page'
-  // or
+  // または
   transition: {
     name: 'page',
     mode: 'out-in',
@@ -33,4 +61,6 @@ module.exports = {
 }
 ```
 
-The transition key in `nuxt.config.js` is used to set the default properties for the pages transitions. To learn more about the available keys when the `transition` key is an object, see the [pages transition property](/api/pages-transition#object).
+<!-- The transition key in `nuxt.config.js` is used to set the default properties for the pages transitions. To learn more about the available keys when the `transition` key is an object, see the [pages transition property](/api/pages-transition#object). -->
+
+`nuxt.config.js` 内の transition キーはページのトランジションのデフォルト設定を指定するために使われます。`transition` キーがオブジェクトのときに利用可能なキーについてより深く理解するには [ページのトランジションプロパティ](/api/pages-transition#object) を参照してください。
