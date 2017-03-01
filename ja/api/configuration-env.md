@@ -1,6 +1,6 @@
 ---
 title: "API: env プロパティ"
-description: クライアントとサーバー間で環境変数を共有します。
+description: クライアントサイドとサーバーサイドで環境変数を共有します。
 ---
 
 <!-- title: "API: The env Property" -->
@@ -32,7 +32,7 @@ module.exports = {
 
 <!-- This lets me create a `baseUrl` property that will be equal to the `BASE_URL` environment variable if defined, otherwise, equal to `http://localhost:3000`. -->
 
-このように記述すると `baseUrl` プロパティは、環境変数 `BASE_URL` が定義されていればそれと同様になり、そうでなければ `http://localhost:3000` と同様になります。
+このように記述すると `baseUrl` プロパティは、環境変数 `BASE_URL` が定義されていればそれと同じになり、そうでなければ `http://localhost:3000` になります。
 
 <!-- Then, I can access my `baseUrl` variable with 2 ways: -->
 
@@ -41,16 +41,16 @@ module.exports = {
 <!-- 1. Via `process.env.baseUrl` -->
 <!-- 2. Via `context.baseUrl`, see [context api](/api#context) -->
 
-1. `process.env.baseUrl` を経由する
+1. `process.env.baseUrl` 経由でアクセスする
 2. `context.baseUrl` を経由する。詳細は [context API](/api#context)
 
 <!-- You can use the `env` property for giving public token for example. -->
 
-例えば公開トークンを付与するために `env` プロパティを使うことができます。
+例えば `env` プロパティを使って公開トークンを付与することができます。
 
 <!-- For the example above, we can use it to configure [axios](https://github.com/mzabriskie/axios). -->
 
-そのような例として [axios](https://github.com/mzabriskie/axios) を設定するために env プロパティを使うことができます。
+上記の例として env プロパティを使って [axios](https://github.com/mzabriskie/axios) を設定できます。
 
 `plugins/axios.js`:
 
@@ -64,4 +64,4 @@ export default axios.create({
 
 <!-- Then, in your pages, you can import axios like this: `import axios from '~plugins/axios'` -->
 
-そうするとページ内で次のように axios をインポートできます: `import axios from '~plugins/axios'`
+このように記述するとページ内で `import axios from '~plugins/axios'` という具合に axios をインポートできます。
