@@ -26,8 +26,8 @@ Nuxt.js アプリケーションのワークスペースを指定します。
 
 <!-- This property should be used when using [nuxt.js programmatically](/api/nuxt). -->
 
-このプロパティは [Nuxt.js をプログラムで使う](/api/nuxt) ときに用いられるべきです。
+このプロパティは [Nuxt.js をプログラムで使う](/api/nuxt) ときに用いると良いです。
 
 <!-- <p class="Alert Alert--blue">The downside of this option is that your `node_modules` directory should be inside the `rootDir` folder. If you want to set the path of the application without the node_modules, use the [`srcDir` option](/api/configuration-srcdir).</p> -->
 
-<p class="Alert Alert--blue">このオプションの否定的な側面は `node_modules` ディレクトリが `rootDir` フォルダ内にあることを求められることです。もしアプリケーションのパスを node_modules なしで設定したいときは [`srcDir` オプション](/api/configuration-srcdir) を使ってください。</p>
+<p class="Alert Alert--blue">このオプションは `node_modules` ディレクトリが `rootDir` フォルダ内にあることを求めるという側面もあります。もしアプリケーションのパスを node_modules なしで設定したいときは [`srcDir` オプション](/api/configuration-srcdir) を使ってください。</p>
