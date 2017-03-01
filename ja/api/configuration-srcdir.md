@@ -46,4 +46,4 @@ module.exports = {
 
 <!-- This option is useful to have a custom server and using nuxt.js, so all npm dependencies can be regrouped in one `package.json`. -->
 
-このオプションは Nuxt.js を使いつつカスタムサーバーを持つときに役に立ちます。そのようなときに、すべての npm 依存パッケージをひとつの `package.json` 内に再編成できます。
+このオプションは Nuxt.js を使いつつ独自のサーバーを持ちたいときに役に立ちます。そのようなときに、すべての npm 依存パッケージをひとつの `package.json` 内にまとめることができます。
