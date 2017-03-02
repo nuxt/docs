@@ -1,6 +1,6 @@
 ---
 title: "API: Nuxt(options)"
-description: Nuxt.js をプログラムで使って、Nuxt.js をウェブアプリケーションをレンダリングする独自サーバーをつくる自由を与えるミドルウェアとして使うことができます。
+description: Nuxt.js はプログラム上で、ミドルウェアとして使うことができます。そうすることでウェブアプリケーションをレンダリングする独自のサーバーを自由に作ることができます。
 ---
 
 <!-- title: "API: Nuxt(options)" -->
@@ -12,7 +12,7 @@ description: Nuxt.js をプログラムで使って、Nuxt.js をウェブアプ
 
 <!-- You might want to use your own server with your middleware and your API. That's why you can use Nuxt.js programmatically. -->
 
-ミドルウェアや API と一緒に独自サーバーを使いたいときがあるかもしれません。それが Nuxt.js をプログラムで使うことができる理由です。
+ミドルウェアや API と合わせて独自サーバーを使いたいときがあるかもしれません。そのため、Nuxt.js はプログラムで使うことができるようにしています。
 
 <!-- Nuxt.js is built on the top of ES2015, which makes the code more enjoyable and cleaner to read. It doesn't make use of any transpilers and depends upon Core V8 implemented features. For these reasons, Nuxt.js targets Node.js `4.0` or higher. -->
 Nuxt.js はコードをより楽しいものし、より読みやすくする ES2015 以上でビルドされます。トランスパイラを利用せず、また V8 エンジンで実装された機能に依存しません。このような理由から Nuxt.js は Node.js `4.0` 以上をターゲットにしています。
@@ -29,7 +29,7 @@ const Nuxt = require('nuxt')
 
 <!-- To see the list of options to give to Nuxt.js, see the configuration section. -->
 
-Nuxt.js に与えられるオプション一覧を見るには、設定のセクションを参照してください。
+Nuxt.js に渡すことができるオプション一覧を見るには、設定のセクションを参照してください。
 
 <!-- ```js -->
 <!-- const options = {} -->
@@ -53,13 +53,13 @@ nuxt.build()
 
 <!-- You can take a look at the [nuxt-express](https://github.com/nuxt/express) and [adonuxt](https://github.com/nuxt/adonuxt) starters to start quickly. -->
 
-手早く始めるために [nuxt-express](https://github.com/nuxt/express) や [adonuxt](https://github.com/nuxt/adonuxt) スターターを見ることができます。
+手っ取り早く始めるために [nuxt-express](https://github.com/nuxt/express) や [adonuxt](https://github.com/nuxt/adonuxt) スターターを参照できます。
 
 ### Debug logs
 
 <!-- If you want to display nuxt.js logs, you can add to the top of your file: -->
 
-Nuxt.js のログを表示したいときはファイルのトップに下記を追加してください:
+Nuxt.js のログを表示したいときはファイルのトップに次のコードを追加してください:
 
 ```js
 process.env.DEBUG = 'nuxt:*'
