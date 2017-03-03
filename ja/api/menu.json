@@ -1,6 +1,6 @@
 [
   {
-    "title": "Pages",
+    "title": "ページ",
     "links": [
       { "name": "data", "to": "/" },
       { "name": "fetch", "to": "/pages-fetch" },
@@ -11,16 +11,16 @@
       {
         "name": "transition", "to": "/pages-transition",
         "contents": [
-          { "name": "String", "to": "#string" },
-          { "name": "Object", "to": "#object" },
-          { "name": "Function", "to": "#function" }
+          { "name": "文字列", "to": "#文字列" },
+          { "name": "オブジェクト", "to": "#オブジェクト" },
+          { "name": "関数", "to": "#関数" }
         ]
       },
       { "name": "validate", "to": "/pages-validate" }
     ]
   },
   {
-    "title": "Components",
+    "title": "コンポーネント",
     "links": [
       { "name": "nuxt", "to": "/components-nuxt" },
       { "name": "nuxt-child", "to": "/components-nuxt-child" },
@@ -28,7 +28,7 @@
     ]
   },
   {
-    "title": "Configuration",
+    "title": "設定",
     "links": [
       {
         "name": "build",
@@ -61,9 +61,9 @@
         "name": "loading",
         "to": "/configuration-loading",
         "contents": [
-          { "name": "Disable the Progress Bar", "to": "#disable-the-progress-bar" },
-          { "name": "Customize the Progress Bar", "to": "#customize-the-progress-bar" },
-          { "name": "Use a Custom Loading Component", "to": "#use-a-custom-loading-component" }
+          { "name": "プログレスバーを無効にする", "to": "#プログレスバーを無効にする" },
+          { "name": "プログレスバーをカスタマイズする", "to": "#プログレスバーをカスタマイズする" },
+          { "name": "独自のコンポーネントを使う", "to": "#独自のコンポーネントを使う" }
         ]
       },
       { "name": "plugins", "to": "/configuration-plugins" },
@@ -84,9 +84,9 @@
     ]
   },
   {
-    "title": "Nuxt Module",
+    "title": "Nuxt モジュール",
     "links": [
-      { "name": "Usage", "to": "/nuxt" },
+      { "name": "Nuxt.js をプログラムで使う", "to": "/nuxt" },
       { "name": "render", "to": "/nuxt-render" },
       { "name": "renderRoute", "to": "/nuxt-render-route" },
       { "name": "renderAndGetWindow", "to": "/nuxt-render-and-get-window" }
