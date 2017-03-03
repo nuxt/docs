@@ -1,6 +1,6 @@
 ---
 title: "API: nuxt.renderAndGetWindow(url, options)"
-description: 与えられた Nuxt.js アプリケーションの URL から window を取得します。
+description: Nuxt.js アプリケーションの URL を渡して window を取得します。
 ---
 
 <!-- title: "API: nuxt.renderAndGetWindow(url, options)" -->
@@ -21,16 +21,16 @@ description: 与えられた Nuxt.js アプリケーションの URL から wind
   1. `文字列`: レンダリングする URL
   2. *オプション*, `オブジェクト`: オプション
     - virtualConsole: `ブーリアン`（デフォルト: `true`）
-- 戻り値: `Promise`
+- 戻り値: `プロミス`
   - 戻り値: `window`
 
 <!-- \> Get the window from a given url of a nuxt.js application. -->
 
-> 与えられた Nuxt.js アプリケーションの URL から window を取得します。
+> Nuxt.js アプリケーションの URL を渡して window を取得します。
 
 <!-- <p class="Alert Alert--info">This method is made for [test purposes](guide/development-tools#end-to-end-testing).</p> -->
 
-<p class="Alert Alert--info">このメソッドは [テストする目的](guide/development-tools#end-to-end-testing) のためのモードです。</p>
+<p class="Alert Alert--info">このメソッドは [テストする目的](guide/development-tools#end-to-end-testing) で使われます。</p>
 
 <!-- To use this function, you have to install `jsdom`: -->
 

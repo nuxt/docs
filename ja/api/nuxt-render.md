@@ -26,7 +26,7 @@ description: Nuxt.js を独自の Node.js サーバーのミドルウェアと�
 
 <!-- Example with [Express.js](https://github.com/expressjs/express): -->
 
-[Express.js](https://github.com/expressjs/express) と一緒に使う例:
+Nuxt.js を [express](https://github.com/expressjs/express) と一緒に使う例:
 
 <!-- ```js -->
 <!-- const Nuxt = require('nuxt') -->
@@ -62,7 +62,7 @@ const app = require('express')()
 const isProd = (process.env.NODE_ENV === 'production')
 const port = process.env.PORT || 3000
 
-// Nuxt.js をオプションとともにインスタンス化
+// Nuxt.js をオプションとともにインスタンス化する
 let config = require('./nuxt.config.js')
 config.dev = !isProd
 const nuxt = new Nuxt(config)
@@ -86,4 +86,4 @@ console.log('Server listening on localhost:' + port)
 
 <!-- <p class="Alert">It's recommended to call **nuxt.render** at the end of your middlewares since it will handle the rendering of your web application and won't call next()</p> -->
 
-<p class="Alert">ミドルウェアの最後で **nuxt.render** を呼び出すことが推奨されます。なぜなら nuxt.render はウェブアプリケーションのレンダリングをハンドリングし、next() メソッドを呼び出さないためです。</p>
+<p class="Alert">ミドルウェアの最後で **nuxt.render** を呼び出すことが推奨されます。それは nuxt.render はウェブアプリケーションのレンダリングをハンドリングし、next() メソッドを呼び出さないためです。</p>

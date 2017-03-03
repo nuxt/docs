@@ -1,6 +1,6 @@
 ---
 title: "API: nuxt.renderRoute(route, context)"
-description: 特定のルートを与えられたコンテキストでレンダリングします。
+description: 特定のルートをレンダリングします。その際にコンテキストを渡すことができます。
 ---
 
 <!-- title: "API: nuxt.renderRoute(route, context)" -->
@@ -21,22 +21,22 @@ description: 特定のルートを与えられたコンテキストでレンダ�
 - 引数:
   1. `文字列`, レンダリングするルート
   2. *オプション*, `オブジェクト`, 付与するコンテキスト, 利用できるキー: `req` 及び `res`
-- 戻り値: `Promise`
+- 戻り値: `プロミス`
   - `html`: `文字列`
   - `error`: `null` または `オブジェクト`
   - `redirected`: `false` または `オブジェクト`
 
 <!-- \> Render a specific route with a given context. -->
 
-> 特定のルートを与えられたコンテキストでレンダリングします。
+> 特定のルートをレンダリングします。その際にコンテキストを渡すことができます。
 
 <!-- This method should be used mostly for [test purposes](guide/development-tools#end-to-end-testing) as well with [nuxt.renderAndGetWindow](/api/nuxt-render-and-get-window). -->
 
-このメソッドは大抵は [nuxt.renderAndGetWindow](/api/nuxt-render-and-get-window) とともに [テストする目的](guide/development-tools#end-to-end-testing) で使われます。
+このメソッドはほとんどの場合 [nuxt.renderAndGetWindow](/api/nuxt-render-and-get-window) とともに [テストする目的](guide/development-tools#end-to-end-testing) で使われます。
 
 <!-- <p class="Alert Alert--info">`nuxt.renderRoute` should be executed after the build process in production mode (dev: false).</p> -->
 
-<p class="Alert Alert--info">`nuxt.renderRoute` はプロダクションモード（dev: false）ではビルド処理の後に実行されるべきです。</p>
+<p class="Alert Alert--info">`nuxt.renderRoute` はプロダクションモード（dev: false）ではビルド処理の後に実行すると良いでしょう。</p>
 
 <!-- Example: -->
 

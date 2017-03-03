@@ -55,7 +55,7 @@ nuxt.build()
 
 手っ取り早く始めるために [nuxt-express](https://github.com/nuxt/express) や [adonuxt](https://github.com/nuxt/adonuxt) スターターを参照できます。
 
-### Debug logs
+### ログを使ってデバッグする
 
 <!-- If you want to display nuxt.js logs, you can add to the top of your file: -->
 
