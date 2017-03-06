@@ -19,16 +19,16 @@ And add a test script to our `package.json` and configure ava to compile files t
 ```javascript
 "scripts": {
   "test": "ava",
-   "ava": {
-     "require": [
-       "babel-register"
-     ]
-   },
-   "babel": {
-     "presets": [
-       "es2015"
-     ]
-   }
+},
+"ava": {
+  "require": [
+    "babel-register"
+  ]
+},
+"babel": {
+  "presets": [
+    "es2015"
+  ]
 }
 ```
 
