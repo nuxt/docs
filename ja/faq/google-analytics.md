@@ -104,8 +104,8 @@ module.exports = {
 
 <!-- Voilà, Google Analytics is integrated into your nuxt.js application and will track every page view! -->
 
-これで Google アナリティクスは Nuxt.js アプリケーションに統合され、すべてのページビューをトラッキングするようになりました！
+よし！これで Google アナリティクスは Nuxt.js アプリケーションに統合され、すべてのページビューをトラッキングするようになりました！
 
 <!-- <p class="Alert Alert--nuxt-green"><b>INFO:</b> you can use this method for any other tracking service.</p> -->
 
-<p class="Alert Alert--nuxt-green"><b>情報:</b> この方法を他のトラッキングサービスでも使うことができます。</p>
+<p class="Alert Alert--nuxt-green"><b>情報:</b> 他のトラッキングサービスでも、同様の方法を使うことができます。</p>
