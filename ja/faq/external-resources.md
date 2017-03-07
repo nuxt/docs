@@ -1,13 +1,22 @@
 ---
-title: External resources
-description: How to use external resources with Nuxt.js?
+title: 外部リソース
+description: Nuxt.js と一緒に外部リソースを使うにはどうしたらよいですか？
 ---
 
-# How to use external resources?
+<!-- title: External resources -->
+<!-- description: How to use external resources with Nuxt.js? -->
 
-## Global Settings
+<!-- # How to use external resources? -->
 
-Include your resources in the `nuxt.config.js` file:
+# 外部リソースを使うにはどうしたらよいですか？
+
+<!-- ## Global Settings -->
+
+## グローバルな設定
+
+<!-- Include your resources in the `nuxt.config.js` file: -->
+
+`nuxt.config.js` ファイル内でリソースをインクルードします:
 
 ```js
 module.exports = {
@@ -22,9 +31,13 @@ module.exports = {
 }
 ```
 
-## Local Settings
+<!-- ## Local Settings -->
 
-Include your resources in your .vue file inside the pages directory:
+## ローカルな設定
+
+<!-- Include your resources in your .vue file inside the pages directory: -->
+
+pages ディレクトリの .vue ファイル内でリソースをインクルードします:
 
 ```html
 <template>
