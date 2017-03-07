@@ -149,15 +149,15 @@ export default {
 
 <!-- ## Nested Routes -->
 
-## ルーティングのネスト
+## ネストされたルート
 
 <!-- Nuxt.js lets you create nested route by using the children routes of vue-router. -->
 
-Nuxt.js では vue-router の子ルーティングを使ってルーティングをネストさせることができます。
+Nuxt.js では vue-router の子ルートを使ってルートをネストさせることができます。
 
 <!-- To define a nested route, you need to create a Vue file with the **same name as the directory** which contain your children views. -->
 
-ネストしたルーティングを定義するには、子ビューを含む **ディレクトリと同じ名前** の Vue ファイルを作成する必要があります。
+ネストされたルートを定義するには、子ビューを含む **ディレクトリと同じ名前** の Vue ファイルを作成する必要があります。
 
 <!-- <p class="Alert Alert--info">Don't forget to write `<nuxt-child/>` inside the parent component (.vue file).</p> -->
 
@@ -204,7 +204,7 @@ router: {
 
 <!-- ## Dynamic Nested Routes -->
 
-## 動的でネストしたルーティング
+## 動的でネストされたルート
 
 <!-- This scenario should not often append, but it is possible with Nuxt.js: having dynamic children inside dynamic parents. -->
 

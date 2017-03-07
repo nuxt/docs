@@ -94,7 +94,7 @@ export default {
 | head | 現在のページの特定のメタタグを設定します。[ページの head API](/api/pages-head) を参照してください |
 | layout | `layouts` ディレクトリ内のレイアウトを指定します。[ページのレイアウト API に関するドキュメント](/api/pages-layout) を参照してください |
 | transition | ページに特定のトランジションを設定します。[ページのトランジション API に関するドキュメント](/api/pages-transition) を参照してください |
-| scrollToTop | ブーリアンで指定し、デフォルトは `false` です。ページをレンダリングする前にトップまでスクロールさせるか否かを指定します。これは [ネストしたルーティング](/guide/routing#nested-routes) で使われます |
+| scrollToTop | ブーリアンで指定し、デフォルトは `false` です。ページをレンダリングする前にトップまでスクロールさせるか否かを指定します。これは [ネストされたルート](/guide/routing#nested-routes) で使われます |
 | validate | [動的なルーティング](/guide/routing#dynamic-routes) のためのバリデーション関数です |
 | middleware | このページのためにミドルウェアを設定し、ミドルウェアはページがレンダリングされる前に呼び出されます。[ルーティングのミドルウェア](/guide/routing#middleware) を参照してください |
 

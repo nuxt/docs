@@ -1,9 +1,9 @@
 ---
-title: ルーティングのネスト
-description: ルーティングのネストの例
+title: ネストされたルート
+description: ネストされたルートの例
 github: nested-routes
 livedemo: https://nested-routes.nuxtjs.org
-documentation: /guide/routing#ルーティングのネスト
+documentation: /guide/routing#ネストされたルート
 ---
 
 title: Nested Routes
