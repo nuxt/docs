@@ -12,7 +12,7 @@ description: PostCSS プラグインを追加するには？
 
 <!-- In your `nuxt.config.js` file: -->
 
-`nuxt.config.js` ファイル内に次のように記述します:
+`nuxt.config.js` ファイルに次のように記述します:
 
 ```js
 module.exports = {

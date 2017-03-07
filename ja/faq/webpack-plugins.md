@@ -1,11 +1,18 @@
 ---
-title: Webpack plugins
-description: How to add webpack plugins?
+title: Webpack プラグイン
+description: Webpack プラグインを追加するには？
 ---
 
-# How to add webpack plugins?
+<!-- title: Webpack plugins -->
+<!-- description: How to add webpack plugins? -->
 
-In your `nuxt.config.js` file:
+<!-- # How to add webpack plugins? -->
+
+# Webpack プラグインを追加するには？
+
+<!-- In your `nuxt.config.js` file: -->
+
+`nuxt.config.js` ファイルに次のように記述します:
 
 ```js
 const webpack = require('webpack')
