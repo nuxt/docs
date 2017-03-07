@@ -1,19 +1,19 @@
 ---
-title: Contribution Guide
-description: Any contribution to Nuxt.js is more than welcome!
+title: Guía de Contribución
+description: Cualquier contribución a Nuxt.js es más que bienvenida!
 ---
 
-> Any contribution to Nuxt.js is more than welcome!
+> Cualquier contribución a Nuxt.js es más que bienvenida!
 
-## Reporting Issues
+## Reportando Problemas
 
-A great way to contribute to the project is to send a detailed report when you encounter an issue. We always appreciate a well-written bug report, and will thank you for it! Before reporting an issue, please read carefully the documentation and search if any issue for your problem doesn't already exist: https://github.com/nuxt/nuxt.js/issues
+Una buena manera de contribuir con el proyecto es enviar un reporte detallado cuando encuentres un problema. Siempre apreciamos un reporte de error bien escrito, y te agradeceremos por eso! Antes de reportar un problema, por favor lee cuidadosamente la documentación y busca si algún tema para el problema que tienes ya existe: https://github.com/nuxt/nuxt.js/issues
 
 ## Pull Requests
 
-We'd love to see your pull requests, even if it's just to fix a typo. Any significant improvement should be documented as [a GitHub issue](https://github.com/nuxt/nuxt.js/issues) before anybody starts working on it.
+Nos encataría ver tus "pull requests", aun así sean para arreglar la tipografía. Cualquier mejora significativa debe ser documentada como [un problema de GitHub](https://github.com/nuxt/nuxt.js/issues) antes de que alguien empiece a trabajar en eso.
 
-### Convention
+### Convención
 
-- For a fix, the branch name should be `fix-XXX` where XXX is the issue number or the name of what your fix does
-- For a feature, the branch name should be `feature-XXX` where XXX is the issue number associated to this feature request
+- Para un arreglo, el nombre de la rama (branch) debe ser `fix-XXX` donde XXX es el número de problema o el nombre de lo que arregla
+- Para una característica, el nombre de la rama (branch) debe ser `feature-XXX` donde XXX es el número del problema asociado a esta solicitud de característica

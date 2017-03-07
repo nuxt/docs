@@ -1,15 +1,15 @@
 ---
-title: Assets
-description: Nuxt uses vue-loader, file-loader and url-loader for Webpack by default for strong assets serving, but you can also use Static directory for static assets.
+title: Recursos (Assets)
+description: Nuxt usa por defecto vue-loader, file-loader y url-loader en Webpack para un servicio de recursos(assets) robusto, pero también puedes usar la carpeta "Static" para recursos estáticos.
 ---
 
-> Nuxt uses vue-loader, file-loader and url-loader for Webpack by default for strong assets serving, but you can also use Static directory for static assets.
+> Nuxt usa por defecto vue-loader, file-loader y url-loader en Webpack para un servicio de recursos(assets) robusto, pero también puedes usar la carpeta "Static" para recursos estáticos.
 
 ## Webpacked
 
-By default, [vue-loader](http://vue-loader.vuejs.org/en/) automatically processes your style and template files with `css-loader` and the Vue template compiler. In this compilation process, all asset URLs such as `<img src="...">`, `background: url(...)` and CSS `@import` are resolved as module dependencies.
+Por defecto, [vue-loader](http://vue-loader.vuejs.org/en/) procesa automáticamente tu estilo y archivos de plantilla con `css-loader` y el compilador de plantillas de Vue. En este proceso de compilación, todos los URL de recursos como `<img src="...">`, `background: url(...)` y `@import` de CSS se resuelven como dependencias de módulo.
 
-For example, we have this file tree:
+Por ejemplo, tenemos este árbol de archivos:
 
 ```bash
 -| assets/
@@ -18,28 +18,28 @@ For example, we have this file tree:
 ----| index.vue
 ```
 
-In my CSS, if I use `url('~assets/image.png')`, it will be translated into `require('~assets/image.png')`.
+En mi CSS, si uso `url('~assets/image.png')`, se traducirá como `require('~assets/image.png')`.
 
-Or if in my `pages/index.vue`, I use:
+O si en mi `pages/index.vue`, uso:
 ```html
 <template>
   <img src="~assets/image.png">
 </template>
 ```
 
-It will be compiled into:
+Será compilado como:
 
 ```js
 createElement('img', { attrs: { src: require('~assets/image.png') }})
 ```
 
-Because `.png` is not a JavaScript file, nuxt.js configures Webpack to use [file-loader](https://github.com/webpack/file-loader) and [url-loader](https://github.com/webpack/url-loader) to handle them for you.
+Como `.png` no es un archivo Javascript, nuxt.js configura Webpack para usar [file-loader](https://github.com/webpack/file-loader) y [url-loader](https://github.com/webpack/url-loader) para manejarlos por ti.
 
-The benefits of them are:
-- `file-loader` lets you designate where to copy and place the asset file, and how to name it using version hashes for better caching.
-- `url-loader` allows you to conditionally inline a file as base-64 data URL if they are smaller than a given threshold. This can reduce a number of HTTP requests for trivial files. If the file is larger than the threshold, it automatically falls back to `file-loader`.
+Los beneficios son:
+- `file-loader` te deja designar a dónde copiar y colocar el archivo del recurso, y cómo nombrarlo usando hashes con versión para una mejor caché.
+- `url-loader` te permite condicionalmente convertir a una sola línea un archivo como "base-64 data URL" si son más pequeños que un límite dado. Esto puede reducir un número de solicitudes HTTP para archivos triviales. Si el archivo sobrepasa el límite dado, volverá automáticamente a `file-loader`.
 
-Actually, Nuxt.js default loaders configuration is:
+Actualmente, Nuxt.js la configuración de los "loaders" por defecto es: 
 
 ```js
 [
@@ -62,9 +62,9 @@ Actually, Nuxt.js default loaders configuration is:
 ]
 ```
 
-Which means that every file below 1 KO will be inlined as base-64 data URL. Otherwise, the image/font will be copied in its corresponding folder (under the `.nuxt` directory) with a name containing a version hashes for better caching.
+Lo que significa que cada archivo por debajo de 1 KO será convertido a una sola línea como 'base-64 data URL'. De lo contrario, la imagen/fuente será copiada en su carpeta correspondiente (dentro del directorio `.nuxt`) con un nombre conteniendo "hashes" con versión para un mejor almacenamiento en caché.
 
-When launching our application with `nuxt`, our template in `pages/index.vue`:
+Cuando lancemos nuestra aplicación con `nuxt`, nuestra plantilla en `pages/index.vue`:
 
 ```html
 <template>
@@ -72,22 +72,22 @@ When launching our application with `nuxt`, our template in `pages/index.vue`:
 </template>
 ```
 
-Will be generated into:
+Será generada en:
 ```html
 <img src="/_nuxt/img/image.0c61159.png">
 ```
 
-If you want to update these loaders or disable them, please take a look at the [loaders configuration](/api/configuration-build#loaders).
+Si quieres actualizar estos "loaders" o deshabilitarlos, por favor mira en la [configuración de loaders](/api/configuration-build#loaders).
 
-## Static
+## Estático
 
-If you don't want to use Webpacked Assets from the `assets` directory, you can create and use the `static` directory in your project root directory.
+Si no quieres usar "Webpacked Assets" del directorio de `assets`, puedes crear y usar el directorio `static` en el directorio raíz de tu proyecto.
 
-These files will be automatically serve by Nuxt and accessible in your project root URL.
+Estos archivos serán automáticamente provistos por Nuxt y accesibles en el URL raíz de tu proyecto.
 
-This option is helpful for files like `robots.txt` or `sitemap.xml`.
+Esta opción es útil para archivos como `robots.txt` o `sitemap.xml`.
 
-From your code you can then reference those files with `/` URLs:
+Desde tu código puedes entonces referirte a estos archivos con `/` en tus URL:
 
 ```html
 <!-- Static image from static directory -->

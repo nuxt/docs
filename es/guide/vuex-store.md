@@ -1,25 +1,25 @@
 ---
 title: Vuex Store
-description: Using a store to manage the state is important for every big application, that's why nuxt.js implement Vuex in its core.
+description: Usar un almacén(store) para manejar el estado(state) es importante para cada aplicación grande, es por eso que nuxt.js implementa Vuex en su núcleo.
 ---
 
-> Using a store to manage the state is important to every big application, that's why nuxt.js implement [vuex](https://github.com/vuejs/vuex) in its core.
+> Usar un almacén(store) para manejar el estado(state) es importante para cada aplicación grande, es por eso que nuxt.js implementa [vuex](https://github.com/vuejs/vuex) en su núcleo.
 
-## Activate the Store
+## Activar el Almacén(store)
 
-Nuxt.js will look for the `store` directory, if it exists, it will:
+Nuxt.js buscará el directorio del `almacén`, si existe, entonces:
 
-1. Import Vuex
-2. Add `vuex` module in the vendors bundle
-3. Add the `store` option to the root `Vue` instance.
+1. Importa Vuex
+2. Agrega el módulo `vuex` en la agrupación de proveedores
+3. Agrega la opción de `almacén` a la instanacia `Vue` de la raíz.
 
-Nuxt.js lets you have **2 modes of store**, choose the one you prefer:
-- **Classic:** `store/index.js` returns a store instance
-- **Modules:** every `.js` file inside the `store` directory is transformed as a [namespaced module](http://vuex.vuejs.org/en/modules.html) (`index` being the root module)
+Nuxt.js te permite tener **2 modos de almacén**, elige el que prefieras:
+- **Clásico:** `store/index.js` devuelve una instancia de almacén
+- **Módulos:** cada archivo `.js` dentro del directorio `store` es transformado como un [módulo con prefijo](http://vuex.vuejs.org/en/modules.html) (`index` viene a ser el módulo raíz)
 
-## Classic mode
+## Modo clásico
 
-To activate the store with the classic mode, we create the `store/index.js` file and export the store instance:
+Para activar el almacén en el modo clásico, creamos el archivo `store/index.js` y exportamos la instancia del almacén:
 
 ```js
 import Vuex from 'vuex'
@@ -38,9 +38,9 @@ const store = new Vuex.Store({
 export default store
 ```
 
-> We don't need to install `vuex` since it's shipped with nuxt.js
+> No necesitamos instalas `vuex` ya que este viene con nuxt.js
 
-We can now use `this.$store` inside our components:
+Ahora podemos usar `this.$store`dentro de nuestro componentes:
 
 ```html
 <template>
@@ -48,11 +48,11 @@ We can now use `this.$store` inside our components:
 </template>
 ```
 
-## Modules mode
+## Modo Módulos
 
-> Nuxt.js lets you have a `store` directory with every file corresponding to a module.
+> Nuxt.js te permite tener un directorio `store` con cada archivo correspondiente a un módulo.
 
-If you want this option, export the state, mutations and actions in `store/index.js` instead of a store instance:
+Si quieres esta opción, exporta el estado, mutaciónes, y acciónes en `store/index.js` en vez de una instancia de almacén:
 
 ```js
 export const state = {
@@ -66,7 +66,7 @@ export const mutations = {
 }
 ```
 
-Then, you can have a `store/todos.js` file:
+Luego, puedes tener un archivo `store/todos.js`:
 ```js
 export const state = {
   list: []
@@ -88,7 +88,7 @@ export const mutations = {
 }
 ```
 
-The store will be as such:
+El almacén sería:
 ```js
 new Vuex.Store({
   state: { counter: 0 },
@@ -121,7 +121,7 @@ new Vuex.Store({
 })
 ```
 
-And in your `pages/todos.vue`, using the `todos` module:
+Y en tu `pages/todos.vue`, usando el módulo `todos`:
 
 ```html
 <template>
@@ -160,19 +160,19 @@ export default {
 </style>
 ```
 
-<div class="Alert">You can also have modules by exporting a store instance, you will have to add them manually on your store.</div>
+<div class="Alert">También puedes tener módulos exportando una instanacia de almácen, tendrías que agregarlos manualmente en tu almacén.</div>
 
-## The fetch Method
+## El Método fetch
 
-> The fetch method is used to fill the store before rendering the page, it's like the data method except it doesn't set the component data.
+> El método fetch es usado para rellenar el almacén antes de que la página se arenderizada, es como el método data excepto que no establece el componente data.
 
-More information about the fetch method: [API Pages fetch](/api/pages-fetch)
+Más información sobre el método fetch: [API Pages fetch](/api/pages-fetch)
 
-## The nuxtServerInit Action
+## La Acción nuxtServerInit
 
-If the action `nuxtServerInit` is defined in the store, nuxt.js will call it with the context (only from the server-side). It's useful when we have some data on the server we want to give directly to the client-side.
+Si la acción `nuxtServerInit` es definida en el almacén, nuxt.js la llamará junto con el contexto (solo desde el lado del servidor). Es útil cuando tenemos algunos datos en el servidor que queremos llevar directamente al lado del cliente.
 
-For example, let's say we have sessions on the server-side and we can access the connected user trough `req.session.user`. To give the authenticated user to our store, we update our `store/index.js` to the following:
+Por ejemplo, digamos que tenemos sesiones en el lado del servidor y podemos acceder a los usuarios conectados a través de `req.session.user`. Para llevar al usuario autentificado a nuestro almacén, actualizamos nuestro `store/index.js` con lo siguiente:
 
 ```js
 actions: {
@@ -184,6 +184,6 @@ actions: {
 }
 ```
 
-> If you are using the _Modules_ mode of the Vuex store, only the primary module (in `store/index.js`) will receive this action. You'll need to chain your module actions from there.
+> Si estas usando el modo _Modules_ de Vuex store, solo el módulo primario (en`store/index.js`) recibirá esta acción. Necesitarás encadenar tus acciones de módulo desde ahí.
 
-The context is given to `nuxtServerInit` as the 2nd argument, it is the same as the `data` or `fetch` method except that `context.redirect()` and `context.error()` are omitted.
+El contexto es dado a `nuxtServerInit` como el segundo argumento, es el mismo que con el método `data` o `fetch` excepto que `context.redirect()` and `context.error()` son omitidos.

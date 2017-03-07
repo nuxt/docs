@@ -1,20 +1,20 @@
 ---
-title: Commands
-description: Nuxt.js comes with a set of useful commands, both for development and production purpose.
+título: Comandos
+descripción: Nuxt.js viene con un conjunto de comandos útiles, ambos con fines en desarrollo y producción.
 ---
 
-> Nuxt.js comes with a set of useful commands, both for development and production purpose.
+> Nuxt.js viene con un conjunto de comandos útiles, ambos con fines en desarrollo y producción.
 
-## List of Commands
+## Lista de Comandos
 
-| Command | Description |
+| Comando | Descripción |
 |---------|-------------|
-| nuxt | Launch a development server on [localhost:3000](http://localhost:3000) with hot-reloading. |
-| nuxt build | Build your application with webpack and minify the JS & CSS (for production). |
-| nuxt start | Start the server in production mode (After running `nuxt build`). |
-| nuxt generate | Build the application and generate every route as a HTML file (used for static hosting). |
+| nuxt | Lanza un servidor de desarrollo [localhost:3000](http://localhost:3000) con "hot-reloading". |
+| nuxt build | Construye tu aplicación con webpack y minifica los JS & CSS (para producción). |
+| nuxt start | Empieza el servidor en modo producción (Después de correr `nuxt build`). |
+| nuxt generate | Construye la aplicación y genera cada ruta como un archivo HTML (usado para hosting estático). |
 
-You should put these commands in the `package.json`:
+Debes poner estos comandos en `package.json`:
 
 ```json
 "scripts": {
@@ -25,32 +25,32 @@ You should put these commands in the `package.json`:
 }
 ```
 
-Then, you can launch your commands via `npm run <command>` (example: `npm run dev`).
+Luego, puedes lanzar tus comandos vía `npm run <command>` (ejemplo: `npm run dev`).
 
-## Development Environment
+## Entorno de Desarrollo
 
-To launch Nuxt in development mode with the hot reloading:
+Para lanzar Nuxt en modo de desarrollo con "hot reloading":
 
 ```bash
 nuxt
-// OR
+// o
 npm run dev
 ```
 
-## Production Deployment
+## Implementación en Producción
 
-Nuxt.js lets your choose between 2 modes to deploy your application: Server Rendered or Static Generated.
+Nuxt.js te deja elegir entre 2 modos para desplegar tu aplicación: "Server Rendered" o "Static Generated".
 
-### Server Rendered Deployment
+### Implementación del modo "Server Rendered"
 
-To deploy, instead of running nuxt, you probably want to build ahead of time. Therefore, building and starting are separate commands:
+Para desplegar, en lugar de correr nuxt, quizás quieras construir con anticipación. Por lo tanto, construir e iniciar son comandos separados:
 
 ```bash
 nuxt build
 nuxt start
 ```
 
-The `package.json` like follows is recommended:
+Este archivo `package.json` es el recomendado:
 ```json
 {
   "name": "my-app",
@@ -65,20 +65,20 @@ The `package.json` like follows is recommended:
 }
 ```
 
-Note: we recommend putting `.nuxt` in `.npmignore` or `.gitignore`.
+Nota: recomendamos poner `.nuxt` en `.npmignore` o `.gitignore`.
 
-### Static Generated Deployment
+### Implementación del modo "Static Generated"
 
-Nuxt.js gives you the possibility to host your web application on any static hosting.
+Nuxt.js te da la posibilidad de alojar tu aplicación web en cualquier hosting estático.
 
-To generate our web application into static files:
+Para generar nuestra aplicación web en archivos estáticos:
 
 ```bash
 npm run generate
 ```
 
-It will create a `dist` folder with everything inside ready to be deployed on a static hosting.
+Eso creará una carpeta `dist` con todo lo incluido listo para ser desplegado en un hosting estático.
 
-If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take a look at the [generate configuration](/api/configuration-generate) to tell nuxt.js how to generate these dynamic routes.
+Si tienes un proyecto con [rutas dinámicas](/guide/routing#dynamic-routes), visita [generar configuración](/api/configuration-generate) para decirle a nuxt.js cómo generar estas rutas dinámicas.
 
-<div class="Alert">When generating your web application with `nuxt generate`, [the context](/api#context) given to [data()](/guide/async-data#the-data-method) and [fetch()](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.</div>
+<div class="Alert">Cuando estes generando tu aplicación web con `nuxt generate`, [el contexto](/api#context) dado a [data()](/guide/async-data#the-data-method) y [fetch()](/guide/vuex-store#the-fetch-method) no tendrá `req` y`res`.</div>

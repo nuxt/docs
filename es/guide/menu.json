@@ -1,14 +1,14 @@
 [
   {
-    "title": "Prologue",
+    "title": "Prólogo",
     "links": [
       {
-        "to": "", "name": "Introduction",
+        "to": "", "name": "Introducción",
         "contents": [
-          { "to": "#what-is-nuxt-js-", "name": "What is Nuxt.js ?" },
-          { "to": "#how-it-works", "name": "How it Works" },
-          { "to": "#features", "name": "Features" },
-          { "to": "#schema", "name": "Schema" },
+          { "to": "#what-is-nuxt-js-", "name": "¿Qué es Nuxt.js?" },
+          { "to": "#how-it-works", "name": "Cómo funciona" },
+          { "to": "#features", "name": "Características" },
+          { "to": "#schema", "name": "Esquema" },
           { "to": "#server-rendered", "name": "Server Rendered" },
           { "to": "#static-generated", "name": "Static Generated" }
         ]
@@ -18,38 +18,38 @@
     ]
   },
   {
-    "title": "Getting Started",
+    "title": "Empezar",
     "links": [
       {
-        "to": "/installation", "name": "Installation",
+        "to": "/installation", "name": "Instalación",
         "contents": [
-          { "to": "#using-nuxt-js-starter-template", "name": "Using Nuxt.js starter template" },
-          { "to": "#starting-from-scratch", "name": "Starting from scratch" }
+          { "to": "#using-nuxt-js-starter-template", "name": "Usando la plantilla de inicio de Nuxt.js" },
+          { "to": "#starting-from-scratch", "name": "Empezando desde cero" }
         ]
       },
       {
-        "to": "/directory-structure", "name": "Directory structure",
+        "to": "/directory-structure", "name": "Estructura del directorio",
         "contents": [
-          { "to": "#directories", "name": "Directories" },
-          { "to": "#aliases", "name": "Aliases" }
+          { "to": "#directories", "name": "Directorios" },
+          { "to": "#aliases", "name": "Alias" }
         ]
       },
-      { "to": "/configuration", "name": "Configuration" },
+      { "to": "/configuration", "name": "Configuración" },
       {
-        "to": "/routing", "name": "Routing",
+        "to": "/routing", "name": "Enrutamiento",
         "contents": [
-          { "to": "#basic-routes", "name": "Basic Routes" },
-          { "to": "#dynamic-routes", "name": "Dynamic Routes" },
-          { "to": "#nested-routes", "name": "Nested Routes" },
-          { "to": "#dynamic-nested-routes", "name": "Dynamic Nested Routes" },
-          { "to": "#transitions", "name": "Transitions" },
+          { "to": "#basic-routes", "name": "Rutas Básicas" },
+          { "to": "#dynamic-routes", "name": "Rutas Dinámicas" },
+          { "to": "#nested-routes", "name": "Rutas Anidadas" },
+          { "to": "#dynamic-nested-routes", "name": "Rutas dinamicamente anidadas" },
+          { "to": "#transitions", "name": "Transiciones" },
           { "to": "#middleware", "name": "Middleware" }
         ]
       },
       {
-        "to": "/views", "name": "Views",
+        "to": "/views", "name": "Vistas",
         "contents": [
-          { "to": "#pages", "name": "Pages" },
+          { "to": "#pages", "name": "Páginas" },
           { "to": "#layouts", "name": "Layouts" },
           { "to": "#html-head", "name": "HTML Head" },
           { "to": "#document", "name": "Document" }
@@ -58,16 +58,16 @@
       {
         "to": "/async-data", "name": "Async Data",
         "contents": [
-          { "to": "#the-data-method", "name": "The data Method" },
-          { "to": "#the-context", "name": "The Context" },
-          { "to": "#handling-errors", "name": "Handling Errors" }
+          { "to": "#the-data-method", "name": "El Método data" },
+          { "to": "#the-context", "name": "El Contexto (context)" },
+          { "to": "#handling-errors", "name": "Manejando Errores" }
         ]
       },
       {
         "to": "/assets", "name": "Assets",
         "contents": [
           { "to": "#webpacked", "name": "Webpacked" },
-          { "to": "#static", "name": "Static" }
+          { "to": "#static", "name": "Estáticos" }
         ]
       },
       {
@@ -75,7 +75,7 @@
         "contents": [
           { "to": "#external-packages", "name": "External Packages" },
           { "to": "#vue-plugins", "name": "Vue Plugins" },
-          { "to": "#client-side-only", "name": "Client-side only" }
+          { "to": "#client-side-only", "name": "Solo desde el cliente (Client-side)" }
         ]
       },
       {
@@ -89,15 +89,15 @@
         ]
       },
       {
-        "to": "/commands", "name": "Commands",
+        "to": "/commands", "name": "Comandos",
         "contents": [
-          { "to": "#list-of-commands", "name": "List of Commands" },
+          { "to": "#list-of-commands", "name": "Lista de Comandos" },
           { "to": "#development-environment", "name": "Developemnt Enviroment" },
           { "to": "#production-deployment", "name": "Production Deployment" }
         ]
       },
       {
-        "to": "/development-tools", "name": "Development Tools",
+        "to": "/development-tools", "name": "Herramientas de desarrollo",
         "contents": [
           { "to": "#end-to-end-testing", "name": "End-to-End Testing" },
           { "to": "#eslint", "name": "ESLint" }
