@@ -1,11 +1,18 @@
 ---
-title: Postcss plugins
-description: How to add postcss plugins?
+title: PostCSS プラグイン
+description: PostCSS プラグインを追加するには？
 ---
 
-# How to add postcss plugins?
+<!-- title: Postcss plugins -->
+<!-- description: How to add postcss plugins? -->
 
-In your `nuxt.config.js` file:
+<!-- # How to add postcss plugins? -->
+
+# PostCSS プラグインを追加するには？
+
+<!-- In your `nuxt.config.js` file: -->
+
+`nuxt.config.js` ファイル内に次のように記述します:
 
 ```js
 module.exports = {
