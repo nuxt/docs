@@ -1,39 +1,39 @@
 {
-  "iso": "en",
+  "iso": "es",
   "links": {
     "api": "API",
     "blog": "Blog",
     "chat": "Chat",
-    "documentation": "Documentation",
-    "download": "Download",
-    "examples": "Examples",
-    "ecosystem": "Ecosystem",
+    "documentation": "Documentación",
+    "download": "Descarga",
+    "examples": "Ejemplos",
+    "ecosystem": "Ecosistema",
     "faq": "FAQ",
-    "get_started": "get started",
+    "get_started": "empezar",
     "github": "Github",
-    "guide": "Guide",
-    "homepage": "Home page",
-    "live_demo": "Live Demo",
-    "live_edit": "Live Edit",
+    "guide": "Guía",
+    "homepage": "Página principal",
+    "live_demo": "Demostración en vivo",
+    "live_edit": "Editar en vivo",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Vue Jobs"
   },
   "text": {
-    "an_error_occured": "An error occured",
+    "an_error_occured": "Ocurrió un error",
     "api_page_not_found": "API page not found",
-    "example_file": "Example Files",
-    "please_wait": "Please wait...",
-    "please_define_title": "Please define a title in the front matter",
-    "please_define_description": "Please define a description in the front matter",
-    "search": "Search",
-    "version": "Version"
+    "example_file": "Archivos ejemplo",
+    "please_wait": "Por favor, espera...",
+    "please_define_title": "Por favor especificar un título en la parte delantera",
+    "please_define_description": "Por favor, especificar una descripción en la parte delantera",
+    "search": "Buscar",
+    "version": "Versión"
   },
   "homepage": {
-    "title": "Universal Vue.js Applications",
+    "title": "Aplicaciones Universales con Vue.js",
     "meta": {
       "title": "Nuxt.js - Universal Vue.js Applications",
-      "description": "Nuxt.js is a minimal framework for creating Vue.js applications with server side rendering, code-splitting, hot-reloading, static generation and more!"
+      "description": "Nuxt.js es un framework mínimo para crear aplicaciones Vue.js con server \"side rendering\", \"code-splitting\", \"hot-reloading\", \"static generation\" y más!"
     }
   },
   "footer": {
@@ -41,10 +41,10 @@
   },
   "guide": {
     "release_notes": "Release Notes",
-    "contribute": "Caught a mistake or want to contribute to the documentation?",
-    "edit_on_github": "Edit this page on Github!"
+    "contribute": "¿Encontraste un error o quieres contribuir con la documentación?",
+    "edit_on_github": "¡Edita esta página en Github!"
   },
   "examples": {
-    "source_code": "Source Code"
+    "source_code": "Código fuente"
   }
 }
