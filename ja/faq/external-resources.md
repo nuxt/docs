@@ -1,6 +1,6 @@
 ---
 title: 外部リソース
-description: Nuxt.js と一緒に外部リソースを使うにはどうしたらよいですか？
+description: Nuxt.js で外部リソースを使うには？
 ---
 
 <!-- title: External resources -->
@@ -8,7 +8,7 @@ description: Nuxt.js と一緒に外部リソースを使うにはどうした�
 
 <!-- # How to use external resources? -->
 
-# 外部リソースを使うにはどうしたらよいですか？
+# 外部リソースを使うには？
 
 <!-- ## Global Settings -->
 
