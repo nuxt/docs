@@ -20,7 +20,7 @@ description: Nuxt.js でホストとポート番号を変更するには？
 
 ```js
 "scripts": {
-    "dev": "HOST=0.0.0.0 PORT=3333 nuxt"
+  "dev": "HOST=0.0.0.0 PORT=3333 nuxt"
 }
 ```
 
@@ -30,12 +30,12 @@ description: Nuxt.js でホストとポート番号を変更するには？
 
 ```js
 "config": {
-    "nuxt": {
-      "host": "0.0.0.0",
-      "port": "3333"
-    }
+  "nuxt": {
+    "host": "0.0.0.0",
+    "port": "3333"
+  }
 },
 "scripts": {
-    "dev": "nuxt"
+  "dev": "nuxt"
 }
 ```
