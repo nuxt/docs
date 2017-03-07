@@ -16,7 +16,7 @@ description: Nuxt.js でホストとポート番号を変更するには？
 
 <!-- - Via a env variables -->
 
-- 環境変数経由
+- 環境変数を使う
 
 ```js
 "scripts": {
@@ -26,7 +26,7 @@ description: Nuxt.js でホストとポート番号を変更するには？
 
 <!-- - Via a nuxt config in the `package.json`: -->
 
-- `package.json` 内の nuxt 設定経由:
+- `package.json` 内の nuxt 設定を使う:
 
 ```js
 "config": {
