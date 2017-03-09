@@ -1,11 +1,19 @@
 ---
-title: Now Deployment
-description: How to deploy Nuxt.js with Now.sh?
+title: Now を使ったデプロイ
+description: Now を使ってデプロイするには？
 ---
 
-# How to deploy with Now.sh?
+<!-- title: Now Deployment -->
+<!-- description: How to deploy Nuxt.js with Now.sh? -->
 
-To deploy with [now.sh](https://zeit.co/now) a `package.json` like follows is recommended:
+<!-- # How to deploy with Now.sh? -->
+
+# Now を使ってデプロイするには？
+
+<!-- To deploy with [now.sh](https://zeit.co/now) a `package.json` like follows is recommended: -->
+
+[now.sh](https://zeit.co/now) を使ってデプロイするには `package.json` を次のように記述することが推奨されます:
+
 ```json
 {
   "name": "my-app",
@@ -20,6 +28,10 @@ To deploy with [now.sh](https://zeit.co/now) a `package.json` like follows is re
 }
 ```
 
-Then run `now` and enjoy!
+<!-- Then run `now` and enjoy! -->
 
-Note: we recommend putting `.nuxt` in `.npmignore` or `.gitignore`.
+これで `now` を実行できます！エンジョイ！
+
+<!-- Note: we recommend putting `.nuxt` in `.npmignore` or `.gitignore`. -->
+
+メモ: `.nuxt` を `.npmignore` または `.gitignore` に入れておくことをお勧めします。
