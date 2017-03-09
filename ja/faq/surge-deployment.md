@@ -32,11 +32,11 @@ npm run generate
 
 <!-- It will create a `dist` folder with everything inside ready to be deployed on a static hosting. -->
 
-`dist` フォルダが作成され、その中に静的ホスティングサービスへデプロイされるものがすべて入ります。
+このとき `dist` フォルダが作成され、その中に静的ホスティングサービスへデプロイされるものがすべて入ります。
 
 <!-- We can then deploy it to surge.sh: -->
 
-surge.sh へデプロイできます:
+そして surge.sh へデプロイできます:
 
 ```bash
 surge dist/
@@ -48,8 +48,8 @@ surge dist/
 
 <!-- If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take a look at the [generate configuration](/api/configuration-generate) to tell nuxt.js how to generate these dynamic routes. -->
 
-プロジェクトが [動的なルーティング](/guide/routing#dynamic-routes) をしているなら、Nuxt.js に動的なルーティングを生成する方法を伝えるために [生成設定](/api/configuration-generate) を参照してください。
+プロジェクトが [動的なルーティング](/guide/routing#dynamic-routes) をしている場合は、動的なルーティングをどのように生成するかを Nuxt.js に伝えるために [生成の設定](/api/configuration-generate) を参照してください。
 
 <!-- <div class="Alert">When generating your web application with `nuxt generate`, [the context](/api) given to [data()](/guide/async-data#the-data-method) and [fetch()](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.</div> -->
 
-<div class="Alert">`nuxt generate` でウェブアプリケーションを生成するときは [data()](/guide/async-data#the-data-method) 及び [fetch()](/guide/vuex-store#the-fetch-method) に渡される [context](/api) が `req` 及び `res` を持っていません。</div>
+<div class="Alert">`nuxt generate` でウェブアプリケーションを生成するときは [data()](/guide/async-data#the-data-method) や [fetch()](/guide/vuex-store#the-fetch-method) に渡される [context](/api) が `req` 及び `res` を持っていません。</div>
