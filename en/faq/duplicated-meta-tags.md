@@ -39,4 +39,4 @@ export default {
 }
 ```
 
-To learn how to use the `head` property in your pages, please see the [HTML head documentation](/guide/views/#html-head).
+To learn how to use the `head` property in your pages, please see the [HTML head documentation](/guide/views#html-head).
