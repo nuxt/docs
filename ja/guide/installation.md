@@ -103,7 +103,7 @@ $ cd <project-name>
 
 <!-- Once the `package.json` has been created, add `nuxt` to the project via NPM: -->
 
-`package.json` を作成した後すぐに、`nuxt` を NPM 経由でプロジェクト追加しましょう:
+`package.json` を作成した後すぐ `nuxt` を NPM 経由でプロジェクト追加しましょう:
 
 ```bash
 npm install --save nuxt
