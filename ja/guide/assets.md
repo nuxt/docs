@@ -122,7 +122,7 @@ file-loader と url-loader の役割:
 
 <!-- If you don't want to use Webpacked Assets from the `assets` directory, you can create and use the `static` directory in your project root directory. -->
 
-もし Webpack で扱う対象となる `assets` ディレクトリを使いたくない場合は、プロジェクトのルートディレクトリに `static` ディレクトリを作成して利用することができます。
+Webpack で扱う対象となる `assets` ディレクトリを使いたくない場合は、プロジェクトのルートディレクトリに `static` ディレクトリを作成して利用することができます。
 
 <!-- These files will be automatically serve by Nuxt and accessible in your project root URL. -->
 
@@ -130,7 +130,7 @@ file-loader と url-loader の役割:
 
 <!-- This option is helpful for files like `robots.txt` or `sitemap.xml`. -->
 
-このオプションは `robots.txt` や `sitemap.xml` などのファイルに役に立ちます。
+このオプションは `robots.txt` や `sitemap.xml` などのファイルの扱いに役立ちます。
 
 <!-- From your code you can then reference those files with `/` URLs: -->
 

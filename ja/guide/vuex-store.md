@@ -85,7 +85,7 @@ export default store
 
 <!-- If you want this option, export the state, mutations and actions in `store/index.js` instead of a store instance: -->
 
-このオプションを使いたいときは、ストアインスタンスの代わりに、`store/index.js` 内のストア、ミューテーション、アクションをエクスポートします:
+このオプションを使いたいときは、ストアインスタンスの代わりに、`store/index.js` 内でストア、ミューテーション、アクションをエクスポートします:
 
 ```js
 export const state = {
@@ -223,7 +223,7 @@ fetch メソッドについてより深く理解するためには [ページの
 
 <!-- If the action `nuxtServerInit` is defined in the store, nuxt.js will call it with the context (only from the server-side). It's useful when we have some data on the server we want to give directly to the client-side. -->
 
-`nuxtServerInit` というアクションがストア内に定義されているときは、Nuxt.js はそれを context とともに呼び出します（ただしサーバーサイドに限ります）。サーバー上に、クライアントサイドに直接渡したいデータがあるときに便利です。
+`nuxtServerInit` というアクションがストア内に定義されているときは、Nuxt.js はそれをコンテキストとともに呼び出します（ただしサーバーサイドに限ります）。サーバーサイドからクライアントサイドに直接渡したいデータがあるときに便利です。
 
 <!-- For example, let's say we have sessions on the server-side and we can access the connected user trough `req.session.user`. To give the authenticated user to our store, we update our `store/index.js` to the following: -->
 
@@ -245,4 +245,4 @@ actions: {
 
 <!-- The context is given to `nuxtServerInit` as the 2nd argument, it is the same as the `data` or `fetch` method except that `context.redirect()` and `context.error()` are omitted. -->
 
-context は `nuxtServerInit` へ第二引数として渡されます。`context.redirect()` や `context.error()` が除外される点を除いては `data` メソッドや `fetch` メソッドと共通しています。
+コンテキストは `nuxtServerInit` へ第二引数として渡されます。`context.redirect()` や `context.error()` が除外される点を除いては `data` メソッドや `fetch` メソッドと共通しています。

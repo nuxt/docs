@@ -367,7 +367,7 @@ export default {
 
 <!-- A middleware receive [the context](/api#context) as first argument: -->
 
-ミドルウェアは第一引数として [context](/api#コンテキスト) を受け取ります:
+ミドルウェアは第一引数として [コンテキスト](/api#コンテキスト) を受け取ります:
 
 ```js
 export default function (context) {

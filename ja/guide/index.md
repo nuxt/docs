@@ -81,7 +81,7 @@ Nuxt.js はリッチなウェブアプリケーションを構築するために
 - コードを自動的に分割すること
 - サーバーサイドレンダリング
 - 非同期データをハンドリングするパワフルなルーティング
-- 静的なファイルの配信
+- 静的ファイルの配信
 - ES6/ES7 のトランスパイレーション
 - JS と CSS のバンドル及びミニファイ
 - Head 要素の管理
@@ -153,7 +153,7 @@ Nuxt.js による大きなイノベーションがやってきました。それ
 
 <!-- This way, you can host your generated web application on any static hosting! -->
 
-このやり方により、静的なファイルをホスティングするサービスであっても、生成されたウェブアプリケーションをホストできます。
+このやり方により、静的ファイルをホスティングするサービスであっても、生成されたウェブアプリケーションをホストできます。
 
 <!-- The best example is this website. It is generated and hosted on Github Pages: -->
 

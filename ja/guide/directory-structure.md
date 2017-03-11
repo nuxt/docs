@@ -90,7 +90,7 @@ _このディレクトリ名は変更できません。_
 
 <!-- The `static` directory contains your static files. Each files inside this directory is mapped to /. -->
 
-`static` ディレクトリには静的なファイルを入れます。このディレクトリ内のファイルはいずれも `/` に配置されます。
+`static` ディレクトリには静的ファイルを入れます。このディレクトリ内のファイルはいずれも `/` に配置されます。
 
 <!-- **Example:** /static/robots.txt is mapped as /robots.txt -->
 
@@ -102,7 +102,7 @@ _このディレクトリ名は変更できません。_
 
 <!-- [More documentation about Static integration](/guide/assets#static) -->
 
-静的なファイルの取り扱いについてより深く理解するには [静的なファイルに関するドキュメント](/guide/assets#webpack-で扱わない静的ファイル) を参照してください。
+静的ファイルの取り扱いについてより深く理解するには [静的ファイルに関するドキュメント](/guide/assets#webpack-で扱わない静的ファイル) を参照してください。
 
 <!-- ### The Store Directory -->
 

@@ -20,7 +20,7 @@ description: Nuxt.js は Vue.js の data メソッドに手を加えて、コン
 
 <!-- `data` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives the **context** as the first argument, you can use it to fetch some data and return the component data. -->
 
-`data` はコンポーネントがローディングされる前に毎回呼び出されます（ページコンポーネントに限ります）。サーバーサイドもしくは（訳注: クライアントサイドでは）ユーザーがページ遷移する前に呼び出されます。このメソッドは第一引数として **context** を受け取り、context を使ってデータを取得してコンポーネントのデータを返すことができます。
+`data` はコンポーネントがローディングされる前に毎回呼び出されます（ページコンポーネントに限ります）。サーバーサイドもしくは（訳注: クライアントサイドでは）ユーザーがページ遷移する前に呼び出されます。このメソッドは第一引数として **コンテキスト** を受け取り、コンテキストを使ってデータを取得してコンポーネントのデータを返すことができます。
 
 ```js
 export default {

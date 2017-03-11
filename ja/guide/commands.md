@@ -71,7 +71,7 @@ npm run dev
 
 <!-- Nuxt.js lets your choose between 2 modes to deploy your application: Server Rendered or Static Generated. -->
 
-Nuxt.js ではアプリケーションをデプロイするための 2つのモードから選べます: サーバーサイドレンダリングするモードと静的なファイルを生成するモードです。
+Nuxt.js ではアプリケーションをデプロイするための 2つのモードから選べます: サーバーサイドレンダリングするモードと静的ファイルを生成するモードです。
 
 <!-- ### Server Rendered Deployment -->
 
@@ -114,11 +114,11 @@ nuxt start
 
 <!-- Nuxt.js gives you the possibility to host your web application on any static hosting. -->
 
-Nuxt.js を使うと、どんな静的なファイルのホスティングサービスでも、ウェブアプリケーションをホストすることができます。
+Nuxt.js を使うと、静的ファイルのホスティングサービスでも、ウェブアプリケーションをホストすることができます。
 
 <!-- To generate our web application into static files: -->
 
-アプリケーションから静的なファイルを生成するには:
+アプリケーションから静的ファイルを生成するには:
 
 ```bash
 npm run generate
@@ -126,7 +126,7 @@ npm run generate
 
 <!-- It will create a `dist` folder with everything inside ready to be deployed on a static hosting. -->
 
-`dist` フォルダが作成され、その中に静的なファイルのホスティングサービスにデプロイされるべきものがすべて入ります。
+`dist` フォルダが作成され、その中に静的ファイルのホスティングサービスにデプロイされるべきものがすべて入ります。
 
 <!-- If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take a look at the [generate configuration](/api/configuration-generate) to tell nuxt.js how to generate these dynamic routes. -->
 
