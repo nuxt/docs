@@ -30,7 +30,7 @@ if (process.BROWSER_BUILD) {
 
 <!-- Don't forget to add your library in the [vendor bundle](/api/configuration-build#build-vendor) in your `nuxt.config.js`: -->
 
-`nuxt.config.js` ファイル内で当該ライブラリを [vendor bundle](/api/configuration-build#build-vendor) に加えておくのを忘れないでください。
+`nuxt.config.js` ファイル内で当該ライブラリを [vendor バンドル](/api/configuration-build#vendor) に加えておくのを忘れないでください。
 
 ```js
   build: {

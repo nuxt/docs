@@ -46,7 +46,7 @@ description: ユニバーサルなウェブアプリケーションから静的�
 
 <!-- When using [dynamic routes](/guide/routing#dynamic-routes), you need to define a mapping of params for each dynamic route to generate. -->
 
-[動的なルーティング](/guide/routing#dynamic-routes) を使うときは、パラメータとそれぞれの動的なルートとのマッピングを定義する必要があります。
+[動的なルーティング](/guide/routing#動的なルーティング) を使うときは、パラメータとそれぞれの動的なルートとのマッピングを定義する必要があります。
 
 <!-- Example: -->
 

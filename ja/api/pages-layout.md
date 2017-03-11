@@ -37,4 +37,4 @@ export default {
 動作する様子を [デモ動画](https://www.youtube.com/watch?v=YOKnSTp7d38) で確認してみてください。
 
 <!-- To understand how the layouts work with nuxt.js, take a look at the [layout documentation](/guide/views#layouts). -->
-Nuxt.js でレイアウトがどのように動作するかをより深く理解するには [layout ドキュメント](/guide/views#layouts) を参照してください。
+Nuxt.js でレイアウトがどのように動作するかをより深く理解するには [layout ドキュメント](/guide/views#レイアウト) を参照してください。

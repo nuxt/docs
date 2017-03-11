@@ -10,9 +10,9 @@ description: メタタグが重複したときは？
 
 # メタタグが重複したときは？
 
-<!-- This is a "feature" of [vue-meta](https://github.com/declandewet/vue-meta), please take a look at the [documentation of head elements](https://nuxtjs.org/guide/html-head#defaults-meta). -->
+<!-- This is a "feature" of [vue-meta](https://github.com/declandewet/vue-meta), please take a look at the [documentation of head elements](/guide/views#html-head). -->
 
-これは [vue-meta](https://github.com/declandewet/vue-meta) の "特徴" です。[head 要素のドキュメント](https://nuxtjs.org/guide/html-head#defaults-meta) を参照してください。
+これは [vue-meta](https://github.com/declandewet/vue-meta) の "特徴" です。[head 要素のドキュメント](/guide/views#html-の-head-情報) を参照してください。
 
 <!-- \> To avoid any duplication when used in child component, please give a unique identifier with the hid key, please [read more](https://github.com/declandewet/vue-meta#lists-of-tags) about it. -->
 
@@ -56,6 +56,6 @@ export default {
 }
 ```
 
-<!-- To learn how to use the `head` property in your pages, please see the [HTML head documentation](/guide/views/#html-head). -->
+<!-- To learn how to use the `head` property in your pages, please see the [HTML head documentation](/guide/views#html-head). -->
 
-ページ内の `head` プロパティの使い方をより深く理解するには [HTML の head 情報のドキュメント](/guide/views/#html-head) を参照してください。
+ページ内の `head` プロパティの使い方をより深く理解するには [HTML の head 情報のドキュメント](/guide/views#html-の-head-情報) を参照してください。

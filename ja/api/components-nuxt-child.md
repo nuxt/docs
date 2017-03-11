@@ -12,7 +12,7 @@ description: 現在のページを表示します。
 
 <!-- \> This component is used for displaying the children components in a [nested route](/guide/routing#nested-routes). -->
 
-> このコンポーネントは [ネストされたルート](/guide/routing#nested-routes) 内で子コンポーネントを表示するために使われます。
+> このコンポーネントは [ネストされたルート](/guide/routing#ネストされたルート) 内で子コンポーネントを表示するために使われます。
 
 <!-- Example: -->
 

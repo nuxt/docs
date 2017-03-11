@@ -51,4 +51,4 @@ Vue.use(VueNotifications)
 
 <!-- To learn more how to use the plugins, see the [guide documentation](/guide/plugins#vue-plugins). -->
 
-plugins の使い方をより深く理解するには [guide ドキュメント](/guide/plugins#vue-plugins) を参照してください。
+plugins の使い方をより深く理解するには [ガイド](/guide/plugins#vue-プラグイン) を参照してください。

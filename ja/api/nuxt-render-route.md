@@ -32,7 +32,7 @@ description: 特定のルートをレンダリングします。その際にコ�
 
 <!-- This method should be used mostly for [test purposes](guide/development-tools#end-to-end-testing) as well with [nuxt.renderAndGetWindow](/api/nuxt-render-and-get-window). -->
 
-このメソッドはほとんどの場合 [nuxt.renderAndGetWindow](/api/nuxt-render-and-get-window) とともに [テストする目的](guide/development-tools#end-to-end-testing) で使われます。
+このメソッドはほとんどの場合 [nuxt.renderAndGetWindow](/api/nuxt-render-and-get-window) とともに [テストする目的](guide/development-tools#エンドツーエンドテスト) で使われます。
 
 <!-- <p class="Alert Alert--info">`nuxt.renderRoute` should be executed after the build process in production mode (dev: false).</p> -->
 

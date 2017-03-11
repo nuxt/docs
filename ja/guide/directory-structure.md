@@ -48,7 +48,7 @@ _このディレクトリ名は変更できません。_
 
 <!-- [More documentation about Layouts integration](/guide/views#layouts) -->
 
-レイアウトの取り扱いついてより深く理解するには [レイアウトに関するドキュメント](/guide/views#layouts) を参照してください。
+レイアウトの取り扱いついてより深く理解するには [レイアウトに関するドキュメント](/guide/views#レイアウト) を参照してください。
 
 <!-- ### The Middleware Directory -->
 
@@ -102,7 +102,7 @@ _このディレクトリ名は変更できません。_
 
 <!-- [More documentation about Static integration](/guide/assets#static) -->
 
-静的なファイルの取り扱いについてより深く理解するには [静的なファイルに関するドキュメント](/guide/assets#static) を参照してください。
+静的なファイルの取り扱いについてより深く理解するには [静的なファイルに関するドキュメント](/guide/assets#webpack-で扱わない静的ファイル) を参照してください。
 
 <!-- ### The Store Directory -->
 

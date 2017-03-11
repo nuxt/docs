@@ -72,4 +72,4 @@ export default function ({ store, redirect }) {
 
 <!-- To learn more about the middleware, see the [middleware guide](/guide/routing#middleware). -->
 
-ミドルウェアについてより深く理解するには [ミドルウェアのガイド](/guide/routing#middleware) を参照してください。
+ミドルウェアについてより深く理解するには [ミドルウェアのガイド](/guide/routing#ミドルウェア) を参照してください。

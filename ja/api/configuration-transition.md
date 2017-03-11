@@ -63,4 +63,4 @@ module.exports = {
 
 <!-- The transition key in `nuxt.config.js` is used to set the default properties for the pages transitions. To learn more about the available keys when the `transition` key is an object, see the [pages transition property](/api/pages-transition#object). -->
 
-`nuxt.config.js` 内の transition キーはページのトランジションのデフォルト設定を指定するために使われます。`transition` キーがオブジェクトのときに利用可能なキーについてより深く理解するには [ページのトランジションプロパティ](/api/pages-transition#object) を参照してください。
+`nuxt.config.js` 内の transition キーはページのトランジションのデフォルト設定を指定するために使われます。`transition` キーがオブジェクトのときに利用可能なキーについてより深く理解するには [ページのトランジションプロパティ](/api/pages-transition#オブジェクト) を参照してください。

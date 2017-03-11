@@ -213,7 +213,7 @@ export default function (context) {
 
 <!-- To learn more about the middleware, see the [middleware guide](/guide/routing#middleware). -->
 
-ミドルウェアについてより深く理解するには [middleware guide](/guide/routing#middleware) ガイドを参照してください。
+ミドルウェアについてより深く理解するには [ミドルウェア](/guide/routing#ミドルウェア) ガイドを参照してください。
 
 ## extendRoutes
 

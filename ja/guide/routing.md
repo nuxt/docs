@@ -365,9 +365,9 @@ export default {
 
 **ミドルウェアは `middleware/` ディレクトリに入れます。** ファイル名はミドルウェアの名前となります（`middleware/auth.js` は `auth` ミドルウェアになります）
 
-<!-- A middleware receive [the context](/api#the-context) as first argument: -->
+<!-- A middleware receive [the context](/api#context) as first argument: -->
 
-ミドルウェアは第一引数として [context](/api#the-context) を受け取ります:
+ミドルウェアは第一引数として [context](/api#コンテキスト) を受け取ります:
 
 ```js
 export default function (context) {

@@ -24,7 +24,7 @@ description: fetch メソッドは、ページがレンダリングされる前�
 
 <!-- The `fetch` method receives [the context](/api#context) as the first argument, we can use it to fetch some data and fill the store. To make the fetch method asynchronous, **return a Promise**, nuxt.js will wait for the promise to be resolved before rendering the Component. -->
 
-`fetch` メソッドは第一引数として [context](/api#context) を受け取り、context を使ってデータを取得してデータをストアに入れることができます。fetch メソッドを非同期にするためには **Promise を返すようにしてください**。Nuxt.js はコンポーネントがレンダリングされる前に Promise が解決されるまで待ちます。
+`fetch` メソッドは第一引数として [context](/api#コンテキスト) を受け取り、context を使ってデータを取得してデータをストアに入れることができます。fetch メソッドを非同期にするためには **Promise を返すようにしてください**。Nuxt.js はコンポーネントがレンダリングされる前に Promise が解決されるまで待ちます。
 
 <!-- Example of `pages/index.vue`: -->
 

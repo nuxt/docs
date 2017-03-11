@@ -12,7 +12,7 @@ description: レイアウト内でページコンポーネントを表示しま�
 
 <!-- \> This component is used only in [layouts](/guide/views#layouts) to display the page components. -->
 
-> このコンポーネントは [レイアウト](/guide/views#layouts) 内でのみ、ページコンポーネントを表示するために使われます。
+> このコンポーネントは [レイアウト](/guide/views#レイアウト) 内でのみ、ページコンポーネントを表示するために使われます。
 
 <!-- Example (`layouts/default.vue`): -->
 

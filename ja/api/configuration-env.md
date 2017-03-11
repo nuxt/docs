@@ -42,7 +42,7 @@ module.exports = {
 <!-- 2. Via `context.baseUrl`, see [context api](/api#context) -->
 
 1. `process.env.baseUrl` 経由でアクセスする
-2. `context.baseUrl` を経由する。詳細は [context API](/api#context)
+2. `context.baseUrl` を経由する。詳細は [コンテキスト API](/api#コンテキスト)
 
 <!-- You can use the `env` property for giving public token for example. -->
 

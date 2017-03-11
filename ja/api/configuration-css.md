@@ -28,7 +28,7 @@ description: Nuxt.js ではグローバルに適用したい（すべてのペ�
 <!-- - lang: `String` ([pre-processor used](/guide/pages#using-pre-processors)) -->
 
 - src: `文字列`（ファイルのパス）
-- lang: `文字列`（[使われているプリプロセッサ](/guide/pages#using-pre-processors)）
+- lang: `文字列`（[プリプロセッサを使うには？](/faq/pre-processors)）
 
 <!-- In `nuxt.config.js`, add the CSS resources: -->
 

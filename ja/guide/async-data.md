@@ -16,7 +16,7 @@ description: Nuxt.js はコンポーネントのデータをセットする前�
 
 <!-- `data` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives [the context](/api#context) as the first argument, you can use it to fetch some data and return the component data. -->
 
-`data` メソッドはコンポーネント（ページコンポーネントに限ります）が読み込まれる前に毎回呼び出されます。サーバーサイドレンダリングや、ユーザーがページを遷移する前にも呼び出されます。そしてこのメソッドは第一引数として [context](/api#context) を受け取り、context を使ってデータを取得してコンポーネントのデータを返すことができます。
+`data` メソッドはコンポーネント（ページコンポーネントに限ります）が読み込まれる前に毎回呼び出されます。サーバーサイドレンダリングや、ユーザーがページを遷移する前にも呼び出されます。そしてこのメソッドは第一引数として [context](/api#コンテキスト) を受け取り、context を使ってデータを取得してコンポーネントのデータを返すことができます。
 
 <!-- <div class="Alert Alert--orange">You do **NOT** have access of the component instance trough `this` inside `data` because it is called **before initiating** the component.</div> -->
 
@@ -189,4 +189,4 @@ export default {
 
 <!-- To customize the error page, take a look at the [VIEWS layouts section](/guide/views#layouts). -->
 
-エラーページをカスタマイズするには [ビューのレイアウトセクション](/guide/views#layouts) を参照してください。
+エラーページをカスタマイズするには [ビューのレイアウトセクション](/guide/views#レイアウト) を参照してください。
