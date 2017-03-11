@@ -1,6 +1,6 @@
 ---
 title: 重複したメタタグ
-description: Nuxt.js でメタタグが重複したときは？
+description: メタタグが重複したときは？
 ---
 
 <!-- title: Duplicated Meta tags -->

@@ -8,7 +8,7 @@ description: Google アナリティクスを使うには？
 
 <!-- ## How to use Google Analytics? -->
 
-## Google アナリティクスを使うには？
+# Google アナリティクスを使うには？
 
 <!-- To use [Google Analytics](https://analytics.google.com/analytics/web/) with your nuxt.js application, we recommend to create a file `plugins/ga.js`: -->
 

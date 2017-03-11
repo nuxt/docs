@@ -1,6 +1,6 @@
 ---
 title: CSS Flash
-description: どうして Nuxt.js で CSS Flash が見えるのか？
+description: なぜ CSS Flash が見えるのか？
 ---
 
 <!-- title: CSS Flash -->
@@ -8,7 +8,7 @@ description: どうして Nuxt.js で CSS Flash が見えるのか？
 
 <!-- # Why a CSS Flash appears? -->
 
-# どうして CSS Flash が見えるのか？
+# なぜ CSS Flash が見えるのか？
 
 ![cssflash](/flash_css.gif)
 

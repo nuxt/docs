@@ -1,33 +1,33 @@
 [
   {
-    "title": "Configuration",
+    "title": "設定",
     "links": [
-      { "name": "How to use external resources?", "to": "" },
-      { "name": "How to use pre-processors?", "to": "/pre-processors" },
-      { "name": "How to use JSX?", "to": "/jsx" },
-      { "name": "How to add postcss plugins?", "to": "/postcss-plugins" },
-      { "name": "How to extend webpack config?", "to": "/extend-webpack" },
-      { "name": "How to add webpack plugins?", "to": "/webpack-plugins" },
-      { "name": "How to edit HOST and PORT?", "to": "/host-port" },
-      { "name": "How to use Google Analytics?", "to": "/google-analytics" }
+      { "name": "外部リソースを使うには？", "to": "" },
+      { "name": "プリプロセッサを使うには？", "to": "/pre-processors" },
+      { "name": "JSX を使うには？", "to": "/jsx" },
+      { "name": "PostCSS プラグインを追加するには？", "to": "/postcss-plugins" },
+      { "name": "Webpack の設定を拡張するには？", "to": "/extend-webpack" },
+      { "name": "Webpack プラグインを追加するには？", "to": "/webpack-plugins" },
+      { "name": "ホストとポート番号を変更するには？", "to": "/host-port" },
+      { "name": "Google アナリティクスを使うには？", "to": "/google-analytics" }
     ]
   },
   {
-    "title": "Development",
+    "title": "開発",
     "links": [
-      { "name": "Window/Document undefined?", "to": "/window-document-undefined" },
-      { "name": "Why a CSS Flash appears?", "to": "/css-flash" },
-      { "name": "Async data in components?", "to": "/async-data-components" },
-      { "name": "Duplicated Meta Tags?", "to": "/duplicated-meta-tags" }
+      { "name": "window または document が undefined のときは？", "to": "/window-document-undefined" },
+      { "name": "なぜ CSS Flash が見えるのか？", "to": "/css-flash" },
+      { "name": "コンポーネント内で非同期データを扱うには？", "to": "/async-data-components" },
+      { "name": "メタタグが重複したときは？", "to": "/duplicated-meta-tags" }
     ]
   },
   {
-    "title": "Deployment",
+    "title": "デプロイ",
     "links": [
-      { "name": "How to deploy on Heroku?", "to": "/heroku-deployment" },
-      { "name": "How to deploy with Now.sh?", "to": "/now-deployment" },
-      { "name": "How to deploy with Surge.sh?", "to": "/surge-deployment" },
-      { "name": "How to deploy on Github?", "to": "/github-pages" }
+      { "name": "Heroku へデプロイするには？", "to": "/heroku-deployment" },
+      { "name": "Now を使ってデプロイするには？", "to": "/now-deployment" },
+      { "name": "Surge.sh へデプロイするには？", "to": "/surge-deployment" },
+      { "name": "Github Pages へデプロイするには？", "to": "/github-pages" }
     ]
   }
 ]

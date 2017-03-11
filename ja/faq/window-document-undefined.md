@@ -1,6 +1,6 @@
 ---
-title: Window または Document が undefined
-description: Nuxt.js で Window または Document が undefined のときは？
+title: window または document が undefined
+description: Nuxt.js で window または document が undefined のときは？
 ---
 
 <!-- title: Window or Document undefined -->
@@ -8,7 +8,7 @@ description: Nuxt.js で Window または Document が undefined のときは？
 
 <!-- # Window or Document undefined? -->
 
-# Window または Document が undefined のときは？
+# window または document が undefined のときは？
 
 <!-- This is due to the server-side rendering. -->
 
