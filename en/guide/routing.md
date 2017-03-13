@@ -269,7 +269,7 @@ More information about the transition property: [API Pages transition](/api/page
 
 **Every middleware should be placed in the `middleware/` directory.** The filename will be the name of the middleware (`middleware/auth.js` will be the `auth` middleware).
 
-A middleware receive [the context](/api#the-context) as first argument:
+A middleware receive [the context](/api#context) as first argument:
 
 ```js
 export default function (context) {
