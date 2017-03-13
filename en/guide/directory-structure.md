@@ -45,7 +45,7 @@ The `plugins` directory contains your Javascript plugins that you want to run be
 
 ### The Static Directory
 
-The `static` directory contains your static files. Each files inside this directory is mapped to /.
+The `static` directory contains your static files. Each file inside this directory is mapped to /.
 
 **Example:** /static/robots.txt is mapped as /robots.txt
 
