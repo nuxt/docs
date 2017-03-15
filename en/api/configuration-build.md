@@ -114,7 +114,7 @@ module.exports = {
 - Type: `Array`
   - Items: `Object`
 
-> Cusomize webpack loaders
+> Customize webpack loaders
 
 Default:
 ```js

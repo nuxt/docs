@@ -3,7 +3,7 @@ title: Google Analytics Integration
 description: How to use Google Analytics?
 ---
 
-## How to use Google Analytics?
+# How to use Google Analytics?
 
 To use [Google Analytics](https://analytics.google.com/analytics/web/) with your nuxt.js application, we recommend to create a file `plugins/ga.js`:
 
