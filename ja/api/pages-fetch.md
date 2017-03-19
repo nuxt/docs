@@ -39,9 +39,9 @@ description: fetch メソッドは、ページがレンダリングされる前�
 export default {
   fetch ({ store, params }) {
     return axios.get('http://my-api/stars')
-    .then((res) => {
-      store.commit('setStars', res.data)
-    })
+      .then((res) => {
+        store.commit('setStars', res.data)
+      })
   }
 }
 </script>

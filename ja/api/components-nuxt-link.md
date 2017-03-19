@@ -8,7 +8,7 @@ description: ページ間を nuxt-link を使ってリンクさせます。
 
 <!-- # The &lt;nuxt-link&gt; Component -->
 
-# The &lt;nuxt-link&gt; コンポーネント
+# &lt;nuxt-link&gt; コンポーネント
 
 <!-- \> This component is used to link the page components between them. -->
 

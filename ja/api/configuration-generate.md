@@ -143,7 +143,9 @@ module.exports = {
 }
 ```
 
-## コールバックと一緒に関数を使う
+<!-- ## Function with a callback -->
+
+### コールバックと一緒に関数を使う
 
 `nuxt.config.js`
 

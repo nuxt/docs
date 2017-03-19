@@ -15,7 +15,8 @@ description: Nuxt.js はプログラム上で、ミドルウェアとして使�
 ミドルウェアや API と合わせて独自サーバーを使いたいときがあるかもしれません。そのため、Nuxt.js はプログラムで使うことができるようにしています。
 
 <!-- Nuxt.js is built on the top of ES2015, which makes the code more enjoyable and cleaner to read. It doesn't make use of any transpilers and depends upon Core V8 implemented features. For these reasons, Nuxt.js targets Node.js `4.0` or higher. -->
-Nuxt.js はコードをより楽しいものし、より読みやすくする ES2015 以上でビルドされます。トランスパイラを利用せず、また V8 エンジンで実装された機能に依存しません。このような理由から Nuxt.js は Node.js `4.0` 以上をターゲットにしています。
+
+Nuxt.js は ES2015 以上でビルドされます。ES2015 はコーディングをより楽しいものし、より読みやすくしてくれますよね。また、Nuxt.js はトランスパイラを利用せず、また V8 エンジンで実装された機能に依存しません。このような理由から Nuxt.js は Node.js `4.0` 以上をターゲットにしています。
 
 <!-- You can require Nuxt.js like this: -->
 

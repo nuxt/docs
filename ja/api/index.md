@@ -62,8 +62,8 @@ export default {
 | `isClient` | ブーリアン | クライアント＆サーバー | クライアントサイドでレンダリングしているか否か |
 | `isServer` | ブーリアン | クライアント＆サーバー | サーバーサイドでレンダリングしているか否か |
 | `isDev` | ブーリアン | クライアント＆サーバー | 開発モードか否か。このキーはプロダクションモードでデータをキャッシュさせるときに役立ちます |
-| `route` | [vue-router のルート](https://router.vuejs.org/en/api/route-object.html) | Client & Server | `vue-router` のルートインスタンス |
-| `store` | [Vuex ストア](http://vuex.vuejs.org/en/api.html#vuexstore-instance-properties) | Client & Server | `Vuex` のストアインスタンス。**[Vuex ストア](/guide/vuex-store) が設定されている場合のみ利用できます** |
+| `route` | [vue-router のルート](https://router.vuejs.org/en/api/route-object.html) | クライアント＆サーバー | `vue-router` のルートインスタンス |
+| `store` | [Vuex ストア](http://vuex.vuejs.org/en/api.html#vuexstore-instance-properties) | クライアント＆サーバー | `Vuex` のストアインスタンス。**[Vuex ストア](/guide/vuex-store) が設定されている場合のみ利用できます** |
 | `env` | オブジェクト | クライアント＆サーバー | `nuxt.config.js` でセットされた環境変数。詳細は [env API](/api/configuration-env) を参照してください |
 | `params` | オブジェクト | クライアント＆サーバー | route.params のエイリアス |
 | `query` | オブジェクト | クライアント＆サーバー | route.query のエイリアス |
