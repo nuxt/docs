@@ -12,11 +12,11 @@ description: コンポーネント内で非同期データを扱うには？
 
 <!-- It is not possible because it's not linked to a route, Nuxt.js surcharges the component data() associated to a route to allow async data. -->
 
-コンポーネントはルートに関連付けられていないため（訳注: 基本的には）非同期データを扱うことはできません。Nuxt.js ではルートに関連付けられたコンポーネントの data() メソッドに手を加えて非同期データを扱えるようにしています。
+コンポーネントはルートに関連付けられていないため（訳注: 基本的には）非同期データを扱うことはできません。Nuxt.js ではルートに関連付けられたコンポーネント（訳注: pages ディレクトリ内のコンポーネントのこと）の data() メソッドに手を加えて非同期データを扱えるようにしています。
 
 <!-- For sub components, there are 2 ways of achieving it: -->
 
-しかしながら、サブコンポーネントでも非同期データを扱えるようにする方法が 2つあります:
+しかしながら、サブコンポーネント（訳注: components ディレクトリ内のコンポーネントのこと）でも非同期データを扱えるようにする方法が 2つあります:
 
 <!-- 1. Making the API call in the mounted() hook and setting the data afterwards, downside: no server rendering -->
 <!-- 2. Making the API call in the data() of the page component and giving the data as a prop to the subComponent: server rendering OK. But the data() of the page might be less readable because it's loading the async data of the sub components -->
