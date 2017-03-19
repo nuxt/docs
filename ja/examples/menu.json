@@ -10,7 +10,7 @@
     "title": "カスタマイズ",
     "links": [
       { "name": "コンポーネントのキャッシュ", "to": "/cached-components" },
-      { "name": "カスタムローディングCustom Loading", "to": "/custom-loading" },
+      { "name": "カスタムローディング", "to": "/custom-loading" },
       { "name": "カスタムルーティング", "to": "/custom-routes" },
       { "name": "グローバル CSS", "to": "/global-css" },
       { "name": "レイアウト", "to": "/layouts" },
