@@ -32,7 +32,7 @@ description: デフォルトの Nuxt.js アプリケーションの構造は、�
 
 <!-- The `components` directory contains your Vue.js Components. Nuxt.js doesn't supercharge the data method on these components. -->
 
-`components` ディレクトリには Vue.js のコンポーネントファイルを入れます。Nuxt.js は `components` ディレクトリ内のコンポーネントの data メソッドについては手を加えません。
+`components` ディレクトリには Vue.js のコンポーネントファイルを入れます。Nuxt.js は `components` ディレクトリ内のコンポーネントの data メソッドについては手を加えません（訳注: 一方、Nuxt.js は `pages` ディレクトリ内のコンポーネントの data メソッドには非同期データを扱えるよう手を加えます）
 
 <!-- ### The Layouts Directory -->
 
@@ -62,7 +62,7 @@ _Coming soon_
 
 <!-- The `pages` directory contains your Application Views and Routes. The framework reads all the `.vue` files inside this directory and create the router of your application. -->
 
-`pages` ディレクトリにはアプリケーションのビュー及びルーティングファイルを入れます。Nuxt.js フレームワークはこのディレクトリ内のすべての `.vue` ファイルを読み込み、アプリケーションのルーターを作成します。
+`pages` ディレクトリにはアプリケーションのビュー及びルーティングファイルを入れます。Nuxt.js フレームワークはこのディレクトリ内のすべての `*.vue` ファイルを読み込み、アプリケーションのルーターを作成します。
 
 <!-- _This directory can not be renamed._ -->
 
@@ -78,7 +78,7 @@ _このディレクトリ名は変更できません。_
 
 <!-- The `plugins` directory contains your Javascript plugins that you want to run before instantiating the root vue.js application. -->
 
-`plugins` ディレクトリには、ルートの vue.js アプリケーションをインスタンス化する前に実行したい Javascript プラグインを入れます。
+`plugins` ディレクトリには、ルートの Vue.js アプリケーションをインスタンス化する前に実行したい JavaScript プラグインを入れます。
 
 <!-- [More documentation about Plugins integration](/guide/plugins) -->
 

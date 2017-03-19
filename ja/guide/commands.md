@@ -1,6 +1,6 @@
 ---
 title: コマンド
-description: Nuxt.js は便利コマンドのセットを備えています。開発用途のものもプロダクション用途のものも含まれています。
+description: Nuxt.js は便利コマンドのセットを備えています。開発時に役立つものも、プロダクション用途のものもあります。
 ---
 
 <!-- title: Commands -->
@@ -8,7 +8,7 @@ description: Nuxt.js は便利コマンドのセットを備えています。�
 
 <!-- \> Nuxt.js comes with a set of useful commands, both for development and production purpose. -->
 
-> Nuxt.js は便利コマンドのセットを備えています。開発用途のものもプロダクション用途のものも含まれています。
+> Nuxt.js は便利コマンドのセットを備えています。開発時に役立つものも、プロダクション用途のものもあります。
 
 <!-- ## List of Commands -->
 
@@ -71,7 +71,7 @@ npm run dev
 
 <!-- Nuxt.js lets your choose between 2 modes to deploy your application: Server Rendered or Static Generated. -->
 
-Nuxt.js ではアプリケーションをデプロイするための 2つのモードから選べます: サーバーサイドレンダリングするモードと静的ファイルを生成するモードです。
+Nuxt.js ではアプリケーションをデプロイするための 2つのモードから選べます。サーバーサイドレンダリングするモードと、静的ファイルを生成するモードです。
 
 <!-- ### Server Rendered Deployment -->
 

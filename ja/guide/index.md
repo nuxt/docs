@@ -16,7 +16,7 @@ description: "2016年10月25日 zeit.co のチームが React アプリケーシ
 
 <!-- Nuxt.js is a framework for creating Universal Vue.js Applications. -->
 
-Next.js とはユニバーサルな Vue.js アプリケーションを構築するためのフレームワークです。
+Nuxt.js とはユニバーサルな Vue.js アプリケーションを構築するためのフレームワークです。
 
 <!-- Its main scope is **UI rendering** while abstracting away the client/server distribution. -->
 

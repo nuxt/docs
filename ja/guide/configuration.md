@@ -64,9 +64,7 @@ description: Nuxt.js ではデフォルトの設定でほとんどのユース�
 
 <!-- This option lets you to define each params value for every dynamic routes in your application that Nuxt.js transforms into HTML files. -->
 
-このオプションで、Nuxt.js が HTML ファイルに変換するアプリケーション内の動的なルーティングのためのパラメータを指定できます。（訳に自信なし。原文は This option lets you to define each params value for every dynamic routes in your application that Nuxt.js transforms into HTML files.）
-
-このオプションで、アプリケーション内の動的なルーティングごとにパラメータを指定できます。Nuxt.js はそれらのパラメータを変換して HTML ファイルに入れます。
+このオプションは、動的なルーティングをしているアプリケーションを HTML ファイルに変換するときに使います。動的なルーティングに用いるパラメータを指定できます。
 
 <!-- [Documentation about generate integration](/api/configuration-generate) -->
 
@@ -96,7 +94,7 @@ description: Nuxt.js ではデフォルトの設定でほとんどのユース�
 
 <!-- This option lets you to define Javascript plugins to be ran before instantiating the root vue.js application. -->
 
-このオプションで、ルートの vue.js アプリケーションをインスタンス化する前に実行したい Javascript plugin を指定できます。
+このオプションで、ルートの vue.js アプリケーションをインスタンス化する前に実行したい JavaScript plugin を指定できます。
 
 <!-- [Documentation about plugins integration](/api/configuration-plugins) -->
 

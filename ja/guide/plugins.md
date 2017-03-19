@@ -24,7 +24,7 @@ description: Nuxt.js では js プラグインを定義することができ、�
 
 <!-- We install it via NPM: -->
 
-外部パッケージは NPM 経由でインストールします:
+外部パッケージは npm でインストールします:
 
 ```bash
 npm install --save axios

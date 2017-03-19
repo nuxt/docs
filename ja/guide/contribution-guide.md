@@ -24,7 +24,7 @@ Nuxt.js への貢献はどんなものでも大歓迎です！
 
 <!-- We'd love to see your pull requests, even if it's just to fix a typo. Any significant improvement should be documented as [a GitHub issue](https://github.com/nuxt/nuxt.js/issues) before anybody starts working on it. -->
 
-たとえそれが単にタイプミスの修正であっても、ぜひプルリクエストを送ってください。どんな重要な改善であっても、誰かが手を動かし始める前に [GitHub issue](https://github.com/nuxt/nuxt.js/issues) に記載してください。
+たとえそれが単にタイプミスの修正であっても、ぜひプルリクエストを送ってください。一方で、どんな重要な改善であっても、誰かが手を動かし始める前に [GitHub issue](https://github.com/nuxt/nuxt.js/issues) に記載してください。
 
 <!-- ### Convention -->
 

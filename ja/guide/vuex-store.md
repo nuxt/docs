@@ -34,7 +34,7 @@ Nuxt.js では **2つのモードのストア** があります。どちらか�
 <!-- - **Modules:** every `.js` file inside the `store` directory is transformed as a [namespaced module](http://vuex.vuejs.org/en/modules.html) (`index` being the root module) -->
 
 - **クラシックモード:** `store/index.js` がストアインスタンスを返します
-- **モジュールモード:** `store` ディレクトリ内のすべての `.js` ファイルが [モジュール](http://vuex.vuejs.org/en/modules.html) に変換されます（`index` はルートモジュールとして存在します）
+- **モジュールモード:** `store` ディレクトリ内のすべての `*.js` ファイルが [モジュール](http://vuex.vuejs.org/en/modules.html) に変換されます（`index` はルートモジュールとして存在します）
 
 <!-- ## Classic mode -->
 
@@ -63,7 +63,7 @@ export default store
 
 <!-- \> We don't need to install `vuex` since it's shipped with nuxt.js -->
 
-> `vuex` は Nuxt.js によって取り込まれているため、別途インストールする必要はありません
+> `vuex` は Nuxt.js によって取り込まれているため、別途インストールする必要はありません。
 
 <!-- We can now use `this.$store` inside our components: -->
 
@@ -241,7 +241,7 @@ actions: {
 
 <!-- \> If you are using the _Modules_ mode of the Vuex store, only the primary module (in `store/index.js`) will receive this action. You'll need to chain your module actions from there. -->
 
-> もし Vuex ストアの _モジュール_ モードを使っているなら、（`store/index.js` 内の）プライマリモードのみ、このアクションを受け取ることができます。そこからモジュールのアクションをつなぐ必要があります。（訳注: 訳に自信なし。原文は If you are using the _Modules_ mode of the Vuex store, only the primary module (in `store/index.js`) will receive this action. You'll need to chain your module actions from there.）
+> Vuex ストアの _モジュール_ モードを使っている場合はなら、プライマリモジュール（`store/index.js`）のみ、このアクションを受け取ることができます。その他のモジュールのアクションでも使いたい場合は、プライマリモジュールからチェインする必要があります。
 
 <!-- The context is given to `nuxtServerInit` as the 2nd argument, it is the same as the `data` or `fetch` method except that `context.redirect()` and `context.error()` are omitted. -->
 

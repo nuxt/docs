@@ -16,11 +16,11 @@ description: Nuxt.js はアセットファイルを配信するために（デ�
 
 <!-- By default, [vue-loader](http://vue-loader.vuejs.org/en/) automatically processes your style and template files with `css-loader` and the Vue template compiler. In this compilation process, all asset URLs such as `<img src="...">`, `background: url(...)` and CSS `@import` are resolved as module dependencies. -->
 
-デフォルトでは [vue-loader](http://vue-loader.vuejs.org/en/) は `css-loader` 及び Vue テンプレートコンパイラを用いて、スタイルやテンプレートファイルを処理します。このコンパイル処理の中で、`<img src="...">` や `background: url(...)` や CSS `@import` などのすべての URL はモジュールの依存関係のように解決されます。
+デフォルトでは [vue-loader](http://vue-loader.vuejs.org/en/) は `css-loader` 及び `vue-template-compiler` を用いて、スタイルやテンプレートファイルを処理します。このコンパイル処理の中で、`<img src="...">` や `background: url(...)` や CSS `@import` などのすべての URL はモジュールの依存関係のように解決されます。
 
 <!-- For example, we have this file tree: -->
 
-例えば、このようなファイルがあるとします:
+例えば、次のようなファイルがあるとします:
 
 ```bash
 -| assets/
