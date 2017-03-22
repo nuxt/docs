@@ -82,7 +82,7 @@ Great, but what if we have **dynamic params**?
 
 `nuxt.config.js`
 ```js
-import axios from 'axios'
+const axios = require('axios')
 
 module.exports = {
   generate: {
@@ -104,7 +104,7 @@ module.exports = {
 
 `nuxt.config.js`
 ```js
-import axios from 'axios'
+const axios = require('axios')
 
 module.exports = {
   generate: {
