@@ -18,6 +18,7 @@ npm run dev
 ### Russian
 
 Russian translation is maintained by Translation Gang.
+
 * Translation Repo — [/translation-gang/ru.docs.nuxtjs](https://github.com/translation-gang/ru.docs.nuxtjs)
 * Primary maintainer - [Grigoriy Beziuk](https://gbezyuk.github.io)
 * Primary translator - [Nicholas Shachmatov](https://github.com/theOnlyBoy)
@@ -25,9 +26,18 @@ Russian translation is maintained by Translation Gang.
 ### Chinese
 
 Chinese translation is maintained by AOTU Labs from China, Shenzhen.
+
 * Translation Repo — [/o2team/i18n-cn-nuxtjs-docs](https://github.com/o2team/i18n-cn-nuxtjs-docs)
 * Primary maintainer - [AOTU Labs](https://aotu.io)
 * Primary translator - [Levin Wong](http://faso.me), [Edward Chu](https://github.com/chuyik)
+
+### Japanese
+
+Japanese translation is maintained by INOUE Takuya.
+
+* Translation Repo — [/inouetakuya/ja.docs.nuxtjs](https://github.com/inouetakuya/ja.docs.nuxtjs)
+* Primary maintainer - [INOUE Takuya](http://blog.inouetakuya.info/)
+* Primary translator - [INOUE Takuya](https://github.com/inouetakuya)
 
 ### Want to help with the translation?
 
