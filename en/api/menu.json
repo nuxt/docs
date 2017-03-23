@@ -53,7 +53,7 @@
         "to": "/configuration-generate",
         "contents": [
           { "name": "dir", "to": "#dir" },
-          { "name": "routeParams", "to": "#routeparams" }
+          { "name": "routes", "to": "#routes" }
         ]
       },
       { "name": "head", "to": "/configuration-head" },
