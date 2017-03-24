@@ -111,7 +111,7 @@ More information about the validate method: [API Pages validate](/api/pages-vali
 
 Nuxt.js lets you create nested route by using the children routes of vue-router.
 
-To define a nested route, you need to create a Vue file with the **same name as the directory** which contain your children views.
+To define the parent component of a nested route, you need to create a Vue file with the **same name as the directory** which contain your children views.
 
 <p class="Alert Alert--info">Don't forget to write `<nuxt-child/>` inside the parent component (.vue file).</p>
 

@@ -49,16 +49,16 @@
       {
         "to": "/views", "name": "Views",
         "contents": [
-          { "to": "#pages", "name": "Pages" },
+          { "to": "#document", "name": "Document" },
           { "to": "#layouts", "name": "Layouts" },
-          { "to": "#html-head", "name": "HTML Head" },
-          { "to": "#document", "name": "Document" }
+          { "to": "#pages", "name": "Pages" },
+          { "to": "#html-head", "name": "HTML Head" }
         ]
       },
       {
         "to": "/async-data", "name": "Async Data",
         "contents": [
-          { "to": "#the-data-method", "name": "The data Method" },
+          { "to": "#the-data-method", "name": "The asyncData Method" },
           { "to": "#the-context", "name": "The Context" },
           { "to": "#handling-errors", "name": "Handling Errors" }
         ]

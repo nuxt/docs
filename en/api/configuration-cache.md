@@ -9,7 +9,7 @@ description: Nuxt.js use lru-cache to allow cached components for better render 
 
 ## Usage
 
-- **Type:** `Boolean` or `Object` (Default: `false`)
+- Type: `Boolean` or `Object` (Default: `false`)
 
 If an object, see [lru-cache options](https://github.com/isaacs/node-lru-cache#options).
 
