@@ -27,7 +27,9 @@ _This directory can not be renamed._
 
 ### The Middleware Directory
 
-_Coming soon_
+The `middleware` directory contains your Application Middleware. The middleware lets you define custom function to be ran before rendering a page or a group of pages (layouts).
+
+[More documentation about Middleware integration](/guide/routing#middleware)
 
 ### The Pages Directory
 
@@ -82,6 +84,7 @@ _This file can not be renamed._
 | ~ | / |
 | ~assets | /assets |
 | ~components | /components |
+| ~middleware | /middleware |
 | ~pages | /pages |
 | ~plugins | /plugins |
 | ~static | /static |
