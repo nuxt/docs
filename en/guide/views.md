@@ -1,56 +1,46 @@
 ---
 title: Views
-description: The Views section describes all you need to configure data and views for a specific route in your Nuxt.js application. (Pages, layouts and HTML Head)
+description: The Views section describes all you need to configure data and views for a specific route in your Nuxt.js application. (Document, Layouts, Pages and HTML Head)
 ---
 
-> The Views section describes all you need to configure data and views for a specific route in your Nuxt.js application. (Pages, layouts and HTML Head)
+> The Views section describes all you need to configure data and views for a specific route in your Nuxt.js application. (Document, Layouts, Pages and HTML Head)
 
-## Pages
+![nuxt-views-schema](/nuxt-views-schema.png)
 
-Every Page component is a Vue component, but Nuxt.js adds special keys to make the development of your universal application the easiest way possible.
+## Document
+
+> You can customise the main document with nuxt.js
+
+To extend the html template, create a `app.html` at the root of your project.
+
+The default template is:
 
 ```html
-<template>
-  <h1 class="red">Hello {{ name }}!</h1>
-</template>
-
-<script>
-export default {
-  data (context) {
-    // called every time before loading the component
-    return { name: 'World' }
-  },
-  fetch () {
-    // The fetch method is used to fill the store before rendering the page
-  },
-  head () {
-    // Set Meta Tags for this Page
-  },
-  // and more functionality to discover
-  ...
-}
-</script>
-
-<style>
-.red {
-  color: red;
-}
-</style>
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }}>
+  <head>
+    {{ HEAD }}
+  </head>
+  <body {{ BODY_ATTRS }}>
+    {{ APP }}
+  </body>
+</html>
 ```
 
+One example if to add conditional CSS classes for IE:
 
-| Attribute | Description |
-|-----------|-------------|
-| data | The most important key, it has the same purpose as [Vue data](https://vuejs.org/v2/api/#Options-Data) but it can be asynchronous and receives the context as argument, please read the [async data documentation](/guide/async-data) to learn how it works. |
-| fetch | Used to fill the store before rendering the page, it's like the data method except it doesn't set the component data. See the [API Pages fetch documentation](/api/pages-fetch). |
-| head | Set specific Meta Tags for the current page, see [API Pages head documentation](/api/pages-head). |
-| layout | Specify a layout defined in the `layouts` directory, see [API Pages layouts documentation](/api/pages-layout). |
-| transition | Set a specific transition for the page, see [API Pages transition](/api/pages-transition). |
-| scrollToTop | Boolean, by default: `false`. Specify if you want the page to scroll to the top before rendering the page, it's used for [nested routes](/guide/routing#nested-routes). |
-| validate | Validator function for a [dynamic route](/guide/routing#dynamic-routes). |
-| middleware | Set a middleware for this page, the middleware will be called before rendering the page, see [routes middleware](/guide/routing#middleware). |
-
-More information about the pages properties usage: [API Pages](/api)
+```html
+<!DOCTYPE html>
+<!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
+  <head>
+    {{ HEAD }}
+  </head>
+  <body {{ BODY_ATTRS }}>
+    {{ APP }}
+  </body>
+</html>
+```
 
 ## Layouts
 
@@ -123,6 +113,53 @@ More information about the layout property: [API Pages layout](/api/pages-layout
 
 Check the [demonstration video](https://www.youtube.com/watch?v=YOKnSTp7d38) to see it in action.
 
+## Pages
+
+Every Page component is a Vue component, but Nuxt.js adds special keys to make the development of your universal application the easiest way possible.
+
+```html
+<template>
+  <h1 class="red">Hello {{ name }}!</h1>
+</template>
+
+<script>
+export default {
+  asyncData (context) {
+    // called every time before loading the component
+    return { name: 'World' }
+  },
+  fetch () {
+    // The fetch method is used to fill the store before rendering the page
+  },
+  head () {
+    // Set Meta Tags for this Page
+  },
+  // and more functionality to discover
+  ...
+}
+</script>
+
+<style>
+.red {
+  color: red;
+}
+</style>
+```
+
+
+| Attribute | Description |
+|-----------|-------------|
+| asyncData | The most important key, it can be asynchronous and receives the context as argument, please read the [async data documentation](/guide/async-data) to learn how it works. |
+| fetch | Used to fill the store before rendering the page, it's like the data method except it doesn't set the component data. See the [API Pages fetch documentation](/api/pages-fetch). |
+| head | Set specific Meta Tags for the current page, see [API Pages head documentation](/api/pages-head). |
+| layout | Specify a layout defined in the `layouts` directory, see [API Pages layouts documentation](/api/pages-layout). |
+| transition | Set a specific transition for the page, see [API Pages transition](/api/pages-transition). |
+| scrollToTop | Boolean, by default: `false`. Specify if you want the page to scroll to the top before rendering the page, it's used for [nested routes](/guide/routing#nested-routes). |
+| validate | Validator function for a [dynamic route](/guide/routing#dynamic-routes). |
+| middleware | Set a middleware for this page, the middleware will be called before rendering the page, see [routes middleware](/guide/routing#middleware). |
+
+More information about the pages properties usage: [API Pages](/api)
+
 ## HTML Head
 
 Nuxt.js uses [vue-meta](https://github.com/declandewet/vue-meta) to update the `headers` and `html attributes` of your application.
@@ -163,38 +200,3 @@ More information about the head method: [API Configuration head](/api/configurat
 More information about the head method: [API Pages head](/api/pages-head)
 
 <p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
-
-## Document
-
-> You can customise the main document with nuxt.js
-
-To extend the html template, create a `app.html` at the root of your project.
-
-The default template is:
-
-```html
-<!DOCTYPE html>
-<html {{ HTML_ATTRS }}>
-  <head>
-    {{ HEAD }}
-  </head>
-  <body {{ BODY_ATTRS }}>
-    {{ APP }}
-  </body>
-</html>
-```
-
-One example if to add conditional CSS classes for IE:
-
-```html
-<!DOCTYPE html>
-<!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
-  <head>
-    {{ HEAD }}
-  </head>
-  <body {{ BODY_ATTRS }}>
-    {{ APP }}
-  </body>
-</html>
-```

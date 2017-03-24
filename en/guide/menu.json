@@ -49,10 +49,10 @@
       {
         "to": "/views", "name": "Views",
         "contents": [
-          { "to": "#pages", "name": "Pages" },
+          { "to": "#document", "name": "Document" },
           { "to": "#layouts", "name": "Layouts" },
-          { "to": "#html-head", "name": "HTML Head" },
-          { "to": "#document", "name": "Document" }
+          { "to": "#pages", "name": "Pages" },
+          { "to": "#html-head", "name": "HTML Head" }
         ]
       },
       {
