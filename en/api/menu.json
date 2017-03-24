@@ -2,7 +2,7 @@
   {
     "title": "Pages",
     "links": [
-      { "name": "data", "to": "/" },
+      { "name": "asyncData", "to": "/" },
       { "name": "fetch", "to": "/pages-fetch" },
       { "name": "head", "to": "/pages-head" },
       { "name": "layout", "to": "/pages-layout" },
