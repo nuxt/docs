@@ -7,13 +7,17 @@ description: Every file (first level) in the layouts directory will create a cus
 
 > Every file (first level) in the layouts directory will create a custom layout accessible with the layout property in the page component.
 
-- **Type:** `String` (default: `'default'`)
+- **Type:** `String` or `Function` (default: `'default'`)
 
 Use the `layout` key in your pages components to define which layout to use:
 
 ```js
 export default {
-  layout: 'blog'
+  layout: 'blog',
+  // OR
+  layout (context) {
+    return 'blog'
+  }
 }
 ```
 
