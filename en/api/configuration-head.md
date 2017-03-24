@@ -7,7 +7,7 @@ description: Nuxt.js let you define all default meta for your application inside
 
 > Nuxt.js let you define all default meta for your application inside `nuxt.config.js`, use the same `head` property:
 
-- **Type:** `Object`
+- Type: `Object`
 
 ```js
 module.exports = {

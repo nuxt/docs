@@ -79,7 +79,8 @@ Example of a custom error page in `layouts/error.vue`:
 
 <script>
 export default {
-  props: ['error']
+  props: ['error'],
+  layout: 'blog' // you can set a custom layout for the error page
 }
 </script>
 ```
@@ -168,8 +169,8 @@ Nuxt.js configures `vue-meta` with these options:
 ```js
 {
   keyName: 'head', // the component option name that vue-meta looks for meta info on.
-  attribute: 'n-head', // the attribute name vue-meta adds to the tags it observes
-  ssrAttribute: 'n-head-ssr', // the attribute name that lets vue-meta know that meta info has already been server-rendered
+  attribute: 'data-n-head', // the attribute name vue-meta adds to the tags it observes
+  ssrAttribute: 'data-n-head-ssr', // the attribute name that lets vue-meta know that meta info has already been server-rendered
   tagIDKeyName: 'hid' // the property name that vue-meta uses to determine whether to overwrite or append a tag
 }
 ```

@@ -41,6 +41,7 @@
           { "name": "loaders", "to": "#loaders" },
           { "name": "plugins", "to": "#plugins" },
           { "name": "postcss", "to": "#postcss" },
+          { "name": "publicPath", "to": "#publicpath" },
           { "name": "vendor", "to": "#vendor" }
         ]
       },
@@ -53,6 +54,7 @@
         "to": "/configuration-generate",
         "contents": [
           { "name": "dir", "to": "#dir" },
+          { "name": "minify", "to": "#minify" },
           { "name": "routes", "to": "#routes" }
         ]
       },
@@ -81,6 +83,7 @@
         "to": "/configuration-router",
         "contents": [
           { "name": "base", "to": "#base" },
+          { "name": "mode", "to": "#mode" },
           { "name": "linkActiveClass", "to": "#linkactiveclass" },
           { "name": "scrollBehavior", "to": "#scrollbehavior" },
           { "name": "middleware", "to": "#middleware" },

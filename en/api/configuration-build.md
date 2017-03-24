@@ -100,7 +100,6 @@ Example (`nuxt.config.js`):
 module.exports = {
   build: {
     filenames: {
-      css: 'app.[hash].css',
       vendor: 'vendor.[hash].js',
       app: 'app.[chunkhash].js'
     }
@@ -181,7 +180,7 @@ module.exports = {
 
 ## postcss
 
-- **Type:** `Array`
+- Type: `Array`
 
 > Customize [postcss](https://github.com/postcss/postcss) options
 
@@ -210,12 +209,31 @@ module.exports = {
 }
 ```
 
+## publicPath
+
+- Type: `String`
+- Default: `'/_nuxt/'`
+
+> Nuxt.js lets you upload your dist files to your CDN for maximum performances, simply set the `publicPath` to your CDN.
+
+Example (`nuxt.config.js`):
+
+```js
+module.exports = {
+  build: {
+    publicPath: 'https://cdn.nuxtjs.org'
+  }
+}
+```
+
+Then, when launching `nuxt build`, upload the content of `.nuxt/dist/` directory to your CDN and voilà!
+
 ## vendor
 
 > Nuxt.js lets you add modules inside the `vendor.bundle.js` file generated to reduce the size of the app bundle. It's really useful when using external modules (like `axios` for example)
 
-- **Type:** `Array`
- - **Items:** `String`
+- Type: `Array`
+ - Items: `String`
 
 To add a module/file inside the vendor bundle, add the `build.vendor` key inside `nuxt.config.js`:
 

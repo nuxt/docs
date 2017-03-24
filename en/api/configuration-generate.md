@@ -98,7 +98,7 @@ nuxt:generate HTML Files generated in 7.6s +6ms
 
 Great, but what if we have **dynamic params**?
 1. Use a `Function` which returns a `Promise`
-2. Use a `Function` with a callback(err, params)
+2. Use a `Function` with a `callback(err, params)`
 
 ### Function which returns a Promise
 
