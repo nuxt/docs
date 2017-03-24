@@ -58,7 +58,7 @@
       {
         "to": "/async-data", "name": "Async Data",
         "contents": [
-          { "to": "#the-data-method", "name": "The data Method" },
+          { "to": "#the-data-method", "name": "The asyncData Method" },
           { "to": "#the-context", "name": "The Context" },
           { "to": "#handling-errors", "name": "Handling Errors" }
         ]
