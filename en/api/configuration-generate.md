@@ -18,6 +18,36 @@ When launching `nuxt generate` or calling `nuxt.generate()`, nuxt.js will use th
 
 Directory name created by `nuxt generate`.
 
+## minify
+
+- Type: `Object`
+- Default:
+
+```js
+minify: {
+  collapseBooleanAttributes: true,
+  collapseWhitespace: true,
+  decodeEntities: true,
+  minifyCSS: true,
+  minifyJS: true,
+  processConditionalComments: true,
+  removeAttributeQuotes: false,
+  removeComments: false,
+  removeEmptyAttributes: true,
+  removeOptionalTags: true,
+  removeRedundantAttributes: true,
+  removeScriptTypeAttributes: false,
+  removeStyleLinkTypeAttributes: false,
+  removeTagWhitespace: false,
+  sortAttributes: true,
+  sortClassName: true,
+  trimCustomFragments: true,
+  useShortDoctype: true
+}
+```
+
+You can change the default configuration of [html-minifier](https://github.com/kangax/html-minifier) used by nuxt.js to minify html files created during generate process.
+
 ## routes
 
 - Type: `Array`
