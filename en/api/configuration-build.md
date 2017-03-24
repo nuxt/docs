@@ -90,7 +90,6 @@ If you want to see more about our default webpack configuration, take a look at 
 Default:
 ```js
 {
-  css: 'style.[hash].css',
   vendor: 'vendor.bundle.[hash].js',
   app: 'nuxt.bundle.[chunkhash].js'
 }
