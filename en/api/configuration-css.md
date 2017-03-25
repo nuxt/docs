@@ -30,5 +30,3 @@ module.exports = {
   ]
 }
 ```
-
-<p class="Alert">**In production**, all CSS will be minified and extracted in a file named `styles.css` and added in the `<head>` of the page.</p>
