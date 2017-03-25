@@ -91,7 +91,15 @@
         ]
       },
       { "name": "srcDir", "to": "/configuration-srcdir" },
-      { "name": "transition", "to": "/configuration-transition" }
+      { "name": "transition", "to": "/configuration-transition" },
+      {
+        "name": "watchers",
+        "to": "/configuration-watchers",
+        "contents": [
+          { "name": "chokidar", "to": "#chokidar" },
+          { "name": "webpack", "to": "#webpack" }
+        ]
+      }
     ]
   },
   {
