@@ -9,8 +9,14 @@ description: Configure nuxt.js performance options
 
 ## gzip
 
-- Type: `Boolean`
-- Default: `true`
+- Type: `Boolean` or `Object`
+- Default:
+
+```js
+{
+  threshold: 0
+}
+```
 
 In production, nuxt.js will gzip all your assets by using the [compression](https://github.com/expressjs/compression) module.
 
