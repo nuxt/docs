@@ -167,7 +167,7 @@ Nuxt.js による大きなイノベーションがやってきました。それ
 
 <!-- We don't want to manually generate the application every time we update the [docs repository](https://github.com/nuxt/docs), so each push made calls an AWS Lambda function which: -->
 
-私たちは [docs リポジトリ](https://github.com/nuxt/docs) を更新するたびに毎回手動でアプリケーションを生成するのは面倒だったので、AWS Lambda funtion から生成機能を実行しています:
+私たちは [docs リポジトリ](https://github.com/nuxt/docs) を更新するたびに毎回手動でアプリケーションを生成するのは面倒だったので、AWS Lambda function から生成機能を実行しています:
 
 <!-- 1. Clone the [nuxtjs.org repository](https://github.com/nuxt/nuxtjs.org) -->
 <!-- 2. Install the dependencies via `npm install` -->
