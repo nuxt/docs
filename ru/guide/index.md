@@ -32,7 +32,7 @@ Nuxt.js использует следующие элементы для созд
 
 Общий размер составляет всего лишь **28kb min+gzip** (31kb при использовании vuex).
 
-Под капотом мы используем [Webpack](https://github.com/webpack/webpack) с [vue-Loader](https://github.com/vuejs/vue-loader) и [babel-loader](https://github.com/babel/babel-loader) для сборки, разделения и минимизации кода.
+Под капотом мы используем [Webpack](https://github.com/webpack/webpack) с [vue-loader](https://github.com/vuejs/vue-loader) и [babel-loader](https://github.com/babel/babel-loader) для сборки, разделения и минимизации кода.
 
 ## Возможности
 
