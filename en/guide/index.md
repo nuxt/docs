@@ -32,7 +32,7 @@ Nuxt.js includes the following to create a rich web application development:
 
 A total of only **28kb min+gzip** (31kb with vuex).
 
-Under the hood we use [Webpack](https://github.com/webpack/webpack) with [vue-Loader](https://github.com/vuejs/vue-loader) and [babel-loader](https://github.com/babel/babel-loader) to bundle, code-split and minify your code.
+Under the hood we use [Webpack](https://github.com/webpack/webpack) with [vue-loader](https://github.com/vuejs/vue-loader) and [babel-loader](https://github.com/babel/babel-loader) to bundle, code-split and minify your code.
 
 ## Features
 

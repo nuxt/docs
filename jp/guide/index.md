@@ -58,9 +58,9 @@ Nuxt.js はリッチなウェブアプリケーションを構築するために
 
 すべて合わせてもわずか **28kb min+gzip** です（Vuex 利用時は 31kb）
 
-<!-- Under the hood we use [Webpack](https://github.com/webpack/webpack) with [vue-Loader](https://github.com/vuejs/vue-loader) and [babel-loader](https://github.com/babel/babel-loader) to bundle, code-split and minify your code. -->
+<!-- Under the hood we use [Webpack](https://github.com/webpack/webpack) with [vue-loader](https://github.com/vuejs/vue-loader) and [babel-loader](https://github.com/babel/babel-loader) to bundle, code-split and minify your code. -->
 
-また、ソースコードのバンドルや分割及びミニファイするために [Webpack](https://github.com/webpack/webpack) を使います。[vue-Loader](https://github.com/vuejs/vue-loader) と [babel-loader](https://github.com/babel/babel-loader) も合わせて使います。
+また、ソースコードのバンドルや分割及びミニファイするために [Webpack](https://github.com/webpack/webpack) を使います。[vue-loader](https://github.com/vuejs/vue-loader) と [babel-loader](https://github.com/babel/babel-loader) も合わせて使います。
 
 <!-- ## Features -->
 
@@ -167,7 +167,7 @@ Nuxt.js による大きなイノベーションがやってきました。それ
 
 <!-- We don't want to manually generate the application every time we update the [docs repository](https://github.com/nuxt/docs), so each push made calls an AWS Lambda function which: -->
 
-私たちは [docs リポジトリ](https://github.com/nuxt/docs) を更新するたびに毎回手動でアプリケーションを生成するのは面倒だったので、AWS Lambda funtion から生成機能を実行しています:
+私たちは [docs リポジトリ](https://github.com/nuxt/docs) を更新するたびに毎回手動でアプリケーションを生成するのは面倒だったので、AWS Lambda function から生成機能を実行しています:
 
 <!-- 1. Clone the [nuxtjs.org repository](https://github.com/nuxt/nuxtjs.org) -->
 <!-- 2. Install the dependencies via `npm install` -->
