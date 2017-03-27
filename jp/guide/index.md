@@ -33,7 +33,7 @@ Nuxt.js は **サーバーサイドレンダリング** する Vue.js アプリ�
 <!-- In addition, we also provide another deployment option called: *nuxt generate*. It will build a **Static Generated** Vue.js Application. -->
 <!-- We believe that option could be the next big step in the development of Web Applications with microservices. -->
 
-それに加えて *nuxt genrate* と呼ばれる別の開発オプションも提供します。これは **静的に生成された** Vue.js アプリケーションを構築するためのものです。私たちはこのオプションが、マイクロサービスでウェブアプリケーションを開発するための次の大きな一歩になり得ると信じています。
+それに加えて *nuxt generate* と呼ばれる別の開発オプションも提供します。これは **静的に生成された** Vue.js アプリケーションを構築するためのものです。私たちはこのオプションが、マイクロサービスでウェブアプリケーションを開発するための次の大きな一歩になり得ると信じています。
 
 <!-- As a framework, Nuxt.js comes with a lot of features to help you in your development between the client side and the server side such as Asynchronous Data, Middleware, Layouts, etc. -->
 
