@@ -92,7 +92,7 @@
         "to": "/commands", "name": "Commands",
         "contents": [
           { "to": "#list-of-commands", "name": "List of Commands" },
-          { "to": "#development-environment", "name": "Developemnt Enviroment" },
+          { "to": "#development-environment", "name": "Development Enviroment" },
           { "to": "#production-deployment", "name": "Production Deployment" }
         ]
       },
