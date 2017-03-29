@@ -1,23 +1,23 @@
 ---
 title: Async Data
-description: You may want to fetch data and render it on the server-side. Nuxt.js add an `asyncData` method let you handle async operation before setting the component data.
+description: You may want to fetch data and render it on the server-side. Nuxt.js adds an `asyncData` method to let you handle async operations before setting the component data.
 ---
 
 > You may want to fetch data and render it on the server-side.
-Nuxt.js add an `asyncData` method let you handle async operation before setting the component data.
+Nuxt.js adds an `asyncData` method to let you handle async operations before setting the component data.
 
 ## The asyncData Method
 
-Sometimes you just want to fetch data and pre-render on the server-side without using a store.
+Sometimes you just want to fetch data and pre-render it on the server-side without using a store.
 `asyncData` is called every time before loading the component (**only for pages components**).
-It can be called from the server-side or before navigating to the corresponding route.
-This method receives [the context](/api#context) as the first argument, you can use it to fetch some data and nuxt.js will merge them with the component data.
+It can be called server-side or before navigating to the corresponding route.
+This method receives [the context](/api#context) as the first argument, you can use it to fetch some data and nuxt.js will merge it with the component data.
 
 <div class="Alert Alert--orange">You do **NOT** have access of the component instance trough `this` inside `data` because it is called **before initiating** the component.</div>
 
-To use the asyncData method, nuxt.js offers you different ways, choose the one you're the most familiar with:
+Nuxt.js offers you different ways to use `asyncData`. Choose the one you're the most familiar with:
 
-1. returning a `Promise`, nuxt.js will wait for the promise to be resolved before rendering the component.
+1. Retunring a `Promise`. Nuxt.js will wait for the promise to be resolved before rendering the component.
 2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await))
 3. Define a callback as second argument. It has to be called like this: `callback(err, data)`
 
@@ -58,7 +58,7 @@ export default {
 ### Displaying the data
 
 The result from asyncData will be **merged** with data.
-You can display the data inside your template like you used to do:
+You can display the data inside your template like you're used to doing:
 
 ```html
 <template>
@@ -72,7 +72,7 @@ To see the list of available keys in `context`, take a look at the [API Pages da
 
 ## Handling Errors
 
-Nuxt.js add the `error(params)` method in the `context`, you can call it to display the error page. `params.statusCode` will be also used to render the proper status code form the server-side.
+Nuxt.js adds the `error(params)` method in the `context`, you can call it to display the error page. `params.statusCode` will be also used to render the proper status code form the server-side.
 
 Example with a `Promise`:
 ```js
@@ -89,7 +89,7 @@ export default {
 }
 ```
 
-If you're using the `callback` argument, you can call it directly with the error, nuxt.js will call the `error` method for you:
+If you're using the `callback` argument, you can call it directly with the error and nuxt.js will call the `error` method for you:
 ```js
 export default {
   asyncData ({ params }, callback) {
