@@ -16,7 +16,7 @@ description: Render a specific route with a given context.
 
 > Render a specific route with a given context.
 
-This method should be used mostly for [test purposes](guide/development-tools#end-to-end-testing) as well with [nuxt.renderAndGetWindow](/api/nuxt-render-and-get-window).
+This method should be used mostly for [test purposes](/guide/development-tools#end-to-end-testing) as well with [nuxt.renderAndGetWindow](/api/nuxt-render-and-get-window).
 
 <p class="Alert Alert--info">`nuxt.renderRoute` should be executed after the build process in production mode (dev: false).</p>
 
