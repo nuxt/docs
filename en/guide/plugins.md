@@ -11,7 +11,7 @@ description: Nuxt.js allows you to define js plugins to be ran before instantiat
 
 We may want to use external packages/modules in our application, one great example is [axios](https://github.com/mzabriskie/axios) for making HTTP request for both server and client.
 
-We install it via NPM:
+We install it via npm:
 
 ```bash
 npm install --save axios

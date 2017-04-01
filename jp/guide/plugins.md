@@ -22,7 +22,7 @@ description: Nuxt.js では js プラグインを定義することができ、�
 
 アプリケーションに外部パッケージ/モジュールを使いたいときがあるでしょう。例えばサーバーでもクライアントでも HTTP リクエストを送れる [axios](https://github.com/mzabriskie/axios) などが良い例です。
 
-<!-- We install it via NPM: -->
+<!-- We install it via npm: -->
 
 外部パッケージは npm でインストールします:
 

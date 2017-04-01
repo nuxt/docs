@@ -101,7 +101,7 @@ $ cd <project-name>
 
 ### `nuxt` のインストール
 
-<!-- Once the `package.json` has been created, add `nuxt` to the project via NPM: -->
+<!-- Once the `package.json` has been created, add `nuxt` to the project via npm: -->
 
 `package.json` を作成したら `nuxt` を npm でプロジェクトに追加しましょう:
 
