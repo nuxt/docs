@@ -42,3 +42,5 @@ Then generate and deploy your static application:
 npm run generate
 npm run deploy
 ```
+
+<p class="Alert Alert--nuxt-green"><b>INFO:</b> If you use a custom domain for your GitHub Pages and put `CNAME` file, it is recommended that CNAME file is put in the `static` directory. [More documentation](/guide/assets#static) about it.</p>
