@@ -35,7 +35,7 @@ Chinese translation is maintained by AOTU Labs from China, Shenzhen.
 
 Japanese translation is maintained by INOUE Takuya.
 
-* Translation Repo — [/inouetakuya/ja.docs.nuxtjs](https://github.com/inouetakuya/ja.docs.nuxtjs)
+* Translation Repo — [/inouetakuya/jp.docs.nuxtjs](https://github.com/inouetakuya/jp.docs.nuxtjs)
 * Primary maintainer - [INOUE Takuya](http://blog.inouetakuya.info/)
 * Primary translator - [INOUE Takuya](https://github.com/inouetakuya)
 
