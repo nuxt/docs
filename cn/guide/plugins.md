@@ -11,7 +11,7 @@ description: 你可以配置需要在 `根vue.js应用` 实例化之前需要运
 
 我们可以在应用中使用第三方模块，一个典型的例子是在客户端和服务端使用 [axios](https://github.com/mzabriskie/axios) 做 HTTP 请求。
 
-首先我们需要安装 NPM 包：
+首先我们需要安装 npm 包：
 
 ```bash
 npm install --save axios

@@ -27,7 +27,7 @@
       { "name": "How to deploy on Heroku?", "to": "/heroku-deployment" },
       { "name": "How to deploy with Now.sh?", "to": "/now-deployment" },
       { "name": "How to deploy with Surge.sh?", "to": "/surge-deployment" },
-      { "name": "How to deploy on Github?", "to": "/github-pages" }
+      { "name": "How to deploy on GitHub?", "to": "/github-pages" }
     ]
   }
 ]

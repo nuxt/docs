@@ -144,9 +144,9 @@ Nuxt.js ではメインレイアウトを拡張したり、カスタムレイア
 
 このレイアウトはテンプレート内に `<nuxt/>` を含まないという意味で特殊です。このレイアウトは 404 や 500 エラーなどが発生したときに表示されるコンポーネントとして見ることになります。
 
-<!-- The default error page source code is [available on Github](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue). -->
+<!-- The default error page source code is [available on GitHub](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue). -->
 
-デフォルトのエラーページのソースコードは [Github](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue) で確認できます。
+デフォルトのエラーページのソースコードは [GitHub](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue) で確認できます。
 
 <!-- Example of a custom error page in `layouts/error.vue`: -->
 

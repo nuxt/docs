@@ -13,9 +13,9 @@ description: 欢迎为 Nuxt.js 做出开源贡献！
 ## Pull Requests
 
 欢迎大家提 PR（ `源码拉取请求` ），即便是修复一个拼写错误。
-任何重要的问题修复或特性开发，在开始编码之前请先提 [Github issue](https://github.com/nuxt/nuxt.js/issues)，以便大家知悉，避免重复的功能开发或问题修复。
+任何重要的问题修复或特性开发，在开始编码之前请先提 [GitHub issue](https://github.com/nuxt/nuxt.js/issues)，以便大家知悉，避免重复的功能开发或问题修复。
 
 ### 惯例
 
-- 问题修复，分支命名为 `fix-XXX`，其中的 `XXX` 对应问题在 [Github issue](https://github.com/nuxt/nuxt.js/issues) 中的编号或名称。
-- 特性开发，分支命名为 `feature-XXX`，其中的 `XXX` 对应特性在 [Github issue](https://github.com/nuxt/nuxt.js/issues) 中的编号或名称。
+- 问题修复，分支命名为 `fix-XXX`，其中的 `XXX` 对应问题在 [GitHub issue](https://github.com/nuxt/nuxt.js/issues) 中的编号或名称。
+- 特性开发，分支命名为 `feature-XXX`，其中的 `XXX` 对应特性在 [GitHub issue](https://github.com/nuxt/nuxt.js/issues) 中的编号或名称。
