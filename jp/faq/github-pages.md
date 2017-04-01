@@ -1,30 +1,30 @@
 ---
-title: Github Pages へデプロイ
-description: Github Pages へデプロイするには？
+title: GitHub Pages へデプロイ
+description: GitHub Pages へデプロイするには？
 ---
 
-<!-- title: Github Pages Deployment -->
-<!-- description: How to deploy Nuxt.js on Github Pages? -->
+<!-- title: GitHub Pages Deployment -->
+<!-- description: How to deploy Nuxt.js on GitHub Pages? -->
 
-<!-- # How to deploy on Github Pages? -->
+<!-- # How to deploy on GitHub Pages? -->
 
-# Github Pages へデプロイするには？
+# GitHub Pages へデプロイするには？
 
-<!-- Nuxt.js gives you the possibility to host your web application on any static hosting like [Github Pages](https://pages.github.com/) for example. -->
+<!-- Nuxt.js gives you the possibility to host your web application on any static hosting like [GitHub Pages](https://pages.github.com/) for example. -->
 
-Nuxt.js を使うと、例えば [Github Pages](https://pages.github.com/) のような静的ホスティングサービスで、ウェブアプリケーションをホストすることが可能です。
+Nuxt.js を使うと、例えば [GitHub Pages](https://pages.github.com/) のような静的ホスティングサービスで、ウェブアプリケーションをホストすることが可能です。
 
-<!-- To deploy on Github Pages, you need to generate your static web application: -->
+<!-- To deploy on GitHub Pages, you need to generate your static web application: -->
 
-Github Pages へデプロイするには、静的なウェブアプリケーションを生成する必要があります:
+GitHub Pages へデプロイするには、静的なウェブアプリケーションを生成する必要があります:
 
 ```bash
 npm run generate
 ```
 
-<!-- It will create a `dist` folder with everything inside ready to be deployed on Github Pages hosting. -->
+<!-- It will create a `dist` folder with everything inside ready to be deployed on GitHub Pages hosting. -->
 
-このとき dist フォルダが作成され、その中に Github Pages ホスティングへデプロイされるものがすべて入ります。
+このとき dist フォルダが作成され、その中に GitHub Pages ホスティングへデプロイされるものがすべて入ります。
 
 <!-- Branch `gh-pages` for project repository OR branch `master` for user or organization site -->
 

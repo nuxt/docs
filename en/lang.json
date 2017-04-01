@@ -10,7 +10,7 @@
     "ecosystem": "Ecosystem",
     "faq": "FAQ",
     "get_started": "get started",
-    "github": "Github",
+    "github": "GitHub",
     "guide": "Guide",
     "homepage": "Home page",
     "live_demo": "Live Demo",
@@ -42,7 +42,7 @@
   "guide": {
     "release_notes": "Release Notes",
     "contribute": "Caught a mistake or want to contribute to the documentation?",
-    "edit_on_github": "Edit this page on Github!"
+    "edit_on_github": "Edit this page on GitHub!"
   },
   "examples": {
     "source_code": "Source Code"

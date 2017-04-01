@@ -87,7 +87,7 @@ Will generate:
 
 This way, you can host your generated web application on any static hosting!
 
-The best example is this website. It is generated and hosted on Github Pages:
+The best example is this website. It is generated and hosted on GitHub Pages:
 - [Source code](https://github.com/nuxt/nuxtjs.org)
 - [Generated code](https://github.com/nuxt/nuxtjs.org/tree/gh-pages)
 

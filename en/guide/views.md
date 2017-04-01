@@ -65,7 +65,7 @@ You can customize the error page by adding a `layouts/error.vue` file.
 
 This layout is special since you should not include `<nuxt/>` inside its template. You must see this layout as a component displayed when an error occurs (404, 500, etc).
 
-The default error page source code is [available on Github](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
+The default error page source code is [available on GitHub](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
 
 Example of a custom error page in `layouts/error.vue`:
 ```html

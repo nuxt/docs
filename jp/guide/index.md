@@ -155,7 +155,7 @@ Nuxt.js による大きなイノベーションがやってきました。それ
 
 このやり方により、静的ファイルをホスティングするサービスであっても、生成されたウェブアプリケーションをホストできます。
 
-<!-- The best example is this website. It is generated and hosted on Github Pages: -->
+<!-- The best example is this website. It is generated and hosted on GitHub Pages: -->
 
 最も良い例はこのウェブサイト自体です。このサイトは生成され GitHub Pages でホストされています:
 

@@ -1,19 +1,19 @@
 ---
-title: Github Pages Deployment
-description: How to deploy Nuxt.js on Github Pages?
+title: GitHub Pages Deployment
+description: How to deploy Nuxt.js on GitHub Pages?
 ---
 
-# How to deploy on Github Pages?
+# How to deploy on GitHub Pages?
 
-Nuxt.js gives you the possibility to host your web application on any static hosting like [Github Pages](https://pages.github.com/) for example.
+Nuxt.js gives you the possibility to host your web application on any static hosting like [GitHub Pages](https://pages.github.com/) for example.
 
-To deploy on Github Pages, you need to generate your static web application:
+To deploy on GitHub Pages, you need to generate your static web application:
 
 ```bash
 npm run generate
 ```
 
-It will create a `dist` folder with everything inside ready to be deployed on Github Pages hosting.
+It will create a `dist` folder with everything inside ready to be deployed on GitHub Pages hosting.
 Branch `gh-pages` for project repository OR branch `master` for user or organization site
 
 ## Command line deployment

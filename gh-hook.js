@@ -9,7 +9,7 @@ const { resolve } = require('path')
 const json = micro.json
 const send = micro.send
 
-// Refresh documentation files (pull from Github)
+// Refresh documentation files (pull from GitHub)
 module.exports = async function ({ req, res }, getFiles) {
   const body = await json(req)
   // Only for production
