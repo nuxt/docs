@@ -85,7 +85,7 @@ If you don't want to use Webpacked Assets from the `assets` directory, you can c
 
 These files will be automatically serve by Nuxt and accessible in your project root URL.
 
-This option is helpful for files like `robots.txt` or `sitemap.xml`.
+This option is helpful for files like `robots.txt`, `sitemap.xml` or `CNAME` (for like GitHub Pages).
 
 From your code you can then reference those files with `/` URLs:
 
