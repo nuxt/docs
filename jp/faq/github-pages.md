@@ -30,6 +30,10 @@ npm run generate
 
 プロジェクトリポジトリならば `gh-pages` ブランチ、ユーザーまたは組織サイトならば `master` ブランチを指定してください。
 
+<!-- <p class="Alert Alert--nuxt-green"><b>INFO:</b> If you use a custom domain for your GitHub Pages and put `CNAME` file, it is recommended that CNAME file is put in the `static` directory. [More documentation](/guide/assets#static) about it.</p> -->
+
+<p class="Alert Alert--nuxt-green"><b>情報:</b> もし GitHub Pages で独自ドメインを使い `CNAME` ファイルを置くのであれば、`CNAME` ファイルは `static` ディレクトリに置くことが推奨されています。詳細は [こちら](/guide/assets#webpack-で扱わない静的ファイル) を参照してください。</p>
+
 <!-- ## Command line deployment -->
 
 ## コマンドラインでデプロイする
