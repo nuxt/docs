@@ -128,9 +128,9 @@ Webpack で扱う対象となる `assets` ディレクトリを使いたくな�
 
 これらのファイルは自動的に Nuxt.js により配信され、またプロジェクトのルート URL からアクセス可能になります。
 
-<!-- This option is helpful for files like `robots.txt` or `sitemap.xml`. -->
+<!-- This option is helpful for files like `robots.txt`, `sitemap.xml` or `CNAME` (for like GitHub Pages). -->
 
-このオプションは `robots.txt` や `sitemap.xml` などのファイルの扱いに役立ちます。
+このオプションは `robots.txt` や `sitemap.xml`、`CNAME`（GitHub Pages などで使う）などのファイルの扱いに役立ちます。
 
 <!-- From your code you can then reference those files with `/` URLs: -->
 
