@@ -10,7 +10,7 @@ description: Nuxt.js lets you define a validator method inside your dynamic rout
 - **Type:** `Function`
 
 ```js
-validate({ params, query }) {
+validate({ params, query, store }) {
   return true // if the params are valid
   return false // will stop Nuxt.js to render the route and display the error page
 }
@@ -26,5 +26,18 @@ export default {
     // Must be a number
     return /^\d+$/.test(params.id)
   }
+}
+```
+
+Sometimes you need to compare data from store, it's easy!
+
+```js
+export default {
+  validate ({ params, store }) {
+  let res = store.state.category.find( category =>  {
+               return category.name == params.id;
+            });
+            // if the store will not be found category Nuxt return 404
+            return res !== undefined;
 }
 ```
