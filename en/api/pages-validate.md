@@ -29,15 +29,13 @@ export default {
 }
 ```
 
-Sometimes you need to compare data from store, it's easy!
+You can also check some data in your [store](/guide/vuex-store) for example (filled by [nuxtServerInit action](/guide/vuex-store#the-nuxtserverinit-action) before):
 
 ```js
 export default {
   validate ({ params, store }) {
-  let res = store.state.category.find( category =>  {
-               return category.name == params.id;
-            });
-            // if the store will not be found category Nuxt return 404
-            return res !== undefined;
+    // Check if `params.id` is an existing category
+    return store.state.categories.some((category) => category.id === params.id)
+  }
 }
 ```
