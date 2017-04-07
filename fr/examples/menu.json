@@ -1,0 +1,33 @@
+[
+  {
+    "title": "Essentiels",
+    "links": [
+      { "name": "Hello world", "to": "" },
+      { "name": "SEO HTML Head", "to": "/seo-html-head" }
+    ]
+  },
+  {
+    "title": "Personnalisation",
+    "links": [
+      { "name": "Composants en cache", "to": "/cached-components" },
+      { "name": "Composant de chargement personalisé", "to": "/custom-loading" },
+      { "name": "Routes personalisées", "to": "/custom-routes" },
+      { "name": "CSS Global", "to": "/global-css" },
+      { "name": "Mise en page (layouts)", "to": "/layouts" },
+      { "name": "Middleware", "to": "/middleware" },
+      { "name": "Routes imbriquées", "to": "/nested-routes" },
+      { "name": "Plugins", "to": "/plugins" },
+      { "name": "Routes transitions", "to": "/routes-transitions" }
+    ]
+  },
+  {
+    "title": "Avancé",
+    "links": [
+      { "name": "Données asynchrones", "to": "/async-data" },
+      { "name": "Auth Routes", "to": "/auth-routes" },
+      { "name": "Vuex Store", "to": "/vuex-store" },
+      { "name": "i18n", "to": "/i18n" },
+      { "name": "Test", "to": "/testing" }
+    ]
+  }
+]
