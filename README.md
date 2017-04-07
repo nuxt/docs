@@ -45,7 +45,7 @@ French translation is maintained by Julien Grünhagel/@rspt for [laruche](https:
 
 * Translation Repo — [/larucheio/fr.docs.nuxtjs](https://github.com/larucheio/fr.docs.nuxtjs)
 * Primary maintainer - [laruche](https://laruche.io/)
-* Primary translator - [laruche](https://laruche.io/)
+* Primary translator - [Julien Grünhagel](https://rspt.io/)
 
 ### Want to help with the translation?
 
