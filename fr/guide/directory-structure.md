@@ -39,13 +39,13 @@ Le répertoire `pages` contient vos vues (*Views*) et vos routes (*Routes*). Le 
 
 [Plus de documentation à propos des Pages](/guide/views)
 
-### The Plugins Directory
+### Le répertoire Plugins
 
 Le répertoire `plugins` contient vos plugins Javascript que vous désirez exécuter avant d'instancier la racine de l'application vue.js.
 
 [Plus de documentation à propos des Plugins](/guide/plugins)
 
-### The Static Directory
+### Le répertoire Static
 
 Le répertoire `static` contient vos fichiers statiques. Chaque fichier au sein de ce répertoire est mappé vers /.
 
@@ -55,7 +55,7 @@ Le répertoire `static` contient vos fichiers statiques. Chaque fichier au sein 
 
 [Plus de documentation à propos des fichiers statiques](/guide/assets#static)
 
-### The Store Directory
+### Le répertoire Store
 
 Le répertoire `store` contient vos fichiers [Vuex Store](http://vuex.vuejs.org). Vuex Store est implémenté de manière optionnelle dans le framework Nuxt.js. La création d'un fichier `index.js` dans ce répertoire active automatiquement l'option dans le framework.
 
@@ -63,7 +63,7 @@ Le répertoire `store` contient vos fichiers [Vuex Store](http://vuex.vuejs.org)
 
 [Plus de documentation à propos des Store](/guide/vuex-store)
 
-### The nuxt.config.js File
+### Le fichier nuxt.config.js
 
 Le fichier `nuxt.config.js` contient vos configurations personnalisées concernant Nuxt.js.
 
@@ -71,7 +71,7 @@ Le fichier `nuxt.config.js` contient vos configurations personnalisées concerna
 
 [Plus de documentation à propos de nuxt.config.js](/guide/configuration)
 
-### The package.json File
+### Le fichier package.json
 
 Le fichier `package.json` contient les dépendances et scripts de votre application.
 
