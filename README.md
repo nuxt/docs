@@ -39,6 +39,14 @@ Japanese translation is maintained by INOUE Takuya.
 * Primary maintainer - [INOUE Takuya](http://blog.inouetakuya.info/)
 * Primary translator - [INOUE Takuya](https://github.com/inouetakuya)
 
+### French
+
+French translation is maintained by Julien Grünhagel/@rspt for [laruche](https://laruche.io).
+
+* Translation Repo — [/larucheio/fr.docs.nuxtjs](https://github.com/larucheio/fr.docs.nuxtjs)
+* Primary maintainer - [laruche](https://laruche.io/)
+* Primary translator - [laruche](https://laruche.io/)
+
 ### Want to help with the translation?
 
 If you feel okay with translating sorta alone, just fork the repo, create a "work-in-progress" pull request (mark it with [WIP], see [Russian translation](https://github.com/nuxt/docs/pull/3) if you need an example) — and just go on.
