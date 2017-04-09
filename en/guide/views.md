@@ -50,7 +50,7 @@ Nuxt.js lets you extend the main layout or create custom layouts by adding them 
 
 You can extend the main layout by adding a `layouts/default.vue` file.
 
-*Make sure to add the `<nuxt>` component when creating a layout to display the page component.*
+*Make sure to add the `<nuxt/>` component when creating a layout to display the page component.*
 
 The default layout source code is:
 ```html
