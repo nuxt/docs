@@ -8,6 +8,7 @@ description: How to use Google Analytics?
 To use [Google Analytics](https://analytics.google.com/analytics/web/) with your nuxt.js application, we recommend to create a file `plugins/ga.js`:
 
 ```js
+/* eslint-disable */
 import router from '~router'
 /*
 ** Only run on client-side and only in production mode
