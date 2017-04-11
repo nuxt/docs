@@ -18,11 +18,40 @@ description: 配置 Nuxt.js 应用生成静态站点的具体方式。
 
 `nuxt generate` 生成的目录名称。
 
-## routeParams
+## minify
+ 
+- 类型: `Object`
+- 默认值:
 
-- 类型： `Object`
-  - 键类型： `String` (路由路径)
-  - 值类型： `Array` 或 `Function`
+```js
+minify: {
+  collapseBooleanAttributes: true,
+  collapseWhitespace: true,
+  decodeEntities: true,
+  minifyCSS: true,
+  minifyJS: true,
+  processConditionalComments: true,
+  removeAttributeQuotes: false,
+  removeComments: false,
+  removeEmptyAttributes: true,
+  removeOptionalTags: true,
+  removeRedundantAttributes: true,
+  removeScriptTypeAttributes: false,
+  removeStyleLinkTypeAttributes: false,
+  removeTagWhitespace: false,
+  sortAttributes: true,
+  sortClassName: true,
+  trimCustomFragments: true,
+  useShortDoctype: true
+}
+```
+你可以修改 nuxt.js generate 所使用的 [html-minifier](https://github.com/kangax/html-minifier) 预设配置来建立最小化 html 档案。
+
+
+## routes
+
+- 类型： `Array`
+
 
 当使用 [动态路由](/guide/routing#动态路由) 时，你需要为每个动态的路由定义至少一个对应的参数映射。
 
@@ -35,25 +64,19 @@ description: 配置 Nuxt.js 应用生成静态站点的具体方式。
 -----| _id.vue
 ```
 
-Nuxt.js 会依据以上目录结构生成的路由为： `/` 和 `/users/:id`。
+Nuxt.js 仅生成 `/` 路由。
 
-如果你尝试运行 `nuxt generate`， 终端控制台会抛出以下错误异常：
+如果你希望 nuxt.js 使用动态参数产生动态路由，你需要给予一组路由组合的文字阵列。
 
-```bash
-Could not generate the dynamic route /users/:id, please add the mapping params in nuxt.config.js (generate.routeParams).
-```
-
-这时候我们可以在 `nuxt.config.js` 中为 `/users/:id` 路由配置参数的值：
+我们增加 routes 的设定 `/users/:id` 在 `nuxt.config.js`档案中:
 ```js
 module.exports = {
   generate: {
-    routeParams: {
-      '/users/:id': [
-        { id: 1 },
-        { id: 2 },
-        { id: 3 }
-      ]
-    }
+    routes: [
+      '/users/1',
+      '/users/2',
+      '/users/3'
+    ]
   }
 }
 ```
@@ -86,15 +109,13 @@ import axios from 'axios'
 
 module.exports = {
   generate: {
-    routeParams: {
-      '/users/:id': function () {
-        return axios.get('https://my-api/users')
-        .then((res) => {
-          return res.data.map((user) => {
-            return { id: user.id }
-          })
-        })
-      }
+    routes: function () {
+      return axios.get('https://my-api/users')
+      .then((res) => {
+        return res.data.map((user) => {
+          return '/users/' + user.id
+        }
+      })
     }
   }
 }
@@ -104,21 +125,19 @@ module.exports = {
 
 `nuxt.config.js`：
 ```js
-import axios from 'axios'
+const axios = require('axios')
 
 module.exports = {
   generate: {
-    routeParams: {
-      '/users/:id': function (callback) {
-        axios.get('https://my-api/users')
-        .then((res) => {
-          var params = res.data.map((user) => {
-            return { id: user.id }
-          })
-          callback(null, params)
+    routes: function (callback) {
+      axios.get('https://my-api/users')
+      .then((res) => {
+        var routes = res.data.map((user) => {
+          return '/users/' + user.id
         })
-        .catch(callback)
-      }
+        callback(null, routes)
+      })
+      .catch(callback)
     }
   }
 }
