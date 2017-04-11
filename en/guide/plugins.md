@@ -11,7 +11,7 @@ description: Nuxt.js allows you to define js plugins to be ran before instantiat
 
 We may want to use external packages/modules in our application, one great example is [axios](https://github.com/mzabriskie/axios) for making HTTP request for both server and client.
 
-We install it via NPM:
+We install it via npm:
 
 ```bash
 npm install --save axios
@@ -83,16 +83,25 @@ module.exports = {
 
 ## Client-side only
 
-Some plugins might work **only for the browser**, you can use the `process.BROWSER_BUILD` variable to check if the plugin will run from the client-side.
+Some plugins might work **only for the browser**, you can use the `ssr: false` option in `plugins` to run the file only on the client-side.
 
 Example:
+
+`nuxt.config.js`:
+```js
+module.exports = {
+  plugins: [
+    { src: '~plugins/vue-notifications', ssr: false }
+  ]
+}
+```
+
+`plugins/vue-notifications.js`:
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
 
-if (process.BROWSER_BUILD) {
-  Vue.use(VueNotifications)
-}
+Vue.use(VueNotifications)
 ```
 
-In case you need to require some libraries only for the server, you can use the `process.SERVER_BUILD` variable set to `true` when webpack is creating the `server.bundle.js` file.
+In case you need to require some libraries only for the server, you can use the `process.server` variable set to `true` when webpack is creating the `server.bundle.js` file.

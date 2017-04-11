@@ -25,7 +25,7 @@ module.exports = data: ->
 </style>
 ```
 
-记得安装这些预处理器对应的 NPM 依赖包和 Webpack 加载器:
+记得安装这些预处理器对应的 npm 依赖包和 Webpack 加载器:
 
 ```bash
 npm install --save-dev pug@2.0.0-beta6 pug-loader coffee-script coffee-loader node-sass sass-loader

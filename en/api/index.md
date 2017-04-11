@@ -1,20 +1,26 @@
 ---
-title: "API: The data Method"
-description: Nuxt.js supercharges the data method from vue.js to let you handle async operation before setting the component data.
+title: "API: The asyncData Method"
+description: You may want to fetch data and render it on the server-side. Nuxt.js add an `asyncData` method let you handle async operation before setting the component data.
 ---
 
-# The data Method
+# The asyncData Method
 
-> Nuxt.js *supercharges* the `data` method from vue.js to let you handle async operation before setting the component data.
+> You may want to fetch data and render it on the server-side.
+Nuxt.js add an `asyncData` method let you handle async operation before setting the component data.
 
 - **Type:** `Function`
 
-`data` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives the **context** as the first argument, you can use it to fetch some data and return the component data.
+`asyncData` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives the **context** (object) as the first argument, you can use it to fetch some data and return the component data.
+
+The result from asyncData will be **merged** with data.
 
 ```js
 export default {
-  data (context) {
-    return { foo: 'bar' }
+  data () {
+    return { project: 'default' }
+  },
+  asyncData (context) {
+    return { project: 'nuxt' }
   }
 }
 ```

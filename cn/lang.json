@@ -10,7 +10,7 @@
     "ecosystem": "更多",
     "faq": "常见问题",
     "get_started": "开始使用",
-    "github": "Github",
+    "github": "GitHub",
     "guide": "教程",
     "homepage": "首页",
     "live_demo": "在线示例",
@@ -42,7 +42,7 @@
   "guide": {
     "release_notes": "版本信息",
     "contribute": "如何提交问题或文档贡献？",
-    "edit_on_github": "在 Github 编辑此页面！"
+    "edit_on_github": "在 GitHub 编辑此页面！"
   },
   "examples": {
     "source_code": "源码"

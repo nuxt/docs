@@ -27,7 +27,7 @@
       { "name": "如何在 Heroku 上部署？", "to": "/heroku-deployment" },
       { "name": "如何使用 Now.sh 部署？", "to": "/now-deployment" },
       { "name": "如何使用 Surge.sh 部署？", "to": "/surge-deployment" },
-      { "name": "如何部署至 Github Pages？", "to": "/github-pages" }
+      { "name": "如何部署至 GitHub Pages？", "to": "/github-pages" }
     ]
   }
 ]

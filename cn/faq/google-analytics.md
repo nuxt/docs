@@ -3,7 +3,7 @@ title: 如何集成 Google 统计分析服务？
 description: 如何集成 Google 统计分析服务？
 ---
 
-## 如何集成 Google 统计分析服务？
+# 如何集成 Google 统计分析服务？
 
 在 Nuxt.js 应用中使用 [Google 统计分析服务](https://analytics.google.com/analytics/web/) ，推荐在 `plugins` 目录下创建 `plugins/ga.js` 文件：
 

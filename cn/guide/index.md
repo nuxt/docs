@@ -89,7 +89,7 @@ Nuxt.js 集成了以下组件/框架，用于开发完整而强大的 Web 应用
 
 静态化可以让你在任何一个静态站点服务商托管你的Web应用。
 
-Nuxt.js 的官网就是一个绝佳的例子, 它静态化后托管于Github Pages：
+Nuxt.js 的官网就是一个绝佳的例子, 它静态化后托管于GitHub Pages：
 - [源码](https://github.com/nuxt/nuxtjs.org)
 - [静态化后的文件](https://github.com/nuxt/nuxtjs.org/tree/gh-pages)
 

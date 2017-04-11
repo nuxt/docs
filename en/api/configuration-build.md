@@ -29,7 +29,7 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**INFO:** You can use the command `nuxt build --analyzer` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)</p>
+<p class="Alert Alert--teal">**INFO:** You can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)</p>
 
 ## babel
 
@@ -40,14 +40,7 @@ module.exports = {
 Default:
 ```js
 {
-  plugins: [
-    'transform-async-to-generator',
-    'transform-runtime'
-  ],
-  presets: [
-    ['es2015', { modules: false }],
-    'stage-2'
-  ]
+  presets: ['vue-app']
 }
 ```
 
@@ -97,9 +90,8 @@ If you want to see more about our default webpack configuration, take a look at 
 Default:
 ```js
 {
-  css: 'style.css',
-  vendor: 'vendor.bundle.js',
-  app: 'nuxt.bundle.js'
+  vendor: 'vendor.bundle.[hash].js',
+  app: 'nuxt.bundle.[chunkhash].js'
 }
 ```
 
@@ -108,9 +100,8 @@ Example (`nuxt.config.js`):
 module.exports = {
   build: {
     filenames: {
-      css: 'app.css',
-      vendor: 'vendor.js',
-      app: 'app.js'
+      vendor: 'vendor.[hash].js',
+      app: 'app.[chunkhash].js'
     }
   }
 }
@@ -121,7 +112,7 @@ module.exports = {
 - Type: `Array`
   - Items: `Object`
 
-> Cusomize webpack loaders
+> Customize webpack loaders
 
 Default:
 ```js
@@ -189,7 +180,7 @@ module.exports = {
 
 ## postcss
 
-- **Type:** `Array`
+- Type: `Array`
 
 > Customize [postcss](https://github.com/postcss/postcss) options
 
@@ -218,12 +209,31 @@ module.exports = {
 }
 ```
 
+## publicPath
+
+- Type: `String`
+- Default: `'/_nuxt/'`
+
+> Nuxt.js lets you upload your dist files to your CDN for maximum performances, simply set the `publicPath` to your CDN.
+
+Example (`nuxt.config.js`):
+
+```js
+module.exports = {
+  build: {
+    publicPath: 'https://cdn.nuxtjs.org'
+  }
+}
+```
+
+Then, when launching `nuxt build`, upload the content of `.nuxt/dist/` directory to your CDN and voilà!
+
 ## vendor
 
 > Nuxt.js lets you add modules inside the `vendor.bundle.js` file generated to reduce the size of the app bundle. It's really useful when using external modules (like `axios` for example)
 
-- **Type:** `Array`
- - **Items:** `String`
+- Type: `Array`
+ - Items: `String`
 
 To add a module/file inside the vendor bundle, add the `build.vendor` key inside `nuxt.config.js`:
 

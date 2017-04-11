@@ -23,6 +23,16 @@ __package.json__
 // ...
 "scripts": {
   "test": "ava",
+   "ava": {
+     "require": [
+       "babel-register"
+     ]
+   },
+   "babel": {
+     "presets": [
+       "es2015"
+     ]
+   }  
 }
 // ...
 ```

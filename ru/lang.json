@@ -10,7 +10,7 @@
     "ecosystem": "Экосистема",
     "faq": "ЧАВО",
     "get_started": "начало работы",
-    "github": "Github",
+    "github": "GitHub",
     "guide": "Руководство",
     "homepage": "Главная",
     "live_demo": "Живое демо",
@@ -42,7 +42,7 @@
   "guide": {
     "release_notes": "Замечания о релизе",
     "contribute": "Обнаружили ошибку или хотите внести свой вклад в документацию?",
-    "edit_on_github": "Отредактировать эту страницу на Github!"
+    "edit_on_github": "Отредактировать эту страницу на GitHub!"
   },
   "examples": {
     "source_code": "Исходный код"

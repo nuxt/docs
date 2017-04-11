@@ -27,6 +27,24 @@ module.exports = {
 
 > This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
 
+## mode
+
+- Type: `String`
+- Default: `'history'`
+
+Configure the router mode, this is not recommended to change it due to server-side rendering.
+
+Example (`nuxt.config.js`):
+```js
+module.exports = {
+  router: {
+    mode: 'hash'
+  }
+}
+```
+
+> This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
+
 ## linkActiveClass
 
 - Type: `String`
@@ -131,11 +149,9 @@ Example of adding a custom route:
 
 `nuxt.config.js`
 ```js
-const resolve = require('path').resolve
-
 module.exports = {
   router: {
-    extendRoutes (routes) {
+    extendRoutes (routes, resolve) {
       routes.push({
         name: 'custom',
         path: '*',

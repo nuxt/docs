@@ -32,7 +32,7 @@ Nuxt.js includes the following to create a rich web application development:
 
 A total of only **28kb min+gzip** (31kb with vuex).
 
-Under the hood we use [Webpack](https://github.com/webpack/webpack) with [vue-Loader](https://github.com/vuejs/vue-loader) and [babel-loader](https://github.com/babel/babel-loader) to bundle, code-split and minify your code.
+Under the hood we use [Webpack](https://github.com/webpack/webpack) with [vue-loader](https://github.com/vuejs/vue-loader) and [babel-loader](https://github.com/babel/babel-loader) to bundle, code-split and minify your code.
 
 ## Features
 
@@ -87,7 +87,7 @@ Will generate:
 
 This way, you can host your generated web application on any static hosting!
 
-The best example is this website. It is generated and hosted on Github Pages:
+The best example is this website. It is generated and hosted on GitHub Pages:
 - [Source code](https://github.com/nuxt/nuxtjs.org)
 - [Generated code](https://github.com/nuxt/nuxtjs.org/tree/gh-pages)
 

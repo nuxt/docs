@@ -6,7 +6,12 @@ description: Use vue.js plugins with the plugins option of nuxt.js.
 # The plugins Property
 
 - Type: `Array`
-  - Items: `String`
+  - Items: `String` or `Object`
+
+If the item is an object, the properties are:
+  - src: `String` (path of the file)
+  - ssr: `Boolean` (default to `true`) *If false, the file will be included only on the client-side.*
+
 
 > The plugins property lets you add vue.js plugins easily to your main application.
 

@@ -60,7 +60,7 @@ The project needs a `package.json` file to specify how to start `nuxt`:
 
 ### Installing `nuxt`
 
-Once the `package.json` has been created, add `nuxt` to the project via NPM:
+Once the `package.json` has been created, add `nuxt` to the project via npm:
 ```bash
 npm install --save nuxt
 ```

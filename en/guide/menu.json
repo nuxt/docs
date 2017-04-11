@@ -49,15 +49,16 @@
       {
         "to": "/views", "name": "Views",
         "contents": [
-          { "to": "#pages", "name": "Pages" },
+          { "to": "#document", "name": "Document" },
           { "to": "#layouts", "name": "Layouts" },
+          { "to": "#pages", "name": "Pages" },
           { "to": "#html-head", "name": "HTML Head" }
         ]
       },
       {
         "to": "/async-data", "name": "Async Data",
         "contents": [
-          { "to": "#the-data-method", "name": "The data Method" },
+          { "to": "#the-data-method", "name": "The asyncData Method" },
           { "to": "#the-context", "name": "The Context" },
           { "to": "#handling-errors", "name": "Handling Errors" }
         ]
@@ -91,7 +92,7 @@
         "to": "/commands", "name": "Commands",
         "contents": [
           { "to": "#list-of-commands", "name": "List of Commands" },
-          { "to": "#development-environment", "name": "Developemnt Enviroment" },
+          { "to": "#development-environment", "name": "Development Enviroment" },
           { "to": "#production-deployment", "name": "Production Deployment" }
         ]
       },

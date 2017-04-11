@@ -111,7 +111,7 @@ More information about the validate method: [API Pages validate](/api/pages-vali
 
 Nuxt.js lets you create nested route by using the children routes of vue-router.
 
-To define a nested route, you need to create a Vue file with the **same name as the directory** which contain your children views.
+To define the parent component of a nested route, you need to create a Vue file with the **same name as the directory** which contain your children views.
 
 <p class="Alert Alert--info">Don't forget to write `<nuxt-child/>` inside the parent component (.vue file).</p>
 
@@ -269,7 +269,7 @@ More information about the transition property: [API Pages transition](/api/page
 
 **Every middleware should be placed in the `middleware/` directory.** The filename will be the name of the middleware (`middleware/auth.js` will be the `auth` middleware).
 
-A middleware receive [the context](/api#the-context) as first argument:
+A middleware receive [the context](/api#context) as first argument:
 
 ```js
 export default function (context) {

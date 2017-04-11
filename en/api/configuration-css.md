@@ -7,12 +7,12 @@ description: Nuxt.js lets you define the CSS files/modules/libraries you want to
 
 > Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every pages).
 
-- **Type:** `Array`
- - **Items:** `String` or `Object`
+- Type: `Array`
+ - Items: `String` or `Object`
 
 If the item is an object, the properties are:
 - src: `String` (path of the file)
-- lang: `String` ([pre-processor used](/guide/pages#using-pre-processors))
+- lang: `String` ([pre-processor used](/faq/pre-processors))
 
 In `nuxt.config.js`, add the CSS resources:
 
@@ -24,9 +24,9 @@ module.exports = {
     // node.js module but we specify the pre-processor
     { src: 'bulma', lang: 'sass' },
     // Css file in the project
-    '~assets/css/main.css'
+    '~assets/css/main.css',
+    // Sass file in the project
+    { src: '~assets/css/main.scss', lang: 'scss' } // scss instead of sass
   ]
 }
 ```
-
-<p class="Alert">**In production**, all CSS will be minified and extracted in a file named `styles.css` and added in the `<head>` of the page.</p>
