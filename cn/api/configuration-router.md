@@ -27,6 +27,25 @@ module.exports = {
 
 > 该配置项的值会被直接传给 vue-router 的[构造器](https://router.vuejs.org/zh-cn/api/options.html)。
 
+## mode
+
+- 类型： `String`
+- 默认值： `'history'`
+
+配置路由模式，如有使用 server-side rendering 不建议修改配置。
+
+Example (`nuxt.config.js`):
+```js
+module.exports = {
+  router: {
+    mode: 'hash'
+  }
+}
+```
+
+> This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
+
+
 ## linkActiveClass
 
 - 类型： `String`
@@ -131,11 +150,10 @@ export default function (context) {
 
 `nuxt.config.js`：
 ```js
-const resolve = require('path').resolve
 
 module.exports = {
   router: {
-    extendRoutes (routes) {
+    extendRoutes (routes, resolve) {
       routes.push({
         name: 'custom',
         path: '*',
