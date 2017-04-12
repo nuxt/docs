@@ -49,6 +49,7 @@
       {
         "to": "/views", "name": "视 图",
         "contents": [
+          { "to": "#模板", "name": "模 板" },
           { "to": "#页面", "name": "页 面" },
           { "to": "#布局", "name": "布 局" },
           { "to": "#html-头部", "name": "HTML 头部" }
@@ -57,7 +58,7 @@
       {
         "to": "/async-data", "name": "异步数据",
         "contents": [
-          { "to": "#data-方法", "name": "data 方法" },
+          { "to": "#asyncdata-方法", "name": "asyncData 方法" },
           { "to": "#上下文对象", "name": "上下文对象" },
           { "to": "#错误处理", "name": "错误处理" }
         ]

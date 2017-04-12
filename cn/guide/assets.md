@@ -1,15 +1,15 @@
 ---
 title: 资源文件
-description: 默认情况下 Nuxt 使用 vue-loader、file-loader 以及 url-loader 这三个Webpack加载器来处理文件的加载和引用。
+description: 默认情况下 Nuxt 使用 vue-loader、file-loader 以及 url-loader 这几个 Webpack 加载器来处理文件的加载和引用。
 ---
+
+> 默认情况下 Nuxt 使用 vue-loader、file-loader 以及 url-loader 这几个 Webpack 加载器来处理文件的加载和引用。对于不需要通过 Webpack 处理的静态资源文件，可以放置在 `static` 目录中。
 
 ## Webpack 构建
 
-> Nuxt 默认使用file-loader 以及 url-loader 这两个Webpack加载器来处理资源文件的加载和引用。
-
 默认情况下, [vue-loader](http://vue-loader.vuejs.org/en/)自动使用 `css-loader` 和Vue模板编译器来编译处理vue文件中的样式和模板。在此编译过程中，所有的资源URL例如 `<img src="...">`、 `background: url(...)` 和 CSS中的 `@import` 均会被解析成模块通过 `require` 引用。
 
-举个栗子, 假设我们有以下文件目录结构：
+举个例子, 假设我们有以下文件目录结构：
 
 ```bash
 -| assets/

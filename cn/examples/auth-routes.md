@@ -78,10 +78,12 @@ promise.then(() => {
 "scripts": {
   "dev": "node server.js",
   "build": "nuxt build",
-  "start": "NODE_ENV=production node server.js"
+  "start": "cross-env NODE_ENV=production node server.js"
 }
 // ...
 ```
+
+注意： 要使上面的例子要正常运行，你需要运行 `npm install --save-dev cross-env` 安装 `cross-env`。当然如果你的开发环境不是 Windows 的话，可以不用安装 `cross-env`，这时需要将 `start` 脚本中的 `cross-env` 去掉。
 
 ## 使用状态树数据（store）
 
@@ -137,6 +139,12 @@ nuxtServerInit ({ commit }, { req }) {
   }
 }
 ```
+
+有几种方式可以使 `nuxtServerInit` 的方法体异步化，你可以根据自己的情况选择其一：
+
+1. 调用返回 `Promise` 的函数， nuxt.js会等待该`Promise`被解析之后才会设置组件的数据，从而渲染组件。
+2. 使用 [async 或 await](https://github.com/lukehoban/ecmascript-asyncawait) ([了解更多](https://zeit.co/blog/async-and-await))
+3. 调用使用回调函数作为参数的函数。
 
 ### login() 方法
 

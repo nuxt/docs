@@ -35,7 +35,7 @@ description: 显示当前页面
 ]
 ```
 
-为了显示 `child.vue` 组件，我们需要在父级页面组件 `pages/parent.vue` 中插入 `<nuxt-child/>`：
+为了显示 `child.vue` 组件，我们需要在父级页面组件 `pages/parent.vue` 中加入 `<nuxt-child/>`：
 
 ```html
 <template>

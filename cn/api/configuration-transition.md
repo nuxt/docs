@@ -5,7 +5,7 @@ description: 用于设置页面切换过渡效果的默认属性值。
 
 # transition 属性配置
 
-- Type: `String` or `Object`
+- Type: `String` 或 `Object`
 
 > 用于设置页面切换过渡效果的默认属性值。
 

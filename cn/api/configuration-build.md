@@ -40,14 +40,7 @@ module.exports = {
 默认值：
 ```js
 {
-  plugins: [
-    'transform-async-to-generator',
-    'transform-runtime'
-  ],
-  presets: [
-    ['es2015', { modules: false }],
-    'stage-2'
-  ]
+  presets: ['vue-app']
 }
 ```
 
@@ -97,9 +90,8 @@ module.exports = {
 默认值：
 ```js
 {
-  css: 'style.css',
-  vendor: 'vendor.bundle.js',
-  app: 'nuxt.bundle.js'
+  vendor: 'vendor.bundle.[hash].js',
+  app: 'nuxt.bundle.[chunkhash].js'
 }
 ```
 
@@ -108,9 +100,8 @@ module.exports = {
 module.exports = {
   build: {
     filenames: {
-      css: 'app.css',
-      vendor: 'vendor.js',
-      app: 'app.js'
+      vendor: 'vendor.[hash].js',
+      app: 'app.[chunkhash].js'
     }
   }
 }
@@ -217,6 +208,25 @@ module.exports = {
   }
 }
 ```
+
+## publicPath
+
+- 类型: `String`
+- 默认值: `'/_nuxt/'`
+
+> Nuxt.js 允许你将待发布的文件直接上传至 CDN 以获得最佳访问性能，只需设置 `publicPath` 为你的 CDN 地址即可。
+
+例如 (`nuxt.config.js`):
+
+```js
+module.exports = {
+  build: {
+    publicPath: 'https://cdn.nuxtjs.org'
+  }
+}
+```
+
+通过以上配置，当运行 `nuxt build` 时，`.nuxt/dist/` 目录内的内容会被上传至指定的 CDN 路径。
 
 ## vendor
 

@@ -15,7 +15,7 @@ description: Nuxt.js 的应用目录架构提供了良好的代码分层结构�
 
 ### 组件目录
 
-组件目录 `components` 用于组织应用的 Vue.js 组件。Nuxt.js 不会扩展增强该目录下 Vue.js 组件的 `data` 方法。
+组件目录 `components` 用于组织应用的 Vue.js 组件。Nuxt.js 不会扩展增强该目录下 Vue.js 组件，即这些组件不会像页面组件那样有 `asyncData` 方法的特性。
 
 ### 布局目录
 
@@ -27,7 +27,9 @@ _该目录名为Nuxt.js保留的，不可更改。_
 
 ### 中间件目录
 
-_未完待续_
+`middleware` 目录用于存放应用的中间件。
+
+[关于中间件的更多信息](/guide/routing#中间件)
 
 ### 页面目录
 

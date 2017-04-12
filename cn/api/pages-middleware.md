@@ -5,8 +5,8 @@ description: 设置应用特定页面的中间件
 
 # middleware 属性
 
-- 类型： String 或 Array
-  - 数组元素类型： String 
+- 类型： `String` 或 `Array`
+  - 数组元素类型： `String`
 
 在应用中的特定页面设置中间件 
 

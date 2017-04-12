@@ -27,6 +27,24 @@ module.exports = {
 
 > 该配置项的值会被直接传给 vue-router 的[构造器](https://router.vuejs.org/zh-cn/api/options.html)。
 
+## mode
+
+- 类型：`String`
+- 默认值：`'history'`
+
+配置路由的模式，鉴于服务端渲染的特性，不建议修改该配置。
+
+示例 (`nuxt.config.js`):
+```js
+module.exports = {
+  router: {
+    mode: 'hash'
+  }
+}
+```
+
+> 该配置项的值会被直接传给 vue-router 的[构造器](https://router.vuejs.org/zh-cn/api/options.html)。
+
 ## linkActiveClass
 
 - 类型： `String`
@@ -114,7 +132,7 @@ module.exports = {
 `middleware/user-agent.js`
 ```js
 export default function (context) {
-  // 给上下文对象增加 userAgent 属性（增加的属性可在 `data` 和 `fetch` 方法中获取）
+  // 给上下文对象增加 userAgent 属性（增加的属性可在 `asyncData` 和 `fetch` 方法中获取）
   context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
