@@ -54,7 +54,9 @@ console.log('服务器运行于 localhost:' + port)
   "scripts": {
     "dev": "node server.js",
     "build": "nuxt build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "cross-env NODE_ENV=production node server.js"
   }
 }
 ```
+提示: 你将会需要执行 `npm install --save-dev cross-env` 来运行上面的例子。
+如果你 *不是* 使用 Windows 开发，那么在你的 `start` script 可以移除 cross-env 仅设定 NODE_ENV 。

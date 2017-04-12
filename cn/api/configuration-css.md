@@ -24,9 +24,9 @@ module.exports = {
     // 同样加载一个 node.js 模块，不过我们定义所需的预处理器
     { src: 'bulma', lang: 'sass' },
     // 项目中的 CSS 文件
-    '~assets/css/main.css'
+    '~assets/css/main.css',
+    // 项目中的 SASS 文件
+    { src: '~assets/css/main.scss', lang: 'scss' } // 标示语言为 scss 文件(使用node-sass)
   ]
 }
 ```
-
-<p class="Alert">**在生产环境中**，所有的 CSS 都会被压缩和提取到一个叫 `styles.css` 的文件中，这个文件会在页面的 `<head>` 标签中引用。</p>

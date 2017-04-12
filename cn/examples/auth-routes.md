@@ -78,10 +78,12 @@ promise.then(() => {
 "scripts": {
   "dev": "node server.js",
   "build": "nuxt build",
-  "start": "NODE_ENV=production node server.js"
+  "start": "cross-env NODE_ENV=production node server.js"
 }
 // ...
 ```
+注意: 你需要先安装 cross-env 套件，执行 `npm install --save-dev cross-env` 才可让范例执行。
+如果你 *不是* 使用 Windows 作为你的开发平台，你可以从 `start` 中移除 cross-env ，只需要设定 `NODE_ENV`。
 
 ## 使用状态树数据（store）
 
@@ -137,6 +139,11 @@ nuxtServerInit ({ commit }, { req }) {
   }
 }
 ```
+
+nuxt.js 支援多种方法来处理异步事件，你可以选择一种你最熟悉的方法。
+
+1. 回传 `Promise`, nuxt.js 会等待 promise 被 resolve 后才渲染组件。
+2. 使用 [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await))
 
 ### login() 方法
 

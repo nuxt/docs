@@ -1,13 +1,18 @@
 ---
 title: 异步数据
-description: Nuxt.js 扩展增强了 Vue.js 原有的 data 方法，使得我们可以在设置组件的数据之前能异步获取或处理数据。
+description: 也许你想要在 server-side 获取资料并且渲染，Nuxt.js 增加了 `asyncData` 方法让你能异步获取或处理数据在完成设定组件资料之前。
 ---
 
-> Nuxt.js *扩展增强*了 Vue.js 原有的 `data` 方法，使得我们可以在设置组件的数据之前能异步获取或处理数据。
+> 也许你想要在 server-side 获取资料并且渲染，Nuxt.js 增加了 `asyncData` 方法让你能异步获取或处理数据在完成设定组件资料之前。
 
-## data 方法
+## asyncData 方法
 
-`data`方法会在组件（**限于页面组件**）每次加载之前被调用。它可以在服务端或路由更新之前被调用。在这个方法被调用的时候，第一个参数被设定为当前页面的[上下文对象](/api/pages-context)，你可以利用 `data`方法来获取数据并返回给当前组件。
+
+有时候你不想要使用 store (vuex)组件时，但你想要获取一些资料并且在 server-side 渲染。
+`asyncData` 每次载入组件时都会执行 (**仅有在 pages 组件**)
+它将会于 server-side 或是路由导向相对应的路由时被执行。
+这个方法将会接收上下文 [the context](/api#context) 在第一个传入参数，你可以从它获取一些资料，Nuxt.js 将会合并 asyncData 与 data 资料。
+
 <div class="Alert Alert--orange">注意：由于`data`方法是在组件 **初始化** 前被调用的，所以在方法内是没有办法通过 `this` 来引用组件的实例对象。</div>
 
 nuxt.js提供了几种不同的方法来让`data`方法异步化，你可以选择自己熟悉的一种来用：
@@ -19,7 +24,7 @@ nuxt.js提供了几种不同的方法来让`data`方法异步化，你可以选�
 ### 返回 Promise
 ```js
 export default {
-  data ({ params }) {
+  asyncData ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
     .then((res) => {
       return { title: res.data.title }
@@ -31,7 +36,7 @@ export default {
 ### 使用 async或await
 ```js
 export default {
-  async data ({ params }) {
+  async asyncData ({ params }) {
     let { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
@@ -41,7 +46,7 @@ export default {
 ### 使用 回调函数
 ```js
 export default {
-  data ({ params }, callback) {
+  asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
     .then((res) => {
       callback(null, { title: res.data.title })
@@ -50,21 +55,11 @@ export default {
 }
 ```
 
-### 返回 对象
-
-如果组件的数据不需要异步获取或处理，可以直接返回指定的字面对象作为组件的数据。
-
-```js
-export default {
-  data (context) {
-    return { foo: 'bar' }
-  }
-}
-```
 
 ### 数据的展示
 
-`data`方法被设置之后，可以在模板中显示数据，如：
+asyncData 回傳值將會與 data 的回傳值**合併**。
+可以顯示回傳值在你文件中的 template 區塊，就像你習慣的 Vue.js 語法。
 
 ```html
 <template>
@@ -83,7 +78,7 @@ Nuxt.js 在上下文对象`context`中提供了一个 `error(params)` 方法，�
 以返回 `Promise` 的方式举个例子：
 ```js
 export default {
-  data ({ params, error }) {
+  asyncData ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
     .then((res) => {
       return { title: res.data.title }
@@ -98,7 +93,7 @@ export default {
 如果你使用 `回调函数` 的方式, 你可以将错误的信息对象直接传给该回调函数， Nuxt.js 内部会自动调用 `error` 方法：
 ```js
 export default {
-  data ({ params }, callback) {
+  asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
     .then((res) => {
       callback(null, { title: res.data.title })
