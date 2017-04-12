@@ -1,57 +1,46 @@
 ---
 title: 视图
-description: 视图章节的内容阐述了如何在 Nuxt.js 应用中为指定的路由配置数据和视图，包括页面、布局和HTML头部等内容。
+description: 视图章节的内容阐述了如何在 Nuxt.js 应用中为指定的路由配置数据和视图，包括 Document、页面、布局和HTML头部等内容。
 ---
 
-> 本章节的内容阐述了如何在 Nuxt.js 应用中为指定的路由配置数据和视图，包括页面、布局和HTML头部等内容。
+> 本章节的内容阐述了如何在 Nuxt.js 应用中为指定的路由配置数据和视图，包括 Document、页面、布局和HTML头部等内容。
 
-## 页面
+![nuxt-views-schema](/nuxt-views-schema.png)
 
-页面组件实际上是 Vue 组件，只不过 Nuxt.js 为这些组件添加了一些特殊的配置项（对应 Nuxt.js 提供的功能特性）以便你能快速开发通用应用。
+## Document
 
+你可以自定义你的 HTML 文件范本
+
+如果想使用你的自订 HTML 文件范本, 建立一个 `app.html` 档案在你的专案跟目录。
+ 
+预设的 HTML 范本应该包含这些
+ 
 ```html
-<template>
-  <h1 class="red">Hello {{ name }}!</h1>
-</template>
-
-<script>
-export default {
-  data (context) {
-    // called every time before loading the component
-    return { name: 'World' }
-  },
-  fetch () {
-    // The fetch method is used to fill the store before rendering the page
-  },
-  head () {
-    // Set Meta Tags for this Page
-  },
-  // and more functionality to discover
-  ...
-}
-</script>
-
-<style>
-.red {
-  color: red;
-}
-</style>
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }}>
+  <head>
+    {{ HEAD }}
+  </head>
+  <body {{ BODY_ATTRS }}>
+    {{ APP }}
+  </body>
+</html>
 ```
 
-Nuxt.js 为页面提供的特殊配置项：
+下面是一个 HTML 判断是否为 IE 的 HTML 范本例子
 
-| 属性名 | 描述 |
-|-----------|-------------|
-| data | 最重要的一个键, 和 [Vue data](https://vuejs.org/v2/api/#Options-Data) 具有相同的作用，除此之外它支持 [异步数据处理](/guide/async-data)，另外 `data` 方法的第一个参数为当前页面组件的 [上下文对象](/api#上下文对象)。|
-| fetch | 与 `data` 方法类似，用于在渲染页面之前获取数据填充应用的状态树（store）。不同的是 `fetch` 方法不会设置组件的数据。详情请参考 [关于fetch方法的文档](/api/pages-fetch)。 |
-| head | 配置当前页面的 Meta 标签, 详情参考 [页面头部配置API](/api/pages-head)。 |
-| layout | 指定当前页面使用的布局（`layouts` 根目录下的布局文件）。详情请参考 [关于 布局 的文档](/api/pages-layout)。 |
-| transition | 指定页面切换的过渡动效, 详情请参考 [页面过渡动效](/api/pages-transition)。 |
-| scrollToTop | 布尔值，默认: `false`。 用于判定渲染页面前是否需要将当前页面滚动至顶部。这个配置用于 [嵌套路由](/guide/routing#嵌套路由)的应用场景。 |
-| validate | 校验方法用于校验 [动态路由](/guide/routing#动态路由)的参数。 |
-| middleware | 指定页面的中间件，中间件会在页面渲染之前被调用， 请参考 [路由中间件](/guide/routing#中间件)。|
-
-关于页面配置项的详细信息，请参考 [页面 API](/api)。
+```html
+<!DOCTYPE html>
+<!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
+  <head>
+    {{ HEAD }}
+  </head>
+  <body {{ BODY_ATTRS }}>
+    {{ APP }}
+  </body>
+</html>
+```
 
 ## 布局
 
@@ -90,7 +79,8 @@ Nuxt.js 允许你扩展默认的布局，或在 `layout` 目录下创建自定�
 
 <script>
 export default {
-  props: ['error']
+  props: ['error'],
+  layout: 'blog' // 你可以给予错误页面设置范本
 }
 </script>
 ```
@@ -122,7 +112,56 @@ export default {
 
 看下 [示例视频](https://www.youtube.com/watch?v=YOKnSTp7d38) 立刻体验下。
 
-更多关于页面布局配置项的信息，请参考[页面布局配置API](/api/pages-layout)。
+
+## Pages
+
+所有的页面组件都是一个Vue组件，但是Nuxt.js加入了一个特别的键值，让你开发起来更为容易。
+
+```html
+<template>
+  <h1 class="red">Hello {{ name }}!</h1>
+</template>
+
+<script>
+export default {
+  asyncData (context) {
+    // 每次载入组件时都会执行
+    return { name: 'World' }
+  },
+  fetch () {
+    // fetch用于填入商店资料，在渲染页面之前。
+  },
+  head () {
+    // 对于这个页面设定头参数
+  },
+  // 和更多的功能...
+  ...
+}
+</script>
+
+<style>
+.red {
+  color: red;
+}
+</style>
+```
+
+
+| Attribute | Description |
+|-----------|-------------|
+| asyncData | 重要的参数，它可以做异步操作，并且接收上下文作为参数，请参阅 [async data documentation](/guide/async-data) 学习它如何运作 |
+| fetch | 在渲染页面之前，用于填入 store 数据，它就像组件的 data 方法，只是它不回传组件数据。 [API Pages fetch documentation](/api/pages-fetch). |
+| head | 设定当页的 head 资料 , 请参阅 [API Pages head documentation](/api/pages-head). |
+| layout | 设置放置于`layouts`资料夹内的布局档案，请参阅 [API Pages layouts documentation](/api/pages-layout). |
+| transition | 设定当页的转换动效 , 请参阅 [API Pages transition](/api/pages-transition). |
+| scrollToTop | Boolean, by default: `false`. 
+如果你想要在渲染页面之前回到页首，请设置它，它作用于巢状路由 [nested routes](/guide/routing#nested-routes). |
+| validate | 
+用于验证路由数据 [dynamic route](/guide/routing#dynamic-routes). |
+| middleware | 设置当页的中间层，中间层将会在渲染页面前执行 [routes middleware](/guide/routing#middleware). |
+
+更多关于页面属性使用方式请参阅: [API Pages](/api)
+
 
 ## HTML 头部
 
@@ -132,8 +171,8 @@ Nuxt.js 使用以下参数配置 `vue-meta`:
 ```js
 {
   keyName: 'head', // 设置 meta 信息的组件对象的字段，vue-meta 会根据这 key 值获取 meta 信息
-  attribute: 'n-head', // vue-meta 在监听标签时所添加的属性名
-  ssrAttribute: 'n-head-ssr', // 让 vue-meta 获知 meta 信息已完成服务端渲染的属性名
+  attribute: 'data-n-head', // vue-meta 在监听标签时所添加的属性名
+  ssrAttribute: 'data-n-head-ssr', // 让 vue-meta 获知 meta 信息已完成服务端渲染的属性名
   tagIDKeyName: 'hid' // 让 vue-meta 用来决定是否覆盖还是追加 tag 的属性名
 }
 ```

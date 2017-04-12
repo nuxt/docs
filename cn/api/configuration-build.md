@@ -40,14 +40,7 @@ module.exports = {
 默认值：
 ```js
 {
-  plugins: [
-    'transform-async-to-generator',
-    'transform-runtime'
-  ],
-  presets: [
-    ['es2015', { modules: false }],
-    'stage-2'
-  ]
+  presets: ['vue-app']
 }
 ```
 
@@ -97,9 +90,8 @@ module.exports = {
 默认值：
 ```js
 {
-  css: 'style.css',
-  vendor: 'vendor.bundle.js',
-  app: 'nuxt.bundle.js'
+  vendor: 'vendor.bundle.[hash].js',
+  app: 'nuxt.bundle.[chunkhash].js'
 }
 ```
 
@@ -108,9 +100,8 @@ module.exports = {
 module.exports = {
   build: {
     filenames: {
-      css: 'app.css',
-      vendor: 'vendor.js',
-      app: 'app.js'
+      vendor: 'vendor.[hash].js',
+      app: 'app.[chunkhash].js'
     }
   }
 }
@@ -217,6 +208,26 @@ module.exports = {
   }
 }
 ```
+
+## publicPath
+
+Type: `String`
+Default: `'/_nuxt/'`
+
+可让您上传编译后的档案到你的CDN托管获得最佳效能。简单的设置`publicPath`指向你的CDN位置。
+
+范例 (`nuxt.config.js`):
+
+```js
+module.exports = {
+  build: {
+    publicPath: 'https://cdn.nuxtjs.org'
+  }
+}
+```
+
+然后，当我们执行`nuxt build`，上传`.nuxt/dist/`资料夹内的档案到你的CDN托管主机，voilà!
+
 
 ## vendor
 

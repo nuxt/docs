@@ -16,6 +16,8 @@ npm run generate
 上述的命令会生成一个 `dist` 目录，该目录包含了待部署的所有资源文件。
 如果是项目站点，可以将 `dist` 的内容提交至项目的 `gh-pages` 分支；如果是用户（github.com/user/user.github.io）或组织（github.com/org/org.github.io）站点，需提交至对应 GitHub 项目的 `master` 分支。
 
+<p class="Alert Alert--nuxt-green"><b>注意:</b> 如果你对GitHub 使用的自订网域并且专案内有`CNAME` 档案, 建议将CNAME 档案放置在`static ` 资料夹中。 [更多文档](/guide/assets#static) 关于静态资产.</p>
+
 ## 使用命令行进行部署
 
 你也可以利用 [push-dir](https://github.com/L33T-KR3W/push-dir) npm 包来部署：

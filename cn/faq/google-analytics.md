@@ -8,10 +8,12 @@ description: 如何集成 Google 统计分析服务？
 在 Nuxt.js 应用中使用 [Google 统计分析服务](https://analytics.google.com/analytics/web/) ，推荐在 `plugins` 目录下创建 `plugins/ga.js` 文件：
 
 ```js
+/* eslint-disable */
+import router from '~router'
 /*
 ** 只在生成模式的客户端中使用
 */
-if (process.BROWSER_BUILD && process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   /*
   ** Google 统计分析脚本
   */
@@ -23,21 +25,15 @@ if (process.BROWSER_BUILD && process.env.NODE_ENV === 'production') {
   ** 当前页的访问统计
   */
   ga('create', 'UA-XXXXXXXX-X', 'auto')
-  ga('send', 'pageview')
   /*
-  ** 应用挂载后
+  ** 路由行为改变时每次触发(初始化同样触发)
   */
-  window.onNuxtReady((app) => {
+  router.afterEach((to, from) => {
     /*
-    ** 每次页面路由发生改变时
+    ** 告诉 Google 统计分析服务 增加新的页面访问统计
     */
-    app.$nuxt.$on('routeChanged', (to, from) => {
-      /*
-      ** 告诉 Google 统计分析服务 增加新的页面访问统计
-      */
-      ga('set', 'page', to.fullPath)
-      ga('send', 'pageview')
-    })
+    ga('set', 'page', to.fullPath)
+    ga('send', 'pageview')
   })
 }
 ```
@@ -50,7 +46,7 @@ if (process.BROWSER_BUILD && process.env.NODE_ENV === 'production') {
 ```js
 module.exports = {
   plugins: [
-    '~plugins/ga.js'
+    { src: '~plugins/ga.js', ssr: false }
   ]
 }
 ```
