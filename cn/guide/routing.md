@@ -301,7 +301,9 @@ export default function ({ route }) {
 
 ```javascript
 module.exports = {
-  middleware: 'stats'
+  router: {
+    middleware: 'stats'
+  }
 }
 ```
 
