@@ -83,16 +83,24 @@ module.exports = {
 
 ## 只在浏览器里使用的插件
 
-有些插件可能只是在浏览器里使用，所以你可以用 `process.BROWSER_BUILD` 变量来检查插件是从客户端还是服务端运行。
+有些插件可能只是在浏览器里使用，所以你可以在 `plugins` 用 `ssr: false` 选项来定义该档案只在服务端运行。
 
-举个栗子：
+举个例子：
+`nuxt.config.js`:
+```js
+module.exports = {
+  plugins: [
+    { src: '~plugins/vue-notifications', ssr: false }
+  ]
+}
+```
+
+`plugins/vue-notifications.js`:
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
 
-if (process.BROWSER_BUILD) {
-  Vue.use(VueNotifications)
-}
+Vue.use(VueNotifications)
 ```
 
-同样地，如果有些脚本库你只想在服务端使用，在 Webpack 打包 `server.bundle.js` 文件的时候你可以将 `process.SERVER_BUILD` 变量设置成 `true`。
+同样地，如果有些脚本库你只想在服务端使用，在 Webpack 打包 `server.bundle.js` 文件的时候你可以将 `process.server` 变量设置成 `true`。

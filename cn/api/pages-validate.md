@@ -10,7 +10,7 @@ description: Nuxt.js 可以让你在动态路由对应的页面组件中配置�
 - **类型：** `Function`
 
 ```js
-validate({ params, query }) {
+validate({ params, query, store }) {
   return true // 如果参数有效
   return false // 参数无效，Nuxt.js 停止渲染当前页面并显示错误页面
 }
@@ -25,6 +25,16 @@ export default {
   validate ({ params }) {
     // Must be a number
     return /^\d+$/.test(params.id)
+  }
+}
+
+你同样可以检查 [store](/guide/vuex-store) 中的资料，如这个范例 (filled by [nuxtServerInit action](/guide/vuex-store#the-nuxtserverinit-action) before):
+
+```js
+export default {
+  validate ({ params, store }) {
+    // Check if `params.id` is an existing category
+    return store.state.categories.some((category) => category.id === params.id)
   }
 }
 ```

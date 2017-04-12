@@ -1,20 +1,27 @@
 ---
-title: "API: data 方法"
-description: Nuxt.js 扩展增强了 vue.js 原有的data方法，使得我们可以在设置组件的数据之前能异步获取或处理数据。
+title: "API: asyncData 方法"
+description: 也许你想要在 server-side 获取资料并且渲染，Nuxt.js 增加了 `asyncData` 方法让你能异步获取或处理数据在完成设定组件资料之前。
 ---
 
-# data 方法
+# asyncData  方法
 
-> Nuxt.js *扩展增强*了 Vue.js 原有的data方法，使得我们可以在设置组件的数据之前能异步获取或处理数据。
+> 也许你想要在 server-side 获取资料并且渲染，Nuxt.js 增加了 `asyncData` 方法让你能异步获取或处理数据在完成设定组件资料之前。
 
 - **类型：** `Function`
 
-`data`方法会在组件（**限于页面组件**）每次加载之前被调用。它可以在服务端或路由更新之前被调用。在这个方法被调用的时候，第一个参数被设定为当前页面的**上下文对象**，你可以利用 `data`方法来获取数据并返回给当前组件。
+`asyncData` 會在載組件前被呼叫 ( **只有在 pages 組件** )。
+它會於 server-side 被呼叫，或是路由前往到相對應頁面之前。
+這個方法會接收到第一個參數為 **context** (object) ，你可以使用它獲取一些資料並且返回組件資料。
+
+asyncData 回传值将会与 data 的回传值 **合并**
 
 ```js
 export default {
-  data (context) {
-    return { foo: 'bar' }
+  data () {
+    return { project: 'default' }
+  },
+  asyncData (context) {
+    return { project: 'nuxt' }
   }
 }
 ```

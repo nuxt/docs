@@ -2,7 +2,7 @@
   {
     "title": "页面",
     "links": [
-      { "name": "data", "to": "/" },
+      { "name": "asyncData", "to": "/" },
       { "name": "fetch", "to": "/pages-fetch" },
       { "name": "head", "to": "/pages-head" },
       { "name": "layout", "to": "/pages-layout" },
@@ -53,7 +53,8 @@
         "to": "/configuration-generate",
         "contents": [
           { "name": "dir", "to": "#dir" },
-          { "name": "routeParams", "to": "#routeparams" }
+          { "name": "minify", "to": "#minify" },
+          { "name": "routes", "to": "#routes" }
         ]
       },
       { "name": "head", "to": "/configuration-head" },
@@ -66,6 +67,14 @@
           { "name": "自定义加载组件", "to": "#自定义加载组件" }
         ]
       },
+      {
+        "name": "performance",
+        "to": "/configuration-performance",
+        "contents": [
+          { "name": "gzip", "to": "#gzip" },
+          { "name": "prefetch", "to": "#prefetch" }
+        ]
+      },
       { "name": "plugins", "to": "/configuration-plugins" },
       { "name": "rootDir", "to": "/configuration-rootdir" },
       {
@@ -73,6 +82,7 @@
         "to": "/configuration-router",
         "contents": [
           { "name": "base", "to": "#base" },
+          { "name": "mode", "to": "#mode" },
           { "name": "linkActiveClass", "to": "#linkactiveclass" },
           { "name": "scrollBehavior", "to": "#scrollbehavior" },
           { "name": "middleware", "to": "#middleware" },
@@ -80,7 +90,15 @@
         ]
       },
       { "name": "srcDir", "to": "/configuration-srcdir" },
-      { "name": "transition", "to": "/configuration-transition" }
+      { "name": "transition", "to": "/configuration-transition" },
+      {
+        "name": "watchers",
+        "to": "/configuration-watchers",
+        "contents": [
+          { "name": "chokidar", "to": "#chokidar" },
+          { "name": "webpack", "to": "#webpack" }
+        ]
+      }
     ]
   },
   {
