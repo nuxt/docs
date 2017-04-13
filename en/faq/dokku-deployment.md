@@ -18,7 +18,7 @@ dokku config:set my-nuxt-app NPM_CONFIG_PRODUCTION=false
 Also, we want our application to listen on the port `0.0.0.0` and run in production mode:
 ```bash
 // on Dokku Server
-dokku config:set nuxt-app HOST=0.0.0.0 NODE_ENV=production
+dokku config:set my-nuxt-app HOST=0.0.0.0 NODE_ENV=production
 ```
 
 You should see these 3 line when you type `dokku config my-nuxt-app`
