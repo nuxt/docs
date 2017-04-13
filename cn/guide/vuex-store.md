@@ -169,7 +169,7 @@ export default {
 
 ## fetch 方法
 
-> fetch 方法会在渲染页面前被调用，作用是填充状态树 (store) 数据，与 data 方法类似，不同的是它不会设置组件的数据。
+> fetch 方法会在渲染页面前被调用，作用是填充状态树 (store) 数据，与 asyncData 方法类似，不同的是它不会设置组件的数据。
 
 关于 `fetch` 方法的更多信息，请参考 [页面 fetch 方法API](/api/pages-fetch)。
 

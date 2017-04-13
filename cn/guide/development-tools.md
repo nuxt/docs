@@ -15,26 +15,24 @@ description: Nuxt.js 可让你的 Web 开发过程更愉悦。
 npm install --save-dev ava jsdom
 ```
 
-然后在 `package.json` 中添加测试脚本：
+然后在 `package.json` 中添加测试脚本，并配置 ava 如果编译待测试的文件：
 
 __package.json__
 
 ```javascript
-// ...
 "scripts": {
   "test": "ava",
-   "ava": {
-     "require": [
-       "babel-register"
-     ]
-   },
-   "babel": {
-     "presets": [
-       "es2015"
-     ]
-   }  
+},
+"ava": {
+  "require": [
+    "babel-register"
+  ]
+},
+"babel": {
+  "presets": [
+    "es2015"
+  ]
 }
-// ...
 ```
 
 接下来我们可以在 `test` 目录下编写单元测试的逻辑代码：

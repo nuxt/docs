@@ -6,7 +6,11 @@ description: plugins 属性使得你可以轻易地为 Nuxt.js 配置使用 Vue.
 # plugins 属性配置
 
 - 类型： `Array`
-  - 数组元素类型： `String`
+  - 数组元素类型： `String` 或 `Object`
+
+如果数组元素类型是 `Object`， 其具有以下属性：
+  - src: `String` (文件的路径)
+  - ssr: `Boolean` (默认为 `true`) *如果值为 false，该文件只会在客户端被打包引入。*
 
 > `plugins` 属性使得你可以轻易地为 Nuxt.js 配置使用 Vue.js 插件。
 

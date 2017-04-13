@@ -81,4 +81,4 @@ npm run generate
 
 如果你的项目需要用到[动态路由](/guide/routing#动态路由)，请移步 [generate配置API](/api/configuration-generate) 了解如果让 Nuxt.js 生成此类动态路由的静态文件。 
 
-<div class="Alert">注意：使用 `nuxt generate` 静态化应用的时候, 传给 [data()](/guide/async-data#data-方法) 和 [fetch()](/guide/vuex-store#fetch-方法) 方法的[上下文对象](/api#上下文对象) 不会包含 `req` 和 `res` 两个属性。</div>
+<div class="Alert">注意：使用 `nuxt generate` 静态化应用的时候, 传给 [asyncData()](/guide/async-data#asyncdata-方法) 和 [fetch()](/guide/vuex-store#fetch-方法) 方法的[上下文对象](/api#上下文对象) 不会包含 `req` 和 `res` 两个属性。</div>

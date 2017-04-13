@@ -28,3 +28,14 @@ export default {
   }
 }
 ```
+
+你也可以在validate 方法中校验 [store](/guide/vuex-store) 的数据 (如果 store 此前在 [nuxtServerInit 方法](/guide/vuex-store#nuxtServerInit-方法) 中被设置了的话):
+
+```js
+export default {
+  validate ({ params, store }) {
+    // 校验 `params.id` 是否存在
+    return store.state.categories.some((category) => category.id === params.id)
+  }
+}
+```

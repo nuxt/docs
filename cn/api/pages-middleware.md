@@ -5,8 +5,8 @@ description: 设置应用特定页面的中间件
 
 # middleware 属性
 
-- 类型： String 或 Array
-  - 数组元素类型： String 
+- 类型： `String` 或 `Array`
+  - 数组元素类型： `String`
 
 在应用中的特定页面设置中间件 
 
@@ -35,4 +35,4 @@ export default function ({ store, redirect }) {
 }
 ``` 
 
-想了解更多关于使用中间件的信息，请移步 [中间件指引](/guide/routing#middleware)。
+想了解更多关于使用中间件的信息，请移步 [中间件指引](/guide/routing#中间件)。

@@ -58,3 +58,4 @@ console.log('服务器运行于 localhost:' + port)
   }
 }
 ```
+注意: 要运行上面的示例，你需要运行 `npm install --save-dev cross-env` 安装 `cross-env`。 如果你在*非* Windows 环境下开发，你可以不用安装 cross-env，这时需要把 `start` 脚本中的 cross-env 去掉。

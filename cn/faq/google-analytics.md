@@ -23,21 +23,15 @@ if (process.BROWSER_BUILD && process.env.NODE_ENV === 'production') {
   ** 当前页的访问统计
   */
   ga('create', 'UA-XXXXXXXX-X', 'auto')
-  ga('send', 'pageview')
   /*
-  ** 应用挂载后
+  ** 每次路由变更时进行pv统计
   */
-  window.onNuxtReady((app) => {
+  router.afterEach((to, from) => {
     /*
-    ** 每次页面路由发生改变时
+    ** 告诉 GA 增加一个 PV
     */
-    app.$nuxt.$on('routeChanged', (to, from) => {
-      /*
-      ** 告诉 Google 统计分析服务 增加新的页面访问统计
-      */
-      ga('set', 'page', to.fullPath)
-      ga('send', 'pageview')
-    })
+    ga('set', 'page', to.fullPath)
+    ga('send', 'pageview')
   })
 }
 ```
@@ -50,7 +44,7 @@ if (process.BROWSER_BUILD && process.env.NODE_ENV === 'production') {
 ```js
 module.exports = {
   plugins: [
-    '~plugins/ga.js'
+    { src: '~plugins/ga.js', ssr: false }
   ]
 }
 ```

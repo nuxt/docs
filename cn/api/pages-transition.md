@@ -13,11 +13,11 @@ description: Nuxt.js 使用 Vue.js transition 组件来实现路由切换时的�
 
 ```js
 export default {
-  // Can be a String
+  // 可以是字符
   transition: ''
-  // Or an Object
+  // 或对象
   transition: {}
-  // or a Function
+  // 或函数
   transition (to, from) {}
 }
 ```

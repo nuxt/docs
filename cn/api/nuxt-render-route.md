@@ -32,12 +32,13 @@ nuxt.build()
   return nuxt.renderRoute('/')
 })
 .then(({ html, error, redirected }) => {
-  // html will be always a string
+  // html 类型为 string
 
-  // error not null when the error layout is displayed, the error format is:
+  // 当显示 error 视图时，error 的值不为 null。error 对象的格式为:
   // { statusCode: 500, message: 'My error message' }
 
   // redirected is not false when redirect() has been used in data() or fetch()
+  // 如果 `redirect` 方法已在 `asyncData` 或 `fetch` 方法中调用，redirected 的值非 false，其格式如下：
   // { path: '/other-path', query: {}, status: 302 }
 })
 ```
