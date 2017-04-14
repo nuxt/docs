@@ -50,7 +50,7 @@ Nuxt.js vous permet d'étendre la mise en page principale ou de créer des mises
 
 Vous pouvez étendre la mise en page principale en ajoutant un fichier `layouts/default.vue`.
 
-*Assurez-vous d'ajouter le composant `<nuxt>` lors de la création d'une mise en page afin d'afficher le composant de la page.*
+*Assurez-vous d'ajouter le composant `<nuxt/>` lors de la création d'une mise en page afin d'afficher le composant de la page.*
 
 Le code source de mise en page par défaut est:
 ```html
@@ -89,7 +89,7 @@ export default {
 
 Chaque fichier (*premier niveau*) dans le répertoire `layouts` créera une mise en page personnalisée accessible via la propriété `layout` dans le composant de la page.
 
-*Assurez-vous d'ajouter le composant `<nuxt>` lors de la création d'une mise en page afin d'afficher le composant de la page.*
+*Assurez-vous d'ajouter le composant `<nuxt/>` lors de la création d'une mise en page afin d'afficher le composant de la page.*
 
 Exemple avec `layouts/blog.vue`:
 ```html
