@@ -1,11 +1,11 @@
 ---
 title: "API: The css Property"
-description: Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every pages).
+description: Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every page).
 ---
 
 # The css Property
 
-> Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every pages).
+> Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every page).
 
 - Type: `Array`
  - Items: `String` or `Object`
