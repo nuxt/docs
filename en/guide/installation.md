@@ -1,13 +1,13 @@
 ---
 title: Installation
-description: Nuxt.js is really easy to get started with. A simple project only need the `nuxt` dependency.
+description: Nuxt.js is really easy to get started with. A simple project only needs the `nuxt` dependency.
 ---
 
-> Nuxt.js is really easy to get started with. A simple project only need the `nuxt` dependency.
+> Nuxt.js is really easy to get started with. A simple project only needs the `nuxt` dependency.
 
 ## Using Nuxt.js starter template
 
-To start quickly, the Nuxt.js team has created a [starter template](https://github.com/nuxt/starter).
+To get started quickly, the Nuxt.js team has created a [starter template](https://github.com/nuxt/starter).
 
 [Download the .zip](https://github.com/nuxt/starter/archive/source.zip) starter template or install it with vue-cli:
 
@@ -30,7 +30,7 @@ $ npm run dev
 ```
 The application is now running on http://localhost:3000
 
-<p class="Alert">Nuxt.js will listen on the files changes inside the `pages` directory, so no need to restart the application when adding new pages</p>
+<p class="Alert">Nuxt.js will listen for file changes inside the `pages` directory, so there is no need to restart the application when adding new pages.</p>
 
 To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
 
@@ -87,6 +87,6 @@ $ npm run dev
 ```
 The application is now running on http://localhost:3000
 
-<p class="Alert">Nuxt.js will listen on the files changes inside the `pages` directory, so no need to restart the application when adding new pages</p>
+<p class="Alert">Nuxt.js will listen for file changes inside the `pages` directory, so there is no need to restart the application when adding new pages.</p>
 
 To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).

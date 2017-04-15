@@ -21,21 +21,21 @@ The `components` directory contains your Vue.js Components. Nuxt.js doesn't supe
 
 The `layouts` directory contains your Application Layouts.
 
-_This directory can not be renamed._
+_This directory cannot be renamed._
 
 [More documentation about Layouts integration](/guide/views#layouts)
 
 ### The Middleware Directory
 
-The `middleware` directory contains your Application Middleware. The middleware lets you define custom function to be ran before rendering a page or a group of pages (layouts).
+The `middleware` directory contains your Application Middleware. Middleware lets you define custom functions that can be run before rendering either a page or a group of pages (layouts).
 
 [More documentation about Middleware integration](/guide/routing#middleware)
 
 ### The Pages Directory
 
-The `pages` directory contains your Application Views and Routes. The framework reads all the `.vue` files inside this directory and create the router of your application.
+The `pages` directory contains your Application Views and Routes. The framework reads all the `.vue` files inside this directory and creates the application router.
 
-_This directory can not be renamed._
+_This directory cannot be renamed._
 
 [More documentation about Pages integration](/guide/views)
 
@@ -51,15 +51,15 @@ The `static` directory contains your static files. Each file inside this directo
 
 **Example:** /static/robots.txt is mapped as /robots.txt
 
-_This directory can not be renamed._
+_This directory cannot be renamed._
 
 [More documentation about Static integration](/guide/assets#static)
 
 ### The Store Directory
 
-The `store` directory contains your [Vuex Store](http://vuex.vuejs.org) files. Vuex Store option is implemented in the Nuxt.js framework. Creating a `index.js` file in this directory activate the option in the framework automatically.
+The `store` directory contains your [Vuex Store](http://vuex.vuejs.org) files. The Vuex Store option is implemented in the Nuxt.js framework. Creating an `index.js` file in this directory enables the option in the framework automatically.
 
-_This directory can not be renamed._
+_This directory cannot be renamed._
 
 [More documentation about Store integration](/guide/vuex-store)
 
