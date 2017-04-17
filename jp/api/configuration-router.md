@@ -232,15 +232,13 @@ Nuxt.js によって作成されるルーティングを拡張したいことが
 `nuxt.config.js`
 
 ```js
-const resolve = require('path').resolve
-
 module.exports = {
   router: {
     extendRoutes (routes) {
       routes.push({
         name: 'custom',
         path: '*',
-        component: resolve(__dirname, 'pages/404.vue')
+        component: '~pages/404.vue'
       })
     }
   }

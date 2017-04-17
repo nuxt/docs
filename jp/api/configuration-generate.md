@@ -24,7 +24,7 @@ description: ユニバーサルなウェブアプリケーションから静的�
 
 ## dir
 
-<!-- - Type: 'Sring' -->
+<!-- - Type: 'String' -->
 <!-- - Default: `'dist'` -->
 
 - タイプ: '文字列'
