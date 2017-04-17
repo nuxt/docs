@@ -66,6 +66,14 @@
           { "name": "独自のコンポーネントを使う", "to": "#独自のコンポーネントを使う" }
         ]
       },
+      {
+        "name": "performance",
+        "to": "/configuration-performance",
+        "contents": [
+          { "name": "gzip", "to": "#gzip" },
+          { "name": "prefetch", "to": "#prefetch" }
+        ]
+      },
       { "name": "plugins", "to": "/configuration-plugins" },
       { "name": "rootDir", "to": "/configuration-rootdir" },
       {
