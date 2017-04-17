@@ -34,6 +34,41 @@ description: ユニバーサルなウェブアプリケーションから静的�
 
 `nuxt generate` で作成されるディレクトリ名です。
 
+## minify
+
+<!-- - Type: `Object` -->
+<!-- - Default: -->
+
+- タイプ: '文字列'
+- デフォルト:
+
+```js
+minify: {
+  collapseBooleanAttributes: true,
+  collapseWhitespace: true,
+  decodeEntities: true,
+  minifyCSS: true,
+  minifyJS: true,
+  processConditionalComments: true,
+  removeAttributeQuotes: false,
+  removeComments: false,
+  removeEmptyAttributes: true,
+  removeOptionalTags: true,
+  removeRedundantAttributes: true,
+  removeScriptTypeAttributes: false,
+  removeStyleLinkTypeAttributes: false,
+  removeTagWhitespace: false,
+  sortAttributes: true,
+  sortClassName: true,
+  trimCustomFragments: true,
+  useShortDoctype: true
+}
+```
+
+<!-- You can change the default configuration of [html-minifier](https://github.com/kangax/html-minifier) used by nuxt.js to minify html files created during generate process. -->
+
+generate 処理で生成される HTML ファイルをミニファイするために Nuxt.js で使われている [html-minifier](https://github.com/kangax/html-minifier) のデフォルト設定を変更することができます。
+
 ## routes
 
 <!-- - Type: `Array` -->
