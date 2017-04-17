@@ -51,7 +51,8 @@
         "contents": [
           { "to": "#ページ", "name": "ページ" },
           { "to": "#レイアウト", "name": "レイアウト" },
-          { "to": "#html-の-head-情報", "name": "HTML の head 情報" }
+          { "to": "#html-の-head-情報", "name": "HTML の head 情報" },
+          { "to": "#ドキュメント", "name": "ドキュメント" }
         ]
       },
       {
