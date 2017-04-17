@@ -203,7 +203,7 @@ module.exports = {
 - タイプ: `配列`
   - 要素: `オブジェクト`
 
-<!-- \> Cusomize webpack loaders -->
+<!-- \> Customize webpack loaders -->
 
 > Webpack のローダーをカスタマイズします。
 
