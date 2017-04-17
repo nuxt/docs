@@ -42,7 +42,9 @@ description: Nuxt.js ではグローバルに適用したい（すべてのペ�
 <!--     // node.js module but we specify the pre-processor -->
 <!--     { src: 'bulma', lang: 'sass' }, -->
 <!--     // Css file in the project -->
-<!--     '~assets/css/main.css' -->
+<!--     '~assets/css/main.css', -->
+<!--     // Sass file in the project -->
+<!--     { src: '~assets/css/main.scss', lang: 'scss' } // scss instead of sass -->
 <!--   ] -->
 <!-- } -->
 <!-- ``` -->
@@ -55,7 +57,9 @@ module.exports = {
     // node.js モジュール。プリプロセッサを指定
     { src: 'bulma', lang: 'sass' },
     // プロジェクト内の CSS ファイル
-    '~assets/css/main.css'
+    '~assets/css/main.css',
+    // プロジェクト内の SASS ファイル
+    { src: '~assets/css/main.scss', lang: 'scss' } // SASS の代わりに SCSS を使う
   ]
 }
 ```
