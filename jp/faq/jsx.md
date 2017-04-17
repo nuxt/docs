@@ -10,35 +10,13 @@ description: Nuxt.js で JSX を使うには？
 
 # JSX を使うには？
 
-<!-- If you want to use JSX in your components, first, you need to install the Babel plugins for JSX: -->
+<!-- Nuxt.js use the official [babel-preset-vue-app](https://github.com/vuejs/babel-preset-vue-app) for babel default configuration, so you can use JSX in your components. -->
 
-コンポーネントで JSX を使いたい場合は、まず JSX のための Babel プラグインをインストールする必要があります:
-
-```bash
-npm install --save-dev babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx babel-helper-vue-jsx-merge-props
-```
-
-<!-- Then, in your `nuxt.config.js`, tell nuxt.js to use the [transform-vue-jsx](https://github.com/vuejs/babel-plugin-transform-vue-jsx) plugin: -->
-
-それから `nuxt.config.js` 内で [transform-vue-jsx](https://github.com/vuejs/babel-plugin-transform-vue-jsx) プラグインを使うことを Nuxt.js に伝えます:
-
-```js
-module.exports = {
-  build: {
-    babel: {
-      plugins: ['transform-vue-jsx']
-    }
-  }
-}
-```
-
-<!-- To learn more about the babel option, take a look at the [build config documentation](/api/configuration-build). -->
-
-Babel のオプションをより深く理解するには [ビルド設定のドキュメント](/api/configuration-build) を参照してください。
+Nuxt.js は babel のデフォルト設定のために公式の [babel-preset-vue-app](https://github.com/vuejs/babel-preset-vue-app) を使います。したがって、コンポーネント内で JSX を使うことができます。
 
 <!-- You can now use JSX in your `render` method of your components: -->
 
-ここまでの設定で、コンポーネントの `render` メソッド内で JSX が使えるようになっています:
+コンポーネントの `render` メソッド内で JSX が使えます:
 
 ```html
 <script>
@@ -52,6 +30,10 @@ export default {
 }
 </script>
 ```
+
+<!-- <p class="Alert Alert--info">Aliasing `createElement` to `h` is a common convention you’ll see in the Vue ecosystem and is actually required for JSX. If `h` is not available in the scope, **your app will throw an error**.</p> -->
+
+<p class="Alert Alert--info">`h` を `createElement` のエイリアスにすることは、Vue エコシステムでは一般的な慣例であり、また、JSX では必要とされています。`h` がスコープの中で利用できないときは **アプリケーションは例外を投げます**.</p>
 
 <!-- You can learn more how to use it in the [JSX section](https://vuejs.org/v2/guide/render-function.html#JSX) of the Vue.js documentation. -->
 
