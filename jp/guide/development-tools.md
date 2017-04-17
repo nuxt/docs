@@ -26,13 +26,23 @@ description: Nuxt.js は開発がより楽しいものになるよう手助け�
 npm install --save-dev ava jsdom
 ```
 
-<!-- And add a test script to our `package.json`: -->
+<!-- And add a test script to our `package.json` and configure ava to compile files that we import into our tests. -->
 
-それから `package.json` に test というスクリプトを追加します:
+それから `package.json` に test というスクリプトを追加し、テストにインポートするファイルをコンバイルするために ava を設定します。
 
 ```javascript
 "scripts": {
   "test": "ava",
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
 }
 ```
 
