@@ -125,7 +125,7 @@ nuxt:generate HTML Files generated in 7.6s +6ms
 `nuxt.config.js`
 
 ```js
-import axios from 'axios'
+const axios = require('axios')
 
 module.exports = {
   generate: {
@@ -150,7 +150,7 @@ module.exports = {
 `nuxt.config.js`
 
 ```js
-import axios from 'axios'
+const axios = require('axios')
 
 module.exports = {
   generate: {
