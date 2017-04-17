@@ -25,7 +25,7 @@ description: Nuxt.js ではグローバルに適用したい（すべてのペ�
 要素がオブジェクトのときは、プロパティは次のとおりです:
 
 <!-- - src: `String` (path of the file) -->
-<!-- - lang: `String` ([pre-processor used](/guide/pages#using-pre-processors)) -->
+<!-- - lang: `String` ([pre-processor used](/faq/pre-processors)) -->
 
 - src: `文字列`（ファイルのパス）
 - lang: `文字列`（[プリプロセッサを使うには？](/faq/pre-processors)）
