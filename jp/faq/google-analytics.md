@@ -6,7 +6,7 @@ description: Google アナリティクスを使うには？
 <!-- title: Google Analytics Integration -->
 <!-- description: How to use Google Analytics? -->
 
-<!-- ## How to use Google Analytics? -->
+<!-- # How to use Google Analytics? -->
 
 # Google アナリティクスを使うには？
 
