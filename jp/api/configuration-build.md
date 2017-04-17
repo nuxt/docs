@@ -166,7 +166,6 @@ module.exports = {
 
 ```js
 {
-  css: 'style.[hash].css',
   vendor: 'vendor.bundle.[hash].js',
   app: 'nuxt.bundle.[chunkhash].js'
 }
