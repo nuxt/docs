@@ -253,6 +253,16 @@ nuxtServerInit ({ commit }, { req }) {
 }
 ```
 
+<!-- To make the data method asynchronous, nuxt.js offers you different ways, choose the one you're the most familiar with: -->
+
+<!-- 1. returning a `Promise`, nuxt.js will wait for the promise to be resolved before rendering the component. -->
+<!-- 2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await)) -->
+
+Nuxt.js では data メソッドを非同期にするために、いくつかの異なるやり方があるので、お好きなものを選んでください:
+
+1. Promise を返す。Nuxt.js はコンポーネントがレンダリングされる前に Promise が解決されるまで待ちます
+2. [async/await](https://github.com/lukehoban/ecmascript-asyncawait) を使う（[より深く理解する](https://zeit.co/blog/async-and-await)）
+
 <!-- ### login() action -->
 
 ### login() アクション
