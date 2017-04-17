@@ -10,7 +10,7 @@ description: コンポーネント内で非同期データを扱うには？
 
 # コンポーネント内で非同期データを扱うには？
 
-<!-- It is not possible because it's not linked to a route, Nuxt.js surcharges the component data() associated to a route to allow async data. -->
+<!-- It is not possible because it's not linked to a route, Nuxt.js supercharges the component data() associated to a route to allow async data. -->
 
 コンポーネントはルートに関連付けられていないため（訳注: 基本的には）非同期データを扱うことはできません。Nuxt.js ではルートに関連付けられたコンポーネント（訳注: pages ディレクトリ内のコンポーネントのこと）の data() メソッドに手を加えて非同期データを扱えるようにしています。
 
