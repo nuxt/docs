@@ -58,7 +58,7 @@ description: 特定のルートをレンダリングします。その際にコ�
 <!--   // error not null when the error layout is displayed, the error format is: -->
 <!--   // { statusCode: 500, message: 'My error message' } -->
 
-<!--   // redirect is not false when redirect() has been used in data() or fetch() -->
+<!--   // redirected is not false when redirect() has been used in data() or fetch() -->
 <!--   // { path: '/other-path', query: {}, status: 302 } -->
 <!-- }) -->
 <!-- ``` -->
