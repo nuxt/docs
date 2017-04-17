@@ -234,11 +234,11 @@ Nuxt.js によって作成されるルーティングを拡張したいことが
 ```js
 module.exports = {
   router: {
-    extendRoutes (routes) {
+    extendRoutes (routes, r) {
       routes.push({
         name: 'custom',
         path: '*',
-        component: '~pages/404.vue'
+        component: r(__dirname, 'pages/404.vue')
       })
     }
   }
