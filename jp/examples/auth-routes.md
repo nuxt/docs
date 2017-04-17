@@ -150,10 +150,14 @@ promise.then(() => {
 "scripts": {
   "dev": "node server.js",
   "build": "nuxt build",
-  "start": "NODE_ENV=production node server.js"
+  "start": "cross-env NODE_ENV=production node server.js"
 }
 // ...
 ```
+
+<!-- Note: You'll need to run `npm install --save-dev cross-env` for the above example to work. If you're *not* developing on Windows you can leave cross-env out of your `start` script and set `NODE_ENV` directly. -->
+
+情報: 上の例を動かすためには `npm install --save-dev cross-env` を実行する必要があります。もし Windows で開発しているの *でない* ならば、`start` スクリプトから cross-env を削除して、直接 `NODE_ENV` をセットすることもできます。
 
 <!-- ## Using the store -->
 
