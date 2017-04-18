@@ -155,9 +155,9 @@ export default {
 
 Nuxt.js では vue-router の子ルートを使ってルートをネストさせることができます。
 
-<!-- To define a nested route, you need to create a Vue file with the **same name as the directory** which contain your children views. -->
+<!-- To define the parent component of a nested route, you need to create a Vue file with the **same name as the directory** which contain your children views. -->
 
-ネストされたルートを定義するには、子ビューを含む **ディレクトリと同じ名前** の Vue ファイルを作成する必要があります。
+ネストされたルートの親コンポーネントを定義するには、子ビューを含む **ディレクトリと同じ名前** の Vue ファイルを作成する必要があります。
 
 <!-- <p class="Alert Alert--info">Don't forget to write `<nuxt-child/>` inside the parent component (.vue file).</p> -->
 
