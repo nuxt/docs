@@ -140,10 +140,10 @@ nuxt:generate HTML Files generated in 7.6s +6ms
 いいですね。しかし、もし **動的なパラメータ** が必要な場合はどうでしょう？
 
 <!-- 1. Use a `Function` which returns a `Promise` -->
-<!-- 2. Use a `Function` with a callback(err, params) -->
+<!-- 2. Use a `Function` with a `callback(err, params)` -->
 
 1. `Promise` を返す `関数` を使う
-2. コールバックと一緒に `関数` を使う
+2. `コールバック` と一緒に `関数` を使う
 
 <!-- ### Function which returns a Promise -->
 

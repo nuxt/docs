@@ -14,11 +14,11 @@ description: Nuxt.js ではグローバルに適用したい（すべてのペ�
 
 > Nuxt.js ではグローバルに適用したい（すべてのページにインクルードしたい）CSS ファイル/モジュール/ライブラリを設定できます。
 
-<!-- - **Type:** `Array` -->
-<!--   - **Items:** `String` or `Object` -->
+<!-- - Type: `Array` -->
+<!--   - Items: `String` or `Object` -->
 
-- **タイプ:** `配列`
-  - **要素:** `文字列` または `オブジェクト`
+- タイプ: `配列`
+  - 要素: `文字列` または `オブジェクト`
 
 <!-- If the item is an object, the properties are: -->
 

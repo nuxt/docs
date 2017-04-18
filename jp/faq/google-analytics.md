@@ -15,10 +15,11 @@ description: Google アナリティクスを使うには？
 Nuxt.js アプリケーションで [Google アナリティクス](https://analytics.google.com/analytics/web/) を使うには `plugins/ga.js` というファイルを作成することを推奨します:
 
 <!-- ```js -->
+<!-- import router from '~router' -->
 <!-- /* -->
 <!-- ** Only run on client-side and only in production mode -->
 <!-- */ -->
-<!-- if (process.BROWSER_BUILD && process.env.NODE_ENV === 'production') { -->
+<!-- if (process.env.NODE_ENV === 'production') { -->
 <!--   /* -->
 <!--   ** Include Google Analytics Script -->
 <!--   */ -->
@@ -30,30 +31,25 @@ Nuxt.js アプリケーションで [Google アナリティクス](https://analy
 <!--   ** Set the current page -->
 <!--   */ -->
 <!--   ga('create', 'UA-XXXXXXXX-X', 'auto') -->
-<!--   ga('send', 'pageview') -->
 <!--   /* -->
-<!--   ** When the app is mounted -->
+<!--   ** Every time the route changes (fired on initialization too) -->
 <!--   */ -->
-<!--   window.onNuxtReady((app) => { -->
+<!--   router.afterEach((to, from) => { -->
 <!--     /* -->
-<!--     ** Every time the route changes -->
+<!--     ** We tell Google Analytic to add a page view -->
 <!--     */ -->
-<!--     app.$nuxt.$on('routeChanged', (to, from) => { -->
-<!--       /* -->
-<!--       ** We tell Google Analytic to add a page view -->
-<!--       */ -->
-<!--       ga('set', 'page', to.fullPath) -->
-<!--       ga('send', 'pageview') -->
-<!--     }) -->
+<!--     ga('set', 'page', to.fullPath) -->
+<!--     ga('send', 'pageview') -->
 <!--   }) -->
 <!-- } -->
 <!-- ``` -->
 
 ```js
+import router from '~router'
 /*
 ** クライアントサイドかつプロダクションモードでのみ実行
 */
-if (process.BROWSER_BUILD && process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   /*
   ** Google アナリティクスのスクリプトをインクルード
   */
@@ -65,21 +61,15 @@ if (process.BROWSER_BUILD && process.env.NODE_ENV === 'production') {
   ** 現在のページをセット
   */
   ga('create', 'UA-XXXXXXXX-X', 'auto')
-  ga('send', 'pageview')
   /*
-  ** アプリケーションがマウントしたとき
+  ** ルートが変更されるたびに毎回実行（初期化も実行される）
   */
-  window.onNuxtReady((app) => {
+  router.afterEach((to, from) => {
     /*
-    ** ルートが変更されるたびに
+    ** Google アナリティクスにページビューが追加されたことを伝える
     */
-    app.$nuxt.$on('routeChanged', (to, from) => {
-      /*
-      ** Google アナリティクスにページビューが追加されたことを伝える
-      */
-      ga('set', 'page', to.fullPath)
-      ga('send', 'pageview')
-    })
+    ga('set', 'page', to.fullPath)
+    ga('send', 'pageview')
   })
 }
 ```
@@ -97,7 +87,7 @@ if (process.BROWSER_BUILD && process.env.NODE_ENV === 'production') {
 ```js
 module.exports = {
   plugins: [
-    '~plugins/ga.js'
+    { src: '~plugins/ga.js', ssr: false }
   ]
 }
 ```
