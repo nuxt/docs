@@ -54,7 +54,13 @@ _このディレクトリ名は変更できません。_
 
 ### middleware ディレクトリ
 
-_Coming soon_
+<!-- The `middleware` directory contains your Application Middleware. The middleware lets you define custom function to be ran before rendering a page or a group of pages (layouts). -->
+
+`middleware` ディレクトリにはアプリケーションのミドルウェアを入れます。ミドルウェアを使って、ページやページグループ（レイアウト）をレンダリングするよりも前に実行されるカスタム関数を定義できます。
+
+<!-- [More documentation about Middleware integration](/guide/routing#middleware) -->
+
+ミドルウェアについてより深く理解するには [ミドルウェアに関するドキュメント](/guide/routing#ミドルウェア) を参照してください。
 
 <!-- ### The Pages Directory -->
 
@@ -157,6 +163,7 @@ _このファイル名は変更できません。_
 <!-- | ~ | / | -->
 <!-- | ~assets | /assets | -->
 <!-- | ~components | /components | -->
+<!-- | ~middleware | /middleware | -->
 <!-- | ~pages | /pages | -->
 <!-- | ~plugins | /plugins | -->
 <!-- | ~static | /static | -->
@@ -166,6 +173,7 @@ _このファイル名は変更できません。_
 | ~ | / |
 | ~assets | /assets |
 | ~components | /components |
+| ~middleware | /middleware |
 | ~pages | /pages |
 | ~plugins | /plugins |
 | ~static | /static |
