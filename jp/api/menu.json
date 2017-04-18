@@ -2,7 +2,7 @@
   {
     "title": "ページ",
     "links": [
-      { "name": "data", "to": "/" },
+      { "name": "asyncData", "to": "/" },
       { "name": "fetch", "to": "/pages-fetch" },
       { "name": "head", "to": "/pages-head" },
       { "name": "layout", "to": "/pages-layout" },
@@ -53,7 +53,7 @@
         "to": "/configuration-generate",
         "contents": [
           { "name": "dir", "to": "#dir" },
-          { "name": "routeParams", "to": "#routeparams" }
+          { "name": "routes", "to": "#routes" }
         ]
       },
       { "name": "head", "to": "/configuration-head" },
@@ -64,6 +64,14 @@
           { "name": "プログレスバーを無効にする", "to": "#プログレスバーを無効にする" },
           { "name": "プログレスバーをカスタマイズする", "to": "#プログレスバーをカスタマイズする" },
           { "name": "独自のコンポーネントを使う", "to": "#独自のコンポーネントを使う" }
+        ]
+      },
+      {
+        "name": "performance",
+        "to": "/configuration-performance",
+        "contents": [
+          { "name": "gzip", "to": "#gzip" },
+          { "name": "prefetch", "to": "#prefetch" }
         ]
       },
       { "name": "plugins", "to": "/configuration-plugins" },

@@ -309,3 +309,48 @@ head メソッドについてより深く理解するには [head 設定 API](/a
 <!-- <p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://github.com/declandewet/vue-meta#lists-of-tags).</p> -->
 
 <p class="Alert">子コンポーネントで利用されたときにメタ情報が重複してしまうことを避けるために `hid` キーでユニーク識別子を与えてください。また、これについてより深く理解するには [こちら](https://github.com/declandewet/vue-meta#lists-of-tags) を参照してください。</p>
+
+<!-- ## Document -->
+
+## ドキュメント
+
+<!-- \> You can customise the main document with nuxt.js -->
+
+> メインのドキュメントをカスタマイズすることができます。
+
+<!-- To extend the html template, create a `app.html` at the root of your project. -->
+
+HTML テンプレートを拡張するために、プロジェクトのルートディレクトリに `app.html` を作成します。
+
+<!-- The default template is: -->
+
+デフォルトのテンプレートは下記です:
+
+```html
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }}>
+  <head>
+    {{ HEAD }}
+  </head>
+  <body {{ BODY_ATTRS }}>
+    {{ APP }}
+  </body>
+</html>
+```
+
+<!-- One example if to add conditional CSS classes for IE: -->
+
+条件付きで IE のための CSS クラスを追加する例:
+
+```html
+<!DOCTYPE html>
+<!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
+  <head>
+    {{ HEAD }}
+  </head>
+  <body {{ BODY_ATTRS }}>
+    {{ APP }}
+  </body>
+</html>
+```

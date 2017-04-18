@@ -88,7 +88,7 @@ _このディレクトリ名は変更できません。_
 
 ### static ディレクトリ
 
-<!-- The `static` directory contains your static files. Each files inside this directory is mapped to /. -->
+<!-- The `static` directory contains your static files. Each file inside this directory is mapped to /. -->
 
 `static` ディレクトリには静的ファイルを入れます。このディレクトリ内のファイルはいずれも `/` に配置されます。
 

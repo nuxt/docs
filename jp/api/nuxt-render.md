@@ -34,7 +34,7 @@ Nuxt.js を [express](https://github.com/expressjs/express) と一緒に使う�
 <!-- const isProd = (process.env.NODE_ENV === 'production') -->
 <!-- const port = process.env.PORT || 3000 -->
 
-<!-- // We instantiate buxt.js with the options -->
+<!-- // We instantiate nuxt.js with the options -->
 <!-- let config = require('./nuxt.config.js') -->
 <!-- config.dev = !isProd -->
 <!-- const nuxt = new Nuxt(config) -->

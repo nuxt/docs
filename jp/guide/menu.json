@@ -51,13 +51,14 @@
         "contents": [
           { "to": "#ページ", "name": "ページ" },
           { "to": "#レイアウト", "name": "レイアウト" },
-          { "to": "#html-の-head-情報", "name": "HTML の head 情報" }
+          { "to": "#html-の-head-情報", "name": "HTML の head 情報" },
+          { "to": "#ドキュメント", "name": "ドキュメント" }
         ]
       },
       {
         "to": "/async-data", "name": "非同期なデータ",
         "contents": [
-          { "to": "#data-メソッド", "name": "data メソッド" },
+          { "to": "#asyncdata-メソッド", "name": "asyncData メソッド" },
           { "to": "#コンテキスト", "name": "コンテキスト" },
           { "to": "#エラー処理", "name": "エラー処理" }
         ]

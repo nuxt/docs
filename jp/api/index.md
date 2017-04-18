@@ -1,31 +1,36 @@
 ---
-title: "API: data メソッド"
-description: Nuxt.js は Vue.js の data メソッドに手を加えて、コンポーネントのデータがセットされる前に非同期処理を行えるようにしています。
+title: "API: asyncData メソッド"
+description: サーバーサイドでデータを取得し、それをレンダリングしたいことがあるでしょう。Nuxt.js はコンポーネントのデータをセットする前に非同期の処理を行えるようにするために `asyncData` メソッドを追加しています。
 ---
 
-<!-- title: "API: The data Method" -->
-<!-- description: Nuxt.js supercharges the data method from vue.js to let you handle async operation before setting the component data. -->
+<!-- title: "API: The asyncData Method" -->
+<!-- description: You may want to fetch data and render it on the server-side. Nuxt.js add an `asyncData` method let you handle async operation before setting the component data. -->
 
-<!-- # The data Method -->
+<!-- # The asyncData Method -->
 
-# data メソッド
+# asyncData メソッド
 
 <!-- \> Nuxt.js *supercharges* the `data` method from vue.js to let you handle async operation before setting the component data. -->
 
-> Nuxt.js は Vue.js の `data` メソッドに手を加えて、コンポーネントのデータがセットされる前に非同期処理を行えるようにしています。
+<!-- \> You may want to fetch data and render it on the server-side. Nuxt.js add an `asyncData` method let you handle async operation before setting the component data. -->
+
+> サーバーサイドでデータを取得し、それをレンダリングしたいことがあるでしょう。Nuxt.js はコンポーネントのデータをセットする前に非同期の処理を行えるようにするために `asyncData` メソッドを追加しています。
 
 <!-- - **Type:** `Function` -->
 
 - **タイプ:** `関数`
 
-<!-- `data` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives the **context** as the first argument, you can use it to fetch some data and return the component data. -->
+<!-- `asyncData` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives [the context](/api#context) as the first argument, you can use it to fetch some data and nuxt.js will merge them with the component data. -->
 
-`data` はコンポーネントがローディングされる前に毎回呼び出されます（ページコンポーネントに限ります）。サーバーサイドもしくは（訳注: クライアントサイドでは）ユーザーがページ遷移する前に呼び出されます。このメソッドは第一引数として **コンテキスト** を受け取り、コンテキストを使ってデータを取得してコンポーネントのデータを返すことができます。
+`asyncData` はコンポーネント（ページコンポーネントに限ります）がロードされる前に毎回呼び出されます。サーバーサイドレンダリングや、ユーザーがページを遷移する前にも呼び出されます。そしてこのメソッドは第一引数として [コンテキスト](/api#コンテキスト) を受け取り、コンテキストを使ってデータを取得してコンポーネントのデータとマージすることができます。
 
 ```js
 export default {
-  data (context) {
-    return { foo: 'bar' }
+  data () {
+    return { project: 'default' }
+  },
+  asyncData (context) {
+    return { project: 'nuxt' }
   }
 }
 ```

@@ -150,10 +150,14 @@ promise.then(() => {
 "scripts": {
   "dev": "node server.js",
   "build": "nuxt build",
-  "start": "NODE_ENV=production node server.js"
+  "start": "cross-env NODE_ENV=production node server.js"
 }
 // ...
 ```
+
+<!-- Note: You'll need to run `npm install --save-dev cross-env` for the above example to work. If you're *not* developing on Windows you can leave cross-env out of your `start` script and set `NODE_ENV` directly. -->
+
+情報: 上の例を動かすためには `npm install --save-dev cross-env` を実行する必要があります。もし Windows で開発しているの *でない* ならば、`start` スクリプトから cross-env を削除して、直接 `NODE_ENV` をセットすることもできます。
 
 <!-- ## Using the store -->
 
@@ -252,6 +256,16 @@ nuxtServerInit ({ commit }, { req }) {
   }
 }
 ```
+
+<!-- To make the data method asynchronous, nuxt.js offers you different ways, choose the one you're the most familiar with: -->
+
+<!-- 1. returning a `Promise`, nuxt.js will wait for the promise to be resolved before rendering the component. -->
+<!-- 2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await)) -->
+
+Nuxt.js では data メソッドを非同期にするために、いくつかの異なるやり方があるので、お好きなものを選んでください:
+
+1. Promise を返す。Nuxt.js はコンポーネントがレンダリングされる前に Promise が解決されるまで待ちます
+2. [async/await](https://github.com/lukehoban/ecmascript-asyncawait) を使う（[より深く理解する](https://zeit.co/blog/async-and-await)）
 
 <!-- ### login() action -->
 

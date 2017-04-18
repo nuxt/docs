@@ -1,30 +1,30 @@
 ---
 title: 非同期なデータ
-description: Nuxt.js はコンポーネントのデータをセットする前に非同期の処理を行えるようにするために、Vue.js の data メソッドに手を加えています。
+description: サーバーサイドでデータを取得し、それをレンダリングしたいことがあるでしょう。Nuxt.js はコンポーネントのデータをセットする前に非同期の処理を行えるようにするために `asyncData` メソッドを追加しています。
 ---
 
 <!-- title: Async Data -->
-<!-- description: Nuxt.js supercharges the data method from vue.js to let you handle async operation before setting the component data. -->
+<!-- description: You may want to fetch data and render it on the server-side. Nuxt.js add an `asyncData` method let you handle async operation before setting the component data. -->
 
-<!-- \> Nuxt.js *supercharges* the `data` method from vue.js to let you handle async operation before setting the component data. -->
+<!-- \> You may want to fetch data and render it on the server-side. Nuxt.js add an `asyncData` method let you handle async operation before setting the component data. -->
 
-> Nuxt.js はコンポーネントのデータをセットする前に非同期の処理を行えるようにするために、Vue.js の `data` メソッドに手を加えています。
+> サーバーサイドでデータを取得し、それをレンダリングしたいことがあるでしょう。Nuxt.js はコンポーネントのデータをセットする前に非同期の処理を行えるようにするために `asyncData` メソッドを追加しています。
 
-<!-- ## The data Method -->
+<!-- ## The asyncData Method -->
 
-## data メソッド
+## asyncData メソッド
 
-<!-- `data` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives [the context](/api#context) as the first argument, you can use it to fetch some data and return the component data. -->
+<!-- Sometimes you just want to fetch data and pre-render on the server-side without using a store. `asyncData` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives [the context](/api#context) as the first argument, you can use it to fetch some data and nuxt.js will merge them with the component data. -->
 
-`data` メソッドはコンポーネント（ページコンポーネントに限ります）が読み込まれる前に毎回呼び出されます。サーバーサイドレンダリングや、ユーザーがページを遷移する前にも呼び出されます。そしてこのメソッドは第一引数として [コンテキスト](/api#コンテキスト) を受け取り、コンテキストを使ってデータを取得してコンポーネントのデータを返すことができます。
+サーバーサイドでストアは使わずに、単にデータをフェッチしてレンダリングの事前処理をしたいときがあるでしょう。`asyncData` はコンポーネント（ページコンポーネントに限ります）がロードされる前に毎回呼び出されます。サーバーサイドレンダリングや、ユーザーがページを遷移する前にも呼び出されます。そしてこのメソッドは第一引数として [コンテキスト](/api#コンテキスト) を受け取り、コンテキストを使ってデータを取得してコンポーネントのデータとマージすることができます。
 
 <!-- <div class="Alert Alert--orange">You do **NOT** have access of the component instance trough `this` inside `data` because it is called **before initiating** the component.</div> -->
 
 <div class="Alert Alert--orange">`data` メソッド内の `this` を通してコンポーネントのインスタンスにアクセスすることは **できません**。それはコンポーネントがインスタンス化される前に data メソッドが呼び出されるためです。</div>
 
-<!-- To make the data method asynchronous, nuxt.js offers you different ways, choose the one you're the most familiar with: -->
+<!-- To use the asyncData method, nuxt.js offers you different ways, choose the one you're the most familiar with: -->
 
-Nuxt.js では data メソッドを非同期にするために、いくつかの異なるやり方があるので、お好きなものを選んでください:
+Nuxt.js では asyncData メソッドを使うために、いくつかの異なるやり方があるので、お好きなものを選んでください:
 
 <!-- 1. returning a `Promise`, nuxt.js will wait for the promise to be resolved before rendering the component. -->
 <!-- 2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await)) -->
@@ -40,7 +40,7 @@ Nuxt.js では data メソッドを非同期にするために、いくつかの
 
 ```js
 export default {
-  data ({ params }) {
+  asyncData ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
     .then((res) => {
       return { title: res.data.title }
@@ -55,7 +55,7 @@ export default {
 
 ```js
 export default {
-  async data ({ params }) {
+  async asyncData ({ params }) {
     let { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
@@ -68,7 +68,7 @@ export default {
 
 ```js
 export default {
-  data ({ params }, callback) {
+  asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
     .then((res) => {
       callback(null, { title: res.data.title })
@@ -77,29 +77,13 @@ export default {
 }
 ```
 
-<!-- ### Returning an Object -->
-
-### オブジェクトを返す
-
-<!-- If you don't need to do any asynchronous call, you can simply return an object: -->
-
-もし非同期に実行する必要がなければ、シンプルにオブジェクトを返すことができます:
-
-```js
-export default {
-  data (context) {
-    return { foo: 'bar' }
-  }
-}
-```
-
 <!-- ### Displaying the data -->
 
 ### データを表示する
 
-<!-- When the data method set, you can display the data inside your template like you used to do: -->
+<!-- The result from asyncData will be **merged** with data. You can display the data inside your template like you used to do: -->
 
-data メソッドがセットされると、下記のように template の内側でデータを表示することができます:
+asyncData の結果はコンポーネントのデータと **マージされ** ます。下記のように template の内側でデータを表示することができます:
 
 ```html
 <template>
@@ -129,7 +113,7 @@ Nuxt.js は `context` の中に `error(params)` メソッドを追加してい�
 
 <!-- ```js -->
 <!-- export default { -->
-<!--   data ({ params, error }) { -->
+<!--   asyncData ({ params, error }) { -->
 <!--     return axios.get(`https://my-api/posts/${params.id}`) -->
 <!--     .then((res) => { -->
 <!--       return { title: res.data.title } -->
@@ -143,7 +127,7 @@ Nuxt.js は `context` の中に `error(params)` メソッドを追加してい�
 
 ```js
 export default {
-  data ({ params, error }) {
+  asyncData ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
     .then((res) => {
       return { title: res.data.title }
@@ -161,7 +145,7 @@ export default {
 
 <!-- ```js -->
 <!-- export default { -->
-<!--   data ({ params }, callback) { -->
+<!--   asyncData ({ params }, callback) { -->
 <!--     axios.get(`https://my-api/posts/${params.id}`) -->
 <!--     .then((res) => { -->
 <!--       callback(null, { title: res.data.title }) -->
@@ -175,7 +159,7 @@ export default {
 
 ```js
 export default {
-  data ({ params }, callback) {
+  asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
     .then((res) => {
       callback(null, { title: res.data.title })

@@ -25,7 +25,7 @@ description: Nuxt.js ではグローバルに適用したい（すべてのペ�
 要素がオブジェクトのときは、プロパティは次のとおりです:
 
 <!-- - src: `String` (path of the file) -->
-<!-- - lang: `String` ([pre-processor used](/guide/pages#using-pre-processors)) -->
+<!-- - lang: `String` ([pre-processor used](/faq/pre-processors)) -->
 
 - src: `文字列`（ファイルのパス）
 - lang: `文字列`（[プリプロセッサを使うには？](/faq/pre-processors)）
@@ -42,7 +42,9 @@ description: Nuxt.js ではグローバルに適用したい（すべてのペ�
 <!--     // node.js module but we specify the pre-processor -->
 <!--     { src: 'bulma', lang: 'sass' }, -->
 <!--     // Css file in the project -->
-<!--     '~assets/css/main.css' -->
+<!--     '~assets/css/main.css', -->
+<!--     // Sass file in the project -->
+<!--     { src: '~assets/css/main.scss', lang: 'scss' } // scss instead of sass -->
 <!--   ] -->
 <!-- } -->
 <!-- ``` -->
@@ -55,7 +57,9 @@ module.exports = {
     // node.js モジュール。プリプロセッサを指定
     { src: 'bulma', lang: 'sass' },
     // プロジェクト内の CSS ファイル
-    '~assets/css/main.css'
+    '~assets/css/main.css',
+    // プロジェクト内の SASS ファイル
+    { src: '~assets/css/main.scss', lang: 'scss' } // SASS の代わりに SCSS を使う
   ]
 }
 ```
