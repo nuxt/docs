@@ -99,7 +99,8 @@ export default {
 <!-- |------|------|---------|-----------| -->
 <!-- | `name` | String | `"page"` | The transition name applied on all the routes transitions. | -->
 <!-- | `mode` | String | `"out-in"` | The transition mode applied on all routes, see [Vue.js documentation](http://vuejs.org/v2/guide/transitions.html#Transition-Modes). | -->
-<!-- | `css` | Boolean | `true` | Whether to apply CSS transition classes. Defaults to true. If set to false, will only trigger JavaScript hooks registered via component events. | -->
+<!-- | `css` | Boolean | `true` | Whether to apply CSS transition classes. Defaults to `true`. If set to false, will only trigger JavaScript hooks registered via component events. | -->
+<!-- | `duration` | Integer | `n/a` | The duration (in milliseconds) applied on the transition, see [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Explicit-Transition-Durations). | -->
 <!-- | `type` | String | `n/a` | Specify the type of transition events to wait for to determine transition end timing. Available values are "transition" and "animation". By default, it will automatically detect the type that has a longer duration. | -->
 <!-- | `enterClass` | String | `n/a` | The starting state of the transition class. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) | -->
 <!-- | `enterToClass` | String | `n/a` | The ending state for the transition. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) | -->
@@ -112,7 +113,8 @@ export default {
 |------|------|---------|-----------|
 | `name` | 文字列 | `"page"` | すべてのトランジション時に適用されるトランジション名 |
 | `mode` | 文字列 | `"out-in"` | すべてのトランジション時に適用されるトランジションモード。詳細は [Vue.js のドキュメント](http://vuejs.org/v2/guide/transitions.html#Transition-Modes) 参照 |
-| `css` | ブーリアン | `true` | CSS トランジションクラスを適用するか否か。デフォルトは true です。false を設定すると、コンポーネントのイベントで登録された JavaScript フックのみがトリガーになります |
+| `css` | ブーリアン | `true` | CSS トランジションクラスを適用するか否か。デフォルトは `true` です。false を設定すると、コンポーネントのイベントで登録された JavaScript フックのみがトリガーになります |
+| `duration` | 整数 | `n/a` | トランジションが適用される時間（ミリ秒）です。詳細は [Vue.js のドキュメント](https://vuejs.org/v2/guide/transitions.html#Explicit-Transition-Durations) 参照 |
 | `type` | 文字列 | `n/a` | トランジション終了のタイミングを判定するために待ち受けるトランジションのイベントタイプを指定します。"transition" または "animation" を指定できます。デフォルトでは、より時間がかかるほうのタイプが自動的に選ばれます |
 | `enterClass` | 文字列 | `n/a` | トランジション開始時の状態のクラスです。詳細は [Vue.js のドキュメント](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) 参照 |
 | `enterToClass` | 文字列 | `n/a` | トランジション終了時の状態のクラスです。詳細は [Vue.js のドキュメント](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) 参照 |

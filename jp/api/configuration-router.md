@@ -46,6 +46,34 @@ module.exports = {
 
 > このオプションは vue-router の [Router コンストラクタ](https://router.vuejs.org/en/api/options.html) に直接付与されます。
 
+## mode
+
+<!-- - Type: `String` -->
+<!-- - Default: `'history'` -->
+
+- タイプ: `文字列`
+- デフォルト: `'history'`
+
+<!-- Configure the router mode, this is not recommended to change it due to server-side rendering. -->
+
+ルーティングのモードを設定します。サーバーサイドレンダリングのため、この設定を変更することは非推奨です。
+
+<!-- Example (`nuxt.config.js`): -->
+
+例（`nuxt.config.js`）:
+
+```js
+module.exports = {
+  router: {
+    mode: 'hash'
+  }
+}
+```
+
+<!-- \> This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html). -->
+
+> このオプションは直接 vue-router の [Router コンストラクタ](https://router.vuejs.org/en/api/options.html) に渡されます。
+
 ## linkActiveClass
 
 <!-- - Type: `String` -->

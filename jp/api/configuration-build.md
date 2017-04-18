@@ -179,7 +179,6 @@ module.exports = {
 module.exports = {
   build: {
     filenames: {
-      css: 'app.[hash].css',
       vendor: 'vendor.[hash].js',
       app: 'app.[chunkhash].js'
     }
@@ -281,9 +280,9 @@ module.exports = {
 
 ## postcss
 
-<!-- - **Type:** `Array` -->
+<!-- - Type: `Array` -->
 
-- **タイプ:** `配列`
+- タイプ: `配列`
 
 <!-- \> Customize [postcss](https://github.com/postcss/postcss) options -->
 
@@ -320,17 +319,45 @@ module.exports = {
 }
 ```
 
+## publicPath
+
+<!-- - Type: `String` -->
+<!-- - Default: `'/_nuxt/'` -->
+
+- タイプ: `文字列`
+- デフォルト: `'/_nuxt/'`
+
+<!-- \> Nuxt.js lets you upload your dist files to your CDN for maximum performances, simply set the `publicPath` to your CDN. -->
+
+> 最高のパフォーマンスを発揮させるために dist ディレクトリ内のファイルを CDN へアップロードできます。そのためには単に `publicPath` に利用する CDN をセットするだけです。
+
+<!-- Example (`nuxt.config.js`): -->
+
+例（`nuxt.config.js`）:
+
+```js
+module.exports = {
+  build: {
+    publicPath: 'https://cdn.nuxtjs.org'
+  }
+}
+```
+
+<!-- Then, when launching `nuxt build`, upload the content of `.nuxt/dist/` directory to your CDN and voilà! -->
+
+設定すると、`nuxt build` を実行したタイミングで `.nuxt/dist/` ディレクトリの内容が CDN にアップロードされます！
+
 ## vendor
 
 <!-- \> Nuxt.js lets you add modules inside the `vendor.bundle.js` file generated to reduce the size of the app bundle. It's really useful when using external modules (like `axios` for example) -->
 
 > Nuxt.js では `vendor.bundle.js` ファイル内にモジュールを追加できます。このファイルは app バンドルファイルのサイズを小さくするために生成します。外部モジュール（例えば `axios` など）を使うときにとても便利です。
 
-<!-- - **Type:** `Array` -->
-<!--   - **Items:** `String` -->
+<!-- - Type: `Array` -->
+<!--   - Items: `String` -->
 
-- **タイプ:** `配列`
-  - **要素:** `文字列`
+- タイプ: `配列`
+  - 要素: `文字列`
 
 <!-- To add a module/file inside the vendor bundle, add the `build.vendor` key inside `nuxt.config.js`: -->
 

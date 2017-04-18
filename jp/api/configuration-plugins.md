@@ -11,10 +11,19 @@ description: Nuxt.js の plugins オプションで Vue.js プラグインを使
 # plugins プロパティ
 
 <!-- - Type: `Array` -->
-<!--   - Items: `String` -->
+<!--   - Items: `String` or `Object` -->
 
 - タイプ: `配列`
-  - 要素: `文字列`
+  - 要素: `文字列` または `オブジェクト`
+
+<!-- If the item is an object, the properties are: -->
+<!--   - src: `String` (path of the file) -->
+<!--   - ssr: `Boolean` (default to `true`) *If false, the file will be included only on the client-side.* -->
+
+オブジェクトの場合にはプロパティは次のとおり:
+
+- src: `文字列`（ファイルパス）
+- ssr: `ブーリアン`（デフォルトは `true`）*false のときは、クライアントサイドでのみファイルがインクルードされます*
 
 <!-- \> The plugins property lets you add vue.js plugins easily to your main application. -->
 
