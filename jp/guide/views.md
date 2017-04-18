@@ -1,106 +1,61 @@
 ---
 title: ビュー
-description: このセクションでは Nuxt.js アプリケーションの特定のルートにデータとビューを設定するために必要なことすべてを説明します（ページ、レイアウト、HTML の head タグのメタ情報などを含みます）
+description: このセクションでは Nuxt.js アプリケーションの特定のルートにデータとビューを設定するために必要なことすべてを説明します（ドキュメント、レイアウト、ページ、HTML の head タグのメタ情報などを含みます）
 ---
 
 <!-- title: Views -->
-<!-- description: The Views section describes all you need to configure data and views for a specific route in your Nuxt.js application. (Pages, layouts and HTML Head) -->
+<!-- description: The Views section describes all you need to configure data and views for a specific route in your Nuxt.js application. (Document, Layouts, Pages and HTML Head) -->
 
-<!-- \> The Views section describes all you need to configure data and views for a specific route in your Nuxt.js application. (Pages, layouts and HTML Head) -->
+<!-- \> The Views section describes all you need to configure data and views for a specific route in your Nuxt.js application. (Document, Layouts, Pages and HTML Head) -->
 
-> このセクションでは Nuxt.js アプリケーションの特定のルートにデータとビューを設定するために必要なことすべてを説明します（ページ、レイアウト、HTML の head タグのメタ情報などを含みます）
+> このセクションでは Nuxt.js アプリケーションの特定のルートにデータとビューを設定するために必要なことすべてを説明します（ドキュメント、レイアウト、ページ、HTML の head タグのメタ情報などを含みます）
 
-<!-- ## Pages -->
+![nuxt-views-schema](/nuxt-views-schema.png)
 
-## ページ
+<!-- ## Document -->
 
-<!-- Every Page component is a Vue component, but Nuxt.js adds special keys to make the development of your universal application the easiest way possible. -->
+## ドキュメント
 
-すべてのページコンポーネントは Vue コンポーネントですが、Nuxt.js はユニバーサルなアプリケーションを最も簡単なやり方で開発することを可能にために、特別なキーを追加します。  
+<!-- \> You can customise the main document with nuxt.js -->
 
-<!-- ```html -->
-<!-- <template> -->
-<!--   <h1 class="red">Hello {{ name }}!</h1> -->
-<!-- </template> -->
+> メインのドキュメントをカスタマイズすることができます。
 
-<!-- <script> -->
-<!-- export default { -->
-<!--   data (context) { -->
-<!--     // called every time before loading the component -->
-<!--     return { name: 'World' } -->
-<!--   }, -->
-<!--   fetch () { -->
-<!--     // The fetch method is used to fill the store before rendering the page -->
-<!--   }, -->
-<!--   head () { -->
-<!--     // Set Meta Tags for this Page -->
-<!--   }, -->
-<!--   // and more functionality to discover -->
-<!--   ... -->
-<!-- } -->
-<!-- </script> -->
+<!-- To extend the html template, create a `app.html` at the root of your project. -->
 
-<!-- <style> -->
-<!-- .red { -->
-<!--   color: red; -->
-<!-- } -->
-<!-- </style> -->
-<!-- ``` -->
+HTML テンプレートを拡張するために、プロジェクトのルートディレクトリに `app.html` を作成します。
+
+<!-- The default template is: -->
+
+デフォルトのテンプレートは下記です:
 
 ```html
-<template>
-  <h1 class="red">Hello {{ name }}!</h1>
-</template>
-
-<script>
-export default {
-  data (context) {
-    // コンポーネントがロードされる前に毎回呼び出されます
-    return { name: 'World' }
-  },
-  fetch () {
-    // fetch メソッドは、ページがレンダリングされる前に、ストアにデータを入れるために使われます
-  },
-  head () {
-    // このページのメタタグをセットします
-  },
-  // さらにいろいろな機能が続きます...
-  ...
-}
-</script>
-
-<style>
-.red {
-  color: red;
-}
-</style>
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }}>
+  <head>
+    {{ HEAD }}
+  </head>
+  <body {{ BODY_ATTRS }}>
+    {{ APP }}
+  </body>
+</html>
 ```
 
-<!-- | Attribute | Description | -->
-<!-- |-----------|-------------| -->
-<!-- | data | The most important key, it has the same purpose as [Vue data](https://vuejs.org/v2/api/#Options-Data) but it can be asynchronous and receives the context as argument, please read the [async data documentation](/guide/async-data) to learn how it works. | -->
-<!-- | fetch | Used to fill the store before rendering the page, it's like the data method except it doesn't set the component data. See the [API Pages fetch documentation](/api/pages-fetch). | -->
-<!-- | head | Set specific Meta Tags for the current page, see [API Pages head documentation](/api/pages-head). | -->
-<!-- | layout | Specify a layout defined in the `layouts` directory, see [API Pages layouts documentation](/api/pages-layout). | -->
-<!-- | transition | Set a specific transition for the page, see [API Pages transition](/api/pages-transition). | -->
-<!-- | scrollToTop | Boolean, by default: `false`. Specify if you want the page to scroll to the top before rendering the page, it's used for [nested routes](/guide/routing#nested-routes). | -->
-<!-- | validate | Validator function for a [dynamic route](/guide/routing#dynamic-routes). | -->
-<!-- | middleware | Set a middleware for this page, the middleware will be called before rendering the page, see [routes middleware](/guide/routing#middleware). | -->
+<!-- One example if to add conditional CSS classes for IE: -->
 
-| 属性 | 説明 |
-|-----------|-------------|
-| data | 最も重要なキーであり [Vue.js の data オプション](https://vuejs.org/v2/api/#Options-Data) と同じ意義を持っています。しかし（訳注: Nuxt.js が data に手を加えているため）非同期に動作し、また引数として context を受け取ります。どのように動作するかを知るには [非同期データに関するドキュメント](/guide/async-data) を参照してください |
-| fetch | ページがレンダリングされる前に、データをストアに入れるために使います。コンポーネントのデータをセットすること以外は data メソッドと似ています。[ページのフェッチ API に関するドキュメント](/api/pages-fetch) を参照してください |
-| head | 現在のページの特定のメタタグを設定します。[ページの head API](/api/pages-head) を参照してください |
-| layout | `layouts` ディレクトリ内のレイアウトを指定します。[ページのレイアウト API に関するドキュメント](/api/pages-layout) を参照してください |
-| transition | ページに特定のトランジションを設定します。[ページのトランジション API に関するドキュメント](/api/pages-transition) を参照してください |
-| scrollToTop | ブーリアンで指定し、デフォルトは `false` です。ページをレンダリングする前にトップまでスクロールさせるか否かを指定します。これは [ネストされたルート](/guide/routing#ネストされたルート) で使われます |
-| validate | [動的なルーティング](/guide/routing#動的なルーティング) のためのバリデーション関数です |
-| middleware | このページのためにミドルウェアを設定し、ミドルウェアはページがレンダリングされる前に呼び出されます。[ルーティングのミドルウェア](/guide/routing#ミドルウェア) を参照してください |
+条件付きで IE のための CSS クラスを追加する例:
 
-<!-- More information about the pages properties usage: [API Pages](/api) -->
-
-ページのプロパティの使い方についてより深く理解するには [ページ API](/api) を参照してください。
+```html
+<!DOCTYPE html>
+<!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
+  <head>
+    {{ HEAD }}
+  </head>
+  <body {{ BODY_ATTRS }}>
+    {{ APP }}
+  </body>
+</html>
+```
 
 <!-- ## Layouts -->
 
@@ -234,7 +189,101 @@ export default {
 
 layout プロパティについてより深く理解するには [ページレイアウト API](/api/pages-layout) を参照してください。
 
+<!-- Check the [demonstration video](https://www.youtube.com/watch?v=YOKnSTp7d38) to see it in action. -->
+
 また、動作する様子を [デモ動画](https://www.youtube.com/watch?v=YOKnSTp7d38) で確認してみてください。
+
+<!-- ## Pages -->
+
+## ページ
+
+<!-- Every Page component is a Vue component, but Nuxt.js adds special keys to make the development of your universal application the easiest way possible. -->
+
+すべてのページコンポーネントは Vue コンポーネントですが、Nuxt.js はユニバーサルなアプリケーションを最も簡単なやり方で開発することを可能にために、特別なキーを追加します。  
+
+<!-- ```html -->
+<!-- <template> -->
+<!--   <h1 class="red">Hello {{ name }}!</h1> -->
+<!-- </template> -->
+
+<!-- <script> -->
+<!-- export default { -->
+<!--   data (context) { -->
+<!--     // called every time before loading the component -->
+<!--     return { name: 'World' } -->
+<!--   }, -->
+<!--   fetch () { -->
+<!--     // The fetch method is used to fill the store before rendering the page -->
+<!--   }, -->
+<!--   head () { -->
+<!--     // Set Meta Tags for this Page -->
+<!--   }, -->
+<!--   // and more functionality to discover -->
+<!--   ... -->
+<!-- } -->
+<!-- </script> -->
+
+<!-- <style> -->
+<!-- .red { -->
+<!--   color: red; -->
+<!-- } -->
+<!-- </style> -->
+<!-- ``` -->
+
+```html
+<template>
+  <h1 class="red">Hello {{ name }}!</h1>
+</template>
+
+<script>
+export default {
+  data (context) {
+    // コンポーネントがロードされる前に毎回呼び出されます
+    return { name: 'World' }
+  },
+  fetch () {
+    // fetch メソッドは、ページがレンダリングされる前に、ストアにデータを入れるために使われます
+  },
+  head () {
+    // このページのメタタグをセットします
+  },
+  // さらにいろいろな機能が続きます...
+  ...
+}
+</script>
+
+<style>
+.red {
+  color: red;
+}
+</style>
+```
+
+<!-- | Attribute | Description | -->
+<!-- |-----------|-------------| -->
+<!-- | asyncData | The most important key, it can be asynchronous and receives the context as argument, please read the [async data documentation](/guide/async-data) to learn how it works. |
+<!-- | fetch | Used to fill the store before rendering the page, it's like the data method except it doesn't set the component data. See the [API Pages fetch documentation](/api/pages-fetch). | -->
+<!-- | head | Set specific Meta Tags for the current page, see [API Pages head documentation](/api/pages-head). | -->
+<!-- | layout | Specify a layout defined in the `layouts` directory, see [API Pages layouts documentation](/api/pages-layout). | -->
+<!-- | transition | Set a specific transition for the page, see [API Pages transition](/api/pages-transition). | -->
+<!-- | scrollToTop | Boolean, by default: `false`. Specify if you want the page to scroll to the top before rendering the page, it's used for [nested routes](/guide/routing#nested-routes). | -->
+<!-- | validate | Validator function for a [dynamic route](/guide/routing#dynamic-routes). | -->
+<!-- | middleware | Set a middleware for this page, the middleware will be called before rendering the page, see [routes middleware](/guide/routing#middleware). | -->
+
+| 属性 | 説明 |
+|-----------|-------------|
+| asyncData | 最も重要なキーです。非同期に動作し、引数として context を受け取ります。どのように動作するかを知るには [非同期データに関するドキュメント](/guide/async-data) を参照してください |
+| fetch | ページがレンダリングされる前に、データをストアに入れるために使います。コンポーネントのデータをセットすること以外は data メソッドと似ています。[ページのフェッチ API に関するドキュメント](/api/pages-fetch) を参照してください |
+| head | 現在のページの特定のメタタグを設定します。[ページの head API](/api/pages-head) を参照してください |
+| layout | `layouts` ディレクトリ内のレイアウトを指定します。[ページのレイアウト API に関するドキュメント](/api/pages-layout) を参照してください |
+| transition | ページに特定のトランジションを設定します。[ページのトランジション API に関するドキュメント](/api/pages-transition) を参照してください |
+| scrollToTop | ブーリアンで指定し、デフォルトは `false` です。ページをレンダリングする前にトップまでスクロールさせるか否かを指定します。これは [ネストされたルート](/guide/routing#ネストされたルート) で使われます |
+| validate | [動的なルーティング](/guide/routing#動的なルーティング) のためのバリデーション関数です |
+| middleware | このページのためにミドルウェアを設定し、ミドルウェアはページがレンダリングされる前に呼び出されます。[ルーティングのミドルウェア](/guide/routing#ミドルウェア) を参照してください |
+
+<!-- More information about the pages properties usage: [API Pages](/api) -->
+
+ページのプロパティの使い方についてより深く理解するには [ページ API](/api) を参照してください。
 
 <!-- ## HTML Head -->
 
@@ -309,48 +358,3 @@ head メソッドについてより深く理解するには [head 設定 API](/a
 <!-- <p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://github.com/declandewet/vue-meta#lists-of-tags).</p> -->
 
 <p class="Alert">子コンポーネントで利用されたときにメタ情報が重複してしまうことを避けるために `hid` キーでユニーク識別子を与えてください。また、これについてより深く理解するには [こちら](https://github.com/declandewet/vue-meta#lists-of-tags) を参照してください。</p>
-
-<!-- ## Document -->
-
-## ドキュメント
-
-<!-- \> You can customise the main document with nuxt.js -->
-
-> メインのドキュメントをカスタマイズすることができます。
-
-<!-- To extend the html template, create a `app.html` at the root of your project. -->
-
-HTML テンプレートを拡張するために、プロジェクトのルートディレクトリに `app.html` を作成します。
-
-<!-- The default template is: -->
-
-デフォルトのテンプレートは下記です:
-
-```html
-<!DOCTYPE html>
-<html {{ HTML_ATTRS }}>
-  <head>
-    {{ HEAD }}
-  </head>
-  <body {{ BODY_ATTRS }}>
-    {{ APP }}
-  </body>
-</html>
-```
-
-<!-- One example if to add conditional CSS classes for IE: -->
-
-条件付きで IE のための CSS クラスを追加する例:
-
-```html
-<!DOCTYPE html>
-<!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
-  <head>
-    {{ HEAD }}
-  </head>
-  <body {{ BODY_ATTRS }}>
-    {{ APP }}
-  </body>
-</html>
-```
