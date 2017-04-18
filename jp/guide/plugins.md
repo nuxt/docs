@@ -121,23 +121,33 @@ module.exports = {
 
 ## クライアントサイド限定のプラグイン利用
 
-<!-- Some plugins might work **only for the browser**, you can use the `process.BROWSER_BUILD` variable to check if the plugin will run from the client-side. -->
+<!-- Some plugins might work **only for the browser**, you can use the `ssr: false` option in `plugins` to run the file only on the client-side. -->
 
-プラグインのいくつかは **ブラウザでのみ** 動かしたいとします。その場合は `process.BROWSER_BUILD` 変数を使って、あるプラグインをクライアントサイドで動作させることが可能です。
+プラグインのいくつかは **ブラウザでのみ** 動かしたいとします。その場合は `plugins` 内の `ssr: false` オプションを使うと、プラグインをクライアントサイドでのみ実行させるが可能です。
 
 <!-- Example: -->
 
 例:
 
+`nuxt.config.js`:
+
+```js
+module.exports = {
+  plugins: [
+    { src: '~plugins/vue-notifications', ssr: false }
+  ]
+}
+```
+
+`plugins/vue-notifications.js`:
+
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
 
-if (process.BROWSER_BUILD) {
-  Vue.use(VueNotifications)
-}
+Vue.use(VueNotifications)
 ```
 
-<!-- In case you need to require some libraries only for the server, you can use the `process.SERVER_BUILD` variable set to `true` when webpack is creating the `server.bundle.js` file. -->
+<!-- In case you need to require some libraries only for the server, you can use the `process.server` variable set to `true` when webpack is creating the `server.bundle.js` file. -->
 
-逆に、サーバーサイドでのみライブラリを読み込む必要がある場合は、`process.SERVER_BUILD` 変数を使うことができます。これは Webpack が `server.bundle.js` ファイルを作成するタイミングで `true` がセットされる変数です。
+逆に、サーバーサイドでのみライブラリを読み込む必要がある場合は、`process.server` 変数を使うことができます。これは Webpack が `server.bundle.js` ファイルを作成するタイミングで `true` がセットされる変数です。

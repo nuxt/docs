@@ -118,7 +118,8 @@ Nuxt.js ではメインレイアウトを拡張したり、カスタムレイア
 
 <!-- <script> -->
 <!-- export default { -->
-<!--   props: ['error'] -->
+<!--   props: ['error'], -->
+<!--   layout: 'blog' // you can set a custom layout for the error page -->
 <!-- } -->
 <!-- </script> -->
 <!-- ``` -->
@@ -134,7 +135,8 @@ Nuxt.js ではメインレイアウトを拡張したり、カスタムレイア
 
 <script>
 export default {
-  props: ['error']
+  props: ['error'],
+  layout: 'blog' // エラーページ用のカスタムレイアウトを指定できます
 }
 </script>
 ```
@@ -300,8 +302,8 @@ Nuxt.js では下記のオプションで `vue-meta` を設定します:
 <!-- ```js -->
 <!-- { -->
 <!--   keyName: 'head', // the component option name that vue-meta looks for meta info on. -->
-<!--   attribute: 'n-head', // the attribute name vue-meta adds to the tags it observes -->
-<!--   ssrAttribute: 'n-head-ssr', // the attribute name that lets vue-meta know that meta info has already been server-rendered -->
+<!--   attribute: 'data-n-head', // the attribute name vue-meta adds to the tags it observes -->
+<!--   ssrAttribute: 'data-n-head-ssr', // the attribute name that lets vue-meta know that meta info has already been server-rendered -->
 <!--   tagIDKeyName: 'hid' // the property name that vue-meta uses to determine whether to overwrite or append a tag -->
 <!-- } -->
 <!-- ``` -->
@@ -309,8 +311,8 @@ Nuxt.js では下記のオプションで `vue-meta` を設定します:
 ```js
 {
   keyName: 'head', // vue-meta がメタ情報を探すためのコンポーネントオプションの名前
-  attribute: 'n-head', // vue-meta がタグを監視するためにタグに追加する属性名
-  ssrAttribute: 'n-head-ssr', // メタ情報が既にサーバーサイドでレンダリングされていることを vue-meta に知らせるための属性名
+  attribute: 'data-n-head', // vue-meta がタグを監視するためにタグに追加する属性名
+  ssrAttribute: 'data-n-head-ssr', // メタ情報が既にサーバーサイドでレンダリングされていることを vue-meta に知らせるための属性名
   tagIDKeyName: 'hid' // vue-meta がタグを上書きすべきかタグを追加すべきか判断するために用いるプロパティ名
 }
 ```

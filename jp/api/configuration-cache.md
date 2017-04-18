@@ -16,9 +16,9 @@ description: Nuxt.js はレンダリングのパフォーマンス向上を目�
 
 ## 使い方
 
-<!-- - **Type:** `Boolean` or `Object` (Default: `false`) -->
+<!-- - Type: `Boolean` or `Object` (Default: `false`) -->
 
-- **タイプ:** `ブーリアン` または `オブジェクト`（デフォルト: `false`）
+- タイプ: `ブーリアン` または `オブジェクト`（デフォルト: `false`）
 
 <!-- If an object, see [lru-cache options](https://github.com/isaacs/node-lru-cache#options). -->
 
