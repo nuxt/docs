@@ -14,17 +14,31 @@ description: layouts ディレクトリの（第一階層の）ファイルは�
 
 > layouts ディレクトリの（第一階層の）ファイルはカスタムレイアウトになります。これらはページコンポーネントの layout プロパティで指定して利用できます。
 
-<!-- - **Type:** `String` (default: `'default'`) -->
+<!-- - **Type:** `String` or `Function` (default: `'default'`) -->
 
-- **タイプ:** `文字列`（デフォルト: `'default'`）
+- **タイプ:** `文字列` または `関数`（デフォルト: `'default'`）
 
 <!-- Use the `layout` key in your pages components to define which layout to use: -->
 
 どのレイアウトを使うか指定するために、ページコンポーネントで `layout` キーを使ってください:
 
+<!-- ```js -->
+<!-- export default { -->
+<!--   layout: 'blog', -->
+<!--   // OR -->
+<!--   layout (context) { -->
+<!--     return 'blog' -->
+<!--   } -->
+<!-- } -->
+<!-- ``` -->
+
 ```js
 export default {
-  layout: 'blog'
+  layout: 'blog',
+  // または
+  layout (context) {
+    return 'blog'
+  }
 }
 ```
 
