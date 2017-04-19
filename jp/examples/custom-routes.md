@@ -6,5 +6,3 @@ livedemo: https://custom-routes.nuxtjs.org
 documentation: /guide/routing#動的なルーティング
 ---
 
-<!-- title: Custom Routes -->
-<!-- description: Custom Routes example with Nuxt.js -->

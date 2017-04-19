@@ -7,5 +7,3 @@ liveedit: https://gomix.com/#!/project/nuxt-custom-layouts
 documentation: /guide/views#レイアウト
 ---
 
-<!-- title: Layouts -->
-<!-- description: Layouts example with Nuxt.js -->

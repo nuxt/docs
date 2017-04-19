@@ -7,5 +7,3 @@ livedemo: https://routes-transitions.nuxtjs.org
 documentation: /guide/routing#トランジション
 ---
 
-<!-- title: Routes transitions -->
-<!-- description: Routes transitions example with Nuxt.js -->

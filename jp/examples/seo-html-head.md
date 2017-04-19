@@ -6,5 +6,3 @@ livedemo: https://head-elements.nuxtjs.org
 documentation: /guide/views#html-の-head-情報
 ---
 
-<!-- title: SEO HTML Head -->
-<!-- description: SEO HTML Head example with Nuxt.js -->
