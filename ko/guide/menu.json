@@ -1,0 +1,109 @@
+[
+  {
+    "title": "Prologue",
+    "links": [
+      {
+        "to": "", "name": "소개",
+        "contents": [
+          { "to": "#what-is-nuxt-js-", "name": "Nuxt.js란 무엇인가?" },
+          { "to": "#how-it-works", "name": "어떻게 동작합니까?" },
+          { "to": "#features", "name": "특징" },
+          { "to": "#schema", "name": "스키마" },
+          { "to": "#server-rendered", "name": "서버에서 렌더링하기" },
+          { "to": "#static-generated", "name": "정적 파일로 생성하기" }
+        ]
+      },
+      { "to": "/contribution-guide", "name": "Contribution 가이드" },
+      { "to": "/release-notes", "name": "릴리즈 노트" }
+    ]
+  },
+  {
+    "title": "시작하기",
+    "links": [
+      {
+        "to": "/installation", "name": "설치",
+        "contents": [
+          { "to": "#using-nuxt-js-starter-template", "name": "Nuxt.js starter 템플릿 사용하기" },
+          { "to": "#starting-from-scratch", "name": "처음부터 시작하기" }
+        ]
+      },
+      {
+        "to": "/directory-structure", "name": "디렉토리 구조",
+        "contents": [
+          { "to": "#directories", "name": "디렉토리" },
+          { "to": "#aliases", "name": "Aliases" }
+        ]
+      },
+      { "to": "/configuration", "name": "환경 설정" },
+      {
+        "to": "/routing", "name": "라우팅",
+        "contents": [
+          { "to": "#basic-routes", "name": "기본 라우트" },
+          { "to": "#dynamic-routes", "name": "동적 라우트" },
+          { "to": "#nested-routes", "name": "중첩 라우트" },
+          { "to": "#dynamic-nested-routes", "name": "동적 중첩 라우트" },
+          { "to": "#transitions", "name": "트랜지션" },
+          { "to": "#middleware", "name": "미들웨어" }
+        ]
+      },
+      {
+        "to": "/views", "name": "뷰",
+        "contents": [
+          { "to": "#document", "name": "도큐먼트" },
+          { "to": "#layouts", "name": "레이아웃" },
+          { "to": "#pages", "name": "페이지" },
+          { "to": "#html-head", "name": "HTML Head" }
+        ]
+      },
+      {
+        "to": "/async-data", "name": "비동기 데이터",
+        "contents": [
+          { "to": "#the-data-method", "name": "asyncData 메소드" },
+          { "to": "#the-context", "name": "Context" },
+          { "to": "#handling-errors", "name": "에러 핸들링" }
+        ]
+      },
+      {
+        "to": "/assets", "name": "애셋",
+        "contents": [
+          { "to": "#webpacked", "name": "Webpack 사용" },
+          { "to": "#static", "name": "정적 파일 사용" }
+        ]
+      },
+      {
+        "to": "/plugins", "name": "플러그인",
+        "contents": [
+          { "to": "#external-packages", "name": "외부 패키지" },
+          { "to": "#vue-plugins", "name": "Vue 플러그인" },
+          { "to": "#inject-in-root-amp-context", "name": "$root 와 context 합치기" },
+          { "to": "#client-side-only", "name": "클라이언트에서만 사용하기" }
+        ]
+      },
+      {
+        "to": "/vuex-store", "name": "Vuex Store",
+        "contents": [
+          { "to": "#activate-the-store", "name": "store 활성화" },
+          { "to": "#classic-mode", "name": "클래식 모드" },
+          { "to": "#modules-mode", "name": "모듈 모드" },
+          { "to": "#the-fetch-method", "name": "fetch 메소드" },
+          { "to": "#the-nuxtserverinit-action", "name": "nuxtServerInit 액션" }
+        ]
+      },
+      {
+        "to": "/commands", "name": "명령어",
+        "contents": [
+          { "to": "#list-of-commands", "name": "명령어 목록" },
+          { "to": "#development-environment", "name": "개발 환경" },
+          { "to": "#production-deployment", "name": "제품 출시" }
+        ]
+      },
+      {
+        "to": "/development-tools", "name": "개발 툴",
+        "contents": [
+          { "to": "#end-to-end-testing", "name": "전체 테스팅" },
+          { "to": "#eslint", "name": "ESLint" }
+        ]
+      }
+    ]
+  }
+]
