@@ -39,6 +39,14 @@ Japanese translation is maintained by INOUE Takuya.
 * Primary maintainer - [INOUE Takuya](http://blog.inouetakuya.info/)
 * Primary translator - [INOUE Takuya](https://github.com/inouetakuya)
 
+### Korean
+
+Korean translation is maintained by Taewoong La.
+
+* Translation Repo — [/DiyLecko/ko.docs.nuxtjs](https://github.com/DiyLecko/ko.docs.nuxtjs)
+* Primary maintainer - [Taewoong La](http://blog.naver.com/diy_lecko)
+* Primary translator - [Taewoong La](https://github.com/DiyLecko)
+
 ### Want to help with the translation?
 
 If you feel okay with translating sorta alone, just fork the repo, create a "work-in-progress" pull request (mark it with [WIP], see [Russian translation](https://github.com/nuxt/docs/pull/3) if you need an example) — and just go on.
