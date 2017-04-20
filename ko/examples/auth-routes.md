@@ -8,7 +8,7 @@ liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 
 # 문서
 
-> Nuxt.js로 인증된 경로를 쉽게 만들 수 있습니다.
+> Nuxt.js로 인증 경로를 쉽게 만들 수 있습니다.
 
 ## Using Express and Sessions
 
@@ -19,7 +19,7 @@ Nuxt.js를 사용하면서 어플리케이션에 세션 기능을 추가할 때 
 yarn add express express-session body-parser whatwg-fetch
 ```
 
-*`whatwg-fetch`에 대해서는 추후에 말씀드리겠습니다.*
+*`whatwg-fetch`에 대해서는 뒤에 말씀드리겠습니다.*
 
 `server.js`를 만듭니다.:
 ```js
@@ -39,7 +39,7 @@ app.use(session({
   cookie: { maxAge: 60000 }
 }))
 
-// POST /api/login 로 로그인하여 req.session.authUser 에 추가.
+// POST /api/login 로 로그인하여 req.session.authUser에 추가.
 app.post('/api/login', function (req, res) {
   if (req.body.username === 'demo' && req.body.password === 'demo') {
     req.session.authUser = { username: 'demo' }
@@ -48,7 +48,7 @@ app.post('/api/login', function (req, res) {
   res.status(401).json({ error: 'Bad credentials' })
 })
 
-// POST /api/logout 로 로그아웃하여 req.session.authUser 에서 제거.
+// POST /api/logout 로 로그아웃하여 req.session.authUser에서 제거.
 app.post('/api/logout', function (req, res) {
   delete req.session.authUser
   res.json({ ok: true })
