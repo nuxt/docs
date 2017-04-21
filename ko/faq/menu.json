@@ -15,7 +15,7 @@
   {
     "title": "개발",
     "links": [
-      { "name": "window 또는 document 가 undefined 의 경우에는?", "to": "/window-document-undefined" },
+      { "name": "window 혹은 document 가 undefined 의 경우에는?", "to": "/window-document-undefined" },
       { "name": "왜 CSS Flash 가 보이는지?", "to": "/css-flash" },
       { "name": "컴포넌트 안에 비동기 데이터를 다루려면?", "to": "/async-data-components" },
       { "name": "메타태그가 중복된 경우에는?", "to": "/duplicated-meta-tags" }
