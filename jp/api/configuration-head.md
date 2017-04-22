@@ -3,18 +3,9 @@ title: "API: head プロパティ"
 description: Nuxt.js では nuxt.config.js 内にアプリケーションのデフォルトのメタ情報を定義できます。
 ---
 
-<!-- title: "API: The head Property" -->
-<!-- description: Nuxt.js let you define all default meta for your application inside nuxt.config.js. -->
-
-<!-- # The head Property -->
-
 # head プロパティ
 
-<!-- \> Nuxt.js let you define all default meta for your application inside `nuxt.config.js`, use the same `head` property: -->
-
 Nuxt.js では `nuxt.config.js` 内にアプリケーションのデフォルトのメタ情報を定義できます。それには `head` プロパティを使います:
-
-<!-- - Type: `Object` -->
 
 - タイプ: `オブジェクト`
 
@@ -31,10 +22,6 @@ module.exports = {
 }
 ```
 
-<!-- To know the list of options you can give to `head`, take a look at [vue-meta documentation](https://github.com/declandewet/vue-meta#recognized-metainfo-properties). -->
-
 `head` に設定できるオプション一覧は [vue-meta のドキュメント](https://github.com/declandewet/vue-meta#recognized-metainfo-properties) を参照してください。
-
-<!-- <p class="Alert Alert--teal"><b>INFO:</b> You can also use `head` in the page components and access to the component data through `this`, see [component head property](/api/pages-head).</p> -->
 
 <p class="Alert Alert--teal"><b>情報:</b> ページのコンポーネントでも `head` を使うことができ、`this` を経由してコンポーネントのデータにアクセスできます。詳しくは [コンポーネントの head プロパティ](/api/pages-head) を参照してください。</p>

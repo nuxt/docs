@@ -5,5 +5,3 @@ github: async-data
 documentation: /guide/async-data
 ---
 
-<!-- title: Async Data -->
-<!-- description: Async Data example with Nuxt.js -->

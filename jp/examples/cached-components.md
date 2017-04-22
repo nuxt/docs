@@ -5,5 +5,3 @@ github: cached-components
 documentation: /api/configuration-cache
 ---
 
-<!-- title: Cached Components -->
-<!-- description: Cached Components example with Nuxt.js -->

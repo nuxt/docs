@@ -6,5 +6,3 @@ livedemo: https://vuex-store.nuxtjs.org
 documentation: /guide/vuex-store
 ---
 
-<!-- title: Vuex Store -->
-<!-- description: Vuex Store example with Nuxt.js -->

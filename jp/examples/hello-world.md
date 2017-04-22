@@ -8,5 +8,3 @@ liveedit: https://gomix.com/#!/project/nuxt-hello-world
 documentation: /guide/installation#スクラッチから始める
 ---
 
-<!-- title: Hello World -->
-<!-- description: Hello World example with Nuxt.js -->
