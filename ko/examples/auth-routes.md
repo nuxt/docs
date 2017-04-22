@@ -1,6 +1,6 @@
 ---
 title: 인증 경로
-description: Nuxt.js로 인증된 경로 예제
+description: Nuxt.js를 사용한 인증 경로 예제
 github: auth-routes
 livedemo: https://nuxt-auth-routes.gomix.me
 liveedit: https://gomix.com/#!/project/nuxt-auth-routes
