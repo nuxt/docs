@@ -82,7 +82,7 @@
       {
         "to": "/vuex-store", "name": "Vuex Store",
         "contents": [
-          { "to": "#activate-the-store", "name": "store 활성화" },
+          { "to": "#activate-the-store", "name": "Store 활성화하기" },
           { "to": "#classic-mode", "name": "클래식 모드" },
           { "to": "#modules-mode", "name": "모듈 모드" },
           { "to": "#the-fetch-method", "name": "fetch 메소드" },
