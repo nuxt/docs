@@ -45,7 +45,7 @@ Korean translation is maintained by Taewoong La.
 
 * Translation Repo — [/DiyLecko/ko.docs.nuxtjs](https://github.com/DiyLecko/ko.docs.nuxtjs)
 * Primary maintainer - [Taewoong La](http://blog.naver.com/diy_lecko)
-* Primary translator - [Taewoong La](https://github.com/DiyLecko)
+* Primary translator - [june](http://jicjjang.github.io)
 
 ### Want to help with the translation?
 
