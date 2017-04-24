@@ -20,7 +20,7 @@
     "vue_jobs": "Vue Jobs"
   },
   "text": {
-    "an_error_occured": "エラーが発生しました",
+    "an_error_occurred": "エラーが発生しました",
     "api_page_not_found": "API ページが見つかりません",
     "example_file": "サンプルファイル",
     "please_wait": "お待ちください...",
