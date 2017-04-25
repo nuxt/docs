@@ -10,7 +10,7 @@ description: Nuxt.js では動的なルーティングを行うコンポーネ�
 - **タイプ:** `関数`
 
 ```js
-validate({ params, query }) {
+validate({ params, query, store }) {
   return true // params バリデーションを通過したとき
   return false // Nuxt.js がルートをレンダリングするのを中止して、エラーページを表示させる
 }
@@ -25,6 +25,17 @@ export default {
   validate ({ params }) {
     // 数値でなければならない
     return /^\d+$/.test(params.id)
+  }
+}
+```
+
+また、例えば [Vuex ストア](/guide/vuex-store) のデータを使ってバリデーションすることもできます（Vuex ストアのデータは [nuxtServerInit アクション](/guide/vuex-store#nuxtserverinit-アクション) を用いて事前に格納しておきます）:
+
+```js
+export default {
+  validate ({ params, store }) {
+    // `params.id` が存在している category の id なのか否かをチェックする
+    return store.state.categories.some((category) => category.id === params.id)
   }
 }
 ```
