@@ -28,7 +28,7 @@ npm install --save-dev ava jsdom
 
 <!-- And add a test script to our `package.json` and configure ava to compile files that we import into our tests. -->
 
-그리고 `package.json` 에 test 스크립트를 추가하고 테스트를 import할 화일을 컴파일 하기 위해 ava를 설정합니다.
+그리고 `package.json` 에 test 스크립트를 추가하고 테스트를 import할 파일을 컴파일 하기 위해 ava를 설정합니다.
 
 ```javascript
 "scripts": {
@@ -48,7 +48,7 @@ npm install --save-dev ava jsdom
 
 <!-- We are going to write our tests in the `test` folder: -->
 
-`test` 폴더 안에 테스트를 작성해 나가는 걸로 하겠습니다: 
+`test` 폴더 안에 테스트를 작성해 나가는 걸로 하겠습니다.
 
 ```bash
 mkdir test
@@ -84,7 +84,7 @@ export default {
 
 <!-- We add our test file `test/index.test.js`: -->
 
-`test/index.test.js` 테스트 화일을 추가합니다:
+`test/index.test.js` 테스트 화일을 추가합니다.
 
 <!-- ```js -->
 <!-- import test from 'ava' -->
@@ -173,7 +173,7 @@ test('Route / exits and render HTML with CSS applied', async t => {
   t.is(window.getComputedStyle(element).color, 'red')
 })
 
-// 서버를 닫고 nuxt 에 화일갱신 리스닝을 중지시킨다
+// 서버를 닫고 nuxt 에 파일갱신 리스닝을 중지시킨다
 test.after('Closing server and nuxt.js', t => {
   server.close()
   nuxt.close()
@@ -182,7 +182,7 @@ test.after('Closing server and nuxt.js', t => {
 
 <!-- We can now launch our tests: -->
 
-이제 테스트를 실행할 수 있게 되었습니다:
+이제 테스트를 실행할 수 있게 되었습니다.
 
 ```bash
 npm test
@@ -196,11 +196,11 @@ jsdom 은 브라우저를 사용하지 않기 때문에 제약점이 몇가지 �
 
 <!-- \> ESLint is a great tool to keep your code clean -->
 
-> ESLint 는 깔끔한 코드를 유지할 수 있도록 해주는 멋지 툴입니다.
+> ESLint 는 깔끔한 코드를 유지할 수 있도록 해주는 멋진 툴입니다.
 
 <!-- You can add [ESLint](http://eslint.org) pretty easily with nuxt.js, first, you need to add the npm dependencies: -->
 
-매우 간단하게 [ESLint](http://eslint.org) 를 Nuxt.js 와 같이 사용할 수 있습니다. 우선 npm 디펜던시를 추가해야 합니다.:
+매우 간단하게 [ESLint](http://eslint.org) 를 Nuxt.js 와 같이 사용할 수 있습니다. 우선 npm 디펜던시를 추가해야 합니다.
 
 ```bash
 npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-html eslint-plugin-promise eslint-plugin-standard
@@ -208,7 +208,7 @@ npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-
 
 <!-- Then, you can configure ESLint via a `.eslintrc.js` file in your root project directory: -->
 
-그리고 `.eslintrc.js` 화일을 프로젝트의 루트 디렉토리에 두고 ESLint 를 설정합니다:
+그리고 `.eslintrc.js` 파일을 프로젝트의 루트 디렉토리에 두고 ESLint 를 설정합니다.
 
 <!-- ```js -->
 <!-- module.exports = { -->
@@ -238,7 +238,7 @@ module.exports = {
     node: true
   },
   extends: 'standard',
-  // *.vue 화일을 lint 하기위해서 필요함
+  // *.vue 파일을 lint 하기위해서 필요함
   plugins: [
     'html'
   ],
@@ -250,7 +250,7 @@ module.exports = {
 
 <!-- Then, you can add a `lint` script in your `package.json`: -->
 
-그리고나서 `lint` 스크립트를 `package.json` 안에 추가합니다:
+그리고나서 `lint` 스크립트를 `package.json` 안에 추가합니다.
 
 ```js
 "scripts": {
@@ -260,7 +260,7 @@ module.exports = {
 
 <!-- You can now launch: -->
 
-이제 lint 를 실행할 수 있습니다:
+이제 lint 를 실행할 수 있습니다.
 
 ```bash
 npm run lint
@@ -268,8 +268,8 @@ npm run lint
 
 <!-- ESLint will lint every of your JavaScript and Vue files while ignoring your ignored files defined in your `.gitignore`. -->
 
-ESLint 는 `.gitignore` 에 정의되어 있는 화일을 무시하고, 그 외의 모든 JavaScript 와 Vue 화일을 lint 합니다。
+ESLint 는 `.gitignore` 에 정의되어 있는 파일을 무시하고, 그 외의 모든 JavaScript 와 Vue 파일을 lint 합니다.
 
 <!-- <p class="Alert Alert--info">One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before commiting your code.</p> -->
 
-<p class="Alert Alert--info">`"precommit": "npm run lint"` 를 package.json 에 추가하여 코드를 커밋하기 전에 자동적으로 lint 가 돌도록 하는 것은 아주 좋은 예일것 같습니다.</p>
+<p class="Alert Alert--info">`"precommit": "npm run lint"` 를 package.json 에 추가하여 코드를 커밋하기 전에 자동적으로 lint 가 돌도록 하는 것은 아주 좋은 예 일것 같습니다.</p>
