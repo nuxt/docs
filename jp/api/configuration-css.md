@@ -31,5 +31,3 @@ module.exports = {
   ]
 }
 ```
-
-<p class="Alert">**プロダクションでは**、すべての CSS はミニファイされ `styles.css` というファイルに抽出されます。そしてページの `<head>` タグ内に `style.css` を読み込む link タグが追加されます。</p>
