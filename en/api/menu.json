@@ -54,6 +54,7 @@
         "to": "/configuration-generate",
         "contents": [
           { "name": "dir", "to": "#dir" },
+          { "name": "interval", "to": "#interval" },
           { "name": "minify", "to": "#minify" },
           { "name": "routes", "to": "#routes" }
         ]
