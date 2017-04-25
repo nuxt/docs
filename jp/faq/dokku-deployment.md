@@ -1,32 +1,34 @@
 ---
-title: Dokku Deployment
-description: How to deploy Nuxt.js on Dokku?
+title: Dokku へデプロイ
+description: Dokku へデプロイするには？
 ---
 
-# How to deploy on Dokku?
+# Dokku へデプロイするには？
 
-We recommend to read [Dokku documentation for the setup](http://dokku.viewdocs.io/dokku/getting-started/installation/) and [Deploying a Node.js Application on Digital Ocean using dokku](http://jakeklassen.com/post/deploying-a-node-app-on-digital-ocean-using-dokku/)
+[Dokku のセットアップのドキュメント](http://dokku.viewdocs.io/dokku/getting-started/installation/) 及び [Dokku を使っている Digital Ocean 上の Node.js アプリケーションのデプロイ](http://jakeklassen.com/post/deploying-a-node-app-on-digital-ocean-using-dokku/) をお読みになることをお勧めします。
 
-For the example, we will call our nuxt.js application `my-nuxt-app`
+例として、Nuxt.js のアプリケーションを以下 `my-nuxt-app` と呼びます。
 
-We need to tell Dokku to install the `devDependencies` of the project (to be able to launch `npm run build`):
+まず `npm run build` を実行できるようにするために、Dokku にプロジェクトの `devDependencies` をインストールすることを伝える必要があります:
+
 ```bash
-// on Dokku Server
+// Dokku サーバー上で
 dokku config:set my-nuxt-app NPM_CONFIG_PRODUCTION=false
 ```
 
-Also, we want our application to listen on the port `0.0.0.0` and run in production mode:
+また、アプリケーションに `0.0.0.0` ポートを Listen させ、プロダクションモードで起動します:
+
 ```bash
-// on Dokku Server
+// Dokku サーバー上で
 dokku config:set my-nuxt-app HOST=0.0.0.0 NODE_ENV=production
 ```
 
-You should see these 3 line when you type `dokku config my-nuxt-app`
+`dokku config my-nuxt-app` とタイプして、下の 3行を確認します。
 
 ![nuxt config vars Dokku](https://i.imgur.com/9FNsaoQ.png)
 
-Then, we tell Dokku to launch `npm run build` via the `scripts.dokku.predeploy` script in our project `app.json`:
-`create a file name app.json in our project root folder`
+それから `app.json` 内の `scripts.dokku.predeploy` スクリプトを使って、Heroku に `npm run build` を実行するよう伝えます。プロジェクトのルートディレクトリに `app.json` という名前のファイルを作成してください:
+
 ```js
 {
   "scripts": {
@@ -37,11 +39,12 @@ Then, we tell Dokku to launch `npm run build` via the `scripts.dokku.predeploy` 
 }
 ```
 
-Finally, we can push our app on Dokku with:
+最後にアプリケーションを Dokku に git push します:
+
 ```bash
-// commit your change before push.
+// push する前に変更をコミットしてください
 git remote add dokku dokku@yourServer:my-nuxt-app
 git push dokku master
 ```
 
-Voilà! Our nuxt.js application is now hosted on Dokku!
+やりました！これで Nuxt.js アプリケーションは Dokku でホストされるようになりました！

@@ -13,7 +13,7 @@ description: Heroku へデプロイするには？
 heroku config:set NPM_CONFIG_PRODUCTION=false
 ```
 
-またアプリケーションに `0.0.0.0` ポートを Listen させ、プロダクションモードで起動します:
+また、アプリケーションに `0.0.0.0` ポートを Listen させ、プロダクションモードで起動します:
 
 ```bash
 heroku config:set HOST=0.0.0.0
