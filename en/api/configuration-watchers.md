@@ -19,7 +19,6 @@ To learn more about chokidar options, see the [chokidar API](https://github.com/
 
 ## webpack
 
-
 - Type: `Object`
 - Default:
 

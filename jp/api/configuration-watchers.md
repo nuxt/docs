@@ -1,27 +1,26 @@
 ---
-title: "API: The watchers Property"
-description: The watchers property lets you overwrite watchers configuration.
+title: "API: watchers プロパティ"
+description: watchers プロパティで監視設定を上書きできます。
 ---
 
-# The watchers Property
+# watchers プロパティ
 
-- Type: `Object`
-- Default: `{}`
+- タイプ: `オブジェクト`
+- デフォルト: `{}`
 
-> The watchers property lets you overwrite watchers configuration in your nuxt.config.js.
+> nuxt.config.js 内の watchers プロパティで監視設定を上書きできます。
 
 ## chokidar
 
-- Type: `Object`
-- Default: `{}`
+- タイプ: `オブジェクト`
+- デフォルト: `{}`
 
-To learn more about chokidar options, see the [chokidar API](https://github.com/paulmillr/chokidar#api).
+chokidar オプションについてより深く理解するには [chokidar API](https://github.com/paulmillr/chokidar#api) を参照してください。
 
 ## webpack
 
-
-- Type: `Object`
-- Default:
+- タイプ: `Object`
+- デフォルト:
 
 ```js
 watchers: {
@@ -32,4 +31,4 @@ watchers: {
 }
 ```
 
-To learn more about webpack watchoptions, see the [webpack documentation](https://webpack.js.org/configuration/watch/#watchoptions).
+webpack の監視オプションについてより深く理解するには [webpack のドキュメント](https://webpack.js.org/configuration/watch/#watchoptions) を参照してください。
