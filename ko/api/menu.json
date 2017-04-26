@@ -2,7 +2,7 @@
   {
     "title": "Pages",
     "links": [
-      { "name": "asyncData", "to": "/" },
+      { "name": "API: asyncData 메소드", "to": "/" },
       { "name": "API: fetch 메소드", "to": "/pages-fetch" },
       { "name": "API: head 메서드", "to": "/pages-head" },
       { "name": "API: layout 프로퍼티", "to": "/pages-layout" },

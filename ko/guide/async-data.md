@@ -14,7 +14,7 @@ asyncData 메소드는 첫 인자로 [context](/api#context)를 받아옵니다.
 
 <div class="Alert Alert--orange">절대로 `data` 안에서 컴포넌트를 참조하기 위해 `this`를 **사용하지 마세요. 컴포넌트가 생성되기 전에** 호출되기 때문에 엑세스할 수 없습니다.</div>
 
-`asyncData`에는 몇 가지 사용 방법이 있습니다. 아래 중에서 원하는 것을 골라 사용해보세요.:
+`asyncData`에는 몇 가지 사용 방법이 있습니다. 아래 중에서 원하는 것을 골라 사용해보세요:
 
 1. `Promise` 객체를 리턴할 수 있습니다. Nuxt.js는 컴포넌트를 렌더링하기 전에 promise가 처리될 때까지 기다립니다.
 2. [async/await](https://github.com/lukehoban/ecmascript-asyncawait)를 사용할 수 있습니다. (자세한 자료는 [이곳](https://zeit.co/blog/async-and-await)에서 확인할 수 있습니다.)
@@ -56,7 +56,7 @@ export default {
 
 ### data 표시하기
 
-asyncData의 반환 값은 data와 **합쳐집니다.** 따라서 위의 예처럼 사용할 경우 템플릿에서 아래와 같이 사용할 수 있게됩니다.:
+asyncData의 반환 값은 data와 **합쳐집니다.** 따라서 위의 예처럼 사용할 경우 템플릿에서 아래와 같이 사용할 수 있게됩니다:
 
 ```html
 <template>
@@ -87,7 +87,7 @@ export default {
 }
 ```
 
-만약 `callback` 인자를 사용한다면, callback의 첫 번째 인자를 사용해서 `error` 메소드를 호출할 수 있습니다.:
+만약 `callback` 인자를 사용한다면, callback의 첫 번째 인자를 사용해서 `error` 메소드를 호출할 수 있습니다:
 ```js
 export default {
   asyncData ({ params }, callback) {

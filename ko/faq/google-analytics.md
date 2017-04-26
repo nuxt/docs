@@ -3,16 +3,11 @@ title: Google 애널리틱스의 통합
 description: Google 애널리틱스를 사용하려면?
 ---
 
-<!-- title: Google Analytics Integration -->
-<!-- description: How to use Google Analytics? -->
-
-<!-- # How to use Google Analytics? -->
-
 # Google 애널리틱스를 사용하려면?
 
 <!-- To use [Google Analytics](https://analytics.google.com/analytics/web/) with your nuxt.js application, we recommend to create a file `plugins/ga.js`: -->
 
-Nuxt.js 어플리케이션에서 [Google 애널리틱스](https://analytics.google.com/analytics/web/) 을 사용하려면 `plugins/ga.js` 화일을 작성하는 것을 추천합니다:
+Nuxt.js 어플리케이션에서 [Google 애널리틱스](https://analytics.google.com/analytics/web/) 을 사용하려면 `plugins/ga.js` 파일을 작성하는 것을 추천합니다:
 
 <!-- ```js -->
 <!-- import router from '~router' -->
@@ -66,7 +61,7 @@ if (process.env.NODE_ENV === 'production') {
   */
   router.afterEach((to, from) => {
     /*
-    ** Google 앨널리틱스에게 페이지뷰가 추가된 것을 전달
+    ** Google 애널리틱스에게 페이지뷰가 추가된 것을 전달
     */
     ga('set', 'page', to.fullPath)
     ga('send', 'pageview')
@@ -74,13 +69,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 ```
 
-<!-- \> Replace `UA-XXXXXXXX-X` by your Google Analytics tracking ID. -->
-
 > `UA-XXXXXXXX-X` 를 Google 애널리틱스 트랙킹 아이디로 변경해 주세요.
 
-<!-- Then, we tell nuxt.js to import it in our main application: -->
-
-그리고 `plugins/ga.js` 를 메인 어플리케이션에서 import 하는 것을 Nuxt.js 에게 전달합니다:
+그리고 `plugins/ga.js`를 메인 어플리케이션에서 import 하는 것을 Nuxt.js 에게 전달합니다:
 
 `nuxt.config.js`
 
@@ -92,10 +83,6 @@ module.exports = {
 }
 ```
 
-<!-- Voilà, Google Analytics is integrated into your nuxt.js application and will track every page view! -->
-
 자! 이걸로 Google 애널리틱스는 Nuxt.js 어플리케이션에 통합되었고, 모든 페이지뷰를 트랙킹할수 있게 되었습니다!
-
-<!-- <p class="Alert Alert--nuxt-green"><b>INFO:</b> you can use this method for any other tracking service.</p> -->
 
 <p class="Alert Alert--nuxt-green"><b>정보:</b> 다른 트랙킹 서비스라도 동일한 방법으로 사용할 수 있습니다.</p>

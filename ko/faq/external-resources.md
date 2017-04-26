@@ -3,20 +3,13 @@ title: 외부 리소스
 description: Nuxt.js 에서 외부 리소스를 사용하려면?
 ---
 
-<!-- title: External resources -->
-<!-- description: How to use external resources with Nuxt.js? -->
-
-<!-- # How to use external resources? -->
-
 # 외부 리소스를 사용하려면?
-
-<!-- ## Global Settings -->
 
 ## 글로벌 설정
 
 <!-- Include your resources in the `nuxt.config.js` file: -->
 
-`nuxt.config.js` 화일 안에 리소스를 include합니다:
+`nuxt.config.js` 파일 안에 리소스를 include합니다:
 
 ```js
 module.exports = {
@@ -31,13 +24,11 @@ module.exports = {
 }
 ```
 
-<!-- ## Local Settings -->
-
 ## 로컬 설정
 
 <!-- Include your resources in your .vue file inside the pages directory: -->
 
-pages 디렉토리의 .vue 화일 안에서 리소스를 include합니다:
+pages 디렉토리의 .vue 파일 안에서 리소스를 include합니다:
 
 ```html
 <template>

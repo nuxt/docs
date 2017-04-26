@@ -13,7 +13,7 @@ description: Views 절에서는 Nuxt.js 어플리케이션의 특정 라우트�
 
 html 템플릿을 확장하기 위해서 당신의 프로젝트에 `app.html` 파일을 생성합니다.
 
-기본 템플릿입니다.:
+기본 템플릿입니다:
 
 ```html
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ html 템플릿을 확장하기 위해서 당신의 프로젝트에 `app.html` �
 </html>
 ```
 
-한 예로, IE 지원을 위한 CSS 클래스를 아래와 같이 추가할 수 있습니다.:
+한 예로, IE 지원을 위한 CSS 클래스를 아래와 같이 추가할 수 있습니다:
 
 ```html
 <!DOCTYPE html>
@@ -52,7 +52,7 @@ Nuxt.js를 사용하면 `layouts` 폴더에 레이아웃을 추가함으로써 �
 
 *페이지 컴포넌트를 레이아웃에 렌더링하기 위해서 꼭 `<nuxt/>` 태그를 작성하세요.*
 
-기본 레이아웃 코드는 아래와 같습니다.:
+기본 레이아웃 코드는 아래와 같습니다:
 ```html
 <template>
   <nuxt/>
@@ -67,7 +67,7 @@ Nuxt.js를 사용하면 `layouts` 폴더에 레이아웃을 추가함으로써 �
 
 기본 에러 페이지 소스 코드는 [깃허브](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue)에서 확인할 수 있습니다.
 
-`layouts/error.vue`에서 사용자 정의 에러 페이지를 사용한 예입니다.:
+`layouts/error.vue`에서 사용자 정의 에러 페이지를 사용한 예입니다:
 ```html
 <template>
   <div class="container">
@@ -101,7 +101,7 @@ export default {
 </template>
 ```
 
-이제 `pages/posts.vue`에서 Nuxt.js로 커스텀 레이아웃을 사용한다고 전달합니다.:
+이제 `pages/posts.vue`에서 Nuxt.js로 커스텀 레이아웃을 사용한다고 전달합니다:
 ```html
 <script>
 export default {
@@ -165,7 +165,7 @@ export default {
 
 Nuxt.js는 `headers` 와 `html attributes` 를 갱신하기 위해서 [vue-meta](https://github.com/declandewet/vue-meta)를 사용합니다.
 
-Nuxt.js는 `vue-meta`를 아래의 옵션으로 구성합니다.:
+Nuxt.js는 `vue-meta`를 아래의 옵션으로 구성합니다:
 ```js
 {
   keyName: 'head', // the component option name that vue-meta looks for meta info on.
@@ -177,9 +177,9 @@ Nuxt.js는 `vue-meta`를 아래의 옵션으로 구성합니다.:
 
 ### 기본 메타 태그
 
-Nuxt.js를 사용하면 `nuxt.config.js`에 `head` 속성을 사용함으로써 기본 메타를 정의할 수 있습니다.:
+Nuxt.js를 사용하면 `nuxt.config.js`에 `head` 속성을 사용함으로써 기본 메타를 정의할 수 있습니다:
 
-사용자 정의 구글 폰트와 사용자 정의 뷰포트를 설정하는 예시입니다.:
+사용자 정의 구글 폰트와 사용자 정의 뷰포트를 설정하는 예시입니다:
 ```js
 head: {
   meta: [
@@ -192,7 +192,7 @@ head: {
 }
 ```
 
-`head`에 전달 가능한 옵션 목록을 알기 위해서는 [vue-meta 문서](https://github.com/declandewet/vue-meta#recognized-metainfo-properties)를 확인합니다..
+`head`에 전달 가능한 옵션 목록을 알기 위해서는 [vue-meta 문서](https://github.com/declandewet/vue-meta#recognized-metainfo-properties)를 확인합니다.
 
 head 메소드에 대한 더 많은 정보: [API head 구성](/api/configuration-head)
 

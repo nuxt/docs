@@ -5,7 +5,7 @@ description: 어플리케이션의 특정 페이지에 대한 미들웨어 설�
 
 # middleware 프로퍼티
 
-- 타입: `String` or `Array`
+- 타입: `String` 또는 `Array`
   - Items: `String`
 
 어플리케이션의 특정 페이지에 대한 미들웨어 설정.

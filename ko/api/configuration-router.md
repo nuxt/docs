@@ -12,7 +12,7 @@ description: router 프로퍼티를 이용하여 nuxt.js 라우터를 사용자 
 - 타입: `String`
 - 기본값: `'/'`
 
-어플리케이션의 기본 URL입니다. 에를 들어, SPA가 `/app/` 아래에서 돌아가고 있다고 한다면, 기본값은 `/app/`이 되어야 합니다.
+어플리케이션의 기본 URL입니다. 예를 들어, SPA가 `/app/` 아래에서 돌아가고 있다고 한다면, 기본값은 `/app/`이 되어야 합니다.
 
 예제 (`nuxt.config.js`):
 ```js
@@ -132,7 +132,7 @@ module.exports = {
 `middleware/user-agent.js`
 ```js
 export default function (context) {
-  // 컨텍스트에 userAgent 프로퍼티를 추가합니다. (`data` 와 `fetch` 에서 사용 가능)
+  // 컨텍스트에 userAgent 프로퍼티를 추가합니다. (`data`와 `fetch`에서 사용 가능)
   context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```

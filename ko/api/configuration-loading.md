@@ -34,7 +34,7 @@ progress bar를 사용자 정의할 수 있는 프로퍼티 목록.
 | `height` | String | `'2px'` | progress bar의 높이 (progress bar의 `style` 속성에서 사용됩니다.) |
 | `duration` | Number | `5000` | ms 기준, progress bar의 최대 진행시간이며, Nuxt,js는 경로가 5초 전에 랜더된다고 가정합니다. |
 
-`nuxt.config.js`를 아래와같이 업데이트하면 height가 5px인 파란 progress bar를 확인하실 수 있습니다:
+`nuxt.config.js`를 아래와 같이 업데이트하면 height가 5px인 파란 progress bar를 확인하실 수 있습니다:
 
 ```js
 module.exports = {
