@@ -107,12 +107,15 @@ module.exports = {
 module.exports = {
   build: {
     filenames: {
+      manifest: 'manifest.[hash].js',
       vendor: 'vendor.[hash].js',
       app: 'app.[chunkhash].js'
     }
   }
 }
 ```
+
+manifest や vendor についての利用についてより深く理解するには [Webpack のドキュメント](https://webpack.js.org/guides/code-splitting-libraries/) を参照してください。
 
 ## loaders
 
