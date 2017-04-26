@@ -20,7 +20,7 @@ description: Nuxt.js 에서 window 혹은 document 가 undefined 의 경우라�
 
 <!-- For example, in your .vue file: -->
 
-예를들어 .vue 화일을 다음처럼 작성합니다:
+예를들어 .vue 파일을 다음처럼 작성합니다:
 
 ```js
 if (process.BROWSER_BUILD) {
@@ -30,7 +30,7 @@ if (process.BROWSER_BUILD) {
 
 <!-- Don't forget to add your library in the [vendor bundle](/api/configuration-build#build-vendor) in your `nuxt.config.js`: -->
 
-`nuxt.config.js` 화일에 해당 라이브러리를 [vendor bundle](/api/configuration-build#vendor) 에 추가하는 것을 잊지 말기 바랍니다.
+`nuxt.config.js` 파일에 해당 라이브러리를 [vendor bundle](/api/configuration-build#vendor) 에 추가하는 것을 잊지 말기 바랍니다.
 
 ```js
   build: {

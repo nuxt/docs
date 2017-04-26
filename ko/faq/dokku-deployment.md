@@ -44,7 +44,7 @@ dokku config:set my-nuxt-app HOST=0.0.0.0 NODE_ENV=production
 <!-- Then, we tell Dokku to launch `npm run build` via the `scripts.dokku.predeploy` script in our project `app.json`:
 `create a file name app.json in our project root folder` -->
 
-그럼 `app.json`화일의 `scripts.dokku.predeploy`의 `npm run build`를 Dokku에서 실행하도록 합니다:
+그럼 `app.json`파일의 `scripts.dokku.predeploy`의 `npm run build`를 Dokku에서 실행하도록 합니다:
 `프로젝트의 루트 폴더에 app.json을 생성합니다.`
 ```js
 {
