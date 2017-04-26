@@ -84,6 +84,42 @@ module.exports = {
 }
 ```
 
+## Inject in $root & context
+
+例えば [vue-18n](https://github.com/kazupon/vue-i18n) のように、プラグインをアプリケーションのルートに挿入して使いたい場合もあるでしょう。Nuxt.js はプラグインをルートのコンポーネントとコンテキストに追加するために `injectAs` プロパティを用意しています。
+
+`plugins/i18n.js`:
+
+```js
+import Vue from 'vue'
+import VueI18n from 'vue-i18n'
+import store from '~store'
+
+Vue.use(VueI18n)
+
+const i18n = new VueI18n({
+  /* ここにオプションを書きます */
+})
+
+export default i18n
+```
+
+`nuxt.config.js`:
+
+```js
+module.exports = {
+  build: {
+    vendor: ['vue-i18n']
+  },
+  plugins: [
+    // プラグインが `i18n` として、ルートのアプリケーションとコンテキストに挿入されます 
+    { src: '~plugins/i18n.js', injectAs: 'i18n' }
+  ]
+}
+```
+
+どのように使うかを見たいときは [i18n の例](/examples/i18n) を参照してください。
+
 ## クライアントサイド限定のプラグイン利用
 
 プラグインのいくつかは **ブラウザでのみ** 動かしたいとします。その場合は `plugins` 内の `ssr: false` オプションを使うと、プラグインをクライアントサイドでのみ実行させるが可能です。
