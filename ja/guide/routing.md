@@ -222,7 +222,7 @@ Nuxt.js では [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#T
 `assets/main.css` 内にグローバルな CSS を書きます:
 
 ```css
-.page-enter-active, .page-leave-active {
+.page-enter-active, .page-leave-to {
   transition: opacity .5s;
 }
 .page-enter, .page-leave-active {
