@@ -11,7 +11,7 @@ Nuxt.js는 범용 Vue.js 애플리케이션을 만들기 위한 프레임워크�
 
 우리의 목표는 Nuxt.js를 기반 프로젝트로 하거나 Node.js 기반의 프로젝트에 추가해서 사용할 수 있도록 충분히 유연한 프레임워크를 만드는 것입니다.
 
-Nuxt.js는 더 즐거운 **서버 사이드 렌더링** Vue.js 애플리케이션 개발을 위해 필요한 모든 설정들이 미리 준비되어있습니다.
+Nuxt.js는 더 즐거운 **서버 사이드 렌더링** Vue.js 애플리케이션 개발을 위해 필요한 모든 설정들이 미리 준비되어 있습니다.
 
 또한 우리는 *nuxt generate* 라고 부르는 배포 옵션을 제공하며, 이는 Vue.js 애플리케이션을 **정적으로 생성** 하는 옵션입니다.
 이 옵션이 마이크로 서비스를 지향하는 웹 애플리케이션 개발의 다음 단계가 될 수 있다고 생각합니다.
@@ -22,7 +22,7 @@ Nuxt.js 프레임워크는 비동기 데이터, 미들웨어, 레이아웃 등�
 
 ![Vue with Webpack and Babel](https://i.imgur.com/avEUftE.png)
 
-Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능들을 포함합니다.:
+Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능들을 포함합니다:
 - [Vue 2](https://github.com/vuejs/vue)
 - [Vue-Router](https://github.com/vuejs/vue-router)
 - [Vuex](https://github.com/vuejs/vuex) ([store 옵션](/guide/vuex-store)을 사용할 때만 포함됩니다.)
@@ -47,7 +47,7 @@ Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능
 
 ## 구조
 
-아래의 구조는 `<nuxt-link>`를 서버가 호출하거나 이를 통해 사용자가 이동한 경우, nuxt.js가 어떻게 동작하는지를 보여줍니다.:
+아래의 구조는 `<nuxt-link>`를 서버가 호출하거나 이를 통해 사용자가 이동한 경우, nuxt.js가 어떻게 동작하는지를 보여줍니다:
 
 ![nuxt-schema](/nuxt-schema.png)
 
@@ -89,7 +89,7 @@ nuxt.js에서 가장 큰 혁신은 아마 `nuxt generate` 명령어 가 될 것�
 - [소스 코드](https://github.com/nuxt/nuxtjs.org)
 - [생성된 코드](https://github.com/nuxt/nuxtjs.org/tree/gh-pages)
 
-우리는 [docs repository](https://github.com/nuxt/docs)가 업데이트될 때마다 수동으로 애플리케이션을 매번 생성하고 싶지 않았고, 그래서 매번 push를 하면 아래의 AWS Lambda를 호출하도록 했습니다.:
+우리는 [docs repository](https://github.com/nuxt/docs)가 업데이트될 때마다 수동으로 애플리케이션을 매번 생성하고 싶지 않았고, 그래서 매번 push를 하면 아래의 AWS Lambda를 호출하도록 했습니다:
 1. [nuxtjs.org repository](https://github.com/nuxt/nuxtjs.org)를 clone 합니다.
 2. `npm install`을 통해 디펜던시를 설치합니다.
 3. `nuxt generate`를 실행합니다.

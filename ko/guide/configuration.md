@@ -25,7 +25,7 @@ description: Nuxt.js 기본 설정은 대부분의 기능을 사용할 수 있�
 
 ### dev
 
-이 옵션을 사용하면 nuxt.js의 개발 및 프로덕션 모드를 정의 할 수 있습니다.
+이 옵션을 사용하면 nuxt.js의 개발 또는 프로덕션 모드를 정의 할 수 있습니다.
 
 [dev 옵션에 대한 문서](/api/configuration-dev)
 
@@ -37,7 +37,7 @@ description: Nuxt.js 기본 설정은 대부분의 기능을 사용할 수 있�
 
 ### generate
 
-이 옵션을 사용하면 어플리케이션에서 Nuxt.js가 HTML 파일로 변환할 모든 동적인 경로에 대한 각각의 params 값을 정의 할 수 있습니다
+이 옵션을 사용하면 어플리케이션에서 Nuxt.js가 HTML 파일로 변환할 모든 동적인 경로에 대한 각각의 params 값을 정의 할 수 있습니다.
 
 [generate 옵션에 대한 문서](/api/configuration-generate)
 
@@ -49,7 +49,7 @@ description: Nuxt.js 기본 설정은 대부분의 기능을 사용할 수 있�
 
 ### loading
 
-이 옵션을 사용하면 Nuxt.js를 사용하여 기본적으로 불러올 컴포넌트를 사용자 정의 할 수 있습니다.
+이 옵션을 사용하면 Nuxt.js를 사용하여 기본적으로 불러올 loading 컴포넌트를 사용자 정의 할 수 있습니다.
 
 [loading 옵션에 대한 문서](/api/configuration-loading)
 
