@@ -75,6 +75,7 @@
         "contents": [
           { "to": "#外部パッケージの利用", "name": "外部パッケージの利用" },
           { "to": "#vue-プラグイン", "name": "Vue プラグイン" },
+          { "to": "#inject-in-root-amp-context", "name": "Inject in $root & context" },
           { "to": "#クライアントサイド限定のプラグイン利用", "name": "クライアントサイド限定のプラグイン利用" }
         ]
       },
