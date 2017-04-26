@@ -14,7 +14,7 @@ description: Nuxt.js를 사용하면 (포함된 모든 페이지에서) 전역�
 - src: `String` (파일 경로)
 - lang: `String` ([사용된 전처리기](/faq/pre-processors))
 
-`nuxt.config.js`안에 CSS 리소스 추가합니다:
+`nuxt.config.js`안에 CSS 리소스를 추가합니다:
 
 ```js
 module.exports = {
