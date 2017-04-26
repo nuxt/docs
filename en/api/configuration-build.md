@@ -90,6 +90,7 @@ If you want to see more about our default webpack configuration, take a look at 
 Default:
 ```js
 {
+  manifest: 'manifest.[hash].js',
   vendor: 'vendor.bundle.[hash].js',
   app: 'nuxt.bundle.[chunkhash].js'
 }
@@ -106,6 +107,8 @@ module.exports = {
   }
 }
 ```
+
+To understand a bit more about the use of manifest and vendor, take a look at this [Webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/).
 
 ## loaders
 

@@ -1,0 +1,108 @@
+[
+  {
+    "title": "序 言",
+    "links": [
+      {
+        "to": "", "name": "介 绍",
+        "contents": [
+          { "to": "#nuxt-js-是什么-", "name": "Nuxt.js 是什么？" },
+          { "to": "#nuxt-js-框架是如何运作的-", "name": "Nuxt.js 框架是如何运作的？" },
+          { "to": "#特性", "name": "特 性" },
+          { "to": "#流程图", "name": "流程图" },
+          { "to": "#服务端渲染", "name": "服务端渲染" },
+          { "to": "#静态化", "name": "静态化" }
+        ]
+      },
+      { "to": "/contribution-guide", "name": "开源贡献指引" },
+      { "to": "/release-notes", "name": "版本记录" }
+    ]
+  },
+  {
+    "title": "开始使用",
+    "links": [
+      {
+        "to": "/installation", "name": "安 装",
+        "contents": [
+          { "to": "#新手模板", "name": "新手模板" },
+          { "to": "#从头开始新建项目", "name": "从头开始新建项目" }
+        ]
+      },
+      {
+        "to": "/directory-structure", "name": "项目目录结构",
+        "contents": [
+          { "to": "#目录", "name": "目 录" },
+          { "to": "#别名", "name": "别 名" }
+        ]
+      },
+      { "to": "/configuration", "name": "配 置" },
+      {
+        "to": "/routing", "name": "路 由",
+        "contents": [
+          { "to": "#基础路由", "name": "基础路由" },
+          { "to": "#动态路由", "name": "动态路由" },
+          { "to": "#嵌套路由", "name": "嵌套路由" },
+          { "to": "#动态嵌套路由", "name": "动态嵌套路由" },
+          { "to": "#过渡动效", "name": "过渡动效" },
+          { "to": "#中间件", "name": "中间件" }
+        ]
+      },
+      {
+        "to": "/views", "name": "视 图",
+        "contents": [
+          { "to": "#模板", "name": "模 板" },
+          { "to": "#页面", "name": "页 面" },
+          { "to": "#布局", "name": "布 局" },
+          { "to": "#html-头部", "name": "HTML 头部" }
+        ]
+      },
+      {
+        "to": "/async-data", "name": "异步数据",
+        "contents": [
+          { "to": "#asyncdata-方法", "name": "asyncData 方法" },
+          { "to": "#上下文对象", "name": "上下文对象" },
+          { "to": "#错误处理", "name": "错误处理" }
+        ]
+      },
+      {
+        "to": "/assets", "name": "资源文件",
+        "contents": [
+          { "to": "#webpack-构建", "name": "Webpack 构建" },
+          { "to": "#静态文件", "name": "静态文件" }
+        ]
+      },
+      {
+        "to": "/plugins", "name": "插 件",
+        "contents": [
+          { "to": "#使用第三方模块", "name": "第三方模块" },
+          { "to": "#使用-vue-插件", "name": "Vue 插件" },
+          { "to": "#只在浏览器里使用的插件", "name": "只在浏览器里使用的插件" }
+        ]
+      },
+      {
+        "to": "/vuex-store", "name": "Vuex 状态树",
+        "contents": [
+          { "to": "#使用状态树", "name": "使用状态树" },
+          { "to": "#普通方式", "name": "普通方式" },
+          { "to": "#模块方式", "name": "模块方式" },
+          { "to": "#fetch-方法", "name": "fetch 方法" },
+          { "to": "#nuxtserverinit-方法", "name": "nuxtServerInit 方法" }
+        ]
+      },
+      {
+        "to": "/commands", "name": "命 令",
+        "contents": [
+          { "to": "#命令列表", "name": "命令列表" },
+          { "to": "#开发模式", "name": "开发模式" },
+          { "to": "#发布部署", "name": "发布部署" }
+        ]
+      },
+      {
+        "to": "/development-tools", "name": "开发工具",
+        "contents": [
+          { "to": "#端对端测试", "name": "端对端测试" },
+          { "to": "#eslint", "name": "ESLint" }
+        ]
+      }
+    ]
+  }
+]

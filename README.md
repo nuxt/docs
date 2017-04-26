@@ -39,6 +39,14 @@ Japanese translation is maintained by INOUE Takuya.
 * Primary maintainer - [INOUE Takuya](http://blog.inouetakuya.info/)
 * Primary translator - [INOUE Takuya](https://github.com/inouetakuya)
 
+### Korean
+
+Korean translation is maintained by Taewoong La.
+
+* Translation Repo — [/DiyLecko/ko.docs.nuxtjs](https://github.com/DiyLecko/ko.docs.nuxtjs)
+* Primary maintainer - [Taewoong La](http://blog.naver.com/diy_lecko)
+* Primary translator - [june](http://jicjjang.github.io), [wanybae](https://github.com/wanybae), [rellario](https://github.com/rellario)
+
 ### French
 
 French translation is maintained by Julien Grünhagel/@rspt for [laruche](https://laruche.io).

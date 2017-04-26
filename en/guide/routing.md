@@ -224,7 +224,7 @@ Our global css in `assets/main.css`:
 .page-enter-active, .page-leave-active {
   transition: opacity .5s;
 }
-.page-enter, .page-leave-active {
+.page-enter, .page-leave-to {
   opacity: 0;
 }
 ```

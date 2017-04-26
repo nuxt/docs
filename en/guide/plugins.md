@@ -28,7 +28,7 @@ Then, we can use it directly in our pages:
 import axios from 'axios'
 
 export default {
-  async data ({ params }) {
+  async asyncData ({ params }) {
     let { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
@@ -80,6 +80,40 @@ module.exports = {
   plugins: ['~plugins/vue-notifications']
 }
 ```
+
+## Inject in $root & context
+
+Some plugins need to be injected in the App root to be used, like [vue-18n](https://github.com/kazupon/vue-i18n). Nuxt.js introduces the `injectAs` property to add a plugin in the root component but also in the context.
+
+`plugins/i18n.js`:
+```js
+import Vue from 'vue'
+import VueI18n from 'vue-i18n'
+import store from '~store'
+
+Vue.use(VueI18n)
+
+const i18n = new VueI18n({
+  /* options... */
+})
+
+export default i18n
+```
+
+`nuxt.config.js`:
+```js
+module.exports = {
+  build: {
+    vendor: ['vue-i18n']
+  },
+  plugins: [
+    // Will inject the plugin in the $root app and also in the context as `i18n`
+    { src: '~plugins/i18n.js', injectAs: 'i18n' }
+  ]
+}
+```
+
+Please take a look at the [i18n example](/examples/i18n) to see how we use it.
 
 ## Client-side only
 
