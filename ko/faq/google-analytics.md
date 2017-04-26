@@ -12,7 +12,7 @@ description: Google 애널리틱스를 사용하려면?
 
 <!-- To use [Google Analytics](https://analytics.google.com/analytics/web/) with your nuxt.js application, we recommend to create a file `plugins/ga.js`: -->
 
-Nuxt.js 어플리케이션에서 [Google 애널리틱스](https://analytics.google.com/analytics/web/) 을 사용하려면 `plugins/ga.js` 화일을 작성하는 것을 추천합니다:
+Nuxt.js 어플리케이션에서 [Google 애널리틱스](https://analytics.google.com/analytics/web/) 을 사용하려면 `plugins/ga.js` 파일을 작성하는 것을 추천합니다:
 
 <!-- ```js -->
 <!-- import router from '~router' -->
