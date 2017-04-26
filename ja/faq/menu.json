@@ -26,6 +26,7 @@
     "links": [
       { "name": "Heroku へデプロイするには？", "to": "/heroku-deployment" },
       { "name": "Now を使ってデプロイするには？", "to": "/now-deployment" },
+      { "name": "Dokku へデプロイするには？", "to": "/dokku-deployment" },
       { "name": "Surge.sh へデプロイするには？", "to": "/surge-deployment" },
       { "name": "GitHub Pages へデプロイするには？", "to": "/github-pages" }
     ]

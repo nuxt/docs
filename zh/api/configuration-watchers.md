@@ -19,7 +19,6 @@ description: watchers 属性可用来覆盖 Nuxt.js 默认的 watchers 配置。
 
 ## webpack
 
-
 - 类型： `Object`
 - 默认值：
 
