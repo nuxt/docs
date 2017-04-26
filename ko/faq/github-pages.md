@@ -32,7 +32,7 @@ npm run generate
 
 <!-- <p class="Alert Alert--nuxt-green"><b>INFO:</b> If you use a custom domain for your GitHub Pages and put `CNAME` file, it is recommended that CNAME file is put in the `static` directory. [More documentation](/guide/assets#static) about it.</p> -->
 
-<p class="Alert Alert--nuxt-green"><b>정보:</b> GitHub Pages에서 독립도메인을 사용하기 위해서 `CNAME` 화일을 사용한다면, `CNAME` 화일은 `static` 디렉토리에 위치시키는게 좋습니다. 자세한 내용은 [webpack에서 다루지 않는 정적 화일](/guide/assets#webpack-에서-다루지-않는-정적-화일)을 참고해 주세요.</p>
+<p class="Alert Alert--nuxt-green"><b>정보:</b> GitHub Pages에서 독립도메인을 사용하기 위해서 `CNAME` 파일을 사용한다면, `CNAME` 파일은 `static` 디렉토리에 위치시키는게 좋습니다. 자세한 내용은 [webpack에서 다루지 않는 정적 파일](/guide/assets/#정적-파일-사용)을 참고해 주세요.</p>
 
 <!-- ## Command line deployment -->
 
