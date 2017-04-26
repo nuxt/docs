@@ -7,6 +7,8 @@ description: Nuxt.js 에서 외부 리소스를 사용하려면?
 
 ## 글로벌 설정
 
+<!-- Include your resources in the `nuxt.config.js` file: -->
+
 `nuxt.config.js` 파일 안에 리소스를 include합니다:
 
 ```js
@@ -23,6 +25,8 @@ module.exports = {
 ```
 
 ## 로컬 설정
+
+<!-- Include your resources in your .vue file inside the pages directory: -->
 
 pages 디렉토리의 .vue 파일 안에서 리소스를 include합니다:
 

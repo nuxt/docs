@@ -10,7 +10,8 @@ description: nuxt.js 어플리케이션의 workspace 정의
 
 > nuxt.js 어플리케이션의 workspace 정의
 
-이 프로퍼티는 [nuxt commands](/guide/commands)에 의해 덮어쓰고 명령어 인자로 설정됩니다 (예제: `nuxt my-app/` 명령어는 `rootDir`을 `my-app/`의 절대경로로 설정합니다).
+이 프로퍼티는 [nuxt commands](/guide/commands)에 의해 덮어쓰고 명령어 인자로 설정됩니다
+ (예제: `nuxt my-app/` 명령어는 `rootDir`을 `my-app/`의 절대경로로 설정합니다).
 
 이 프로퍼티는 [nuxt.js programmatically](/api/nuxt)을 사용할 때 함께 사용할 수 있습니다.
 

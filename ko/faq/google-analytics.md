@@ -5,7 +5,39 @@ description: Google 애널리틱스를 사용하려면?
 
 # Google 애널리틱스를 사용하려면?
 
+<!-- To use [Google Analytics](https://analytics.google.com/analytics/web/) with your nuxt.js application, we recommend to create a file `plugins/ga.js`: -->
+
 Nuxt.js 어플리케이션에서 [Google 애널리틱스](https://analytics.google.com/analytics/web/) 을 사용하려면 `plugins/ga.js` 파일을 작성하는 것을 추천합니다:
+
+<!-- ```js -->
+<!-- import router from '~router' -->
+<!-- /* -->
+<!-- ** Only run on client-side and only in production mode -->
+<!-- */ -->
+<!-- if (process.env.NODE_ENV === 'production') { -->
+<!--   /* -->
+<!--   ** Include Google Analytics Script -->
+<!--   */ -->
+<!--   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ -->
+<!--   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), -->
+<!--   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) -->
+<!--   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); -->
+<!--   /* -->
+<!--   ** Set the current page -->
+<!--   */ -->
+<!--   ga('create', 'UA-XXXXXXXX-X', 'auto') -->
+<!--   /* -->
+<!--   ** Every time the route changes (fired on initialization too) -->
+<!--   */ -->
+<!--   router.afterEach((to, from) => { -->
+<!--     /* -->
+<!--     ** We tell Google Analytic to add a page view -->
+<!--     */ -->
+<!--     ga('set', 'page', to.fullPath) -->
+<!--     ga('send', 'pageview') -->
+<!--   }) -->
+<!-- } -->
+<!-- ``` -->
 
 ```js
 import router from '~router'
