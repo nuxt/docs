@@ -66,7 +66,7 @@ if (process.env.NODE_ENV === 'production') {
   */
   router.afterEach((to, from) => {
     /*
-    ** Google 앨널리틱스에게 페이지뷰가 추가된 것을 전달
+    ** Google 애널리틱스에게 페이지뷰가 추가된 것을 전달
     */
     ga('set', 'page', to.fullPath)
     ga('send', 'pageview')

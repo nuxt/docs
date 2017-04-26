@@ -66,7 +66,7 @@ export default {
 |-----|------|--------------|-------------|
 | `isClient` | Boolean | 클라이언트&서버 | 클라이언트사이드에서 랜더링하고 있는지의 여부 |
 | `isServer` | Boolean | 클라이언트&서버 | 서버사이드에서 랜더링하고 있는지의 여부 |
-| `isDev` | Boolean | 클라이언트&서버 | 개발모드인지 아닌지. 이 키는 프로덕션 모드에서 데이터를 케싱할 경우 도움이 됩니다. |
+| `isDev` | Boolean | 클라이언트&서버 | 개발모드인지 아닌지. 이 키는 프로덕션 모드에서 데이터를 캐싱할 경우 도움이 됩니다. |
 | `route` | [vue-router의 라우트](https://router.vuejs.org/en/api/route-object.html) | 클라이언트&서버 | `vue-router`의 라우트 인스턴스 |
 | `store` | [Vuex Store](http://vuex.vuejs.org/en/api.html#vuexstore-instance-properties) | 클라이언트&서버 | `Vuex`의 스토어 인스턴스 **[Vuex Store](/guide/vuex-store)가 설정되어 있는경우에만 사용가능합니다.** |
 | `env` | Object | 클라이언트&서버 | `nuxt.config.js`에 세팅된 환경변수. 자세한 내용은 [env API](/api/configuration-env)를 참조 |
