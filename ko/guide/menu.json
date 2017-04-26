@@ -34,7 +34,7 @@
           { "to": "#aliases", "name": "Aliases" }
         ]
       },
-      { "to": "/configuration", "name": "환경 설정" },
+      { "to": "/configuration", "name": "설정" },
       {
         "to": "/routing", "name": "라우팅",
         "contents": [
@@ -47,7 +47,7 @@
         ]
       },
       {
-        "to": "/views", "name": "뷰",
+        "to": "/views", "name": "Views",
         "contents": [
           { "to": "#document", "name": "도큐먼트" },
           { "to": "#layouts", "name": "레이아웃" },
@@ -90,7 +90,7 @@
         ]
       },
       {
-        "to": "/commands", "name": "명령어",
+        "to": "/commands", "name": "명령어들",
         "contents": [
           { "to": "#list-of-commands", "name": "명령어 목록" },
           { "to": "#development-environment", "name": "개발 환경" },

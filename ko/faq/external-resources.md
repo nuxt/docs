@@ -3,14 +3,7 @@ title: 외부 리소스
 description: Nuxt.js 에서 외부 리소스를 사용하려면?
 ---
 
-<!-- title: External resources -->
-<!-- description: How to use external resources with Nuxt.js? -->
-
-<!-- # How to use external resources? -->
-
 # 외부 리소스를 사용하려면?
-
-<!-- ## Global Settings -->
 
 ## 글로벌 설정
 
@@ -30,8 +23,6 @@ module.exports = {
   }
 }
 ```
-
-<!-- ## Local Settings -->
 
 ## 로컬 설정
 

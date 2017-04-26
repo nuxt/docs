@@ -97,9 +97,9 @@ nuxt:generate HTML Files generated in 7.6s +6ms
 [nuxt] Generate done
 ```
 
-훌륭합니다. 그런데 만약 사용자가 **동적 params**를 사용한다면?
+훌륭합니다. 그런데 만약 사용자가 **동적 params** 를 사용한다면?
 1. `Promise`를 반환하는 `함수`를 사용합니다.
-2, `콜백`을 사용하는 `함수`를 사용합니다.
+2. `콜백`을 사용하는 `함수`를 사용합니다.
 
 ### Promise를 반환하는 함수
 

@@ -14,7 +14,7 @@ description: 개발 모드, 프로덕션 모드 정의하기.
 - `dev`는 `nuxt`에 의해 `true`값이 강제로 적용됩니다.
 - `dev`는 `nuxt build`, `nuxt start`, `nuxt generate` 명령어로 강제로 `false`가 됩니다.
 
-이 프로퍼티는 [nuxt.js programmatically](/api/nuxt)를 사용할 때 사용됩니다.:
+이 프로퍼티는 [nuxt.js programmatically](/api/nuxt)를 사용할 때 사용됩니다:
 
 예제:
 

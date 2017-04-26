@@ -3,11 +3,6 @@ title: PostCSS 플러그인
 description: PostCSS 플러그인을 추가하려면?
 ---
 
-<!-- title: Postcss plugins -->
-<!-- description: How to add postcss plugins? -->
-
-<!-- # How to add postcss plugins? -->
-
 # PostCSS 플러그인을 추가하려면?
 
 <!-- In your `nuxt.config.js` file: -->

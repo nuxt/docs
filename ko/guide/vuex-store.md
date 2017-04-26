@@ -1,25 +1,25 @@
 ---
 title: Vuex Store
-description: Using a store to manage the state is important for every big application, that's why nuxt.js implement Vuex in its core.
+description: nuxt.js가 Vuex를 구현하는 핵심 이유는, 저장소를 사용하여 상태를 관리하는 것은 모든 대형 애플리케이션에서 중요하기 때문입니다.
 ---
 
-> Using a store to manage the state is important to every big application, that's why nuxt.js implement [vuex](https://github.com/vuejs/vuex) in its core.
+> nuxt.js가 [Vuex](https://github.com/vuejs/vuex) 구현하는 핵심 이유는, 저장소를 사용하여 상태를 관리하는 것은 모든 대형 애플리케이션에서 중요하기 때문입니다.
 
 ## Store 활성화하기
 
-Nuxt.js는 store 디렉토리를 바라보고 있습니다. 만약 `store` 디렉토리가 존재한다면,:
+Nuxt.js는 store 디렉토리를 바라보고 있습니다. 만약 `store` 디렉토리가 존재한다면:
 
 1. Vuex를 불러옵니다.
 2. 벤더 번들에 `vuex` 모듈을 추가합니다.
 3. 루트 `Vue` 인스턴스에 `store` 옵션을 추가합니다.
 
-Nuxt.js에서는 **2가지 store 모드** 를 지원하며, 선호하는 모드를 사용합니다.:
+Nuxt.js에서는 **2가지 store 모드** 를 지원하며, 선호하는 모드를 사용합니다:
 - **클래식:** `store/index.js`에서 store 인스턴스를 return 합니다.
 - **모듈:** store 디렉토리 내의 모든 .js 파일이 [같은 이름의 모듈](http://vuex.vuejs.org/en/modules.html)로 변환됩니다. (`index`는 루트 모듈이 됩니다.)
 
 ## 클래식 모드
 
-클래식 모드를 사용하려면 `store/index.js` 파일을 만들고 store 인스턴스를 export 하면 됩니다.:
+클래식 모드를 사용하려면 `store/index.js` 파일을 만들고 store 인스턴스를 export 하면 됩니다:
 
 ```js
 import Vuex from 'vuex'
@@ -40,7 +40,7 @@ export default store
 
 > nuxt.js에 `vuex`가 포함되어 있기 때문에 따로 설치할 필요 없습니다.
 
-이제 컴포넌트에서 `this.$store`를 사용할 수 있습니다.:
+이제 컴포넌트에서 `this.$store`를 사용할 수 있습니다:
 
 ```html
 <template>
@@ -52,7 +52,7 @@ export default store
 
 > Nuxt.js는 `store` 디렉토리에서 모든 모듈을 관리할 수 있도록 해줍니다.
 
-만약 모듈 모드를 원한다면 `store/index.js` 파일에 store 인스턴스 대신 state와 mutaions, actions를 export 합니다.:
+만약 모듈 모드를 원한다면 `store/index.js` 파일에 store 인스턴스 대신 state와 mutaions, actions를 export 합니다:
 
 ```js
 export const state = {
@@ -66,7 +66,7 @@ export const mutations = {
 }
 ```
 
-이제 `store/todos.js` 파일을 만들 수 있습니다.:
+이제 `store/todos.js` 파일을 만들 수 있습니다:
 ```js
 export const state = {
   list: []
@@ -88,7 +88,7 @@ export const mutations = {
 }
 ```
 
-store는 아래와 같이 생성될 것입니다.:
+store는 아래와 같이 생성될 것입니다:
 ```js
 new Vuex.Store({
   state: { counter: 0 },
@@ -121,7 +121,7 @@ new Vuex.Store({
 })
 ```
 
-이제 `pages/todos.vue` 컴포넌트에서 `todos` 모듈을 사용해보겠습니다.:
+이제 `pages/todos.vue` 컴포넌트에서 `todos` 모듈을 사용해보겠습니다:
 
 ```html
 <template>
@@ -172,7 +172,7 @@ fetch 메소드에 대한 더 많은 정보: [API 페이지 fetch](/api/pages-fe
 
 만약 store에 `nuxtServerInit`가 정의되면, nuxt.js는 서버사이드에서 context와 함께 이 함수를 호출합니다. 이는 서버에서 받은 데이터를 클라이언트로 직접 전달할 때 유용합니다.
 
-예를 들어, 서버에서 세션을 가지고 있다면 `req.session.user`로 접근이 가능합니다. store로 유저의 인증 정보를 전달하기 위해서는 `store/index.js`를 아래와 같이 수정합니다.:
+예를 들어, 서버에서 세션을 가지고 있다면 `req.session.user`로 접근이 가능합니다. store로 유저의 인증 정보를 전달하기 위해서는 `store/index.js`를 아래와 같이 수정합니다:
 
 ```js
 actions: {
