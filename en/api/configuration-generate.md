@@ -18,6 +18,13 @@ When launching `nuxt generate` or calling `nuxt.generate()`, nuxt.js will use th
 
 Directory name created by `nuxt generate`.
 
+## interval
+
+- Type: `Number`
+- Default: `0`
+
+Interval between 2 render to avoid flooding the API calls made to a potential API from the web application.
+
 ## minify
 
 - Type: `Object`
