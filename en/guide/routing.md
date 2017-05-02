@@ -152,7 +152,7 @@ router: {
 
 ## Dynamic Nested Routes
 
-This scenario should not often append, but it is possible with Nuxt.js: having dynamic children inside dynamic parents.
+This scenario should not often happen, but it is possible with Nuxt.js: having dynamic children inside dynamic parents.
 
 This file tree:
 
