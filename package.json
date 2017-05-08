@@ -7,7 +7,9 @@
     "lint": "eslint *.js",
     "start": "node --harmony api.js",
     "deploy": "now --alias",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -35,7 +37,8 @@
     "micro": "^6.1.0",
     "pify": "^2.3.0",
     "rimraf": "^2.5.4",
-    "uuid": "^3.0.1"
+    "uuid": "^3.0.1",
+    "snyk": "^1.25.0"
   },
   "devDependencies": {
     "chokidar": "^1.6.1",
@@ -44,5 +47,6 @@
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
     "nodemon": "^1.11.0"
-  }
+  },
+  "snyk": true
 }
