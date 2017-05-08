@@ -66,6 +66,8 @@ You can display the data inside your template like you're used to doing:
 </template>
 ```
 
+<div class="Alert">**Caveat!** Mixins using the `data` function are not currently supported and will cause the `data` function in your Page components to no longer receive the `context`.</div>
+
 ## The Context
 
 To see the list of available keys in `context`, take a look at the [API Pages data](/api).
