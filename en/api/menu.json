@@ -86,6 +86,7 @@
           { "name": "base", "to": "#base" },
           { "name": "mode", "to": "#mode" },
           { "name": "linkActiveClass", "to": "#linkactiveclass" },
+          { "name": "linkExactActiveClass", "to": "#linkexactactiveclass" },
           { "name": "scrollBehavior", "to": "#scrollbehavior" },
           { "name": "middleware", "to": "#middleware" },
           { "name": "extendRoutes", "to": "#extendroutes" }
