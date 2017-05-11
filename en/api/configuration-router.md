@@ -63,6 +63,24 @@ module.exports = {
 
 > This option is given directly to the [vue-router Router constructor](https://router.vuejs.org/en/api/options.html).
 
+## linkExactActiveClass
+
+- Type: `String`
+- Default: `'nuxt-link-exact-active'`
+
+Globally configure [`<nuxt-link>`](/api/components-nuxt-link) default exact active class.
+
+Example (`nuxt.config.js`):
+```js
+module.exports = {
+  router: {
+    linkExactActiveClass: 'exact-active-link'
+  }
+}
+```
+
+> This option is given directly to the [vue-router Router constructor](https://router.vuejs.org/en/api/options.html).
+
 ## scrollBehavior
 
 - Type: `Function`
