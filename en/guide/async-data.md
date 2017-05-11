@@ -70,6 +70,10 @@ You can display the data inside your template like you're used to doing:
 
 To see the list of available keys in `context`, take a look at the [API Pages data](/api).
 
+### Accessing dynamic route data 
+
+You can use the context object injected into the `asyncData` property to access dynamic route data. For example, dynamic route params can be accessed using the name of the file or folder that configured it. So if you define a file named `_slug.vue`, you can acccess it via `context.params.slug`.
+
 ## Handling Errors
 
 Nuxt.js adds the `error(params)` method in the `context`, you can call it to display the error page. `params.statusCode` will be also used to render the proper status code form the server-side.
