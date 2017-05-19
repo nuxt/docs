@@ -37,12 +37,16 @@
           { "name": "analyze", "to": "#analyze" },
           { "name": "babel", "to": "#babel" },
           { "name": "extend", "to": "#extend" },
+          { "name": "extractCSS", "to": "#extractcss" },
           { "name": "filenames", "to": "#filenames" },
           { "name": "loaders", "to": "#loaders" },
           { "name": "plugins", "to": "#plugins" },
           { "name": "postcss", "to": "#postcss" },
           { "name": "publicPath", "to": "#publicpath" },
-          { "name": "vendor", "to": "#vendor" }
+          { "name": "ssr", "to": "#ssr" },
+          { "name": "templates", "to": "#templates" },
+          { "name": "vendor", "to": "#vendor" },
+          { "name": "watch", "to": "#watch" }
         ]
       },
       { "name": "cache", "to": "/configuration-cache" },
@@ -69,6 +73,7 @@
           { "name": "Use a Custom Loading Component", "to": "#use-a-custom-loading-component" }
         ]
       },
+      { "name": "modules", "to": "/modules" },
       {
         "name": "performance",
         "to": "/configuration-performance",

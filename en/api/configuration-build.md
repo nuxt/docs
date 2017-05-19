@@ -81,6 +81,18 @@ module.exports = {
 
 If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/webpack).
 
+
+## extractCSS
+
+- Type: `Boolean`
+  - Default: `false`
+
+> Enables Common CSS Extraction using vue SSR [guidelines](https://ssr.vuejs.org/en/css.html).
+
+Using extract-text-webpack-plugin to extract the CSS in the main chunk into a separate CSS file (auto injected with template),
+which allows the file to be individually cached. This is recommended when there is a lot of shared CSS.
+CSS inside async components will remain inlined as JavaScript strings and handled by vue-style-loader.
+
 ## filenames
 
 - Type: `Object`
@@ -91,8 +103,9 @@ Default:
 ```js
 {
   manifest: 'manifest.[hash].js',
-  vendor: 'vendor.bundle.[hash].js',
-  app: 'nuxt.bundle.[chunkhash].js'
+  vendor: 'vendor.bundle.[chunkhash].js',
+  app: 'nuxt.bundle.[chunkhash].js',
+  css: 'common.[chunkhash].css'
 }
 ```
 
@@ -231,6 +244,52 @@ module.exports = {
 
 Then, when launching `nuxt build`, upload the content of `.nuxt/dist/` directory to your CDN and voilà!
 
+## ssr
+- Type: `Object`
+
+> Use `ssr` option to customize vue SSR bundle renderer
+
+```js
+module.exports = {
+  build: {
+    ssr: {
+        runInNewContext: false
+    }
+  }
+}
+```
+
+Learn more about available options on [Vue SSR API Reference](https://ssr.vuejs.org/en/api.html#renderer-options).
+It is recommended don't using this option as Nuxt.js is already providing best SSR defaults and misconfiguration my lead to SSR problems.
+
+## templates
+- Type: `Array`
+ - Items: `Object`
+
+> Nuxt.js allows you provide your own templates which will be rendered based on nuxt configuration
+  This feature is specially useful for using with [modules](/guide/modules).
+
+Example (`nuxt.config.js`):
+
+```js
+module.exports = {
+  build: {
+      templates: [
+         {
+           src: '~/modules/support/plugin.js', // src can be absolute or relative
+           dst: 'support.js', // dst is relative to project `.nuxt` dir
+           options: { // Options are provided to template as `options` key
+               live_chat: false
+           }
+         }
+      ]
+  }
+}
+```
+
+Templates are rendered using [lodash.template](https://lodash.com/docs/#template) 
+you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
+
 ## vendor
 
 > Nuxt.js lets you add modules inside the `vendor.bundle.js` file generated to reduce the size of the app bundle. It's really useful when using external modules (like `axios` for example)
@@ -256,6 +315,23 @@ module.exports = {
       'axios',
       '~plugins/my-lib.js'
     ]
+  }
+}
+```
+
+## watch
+- Type: `Array`
+ - Items: `String`
+
+> You can provide your custom files to watch and regenerate after changes.
+  This feature is specially useful for using with [modules](/guide/modules).
+
+```js
+module.exports = {
+  build: {
+      watch: [
+          '~/.nuxt/support.js'
+      ]
   }
 }
 ```
