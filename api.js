@@ -221,7 +221,7 @@ const server = micro(async function (req, res) {
   send(res, 200, _DOC_FILES_[path])
 })
 
-getFiles()
+module.exports = getFiles()
 .then(() => getReleases())
 .then(() => {
   if (process.env.NODE_ENV !== 'production') {
@@ -230,4 +230,5 @@ getFiles()
   const port = process.env.PORT || 4000
   server.listen(port)
   console.log(`Server listening on localhost:${port}`)
+  return
 })
