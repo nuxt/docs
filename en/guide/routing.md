@@ -88,6 +88,8 @@ router: {
 
 As you can see the route named `users-id` has the path `:id?` which makes it optional, if you want to make it required, create an `index.vue` file in the `users/_id` directory.
 
+<p class="Alert Alert--info">Warning: dynamic routes are ignored by the `generate` command: [API Configuration generate](/api/configuration-generate#routes)</p>
+
 ### Validate Route Params
 
 Nuxt.js lets you define a validator method inside your dynamic route component.
