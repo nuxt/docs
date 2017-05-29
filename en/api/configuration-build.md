@@ -62,6 +62,7 @@ module.exports = {
 > Extend the webpack configuration manually for the client & server bundles.
 
 The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are:
+
 1. Webpack config object
 2. Object with the folowing keys (all boolean): `dev`, `isClient`, `isServer`
 
