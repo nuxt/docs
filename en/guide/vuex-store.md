@@ -14,6 +14,7 @@ Nuxt.js will look for the `store` directory, if it exists, it will:
 3. Add the `store` option to the root `Vue` instance.
 
 Nuxt.js lets you have **2 modes of store**, choose the one you prefer:
+
 - **Classic:** `store/index.js` returns a store instance
 - **Modules:** every `.js` file inside the `store` directory is transformed as a [namespaced module](http://vuex.vuejs.org/en/modules.html) (`index` being the root module)
 
