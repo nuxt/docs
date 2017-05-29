@@ -2,6 +2,9 @@
   "name": "nuxt-docs",
   "version": "1.0.0",
   "description": "Nuxt.js documentation files",
+  "engines": {
+    "node": ">=7"
+  },
   "scripts": {
     "dev": "nodemon --watch *.js --exec 'node --harmony api.js'",
     "lint": "eslint *.js",
