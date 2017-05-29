@@ -13,9 +13,7 @@ GitHub Pages へデプロイするには、静的なウェブアプリケーシ�
 npm run generate
 ```
 
-このとき dist フォルダが作成され、その中に GitHub Pages ホスティングへデプロイされるものがすべて入ります。
-
-プロジェクトリポジトリならば `gh-pages` ブランチ、ユーザーまたは組織サイトならば `master` ブランチを指定してください。
+このとき dist フォルダが作成され、その中に GitHub Pages ホスティングへデプロイされるものがすべて入ります。プロジェクトリポジトリならば `gh-pages` ブランチ、ユーザーまたは組織サイトならば `master` ブランチを指定してください。
 
 <p class="Alert Alert--nuxt-green"><b>情報:</b> GitHub Pages で独自ドメインを使うために `CNAME` ファイルを置くのであれば、`CNAME` ファイルは `static` ディレクトリに置くとよいでしょう。詳細は [こちら](/guide/assets#webpack-で扱わない静的ファイル) を参照してください。</p>
 
