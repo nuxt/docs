@@ -81,7 +81,7 @@ export const mutations = {
       done: false
     })
   },
-  delete (state, { todo }) {
+  remove (state, { todo }) {
     state.list.splice(state.list.indexOf(todo), 1)
   },
   toggle (state, todo) {
@@ -112,7 +112,7 @@ new Vuex.Store({
             done: false
           })
         },
-        delete (state, { todo }) {
+        remove (state, { todo }) {
           state.list.splice(state.list.indexOf(todo), 1)
         },
         toggle (state, { todo }) {
