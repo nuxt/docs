@@ -104,3 +104,20 @@ Transitions applied on navigation:
 - `/` to `/posts` => `slide-left`
 - `/posts` to `/posts?page=3` => `slide-left`
 - `/posts?page=3` to `/posts?page=2` => `slide-right`
+
+## Dynamic
+
+If one wants to set a different transition effect for mobiles and desktops.<br>
+To trigger transition depending on a context:
+
+*Note: `isMobile` is a created context*
+
+```js
+transition: ({ isMobile }) => isMobile ? {
+  name: 'test',
+  mode: 'out-in'
+} : {
+  name: 'test',
+  mode: 'in-out'
+},
+```
