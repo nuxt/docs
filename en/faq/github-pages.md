@@ -23,6 +23,7 @@ Branch `gh-pages` for project repository OR branch `master` for user or organiza
 You can also use [push-dir package](https://github.com/L33T-KR3W/push-dir):
 
 First install it via npm:
+
 ```bash
 npm install push-dir --save-dev
 ```
@@ -40,6 +41,7 @@ Add a `deploy` command to your package.json with the branch as `gh-pages` for pr
 ```
 
 Then generate and deploy your static application:
+
 ```bash
 npm run generate
 npm run deploy
