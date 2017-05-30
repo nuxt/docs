@@ -83,7 +83,7 @@ module.exports = {
 }
 ```
 
-> このオプションは [vue-router Router constructor](https://router.vuejs.org/en/api/options.html) に直接付与さられます.
+> このオプションは [vue-router Router constructor](https://router.vuejs.org/en/api/options.html) に直接付与されます.
 
 ## scrollBehavior
 
