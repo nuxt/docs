@@ -79,19 +79,19 @@ _This file can not be renamed._
 
 ## Aliases
 
-| Alias | Directory |
-|-----|------|
-| ~ | / |
-| ~assets | /assets |
+| Alias       | Directory   |
+|-------------|-------------|
+| ~           | /           |
+| ~assets     | /assets     |
 | ~components | /components |
 | ~middleware | /middleware |
-| ~pages | /pages |
-| ~plugins | /plugins |
-| ~static | /static |
+| ~pages      | /pages      |
+| ~plugins    | /plugins    |
+| ~static     | /static     |
 
 Aliases which link to files:
 
-| Alias | Usage | Description |
-|-------|------|--------------|
-| ~store | `const store = require('~store')` | Import the `vuex` store instance. |
-| ~router | `const router = require('~router')`| Import the `vue-router` instance. |
+| Alias   | Usage                               | Description                       |
+|---------|-------------------------------------|-----------------------------------|
+| ~store  | `const store = require('~store')`   | Import the `vuex` store instance. |
+| ~router | `const router = require('~router')` | Import the `vue-router` instance. |
