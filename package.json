@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Nuxt.js documentation files",
   "engines": {
-    "node": ">=7"
+    "node": ">=7.6.0"
   },
   "scripts": {
     "dev": "nodemon --watch *.js --exec 'node api.js'",
