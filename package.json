@@ -6,7 +6,7 @@
     "node": ">=7"
   },
   "scripts": {
-    "dev": "nodemon --watch *.js --exec 'node --harmony api.js'",
+    "dev": "nodemon --watch *.js --exec 'node api.js'",
     "lint": "eslint *.js",
     "start": "node --harmony api.js",
     "deploy": "now --alias",
