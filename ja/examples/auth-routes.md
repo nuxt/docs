@@ -149,8 +149,6 @@ Nuxt.js では data メソッドを非同期にするために、いくつかの
 
 `login` アクションを追加できます。このアクションはログインするためにページコンポーネントから呼び出されます:
 
-ログインするためにページコンポーネントから呼び出される `login` アクションを追加します:
-
 ```js
 login ({ commit }, { username, password }) {
   return fetch('/api/login', {

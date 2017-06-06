@@ -5,9 +5,7 @@ description: Nuxt.js で window または document が undefined のときは？
 
 # window または document が undefined のときは？
 
-このエラーはサーバーサイドレンダリングに起因しています。
-
-あるリソースをクライアントサイドでのみインポートしたいときは `process.BROWSER_BUILD` 変数を使う必要があります。
+このエラーはサーバーサイドレンダリングに起因しています。あるリソースをクライアントサイドでのみインポートしたいときは `process.BROWSER_BUILD` 変数を使う必要があります。
 
 例えば .vue ファイルに次のように書きます:
 

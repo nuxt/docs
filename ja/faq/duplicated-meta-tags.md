@@ -7,7 +7,7 @@ description: メタタグが重複したときは？
 
 これは [vue-meta](https://github.com/declandewet/vue-meta) の "特徴" です。[head 要素のドキュメント](/guide/views#html-の-head-情報) を参照してください。
 
-コンポーネントで vue-meta が使われたときに重複を避けるためには、ユニーク識別子を hid キーで付与してください。詳細は [こちら](https://github.com/declandewet/vue-meta#lists-of-tags) を参照してください。
+> コンポーネントで vue-meta が使われたときに重複を避けるためには、ユニーク識別子を hid キーで付与してください。詳細は [こちら](https://github.com/declandewet/vue-meta#lists-of-tags) を参照してください。
 
 例えば description のメタタグについて、`hid` ユニーク識別子を付与する必要があります。そうすれば vue-meta は、デフォルトのタグを上書きすべきということを知ることができます。
 
