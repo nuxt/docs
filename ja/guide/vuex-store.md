@@ -25,7 +25,8 @@ Nuxt.js では **2つのモードのストア** があります。どちらか�
 ```js
 import Vuex from 'vuex'
 
-const store = new Vuex.Store({
+const store = () => new Vuex.Store({
+
   state: {
     counter: 0
   },

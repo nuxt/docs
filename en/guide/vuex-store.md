@@ -25,7 +25,8 @@ To activate the store with the classic mode, we create the `store/index.js` file
 ```js
 import Vuex from 'vuex'
 
-const store = new Vuex.Store({
+const store = () => new Vuex.Store({
+
   state: {
     counter: 0
   },
