@@ -178,7 +178,7 @@ Now we can access the `payload` from `/users/_id.vue` like so:
 
 ```js
 async asyncData ({ params, error, payload }) {
-  if (payload) return {page: payload}
-  else return {page: await backend.fetchUser(params.id)}
+  if (payload) return { user: payload }
+  else return { user: await backend.fetchUser(params.id) }
 }
 ```
