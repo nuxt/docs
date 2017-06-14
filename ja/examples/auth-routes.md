@@ -102,7 +102,8 @@ Vue.use(Vuex)
 // window.fetch() のためのポリフィル
 require('whatwg-fetch')
 
-const store = new Vuex.Store({
+const store = () => new Vuex.Store({
+
   state: {
     authUser: null
   },

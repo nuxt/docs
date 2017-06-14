@@ -97,7 +97,7 @@ Vue.use(Vuex)
 // Polyfill for window.fetch()
 require('whatwg-fetch')
 
-const store = new Vuex.Store({
+const store = () => new Vuex.Store({
 
   state: {
     authUser: null
