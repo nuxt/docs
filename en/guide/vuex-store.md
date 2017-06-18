@@ -70,9 +70,9 @@ export const mutations = {
 
 Then, you can have a `store/todos.js` file:
 ```js
-export const state = {
+export const state = () => ({
   list: []
-}
+})
 
 export const mutations = {
   add (state, text) {
