@@ -1,0 +1,50 @@
+{
+  "iso": "es",
+  "links": {
+    "api": "API",
+    "blog": "Blog",
+    "chat": "Chat",
+    "documentation": "Documentación",
+    "download": "Descarga",
+    "examples": "Ejemplos",
+    "ecosystem": "Ecosistema",
+    "faq": "FAQ",
+    "get_started": "Comenzando",
+    "github": "GitHub",
+    "guide": "Guia",
+    "homepage": "Pagina principal",
+    "live_demo": "Demo en vivo",
+    "live_edit": "Editar en vivo",
+    "twitter": "Twitter",
+    "vuejs": "Vue.js",
+    "vue_jobs": "Trabajos en Vue.js"
+  },
+  "text": {
+    "an_error_occured": "Ha ocurrido un error",
+    "api_page_not_found": "La pagina de la API no se encuentra",
+    "example_file": "Archivos de ejemplo",
+    "please_wait": "Por favor espere...",
+    "please_define_title": "Por favor defina un titulo en la pagina delantera",
+    "please_define_description": "Por favor defina una descripcion en la pagina delantera",
+    "search": "Buscar",
+    "version": "Version"
+  },
+  "homepage": {
+    "title": "Aplicaciónes VueJs universales",
+    "meta": {
+      "title": "Nuxt.js - Aplicaciones VueJs universales",
+      "description": "Nuxt es un framework minimalista para crear aplicaciones Vue.js que se renderizables del lado del servidor, division de codigo, recarga en caliente, generacion estatica y mucho mas!"
+    }
+  },
+  "footer": {
+    "authors": "Made by Chopin Brothers"
+  },
+  "guide": {
+    "release_notes": "Notas de la version",
+    "contribute": "Ha atrapado algun error o desea contribuir en la documentación?",
+    "edit_on_github": "Edite esta pagina en GitHub"
+  },
+  "examples": {
+    "source_code": "Codigo Fuente"
+  }
+}
