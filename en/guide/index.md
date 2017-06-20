@@ -25,6 +25,7 @@ As a framework, Nuxt.js comes with a lot of features to help you in your develop
 ![Vue with Webpack and Babel](https://i.imgur.com/avEUftE.png)
 
 Nuxt.js includes the following to create a rich web application development:
+
 - [Vue 2](https://github.com/vuejs/vue)
 - [Vue-Router](https://github.com/vuejs/vue-router)
 - [Vuex](https://github.com/vuejs/vuex) (included only when using the [store option](/guide/vuex-store))
@@ -78,6 +79,7 @@ Example:
 ```
 
 Will generate:
+
 ```
 -| dist/
 ----| about/
@@ -88,10 +90,12 @@ Will generate:
 This way, you can host your generated web application on any static hosting!
 
 The best example is this website. It is generated and hosted on GitHub Pages:
+
 - [Source code](https://github.com/nuxt/nuxtjs.org)
 - [Generated code](https://github.com/nuxt/nuxtjs.org/tree/gh-pages)
 
 We don't want to manually generate the application every time we update the [docs repository](https://github.com/nuxt/docs), so each push made calls an AWS Lambda function which:
+
 1. Clone the [nuxtjs.org repository](https://github.com/nuxt/nuxtjs.org)
 2. Install the dependencies via `npm install`
 3. Run `nuxt generate`

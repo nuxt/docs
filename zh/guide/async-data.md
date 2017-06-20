@@ -21,7 +21,7 @@ Nuxt.js 提供了几种不同的方法来使用 `asyncData` 方法，你可以�
 ### 返回 Promise
 ```js
 export default {
-  data ({ params }) {
+  asyncData ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
     .then((res) => {
       return { title: res.data.title }
@@ -33,7 +33,7 @@ export default {
 ### 使用 async或await
 ```js
 export default {
-  async data ({ params }) {
+  async asyncData ({ params }) {
     let { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
@@ -43,7 +43,7 @@ export default {
 ### 使用 回调函数
 ```js
 export default {
-  data ({ params }, callback) {
+  asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
     .then((res) => {
       callback(null, { title: res.data.title })

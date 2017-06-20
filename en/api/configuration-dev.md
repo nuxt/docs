@@ -11,8 +11,9 @@ description: Define the development or production mode.
 > Define the development or production mode of nuxt.js
 
 This property is overwritten by [nuxt commands](/guide/commands):
+
 - `dev` is forced to `true` with `nuxt`
-- `dev` is force to `false` with `nuxt build`, `nuxt start` and `nuxt generate`
+- `dev` is forced to `false` with `nuxt build`, `nuxt start` and `nuxt generate`
 
 This property should be used when using [nuxt.js programmatically](/api/nuxt):
 

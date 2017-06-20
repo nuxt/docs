@@ -1,13 +1,13 @@
 ---
 title: "API: The loading Property"
-description: Nuxt.js uses it's own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
+description: Nuxt.js uses its own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
 ---
 
 # The loading Property
 
 - Type: `Boolean` or `Object` or `String`
 
-> Nuxt.js uses it's own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
+> Nuxt.js uses its own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
 
 ## Disable the Progress Bar
 

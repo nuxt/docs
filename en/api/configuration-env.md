@@ -22,8 +22,9 @@ module.exports = {
 This lets me create a `baseUrl` property that will be equal to the `BASE_URL` environment variable if defined, otherwise, equal to `http://localhost:3000`.
 
 Then, I can access my `baseUrl` variable with 2 ways:
+
 1. Via `process.env.baseUrl`
-2. Via `context.baseUrl`, see [context api](/api#context)
+2. Via `context.env.baseUrl`, see [context api](/api#context)
 
 You can use the `env` property for giving public token for example.
 

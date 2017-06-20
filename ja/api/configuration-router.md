@@ -66,6 +66,25 @@ module.exports = {
 
 > このオプションは [vue-router の Router コンストラクタ](https://router.vuejs.org/en/api/options.html) に直接付与されます。
 
+## linkExactActiveClass
+
+- タイプ `文字列`
+- デフォルト: `'nuxt-link-exact-active'`
+
+[`<nuxt-link>`](/api/components-nuxt-link) のデフォルトの active class をグローバルに設定します。
+
+例 (`nuxt.config.js`):
+
+```js
+module.exports = {
+  router: {
+    linkExactActiveClass: 'exact-active-link'
+  }
+}
+```
+
+> このオプションは [vue-router Router constructor](https://router.vuejs.org/en/api/options.html) に直接付与されます.
+
 ## scrollBehavior
 
 - タイプ: `関数`

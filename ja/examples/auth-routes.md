@@ -102,7 +102,8 @@ Vue.use(Vuex)
 // window.fetch() のためのポリフィル
 require('whatwg-fetch')
 
-const store = new Vuex.Store({
+const store = () => new Vuex.Store({
+
   state: {
     authUser: null
   },
@@ -148,8 +149,6 @@ Nuxt.js では data メソッドを非同期にするために、いくつかの
 ### login() アクション
 
 `login` アクションを追加できます。このアクションはログインするためにページコンポーネントから呼び出されます:
-
-ログインするためにページコンポーネントから呼び出される `login` アクションを追加します:
 
 ```js
 login ({ commit }, { username, password }) {

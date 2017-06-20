@@ -25,7 +25,8 @@ Nuxt.js では **2つのモードのストア** があります。どちらか�
 ```js
 import Vuex from 'vuex'
 
-const store = new Vuex.Store({
+const store = () => new Vuex.Store({
+
   state: {
     counter: 0
   },
@@ -81,7 +82,7 @@ export const mutations = {
       done: false
     })
   },
-  delete (state, { todo }) {
+  remove (state, { todo }) {
     state.list.splice(state.list.indexOf(todo), 1)
   },
   toggle (state, todo) {
@@ -112,7 +113,7 @@ new Vuex.Store({
             done: false
           })
         },
-        delete (state, { todo }) {
+        remove (state, { todo }) {
           state.list.splice(state.list.indexOf(todo), 1)
         },
         toggle (state, { todo }) {

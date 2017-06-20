@@ -4,7 +4,7 @@
 
 ## Developing
 
-:warning: You must at least use `node >= 7` to start the server.
+:warning: You must at least use `node >= 7.6.0` (supports async/await) to start the server.
 
 Start a dev server on `localhost:4000`
 

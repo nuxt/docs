@@ -24,7 +24,8 @@ Nuxt.js에서는 **2가지 store 모드** 를 지원하며, 선호하는 모드�
 ```js
 import Vuex from 'vuex'
 
-const store = new Vuex.Store({
+const store = () => new Vuex.Store({
+
   state: {
     counter: 0
   },
@@ -79,7 +80,7 @@ export const mutations = {
       done: false
     })
   },
-  delete (state, { todo }) {
+  remove (state, { todo }) {
     state.list.splice(state.list.indexOf(todo), 1)
   },
   toggle (state, todo) {
@@ -109,7 +110,7 @@ new Vuex.Store({
             done: false
           })
         },
-        delete (state, { todo }) {
+        remove (state, { todo }) {
           state.list.splice(state.list.indexOf(todo), 1)
         },
         toggle (state, { todo }) {
