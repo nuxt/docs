@@ -15,6 +15,20 @@ You can configure the PORT with 2 different ways:
 }
 ```
 
+**Note**: for better cross platform development support you can use [cross-env](https://www.npmjs.com/package/cross-env) package.
+
+Installation:
+
+```bash
+npm install --save-dev cross-env
+```
+
+```js
+"scripts": {
+  "dev": "cross-env HOST=0.0.0.0 PORT=3333 nuxt"
+}
+```
+
 - Via a nuxt config in the `package.json`:
 
 ```js
