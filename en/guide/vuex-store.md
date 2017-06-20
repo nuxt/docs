@@ -1,6 +1,6 @@
 ---
 title: Vuex Store
-description: Using a store to manage the state is important for every big application, that's why nuxt.js implement Vuex in its core.
+description: Using a store to manage the state is important for every big application, that's why nuxt.js implements Vuex in its core.
 ---
 
 > Using a store to manage the state is important to every big application, that's why nuxt.js implement [vuex](https://github.com/vuejs/vuex) in its core.
