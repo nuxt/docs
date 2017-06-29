@@ -54,7 +54,7 @@ We can now use `this.$store` inside our components:
 
 > Nuxt.js lets you have a `store` directory with every file corresponding to a module.
 
-If you want this option, export the state, mutations and actions as a function in `store/index.js` instead of a store instance:
+If you want this option, export the state as a function, and the mutations and actions as objects in `store/index.js` instead of a store instance:
 
 ```js
 export const state = () => ({
