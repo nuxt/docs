@@ -68,7 +68,7 @@ If you already have a server, you can plug nuxt.js by using it as a middleware, 
 
 The big innovation of nuxt.js comes here: `nuxt generate`
 
-When building your application it will generate the HTML for every one your routes and store it in a file.
+When building your application it will generate the HTML for every one of your routes and store it in a file.
 
 Example:
 
