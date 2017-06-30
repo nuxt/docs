@@ -299,6 +299,8 @@ export default function ({ route }) {
 
 然后在你的 `nuxt.config.js` 、 layouts 或者 pages 中使用中间件:
 
+`nuxt.config.js`
+
 ```javascript
 module.exports = {
   router: {
