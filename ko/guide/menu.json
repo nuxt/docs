@@ -23,8 +23,8 @@
       {
         "to": "/installation", "name": "설치",
         "contents": [
-          { "to": "#using-nuxt-js-starter-template", "name": "Nuxt.js starter 템플릿 사용하기" },
-          { "to": "#starting-from-scratch", "name": "처음부터 시작하기" }
+          { "to": "#nuxt-js-starter-템플릿-사용하기", "name": "Nuxt.js starter 템플릿 사용하기" },
+          { "to": "#처음부터-시작하기", "name": "처음부터 시작하기" }
         ]
       },
       {
