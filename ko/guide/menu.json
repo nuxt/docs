@@ -38,12 +38,12 @@
       {
         "to": "/routing", "name": "라우팅",
         "contents": [
-          { "to": "#basic-routes", "name": "기본 라우트" },
-          { "to": "#dynamic-routes", "name": "동적 라우트" },
-          { "to": "#nested-routes", "name": "중첩 라우트" },
-          { "to": "#dynamic-nested-routes", "name": "동적 중첩 라우트" },
-          { "to": "#transitions", "name": "트랜지션" },
-          { "to": "#middleware", "name": "미들웨어" }
+          { "to": "#기본-라우트", "name": "기본 라우트" },
+          { "to": "#동적-라우트", "name": "동적 라우트" },
+          { "to": "#중첩-라우트", "name": "중첩 라우트" },
+          { "to": "#동적-중첩-라우트", "name": "동적 중첩 라우트" },
+          { "to": "#트랜지션", "name": "트랜지션" },
+          { "to": "#미들웨어", "name": "미들웨어" }
         ]
       },
       {
