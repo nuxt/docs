@@ -58,9 +58,9 @@
       {
         "to": "/async-data", "name": "비동기 데이터",
         "contents": [
-          { "to": "#the-data-method", "name": "asyncData 메소드" },
-          { "to": "#the-context", "name": "Context" },
-          { "to": "#handling-errors", "name": "에러 핸들링" }
+          { "to": "#asyncdata-메소드", "name": "asyncData 메소드" },
+          { "to": "#context", "name": "Context" },
+          { "to": "#에러-핸들링", "name": "에러 핸들링" }
         ]
       },
       {
