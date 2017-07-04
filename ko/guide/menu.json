@@ -30,7 +30,7 @@
       {
         "to": "/directory-structure", "name": "디렉토리 구조",
         "contents": [
-          { "to": "#directories", "name": "디렉토리" },
+          { "to": "#디렉토리들", "name": "디렉토리들" },
           { "to": "#aliases", "name": "Aliases" }
         ]
       },
