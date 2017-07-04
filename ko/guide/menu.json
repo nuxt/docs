@@ -66,8 +66,8 @@
       {
         "to": "/assets", "name": "애셋",
         "contents": [
-          { "to": "#webpacked", "name": "Webpack 사용" },
-          { "to": "#static", "name": "정적 파일 사용" }
+          { "to": "#webpack-사용", "name": "Webpack 사용" },
+          { "to": "#정적-파일-사용", "name": "정적 파일 사용" }
         ]
       },
       {
