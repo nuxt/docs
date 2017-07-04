@@ -5,12 +5,12 @@
       {
         "to": "", "name": "소개",
         "contents": [
-          { "to": "#what-is-nuxt-js-", "name": "Nuxt.js란 무엇인가?" },
-          { "to": "#how-it-works", "name": "어떻게 동작합니까?" },
-          { "to": "#features", "name": "특징" },
-          { "to": "#schema", "name": "구조" },
-          { "to": "#server-rendered", "name": "서버에서 렌더링하기" },
-          { "to": "#static-generated", "name": "정적 파일로 생성하기" }
+          { "to": "#nuxt-js란-무엇인가-", "name": "Nuxt.js란 무엇인가?" },
+          { "to": "#어떻게-동작합니까-", "name": "어떻게 동작합니까?" },
+          { "to": "#특징", "name": "특징" },
+          { "to": "#구조", "name": "구조" },
+          { "to": "#서버에서-렌더링하기", "name": "서버에서 렌더링하기" },
+          { "to": "#정적-파일로-생성하기", "name": "정적 파일로 생성하기" }
         ]
       },
       { "to": "/contribution-guide", "name": "Contribution 가이드" },
