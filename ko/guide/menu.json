@@ -100,7 +100,7 @@
       {
         "to": "/development-tools", "name": "개발 툴",
         "contents": [
-          { "to": "#end-to-end-testing", "name": "전체 테스팅" },
+          { "to": "#end-to-end-테스트", "name": "End-To-End 테스트" },
           { "to": "#eslint", "name": "ESLint" }
         ]
       }
