@@ -49,9 +49,9 @@
       {
         "to": "/views", "name": "Views",
         "contents": [
-          { "to": "#document", "name": "도큐먼트" },
-          { "to": "#layouts", "name": "레이아웃" },
-          { "to": "#pages", "name": "페이지" },
+          { "to": "#도큐먼트", "name": "도큐먼트" },
+          { "to": "#레이아웃", "name": "레이아웃" },
+          { "to": "#페이지", "name": "페이지" },
           { "to": "#html-head", "name": "HTML Head" }
         ]
       },
