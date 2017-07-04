@@ -82,11 +82,11 @@
       {
         "to": "/vuex-store", "name": "Vuex Store",
         "contents": [
-          { "to": "#activate-the-store", "name": "Store 활성화하기" },
-          { "to": "#classic-mode", "name": "클래식 모드" },
-          { "to": "#modules-mode", "name": "모듈 모드" },
-          { "to": "#the-fetch-method", "name": "fetch 메소드" },
-          { "to": "#the-nuxtserverinit-action", "name": "nuxtServerInit 액션" }
+          { "to": "#store-활성화하기", "name": "Store 활성화하기" },
+          { "to": "#클래식-모드", "name": "클래식 모드" },
+          { "to": "#모듈-모드", "name": "모듈 모드" },
+          { "to": "#fetch-메소드", "name": "fetch 메소드" },
+          { "to": "#nuxtserverinit-액션", "name": "nuxtServerInit 액션" }
         ]
       },
       {
