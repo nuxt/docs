@@ -73,10 +73,10 @@
       {
         "to": "/plugins", "name": "플러그인",
         "contents": [
-          { "to": "#external-packages", "name": "외부 패키지" },
-          { "to": "#vue-plugins", "name": "Vue 플러그인" },
-          { "to": "#inject-in-root-amp-context", "name": "$root 와 context 합치기" },
-          { "to": "#client-side-only", "name": "클라이언트에서만 사용하기" }
+          { "to": "#외부-패키지", "name": "외부 패키지" },
+          { "to": "#vue-플러그인", "name": "Vue 플러그인" },
+          { "to": "#-root-와-context-합치기", "name": "$root 와 context 합치기" },
+          { "to": "#클라이언트에서만-사용하기", "name": "클라이언트에서만 사용하기" }
         ]
       },
       {
