@@ -37,7 +37,7 @@ We are going to write our tests in the `test` folder:
 mkdir test
 ```
 
-Let's says we have a page in `pages/index.vue`:
+Let's say we have a page in `pages/index.vue`:
 ```html
 <template>
   <h1 class="red">Hello {{ name }}!</h1>
