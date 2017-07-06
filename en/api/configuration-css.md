@@ -30,3 +30,9 @@ module.exports = {
   ]
 }
 ```
+
+## Dependencies
+For certain files you need extra dependencies.  
+[If you use `sass`/`scss` make sure to install these via npm](https://github.com/nuxt/nuxt.js/issues/1003#issuecomment-312304831):
+- node-sass
+- sass-loader
