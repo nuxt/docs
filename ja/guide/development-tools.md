@@ -39,7 +39,7 @@ npm install --save-dev ava jsdom
 mkdir test
 ```
 
-`pages/index.vue` にページががあります:
+`pages/index.vue` にページがあります:
 
 ```html
 <template>
