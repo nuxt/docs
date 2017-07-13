@@ -14,7 +14,7 @@ To deploy with [now.sh](https://zeit.co/now) a `package.json` like follows is re
   },
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "NODE_ENV=production nuxt build",
     "start": "nuxt start"
   }
 }

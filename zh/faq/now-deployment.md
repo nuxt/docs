@@ -15,7 +15,7 @@ description: 如何使用 Now.sh 进行部署？
   },
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "NODE_ENV=production nuxt build",
     "start": "nuxt start"
   }
 }
