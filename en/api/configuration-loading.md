@@ -104,6 +104,6 @@ Then, we update our `nuxt.config.js` to tell Nuxt.js to use our component:
 
 ```js
 module.exports = {
-  loading: '~components/loading.vue'
+  loading: '~/components/loading.vue'
 }
 ```

@@ -24,7 +24,7 @@ module.exports = {
 
 ## Local Settings
 
-Include your resources in your .vue file inside the pages directory:
+Include your resources in your `.vue` file inside the `pages/` directory:
 
 ```html
 <template>
@@ -43,4 +43,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+h1 {
+  font-family: Roboto, sans-serif;
+}
+</style>
 ```

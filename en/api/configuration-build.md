@@ -314,7 +314,7 @@ module.exports = {
   build: {
     vendor: [
       'axios',
-      '~plugins/my-lib.js'
+      '~/plugins/my-lib.js'
     ]
   }
 }

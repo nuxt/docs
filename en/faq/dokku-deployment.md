@@ -1,6 +1,6 @@
 ---
 title: Dokku Deployment
-description: How to deploy Nuxt.js on Dokku?
+description: How to deploy a Nuxt.js application on Dokku?
 ---
 
 # How to deploy on Dokku?

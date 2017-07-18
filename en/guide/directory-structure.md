@@ -79,19 +79,11 @@ _This file can not be renamed._
 
 ## Aliases
 
-| Alias       | Directory   |
-|-------------|-------------|
-| ~           | /           |
-| ~assets     | /assets     |
-| ~components | /components |
-| ~middleware | /middleware |
-| ~pages      | /pages      |
-| ~plugins    | /plugins    |
-| ~static     | /static     |
+| Alias | Directory |
+|-----|------|
+| `~` or `@` | [srcDir](/api/configuration-srcdir) |
+| `~~` or `@@` | [rooDir](/api/configuration-rootdir) |
 
-Aliases which link to files:
+By default, `srcDir` is the same as `rootDir`.
 
-| Alias   | Usage                               | Description                       |
-|---------|-------------------------------------|-----------------------------------|
-| ~store  | `const store = require('~store')`   | Import the `vuex` store instance. |
-| ~router | `const router = require('~router')` | Import the `vue-router` instance. |
+<p class="Alert Alert--nuxt-green"><b>INFO:</b> Inside your `vue` templates, if you need to link to your `assets` or `static` directory, use `~assets/your_image.png` and `~static/your_image.png`.</p>

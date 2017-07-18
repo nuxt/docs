@@ -1,6 +1,6 @@
 ---
 title: Google Analytics Integration
-description: How to use Google Analytics?
+description: How to use Google Analytics in my Nuxt.js application?
 ---
 
 # How to use Google Analytics?
@@ -9,11 +9,12 @@ To use [Google Analytics](https://analytics.google.com/analytics/web/) with your
 
 ```js
 /* eslint-disable */
-import router from '~router'
-/*
-** Only run on client-side and only in production mode
-*/
-if (process.env.NODE_ENV === 'production') {
+
+export default ({ router }) => {
+  /*
+  ** Only run on client-side and only in production mode
+  */
+  if (process.env.NODE_ENV !== 'production') return
   /*
   ** Include Google Analytics Script
   */
@@ -46,7 +47,7 @@ Then, we tell nuxt.js to import it in our main application:
 ```js
 module.exports = {
   plugins: [
-    { src: '~plugins/ga.js', ssr: false }
+    { src: '~/plugins/ga.js', ssr: false }
   ]
 }
 ```

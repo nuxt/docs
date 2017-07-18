@@ -39,4 +39,4 @@ export default axios.create({
 })
 ```
 
-Then, in your pages, you can import axios like this: `import axios from '~plugins/axios'`
+Then, in your pages, you can import axios like this: `import axios from '~/plugins/axios'`
