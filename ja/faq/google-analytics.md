@@ -25,6 +25,9 @@ if (process.env.NODE_ENV === 'production') {
   ** 現在のページをセット
   */
   ga('create', 'UA-XXXXXXXX-X', 'auto')
+}
+
+export default ({ app: { router }, store }) => {
   /*
   ** ルートが変更されるたびに毎回実行（初期化も実行される）
   */
