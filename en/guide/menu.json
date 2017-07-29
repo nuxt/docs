@@ -80,6 +80,15 @@
         ]
       },
       {
+        "to": "/modules", "name": "Modules",
+        "contents": [
+          { "to": "#introduction", "name": "Introduction" },
+          { "to": "#write-a-basic-module", "name": "Write a basic Module" },
+          { "to": "#async-modules", "name": "Async Modules" },
+          { "to": "#common-snippets", "name": "Common Snippets" }
+        ]
+      },
+      {
         "to": "/vuex-store", "name": "Vuex Store",
         "contents": [
           { "to": "#activate-the-store", "name": "Activate the Store" },

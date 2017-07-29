@@ -53,6 +53,12 @@ This option lets you to customize the loading component load by default with Nux
 
 [Documentation about loading integration](/api/configuration-loading)
 
+### modules
+
+This option lets you add nuxt modules to your project.
+
+[Documentation about modules integration](/api/configuration-modules)
+
 ### plugins
 
 This option lets you to define Javascript plugins to be ran before instantiating the root vue.js application.

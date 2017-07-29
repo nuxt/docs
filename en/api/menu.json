@@ -73,7 +73,7 @@
           { "name": "Use a Custom Loading Component", "to": "#use-a-custom-loading-component" }
         ]
       },
-      { "name": "modules", "to": "/modules" },
+      { "name": "modules", "to": "/configuration-modules" },
       {
         "name": "performance",
         "to": "/configuration-performance",
@@ -110,7 +110,7 @@
     ]
   },
   {
-    "title": "Nuxt Module",
+    "title": "Nuxt Class",
     "links": [
       { "name": "Usage", "to": "/nuxt" },
       { "name": "render", "to": "/nuxt-render" },

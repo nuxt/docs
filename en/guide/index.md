@@ -47,6 +47,7 @@ Under the hood we use [Webpack](https://github.com/webpack/webpack) with [vue-lo
 - Managing Head Elements
 - Hot reloading in Development
 - Pre-processor: SASS, LESS, Stylus, etc
+- Extending with Modular architecture
 
 ## Schema
 
