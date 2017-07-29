@@ -22,15 +22,16 @@ This method should be used mostly for [test purposes](/guide/development-tools#e
 
 Example:
 ```js
-const Nuxt = require('nuxt')
-let config = require('./nuxt.config.js')
+const { Nuxt, Builder } = require('nuxt')
+
+const config = require('./nuxt.config.js')
 config.dev = false
+
 const nuxt = new Nuxt(config)
 
-nuxt.build()
-.then(() => {
-  return nuxt.renderRoute('/')
-})
+new Builder(nuxt)
+.build()
+.then(() => nuxt.renderRoute('/'))
 .then(({ html, error, redirected }) => {
   // html will be always a string
 

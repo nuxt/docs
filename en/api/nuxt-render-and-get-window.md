@@ -24,8 +24,12 @@ npm install --save-dev jsdom
 
 Example:
 ```js
-const Nuxt = require('nuxt')
-const nuxt = new Nuxt()
+const { Nuxt, Builder } = require('nuxt')
+
+const config = require('./nuxt.config.js')
+config.dev = false
+
+const nuxt = new Nuxt(config)
 
 nuxt.renderAndGetWindow('http://localhost:3000')
 .then((window) => {

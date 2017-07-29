@@ -110,7 +110,7 @@
     ]
   },
   {
-    "title": "Nuxt Class",
+    "title": "Programmatically",
     "links": [
       { "name": "Usage", "to": "/nuxt" },
       { "name": "render", "to": "/nuxt-render" },
