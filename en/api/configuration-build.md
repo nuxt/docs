@@ -124,55 +124,6 @@ module.exports = {
 
 To understand a bit more about the use of manifest and vendor, take a look at this [Webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/).
 
-## loaders
-
-- Type: `Array`
-  - Items: `Object`
-
-> Customize webpack loaders
-
-Default:
-```js
-[
-  {
-    test: /\.(png|jpe?g|gif|svg)$/,
-    loader: 'url-loader',
-    query: {
-      limit: 1000, // 1KO
-      name: 'img/[name].[hash:7].[ext]'
-    }
-  },
-  {
-    test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-    loader: 'url-loader',
-    query: {
-      limit: 1000, // 1 KO
-      name: 'fonts/[name].[hash:7].[ext]'
-    }
-  }
-]
-```
-
-Example (`nuxt.config.js`):
-```js
-module.exports = {
-  build: {
-    loaders: [
-      {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        loader: 'url-loader',
-        query: {
-          limit: 10000, // 10KO
-          name: 'img/[name].[hash].[ext]'
-        }
-      }
-    ]
-  }
-}
-```
-
-<p class="Alert Alert--orange">When the loaders are defined in the `nuxt.config.js`, the default loaders will be overwritten.</p>
-
 ## plugins
 
 - Type: `Array`
