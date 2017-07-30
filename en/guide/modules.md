@@ -265,7 +265,8 @@ module.exports = function (moduleOptions) {
 ```
 
 ### Register custom loaders
-We can do the same as `extendBuild` in `nuxt.config.js` using `this.extendBuild`
+
+We can do the same as `build.extend` in `nuxt.config.js` using `this.extendBuild`
 
 **module.js**
 

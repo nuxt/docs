@@ -39,7 +39,7 @@ The benefits of them are:
 - `file-loader` lets you designate where to copy and place the asset file, and how to name it using version hashes for better caching.
 - `url-loader` allows you to conditionally inline a file as base-64 data URL if they are smaller than a given threshold. This can reduce a number of HTTP requests for trivial files. If the file is larger than the threshold, it automatically falls back to `file-loader`.
 
-Actually, Nuxt.js default loaders configuration is:
+Actually, Nuxt.js default assets loaders configuration is:
 
 ```js
 [
@@ -77,7 +77,7 @@ Will be generated into:
 <img src="/_nuxt/img/image.0c61159.png">
 ```
 
-If you want to update these loaders or disable them, please take a look at the [loaders configuration](/api/configuration-build#loaders).
+If you want to update these loaders or disable them, please use [build.extend](/api/configuration-build#extend).
 
 ## Static
 
