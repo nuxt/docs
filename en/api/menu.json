@@ -97,6 +97,7 @@
           { "name": "extendRoutes", "to": "#extendroutes" }
         ]
       },
+      { "name": "serverMiddleware", "to": "/configuration-servermiddleware" },
       { "name": "srcDir", "to": "/configuration-srcdir" },
       { "name": "transition", "to": "/configuration-transition" },
       {
