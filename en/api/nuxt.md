@@ -6,7 +6,6 @@ description: You can use nuxt.js programmatically to use it as a middleware givi
 # Using Nuxt.js Programmatically
 
 You might want to use your own server with your middleware and your API. That's why you can use Nuxt.js programmatically.
-Nuxt.js is built on the top of ES2015, which makes the code more enjoyable and cleaner to read. It doesn't make use of any transpilers and depends upon Core V8 implemented features. For these reasons, Nuxt.js targets Node.js `6.0` or higher.
 
 You can require Nuxt.js like this:
 ```js
@@ -14,6 +13,7 @@ const { Nuxt, Builder } = require('nuxt')
 ```
 
 ## Nuxt Constructor
+
 To see the list of options to give to Nuxt.js, see the configuration section.
 
 ```js
@@ -34,7 +34,7 @@ if (nuxt.options.dev) {
 // We can use nuxt.render(req, res) or nuxt.renderRoute(route, context)
 ```
 
-You can take a look at the [nuxt-express](https://github.com/nuxt/express) and [adonuxt](https://github.com/nuxt/adonuxt) starters to start quickly.
+You can take a look at the [nuxt-express](https://github.com/nuxt-community/express-template) and [adonuxt](https://github.com/nuxt-community/adonuxt-template) starters to start quickly.
 
 ### Debug logs
 

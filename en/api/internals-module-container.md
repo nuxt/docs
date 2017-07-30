@@ -29,7 +29,7 @@ this.plugin('ready', async moduleContainer => {
 
 Plugin               | Arguments                 | When
 ---------------------|---------------------------|--------------------------------------------------------------
-`ready`              | renderer                  | All modules in `nuxt.config.js` has been initialized
+`ready`              | moduleContainuer          | All modules in `nuxt.config.js` has been initialized
 
 
 ## Methods
@@ -56,15 +56,15 @@ You can use `template.ssr: false` to disable plugin including in SSR bundle.
 
 ### addServerMiddleware (middleware)
 
-Pushes middleware into `options.serverMiddleware`. 
+Pushes middleware into [options.serverMiddleware](/api/configuration-servermiddleware). 
 
 ### extendBuild (fn)
 
-Allows easily extending webpack build config by chaining `options.build.extend` function.
+Allows easily extending webpack build config by chaining [options.build.extend](/api/configuration-build#extend) function.
 
 ### extendRoutes (fn)
 
-Allows easily extending routes by chaining `options.build.extendRoutes` function.
+Allows easily extending routes by chaining [options.build.extendRoutes](/api/configuration-router#extendroutes) function.
 
 ### addModule (moduleOpts, requireOnce) 
 
