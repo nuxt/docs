@@ -117,5 +117,16 @@
       { "name": "renderRoute", "to": "/nuxt-render-route" },
       { "name": "renderAndGetWindow", "to": "/nuxt-render-and-get-window" }
     ]
+  },
+  {
+    "title": "Internals",
+    "links": [
+      { "name": "Intro", "to": "/internals" },
+      { "name": "Nuxt", "to": "/internals-nuxt" },
+      { "name": "Renderer", "to": "/internals-renderer" },
+      { "name": "Module Container", "to": "/internals-module-container" },
+      { "name": "Builder", "to": "/internals-builder" },
+      { "name": "Generator", "to": "/internals-generator" }
+    ]
   }
 ]

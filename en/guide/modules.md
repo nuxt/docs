@@ -60,6 +60,7 @@ This is a reference to current nuxt instance. Refer to nuxt class docs for avail
 **`this`**
 
 Context of modules. Refer to ModuleContainer class docs for available methods.
+See [module-container](/api/internals-module-container) for more info about `this` context.
 
 **`module.exports.meta`**
 
@@ -93,7 +94,7 @@ For this, Nuxt supports async modules which can return a Promise or call a callb
 
 ### Use async/await
 
-<p class="Alert">
+<p class="Alert Alert--orange">
   Be aware that async/await is only supported in Node.js > 7.2
   So if you are a module developer at least warn users about that if using them.
   For heavily async modules or better legacy support you can use either a bundler to transform it for older node comparability or using promise method.
@@ -321,5 +322,5 @@ module.exports = function () {
 
 <p class="Alert">
   There are many many more hooks and possibilities for modules.
-  Just refer to Nuxt [source code](https://github.com/nuxt/nuxt.js/tree/dev/lib) to discover more!
+  Please refer to [Nuxt Internals](/api/internals) to learn more about Nuxt internal API.
 </p>
