@@ -1,5 +1,5 @@
 ---
-title: Views 2
+title: Views
 description: The Views section describes all you need to configure data and views for a specific route in your Nuxt.js application. (Document, Layouts, Pages and HTML Head)
 ---
 
