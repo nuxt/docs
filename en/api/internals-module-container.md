@@ -1,9 +1,9 @@
 ---
-title: "API: The Module Container"
-description: Nuxt Module Container
+title: "API: The ModuleContainer Class"
+description: Nuxt ModuleContainer Class
 ---
 
-# Module Container
+# ModuleContainer Class
 
 - Source: **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/module.js)**
 

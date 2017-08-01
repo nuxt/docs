@@ -1,13 +1,13 @@
 ---
-title: "API: The Renderer Module"
-description: Nuxt Renderer Module
+title: "API: The Renderer Class"
+description: Nuxt Renderer Class
 ---
 
-# Renderer Module
+# Renderer Class
 
 - Source: **[core/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/renderer.js)**
 
-This module is exporting a connect middleware which handles and serves all SSR and asset requests.
+This class is exporting a connect middleware which handles and serves all SSR and asset requests.
 
 ## Tapable plugins
 

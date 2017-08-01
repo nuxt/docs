@@ -1,9 +1,9 @@
 ---
-title: "API: The Builder Module"
-description: Nuxt Builder Module
+title: "API: The Builder Class"
+description: Nuxt Builder Class
 ---
 
-# Builder Module
+# Builder Class
 
 - Source: **[builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)**
 

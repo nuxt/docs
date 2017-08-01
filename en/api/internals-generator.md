@@ -1,9 +1,9 @@
 ---
-title: "API: The Generator Module"
-description: Nuxt Generator Module
+title: "API: The Generator Class"
+description: Nuxt Generator Class
 ---
 
-# Generator Module
+# Generator Class
 
 - Source: **[builder/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/generator.js)**
 

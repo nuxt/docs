@@ -73,14 +73,6 @@
         ]
       },
       { "name": "modules", "to": "/configuration-modules" },
-      {
-        "name": "performance",
-        "to": "/configuration-performance",
-        "contents": [
-          { "name": "gzip", "to": "#gzip" },
-          { "name": "prefetch", "to": "#prefetch" }
-        ]
-      },
       { "name": "plugins", "to": "/configuration-plugins" },
       { "name": "rootDir", "to": "/configuration-rootdir" },
       {

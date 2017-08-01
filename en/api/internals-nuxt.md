@@ -1,14 +1,14 @@
 ---
-title: "API: The Nuxt Module"
-description: Nuxt Core Module
+title: "API: The Nuxt Class"
+description: Nuxt Core Class
 ---
 
-# Nuxt Module
+# Nuxt Class
 
 - Source: **[core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/nuxt.js)**
 
-This is the core container which allows all modules communicate with each other. 
-Almost all modules has access to nuxt instance using `this.nuxt`.
+This is the core container which allows all modules and classes communicate with each other. 
+All modules has access to nuxt instance using `this.nuxt`.
 
 ## Tapable plugins
 

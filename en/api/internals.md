@@ -63,7 +63,7 @@ const { Nuxt, Builder, Utils } = require('nuxt')
 
 ## Common patterns
 
-All Nuxt classes have a reference to nuxt instance and options. Every class extends [`tappable`](https://github.com/nuxt/tappable) class, this way we always have a consistent API across classes to access options and nuxt.
+All Nuxt classes have a reference to nuxt instance and options. Every class extends [`tappable`](https://github.com/nuxt/tappable), this way we always have a consistent API across classes to access options and nuxt.
 
 ```js
 const Tapable = require('tappable')
