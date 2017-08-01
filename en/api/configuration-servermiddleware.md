@@ -17,7 +17,7 @@ Nuxt [Modules](/guide/modules) can also provide `serverMiddleware`
 using [this.addServerMiddleware()](/api/internals-module-container#addservermiddleware-middleware-)
 
 ## serverMiddleware vs middleware!
-Don't confuse it with [routes middleware](/guide/routing#middleware) which are being called after each route by Vue in Client Side or SSR.
+Don't confuse it with [routes middleware](/guide/routing#middleware) which are being called before each route by Vue in Client Side or SSR.
 `serverMiddleware` are just running in server side **before** vue-server-renderer and can be used for server specific tasks
 like handling API requests or serving assets.
 
@@ -32,10 +32,10 @@ const serveStatic = require('serve-static')
 
 module.exports = {
   serverMiddleware: [
-      // Will load is-https npm package
-      'is-https',
+      // Will register redirect-ssl npm package
+      'redirect-ssl',
 
-      // Will load it from project api directory to handle /api/* requires
+      // Will register file from project api directory to handle /api/* requires
       { path: '/api', handler: '~/api/index.js' },
 
       // We can create custom instances too
