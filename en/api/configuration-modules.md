@@ -24,7 +24,7 @@ module.exports = {
     ['@nuxtjs/google-analytics', { ua: 'X1234567' }],
 
     // Inline definition
-    function () { this.options.build.postcss.push(require('cssnano')(options)) }
+    function () { }
   ]
 }
 ```

@@ -9,11 +9,11 @@ description: Modules are Nuxt.js extensions which can extend it's core functiona
 
 While developing production grade application using Nuxt, you will find out soon that nuxt core functionalities are not enough
 and writing configs and plugins for each project is a repetitive, boring and time consuming job.
-Also adding every new feature into nuxt is not possible as it would make it an optioned framework.
+Also adding every new feature into Nuxt is not possible as it would make it a fat framework.
    
-This was the reason nuxt introduced a higher order modular system to easily extend the core.
-Modules are basically **functions** which are called sequentially when booting nuxt and nuxt awaits for all of them
-to be finished before continue it's job. So they have the chance to customize almost any aspect of nuxt and thanks to modular design of nuxt itself and Webpack [Tapable](https://github.com/webpack/tapable) technology they can also register hooks
+This was the reason Nuxt introduces a higher order modular system to easily extend the core.
+Modules are basically **functions** which are called sequentially when booting Nuxt and core awaits for all of them
+to be finished before continue it's job. So they have the chance to customize almost any aspect of Nuxt and thanks to modular design of nuxt itself and Webpack [Tapable](https://github.com/webpack/tapable) technology they can also register hooks
 for certain entry points like builder initialization.
 
 Another point of using modules is that they can be refactored and packaged out of the project and released as NPM packages
@@ -21,10 +21,10 @@ so you can share and use high quality integration and solutions from nuxt commun
 
 - Are a member of an **agile team** that want to set up your project instantly and avoid **re-inventing** the wheel for common tasks like google-analytics for your new project.
 - Are an **enterprise** company which **quality** and **reusability** is important for your projects.
-- Are a lovely **open source** enthusiast and interested in **sharing** your nuxt solutions with community in an easy manner.
-- Are a lazy programmer® and don't like digging into details setting up every new library or integration.
- (Certainly someone else should already provided a module for that but you can always ask community for that)
-- Tired of breaking changes of plugins during low level api changes, and need things that just work.
+- Are a lovely **open source** enthusiast and interested in **sharing** your works with community in an easy manner.
+- Are a lazy programmer and don't like digging into details setting up every new library or integration.
+ (Someone else should already provided a module for that but you can always ask community for making one)
+- Tired of breaking low level API and Usage changes, and need **things that just work™**.
 
 
 ## Write a basic Module
@@ -59,8 +59,7 @@ This is a reference to current nuxt instance. Refer to nuxt class docs for avail
 
 **`this`**
 
-Context of modules. Refer to ModuleContainer class docs for available methods.
-See [module-container](/api/internals-module-container) for more info about `this` context.
+Context of modules. Refer to [ModuleContainer](/api/internals-module-container) class docs for available methods.
 
 **`module.exports.meta`**
 
