@@ -5,37 +5,44 @@ description: How to use Google Analytics?
 
 # How to use Google Analytics?
 
-To use [Google Analytics](https://analytics.google.com/analytics/web/) with your nuxt.js application, we recommend to create a file `plugins/ga.js`:
+Check first google [Google Analytics](https://analytics.google.com/analytics/web/) [Nuxt module](https://github.com/nuxt-community/modules/tree/master/modules/google-analytics)
+
+Or you may create manually a plugin `plugins/ga.js`:
 
 ```js
 /* eslint-disable */
-import router from '~router'
-/*
-** Only run on client-side and only in production mode
-*/
-if (process.env.NODE_ENV === 'production') {
+export default (context) => {
+
   /*
-  ** Include Google Analytics Script
+  ** Only run on client-side and only in production mode
   */
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  /*
-  ** Set the current page
-  */
-  ga('create', 'UA-XXXXXXXX-X', 'auto')
-  /*
-  ** Every time the route changes (fired on initialization too)
-  */
-  router.afterEach((to, from) => {
+  if (process.env.NODE_ENV === 'production') {
     /*
-    ** We tell Google Analytic to add a page view
+    ** Include Google Analytics Script
     */
-    ga('set', 'page', to.fullPath)
-    ga('send', 'pageview')
-  })
+    (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    /*
+    ** Set the current page
+    */
+    ga('create', 'UA-XXXXXXXXX-X', 'auto')
+    /*
+    ** Every time the route changes (fired on initialization too)
+    */
+    context.app.router.afterEach((to, from) => {
+      /*
+      ** We tell Google Analytic to add a page view
+      */
+      ga('set', 'page', to.fullPath)
+      ga('send', 'pageview')
+    })
+  }
 }
+
 ```
 
 > Replace `UA-XXXXXXXX-X` by your Google Analytics tracking ID.
