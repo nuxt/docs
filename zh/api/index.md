@@ -22,7 +22,7 @@ export default {
 }
 ```
 
-<div class="Alert Alert--orange">注意：由于`data`方法是在组件 **初始化** 前被调用的，所以在方法内是没有办法通过 `this` 来引用组件的实例对象。</div>
+<div class="Alert Alert--orange">注意：由于`asyncData`方法是在组件 **初始化** 前被调用的，所以在方法内是没有办法通过 `this` 来引用组件的实例对象。</div>
 
 ## 上下文对象
 
