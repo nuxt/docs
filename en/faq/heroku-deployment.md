@@ -12,7 +12,7 @@ First, we need to tell Heroku to install the `devDependencies` of the project (t
 heroku config:set NPM_CONFIG_PRODUCTION=false
 ```
 
-Also, we want our application to listen on the port `0.0.0.0` and run in production mode:
+Also, we want our application to listen on the host `0.0.0.0` and run in production mode:
 ```bash
 heroku config:set HOST=0.0.0.0
 heroku config:set NODE_ENV=production

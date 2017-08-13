@@ -3,7 +3,7 @@ title: 개발 툴
 description: Nuxt.js는 개발을 보다 재미있게 할 수 있도록 도와줍니다.
 ---
 
-## 엔드 투 엔드 테스트
+## End-To-End 테스트
 
 [Ava](https://github.com/avajs/ava)는 [jsdom](https://github.com/tmpvar/jsdom)과 같이 사용할 수 있는 JavaScript의 강력한 테스트 프레임워크입니다. 엔드 투 엔드 테스트를 쉽게 하기 위해서 이 두가지를 사용합니다.
 
