@@ -162,3 +162,16 @@ npm run lint
 ESLint will lint every of your JavaScript and Vue files while ignoring your ignored files defined in your `.gitignore`.
 
 <p class="Alert Alert--info">One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before commiting your code.</p>
+
+### Editor settings
+
+**VS Code**
+```json
+# Add the following to `settings.json` to enable linting/fixing inside .vue files
+"eslint.validate": [
+  "javascript",
+  "javascriptreact",
+  { "language": "vue", "autoFix": true },
+  { "language": "html", "autoFix": true }
+]
+```
