@@ -15,7 +15,7 @@ description: Now를 사용하여 배포하려면?
   },
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "NODE_ENV=production nuxt build",
     "start": "nuxt start"
   }
 }

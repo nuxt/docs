@@ -15,7 +15,7 @@ description: Now を使ってデプロイするには？
   },
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "NODE_ENV=production nuxt build",
     "start": "nuxt start"
   }
 }
