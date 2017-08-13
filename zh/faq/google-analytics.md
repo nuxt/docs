@@ -23,6 +23,9 @@ if (process.BROWSER_BUILD && process.env.NODE_ENV === 'production') {
   ** 当前页的访问统计
   */
   ga('create', 'UA-XXXXXXXX-X', 'auto')
+}
+
+export default ({ app: { router }, store }) => {
   /*
   ** 每次路由变更时进行pv统计
   */
