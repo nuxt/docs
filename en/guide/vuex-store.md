@@ -164,6 +164,28 @@ export default {
 
 <div class="Alert">You can also have modules by exporting a store instance, you will have to add them manually on your store.</div>
 
+### Plugins
+
+You can add additional plugin to the store (in Modules Mode) putting it into the `store/index.js` file:
+
+```js
+import myPlugin from 'myPlugin'
+
+export const plugins = [ myPlugin ]
+
+export const state = () => ({
+  counter: 0
+})
+
+export const mutations = {
+  increment (state) {
+    state.counter++
+  }
+}
+```
+
+More information about the plugins: [Vuex documentation](https://vuex.vuejs.org/en/plugins.html)
+
 ## The fetch Method
 
 > The fetch method is used to fill the store before rendering the page, it's like the data method except it doesn't set the component data.
