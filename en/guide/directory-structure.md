@@ -9,7 +9,7 @@ description: The default Nuxt.js application structure is intended to provide a 
 
 ### The Assets Directory
 
-The `assets` directory contains your un-compiled assets such as LESS, SASS, or JavaScript.
+The `assets` directory contains your un-compiled assets such as LESS, SASS or JavaScript.
 
 [More documentation about Assets integration](/guide/assets)
 
@@ -57,7 +57,7 @@ _This directory can not be renamed._
 
 ### The Store Directory
 
-The `store` directory contains your [Vuex Store](http://vuex.vuejs.org) files. Vuex Store option is implemented in the Nuxt.js framework. Creating a `index.js` file in this directory activate the option in the framework automatically.
+The `store` directory contains your [Vuex Store](http://vuex.vuejs.org) files. Vuex Store option is implemented in the Nuxt.js framework. Creating an `index.js` file in this directory activates the option in the framework automatically.
 
 _This directory can not be renamed._
 

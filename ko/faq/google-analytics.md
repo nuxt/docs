@@ -56,8 +56,11 @@ if (process.env.NODE_ENV === 'production') {
   ** 현재 페이지를 설정
   */
   ga('create', 'UA-XXXXXXXX-X', 'auto')
+}
+
+export default ({ app: { router }, store }) => {
   /*
-  ** 라우트가 변경될 때마다 실행(초기화도 실행됨)
+  ** 라우트가 변경될 때마다 실행 (초기 설정 시에도 실행됨)
   */
   router.afterEach((to, from) => {
     /*
@@ -66,7 +69,6 @@ if (process.env.NODE_ENV === 'production') {
     ga('set', 'page', to.fullPath)
     ga('send', 'pageview')
   })
-}
 ```
 
 > `UA-XXXXXXXX-X` 를 Google 애널리틱스 트랙킹 아이디로 변경해 주세요.
