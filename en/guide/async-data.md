@@ -25,7 +25,7 @@ Nuxt.js offers you different ways to use `asyncData`. Choose the one you're the 
 ```js
 export default {
   asyncData ({ params }) {
-    return axios.get(`https://my-api/posts/${params.id}`)
+    return axios.get(`https://my-api/posts/${params._id}`)
     .then((res) => {
       return { title: res.data.title }
     })
@@ -37,7 +37,7 @@ export default {
 ```js
 export default {
   async asyncData ({ params }) {
-    let { data } = await axios.get(`https://my-api/posts/${params.id}`)
+    let { data } = await axios.get(`https://my-api/posts/${params._id}`)
     return { title: data.title }
   }
 }
@@ -47,7 +47,7 @@ export default {
 ```js
 export default {
   asyncData ({ params }, callback) {
-    axios.get(`https://my-api/posts/${params.id}`)
+    axios.get(`https://my-api/posts/${params._id}`)
     .then((res) => {
       callback(null, { title: res.data.title })
     })
@@ -82,7 +82,7 @@ Example with a `Promise`:
 ```js
 export default {
   asyncData ({ params, error }) {
-    return axios.get(`https://my-api/posts/${params.id}`)
+    return axios.get(`https://my-api/posts/${params._id}`)
     .then((res) => {
       return { title: res.data.title }
     })
@@ -97,7 +97,7 @@ If you're using the `callback` argument, you can call it directly with the error
 ```js
 export default {
   asyncData ({ params }, callback) {
-    axios.get(`https://my-api/posts/${params.id}`)
+    axios.get(`https://my-api/posts/${params._id}`)
     .then((res) => {
       callback(null, { title: res.data.title })
     })
