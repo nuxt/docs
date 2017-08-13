@@ -267,11 +267,11 @@ More information about the transition property: [API Pages transition](/api/page
 
 ## Middleware
 
-> The middleware lets you define custom function to be ran before rendering a page or a group of pages.
+> The middleware lets you define a custom function to be run before rendering a page or a group of pages.
 
 **Every middleware should be placed in the `middleware/` directory.** The filename will be the name of the middleware (`middleware/auth.js` will be the `auth` middleware).
 
-A middleware receive [the context](/api#context) as first argument:
+A middleware receives [the context](/api#context) as first argument:
 
 ```js
 export default function (context) {
