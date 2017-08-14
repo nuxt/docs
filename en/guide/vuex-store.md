@@ -24,20 +24,18 @@ To activate the store with the classic mode, we create the `store/index.js` file
 
 ```js
 import Vuex from 'vuex'
+import mutations from './mutations'
 
-const store = () => new Vuex.Store({
+const createStore = () => {
+  return new Vuex.Store({
+    state: {
+      counter: 0
+    },
+    mutations
+  })
+}
 
-  state: {
-    counter: 0
-  },
-  mutations: {
-    increment (state) {
-      state.counter++
-    }
-  }
-})
-
-export default store
+export default createStore
 ```
 
 > We don't need to install `vuex` since it's shipped with nuxt.js
