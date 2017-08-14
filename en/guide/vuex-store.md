@@ -24,14 +24,17 @@ To activate the store with the classic mode, we create the `store/index.js` file
 
 ```js
 import Vuex from 'vuex'
-import mutations from './mutations'
 
 const createStore = () => {
   return new Vuex.Store({
     state: {
       counter: 0
     },
-    mutations
+    mutations: {
+      increment (state) {
+        state.counter++
+      }
+    }
   })
 }
 
