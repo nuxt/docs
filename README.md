@@ -6,7 +6,7 @@
 
 :warning: You must at least use `node >= 7.6.0` (supports async/await) to start the server.
 
-:warning: You must also have the main [nuxt.js](https://github.com/nuxt/nuxt.js) website repo up and running on localhost to be able to run the docs...
+:warning: You must also have the main [nuxtjs.org](https://github.com/nuxt/nuxtjs.org) website repo up and running on localhost to be able to run the docs...
 
 Start a dev server on `localhost:4000`
 
@@ -15,7 +15,7 @@ npm install
 npm run dev
 ```
 
-Then access the docs via the website running on `http://localhost:3000`
+Then access the docs via the website running on `http://nuxt:3000` (see instructions on [nuxtjs.org](https://github.com/nuxt/nuxtjs.org) repo).
 
 ## On Translations
 
