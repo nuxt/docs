@@ -4,7 +4,7 @@
 
 ## Developing
 
-:warning: You must at least use `node >= 7.6.0` (supports async/await) to start the server.
+:warning: You must at least use `node >= 8.0.0` (supports async/await) to start the server.
 
 :warning: You must also have the main [nuxtjs.org](https://github.com/nuxt/nuxtjs.org) website repo up and running on localhost to be able to run the docs...
 
