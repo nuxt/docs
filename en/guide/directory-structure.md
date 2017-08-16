@@ -82,7 +82,7 @@ _This file can not be renamed._
 | Alias | Directory |
 |-----|------|
 | `~` or `@` | [srcDir](/api/configuration-srcdir) |
-| `~~` or `@@` | [rooDir](/api/configuration-rootdir) |
+| `~~` or `@@` | [rootDir](/api/configuration-rootdir) |
 
 By default, `srcDir` is the same as `rootDir`.
 
