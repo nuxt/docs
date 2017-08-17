@@ -64,7 +64,7 @@ Then, we add the file inside the `plugins` key of `nuxt.config.js`:
 ```js
 module.exports = {
   plugins: ['~/plugins/vue-notifications']
-}
+}renderer from the server-side
 ```
 
 To learn more about the `plugins` configuration key, check out the [plugins api](/api/configuration-plugins).
@@ -137,3 +137,5 @@ Vue.use(VueNotifications)
 ```
 
 In case you need to require some libraries only for the server, you can use the `process.server` variable set to `true` when webpack is creating the `server.bundle.js` file.
+
+Also, if you need to know if you are inside a generated app (via `nuxt generate`), you can check `process.static`, set to `true` during generation and after. To know the state when a page is being server-rendered by `nuxt generate` before being saved, you can use `process.static && process.server`.
