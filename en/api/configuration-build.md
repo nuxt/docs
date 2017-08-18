@@ -212,7 +212,7 @@ module.exports = {
 ```
 
 Learn more about available options on [Vue SSR API Reference](https://ssr.vuejs.org/en/api.html#renderer-options).
-It is recommended don't using this option as Nuxt.js is already providing best SSR defaults and misconfiguration my lead to SSR problems.
+It is recommended to not use this option as Nuxt.js is already providing best SSR defaults and misconfiguration might lead to SSR problems.
 
 ## templates
 - Type: `Array`
