@@ -12,7 +12,7 @@ Ortherwise, to use [Google Analytics](https://analytics.google.com/analytics/web
 ```js
 /* eslint-disable */
 
-export default ({ router }) => {
+export default ({ app }) => {
   /*
   ** Only run on client-side and only in production mode
   */
@@ -31,7 +31,7 @@ export default ({ router }) => {
   /*
   ** Every time the route changes (fired on initialization too)
   */
-  router.afterEach((to, from) => {
+  app.router.afterEach((to, from) => {
     /*
     ** We tell Google Analytic to add a page view
     */
