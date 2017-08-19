@@ -148,31 +148,45 @@ module.exports = {
 
 ## postcss
 
-- Type: `Array`
+- Type: `Array` or `Object` (recommended) or `Function` or `Boolean`
 
-> Customize [postcss](https://github.com/postcss/postcss) options
+> Customize [Postcss Loader](https://github.com/postcss/postcss-loader#usage) plugins.
+
+**NOTE:** While default preset is OK and flexible enough for normal use cases, the recommended 
+usage by [vue-loader](https://vue-loader.vuejs.org/en/options.html#postcss) is using `postcss.config.js` file in your project.
+By creating that file it will be automatically detected and this option is ignored.
 
 Default:
+
 ```js
-[
-  require('autoprefixer')({
-    browsers: ['last 3 versions']
-  })
-]
+{
+  'postcss-import' : {},
+  'postcss-url': {},
+  'postcss-cssnext': {}
+}
 ```
 
 Example (`nuxt.config.js`):
+
 ```js
 module.exports = {
   build: {
-    postcss: [
-      require('postcss-nested')(),
-      require('postcss-responsive-type')(),
-      require('postcss-hexrgba')(),
-      require('autoprefixer')({
-        browsers: ['last 3 versions']
-      })
-    ]
+    postcss: {
+      // Disable postcss-url
+      'postcss-url': false
+      
+      // Customize postcss-cssnext default options
+      'postcss-cssnext': {
+        features: {
+          customProperties: false
+        }
+      }
+
+      // Add some plugins
+      'postcss-nested': {},
+      'postcss-responsive-type': {}
+      'postcss-hexrgba': {}
+    }
   }
 }
 ```
