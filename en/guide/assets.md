@@ -18,19 +18,19 @@ For example, we have this file tree:
 ----| index.vue
 ```
 
-In my CSS, if I use `url('~assets/image.png')`, it will be translated into `require('~assets/image.png')`.
+In my CSS, if I use `url('~/assets/image.png')`, it will be translated into `require('~/assets/image.png')`.
 
 Or if in my `pages/index.vue`, I use:
 ```html
 <template>
-  <img src="~assets/image.png">
+  <img src="~/assets/image.png">
 </template>
 ```
 
 It will be compiled into:
 
 ```js
-createElement('img', { attrs: { src: require('~assets/image.png') }})
+createElement('img', { attrs: { src: require('~/assets/image.png') }})
 ```
 
 Because `.png` is not a JavaScript file, nuxt.js configures Webpack to use [file-loader](https://github.com/webpack/file-loader) and [url-loader](https://github.com/webpack/url-loader) to handle them for you.
@@ -68,7 +68,7 @@ When launching our application with `nuxt`, our template in `pages/index.vue`:
 
 ```html
 <template>
-  <img src="~assets/image.png">
+  <img src="~/assets/image.png">
 </template>
 ```
 
@@ -92,7 +92,7 @@ From your code you can then reference those files with `/` URLs:
 ```html
 <!-- Static image from static directory -->
 <img src="/my-image.png"/>
-
+~
 <!-- Webpacked image from assets directory -->
-<img src="/assets/my-image-2.png"/>
+<img src="~/assets/my-image-2.png"/>
 ```
