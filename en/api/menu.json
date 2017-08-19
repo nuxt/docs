@@ -61,6 +61,7 @@
         ]
       },
       { "name": "loading-indicator", "to": "/configuration-loading-indicator" },
+      { "name": "mode", "to": "/configuration-mode" },
       { "name": "css", "to": "/configuration-css" },
       { "name": "dev", "to": "/configuration-dev" },
       { "name": "env", "to": "/configuration-env" },
