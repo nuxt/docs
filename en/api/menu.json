@@ -60,7 +60,6 @@
           { "name": "static", "to": "#static" }
         ]
       },
-      { "name": "cache", "to": "/configuration-cache" },
       { "name": "css", "to": "/configuration-css" },
       { "name": "dev", "to": "/configuration-dev" },
       { "name": "env", "to": "/configuration-env" },
