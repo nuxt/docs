@@ -28,7 +28,7 @@ module.exports = {
 
 `server.js`
 ```js
-const Nuxt = require('nuxt')
+const { Nuxt, Builder } = require('nuxt')
 const app = require('express')()
 const port = process.env.PORT || 3000
 
@@ -39,7 +39,7 @@ app.use(nuxt.render)
 
 // Build only in dev mode
 if (config.dev) {
-  nuxt.build()
+  new Builder(nuxt).build()
   .catch((error) => {
     console.error(error)
     process.exit(1)
@@ -47,8 +47,9 @@ if (config.dev) {
 }
 
 // Listen the server
-app.listen(port, '0.0.0.0')
-console.log('Server listening on localhost:' + port)
+app.listen(port, '0.0.0.0').then(() => {
+  nuxt.showOpen()
+})
 ```
 
 Then in your `package.json`:
@@ -61,4 +62,5 @@ Then in your `package.json`:
   }
 }
 ```
+
 Note: You'll need to run `npm install --save-dev cross-env` for the above example to work. If you're *not* developing on Windows you can leave cross-env out of your `start` script and set `NODE_ENV` directly.
