@@ -94,6 +94,13 @@ Using extract-text-webpack-plugin to extract the CSS in the main chunk into a se
 which allows the file to be individually cached. This is recommended when there is a lot of shared CSS.
 CSS inside async components will remain inlined as JavaScript strings and handled by vue-style-loader.
 
+## cssSourceMap
+
+- Type: `boolean`
+  - Default: `true` for dev and `false` for production.
+
+> Enables CSS Source Map support
+
 ## filenames
 
 - Type: `Object`
@@ -103,20 +110,21 @@ CSS inside async components will remain inlined as JavaScript strings and handle
 Default:
 ```js
 {
+  css: 'common.[contenthash].css',
   manifest: 'manifest.[hash].js',
-  vendor: 'vendor.bundle.[chunkhash].js',
-  app: 'nuxt.bundle.[chunkhash].js',
-  css: 'common.[chunkhash].css'
+  vendor: 'common.[chunkhash].js',
+  app: 'app.[chunkhash].js',
+  chunk: '[name].[chunkhash].js'
 }
 ```
 
-Example (`nuxt.config.js`):
+This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
+
 ```js
 module.exports = {
   build: {
     filenames: {
-      vendor: 'vendor.[hash].js',
-      app: 'app.[chunkhash].js'
+      chunk: '[id].[chunkhash].js'
     }
   }
 }
@@ -291,3 +299,13 @@ module.exports = {
   }
 }
 ```
+
+## devMiddleware
+- Type: `Object`
+
+See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) for available options.
+
+## hotMiddleware
+- Type: `Object`
+
+See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for available options.

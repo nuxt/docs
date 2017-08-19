@@ -38,6 +38,7 @@
           { "name": "babel", "to": "#babel" },
           { "name": "extend", "to": "#extend" },
           { "name": "extractCSS", "to": "#extractcss" },
+          { "name": "cssSourceMap", "to": "#css-source-map" },
           { "name": "filenames", "to": "#filenames" },
           { "name": "plugins", "to": "#plugins" },
           { "name": "postcss", "to": "#postcss" },
@@ -45,7 +46,9 @@
           { "name": "ssr", "to": "#ssr" },
           { "name": "templates", "to": "#templates" },
           { "name": "vendor", "to": "#vendor" },
-          { "name": "watch", "to": "#watch" }
+          { "name": "watch", "to": "#watch" },
+          { "name": "devMiddleware", "to": "#devmiddleware" },
+          { "name": "hotMiddleware", "to": "#hot-middleware" }
         ]
       },
       {
