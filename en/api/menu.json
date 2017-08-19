@@ -48,6 +48,18 @@
           { "name": "watch", "to": "#watch" }
         ]
       },
+      {
+        "name": "render",
+        "to": "/configuration-render",
+        "contents": [
+          { "name": "bundleRenderer", "to": "#bundleRenderer" },
+          { "name": "resourceHints", "to": "#resourceHints" },
+          { "name": "ssr", "to": "#ssr" },
+          { "name": "gzip", "to": "#gzip" },
+          { "name": "etag", "to": "#etag" },
+          { "name": "static", "to": "#static" }
+        ]
+      },
       { "name": "cache", "to": "/configuration-cache" },
       { "name": "css", "to": "/configuration-css" },
       { "name": "dev", "to": "/configuration-dev" },

@@ -211,22 +211,12 @@ module.exports = {
 Then, when launching `nuxt build`, upload the content of `.nuxt/dist/` directory to your CDN and voilà!
 
 ## ssr
-- Type: `Object`
+- Type: `Boolean`
+  - Default `true` for universal mode and `false` for spa mode
 
-> Use `ssr` option to customize vue SSR bundle renderer
+> Creates special webpack bundle for SSR renderer.
 
-```js
-module.exports = {
-  build: {
-    ssr: {
-        runInNewContext: false
-    }
-  }
-}
-```
-
-Learn more about available options on [Vue SSR API Reference](https://ssr.vuejs.org/en/api.html#renderer-options).
-It is recommended don't using this option as Nuxt.js is already providing best SSR defaults and misconfiguration my lead to SSR problems.
+This option is automatically set based on `mode` value if not provided. 
 
 ## templates
 - Type: `Array`
