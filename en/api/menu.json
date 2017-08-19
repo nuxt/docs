@@ -60,6 +60,7 @@
           { "name": "static", "to": "#static" }
         ]
       },
+      { "name": "loading-indicator", "to": "/configuration-loading-indicator" },
       { "name": "css", "to": "/configuration-css" },
       { "name": "dev", "to": "/configuration-dev" },
       { "name": "env", "to": "/configuration-env" },
