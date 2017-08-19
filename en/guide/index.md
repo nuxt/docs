@@ -55,17 +55,23 @@ This schema shows what is called by nuxt.js when the server is called or when th
 
 ![nuxt-schema](/nuxt-schema.png)
 
-## Server Rendered
+## Server Rendered (Universal SSR)
 
 You can use nuxt.js as a framework to handle all the UI rendering of your project.
 
 When launching `nuxt`, it will start a development server with hot-reloading and vue-server-renderer configured to automatically server-render your application.
 
-Take a look at [the commands](/guide/commands) to learn more about it.
+### Single Page Applications (SPA)
+If for any reason you prefer not using server side rendering or need static hosting for your applications,
+you can simply use SPA mode using `nuxt --spa`. Combination with *generate* feature
+gives a powerful SPA deployment mechanism without need to Node.js runtime or any special server handling.
 
-If you already have a server, you can plug nuxt.js by using it as a middleware, there is no restriction at all when using nuxt.js for developing your Universal Web Applications, see the [Using Nuxt.js Programmatically](/api/nuxt) guide.
 
-## Static Generated
+Take a look at [the commands](/guide/commands) to learn more about usage.
+
+If you already have a server, you can plug Nuxt.js by using it as a middleware, there is no restriction at all when using nuxt.js for developing your Universal Web Applications, see the [Using Nuxt.js Programmatically](/api/nuxt) guide.
+
+## Static Generated (Pre Rendering)
 
 The big innovation of nuxt.js comes here: `nuxt generate`
 

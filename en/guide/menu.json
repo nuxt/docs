@@ -9,8 +9,9 @@
           { "to": "#how-it-works", "name": "How it Works" },
           { "to": "#features", "name": "Features" },
           { "to": "#schema", "name": "Schema" },
-          { "to": "#server-rendered", "name": "Server Rendered" },
-          { "to": "#static-generated", "name": "Static Generated" }
+          { "to": "#server-rendered-universal-ssr-", "name": "Server Rendered" },
+          { "to": "#single-page-applications-spa-", "name": "Single Page Application" },
+          { "to": "#static-generated-pre-rendering-", "name": "Static Generated" }
         ]
       },
       { "to": "/contribution-guide", "name": "Contribution Guide" },
@@ -99,7 +100,7 @@
         ]
       },
       {
-        "to": "/commands", "name": "Commands",
+        "to": "/commands", "name": "Commands and Deployment",
         "contents": [
           { "to": "#list-of-commands", "name": "List of Commands" },
           { "to": "#development-environment", "name": "Development Enviroment" },
