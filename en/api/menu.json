@@ -114,6 +114,7 @@
     "title": "Internals",
     "links": [
       { "name": "Intro", "to": "/internals" },
+      { "name": "Context", "to": "/internals-context" },
       { "name": "Nuxt", "to": "/internals-nuxt" },
       { "name": "Renderer", "to": "/internals-renderer" },
       { "name": "Module Container", "to": "/internals-module-container" },
