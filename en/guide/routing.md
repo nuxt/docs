@@ -267,7 +267,7 @@ More information about the transition property: [API Pages transition](/api/page
 
 ## Middleware
 
-> The middleware lets you define a custom function to be run before rendering a page or a group of pages.
+> Middleware lets you define custom functions that can be run before rendering either a page or a group of pages.
 
 **Every middleware should be placed in the `middleware/` directory.** The filename will be the name of the middleware (`middleware/auth.js` will be the `auth` middleware).
 
@@ -304,7 +304,7 @@ Then, in your `nuxt.config.js`, layout or page, use the `middleware` key:
 module.exports = {
   router: {
     middleware: 'stats'
-  }  
+  }
 }
 ```
 

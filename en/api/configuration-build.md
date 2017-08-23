@@ -256,7 +256,7 @@ you can learn more about using them [here](https://github.com/learn-co-students/
 
 ## vendor
 
-> Nuxt.js lets you add modules inside the `vendor.bundle.js` file generated to reduce the size of the app bundle. It's really useful when using external modules (like `axios` for example)
+> Nuxt.js lets you add modules inside the `vendor.bundle.js` file to reduce the size of the application bundle. This is especially helpful when using external modules (like `axios` for example).
 
 - Type: `Array`
  - Items: `String`
