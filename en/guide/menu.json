@@ -29,7 +29,7 @@
         ]
       },
       {
-        "to": "/directory-structure", "name": "Directory structure",
+        "to": "/directory-structure", "name": "Directory Structure",
         "contents": [
           { "to": "#directories", "name": "Directories" },
           { "to": "#aliases", "name": "Aliases" }
