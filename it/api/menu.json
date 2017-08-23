@@ -1,0 +1,116 @@
+[
+  {
+    "title": "Pages",
+    "links": [
+      { "name": "asyncData", "to": "/" },
+      { "name": "fetch", "to": "/pages-fetch" },
+      { "name": "head", "to": "/pages-head" },
+      { "name": "layout", "to": "/pages-layout" },
+      { "name": "middleware", "to": "/pages-middleware" },
+      { "name": "scrollToTop", "to": "/pages-scrolltotop" },
+      {
+        "name": "transition", "to": "/pages-transition",
+        "contents": [
+          { "name": "String", "to": "#string" },
+          { "name": "Object", "to": "#object" },
+          { "name": "Function", "to": "#function" }
+        ]
+      },
+      { "name": "validate", "to": "/pages-validate" }
+    ]
+  },
+  {
+    "title": "Components",
+    "links": [
+      { "name": "nuxt", "to": "/components-nuxt" },
+      { "name": "nuxt-child", "to": "/components-nuxt-child" },
+      { "name": "nuxt-link", "to": "/components-nuxt-link" }
+    ]
+  },
+  {
+    "title": "Configuration",
+    "links": [
+      {
+        "name": "build",
+        "to": "/configuration-build",
+        "contents": [
+          { "name": "analyze", "to": "#analyze" },
+          { "name": "babel", "to": "#babel" },
+          { "name": "extend", "to": "#extend" },
+          { "name": "filenames", "to": "#filenames" },
+          { "name": "loaders", "to": "#loaders" },
+          { "name": "plugins", "to": "#plugins" },
+          { "name": "postcss", "to": "#postcss" },
+          { "name": "publicPath", "to": "#publicpath" },
+          { "name": "vendor", "to": "#vendor" }
+        ]
+      },
+      { "name": "cache", "to": "/configuration-cache" },
+      { "name": "css", "to": "/configuration-css" },
+      { "name": "dev", "to": "/configuration-dev" },
+      { "name": "env", "to": "/configuration-env" },
+      {
+        "name": "generate",
+        "to": "/configuration-generate",
+        "contents": [
+          { "name": "dir", "to": "#dir" },
+          { "name": "interval", "to": "#interval" },
+          { "name": "minify", "to": "#minify" },
+          { "name": "routes", "to": "#routes" }
+        ]
+      },
+      { "name": "head", "to": "/configuration-head" },
+      {
+        "name": "loading",
+        "to": "/configuration-loading",
+        "contents": [
+          { "name": "Disable the Progress Bar", "to": "#disable-the-progress-bar" },
+          { "name": "Customize the Progress Bar", "to": "#customize-the-progress-bar" },
+          { "name": "Use a Custom Loading Component", "to": "#use-a-custom-loading-component" }
+        ]
+      },
+      {
+        "name": "performance",
+        "to": "/configuration-performance",
+        "contents": [
+          { "name": "gzip", "to": "#gzip" },
+          { "name": "prefetch", "to": "#prefetch" }
+        ]
+      },
+      { "name": "plugins", "to": "/configuration-plugins" },
+      { "name": "rootDir", "to": "/configuration-rootdir" },
+      {
+        "name": "router",
+        "to": "/configuration-router",
+        "contents": [
+          { "name": "base", "to": "#base" },
+          { "name": "mode", "to": "#mode" },
+          { "name": "linkActiveClass", "to": "#linkactiveclass" },
+          { "name": "linkExactActiveClass", "to": "#linkexactactiveclass" },
+          { "name": "scrollBehavior", "to": "#scrollbehavior" },
+          { "name": "middleware", "to": "#middleware" },
+          { "name": "extendRoutes", "to": "#extendroutes" }
+        ]
+      },
+      { "name": "srcDir", "to": "/configuration-srcdir" },
+      { "name": "transition", "to": "/configuration-transition" },
+      {
+        "name": "watchers",
+        "to": "/configuration-watchers",
+        "contents": [
+          { "name": "chokidar", "to": "#chokidar" },
+          { "name": "webpack", "to": "#webpack" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Nuxt Module",
+    "links": [
+      { "name": "Usage", "to": "/nuxt" },
+      { "name": "render", "to": "/nuxt-render" },
+      { "name": "renderRoute", "to": "/nuxt-render-route" },
+      { "name": "renderAndGetWindow", "to": "/nuxt-render-and-get-window" }
+    ]
+  }
+]
