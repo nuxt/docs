@@ -25,6 +25,24 @@ module.exports = {
 Learn more about available options on [Vue SSR API Reference](https://ssr.vuejs.org/en/api.html#renderer-options).
 It is recommended to not use this option as Nuxt.js is already providing best SSR defaults and misconfiguration might lead to SSR problems.
 
+## etag
+- Type: `object`
+  - Default: `{ weak: true }`
+
+See [etag](https://www.npmjs.com/package/etag) docs for possible options.
+
+### gzip
+- Type `object`
+  - Default: `{ threshold: 0 }`
+
+See [compression](https://www.npmjs.com/package/compression) docs for possible options.
+
+### http2
+- Type `object`
+  - Default: `{ push: false }`
+
+Activate HTTP2 push headers.
+
 ## resourceHints
 - Type: `boolean`
   - Default: `true`
@@ -41,18 +59,6 @@ You may want to only disable this option if have many pages and routes.
 
 This option is automatically set based on `mode` value if not provided. 
 This can be useful to dynamically enable/disable SSR on runtime after image builds. (With docker for example)
-
-### gzip
-- Type `object`
-  - Default: `{threshold: 0}`
-
-See [compression](https://www.npmjs.com/package/compression) docs for possible options.
-
-## etag
-- Type: `object`
-  - Default: `{weak: true}`
-
-See [etag](https://www.npmjs.com/package/etag) docs for possible options.
 
 ## static
 - Type: `object`

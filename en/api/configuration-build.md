@@ -55,6 +55,18 @@ module.exports = {
 }
 ```
 
+## cssSourceMap
+
+- Type: `boolean`
+  - Default: `true` for dev and `false` for production.
+
+> Enables CSS Source Map support
+
+## devMiddleware
+- Type: `Object`
+
+See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) for available options.
+
 ## extend
 
 - Type: `Function`
@@ -82,7 +94,6 @@ module.exports = {
 
 If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/webpack).
 
-
 ## extractCSS
 
 - Type: `Boolean`
@@ -93,13 +104,6 @@ If you want to see more about our default webpack configuration, take a look at 
 Using extract-text-webpack-plugin to extract the CSS in the main chunk into a separate CSS file (auto injected with template),
 which allows the file to be individually cached. This is recommended when there is a lot of shared CSS.
 CSS inside async components will remain inlined as JavaScript strings and handled by vue-style-loader.
-
-## cssSourceMap
-
-- Type: `boolean`
-  - Default: `true` for dev and `false` for production.
-
-> Enables CSS Source Map support
 
 ## filenames
 
@@ -131,6 +135,11 @@ module.exports = {
 ```
 
 To understand a bit more about the use of manifest and vendor, take a look at this [Webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/).
+
+## hotMiddleware
+- Type: `Object`
+
+See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for available options.
 
 ## plugins
 
@@ -299,13 +308,3 @@ module.exports = {
   }
 }
 ```
-
-## devMiddleware
-- Type: `Object`
-
-See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) for available options.
-
-## hotMiddleware
-- Type: `Object`
-
-See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for available options.
