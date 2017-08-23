@@ -51,6 +51,14 @@ Korean translation is maintained by Taewoong La.
 * Primary maintainer - [Taewoong La](http://blog.naver.com/diy_lecko)
 * Primary translator - [june](http://jicjjang.github.io), [wanybae](https://github.com/wanybae), [rellario](https://github.com/rellario)
 
+### French
+
+French translation is maintained by Julien Grünhagel/@rspt for [laruche](https://laruche.io).
+
+* Translation Repo — [/larucheio/fr.docs.nuxtjs](https://github.com/larucheio/fr.docs.nuxtjs)
+* Primary maintainer - [laruche](https://laruche.io/)
+* Primary translator - [Julien Grünhagel](https://rspt.io/)
+
 ### Want to help with the translation?
 
 If you feel okay with translating sorta alone, just fork the repo, create a "work-in-progress" pull request (mark it with [WIP], see [Russian translation](https://github.com/nuxt/docs/pull/3) if you need an example) — and just go on.
