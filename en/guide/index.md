@@ -44,9 +44,10 @@ Under the hood we use [Webpack](https://github.com/webpack/webpack) with [vue-lo
 - Static File Serving
 - ES6/ES7 Transpilation
 - Bundling and minifying of your JS & CSS
-- Managing Head Elements
-- Hot reloading in Development
+- Managing `<head>` element (title, meta...)
+- Hot module replacement in Development
 - Pre-processor: SASS, LESS, Stylus, etc
+- HTTP/2 push headers ready
 - Extending with Modular architecture
 
 ## Schema
@@ -59,13 +60,11 @@ This schema shows what is called by nuxt.js when the server is called or when th
 
 You can use nuxt.js as a framework to handle all the UI rendering of your project.
 
-When launching `nuxt`, it will start a development server with hot-reloading and vue-server-renderer configured to automatically server-render your application.
+When launching `nuxt`, it will start a development server with hot-reloading and [vue-server-renderer](https://ssr.vuejs.org/en/) configured to automatically server-render your application.
 
 ### Single Page Applications (SPA)
-If for any reason you prefer not using server side rendering or need static hosting for your applications,
-you can simply use SPA mode using `nuxt --spa`. Combination with *generate* feature
-gives a powerful SPA deployment mechanism without need to Node.js runtime or any special server handling.
 
+If for any reason you prefer not using server side rendering or need static hosting for your applications, you can simply use SPA mode using `nuxt --spa`. Combination with *generate* feature gives a powerful SPA deployment mechanism without need to use Node.js runtime or any special server handling.
 
 Take a look at [the commands](/guide/commands) to learn more about usage.
 
