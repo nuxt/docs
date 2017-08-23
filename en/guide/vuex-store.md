@@ -20,24 +20,25 @@ Nuxt.js lets you have **2 modes of store**, choose the one you prefer:
 
 ## Classic mode
 
-To activate the store with the classic mode, we create the `store/index.js` file and export the store instance:
+To activate the store with the classic mode, we create the `store/index.js` file which should export a method which returns a Vuex instance:
 
 ```js
 import Vuex from 'vuex'
 
-const store = () => new Vuex.Store({
-
-  state: {
-    counter: 0
-  },
-  mutations: {
-    increment (state) {
-      state.counter++
+const createStore = () => {
+  return new Vuex.Store({
+    state: {
+      counter: 0
+    },
+    mutations: {
+      increment (state) {
+        state.counter++
+      }
     }
-  }
-})
+  })
+}
 
-export default store
+export default createStore
 ```
 
 > We don't need to install `vuex` since it's shipped with nuxt.js
