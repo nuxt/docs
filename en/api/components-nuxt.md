@@ -9,8 +9,8 @@ description: Display the page components inside a layout.
 
 **Props**:
 - nuxtChildKey: `string`
-- This prop will be set to `<router-view/>`, useful to make transitions inside a dynamic page and different route.
-- Default: `$route.fullPath`
+  - This prop will be set to `<router-view/>`, useful to make transitions inside a dynamic page and different route.
+  - Default: `$route.fullPath`
 
 Example (`layouts/default.vue`):
 
