@@ -98,7 +98,7 @@ If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take
 `nuxt generate` still needs SSR engine during build/generate time
 While having the pro that all of our pages are pre rendered and having a high SEO and page load score, 
 the content is generated at *build time*. For example, we can't use it for applications
-were their content depends on user authentication or a real time API (at least for the first load).
+where content depends on user authentication or a real time API (at least for the first load).
 
 The SPA idea is simple! When spa mode is enabled using `mode: 'spa'` or `--spa` flag and we run build,
 generation automatically starts after the build, but this time without pages content and only common meta and resource links.
