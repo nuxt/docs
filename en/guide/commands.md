@@ -97,18 +97,18 @@ If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take
 
 `nuxt generate` still needs SSR engine during build/generate time
 While having the pro that all of our pages are pre rendered and having a high SEO and page load score, 
-the content is generated at *build time* so for example we can't use it for applications
-That their content depends on user authentication or a real time API. (At least for the first load)
+the content is generated at *build time*. For example, we can't use it for applications
+were their content depends on user authentication or a real time API (at least for the first load).
 
 The SPA idea is simple! When spa mode is enabled using `mode: 'spa'` or `--spa` flag and we run build,
-Generate automatically starts after build, but this time without pages content and only common meta and resource links.
+generation automatically starts after the build, but this time without pages content and only common meta and resource links.
 
 So for an SPA deployment:
  - Change `mode` in `nuxt.config.js` to `spa` 
  - Run `npm run build`
  - Deploy the created `dist/` folder to your static hosting like surge or github pages or nginx.
 
-Another possible deployment is that we can use nuxt as a middleware in frameworks while mode is `spa`,
+Another possible deployment is that we can use nuxt as a middleware in frameworks while mode is `spa`.
 This helps reduce server loads and using nuxt in projects where SSR is not possible.
 
 
