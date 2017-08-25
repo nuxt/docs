@@ -12,7 +12,7 @@ To get started quickly, the Nuxt.js team has created a [starter template](https:
 [Download the .zip](https://github.com/nuxt-community/starter-template/archive/master.zip) starter template or install it with vue-cli:
 
 ```bash
-$ vue init nuxt/starter <project-name>
+$ vue init nuxt-community/starter-template <project-name>
 ```
 
 > If [vue-cli](https://github.com/vuejs/vue-cli) is not installed, please install it with `npm install -g vue-cli`
