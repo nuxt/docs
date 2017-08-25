@@ -7,9 +7,9 @@ description: Nuxt.js はとても簡単に始められます。シンプルな�
 
 ## Nuxt.js を使ったスターターテンプレート
 
-素早くスタートできるようにするため、Nuxt.js チームは [スターターテンプレート](https://github.com/nuxt/starter) を用意しました。
+素早くスタートできるようにするため、Nuxt.js チームは [スターターテンプレート](https://github.com/nuxt-community/starter-template) を用意しました。
 
-[ZIP をダウンロード](https://github.com/nuxt/starter/archive/source.zip) するか、vue-cli を使ってインストールしてください:
+[ZIP をダウンロード](https://github.com/nuxt-community/starter-template/archive/master.zip) するか、vue-cli を使ってインストールしてください:
 
 ```bash
 $ vue init nuxt/starter <project-name>

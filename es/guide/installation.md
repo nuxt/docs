@@ -7,9 +7,9 @@ description: Con `nuxt` es realmente facil empezar. Un proyecto simple solo nece
 
 ## Utilizar la plantilla de inicio de nuxt.js
 
-Para comenzar rapidamente, el equipo de Nuxt.js a creado una [plantilla de inicio](https://github.com/nuxt/starter).
+Para comenzar rapidamente, el equipo de Nuxt.js a creado una [plantilla de inicio](https://github.com/nuxt-community/starter-template).
 
-Descargue el  [.zip con la plantilla de inicio](https://github.com/nuxt/starter/archive/source.zip) o instalela con with vue-cli:
+Descargue el  [.zip con la plantilla de inicio](https://github.com/nuxt-community/starter-template/archive/master.zip) o instalela con with vue-cli:
 
 ```bash
 $ vue init nuxt/starter <project-name>

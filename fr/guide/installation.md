@@ -7,9 +7,9 @@ description: Démarrer avec Nuxt.js est vraiment facile. Un projet simple n'a be
 
 ## Utilisation du template de base de Nuxt.js
 
-Afin de démarrer rapidement, l'équipe Nuxt.js a créé un [starter template](https://github.com/nuxt/starter).
+Afin de démarrer rapidement, l'équipe Nuxt.js a créé un [starter template](https://github.com/nuxt-community/starter-template).
 
-[Télécharge le .zip](https://github.com/nuxt/starter/archive/source.zip) du *starter template* ou installe le l'aide de vue-cli:
+[Télécharge le .zip](https://github.com/nuxt-community/starter-template/archive/master.zip) du *starter template* ou installe le l'aide de vue-cli:
 
 ```bash
 $ vue init nuxt/starter <project-name>

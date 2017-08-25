@@ -7,9 +7,9 @@ description: Nuxt.js is really easy to get started with. A simple project only n
 
 ## Using Nuxt.js starter template
 
-To get started quickly, the Nuxt.js team has created a [starter template](https://github.com/nuxt/starter).
+To get started quickly, the Nuxt.js team has created a [starter template](https://github.com/nuxt-community/starter-template).
 
-[Download the .zip](https://github.com/nuxt/starter/archive/source.zip) starter template or install it with vue-cli:
+[Download the .zip](https://github.com/nuxt-community/starter-template/archive/master.zip) starter template or install it with vue-cli:
 
 ```bash
 $ vue init nuxt/starter <project-name>
