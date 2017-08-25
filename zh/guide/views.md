@@ -53,7 +53,9 @@ Nuxt.js 允许你扩展默认的布局，或在 `layout` 目录下创建自定�
 默认布局的源码如下：
 ```html
 <template>
-  <nuxt/>
+  <div>
+    <nuxt/>
+  </div>
 </template>
 ```
 
