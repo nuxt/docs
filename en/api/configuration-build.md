@@ -177,9 +177,11 @@ Default:
 
 ```js
 {
+  plugins: {
   'postcss-import' : {},
   'postcss-url': {},
   'postcss-cssnext': {}
+  }
 }
 ```
 
@@ -189,9 +191,10 @@ Example (`nuxt.config.js`):
 module.exports = {
   build: {
     postcss: {
-      // Disable postcss-url
+      plugins: {
+        // Disable postcss-url
       'postcss-url': false
-      
+
       // Customize postcss-cssnext default options
       'postcss-cssnext': {
         features: {
@@ -203,6 +206,7 @@ module.exports = {
       'postcss-nested': {},
       'postcss-responsive-type': {}
       'postcss-hexrgba': {}
+      }
     }
   }
 }
