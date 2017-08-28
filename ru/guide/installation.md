@@ -7,12 +7,12 @@ description: Начать работу с Nuxt.js действительно о�
 
 ## Использование стартового шаблона Nuxt.js
 
-Для быстрого запуска приложения команда Nuxt.js создала [стартовый шаблон](https://github.com/nuxt/starter).
+Для быстрого запуска приложения команда Nuxt.js создала [стартовый шаблон](https://github.com/nuxt-community/starter-template).
 
-[Скачайте .zip](https://github.com/nuxt/starter/archive/source.zip), или установите стартовый шаблон с помощью vue-cli:
+[Скачайте .zip](https://github.com/nuxt-community/starter-template/archive/master.zip), или установите стартовый шаблон с помощью vue-cli:
 
 ```bash
-$ vue init nuxt/starter <project-name>
+$ vue init nuxt-community/starter-template <project-name>
 ```
 
 > Если [vue-cli](https://github.com/vuejs/vue-cli) ещё не установлен, это можно сделать так: `npm install -g vue-cli`

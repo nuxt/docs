@@ -7,12 +7,12 @@ description: Nuxt.js는 시작하기 정말 쉽습니다. 간단한 프로젝트
 
 ## Nuxt.js starter 템플릿 사용하기
 
-빠르게 시작하기 위해서 Nuxt.js 팀은 [starter 템플릿](https://github.com/nuxt/starter)을 만들어뒀습니다.
+빠르게 시작하기 위해서 Nuxt.js 팀은 [starter 템플릿](https://github.com/nuxt-community/starter-template)을 만들어뒀습니다.
 
-starter 템플릿을 [.zip로 다운로드](https://github.com/nuxt/starter/archive/source.zip)하거나 vue-cli로 설치할 수 있습니다:
+starter 템플릿을 [.zip로 다운로드](https://github.com/nuxt-community/starter-template/archive/master.zip)하거나 vue-cli로 설치할 수 있습니다:
 
 ```bash
-$ vue init nuxt/starter <project-name>
+$ vue init nuxt-community/starter-template <project-name>
 ```
 
 > 만약 [vue-cli](https://github.com/vuejs/vue-cli)가 설치되지 않았다면, `npm install -g vue-cli` 명령어로 설치할 수 있습니다.

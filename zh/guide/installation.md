@@ -7,12 +7,12 @@ description: Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt` 
 
 ## 新手模板
 
-为了便于大家快速使用，Nuxt.js提供了一个 [starter 模板](https://github.com/nuxt/starter)。
+为了便于大家快速使用，Nuxt.js提供了一个 [starter 模板](https://github.com/nuxt-community/starter-template)。
 
-[下载模板的压缩包](https://github.com/nuxt/starter/archive/source.zip) 或利用 `vue-cli` 安装使用：
+[下载模板的压缩包](https://github.com/nuxt-community/starter-template/archive/master.zip) 或利用 `vue-cli` 安装使用：
 
 ```bash
-$ vue init nuxt/starter <project-name>
+$ vue init nuxt-community/starter-template <project-name>
 ```
 
 > 如果 [vue-cli](https://github.com/vuejs/vue-cli) 没有安装, 需先通过 `npm install -g vue-cli` 来安装。
