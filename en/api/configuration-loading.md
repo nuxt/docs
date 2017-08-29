@@ -33,6 +33,7 @@ List of properties to customize the progress bar.
 | `failedColor` | String | `'red'` | CSS color of the progress bar when an error appended while rendering the route (if `data` or `fetch` sent back an error for example). |
 | `height` | String | `'2px'` | Height of the progress bar (used in the `style` property of the progress bar) |
 | `duration` | Number | `5000` | In ms, the maximum duration of the progress bar, Nuxt.js assumes that the route will be rendered before 5 seconds. |
+| `rtl` | Boolean | `false` | Set the direction of the progress bar from right to left. |
 
 For a blue progress bar with 5px of height, we update the `nuxt.config.js` to the following:
 
