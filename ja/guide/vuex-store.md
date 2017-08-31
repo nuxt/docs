@@ -57,9 +57,9 @@ export default store
 このオプションを使いたいときは、ストアインスタンスの代わりに、`store/index.js` 内でストア、ミューテーション、アクションをエクスポートします:
 
 ```js
-export const state = {
+export const state = () => ({
   counter: 0
-}
+})
 
 export const mutations = {
   increment (state) {
@@ -71,9 +71,9 @@ export const mutations = {
 また、次のような `store/todos.js` ファイルを作成できます:
 
 ```js
-export const state = {
+export const state = () => ({
   list: []
-}
+})
 
 export const mutations = {
   add (state, text) {

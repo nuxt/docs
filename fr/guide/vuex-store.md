@@ -55,9 +55,9 @@ Nous pouvons alors utiliser `this.$store` dans nos composants:
 Si vous voulez cette option, exportez le `state`, les mutations et les actions dans `store/index.js` au lieu de l'instance `store`:
 
 ```js
-export const state = {
+export const state = () => ({
   counter: 0
-}
+})
 
 export const mutations = {
   increment (state) {
@@ -68,9 +68,9 @@ export const mutations = {
 
 Puis, vous pouvez avoir `store/todos.js`:
 ```js
-export const state = {
+export const state = () => ({
   list: []
-}
+})
 
 export const mutations = {
   add (state, text) {
