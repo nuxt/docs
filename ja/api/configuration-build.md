@@ -58,6 +58,19 @@ module.exports = {
 }
 ```
 
+## cssSourceMap
+
+- Type: `boolean`
+  - Default: `true` for dev and `false` for production.
+
+> Enables CSS Source Map support
+
+## devMiddleware
+
+- Type: `Object`
+
+See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) for available options.
+
 ## extend
 
 - タイプ: `関数`
@@ -85,6 +98,17 @@ module.exports = {
 ```
 
 デフォルトの Webpack の設定についてもう少し見てみたい場合は Nuxt.js の [webpack ディレクトリ](https://github.com/nuxt/nuxt.js/tree/master/lib/webpack) を参照してください。
+
+## extractCSS
+
+- Type: `Boolean`
+  - Default: `false`
+
+> Enables Common CSS Extraction using vue SSR [guidelines](https://ssr.vuejs.org/en/css.html).
+
+Using extract-text-webpack-plugin to extract the CSS in the main chunk into a separate CSS file (auto injected with template),
+which allows the file to be individually cached. This is recommended when there is a lot of shared CSS.
+CSS inside async components will remain inlined as JavaScript strings and handled by vue-style-loader.
 
 ## filenames
 
@@ -117,56 +141,11 @@ module.exports = {
 
 manifest や vendor についての利用についてより深く理解するには [Webpack のドキュメント](https://webpack.js.org/guides/code-splitting-libraries/) を参照してください。
 
-## loaders
+## hotMiddleware
 
-- タイプ: `配列`
-  - 要素: `オブジェクト`
+- Type: `Object`
 
-> Webpack のローダーをカスタマイズします。
-
-デフォルト:
-
-```js
-[
-  {
-    test: /\.(png|jpe?g|gif|svg)$/,
-    loader: 'url-loader',
-    query: {
-      limit: 1000, // 1KO
-      name: 'img/[name].[hash:7].[ext]'
-    }
-  },
-  {
-    test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-    loader: 'url-loader',
-    query: {
-      limit: 1000, // 1 KO
-      name: 'fonts/[name].[hash:7].[ext]'
-    }
-  }
-]
-```
-
-例（`nuxt.config.js`）:
-
-```js
-module.exports = {
-  build: {
-    loaders: [
-      {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        loader: 'url-loader',
-        query: {
-          limit: 10000, // 10KO
-          name: 'img/[name].[hash].[ext]'
-        }
-      }
-    ]
-  }
-}
-```
-
-<p class="Alert Alert--orange">loaders が `nuxt.config.js` で定義されているときは、デフォルトのローダー設定は上書きされます。</p>
+See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for available options.
 
 ## plugins
 
@@ -196,6 +175,10 @@ module.exports = {
 - タイプ: `配列`
 
 > [postcss](https://github.com/postcss/postcss) オプションをカスタマイズします。
+
+**NOTE:** While default preset is OK and flexible enough for normal use cases, the recommended 
+usage by [vue-loader](https://vue-loader.vuejs.org/en/options.html#postcss) is using `postcss.config.js` file in your project.
+By creating that file it will be automatically detected and this option is ignored.
 
 デフォルト:
 
@@ -243,6 +226,44 @@ module.exports = {
 
 設定すると、`nuxt build` を実行したタイミングで `.nuxt/dist/` ディレクトリの内容が CDN にアップロードされます！
 
+## ssr
+
+- Type: `Boolean`
+  - Default `true` for universal mode and `false` for spa mode
+
+> Creates special webpack bundle for SSR renderer.
+
+This option is automatically set based on `mode` value if not provided. 
+
+## templates
+
+- Type: `Array`
+ - Items: `Object`
+
+> Nuxt.js allows you provide your own templates which will be rendered based on nuxt configuration
+  This feature is specially useful for using with [modules](/guide/modules).
+
+Example (`nuxt.config.js`):
+
+```js
+module.exports = {
+  build: {
+      templates: [
+         {
+           src: '~/modules/support/plugin.js', // src can be absolute or relative
+           dst: 'support.js', // dst is relative to project `.nuxt` dir
+           options: { // Options are provided to template as `options` key
+               live_chat: false
+           }
+         }
+      ]
+  }
+}
+```
+
+Templates are rendered using [lodash.template](https://lodash.com/docs/#template) 
+you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
+
 ## vendor
 
 > Nuxt.js では `vendor.bundle.js` ファイル内にモジュールを追加できます。このファイルは app バンドルファイルのサイズを小さくするために生成します。外部モジュール（例えば `axios` など）を使うときにとても便利です。
@@ -269,6 +290,24 @@ module.exports = {
       'axios',
       '~plugins/my-lib.js'
     ]
+  }
+}
+```
+
+## watch
+
+- Type: `Array`
+ - Items: `String`
+
+> You can provide your custom files to watch and regenerate after changes.
+  This feature is specially useful for using with [modules](/guide/modules).
+
+```js
+module.exports = {
+  build: {
+      watch: [
+          '~/.nuxt/support.js'
+      ]
   }
 }
 ```
