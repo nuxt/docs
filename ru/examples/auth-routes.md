@@ -2,7 +2,7 @@
 title: Auth Routes
 description: Authenticated routes example with Nuxt.js
 github: auth-routes
-livedemo: https://auth-routes.nuxtjs.org
+livedemo: https://nuxt-auth-routes.gomix.me
 liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 ---
 
@@ -14,7 +14,7 @@ liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 
 To add the sessions feature in our application, we will use `express` and `express-session`, for this, we need to use Nuxt.js programmatically.
 
-First, we install the depedencies:
+First, we install the dependencies:
 ```bash
 yarn add express express-session body-parser whatwg-fetch
 ```
@@ -84,7 +84,7 @@ Note: You'll need to run `npm install --save-dev cross-env` for the above exampl
 
 ## Using the store
 
-We need a global state to let our application if the user is connected **across the pages**.
+We need a global state to let our application know if the user is connected **across the pages**.
 
 To let Nuxt.js use Vuex, we create a `store/index.js` file:
 
@@ -135,6 +135,11 @@ nuxtServerInit ({ commit }, { req }) {
   }
 }
 ```
+
+To make the data method asynchronous, nuxt.js offers you different ways, choose the one you're the most familiar with:
+
+1. returning a `Promise`, nuxt.js will wait for the promise to be resolved before rendering the component.
+2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await))
 
 ### login() action
 

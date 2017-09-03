@@ -1,19 +1,19 @@
 ---
-title: Помощь в разработке
-description: Мы ценим любую помощь в разработке Nuxt.js!
+title: Contribution Guide
+description: Any contribution to Nuxt.js is more than welcome!
 ---
 
-> Мы ценим любую помощь в разработке Nuxt.js!
+> Any contribution to Nuxt.js is more than welcome!
 
-## Отчёт о проблемах
+## Reporting Issues
 
-Неоценимая помощь при разработке проекта — отправка детализированных отчётов о возникаемых ошибках. Вы всегда рады получать грамотно написанные отчёты и очень благодарны за это! Перед тем, как отправить отчёт, пожалуйста, прочитайте внимательно документацию и постарайтесь найти ответ на возникшую проблему в существующем списке https://github.com/nuxt/nuxt.js/issues.
+A great way to contribute to the project is to send a detailed report when you encounter an issue. We always appreciate a well-written bug report, and will thank you for it! Before reporting an issue, please read carefully the documentation and search if any issue for your problem doesn't already exist: https://github.com/nuxt/nuxt.js/issues
 
-## Пулл-реквесты
+## Pull Requests
 
-Мы бы очень хотели получать пулл-реквесты от вас, даже если это небольшая правка какой-либо опечатки. Любые более значимые запросы на улучшение должны быть внесены [в список запросов GitHub](https://github.com/nuxt/nuxt.js/issues), чтобы над ними началась работа.
+We'd love to see your pull requests, even if it's just to fix a typo. Any significant improvement should be documented as [a GitHub issue](https://github.com/nuxt/nuxt.js/issues) before anybody starts working on it.
 
-### Соглашения
+### Convention
 
-- Для фикса: ветка должна быть названа в виде `fix-XXX`, где XXX — номер существующего запроса в списке, или название того, что именно фикс делает.
-- Для нового функционала: ветка должна быть названа в виде `feature-XXX`, где XXX — номер существующего запроса из списка.
+- For a fix, the branch name should be `fix-XXX` where XXX is the issue number or the name of what your fix does
+- For a feature, the branch name should be `feature-XXX` where XXX is the issue number associated to this feature request

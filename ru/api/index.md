@@ -1,27 +1,28 @@
 ---
-title: Модуль Nuxt.js
-description: можно использовать nuxt.js программно, как middleware для собственного web-сервера.
+title: "API: The asyncData Method"
+description: You may want to fetch data and render it on the server-side. Nuxt.js add an `asyncData` method let you handle async operation before setting the component data.
 ---
 
-# Программное использование Nuxt.js
+# The asyncData Method
 
-Вероятно, вы захотите использовать свой сервер со своим ПО и API. Для этого вы можете использовать Nuxt.js программно.
-Nuxt.js написан на ES2015, из-за чего его код приятен и хорошо читаем. Транспилеры не используются, и всю работу выполняет сам движок Core V8. Поэтому Nuxt.js требует Node.js версии `4.0` или выше.
+> You may want to fetch data and render it on the server-side.
+Nuxt.js add an `asyncData` method let you handle async operation before setting the component data.
 
-Подключить Nuxt.js можно так:
+- **Type:** `Function`
+
+`asyncData` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives the [context](/api/context) (object) as the first argument, you can use it to fetch some data and return the component data.
+
+The result from asyncData will be **merged** with data.
+
 ```js
-const Nuxt = require('nuxt')
+export default {
+  data () {
+    return { project: 'default' }
+  },
+  asyncData (context) {
+    return { project: 'nuxt' }
+  }
+}
 ```
 
-### Опции Nuxt
-
-Чтобы узнать о возможных опциях для Nuxt.js, см. раздел конфигурации.
-```js
-const options = {}
-
-const nuxt = new Nuxt(options)
-nuxt.build()
-.then(() => {
-  // Здесь можно использовать nuxt.render(req, res) или nuxt.renderRoute(route, context)
-})
-```
+<div class="Alert Alert--orange">You do **NOT** have access of the component instance through `this` inside `asyncData` because it is called **before initiating** the component.</div>

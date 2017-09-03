@@ -1,21 +1,28 @@
 ---
-title: Команды
-description: Nuxt.js поставляется с набором полезных команд как для разрабатываемого, так и для финального продукта.
+title: Commands and Deployment
+description: Nuxt.js comes with a set of useful commands, both for development and production purpose.
 ---
 
-> Nuxt.js поставляется с набором полезных команд как для разрабатываемого, так и для финального продукта.
+> Nuxt.js comes with a set of useful commands, both for development and production purpose.
 
-## Список команд
+## List of Commands
 
-| Команда | Описание |
-|---------|-------------|
-| nuxt | Запустить сервер разработки [localhost:3000](http://localhost:3000) с горячей заменой модулей (hot-reloading). |
-| nuxt&nbsp;build | Собрать приложение webpack'ом и минифицировать JS & CSS (для продакшн-версии). |
-| nuxt&nbsp;start | Запустить сервер в продакшн-режиме (сперва необходимо запустить `nuxt build`). |
-| nuxt&nbsp;generate | Собрать приложение и сгенерировать каждый маршрут в виде HTML файла (используется в случае статического хостинга). |
+| Command         | Description                                                                                |
+|-----------------|--------------------------------------------------------------------------------------------|
+| nuxt            | Launch a development server on [localhost:3000](http://localhost:3000) with hot-reloading. |
+| nuxt build      | Build your application with webpack and minify the JS & CSS (for production).              |
+| nuxt start      | Start the server in production mode (After running `nuxt build`).                          |
+| nuxt generate   | Build the application and generate every route as a HTML file (used for static hosting).   |
 
+#### Arguments
+You can use `--help` with any command to get detailed usage. Common arguments are:
 
-Вы должны добавить эти команды в файл `package.json`:
+- **`--config-file` or `-c`:** Specify path to `nuxt.config.js` file.
+- **`--spa` or `-s`:** Runs command in SPA mode by disabling server side rendering.
+
+#### Using in package.json
+
+You should put these commands in the `package.json`:
 
 ```json
 "scripts": {
@@ -26,18 +33,34 @@ description: Nuxt.js поставляется с набором полезных
 }
 ```
 
-Затем вы можете запускать команды с помощью `npm run <command>` (например: `npm run dev`).
+Then, you can launch your commands via `npm run <command>` (example: `npm run dev`).
 
-## Продуктовая выкладка
+**PRO TIP:** To pass arguments to npm commands, you need an extra `--` after script name (example: `npm run dev -- --spa`)
 
-Вероятно, вы захотите избежать запуска Nuxt при развёртывании на сервере. Для этого команды сборки и запуска приложения выполняются раздельно друг от друга:
+## Development Environment
+
+To launch Nuxt in development mode with the hot reloading:
+
+```bash
+nuxt
+// OR
+npm run dev
+```
+
+## Production Deployment
+
+Nuxt.js lets your choose between 3 modes to deploy your application: Server Rendered, SPA or Static Generated.
+
+### Server Rendered Deployment (Universal)
+
+To deploy, instead of running nuxt, you probably want to build ahead of time. Therefore, building and starting are separate commands:
 
 ```bash
 nuxt build
 nuxt start
 ```
 
-Например, чтобы развернуть на [now.sh](https://zeit.co/now), рекомендуется следующий вид `package.json`:
+The `package.json` like follows is recommended:
 ```json
 {
   "name": "my-app",
@@ -52,36 +75,42 @@ nuxt start
 }
 ```
 
-Затем запустите `now` и наслаждайтесь!
+Note: we recommend putting `.nuxt` in `.npmignore` or `.gitignore`.
 
-Заметка: рекомендуем добавить `.nuxt` в `.npmignore` или `.gitignore`.
+### Static Generated Deployment (Pre Rendered)
 
+Nuxt.js gives you the possibility to host your web application on any static hosting.
 
-## Развёртывание на статическом хостинге
-
-Nuxt.js даёт вам возможность хостить веб-приложение на любом статическом хостинге. Например,  [surge.sh](https://surge.sh/).
-
-Чтобы развернуть на сервисе surge.sh, сперва нужно установить его:
-```bash
-npm install -g surge
-```
-
-Затем мы говорим nuxt.js сгенерировать веб-приложение:
+To generate our web application into static files:
 
 ```bash
 npm run generate
 ```
 
-Будет создана папка `dist` со всем необходимым и готовым к выкладке на статический хостинг.
+It will create a `dist` folder with everything inside ready to be deployed on a static hosting.
 
-Теперь мы можем выложить приложение на surge.sh:
+If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take a look at the [generate configuration](/api/configuration-generate) to tell nuxt.js how to generate these dynamic routes.
 
-```bash
-surge dist/
-```
+<div class="Alert">When generating your web application with `nuxt generate`, [the context](/api/context) given to [data()](/guide/async-data#the-data-method) and [fetch()](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.</div>
 
-Вуаля :)
+### Single Page Application Deployment (SPA)
 
-Если у вас есть проект с [динамическими маршрутами](/guide/dynamic-routes), взгляните на [генерацию конфигурации](/api/configuration-generate), чтобы указать Nuxt.js, как генерировать эти динамические маршруты.
+`nuxt generate` still needs SSR engine during build/generate time
+While having the pro that all of our pages are pre rendered and having a high SEO and page load score, 
+the content is generated at *build time*. For example, we can't use it for applications
+where content depends on user authentication or a real time API (at least for the first load).
 
-<div class="Alert">В случае генерации веб-приложения через `nuxt generate`, [контекст](/api/pages-context), определённый для [data()](/guide/async-data#the-data-method) и [fetch()](/guide/vuex-store#the-fetch-method), не будет содержать `req` и `res`.</div>
+The SPA idea is simple! When spa mode is enabled using `mode: 'spa'` or `--spa` flag and we run build,
+generation automatically starts after the build, but this time without pages content and only common meta and resource links.
+
+So for an SPA deployment:
+ - Change `mode` in `nuxt.config.js` to `spa` 
+ - Run `npm run build`
+ - Deploy the created `dist/` folder to your static hosting like surge or github pages or nginx.
+
+Another possible deployment is that we can use nuxt as a middleware in frameworks while mode is `spa`.
+This helps reduce server loads and using nuxt in projects where SSR is not possible.
+
+
+<div class="Alert">See [FAQ/Deployments](/faq/heroku-deployment) for examples of deployment to popular hosts.</div>
+

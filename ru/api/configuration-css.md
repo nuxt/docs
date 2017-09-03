@@ -1,32 +1,34 @@
 ---
-title: Конфигурация CSS
-description: Nuxt.js позволяет указать глобальные CSS-файлы/модули/библиотеки (подключённые к каждой странице).
+title: "API: The css Property"
+description: Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every page).
 ---
 
-# CSS
+# The css Property
 
-> Nuxt.js позволяет указать глобальные CSS-файлы/модули/библиотеки (подключённые к каждой странице).
+> Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every page).
+
+In case you want to use ```sass``` make sure that you have installed ```node-sass``` and ```sass-loader``` packages. If you didn't  just
+
+```sh
+npm install --save-dev node-sass sass-loader
+```
 
 - Type: `Array`
- - `String | Object`
+ - Items: `String`
 
-Если элемент типа объект, то параметры следующие:
-- src: `String` (путь к файлу)
-- lang: `String` ([используется пре-процессор](/guide/pages#using-pre-processors))
-
-В `nuxt.config.js` добавьте ресурсы CSS:
+In `nuxt.config.js`, add the CSS resources:
 
 ```js
 module.exports = {
   css: [
-    // Загрузить модуль node.js
-    'hover.css/css/hover-min.css',
-    // модуль node.js, но с указанием пре-процессора
-    { src: 'bulma', lang: 'sass' },
-    // CSS-файл в проекте
-    '~assets/css/main.css'
+    // Load a node module directly (here it's a SASS file)
+    'bulma',
+    // CSS file in the project
+    '@/assets/css/main.css',
+    // SCSS file in the project
+    '@/assets/css/main.scss'
   ]
 }
 ```
 
-<p class="Alert">**В продакшн-версии приложения** весь CSS-код будет минимизирован, скомпилирован в файл `styles.css` и добавлен в блок страницы `<head>`.</p>
+Nuxt.js will automatically guess the file type by it's extension and use the appropriate pre-processor loader for webpack. You will still need to install the required loader if you need to use them.

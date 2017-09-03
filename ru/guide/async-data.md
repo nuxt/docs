@@ -1,26 +1,30 @@
 ---
-title: Асинхронные данные
-description: Nuxt.js перехватывает метод data от vue.js, чтобы позволить обрабатать асинхронные задачи прежде, чем установить data.
+title: Async Data
+description: You may want to fetch data and render it on the server-side. Nuxt.js adds an `asyncData` method to let you handle async operations before setting the component data.
 ---
 
-> Nuxt.js *перегружает* метод `data` от Vue.js, чтобы позволить обрабатывать асинхронные данные прежде, чем сохранить их.
+> You may want to fetch data and render it on the server-side.
+Nuxt.js adds an `asyncData` method to let you handle async operations before setting the component data.
 
-## Метод `data`
+## The asyncData Method
 
-Метод `data` вызывается каждый раз перед загрузкой компонента (**только для компонентов страниц**). Он может быть вызван на стороне сервера или перед переходом к соответствующему маршруту. Этот метод получает [контекст](/api/pages-context) в виде первого аргумента, который вы можете использовать для выборки нужных данных, и вернуть обработанные данные.
+Sometimes you just want to fetch data and pre-render it on the server-side without using a store.
+`asyncData` is called every time before loading the component (**only for pages components**).
+It can be called server-side or before navigating to the corresponding route.
+This method receives [the context](/api/context) as the first argument, you can use it to fetch some data and nuxt.js will merge it with the component data.
 
-<div class="Alert Alert--orange">**НЕ используйте** `this` внутри `data` для обращения к экземпляру компонента, потому что метод вызывается **перед инициализацией** компонента.</div>
+<div class="Alert Alert--orange">You do **NOT** have access of the component instance through `this` inside `asyncData` because it is called **before initiating** the component.</div>
 
-Чтобы сделать метод `data` асинхронным, Nuxt.js предлагает различные пути. Выберите тот, который вам больше подходит:
+Nuxt.js offers you different ways to use `asyncData`. Choose the one you're the most familiar with:
 
-1. Возвращая `Promise`, Nuxt.js будет ожидать его состояния resolved перед тем, как отобразить компонент.
-2. Используя директивы [async/await](https://github.com/lukehoban/ecmascript-asyncawait) ([Подробнее](https://zeit.co/blog/async-and-await))
-3. Определить колбэк в качестве второго аргумента и вызывать его в виде: `callback(err, data)`
+1. Returning a `Promise`. Nuxt.js will wait for the promise to be resolved before rendering the component.
+2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await))
+3. Define a callback as second argument. It has to be called like this: `callback(err, data)`
 
-### Способ первый: возвращая Promise
+### Returning a Promise
 ```js
 export default {
-  data ({ params }) {
+  asyncData ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
     .then((res) => {
       return { title: res.data.title }
@@ -29,20 +33,20 @@ export default {
 }
 ```
 
-### Используя async/await
+### Using async/await
 ```js
 export default {
-  async data ({ params }) {
+  async asyncData ({ params }) {
     let { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
 }
 ```
 
-### Используя callback
+### Using a callback
 ```js
 export default {
-  data ({ params }, callback) {
+  asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
     .then((res) => {
       callback(null, { title: res.data.title })
@@ -51,21 +55,10 @@ export default {
 }
 ```
 
-### Возвращая объект
+### Displaying the data
 
-Если асинхронного вызов не требуется, то можно просто вернуть объект:
-
-```js
-export default {
-  data (context) {
-    return { foo: 'bar' }
-  }
-}
-```
-
-### Отображение данных
-
-Когда метод `data` определён, можно отобразить данные внутри шаблона, как обычно:
+The result from asyncData will be **merged** with data.
+You can display the data inside your template like you're used to doing:
 
 ```html
 <template>
@@ -73,42 +66,46 @@ export default {
 </template>
 ```
 
-## Аргумент `context`
+## The Context
 
-Для просмотра списка доступных параметров в 'context', смотрите [API контекста страниц](/api/pages-context).
+To see the list of available keys in `context`, take a look at the [API Pages data](/api).
 
-## Обработка ошибок
+### Accessing dynamic route data 
 
-Добавив метод `error(params)` в аргумент `context`, вы можете показать страницу ошибки. Также значение `params.statusCode`, пришедшее с сервера, будет использоваться для отображения соответствующей ошибки.
+You can use the context object injected into the `asyncData` property to access dynamic route data. For example, dynamic route params can be accessed using the name of the file or folder that configured it. So if you define a file named `_slug.vue`, you can acccess it via `context.params.slug`.
 
-Пример с `Promise`:
+## Handling Errors
+
+Nuxt.js adds the `error(params)` method in the `context`, you can call it to display the error page. `params.statusCode` will be also used to render the proper status code form the server-side.
+
+Example with a `Promise`:
 ```js
 export default {
-  data ({ params, error }) {
+  asyncData ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
     .then((res) => {
       return { title: res.data.title }
     })
     .catch((e) => {
-      error({ statusCode: 404, message: 'Страница не найдена' })
+      error({ statusCode: 404, message: 'Post not found' })
     })
   }
 }
 ```
 
-При использовании параметра 'callback' можно вызвать его непосредственно с нужной ошибкой, и тогда Nuxt.js сам вызовет метод `error`:
+If you're using the `callback` argument, you can call it directly with the error and nuxt.js will call the `error` method for you:
 ```js
 export default {
-  data ({ params }, callback) {
+  asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
     .then((res) => {
       callback(null, { title: res.data.title })
     })
     .catch((e) => {
-      callback({ statusCode: 404, message: 'Сообщение не найдено' })
+      callback({ statusCode: 404, message: 'Post not found' })
     })
   }
 }
 ```
 
-Для настройки страницы ошибки, пожалуйста, прочитайте [про шаблоны](/guide/layouts#error-page).
+To customize the error page, take a look at the [VIEWS layouts section](/guide/views#layouts).

@@ -1,88 +1,89 @@
 ---
-title: Структура папок
-description: Структура папок приложения Nuxt.js по-умолчанию содержит всё необходимое для максимально удобного начала разработки как больших, так и маленьких приложений
+title: Directory Structure
+description: The default Nuxt.js application structure is intended to provide a great starting point for both large and small applications.
 ---
 
-> Структура папок приложения Nuxt.js по-умолчанию содержит всё необходимое для максимально удобного начала разработки как больших, так и маленьких приложений
+> The default Nuxt.js application structure is intended to provide a great starting point for both small and large applications. Of course, you are free to organize your application however you like.
 
-## Папки
+## Directories
 
-### Папка `assets`
+### The Assets Directory
 
-Папка `assets` содержит нескомпилированные файлы с исходным кодом, такие как LESS, SASS или JavaScript.
+The `assets` directory contains your un-compiled assets such as LESS, SASS or JavaScript.
 
-[Подробнее о файлах исходного кода](/guide/assets)
+[More documentation about Assets integration](/guide/assets)
 
-### Папка `components`
+### The Components Directory
 
-Папка `components` содержит компоненты Vue.js для приложения. Nuxt.js не перегружает метод `data` у этих компонент (речь об [асинхронной загрузке `data`](/guide/async-data)).
+The `components` directory contains your Vue.js Components. Nuxt.js doesn't supercharge the data method on these components.
 
-### Папка `layouts`
+### The Layouts Directory
 
-Папка `layouts` содержит шаблоны приложения.
+The `layouts` directory contains your Application Layouts.
 
-_Эту папку переименовать нельзя._
+_This directory cannot be renamed._
 
-[Подробнее о шаблонах](/guide/layouts)
+[More documentation about Layouts integration](/guide/views#layouts)
 
-### Папка `middleware`
+### The Middleware Directory
 
-_Информация на подходе_
+The `middleware` directory contains your Application Middleware. Middleware lets you define custom functions that can be run before rendering either a page or a group of pages (layouts).
 
-### Папка `pages`
+[More documentation about Middleware integration](/guide/routing#middleware)
 
-Папка `pages` содержит представления (views) и маршруты (routes). Фреймворк считывает все файлы `.vue` внутри папки и создает маршрутизатор для вашего приложения.
+### The Pages Directory
 
-_Эту папку переименовать нельзя._
+The `pages` directory contains your Application Views and Routes. The framework reads all the `.vue` files inside this directory and creates the application router.
 
-[Подробнее о страницах](/guide/pages)
+_This directory cannot be renamed._
 
-### Папка `plugins`
+[More documentation about Pages integration](/guide/views)
 
-Папка `plugins` содержит JavaScript-плагины, запускаемые перед созданием экземпляра корневого приложения Vue.js.
+### The Plugins Directory
 
-[Подробнее о плагинах](/guide/plugins)
+The `plugins` directory contains your Javascript plugins that you want to run before instantiating the root vue.js application.
 
-### Папка `static`
+[More documentation about Plugins integration](/guide/plugins)
 
-Папка `static` содержит статические файлы. Каждый файл в этой папке доступен через `/`.
+### The Static Directory
 
-**Пример:** /static/robots.txt будет доступен как /robots.txt
+The `static` directory contains your static files. Each file inside this directory is mapped to /.
 
-_Эту папку переименовать нельзя._
+**Example:** /static/robots.txt is mapped as /robots.txt
 
-[Подробнее о статике](/guide/static)
+_This directory cannot be renamed._
 
-### Папка `store`
+[More documentation about Static integration](/guide/assets#static)
 
-Папка `store` может содержать файлы [Vuex хранилища](http://vuex.vuejs.org). Vuex хранилище является опциональным в Nuxt.js. Создайте файл `index.js` в этой папке, и Vuex хранилище активируется фреймворком автоматически.
+### The Store Directory
 
-_Эту папку переименовать нельзя._
+The `store` directory contains your [Vuex Store](http://vuex.vuejs.org) files. The Vuex Store option is implemented in the Nuxt.js framework. Creating an `index.js` file in this directory enables the option in the framework automatically.
 
-[Подробнее о работе с хранилищем](/guide/vuex-store)
+_This directory cannot be renamed._
 
-### Файл nuxt.config.js
+[More documentation about Store integration](/guide/vuex-store)
 
-Файл `nuxt.config.js` содержит пользовательскую конфигурацию Nuxt.js.
+### The nuxt.config.js File
 
-_Этот файл переименовывать нельзя._
+The `nuxt.config.js` file contains your Nuxt.js custom configuration.
 
-[Подробнее о nuxt.config.js](/guide/configuration)
+_This file can not be renamed._
 
-### Файл package.json
+[More documentation about nuxt.config.js integration](/guide/configuration)
 
-Файл `package.json` содержит список зависимостей и команды для вашего приложения.
+### The package.json File
 
-_Этот файл переименовывать нельзя._
+The `package.json` file contains your Application dependencies and scripts.
 
-## Псевдонимы
+_This file can not be renamed._
 
-| Псевдоним | Папка |
+## Aliases
+
+| Alias | Directory |
 |-----|------|
-| ~ | / |
-| ~assets | /assets |
-| ~components | /components |
-| ~pages | /pages |
-| ~plugins | /plugins |
-| ~static | /static |
-| ~store | /store |
+| `~` or `@` | [srcDir](/api/configuration-srcdir) |
+| `~~` or `@@` | [rootDir](/api/configuration-rootdir) |
+
+By default, `srcDir` is the same as `rootDir`.
+
+<p class="Alert Alert--nuxt-green"><b>INFO:</b> Inside your `vue` templates, if you need to link to your `assets` or `static` directory, use `~assets/your_image.png` and `~static/your_image.png`.</p>
