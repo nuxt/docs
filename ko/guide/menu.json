@@ -1,0 +1,109 @@
+[
+  {
+    "title": "Prologue",
+    "links": [
+      {
+        "to": "", "name": "소개",
+        "contents": [
+          { "to": "#nuxt-js란-무엇인가-", "name": "Nuxt.js란 무엇인가?" },
+          { "to": "#어떻게-동작합니까-", "name": "어떻게 동작합니까?" },
+          { "to": "#특징", "name": "특징" },
+          { "to": "#구조", "name": "구조" },
+          { "to": "#서버에서-렌더링하기", "name": "서버에서 렌더링하기" },
+          { "to": "#정적-파일로-생성하기", "name": "정적 파일로 생성하기" }
+        ]
+      },
+      { "to": "/contribution-guide", "name": "Contribution 가이드" },
+      { "to": "/release-notes", "name": "릴리즈 노트" }
+    ]
+  },
+  {
+    "title": "시작하기",
+    "links": [
+      {
+        "to": "/installation", "name": "설치",
+        "contents": [
+          { "to": "#nuxt-js-starter-템플릿-사용하기", "name": "Nuxt.js starter 템플릿 사용하기" },
+          { "to": "#처음부터-시작하기", "name": "처음부터 시작하기" }
+        ]
+      },
+      {
+        "to": "/directory-structure", "name": "디렉토리 구조",
+        "contents": [
+          { "to": "#디렉토리들", "name": "디렉토리들" },
+          { "to": "#aliases", "name": "Aliases" }
+        ]
+      },
+      { "to": "/configuration", "name": "설정" },
+      {
+        "to": "/routing", "name": "라우팅",
+        "contents": [
+          { "to": "#기본-라우트", "name": "기본 라우트" },
+          { "to": "#동적-라우트", "name": "동적 라우트" },
+          { "to": "#중첩-라우트", "name": "중첩 라우트" },
+          { "to": "#동적-중첩-라우트", "name": "동적 중첩 라우트" },
+          { "to": "#트랜지션", "name": "트랜지션" },
+          { "to": "#미들웨어", "name": "미들웨어" }
+        ]
+      },
+      {
+        "to": "/views", "name": "Views",
+        "contents": [
+          { "to": "#도큐먼트", "name": "도큐먼트" },
+          { "to": "#레이아웃", "name": "레이아웃" },
+          { "to": "#페이지", "name": "페이지" },
+          { "to": "#html-head", "name": "HTML Head" }
+        ]
+      },
+      {
+        "to": "/async-data", "name": "비동기 데이터",
+        "contents": [
+          { "to": "#asyncdata-메소드", "name": "asyncData 메소드" },
+          { "to": "#context", "name": "Context" },
+          { "to": "#에러-핸들링", "name": "에러 핸들링" }
+        ]
+      },
+      {
+        "to": "/assets", "name": "애셋",
+        "contents": [
+          { "to": "#webpack-사용", "name": "Webpack 사용" },
+          { "to": "#정적-파일-사용", "name": "정적 파일 사용" }
+        ]
+      },
+      {
+        "to": "/plugins", "name": "플러그인",
+        "contents": [
+          { "to": "#외부-패키지", "name": "외부 패키지" },
+          { "to": "#vue-플러그인", "name": "Vue 플러그인" },
+          { "to": "#-root-와-context-합치기", "name": "$root 와 context 합치기" },
+          { "to": "#클라이언트에서만-사용하기", "name": "클라이언트에서만 사용하기" }
+        ]
+      },
+      {
+        "to": "/vuex-store", "name": "Vuex Store",
+        "contents": [
+          { "to": "#store-활성화하기", "name": "Store 활성화하기" },
+          { "to": "#클래식-모드", "name": "클래식 모드" },
+          { "to": "#모듈-모드", "name": "모듈 모드" },
+          { "to": "#fetch-메소드", "name": "fetch 메소드" },
+          { "to": "#nuxtserverinit-액션", "name": "nuxtServerInit 액션" }
+        ]
+      },
+      {
+        "to": "/commands", "name": "명령어들",
+        "contents": [
+          { "to": "#명령어-리스트", "name": "명령어 리스트" },
+          { "to": "#개발-환경", "name": "개발 환경" },
+          { "to": "#프로덕션-배포", "name": "프로덕션 배포" }
+        ]
+      },
+      {
+        "to": "/development-tools", "name": "개발 툴",
+        "contents": [
+          { "to": "#end-to-end-테스트", "name": "End-To-End 테스트" },
+          { "to": "#eslint", "name": "ESLint" }
+        ]
+      }
+    ]
+  }
+]

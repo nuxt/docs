@@ -86,7 +86,9 @@ router: {
 }
 ```
 
-As you can see the route named `users-id` has the path `:id?` which makes it optional, if you want to make it required, create an `index.vue` file in the `users` directory.
+As you can see the route named `users-id` has the path `:id?` which makes it optional, if you want to make it required, create an `index.vue` file in the `users/_id` directory.
+
+<p class="Alert Alert--info">Warning: dynamic routes are ignored by the `generate` command: [API Configuration generate](/api/configuration-generate#routes)</p>
 
 ### Validate Route Params
 
@@ -111,7 +113,7 @@ More information about the validate method: [API Pages validate](/api/pages-vali
 
 Nuxt.js lets you create nested route by using the children routes of vue-router.
 
-To define a nested route, you need to create a Vue file with the **same name as the directory** which contain your children views.
+To define the parent component of a nested route, you need to create a Vue file with the **same name as the directory** which contain your children views.
 
 <p class="Alert Alert--info">Don't forget to write `<nuxt-child/>` inside the parent component (.vue file).</p>
 
@@ -152,7 +154,7 @@ router: {
 
 ## Dynamic Nested Routes
 
-This scenario should not often append, but it is possible with Nuxt.js: having dynamic children inside dynamic parents.
+This scenario should not often happen, but it is possible with Nuxt.js: having dynamic children inside dynamic parents.
 
 This file tree:
 
@@ -224,7 +226,7 @@ Our global css in `assets/main.css`:
 .page-enter-active, .page-leave-active {
   transition: opacity .5s;
 }
-.page-enter, .page-leave-active {
+.page-enter, .page-leave-to {
   opacity: 0;
 }
 ```
@@ -265,4 +267,47 @@ More information about the transition property: [API Pages transition](/api/page
 
 ## Middleware
 
-> Feature & Documentation coming soon!
+> Middleware lets you define custom functions that can be run before rendering either a page or a group of pages.
+
+**Every middleware should be placed in the `middleware/` directory.** The filename will be the name of the middleware (`middleware/auth.js` will be the `auth` middleware).
+
+A middleware receives [the context](/api/context) as first argument:
+
+```js
+export default function (context) {
+  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+}
+```
+
+The middleware will be executed in series in this order:
+1. `nuxt.config.js`
+2. Matched layouts
+3. Matched pages
+
+A middleware can be asynchronous, simply return a `Promise` or use the 2nd `callback` argument:
+
+`middleware/stats.js`
+```js
+import axios from 'axios'
+
+export default function ({ route }) {
+  return axios.post('http://my-stats-api.com', {
+    url: route.fullPath
+  })
+}
+```
+
+Then, in your `nuxt.config.js`, layout or page, use the `middleware` key:
+
+`nuxt.config.js`
+```js
+module.exports = {
+  router: {
+    middleware: 'stats'
+  }
+}
+```
+
+The `stats` middleware will be called for every route changes.
+
+To see a real-life example using the middleware, please see [example-auth0](https://github.com/nuxt/example-auth0) on GitHub.

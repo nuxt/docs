@@ -1,18 +1,18 @@
 ---
 title: Installation
-description: Nuxt.js is really easy to get started with. A simple project only need the `nuxt` dependency.
+description: Nuxt.js is really easy to get started with. A simple project only needs the `nuxt` dependency.
 ---
 
-> Nuxt.js is really easy to get started with. A simple project only need the `nuxt` dependency.
+> Nuxt.js is really easy to get started with. A simple project only needs the `nuxt` dependency.
 
 ## Using Nuxt.js starter template
 
-To start quickly, the Nuxt.js team has created a [starter template](https://github.com/nuxt/starter).
+To get started quickly, the Nuxt.js team has created a [starter template](https://github.com/nuxt-community/starter-template).
 
-[Download the .zip](https://github.com/nuxt/starter/archive/source.zip) starter template or install it with vue-cli:
+[Download the .zip](https://github.com/nuxt-community/starter-template/archive/master.zip) starter template or install it with vue-cli:
 
 ```bash
-$ vue init nuxt/starter <project-name>
+$ vue init nuxt-community/starter-template <project-name>
 ```
 
 > If [vue-cli](https://github.com/vuejs/vue-cli) is not installed, please install it with `npm install -g vue-cli`
@@ -30,7 +30,7 @@ $ npm run dev
 ```
 The application is now running on http://localhost:3000
 
-<p class="Alert">Nuxt.js will listen on the files changes inside the `pages` directory, so no need to restart the application when adding new pages</p>
+<p class="Alert">Nuxt.js will listen for file changes inside the `pages` directory, so there is no need to restart the application when adding new pages.</p>
 
 To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
 
@@ -60,7 +60,7 @@ The project needs a `package.json` file to specify how to start `nuxt`:
 
 ### Installing `nuxt`
 
-Once the `package.json` has been created, add `nuxt` to the project via NPM:
+Once the `package.json` has been created, add `nuxt` to the project via npm:
 ```bash
 npm install --save nuxt
 ```
@@ -87,6 +87,6 @@ $ npm run dev
 ```
 The application is now running on http://localhost:3000
 
-<p class="Alert">Nuxt.js will listen on the files changes inside the `pages` directory, so no need to restart the application when adding new pages</p>
+<p class="Alert">Nuxt.js will listen for file changes inside the `pages` directory, so there is no need to restart the application when adding new pages.</p>
 
 To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).

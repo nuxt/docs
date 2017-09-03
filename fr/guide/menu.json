@@ -1,0 +1,108 @@
+[
+  {
+    "title": "Prologue",
+    "links": [
+      {
+        "to": "", "name": "Introduction",
+        "contents": [
+          { "to": "#qu-39-est-ce-que-nuxt-js-", "name": "Qu'est-ce que Nuxt.js?" },
+          { "to": "#comment-a-marche", "name": "Comment ça marche" },
+          { "to": "#fonctionnalit-s", "name": "Fonctionnalités" },
+          { "to": "#sch-ma", "name": "Schéma" },
+          { "to": "#rendu-c-t-serveur", "name": "Rendu côté serveur" },
+          { "to": "#g-n-ration-d-39-applications-statique", "name": "Génération d'applications statique" }
+        ]
+      },
+      { "to": "/contribution-guide", "name": "Guide de contribution" },
+      { "to": "/release-notes", "name": "Notes de version (EN)" }
+    ]
+  },
+  {
+    "title": "Mise en route",
+    "links": [
+      {
+        "to": "/installation", "name": "Installation",
+        "contents": [
+          { "to": "#utilisation-du-template-de-base-de-nuxt-js", "name": "Utilisation du template de base de Nuxt.js" },
+          { "to": "#commencer-depuis-z-ro", "name": "Commencer depuis zéro" }
+        ]
+      },
+      {
+        "to": "/directory-structure", "name": "Structure des répertoires",
+        "contents": [
+          { "to": "#r-pertoires", "name": "Répertoires" },
+          { "to": "#alias", "name": "Alias" }
+        ]
+      },
+      { "to": "/configuration", "name": "Configuration" },
+      {
+        "to": "/routing", "name": "Routage",
+        "contents": [
+          { "to": "#routes-basiques", "name": "Routes basiques" },
+          { "to": "#routes-dynamiques", "name": "Routes dynamiques" },
+          { "to": "#routes-imbriqu-es", "name": "Routes imbriquées" },
+          { "to": "#routes-dynamiques-imbriqu-es", "name": "Routes dynamiques imbriquées" },
+          { "to": "#transitions", "name": "Transitions" },
+          { "to": "#middleware", "name": "Middleware" }
+        ]
+      },
+      {
+        "to": "/views", "name": "Vues",
+        "contents": [
+          { "to": "#document", "name": "Document" },
+          { "to": "#mise-en-page", "name": "Mise en page" },
+          { "to": "#pages", "name": "Pages" },
+          { "to": "#html-head", "name": "HTML Head" }
+        ]
+      },
+      {
+        "to": "/async-data", "name": "Données asynchrones",
+        "contents": [
+          { "to": "#la-m-thode-asyncdata", "name": "La méthode asyncData" },
+          { "to": "#le-context", "name": "Le Context" },
+          { "to": "#gestion-des-erreurs", "name": "Gestion des erreurs" }
+        ]
+      },
+      {
+        "to": "/assets", "name": "Assets",
+        "contents": [
+          { "to": "#avec-webpack", "name": "Avec Webpack" },
+          { "to": "#static", "name": "Static" }
+        ]
+      },
+      {
+        "to": "/plugins", "name": "Plugins",
+        "contents": [
+          { "to": "#modules-externes", "name": "Modules externes" },
+          { "to": "#plugins-vue", "name": "Plugins Vue" },
+          { "to": "#c-t-client-uniquement", "name": "Côté client uniquement" }
+        ]
+      },
+      {
+        "to": "/vuex-store", "name": "Vuex Store",
+        "contents": [
+          { "to": "#activer-le-store", "name": "Activer le Store" },
+          { "to": "#mode-classique", "name": "Mode classique" },
+          { "to": "#mode-modules", "name": "Mode modules" },
+          { "to": "#la-m-thode-fetch", "name": "La méthode fetch" },
+          { "to": "#l-39-action-nuxtserverinit", "name": "L'action nuxtServerInit" }
+        ]
+      },
+      {
+        "to": "/commands", "name": "Commandes",
+        "contents": [
+          { "to": "#liste-des-commandes", "name": "Liste des commandes" },
+          { "to": "#environnement-de-d-veloppement", "name": "Environnement de développement" },
+          { "to": "#d-ploiement-en-production", "name": "Déploiement en production" }
+        ]
+      },
+      {
+        "to": "/development-tools", "name": "Outils de développement",
+        "contents": [
+          { "to": "#tests-end-to-end", "name": "Tests End-to-End" },
+          { "to": "#eslint", "name": "ESLint" }
+        ]
+      }
+    ]
+  }
+]

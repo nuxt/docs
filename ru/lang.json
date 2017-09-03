@@ -1,5 +1,6 @@
 {
   "iso": "ru",
+  "docVersion": "0.10.7",
   "links": {
     "api": "API",
     "blog": "Блог",
@@ -10,7 +11,7 @@
     "ecosystem": "Экосистема",
     "faq": "ЧАВО",
     "get_started": "начало работы",
-    "github": "Github",
+    "github": "GitHub",
     "guide": "Руководство",
     "homepage": "Главная",
     "live_demo": "Живое демо",
@@ -20,7 +21,7 @@
     "vue_jobs": "Vue Jobs"
   },
   "text": {
-    "an_error_occured": "An error occured",
+    "an_error_occurred": "An error occurred",
     "api_page_not_found": "API page not found",
     "example_file": "Example Files",
     "please_wait": "Please wait...",
@@ -42,7 +43,7 @@
   "guide": {
     "release_notes": "Замечания о релизе",
     "contribute": "Обнаружили ошибку или хотите внести свой вклад в документацию?",
-    "edit_on_github": "Отредактировать эту страницу на Github!"
+    "edit_on_github": "Отредактировать эту страницу на GitHub!"
   },
   "examples": {
     "source_code": "Исходный код"

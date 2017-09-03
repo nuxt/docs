@@ -1,0 +1,32 @@
+[
+  {
+    "title": "基 本",
+    "links": [
+      { "name": "Hello world", "to": "" },
+      { "name": "SEO HTML 头部", "to": "/seo-html-head" }
+    ]
+  },
+  {
+    "title": "自定义",
+    "links": [
+      { "name": "缓存组件", "to": "/cached-components" },
+      { "name": "自定义加载", "to": "/custom-loading" },
+      { "name": "自定义路由", "to": "/custom-routes" },
+      { "name": "全局 CSS", "to": "/global-css" },
+      { "name": "布 局", "to": "/layouts" },
+      { "name": "中间件", "to": "/middleware" },
+      { "name": "插 件", "to": "/plugins" },
+      { "name": "路由过渡动效", "to": "/routes-transitions" }
+    ]
+  },
+  {
+    "title": "高 级",
+    "links": [
+      { "name": "异步数据", "to": "/async-data" },
+      { "name": "路由鉴权", "to": "/auth-routes" },
+      { "name": "Vuex 状态树", "to": "/vuex-store" },
+      { "name": "国际化", "to": "/i18n" },
+      { "name": "测 试", "to": "/testing" }
+    ]
+  }
+]

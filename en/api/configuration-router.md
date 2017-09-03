@@ -27,6 +27,31 @@ module.exports = {
 
 > This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
 
+## extendRoutes
+
+- Type: `Function`
+
+You may want to extend the routes created by nuxt.js. You can do it via the `extendRoutes` option.
+
+Example of adding a custom route:
+
+`nuxt.config.js`
+```js
+module.exports = {
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, 'pages/404.vue')
+      })
+    }
+  }
+}
+```
+
+The schema of the route should respect the [vue-router](https://router.vuejs.org/en/) schema.
+
 ## linkActiveClass
 
 - Type: `String`
@@ -44,6 +69,71 @@ module.exports = {
 ```
 
 > This option is given directly to the [vue-router Router constructor](https://router.vuejs.org/en/api/options.html).
+
+## linkExactActiveClass
+
+- Type: `String`
+- Default: `'nuxt-link-exact-active'`
+
+Globally configure [`<nuxt-link>`](/api/components-nuxt-link) default exact active class.
+
+Example (`nuxt.config.js`):
+```js
+module.exports = {
+  router: {
+    linkExactActiveClass: 'exact-active-link'
+  }
+}
+```
+
+> This option is given directly to the [vue-router Router constructor](https://router.vuejs.org/en/api/options.html).
+
+## middleware
+
+- Type: `String` or `Array`
+  - Items: `String`
+
+Set the default(s) middleware for every pages of the application.
+
+Example:
+
+`nuxt.config.js`
+```js
+module.exports = {
+  router: {
+    // Run the middleware/user-agent.js on every pages
+    middleware: 'user-agent'
+  }
+}
+```
+
+`middleware/user-agent.js`
+```js
+export default function (context) {
+  // Add the userAgent property in the context (available in `data` and `fetch`)
+  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+}
+```
+
+To learn more about the middleware, see the [middleware guide](/guide/routing#middleware).
+
+## mode
+
+- Type: `String`
+- Default: `'history'`
+
+Configure the router mode, this is not recommended to change it due to server-side rendering.
+
+Example (`nuxt.config.js`):
+```js
+module.exports = {
+  router: {
+    mode: 'hash'
+  }
+}
+```
+
+> This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
 
 ## scrollBehavior
 
@@ -91,30 +181,3 @@ module.exports = {
 ```
 
 > This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
-
-## extendRoutes
-
-- Type: `Function`
-
-You may want to extend the routes created by nuxt.js. You can do it via the `extendRoutes` option.
-
-Example of adding a custom route:
-
-`nuxt.config.js`
-```js
-const resolve = require('path').resolve
-
-module.exports = {
-  router: {
-    extendRoutes (routes) {
-      routes.push({
-        name: 'custom',
-        path: '*',
-        component: resolve(__dirname, 'pages/404.vue')
-      })
-    }
-  }
-}
-```
-
-The schema of the route should respect the [vue-router](https://router.vuejs.org/en/) schema.

@@ -11,8 +11,9 @@ description: Define the development or production mode.
 > Define the development or production mode of nuxt.js
 
 This property is overwritten by [nuxt commands](/guide/commands):
+
 - `dev` is forced to `true` with `nuxt`
-- `dev` is force to `false` with `nuxt build`, `nuxt start` and `nuxt generate`
+- `dev` is forced to `false` with `nuxt build`, `nuxt start` and `nuxt generate`
 
 This property should be used when using [nuxt.js programmatically](/api/nuxt):
 
@@ -27,7 +28,7 @@ module.exports = {
 
 `server.js`
 ```js
-const Nuxt = require('nuxt')
+const { Nuxt, Builder } = require('nuxt')
 const app = require('express')()
 const port = process.env.PORT || 3000
 
@@ -38,7 +39,7 @@ app.use(nuxt.render)
 
 // Build only in dev mode
 if (config.dev) {
-  nuxt.build()
+  new Builder(nuxt).build()
   .catch((error) => {
     console.error(error)
     process.exit(1)
@@ -46,8 +47,9 @@ if (config.dev) {
 }
 
 // Listen the server
-app.listen(port, '0.0.0.0')
-console.log('Server listening on localhost:' + port)
+app.listen(port, '0.0.0.0').then(() => {
+  nuxt.showOpen()
+})
 ```
 
 Then in your `package.json`:
@@ -56,7 +58,9 @@ Then in your `package.json`:
   "scripts": {
     "dev": "node server.js",
     "build": "nuxt build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "cross-env NODE_ENV=production node server.js"
   }
 }
 ```
+
+Note: You'll need to run `npm install --save-dev cross-env` for the above example to work. If you're *not* developing on Windows you can leave cross-env out of your `start` script and set `NODE_ENV` directly.

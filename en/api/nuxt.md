@@ -6,28 +6,35 @@ description: You can use nuxt.js programmatically to use it as a middleware givi
 # Using Nuxt.js Programmatically
 
 You might want to use your own server with your middleware and your API. That's why you can use Nuxt.js programmatically.
-Nuxt.js is built on the top of ES2015, which makes the code more enjoyable and cleaner to read. It doesn't make use of any transpilers and depends upon Core V8 implemented features. For these reasons, Nuxt.js targets Node.js `4.0` or higher.
 
 You can require Nuxt.js like this:
 ```js
-const Nuxt = require('nuxt')
+const { Nuxt, Builder } = require('nuxt')
 ```
 
-## Nuxt(options)
+## Nuxt Constructor
 
 To see the list of options to give to Nuxt.js, see the configuration section.
 
 ```js
-const options = {}
+// Require Nuxt And Builder modules
+const { Nuxt, Builder } = require('nuxt')
 
-const nuxt = new Nuxt(options)
-nuxt.build()
-.then(() => {
-  // We can use nuxt.render(req, res) or nuxt.renderRoute(route, context)
-})
+// Require nuxt config
+const config = require('./nuxt.config.js')
+
+// Create a new nuxt instance
+const nuxt = new Nuxt(config)
+
+// Enable live build & reloading on dev
+if (nuxt.options.dev) {
+  new Builder(nuxt).build()
+}
+
+// We can use nuxt.render(req, res) or nuxt.renderRoute(route, context)
 ```
 
-You can take a look at the [nuxt-express](https://github.com/nuxt/express) and [adonuxt](https://github.com/nuxt/adonuxt) starters to start quickly.
+You can take a look at the [nuxt-express](https://github.com/nuxt/express) and [adonuxt](https://github.com/nuxt/adonuxt) starters to get started quickly.
 
 ### Debug logs
 

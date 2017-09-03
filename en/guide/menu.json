@@ -8,8 +8,10 @@
           { "to": "#what-is-nuxt-js-", "name": "What is Nuxt.js ?" },
           { "to": "#how-it-works", "name": "How it Works" },
           { "to": "#features", "name": "Features" },
-          { "to": "#server-rendered", "name": "Server Rendered" },
-          { "to": "#static-generated", "name": "Static Generated" }
+          { "to": "#schema", "name": "Schema" },
+          { "to": "#server-rendered-universal-ssr-", "name": "Server Rendered" },
+          { "to": "#single-page-applications-spa-", "name": "Single Page Application" },
+          { "to": "#static-generated-pre-rendering-", "name": "Static Generated" }
         ]
       },
       { "to": "/contribution-guide", "name": "Contribution Guide" },
@@ -27,7 +29,7 @@
         ]
       },
       {
-        "to": "/directory-structure", "name": "Directory structure",
+        "to": "/directory-structure", "name": "Directory Structure",
         "contents": [
           { "to": "#directories", "name": "Directories" },
           { "to": "#aliases", "name": "Aliases" }
@@ -48,15 +50,16 @@
       {
         "to": "/views", "name": "Views",
         "contents": [
-          { "to": "#pages", "name": "Pages" },
+          { "to": "#document", "name": "Document" },
           { "to": "#layouts", "name": "Layouts" },
+          { "to": "#pages", "name": "Pages" },
           { "to": "#html-head", "name": "HTML Head" }
         ]
       },
       {
         "to": "/async-data", "name": "Async Data",
         "contents": [
-          { "to": "#the-data-method", "name": "The data Method" },
+          { "to": "#the-data-method", "name": "The asyncData Method" },
           { "to": "#the-context", "name": "The Context" },
           { "to": "#handling-errors", "name": "Handling Errors" }
         ]
@@ -73,7 +76,17 @@
         "contents": [
           { "to": "#external-packages", "name": "External Packages" },
           { "to": "#vue-plugins", "name": "Vue Plugins" },
+          { "to": "#inject-in-root-amp-context", "name": "Inject in $root & context" },
           { "to": "#client-side-only", "name": "Client-side only" }
+        ]
+      },
+      {
+        "to": "/modules", "name": "Modules",
+        "contents": [
+          { "to": "#introduction", "name": "Introduction" },
+          { "to": "#write-a-basic-module", "name": "Write a basic Module" },
+          { "to": "#async-modules", "name": "Async Modules" },
+          { "to": "#common-snippets", "name": "Common Snippets" }
         ]
       },
       {
@@ -87,10 +100,10 @@
         ]
       },
       {
-        "to": "/commands", "name": "Commands",
+        "to": "/commands", "name": "Commands and Deployment",
         "contents": [
           { "to": "#list-of-commands", "name": "List of Commands" },
-          { "to": "#development-environment", "name": "Developemnt Enviroment" },
+          { "to": "#development-environment", "name": "Development Enviroment" },
           { "to": "#production-deployment", "name": "Production Deployment" }
         ]
       },

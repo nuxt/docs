@@ -29,7 +29,7 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**INFO:** You can use the command `nuxt build --analyzer` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)</p>
+<p class="Alert Alert--teal">**INFO:** You can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)</p>
 
 ## babel
 
@@ -40,14 +40,7 @@ module.exports = {
 Default:
 ```js
 {
-  plugins: [
-    'transform-async-to-generator',
-    'transform-runtime'
-  ],
-  presets: [
-    ['es2015', { modules: false }],
-    'stage-2'
-  ]
+  presets: ['vue-app']
 }
 ```
 
@@ -62,6 +55,18 @@ module.exports = {
 }
 ```
 
+## cssSourceMap
+
+- Type: `boolean`
+  - Default: `true` for dev and `false` for production.
+
+> Enables CSS Source Map support
+
+## devMiddleware
+- Type: `Object`
+
+See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) for available options.
+
 ## extend
 
 - Type: `Function`
@@ -69,6 +74,7 @@ module.exports = {
 > Extend the webpack configuration manually for the client & server bundles.
 
 The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are:
+
 1. Webpack config object
 2. Object with the folowing keys (all boolean): `dev`, `isClient`, `isServer`
 
@@ -88,6 +94,17 @@ module.exports = {
 
 If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/webpack).
 
+## extractCSS
+
+- Type: `Boolean`
+  - Default: `false`
+
+> Enables Common CSS Extraction using vue SSR [guidelines](https://ssr.vuejs.org/en/css.html).
+
+Using extract-text-webpack-plugin to extract the CSS in the main chunk into a separate CSS file (auto injected with template),
+which allows the file to be individually cached. This is recommended when there is a lot of shared CSS.
+CSS inside async components will remain inlined as JavaScript strings and handled by vue-style-loader.
+
 ## filenames
 
 - Type: `Object`
@@ -97,73 +114,32 @@ If you want to see more about our default webpack configuration, take a look at 
 Default:
 ```js
 {
-  css: 'style.css',
-  vendor: 'vendor.bundle.js',
-  app: 'nuxt.bundle.js'
+  css: 'common.[contenthash].css',
+  manifest: 'manifest.[hash].js',
+  vendor: 'common.[chunkhash].js',
+  app: 'app.[chunkhash].js',
+  chunk: '[name].[chunkhash].js'
 }
 ```
 
-Example (`nuxt.config.js`):
+This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
+
 ```js
 module.exports = {
   build: {
     filenames: {
-      css: 'app.css',
-      vendor: 'vendor.js',
-      app: 'app.js'
+      chunk: '[id].[chunkhash].js'
     }
   }
 }
 ```
 
-## loaders
+To understand a bit more about the use of manifest and vendor, take a look at this [Webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/).
 
-- Type: `Array`
-  - Items: `Object`
+## hotMiddleware
+- Type: `Object`
 
-> Cusomize webpack loaders
-
-Default:
-```js
-[
-  {
-    test: /\.(png|jpe?g|gif|svg)$/,
-    loader: 'url-loader',
-    query: {
-      limit: 1000, // 1KO
-      name: 'img/[name].[hash:7].[ext]'
-    }
-  },
-  {
-    test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-    loader: 'url-loader',
-    query: {
-      limit: 1000, // 1 KO
-      name: 'fonts/[name].[hash:7].[ext]'
-    }
-  }
-]
-```
-
-Example (`nuxt.config.js`):
-```js
-module.exports = {
-  build: {
-    loaders: [
-      {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        loader: 'url-loader',
-        query: {
-          limit: 10000, // 10KO
-          name: 'img/[name].[hash].[ext]'
-        }
-      }
-    ]
-  }
-}
-```
-
-<p class="Alert Alert--orange">When the loaders are defined in the `nuxt.config.js`, the default loaders will be overwritten.</p>
+See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for available options.
 
 ## plugins
 
@@ -189,41 +165,114 @@ module.exports = {
 
 ## postcss
 
-- **Type:** `Array`
+- Type: `Array` or `Object` (recommended) or `Function` or `Boolean`
 
-> Customize [postcss](https://github.com/postcss/postcss) options
+> Customize [Postcss Loader](https://github.com/postcss/postcss-loader#usage) plugins.
+
+**NOTE:** While default preset is OK and flexible enough for normal use cases, the recommended 
+usage by [vue-loader](https://vue-loader.vuejs.org/en/options.html#postcss) is using `postcss.config.js` file in your project.
+By creating that file it will be automatically detected and this option is ignored.
 
 Default:
-```js
-[
-  require('autoprefixer')({
-    browsers: ['last 3 versions']
-  })
-]
-```
 
-Example (`nuxt.config.js`):
 ```js
-module.exports = {
-  build: {
-    postcss: [
-      require('postcss-nested')(),
-      require('postcss-responsive-type')(),
-      require('postcss-hexrgba')(),
-      require('autoprefixer')({
-        browsers: ['last 3 versions']
-      })
-    ]
+{
+  plugins: {
+  'postcss-import' : {},
+  'postcss-url': {},
+  'postcss-cssnext': {}
   }
 }
 ```
 
+Example (`nuxt.config.js`):
+
+```js
+module.exports = {
+  build: {
+    postcss: {
+      plugins: {
+        // Disable postcss-url
+      'postcss-url': false
+
+      // Customize postcss-cssnext default options
+      'postcss-cssnext': {
+        features: {
+          customProperties: false
+        }
+      }
+
+      // Add some plugins
+      'postcss-nested': {},
+      'postcss-responsive-type': {}
+      'postcss-hexrgba': {}
+      }
+    }
+  }
+}
+```
+
+## publicPath
+
+- Type: `String`
+- Default: `'/_nuxt/'`
+
+> Nuxt.js lets you upload your dist files to your CDN for maximum performances, simply set the `publicPath` to your CDN.
+
+Example (`nuxt.config.js`):
+
+```js
+module.exports = {
+  build: {
+    publicPath: 'https://cdn.nuxtjs.org'
+  }
+}
+```
+
+Then, when launching `nuxt build`, upload the content of `.nuxt/dist/` directory to your CDN and voilà!
+
+## ssr
+- Type: `Boolean`
+  - Default `true` for universal mode and `false` for spa mode
+
+> Creates special webpack bundle for SSR renderer.
+
+This option is automatically set based on `mode` value if not provided. 
+
+## templates
+- Type: `Array`
+ - Items: `Object`
+
+> Nuxt.js allows you provide your own templates which will be rendered based on nuxt configuration
+  This feature is specially useful for using with [modules](/guide/modules).
+
+Example (`nuxt.config.js`):
+
+```js
+module.exports = {
+  build: {
+      templates: [
+         {
+           src: '~/modules/support/plugin.js', // src can be absolute or relative
+           dst: 'support.js', // dst is relative to project `.nuxt` dir
+           options: { // Options are provided to template as `options` key
+               live_chat: false
+           }
+         }
+      ]
+  }
+}
+```
+
+Templates are rendered using [lodash.template](https://lodash.com/docs/#template) 
+you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
+
 ## vendor
 
-> Nuxt.js lets you add modules inside the `vendor.bundle.js` file generated to reduce the size of the app bundle. It's really useful when using external modules (like `axios` for example)
+> Nuxt.js lets you add modules inside the `vendor.bundle.js` file to reduce the size of the application bundle. This is especially helpful when using external modules (like `axios` for example).
 
-- **Type:** `Array`
- - **Items:** `String`
+- Type: `Array`
+ - Items: `String`
 
 To add a module/file inside the vendor bundle, add the `build.vendor` key inside `nuxt.config.js`:
 
@@ -241,8 +290,25 @@ module.exports = {
   build: {
     vendor: [
       'axios',
-      '~plugins/my-lib.js'
+      '~/plugins/my-lib.js'
     ]
+  }
+}
+```
+
+## watch
+- Type: `Array`
+ - Items: `String`
+
+> You can provide your custom files to watch and regenerate after changes.
+  This feature is specially useful for using with [modules](/guide/modules).
+
+```js
+module.exports = {
+  build: {
+      watch: [
+          '~/.nuxt/support.js'
+      ]
   }
 }
 ```

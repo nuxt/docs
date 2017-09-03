@@ -14,11 +14,21 @@ First, we need to add ava and jsdom as development dependencies:
 npm install --save-dev ava jsdom
 ```
 
-And add a test script to our `package.json`:
+And add a test script to our `package.json` and configure ava to compile files that we import into our tests.
 
 ```javascript
 "scripts": {
   "test": "ava",
+},
+"ava": {
+  "require": [
+    "babel-register"
+  ]
+},
+"babel": {
+  "presets": [
+    "es2015"
+  ]
 }
 ```
 
@@ -27,7 +37,7 @@ We are going to write our tests in the `test` folder:
 mkdir test
 ```
 
-Let's says we have a page in `pages/index.vue`:
+Let's say we have a page in `pages/index.vue`:
 ```html
 <template>
   <h1 class="red">Hello {{ name }}!</h1>
@@ -113,7 +123,7 @@ jsdom has some limitations because it does not use a browser. However, it will c
 You can add [ESLint](http://eslint.org) pretty easily with nuxt.js, first, you need to add the npm dependencies:
 
 ```bash
-npm install --save-dev eslint eslint-config-standard eslint-plugin-html eslint-plugin-promise eslint-plugin-standard
+npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-html eslint-plugin-promise eslint-plugin-standard
 ```
 
 Then, you can configure ESLint via a `.eslintrc.js` file in your root project directory:
