@@ -81,17 +81,9 @@ _このファイル名は変更できません。_
 
 | エイリアス | ディレクトリ |
 |-----|------|
-| ~ | / |
-| ~assets | /assets |
-| ~components | /components |
-| ~middleware | /middleware |
-| ~pages | /pages |
-| ~plugins | /plugins |
-| ~static | /static |
+| `~` or `@` | [srcDir](/api/configuration-srcdir) |
+| `~~` or `@@` | [rootDir](/api/configuration-rootdir) |
 
-ファイルへリンクするエイリアス:
+デフォルトでは `srcDir` は `rootDir` と同じです。
 
-| エイリアス | 使い方 | 説明 |
-|-------|------|--------------|
-| ~store | `const store = require('~store')` | `vuex` ストアのインスタンスをインポートします |
-| ~router | `const router = require('~router')`| `vue-router` のインスタンスをインポートします |
+<p class="Alert Alert--nuxt-green"><b>情報:</b> `vue` テンプレート内で `assets` または `static` ディレクトリへのリンクが必要なときは `~assets/your_image.png` や `~static/your_image.png` などを使ってください。</p>

@@ -7,13 +7,14 @@ description: Nuxt.js ではグローバルに適用したい（すべてのペ�
 
 > Nuxt.js ではグローバルに適用したい（すべてのページにインクルードしたい）CSS ファイル/モジュール/ライブラリを設定できます。
 
+In case you want to use ```sass``` make sure that you have installed ```node-sass``` and ```sass-loader``` packages. If you didn't  just
+
+```sh
+npm install --save-dev node-sass sass-loader
+```
+
 - タイプ: `配列`
-  - 要素: `文字列` または `オブジェクト`
-
-要素がオブジェクトのときは、プロパティは次のとおりです:
-
-- src: `文字列`（ファイルのパス）
-- lang: `文字列`（[プリプロセッサを使うには？](/faq/pre-processors)）
+  - 要素: `文字列`
 
 `nuxt.config.js` 内で CSS リソースを追加するには:
 
@@ -31,3 +32,5 @@ module.exports = {
   ]
 }
 ```
+
+Nuxt.js will automatically guess the file type by it's extension and use the appropriate pre-processor loader for webpack. You will still need to install the required loader if you need to use them.
