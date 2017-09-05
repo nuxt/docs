@@ -27,7 +27,7 @@ description: Nuxt.js ではデフォルトの設定でほとんどのユース�
 
 このオプションで、Nuxt.js の開発モードまたはプロダクションモードを定義できます。
 
-[dev オプションに関するドキュメント](/api/configuration-css)
+[dev オプションに関するドキュメント](/api/configuration-dev)
 
 ### env
 
@@ -53,11 +53,17 @@ description: Nuxt.js ではデフォルトの設定でほとんどのユース�
 
 [loading オプションに関するドキュメント](/api/configuration-loading)
 
+### modules
+
+このオプションで、プロジェクトにnuxtモジュールを追加できます。
+
+[modules オプションに関するドキュメント](/api/configuration-modules)
+
 ### plugins
 
 このオプションで、ルートの vue.js アプリケーションをインスタンス化する前に実行したい JavaScript plugin を指定できます。
 
-[plugings オプションに関するドキュメント](/api/configuration-plugins)
+[plugins オプションに関するドキュメント](/api/configuration-plugins)
 
 ### rootDir
 
