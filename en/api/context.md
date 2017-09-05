@@ -17,6 +17,7 @@ List of all the available keys in `context`:
 | `isHMR` | Boolean | Client & Server | Boolean to let you know if you're the method/middleware is called from webpack hot module replacement (*only on client-side in dev mode*) |
 | `route` | [vue-router route](https://router.vuejs.org/en/api/route-object.html) | Client & Server | `vue-router` route instance. |
 | `store` | [vuex store](http://vuex.vuejs.org/en/api.html#vuexstore-instance-properties) | Client & Server | `Vuex.Store` instance. **Available only if the [vuex store](/guide/vuex-store) is set** |
+| `serverStoreState` | Object | Client | `Vuex.Store` state. **Available only if the [vuex store](/guide/vuex-store) is set and in `universal` mode.** |
 | `env` | Object | Client & Server | Environment variables set in `nuxt.config.js`, see [env api](/api/configuration-env)  |
 | `params` | Object | Client & Server | Alias of route.params |
 | `query` | Object | Client & Server | Alias of route.query |
@@ -24,4 +25,5 @@ List of all the available keys in `context`:
 | `res` | [http.Response](https://nodejs.org/api/http.html#http_class_http_serverresponse) | Server | Response from the node.js server. If nuxt is used as a middleware, the res object might be different depending of the framework you're using.<br>**Not available via `nuxt generate`** |
 | `redirect` | Function | Client & Server | Use this method to redirect the user to another route, the status code is used on the server-side, default to 302. `redirect([status,] path [, query])` |
 | `error` | Function | Client & Server | Use this method to show the error page: `error(params)`. The `params` should have the fields `statusCode` and `message` |
+| `nuxtState` | Object | Client | Nuxt state, useful for plugins which uses `beforeNuxtRender` to get the nuxt state on client-side before hydration. **Available only in `universal` mode.** 
 | `beforeNuxtRender(fn)` | Function | Server | Use this method to update `__NUXT__` variable rendered on client-side, the `fn` (can be asynchronous) is called with `{ Components, nuxtState }`, see [example](https://github.com/nuxt/nuxt.js/blob/cf6b0df45f678c5ac35535d49710c606ab34787d/test/fixtures/basic/pages/special-state.vue).  |
