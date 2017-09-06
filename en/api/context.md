@@ -17,7 +17,6 @@ List of all the available keys in `context`:
 | `isHMR` | Boolean | Client & Server | Boolean to let you know if you're the method/middleware is called from webpack hot module replacement (*only on client-side in dev mode*) |
 | `route` | [vue-router route](https://router.vuejs.org/en/api/route-object.html) | Client & Server | `vue-router` route instance. |
 | `store` | [vuex store](http://vuex.vuejs.org/en/api.html#vuexstore-instance-properties) | Client & Server | `Vuex.Store` instance. **Available only if the [vuex store](/guide/vuex-store) is set** |
-| `serverStoreState` | Object | Client | `Vuex.Store` state. **Available only if the [vuex store](/guide/vuex-store) is set and in `universal` mode.** |
 | `env` | Object | Client & Server | Environment variables set in `nuxt.config.js`, see [env api](/api/configuration-env)  |
 | `params` | Object | Client & Server | Alias of route.params |
 | `query` | Object | Client & Server | Alias of route.query |
