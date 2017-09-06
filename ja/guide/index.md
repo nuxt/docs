@@ -1,6 +1,8 @@
 ---
 title: はじめに
-description: "2016年10月25日 zeit.co のチームが React アプリケーションをサーバーサイドレンダリングするためのフレームワーク Next.js を発表しました。そしてその発表から数時間後、Next.js と同じやり方で、しかし今度は Vue.js をサーバーサイドレンダリングするアプリケーションを構築するアイディアが生まれました。すなわち Nuxt.js の誕生です。"
+description: 2016年10月25日 zeit.co のチームが React アプリケーションをサーバーサイドレンダリングするためのフレームワーク Next.js
+  を発表しました。そしてその発表から数時間後、Next.js と同じやり方で、しかし今度は Vue.js をサーバーサイドレンダリングするアプリケーションを構築するアイディアが生まれました。すなわち
+  Nuxt.js の誕生です。
 ---
 
 > 2016年10月25日 [zeit.co](https://zeit.co/) のチームが React アプリケーションをサーバーサイドレンダリングするためのフレームワーク [Next.js](https://zeit.co/blog/next) を発表しました。そしてその発表からわずか数時間後、Next.js と同じやり方で、しかし今度は [Vue.js](https://vuejs.org) をサーバーサイドレンダリングするアプリケーションを構築するアイディアが生まれました。すなわち **Nuxt.js** の誕生です。
@@ -30,7 +32,7 @@ Nuxt.js はリッチなウェブアプリケーションを構築するために
 - [Vuex](https://github.com/vuejs/vuex)（[Vuex ストアのオプション](/guide/vuex-store) を利用しているときに限ります）
 - [Vue-Meta](https://github.com/declandewet/vue-meta)
 
-すべて合わせてもわずか **28kb min+gzip** です（Vuex 利用時は 31kb）
+すべて合わせてもわずか **57kb min+gzip** です（Vuex 利用時は 53kb）
 
 また、ソースコードのバンドルや分割及びミニファイするために [Webpack](https://github.com/webpack/webpack) を使います。[vue-loader](https://github.com/vuejs/vue-loader) と [babel-loader](https://github.com/babel/babel-loader) も合わせて使います。
 
@@ -46,6 +48,8 @@ Nuxt.js はリッチなウェブアプリケーションを構築するために
 - Head 要素の管理
 - 開発モードにおけるホットリローディング
 - SASS, LESS, Stylus などのプリプロセッサのサポート
+- HTTP/2 push headers ready
+- モジュール構造で拡張できること
 
 ## 図解
 
@@ -59,6 +63,10 @@ Nuxt.js をプロジェクトの UI レンダリング全体を担うフレー�
 
 `nuxt` コマンドを実行すると開発サーバーが起動されます。このサーバーはホットリローディング及び vue-server-render を備えており、vue-server-render は自動的にアプリケーションをサーバーサイドレンダリングするよう設定されています。
 
+### シングルページアプリケーション（SPA）
+
+コマンドについてより深く理解するには [コマンド](/guide/commands) を参照してください。
+
 コマンドについてより深く理解するには [コマンド](/guide/commands) を参照してください。
 
 既にサーバーがあるならば Nuxt.js をミドルウェアとして追加ことができます。ユニバーサルなウェブアプリケーションを開発するために Nuxt.js を利用するにあたって何も制限はありません。[Nuxt.js](/api/nuxt) ガイドを見てみてください。
@@ -67,7 +75,7 @@ Nuxt.js をプロジェクトの UI レンダリング全体を担うフレー�
 
 Nuxt.js による大きなイノベーションがやってきました。それが `nuxt generate` です。
 
-`nuxt generate` はアプリケーションをビルドする際に、各ルートごとの HTML を生成します。
+アプリケーションをビルドする際に、ルートごとに HTML を生成しファイルに書き込みます。
 
 例えば、下記のファイル群がある場合:
 
