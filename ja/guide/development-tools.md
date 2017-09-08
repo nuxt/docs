@@ -67,13 +67,12 @@ export default {
 
 ```js
 import test from 'ava'
-import Nuxt from 'nuxt'
+import { Nuxt, Builder } from 'nuxt'
 import { resolve } from 'path'
 
 // nuxt と server インスタンスを保持します
 // そうすればテスト終了時にそれらをクローズできます
 let nuxt = null
-let server = null
 
 // Nuxt.js を初期化し localhost:4000 でリスニングするサーバーを作成します
 test.before('Init Nuxt.js', async t => {
@@ -83,9 +82,8 @@ test.before('Init Nuxt.js', async t => {
   config.rootDir = rootDir // project folder
   config.dev = false // production build
   nuxt = new Nuxt(config)
-  await nuxt.build()
-  server = new nuxt.Server(nuxt)
-  server.listen(4000, 'localhost')
+  await new Builder(nuxt).build()
+  nuxt.listen(4000, 'localhost')
 })
 
 // 生成された HTML のみをテストする例
@@ -107,7 +105,6 @@ test('Route / exits and render HTML with CSS applied', async t => {
 
 // サーバーを閉じて nuxt にファイル更新のリスニングを中止させる
 test.after('Closing server and nuxt.js', t => {
-  server.close()
   nuxt.close()
 })
 ```
