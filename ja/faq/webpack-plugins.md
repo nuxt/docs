@@ -9,7 +9,6 @@ description: Webpack プラグインを追加するには？
 
 ```js
 const webpack = require('webpack')
-
 module.exports = {
   build: {
     plugins: [
