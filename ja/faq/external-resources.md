@@ -24,13 +24,12 @@ module.exports = {
 
 ## ローカルな設定
 
-pages ディレクトリの .vue ファイル内でリソースをインクルードします:
+`pages/` ディレクトリの `.vue` ファイル内でリソースをインクルードします:
 
 ```html
 <template>
   <h1>About page with jQuery and Roboto font</h1>
 </template>
-
 <script>
 export default {
   head: {
@@ -43,4 +42,9 @@ export default {
   }
 }
 </script>
+<style scoped>
+h1 {
+  font-family: Roboto, sans-serif;
+}
+</style>
 ```
