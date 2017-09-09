@@ -32,15 +32,21 @@ app.use(nuxt.render)
 // Build only in dev mode with hot-reloading
 if (config.dev) {
   new Builder(nuxt).build()
+  .then(listen)
   .catch((error) => {
     console.error(error)
     process.exit(1)
   })
 }
+else {
+  listen()
+}
 
-// Listen the server
-app.listen(port, '0.0.0.0')
-console.log('Server listening on localhost:' + port)
+function listen() {
+  // Listen the server
+  app.listen(port, '0.0.0.0')
+  console.log('Server listening on localhost:' + port)
+}
 ```
 
 <p class="Alert">It's recommended to call **nuxt.render** at the end of your middlewares since it will handle the rendering of your web application and won't call next()</p>
