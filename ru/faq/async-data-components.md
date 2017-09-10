@@ -1,11 +1,11 @@
 ---
-title: Async data in components
-description: Async data in components?
+title: Асинхронные данные в компонентах
+description: Асинхронные данные в компонентах?
 ---
 
-# Async data in components?
+# Асинхронные данные в компонентах?
 
-Because components do not have an asyncData method, you cannot directly fetch async data server side within a component. In order to get around there limitation you have two basic options:
+Так как компоненты не имеют метода asyncData, вы не можете напрямую получить асинхронные данные с сервера в компоненте. Чтобы обойти это ограничение есть два варианта:
 
-1. Make the API call in the mounted() hook and set data properties when loaded. *Downside: Won't work for server side rendering.*
-2. Make the API call in the asyncData() or fetch() methods of the page component and pass the data as props to the sub components. Server rendering will work fine. *Downside: the asyncData() or fetch() of the page might be less readable because it's loading the data for other components*
+1. Сделайте вызов API в хуке mounted() и установите свойства данных при загрузке. *Недостаток: не будет работать для рендеринга на стороне сервера.*
+2. Сделайте вызов API в методе asyncData() или fetch() компонента страницы и передайте данные в качестве входных параметров дочерним компонентам. Рендеринг на стороне сервера будет работать нормально. *Недостаток: asyncData() или fetch() страницы может стать менее читаемым, поскольку они загружают данные для других компонентов.*
