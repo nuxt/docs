@@ -15,7 +15,7 @@ if (process.browser) {
 }
 ```
 
-If your are using this library into multiple files, we recommend your to add it into your [vendor bundle](/api/configuration-build#build-vendor) via `nuxt.config.js`:
+If you are using this library within multiple files, we recommend that you add it into your [vendor bundle](/api/configuration-build#build-vendor) via `nuxt.config.js`:
 ```js
   build: {
     vendor: ['external_library']

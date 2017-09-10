@@ -1,68 +1,67 @@
 ---
-title: Introduction
-description: "The 25th of October 2016, the team behind zeit.co, announced Next.js, a framework for server-rendered React applications. Few hours after the announcement, the idea of creating server-rendered Vue.js applications the same way as Next.js was obvious: Nuxt.js was born."
+title: Введение
+description: "25 октября 2016 года команда zeit.co анонсировала Next.js, фреймворк для приложений на React с серверным рендерингом. Через несколько часов после этого объявления родилась идея создания приложений Vue.js с серверным рендерингом, аналогично представленной Next.js: так родился Nuxt.js."
 ---
 
-> The 25th of October 2016, the team behind [zeit.co](https://zeit.co/), announced [Next.js](https://zeit.co/blog/next), a framework for server-rendered React applications. Few hours after the announcement, the idea of creating server-rendered [Vue.js](https://vuejs.org) applications the same way as Next.js was obvious: **Nuxt.js** was born.
+> 25 октября 2016 года команда [zeit.co](https://zeit.co/) анонсировала [Next.js](https://zeit.co/blog/next), фреймворк для приложений на React с серверным рендерингом. Через несколько часов после этого объявления родилась идея создания приложений [Vue.js](https://vuejs.org) с серверным рендерингом, аналогично представленной Next.js: так родился **Nuxt.js**.
 
-## What is Nuxt.js ?
+## Что такое Nuxt.js ?
 
-Nuxt.js is a framework for creating Universal Vue.js Applications.
+Nuxt.js — это фреймворк для создания универсальных приложений на Vue.js.
 
-Its main scope is **UI rendering** while abstracting away the client/server distribution.
+Основной задачей этого фреймворка является **рендеринг пользовательского интерфейса** в условиях абстракции от клиент-серверной архитектуры.
 
-Our goal is to create a framework flexible enough so that you can use it as a main project base or in addition to your current project based on Node.js.
+Нашей целью было создать фреймворк настолько гибкий, чтобы его можно было использовать и как основу, и как дополнение к уже существующим проектам на Node.js.
 
-Nuxt.js presets all the configuration needed to make your development of a Vue.js Application **Server Rendered** more enjoyable.
+Nuxt.js предоставляет всю необходимую конфигурацию, чтобы сделать разработку приложений **с серверным рендерингом** на Vue.js лёгкой и приятной.
 
-In addition, we also provide another deployment option called: *nuxt generate*. It will build a **Static Generated** Vue.js Application.
-We believe that option could be the next big step in the development of Web Applications with microservices.
+Кроме того, мы также предоставляем другую опцию разработки, названную *nuxt generate*. С её помощью можно **статически генерировать** приложения на Vue.js. Мы верим, что эта опция может оказаться следующим большим шагом в разработке микросервисных веб-приложений.
 
-As a framework, Nuxt.js comes with a lot of features to help you in your development between the client side and the server side such as Asynchronous Data, Middleware, Layouts, etc.
+Как фреймворк Nuxt.js привносит множество возможностей, помогающих в разработке, таких как: работа с асинхронными данными, middleware, работа с шаблонами и др.
 
-## How it Works
+## Как это работает
 
-![Vue with Webpack and Babel](https://i.imgur.com/avEUftE.png)
+![Vue + Webpack + Babel](https://i.imgur.com/avEUftE.png)
 
-Nuxt.js includes the following to create a rich web application development:
+Nuxt.js для создания современных веб-приложений использует:
 
 - [Vue 2](https://github.com/vuejs/vue)
 - [Vue-Router](https://github.com/vuejs/vue-router)
-- [Vuex](https://github.com/vuejs/vuex) (included only when using the [store option](/guide/vuex-store))
+- [Vuex](https://github.com/vuejs/vuex) (добавляется только при использовании [опции store](/guide/vuex-store))
 - [Vue-Meta](https://github.com/declandewet/vue-meta)
 
-A total of only **57kb min+gzip** (53kb with vuex).
+Общий размер составляет лишь **57kb min+gzip** (53kb при использовании vuex).
 
-Under the hood we use [Webpack](https://github.com/webpack/webpack) with [vue-loader](https://github.com/vuejs/vue-loader) and [babel-loader](https://github.com/babel/babel-loader) to bundle, code-split and minify your code.
+Под капотом используется [Webpack](https://github.com/webpack/webpack) с загрузчиками [vue-loader](https://github.com/vuejs/vue-loader) и [babel-loader](https://github.com/babel/babel-loader) для сборки, разделения и минификации кода.
 
-## Features
+## Возможности
 
-- Write Vue Files
-- Automatic Code Splitting
-- Server-Side Rendering
-- Powerful Routing System with Asynchronous Data
-- Static File Serving
-- ES6/ES7 Transpilation
-- Bundling and minifying of your JS & CSS
-- Managing `<head>` element (title, meta...)
-- Hot module replacement in Development
-- Pre-processor: SASS, LESS, Stylus, etc
-- HTTP/2 push headers ready
-- Extending with Modular architecture
+- Создание Vue-файлов
+- Автоматическое разделение кода
+- Рендеринг на стороне сервера
+- Мощная система маршрутизации с асинхронными данными
+- Обслуживание статических файлов
+- Транспиляци ES6/ES7
+- Сборка и минификация JS & CSS
+- Управление элементами в `<head>` (title, meta...)
+- Горячая перезагрузка модулей в режиме разработки
+- Пре-процессоры: SASS, LESS, Stylus, и т.д.
+- Поддержка push-заголовков HTTP/2
+- Расширяемость с модульной архитектурой
 
-## Schema
+## Схема работы
 
-This schema shows what is called by nuxt.js when the server is called or when the user navigate through the app via `<nuxt-link>`:
+Эта схема показывает этапы работы Nuxt.js, когда происходит запрос к серверу или когда пользователь переходит на другую страницу через `<nuxt-link>`:
 
 ![nuxt-schema](/nuxt-schema.png)
 
-## Server Rendered (Universal SSR)
+## Серверный рендеринг (универсальный SSR)
 
-You can use nuxt.js as a framework to handle all the UI rendering of your project.
+Вы можете использовать Nuxt.js как фреймворк позволяющий организовать все этапы рендеринга UI в вашем проекте.
 
-When launching `nuxt`, it will start a development server with hot-reloading and [vue-server-renderer](https://ssr.vuejs.org/en/) configured to automatically server-render your application.
+Выполнение команды `nuxt` запустит сервер для разработки с поддержкой горячей замены модулей и [vue-server-renderer](https://ssr.vuejs.org/ru/) сконфигурированным автоматически для серверного рендеринга вашего приложения.
 
-### Single Page Applications (SPA)
+### Одностраничные приложения (SPA)
 
 If for any reason you prefer not using server side rendering or need static hosting for your applications, you can simply use SPA mode using `nuxt --spa`. Combination with *generate* feature gives a powerful SPA deployment mechanism without need to use Node.js runtime or any special server handling.
 
@@ -70,13 +69,13 @@ Take a look at [the commands](/guide/commands) to learn more about usage.
 
 If you already have a server, you can plug Nuxt.js by using it as a middleware, there is no restriction at all when using nuxt.js for developing your Universal Web Applications, see the [Using Nuxt.js Programmatically](/api/nuxt) guide.
 
-## Static Generated (Pre Rendering)
+## Статическая генерация (предварительный рендеринг)
 
-The big innovation of nuxt.js comes here: `nuxt generate`
+Большая инновация Nuxt.js скрыта в команде `nuxt generate`
 
-When building your application it will generate the HTML for every one of your routes and store it in a file.
+При сборке вашего приложения она сгенерирует HTML-страницу для каждого маршрута и сохранит их в файлы.
 
-Example:
+Например:
 
 ```bash
 -| pages/
@@ -84,7 +83,7 @@ Example:
 ----| index.vue
 ```
 
-Will generate:
+Сгенерирует:
 
 ```
 -| dist/
@@ -93,20 +92,20 @@ Will generate:
 ----| index.html
 ```
 
-This way, you can host your generated web application on any static hosting!
+Таким образом, вы можете разместить сгенерированное приложение на любом статичном хостинге!
 
-The best example is this website. It is generated and hosted on GitHub Pages:
+Лучшим примером может послужить этот сайт. Он был сгенерирован и размещён на GitHub Pages:
 
-- [Source code](https://github.com/nuxt/nuxtjs.org)
-- [Generated code](https://github.com/nuxt/nuxtjs.org/tree/gh-pages)
+- [Исходный код](https://github.com/nuxt/nuxtjs.org)
+- [Сгенерированный код](https://github.com/nuxt/nuxtjs.org/tree/gh-pages)
 
-We don't want to manually generate the application every time we update the [docs repository](https://github.com/nuxt/docs), so each push made calls an AWS Lambda function which:
+Мы не хотим вручную генерировать приложение каждый раз, когда обновляем [репозиторий документации](https://github.com/nuxt/docs), поэтому каждый push вызывает функцию AWS Lambda, которая:
 
-1. Clone the [nuxtjs.org repository](https://github.com/nuxt/nuxtjs.org)
-2. Install the dependencies via `npm install`
-3. Run `nuxt generate`
-4. Push the `dist` folder to the `gh-pages` branch
+1. Клонирует [репозиторий nuxtjs.org](https://github.com/nuxt/nuxtjs.org)
+2. Устанавливает зависимости через `npm install`
+3. Запускает `nuxt generate`
+4. Отправляет каталог `dist` в ветку `gh-pages`
 
-We now have a **Serverless Static Generated Web Application** :)
+Теперь у нас есть **безсерверное, статически-генерируемое веб-приложение** :)
 
-We can go further by thinking of an e-commerce web application made with `nuxt generate` and hosted on a CDN, and every time a product is out of stock or back in stock, we regenerate the web app. But if the user navigates through the web app in the meantime, it will be up to date thanks to the API calls made to the e-commerce API. No need to have multiple instances of a server + a cache anymore!
+Мы можем развить мысль дальше, представив интернет-магазин, созданный с помощью `nuxt generate` и размещённый на CDN. Каждый раз, когда товар заканчивается на складе, мы будем генерировать приложение заново. А если во время этого процесса кто-то использует наше приложение — всё будет оставаться актуальным благодаря запросам к API интернет-магазина. Больше нет нужды во множестве серверов и кэшировании!
