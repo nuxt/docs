@@ -1,11 +1,11 @@
 ---
-title: Extend Webpack
-description: How to extend webpack config into my Nuxt.js application?
+title: Расширение конфигурации Webpack
+description: Как расширить конфигурацию Webpack в моём Nuxt.js приложении?
 ---
 
-# How to extend webpack config?
+# Как расширить конфигурацию Webpack?
 
-You can extend the webpack configuration via the `extend` option in your `nuxt.config.js`:
+Вы можете расширить конфигурацию Webpack с помощью опции `extend` в вашем `nuxt.config.js`:
 
 ```js
 module.exports = {
