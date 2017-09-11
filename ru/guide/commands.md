@@ -1,28 +1,28 @@
 ---
-title: Commands and Deployment
-description: Nuxt.js comes with a set of useful commands, both for development and production purpose.
+title: Команды и развёртывание
+description: Nuxt.js поставляется с набором полезных команд, как для разработки, так и для production.
 ---
 
-> Nuxt.js comes with a set of useful commands, both for development and production purpose.
+> Nuxt.js поставляется с набором полезных команд, как для разработки, так и для production.
 
-## List of Commands
+## Список команд
 
-| Command         | Description                                                                                |
-|-----------------|--------------------------------------------------------------------------------------------|
-| nuxt            | Launch a development server on [localhost:3000](http://localhost:3000) with hot-reloading. |
-| nuxt build      | Build your application with webpack and minify the JS & CSS (for production).              |
-| nuxt start      | Start the server in production mode (After running `nuxt build`).                          |
-| nuxt generate   | Build the application and generate every route as a HTML file (used for static hosting).   |
+| Команда         | Описание                                                                                                 |
+|-----------------|----------------------------------------------------------------------------------------------------------|
+| nuxt            | Запускает сервер разработки по адресу [localhost:3000](http://localhost:3000) с горячей заменой модулей. |
+| nuxt build      | Собирает ваше приложение с webpack и минификацией JS & CSS (для production).                             |
+| nuxt start      | Запускает сервер в режиме production (После запуска `nuxt build`).                                       |
+| nuxt generate   | Собирает приложение и генерирует HTML-файл для каждого маршрута (используется для статичного хостинга).  |
 
-#### Arguments
-You can use `--help` with any command to get detailed usage. Common arguments are:
+#### Аргументы
+Вы можете использовать `--help` с любой командой для получения подробной информации об использовании. Общие аргументы:
 
-- **`--config-file` or `-c`:** Specify path to `nuxt.config.js` file.
-- **`--spa` or `-s`:** Runs command in SPA mode by disabling server side rendering.
+- **`--config-file` или `-c`:** Для указания пути к файлу `nuxt.config.js`.
+- **`--spa` или `-s`:** Запуск команды в режиме SPA и отключением рендеринга на стороне сервера.
 
-#### Using in package.json
+#### Использование в package.json
 
-You should put these commands in the `package.json`:
+Вы можете поместить эти команды в файл `package.json`:
 
 ```json
 "scripts": {
@@ -33,34 +33,34 @@ You should put these commands in the `package.json`:
 }
 ```
 
-Then, you can launch your commands via `npm run <command>` (example: `npm run dev`).
+После этого, вы можете запускать ваши команды через `npm run <command>` (например: `npm run dev`).
 
-**PRO TIP:** To pass arguments to npm commands, you need an extra `--` after script name (example: `npm run dev -- --spa`)
+**Совет:** Чтобы передать аргументы в команду npm, вам потребуется дополнительные `--` после названия скрипта (например: `npm run dev -- --spa`)
 
-## Development Environment
+## Окружение для разработки
 
-To launch Nuxt in development mode with the hot reloading:
+Для запуска Nuxt в режиме разработки с горячей перезагрузкой модулей:
 
 ```bash
 nuxt
-// OR
+// ИЛИ
 npm run dev
 ```
 
-## Production Deployment
+## Развёртывание для Production
 
-Nuxt.js lets your choose between 3 modes to deploy your application: Server Rendered, SPA or Static Generated.
+Nuxt.js предоставляет вам выбор между 3 режимами развёртывания вашего приложения: Рендеринг на стороне сервера, SPA или статично сгенерированное.
 
-### Server Rendered Deployment (Universal)
+### Развёртывание с рендерингом на стороне сервера (Универсальное)
 
-To deploy, instead of running nuxt, you probably want to build ahead of time. Therefore, building and starting are separate commands:
+Для развёртывания, вместо запуска nuxt, вы возможно захотите собрать приложение заранее. Поэтому сборка и запуск — это разные команды:
 
 ```bash
 nuxt build
 nuxt start
 ```
 
-The `package.json` like follows is recommended:
+Файл `package.json` должен выглядеть примерно так:
 ```json
 {
   "name": "my-app",
@@ -75,7 +75,7 @@ The `package.json` like follows is recommended:
 }
 ```
 
-Note: we recommend putting `.nuxt` in `.npmignore` or `.gitignore`.
+Примечание: мы рекомендуем добавить `.nuxt` в `.npmignore` или `.gitignore`.
 
 ### Static Generated Deployment (Pre Rendered)
 
@@ -96,7 +96,7 @@ If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take
 ### Single Page Application Deployment (SPA)
 
 `nuxt generate` still needs SSR engine during build/generate time
-While having the pro that all of our pages are pre rendered and having a high SEO and page load score, 
+While having the pro that all of our pages are pre rendered and having a high SEO and page load score,
 the content is generated at *build time*. For example, we can't use it for applications
 where content depends on user authentication or a real time API (at least for the first load).
 
@@ -104,7 +104,7 @@ The SPA idea is simple! When spa mode is enabled using `mode: 'spa'` or `--spa` 
 generation automatically starts after the build, but this time without pages content and only common meta and resource links.
 
 So for an SPA deployment:
- - Change `mode` in `nuxt.config.js` to `spa` 
+ - Change `mode` in `nuxt.config.js` to `spa`
  - Run `npm run build`
  - Deploy the created `dist/` folder to your static hosting like surge or github pages or nginx.
 

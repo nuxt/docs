@@ -63,11 +63,11 @@ Nuxt.js для создания современных веб-приложени
 
 ### Одностраничные приложения (SPA)
 
-If for any reason you prefer not using server side rendering or need static hosting for your applications, you can simply use SPA mode using `nuxt --spa`. Combination with *generate* feature gives a powerful SPA deployment mechanism without need to use Node.js runtime or any special server handling.
+Если по какой-либо причине вы предпочитаете не использовать серверный рендеринг или использовать статичный хостинг для вашего приложения, то вы просто можете использовать режим SPA с помощью `nuxt --spa`. В сочетании с функцией *generate* это предоставит мощный механизм развёртывания SPA без необходимости использовать Node.js runtime или любые другие специальные обработчики сервера.
 
-Take a look at [the commands](/guide/commands) to learn more about usage.
+Изучите [команды](/guide/commands) для большей информации об использовании.
 
-If you already have a server, you can plug Nuxt.js by using it as a middleware, there is no restriction at all when using nuxt.js for developing your Universal Web Applications, see the [Using Nuxt.js Programmatically](/api/nuxt) guide.
+Если у вас уже есть сервер, вы можете подключить Nuxt.js в качестве middleware, нет никаких ограничений при использовании nuxt.js для разработки ваших универсальных веб-приложений, подробнее в инструкции [Программное использование Nuxt.js](/api/nuxt).
 
 ## Статическая генерация (предварительный рендеринг)
 
