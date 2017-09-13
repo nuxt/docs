@@ -1,68 +1,30 @@
-# Nuxt.js Documentation
+# Pour traduire la documentation de nuxt
 
-> This is where the documentation is stored and served as an API
+### Workflow de travail
 
-## Developing
+Cette branche de travail `working` est volontairement mise en avant et doit uniquement être mise à jour dans le sens :
 
-:warning: You must at least use `node >= 8.0.0` (supports async/await) to start the server.
+`nuxt/docs:master` --> `vuejs-fr/nuxt:working`.
 
-:warning: You must also have the main [nuxtjs.org](https://github.com/nuxt/nuxtjs.org) website repo up and running on localhost to be able to run the docs...
+Nous traduisons les fichiers directement dans le dossier `en` sans les renommer. Cela permet lors de la mise à jour de la documentation via l'utilisation des commandes :
 
-Start a dev server on `localhost:4000`
-
-```bash
-npm install
-npm run dev
+```
+git fetch upstream
+git merge upstream/master
 ```
 
-Then access the docs via the website running on `http://nuxt:3000` (see instructions on [nuxtjs.org](https://github.com/nuxt/nuxtjs.org) repo).
+d'obtenir des conflits **sur les pages déjà traduites** et ainsi maintenir la documentation à jour en fonction des modifications à travers **les documents déjà traduits**.
 
-## On Translations
+### Traduction
 
-### Russian
+Pour savoir ce qui est [en cours de traduction](https://github.com/vuejs-fr/nuxt/issues/1) ou [comment traduire un fichier](https://github.com/vuejs-fr/nuxt/issues/2), référez vous aux issues correspondantes.
 
-Russian translation is maintained by Translation Gang.
+### Reverssement
 
-* Translation Repo — [/translation-gang/ru.docs.nuxtjs](https://github.com/translation-gang/ru.docs.nuxtjs)
-* Primary maintainer - [Grigoriy Beziuk](https://gbezyuk.github.io)
-* Primary translator - [Nicholas Shachmatov](https://github.com/theOnlyBoy)
+Quand un fichier traduit est validé par pull request, on le met à jour dans le dossier `fr` de `vuejs-fr/nuxt:master` puis on propose une pull request au site principal :
 
-### Chinese
+`vuejs-fr/nuxt:master` --> `nuxt/docs:dev`
 
-Chinese translation is maintained by AOTU Labs from China, Shenzhen.
+ainsi le dossier officiel hébergeant la documentation possède bien le dossier `fr` en français et le dossier `en` en anglais.
 
-* Translation Repo — [/o2team/i18n-cn-nuxtjs-docs](https://github.com/o2team/i18n-cn-nuxtjs-docs)
-* Primary maintainer - [AOTU Labs](https://aotu.io)
-* Primary translator - [Levin Wong](http://faso.me), [Edward Chu](https://github.com/chuyik)
-
-### Japanese
-
-Japanese translation is maintained by INOUE Takuya.
-
-* Translation Repo — [/inouetakuya/ja.docs.nuxtjs](https://github.com/inouetakuya/ja.docs.nuxtjs)
-* Primary maintainer - [INOUE Takuya](http://blog.inouetakuya.info/)
-* Primary translator - [INOUE Takuya](https://github.com/inouetakuya)
-
-### Korean
-
-Korean translation is maintained by Taewoong La.
-
-* Translation Repo — [/DiyLecko/ko.docs.nuxtjs](https://github.com/DiyLecko/ko.docs.nuxtjs)
-* Primary maintainer - [Taewoong La](http://blog.naver.com/diy_lecko)
-* Primary translator - [june](http://jicjjang.github.io), [wanybae](https://github.com/wanybae), [rellario](https://github.com/rellario)
-
-### French
-
-French translation is maintained by Julien Grünhagel/@rspt for [laruche](https://laruche.io).
-
-* Translation Repo — [/larucheio/fr.docs.nuxtjs](https://github.com/larucheio/fr.docs.nuxtjs)
-* Primary maintainer - [laruche](https://laruche.io/)
-* Primary translator - [Julien Grünhagel](https://rspt.io/)
-
-### Want to help with the translation?
-
-If you feel okay with translating sorta alone, just fork the repo, create a "work-in-progress" pull request (mark it with [WIP], see [Russian translation](https://github.com/nuxt/docs/pull/3) if you need an example) — and just go on.
-
-If you are more of a team player, maybe Translation Gang is for you? Then just let us know somehow that you're ready to join this international open-source translators community. Feel free to contact [Grigoriy Beziuk](https://gbezyuk.github.io) or anybody else from the team.
-
-And thank you in advance ;)
+Note : il peut être intéressant de faire une pull request par ficher validé et donc de créer une branche dérivée de `vuejs-fr/nuxt:master` pour faire la pull request (`vuejs-fr/nuxt:master` --> `vuejs-fr/nuxt:only_one_changed_file_from_master` --> `vuejs/nuxt:master`)
