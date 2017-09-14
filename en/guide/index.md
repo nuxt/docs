@@ -47,6 +47,8 @@ Sous le capot, nous utilisons [webpack](https://github.com/webpack/webpack) avec
 - Gestion des éléments de balise d'en-tête `<head>` HTML (`<title>`, `<meta>`, etc.)
 - Rechargement à chaud pendant le développement
 - Pré-processeur : Sass, Less, Stylus, etc.
+- En-tête HTTP/2 PUSH
+- Extensible avec une architecture modulaire
 
 ## Schéma
 
