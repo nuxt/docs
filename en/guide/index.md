@@ -31,7 +31,7 @@ Nuxt.js includes the following to create a rich web application development:
 - [Vuex](https://github.com/vuejs/vuex) (included only when using the [store option](/guide/vuex-store))
 - [Vue Meta](https://github.com/declandewet/vue-meta)
 
-A total of only **57kb min+gzip** (53kb with vuex).
+A total of only **57kb min+gzip** (53kb with Vuex).
 
 Under the hood we use [webpack](https://github.com/webpack/webpack) with [vue-loader](https://github.com/vuejs/vue-loader) and [babel-loader](https://github.com/babel/babel-loader) to bundle, code-split and minify your code.
 
@@ -60,7 +60,7 @@ This schema shows what is called by Nuxt.js when the server is called or when th
 
 You can use Nuxt.js as a framework to handle all the UI rendering of your project.
 
-When launching `nuxt`, it will start a development server with hot-reloading and [vue-server-renderer](https://ssr.vuejs.org/en/) configured to automatically server-render your application.
+When launching `nuxt`, it will start a development server with hot-reloading and [Vue Server Renderer](https://ssr.vuejs.org/en/) configured to automatically server-render your application.
 
 ### Single Page Applications (SPA)
 
