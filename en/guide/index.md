@@ -100,12 +100,13 @@ Le meilleur exemple est ce site web. Il est généré et hébergé sur le systè
 - [Code source](https://github.com/nuxt/nuxtjs.org) (en anglais)
 - [Code généré](https://github.com/nuxt/nuxtjs.org/tree/gh-pages) (en anglais)
 
-Nous ne voulons pas devoir générer manuellement l'application à chaque fois que nous mettons à jour la [documentation](https://github.com/nuxt/docs), du coup chaque modification réalisée invoque une fonction AWS Lambda qui:
-1. Clone le [répertoire nuxtjs.org](https://github.com/nuxt/nuxtjs.org)
+Nous ne voulons pas devoir générer manuellement l'application à chaque fois que nous mettons à jour la [documentation](https://github.com/nuxt/docs), du coup chaque modification réalisée invoque une fonction AWS Lambda qui :
+
+1. Clone le [dépôt nuxtjs.org](https://github.com/nuxt/nuxtjs.org)
 2. Installe les dépendances via `npm install`
 3. Lance `nux generate`
 4. Déploie le dossier `dist` sur la branche `gh-pages`
 
-Et nous voilà avec une **Serverless Static Generated Web Application** :)
+Et nous voilà avec une **application web générée sans partie serveur** :)
 
-Nous pouvons aller plus loin en imaginant une application d'e-commerce créée avec `nuxt generate` et hébergée sur un CDN, et regénérée à chaque fois qu'un produit est en rupture de stock ou de retour en stock. Mais si l'utilisateur navigue à sur l'application en attendant, il vera les informations à jour grâce aux appels API effectués sur l'API de l'e-commerce. Pas besoin d'avoir plusieurs instances d'un serveur ainsi qu'un cache supplémentaire!
+Nous pouvons aller plus loin en imaginant une application d'e-commerce créée avec `nuxt generate` et hébergée sur un CDN. Chaque fois qu'un produit est en rupture de stock ou de nouveau en stock nous régénérons l'application. Mais si l'utilisateur navigue sur l'application en même temps, il verra les informations à jour grâce aux appels d'API effectués sur l'API de l'e-commerce. Pas besoin d'avoir plusieurs instances d'un serveur ou un cache !
