@@ -62,6 +62,10 @@ Vous pouvez utiliser nuxt.js comme framework pour gérer le rendu complet de l'i
 
 En utilisant la commande `nuxt`, Nuxt va démarrer un serveur de développement avec rechargement à chaud et [Vue Server Renderer](https://ssr.vuejs.org/fr/) configurés afin de servir automatiquement le rendu de votre application fait côté serveur.
 
+### Application monopage
+
+Si pour une quelconque raison vous préférez ne pas utiliser le rendu côté serveur ou que vous avez besoin d'héberger statique pour votre application, vous pouvez simplement utiliser le mode application monopage (ou SPA « Simple Page Application ») en utilisant la commande `nuxt --spa`. Combiné avec la fonctionnalité de *génération*, vous avez la une puissante application monopage qui ne nécessite aucunement de Node.js ou d'un serveur spécial pour fonctionner.
+
 Jetez un œil aux [commandes](/guide/commands) pour en savoir plus.
 
 Si vous avez déjà un serveur, vous pouvez greffer nuxt.js en l'utilisant comme middleware. Il n'y a aucune restrictions quand vous utilisez nuxt.js pour développer votre application web universelle; voir le guide [Using Nuxt.js Programmatically](/api/nuxt).
