@@ -44,7 +44,7 @@ Under the hood we use [webpack](https://github.com/webpack/webpack) with [vue-lo
 - Static File Serving
 - ES6/ES7 Transpilation
 - Bundling and minifying of your JS & CSS
-- Managing `<head>` element (`<title>`, `<meta>`...)
+- Managing `<head>` element (`<title>`, `<meta>`, etc.)
 - Hot module replacement in Development
 - Pre-processor: SASS, LESS, Stylus, etc.
 - HTTP/2 push headers ready
