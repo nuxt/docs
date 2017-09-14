@@ -52,13 +52,13 @@ Sous le capot, nous utilisons [webpack](https://github.com/webpack/webpack) avec
 
 ## Schéma
 
-Ce schéma (en anglais) montre ce qui est invoqué par nuxt.js quand le serveur est appelé ou quand l'utilisateur navigue dans l'application à l'aide de `<nuxt-link>` :
+Ce schéma (en anglais) montre ce qui est invoqué par Nuxt.js quand le serveur est appelé ou quand l'utilisateur navigue dans l'application à l'aide de `<nuxt-link>` :
 
 ![nuxt-schema](/nuxt-schema.png)
 
 ## Rendu côté serveur (SSR universel)
 
-Vous pouvez utiliser nuxt.js comme framework pour gérer le rendu complet de l'interface utilisateur de votre projet.
+Vous pouvez utiliser Nuxt.js comme framework pour gérer le rendu complet de l'interface utilisateur de votre projet.
 
 En utilisant la commande `nuxt`, Nuxt va démarrer un serveur de développement avec rechargement à chaud et [Vue Server Renderer](https://ssr.vuejs.org/fr/) configurés afin de servir automatiquement le rendu de votre application fait côté serveur.
 
@@ -66,17 +66,17 @@ En utilisant la commande `nuxt`, Nuxt va démarrer un serveur de développement 
 
 Si pour une quelconque raison vous préférez ne pas utiliser le rendu côté serveur ou que vous avez besoin d'héberger statique pour votre application, vous pouvez simplement utiliser le mode application monopage (ou SPA « Simple Page Application ») en utilisant la commande `nuxt --spa`. Combiné avec la fonctionnalité de *génération*, vous avez la une puissante application monopage qui ne nécessite aucunement de Node.js ou d'un serveur spécial pour fonctionner.
 
-Jetez un œil aux [commandes](/guide/commands) pour en savoir plus.
+Jetez un œil à [la liste des commandes](/guide/commands) pour en savoir plus.
 
-Si vous avez déjà un serveur, vous pouvez greffer nuxt.js en l'utilisant comme middleware. Il n'y a aucune restrictions quand vous utilisez nuxt.js pour développer votre application web universelle; voir le guide [Using Nuxt.js Programmatically](/api/nuxt).
+Si vous avez déjà un serveur, vous pouvez greffer Nuxt.js en l'utilisant comme middleware. Il n'y a aucune restrictions quand vous utilisez Nuxt.js pour développer votre application web universelle. Consultez le guide [d'utilisation de Nuxt.js par programmation](/api/nuxt).
 
-## Génération d'applications statique
+## Génération statique (Pré rendu)
 
-La grande innovation de nuxt.js est: `nuxt generate`
+La grande innovation de Nuxt.js est : `nuxt generate`
 
 Lors de la création de votre application, il générera le code HTML de chacune de vos routes pour le stocker dans un fichier.
 
-Exemple:
+Exemple :
 
 ```bash
 -| pages/
@@ -84,7 +84,8 @@ Exemple:
 ----| index.vue
 ```
 
-Va générer:
+Va générer :
+
 ```
 -| dist/
 ----| about/
@@ -92,9 +93,10 @@ Va générer:
 ----| index.html
 ```
 
-De cette façon, vous pouvez héberger votre application web sur n'importe quel hébergement statique!
+De cette façon, vous pouvez héberger votre application web sur n'importe quel hébergement statique !
 
-Le meilleur exemple est ce site web. Il est généré et hébergé sur GitHub Pages:
+Le meilleur exemple est ce site web. Il est généré et hébergé sur le système d'hébergement de page de GitHub :
+
 - [Code source](https://github.com/nuxt/nuxtjs.org) (en anglais)
 - [Code généré](https://github.com/nuxt/nuxtjs.org/tree/gh-pages) (en anglais)
 
