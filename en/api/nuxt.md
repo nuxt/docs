@@ -34,7 +34,7 @@ if (nuxt.options.dev) {
 // We can use nuxt.render(req, res) or nuxt.renderRoute(route, context)
 ```
 
-You can take a look at the [nuxt-express](https://github.com/nuxt/express) and [adonuxt](https://github.com/nuxt/adonuxt) starters to get started quickly.
+You can take a look at the [mluberry/nuxt-express](https://github.com/mluberry/nuxt-express), [nuxt/express](https://github.com/nuxt/express), and [nuxt/adonuxt](https://github.com/nuxt/adonuxt) starters to get started quickly.
 
 ### Debug logs
 
