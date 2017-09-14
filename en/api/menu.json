@@ -80,7 +80,7 @@
           { "name": "Use a Custom Loading Component", "to": "#use-a-custom-loading-component" }
         ]
       },
-      { "name": "loading-indicator", "to": "/configuration-loading-indicator" },
+      { "name": "loadingIndicator", "to": "/configuration-loading-indicator" },
       { "name": "mode", "to": "/configuration-mode" },
       { "name": "modules", "to": "/configuration-modules" },
       { "name": "plugins", "to": "/configuration-plugins" },
