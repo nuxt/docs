@@ -115,7 +115,7 @@ Nuxt.js vous permets de créer des routes imbriquées en utilisant les routes en
 
 Pour définir le composant parent d'une route imbriquée, vous devez créer un fichier Vue avec le **même nom que le répertoire** qui contient les vues enfants.
 
-<p class="Alert Alert--nuxt-green"><b>Info :</b> n'oubliez pas d'écrire `<nuxt-child/>` au sein du composant parent (fichier <code>.vue</code>).</p>
+<p class="Alert Alert--info"><b>Attention :</b> n'oubliez pas d'écrire `<nuxt-child/>` au sein du composant parent (fichier <code>.vue</code>).</p>
 
 Cette arborescence :
 
