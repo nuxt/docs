@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: « Le 25 octobre 2016, l'équipe derrière zeit.co, annonçait Next.js, un framework pour les applications React rendues côté serveur. Quelques heures après l'annonce, l'idée de créer un équivalent pour les applications Vue.js était évidente : Nuxt.js était né. »
+description: "Le 25 octobre 2016, l'équipe derrière zeit.co, annonçait Next.js, un framework pour les applications React rendues côté serveur. Quelques heures après l'annonce, l'idée de créer un équivalent pour les applications Vue.js était évidente : Nuxt.js était né."
 ---
 
 > Le 25 octobre 2016, l'équipe derrière [zeit.co](https://zeit.co/), annonçait [Next.js](https://zeit.co/blog/next), un framework pour les applications React rendues côté serveur. Quelques heures après l'annonce, l'idée de créer un équivalent pour les applications [Vue.js](https://fr.vuejs.org) était évident : Nuxt.js était né.
@@ -70,7 +70,7 @@ Jetez un œil à [la liste des commandes](/guide/commands) pour en savoir plus.
 
 Si vous avez déjà un serveur, vous pouvez greffer Nuxt.js en l'utilisant comme middleware. Il n'y a aucune restrictions quand vous utilisez Nuxt.js pour développer votre application web universelle. Consultez le guide [d'utilisation de Nuxt.js par programmation](/api/nuxt).
 
-## Génération statique (Pré rendu)
+## Génération statique
 
 La grande innovation de Nuxt.js est : `nuxt generate`
 
