@@ -32,7 +32,7 @@ L'application est désormais accessible à l'adresse http://localhost:3000.
 
 <p class="Alert">Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages.</p>
 
-Pour en savoir plus sur la structure des dossiers du projet, consultez [la documentation de l'architecture des dossiers](/guide/directory-structure).
+Pour en savoir plus sur la structure des répertoires du projet, consultez [la documentation de l'architecture des répertoires](/guide/directory-structure).
 
 ## Commencer depuis zéro
 
