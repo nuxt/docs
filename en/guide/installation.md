@@ -43,7 +43,7 @@ $ mkdir <nom-du-projet>
 $ cd <nom-du-projet>
 ```
 
-*Info : remplacez `<nom-du-projet>` par le nom du projet.*
+<p class="Alert Alert--nuxt-green"><b>INFO :</b> remplacez <code>&lt;nom-du-projet&gt;</nom-du-projet></code> par le nom du projet.</p>
 
 ### Le package.json
 
