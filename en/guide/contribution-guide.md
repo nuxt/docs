@@ -5,7 +5,7 @@ description: Toute contribution à Nuxt.js est plus que bienvenue !
 
 > Toute contribution à Nuxt.js est plus que bienvenue !
 
-## Reporter les problèmes
+## Rapports de problème
 
 Une excellente façon de contribuer au projet est d'envoyer un rapport (« issue ») détaillé lorsque vous rencontrez un problème. Nous apprécions toujours un rapport de bogue bien écrit et nous vous en remercierons ! Avant de signaler un problème, lisez attentivement la documentation et vérifiez si votre problème n'a pas déjà été reporté ou résolu : [https://github.com/nuxt/nuxt.js/issues](https://github.com/nuxt/nuxt.js/issues)
 
