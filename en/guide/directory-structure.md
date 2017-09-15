@@ -49,7 +49,7 @@ Le répertoire `plugins` contient les plugins JavaScript que vous désirez exéc
 
 Le répertoire `static` contient vos fichiers statiques. Chaque fichier au sein de ce répertoire est mappé à `/`.
 
-**Exemple:** `/static/robots.txt` est mappé à `/robots.txt`
+**Exemple :** `/static/robots.txt` est mappé à `/robots.txt`
 
 _Ce répertoire ne peut pas être renommé._
 
