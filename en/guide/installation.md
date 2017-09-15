@@ -85,7 +85,7 @@ et lancez le projet avec :
 ```bash
 $ npm run dev
 ```
-L'application est désormais accessible à l'adresse [http://localhost:3000](http://localhost:3000)
+L'application est désormais accessible à l'adresse http://localhost:3000.
 
 <p class="Alert">Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages</p>
 
