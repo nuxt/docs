@@ -3,7 +3,7 @@ title: Introduction
 description: "Le 25 octobre 2016, l'équipe derrière zeit.co, annonçait Next.js, un framework pour les applications React rendues côté serveur. Quelques heures après l'annonce, l'idée de créer un équivalent pour les applications Vue.js était évidente : Nuxt.js était né."
 ---
 
-> Le 25 octobre 2016, l'équipe derrière [zeit.co](https://zeit.co/), annonçait [Next.js](https://zeit.co/blog/next), un framework pour les applications React rendues côté serveur. Quelques heures après l'annonce, l'idée de créer un équivalent pour les applications [Vue.js](https://fr.vuejs.org) était évident : Nuxt.js était né.
+> Le 25 octobre 2016, l'équipe derrière [zeit.co](https://zeit.co/), annonçait [Next.js](https://zeit.co/blog/next), un framework pour les applications React rendues côté serveur. Quelques heures après l'annonce, l'idée de créer un équivalent pour les applications [Vue.js](https://fr.vuejs.org) était évidente : Nuxt.js était né.
 
 ## Nuxt.js, qu’est-ce que c’est ?
 
@@ -46,8 +46,8 @@ Sous le capot, nous utilisons [webpack](https://github.com/webpack/webpack) avec
 - Empaquetage et minification de vos fichiers JS et CSS
 - Gestion des éléments de balise d'en-tête `<head>` HTML (`<title>`, `<meta>`, etc.)
 - Rechargement à chaud pendant le développement
-- Pré-processeur : Sass, Less, Stylus, etc.
-- En-tête HTTP/2 PUSH
+- Préprocesseur : Sass, Less, Stylus, etc.
+- Entête HTTP/2 PUSH
 - Extensible avec une architecture modulaire
 
 ## Schéma
@@ -68,13 +68,13 @@ Si pour une quelconque raison vous préférez ne pas utiliser le rendu côté se
 
 Jetez un œil à [la liste des commandes](/guide/commands) pour en savoir plus.
 
-Si vous avez déjà un serveur, vous pouvez greffer Nuxt.js en l'utilisant comme middleware. Il n'y a aucune restrictions quand vous utilisez Nuxt.js pour développer votre application web universelle. Consultez le guide [d'utilisation de Nuxt.js par programmation](/api/nuxt).
+Si vous avez déjà un serveur, vous pouvez greffer Nuxt.js en l'utilisant comme middleware. Il n'y a aucune restriction quand vous utilisez Nuxt.js pour développer votre application web universelle. Consultez le guide [d'utilisation de Nuxt.js par programmation](/api/nuxt).
 
 ## Génération statique
 
 La grande innovation de Nuxt.js est : `nuxt generate`
 
-Lors de la création de votre application, il générera le code HTML de chacune de vos routes pour le stocker dans un fichier.
+Lors de la création de votre application, il génèrera le code HTML de chacune de vos routes pour le stocker dans un fichier.
 
 Exemple :
 
