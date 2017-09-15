@@ -77,7 +77,7 @@ $ mkdir pages
 puis créez la première page `pages/index.vue`:
 ```html
 <template>
-  <h1>Hello world!</h1>
+  <h1>Hello world !</h1>
 </template>
 ```
 
