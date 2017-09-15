@@ -1,7 +1,6 @@
 ---
 title: Installation
-description: Débuter avec Nuxt.js est vraiment facile. Un projet simple n'a besoin
-  que d'une dépendance à `nuxt`.
+description: Débuter avec Nuxt.js est vraiment facile. Un projet simple n'a besoin que d'une dépendance à `nuxt`.
 ---
 
 > Débuter avec Nuxt.js est vraiment facile. Un projet simple n'a besoin que d'une dépendance à `nuxt`.
@@ -26,16 +25,12 @@ $ npm install
 ```
 
 et démarrez le projet avec :
-
 ```bash
 $ npm run dev
 ```
-
-L'application est désormais accessible à l'adresse [http://localhost:3000](http://localhost:3000)
-
+L'application est désormais accessible à l'adresse http://localhost:3000.
 
 <p class="Alert">Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages.</p>
-
 
 Pour en savoir plus sur la structure des dossiers du projet consultez [la documentation de l'architecture des dossiers](/guide/directory-structure).
 
@@ -48,12 +43,11 @@ $ mkdir <nom-du-projet>
 $ cd <nom-du-projet>
 ```
 
-*Info : remplacez <code><nom-du-projet></code> par le nom du projet.*
+*Info : remplacez `<nom-du-projet>` par le nom du projet.*
 
 ### Le package.json
 
 Le projet a besoin d'un fichier `package.json` avec un script permettant de lancer `nuxt` :
-
 ```json
 {
   "name": "mon-application",
@@ -62,13 +56,11 @@ Le projet a besoin d'un fichier `package.json` avec un script permettant de lanc
   }
 }
 ```
-
 `scripts` lancera Nuxt.js via `npm run dev`.
 
 ### Installation de `nuxt`
 
 Une fois que le `package.json` est créé, ajoutez `nuxt` au projet via npm :
-
 ```bash
 npm install --save nuxt
 ```
@@ -78,13 +70,11 @@ npm install --save nuxt
 Nuxt.js va transformer chaque fichier `*.vue` se trouvant dans le dossier `pages` en une route pour l'application.
 
 Créez le dossier `pages` :
-
 ```bash
 $ mkdir pages
 ```
 
 puis créez la première page `pages/index.vue`:
-
 ```html
 <template>
   <h1>Hello world!</h1>
@@ -92,15 +82,11 @@ puis créez la première page `pages/index.vue`:
 ```
 
 et lancez le projet avec :
-
 ```bash
 $ npm run dev
 ```
-
 L'application est désormais accessible à l'adresse [http://localhost:3000](http://localhost:3000)
 
-
 <p class="Alert">Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages</p>
-
 
 Pour en savoir plus sur la structure des dossier du projet consultez [la documentation de l'architecture des dossiers](/guide/directory-structure).
