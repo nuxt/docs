@@ -15,7 +15,7 @@ Le répertoire `assets` contient vos ressources non-compilés comme par ex. vos 
 
 ### Le répertoire des composants
 
-Le répertoire `components` contient vos composants Vue.js. Nuxt.js surcharge pas la méthode `data` sur ces composants.
+Le répertoire `components` contient vos composants Vue.js. Nuxt.js ne surcharge pas la méthode `data` sur ces composants.
 
 ### Le répertoire des présentations
 
@@ -41,7 +41,7 @@ _Ce répertoire ne peut pas être renommé._
 
 ### Le répertoire des plugins
 
-Le répertoire `plugins` contient les plugins JavaScript que vous désirez exécuter avant d'instancier la racine de l'application Vue.js.
+Le répertoire `plugins` contient les plugins JavaScript que vous désirez exécuter avant d'instancier l'application Vue.js racine.
 
 [Consultez la documentation à propos des plugins](/guide/plugins)
 
