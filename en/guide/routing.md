@@ -88,7 +88,7 @@ router: {
 
 Comme vous pouvez le voir, la route nommée `users-id` contient le chemin `:id?` ce qui le rend optionnel; si vous voulez le rendre obligatoire, créez un fichier `index.vue` dans le dossier `users/_id`.
 
-<p class="Alert Alert--info"><b>Attention :</b> les routes dynamiques sont ignoréespar la commande `generate` : [ Configuration de l'API pour la génération](/api/configuration-generate#routes)</p>
+<p class="Alert Alert--info"><b>Attention :</b> les routes dynamiques sont ignorées par la commande `generate` : [ Configuration de l'API pour la génération](/api/configuration-generate#routes)</p>
 
 ### Validation des paramètres de route
 
