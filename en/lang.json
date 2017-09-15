@@ -1,51 +1,51 @@
 {
-  "iso": "en",
+  "iso": "fr",
   "docVersion": "1.0.0-rc10",
   "links": {
     "api": "API",
     "blog": "Blog",
     "chat": "Chat",
     "documentation": "Documentation",
-    "download": "Download",
-    "examples": "Examples",
-    "ecosystem": "Ecosystem",
+    "download": "Téléchargement",
+    "examples": "Exemples",
+    "ecosystem": "Écosystème",
     "faq": "FAQ",
-    "get_started": "get started",
+    "get_started": "Commencer",
     "github": "GitHub",
     "guide": "Guide",
-    "homepage": "Home page",
-    "live_demo": "Live Demo",
-    "live_edit": "Live Edit",
+    "homepage": "Accueil",
+    "live_demo": "Voir en ligne",
+    "live_edit": "Éditer en ligne",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Vue Jobs"
   },
   "text": {
-    "an_error_occured": "An error occurred",
-    "api_page_not_found": "API page not found",
-    "example_file": "Example Files",
-    "please_wait": "Please wait...",
-    "please_define_title": "Please define a title in the front matter",
-    "please_define_description": "Please define a description in the front matter",
-    "search": "Search",
+    "an_error_occured": "Une erreur s'est produite",
+    "api_page_not_found": "La page API est introuvable",
+    "example_file": "Fichiers d'exemples",
+    "please_wait": "Patientez...",
+    "please_define_title": "Merci de définir un titre",
+    "please_define_description": "Merci de définir une description",
+    "search": "Rechercher",
     "version": "Version"
   },
   "homepage": {
-    "title": "Universal Vue.js Applications",
+    "title": "Applications Vue.js universelles",
     "meta": {
-      "title": "Nuxt.js - Universal Vue.js Applications",
-      "description": "Nuxt.js is a minimal framework for creating Vue.js applications with server side rendering, code-splitting, hot-reloading, static generation and more!"
+      "title": "Nuxt.js - Applications Vue.js universelles",
+      "description": "Nuxt.js est un framework minimal pour créer des applications Vue.js avec du rendu côté serveur, de la scission de code, du rechargement à chaud, de la génération de sites statiques et plus encore !"
     }
   },
   "footer": {
-    "authors": "Made by Chopin Brothers"
+    "authors": "Réalisé par les frères Chopin"
   },
   "guide": {
-    "release_notes": "Release Notes",
-    "contribute": "Caught a mistake or want to contribute to the documentation?",
-    "edit_on_github": "Edit this page on GitHub!"
+    "release_notes": "Notes de versions",
+    "contribute": "Vous avez vu une erreur ou vous souhaitez contribuer à la documentation ?",
+    "edit_on_github": "Editez cette page sur GitHub !"
   },
   "examples": {
-    "source_code": "Source Code"
+    "source_code": "Code source"
   }
 }
