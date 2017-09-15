@@ -9,7 +9,7 @@ description: "Le 25 octobre 2016, l'équipe derrière zeit.co, annonçait Next.j
 
 Nuxt.js est un framework pour créer des applications Vue.js universelles.
 
-Son champ principal est de **faire le rendu d'interface utilisateur (« UI »)** en faisant abstraction de la distribution au client et au serveur.
+Son principal but est de **faire le rendu d'interface utilisateur (« UI »)** en faisant abstraction de la distribution au client et au serveur.
 
 Notre but est de créer un framework suffisamment flexible afin que vous puissiez l'utiliser comme base dans un projet principal ou en tant que supplément pour votre projet actuel basé sur Node.js.
 
