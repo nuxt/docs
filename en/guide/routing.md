@@ -1,13 +1,13 @@
 ---
 title: Routage
-description: Nuxt.js utilise le système de fichiers pour générer les routes de votre applications web.
+description: Nuxt.js utilise le système de fichiers pour générer les routes de votre applications web, c'est aussi simple qu'en PHP de créer des routes.
 ---
 
 > Nuxt.js génère automatiquement la configuration pour [vue-router](https://github.com/vuejs/vue-router) en fonction de votre arborescence de fichiers Vue se trouvant au sein du répertoire `pages`.
 
 ## Routes basiques
 
-Cette arborescence:
+Cette arborescence :
 
 ```bash
 pages/
@@ -17,7 +17,7 @@ pages/
 --| index.vue
 ```
 
-génère automatiquement:
+génère automatiquement :
 
 ```js
 router: {
@@ -43,9 +43,9 @@ router: {
 
 ## Routes dynamiques
 
-Pour définir une route dynmaique à l'aide d'un paramètre, vous devez définir un fichier `.vue` OU un répertoire **préfixé par un souligner (`_`).
+Pour définir une route dynmaique à l'aide d'un paramètre, vous devez définir un fichier `.vue` OU un répertoire **préfixé par un souligner (`_`)**.
 
-Cette arborescence:
+Cette arborescence :
 
 ```bash
 pages/
@@ -57,7 +57,7 @@ pages/
 --| index.vue
 ```
 
-génère automatiquement:
+génère automatiquement :
 
 ```js
 router: {
@@ -88,16 +88,18 @@ router: {
 
 Comme vous pouvez le voir, la route nommée `users-id` contient le chemin `:id?` ce qui le rend optionnel; si vous voulez le rendre obligatoire, créez un fichier `index.vue` dans le dossier `users/_id`.
 
-### Validation des paramètres de routes
+<p class="Alert Alert--info"><b>Attention :</b> les routes dynamiques sont ignoréespar la commande `generate` : [ Configuration de l'API pour la génération](/api/configuration-generate#routes)</p>
+
+### Validation des paramètres de route
 
 Nuxt.js vous permet de définir une méthode de validation dans votre composant de routage dynamique.
 
-Par exemple: `pages/users/_id.vue`
+Par exemple : `pages/users/_id.vue`
 
 ```js
 export default {
   validate ({ params }) {
-    // Must be a number
+    // Doit être un nombre
     return /^\d+$/.test(params.id)
   }
 }
@@ -105,17 +107,17 @@ export default {
 
 Si la méthode de validation ne renvoie pas `true`, Nuxt.js chargera automatiquement la page d'erreur 404.
 
-Plus d'informations à propos de la méthode de validation: [API Pages validate](/api/pages-validate)
+Plus d'informations à propos de la méthode de validation : [API pour la validation de pages](/api/pages-validate)
 
 ## Routes imbriquées
 
 Nuxt.js vous permets de créer des routes imbriquées en utilisant les routes enfants de vue-router.
 
-Pour définir le composant parent d'un route imbriquée, vous devez créer un fichier Vue avec le **même nom que le répertoire** qui contient les vues enfants.
+Pour définir le composant parent d'une route imbriquée, vous devez créer un fichier Vue avec le **même nom que le répertoire** qui contient les vues enfants.
 
-<p class="Alert Alert--info">N'oubliez pas d'écrire `<nuxt-child/>` au sein du composant parent (fichier `.vue`).</p>
+<p class="Alert Alert--nuxt-green"><b>Info :</b> n'oubliez pas d'écrire `<nuxt-child/>` au sein du composant parent (fichier <code>.vue</code>).</p>
 
-Cette arborescence:
+Cette arborescence :
 
 ```bash
 pages/
@@ -125,7 +127,7 @@ pages/
 --| users.vue
 ```
 
-génère automatiquement:
+va automatiquement génèrer :
 
 ```js
 router: {
