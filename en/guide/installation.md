@@ -45,7 +45,7 @@ $ mkdir <project-name>
 $ cd <project-name>
 ```
 
-<p class="Alert Alert--nuxt-green"><b>INFO:</b> replace <code>&lt;project-name&gt;</nom-du-projet></code> by the name of the project.</p>
+<p class="Alert Alert--nuxt-green"><b>Info:</b> replace <code>&lt;project-name&gt;</nom-du-projet></code> by the name of the project.</p>
 
 ### The package.json
 
