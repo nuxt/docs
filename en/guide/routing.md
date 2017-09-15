@@ -154,9 +154,9 @@ router: {
 
 ## Routes dynamiques imbriquées
 
-Il est possible avec Nuxt.js d'avoir des routes dynamiques imbriquées dans des routes dynamiques; bien que ce scénario ne devrait pas être monnaie courante.
+Ce scénario ne devrait pas arriver souvent, mais il est possible avec Nuxt.js d'avoir des routes dynamiques enfants dans des routes dynamiques parentes.
 
-Cette arborescence:
+Cette arborescence :
 
 ```bash
 pages/
@@ -170,7 +170,7 @@ pages/
 --| index.vue
 ```
 
-génère automatiquement:
+va automatiquement génèrer :
 
 ```js
 router: {
@@ -213,15 +213,15 @@ router: {
 
 ## Transitions
 
-Nuxt.js utilise le composant [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) afin de vous permettre de créer des transitions/animations époustouflantes entre vos routes.
+Nuxt.js utilise le composant [`<transition>`](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) afin de vous permettre de créer des transitions / animations époustouflantes entre vos routes.
 
 ### Paramètres globaux
 
-<p class="Alert Alert--info">Dans Nuxt.js, le nom de la transition par défaut est `"page"`.</p>
+<p class="Alert Alert--nuxt-green"><b>Info :</b> dans Nuxt.js, le nom de la transition par défaut est `"page"`.</p>
 
 Pour ajouter une transition de fondu à chaque page de votre application, nous avons besoin d'un fichier CSS qui est partagé sur toutes nos routes. Commençons par créer un fichier dans le dossier `assets`.
 
-Notre CSS global dans `assets/main.css`:
+Notre CSS global dans `assets/main.css` :
 ```css
 .page-enter-active, .page-leave-active {
   transition: opacity .5s;
@@ -231,7 +231,7 @@ Notre CSS global dans `assets/main.css`:
 }
 ```
 
-Nous ajoutons son chemin dans notre config `nuxt.config.js`:
+Nous ajoutons son chemin dans notre fichier de configuration `nuxt.config.js` :
 ```js
 module.exports = {
   css: [
@@ -240,13 +240,13 @@ module.exports = {
 }
 ```
 
-Plus d'informations à propos des transitions: [API Configuration transition](/api/pages-transition)
+Plus d'informations à propos des transitions : [Configuration de l'API pour les transitions](/api/pages-transition)
 
 ### Paramètres des pages
 
 Vous êtes également libre de définir une transition personnalisée pour une seule page à l'aide de la propriété `transition`.
 
-Nous ajoutons une nouvelle classe dans notre CSS global `assets/main.css`:
+Nous ajoutons une nouvelle classe dans notre CSS global `assets/main.css` :
 ```css
 .test-enter-active, .test-leave-active {
   transition: opacity .5s;
@@ -256,14 +256,14 @@ Nous ajoutons une nouvelle classe dans notre CSS global `assets/main.css`:
 }
 ```
 
-puis, nous utilions la propriété transition pour définir le nom de la classe à utiliser pour cette transition de page:
+puis, nous utilions la propriété transition pour définir le nom de la classe à utiliser pour cette transition de page :
 ```js
 export default {
   transition: 'test'
 }
 ```
 
-Plus d'informations à propos de la propriété transition: [API Pages transition](/api/pages-transition)
+Plus d'informations à propos de la propriété transition : [API pour la transition de pages](/api/pages-transition)
 
 ## Middleware
 
@@ -271,7 +271,7 @@ Plus d'informations à propos de la propriété transition: [API Pages transitio
 
 **Tous les middlewares devraient être placés dans le répertoire `middleware/`.** Le nom du fichier étant le nom du middleware (`middleware/auth.js` deviendra le middleware `auth`).
 
-Un middleware reçoit le [contexte](/api#context) comme premier argument:
+Un middleware reçoit [le contexte](/api#context) comme premier argument :
 
 ```js
 export default function (context) {
@@ -279,12 +279,12 @@ export default function (context) {
 }
 ```
 
-Le middleware sont exécuté en séries dans l'ordre suivant:
+Le middleware sont exécuté en série dans l'ordre suivant :
 1. `nuxt.config.js`
-2. Layouts correspondants
+2. Mises en page correspondantes
 3. Pages correspondantes
 
-Un middleware peut être asynchrone, retourner une `Promise` ou utiliser le `callback` (2ème arguement):
+Un middleware peut être asynchrone, retourner une `Promise` ou utiliser une fonction de rappel en seconde argument :
 
 `middleware/stats.js`
 ```js
@@ -297,7 +297,7 @@ export default function ({ route }) {
 }
 ```
 
-Puis, dans `nuxt.config.js`, un layout ou une page, utilisez le mot clef `middleware`:
+Puis, dans `nuxt.config.js`, pour une mise en page ou une page, utilisez le mot clef `middleware` :
 
 `nuxt.config.js`
 ```js
@@ -308,6 +308,6 @@ module.exports = {
 }
 ```
 
-Dans cet exemple, le middleware `stats` sera appelé à chaque changement de routes.
+Le middleware `stats` sera appelé à chaque changement de routes.
 
-Pour voir un exemple "réel" utilisant les middlewares, jeter un oeil à [example-auth0](https://github.com/nuxt/example-auth0) sur GitHub.
+Pour voir un exemple d'usage utilisant les middlewares, consultez [example-auth0](https://github.com/nuxt/example-auth0) sur GitHub.
