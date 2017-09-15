@@ -43,7 +43,7 @@ Cette option vous permet de définir chaque paramètre pour chaque route dynamiq
 
 ### head
 
-Cette option vous permet de définir les meta balises par défaut de votre application.
+Cette option vous permet de définir les balises meta par défaut de votre application.
 
 [Consultez la documentation à propos de `head`](/api/configuration-head)
 
