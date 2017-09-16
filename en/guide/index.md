@@ -9,16 +9,16 @@ description: "Le 25 octobre 2016, l'équipe derrière zeit.co, annonçait Next.j
 
 Nuxt.js est un framework pour créer des applications Vue.js universelles.
 
-Son principal but est de **faire le rendu d'interface utilisateur (« UI »)** en faisant abstraction de la distribution au client et au serveur.
+Son principal but est de **faire le rendu d'interface utilisateur (« UI »)** en faisant abstraction de la distribution entre le client et le serveur.
 
 Notre but est de créer un framework suffisamment flexible afin que vous puissiez l'utiliser comme base dans un projet principal ou en tant que supplément pour votre projet actuel basé sur Node.js.
 
 Nuxt.js prédéfinit toute la configuration nécessaire pour faire de votre développement d'application Vue.js rendue côté serveur quelque chose d'agréable.
 
 En outre, nous fournissons également une autre option de déploiement appelée : *nuxt generate*. Elle permet de construire une application Vue.js **générée statiquement**.
-Nous croyons que cette option pourrait être la prochaine étape importante dans le développement d'applications web avec microservices.
+Nous croyons que cette option pourrait être la prochaine étape importante dans le développement d'applications web avec des microservices.
 
-En tant que framework, Nuxt.js est doté de nombreuses fonctionnalités pour vous aider dans votre développement entre côté client et serveur telles que les données asynchrones, les *middlewares*, les *layouts*, etc.
+En tant que framework, Nuxt.js est doté de nombreuses fonctionnalités pour vous aider dans votre développement entre côté client et serveur tels que les données asynchrones, les *middlewares*, les *layouts*, etc.
 
 ## Comment ça marche
 
@@ -60,17 +60,17 @@ Ce schéma (en anglais) montre ce qui est invoqué par Nuxt.js quand le serveur 
 
 Vous pouvez utiliser Nuxt.js comme framework pour gérer le rendu complet de l'interface utilisateur de votre projet.
 
-En utilisant la commande `nuxt`, Nuxt va démarrer un serveur de développement avec rechargement à chaud et [Vue Server Renderer](https://ssr.vuejs.org/fr/) configurés afin de servir automatiquement le rendu de votre application fait côté serveur.
+En utilisant la commande `nuxt`, Nuxt démarrera un serveur de développement avec rechargement à chaud et [Vue Server Renderer](https://ssr.vuejs.org/fr/) sera configuré pour faire automatiquement le rendu de votre application côté serveur.
 
 ### Application monopage
 
-Si pour une quelconque raison vous préférez ne pas utiliser le rendu côté serveur ou que vous avez besoin d'héberger statique pour votre application, vous pouvez simplement utiliser le mode application monopage (ou SPA « Simple Page Application ») en utilisant la commande `nuxt --spa`. Combiné avec la fonctionnalité de *génération*, vous avez la une puissante application monopage qui ne nécessite aucunement de Node.js ou d'un serveur spécial pour fonctionner.
+Si pour une quelconque raison vous préférez ne pas utiliser le rendu côté serveur ou que vous avez besoin d'un hébergement statique pour votre application, vous pouvez simplement utiliser le mode application monopage (ou « SPA » pour « Simple Page Application ») en utilisant la commande `nuxt --spa`. Combiné avec la fonctionnalité de *génération*, vous avez la une puissante application monopage qui ne nécessite aucunement de Node.js ou d'un serveur spécial pour fonctionner.
 
 Jetez un œil à [la liste des commandes](/guide/commands) pour en savoir plus.
 
 Si vous avez déjà un serveur, vous pouvez greffer Nuxt.js en l'utilisant comme middleware. Il n'y a aucune restriction quand vous utilisez Nuxt.js pour développer votre application web universelle. Consultez le guide [d'utilisation de Nuxt.js par programmation](/api/nuxt).
 
-## Génération statique
+## Génération statique (pré-rendu)
 
 La grande innovation de Nuxt.js est : `nuxt generate`
 
@@ -84,7 +84,7 @@ Exemple :
 ----| index.vue
 ```
 
-Va générer :
+Cela générera :
 
 ```
 -| dist/
@@ -100,13 +100,13 @@ Le meilleur exemple est ce site web. Il est généré et hébergé sur le systè
 - [Code source](https://github.com/nuxt/nuxtjs.org) (en anglais)
 - [Code généré](https://github.com/nuxt/nuxtjs.org/tree/gh-pages) (en anglais)
 
-Nous ne voulons pas devoir générer manuellement l'application à chaque fois que nous mettons à jour la [documentation](https://github.com/nuxt/docs), du coup chaque modification réalisée invoque une fonction AWS Lambda qui :
+Nous ne voulons pas générer manuellement l'application à chaque fois que nous mettons à jour la [documentation](https://github.com/nuxt/docs), du coup chaque modification réalisée invoque une fonction AWS Lambda qui :
 
 1. Clone le [dépôt nuxtjs.org](https://github.com/nuxt/nuxtjs.org)
 2. Installe les dépendances via `npm install`
 3. Lance `nux generate`
 4. Déploie le dossier `dist` sur la branche `gh-pages`
 
-Et nous voilà avec une **application web générée sans partie serveur** :)
+Et nous voilà avec une **application web générée sans fichiers statiques serveurs** :)
 
-Nous pouvons aller plus loin en imaginant une application d'e-commerce créée avec `nuxt generate` et hébergée sur un CDN. Chaque fois qu'un produit est en rupture de stock ou de nouveau en stock nous régénérons l'application. Mais si l'utilisateur navigue sur l'application en même temps, il verra les informations à jour grâce aux appels d'API effectués sur l'API de l'e-commerce. Pas besoin d'avoir plusieurs instances d'un serveur ou un cache !
+Nous pouvons aller plus loin en imaginant une application d'e-commerce créée avec `nuxt generate` et hébergée sur un CDN. Chaque fois qu'un produit est en rupture de stock ou de nouveau en stock nous régénérons l'application. Mais si l'utilisateur navigue sur l'application en même temps, il verra les informations à jour grâce aux appels d'API effectués sur l'API de l'e-commerce. Pas besoin d'avoir plusieurs instances d'un serveur d'un cache !
