@@ -1,19 +1,19 @@
 ---
-title: Contribution Guide
-description: Any contribution to Nuxt.js is more than welcome!
+title: Guide de contribution
+description: Toute contribution à Nuxt.js est plus que bienvenue !
 ---
 
-> Any contribution to Nuxt.js is more than welcome!
+> Toute contribution à Nuxt.js est plus que bienvenue !
 
-## Reporting Issues
+## Rapports de problème
 
-A great way to contribute to the project is to send a detailed report when you encounter an issue. We always appreciate a well-written bug report, and will thank you for it! Before reporting an issue, please read carefully the documentation and search if any issue for your problem doesn't already exist: https://github.com/nuxt/nuxt.js/issues
+Une excellente façon de contribuer au projet est d'envoyer un rapport (« issue ») détaillé lorsque vous rencontrez un problème. Nous apprécions toujours un rapport de bogue bien écrit et nous vous en remercierons ! Avant de signaler un problème, lisez attentivement la documentation et vérifiez si votre problème n'a pas déjà été reporté ou résolu : [https://github.com/nuxt/nuxt.js/issues](https://github.com/nuxt/nuxt.js/issues)
 
-## Pull Requests
+## Propositions de fusion
 
-We'd love to see your pull requests, even if it's just to fix a typo. Any significant improvement should be documented as [a GitHub issue](https://github.com/nuxt/nuxt.js/issues) before anybody starts working on it.
+Nous adorerions voir vos propositions de fusion (« pull requests »), même s'il s'agit uniquement de corrections orthographiques. Toute amélioration significative devrait être documentée dans [un rapport détaillé sur GitHub](https://github.com/nuxt/nuxt.js/issues) avant que quelqu'un ne commence à y travailler.
 
 ### Convention
 
-- For a fix, the branch name should be `fix-XXX` where XXX is the issue number or the name of what your fix does
-- For a feature, the branch name should be `feature-XXX` where XXX is the issue number associated to this feature request
+- Pour un correctif, le nom de la branche devrait être `fix-XXX` où `XXX` est le numéro du rapport correspondant ou le nom de votre correctif.
+- Pour une fonctionnalité, le nom de la branche doit être `feature-XXX` où `XXX` est numéro du rapport correspondante à cette demande de fonctionnalité.
