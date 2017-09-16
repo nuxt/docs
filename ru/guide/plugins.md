@@ -64,7 +64,7 @@ Then, we add the file inside the `plugins` key of `nuxt.config.js`:
 ```js
 module.exports = {
   plugins: ['~/plugins/vue-notifications']
-}renderer from the server-side
+}
 ```
 
 To learn more about the `plugins` configuration key, check out the [plugins api](/api/configuration-plugins).
