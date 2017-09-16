@@ -37,10 +37,10 @@ Sous le capot, nous utilisons [webpack](https://github.com/webpack/webpack) avec
 
 ## Fonctionnalités
 
-- Utilisation des fichiers Vue (`*.vue*`)
+- Écriture des fichiers Vue (`*.vue*`)
 - Scission de code automatique
 - Rendu coté serveur (ou « SSR » pour « Server-Side Rendering »)
-- Système de routage puissant à l'aide de données asynchrones
+- Routage puissant à l'aide de données asynchrones
 - Génération de fichiers statiques
 - Transpilation ES6/ES7
 - Empaquetage et minification de vos fichiers JS et CSS
@@ -48,7 +48,7 @@ Sous le capot, nous utilisons [webpack](https://github.com/webpack/webpack) avec
 - Rechargement à chaud pendant le développement
 - Préprocesseur : Sass, Less, Stylus, etc.
 - Entête HTTP/2 PUSH
-- Extensible avec une architecture modulaire
+- Extensibilité avec une architecture modulaire
 
 ## Schéma
 
