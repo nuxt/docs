@@ -26,10 +26,10 @@ As a framework, Nuxt.js comes with a lot of features to help you in your develop
 
 Nuxt.js includes the following to create a rich web application development:
 
-- [Vue 2](https://github.com/vuejs/vue)
-- [Vue Router](https://github.com/vuejs/vue-router)
-- [Vuex](https://github.com/vuejs/vuex) (included only when using the [store option](/guide/vuex-store))
-- [Vue Meta](https://github.com/declandewet/vue-meta)
+- [Vue 2](https://vuejs.org/)
+- [Vue Router](https://router.vuejs.org/en/)
+- [Vuex](https://vuex.vuejs.org/en/) (included only when using the [store option](/guide/vuex-store))
+- [vue-meta](https://github.com/declandewet/vue-meta)
 
 A total of only **57kB min+gzip** (53kB with Vuex).
 
