@@ -17,7 +17,7 @@ pages/
 --| index.vue
 ```
 
-génère automatiquement :
+générera automatiquement :
 
 ```js
 router: {
@@ -43,7 +43,7 @@ router: {
 
 ## Routes dynamiques
 
-Pour définir une route dynmaique à l'aide d'un paramètre, vous devez définir un fichier `.vue` OU un répertoire **préfixé par un souligner (`_`)**.
+Pour définir une route dynamique à l'aide d'un paramètre, vous devez définir un fichier `.vue` OU un répertoire **préfixé par un souligné (`_`)**.
 
 Cette arborescence :
 
@@ -57,7 +57,7 @@ pages/
 --| index.vue
 ```
 
-génère automatiquement :
+générera automatiquement :
 
 ```js
 router: {
@@ -86,7 +86,7 @@ router: {
 }
 ```
 
-Comme vous pouvez le voir, la route nommée `users-id` contient le chemin `:id?` ce qui le rend optionnel; si vous voulez le rendre obligatoire, créez un fichier `index.vue` dans le dossier `users/_id`.
+Comme vous pouvez le voir, la route nommée `users-id` contient le chemin `:id?` ce qui le rend optionnel. Si vous voulez le rendre obligatoire, créez un fichier `index.vue` dans le dossier `users/_id`.
 
 <p class="Alert Alert--info"><b>Attention :</b> les routes dynamiques sont ignorées par la commande `generate` : [ Configuration de l'API pour la génération](/api/configuration-generate#routes)</p>
 
@@ -111,7 +111,7 @@ Plus d'informations à propos de la méthode de validation : [API pour la valida
 
 ## Routes imbriquées
 
-Nuxt.js vous permets de créer des routes imbriquées en utilisant les routes enfants de vue-router.
+Nuxt.js vous permet de créer des routes imbriquées en utilisant les routes enfants de vue-router.
 
 Pour définir le composant parent d'une route imbriquée, vous devez créer un fichier Vue avec le **même nom que le répertoire** qui contient les vues enfants.
 
@@ -127,7 +127,7 @@ pages/
 --| users.vue
 ```
 
-va automatiquement génèrer :
+générera automatiquement :
 
 ```js
 router: {
@@ -170,7 +170,7 @@ pages/
 --| index.vue
 ```
 
-va automatiquement génèrer :
+générera automatiquement :
 
 ```js
 router: {
@@ -279,12 +279,12 @@ export default function (context) {
 }
 ```
 
-Le middleware sont exécuté en série dans l'ordre suivant :
+Le middleware sera exécuté en série dans l'ordre suivant :
 1. `nuxt.config.js`
 2. Mises en page correspondantes
 3. Pages correspondantes
 
-Un middleware peut être asynchrone, retourner une `Promise` ou utiliser une fonction de rappel en seconde argument :
+Un middleware peut être asynchrone, retourner une `Promise` ou utiliser une fonction de rappel en second argument :
 
 `middleware/stats.js`
 ```js
