@@ -1,6 +1,6 @@
 ---
 title: Routage
-description: Nuxt.js utilise le système de fichiers pour générer les routes de votre applications web, c'est aussi simple qu'en PHP de créer des routes.
+description: Nuxt.js utilise le système de fichiers pour générer les routes de votre application web, c'est aussi simple qu'en PHP de créer des routes.
 ---
 
 > Nuxt.js génère automatiquement la configuration pour [vue-router](https://github.com/vuejs/vue-router) en fonction de votre arborescence de fichiers Vue se trouvant au sein du répertoire `pages`.
@@ -17,7 +17,7 @@ pages/
 --| index.vue
 ```
 
-générera automatiquement :
+génèrera automatiquement :
 
 ```js
 router: {
@@ -57,7 +57,7 @@ pages/
 --| index.vue
 ```
 
-générera automatiquement :
+génèrera automatiquement :
 
 ```js
 router: {
@@ -127,7 +127,7 @@ pages/
 --| users.vue
 ```
 
-générera automatiquement :
+génèrera automatiquement :
 
 ```js
 router: {
@@ -170,7 +170,7 @@ pages/
 --| index.vue
 ```
 
-générera automatiquement :
+génèrera automatiquement :
 
 ```js
 router: {
@@ -213,7 +213,7 @@ router: {
 
 ## Transitions
 
-Nuxt.js utilise le composant [`<transition>`](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) afin de vous permettre de créer des transitions / animations époustouflantes entre vos routes.
+Nuxt.js utilise le composant [`<transition>`](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) afin de vous permettre de créer de superbes transitions / animations entre vos routes.
 
 ### Paramètres globaux
 
@@ -256,7 +256,7 @@ Nous ajoutons une nouvelle classe dans notre CSS global `assets/main.css` :
 }
 ```
 
-puis, nous utilions la propriété transition pour définir le nom de la classe à utiliser pour cette transition de page :
+puis, nous utilisons la propriété transition pour définir le nom de la classe à utiliser pour cette transition de page :
 ```js
 export default {
   transition: 'test'
@@ -297,7 +297,7 @@ export default function ({ route }) {
 }
 ```
 
-Puis, dans `nuxt.config.js`, pour une mise en page ou une page, utilisez le mot clef `middleware` :
+Puis, dans `nuxt.config.js`, pour une mise en page ou une page, utilisez le mot-clé `middleware` :
 
 `nuxt.config.js`
 ```js
