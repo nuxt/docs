@@ -67,7 +67,7 @@ Cette mise en page est spéciale car vous ne devez pas inclure `<nuxt />` dans s
 
 Le code source de la page d'erreur par défaut est [disponible sur GitHub](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
 
-Exemple d'une page d'erreur personalisée à l'aide de `layouts/error.vue`:
+Exemple d'une page d'erreur personnalisée à l'aide de `layouts/error.vue`:
 ```html
 <template>
   <div class="container">
@@ -80,12 +80,12 @@ Exemple d'une page d'erreur personalisée à l'aide de `layouts/error.vue`:
 <script>
 export default {
   props: ['error'],
-  layout: 'blog' // vous pouvez définir une mise en page personalisée pour la page d'erreur
+  layout: 'blog' // vous pouvez définir une mise en page personnalisée pour la page d'erreur
 }
 </script>
 ```
 
-### Mise en page personalisée
+### Mise en page personnalisée
 
 Chaque fichier (*premier niveau*) dans le répertoire `layouts` créera une mise en page personnalisée accessible via la propriété `layout` dans le composant de la page.
 
@@ -101,7 +101,7 @@ Exemple avec `layouts/blog.vue` :
 </template>
 ```
 
-Puis dans `pages/posts.vue`, vous pouvez spécifier à Nuxt.js d'utiliser votre mise en page personalisée :
+Puis dans `pages/posts.vue`, vous pouvez spécifier à Nuxt.js d'utiliser votre mise en page personnalisée :
 ```html
 <script>
 export default {
@@ -126,7 +126,7 @@ Chaque composant de page est un composant Vue, mais Nuxt.js ajoute des clés sp�
 <script>
 export default {
   asyncData (context) {
-    // appellé avant le chargement du composant
+    // appelé avant le chargement du composant
     return { name: 'World' }
   },
   fetch () {
@@ -156,7 +156,7 @@ export default {
 | layout | Défini une mise en page existantes dans le répertoire `layouts`, voir [la partie pages de l'API sur `layout`](/api/pages-layout). |
 | transition | Défini une transition spécifique pour une page, voir [la partie pages de l'API sur `transition`](/api/pages-transition). |
 | scrollToTop | Booléen, par défaut: `false`. Indiquez si vous souhaitez que la position se déplace vers le haut avant d'afficher la page, est utilisé pour les [routes imbriquées](/guide/routing#routes-imbriqu-es). |
-| validate | Fonction de validation pour les [routes dynamique](/guide/routing#routes-dynamiques). |
+| validate | Fonction de validation pour les [routes dynamiques](/guide/routing#routes-dynamiques). |
 | middleware | Défini un middleware pour cette page, ce middleware sera exécuté avant d'effectuer le rendu de la page, voir [middleware dans le routage](/guide/routing#middleware). |
 
 Plus d'informations à propos de l'utilisation des attributs des pages : [La partie pages de l'API](/api)
@@ -169,7 +169,7 @@ Nuxt.js configure `vue-meta` avec les options suivantes :
 ```js
 {
   keyName: 'head', // le nom de l'option où vue-meta va chercher les informations.
-  attribute: 'data-n-head', // l'attribut que vue-meta ajoute aux balises observés
+  attribute: 'data-n-head', // l'attribut que vue-meta ajoute aux balises observées
   ssrAttribute: 'data-n-head-ssr', // le nom de l'attribut qui permet à vue-meta de savoir que la meta information a déjà été générée par le serveur
   tagIDKeyName: 'hid' // Le nom de la propriété que vue-meta utilise pour déterminer s'il faut écraser ou ajouter une balise
 }
@@ -196,7 +196,7 @@ Pour connaitre la liste des options que vous pouvez donner à `head`, jeter un �
 
 Plus d'informations à propos de la méthode `head` dans [la partie configuration de l'API sur `head`](/api/configuration-head).
 
-### Balises meta personalisées pour une page
+### Balises meta personnalisées pour une page
 
 Plus d'informations à propos de la méthode `head` dans [la partie configuration de l'API sur `head`](/api/pages-head).
 
