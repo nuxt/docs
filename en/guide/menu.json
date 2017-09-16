@@ -32,20 +32,20 @@
         ]
       },
       {
-        "to": "/directory-structure", "name": "Directory Structure",
+        "to": "/directory-structure", "name": "Structure des répertoires",
         "contents": [
-          { "to": "#directories", "name": "Directories" },
-          { "to": "#aliases", "name": "Aliases" }
+          { "to": "#r-pertoires", "name": "Répertoires" },
+          { "to": "#alias", "name": "Alias" }
         ]
       },
       { "to": "/configuration", "name": "Configuration" },
       {
-        "to": "/routing", "name": "Routing",
+        "to": "/routing", "name": "Routage",
         "contents": [
-          { "to": "#basic-routes", "name": "Basic Routes" },
-          { "to": "#dynamic-routes", "name": "Dynamic Routes" },
-          { "to": "#nested-routes", "name": "Nested Routes" },
-          { "to": "#dynamic-nested-routes", "name": "Dynamic Nested Routes" },
+          { "to": "#routes-basiques", "name": "Routes basiques" },
+          { "to": "#routes-dynamiques", "name": "Routes dynamiques" },
+          { "to": "#routes-imbriqu-es", "name": "Routes imbriquées" },
+          { "to": "#routes-dynamiques-imbriqu-es", "name": "Routes dynamiques imbriquées" },
           { "to": "#transitions", "name": "Transitions" },
           { "to": "#middleware", "name": "Middleware" }
         ]
