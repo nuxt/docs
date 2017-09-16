@@ -150,7 +150,7 @@ export default {
 
 | Attribut | Description |
 |-----------|-------------|
-| asyncData | L'attribut le plus important. Il peut être asynchrone et reçoit le contexte comme argument, lisez la [documentation sur `asyncData`](/guide/async-data) pour savoir comment il fonctionne. |
+| asyncData | L'attribut le plus important. Il peut être asynchrone et reçoit le contexte comme argument, lisez la [documentation sur les données asynchrones](/guide/async-data) pour savoir comment il fonctionne. |
 | fetch | Utilisé pour peupler le store avant de faire le rendu de la page, équivalent à la méthode `data` sauf qu'il ne peuple pas le composant `data`. Voir [la partie pages de l'API sur `fetch`](/api/pages-fetch). |
 | head | Défini des balises meta spécifiques pour la page en cours, voir [la partie pages de l'API sur `head`](/api/pages-head). |
 | layout | Défini une mise en page existantes dans le répertoire `layouts`, voir [la partie pages de l'API sur `layout`](/api/pages-layout). |
