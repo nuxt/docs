@@ -1,17 +1,17 @@
 ---
 title: Views
-description: The Views section describes all you need to configure data and views for a specific route in your Nuxt.js application. (Document, Layouts, Pages and HTML Head)
+description: The Views section describes all you need to configure data and views for a specific route in your Nuxt.js Application (Document, Layouts, Pages and HTML Head).
 ---
- 
-> The Views section describes all you need to configure data and views for a specific route in your Nuxt.js application. (Document, Layouts, Pages and HTML Head)
+
+> The Views section describes all you need to configure data and views for a specific route in your Nuxt.js Application (Document, Layouts, Pages and HTML Head).
 
 ![nuxt-views-schema](/nuxt-views-schema.png)
 
 ## Document
 
-> You can customise the main document with nuxt.js
+> You can customise the main document with Nuxt.js.
 
-To extend the html template, create a `app.html` at the root of your project.
+To extend the HTML template, create a `app.html` at the root of your project.
 
 The default template is:
 
@@ -110,7 +110,7 @@ export default {
 </script>
 ```
 
-More information about the layout property: [API Pages layout](/api/pages-layout)
+More information about the `layout` property: [API Pages `layout`](/api/pages-layout)
 
 Check the [demonstration video](https://www.youtube.com/watch?v=YOKnSTp7d38) to see it in action.
 
@@ -130,7 +130,7 @@ export default {
     return { name: 'World' }
   },
   fetch () {
-    // The fetch method is used to fill the store before rendering the page
+    // The `fetch` method is used to fill the store before rendering the page
   },
   head () {
     // Set Meta Tags for this Page
@@ -150,14 +150,14 @@ export default {
 
 | Attribute | Description |
 |-----------|-------------|
-| asyncData | The most important key, it can be asynchronous and receives the context as argument, please read the [async data documentation](/guide/async-data) to learn how it works. |
-| fetch | Used to fill the store before rendering the page, it's like the data method except it doesn't set the component data. See the [API Pages fetch documentation](/api/pages-fetch). |
-| head | Set specific Meta Tags for the current page, see [API Pages head documentation](/api/pages-head). |
-| layout | Specify a layout defined in the `layouts` directory, see [API Pages layouts documentation](/api/pages-layout). |
-| transition | Set a specific transition for the page, see [API Pages transition](/api/pages-transition). |
+| asyncData | The most important key, it can be asynchronous and receives the context as argument, please read the [API Pages `asyncData` documentation](/guide/async-data) to learn how it works. |
+| fetch | Used to fill the store before rendering the page, it's like the data method except it doesn't set the component data. See the [API Pages `fetch` documentation](/api/pages-fetch). |
+| head | Set specific Meta Tags for the current page, see [API Pages `head` documentation](/api/pages-head). |
+| layout | Specify a layout defined in the `layouts` directory, see [API Pages `layout` documentation](/api/pages-layout). |
+| transition | Set a specific transition for the page, see [API Pages `transition`](/api/pages-transition). |
 | scrollToTop | Boolean, by default: `false`. Specify if you want the page to scroll to the top before rendering the page, it's used for [nested routes](/guide/routing#nested-routes). |
-| validate | Validator function for a [dynamic route](/guide/routing#dynamic-routes). |
-| middleware | Set a middleware for this page, the middleware will be called before rendering the page, see [routes middleware](/guide/routing#middleware). |
+| validate | Validator function for [dynamic routes](/guide/routing#dynamic-routes). |
+| middleware | Set a middleware for this page, the middleware will be called before rendering the page, see routes [middleware](/guide/routing#middleware). |
 
 More information about the pages properties usage: [API Pages](/api)
 
@@ -194,10 +194,10 @@ head: {
 
 To know the list of options you can give to `head`, take a look at [vue-meta documentation](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
 
-More information about the head method: [API Configuration head](/api/configuration-head)
+More information about the `head` method: [API Configuration `head`](/api/configuration-head).
 
 ### Custom Meta Tags for a Page
 
-More information about the head method: [API Pages head](/api/pages-head)
+More information about the head method: [API Pages `head`](/api/pages-head).
 
 <p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
