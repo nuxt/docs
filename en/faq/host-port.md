@@ -14,6 +14,8 @@ You can configure the PORT with 3 different ways:
 }
 ```
 
+2. Add better cross platform development support
+
 **Note**: for better cross platform development support you can use [cross-env](https://www.npmjs.com/package/cross-env) package.
 
 Installation:
