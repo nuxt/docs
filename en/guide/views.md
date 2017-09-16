@@ -53,6 +53,7 @@ You can extend the main layout by adding a `layouts/default.vue` file.
 *Make sure to add the `<nuxt/>` component when creating a layout to display the page component.*
 
 The default layout source code is:
+
 ```html
 <template>
   <nuxt/>
@@ -68,6 +69,7 @@ This layout is special since you should not include `<nuxt/>` inside its templat
 The default error page source code is [available on GitHub](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
 
 Example of a custom error page in `layouts/error.vue`:
+
 ```html
 <template>
   <div class="container">
@@ -102,6 +104,7 @@ Example of `layouts/blog.vue`:
 ```
 
 And then in `pages/posts.vue`, you can tell Nuxt.js to use your custom layout:
+
 ```html
 <script>
 export default {
@@ -146,7 +149,6 @@ export default {
 }
 </style>
 ```
-
 
 | Attribute | Description |
 |-----------|-------------|
