@@ -9,7 +9,7 @@ description: La structure par défaut d'une application Nuxt.js est destinée à
 
 ### Le répertoire des ressources
 
-Le répertoire `assets` contient vos ressources non-compilés comme par exemple vos Less, Sass, ou JavaScript.
+Le répertoire `assets` contient vos ressources non compilées tels que vos fichiers Less, Sass ou JavaScript.
 
 [Consultez la documentation à propos de l'intégration des ressources](/guide/assets)
 
@@ -86,4 +86,4 @@ _Ce fichier ne peut pas être renommé._
 
 Par défaut, `srcDir` est le même répertoire que `rootDir`.
 
-<p class="Alert Alert--nuxt-green"><b>Info :</b> À l'intérieur de vos templates `vue`, si vous avez besoin de faire référence à vos répertoires `assets` ou `static`, utilisez par ex. `~assets/votre_image.png` et `~static/votre_image.png`.</p>
+<p class="Alert Alert--nuxt-green"><b>Info :</b> à l'intérieur de vos templates `vue`, si vous avez besoin de faire référence à vos répertoires `assets` ou `static`, utilisez par ex. `~assets/votre_image.png` et `~static/votre_image.png`.</p>
