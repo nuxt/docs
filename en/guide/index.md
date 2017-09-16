@@ -31,7 +31,7 @@ Nuxt.js includes the following to create a rich web application development:
 - [Vuex](https://github.com/vuejs/vuex) (included only when using the [store option](/guide/vuex-store))
 - [Vue Meta](https://github.com/declandewet/vue-meta)
 
-A total of only **57kb min+gzip** (53kb with Vuex).
+A total of only **57kB min+gzip** (53kB with Vuex).
 
 Under the hood we use [webpack](https://github.com/webpack/webpack) with [vue-loader](https://github.com/vuejs/vue-loader) and [babel-loader](https://github.com/babel/babel-loader) to bundle, code-split and minify your code.
 
