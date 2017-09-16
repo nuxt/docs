@@ -69,7 +69,7 @@ The `nuxt.config.js` file contains your Nuxt.js custom configuration.
 
 _This file can not be renamed._
 
-[More documentation about nuxt.config.js integration](/guide/configuration)
+[More documentation about `nuxt.config.js` integration](/guide/configuration)
 
 ### The package.json File
 
