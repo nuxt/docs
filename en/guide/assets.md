@@ -7,7 +7,7 @@ description: Nuxt uses vue-loader, file-loader and url-loader for webpack by def
 
 ## webpacked
 
-By default, [vue-loader](http://vue-loader.vuejs.org/en/) automatically processes your style and template files with `css-loader` and the Vue template compiler. In this compilation process, all asset URL such as `<img src="...">`, `background: url(...)` and CSS `@import` are resolved as module dependencies.
+By default, [vue-loader](http://vue-loader.vuejs.org/en/) automatically processes your style and template files with css-loader and the Vue template compiler. In this compilation process, all asset URL such as `<img src="...">`, `background: url(...)` and CSS `@import` are resolved as module dependencies.
 
 For example, we have this file tree:
 
@@ -20,7 +20,8 @@ For example, we have this file tree:
 
 In your CSS, if you use `url('~/assets/image.png')`, it will be translated into `require('~/assets/image.png')`.
 
-Or if in your `pages/index.vue`, you use:
+Or if in your `pages/index.vue` you use:
+
 ```html
 <template>
   <img src="~/assets/image.png">
@@ -36,6 +37,7 @@ createElement('img', { attrs: { src: require('~/assets/image.png') }})
 Because `.png` is not a JavaScript file, Nuxt.js configures webpack to use [file-loader](https://github.com/webpack/file-loader) and [url-loader](https://github.com/webpack/url-loader) to handle them for you.
 
 The benefits of them are:
+
 - file-loader lets you designate where to copy and place the asset file, and how to name it using version hashes for better caching.
 - url-loader allows you to conditionally inline a file as base-64 data URL if they are smaller than a given threshold. This can reduce a number of HTTP requests for trivial files. If the file is larger than the threshold, it automatically falls back to file-loader.
 
@@ -55,7 +57,7 @@ Actually, Nuxt.js default assets loaders configuration is:
     test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
     loader: 'url-loader',
     query: {
-      limit: 1000, // 1 KO
+      limit: 1000, // 1kB
       name: 'fonts/[name].[hash:7].[ext]'
     }
   }
@@ -73,6 +75,7 @@ When launching our application with `nuxt`, our template in `pages/index.vue`:
 ```
 
 Will be generated into:
+
 ```html
 <img src="/_nuxt/img/image.0c61159.png">
 ```
@@ -92,7 +95,7 @@ From your code you can then reference those files with `/` URL:
 ```html
 <!-- Static image from static directory -->
 <img src="/my-image.png"/>
-~
+
 <!-- webpacked image from assets directory -->
 <img src="~/assets/my-image-2.png"/>
 ```
