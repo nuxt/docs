@@ -88,7 +88,7 @@ router: {
 
 Comme vous pouvez le voir, la route nommée `users-id` contient le chemin `:id?` ce qui le rend optionnel. Si vous voulez le rendre obligatoire, créez un fichier `index.vue` dans le dossier `users/_id`.
 
-<p class="Alert Alert--info"><b>Attention :</b> les routes dynamiques sont ignorées par la commande `generate` : [ Configuration de l'API pour la génération](/api/configuration-generate#routes)</p>
+<p class="Alert Alert--info"><b>Attention :</b> les routes dynamiques sont ignorées par la commande `generate`, consultez la configuration de l'API pour La propriété `generate`](/api/configuration-generate#routes)</p>
 
 ### Validation des paramètres de route
 
@@ -107,7 +107,7 @@ export default {
 
 Si la méthode de validation ne renvoie pas `true`, Nuxt.js chargera automatiquement la page d'erreur 404.
 
-Plus d'informations à propos de la méthode de validation : [API pour la validation de pages](/api/pages-validate)
+Pour plus d'informations à propos de la méthode de validation, consultez [la partie Pages de l'API pour La méthode `validate`](/api/pages-validate)
 
 ## Routes imbriquées
 
@@ -240,7 +240,7 @@ module.exports = {
 }
 ```
 
-Plus d'informations à propos des transitions : [Configuration de l'API pour les transitions](/api/pages-transition)
+Pour plus d'informations à propos des transitions, consultez [la partie Configuration de l'API pour La propriété `transition`](/api/pages-transition)
 
 ### Paramètres des pages
 
@@ -263,7 +263,7 @@ export default {
 }
 ```
 
-Plus d'informations à propos de la propriété transition : [API pour la transition de pages](/api/pages-transition)
+Pour plus d'informations à propos de la propriété transition, consultez [la partie Configuration de l'API pour La propriété `transition`](/api/pages-transition)
 
 ## Middleware
 

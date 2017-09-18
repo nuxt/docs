@@ -110,7 +110,7 @@ export default {
 </script>
 ```
 
-Plus d'informations à propos de la propriété `layout` dans [la partie pages de l'API sur `layout`](/api/pages-layout)
+Pour plus d'informations, consultez la configuration de l'API à propos de [La propriété `layout`](/api/pages-layout).
 
 Regardez la [vidéo de démonstration](https://www.youtube.com/watch?v=YOKnSTp7d38) pour la voir en action (EN).
 
@@ -150,16 +150,16 @@ export default {
 
 | Attribut | Description |
 |-----------|-------------|
-| asyncData | L'attribut le plus important. Il peut être asynchrone et reçoit le contexte comme argument, lisez la [documentation sur les données asynchrones](/guide/async-data) pour savoir comment il fonctionne. |
-| fetch | Utilisé pour peupler le store avant de faire le rendu de la page, équivalent à la méthode `data` sauf qu'il ne peuple pas le composant `data`. Voir [la partie pages de l'API sur `fetch`](/api/pages-fetch). |
-| head | Défini des balises meta spécifiques pour la page en cours, voir [la partie pages de l'API sur `head`](/api/pages-head). |
-| layout | Défini une mise en page existantes dans le répertoire `layouts`, voir [la partie pages de l'API sur `layout`](/api/pages-layout). |
-| transition | Défini une transition spécifique pour une page, voir [la partie pages de l'API sur `transition`](/api/pages-transition). |
-| scrollToTop | Booléen, par défaut: `false`. Indiquez si vous souhaitez que la position se déplace vers le haut avant d'afficher la page, est utilisé pour les [routes imbriquées](/guide/routing#routes-imbriqu-es). |
-| validate | Fonction de validation pour les [routes dynamiques](/guide/routing#routes-dynamiques). |
-| middleware | Défini un middleware pour cette page, ce middleware sera exécuté avant d'effectuer le rendu de la page, voir [middleware dans le routage](/guide/routing#middleware). |
+| asyncData | L'attribut le plus important. Il peut être asynchrone et reçoit le contexte comme argument, lisez la documentation sur les [Données asynchrones](/guide/async-data) pour savoir comment il fonctionne. |
+| fetch | Utilisé pour peupler le store avant de faire le rendu de la page, équivalent à la méthode `data` sauf qu'il ne peuple pas le composant `data`. Voir [la partie Pages de l'API sur `fetch`](/api/pages-fetch). |
+| head | Défini des balises meta spécifiques pour la page en cours, voir [la partie Pages de l'API sur `head`](/api/pages-head). |
+| layout | Défini une mise en page existantes dans le répertoire `layouts`, voir [la partie Pages de l'API sur `layout`](/api/pages-layout). |
+| transition | Défini une transition spécifique pour une page, voir [la partie Pages de l'API sur `transition`](/api/pages-transition). |
+| scrollToTop | Booléen, par défaut: `false`. Indiquez si vous souhaitez que la position se déplace vers le haut avant d'afficher la page, est utilisé pour les [Routes imbriquées](/guide/routing#routes-imbriqu-es). |
+| validate | Fonction de validation pour les [Routes dynamiques](/guide/routing#routes-dynamiques). |
+| middleware | Défini un middleware pour cette page, ce middleware sera exécuté avant d'effectuer le rendu de la page, voir le [Middleware dans le Routage](/guide/routing#middleware). |
 
-Plus d'informations à propos de l'utilisation des attributs des pages : [La partie pages de l'API](/api)
+Pour plus d'informations à propos de l'utilisation des attributs de pages, consultez [la partie Pages de l'API](/api)
 
 ## Entête HTML
 
@@ -194,10 +194,10 @@ head: {
 
 Pour connaitre la liste des options que vous pouvez donner à `head`, jeter un œil à la [documentation vue-meta](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
 
-Plus d'informations à propos de la méthode `head` dans [la partie configuration de l'API sur `head`](/api/configuration-head).
+Plus d'informations à propos de la méthode `head` dans [la partie Configuration de l'API sur `head`](/api/configuration-head).
 
 ### Balises meta personnalisées pour une page
 
-Plus d'informations à propos de la méthode `head` dans [la partie configuration de l'API sur `head`](/api/pages-head).
+Plus d'informations à propos de la méthode `head` dans [la partie Configuration de l'API sur `head`](/api/pages-head).
 
 <p class="Alert">Afin d'éviter toutes duplications lors de l'utilisation d'un composant enfant, donnez un identifiant unique à l'aide de l'attribut `hid`. Pour [en savoir plus](https://github.com/declandewet/vue-meta#lists-of-tags).</p>

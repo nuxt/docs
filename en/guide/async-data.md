@@ -68,7 +68,7 @@ Vous pouvez afficher les données au sein du template comme habituellement :
 
 ## Le contexte
 
-Pour voir la liste des attributs disponibles dans `context`, jeter un œil à [la partie essentielle de l'API pour `context`](/api/context).
+Pour voir la liste des attributs disponibles dans `context`, jeter un œil à [la partie Essentielle de l'API pour `context`](/api/context).
 
 ### Accéder aux données des routes dynamiques
 
@@ -108,4 +108,4 @@ export default {
 }
 ```
 
-Pour personnaliser la page d'erreur, consultez la [partie mises en page de la section vues](/guide/views#mises-en-page).
+Pour personnaliser la page d'erreur, consultez [la partie Mises en page de la section Vues](/guide/views#mises-en-page).
