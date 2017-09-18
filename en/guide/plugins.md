@@ -1,6 +1,6 @@
 ---
 title: Plugins
-description: Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root vue.js application. This is especially helpful when using your own libraries or external modules.
+description: Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root Vue.js Application. This is especially helpful when using your own libraries or external modules.
 ---
 
 > Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root vue.js application. This is especially helpful when using your own libraries or external modules.
@@ -53,6 +53,7 @@ Then, I can import `axios` anywhere without having to worry about making the bun
 If we want to use [vue-notifications](https://github.com/se-panfilov/vue-notifications) to display notification in our application, we need to setup the plugin before launching the app.
 
 File `plugins/vue-notifications.js`:
+
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
@@ -61,6 +62,7 @@ Vue.use(VueNotifications)
 ```
 
 Then, we add the file inside the `plugins` key of `nuxt.config.js`:
+
 ```js
 module.exports = {
   plugins: ['~/plugins/vue-notifications']
@@ -72,6 +74,7 @@ To learn more about the `plugins` configuration key, check out the [plugins api]
 Actually, `vue-notifications` will be included in the app bundle, but because it's a library, we want to include it in the vendor bundle for better caching.
 
 We can update our `nuxt.config.js` to add `vue-notifications` in the vendor bundle:
+
 ```js
 module.exports = {
   build: {
@@ -86,6 +89,7 @@ module.exports = {
 Some plugins need to be injected in the App root to be used, like [vue-18n](https://github.com/kazupon/vue-i18n). Nuxt.js gives you the possibility to export a function in your plugin to receives the root component but also the context.
 
 `plugins/i18n.js`:
+
 ```js
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
@@ -102,6 +106,7 @@ export default ({ app, store }) => {
 ```
 
 `nuxt.config.js`:
+
 ```js
 module.exports = {
   build: {
@@ -120,6 +125,7 @@ Some plugins might work **only for the browser**, you can use the `ssr: false` o
 Example:
 
 `nuxt.config.js`:
+
 ```js
 module.exports = {
   plugins: [
@@ -129,6 +135,7 @@ module.exports = {
 ```
 
 `plugins/vue-notifications.js`:
+
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
