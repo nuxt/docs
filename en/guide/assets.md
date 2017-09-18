@@ -18,7 +18,7 @@ Imaginons par exemple cette arborescence :
 ----| index.vue
 ```
 
-Dans votre CSS, si nous utilisons `url('~assets/image.png')`, ce sera transformé en `require('~assets/image.png')`.
+Dans votre CSS, si nous utilisons `url('~/assets/image.png')`, ce sera transformé en `require('~/assets/image.png')`.
 
 Ou si dans `pages/index.vue` vous utilisez :
 ```html
@@ -30,7 +30,7 @@ Ou si dans `pages/index.vue` vous utilisez :
 Ce sera compilé en :
 
 ```js
-createElement('img', { attrs: { src: require('~assets/image.png') }})
+createElement('img', { attrs: { src: require('~/assets/image.png') }})
 ```
 
 Puisque que les fichiers `.png` ne sont pas des fichiers JavaScript, Nuxt.js configure webpack afin d'utiliser [file-loader](https://github.com/webpack/file-loader) et [url-loader](https://github.com/webpack/url-loader) afin de pouvoir s'en charger.
@@ -55,7 +55,7 @@ Actuellement, la configuration des loaders par défaut de Nuxt.js est la suivant
     test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
     loader: 'url-loader',
     query: {
-      limit: 1000, // 1KO
+      limit: 1000, // 1ko
       name: 'fonts/[name].[hash:7].[ext]'
     }
   }
@@ -68,7 +68,7 @@ Lors du lancement de notre application avec `nuxt`, notre modèle dans `pages/in
 
 ```html
 <template>
-  <img src="~assets/image.png">
+  <img src="~/assets/image.png">
 </template>
 ```
 
