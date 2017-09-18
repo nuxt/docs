@@ -77,7 +77,7 @@ Sera transformé en:
 <img src="/_nuxt/img/image.0c61159.png">
 ```
 
-Si vous désirez modifier ou désactiver ces loaders, consultez la documentation sur [La propriété `extend`](/api/configuration-build#extend).
+Si vous désirez modifier ou désactiver ces loaders, consultez la documentation sur [la propriété `extend` de la page La propriété `build`](/api/configuration-build#extend).
 
 ## Avec des fichiers statiques
 
