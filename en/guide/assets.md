@@ -7,7 +7,7 @@ description: Nuxt uses vue-loader, file-loader and url-loader for webpack by def
 
 ## webpacked
 
-By default, [vue-loader](http://vue-loader.vuejs.org/en/) automatically processes your style and template files with css-loader and the Vue template compiler. In this compilation process, all asset URL such as `<img src="...">`, `background: url(...)` and CSS `@import` are resolved as module dependencies.
+By default, [vue-loader](http://vue-loader.vuejs.org/en/) automatically processes your style and template files with css-loader and the Vue template compiler. In this compilation process, all asset URLs such as `<img src="...">`, `background: url(...)` and CSS `@import` are resolved as module dependencies.
 
 For example, we have this file tree:
 
@@ -86,7 +86,7 @@ If you want to update these loaders or disable them, please use [build.extend](/
 
 If you don't want to use webpacked Assets from the `assets` directory, you can create and use the `static` directory in your project root directory.
 
-These files will be automatically serve by Nuxt and accessible in your project root URL.
+These files will be automatically serve by Nuxt and accessible in your project root URLs.
 
 This option is helpful for files like `robots.txt`, `sitemap.xml` or `CNAME` (for like GitHub Pages).
 
