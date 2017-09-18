@@ -37,7 +37,7 @@ Puisque que les fichiers `.png` ne sont pas des fichiers JavaScript, Nuxt.js con
 
 Leurs avantages sont:
 - file-loader vous laisse définir ou copier les ressources, comment les nommer et vous permet d'utiliser des hashs de version pour un meilleur cache.
-- url-loader vous permet d'insérer de façon conditionnelle un fichier en tant qu'URL encodé en base 64 si sa taille est inférieure à un seuil donné. Cela peut réduire un certain nombre de demandes HTTP pour les fichiers triviaux. Si la taille du fichier est supérieur au seuil, il retombe automatiquement sur file-loader.
+- url-loader vous permet d'insérer de façon conditionnelle un fichier en tant qu'URL encodé en base 64 si sa taille est inférieure à un seuil donné. Cela peut réduire un certain nombre de demandes HTTP pour les fichiers triviaux. Si la taille du fichier est supérieure au seuil, il retombe automatiquement sur file-loader.
 
 Actuellement, la configuration des loaders par défaut de Nuxt.js est la suivante :
 
