@@ -57,7 +57,7 @@ _Ce répertoire ne peut pas être renommé._
 
 ### Le répertoire des stores
 
-Le répertoire `store` contient vos fichiers [de store Vuex](https://vuex.vuejs.org/fr/). Les stores Vuex sont implémentés de manière optionnelle dans le framework Nuxt.js. La création d'un fichier `index.js` dans ce répertoire active automatiquement l'option dans le framework.
+Le répertoire `store` contient vos fichiers de [store Vuex](https://vuex.vuejs.org/fr/). Les stores Vuex sont implémentés de manière optionnelle dans le framework Nuxt.js. La création d'un fichier `index.js` dans ce répertoire active automatiquement l'option dans le framework.
 
 _Ce répertoire ne peut pas être renommé._
 

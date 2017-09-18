@@ -26,10 +26,10 @@ En tant que framework, Nuxt.js est doté de nombreuses fonctionnalités pour vou
 
 Nuxt.js inclut les éléments suivants afin de créer une expérience de développement optimale :
 
-- [Vue 2](https://github.com/vuejs/vue)
-- [Vue Router](https://github.com/vuejs/vue-router)
-- [Vuex](https://github.com/vuejs/vuex) (inclut uniquement quand l'[option `store`](/guide/vuex-store) est activée)
-- [Vue Meta](https://github.com/declandewet/vue-meta)
+- [Vue 2](https://fr.vuejs.org/)
+- [Vue Router](https://router.vuejs.org/fr/)
+- [Vuex](https://ssr.vuejs.org/fr/) (inclut uniquement quand l'[option `store`](/guide/vuex-store) est activée)
+- [vue-meta](https://github.com/declandewet/vue-meta)
 
 Un total de seulement **57ko min+gzip** (53ko avec Vuex).
 
@@ -68,7 +68,7 @@ Si pour une quelconque raison vous préférez ne pas utiliser le rendu côté se
 
 Jetez un œil à [la liste des commandes](/guide/commands) pour en savoir plus.
 
-Si vous avez déjà un serveur, vous pouvez greffer Nuxt.js en l'utilisant comme middleware. Il n'y a aucune restriction quand vous utilisez Nuxt.js pour développer votre application web universelle. Consultez le guide [d'utilisation de Nuxt.js par programmation](/api/nuxt).
+Si vous avez déjà un serveur, vous pouvez greffer Nuxt.js en l'utilisant comme middleware. Il n'y a aucune restriction quand vous utilisez Nuxt.js pour développer votre application web universelle. Consultez le guide d'[Utilisation de Nuxt.js par programmation](/api/nuxt).
 
 ## Génération statique (pré-rendu)
 
