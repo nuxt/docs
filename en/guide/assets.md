@@ -7,7 +7,7 @@ description: Nuxt utilise vue-loader, file-loader et url-loader avec webpack par
 
 ## Avec webpack
 
-Par défaut, [vue-loader](http://vue-loader.vuejs.org/en/) traite automatiquement vos fichiers de style et vos templates à l'aide de `css-loader` et du compilateur de template de Vue. Dans ce processus de compilation, toutes les URL des fichiers comme `<img src="...">`, `background: url(...)` et les CSS `@import` sont résolus en tant que dépendances des modules.
+Par défaut, [vue-loader](http://vue-loader.vuejs.org/en/) traite automatiquement vos fichiers de styles et vos templates à l'aide de `css-loader` et du compilateur de template de Vue. Dans ce processus de compilation, toutes les URL des fichiers comme `<img src="...">`, `background: url(...)` et les CSS `@import` sont résolus en tant que dépendances des modules.
 
 Imaginons par exemple cette arborescence :
 
@@ -87,7 +87,7 @@ Ces fichiers seront automatiquement servis par Nuxt et accessibles via l'URL rac
 
 Cette option est utile pour les fichiers tels que `robots.txt`, `sitemap.xml` ou `CNAME` (pour les pages hébergées sur GitHub par ex.).
 
-À partir de votre code vous pouvez ensuite référencer ces fichiers avec de URL commencant par `/` :
+À partir de votre code vous pouvez ensuite référencer ces fichiers avec un URL commencant par `/` :
 
 ```html
 <!-- Image statique du répertoire `static` -->
