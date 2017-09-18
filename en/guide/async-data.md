@@ -110,4 +110,4 @@ export default {
 }
 ```
 
-To customize the error page, take a look at the [Guide Views `layouts`](/guide/views#layouts).
+To customize the error page, take a look at the [Guide Views layouts](/guide/views#layouts).
