@@ -32,7 +32,7 @@ Cette option vous permet de définir le mode de développement ou de production 
 
 ### env
 
-Cette option vous permet de définir des variables d'environnements disponible côté client et côté serveur.
+Cette option vous permet de définir des variables d'environnements disponibles côté client et côté serveur.
 
 [Documentation à propos de env](/api/configuration-env)
 
