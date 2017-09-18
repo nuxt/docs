@@ -69,7 +69,7 @@ module.exports = {
 
 Pour en savoir plus sur l'attribut `plugins`, consultez [La propriété `plugins`](/api/configuration-plugins) de l'API.
 
-Acutellement, `vue-notifications` sera inclu dans le paquetage de l'application. Mais comme il s'agit d'une bibliothèque, nous voulons l'inclure dans le paquetage `vendor` pour une meilleure mise en cache.
+Acutellement, `vue-notifications` sera inclus dans le paquetage de l'application. Mais comme il s'agit d'une bibliothèque, nous voulons l'inclure dans le paquetage `vendor` pour une meilleure mise en cache.
 
 Nous pouvons mettre à jour `nuxt.config.js` pour ajouter `vue-notifications` dans le bundle `vendor` :
 ```js
@@ -83,7 +83,7 @@ module.exports = {
 
 ## Injection dans $root et context
 
-Plusieurs plugins on besoin d'être injectés à la racine de l'application pour être utilisés, comme [vue-18n](https://github.com/kazupon/vue-i18n). Nuxt.js vous donne la possibilité d'exporter une fonction dans votre plugin pour recevoir l'instance racine ainsi que le contexte.
+Plusieurs plugins ont besoin d'être injectés à la racine de l'application pour être utilisés, comme [vue-18n](https://github.com/kazupon/vue-i18n). Nuxt.js vous donne la possibilité d'exporter une fonction dans votre plugin pour recevoir l'instance racine ainsi que le contexte.
 
 `plugins/i18n.js`:
 ```js
@@ -138,4 +138,4 @@ Vue.use(VueNotifications)
 
 Dans le cas où vous devez importer certaines bibliothèques uniquement pour le serveur, vous pouvez utiliser la variable `process.server` définie sur `true` lorsque le serveur web crée le fichier `server.bundle.js`.
 
-Si vous avez besoin également de savoir si vous êtes dans une application générée (via `nuxt generate`), vous pouvez vérifier `process.static` mise à `true` pendant la génération et après. Pour connaître dans quel état est une page qui est entrain d'être rendue par `nuxt generate` avant d'être sauvée, vous pouvez utilisez `process.static && process.server`.
+Si vous avez besoin également de savoir si vous êtes dans une application générée (via `nuxt generate`), vous pouvez vérifier la propriété `process.static` mise à `true` pendant la génération et après. Pour connaitre dans quel état est une page qui est en train d'être rendue par `nuxt generate` avant d'être sauvée, vous pouvez utilisez `process.static && process.server`.
