@@ -17,7 +17,7 @@ Cette méthode reçoit [le contexte](/api#context) comme premier argument, vous 
 
 Nuxt.js vous propose différentes façons d'utiliser `asyncData`. Choisissez celle avec laquelle vous êtes le plus à l'aise :
 
-1. Retourner une `Promise`. Nuxt.js attends que la promesse soit résolue avant de faire le rendu du composant.
+1. Retourner une `Promise`. Nuxt.js attend que la promesse soit résolue avant de faire le rendu du composant.
 2. En utilisant [async / await](https://github.com/lukehoban/ecmascript-asyncawait) ([en savoir plus](https://zeit.co/blog/async-and-await))
 3. En définissant une fonction de rappel comme second argument. Elle doit être appelée comme suit : `callback(err, data)`
 
@@ -72,11 +72,11 @@ Pour voir la liste des attributs disponibles dans `context`, jeter un œil à [l
 
 ### Accéder aux données des routes dynamiques
 
-Vous pouvez utiliser l'objet du contexte injecté à la propriété `asyncData` afin d'accéder aux données des routes dynamiques. Par example, les données des routes dynamiques peuvent être accédées en utilisant le nom du fichier ou du dossier qui la configure. Si vous définissez un fichier nommé `_slug.vue`, vous pourrez y accéder via `context.params.slug`.
+Vous pouvez utiliser l'objet du contexte injecté à la propriété `asyncData` afin d'accéder aux données des routes dynamiques. Par exemple, les données des routes dynamiques peuvent être accédées en utilisant le nom du fichier ou du dossier qui la configure. Si vous définissez un fichier nommé `_slug.vue`, vous pourrez y accéder via `context.params.slug`.
 
 ## Gestion des erreurs
 
-Nuxt.js ajoute la méthode `error(params)` au `context`, vous pouvez l'appeler pour afficher la page d'erreur. `params.statusCode` sera également utilisée pour faire le rendu avec le code de status approprié côté serveur.
+Nuxt.js ajoute la méthode `error(params)` au `context`, vous pouvez l'appeler pour afficher la page d'erreur. `params.statusCode` sera également utilisée pour faire le rendu avec le code de statut approprié côté serveur.
 
 Exemple avec une `Promise` :
 ```js
