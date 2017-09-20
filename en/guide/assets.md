@@ -33,7 +33,7 @@ Ce sera compilé en :
 createElement('img', { attrs: { src: require('~/assets/image.png') }})
 ```
 
-Puisque que les fichiers `.png` ne sont pas des fichiers JavaScript, Nuxt.js configure webpack afin d'utiliser [file-loader](https://github.com/webpack/file-loader) et [url-loader](https://github.com/webpack/url-loader) afin de pouvoir s'en charger.
+Puisque que les fichiers `.png` ne sont pas des fichiers JavaScript, Nuxt.js configure webpack pour utiliser [file-loader](https://github.com/webpack/file-loader) et [url-loader](https://github.com/webpack/url-loader) afin de pouvoir s'en charger.
 
 Leurs avantages sont:
 - file-loader vous laisse définir ou copier les ressources, comment les nommer et vous permet d'utiliser des hashs de version pour un meilleur cache.
@@ -64,7 +64,7 @@ Actuellement, la configuration des loaders par défaut de Nuxt.js est la suivant
 
 Ce qui signifie que tous les fichiers inférieurs à 1ko seront intégrés comme URL base-64. Sinon, l'image / police sera copiée dans son dossier correspondant (dans le répertoire `.nuxt`) avec un nom contenant des hashs de version pour une meilleure mise en cache.
 
-Lors du lancement de notre application avec `nuxt`, notre modèle dans `pages/index.vue` :
+Lors du lancement de notre application avec `nuxt`, notre template dans `pages/index.vue` :
 
 ```html
 <template>
