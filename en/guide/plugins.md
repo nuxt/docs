@@ -53,6 +53,7 @@ Je peux ensuite importer `axios` partout sans avoir à m'inquiéter de l'importe
 Si nous voulons utiliser [vue-notifications](https://github.com/se-panfilov/vue-notifications) pour afficher des notifications dans notre application, nous devons configurer le plugin avant de lancer l'application.
 
 Dans `plugins/vue-notifications.js` :
+
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
@@ -61,6 +62,7 @@ Vue.use(VueNotifications)
 ```
 
 Puis nous ajoutons le fichier dans l'attribut `plugins` de `nuxt.config.js` :
+
 ```js
 module.exports = {
   plugins: ['~plugins/vue-notifications']
@@ -72,6 +74,7 @@ Pour en savoir plus sur l'attribut `plugins`, consultez [La propriété `plugins
 Acutellement, `vue-notifications` sera inclus dans le paquetage de l'application. Mais comme il s'agit d'une bibliothèque, nous voulons l'inclure dans le paquetage `vendor` pour une meilleure mise en cache.
 
 Nous pouvons mettre à jour `nuxt.config.js` pour ajouter `vue-notifications` dans le bundle `vendor` :
+
 ```js
 module.exports = {
   build: {
@@ -86,6 +89,7 @@ module.exports = {
 Plusieurs plugins ont besoin d'être injectés à la racine de l'application pour être utilisés, comme [vue-18n](https://github.com/kazupon/vue-i18n). Nuxt.js vous donne la possibilité d'exporter une fonction dans votre plugin pour recevoir l'instance racine ainsi que le contexte.
 
 `plugins/i18n.js`:
+
 ```js
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
@@ -102,6 +106,7 @@ export default ({ app, store }) => {
 ```
 
 `nuxt.config.js`:
+
 ```js
 module.exports = {
   build: {
@@ -120,6 +125,7 @@ Certains plugins fonctionnent **uniquement dans un navigateur**. Vous pouvez uti
 Exemple :
 
 `nuxt.config.js`:
+
 ```js
 module.exports = {
   plugins: [
@@ -129,6 +135,7 @@ module.exports = {
 ```
 
 `plugins/vue-notifications.js`:
+
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
