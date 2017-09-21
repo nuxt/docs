@@ -22,45 +22,46 @@ As a framework, Nuxt.js comes with a lot of features to help you in your develop
 
 ## How it Works
 
-![Vue with Webpack and Babel](https://i.imgur.com/avEUftE.png)
+![Vue with webpack and Babel](https://i.imgur.com/avEUftE.png)
 
 Nuxt.js includes the following to create a rich web application development:
 
-- [Vue 2](https://github.com/vuejs/vue)
-- [Vue-Router](https://github.com/vuejs/vue-router)
-- [Vuex](https://github.com/vuejs/vuex) (included only when using the [store option](/guide/vuex-store))
-- [Vue-Meta](https://github.com/declandewet/vue-meta)
+- [Vue 2](https://vuejs.org/)
+- [Vue Router](https://router.vuejs.org/en/)
+- [Vuex](https://vuex.vuejs.org/en/) (included only when using the [store option](/guide/vuex-store))
+- [Vue Server Renderer](https://ssr.vuejs.org/en/) (excluded when using [`mode: 'spa'`](/api/configuration-mode))
+- [vue-meta](https://github.com/declandewet/vue-meta)
 
-A total of only **57kb min+gzip** (53kb with vuex).
+A total of only **57kB min+gzip** (53kB with Vuex).
 
-Under the hood we use [Webpack](https://github.com/webpack/webpack) with [vue-loader](https://github.com/vuejs/vue-loader) and [babel-loader](https://github.com/babel/babel-loader) to bundle, code-split and minify your code.
+Under the hood we use [webpack](https://github.com/webpack/webpack) with [vue-loader](https://github.com/vuejs/vue-loader) and [babel-loader](https://github.com/babel/babel-loader) to bundle, code-split and minify your code.
 
 ## Features
 
-- Write Vue Files
+- Write Vue Files (`*.vue`)
 - Automatic Code Splitting
 - Server-Side Rendering
 - Powerful Routing System with Asynchronous Data
 - Static File Serving
 - ES6/ES7 Transpilation
 - Bundling and minifying of your JS & CSS
-- Managing `<head>` element (title, meta...)
+- Managing `<head>` element (`<title>`, `<meta>`, etc.)
 - Hot module replacement in Development
-- Pre-processor: SASS, LESS, Stylus, etc
+- Pre-processor: Sass, Less, Stylus, etc.
 - HTTP/2 push headers ready
 - Extending with Modular architecture
 
 ## Schema
 
-This schema shows what is called by nuxt.js when the server is called or when the user navigate through the app via `<nuxt-link>`:
+This schema shows what is called by Nuxt.js when the server is called or when the user navigate through the app via `<nuxt-link>`:
 
 ![nuxt-schema](/nuxt-schema.png)
 
 ## Server Rendered (Universal SSR)
 
-You can use nuxt.js as a framework to handle all the UI rendering of your project.
+You can use Nuxt.js as a framework to handle all the UI rendering of your project.
 
-When launching `nuxt`, it will start a development server with hot-reloading and [vue-server-renderer](https://ssr.vuejs.org/en/) configured to automatically server-render your application.
+When launching `nuxt`, it will start a development server with hot-reloading and [Vue Server Renderer](https://ssr.vuejs.org/en/) configured to automatically server-render your application.
 
 ### Single Page Applications (SPA)
 
@@ -68,11 +69,11 @@ If for any reason you prefer not using server side rendering or need static host
 
 Take a look at [the commands](/guide/commands) to learn more about usage.
 
-If you already have a server, you can plug Nuxt.js by using it as a middleware, there is no restriction at all when using nuxt.js for developing your Universal Web Applications, see the [Using Nuxt.js Programmatically](/api/nuxt) guide.
+If you already have a server, you can plug Nuxt.js by using it as a middleware, there is no restriction at all when using Nuxt.js for developing your Universal Web Applications, see the [Using Nuxt.js Programmatically](/api/nuxt) guide.
 
 ## Static Generated (Pre Rendering)
 
-The big innovation of nuxt.js comes here: `nuxt generate`
+The big innovation of Nuxt.js comes here: `nuxt generate`
 
 When building your application it will generate the HTML for every one of your routes and store it in a file.
 
