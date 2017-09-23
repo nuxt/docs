@@ -222,6 +222,7 @@ Nuxt.js utilise le composant [`<transition>`](http://vuejs.org/v2/guide/transiti
 Pour ajouter une transition de fondu à chaque page de votre application, nous avons besoin d'un fichier CSS qui est partagé sur toutes nos routes. Commençons par créer un fichier dans le dossier `assets`.
 
 Notre CSS global dans `assets/main.css` :
+
 ```css
 .page-enter-active, .page-leave-active {
   transition: opacity .5s;
@@ -232,6 +233,7 @@ Notre CSS global dans `assets/main.css` :
 ```
 
 Nous ajoutons son chemin dans notre fichier de configuration `nuxt.config.js` :
+
 ```js
 module.exports = {
   css: [
@@ -247,6 +249,7 @@ Pour plus d'informations à propos des transitions, consultez [la partie Configu
 Vous êtes également libre de définir une transition personnalisée pour une seule page à l'aide de la propriété `transition`.
 
 Nous ajoutons une nouvelle classe dans notre CSS global `assets/main.css` :
+
 ```css
 .test-enter-active, .test-leave-active {
   transition: opacity .5s;
@@ -257,6 +260,7 @@ Nous ajoutons une nouvelle classe dans notre CSS global `assets/main.css` :
 ```
 
 puis, nous utilisons la propriété transition pour définir le nom de la classe à utiliser pour cette transition de page :
+
 ```js
 export default {
   transition: 'test'
@@ -280,6 +284,7 @@ export default function (context) {
 ```
 
 Le middleware sera exécuté en série dans l'ordre suivant :
+
 1. `nuxt.config.js`
 2. Mises en page correspondantes
 3. Pages correspondantes
@@ -287,6 +292,7 @@ Le middleware sera exécuté en série dans l'ordre suivant :
 Un middleware peut être asynchrone, retourner une `Promise` ou utiliser une fonction de rappel en second argument :
 
 `middleware/stats.js`
+
 ```js
 import axios from 'axios'
 
@@ -300,6 +306,7 @@ export default function ({ route }) {
 Puis, dans `nuxt.config.js`, pour une mise en page ou une page, utilisez le mot-clé `middleware` :
 
 `nuxt.config.js`
+
 ```js
 module.exports = {
   router: {

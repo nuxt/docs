@@ -14,9 +14,13 @@ description: Nuxt.js lets you customize runtime options for rendering pages
 
 ```js
 module.exports = {
-  build: {
-    ssr: {
-        runInNewContext: false
+  render: {
+    bundleRenderer: {
+      directives: {
+        custom1: function (el, dir) {
+          // something ...
+        }
+      }
     }
   }
 }

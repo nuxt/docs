@@ -21,6 +21,7 @@ Imaginons par exemple cette arborescence :
 Dans votre CSS, si nous utilisons `url('~/assets/image.png')`, ce sera transformé en `require('~/assets/image.png')`.
 
 Ou si dans `pages/index.vue` vous utilisez :
+
 ```html
 <template>
   <img src="~assets/image.png">
@@ -72,7 +73,8 @@ Lors du lancement de notre application avec `nuxt`, notre template dans `pages/i
 </template>
 ```
 
-Sera transformé en:
+Sera transformé en :
+
 ```html
 <img src="/_nuxt/img/image.0c61159.png">
 ```

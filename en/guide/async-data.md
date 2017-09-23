@@ -22,6 +22,7 @@ Nuxt.js vous propose différentes façons d'utiliser `asyncData`. Choisissez cel
 3. En définissant une fonction de rappel comme second argument. Elle doit être appelée comme suit : `callback(err, data)`
 
 ### Retourner une promesse
+
 ```js
 export default {
   asyncData ({ params }) {
@@ -34,6 +35,7 @@ export default {
 ```
 
 ### Utiliser async / await
+
 ```js
 export default {
   async asyncData ({ params }) {
@@ -44,6 +46,8 @@ export default {
 ```
 
 ### Utiliser une fonction de rappel
+
+>>>>>>> upstream/master
 ```js
 export default {
   asyncData ({ params }, callback) {
@@ -79,6 +83,7 @@ Vous pouvez utiliser l'objet du contexte injecté à la propriété `asyncData` 
 Nuxt.js ajoute la méthode `error(params)` au `context`, vous pouvez l'appeler pour afficher la page d'erreur. `params.statusCode` sera également utilisée pour faire le rendu avec le code de statut approprié côté serveur.
 
 Exemple avec une `Promise` :
+
 ```js
 export default {
   asyncData ({ params, error }) {
@@ -94,6 +99,7 @@ export default {
 ```
 
 Si vous utilisez l'argument `callback`, vous pouvez l'appeler directement en lui passant l'erreur et Nuxt.js appellera la méthode `error` pour vous :
+
 ```js
 export default {
   asyncData ({ params }, callback) {

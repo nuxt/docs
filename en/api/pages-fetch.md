@@ -1,11 +1,11 @@
 ---
 title: "API: The fetch Method"
-description: The fetch method is used to fill the store before rendering the page, it's like the data method except it doesn't set the component data.
+description: The fetch method is used to fill the store before rendering the page, it's like the asyncData method except it doesn't set the component data.
 ---
 
 # The fetch Method
 
-> The fetch method is used to fill the store before rendering the page, it's like the data method except it doesn't set the component data.
+> The fetch method is used to fill the store before rendering the page, it's like the asyncData method except it doesn't set the component data.
 
 - **Type:** `Function`
 

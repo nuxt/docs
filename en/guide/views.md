@@ -53,6 +53,7 @@ Vous pouvez étendre la mise en page principale en ajoutant un fichier `layouts/
 *Assurez-vous d'ajouter le composant `<nuxt/>` lors de la création d'une mise en page afin d'afficher le composant de la page.*
 
 Le code source de mise en page par défaut est :
+
 ```html
 <template>
   <nuxt/>
@@ -68,6 +69,7 @@ Cette mise en page est spéciale car vous ne devez pas inclure `<nuxt />` dans s
 Le code source de la page d'erreur par défaut est [disponible sur GitHub](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
 
 Exemple d'une page d'erreur personnalisée à l'aide de `layouts/error.vue`:
+
 ```html
 <template>
   <div class="container">
@@ -102,6 +104,7 @@ Exemple avec `layouts/blog.vue` :
 ```
 
 Puis dans `pages/posts.vue`, vous pouvez spécifier à Nuxt.js d'utiliser votre mise en page personnalisée :
+
 ```html
 <script>
 export default {
@@ -147,7 +150,6 @@ export default {
 </style>
 ```
 
-
 | Attribut | Description |
 |-----------|-------------|
 | asyncData | L'attribut le plus important. Il peut être asynchrone et reçoit le contexte comme argument, lisez la documentation sur les [Données asynchrones](/guide/async-data) pour savoir comment il fonctionne. |
@@ -180,6 +182,7 @@ Nuxt.js configure `vue-meta` avec les options suivantes :
 Nuxt.js vous permet de définir tous les meta par défaut de votre application dans `nuxt.config.js`, en utilisant la même propriété `head` :
 
 Exemple d'un viewport spécifique et d'une police Google personnalisée :
+
 ```js
 head: {
   meta: [
@@ -194,7 +197,7 @@ head: {
 
 Pour connaitre la liste des options que vous pouvez donner à `head`, jeter un œil à la [documentation vue-meta](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
 
-Plus d'informations à propos de la méthode `head` dans [la partie Configuration de l'API sur `head`](/api/configuration-head).
+More information about the `head` method: [API Configuration `head`](/api/configuration-head).
 
 ### Balises meta personnalisées pour une page
 
