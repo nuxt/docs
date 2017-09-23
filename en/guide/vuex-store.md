@@ -3,14 +3,14 @@ title: Vuex Store
 description: L'utilisation d'un store pour gérer l'état est important pour toutes les applications de taille importante, c'est pourquoi Vuex est implémenté au cœur de Nuxt.js.
 ---
 
-> L'utilisation d'un store pour gérer l'état est important pour toutes les applications de taille importante, c'est pourquoi [Vuex](https//vuex.vuejs.org/fr/) est implémenté au cœur de Nuxt.js.
+> L'utilisation d'un store pour gérer l'état est important pour toutes les applications de taille importante, c'est pourquoi [Vuex](https://vuex.vuejs.org/fr/) est implémenté au cœur de Nuxt.js.
 
 ## Activer le store
 
 Nuxt.js recherchera le répertoire `store`. S'il existe, il :
 
 1. importera Vuex,
-2. ajoutera le module `vuex` dans le packetage vendors,
+2. ajoutera le module `vuex` dans le paquetage vendors,
 3. ajoutera l'option `store` à l'instance racine de Vue.
 
 Nuxt.js vous laisse le choix entre **2 modes de store**, choisissez celui qui vous convient le mieux :
@@ -135,7 +135,7 @@ Et dans votre `pages/todos.vue`, utiliser le module `todos` :
       <input type="checkbox" :checked="todo.done" @change="toggle(todo)">
       <span :class="{ done: todo.done }">{{ todo.text }}</span>
     </li>
-    <li><input placeholder="Qu'est-ce qui dois être fait ?" @keyup.enter="addTodo"></li>
+    <li><input placeholder="Qu'est-ce qui doit être fait ?" @keyup.enter="addTodo"></li>
   </ul>
 </template>
 
@@ -213,6 +213,6 @@ actions: {
 
 > Si vous utilisez le mode _Modules_ du store Vuex, seul le module principal (dans `store/index.js`) recevra cette action. Vous devrez chainer vos actions de module à partir de là.
 
-Le contexte est fourni par `nuxtServerInit` comme 2ème argument. C'est le même que pour les méthodes `data` et `fetch` excepté que `context.redirect()` et `context.error()` sont omis.
+Le contexte est fourni par `nuxtServerInit` comme deuxième argument. C'est le même que pour les méthodes `data` et `fetch` excepté que `context.redirect()` et `context.error()` sont omis.
 
 > Note : Les actions `nuxtServerInit` asynchrones doivent retourner une promesse pour permettre au serveur `nuxt` de les attendres.
