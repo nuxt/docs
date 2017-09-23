@@ -15,12 +15,12 @@ Nuxt.js recherchera le répertoire `store`. S'il existe, il :
 
 Nuxt.js vous laisse le choix entre **2 modes de store**, choisissez celui qui vous convient le mieux :
 
-- **Classique :** `store/index.js` retourne une instance.
+- **Classique :** `store/index.js` retourne une instance de store.
 - **Modules :** chaque fichier `.js` dans le répertoire `store` est transformé en tant que [module avec son propre espace de nom](http://vuex.vuejs.org/fr/modules.html) (`index` étant le module racine)
 
 ## Mode classique
 
-Pour activer le store avec le mode classique, nous créons `store/index.js` dans lequel nous exportons l'instance du store :
+Pour activer le store avec le mode classique, nous créons `store/index.js` qui devrait exporter une méthode qui renvoie une instance Vuex :
 
 ```js
 import Vuex from 'vuex'
@@ -215,4 +215,4 @@ actions: {
 
 Le contexte est fourni par `nuxtServerInit` comme deuxième argument. C'est le même que pour les méthodes `data` et `fetch` excepté que `context.redirect()` et `context.error()` sont omis.
 
-> Note : Les actions `nuxtServerInit` asynchrones doivent retourner une promesse pour permettre au serveur `nuxt` de les attendres.
+> Note : Les actions `nuxtServerInit` asynchrones doivent retourner une promesse pour permettre au serveur `nuxt` de les attendre.
