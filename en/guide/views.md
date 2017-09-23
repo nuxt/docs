@@ -182,6 +182,7 @@ Nuxt.js configures `vue-meta` with these options:
 Nuxt.js let you define all default meta for your application inside `nuxt.config.js`, use the same `head` property:
 
 Example of a custom viewport with a custom Google font:
+
 ```js
 head: {
   meta: [
