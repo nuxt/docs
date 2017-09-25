@@ -30,3 +30,7 @@ module.exports = data: ->
 ```bash
 npm install --save-dev pug@2.0.0-beta6 pug-loader coffee-script coffee-loader node-sass sass-loader
 ```
+
+同时在配置webpack的扩展
+const vueLoader = webpackConfig.module.rules.find((rule) => rule.loader === 'vue-loader')
+vueLoader.options.loaders.sass = 'vue-style-loader!css-loader!sass-loader'
