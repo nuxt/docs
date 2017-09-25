@@ -1,6 +1,6 @@
 ---
 title: Routage
-description: Nuxt.js utilise le système de fichiers pour générer les routes de votre application web, c'est aussi simple qu'en PHP de créer des routes.
+description: Nuxt.js utilise le système de fichiers pour générer les routes de votre application web.
 ---
 
 > Nuxt.js génère automatiquement la configuration pour [vue-router](https://github.com/vuejs/vue-router) en fonction de votre arborescence de fichiers Vue se trouvant au sein du répertoire `pages`.
