@@ -1,17 +1,17 @@
 ---
 title: ビュー
-description: このセクションでは Nuxt.js アプリケーションの特定のルートにデータとビューを設定するために必要なことすべてを説明します（ドキュメント、レイアウト、ページ、HTML の head タグのメタ情報などを含みます）
+description: ビューセクションでは Nuxt アプリケーションで特定のルートに対してデータとビューを設定するため必要なもの全て説明しています (ドキュメントレイアウト、ページそしてヘッド)。
 ---
 
-> このセクションでは Nuxt.js アプリケーションの特定のルートにデータとビューを設定するために必要なことすべてを説明します（ドキュメント、レイアウト、ページ、HTML の head タグのメタ情報などを含みます）
+> ビューセクションでは Nuxt アプリケーションで特定のルートに対してデータとビューを設定するため必要なもの全て説明しています (ドキュメントレイアウト、ページそしてヘッド)。
 
 ![nuxt-views-schema](/nuxt-views-schema.png)
 
 ## ドキュメント
 
-> メインのドキュメントをカスタマイズすることができます。
+> Nuxt.js でメインドキュメントをカスタマイズできます。
 
-HTML テンプレートを拡張するために、プロジェクトのルートディレクトリに `app.html` を作成します。
+HTML テンプレートを拡張するために、プロジェクトのルートにおいて `app.html` を作成します。
 
 デフォルトのテンプレートは下記です:
 
@@ -78,7 +78,6 @@ Nuxt.js ではメインレイアウトを拡張したり、カスタムレイア
     <nuxt-link to="/">ホーム</nuxt-link>
   </div>
 </template>
-
 <script>
 export default {
   props: ['error'],
@@ -126,24 +125,23 @@ layout プロパティについてより深く理解するには [ページレ�
 <template>
   <h1 class="red">Hello {{ name }}!</h1>
 </template>
-
 <script>
 export default {
-  data (context) {
-    // コンポーネントがロードされる前に毎回呼び出されます
+  asyncData (context) {
+    // コンポーネントをロードする前に毎回呼び出されます
     return { name: 'World' }
   },
   fetch () {
-    // fetch メソッドは、ページがレンダリングされる前に、ストアにデータを入れるために使われます
+    // `fetch` メソッドはページの描画前にストアを満たすために使用されます
+the page
   },
   head () {
-    // このページのメタタグをセットします
+    // このページ向けにメタタグを設定します
   },
-  // さらにいろいろな機能が続きます...
+  // そしてもっと多くの機能を見つける
   ...
 }
 </script>
-
 <style>
 .red {
   color: red;
@@ -151,41 +149,39 @@ export default {
 </style>
 ```
 
-<!-- | asyncData | The most important key, it can be asynchronous and receives the context as argument, please read the [async data documentation](/guide/async-data) to learn how it works. |
+属性 | 説明
+--- | ---
+asyncData | 最も重要なキーとして、非同期でかつコンテキストを引数として受信することです。どのように動作するのか学習するために、[async data documentation](/guide/async-data) を読んでください。
+fetch | ページの描画前にストアを満たすために使用されます。コンポーネントデータを設定しない点を除いて、データメソッドのようなものです。[API Pages `fetch` documentation](/api/pages-fetch) を参照してください。
+head | 現在のページに対して特定のメタタグを設定します。[API Pages `head` documentation](/api/pages-head)を参照してください。
+layout | `layouts` ディレクトリで定義されたレイアウトを指定します。[API Pages `layout` documentation](/api/pages-layout) を参照してください。
+transition | ページに対して特定のトランジションを設定します。[API Pages `transition`](/api/pages-transition) を参照してください。
+scrollToTop | Boolean、デフォルトは `false`: ページの描画前にトップにスクロールしたいしたい場合、[nested routes](/guide/routing#nested-routes) に対して使用されます。
+validate | [dynamic routes](/guide/routing#dynamic-routes) に対する検証関数。
+middleware | このページに対してミドルウェアを設定します。ミドルウェアはページを描画する前に呼ばれます。ルート [middleware](/guide/routing#middleware) を参照してください。
 
-| 属性 | 説明 |
-|-----------|-------------|
-| asyncData | 最も重要なキーです。非同期に動作し、引数として context を受け取ります。どのように動作するかを知るには [非同期データに関するドキュメント](/guide/async-data) を参照してください |
-| fetch | ページがレンダリングされる前に、データをストアに入れるために使います。コンポーネントのデータをセットすること以外は data メソッドと似ています。[ページのフェッチ API に関するドキュメント](/api/pages-fetch) を参照してください |
-| head | 現在のページの特定のメタタグを設定します。[ページの head API](/api/pages-head) を参照してください |
-| layout | `layouts` ディレクトリ内のレイアウトを指定します。[ページのレイアウト API に関するドキュメント](/api/pages-layout) を参照してください |
-| transition | ページに特定のトランジションを設定します。[ページのトランジション API に関するドキュメント](/api/pages-transition) を参照してください |
-| scrollToTop | ブーリアンで指定し、デフォルトは `false` です。ページをレンダリングする前にトップまでスクロールさせるか否かを指定します。これは [ネストされたルート](/guide/routing#ネストされたルート) で使われます |
-| validate | [動的なルーティング](/guide/routing#動的なルーティング) のためのバリデーション関数です |
-| middleware | このページのためにミドルウェアを設定し、ミドルウェアはページがレンダリングされる前に呼び出されます。[ルーティングのミドルウェア](/guide/routing#ミドルウェア) を参照してください |
+ページプロパティの使用についてより多くの情報: [API Pages](/api)
 
-ページのプロパティの使い方についてより深く理解するには [ページ API](/api) を参照してください。
+## HTML ヘッド
 
-## HTML の head 情報
+Nuxt.js は `headers` とアプリケーションの `html attributes` を更新するために [vue-meta](https://github.com/declandewet/vue-meta) を使用しています。
 
-Nuxt.js はアプリケーションの `headers` 及び `html attributes` を更新するために [vue-meta](https://github.com/declandewet/vue-meta) を使います。
-
-Nuxt.js では下記のオプションで `vue-meta` を設定します:
+Nuxt.js はこれらのオプションで `vue-meta` を設定します:
 
 ```js
 {
-  keyName: 'head', // vue-meta がメタ情報を探すためのコンポーネントオプションの名前
-  attribute: 'data-n-head', // vue-meta がタグを監視するためにタグに追加する属性名
-  ssrAttribute: 'data-n-head-ssr', // メタ情報が既にサーバーサイドでレンダリングされていることを vue-meta に知らせるための属性名
-  tagIDKeyName: 'hid' // vue-meta がタグを上書きすべきかタグを追加すべきか判断するために用いるプロパティ名
+  keyName: 'head', // vue-meta がメタ情報を探すためのコンポーネントオプション名
+  attribute: 'data-n-head', // vue-méta がそれをオブザーブするタグに追加する属性名
+  ssrAttribute: 'data-n-head-ssr', // メタ情報がすでにサーバで描画されていることを vue-meta に知らせる属性名
+  tagIDKeyName: 'hid' // タグを上書きするか追加するかを決定するために vue-meta が使用するプロパティ名
 }
 ```
 
-### デフォルトのメタタグ
+### デフォルトメタタグ
 
-Nuxt.js ではアプリケーションのデフォルトのメタ情報を `nuxt.config.js` で設定できます。`head` プロパティを使用します:
+Nuxt.js を使用すると、`nuxt.config.js` 内のアプリケーションのすべてのデフォルトメタタグを定義し、同じ `head` プロパティを使用します:
 
-カスタム viewport 及び Google フォントを定義する例:
+カスタム Google フォントによるカスタム viewport の例:
 
 ```js
 head: {
@@ -199,12 +195,13 @@ head: {
 }
 ```
 
-`head` に渡せるオプションのリストを確認するには [vue-meta のドキュメント](https://github.com/declandewet/vue-meta#recognized-metainfo-properties) を見てみてください。
+ `head` に与えることができるオプションのリストを知るためには、[vue-meta documentation](https://github.com/declandewet/vue-meta#recognized-metainfo-properties) を参照してください。
 
-head メソッドについてより深く理解するには [head 設定 API](/api/configuration-head) を参照してください。
+`head` メソッドに関するより多くの情報:  [API Configuration `head`](/api/configuration-head)
 
-### 特定のページにメタタグを設定する
+### ページに対するカスタムメタタグ
 
-特定のページにメタタグを設定する方法について [ページ head API](/api/pages-head) を参照してください。
+ヘッドメソッドに関するより多くの情報: [API Pages `head`](/api/pages-head)
 
-<p class="Alert">子コンポーネントで利用されたときにメタ情報が重複してしまうことを避けるために `hid` キーでユニーク識別子を与えてください。また、これについてより深く理解するには [こちら](https://github.com/declandewet/vue-meta#lists-of-tags) を参照してください。</p>
+
+<p class="Alert">子コンポーネントで使用するとき、任意の重複を回避するために、`hid`キーでユニークなIDが与えてください。[それについてより多くの情報を読んで](https://github.com/declandewet/vue-meta#lists-of-tags)ください。</p>
