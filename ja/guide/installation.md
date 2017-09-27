@@ -32,7 +32,8 @@ $ npm run dev
 
 するとアプリケーションは http://localhost:3000 で動いています。
 
-<p class="Alert">Nuxt.js は `pages` ディレクトリ内のファイルの更新を監視します。そのため、新しいページを追加したときにアプリケーションを再起動する必要はありません。</p>
+
+<p class="Alert">Nuxt.js は <code>pages</code> ディレクトリ内のファイルの更新を監視します。そのため、新しいページを追加したときにアプリケーションを再起動する必要はありません。</p>
 
 プロジェクトのディレクトリ構造についてより深く理解するには [ディレクトリ構造のドキュメント](/guide/directory-structure) を参照してください。
 
@@ -45,7 +46,8 @@ $ mkdir <project-name>
 $ cd <project-name>
 ```
 
-*メモ: `<project-name>` の箇所は置き換えてください。*
+
+<p class="Alert Alert--nuxt-green">メモ: <code data-md-type="codespan"><project-name></code> の箇所は置き換えてください。</p>
 
 ### package.json
 
@@ -96,6 +98,7 @@ $ npm run dev
 
 すると、アプリケーションは http://localhost:3000 で動いています。
 
-<p class="Alert">Nuxt.js は `pages` ディレクトリ内のファイルの更新を監視します。そのため新しいページを追加した場合にアプリケーションを再起動する必要はありません。</p>
+
+<p class="Alert">Nuxt.js は <code>pages</code> ディレクトリ内のファイルの更新を監視します。そのため新しいページを追加した場合にアプリケーションを再起動する必要はありません。</p>
 
 プロジェクトのディレクトリ構造についてより深く理解するには [ディレクトリ構造のドキュメント](/guide/directory-structure) を参照してください。
