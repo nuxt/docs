@@ -7,11 +7,11 @@ description: Show fancy loading indicator while SPA page is loading!
 
 > Show fancy loading indicator while SPA page is loading!
 
-When running nuxt.js in SPA mode, there is no content from server side on the first page load,
-So instead of show a blank page while page loads, we may show a spinner.
+When running nuxt.js in SPA mode, there is no content from the server side on the first page load,
+So instead of showing a blank page while the page loads, we may show a spinner.
 
 This property can have 3 different types: `string` or `false` or `object`.
-If string value is provided it is converted to object style.
+If a string value is provided it is converted to object style.
 
 Default value is: 
 ```js
@@ -43,7 +43,7 @@ Built-in indicators support `color` and `background` options.
 
 ## Custom indicators
 
-If you need your own special indicator, String value or Name key can be also a path to html template of indicator source code!
+If you need your own special indicator, a String value or Name key can also be a path to an html template of indicator source code!
 All of the options are passed to the template too.
 
 Nuxt Built-ins [source code](https://github.com/nuxt/nuxt.js/tree/dev/lib/app/views/loading) is also available if you need a base!
