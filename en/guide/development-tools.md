@@ -7,14 +7,15 @@ description: Nuxt.js helps you to make your web development enjoyable.
 
 ## End-to-End Testing
 
-[Ava](https://github.com/avajs/ava) is a powerful JavaScript testing framework, mixed with [jsdom](https://github.com/tmpvar/jsdom), we can use them to do end-to-end testing easily.
+[AVA](https://github.com/avajs/ava) is a powerful JavaScript testing framework, mixed with [jsdom](https://github.com/tmpvar/jsdom), we can use them to do end-to-end testing easily.
 
-First, we need to add ava and jsdom as development dependencies:
+First, we need to add AVA and jsdom as development dependencies:
+
 ```bash
 npm install --save-dev ava jsdom
 ```
 
-And add a test script to our `package.json` and configure ava to compile files that we import into our tests.
+Then add a test script to our `package.json` and configure AVA to compile files that we import into our tests.
 
 ```javascript
 "scripts": {
@@ -33,11 +34,13 @@ And add a test script to our `package.json` and configure ava to compile files t
 ```
 
 We are going to write our tests in the `test` folder:
+
 ```bash
 mkdir test
 ```
 
 Let's say we have a page in `pages/index.vue`:
+
 ```html
 <template>
   <h1 class="red">Hello {{ name }}!</h1>
@@ -58,7 +61,7 @@ export default {
 </style>
 ```
 
-When we launch our app with `npm run dev` and open [http://localhost:3000](http://localhost:3000), we can see our red `Hello world!` title.
+When we launch our app with `npm run dev` and open http://localhost:3000, we can see our red `Hello world!` title.
 
 We add our test file `test/index.test.js`:
 
@@ -67,7 +70,7 @@ import test from 'ava'
 import { Nuxt, Builder } from 'nuxt'
 import { resolve } from 'path'
 
-// We keep a reference to nuxt so we can close
+// We keep a reference to Nuxt so we can close
 // the server at the end of the test
 let nuxt = null
 
@@ -90,7 +93,7 @@ test('Route / exits and render HTML', async t => {
   t.true(html.includes('<h1 class="red">Hello world!</h1>'))
 })
 
-// Example of testing via dom checking
+// Example of testing via DOM checking
 test('Route / exits and render HTML with CSS applied', async t => {
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
@@ -100,13 +103,14 @@ test('Route / exits and render HTML with CSS applied', async t => {
   t.is(window.getComputedStyle(element).color, 'red')
 })
 
-// Close the nuxt server
+// Close the Nuxt server
 test.after('Closing server', t => {
   nuxt.close()
 })
 ```
 
 We can now launch our tests:
+
 ```bash
 npm test
 ```
