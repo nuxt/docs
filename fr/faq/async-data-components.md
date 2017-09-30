@@ -1,11 +1,11 @@
 ---
-title: Données asynchrones dans les composants
-description: Données asynchrones dans les composants?
+title: Async data in components
+description: Async data in components?
 ---
 
-# Données asynchrones dans les composants?
+# Async data in components? (En)
 
-Étant donné que les composants ne comportent pas de méthode asyncData, vous ne pouvez pas récupérer directement côté serveur de données asynchrone dans un composant. Pour contourner cette limitation, vous avez deux possibilités:
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Because components do not have an asyncData method, you cannot directly fetch async data server side within a component. In order to get around there limitation you have two basic options:</p>
 
-1. Effectuez l'appel API dans le hook mounted() et définissez les données quand le composant est loadé. *Problème: ne fonctionne pas pour le rendu côté serveur
-2. Effectuez l'appel API dans la méthode asyncData() ou fetch() du composant page et passez les données en tant que props au sous-composant. Le rendu côté serveur fonctionnera. *Problème: asyncData() ou fetch() d'une page peuvent êtres moins lisibles car elles chargent les données pour d'autres composants*
+1. Make the API call in the mounted() hook and set data properties when loaded. *Downside: Won't work for server side rendering.*
+2. Make the API call in the asyncData() or fetch() methods of the page component and pass the data as props to the sub components. Server rendering will work fine. *Downside: the asyncData() or fetch() of the page might be less readable because it's loading the data for other components*

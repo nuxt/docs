@@ -1,11 +1,11 @@
 ---
-title: Plugins postcss
-description: Comment utiliser des plugins postcss
+title: Postcss plugins
+description: How to add postcss plugins?
 ---
 
-# Comment utiliser des plugins postcss
+# How to add postcss plugins? (En)
 
-Dans votre fichier `nuxt.config.js`:
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>In your `nuxt.config.js` file:</p>
 
 ```js
 module.exports = {

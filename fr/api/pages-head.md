@@ -1,17 +1,17 @@
 ---
-title: "API: la méthode head"
-description: Nuxt.js utilise vue-meta pour mettre à jours les `headers` et les attributs html de votre application.
+title: "API: The head Method"
+description: Nuxt.js uses vue-meta to update the `headers` and `html attributes` of your application.
 ---
 
-# La méthode head
+# The head Method (En)
 
-> Nuxt.js utilise [vue-meta](https://github.com/declandewet/vue-meta) pour mettre à jours les `headers` et les attributs html de votre application.
+> Nuxt.js uses [vue-meta](https://github.com/declandewet/vue-meta) to update the `headers` and `html attributes` of your application.
 
-- **Type:** `Object` ou `Function`
+- **Type:** `Object` or `Function`
 
-Utilisez la méthode `head` pour définir les tags HTML head de la page courante.
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Use the `head` method to set the HTML Head tags for the current page.</p>
 
-Les données de votre composant sont disponibles avec `with` au sein de la méthode `head`, vous pouvez définir des meta tags personnalisés avec les données de page.
+Your component data are available with `this` in the `head` method, you can use set custom meta tags with the page data.
 
 ```html
 <template>
@@ -37,4 +37,4 @@ export default {
 </script>
 ```
 
-<p class="Alert">Afin d'éviter un doublon quand vous utilisez un composant enfant, utilisez un identifiant unique à l'aide de la clef `hid`; [plus à ce propos](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+<p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://github.com/declandewet/vue-meta#lists-of-tags).</p>

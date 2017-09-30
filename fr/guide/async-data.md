@@ -1,25 +1,28 @@
 ---
 title: Données asynchrones
-description: Vous voudrez peut-être récupérer des données et faire le rendu côté serveur. Nuxt.js ajoute une méthode `asyncData` pour vous permettre de gérer les opérations asynchrones avant de définir les données du composant.
+description: Vous voudriez peut-être récupérer des données et faire le rendu côté serveur. Nuxt.js ajoute une méthode `asyncData` pour vous permettre de gérer les opérations asynchrones avant de définir les données du composant.
 ---
 
-> Vous voudrez peut-être récupérer des données et faire le rendu côté serveur. Nuxt.js ajoute une méthode `asyncData` pour vous permettre de gérer les opérations asynchrones avant de définir les données du composant.
+> Vous voudriez peut-être récupérer des données et faire le rendu côté serveur.
+Nuxt.js ajoute une méthode `asyncData` pour vous permettre de gérer les opérations asynchrones avant de définir les données du composant.
 
 ## La méthode asyncData
 
-Parfois, vous souhaitez simplement récupérer des données et les faire le rendu côté serveur sans utiliser de *store*. `asyncData` est appelé avant chaque chargement du composant (**uniquement pour les composants pages**).
+Parfois vous souhaitez simplement récupérer des données et faire le rendu côté serveur sans utiliser de store.
+`asyncData` est appelé avant chaque chargement du composant (**uniquement pour les composants de pages**).
 On peut l'appeler côté serveur ou avant de naviguer vers la route correspondante.
-Cette méthode reçoit [le contexte](/api#context) comme premier argument, vous pouvez l'utiliser pour récupérer des données et nuxt.js fusionnera avec les données du composant.
+Cette méthode reçoit [le contexte](/api#context) comme premier argument, vous pouvez l'utiliser pour récupérer différentes données et Nuxt.js les fusionnera avec les données du composant.
 
-<div class="Alert Alert--orange">Vous **n'avez pas** accès à l'instance du composant via `this` au sein de `data` parce que la fonction est appelée **avant d'initier** le composant.</div>
+<div class="Alert Alert--orange">Vous **n'**avez **PAS** accès à l'instance du composant via `this` au sein de `asyncData` parce que la fonction est appelée **avant d'initier** le composant.</div>
 
-Nuxt.js vous propose différentes façons d'utiliser `asyncData`. Choisissez celle avec laquelle vous êtes le plus familier:
+Nuxt.js vous propose différentes façons d'utiliser `asyncData`. Choisissez celle avec laquelle vous êtes le plus à l'aise :
 
-1. Retourner une `Promise`. Nuxt.js attends que la Promise soit résolue avant de faire le rendu du composant.
-2. En utilisant [async/await](https://github.com/lukehoban/ecmascript-asyncawait) ([en savoir plus](https://zeit.co/blog/async-and-await))
-3. En définissant un callback comme second argument. Il doit être appelé comme suit: `callback(err, data)`
+1. Retourner une `Promise`. Nuxt.js attend que la promesse soit résolue avant de faire le rendu du composant.
+2. En utilisant [async / await](https://github.com/lukehoban/ecmascript-asyncawait) ([en savoir plus](https://zeit.co/blog/async-and-await))
+3. En définissant une fonction de rappel comme second argument. Elle doit être appelée comme suit : `callback(err, data)`
 
-### Retourner une Promise
+### Retourner une promesse
+
 ```js
 export default {
   asyncData ({ params }) {
@@ -31,7 +34,8 @@ export default {
 }
 ```
 
-### Utiliser async/await
+### Utiliser async / await
+
 ```js
 export default {
   async asyncData ({ params }) {
@@ -41,7 +45,9 @@ export default {
 }
 ```
 
-### Utiliser un callback
+### Utiliser une fonction de rappel
+
+>>>>>>> upstream/master
 ```js
 export default {
   asyncData ({ params }, callback) {
@@ -55,8 +61,8 @@ export default {
 
 ### Afficher les données
 
-Le résultat d'`asyncData` sera **mergé** avec les données.
-Vous pouvez afficher les données au sein du template comme habituellement.
+Le résultat de `asyncData` sera **fusionné** avec les données.
+Vous pouvez afficher les données au sein du template comme habituellement :
 
 ```html
 <template>
@@ -64,19 +70,20 @@ Vous pouvez afficher les données au sein du template comme habituellement.
 </template>
 ```
 
-## Le Context
+## Le contexte
 
-Pour voir la liste des attributs disponibles dans le `context`, jeter un oeil à [API Pages data](/api).
+Pour voir la liste des attributs disponibles dans `context`, jeter un œil à [la partie Essentielle de l'API pour `context`](/api/context).
 
 ### Accéder aux données des routes dynamiques
 
-Vous pouvez utiliser l'objet contexte injecté à la propriété `asyncData` afin d'accéder aux données des routes dynamiques. Par example, les données des routes dynamiques peuvent être accédées en utilisant le nom du fichier ou du dossier qui la configure; si vous définissez un fichier nommé `_slug.vue`, vous pourrez y accéder via `context.params.slug`.
+Vous pouvez utiliser l'objet du contexte injecté à la propriété `asyncData` afin d'accéder aux données des routes dynamiques. Par exemple, les données des routes dynamiques peuvent être accédées en utilisant le nom du fichier ou du dossier qui la configure. Si vous définissez un fichier nommé `_slug.vue`, vous pourrez y accéder via `context.params.slug`.
 
 ## Gestion des erreurs
 
-Nuxt.js ajoute la méthode `error(params)` au `context`, vous pouvez l'appeler pour afficher la page d'erreur. `Params.statusCode` sera également utilisé pour faire le rendu avec le code de status approprié côté serveur.
+Nuxt.js ajoute la méthode `error(params)` au `context`, vous pouvez l'appeler pour afficher la page d'erreur. `params.statusCode` sera également utilisée pour faire le rendu avec le code de statut approprié côté serveur.
 
-Exemple avec une `Promise`:
+Exemple avec une `Promise` :
+
 ```js
 export default {
   asyncData ({ params, error }) {
@@ -85,13 +92,14 @@ export default {
       return { title: res.data.title }
     })
     .catch((e) => {
-      error({ statusCode: 404, message: 'Post not found' })
+      error({ statusCode: 404, message: 'Billet non trouvé' })
     })
   }
 }
 ```
 
-Si vous utilisez l'argument `callback`, vous pouvez l'appeler directement en lui passant l'erreur et nuxt.js appellera la méthode `error` pour vous:
+Si vous utilisez l'argument `callback`, vous pouvez l'appeler directement en lui passant l'erreur et Nuxt.js appellera la méthode `error` pour vous :
+
 ```js
 export default {
   asyncData ({ params }, callback) {
@@ -106,4 +114,4 @@ export default {
 }
 ```
 
-Pour modifier la page d'erreur, voir [Views layouts section](/guide/views#layouts).
+Pour personnaliser la page d'erreur, consultez [la partie Mises en page de la section Vues](/guide/views#mises-en-page).

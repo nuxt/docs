@@ -1,19 +1,19 @@
 ---
 title: "API: The loading Property"
-description: Nuxt.js uses it's own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
+description: Nuxt.js uses its own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
 ---
 
-# The loading Property
+# The loading Property (En)
 
 - Type: `Boolean` or `Object` or `String`
 
-> Nuxt.js uses it's own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
+> Nuxt.js uses its own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
 
 ## Disable the Progress Bar
 
 - Type: `Boolean`
 
-If you don't want to display the progress bar between the routes, simply add `loading: false` in your `nuxt.config.js` file:
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>If you don't want to display the progress bar between the routes, simply add `loading: false` in your `nuxt.config.js` file:</p>
 
 ```js
 module.exports = {
@@ -33,6 +33,7 @@ List of properties to customize the progress bar.
 | `failedColor` | String | `'red'` | CSS color of the progress bar when an error appended while rendering the route (if `data` or `fetch` sent back an error for example). |
 | `height` | String | `'2px'` | Height of the progress bar (used in the `style` property of the progress bar) |
 | `duration` | Number | `5000` | In ms, the maximum duration of the progress bar, Nuxt.js assumes that the route will be rendered before 5 seconds. |
+| `rtl` | Boolean | `false` | Set the direction of the progress bar from right to left. |
 
 For a blue progress bar with 5px of height, we update the `nuxt.config.js` to the following:
 
@@ -104,6 +105,6 @@ Then, we update our `nuxt.config.js` to tell Nuxt.js to use our component:
 
 ```js
 module.exports = {
-  loading: '~components/loading.vue'
+  loading: '~/components/loading.vue'
 }
 ```

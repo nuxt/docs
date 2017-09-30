@@ -9,7 +9,7 @@ description: Configure the generation of your universal web application to a sta
 
 > Configure the generation of your universal web application to a static web application.
 
-When launching `nuxt generate` or calling `nuxt.generate()`, nuxt.js will use the configuration defined in the `generate` property.
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>When launching `nuxt generate` or calling `nuxt.generate()`, nuxt.js will use the configuration defined in the `generate` property.</p>
 
 ## dir
 
@@ -121,7 +121,7 @@ module.exports = {
         return res.data.map((user) => {
           return '/users/' + user.id
         })
-      })
+      })      
     }
   }
 }
@@ -146,5 +146,39 @@ module.exports = {
       .catch(callback)
     }
   }
+}
+```
+
+### Speeding up dynamic route generation with `payload`
+
+In the example above, we're using the `user.id` from the server to generate the routes but tossing out the rest of the data. Typically, we need to fetch it again from inside the `/users/_id.vue`. While we can do that, we'll probably need to set the `generate.interval` to something like `100` in order not to flood the server with calls. Because this will increase the run time of the generate script, it would be preferable to pass along the entire `user` object to the context in `_id.vue`. We do that with by modifying the code above to this:
+
+`nuxt.config.js`
+```js
+const axios = require('axios')
+
+module.exports = {
+  generate: {
+    routes: function () {
+      return axios.get('https://my-api/users')
+      .then((res) => {
+        return res.data.map((user) => {
+          return {
+            route: '/users/' + user.id,
+            payload: user
+          }
+        })
+      })
+    }
+  }
+}
+```
+
+Now we can access the `payload` from `/users/_id.vue` like so:
+
+```js
+async asyncData ({ params, error, payload }) {
+  if (payload) return { user: payload }
+  else return { user: await backend.fetchUser(params.id) }
 }
 ```
