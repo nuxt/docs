@@ -3,9 +3,9 @@ title: HOST and PORT
 description: How to edit HOST and PORT with Nuxt.js?
 ---
 
-# How to edit HOST and PORT?
+# How to edit HOST and PORT? (En)
 
-You can configure the PORT with 3 different ways:
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>You can configure the PORT with 3 different ways:</p>
 
 1. With env variables
 ```js

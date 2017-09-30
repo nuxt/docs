@@ -3,11 +3,11 @@ title: "API: The <nuxt-child> Component"
 description: Display the current page
 ---
 
-# The &lt;nuxt-child&gt; Component
+# The &lt;nuxt-child&gt; Component (En)
 
 > This component is used for displaying the children components in a [nested route](/guide/routing#nested-routes).
 
-Example:
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Example:</p>
 
 ```bash
 -| pages/

@@ -1,5 +1,5 @@
 ---
-title: Auth Routes
+title: Auth Routes (En)
 description: Authenticated routes example with Nuxt.js
 github: auth-routes
 livedemo: https://nuxt-auth-routes.gomix.me
@@ -12,7 +12,7 @@ liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 
 ## Using Express and Sessions
 
-To add the sessions feature in our application, we will use `express` and `express-session`, for this, we need to use Nuxt.js programmatically.
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>To add the sessions feature in our application, we will use `express` and `express-session`, for this, we need to use Nuxt.js programmatically.</p>
 
 First, we install the dependencies:
 ```bash

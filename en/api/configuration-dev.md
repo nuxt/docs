@@ -3,14 +3,14 @@ title: "API: The dev Property"
 description: Define the development or production mode.
 ---
 
-# The dev Property
+# The dev Property (En)
 
 - Type: `Boolean`
 - Default: `true`
 
 > Define the development or production mode of nuxt.js
 
-This property is overwritten by [nuxt commands](/guide/commands):
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>This property is overwritten by [nuxt commands](/guide/commands):</p>
 
 - `dev` is forced to `true` with `nuxt`
 - `dev` is forced to `false` with `nuxt build`, `nuxt start` and `nuxt generate`

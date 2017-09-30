@@ -3,11 +3,11 @@ title: "API: Nuxt Modules Intro"
 description: Better understand Nuxt internals
 ---
 
-# Nuxt Internals
+# Nuxt Internals (En)
 
-Nuxt.js has a fully modular architecture which allows developers extending any part of Nuxt Core using a flexible API.
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Nuxt.js has a fully modular architecture which allows developers extending any part of Nuxt Core using a flexible API.
 Please see [Modules Guide](/guide/modules) for more detailed information if interested developing your own module. 
-This section helps getting familiar to Nuxt internals and can be used as a reference to understand it better while writing your own modules.
+This section helps getting familiar to Nuxt internals and can be used as a reference to understand it better while writing your own modules.</p>
 
 ### Core
 

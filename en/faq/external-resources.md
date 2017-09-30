@@ -3,11 +3,11 @@ title: External resources
 description: How to use external resources with Nuxt.js?
 ---
 
-# How to use external resources?
+# How to use external resources? (En)
 
 ## Global Settings
 
-Include your resources in the `nuxt.config.js` file:
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Include your resources in the `nuxt.config.js` file:</p>
 
 ```js
 module.exports = {

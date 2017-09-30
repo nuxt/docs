@@ -3,13 +3,13 @@ title: "API: The transition Property"
 description: Nuxt.js uses the transition component to let you create amazing transitions/animations between your pages.
 ---
 
-# The transition Property
+# The transition Property (En)
 
 > Nuxt.js uses the [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your pages. 
 
 - **Type:** `String` or `Object` or `Function`
 
-To define a custom transition for a specific route, simply add the `transition` key to the page component.
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>To define a custom transition for a specific route, simply add the `transition` key to the page component.</p>
 
 ```js
 export default {

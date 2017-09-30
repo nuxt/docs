@@ -3,9 +3,9 @@ title: Surge Deployment
 description: How to deploy Nuxt.js with Surge.sh?
 ---
 
-# How to deploy with Surge.sh?
+# How to deploy with Surge.sh? (En)
 
-Nuxt.js gives you the possibility to host your web application on any static hosting like [surge.sh](https://surge.sh/) for example.
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Nuxt.js gives you the possibility to host your web application on any static hosting like [surge.sh](https://surge.sh/) for example.</p>
 
 To deploy on surge.sh, first install it on your computer:
 ```bash

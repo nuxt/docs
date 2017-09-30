@@ -3,9 +3,9 @@ title: Heroku Deployment
 description: How to deploy Nuxt.js on Heroku?
 ---
 
-# How to deploy on Heroku?
+# How to deploy on Heroku? (En)
 
-We recommend you to read the [Heroku documentation for node.js](https://devcenter.heroku.com/articles/nodejs-support).
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>We recommend you to read the [Heroku documentation for node.js](https://devcenter.heroku.com/articles/nodejs-support).</p>
 
 First, we need to tell Heroku to install the `devDependencies` of the project (to be able to launch `npm run build`):
 ```bash

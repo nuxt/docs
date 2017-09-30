@@ -1,147 +1,141 @@
 [
   {
-    "title": "Essential",
+    "title": "Essentiel",
     "links": [
-      { "name": "Context", "to": "/context" }
+      { "name": "Context (En)", "to": "/context" }
     ]
   },
   {
     "title": "Pages",
     "links": [
-      { "name": "asyncData", "to": "/" },
-      { "name": "fetch", "to": "/pages-fetch" },
-      { "name": "head", "to": "/pages-head" },
-      { "name": "layout", "to": "/pages-layout" },
-      { "name": "middleware", "to": "/pages-middleware" },
-      { "name": "scrollToTop", "to": "/pages-scrolltotop" },
+      { "name": "asyncData (En)", "to": "/" },
+      { "name": "fetch (En)", "to": "/pages-fetch" },
+      { "name": "head (En)", "to": "/pages-head" },
+      { "name": "layout (En)", "to": "/pages-layout" },
+      { "name": "middleware (En)", "to": "/pages-middleware" },
+      { "name": "scrollToTop (En)", "to": "/pages-scrolltotop" },
       {
-        "name": "transition", "to": "/pages-transition",
+        "name": "transition (En)", "to": "/pages-transition",
         "contents": [
-          { "name": "String", "to": "#string" },
-          { "name": "Object", "to": "#object" },
-          { "name": "Function", "to": "#function" }
+          { "name": "String (En)", "to": "#string" },
+          { "name": "Object (En)", "to": "#object" },
+          { "name": "Function (En)", "to": "#function" }
         ]
       },
-      { "name": "validate", "to": "/pages-validate" }
+      { "name": "validate (En)", "to": "/pages-validate" }
     ]
   },
   {
-    "title": "Components",
+    "title": "Composants",
     "links": [
-      { "name": "nuxt", "to": "/components-nuxt" },
-      { "name": "nuxt-child", "to": "/components-nuxt-child" },
-      { "name": "nuxt-link", "to": "/components-nuxt-link" }
+      { "name": "nuxt (En)", "to": "/components-nuxt" },
+      { "name": "nuxt-child (En)", "to": "/components-nuxt-child" },
+      { "name": "nuxt-link (En)", "to": "/components-nuxt-link" }
     ]
   },
   {
     "title": "Configuration",
     "links": [
       {
-        "name": "build",
-        "to": "/configuration-build",
+        "name": "build (En)", "to": "/configuration-build",
         "contents": [
-          { "name": "analyze", "to": "#analyze" },
-          { "name": "babel", "to": "#babel" },
-          { "name": "cssSourceMap", "to": "#css-source-map" },
-          { "name": "devMiddleware", "to": "#devmiddleware" },
-          { "name": "extend", "to": "#extend" },
-          { "name": "extractCSS", "to": "#extractcss" },
-          { "name": "filenames", "to": "#filenames" },
-          { "name": "hotMiddleware", "to": "#hot-middleware" },
-          { "name": "plugins", "to": "#plugins" },
-          { "name": "postcss", "to": "#postcss" },
-          { "name": "publicPath", "to": "#publicpath" },
-          { "name": "ssr", "to": "#ssr" },
-          { "name": "templates", "to": "#templates" },
-          { "name": "vendor", "to": "#vendor" },
-          { "name": "watch", "to": "#watch" }
+          { "name": "analyze (En)", "to": "#analyze" },
+          { "name": "babel (En)", "to": "#babel" },
+          { "name": "cssSourceMap (En)", "to": "#css-source-map" },
+          { "name": "devMiddleware (En)", "to": "#devmiddleware" },
+          { "name": "extend (En)", "to": "#extend" },
+          { "name": "extractCSS (En)", "to": "#extractcss" },
+          { "name": "filenames (En)", "to": "#filenames" },
+          { "name": "hotMiddleware (En)", "to": "#hot-middleware" },
+          { "name": "plugins (En)", "to": "#plugins" },
+          { "name": "postcss (En)", "to": "#postcss" },
+          { "name": "publicPath (En)", "to": "#publicpath" },
+          { "name": "ssr (En)", "to": "#ssr" },
+          { "name": "templates (En)", "to": "#templates" },
+          { "name": "vendor (En)", "to": "#vendor" },
+          { "name": "watch (En)", "to": "#watch" }
         ]
       },
-      { "name": "css", "to": "/configuration-css" },
-      { "name": "dev", "to": "/configuration-dev" },
-      { "name": "env", "to": "/configuration-env" },
+      { "name": "css (En)", "to": "/configuration-css" },
+      { "name": "dev (En)", "to": "/configuration-dev" },
+      { "name": "env (En)", "to": "/configuration-env" },
       {
-        "name": "generate",
-        "to": "/configuration-generate",
+        "name": "generate (En)", "to": "/configuration-generate",
         "contents": [
-          { "name": "dir", "to": "#dir" },
-          { "name": "interval", "to": "#interval" },
-          { "name": "minify", "to": "#minify" },
-          { "name": "routes", "to": "#routes" }
+          { "name": "dir (En)", "to": "#dir" },
+          { "name": "interval (En)", "to": "#interval" },
+          { "name": "minify (En)", "to": "#minify" },
+          { "name": "routes (En)", "to": "#routes" }
         ]
       },
-      { "name": "head", "to": "/configuration-head" },
+      { "name": "head (En)", "to": "/configuration-head" },
       {
-        "name": "loading",
-        "to": "/configuration-loading",
+        "name": "loading (En)", "to": "/configuration-loading",
         "contents": [
-          { "name": "Disable the Progress Bar", "to": "#disable-the-progress-bar" },
-          { "name": "Customize the Progress Bar", "to": "#customize-the-progress-bar" },
-          { "name": "Use a Custom Loading Component", "to": "#use-a-custom-loading-component" }
+          { "name": "Disable the Progress Bar (En)", "to": "#disable-the-progress-bar" },
+          { "name": "Customize the Progress Bar (En)", "to": "#customize-the-progress-bar" },
+          { "name": "Use a Custom Loading Component (En)", "to": "#use-a-custom-loading-component" }
         ]
       },
-      { "name": "loadingIndicator", "to": "/configuration-loading-indicator" },
-      { "name": "mode", "to": "/configuration-mode" },
-      { "name": "modules", "to": "/configuration-modules" },
-      { "name": "plugins", "to": "/configuration-plugins" },
+      { "name": "loadingIndicator (En)", "to": "/configuration-loading-indicator" },
+      { "name": "mode (En)", "to": "/configuration-mode" },
+      { "name": "modules (En)", "to": "/configuration-modules" },
+      { "name": "plugins (En)", "to": "/configuration-plugins" },
       {
-        "name": "render",
-        "to": "/configuration-render",
+        "name": "render (En)", "to": "/configuration-render",
         "contents": [
-          { "name": "bundleRenderer", "to": "#bundleRenderer" },
-          { "name": "etag", "to": "#etag" },
-          { "name": "gzip", "to": "#gzip" },
-          { "name": "http2", "to": "#http2" },
-          { "name": "resourceHints", "to": "#resourceHints" },
-          { "name": "ssr", "to": "#ssr" },
-          { "name": "static", "to": "#static" }
+          { "name": "bundleRenderer (En)", "to": "#bundleRenderer" },
+          { "name": "etag (En)", "to": "#etag" },
+          { "name": "gzip (En)", "to": "#gzip" },
+          { "name": "http2 (En)", "to": "#http2" },
+          { "name": "resourceHints (En)", "to": "#resourceHints" },
+          { "name": "ssr (En)", "to": "#ssr" },
+          { "name": "static (En)", "to": "#static" }
         ]
       },
-      { "name": "rootDir", "to": "/configuration-rootdir" },
+      { "name": "rootDir (En)", "to": "/configuration-rootdir" },
       {
-        "name": "router",
-        "to": "/configuration-router",
+        "name": "router (En)", "to": "/configuration-router",
         "contents": [
-          { "name": "base", "to": "#base" },
-          { "name": "extendRoutes", "to": "#extendroutes" },
-          { "name": "linkActiveClass", "to": "#linkactiveclass" },
-          { "name": "linkExactActiveClass", "to": "#linkexactactiveclass" },
-          { "name": "middleware", "to": "#middleware" },
-          { "name": "mode", "to": "#mode" },
-          { "name": "scrollBehavior", "to": "#scrollbehavior" }
+          { "name": "base (En)", "to": "#base" },
+          { "name": "extendRoutes (En)", "to": "#extendroutes" },
+          { "name": "linkActiveClass (En)", "to": "#linkactiveclass" },
+          { "name": "linkExactActiveClass (En)", "to": "#linkexactactiveclass" },
+          { "name": "middleware (En)", "to": "#middleware" },
+          { "name": "mode (En)", "to": "#mode" },
+          { "name": "scrollBehavior (En)", "to": "#scrollbehavior" }
         ]
       },
-      { "name": "serverMiddleware", "to": "/configuration-servermiddleware" },
-      { "name": "srcDir", "to": "/configuration-srcdir" },
-      { "name": "transition", "to": "/configuration-transition" },
+      { "name": "serverMiddleware (En)", "to": "/configuration-servermiddleware" },
+      { "name": "srcDir (En)", "to": "/configuration-srcdir" },
+      { "name": "transition (En)", "to": "/configuration-transition" },
       {
-        "name": "watchers",
-        "to": "/configuration-watchers",
+        "name": "watchers (En)", "to": "/configuration-watchers",
         "contents": [
-          { "name": "chokidar", "to": "#chokidar" },
-          { "name": "webpack", "to": "#webpack" }
+          { "name": "chokidar (En)", "to": "#chokidar" },
+          { "name": "webpack (En)", "to": "#webpack" }
         ]
       }
     ]
   },
   {
-    "title": "Programmatically",
+    "title": "Programmation",
     "links": [
-      { "name": "Usage", "to": "/nuxt" },
-      { "name": "render", "to": "/nuxt-render" },
-      { "name": "renderRoute", "to": "/nuxt-render-route" },
-      { "name": "renderAndGetWindow", "to": "/nuxt-render-and-get-window" }
+      { "name": "Usage (En)", "to": "/nuxt" },
+      { "name": "render (En)", "to": "/nuxt-render" },
+      { "name": "renderRoute (En)", "to": "/nuxt-render-route" },
+      { "name": "renderAndGetWindow (En)", "to": "/nuxt-render-and-get-window" }
     ]
   },
   {
-    "title": "Internals",
+    "title": "Mécanismes",
     "links": [
-      { "name": "Intro", "to": "/internals" },
-      { "name": "Nuxt", "to": "/internals-nuxt" },
-      { "name": "Renderer", "to": "/internals-renderer" },
-      { "name": "Module Container", "to": "/internals-module-container" },
-      { "name": "Builder", "to": "/internals-builder" },
-      { "name": "Generator", "to": "/internals-generator" }
+      { "name": "Intro (En)", "to": "/internals" },
+      { "name": "Nuxt (En)", "to": "/internals-nuxt" },
+      { "name": "Renderer (En)", "to": "/internals-renderer" },
+      { "name": "Module Container (En)", "to": "/internals-module-container" },
+      { "name": "Builder (En)", "to": "/internals-builder" },
+      { "name": "Generator (En)", "to": "/internals-generator" }
     ]
   }
 ]

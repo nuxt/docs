@@ -3,18 +3,18 @@ title: "API: The serverMiddleware Property"
 description: Define server-side middleware.
 ---
 
-# The serverMiddleware Property
+# The serverMiddleware Property (En)
 
 - Type: `Array`
     - Items: `String` or `Object` or `Function`
 
-Nuxt internally creates a [connect](https://github.com/senchalabs/connect) instance,
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Nuxt internally creates a [connect](https://github.com/senchalabs/connect) instance,
 so we can register our middleware to it's stack and having chance
 to provide more routes like API **without need to an external server**.
 Because connect itself is a middleware, registered middleware will work with both `nuxt start` 
 and also when used as a middleware with programmatic usages like [express-template](github.com/nuxt-community/express-template).
 Nuxt [Modules](/guide/modules) can also provide `serverMiddleware`
-using [this.addServerMiddleware()](/api/internals-module-container#addservermiddleware-middleware-)
+using [this.addServerMiddleware()](/api/internals-module-container#addservermiddleware-middleware-)</p>
 
 ## serverMiddleware vs middleware!
 Don't confuse it with [routes middleware](/guide/routing#middleware) which are being called before each route by Vue in Client Side or SSR.

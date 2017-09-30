@@ -3,7 +3,7 @@ title: "API: nuxt.render(req, res)"
 description: You can use Nuxt.js as a middleware for your node.js server.
 ---
 
-# nuxt.render(req, res)
+# nuxt.render(req, res) (En)
 
 - Type: `Function`
 - Arguments:
@@ -13,7 +13,7 @@ description: You can use Nuxt.js as a middleware for your node.js server.
 
 > You can use nuxt.js as a middleware with `nuxt.render` for your node.js server.
 
-Example with [Express.js](https://github.com/expressjs/express):
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Example with [Express.js](https://github.com/expressjs/express):</p>
 ```js
 const { Nuxt, Builder } = require('nuxt')
 

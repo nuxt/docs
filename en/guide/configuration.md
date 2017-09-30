@@ -5,6 +5,8 @@ description: La configuration par défaut de Nuxt.js couvre la plupart des cas d
 
 > La configuration par défaut de Nuxt.js couvre la plupart des cas d'usage. Cependant, le fichier `nuxt.config.js` vous permet de la modifier.
 
+## Options
+
 ### build
 
 Cette option vous permet d'ajouter des modules à l'intérieur du fichier `vendor.bundle.js` généré pour réduire la taille du paquetage de l'application. Vraiment utile lors de l'utilisation de modules externes.

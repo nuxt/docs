@@ -3,7 +3,7 @@ title: "API: The validate Method"
 description: Nuxt.js lets you define a validator method inside your dynamic route component.
 ---
 
-# The validate Method
+# The validate Method (En)
 
 > Nuxt.js lets you define a validator method inside your dynamic route component.
 
@@ -16,7 +16,7 @@ validate({ params, query, store }) {
 }
 ```
 
-Nuxt.js lets you define a validator method inside your dynamic route component (In this example: `pages/users/_id.vue`).
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Nuxt.js lets you define a validator method inside your dynamic route component (In this example: `pages/users/_id.vue`).</p>
 
 If the validate method does not return `true`, Nuxt.js will automatically load the 404 error page.
 

@@ -9,7 +9,7 @@ description: Configure the generation of your universal web application to a sta
 
 > Configure the generation of your universal web application to a static web application.
 
-When launching `nuxt generate` or calling `nuxt.generate()`, nuxt.js will use the configuration defined in the `generate` property.
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>When launching `nuxt generate` or calling `nuxt.generate()`, nuxt.js will use the configuration defined in the `generate` property.</p>
 
 ## dir
 

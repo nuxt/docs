@@ -3,7 +3,7 @@ title: "API: The build Property"
 description: Nuxt.js lets you customize the webpack configuration for building your web application as you want.
 ---
 
-# The build Property
+# The build Property (En)
 
 > Nuxt.js lets you customize the webpack configuration for building your web application as you want.
 
@@ -14,7 +14,7 @@ description: Nuxt.js lets you customize the webpack configuration for building y
 - Type: `Boolean` or `Object`
 - Default: `false`
 
-If an object, see available properties [here](https://github.com/th0r/webpack-bundle-analyzer#as-plugin).
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>If an object, see available properties [here](https://github.com/th0r/webpack-bundle-analyzer#as-plugin).</p>
 
 Example (`nuxt.config.js`):
 ```js

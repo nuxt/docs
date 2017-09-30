@@ -3,9 +3,9 @@ title: "API: The Context"
 description: The `context` provides additional objects/params from Nuxt not traditionally available to Vue components. The `context` is available in special nuxt lifecycle areas like `asyncData`, `plugins`, 'middlewares', 'modules', and 'store/nuxtServerInit`. 
 ---
 
-## Context
+## Context (En)
 
-List of all the available keys in `context`:
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>List of all the available keys in `context`:</p>
 
 | Key | Type | Available | Description |
 |-----|------|--------------|-------------|

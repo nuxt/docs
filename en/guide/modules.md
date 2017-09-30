@@ -1,5 +1,5 @@
 ---
-title: Modules
+title: Modules (En)
 description: Modules are Nuxt.js extensions which can extend it's core functionality and add endless integrations.
 ---
 
@@ -7,9 +7,9 @@ description: Modules are Nuxt.js extensions which can extend it's core functiona
 
 ## Introduction
 
-While developing production grade application using Nuxt, you will find out soon that nuxt core functionalities are not enough
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>While developing production grade application using Nuxt, you will find out soon that nuxt core functionalities are not enough
 and writing configs and plugins for each project is a repetitive, boring and time consuming job.
-Also adding every new feature into Nuxt is not possible as it would make it a fat framework.
+Also adding every new feature into Nuxt is not possible as it would make it a fat framework.</p>
    
 This was the reason Nuxt introduces a higher order modular system to easily extend the core.
 Modules are basically **functions** which are called sequentially when booting Nuxt and core awaits for all of them

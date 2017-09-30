@@ -1,5 +1,5 @@
 ---
-title: Vuex Store
+title: Store Vuex
 description: L'utilisation d'un store pour gérer l'état est important pour toutes les applications de taille importante, c'est pourquoi Vuex est implémenté au cœur de Nuxt.js.
 ---
 
@@ -165,7 +165,7 @@ export default {
 </style>
 ```
 
-<div class="Alert">Vous pouvez également avoir des modules en exportant une instance de store vous devrez les ajouter manuellement sur votre store.
+<div class="Alert">Vous pouvez également avoir des modules en exportant une instance de store vous devrez les ajouter manuellement sur votre store.</div>
 
 ### Plugins
 

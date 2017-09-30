@@ -3,14 +3,14 @@ title: "API: The Builder Class"
 description: Nuxt Builder Class
 ---
 
-# Builder Class
+# Builder Class (En)
 
 - Source: **[builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)**
 
 
 ## Tapable plugins
 
-We can register hooks on certain life cycle events.
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>We can register hooks on certain life cycle events.</p>
 
 ```js
 nuxt.plugin('build', builder => {
