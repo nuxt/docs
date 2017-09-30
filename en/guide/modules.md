@@ -40,7 +40,7 @@ This is the object passed using `modules` array by user we can use it to customi
 
 **`this.options`**
 
-You can directly access to Nuxt options using this reference. This is _nuxt.config.js_ with all default options assigned to and can be used for shared options between modules.
+You can directly access to Nuxt options using this reference. This is `nuxt.config.js` with all default options assigned to and can be used for shared options between modules.
 
 **`this.nuxt`**
 
@@ -76,13 +76,13 @@ Not all modules will do everything synchronous. For example you may want to deve
 
 ### Use async/await
 
-<p class="Alert Alert--orange">Be aware that async/await is only supported in Node.js > 7.2. So if you are a module developer at least warn users about that if using them. For heavily async modules or better legacy support you can use either a bundler to transform it for older Node.js comparability or using promise method.</p>
+<p class="Alert Alert--orange">Be aware that `async`/`await` is only supported in Node.js > 7.2. So if you are a module developer at least warn users about that if using them. For heavily async modules or better legacy support you can use either a bundler to transform it for older Node.js comparability or using promise method.</p>
 
 ```js
 const fse = require('fs-extra')
 
 module.exports = async function asyncModule() {
-  // You can do async works here using async/await
+  // You can do async works here using `async`/`await`
   let pages = await fse.readJson('./pages.json')
 }
 ```
