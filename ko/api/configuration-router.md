@@ -5,7 +5,7 @@ description: router 프로퍼티를 이용하여 nuxt.js 라우터를 사용자 
 
 # router 프로퍼티
 
-> router 프로퍼티를 이용하여 nuxt.js 라우터를 사용자 정의할 수 있습니다. ([vue-router](https://router.vuejs.org/en/)).
+> router 프로퍼티를 이용하여 nuxt.js 라우터를 사용자 정의할 수 있습니다. ([vue-router](https://router.vuejs.org/kr/)).
 
 ## base
 
@@ -25,7 +25,7 @@ module.exports = {
 
 <p class="Alert Alert-blue">`base`가 설정되면, nuxt.js는 문서의 헤더를 추가합니다 `<base href="{{ router.base }}"/>`.</p>
 
-> 이 옵션은 vue-router에 다이렉트로 제공됩니다. [Router 생성자](https://router.vuejs.org/en/api/options.html).
+> 이 옵션은 vue-router에 다이렉트로 제공됩니다. [Router 생성자](https://router.vuejs.org/kr/api/options.html).
 
 ## mode
 
@@ -43,7 +43,7 @@ module.exports = {
 }
 ```
 
-> 이 옵션은 vue-router에 다이렉트로 제공됩니다. [Router 생성자](https://router.vuejs.org/en/api/options.html).
+> 이 옵션은 vue-router에 다이렉트로 제공됩니다. [Router 생성자](https://router.vuejs.org/kr/api/options.html).
 
 ## linkActiveClass
 
@@ -61,7 +61,7 @@ module.exports = {
 }
 ```
 
-> 이 옵션은 vue-router에 다이렉트로 제공됩니다. [Router 생성자](https://router.vuejs.org/en/api/options.html).
+> 이 옵션은 vue-router에 다이렉트로 제공됩니다. [Router 생성자](https://router.vuejs.org/kr/api/options.html).
 
 ## scrollBehavior
 
@@ -108,7 +108,7 @@ module.exports = {
 }
 ```
 
-> 이 옵션은 vue-router에 다이렉트로 제공됩니다. [Router 생성자](https://router.vuejs.org/en/api/options.html).
+> 이 옵션은 vue-router에 다이렉트로 제공됩니다. [Router 생성자](https://router.vuejs.org/kr/api/options.html).
 
 ## middleware
 
@@ -162,4 +162,4 @@ module.exports = {
 }
 ```
 
-nuxt.js 경로 스키마는 [vue-router](https://router.vuejs.org/en/)를 고려해야 합니다.
+nuxt.js 경로 스키마는 [vue-router](https://router.vuejs.org/kr/)를 고려해야 합니다.
