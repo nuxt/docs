@@ -29,6 +29,7 @@
       { "name": "How to deploy on Dokku? (En)", "to": "/dokku-deployment" },
       { "name": "How to deploy with Surge.sh? (En)", "to": "/surge-deployment" },
       { "name": "How to deploy on GitHub? (En)", "to": "/github-pages" }
+      { "name": "Using NGINX as a proxy (En)", "to": "/nginx-proxy" }
     ]
   }
 ]
