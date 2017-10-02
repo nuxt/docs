@@ -1,6 +1,6 @@
 ---
-title: Auth Routes
-description: Exemple d'authentification de routes avec Nuxt.js
+title: Auth Routes (En)
+description: Authenticated routes example with Nuxt.js
 github: auth-routes
 livedemo: https://nuxt-auth-routes.gomix.me
 liveedit: https://gomix.com/#!/project/nuxt-auth-routes
@@ -8,20 +8,20 @@ liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 
 # Documentation
 
-> Nuxt.js peut être utilisé pour créer des routes authentifiées facilement.
+> Nuxt.js can be used to create authenticated routes easily.
 
-## Utilisation de Express et Sessions
+## Using Express and Sessions
 
-Pour ajouter la fonctionnalité de sessions dans notre application, nous utiliserons `express` et` express-session`, pour cela, nous devons utiliser Nuxt.js de manière programmatique.
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>To add the sessions feature in our application, we will use `express` and `express-session`, for this, we need to use Nuxt.js programmatically.</p>
 
-Premièrement, nous installons les dépendances:
+First, we install the dependencies:
 ```bash
 yarn add express express-session body-parser whatwg-fetch
 ```
 
-*Nous parlerons de `whatwg-fetch` dans un instant.*
+*We will talk about `whatwg-fetch` later.*
 
-Puis nous créons notre `server.js`:
+Then we create our `server.js`:
 ```js
 const { Nuxt, Builder } = require('nuxt')
 const bodyParser = require('body-parser')
@@ -67,7 +67,7 @@ app.listen(3000)
 console.log('Server is listening on http://localhost:3000')
 ```
 
-Et nous modifions nos script dans `package.json`:
+And we update our `package.json` scripts:
 ```json
 // ...
 "scripts": {
@@ -77,13 +77,14 @@ Et nous modifions nos script dans `package.json`:
 }
 // ...
 ```
-Note: Vous devrez exécuter `npm install --save-dev cross-env` afin de faire fonctionner l'exemple précédent. Si vous n'êtes pas en train de développer sur Windows, vous pouvez laisser cross-env en dehors de votre script `start` et définir `NODE_ENV` directement.
+Note: You'll need to run `npm install --save-dev cross-env` for the above example to work. If you're *not* developing on Windows you can leave cross-env out of your `start` script and set `NODE_ENV` directly.
 
-## Utilisation du store
+## Using the store
 
-Nous avons besoin d'un état global pour informer notre application si l'utilisateur est connecté sur les pages.
+We need a global state to let our application know if the user is connected **across the pages**.
 
-Pour laisser Nuxt.js utiliser Vuex, nous créons un fichier `store/index.js`:
+To let Nuxt.js use Vuex, we create a `store/index.js` file:
+
 ```js
 import Vue from 'vue'
 import Vuex from 'vuex'
@@ -93,7 +94,7 @@ Vue.use(Vuex)
 // Polyfill for window.fetch()
 require('whatwg-fetch')
 
-const store = new Vuex.Store({
+const store = () => new Vuex.Store({
 
   state: {
     authUser: null
@@ -114,16 +115,16 @@ const store = new Vuex.Store({
 export default store
 ```
 
-1. Nous importons `Vue` et `Vuex` (inclus dans Nuxt.js) et nous indiquons à Vue d'utiliser Vuex afin de pouvoir utiliser `$store` dans nos composants
-2. Nous `require('whatwg-fetch')` afin de *polyfill* la méthode `fetch()` pour tous les navigateurs (voir [fetch repo](https://github.com/github/fetch))
-3. Nous créons notre mutation `SET_USER` qui va instancier `state.authUser` avec l'utilisateur connecté
-4. Nous exportons notre instance du *store* vers Nuxt.js afin qu'il puisse l'injecter dans notre application principale
+1. We import `Vue` and `Vuex` (included in Nuxt.js) and we tell Vue to use Vuex to let us use `$store` in our components
+2. We `require('whatwg-fetch')` to polyfill the `fetch()` method across all browsers (see [fetch repo](https://github.com/github/fetch))
+3. We create our `SET_USER` mutation which will set the `state.authUser` to the connected user
+4. We export our store instance to Nuxt.js can inject it to our main application
 
-### Fonction nuxtServerInit()
+### nuxtServerInit() action
 
-Nuxt.js appelle une action spécifique nommée `nuxtServerInit` avec le contexte comme l'argument, de telle manière à ce que lorsque l'application sera chargée, le magasin sera déjà rempli avec certaines données que nous pouvons obtenir du serveur.
+Nuxt.js will call a specific action called `nuxtServerInit` with the context in argument, so when the app will be loaded, the store will be already filled with some data we can get from the server.
 
-Dans notre `store/index.js`, nous pouvons ajouter l'action `nuxtServerInit`:
+In our `store/index.js`, we can add the `nuxtServerInit` action:
 ```js
 nuxtServerInit ({ commit }, { req }) {
   if (req.session && req.session.authUser) {
@@ -132,14 +133,14 @@ nuxtServerInit ({ commit }, { req }) {
 }
 ```
 
-Pour rendre la méthode de données asynchrone, nuxt.js vous offre différents moyens, choisissez celui dont vous êtes le plus familier:
+To make the data method asynchronous, nuxt.js offers you different ways, choose the one you're the most familiar with:
 
-1. retourner une `Promise`, nuxt.js attendra la résolution de la `Promise` avant d'afficher le composant.
-2. en utilisant [async/await](https://github.com/lukehoban/ecmascript-asyncawait) ([en savoir plus](https://zeit.co/blog/async-and-await))
+1. returning a `Promise`, nuxt.js will wait for the promise to be resolved before rendering the component.
+2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await))
 
-### Fonction login()
+### login() action
 
-Nous ajoutons une action `login` qui sera appelée à partir de nos composant pages pour connecter l'utilisateur:
+We add a `login` action which will be called from our pages component to log in the user:
 ```js
 login ({ commit }, { username, password }) {
   return fetch('/api/login', {
@@ -167,7 +168,7 @@ login ({ commit }, { username, password }) {
 }
 ```
 
-### Fonction logout()
+### logout() method
 
 ```js
 logout ({ commit }) {
@@ -182,13 +183,13 @@ logout ({ commit }) {
 }
 ```
 
-## Composants Pages
+## Pages components
 
-Ensuite, nous pouvons utiliser `$store.state.authUser` dans nos composants Pages pour vérifier si l'utilisateur est connecté ou non dans notre application.
+Then we can use `$store.state.authUser` in our pages components to check if the user is connected in our application or not.
 
-### Rediriger l'utilisateur s'il n'est pas connecté
+### Redirect user if not connected
 
-Ajoutons une route `/secret` où seul l'utilisateur connecté peut voir son contenu:
+Let's add a `/secret` route where only the connected user can see its content:
 ```html
 <template>
   <div>
@@ -209,4 +210,4 @@ export default {
 </script>
 ```
 
-Nous pouvons voir dans la méthode `fetch` que nous appelons `redirect('/')` lorsque notre utilisateur n'est pas connecté.
+We can see in the `fetch` method that we call `redirect('/')` when our user is not connected.

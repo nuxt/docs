@@ -1,17 +1,17 @@
 ---
-title: Meta Tags dupliqués
-description: Meta Tags dupliqués avec Nuxt.js?
+title: Duplicated Meta tags
+description: Duplicated Meta tags with Nuxt.js?
 ---
 
-# Meta Tags dupliqués?
+# Duplicated Meta tags? (En)
 
-Il s'agit d'une "fonctionnalité" de [vue-meta](https://github.com/declandewet/vue-meta), merci de libre la [documentation des éléments head](/guide/views#html-head).
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>This is a "feature" of [vue-meta](https://github.com/declandewet/vue-meta), please take a look at the [documentation of head elements](/guide/views#html-head).</p>
 
-> Afin d'éviter toute duplication lors de l'utilisation d'un composant enfant, donner un identifiant unique à l'aide de la clef hid, merci [d'en lire plus](https://github.com/declandewet/vue-meta#lists-of-tags).
+> To avoid any duplication when used in child component, please give an unique identifier with the `hid` key, please [read more](https://github.com/declandewet/vue-meta#lists-of-tags) about it.
 
-Pour le meta "description", vous devez ajouter un identifiant unique `hid` afin que vue-meta sache qu'il doit remplacer le tag par défaut.
+For the meta description, you need to add the unique identifier `hid` so vue-meta will know that it has to overwrite the default tag.
 
-Votre `nuxt.config.js`:
+Your `nuxt.config.js`:
 ```js
 ...head: {
     title: 'starter',
@@ -25,18 +25,18 @@ Votre `nuxt.config.js`:
 ...
 ```
 
-Dans votre page individuelle:
+An then in your individual page:
 ```js
 export default {
   head () {
     return {
       title: `Page 1 (${this.name}-side)`,
       meta: [
-        { hid: 'description', name: 'description', content: "Page 1 description" }
-      ],
+        { hid: 'description', name: 'description', content: 'Page 1 description' }
+      ]
     }
   }
 }
 ```
 
-Pour apprendre à utiliser la propriété `head` dans vos pages, lire la documentation [HTML head](/guide/views#html-head).
+To learn how to use the `head` property in your pages, please see the [HTML head documentation](/guide/views#html-head).

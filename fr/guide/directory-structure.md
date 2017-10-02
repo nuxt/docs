@@ -1,97 +1,89 @@
 ---
 title: Structure des répertoires
-description: La structure d'application Nuxt.js par défaut est destinée à fournir un excellent point de départ pour les applications petites et grandes. Bien sûr, vous êtes libre d'organiser votre application comme vous le souhaitez.
+description: La structure par défaut d'une application Nuxt.js est destinée à fournir un excellent point de départ pour les petites et grandes applications. Bien sûr, vous êtes libre d'organiser votre application comme vous le souhaitez.
 ---
 
-> La structure d'application Nuxt.js par défaut est destinée à fournir un excellent point de départ pour les applications petites et grandes. Bien sûr, vous êtes libre d'organiser votre application comme vous le souhaitez.
+> La structure par défaut d'une application Nuxt.js est destinée à fournir un excellent point de départ pour les petites et grandes applications. Bien sûr, vous êtes libre d'organiser votre application comme vous le souhaitez.
 
 ## Répertoires
 
-### Le répertoire Assets
+### Le répertoire des ressources
 
-Le répertoire `assets` contient vos *assets*  non-compilés (p.e. LESS, SASS, or JavaScript).
+Le répertoire `assets` contient vos ressources non compilées tels que vos fichiers Less, Sass ou JavaScript.
 
-[Plus de documentation à propos des Assets](/guide/assets)
+[Consultez la documentation à propos de l'intégration des ressources](/guide/assets)
 
-### Le répertoire Components
+### Le répertoire des composants
 
-Le répertoire `components` contient vos composants Vue.js. Nuxt.js ne *supercharge* pas la méthode `data` sur ces composants.
+Le répertoire `components` contient vos composants Vue.js. Nuxt.js ne surcharge pas la méthode `data` sur ces composants.
 
-### Le répertoire Layouts
+### Le répertoire des mises en page
 
-Le répertoire `layouts` contient vos layouts.
+Le répertoire `layouts` contient vos mises en page.
 
-*Ce répertoire ne peut pas être renommé.*
+_Ce répertoire ne peut pas être renommé._
 
-[Plus de documentation à propos des Layouts](/guide/views#layouts)
+[Consultez la documentation à propos de l'intégration des mises en page](/guide/views#layouts)
 
-### Le répertoire Middleware
+### Le répertoire des middlewares
 
-Le répertoire `middleware` contient vos Middleware. Un middleware vous permets de définir une fonction qui sera exécutée avant de faire le rendu d'une page ou d'un groupe de pages (layouts).
+Le répertoire `middleware` contient vos middlewares. Un middleware vous permet de définir une fonction qui sera exécutée avant de faire le rendu d'une mise en page ou d'un groupe de mises en page.
 
-[Plus de documentation à propos des Middleware](/guide/routing#middleware)
+[Consultez la documentation à propos de l'intégration des middlewares](/guide/routing#middleware)
 
-### Le répertoire Pages
+### Le répertoire des pages
 
-Le répertoire `pages` contient vos vues (*Views*) et vos routes (*Routes*). Le framework lit tous vos fichiers `.vue` au sein de ce répertoire et créé automatiquement le routage de votre application.
+Le répertoire `pages` contient vos vues et routes de l'application. Le framework lit tous vos fichiers `.vue` au sein de ce répertoire et crée automatiquement le routage de votre application.
 
-*Ce répertoire ne peut pas être renommé.*
+_Ce répertoire ne peut pas être renommé._
 
-[Plus de documentation à propos des Pages](/guide/views)
+[Consultez la documentation à propos de l'intégration des pages](/guide/views)
 
-### Le répertoire Plugins
+### Le répertoire des plugins
 
-Le répertoire `plugins` contient vos plugins Javascript que vous désirez exécuter avant d'instancier la racine de l'application vue.js.
+Le répertoire `plugins` contient les plugins JavaScript que vous désirez exécuter avant d'instancier l'application Vue.js racine.
 
-[Plus de documentation à propos des Plugins](/guide/plugins)
+[Consultez la documentation à propos de l'intégration des plugins](/guide/plugins)
 
-### Le répertoire Static
+### Le répertoire des fichiers statiques
 
-Le répertoire `static` contient vos fichiers statiques. Chaque fichier au sein de ce répertoire est mappé vers /.
+Le répertoire `static` contient vos fichiers statiques. Chaque fichier au sein de ce répertoire est mappé à `/`.
 
-**Exemple:** /static/robots.txt est mappé vers /robots.txt
+**Exemple :** `/static/robots.txt` est mappé à `/robots.txt`
 
-*Ce répertoire ne peut pas être renommé.*
+_Ce répertoire ne peut pas être renommé._
 
-[Plus de documentation à propos des fichiers statiques](/guide/assets#static)
+[Consultez la documentation à propos de l'intégration des fichiers statiques](/guide/assets#static)
 
-### Le répertoire Store
+### Le répertoire des stores
 
-Le répertoire `store` contient vos fichiers [Vuex Store](http://vuex.vuejs.org). Vuex Store est implémenté de manière optionnelle dans le framework Nuxt.js. La création d'un fichier `index.js` dans ce répertoire active automatiquement l'option dans le framework.
+Le répertoire `store` contient vos fichiers de [store Vuex](https://vuex.vuejs.org/fr/). Les stores Vuex sont implémentés de manière optionnelle dans le framework Nuxt.js. La création d'un fichier `index.js` dans ce répertoire active automatiquement l'option dans le framework.
 
-*Ce répertoire ne peut pas être renommé.*
+_Ce répertoire ne peut pas être renommé._
 
-[Plus de documentation à propos des Store](/guide/vuex-store)
+[Consultez la documentation à propos de l'intégration des stores Vuex](/guide/vuex-store)
 
 ### Le fichier nuxt.config.js
 
 Le fichier `nuxt.config.js` contient vos configurations personnalisées concernant Nuxt.js.
 
-*Ce fichier ne peut pas être renommé.*
+_Ce fichier ne peut pas être renommé._
 
-[Plus de documentation à propos de nuxt.config.js](/guide/configuration)
+[Consultez la documentation à propos de l'intégration de `nuxt.config.js`](/guide/configuration)
 
 ### Le fichier package.json
 
 Le fichier `package.json` contient les dépendances et scripts de votre application.
 
-*Ce fichier ne peut pas être renommé.*
+_Ce fichier ne peut pas être renommé._
 
 ## Alias
 
 | Alias | Répertoire |
 |-----|------|
-| ~ | / |
-| ~assets | /assets |
-| ~components | /components |
-| ~middleware | /middleware |
-| ~pages | /pages |
-| ~plugins | /plugins |
-| ~static | /static |
+| `~` or `@` | [srcDir](/api/configuration-srcdir) |
+| `~~` or `@@` | [rootDir](/api/configuration-rootdir) |
 
-Alias redirigeant vers des fichiers:
+Par défaut, `srcDir` est le même répertoire que `rootDir`.
 
-| Alias | Utilisation | Description |
-|-------|------|--------------|
-| ~store | `const store = require('~store')` | Importe l'instance du store `vuex`. |
-| ~router | `const router = require('~router')`| Importe l'instance `vue-router`. |
+<p class="Alert Alert--nuxt-green"><b>Info :</b> à l'intérieur de vos templates `vue`, si vous avez besoin de faire référence à vos répertoires `assets` ou `static`, utilisez par ex. `~/assets/votre_image.png` et `~/static/votre_image.png`.</p>

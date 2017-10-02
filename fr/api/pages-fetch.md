@@ -1,19 +1,19 @@
 ---
-title: "API: La méthode fetch"
-description: La méthode fetch est utilisée pour remplir le store avant de rendre la page, c'est comme la méthode data  sauf qu'elle ne définit pas les données du composant.
+title: "API: The fetch Method"
+description: The fetch method is used to fill the store before rendering the page, it's like the asyncData method except it doesn't set the component data.
 ---
 
-# La méthode fetch
+# The fetch Method (En)
 
-> La méthode fetch est utilisée pour remplir le store avant de rendre la page, c'est comme la méthode data  sauf qu'elle ne définit pas les données du composant.
+> The fetch method is used to fill the store before rendering the page, it's like the asyncData method except it doesn't set the component data.
 
 - **Type:** `Function`
 
-La méthode `fetch` est appelée avant chaque chargement de composant (**uniquement pour les composants pages**). Elle peut être appelée côté serveur ou avant de nvaiguer sur la route correspondante.
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>The `fetch` method, *if set*, is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route.</p>
 
-La méthode `fetch` reçoit le [context](/api#context) comme premier argument, vous pouvez l'utiliser afin de récupérer des données et remplir le store. Pour rendre la méthode fetch asynchrone, **retourner une Promise**, nuxt.js attendra la résolution de la promise avand de faire le rendu du cmoposant.
+The `fetch` method receives [the context](/api/context) as the first argument, we can use it to fetch some data and fill the store. To make the fetch method asynchronous, **return a Promise**, nuxt.js will wait for the promise to be resolved before rendering the Component.
 
-Exemple de `pages/index.vue`:
+Example of `pages/index.vue`:
 ```html
 <template>
   <h1>Stars: {{ $store.state.stars }}</h1>
@@ -31,7 +31,7 @@ export default {
 </script>
 ```
 
-Vous pouvez également utiliser async/await pour rendre votre code plus propre:
+You can also use async/await to make your code cleaner:
 
 ```html
 <template>

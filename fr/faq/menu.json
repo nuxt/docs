@@ -2,33 +2,33 @@
   {
     "title": "Configuration",
     "links": [
-      { "name": "Comment utiliser des ressources externes?", "to": "" },
-      { "name": "Comment utiliser des pré-processeurs?", "to": "/pre-processors" },
-      { "name": "Comment utiliser JSX?", "to": "/jsx" },
-      { "name": "Comment utiliser des plugins postcss?", "to": "/postcss-plugins" },
-      { "name": "Comment étendre la configuration de webpack?", "to": "/extend-webpack" },
-      { "name": "Comment ajouter des plugins webpack?", "to": "/webpack-plugins" },
-      { "name": "Comment changer HOST et PORT?", "to": "/host-port" },
-      { "name": "Comment intégrer Google Analytics?", "to": "/google-analytics" }
+      { "name": "How to use external resources? (En)", "to": "" },
+      { "name": "How to use pre-processors? (En)", "to": "/pre-processors" },
+      { "name": "How to use JSX? (En)", "to": "/jsx" },
+      { "name": "How to add postcss plugins? (En)", "to": "/postcss-plugins" },
+      { "name": "How to extend webpack config? (En)", "to": "/extend-webpack" },
+      { "name": "How to add webpack plugins? (En)", "to": "/webpack-plugins" },
+      { "name": "How to edit HOST and PORT? (En)", "to": "/host-port" },
+      { "name": "How to use Google Analytics? (En)", "to": "/google-analytics" }
     ]
   },
   {
     "title": "Développement",
     "links": [
-      { "name": "Window/Document undefined?", "to": "/window-document-undefined" },
-      { "name": "Pourquoi un flash CSS apparaît?", "to": "/css-flash" },
-      { "name": "Données asynchrones dans les composants?", "to": "/async-data-components" },
-      { "name": "Meta Tags dupliqués?", "to": "/duplicated-meta-tags" }
+      { "name": "Window/Document undefined? (En)", "to": "/window-document-undefined" },
+      { "name": "Why a CSS Flash appears? (En)", "to": "/css-flash" },
+      { "name": "Async data in components? (En)", "to": "/async-data-components" },
+      { "name": "Duplicated Meta Tags? (En)", "to": "/duplicated-meta-tags" }
     ]
   },
   {
     "title": "Déploiement",
     "links": [
-      { "name": "Déployer sur Heroku", "to": "/heroku-deployment" },
-      { "name": "Déployer sur Dokku", "to": "/dokku-deployment" },
-      { "name": "Déployer avec Now.sh", "to": "/now-deployment" },
-      { "name": "Déployer avec Surge.sh", "to": "/surge-deployment" },
-      { "name": "Déployer sur GitHub Pages", "to": "/github-pages" }
+      { "name": "How to deploy on Heroku? (En)", "to": "/heroku-deployment" },
+      { "name": "How to deploy with Now.sh? (En)", "to": "/now-deployment" },
+      { "name": "How to deploy on Dokku? (En)", "to": "/dokku-deployment" },
+      { "name": "How to deploy with Surge.sh? (En)", "to": "/surge-deployment" },
+      { "name": "How to deploy on GitHub? (En)", "to": "/github-pages" }
     ]
   }
 ]

@@ -3,16 +3,17 @@ title: "API: The dev Property"
 description: Define the development or production mode.
 ---
 
-# The dev Property
+# The dev Property (En)
 
 - Type: `Boolean`
 - Default: `true`
 
 > Define the development or production mode of nuxt.js
 
-This property is overwritten by [nuxt commands](/guide/commands):
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>This property is overwritten by [nuxt commands](/guide/commands):</p>
+
 - `dev` is forced to `true` with `nuxt`
-- `dev` is force to `false` with `nuxt build`, `nuxt start` and `nuxt generate`
+- `dev` is forced to `false` with `nuxt build`, `nuxt start` and `nuxt generate`
 
 This property should be used when using [nuxt.js programmatically](/api/nuxt):
 
@@ -27,7 +28,7 @@ module.exports = {
 
 `server.js`
 ```js
-const Nuxt = require('nuxt')
+const { Nuxt, Builder } = require('nuxt')
 const app = require('express')()
 const port = process.env.PORT || 3000
 
@@ -38,7 +39,7 @@ app.use(nuxt.render)
 
 // Build only in dev mode
 if (config.dev) {
-  nuxt.build()
+  new Builder(nuxt).build()
   .catch((error) => {
     console.error(error)
     process.exit(1)
@@ -46,8 +47,9 @@ if (config.dev) {
 }
 
 // Listen the server
-app.listen(port, '0.0.0.0')
-console.log('Server listening on localhost:' + port)
+app.listen(port, '0.0.0.0').then(() => {
+  nuxt.showOpen()
+})
 ```
 
 Then in your `package.json`:
@@ -60,4 +62,5 @@ Then in your `package.json`:
   }
 }
 ```
+
 Note: You'll need to run `npm install --save-dev cross-env` for the above example to work. If you're *not* developing on Windows you can leave cross-env out of your `start` script and set `NODE_ENV` directly.

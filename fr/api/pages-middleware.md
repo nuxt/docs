@@ -1,21 +1,21 @@
 ---
-title: "API: La propriété middleware"
-description: Définit le middleware pour une page spécifique de l'application.
+title: "API: The middleware Property"
+description: Set the middleware for a specific page of the application.
 ---
 
-# La propriété middleware
+# The middleware Property (En)
 
-- Type: `String` ou `Array`
+- Type: `String` or `Array`
   - Items: `String`
 
-Définit le middleware pour une page spécifique de l'application.
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Set the middleware for a specific page of the application.</p>
 
-Exemple:
+Example:
 
 `pages/secret.vue`
 ```html
 <template>
-  <h1>Page secrète</h1>
+  <h1>Secret page</h1>
 </template>
 
 <script>
@@ -28,11 +28,11 @@ export default {
 `middleware/authenticated.js`
 ```js
 export default function ({ store, redirect }) {
-  // Si l'utilisateur n'est pas authentifié
+  // If the user is not authenticated
   if (!store.state.authenticated) {
     return redirect('/login')
   }
 }
 ```
 
-Pour en savoir plus sur les middleware, voir le [guide middleware](/guide/routing#middleware).
+To learn more about the middleware, see the [middleware guide](/guide/routing#middleware).

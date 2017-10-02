@@ -35,7 +35,7 @@ Plugin               | Arguments                 | When
 ## Methods
 
 ### addVendor (vendor)
-Adds to `options.build.vendor` and apply uniq filter.
+Adds to `options.build.vendor` and apply unique filter.
 
 ### addTemplate (template)
 - **template**: String Or Object

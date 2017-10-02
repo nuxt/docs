@@ -1,15 +1,15 @@
 ---
 title: "API: The transition Property"
-description: Set the default properties of the pages transitions.
+description: Set the default properties of the page transitions.
 ---
 
-# The transition Property
+# The transition Property (En)
 
 - Type: `String` or `Object`
 
-> Used to set the default properties of the pages transitions.
+> Used to set the default properties of the page transitions.
 
-Default:
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Default:</p>
 ```js
 {
   name: 'page',
@@ -33,4 +33,4 @@ module.exports = {
 }
 ```
 
-The transition key in `nuxt.config.js` is used to set the default properties for the pages transitions. To learn more about the available keys when the `transition` key is an object, see the [pages transition property](/api/pages-transition#object).
+The transition key in `nuxt.config.js` is used to set the default properties for the page transitions. To learn more about the available keys when the `transition` key is an object, see the [pages transition property](/api/pages-transition#object).

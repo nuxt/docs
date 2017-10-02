@@ -1,19 +1,19 @@
 ---
-title: "API: la propriété scrollToTop"
-description: La propriété scrollToTop vous permets d'indiquer à nuxt.js de scroller en haut de la page avant de faire le rendu.
+title: "API: The scrollToTop Property"
+description: The scrollToTop property lets you tell nuxt.js to scroll to the top before rendering the page.
 ---
 
-# La propriété scrollToTop
+# The scrollToTop Property
 
-> La propriété scrollToTop vous permets d'indiquer à nuxt.js de scroller en haut de la page avant de faire le rendu.
+> The scrollToTop property lets you tell nuxt.js to scroll to the top before rendering the page.
 
-- **Type:** `Boolean` (défaut: `false`)
+- **Type:** `Boolean` (default: `false`)
 
-Par défaut, nuxt.js scroll vers le haut de la page quand vous changer de page. Mais dans le cas de routes enfants, nuxt.js reste à sa position actuelle. Si vous désirez indiquer à nuxt.js de scroller en haut de la page lors du rendu de la page enfant, utilisez `scrollToTop: true`:
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>By default, nuxt.js scrolls to the top when you go to another page, but with children routes, nuxt.js keeps the scroll position. If you want to tell nuxt.js to scroll to the top when rendering your child route, set `scrollToTop: true`:</p>
 
 ```html
 <template>
-  <h1>Mon composant enfant</h1>
+  <h1>My child component</h1>
 </template>
 
 <script>
@@ -23,4 +23,4 @@ export default {
 </script>
 ```
 
-Si vous désirez écraser le comportonent par défaut du scroll, regardez l'[option scrollBehavior](/api/configuration-router#scrollBehavior).
+If you want to overwrite the default scroll behavior of nuxt.js, take a look at the [scrollBehavior option](/api/configuration-router#scrollBehavior).

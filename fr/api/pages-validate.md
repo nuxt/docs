@@ -1,11 +1,11 @@
 ---
-title: "API: la méthode validate"
-description: Nuxt.js vous permet de définir une méthode de validation dans votre composant de route dynamique.
+title: "API: The validate Method"
+description: Nuxt.js lets you define a validator method inside your dynamic route component.
 ---
 
-# La méthode validate
+# The validate Method (En)
 
-> Nuxt.js vous permet de définir une méthode de validation dans votre composant de route dynamique.
+> Nuxt.js lets you define a validator method inside your dynamic route component.
 
 - **Type:** `Function`
 
@@ -16,9 +16,9 @@ validate({ params, query, store }) {
 }
 ```
 
-Nuxt.js vous permet de définir une méthode de validation dans votre composant de route dynamique (dans cet exemple : `pages/users/_id.vue`).
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Nuxt.js lets you define a validator method inside your dynamic route component (In this example: `pages/users/_id.vue`).</p>
 
-Si la méthode de validation retourne `false`, Nuxt.js chargera automatiquement la page d'erreur 404.
+If the validate method does not return `true`, Nuxt.js will automatically load the 404 error page.
 
 ```js
 export default {
@@ -29,7 +29,7 @@ export default {
 }
 ```
 
-Vous pouvez également utiliser des données de votre [store](/guide/vuex-store) pour la validation comme par exemple (remplie par [l'action nuxtServerInit](/guide/vuex-store#the-nuxtserverinit-action) auparavant):
+You can also check some data in your [store](/guide/vuex-store) for example (filled by [nuxtServerInit action](/guide/vuex-store#the-nuxtserverinit-action) before):
 
 ```js
 export default {

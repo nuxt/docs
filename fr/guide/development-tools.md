@@ -1,20 +1,21 @@
 ---
 title: Outils de développement
-description: Nuxt.js rend votre développement web agréable.
+description: Nuxt.js vous aide à rendre votre développement web agréable.
 ---
 
 > Le test de votre application fait partie du développement web. Nuxt.js vous aide à le rendre aussi facile que possible.
 
-## Tests End-to-End
+## Tests de bout en bout
 
-[Ava](https://github.com/avajs/ava) est un framework JavaScript de test puissant, mixé avec [jsdom](https://github.com/tmpvar/jsdom), nous pouvons les utiliser pour écrire des tests end-to-end testing facilement.
+[AVA](https://github.com/avajs/ava) est un framework JavaScript de test puissant, mixé avec [jsdom](https://github.com/tmpvar/jsdom), nous pouvons les utiliser pour écrire des tests de bout en bout facilement.
 
-Tout d'abord, nous devons ajouter ava et jsdom en tant que dépendances de développement:
+Tout d'abord, nous devons ajouter AVA et jsdom en tant que dépendances de développement :
+
 ```bash
 npm install --save-dev ava jsdom
 ```
 
-Et ajouter un script de test à notre `package.json` et configurer ava pour compiler les fichiers que nous importons dans nos tests.
+Puis ajouter un script de test à notre `package.json` et configurer AVA pour compiler les fichiers que nous importons dans nos tests.
 
 ```javascript
 "scripts": {
@@ -32,21 +33,23 @@ Et ajouter un script de test à notre `package.json` et configurer ava pour comp
 }
 ```
 
-Nous allons écrire nos tests dans le répertoire `test`:
+Nous allons écrire nos tests dans le répertoire `test` :
+
 ```bash
 mkdir test
 ```
 
-Mettons que nous avons une page dans `pages/index.vue`:
+Imaginons que nous avons une page dans `pages/index.vue` :
+
 ```html
 <template>
-  <h1 class="red">Hello {{ name }}!</h1>
+  <h1 class="red">Hello {{ name }} !</h1>
 </template>
 
 <script>
 export default {
   data () {
-    return { name: 'world' }
+    return { name: 'World' }
   }
 }
 </script>
@@ -58,20 +61,20 @@ export default {
 </style>
 ```
 
-Lorsque nous lançons notre application avec `npm run dev` et que nous visitons [http://localhost:3000](http://localhost:3000), nous voyons notre titre `Hello world!` rouge.
+Lorsque nous lançons notre application avec `npm run dev` et que nous visitons http://localhost:3000, nous voyons notre titre `Hello World !` rouge.
 
-Nous ajoutons notre fichier de test `test/index.test.js`:
+Nous ajoutons notre fichier de test `test/index.test.js` :
 
 ```js
 import test from 'ava'
 import { Nuxt, Builder } from 'nuxt'
 import { resolve } from 'path'
 
-// We keep the nuxt and server instance
-// So we can close them at the end of the test
+// Nous gardons une référence à Nuxt pour fermer
+// le serveur à la fin du test
 let nuxt = null
 
-// Init Nuxt.js and create a server listening on localhost:4000
+// Initialiser Nuxt.js et démarrer l'écoute sur localhost:4000
 test.before('Init Nuxt.js', async t => {
   const rootDir = resolve(__dirname, '..')
   let config = {}
@@ -83,47 +86,49 @@ test.before('Init Nuxt.js', async t => {
   nuxt.listen(4000, 'localhost')
 })
 
-// Example of testing only generated html
+// Exemple de test uniquement sur le HTML généré
 test('Route / exits and render HTML', async t => {
   let context = {}
   const { html } = await nuxt.renderRoute('/', context)
-  t.true(html.includes('<h1 class="red">Hello world!</h1>'))
+  t.true(html.includes('<h1 class="red">Hello World !</h1>'))
 })
 
-// Example of testing via dom checking
+// Exemple de test via la vérification du DOM
 test('Route / exits and render HTML with CSS applied', async t => {
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
   t.not(element, null)
-  t.is(element.textContent, 'Hello world!')
+  t.is(element.textContent, 'Hello World !')
   t.is(element.className, 'red')
   t.is(window.getComputedStyle(element).color, 'red')
 })
 
-// Close server and ask nuxt to stop listening to file changes
-test.after('Closing server and nuxt.js', t => {
+// Arrêter le serveur Nuxt
+test.after('Closing server', t => {
   nuxt.close()
 })
 ```
 
-Nous pouvons désormais lancer nos tests:
+Nous pouvons désormais lancer nos tests :
+
 ```bash
 npm test
 ```
 
-jsdom a certaines limitations parce qu'il n'utilise pas de navigateur. Cependant, cela couvrira la plupart de nos tests. Si vous souhaitez utiliser un navigateur pour tester votre application, vous pouvez consulter [Nightwatch.js] (http://nightwatchjs.org).
+jsdom a certaines limitations parce qu'il n'utilise pas de navigateur. Cependant, cela couvrira la plupart de nos tests. Si vous souhaitez utiliser un navigateur pour tester votre application, vous pouvez consulter [Nightwatch.js](http://nightwatchjs.org).
 
 ## ESLint
 
-> ESLint est un excellent outil pour garder votre code propre
+> ESLint est un excellent outil pour garder votre code propre.
 
-Vous pouvez ajouter [ESLint](http://eslint.org) assez facilement avec nuxt.js. Ajouter les dépendances npm:
+Vous pouvez ajouter [ESLint](http://eslint.org) assez facilement avec Nuxt.js. Ajouter les dépendances npm :
 
 ```bash
 npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-html eslint-plugin-promise eslint-plugin-standard
 ```
 
-Puis, configurez ESLint via un fichier `.eslintrc.js` à la racine de votre projet:
+Puis, configurez ESLint via un fichier `.eslintrc.js` à la racine de votre projet :
+
 ```js
 module.exports = {
   root: true,
@@ -143,7 +148,7 @@ module.exports = {
 }
 ```
 
-Ensuite, vous pouvez ajouter un script `lint` à `package.json`:
+Ensuite, vous pouvez ajouter un script `lint` à `package.json` :
 
 ```js
 "scripts": {
@@ -151,11 +156,12 @@ Ensuite, vous pouvez ajouter un script `lint` à `package.json`:
 }
 ```
 
-Vous pouvez alors lancer:
+Vous pouvez alors lancer :
+
 ```bash
 npm run lint
 ```
 
 ESLint va linter tous vos fichiers JavaScript et Vue sauf ceux ignorés par `.gitignore`.
 
-<p class="Alert Alert--info">Une bonne pratique est également d'ajouter `"precommit": "npm run lint"` dans package.json afin de linter votre code automatiquement avant de le commiter.</p>
+<p class="Alert Alert--info">Une bonne pratique est également d'ajouter `"precommit": "npm run lint"` dans `package.json` afin de linter votre code automatiquement avant de l'acter.</p>
