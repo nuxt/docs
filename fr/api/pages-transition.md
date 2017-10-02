@@ -1,15 +1,15 @@
 ---
-title: "API: la propriété transition"
-description: Nuxt.js utilise le composant transition afin de créer des transitions/animations époustouflantes entre vos pages.
+title: "API: The transition Property"
+description: Nuxt.js uses the transition component to let you create amazing transitions/animations between your pages.
 ---
 
-# La propriété transition
+# The transition Property (En)
 
-> Nuxt.js utilise le composant [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) afin de créer des transitions/animations époustouflantes entre vos pages.
+> Nuxt.js uses the [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your pages. 
 
-- **Type:** `String` ou `Object` ou `Function`
+- **Type:** `String` or `Object` or `Function`
 
-Pour définir une transition personalisée pour une route spécifique, ajouter la clef `transition` au composant de page.
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>To define a custom transition for a specific route, simply add the `transition` key to the page component.</p>
 
 ```js
 export default {
@@ -24,7 +24,7 @@ export default {
 
 ## String
 
-Si la clef `transition` est défini en tant que string, il sera utilisé comme `transition.name`.
+If the `transition` key is set as a string, it will be used as the `transition.name`.
 
 ```js
 export default {
@@ -32,15 +32,15 @@ export default {
 }
 ```
 
-Nuxt.js utilisera ces paramètres pour définir le composant comme suit:
+Nuxt.js will use these settings to set the component as follows:
 
 ```html
 <transition name="test">
 ```
 
-## Objet
+## Object
 
-Si la clef `transition` est un objet:
+If the `transition` key is set as an object:
 
 ```js
 export default {
@@ -51,29 +51,30 @@ export default {
 }
 ```
 
-Nuxt.js utilisera ces paramètres pour définir le composant comme suit:
+Nuxt.js will use these settings to set the component as follows:
 
 ```html
 <transition name="test" mode="out-in">
 ```
 
-L'objet `transition` peut avoir les propriétés suivantes:
+The following properties that the `transition` object can have:
 
-| clef  | type | défaut | définition |
+| key  | Type | Default | definition |
 |------|------|---------|-----------|
-| `name` | String | `"page"` | Le nom de la transition appliqué aux routes. |
-| `mode` | String | `"out-in"` | Le mode de la transition appliqué aux routes; voir la [documentation Vue.js](http://vuejs.org/v2/guide/transitions.html#Transition-Modes). |
+| `name` | String | `"page"` | The transition name applied on all the routes transitions. |
+| `mode` | String | `"out-in"` | The transition mode applied on all routes, see [Vue.js documentation](http://vuejs.org/v2/guide/transitions.html#Transition-Modes). |
 | `css` | Boolean | `true` | Whether to apply CSS transition classes. Defaults to `true`. If set to false, will only trigger JavaScript hooks registered via component events. |
 | `duration` | Integer | `n/a` | The duration (in milliseconds) applied on the transition, see [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Explicit-Transition-Durations). |
 | `type` | String | `n/a` | Specify the type of transition events to wait for to determine transition end timing. Available values are "transition" and "animation". By default, it will automatically detect the type that has a longer duration. |
-| `enterClass` | String | `n/a` | L'état de départ de la classe de transition. Voir la [documentation Vue.js](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `enterToClass` | String | `n/a` | L'état final de la transition. Voir la [documentation Vue.js](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `enterActiveClass` | String | `n/a` | La classe appliquée pendant l'intégralité de la transition. Voir la [documentation Vue.js](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `leaveClass` | String | `n/a` | L'état de départ de la classe de transition. Voir la [documentation Vue.js](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `leaveToClass` | String | `n/a` | L'état final de la transition. Voir la [documentation Vue.js](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `leaveActiveClass` | String | `n/a` | La classe appliquée pendant l'intégralité de la transition. Voir la [documentation Vue.js](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
+| `enterClass` | String | `n/a` | The starting state of the transition class. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
+| `enterToClass` | String | `n/a` | The ending state for the transition. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
+| `enterActiveClass` | String | `n/a` | The class applied across the entire transition duration. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
+| `leaveClass` | String | `n/a` | The starting state of the transition class. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
+| `leaveToClass` | String | `n/a` | The ending state for the transition. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
+| `leaveActiveClass` | String | `n/a` | The class applied across the entire transition duration. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
 
-Vous pouvez également définir des méthodes dans l'objet `transition` afin de pouvoir utiliser des [hooks JavaScript](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks):
+
+You can also define methods in the `transition`, these are for the [JavaScript hooks](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks):
 
 - beforeEnter(el)
 - enter(el, done)
@@ -84,11 +85,11 @@ Vous pouvez également définir des méthodes dans l'objet `transition` afin de 
 - afterLeave(el)
 - leaveCancelled(el)
 
-*Note: c'est une bonne pratique que de définir explicitement `css: false` pour les transitions uniquement JavaScript afin que Vue passe la détection CSS. Cela prévient également les potentielles interférences entre les déclarations CSS.*
+*Note: it’s also a good idea to explicitly add `css: false` for JavaScript-only transitions so that Vue can skip the CSS detection. This also prevents CSS rules from accidentally interfering with the transition.*
 
-## Fonction
+## Function
 
-Si la clef `transition` est une fonction:
+If the `transition` key is set as a function:
 
 ```js
 export default {
@@ -99,7 +100,7 @@ export default {
 }
 ```
 
-Transitions appliquées à la navigation:
+Transitions applied on navigation:
 - `/` to `/posts` => `slide-left`
 - `/posts` to `/posts?page=3` => `slide-left`
 - `/posts?page=3` to `/posts?page=2` => `slide-right`

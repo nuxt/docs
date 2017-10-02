@@ -1,33 +1,33 @@
 [
   {
-    "title": "Essentiels",
+    "title": "Essentiel",
     "links": [
-      { "name": "Hello world", "to": "" },
-      { "name": "SEO HTML Head", "to": "/seo-html-head" }
+      { "name": "Hello world (En)", "to": "" },
+      { "name": "SEO HTML Head (En)", "to": "/seo-html-head" }
     ]
   },
   {
     "title": "Personnalisation",
     "links": [
-      { "name": "Composants en cache", "to": "/cached-components" },
-      { "name": "Composant de chargement personalisé", "to": "/custom-loading" },
-      { "name": "Routes personalisées", "to": "/custom-routes" },
-      { "name": "CSS Global", "to": "/global-css" },
-      { "name": "Mise en page (layouts)", "to": "/layouts" },
-      { "name": "Middleware", "to": "/middleware" },
-      { "name": "Routes imbriquées", "to": "/nested-routes" },
-      { "name": "Plugins", "to": "/plugins" },
-      { "name": "Routes transitions", "to": "/routes-transitions" }
+      { "name": "Cached Components (En)", "to": "/cached-components" },
+      { "name": "Custom Loading (En)", "to": "/custom-loading" },
+      { "name": "Custom Routes (En)", "to": "/custom-routes" },
+      { "name": "Global CSS (En)", "to": "/global-css" },
+      { "name": "Layouts (En)", "to": "/layouts" },
+      { "name": "Middleware (En)", "to": "/middleware" },
+      { "name": "Nested Routes (En)", "to": "/nested-routes" },
+      { "name": "Plugins (En)", "to": "/plugins" },
+      { "name": "Routes transitions (En)", "to": "/routes-transitions" }
     ]
   },
   {
-    "title": "Avancé",
+    "title": "Avancées",
     "links": [
-      { "name": "Données asynchrones", "to": "/async-data" },
-      { "name": "Auth Routes", "to": "/auth-routes" },
-      { "name": "Vuex Store", "to": "/vuex-store" },
-      { "name": "i18n", "to": "/i18n" },
-      { "name": "Test", "to": "/testing" }
+      { "name": "Async Data (En)", "to": "/async-data" },
+      { "name": "Auth Routes (En)", "to": "/auth-routes" },
+      { "name": "Vuex Store (En)", "to": "/vuex-store" },
+      { "name": "i18n (En)", "to": "/i18n" },
+      { "name": "Testing (En)", "to": "/testing" }
     ]
   }
 ]

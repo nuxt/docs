@@ -1,31 +1,33 @@
 ---
-title: Déployer avec Surge.sh
-description: Déployer nuxt.js avec Surge.sh
+title: Surge Deployment
+description: How to deploy Nuxt.js with Surge.sh?
 ---
 
-# Déployer avec Surge.sh
+# How to deploy with Surge.sh? (En)
 
-Nuxt.js vous donne la possibilité d'héberger votre application web sur n'importe quel hébergeur statique tel que [surge.sh](https://surge.sh/) par exemple.
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Nuxt.js gives you the possibility to host your web application on any static hosting like [surge.sh](https://surge.sh/) for example.</p>
 
-Pour déployer sur surge.sh, installez surge sur votre ordinateur:
+To deploy on surge.sh, first install it on your computer:
 ```bash
 npm install -g surge
 ```
 
-Puis demander à nuxt.js de générer votre applicaiton web:
+Then, we tell nuxt.js to generate our web application:
+
 ```bash
 npm run generate
 ```
 
-Cela créera un répertoire `dist` contenant les fichiers prêts à être déployés sur un hébergement statique.
+It will create a `dist` folder with everything inside ready to be deployed on a static hosting.
 
-Nous pouvons alors déployer sur surge.sh:
+We can then deploy it to surge.sh:
+
 ```bash
 surge dist/
 ```
 
-Tadaaa :)
+Done :)
 
-Si vous avez un projet avec des [routes dynamiques](/guide/routing#dynamic-routes), lisez la configuration de [generate](/api/configuration-generate) afin d'expliquer à nuxt.js comment les générer.
+If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take a look at the [generate configuration](/api/configuration-generate) to tell nuxt.js how to generate these dynamic routes.
 
-<div class="Alert">Quand vous générez votre application web via `nuxt generate`, [le contexte](/api) passé to [data()](/guide/async-data#the-data-method) et [fetch()](/guide/vuex-store#the-fetch-method) ne disposent pas de `req` ni de `res`</div>
+<div class="Alert">When generating your web application with `nuxt generate`, [the context](/api) given to [data()](/guide/async-data#the-data-method) and [fetch()](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.</div>
