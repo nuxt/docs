@@ -87,7 +87,7 @@
         ]
       },
       {
-        "to": "/modules", "name": "Modules (En)",
+        "to": "/modules", "name": "Modules",
         "contents": [
           { "to": "#introduction", "name": "Introduction" },
           { "to": "#write-a-basic-module", "name": "Write a basic Module" },
