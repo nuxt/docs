@@ -1,6 +1,6 @@
 ---
-title: Cached Components
-description: Cached Components example with Nuxt.js
+title: Composants en cache
+description: Exemple de composants mis en cache avec Nuxt.js
 github: cached-components
 documentation: /api/configuration-cache
 ---
