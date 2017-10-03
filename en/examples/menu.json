@@ -13,7 +13,7 @@
       { "name": "Composant de chargement personnalisé", "to": "/custom-loading" },
       { "name": "Routes personnalisées", "to": "/custom-routes" },
       { "name": "CSS global", "to": "/global-css" },
-      { "name": "Mises en page (layouts)", "to": "/layouts" },
+      { "name": "Mises en page", "to": "/layouts" },
       { "name": "Middleware", "to": "/middleware" },
       { "name": "Routes imbriquées", "to": "/nested-routes" },
       { "name": "Plugins", "to": "/plugins" },
