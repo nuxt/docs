@@ -1,7 +1,7 @@
 ---
-title: Custom Routes
-description: Custom Routes example with Nuxt.js
+title: Routes personnalisées
+description: Exemple de routes personnalisées avec Nuxt.js
 github: custom-routes
 livedemo: https://custom-routes.nuxtjs.org
-documentation: /guide/routing#dynamic-routes
+documentation: /guide/routing#routes-dynamiques
 ---
