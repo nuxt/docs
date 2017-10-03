@@ -2,7 +2,7 @@
   {
     "title": "Essentials",
     "links": [
-      { "name": "Hello world", "to": "" },
+      { "name": "Hello World", "to": "" },
       { "name": "SEO HTML Head", "to": "/seo-html-head" }
     ]
   },

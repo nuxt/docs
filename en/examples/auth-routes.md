@@ -15,6 +15,7 @@ liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 To add the sessions feature in our application, we will use `express` and `express-session`, for this, we need to use Nuxt.js programmatically.
 
 First, we install the dependencies:
+
 ```bash
 yarn add express express-session body-parser whatwg-fetch
 ```
@@ -22,16 +23,17 @@ yarn add express express-session body-parser whatwg-fetch
 *We will talk about `whatwg-fetch` later.*
 
 Then we create our `server.js`:
+
 ```js
 const { Nuxt, Builder } = require('nuxt')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const app = require('express')()
 
-// Body parser, to access req.body
+// Body parser, to access `req.body`
 app.use(bodyParser.json())
 
-// Sessions to create req.session
+// Sessions to create `req.session`
 app.use(session({
   secret: 'super-secret-key',
   resave: false,
@@ -39,7 +41,7 @@ app.use(session({
   cookie: { maxAge: 60000 }
 }))
 
-// POST /api/login to log in the user and add him to the req.session.authUser
+// POST `/api/login` to log in the user and add him to the `req.session.authUser`
 app.post('/api/login', function (req, res) {
   if (req.body.username === 'demo' && req.body.password === 'demo') {
     req.session.authUser = { username: 'demo' }
@@ -48,7 +50,7 @@ app.post('/api/login', function (req, res) {
   res.status(401).json({ error: 'Bad credentials' })
 })
 
-// POST /api/logout to log out the user and remove it from the req.session
+// POST `/api/logout` to log out the user and remove it from the `req.session`
 app.post('/api/logout', function (req, res) {
   delete req.session.authUser
   res.json({ ok: true })
@@ -68,6 +70,7 @@ console.log('Server is listening on http://localhost:3000')
 ```
 
 And we update our `package.json` scripts:
+
 ```json
 // ...
 "scripts": {
@@ -77,6 +80,7 @@ And we update our `package.json` scripts:
 }
 // ...
 ```
+
 Note: You'll need to run `npm install --save-dev cross-env` for the above example to work. If you're *not* developing on Windows you can leave cross-env out of your `start` script and set `NODE_ENV` directly.
 
 ## Using the store
@@ -91,7 +95,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-// Polyfill for window.fetch()
+// Polyfill for `window.fetch()`
 require('whatwg-fetch')
 
 const store = () => new Vuex.Store({
@@ -115,16 +119,17 @@ const store = () => new Vuex.Store({
 export default store
 ```
 
-1. We import `Vue` and `Vuex` (included in Nuxt.js) and we tell Vue to use Vuex to let us use `$store` in our components
-2. We `require('whatwg-fetch')` to polyfill the `fetch()` method across all browsers (see [fetch repo](https://github.com/github/fetch))
-3. We create our `SET_USER` mutation which will set the `state.authUser` to the connected user
-4. We export our store instance to Nuxt.js can inject it to our main application
+1. We import `Vue` and `Vuex` (included in Nuxt.js) and we tell Vue to use Vuex to let us use `$store` in our components.
+2. We `require('whatwg-fetch')` to polyfill the `fetch()` method across all browsers (see [fetch repo](https://github.com/github/fetch)).
+3. We create our `SET_USER` mutation which will set the `state.authUser` to the connected user.
+4. We export our store instance to Nuxt.js can inject it to our main application.
 
 ### nuxtServerInit() action
 
 Nuxt.js will call a specific action called `nuxtServerInit` with the context in argument, so when the app will be loaded, the store will be already filled with some data we can get from the server.
 
 In our `store/index.js`, we can add the `nuxtServerInit` action:
+
 ```js
 nuxtServerInit ({ commit }, { req }) {
   if (req.session && req.session.authUser) {
@@ -133,14 +138,15 @@ nuxtServerInit ({ commit }, { req }) {
 }
 ```
 
-To make the data method asynchronous, nuxt.js offers you different ways, choose the one you're the most familiar with:
+To make the data method asynchronous, Nuxt.js offers you different ways, choose the one you're the most familiar with:
 
-1. returning a `Promise`, nuxt.js will wait for the promise to be resolved before rendering the component.
-2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await))
+1. returning a `Promise`, Nuxt.js will wait for the promise to be resolved before rendering the component.
+2. Using the [`async`/`await` proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await)).
 
 ### login() action
 
 We add a `login` action which will be called from our pages component to log in the user:
+
 ```js
 login ({ commit }, { username, password }) {
   return fetch('/api/login', {
@@ -190,6 +196,7 @@ Then we can use `$store.state.authUser` in our pages components to check if the 
 ### Redirect user if not connected
 
 Let's add a `/secret` route where only the connected user can see its content:
+
 ```html
 <template>
   <div>
