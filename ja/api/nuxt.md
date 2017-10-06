@@ -11,7 +11,7 @@ description: Nuxt.js はプログラム上で、ミドルウェアとして使�
 Nuxt.js をこのように require できます:
 
 ```js
-const Nuxt = require('nuxt')
+const { Nuxt, Builder } = require('nuxt')
 ```
 
 ## Nuxt のコンストラクタ
