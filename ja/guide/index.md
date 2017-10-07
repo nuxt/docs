@@ -23,13 +23,14 @@ Nuxt.js はフレームワークとして、クライアントサイドとサー
 
 ## どのように動作するか？
 
-![Vue with Webpack and Babel](https://i.imgur.com/avEUftE.png)
+![Vue with webpack and Babel](https://i.imgur.com/avEUftE.png)
 
 Nuxt.js はリッチなウェブアプリケーションを構築するために下記のものを含んでいます:
 
-- [Vue 2](https://github.com/vuejs/vue)
-- [Vue-Router](https://github.com/vuejs/vue-router)
+- [Vue 2](https://vuejs.org/)
+- [Vue-Router](https://router.vuejs.org/en/)
 - [Vuex](https://github.com/vuejs/vuex)（[Vuex ストアのオプション](/guide/vuex-store) を利用しているときに限ります）
+- [Vue Server Renderer](https://ssr.vuejs.org/en/)（[`mode: 'spa'`](/api/configuration-mode) を利用しているときを除く)
 - [Vue-Meta](https://github.com/declandewet/vue-meta)
 
 すべて合わせてもわずか **57kb min+gzip** です（Vuex 利用時は 53kb）
@@ -65,7 +66,7 @@ Nuxt.js をプロジェクトの UI レンダリング全体を担うフレー�
 
 ### シングルページアプリケーション（SPA）
 
-コマンドについてより深く理解するには [コマンド](/guide/commands) を参照してください。
+もし何らかの理由でサーバーサイドレンダリングを使いたくない、あるいはアプリケーションを静的にホスティングする必要があるときは `nuxt --spa` を使って、シンプルに SPA モードを使うことができます。静的ファイル *generate* 機能と組み合わせることで、Node.js ランタイムや特別なサーバー処理を利用する必要のない、SPA のパワフルなデプロイが実現できます。
 
 コマンドについてより深く理解するには [コマンド](/guide/commands) を参照してください。
 
