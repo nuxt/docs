@@ -1,28 +1,31 @@
 ---
-title: Heroku Deployment
-description: How to deploy Nuxt.js on Heroku?
+title: Déployer sur Heroku
+description: Comment déployer Nuxt.js sur Heroku ?
 ---
 
-# How to deploy on Heroku? (En)
+# Comment déployer sur Heroku ?
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>We recommend you to read the [Heroku documentation for node.js](https://devcenter.heroku.com/articles/nodejs-support).</p>
+Nous vous recommandons de lire la [documentation Heroku pour Node.js](https://devcenter.heroku.com/articles/nodejs-support).
 
-First, we need to tell Heroku to install the `devDependencies` of the project (to be able to launch `npm run build`):
+Premièrement, nous devons demander à Heroku d'installer les `devDependencies` du projet (afin de pouvoir exécuter `npm run build`) :
+
 ```bash
 heroku config:set NPM_CONFIG_PRODUCTION=false
 ```
 
-Also, we want our application to listen on the host `0.0.0.0` and run in production mode:
+Nous voulons également que notre application écoute le port `0.0.0.0` et s'exécute en mode production :
+
 ```bash
 heroku config:set HOST=0.0.0.0
 heroku config:set NODE_ENV=production
 ```
 
-You should see this in your Heroku dashboard (Settings section):
+Vous devriez voir cela dans votre tableau de bord Heroku (section Settings) :
 
 ![nuxt config vars Heroku](https://i.imgur.com/EEKl6aS.png)
 
-Then, we tell Heroku to launch `npm run build` via the `heroku-postbuild` script in our `package.json`:
+Puis nous demandons à Heroku d'exécuter `npm run build` via le script `heroku-postbuild` de notre `package.json` :
+
 ```js
 "scripts": {
   "dev": "nuxt",
@@ -32,9 +35,10 @@ Then, we tell Heroku to launch `npm run build` via the `heroku-postbuild` script
 }
 ```
 
-Finally, we can push the app on Heroku with:
+Pour finir, nous pouvons déployer notre application sur Heroku :
+
 ```bash
 git push heroku master
 ```
 
-Voilà! Your nuxt.js application is now hosted on Heroku!
+Voilà! Votre application Nuxt.js est hébergée sur Heroku !

@@ -1,12 +1,12 @@
 ---
 title: CSS Flash
-description: Why a CSS Flash appears with Nuxt.js?
+description: Pourquoi un flash CSS apparaît avec Nuxt.js ?
 ---
 
-# Why a CSS Flash appears? (En)
+# Pourquoi un flash CSS apparaît ?
 
 ![cssflash](/flash_css.gif)
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>This is because the CSS is in the JavaScript build in **development mode** to allow hot-reloading via Webpack.</p>
+C'est parce qu'en **mode développement** le CSS se trouve dans le JavaScript afin de permettre le rechargement à chaud via Webpack. Ce flash est appelé [FOUC](https://fr.wikipedia.org/wiki/FOUC).
 
-Don't worry in production mode, the CSS is separated and put in the header so this "flash" does not appear anymore.
+Ne vous inquiétez pas, en **mode production** le CSS est séparé et placé dans l'en-tête afin que le phénomène de FOUC n'apparaisse plus.
