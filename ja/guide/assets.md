@@ -1,6 +1,7 @@
 ---
 title: アセット
-description: Nuxt.js はアセットファイルを配信するために（デフォルトでは）Webpack のローダーとして vue-loader、file-loader 及び url-loader を使います。しかし Webpack の取り扱う対象としない静的ファイル専用のディレクトリを使うこともできます。
+description: Nuxt.js はアセットファイルを配信するために（デフォルトでは）Webpack のローダーとして vue-loader、file-loader
+  及び url-loader を使います。しかし Webpack の取り扱う対象としない静的ファイル専用のディレクトリを使うこともできます。
 ---
 
 > Nuxt.js はアセットファイルを配信するために（デフォルトでは）Webpack のローダーとして vue-loader、file-loader 及び url-loader を使います。しかし Webpack の取り扱う対象としない静的ファイル専用のディレクトリを使うこともできます。
@@ -93,8 +94,9 @@ Webpack で扱う対象となる `assets` ディレクトリを使いたくな�
 `/` URL からそれらのファイルを参照できます:
 
 ```html
-
+<!-- static ディレクトリの（Webpack で扱わない）静的な画像 -->
 <img src="/my-image.png"/>
 
-<img src="/assets/my-image-2.png"/>
+<!-- assets ディレクトリの Webpack で扱われた画像 -->
+<img src="~/assets/my-image-2.png"/>
 ```
