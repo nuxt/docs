@@ -220,7 +220,7 @@ Nuxt.js では [<transition>](http://vuejs.org/v2/guide/transitions.html#Transit
 ### グローバルな設定
 
 
-<p class="Alert Alert--nuxt-green"><b>Info :</b> Nuxt.js default transition name is `"page"`.</p>
+<p class="Alert Alert--nuxt-green"><b>情報:</b> Nuxt.js のデフォルトのトランジション名は `"page"`です。</p>
 
 アプリケーションのすべてのページでフェードさせるトランジションを定義には、ルーティング全体に適用されている CSS ファイルが必要です。まずは `assets` ディレクトリ内にファイルを作成するところから始めます:
 
