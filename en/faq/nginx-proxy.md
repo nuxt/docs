@@ -1,12 +1,12 @@
 ---
-title: NGINX proxy
-description: How to use NGINX as a reverse proxy
+title: nginx proxy
+description: How to use nginx as a reverse proxy
 ---
 
-# Using NGINX as a reverse proxy
+# Using nginx as a reverse proxy
 
 
-```Nginx
+```nginx
 map $sent_http_content_type $expires {
     "text/html"                 epoch;
     "text/html; charset=utf-8"  epoch;
@@ -14,8 +14,8 @@ map $sent_http_content_type $expires {
 }
 
 server {
-    listen 80;					# the port nginx is listening on
-    server_name             your-domain;	# setup your domain here
+    listen          80;             # the port nginx is listening on
+    server_name     your-domain;    # setup your domain here
 
     gzip            on;
     gzip_types      text/plain application/xml text/css application/javascript;
@@ -32,7 +32,7 @@ server {
         proxy_set_header X-Forwarded-Proto  $scheme;
         proxy_read_timeout          1m;
         proxy_connect_timeout       1m;
-        proxy_pass                          http://127.0.0.1:3000;	# set the adress of the node instance here
+        proxy_pass                          http://127.0.0.1:3000;	# set the adress of the Node.js instance here
     }
 }
 ```
