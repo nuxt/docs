@@ -8,7 +8,6 @@ description: Nuxt.js では js プラグインを定義することができ、�
 
 <div class="Alert">Vue インスタンスの [ライフサイクル](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram) において、`beforeCreate` と `created` フックのみが **クライアントサイドとサーバーサイドの両方** で呼び出されることに注意してください。それ以外のすべてのフックはクライアントサイドでのみ呼び出されます。</div>
 
-
 ## 外部パッケージの利用
 
 アプリケーションに外部パッケージ/モジュールを使いたいときがあるでしょう。例えばサーバーでもクライアントでも HTTP リクエストを送れる [axios](https://github.com/mzabriskie/axios) などが良い例です。
@@ -83,21 +82,29 @@ module.exports = {
 }
 ```
 
-## Inject in $root & context
+## アプリケーションのルートや context に挿入する
 
-例えば [vue-18n](https://github.com/kazupon/vue-i18n) のように、プラグインをアプリケーションのルートに挿入して使いたい場合もあるでしょう。Nuxt.js はプラグインをルートのコンポーネントとコンテキストに追加するために `injectAs` プロパティを用意しています。
+例えば [vue-18n](https://github.com/kazupon/vue-i18n) のように、プラグインをアプリケーションのルートに挿入して使いたい場合もあるでしょう。Nuxt.js はプラグイン内の関数を公開できるようにしており、それはルートコンポーネントとコンテキストを受け取れます。また `inject` 関数も用意しています。
 
 `plugins/i18n.js`:
 
 ```js
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-import store from '~store'
+
 Vue.use(VueI18n)
-const i18n = new VueI18n({
-  /* ここにオプションを書きます */
-})
-export default i18n
+
+export default ({ store }, inject) => {
+  // `i18n` キーを挿入する
+  // -> app.$i18n になる
+  // -> Vue コンポーネント内では this.$i18n
+  // -> Vuex ストアやアクション、ミューテーション内で this.$i18n
+  // このようにしてミドルウェアやページの asyncData や fetch の中でプラグインを使うことができる
+
+  inject('i18n', new VueI18n({
+    /* vue-i18n のオプション... */
+  }))
+}
 ```
 
 `nuxt.config.js`:
@@ -107,10 +114,7 @@ module.exports = {
   build: {
     vendor: ['vue-i18n']
   },
-  plugins: [
-    // プラグインが `i18n` として、ルートのアプリケーションとコンテキストに挿入されます 
-    { src: '~plugins/i18n.js', injectAs: 'i18n' }
-  ]
+  plugins: ['~/plugins/i18n.js']
 }
 ```
 
@@ -137,6 +141,7 @@ module.exports = {
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
+
 Vue.use(VueNotifications)
 ```
 
