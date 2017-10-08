@@ -1,17 +1,18 @@
 ---
-title: Duplicated Meta tags
-description: Duplicated Meta tags with Nuxt.js?
+title: Balises meta dupliquées
+description: Balises meta dupliquées avec Nuxt.js ?
 ---
 
-# Duplicated Meta tags? (En)
+# Balises meta dupliquées ?
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>This is a "feature" of [vue-meta](https://github.com/declandewet/vue-meta), please take a look at the [documentation of head elements](/guide/views#html-head).</p>
+Il s'agit d'une « fonctionnalité » de [vue-meta](https://github.com/declandewet/vue-meta), merci de lire la [documentation des éléments d'entête](/guide/views#html-head).
 
-> To avoid any duplication when used in child component, please give an unique identifier with the `hid` key, please [read more](https://github.com/declandewet/vue-meta#lists-of-tags) about it.
+> Afin d'éviter toute duplication lors de l'utilisation d'un composant enfant, donnez un identifiant unique à l'aide de la clé `hid`. [En savoir plus](https://github.com/declandewet/vue-meta#lists-of-tags).
 
-For the meta description, you need to add the unique identifier `hid` so vue-meta will know that it has to overwrite the default tag.
+Pour la meta description, vous devez ajouter un identifiant unique `hid` afin que vue-meta sache qu'il doit remplacer la balise par défaut.
 
-Your `nuxt.config.js`:
+Votre `nuxt.config.js` :
+
 ```js
 ...head: {
     title: 'starter',
@@ -25,7 +26,8 @@ Your `nuxt.config.js`:
 ...
 ```
 
-An then in your individual page:
+Dans votre page individuelle :
+
 ```js
 export default {
   head () {
@@ -39,4 +41,4 @@ export default {
 }
 ```
 
-To learn how to use the `head` property in your pages, please see the [HTML head documentation](/guide/views#html-head).
+Pour apprendre à utiliser la propriété `head` dans vos pages, consultez la documentation [d'entête HTML](/guide/views#html-head).

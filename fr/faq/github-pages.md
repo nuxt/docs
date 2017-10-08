@@ -1,34 +1,33 @@
 ---
-title: GitHub Pages Deployment
-description: How to deploy Nuxt.js on GitHub Pages?
+title: Déployer sur GitHub Pages
+description: Comment déployer une application Nuxt.js sur GitHub Pages
 ---
 
-# How to deploy on GitHub Pages? (En)
+# Comment déployer sur GitHub Pages ?
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Nuxt.js gives you the possibility to host your web application on any static hosting like [GitHub Pages](https://pages.github.com/) for example.</p>
+Nuxt.js vous offre la possibilité d'héberger votre application web sur n'importe quel hébergeur statique tel que [GitHub Pages](https://pages.github.com/) par exemple.
 
-To deploy on GitHub Pages, you need to generate your static web application:
+Pour déployer sur GitHub Pages, vous devez générer votre application web de manière statique :
 
 ```bash
 npm run generate
 ```
 
-It will create a `dist` folder with everything inside ready to be deployed on GitHub Pages hosting.
-Branch `gh-pages` for project repository OR branch `master` for user or organization site
+Cette commande crée un répertoire `dist` contenant l'intégralité de l'application prête à être déployée sur GitHub Pages. Cela sur la branche `gh-pages` pour un dépôt de projet OU sur la branche `master` pour le site d'un utilisateur ou d'une organisation.
 
-<p class="Alert Alert--nuxt-green"><b>INFO:</b> If you use a custom domain for your GitHub Pages and put `CNAME` file, it is recommended that CNAME file is put in the `static` directory. [More documentation](/guide/assets#static) about it.</p>
+<p class="Alert Alert--nuxt-green"><b>Info :</b> si vous utilisez un nom de domaine personnalisé pour GitHub Pages à l'aide d'un fichier `CNAME`, il est recommandé de placer ce fichier dans le répertoire `static`. [Plus d'informations](/guide/assets#static) à ce propos.</p>
 
-## Command line deployment
+## Déploiement en ligne de commande
 
-You can also use [push-dir package](https://github.com/L33T-KR3W/push-dir):
+Vous pouvez également utiliser le package [push-dir](https://github.com/L33T-KR3W/push-dir):
 
-First install it via npm:
+Installez-le via npm :
 
 ```bash
 npm install push-dir --save-dev
 ```
 
-Add a `deploy` command to your package.json with the branch as `gh-pages` for project repository OR `master` for user or organization site.
+Ajoutez une commande `deploy` à votre `package.json` avec la branche `gh-pages` pour un dépôt de projet OU avec la branche `master` pour le site d'un utilisateur ou d'une organisation.
 
 ```js
 "scripts": {
@@ -40,7 +39,7 @@ Add a `deploy` command to your package.json with the branch as `gh-pages` for pr
 },
 ```
 
-Then generate and deploy your static application:
+Puis générez et déployez votre application statique :
 
 ```bash
 npm run generate
