@@ -13,7 +13,7 @@ Pour déployer sur Surge, installez `surge` sur votre ordinateur :
 npm install -g surge
 ```
 
-Puis demander à Nuxt.js de générer votre applicaiton web :
+Puis demander à Nuxt.js de générer votre application web :
 
 ```bash
 npm run generate

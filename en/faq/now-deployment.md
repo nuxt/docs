@@ -21,6 +21,6 @@ Pour déployer avec [Now](https://zeit.co/now), un fichier `package.json` comme 
 }
 ```
 
-Puis exécutez `now` et profiter !
+Puis exécutez `now` et profitez !
 
 Note : nous recommandons d'ajouter `.nuxt` dans `.npmignore` ou `.gitignore`.

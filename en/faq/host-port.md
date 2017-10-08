@@ -15,9 +15,9 @@ Vous pouvez configurer le PORT de trois façons :
   }
   ```
 
-2. Ajouter un meilleur support de développement d'interopérable entre plateformes.
+2. Ajoutez un meilleur support de développement qui fonctionne sur toutes les plateformes.
 
-  **Note** : pour un meilleur développement d'interopérable entre plateformes vous pouvez utiliser le package [cross-env](https://www.npmjs.com/package/cross-env).
+  **Note** : pour un meilleur développement qui fonctionne sur toutes les plateformes vous pouvez utiliser le package [cross-env](https://www.npmjs.com/package/cross-env).
 
   Installation :
 

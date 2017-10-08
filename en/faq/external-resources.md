@@ -7,7 +7,7 @@ description: Comment utiliser des ressources externes avec Nuxt.js ?
 
 ## Paramètres globaux
 
-Inclure vos ressources dans le fichier `nuxt.config.js` :
+Ajoutez vos ressources dans le fichier `nuxt.config.js` :
 
 ```js
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
 
 ## Paramètres locaux
 
-Inclure vos ressources dans votre fichier `.vue` dans votre répertoire `pages/` :
+Ajoutez vos ressources dans votre fichier `.vue` dans votre répertoire `pages/` :
 
 ```html
 <template>

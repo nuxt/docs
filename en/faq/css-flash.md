@@ -1,12 +1,12 @@
 ---
 title: CSS Flash
-description: Pourquoi un flash CSS apparaît avec Nuxt.js ?
+description: Pourquoi un flash CSS apparait avec Nuxt.js ?
 ---
 
-# Pourquoi un flash CSS apparaît ?
+# Pourquoi un flash CSS apparait ?
 
 ![cssflash](/flash_css.gif)
 
 C'est parce qu'en **mode développement** le CSS se trouve dans le JavaScript afin de permettre le rechargement à chaud via Webpack. Ce flash est appelé [FOUC](https://fr.wikipedia.org/wiki/FOUC).
 
-Ne vous inquiétez pas, en **mode production** le CSS est séparé et placé dans l'en-tête afin que le phénomène de FOUC n'apparaisse plus.
+Ne vous inquiétez pas, en **mode production** le CSS est séparé et placé dans l'entête afin que le phénomène de FOUC n'apparaisse plus.

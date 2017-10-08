@@ -1,9 +1,9 @@
 ---
 title: nginx proxy
-description: Comment utiliser nginx en tant que passerelle inverse ?
+description: Comment utiliser nginx en tant que proxy inverse ?
 ---
 
-# Utiliser nginx comme passerelle inverse
+# Utiliser nginx comme proxy inverse
 
 
 ```nginx
@@ -14,7 +14,7 @@ map $sent_http_content_type $expires {
 }
 
 server {
-    listen          80;				# le port nginx is listening on
+    listen          80;				# le port nginx est maintenant écouté
     server_name     your-domain;	# votre domaine ici
 
     gzip            on;
@@ -32,7 +32,7 @@ server {
         proxy_set_header X-Forwarded-Proto  $scheme;
         proxy_read_timeout          1m;
         proxy_connect_timeout       1m;
-        proxy_pass                          http://127.0.0.1:3000;	# associé l'adresse de l'instance Node.js ici
+        proxy_pass                          http://127.0.0.1:3000;	# l'URL de l'instance Node.js ici
     }
 }
 ```

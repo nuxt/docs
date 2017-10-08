@@ -14,7 +14,7 @@ Ensuite, pour utiliser [Google Analytics](https://analytics.google.com/analytics
 
 export default ({ app }) => {
   /*
-  ** Seulement lu côté client et en mode production
+  ** Seulement exécuté côté client et en mode production
   */
   if (process.env.NODE_ENV !== 'production') return
   /*
@@ -55,6 +55,6 @@ module.exports = {
 }
 ```
 
-Voilà, Google Analytics est intégré dans notre application Nuxt.js et trackera chaque page vue !
+Voilà, Google Analytics est intégré dans notre application Nuxt.js et suivra chaque page vue !
 
 <p class="Alert Alert--nuxt-green"><b>Info :</b> cette méthode est valable pour n'importe quel autre service de suivi.</p>

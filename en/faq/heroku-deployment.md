@@ -41,4 +41,4 @@ Pour finir, nous pouvons déployer notre application sur Heroku :
 git push heroku master
 ```
 
-Voilà! Votre application Nuxt.js est hébergée sur Heroku !
+Voilà ! Votre application Nuxt.js est hébergée sur Heroku !
