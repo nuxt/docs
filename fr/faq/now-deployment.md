@@ -1,11 +1,12 @@
 ---
-title: Now Deployment
-description: How to deploy Nuxt.js with Now.sh?
+title: Déployer avec Now
+description: Comment déployer une application Nuxt.js avec Now ?
 ---
 
-# How to deploy with Now.sh? (En)
+# Comment déployer avec Now ?
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>To deploy with [now.sh](https://zeit.co/now) a `package.json` like follows is recommended:</p>
+Pour déployer avec [Now](https://zeit.co/now), un fichier `package.json` comme suit est recommandé :
+
 ```json
 {
   "name": "my-app",
@@ -20,6 +21,6 @@ description: How to deploy Nuxt.js with Now.sh?
 }
 ```
 
-Then run `now` and enjoy!
+Puis exécutez `now` et profitez !
 
-Note: we recommend putting `.nuxt` in `.npmignore` or `.gitignore`.
+Note : nous recommandons d'ajouter `.nuxt` dans `.npmignore` ou `.gitignore`.

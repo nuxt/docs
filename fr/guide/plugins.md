@@ -86,7 +86,7 @@ module.exports = {
 
 ## Injection dans $root et context
 
-Plusieurs plugins ont besoin d'être injectés à la racine de l'application pour être utilisés, comme [vue-18n](https://github.com/kazupon/vue-i18n). Nuxt.js vous donne la possibilité d'exporter une fonction dans votre plugin pour recevoir l'instance racine ainsi que le contexte.
+Plusieurs plugins ont besoin d'être injectés à la racine de l'application pour être utilisés, comme [vue-18n](https://github.com/kazupon/vue-i18n). Nuxt.js vous donne la possibilité d'exporter une fonction dans votre plugin pour recevoir l'instance racine ainsi que le contexte et une fonction `inject`.
 
 `plugins/i18n.js`:
 
@@ -96,12 +96,16 @@ import VueI18n from 'vue-i18n'
 
 Vue.use(VueI18n)
 
-export default ({ app, store }) => {
-  // Appliquer l'instance i18n  de l'application
-  // De cette façon nous pouvons l'utiliser en tant que middleware et pages asyncData & fetch
-  app.i18n = new VueI18n({
-    /*  options vue-i18n... */
-  })
+export default ({ store }, inject) => {
+  // Injecter la clé `i18n`
+  // -> `app.$i18n`
+  // -> `this.$i18n` dans les composants Vue
+  // -> `this.$i18n` dans les actions et mutations du store
+  // De cette manière nous pouvons l'utiliser comme middleware et `asyncData` / `fetch` pour les pages
+
+  inject('i18n', new VueI18n({
+    /* options de `VueI18n`... */
+  }))
 }
 ```
 
