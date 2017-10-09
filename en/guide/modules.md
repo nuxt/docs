@@ -7,17 +7,20 @@ description: Modules are Nuxt.js extensions which can extend it's core functiona
 
 ## Introduction
 
-While developing production grade application using Nuxt, you will find out soon that Nuxt core functionalities are not enough and writing configs and plugins for each project is a repetitive, boring and time consuming job. Also adding every new feature into Nuxt is not possible as it would make it a fat framework.
+While developing production-grade applications with Nuxt, you soon discover that the framework's core functionality is not enough. Nuxt can be extended with configuration options and plugins, but maintaining these customizations across multiple projects is tedious, repetitive and time-consuming. On the other hand, supporting every project's needs out of the box would make Nuxt very complex and hard to use.
 
-This was the reason Nuxt introduces a higher order modular system to easily extend the core. Modules are basically **functions** which are called sequentially when booting Nuxt and core awaits for all of them to be finished before continue it's job. So they have the chance to customize almost any aspect of Nuxt and thanks to modular design of Nuxt itself and webpack [Tapable](https://github.com/webpack/tapable) technology they can also register hooks for certain entry points like builder initialization.
+This is why Nuxt provides a higher-order module system that makes it easy to extend the core. Modules are simply **functions** that are called sequentially when booting Nuxt. The framework waits for each module to finish before continuing. In this way, modules can customize almost any aspect of Nuxt. Thanks to Nuxt's modular design (based on webpack's [Tapable](https://github.com/webpack/tapable)), modules can easily register hooks for certain entry points like builder initialization. Modules can also override templates, configure webpack loaders, add CSS libraries, and perform any of a number of other useful tasks. 
 
-Another point of using modules is that they can be refactored and packaged out of the project and released as npm packages so you can share and use high quality integration and solutions from Nuxt community with no pain! You might interested in modules if you:
+Best of all, Nuxt modules can be incorporated into npm packages. This makes them easy to reuse across projects and to share with the Nuxt community, helping create an ecosystem of high-quality Nuxt add-ons.
 
-- Are a member of an **agile team** that want to set up your project instantly and avoid **re-inventing** the wheel for common tasks like Google Analytics tools for your new project.
-- Are an **enterprise** company which **quality** and **reusability** is important for your projects.
-- Are a lovely **Open Source** enthusiast and interested in **sharing** your works with community in an easy manner.
-- Are a lazy programmer and don't like digging into details setting up every new library or integration (Someone else should already provided a module for that but you can always ask community for making one).
-- Tired of breaking low level API and Usage changes, and need **things that just work™**.
+Modules are great if you:
+
+- Are a member of an **agile team** that needs to quickly bootstrap new projects.
+- Are tired of **re-inventing** the wheel for common tasks like integrating Google Analytics.
+- Are a lovely **Open Source** enthusiast who would like to easily **share** your work with the community.
+- Are a member of an **enterprise** company that values **quality** and **reusability**.
+- Are often up against short deadlines and don't have time to dig into the details of every new library or integration.
+- Are tired of dealing with breaking changes to low-level interfaces, and need things that **just work™**.
 
 ## Write a basic Module
 
