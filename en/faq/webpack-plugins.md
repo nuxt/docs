@@ -1,5 +1,5 @@
 ---
-title: Webpack plugins
+title: webpack plugins
 description: How to add webpack plugins into my Nuxt.js application?
 ---
 

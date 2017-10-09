@@ -98,13 +98,12 @@ Vue.use(VueI18n)
 
 export default ({ store }, inject) => {
   // Inject `i18n` key
-  // -> app.$i18n
-  // -> this.$i18n in vue components
-  // -> this.$i18n in store actions/mutations
-  // This way we can use it in middleware and pages asyncData & fetch
-  
+  // -> `app.$i18n`
+  // -> `this.$i18n` in Vue components
+  // -> `this.$i18n` in store actions/mutations
+  // This way we can use it in middleware and pages `asyncData` & `fetch`
   inject('i18n', new VueI18n({
-    /* vue-i18n options... */
+    /* `VueI18n` options... */
   }))
 }
 ```
