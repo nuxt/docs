@@ -69,6 +69,7 @@ export default ({ app: { router }, store }) => {
     ga('set', 'page', to.fullPath)
     ga('send', 'pageview')
   })
+}
 ```
 
 > `UA-XXXXXXXX-X` 를 Google 애널리틱스 트랙킹 아이디로 변경해 주세요.
