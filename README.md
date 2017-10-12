@@ -53,7 +53,7 @@ Korean translation is maintained by Taewoong La.
 
 ### French
 
-French translation is maintained by [Vuejs-FR](https://github.com/vuejs-fr) Team.
+French translation is maintained by [Vuejs-FR](https://github.com/vuejs-fr/nuxt/issues/1) Team.
 
 * Translation Repo — [/vuejs-fr/nuxt](https://github.com/vuejs-fr/nuxt)
 * Primary maintainer - [Bruno Lesieur](https://www.lesieur.name/) ([Orchard ID](https://www.orchard-id.com/))
