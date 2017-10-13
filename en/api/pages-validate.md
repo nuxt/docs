@@ -29,7 +29,7 @@ export default {
 }
 ```
 
-You can also check some data in your [store](/guide/vuex-store) for example (filled by [nuxtServerInit action](/guide/vuex-store#the-nuxtserverinit-action) before):
+You can also check some data in your [store](/guide/vuex-store) for example (filled by [`nuxtServerInit`](/guide/vuex-store#the-nuxtserverinit-action) before action):
 
 ```js
 export default {
