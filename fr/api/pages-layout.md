@@ -1,28 +1,28 @@
 ---
-title: "API: The layout Property"
-description: Every file (first level) in the layouts directory will create a custom layout accessible with the layout property in the page component.
+title: "API : la propriété layout"
+description: Chaque fichier (premier niveau) dans le répertoire `layouts` créera un layout personnalisé accessible avec la propriété layout dans le composant page.
 ---
 
-# The layout Property (En)
+# La propriété layout
 
-> Every file (first level) in the layouts directory will create a custom layout accessible with the layout property in the page component.
+> Chaque fichier (premier niveau) dans le répertoire `layouts` créera une mise en page personnalisée accessible avec la propriété `layout` dans le composant de page.
 
-- **Type:** `String` or `Function` (default: `'default'`)
+- **Type :** `String` ou `Function` (par défaut : `'default'`)
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Use the `layout` key in your pages components to define which layout to use:</p>
+Utilisez la clé `layout` dans vos composants de page pour définir la mise en page à utiliser :
 
 ```js
 export default {
   layout: 'blog',
-  // OR
+  // OU
   layout (context) {
     return 'blog'
   }
 }
 ```
 
-In this example, Nuxt.js will include the `layouts/blog.vue` file as a layout for this page component.
+Dans cet exemple, Nuxt.js inclura le fichier `layouts/blog.vue` comme mise en page pour ce composant de page.
 
-Check the [demonstration video](https://www.youtube.com/watch?v=YOKnSTp7d38) to see it in action.
+Voyez cela en action dans [cette vidéo de démonstration](https://www.youtube.com/watch?v=YOKnSTp7d38).
 
-To understand how the layouts work with nuxt.js, take a look at the [layout documentation](/guide/views#layouts).
+Afin de comprendre comment les mises en page fonctionnent avec Nuxt.js, regardez la documentation sur les [Mises en page](/guide/views#mises-en-page).
