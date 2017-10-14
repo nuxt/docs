@@ -76,7 +76,7 @@ You can use the context object injected into the `asyncData` property to access 
 
 ## Handling Errors
 
-Nuxt.js adds the `error(params)` method in the `context`, you can call it to display the error page. `params.statusCode` will be also used to render the proper status code form the server-side.
+Nuxt.js adds the `error(params)` method in the `context`, you can call it to display the error page. `params.statusCode` will be also used to render the proper status code from the server-side.
 
 Example with a `Promise`:
 
