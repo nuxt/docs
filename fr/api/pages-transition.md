@@ -1,30 +1,30 @@
 ---
-title: "API: The transition Property"
-description: Nuxt.js uses the transition component to let you create amazing transitions/animations between your pages.
+title: "API : la propriété transition"
+description: Nuxt.js utilise le composant de `<transition>` afin de créer des transitions / animations époustouflantes entre vos pages.
 ---
 
-# The transition Property (En)
+# La propriété transition
 
-> Nuxt.js uses the [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your pages. 
+> Nuxt.js utilise le composant [`<transition>`](https://fr.vuejs.org/v2/guide/transitions.html#Transition-d’elements-composants-simples) afin de créer des transitions / animations époustouflantes entre vos pages.
 
-- **Type:** `String` or `Object` or `Function`
+- **Type :** `String` ou `Object` ou `Function`
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>To define a custom transition for a specific route, simply add the `transition` key to the page component.</p>
+Pour définir une transition personnalisée pour une route spécifique, ajoutez la propriété `transition` au composant de page.
 
 ```js
 export default {
-  // Can be a String
+  // Peut-être une chaine de caractères
   transition: ''
-  // Or an Object
+  // Ou un objet
   transition: {}
-  // or a Function
+  // ou une fonction
   transition (to, from) {}
 }
 ```
 
-## String
+## Chaine de caractères
 
-If the `transition` key is set as a string, it will be used as the `transition.name`.
+Si la propriété `transition` est définie en tant que chaine de caractère, elle sera utilisée comme `transition.name`.
 
 ```js
 export default {
@@ -32,15 +32,15 @@ export default {
 }
 ```
 
-Nuxt.js will use these settings to set the component as follows:
+Nuxt.js utilisera ces paramètres pour définir le composant comme suit :
 
 ```html
 <transition name="test">
 ```
 
-## Object
+## Objet
 
-If the `transition` key is set as an object:
+Si la propriété `transition` est un objet :
 
 ```js
 export default {
@@ -51,45 +51,44 @@ export default {
 }
 ```
 
-Nuxt.js will use these settings to set the component as follows:
+Nuxt.js utilisera ces paramètres pour définir le composant comme suit :
 
 ```html
 <transition name="test" mode="out-in">
 ```
 
-The following properties that the `transition` object can have:
+L'objet `transition` peut avoir les propriétés suivantes :
 
-| key  | Type | Default | definition |
-|------|------|---------|-----------|
-| `name` | String | `"page"` | The transition name applied on all the routes transitions. |
-| `mode` | String | `"out-in"` | The transition mode applied on all routes, see [Vue.js documentation](http://vuejs.org/v2/guide/transitions.html#Transition-Modes). |
-| `css` | Boolean | `true` | Whether to apply CSS transition classes. Defaults to `true`. If set to false, will only trigger JavaScript hooks registered via component events. |
-| `duration` | Integer | `n/a` | The duration (in milliseconds) applied on the transition, see [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Explicit-Transition-Durations). |
-| `type` | String | `n/a` | Specify the type of transition events to wait for to determine transition end timing. Available values are "transition" and "animation". By default, it will automatically detect the type that has a longer duration. |
-| `enterClass` | String | `n/a` | The starting state of the transition class. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `enterToClass` | String | `n/a` | The ending state for the transition. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `enterActiveClass` | String | `n/a` | The class applied across the entire transition duration. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `leaveClass` | String | `n/a` | The starting state of the transition class. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `leaveToClass` | String | `n/a` | The ending state for the transition. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
-| `leaveActiveClass` | String | `n/a` | The class applied across the entire transition duration. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) |
+| Propriété          | type      | défaut     | définition                                                                                                                                                                                                                                         |
+|--------------------|-----------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `name`             | `String`  | `"page"`   | Le nom de la transition appliqué aux transitions de route.                                                                                                                                                                                         |
+| `mode`             | `String`  | `"out-in"` | Le mode de la transition appliqué aux routes. Voir la [documentation Vue.js](https://fr.vuejs.org/v2/guide/transitions.html#Les-modes-de-transition).                                                                                              |
+| `css`              | `Boolean` | `true`     | Défini s'il faut utiliser les transitions de classes CSS. Par défaut à `true`. Si mis à `false`, cela ne déclenchera que les points d'ancrage JavaScript abonnés via les évènements de composant.                                                       |
+| `duration`         | `Integer` | aucune     | La durée (en millisecondes) appliquée a une transition, voir la [documentation Vue.js](https://fr.vuejs.org/v2/guide/transitions.html#Durees-de-transition-explicites).                                                                             |
+| `type`             | `String`  | aucune     | Spécifie le type d'évènement de transition attendu pour déterminer le moment de fin de transition. Les valeurs disponibles sont `"transition"` et `"animation"`. Par défaut, cela sera automatiquement déterminé s'il n'y a pas de durée précisée. |
+| `enterClass`       | `String`  | aucune     | L'état de départ de la classe de transition. Voir la [documentation Vue.js](https://fr.vuejs.org/v2/guide/transitions.html#Classes-de-transition-personnalisees).                                                                                  |
+| `enterToClass`     | `String`  | aucune     | L'état final de la transition. Voir la [documentation Vue.js](https://fr.vuejs.org/v2/guide/transitions.html#Classes-de-transition-personnalisees).                                                                                                |
+| `enterActiveClass` | `String`  | aucune     | La classe appliquée pendant l'intégralité de la transition. Voir la [documentation Vue.js](https://fr.vuejs.org/v2/guide/transitions.html#Classes-de-transition-personnalisees)                                                                    |
+| `leaveClass`       | `String`  | aucune     | L'état de départ de la classe de transition. Voir la [documentation Vue.js](https://fr.vuejs.org/v2/guide/transitions.html#Classes-de-transition-personnalisees).                                                                                  |
+| `leaveToClass`     | `String`  | aucune     | L'état final de la transition. Voir la [documentation Vue.js](https://fr.vuejs.org/v2/guide/transitions.html#Classes-de-transition-personnalisees).                                                                                                |
+| `leaveActiveClass` | `String`  | aucune     | La classe appliquée pendant l'intégralité de la transition. Voir la [documentation Vue.js](https://fr.vuejs.org/v2/guide/transitions.html#Classes-de-transition-personnalisees).                                                                   |
 
+Vous pouvez également définir des méthodes dans l'objet `transition` afin de pouvoir utiliser des [points d'ancrage JavaScript](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks) :
 
-You can also define methods in the `transition`, these are for the [JavaScript hooks](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks):
+- `beforeEnter(el)`
+- `enter(el, done)`
+- `afterEnter(el)`
+- `enterCancelled(el)`
+- `beforeLeave(el)`
+- `leave(el, done)`
+- `afterLeave(el)`
+- `leaveCancelled(el)`
 
-- beforeEnter(el)
-- enter(el, done)
-- afterEnter(el)
-- enterCancelled(el)
-- beforeLeave(el)
-- leave(el, done)
-- afterLeave(el)
-- leaveCancelled(el)
+*Note : c'est une bonne pratique que de définir explicitement `css: false` pour les transitions uniquement JavaScript afin que Vue passe la détection CSS. Cela prévient également les potentielles interférences entre les déclarations CSS.*
 
-*Note: it’s also a good idea to explicitly add `css: false` for JavaScript-only transitions so that Vue can skip the CSS detection. This also prevents CSS rules from accidentally interfering with the transition.*
+## Fonction
 
-## Function
-
-If the `transition` key is set as a function:
+Si la propriété `transition` est une fonction :
 
 ```js
 export default {
@@ -100,7 +99,8 @@ export default {
 }
 ```
 
-Transitions applied on navigation:
-- `/` to `/posts` => `slide-left`
-- `/posts` to `/posts?page=3` => `slide-left`
-- `/posts?page=3` to `/posts?page=2` => `slide-right`
+Transitions appliquées à la navigation :
+
+- `/` vers `/posts` => `slide-left`,
+- `/posts` vers `/posts?page=3` => `slide-left`,
+- `/posts?page=3` vers `/posts?page=2` => `slide-right`.

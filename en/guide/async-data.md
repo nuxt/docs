@@ -47,7 +47,6 @@ export default {
 
 ### Utiliser une fonction de rappel
 
->>>>>>> upstream/master
 ```js
 export default {
   asyncData ({ params }, callback) {

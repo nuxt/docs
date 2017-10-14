@@ -17,9 +17,17 @@ d'obtenir des conflits **sur les pages déjà traduites** et ainsi maintenir la 
 
 ### Traduction
 
+<<<<<<< HEAD
 Pour savoir ce qui est [en cours de traduction](https://github.com/vuejs-fr/nuxt/issues/1) ou [comment traduire un fichier](https://github.com/vuejs-fr/nuxt/issues/2), référez vous aux issues correspondantes.
 
 ### Reverssement
+=======
+French translation is maintained by [Vuejs-FR](https://github.com/vuejs-fr/nuxt/issues/1) Team.
+
+* Translation Repo — [/vuejs-fr/nuxt](https://github.com/vuejs-fr/nuxt)
+* Primary maintainer - [Bruno Lesieur](https://www.lesieur.name/) ([Orchard ID](https://www.orchard-id.com/))
+* Primary translator - [Julien Grünhagel](https://rspt.io/) ([laruche](https://laruche.io))
+>>>>>>> upstream/master
 
 Quand un fichier traduit est validé par pull request, on le met à jour dans le dossier `fr` de `vuejs-fr/nuxt:master` puis on propose une pull request au site principal :
 

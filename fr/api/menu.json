@@ -2,27 +2,27 @@
   {
     "title": "Essentiel",
     "links": [
-      { "name": "Context (En)", "to": "/context" }
+      { "name": "Context", "to": "/context" }
     ]
   },
   {
     "title": "Pages",
     "links": [
-      { "name": "asyncData (En)", "to": "/" },
-      { "name": "fetch (En)", "to": "/pages-fetch" },
-      { "name": "head (En)", "to": "/pages-head" },
-      { "name": "layout (En)", "to": "/pages-layout" },
-      { "name": "middleware (En)", "to": "/pages-middleware" },
-      { "name": "scrollToTop (En)", "to": "/pages-scrolltotop" },
+      { "name": "asyncData", "to": "/" },
+      { "name": "fetch", "to": "/pages-fetch" },
+      { "name": "head", "to": "/pages-head" },
+      { "name": "layout", "to": "/pages-layout" },
+      { "name": "middleware", "to": "/pages-middleware" },
+      { "name": "scrollToTop", "to": "/pages-scrolltotop" },
       {
-        "name": "transition (En)", "to": "/pages-transition",
+        "name": "transition", "to": "/pages-transition",
         "contents": [
-          { "name": "String (En)", "to": "#string" },
-          { "name": "Object (En)", "to": "#object" },
-          { "name": "Function (En)", "to": "#function" }
+          { "name": "Chaine de caractères", "to": "#chaine-de-caract-res" },
+          { "name": "Objet", "to": "#objet" },
+          { "name": "Fonction", "to": "#fonction" }
         ]
       },
-      { "name": "validate (En)", "to": "/pages-validate" }
+      { "name": "validate", "to": "/pages-validate" }
     ]
   },
   {
