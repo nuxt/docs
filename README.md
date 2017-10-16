@@ -8,7 +8,7 @@
 
 :warning: You must also have the main [nuxtjs.org](https://github.com/nuxt/nuxtjs.org) website repo up and running on localhost to be able to run the docs...
 
-Start a dev server on `localhost:4000`
+Start a dev server on `localhost:4000`:
 
 ```bash
 npm install
