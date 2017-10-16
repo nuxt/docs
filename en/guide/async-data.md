@@ -8,7 +8,7 @@ Nuxt.js adds an `asyncData` method to let you handle async operations before set
 
 ## The asyncData Method
 
-Sometimes you just want to fetch data and pre-render it on the server-side without using a store. `asyncData` is called every time before loading the component (**only for pages components**). It can be called server-side or before navigating to the corresponding route. This method receives [the context](/api/context) as the first argument, you can use it to fetch some data and Nuxt.js will merge it with the component data.
+Sometimes you just want to fetch data and pre-render it on the server without using a store. `asyncData` is called every time before loading the component (**only for pages components**). It can be called server-side or before navigating to the corresponding route. This method receives [the context](/api/context) as the first argument, you can use it to fetch some data and Nuxt.js will merge it with the component data.
 
 <div class="Alert Alert--orange">You do **NOT** have access of the component instance through `this` inside `asyncData` because it is called **before initiating** the component.</div>
 
@@ -72,7 +72,7 @@ To see the list of available keys in `context`, take a look at the [API Essentia
 
 ### Accessing dynamic route data
 
-You can use the context object injected into the `asyncData` property to access dynamic route data. For example, dynamic route params can be accessed using the name of the file or folder that configured it. So if you define a file named `_slug.vue`, you can acccess it via `context.params.slug`.
+You can use the context object injected into the `asyncData` property to access dynamic route data. For example, dynamic route params can be accessed using the name of the file or folder that configured it. So, if you define a file named `_slug.vue`, you can acccess it via `context.params.slug`.
 
 ## Handling Errors
 
