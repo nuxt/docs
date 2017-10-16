@@ -36,7 +36,7 @@ export default {
 </script>
 ```
 
-But there is **one problem here**, if we import axios in another page, it will be included again for the page bundle. We want to include `axios` only once in our application, for this, we use the `build.vendor` key in our `nuxt.config.js`:
+But there is **one problem here**. If we import axios in another page, it will be included again for the page bundle. We want to include `axios` only once in our application. To do this, we use the `build.vendor` key in our `nuxt.config.js`:
 
 ```js
 module.exports = {
@@ -46,7 +46,7 @@ module.exports = {
 }
 ```
 
-Then, I can import `axios` anywhere without having to worry about making the bundle bigger!
+Then, we can import `axios` anywhere without having to worry about making the bundle bigger!
 
 ## Vue Plugins
 

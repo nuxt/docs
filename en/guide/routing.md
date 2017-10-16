@@ -3,7 +3,7 @@ title: Routing
 description: Nuxt.js use the file-system to generate the routes of your web applications.
 ---
 
-> Nuxt.js generates automatically the [vue-router](https://github.com/vuejs/vue-router) configuration according to your file tree of Vue files inside the `pages` directory.
+> Nuxt.js automatically generates the [vue-router](https://github.com/vuejs/vue-router) configuration based on your file tree of Vue files inside the `pages` directory.
 
 ## Basic Routes
 
@@ -289,7 +289,7 @@ The middleware will be executed in series in this order:
 2. Matched layouts
 3. Matched pages
 
-A middleware can be asynchronous, simply return a `Promise` or use the 2nd `callback` argument:
+A middleware can be asynchronous. To do this, simply return a `Promise` or use the 2nd `callback` argument:
 
 `middleware/stats.js`
 
