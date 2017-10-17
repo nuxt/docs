@@ -8,9 +8,11 @@ Cette branche de travail `working` est volontairement mise en avant et doit uniq
 
 Nous traduisons les fichiers directement dans le dossier `en` sans les renommer. Cela permet lors de la mise à jour de la documentation via l'utilisation des commandes :
 
-```
-git fetch upstream
-git merge upstream/master
+Démarrer un serveur de développement sur `localhost:4000` :
+
+```bash
+npm install
+npm run dev
 ```
 
 d'obtenir des conflits **sur les pages déjà traduites** et ainsi maintenir la documentation à jour en fonction des modifications à travers **les documents déjà traduits**.

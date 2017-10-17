@@ -1,18 +1,17 @@
 ---
-title: "API: The asyncData Method"
-description: You may want to fetch data and render it on the server-side. Nuxt.js add an `asyncData` method let you handle async operation before setting the component data.
+title: "API : la méthode asyncData"
+description: Vous voudriez peut-être récupérer des données et faire le rendu côté serveur. Nuxt.js ajoute une méthode `asyncData` vous permettant de gérer des opérations asynchrones avant de définir les données du composant.
 ---
 
-# The asyncData Method (En)
+# La méthode asyncData
 
-> You may want to fetch data and render it on the server-side.
-Nuxt.js add an `asyncData` method let you handle async operation before setting the component data.
+> Vous voudriez peut-être récupérer des données et faire le rendu côté serveur. Nuxt.js ajoute une méthode `asyncData` vous permettant de gérer des opérations asynchrones avant de définir les données du composant.
 
 - **Type:** `Function`
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>`asyncData` is called every time before loading the component (**only for pages components**). It can be called from the server-side or before navigating to the corresponding route. This method receives the [context](/api/context) (object) as the first argument, you can use it to fetch some data and return the component data.</p>
+`asyncData` est appelée avant chaque chargement de composant (**uniquement pour les composants de page**). Elle peut être appelée côté serveur ou avant de naviguer sur la route correspondante. Cette méthode reçoit l'objet [context](/api/context) comme premier argument. Vous pouvez l'utiliser afin de récupérer des données et retourner les données du composant.
 
-The result from asyncData will be **merged** with data.
+Le résultat d'asyncData sera **fusionné** avec les données.
 
 ```js
 export default {
@@ -25,4 +24,4 @@ export default {
 }
 ```
 
-<div class="Alert Alert--orange">You do **NOT** have access of the component instance through `this` inside `asyncData` because it is called **before initiating** the component.</div>
+<div class="Alert Alert--orange">Vous **N**'avez **PAS** accès à l'instance du composant via `this` au sein de `asyncData` parce que la fonction est appelée **avant d'initialiser** le composant.</div>
