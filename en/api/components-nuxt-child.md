@@ -1,6 +1,6 @@
 ---
 title: "API: The <nuxt-child> Component"
-description: Display the current page
+description: Display the current page.
 ---
 
 # The &lt;nuxt-child&gt; Component
@@ -17,6 +17,7 @@ Example:
 ```
 
 This file tree will generate these routes:
+
 ```js
 [
   {
