@@ -1,19 +1,19 @@
 ---
-title: "API: The scrollToTop Property"
-description: The scrollToTop property lets you tell nuxt.js to scroll to the top before rendering the page.
+title: "API : la propriété scrollToTop"
+description: La propriété `scrollToTop` vous permet d'indiquer à Nuxt.js de faire défiler la page tout en haut avant de faire le rendu.
 ---
 
-# The scrollToTop Property
+# La propriété scrollToTop
 
-> The scrollToTop property lets you tell nuxt.js to scroll to the top before rendering the page.
+> La propriété `scrollToTop` vous permet d'indiquer à Nuxt.js de faire défiler la page tout en haut avant de faire le rendu.
 
-- **Type:** `Boolean` (default: `false`)
+- **Type :** `Boolean` (défaut : `false`)
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>By default, nuxt.js scrolls to the top when you go to another page, but with children routes, nuxt.js keeps the scroll position. If you want to tell nuxt.js to scroll to the top when rendering your child route, set `scrollToTop: true`:</p>
+Par défaut, Nuxt.js fait défiler la page vers le sommet quand vous changez de page. Mais dans le cas de routes enfants, Nuxt.js reste à sa position actuelle. Si vous désirez indiquer à Nuxt.js de défiler vers le haut de la page lors du rendu de la page enfant, utilisez `scrollToTop: true` :
 
 ```html
 <template>
-  <h1>My child component</h1>
+  <h1>Mon composant enfant</h1>
 </template>
 
 <script>
@@ -23,4 +23,4 @@ export default {
 </script>
 ```
 
-If you want to overwrite the default scroll behavior of nuxt.js, take a look at the [scrollBehavior option](/api/configuration-router#scrollBehavior).
+Si vous désirez écraser le comportement par défaut du défilement, regardez l'[option `scrollBehavior`](/api/configuration-router#scrollBehavior).

@@ -12,6 +12,7 @@ This is a "feature" of [vue-meta](https://github.com/declandewet/vue-meta), plea
 For the meta description, you need to add the unique identifier `hid` so vue-meta will know that it has to overwrite the default tag.
 
 Your `nuxt.config.js`:
+
 ```js
 ...head: {
     title: 'starter',
@@ -26,6 +27,7 @@ Your `nuxt.config.js`:
 ```
 
 An then in your individual page:
+
 ```js
 export default {
   head () {

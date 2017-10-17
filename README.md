@@ -8,7 +8,7 @@
 
 :warning: You must also have the main [nuxtjs.org](https://github.com/nuxt/nuxtjs.org) website repo up and running on localhost to be able to run the docs...
 
-Start a dev server on `localhost:4000`
+Start a dev server on `localhost:4000`:
 
 ```bash
 npm install
@@ -53,11 +53,11 @@ Korean translation is maintained by Taewoong La.
 
 ### French
 
-French translation is maintained by Julien Grünhagel/@rspt for [laruche](https://laruche.io).
+French translation is maintained by [Vuejs-FR](https://github.com/vuejs-fr/nuxt/issues/1) Team.
 
-* Translation Repo — [/larucheio/fr.docs.nuxtjs](https://github.com/larucheio/fr.docs.nuxtjs)
-* Primary maintainer - [laruche](https://laruche.io/)
-* Primary translator - [Julien Grünhagel](https://rspt.io/)
+* Translation Repo — [/vuejs-fr/nuxt](https://github.com/vuejs-fr/nuxt)
+* Primary maintainer - [Bruno Lesieur](https://www.lesieur.name/) ([Orchard ID](https://www.orchard-id.com/))
+* Primary translator - [Julien Grünhagel](https://rspt.io/) ([laruche](https://laruche.io))
 
 ### Want to help with the translation?
 

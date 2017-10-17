@@ -1,40 +1,40 @@
 ---
-title: "API: The validate Method"
-description: Nuxt.js lets you define a validator method inside your dynamic route component.
+title: "API : la méthode validate"
+description: Nuxt.js vous permet de définir une méthode de validation dans votre composant de route dynamique.
 ---
 
-# The validate Method (En)
+# La méthode validate
 
-> Nuxt.js lets you define a validator method inside your dynamic route component.
+> Nuxt.js vous permet de définir une méthode de validation dans votre composant de route dynamique.
 
-- **Type:** `Function`
+- **Type :** `Function`
 
 ```js
 validate({ params, query, store }) {
-  return true // if the params are valid
-  return false // will stop Nuxt.js to render the route and display the error page
+  return true // si le paramètre est valide
+  return false // nous arrêtons Nuxt.js pour faire le rendu de la route et afficher la page d'erreur
 }
 ```
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Nuxt.js lets you define a validator method inside your dynamic route component (In this example: `pages/users/_id.vue`).</p>
+Nuxt.js vous permet de définir une méthode de validation dans votre composant de route dynamique (dans cet exemple : `pages/users/_id.vue`).
 
-If the validate method does not return `true`, Nuxt.js will automatically load the 404 error page.
+Si la méthode de validation retourne `false`, Nuxt.js chargera automatiquement la page d'erreur 404.
 
 ```js
 export default {
   validate ({ params }) {
-    // Must be a number
+    // Doit être un nombre
     return /^\d+$/.test(params.id)
   }
 }
 ```
 
-You can also check some data in your [store](/guide/vuex-store) for example (filled by [nuxtServerInit action](/guide/vuex-store#the-nuxtserverinit-action) before):
+Vous pouvez aussi vérifier les données dans votre [store](/guide/vuex-store) (remplies au préalable avec l'action [`nuxtServerInit`](/guide/vuex-store#the-nuxtserverinit-action)) :
 
 ```js
 export default {
   validate ({ params, store }) {
-    // Check if `params.id` is an existing category
+    // Vérifier si `params.id` est une catégorie existante
     return store.state.categories.some((category) => category.id === params.id)
   }
 }
