@@ -80,9 +80,6 @@ server {
         proxy_pass                          http://127.0.0.1:3000; # set the adress of the Node.js
     }
 
-    #location = /favicon.ico { access_log off; log_not_found off; }
-    #location = /robots.txt  { access_log off; log_not_found off; }
-
     access_log off;
     error_log  /var/log/nginx/YOUR_WEBSITE_FOLDER-error.log error;
 
@@ -148,9 +145,6 @@ server {
         proxy_connect_timeout       1m;
         proxy_pass                          http://127.0.0.1:3000; # set the adress of the Node.js
     }
-
-    #location = /favicon.ico { access_log off; log_not_found off; }
-    #location = /robots.txt  { access_log off; log_not_found off; }
 
     access_log off;
     error_log  /var/log/nginx/YOUR_WEBSITE_FOLDER-error.log error;
