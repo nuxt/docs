@@ -1,9 +1,9 @@
 ---
 title: Configuration
-description: Nuxt.js is configured by default to cover most use cases. This default configuration can be overwritten by using the `nuxt.config.js` file.
+description: By default, Nuxt.js is configured to cover most use cases. This default configuration can be overwritten by using the `nuxt.config.js` file.
 ---
 
-> Nuxt.js is configured by default to cover most use cases. This default configuration can be overwritten by using the `nuxt.config.js` file.
+> By default, Nuxt.js is configured to cover most use cases. This default configuration can be overwritten by modifying the `nuxt.config.js` file.
 
 ### build
 
@@ -37,7 +37,7 @@ This option lets you define environment variables available both the client and 
 
 ### generate
 
-This option lets you to define each parameters value for every dynamic route in your application to be transformed into HTML files by Nuxt.js.
+This option lets you to define parameters values for every dynamic route in your application that will be transformed into HTML files by Nuxt.js.
 
 [Documentation about generate integration](/api/configuration-generate)
 
@@ -49,7 +49,7 @@ This option lets you to define all default meta tags for your application.
 
 ### loading
 
-This option lets you to customize the loading component which is loaded by default with Nuxt.js.
+This option lets you to customize the loading component Nuxt.js loads by default.
 
 [Documentation about `loading` integration](/api/configuration-loading)
 
@@ -73,7 +73,7 @@ This option lets you define the workspace of your Nuxt.js Application.
 
 ### router
 
-This option lets you to overwrite the default Nuxt.js configuration of Vue Router.
+This option lets you overwrite the default Nuxt.js configuration of Vue Router.
 
 [Documentation about `router` integration](/api/configuration-router)
 

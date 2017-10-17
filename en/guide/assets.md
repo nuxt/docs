@@ -1,9 +1,9 @@
 ---
 title: Assets
-description: Nuxt uses vue-loader, file-loader and url-loader for webpack by default for strong assets serving, but you can also use Static directory for static assets.
+description: By default, Nuxt uses vue-loader, file-loader and url-loader webpack loaders for strong assets serving. You can also use Static directory for static assets.
 ---
 
-> Nuxt uses vue-loader, file-loader and url-loader for webpack by default for strong assets serving, but you can also use Static directory for static assets.
+> By default, Nuxt uses vue-loader, file-loader and url-loader webpack loaders for strong assets serving. You can also use Static directory for static assets.
 
 ## webpacked
 
@@ -36,7 +36,7 @@ createElement('img', { attrs: { src: require('~/assets/image.png') }})
 
 Because `.png` is not a JavaScript file, Nuxt.js configures webpack to use [file-loader](https://github.com/webpack/file-loader) and [url-loader](https://github.com/webpack/url-loader) to handle them for you.
 
-The benefits of them are:
+The benefits of using file-loader and url-loader are:
 
 - file-loader lets you designate where to copy and place the asset file, and how to name it using version hashes for better caching.
 - url-loader allows you to conditionally inline a file as base-64 data URL if they are smaller than a given threshold. This can reduce a number of HTTP requests for trivial files. If the file is larger than the threshold, it automatically falls back to file-loader.

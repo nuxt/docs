@@ -40,7 +40,7 @@ Then, you can launch your commands via `npm run <command>` (example: `npm run de
 
 ## Development Environment
 
-To launch Nuxt in development mode with the hot reloading:
+To launch Nuxt in development mode with hot reloading:
 
 ```bash
 nuxt
@@ -81,7 +81,7 @@ Note: we recommend putting `.nuxt` in `.npmignore` or `.gitignore`.
 
 ### Static Generated Deployment (Pre Rendered)
 
-Nuxt.js gives you the possibility to host your web application on any static hosting.
+Nuxt.js gives you the ability to host your web application on any static hosting.
 
 To generate our web application into static files:
 
@@ -89,7 +89,7 @@ To generate our web application into static files:
 npm run generate
 ```
 
-It will create a `dist` folder with everything inside ready to be deployed on a static hosting.
+It will create a `dist` folder with everything inside ready to be deployed on a static hosting site.
 
 If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take a look at the [generate configuration](/api/configuration-generate) to tell Nuxt.js how to generate these dynamic routes.
 
@@ -97,16 +97,16 @@ If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take
 
 ### Single Page Application Deployment (SPA)
 
-`nuxt generate` still needs SSR engine during build/generate time while having the pro that all of our pages are pre rendered and having a high SEO and page load score, the content is generated at *build time*. For example, we can't use it for applications where content depends on user authentication or a real time API (at least for the first load).
+`nuxt generate` still needs SSR engine during build/generate time while having the advantage of having all our pages pre rendered, and have a high SEO and page load score. The content is generated at *build time*. For example, we can't use it for applications where content depends on user authentication or a real time API (at least for the first load).
 
-The SPA idea is simple! When SPA mode is enabled using `mode: 'spa'` or `--spa` flag and we run build, generation automatically starts after the build, but this time without pages content and only common meta and resource links.
+The SPA idea is simple! When SPA mode is enabled using `mode: 'spa'` or `--spa` flag, and we run build, generation automatically starts after the build. This generation contains common meta and resource links, but not page content.
 
-So for an SPA deployment:
+So, for an SPA deployment, you must do the following:
 
  - Change `mode` in `nuxt.config.js` to `spa`.
  - Run `npm run build`.
  - Deploy the created `dist/` folder to your static hosting like Surge, GitHub Pages or nginx.
 
-Another possible deployment is that we can use Nuxt as a middleware in frameworks while mode is `spa`. This helps reduce server loads and using Nuxt in projects where SSR is not possible.
+Another possible deployment method is to use Nuxt as a middleware in frameworks while in `spa` mode. This helps reduce server load and uses Nuxt in projects where SSR is not possible.
 
 <div class="Alert">See [How to deploy on Heroku?](/faq/heroku-deployment) for examples of deployment to popular hosts.</div>
