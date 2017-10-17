@@ -3,14 +3,14 @@ title: "API : le composant <nuxt>"
 description: Affiche un composant de page à l'intérieur d'une mise en page.
 ---
 
-# The &lt;nuxt&gt; Component
+# Le composant &lt;nuxt&gt;
 
 > Ce composant est utilisé seulement dans les [mises en page](/guide/views#mises-en-page) pour afficher les composants de page.
 
 **Props** :
 - nuxtChildKey : `string`
   - Cette prop va être appliquée à `<router-view/>`. Utile pour faire des transitions à l'intérieur d'une page dynamique et d'une route différente.
-  - par défault : `$route.fullPath`
+  - par défaut : `$route.fullPath`
 
 Exemple (`layouts/default.vue`) :
 

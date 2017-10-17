@@ -5,7 +5,7 @@ description: Affiche la page courante.
 
 # Le composant &lt;nuxt-child&gt;
 
-> Ce composant est utilisé pour affichier les composants enfants dans une [route imbriquée](/guide/routing#routes-imbriqu-es).
+> Ce composant est utilisé pour afficher les composants enfants dans une [route imbriquée](/guide/routing#routes-imbriqu-es).
 
 Exemple :
 
@@ -35,7 +35,7 @@ Cet arbre de fichier va générer ces routes :
 ]
 ```
 
-Pour afficher le composant `child.vue`, nous avons du insérer `<nuxt-child/>` à l'intérieur de `pages/parent.vue` :
+Pour afficher le composant `child.vue`, nous avons dû insérer `<nuxt-child/>` à l'intérieur de `pages/parent.vue` :
 
 ```html
 <template>
