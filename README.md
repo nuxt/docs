@@ -61,8 +61,18 @@ French translation is maintained by [Vuejs-FR](https://github.com/vuejs-fr/nuxt/
 
 ### Want to help with the translation?
 
-If you feel okay with translating sorta alone, just fork the repo, create a "work-in-progress" pull request (mark it with [WIP], see [Russian translation](https://github.com/nuxt/docs/pull/3) if you need an example) — and just go on.
+[gl]: https://gitlocalize.com
+[gl-help]: https://docs.gitlocalize.com/ 
+[gl-issue-tracker]: https://github.com/gitlocalize/feedback
+[gl-repo]: https://gitlocalize/repo/100
 
-If you are more of a team player, maybe Translation Gang is for you? Then just let us know somehow that you're ready to join this international open-source translators community. Feel free to contact [Grigoriy Beziuk](https://gbezyuk.github.io) or anybody else from the team.
+We are useing with a translation tool called [GitLocalize][gl] and follow the steps to get started with your contribution:
 
-And thank you in advance ;)
+1. Go to [GitLocalize's nuxt/docs repository][gl-repo].
+1. Sign up using your GitHub account :octocat:.
+1. Find the document you are going to translate. 
+1. Happy translating :sparkles: .
+1. When you are done, send the translation for reviews.
+1. Reviewed translation will be sent as a Pull Request to GitHub by language admin in the community.
+
+To learn more about how GitLocalize works, visit their [help page][gl-help]. If you find any issues or feature requests, please file them in [GitLocalize's issue tracker][gl-issue-tracker].
