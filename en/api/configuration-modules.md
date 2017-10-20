@@ -38,4 +38,4 @@ Note that they are required at runtime so should be already transpiled if depend
 
 
 Please see [Modules Guide](/guide/modules) for more detailed information on how they work or if interested developing your own module.
-Also we have provided an official [Modules](/modules) Section listing dozens of production ready modules made by Nuxt Community.
+Also we have provided an official [Modules](https://github.com/nuxt-community/awesome-nuxt#modules) Section listing dozens of production ready modules made by Nuxt Community.
