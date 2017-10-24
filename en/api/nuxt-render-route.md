@@ -7,7 +7,7 @@ description: Render a specific route with a given context.
 
 - Type: `Function`
 - Arguments:
-  1. `String`, route to render
+  1. `String` : route to render
   2. *Optional*, `Object`, context given, available keys: `req` & `res`
 - Returns: `Promise`
   - `html`: `String`
@@ -16,11 +16,12 @@ description: Render a specific route with a given context.
 
 > Render a specific route with a given context.
 
-This method should be used mostly for [test purposes](/guide/development-tools#end-to-end-testing) as well with [nuxt.renderAndGetWindow](/api/nuxt-render-and-get-window).
+This method should be used mostly for [test purposes](/guide/development-tools#end-to-end-testing) as well with [`nuxt.renderAndGetWindow`](/api/nuxt-render-and-get-window).
 
-<p class="Alert Alert--info">`nuxt.renderRoute` should be executed after the build process in production mode (dev: false).</p>
+<p class="Alert Alert--info">`nuxt.renderRoute` should be executed after the build process in production mode (`dev: false`).</p>
 
 Example:
+
 ```js
 const { Nuxt, Builder } = require('nuxt')
 
@@ -33,12 +34,12 @@ new Builder(nuxt)
 .build()
 .then(() => nuxt.renderRoute('/'))
 .then(({ html, error, redirected }) => {
-  // html will be always a string
+  // `html` will be always a string
 
-  // error not null when the error layout is displayed, the error format is:
+  // `error` not null when the error layout is displayed, the error format is:
   // { statusCode: 500, message: 'My error message' }
 
-  // redirected is not false when redirect() has been used in data() or fetch()
+  // `redirected` is not `false` when `redirect()` has been used in `data()` or `fetch()`
   // { path: '/other-path', query: {}, status: 302 }
 })
 ```
