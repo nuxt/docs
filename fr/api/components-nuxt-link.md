@@ -1,23 +1,23 @@
 ---
-title: "API: The <nuxt-link> Component"
-description: Link the pages between them with nuxt-link.
+title: "API : le composant <nuxt-link>"
+description: Lie les pages entre elles avec `<nuxt-link>`.
 ---
 
-# The &lt;nuxt-link&gt; Component
+# Le composant &lt;nuxt-link&gt;
 
-> This component is used to link the page components between them.
+> Ce composant est utilisé pour lier les composants de page entre eux.
 
-At the moment, `<nuxt-link>` is the same as [`<router-link>`](https://router.vuejs.org/en/api/router-link.html), so we recommend you to see how to use it on the [vue-router documentation](https://router.vuejs.org/en/api/router-link.html).
+Actuellement, `<nuxt-link>` est identique à [`<router-link>`](https://router.vuejs.org/fr/api/router-link.html). Nous vous recommandons d'apprendre à l'utiliser avec la [documentation de Vue Router](https://router.vuejs.org/fr/api/router-link.html).
 
-Example (`pages/index.vue`):
+Exemple (`pages/index.vue`) :
 
 ```html
 <template>
   <div>
     <h1>Home page</h1>
-    <nuxt-link to="/about">About</nuxt-link>
+    <nuxt-link to="/a-propos">À propos</nuxt-link>
   </div>
 </template>
 ```
 
-In the future, we will add features to the nuxt-link component, like pre-fetching on the background for improving the responsiveness of nuxt.js applications.
+Dans le futur, nous ajouterons des fonctionnalités au composant `<nuxt-link>`, comme du préchargement en tâche de fond pour améliorer la réactivité des applications Nuxt.js.

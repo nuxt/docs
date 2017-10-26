@@ -20,4 +20,4 @@ Example (`pages/index.vue`):
 </template>
 ```
 
-In the future, we will add features to the nuxt-link component, like pre-fetching on the background for improving the responsiveness of Nuxt.js Applications.
+In the future, we will add features to the `<nuxt-link>` component, like pre-fetching on the background for improving the responsiveness of Nuxt.js Applications.
