@@ -1,11 +1,11 @@
 ---
 title: "API: The asyncData Method"
-description: You may want to fetch data and render it on the server-side. Nuxt.js add an `asyncData` method let you handle async operation before setting the component data.
+description: You may want to fetch data and render it on the server-side. Nuxt.js adds an `asyncData` method that lets you handle async operations before setting the component data.
 ---
 
 # The asyncData Method
 
-> You may want to fetch data and render it on the server-side. Nuxt.js add an `asyncData` method let you handle async operation before setting the component data.
+> You may want to fetch data and render it on the server-side. Nuxt.js adds an `asyncData` method that lets you handle async operations before setting the component data.
 
 - **Type:** `Function`
 
