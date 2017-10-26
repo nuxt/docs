@@ -89,7 +89,7 @@ Pour générer votre application web en fichiers statiques :
 npm run generate
 ```
 
-Il créera un dossier `dist` avec tout à l'intérieur prêt à être déployé sur un hébergement statique.
+Il créera un dossier `dist` avec tout à l'intérieur prêt à être déployé sur un hébergement de site statique.
 
 Si vous avez un projet avec des [routes dynamiques](/guide/routing#dynamic-routes), regardez la [configuration de la commande generate](/api/configuration-generate) afin de dire à Nuxt.js comment générer ces routes dynamiques.
 
@@ -101,7 +101,7 @@ Si vous avez un projet avec des [routes dynamiques](/guide/routing#dynamic-route
 
 L'idée de l'application monopage est simple ! Quand le mode SPA est activé en utilisant `mode: 'spa'` ou l'option `--spa`, la génération se lance automatiquement après le build mais cette fois sans contenu de page et seulement avec les meta, ressources et liens communs.
 
-Donc pour un déploiement en mode SPA :
+Donc pour un déploiement en mode SPA, vous devez :
 
 - Changez le `mode` dans `nuxt.config.js` pour `spa`.
 - Lancez `npm run build`.

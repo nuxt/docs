@@ -13,7 +13,7 @@ description: Vous pouvez utiliser Nuxt.js comme un middleware pour votre serveur
 
 > Vous pouvez utiliser Nuxt.js comme un middleware avec `nuxt.render` pour votre serveur Node.js.
 
-Example with [Express](https://github.com/expressjs/express) :
+Exemple avec [Express](https://github.com/expressjs/express) :
 
 ```js
 const { Nuxt, Builder } = require('nuxt')
@@ -27,7 +27,7 @@ const config = require('./nuxt.config.js')
 config.dev = !isProd
 const nuxt = new Nuxt(config)
 
-// Rendre chaque route avec Nuxt.js
+// Faire le rendu chaque route avec Nuxt.js
 app.use(nuxt.render)
 
 // Faire le build seulement en mode de développement avec du rechargement à chaud

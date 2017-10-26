@@ -1,9 +1,9 @@
 ---
 title: Configuration
-description: La configuration par défaut de Nuxt.js couvre la plupart des cas d'usage. Cependant, le fichier `nuxt.config.js` vous permet de la modifier.
+description: La configuration par défaut de Nuxt.js couvre la plupart des cas d'usage. Cette configuration peut être surchargée en utilisant le fichier `nuxt.config.js`.
 ---
 
-> La configuration par défaut de Nuxt.js couvre la plupart des cas d'usage. Cependant, le fichier `nuxt.config.js` vous permet de la modifier.
+> La configuration par défaut de Nuxt.js couvre la plupart des cas d'usage. Cette configuration peut être surchargée en utilisant le fichier `nuxt.config.js`.
 
 ## Options
 

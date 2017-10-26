@@ -1,6 +1,6 @@
 ---
-title: "API : le composant <nuxt-child>"
-description: Affiche la page courante.
+title: "API: The <nuxt-child> Component"
+description: Display the current page.
 ---
 
 # Le composant &lt;nuxt-child&gt;
