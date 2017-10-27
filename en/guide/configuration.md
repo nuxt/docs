@@ -11,12 +11,6 @@ This option lets you add modules inside the `vendor.bundle.js` file to reduce th
 
 [Documentation about `build` integration](/api/configuration-build)
 
-### cache
-
-This option lets you enable cached components for better render performances.
-
-[Documentation about `cache` integration](/api/configuration-cache)
-
 ### css
 
 This option lets you define the CSS files/modules/libraries you want to set as globals (included in every page).
