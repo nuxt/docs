@@ -35,7 +35,7 @@ server {
 }
 ```
 
-# Nginx configuration for Laravel Forge
+# nginx configuration for Laravel Forge
 
 Change `YOUR_WEBSITE_FOLDER` to your web site folder and `YOUR_WEBSITE_DOMAIN` to your website URL. Laravel Forge will have filled out these values for you but be sure to double check.
 

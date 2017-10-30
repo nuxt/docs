@@ -1,27 +1,27 @@
 ---
-title: "API: The <nuxt> Component"
-description: Display the page components inside a layout.
+title: "API : le composant <nuxt>"
+description: Affiche un composant de page à l'intérieur d'une mise en page.
 ---
 
-# The &lt;nuxt&gt; Component
+# Le composant &lt;nuxt&gt;
 
-> This component is used only in [layouts](/guide/views#layouts) to display the page components.
+> Ce composant est utilisé seulement dans les [mises en page](/guide/views#mises-en-page) pour afficher les composants de page.
 
-**Props**:
-- nuxtChildKey: `string`
-  - This prop will be set to `<router-view/>`, useful to make transitions inside a dynamic page and different route.
-  - Default: `$route.fullPath`
+**Props** :
+- nuxtChildKey : `string`
+  - Cette prop va être appliquée à `<router-view/>`. Utile pour faire des transitions à l'intérieur d'une page dynamique et d'une route différente.
+  - par défaut : `$route.fullPath`
 
-Example (`layouts/default.vue`):
+Exemple (`layouts/default.vue`) :
 
 ```html
 <template>
   <div>
-    <div>My nav bar</div>
+    <div>Ma barre de navigation</div>
     <nuxt/>
-    <div>My footer</div>
+    <div>Mon pied de page</div>
   </div>
 </template>
 ```
 
-To see an example, take a look at the [layouts example](/examples/layouts).
+Pour voir un exemple, consultez l'[exemple de mise en page](/examples/layouts).

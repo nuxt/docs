@@ -9,9 +9,7 @@ Nuxt.js ajoute une méthode `asyncData` pour vous permettre de gérer les opéra
 ## La méthode asyncData
 
 Parfois vous souhaitez simplement récupérer des données et faire le rendu côté serveur sans utiliser de store.
-`asyncData` est appelé avant chaque chargement du composant (**uniquement pour les composants de pages**).
-On peut l'appeler côté serveur ou avant de naviguer vers la route correspondante.
-Cette méthode reçoit [le contexte](/api#context) comme premier argument, vous pouvez l'utiliser pour récupérer différentes données et Nuxt.js les fusionnera avec les données du composant.
+`asyncData` est appelé avant chaque chargement du composant (**uniquement pour les composants de pages**). On peut l'appeler côté serveur ou avant de naviguer vers la route correspondante. Cette méthode reçoit [le contexte](/api#context) comme premier argument, vous pouvez l'utiliser pour récupérer différentes données et Nuxt.js les fusionnera avec les données du composant.
 
 <div class="Alert Alert--orange">Vous **n'**avez **PAS** accès à l'instance du composant via `this` au sein de `asyncData` parce que la fonction est appelée **avant d'initier** le composant.</div>
 
@@ -47,7 +45,6 @@ export default {
 
 ### Utiliser une fonction de rappel
 
->>>>>>> upstream/master
 ```js
 export default {
   asyncData ({ params }, callback) {
