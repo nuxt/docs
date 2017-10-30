@@ -19,7 +19,7 @@ Nuxt.js 支持两种使用 `store` 的方式，你可以择一使用：
 
 ### 普通方式
 
-使用普通方式的状态树，需要要添加 `store/index.js` 文件，并对外暴露一个 Vuex.Store 实例：
+使用普通方式的状态树，需要添加 `store/index.js` 文件，并对外暴露一个 Vuex.Store 实例：
 
 ```js
 import Vue from 'vue'
