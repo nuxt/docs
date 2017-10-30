@@ -13,12 +13,6 @@ Cette option vous permet d'ajouter des modules à l'intérieur du fichier `vendo
 
 [Consultez la documentation à propos de `build`](/api/configuration-build)
 
-### cache
-
-Cette option vous permet de mettre en cache les composants pour améliorer les performances de rendu.
-
-[Consultez la documentation à propos de `cache`](/api/configuration-cache)
-
 ### css
 
 Cette option vous permet de définir les fichiers / modules / bibliothèques CSS que vous voulez en global (inclus dans chaque page).
