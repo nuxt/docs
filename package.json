@@ -10,7 +10,9 @@
     "lint": "eslint *.js",
     "start": "node api.js",
     "deploy": "now --alias",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -38,7 +40,8 @@
     "micro": "^8.0.2",
     "pify": "^3.0.0",
     "rimraf": "^2.6.1",
-    "uuid": "^3.1.0"
+    "uuid": "^3.1.0",
+    "snyk": "^1.47.0"
   },
   "devDependencies": {
     "chokidar": "^1.7.0",
@@ -47,5 +50,6 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "nodemon": "^1.11.0"
-  }
+  },
+  "snyk": true
 }
