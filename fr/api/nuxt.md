@@ -1,44 +1,45 @@
 ---
-title: "API: Nuxt(options)"
-description: You can use nuxt.js programmatically to use it as a middleware giving you the freedom of creating your own server for rendering your web applications.
+title: "API : Nuxt(options)"
+description: Vous pouvez utiliser Nuxt.js par programmation et l'utiliser en tant que middleware vous donnant la possibilité de créer votre propre serveur pour le rendu de vos applications web.
 ---
 
-# Using Nuxt.js Programmatically (En)
+# Utiliser Nuxt.js par programmation
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>You might want to use your own server with your middleware and your API. That's why you can use Nuxt.js programmatically.</p>
+Vous voudrez peut-être utiliser votre propre serveur avec vos middlewares et votre API. C'est pourquoi vous pouvez utiliser Nuxt.js par programmation.
 
-You can require Nuxt.js like this:
+Vous pouvez inclure Nuxt.js ainsi :
+
 ```js
 const { Nuxt, Builder } = require('nuxt')
 ```
 
-## Nuxt Constructor
+## Constructeur Nuxt
 
-To see the list of options to give to Nuxt.js, see the configuration section.
+Pour voir la liste des options à fournir à Nuxt.js, consultez la section configuration.
 
 ```js
-// Require Nuxt And Builder modules
+// Inclure les modules `Nuxt` et `Builder`
 const { Nuxt, Builder } = require('nuxt')
 
-// Require nuxt config
+// Inclure la configuration Nuxt
 const config = require('./nuxt.config.js')
 
-// Create a new nuxt instance
+// Créer une nouvelle instance de Nuxt
 const nuxt = new Nuxt(config)
 
-// Enable live build & reloading on dev
+// Activer le build live et le rechargement à chaud reloading en développement
 if (nuxt.options.dev) {
   new Builder(nuxt).build()
 }
 
-// We can use nuxt.render(req, res) or nuxt.renderRoute(route, context)
+// Nous pouvons utiliser `nuxt.render(req, res)` ou `nuxt.renderRoute(route, context)`
 ```
 
-You can take a look at the [nuxt-express](https://github.com/nuxt/express) and [adonuxt](https://github.com/nuxt/adonuxt) starters to get started quickly.
+Vous pouvez jeter un œil aux modules de démarrage [nuxt-express](https://github.com/nuxt/express) et [adonuxt](https://github.com/nuxt/adonuxt) pour démarrer rapidement
 
-### Debug logs
+### Logs de débogue
 
-If you want to display nuxt.js logs, you can add to the top of your file:
+Si vous voulez afficher les logs de Nuxt.js, vous pouvez ajouter en première ligne de fichier le code suivant :
 
 ```js
 process.env.DEBUG = 'nuxt:*'

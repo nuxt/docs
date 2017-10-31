@@ -1,9 +1,9 @@
 ---
 title: Configuration
-description: La configuration par défaut de Nuxt.js couvre la plupart des cas d'usage. Cependant, le fichier `nuxt.config.js` vous permet de la modifier.
+description: La configuration par défaut de Nuxt.js couvre la plupart des cas d'usage. Cette configuration peut être surchargée en utilisant le fichier `nuxt.config.js`.
 ---
 
-> La configuration par défaut de Nuxt.js couvre la plupart des cas d'usage. Cependant, le fichier `nuxt.config.js` vous permet de la modifier.
+> La configuration par défaut de Nuxt.js couvre la plupart des cas d'usage. Cette configuration peut être surchargée en utilisant le fichier `nuxt.config.js`.
 
 ## Options
 
@@ -12,12 +12,6 @@ description: La configuration par défaut de Nuxt.js couvre la plupart des cas d
 Cette option vous permet d'ajouter des modules à l'intérieur du fichier `vendor.bundle.js` généré pour réduire la taille du paquetage de l'application. Vraiment utile lors de l'utilisation de modules externes.
 
 [Consultez la documentation à propos de `build`](/api/configuration-build)
-
-### cache
-
-Cette option vous permet de mettre en cache les composants pour améliorer les performances de rendu.
-
-[Consultez la documentation à propos de `cache`](/api/configuration-cache)
 
 ### css
 
