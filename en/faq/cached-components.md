@@ -1,26 +1,27 @@
 ---
-title: Caching Components
-description: How to cache components?
+title: Mettre en cache les composants
+description: Comment mettre en cache des composants ?
 ---
 
-# How to cache Vue components?
+# Comment mettre en cache des composants Vue ?
 
-> Although Vue's SSR is quite fast, it can't match the performance of pure string-based templating due to the cost of creating component instances and Virtual DOM nodes. In cases where SSR performance is critical, wisely leveraging caching strategies can greatly improve response time and reduce server load.
+> Bien que le rendu côté serveur de Vue soit rapide, il ne rivalise pas avec les performances d'un template basé sur une chaine de caractère pure, et ceux, à cause du cout de création des instances de composant et des nœuds du DOM virtuel. Dans le cas où les performances du rendu côté serveur est critique, mettre en place une bonne stratégie de mise en cache peut grandement améliorer le temps de réponse et réduire la charge serveur.
 
-To avoid boilerplate, use [Component Cache module](https://github.com/nuxt-community/modules/tree/master/packages/component-cache) for Nuxt.js.
-This module uses vue-server-renderer to add LRU cache support for Vue components.
+Vous pouvez utiliser le module [Component Cache](https://github.com/nuxt-community/modules/tree/master/packages/component-cache) pour Nuxt.js.
+Ce module utilise `vue-server-renderer` pour ajouter le support d'un cache [LRU](https://fr.wikipedia.org/wiki/Algorithmes_de_remplacement_des_lignes_de_cache#LRU_.28Least_Recently_Used.29) pour les composants Vue.
 
-## Usage
+## Utilisation
 
-- Add `@nuxtjs/component-cache` dependency using yarn or npm to your project
-- Add `@nuxtjs/component-cache` to `modules` section of `nuxt.config.js`
+- Ajoutez la dépendance `@nuxtjs/component-cache` en utilisant Yarn ou npm pour votre projet.
+- Ajoutez `@nuxtjs/component-cache` à la section `modules` de `nuxt.config.js`.
+
 ```js
 {
   modules: [
-    // Simple usage
+    // Utilisation simple
     '@nuxtjs/component-cache',
 
-    // With options
+    // Avec des options
     ['@nuxtjs/component-cache', {
       max: 10000,
       maxAge: 1000 * 60 * 60
@@ -29,12 +30,11 @@ This module uses vue-server-renderer to add LRU cache support for Vue components
 }
 ```
 
-See [component-level caching](http://ssr.vuejs.org/en/caching.html#component-level-caching) for more information.
+Voir [la mise en cache au niveau composant](http://ssr.vuejs.org/en/caching.html#mise-en-cache-au-niveau-du-composant) pour plus d'informations.
 
-## Don't forget, that
+## N'oubliez pas
 
-- Cache-able component **must define a unique `name` option**.
-- You should ***NOT*** cache components, that
-  - has child components that may rely on global state.
-  - has child components that produces side effects on the render `context`.
-
+- Les composants à mettre en cache **doivent définir une option `name` unique**.
+- Vous **NE** devez ***PAS*** mettre en cache un composant si
+  - ses composants enfants sont liés à l'état global ou si
+  - ses composants enfants produisent des effets de bord sur le rendu de `context`.
