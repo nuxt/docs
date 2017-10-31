@@ -9,7 +9,7 @@
       { "name": "Comment étendre la configuration de webpack ?", "to": "/extend-webpack" },
       { "name": "Comment ajouter des plugins webpack ?", "to": "/webpack-plugins" },
       { "name": "Comment changer le HOST et le PORT ?", "to": "/host-port" },
-      { "name": "Comment utiliser des composants avec cache ? (EN)", "to": "/cached-components" },
+      { "name": "Comment mettre en cache des composants ?", "to": "/cached-components" },
       { "name": "Comment intégrer Google Analytics ?", "to": "/google-analytics" }
     ]
   },
