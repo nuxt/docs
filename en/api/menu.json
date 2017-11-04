@@ -47,7 +47,7 @@
           { "name": "extend", "to": "#extend" },
           { "name": "extractCSS", "to": "#extractcss" },
           { "name": "filenames", "to": "#filenames" },
-          { "name": "hotMiddleware", "to": "#hot-middleware" },
+          { "name": "hotMiddleware", "to": "#hotmiddleware" },
           { "name": "plugins", "to": "#plugins" },
           { "name": "postcss", "to": "#postcss" },
           { "name": "publicPath", "to": "#publicpath" },
