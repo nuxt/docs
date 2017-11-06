@@ -20,7 +20,7 @@ nuxt.plugin('generator', generator => {
 })
 ```
 
-Plugin               | Arguments                               | When
----------------------|-----------------------------------------|--------------------------------------------------------------------------------
-`generateRoutes`     | {generator, generateRoutes}             | After resolving routes to generate so we have change to customize them
-`generate`           | {generator, routes}                     | Just before start generating routes. routes are decorated with payloads
+Plugin           | Arguments                   | When
+-----------------|-----------------------------|--------------------------------------------------------------------------------
+`generateRoutes` | {generator, generateRoutes} | After resolving routes to generate so we have change to customize them
+`generate`       | {generator, routes}         | Just before start generating routes. routes are decorated with payloads
