@@ -1,6 +1,6 @@
 ---
 title: "API: The Builder Class"
-description: Nuxt Builder Class
+description: Nuxt `Builder` Class
 ---
 
 # Builder Class
@@ -20,12 +20,12 @@ nuxt.plugin('build', builder => {
 })
 ```
 
-Plugin               | Arguments                               | When
----------------------|-----------------------------------------|--------------------------------------------------------------------------------
-`build`              | builder                                 | First build started
-`built`              | builder                                 | First build finished
-`extendRoutes`       | {routes, templateVars, r}               | Generating routes
-`generate`           | {builder, templatesFiles, templateVars} | Generating `.nuxt` template files
-`done`               | {builder, stats}                        | Webpack build was done
-`compile`            | {builder, compiler}                     | Before webpack compile (compiler is a MultiCompiler instance)
-`compiled`           | builder                                 | Webpack build finished
+Plugin         | Arguments                               | When
+---------------|-----------------------------------------|--------------------------------------------------------------------------------
+`build`        | builder                                 | First build started
+`built`        | builder                                 | First build finished
+`extendRoutes` | {routes, templateVars, r}               | Generating routes
+`generate`     | {builder, templatesFiles, templateVars} | Generating `.nuxt` template files
+`done`         | {builder, stats}                        | webpack build was done
+`compile`      | {builder, compiler}                     | Before webpack compile (compiler is a `MultiCompiler` instance)
+`compiled`     | builder                                 | webpack build finished
