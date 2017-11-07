@@ -28,9 +28,9 @@
   {
     "title": "Composants",
     "links": [
-      { "name": "nuxt (En)", "to": "/components-nuxt" },
-      { "name": "nuxt-child (En)", "to": "/components-nuxt-child" },
-      { "name": "nuxt-link (En)", "to": "/components-nuxt-link" }
+      { "name": "nuxt", "to": "/components-nuxt" },
+      { "name": "nuxt-child", "to": "/components-nuxt-child" },
+      { "name": "nuxt-link", "to": "/components-nuxt-link" }
     ]
   },
   {
@@ -121,10 +121,10 @@
   {
     "title": "Programmation",
     "links": [
-      { "name": "Usage (En)", "to": "/nuxt" },
-      { "name": "render (En)", "to": "/nuxt-render" },
-      { "name": "renderRoute (En)", "to": "/nuxt-render-route" },
-      { "name": "renderAndGetWindow (En)", "to": "/nuxt-render-and-get-window" }
+      { "name": "Utilisation", "to": "/nuxt" },
+      { "name": "render", "to": "/nuxt-render" },
+      { "name": "renderRoute", "to": "/nuxt-render-route" },
+      { "name": "renderAndGetWindow", "to": "/nuxt-render-and-get-window" }
     ]
   },
   {
