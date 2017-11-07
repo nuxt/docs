@@ -1,5 +1,5 @@
 ---
-title: "API: La classe Nuxt"
+title: "API: The Nuxt Class"
 description: Nuxt Core Class
 ---
 
