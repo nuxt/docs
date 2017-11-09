@@ -31,19 +31,19 @@ This option lets you define environment variables available both the client and 
 
 ### generate
 
-This option lets you to define parameters values for every dynamic route in your application that will be transformed into HTML files by Nuxt.js.
+This option lets you define parameters values for every dynamic route in your application that will be transformed into HTML files by Nuxt.js.
 
 [Documentation about generate integration](/api/configuration-generate)
 
 ### head
 
-This option lets you to define all default meta tags for your application.
+This option lets you define all default meta tags for your application.
 
 [Documentation about head integration](/api/configuration-head)
 
 ### loading
 
-This option lets you to customize the loading component Nuxt.js loads by default.
+This option lets you customize the loading component Nuxt.js loads by default.
 
 [Documentation about `loading` integration](/api/configuration-loading)
 
@@ -55,7 +55,7 @@ This option lets you add Nuxt modules to your project.
 
 ### plugins
 
-This option lets you to define JavaScript plugins to be run before instantiating the root Vue.js Application.
+This option lets you define JavaScript plugins to be run before instantiating the root Vue.js Application.
 
 [Documentation about `plugins` integration](/api/configuration-plugins)
 
