@@ -1,76 +1,78 @@
 ---
-title: "API: The ModuleContainer Class"
-description: Nuxt ModuleContainer Class
+title: "API : la classe ModuleContainer"
+description: La classe `ModuleContainer` de Nuxt
 ---
 
-# ModuleContainer Class (En)
+# Classe ModuleContainer
 
-- Source: **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/module.js)**
+- Source : **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/module.js)**
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>All [modules](/guide/modules) will be called within context of ModuleContainer instance.</p>
+Tous les [modules](/guide/modules) seront appelés dans le contexte de l'instance de `ModuleContainer`.
 
-## Tapable plugins
+## Plugins Tapable
 
-We can register hooks on certain life cycle events.
+Nous pouvons enregistrer des points d'ancrage sur certains évènements du cycle de vie.
 
 ```js
 nuxt.moduleContainer.plugin('ready', async moduleContainer => {
-    // Do this after all modules where ready
+    // Faire ceci après que tous les modules soient prêts
 })
 ```
 
-Inside [modules](/guide/modules) context we can use this instead:
+Dans le contexte des [modules](/guide/modules) nous pouvons utiliser ceci à la place :
 
 ```js
 this.plugin('ready', async moduleContainer => {
-    // Do this after all modules where ready
+    // Faire ceci après que tous les modules soient prêts
 })
 ```
 
-Plugin               | Arguments                 | When
----------------------|---------------------------|--------------------------------------------------------------
-`ready`              | moduleContainuer          | All modules in `nuxt.config.js` has been initialized
+Plugin  | Arguments       | Quand
+--------|-----------------|-----------------------------------------------------------
+`ready` | moduleContainer | Tous les modules dans `nuxt.config.js` ont été initialisés
 
 
-## Methods
+## Méthodes
 
 ### addVendor (vendor)
-Adds to `options.build.vendor` and apply unique filter.
+
+Ajoute à `options.build.vendor` et applique un filtre unique.
 
 ### addTemplate (template)
-- **template**: String Or Object
-    - src
-    - options
-    - fileName
 
-Renders given template using [lodash template](https://lodash.com/docs/4.17.4#template) during build into project `buildDir` (`.nuxt`).
+- **template**: `String` ou `Object`
+    - `src`
+    - `options`
+    - `fileName`
 
-If `fileName` is not provided or template is string, target file name defaults to `[dirName].[fileName].[pathHash].[ext]`
+Le rendu des templates sont faits dans le projet `buildDir` (`.nuxt`) en utilisant [lodash template](https://lodash.com/docs/4.17.4#template).
 
-This method returns final `{ dist, src, options }` object.
+Si `fileName` n'est pas fourni ou que `template` est une chaine de caractères, le fichier ciblé par défaut sera `[dirName].[fileName].[pathHash].[ext]`.
+
+Cette méthode retourne un objet final `{ dist, src, options }`.
 
 ### addPlugin (template)
 
-Registers a plugin using `addTemplate` and adds it to first of `plugins[]` option.
-You can use `template.ssr: false` to disable plugin including in SSR bundle.
+Enregistre un plugin en utilisant `addTemplate` et l'ajoute en premier à la liste des options de `plugins[]`.
+
+Vous pouvez utiliser `template.ssr: false` pour désactiver les plugins inclus dans le paquetage SSR.
 
 ### addServerMiddleware (middleware)
 
-Pushes middleware into [options.serverMiddleware](/api/configuration-servermiddleware). 
+Pousse le middleware dans [options.serverMiddleware](/api/configuration-servermiddleware).
 
 ### extendBuild (fn)
 
-Allows easily extending webpack build config by chaining [options.build.extend](/api/configuration-build#extend) function.
+Permet d'étendre facilement la configuration de build webpack en chainant la fonction [options.build.extend](/api/configuration-build#extend).
 
 ### extendRoutes (fn)
 
-Allows easily extending routes by chaining [options.build.extendRoutes](/api/configuration-router#extendroutes) function.
+Permet d'étendre facilement les routes en chainant la fonction [options.build.extendRoutes](/api/configuration-router#extendroutes).
 
-### addModule (moduleOpts, requireOnce) 
+### addModule (moduleOpts, requireOnce)
 
-Registers module. moduleOpts can be string or `[src, options]`.
-If `requireOnce` is `true` and resolved module exports `meta` prevents registering same module twice.
+Enregistre le module. `moduleOpts` peut être une chaine de caractères ou `[src, options]`. Si `requireOnce` est `true`, les modules résolus `meta` préviennent l'enregistrement du même module plus d'une fois.
 
 ### requireModule (moduleOpts)
 
-Is shortcut to `addModule(moduleOpts, true)`
+C'est un alias raccourci de `addModule(moduleOpts, true)`
