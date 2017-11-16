@@ -86,7 +86,7 @@ module.exports = {
 
 ## Inject in $root & context
 
-Some plugins need to be injected in the App root to be used, like [vue-18n](https://github.com/kazupon/vue-i18n). With Nuxt.js, you can use `app` available into the `context` when exporting a method:
+Some plugins need to be injected in the App root to be used, like [vue-i18n](https://github.com/kazupon/vue-i18n). With Nuxt.js, you can use `app` available into the `context` when exporting a method:
 
 `plugins/i18n.js`:
 
