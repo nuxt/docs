@@ -22,7 +22,7 @@ Example (`nuxt.config.js`):
 module.exports = {
   build: {
     analyze: true,
-    // ou
+    // or
     analyze: {
       analyzerMode: 'static'
     }
