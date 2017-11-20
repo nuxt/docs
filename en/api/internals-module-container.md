@@ -31,7 +31,6 @@ Plugin  | Arguments       | Quand
 --------|-----------------|-----------------------------------------------------------
 `ready` | moduleContainer | Tous les modules dans `nuxt.config.js` ont été initialisés
 
-
 ## Méthodes
 
 ### addVendor (vendor)

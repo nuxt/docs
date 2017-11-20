@@ -39,6 +39,6 @@ export default {
 | `params` | Object | 客户端 & 服务端 | route.params 的别名 |
 | `query` | Object | 客户端 & 服务端 | route.query 的别名 |
 | `req` | [http.Request](https://nodejs.org/api/http.html#http_class_http_incomingmessage) | 服务端 | Node.js API 的 Request 对象。如果 nuxt 以中间件形式使用的话，这个对象就根据你所使用的框架而定。*`nuxt generate` 不可用*。 |
-| `res` | [http.Response](https://nodejs.org/api/http.html#http_class_http_serverresponse) | 服务端 | Node.js API 的 Request 对象。如果 nuxt 以中间件形式使用的话，这个对象就根据你所使用的框架而定。*`nuxt generate` 不可用*。 |
+| `res` | [http.Response](https://nodejs.org/api/http.html#http_class_http_serverresponse) | 服务端 | Node.js API 的 Response 对象。如果 nuxt 以中间件形式使用的话，这个对象就根据你所使用的框架而定。*`nuxt generate` 不可用*。 |
 | `redirect` | Function | 客户端 & 服务端 | 用这个方法重定向用户请求到另一个路由。状态码在服务端被使用，默认 302。`redirect([status,] path [, query])` |
 | `error` | Function | 客户端 & 服务端 | 用这个方法展示错误页：`error(params)`。`params` 参数应该包含 `statusCode` 和 `message` 字段。 |

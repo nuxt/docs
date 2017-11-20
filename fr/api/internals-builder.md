@@ -1,16 +1,16 @@
 ---
-title: "API: The Builder Class"
-description: Nuxt Builder Class
+title: "API : la classe Builder"
+description: La classe `Builder` de Nuxt
 ---
 
-# Builder Class (En)
+# Classe Builder
 
-- Source: **[builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)**
+- Source : **[builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)**
 
 
-## Tapable plugins
+## Plugins Tapable
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>We can register hooks on certain life cycle events.</p>
+Nous pouvons enregistrer des points d'ancrage sur certains évènements du cycle de vie.
 
 ```js
 nuxt.plugin('build', builder => {
@@ -20,12 +20,12 @@ nuxt.plugin('build', builder => {
 })
 ```
 
-Plugin               | Arguments                               | When
----------------------|-----------------------------------------|--------------------------------------------------------------------------------
-`build`              | builder                                 | First build started
-`built`              | builder                                 | First build finished
-`extendRoutes`       | {routes, templateVars, r}               | Generating routes
-`generate`           | {builder, templatesFiles, templateVars} | Generating `.nuxt` template files
-`done`               | {builder, stats}                        | Webpack build was done
-`compile`            | {builder, compiler}                     | Before webpack compile (compiler is a MultiCompiler instance)
-`compiled`           | builder                                 | Webpack build finished
+Plugin         | Arguments                               | Quand
+---------------|-----------------------------------------|-------------------------------------------------------------------------------
+`build`        | builder                                 | Au démarrage du premier build
+`built`        | builder                                 | À la fin du premier build
+`extendRoutes` | {routes, templateVars, r}               | À la génération des routes
+`generate`     | {builder, templatesFiles, templateVars} | À la génération des fichiers template `.nuxt`
+`done`         | {builder, stats}                        | Quand les builds webpack sont finis
+`compile`      | {builder, compiler}                     | Avant la compilation webpack (le compilateur est une instance `MultiCompiler`)
+`compiled`     | builder                                 | À la fin du build webpack

@@ -50,4 +50,4 @@ function listen() {
 }
 ```
 
-<p class="Alert">Il est recommandé d'appeler `nuxt.render` à la fin de votre middlewares ainsi il fera le rendu de votre application web et n'appellera pas `next()`.</p>
+<p class="Alert">Il est recommandé d'appeler `nuxt.render` à la fin de vos middlewares ainsi il fera le rendu de votre application web et n'appellera pas `next()`.</p>
