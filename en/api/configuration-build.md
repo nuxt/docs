@@ -45,7 +45,7 @@ module.exports = {
   }
   ```
 
-Exemple (`nuxt.config.js`):
+Example (`nuxt.config.js`):
 
 ```js
 module.exports = {
@@ -221,7 +221,7 @@ module.exports = {
 - Type: `String`
 - Default: `'/_nuxt/'`
 
-Exemple (`nuxt.config.js`):
+Example (`nuxt.config.js`):
 
 ```js
 module.exports = {
