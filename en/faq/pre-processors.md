@@ -23,6 +23,12 @@ module.exports = data: ->
 .red
   color: red
 </style>
+
+<style lang="scss">
+.red {
+  color: red
+}
+</style>
 ```
 
 To be able to use these pre-processors, we need to install their webpack loaders:
