@@ -52,7 +52,7 @@ module.exports = {
 
 You can create your own component that Nuxt.js will call instead of its default component. To do so, you need to give a path to your component in the `loading` option. Then, your component will be called directly by Nuxt.js.
 
-**Your component has to expose some of theses methods:**
+**Your component has to expose some of these methods:**
 
 | Method | Required | Description |
 |--------|----------|-------------|
