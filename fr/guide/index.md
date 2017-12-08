@@ -110,3 +110,7 @@ Nous ne voulons pas générer manuellement l'application à chaque fois que nous
 Et nous voilà avec une **application web générée sans fichiers statiques serveurs** :)
 
 Nous pouvons aller plus loin en imaginant une application d'e-commerce créée avec `nuxt generate` et hébergée sur un CDN. Chaque fois qu'un produit est en rupture de stock ou de nouveau en stock nous régénérons l'application. Mais si l'utilisateur navigue sur l'application en même temps, il verra les informations à jour grâce aux appels d'API effectués sur l'API de l'e-commerce. Pas besoin d'avoir plusieurs instances d'un serveur d'un cache !
+
+<div class="Alert">Vous pouvez counsultez [comment déployez sur GitHub Pages](/faq/github-pages) pour plus d'informations.</div>
+
+<div class="Alert">Counsultez [Comment déployez sur GitHub Pages ?](/faq/github-pages) pour plus d'informations sur un hébergement GitHub Pages.</div>

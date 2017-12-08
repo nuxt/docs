@@ -46,7 +46,7 @@
           { "name": "extend (En)", "to": "#extend" },
           { "name": "extractCSS (En)", "to": "#extractcss" },
           { "name": "filenames (En)", "to": "#filenames" },
-          { "name": "hotMiddleware (En)", "to": "#hotmiddleware" },
+          { "name": "hotMiddleware (En)", "to": "#hot-middleware" },
           { "name": "plugins (En)", "to": "#plugins" },
           { "name": "postcss (En)", "to": "#postcss" },
           { "name": "publicPath (En)", "to": "#publicpath" },
@@ -130,12 +130,12 @@
   {
     "title": "Mécanismes",
     "links": [
-      { "name": "Intro (En)", "to": "/internals" },
-      { "name": "Nuxt (En)", "to": "/internals-nuxt" },
-      { "name": "Renderer (En)", "to": "/internals-renderer" },
-      { "name": "Module Container (En)", "to": "/internals-module-container" },
-      { "name": "Builder (En)", "to": "/internals-builder" },
-      { "name": "Generator (En)", "to": "/internals-generator" }
+      { "name": "Intro", "to": "/internals" },
+      { "name": "Nuxt", "to": "/internals-nuxt" },
+      { "name": "Renderer", "to": "/internals-renderer" },
+      { "name": "Module Container", "to": "/internals-module-container" },
+      { "name": "Builder", "to": "/internals-builder" },
+      { "name": "Generator", "to": "/internals-generator" }
     ]
   }
 ]

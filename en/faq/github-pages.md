@@ -39,12 +39,12 @@ There is a downside adding `router.base` as the default setting in `nuxt.config.
 
 ```js
 /* nuxt.config.js */
-// only add router.base = '/<repository-name>/' if DEPLOY_ENV is GH_PAGES
+// only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-    router: { 
-      base: '/<repository-name>/'
-    }
-  } : {}
+  router: {
+    base: '/<repository-name>/'
+  }
+} : {}
 
 module.exports = {
   ...routerBase
@@ -57,7 +57,7 @@ and now we just need to set `DEPLOY_ENV='GH_PAGES'` to build the site for GitHub
 /* package.json */
 "scripts": {
   "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
-  "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
+  "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate"
 },
 ```
 
@@ -71,7 +71,7 @@ then use it this way:
 
 ```js
   "build:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
-  "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate",
+  "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate"
 ```
 
 ## Command line deployment
