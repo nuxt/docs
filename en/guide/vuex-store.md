@@ -164,6 +164,24 @@ export default {
 }
 </style>
 ```
+> The module method also works for top-level definitions without implementing a sub-directory in the `store` directory
+
+Example for state; you create a file `store/state.js` and add the following
+
+```js
+export default {
+  counter: 0
+}
+```
+
+And the corresponding mutations can be in the file `store/mutations.js`
+```js
+export default {
+  increment (state) {
+    state.counter++
+  }
+}
+```
 
 <div class="Alert">You can also have modules by exporting a store instance, you will have to add them manually on your store.</div>
 
