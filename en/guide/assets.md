@@ -64,7 +64,7 @@ Actually, Nuxt.js default assets loaders configuration is:
 ]
 ```
 
-Which means that every file below 1 KO will be inlined as base-64 data URL. Otherwise, the image/font will be copied in its corresponding folder (under the `.nuxt` directory) with a name containing a version hashes for better caching.
+Which means that every file below 1 KB will be inlined as base-64 data URL. Otherwise, the image/font will be copied in its corresponding folder (under the `.nuxt` directory) with a name containing a version hashes for better caching.
 
 When launching our application with `nuxt`, our template in `pages/index.vue`:
 
