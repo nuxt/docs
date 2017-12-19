@@ -80,10 +80,11 @@ Example of a custom error page in `layouts/error.vue`:
 <script>
 export default {
   props: ['error'],
-  layout: 'blog' // you can set a custom layout for the error page
 }
 </script>
 ```
+
+The `layouts/error.vue` does not allow composing with other layouts (they `layouts` attribute is ignored) due to conflicts (especially with css).  Instead, you should add your own header components, etc directly to `layouts/error.vue`.
 
 ### Custom Layout
 

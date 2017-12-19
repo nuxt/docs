@@ -82,10 +82,11 @@ Exemple d'une page d'erreur personnalisée à l'aide de `layouts/error.vue`:
 <script>
 export default {
   props: ['error'],
-  layout: 'blog' // vous pouvez définir une mise en page personnalisée pour la page d'erreur
 }
 </script>
 ```
+
+The `layouts/error.vue` does not allow composing with other layouts (they `layouts` attribute is ignored) due to conflicts (especially with css).  Instead, you should add your own header components, etc directly to `layouts/error.vue`.
 
 ### Mise en page personnalisée
 

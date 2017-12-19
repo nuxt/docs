@@ -81,10 +81,11 @@ Nuxt.js ではメインレイアウトを拡張したり、カスタムレイア
 <script>
 export default {
   props: ['error'],
-  layout: 'blog' // エラーページ用のカスタムレイアウトを指定できます
 }
 </script>
 ```
+
+The `layouts/error.vue` does not allow composing with other layouts (they `layouts` attribute is ignored) due to conflicts (especially with css).  Instead, you should add your own header components, etc directly to `layouts/error.vue`.
 
 ### カスタムレイアウト
 
