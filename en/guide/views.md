@@ -86,7 +86,7 @@ export default {
 </script>
 ```
 
-The `layouts/error.vue` does not allow composing with other layouts (they `layouts` attribute is ignored) due to conflicts (especially with css).  Instead, you should add your own header components, etc directly to `layouts/error.vue`.
+The `layouts/error.vue` does not allow composing with other layouts (the `layout` attribute is ignored) due to conflicts (especially with css).  Instead, you should add your own header components, etc directly to `layouts/error.vue`.
 
 ### Custom Layout
 
