@@ -80,10 +80,11 @@ Nuxt.js를 사용하면 `layouts` 폴더에 레이아웃을 추가함으로써 �
 <script>
 export default {
   props: ['error'],
-  layout: 'blog' // you can set a custom layout for the error page
 }
 </script>
 ```
+
+The `layouts/error.vue` does not allow composing with other layouts (they `layouts` attribute is ignored) due to conflicts (especially with css).  Instead, you should add your own header components, etc directly to `layouts/error.vue`.
 
 ### 사용자 정의 레이아웃
 

@@ -78,10 +78,11 @@ Nuxt.js 允许你扩展默认的布局，或在 `layout` 目录下创建自定�
 <script>
 export default {
   props: ['error'],
-  layout: 'blog' // 你可以为错误页面指定自定义的布局
 }
 </script>
 ```
+
+The `layouts/error.vue` does not allow composing with other layouts (they `layouts` attribute is ignored) due to conflicts (especially with css).  Instead, you should add your own header components, etc directly to `layouts/error.vue`.
 
 ### 个性化布局
 
