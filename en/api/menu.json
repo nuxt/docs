@@ -42,7 +42,7 @@
         "contents": [
           { "name": "analyze", "to": "#analyze" },
           { "name": "babel", "to": "#babel" },
-          { "name": "cssSourceMap", "to": "#css-source-map" },
+          { "name": "cssSourceMap", "to": "#csssourcemap" },
           { "name": "devMiddleware", "to": "#devmiddleware" },
           { "name": "extend", "to": "#extend" },
           { "name": "extractCSS", "to": "#extractcss" },
