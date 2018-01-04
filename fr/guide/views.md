@@ -94,6 +94,7 @@ Chaque fichier (*premier niveau*) dans le répertoire `layouts` créera une mise
 *Assurez-vous d'ajouter le composant `<nuxt/>` lors de la création d'une mise en page afin d'afficher le composant de la page.*
 
 Exemple avec `layouts/blog.vue` :
+
 ```html
 <template>
   <div>
@@ -150,16 +151,16 @@ export default {
 </style>
 ```
 
-| Attribut | Description |
-|-----------|-------------|
-| asyncData | L'attribut le plus important. Il peut être asynchrone et reçoit le contexte comme argument, lisez la documentation sur les [Données asynchrones](/guide/async-data) pour savoir comment il fonctionne. |
-| fetch | Utilisé pour peupler le store avant de faire le rendu de la page, équivalent à la méthode `data` sauf qu'il ne peuple pas le composant `data`. Voir [la partie Pages de l'API sur `fetch`](/api/pages-fetch). |
-| head | Défini des balises meta spécifiques pour la page en cours, voir [la partie Pages de l'API sur `head`](/api/pages-head). |
-| layout | Défini une mise en page existantes dans le répertoire `layouts`, voir [la partie Pages de l'API sur `layout`](/api/pages-layout). |
-| transition | Défini une transition spécifique pour une page, voir [la partie Pages de l'API sur `transition`](/api/pages-transition). |
-| scrollToTop | Booléen, par défaut: `false`. Indiquez si vous souhaitez que la position se déplace vers le haut avant d'afficher la page, est utilisé pour les [Routes imbriquées](/guide/routing#routes-imbriqu-es). |
-| validate | Fonction de validation pour les [Routes dynamiques](/guide/routing#routes-dynamiques). |
-| middleware | Défini un middleware pour cette page, ce middleware sera exécuté avant d'effectuer le rendu de la page, voir le [Middleware dans le Routage](/guide/routing#middleware). |
+| Attribut      | Description                                                                                                                                                                                                   |
+|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `asyncData`   | L'attribut le plus important. Il peut être asynchrone et reçoit le contexte comme argument, lisez la documentation sur les [Données asynchrones](/guide/async-data) pour savoir comment il fonctionne.        |
+| `fetch`       | Utilisé pour peupler le store avant de faire le rendu de la page, équivalent à la méthode `data` sauf qu'il ne peuple pas le composant `data`. Voir [la partie Pages de l'API sur `fetch`](/api/pages-fetch). |
+| `head`        | Défini des balises meta spécifiques pour la page en cours, voir [la partie Pages de l'API sur `head`](/api/pages-head).                                                                                       |
+| `layout`      | Défini une mise en page existantes dans le répertoire `layouts`, voir [la partie Pages de l'API sur `layout`](/api/pages-layout).                                                                             |
+| `transition`  | Défini une transition spécifique pour une page, voir [la partie Pages de l'API sur `transition`](/api/pages-transition).                                                                                      |
+| `scrollToTop` | Booléen, par défaut: `false`. Indiquez si vous souhaitez que la position se déplace vers le haut avant d'afficher la page, est utilisé pour les [Routes imbriquées](/guide/routing#routes-imbriqu-es).        |
+| `validate`    | Fonction de validation pour les [Routes dynamiques](/guide/routing#routes-dynamiques).                                                                                                                        |
+| `middleware`  | Défini un middleware pour cette page, ce middleware sera exécuté avant d'effectuer le rendu de la page, voir le [Middleware dans le Routage](/guide/routing#middleware).                                      |
 
 Pour plus d'informations à propos de l'utilisation des attributs de pages, consultez [la partie Pages de l'API](/api)
 
@@ -168,6 +169,7 @@ Pour plus d'informations à propos de l'utilisation des attributs de pages, cons
 Nuxt.js utilise [vue-meta](https://github.com/declandewet/vue-meta) pour mettre à jour les `headers` et les `html attributes` de votre application.
 
 Nuxt.js configure `vue-meta` avec les options suivantes :
+
 ```js
 {
   keyName: 'head', // le nom de l'option où vue-meta va chercher les informations.
