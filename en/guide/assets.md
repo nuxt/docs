@@ -49,7 +49,7 @@ Actuellement, la configuration des loaders par défaut de Nuxt.js est la suivant
     test: /\.(png|jpe?g|gif|svg)$/,
     loader: 'url-loader',
     query: {
-      limit: 1000, // 1KO
+      limit: 1000, // 1 ko
       name: 'img/[name].[hash:7].[ext]'
     }
   },
@@ -57,14 +57,14 @@ Actuellement, la configuration des loaders par défaut de Nuxt.js est la suivant
     test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
     loader: 'url-loader',
     query: {
-      limit: 1000, // 1ko
+      limit: 1000, // 1 ko
       name: 'fonts/[name].[hash:7].[ext]'
     }
   }
 ]
 ```
 
-Ce qui signifie que tous les fichiers inférieurs à 1ko seront intégrés comme URL base-64. Sinon, l'image / police sera copiée dans son dossier correspondant (dans le répertoire `.nuxt`) avec un nom contenant des hashs de version pour une meilleure mise en cache.
+Ce qui signifie que tous les fichiers inférieurs à 1 ko seront intégrés comme URL base-64. Sinon, l'image / police sera copiée dans son dossier correspondant (dans le répertoire `.nuxt`) avec un nom contenant des hashs de version pour une meilleure mise en cache.
 
 Lors du lancement de notre application avec `nuxt`, notre template dans `pages/index.vue` :
 
