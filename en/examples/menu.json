@@ -9,7 +9,6 @@
   {
     "title": "Customization",
     "links": [
-      { "name": "Cached Components", "to": "/cached-components" },
       { "name": "Custom Loading", "to": "/custom-loading" },
       { "name": "Custom Routes", "to": "/custom-routes" },
       { "name": "Global CSS", "to": "/global-css" },
