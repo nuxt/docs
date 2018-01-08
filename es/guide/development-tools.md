@@ -120,7 +120,7 @@ jsdom has some limitations because it does not use a browser. However, it will c
 You can add [ESLint](http://eslint.org) pretty easily with nuxt.js, first, you need to add the npm dependencies:
 
 ```bash
-npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-html eslint-plugin-promise eslint-plugin-standard
+npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-html eslint-plugin-promise eslint-plugin-standard eslint-plugin-import eslint-plugin-node
 ```
 
 Then, you can configure ESLint via a `.eslintrc.js` file in your root project directory:
