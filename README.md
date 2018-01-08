@@ -66,7 +66,9 @@ French translation is maintained by [Vuejs-FR](https://github.com/vuejs-fr/nuxt/
 [gl-issue-tracker]: https://github.com/gitlocalize/feedback
 [gl-repo]: https://gitlocalize.com/repo/100
 
-We are useing with a translation tool called [GitLocalize][gl] and follow the steps to get started with your contribution:
+We are using a translation tool called [GitLocalize][gl]. 
+
+Follow these steps to get started with your contribution:
 
 1. Go to [GitLocalize's nuxt/docs repository][gl-repo].
 1. Sign up using your GitHub account :octocat:.
