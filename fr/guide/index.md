@@ -104,7 +104,7 @@ Nous ne voulons pas générer manuellement l'application à chaque fois que nous
 
 1. Clone le [dépôt nuxtjs.org](https://github.com/nuxt/nuxtjs.org)
 2. Installe les dépendances via `npm install`
-3. Lance `nux generate`
+3. Lance `nuxt generate`
 4. Déploie le dossier `dist` sur la branche `gh-pages`
 
 Et nous voilà avec une **application web générée sans fichiers statiques serveurs** :)
