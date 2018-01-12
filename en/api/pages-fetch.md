@@ -49,9 +49,9 @@ export default {
 </script>
 ```
 
-## Using Vuex
+## Vuex
 
-If using `dispatch` inside of Nuxt component `fetch`, make sure to use `async`/`await` in the component file *and* the action function. If this is not done, then `fetch` will not trigger on page refresh.
+If you want to call a store action, use `store.dispatch` inside `fetch`, make sure to wait for the end of the action by using `async`/`await` inside:
 
 ```html
 <script>
@@ -63,9 +63,13 @@ export default {
 </script>
 ```
 
+`store/index.js`
 ```js
-export async function GET_STARS({ commit }) {
-  const { data } = await axios.get('http://my-api/stars');
-  store.commit('SET_STARS', data);
+// ...
+export const actions = {
+  async function GET_STARS({ commit }) {
+    const { data } = await axios.get('http://my-api/stars');
+    store.commit('SET_STARS', data);
+  }
 }
 ```
