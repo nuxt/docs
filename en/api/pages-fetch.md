@@ -48,3 +48,28 @@ export default {
 }
 </script>
 ```
+
+## Vuex
+
+If you want to call a store action, use `store.dispatch` inside `fetch`, make sure to wait for the end of the action by using `async`/`await` inside:
+
+```html
+<script>
+export default {
+  async fetch ({ store, params }) {
+    await store.dispatch('GET_STARS');
+  }
+}
+</script>
+```
+
+`store/index.js`
+```js
+// ...
+export const actions = {
+  async function GET_STARS({ commit }) {
+    const { data } = await axios.get('http://my-api/stars');
+    store.commit('SET_STARS', data);
+  }
+}
+```
