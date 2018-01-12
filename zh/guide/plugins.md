@@ -104,4 +104,4 @@ import VueNotifications from 'vue-notifications'
 Vue.use(VueNotifications)
 ```
 
-同样地，如果有些脚本库你只想在服务端使用，在 Webpack 打包 `server.bundle.js` 文件的时候你可以将 `process.SERVER_BUILD` 变量设置成 `true`。
+同样地，如果有些脚本库你只想在服务端使用，在 Webpack 打包 `server.bundle.js` 文件的时候会将 `process.server` 变量设置成 `true`。
