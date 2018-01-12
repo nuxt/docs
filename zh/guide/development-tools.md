@@ -124,7 +124,7 @@ npm test
 在 Nuxt.js 中集成 [ESLint](http://eslint.org) 是非常简单的，首先我们需要安装 ESLint 的一系列依赖包：
 
 ```bash
-npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-html eslint-plugin-promise eslint-plugin-standard
+npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-html eslint-plugin-promise eslint-plugin-standard eslint-plugin-import eslint-plugin-node
 ```
 
 然后, 在项目根目录下创建 `.eslintrc.js` 文件用于配置 ESLint：
