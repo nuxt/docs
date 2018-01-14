@@ -67,9 +67,9 @@ export default {
 ```js
 // ...
 export const actions = {
-  async function GET_STARS({ commit }) {
-    const { data } = await axios.get('http://my-api/stars');
-    store.commit('SET_STARS', data);
+  async GET_STARS ({ commit }) {
+    const { data } = await axios.get('http://my-api/stars')
+    commit('SET_STARS', data)
   }
 }
 ```
