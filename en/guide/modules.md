@@ -123,7 +123,7 @@ module.exports = function asyncModule(callback) {
 
 ### Top level options
 
-Sometimes it is more convenient if we can use top level options while register modules in `nuxt.config.js`. So we can combine multiply option sources.
+Sometimes it is more convenient if we can use top level options while registering modules in `nuxt.config.js`. This allows us to combine multiple option sources.
 
 **nuxt.config.js**
 
