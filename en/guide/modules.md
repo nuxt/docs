@@ -79,7 +79,7 @@ Not all modules will do everything synchronous. For example you may want to deve
 
 ### Use async/await
 
-<p class="Alert Alert--orange">Be aware that `async`/`await` is only supported in Node.js > 7.2. So if you are a module developer at least warn users about that if using them. For heavily async modules or better legacy support you can use either a bundler to transform it for older Node.js comparability or using promise method.</p>
+<p class="Alert Alert--orange">Be aware that `async`/`await` is only supported in Node.js > 7.2. So if you are a module developer at least warn users about that if using them. For heavily async modules or better legacy support you can use either a bundler to transform it for older Node.js compatibility or using promise method.</p>
 
 ```js
 const fse = require('fs-extra')
