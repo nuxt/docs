@@ -182,3 +182,34 @@ async asyncData ({ params, error, payload }) {
   else return { user: await backend.fetchUser(params.id) }
 }
 ```
+
+## subFolders
+
+- Type: `Boolean`
+- Default: `true`
+
+By default, running nuxt generate will create a directory for each route & serve an `index.html` file.
+
+Example:
+
+```bash
+-| dist/
+---| index.html
+---| about/
+-----| index.html
+---| products/
+-----| item/
+-------| index.html
+```
+
+When set to false, html files are generated according to the route path:
+
+```bash
+-| dist/
+---| index.html
+---| about.html
+---| products/
+-----| item.html
+```
+
+_Note: this option could be useful using [Netlify](https://netlify.com) or any static hosting using html fallbacks._
