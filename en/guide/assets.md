@@ -49,7 +49,7 @@ Actually, Nuxt.js default assets loaders configuration is:
     test: /\.(png|jpe?g|gif|svg)$/,
     loader: 'url-loader',
     query: {
-      limit: 1000, // 1KO
+      limit: 1000, // 1kB
       name: 'img/[name].[hash:7].[ext]'
     }
   },
