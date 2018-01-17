@@ -59,20 +59,28 @@ French translation is maintained by [Vuejs-FR](https://github.com/vuejs-fr/nuxt/
 * Primary maintainer - [Bruno Lesieur](https://www.lesieur.name/) ([Orchard ID](https://www.orchard-id.com/))
 * Primary translator - [Julien Grünhagel](https://rspt.io/) ([laruche](https://laruche.io))
 
+### Brazilian Portuguese
+
+Brazilian Portuguese translation is maintained by [Vuejs Brasil](https://github.com/vuejs-br/) Team.
+
+* Translation Repo — [/vuejs-br/nuxt-docs](https://github.com/vuejs-br/nuxt-docs/)
+* Primary maintainer - [Erick Eduardo Petrucelli](https://github.com/ErickPetru)
+* Primary translator - [André Van Dal](https://github.com/derevandal/)
+
 ### Want to help with the translation?
 
 [gl]: https://gitlocalize.com
-[gl-help]: https://docs.gitlocalize.com/ 
+[gl-help]: https://docs.gitlocalize.com/
 [gl-issue-tracker]: https://github.com/gitlocalize/feedback
 [gl-repo]: https://gitlocalize.com/repo/100
 
-We are using a translation tool called [GitLocalize][gl]. 
+We are using a translation tool called [GitLocalize][gl].
 
 Follow these steps to get started with your contribution:
 
 1. Go to [GitLocalize's nuxt/docs repository][gl-repo].
 1. Sign up using your GitHub account :octocat:.
-1. Find the document you are going to translate. 
+1. Find the document you are going to translate.
 1. Happy translating :sparkles: .
 1. When you are done, send the translation for reviews.
 1. Reviewed translation will be sent as a Pull Request to GitHub by language admin in the community.
