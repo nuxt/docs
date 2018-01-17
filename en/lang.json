@@ -1,51 +1,51 @@
 {
-  "iso": "en",
+  "iso": "pt-br",
   "docVersion": "1.0.0-rc11",
   "links": {
     "api": "API",
     "blog": "Blog",
     "chat": "Chat",
-    "documentation": "Documentation",
+    "documentation": "Documentação",
     "download": "Download",
-    "examples": "Examples",
-    "ecosystem": "Ecosystem",
+    "examples": "Exemplos",
+    "ecosystem": "Ecosistema",
     "faq": "FAQ",
-    "get_started": "get started",
+    "get_started": "iniciar",
     "github": "GitHub",
     "guide": "Guide",
-    "homepage": "Home page",
-    "live_demo": "Live Demo",
-    "live_edit": "Live Edit",
+    "homepage": "Página Inicial",
+    "live_demo": "Demonstração",
+    "live_edit": "Edite ao vivo",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Vue Jobs"
   },
   "text": {
-    "an_error_occured": "An error occurred",
-    "api_page_not_found": "API page not found",
-    "example_file": "Example Files",
-    "please_wait": "Please wait...",
-    "please_define_title": "Please define a title in the front matter",
-    "please_define_description": "Please define a description in the front matter",
-    "search": "Search",
-    "version": "Version"
+    "an_error_occured": "Um erro ocorreu",
+    "api_page_not_found": "Página API não foi encontrada",
+    "example_file": "Arquivos de Exemplo",
+    "please_wait": "Por favor, aguarde...",
+    "please_define_title": "Por favor, defina um título na primeira página",
+    "please_define_description": "Por favor, defina um descrição na primeira página",
+    "search": "Pesquisar",
+    "version": "Versão"
   },
   "homepage": {
-    "title": "Universal Vue.js Applications",
+    "title": "Aplicações Universais em Vue.js",
     "meta": {
-      "title": "Nuxt.js - Universal Vue.js Applications",
-      "description": "Nuxt.js is a minimal framework for creating Vue.js applications with server side rendering, code-splitting, hot-reloading, static generation and more!"
+      "title": "Nuxt.js - Aplicações Universais em Vue.js",
+      "description": "Nuxt.js é um framework mínimo para criar aplicações Vue.js com renderização no servidor, code-splitting, hot-reloading, gerador de arquivos estáticos e muito mais!"
     }
   },
   "footer": {
-    "authors": "Made by Chopin Brothers"
+    "authors": "Feito pelos irmãos Chopin"
   },
   "guide": {
-    "release_notes": "Release Notes",
-    "contribute": "Caught a mistake or want to contribute to the documentation?",
-    "edit_on_github": "Edit this page on GitHub!"
+    "release_notes": "Notas de Lançamento",
+    "contribute": "Encontrou algum erro ou quer contribuir com a documentação?",
+    "edit_on_github": "Edite essa página pelo GitHub!"
   },
   "examples": {
-    "source_code": "Source Code"
+    "source_code": "Código-fonte"
   }
 }
