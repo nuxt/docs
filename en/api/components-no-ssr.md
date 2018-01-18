@@ -1,6 +1,6 @@
 ---
 title: "API: The <no-ssr> Component"
-description: Skip component rendering on server side rendering, and rendering placeholder text.
+description: Skip component rendering on server side(rendering), and display placeholder text.
 ---
 
 # The &lt;no-ssr&gt; Component
@@ -9,7 +9,7 @@ description: Skip component rendering on server side rendering, and rendering pl
 
 **Props**:
 - placeholder: `String`
-  - This prop will be use to component innner `div`, it's displayed as text only on server side rendering.
+  - This prop will be used as a content of inner `div` and displayed as text only on server side rendering.
 
 ```html
 <template>
