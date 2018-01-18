@@ -63,7 +63,7 @@ module.exports = {
 
 该扩展方法会被调用两次，一次在服务端打包构建的时候，另外一次是在客户端打包构建的时候。该方法的参数如下：
 1. Webpack 配置对象
-2. 构建环境对象，包括这些属性（全部为布尔类型）： `dev`， `isClient`， `isServer`
+2. 构建环境对象，包括这些属性（全部为布尔类型）： `isDev`， `isClient`， `isServer`
 
 例如 (`nuxt.config.js`)：
 ```js

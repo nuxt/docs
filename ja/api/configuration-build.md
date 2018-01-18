@@ -80,7 +80,7 @@ See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) 
 extend メソッドは一度はサーバーのバンドルのため、一度はクライアントのバンドルのため、つまり二度呼び出されます。メソッドの引数は次のとおり:
 
 1. Webpack 設定オブジェクト
-2. 次のキーを持つオブジェクト（すべてブーリアン）: `dev`, `isClient`, `isServer`
+2. 次のキーを持つオブジェクト（すべてブーリアン）: `isDev`, `isClient`, `isServer`
 
 例（`nuxt.config.js`）:
 
