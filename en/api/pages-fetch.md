@@ -64,6 +64,7 @@ export default {
 ```
 
 `store/index.js`
+
 ```js
 // ...
 export const actions = {
