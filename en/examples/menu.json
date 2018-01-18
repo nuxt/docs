@@ -9,7 +9,6 @@
   {
     "title": "Personnalisation",
     "links": [
-      { "name": "Composants en cache", "to": "/cached-components" },
       { "name": "Composant de chargement personnalisé", "to": "/custom-loading" },
       { "name": "Routes personnalisées", "to": "/custom-routes" },
       { "name": "CSS global", "to": "/global-css" },

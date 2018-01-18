@@ -104,13 +104,11 @@ Nous ne voulons pas générer manuellement l'application à chaque fois que nous
 
 1. Clone le [dépôt nuxtjs.org](https://github.com/nuxt/nuxtjs.org)
 2. Installe les dépendances via `npm install`
-3. Lance `nux generate`
+3. Lance `nuxt generate`
 4. Déploie le dossier `dist` sur la branche `gh-pages`
 
 Et nous voilà avec une **application web générée sans fichiers statiques serveurs** :)
 
 Nous pouvons aller plus loin en imaginant une application d'e-commerce créée avec `nuxt generate` et hébergée sur un CDN. Chaque fois qu'un produit est en rupture de stock ou de nouveau en stock nous régénérons l'application. Mais si l'utilisateur navigue sur l'application en même temps, il verra les informations à jour grâce aux appels d'API effectués sur l'API de l'e-commerce. Pas besoin d'avoir plusieurs instances d'un serveur d'un cache !
 
-<div class="Alert">Vous pouvez counsultez [comment déployez sur GitHub Pages](/faq/github-pages) pour plus d'informations.</div>
-
-<div class="Alert">Counsultez [Comment déployez sur GitHub Pages ?](/faq/github-pages) pour plus d'informations sur un hébergement GitHub Pages.</div>
+<div class="Alert">Vous pouvez consulter [Comment déployer sur GitHub Pages ?](/faq/github-pages) pour plus d'informations sur un hébergement GitHub Pages.</div>
