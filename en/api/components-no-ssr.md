@@ -21,3 +21,6 @@ description: Skip component rendering on server side(rendering), and display pla
   </div>
 </template>
 ```
+
+This component is a clone of [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr).
+Thanks [@egoist](https://github.com/egoist)!
