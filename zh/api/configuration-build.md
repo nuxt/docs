@@ -79,7 +79,7 @@ module.exports = {
 }
 ```
 
-如果你想了解更多关于webpack的配置，可以移步 Nuxt.js 源码的 [webpack 目录](https://github.com/nuxt/nuxt.js/tree/master/lib/webpack)。
+如果你想了解更多关于webpack的配置，可以移步 Nuxt.js 源码的 [webpack 目录](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack)。
 
 ## filenames
 
