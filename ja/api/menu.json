@@ -1,5 +1,11 @@
 [
   {
+    "title": "基本",
+    "links": [
+      { "name": "Context", "to": "/context" }
+    ]
+  },
+  {
     "title": "ページ",
     "links": [
       { "name": "asyncData", "to": "/" },
@@ -36,16 +42,21 @@
         "contents": [
           { "name": "analyze", "to": "#analyze" },
           { "name": "babel", "to": "#babel" },
+          { "name": "cssSourceMap", "to": "#csssourcemap" },
+          { "name": "devMiddleware", "to": "#devmiddleware" },
           { "name": "extend", "to": "#extend" },
+          { "name": "extractCSS", "to": "#extractcss" },
           { "name": "filenames", "to": "#filenames" },
-          { "name": "loaders", "to": "#loaders" },
+          { "name": "hotMiddleware", "to": "#hotmiddleware" },
           { "name": "plugins", "to": "#plugins" },
           { "name": "postcss", "to": "#postcss" },
           { "name": "publicPath", "to": "#publicpath" },
-          { "name": "vendor", "to": "#vendor" }
+          { "name": "ssr", "to": "#ssr" },
+          { "name": "templates", "to": "#templates" },
+          { "name": "vendor", "to": "#vendor" },
+          { "name": "watch", "to": "#watch" }
         ]
       },
-      { "name": "cache", "to": "/configuration-cache" },
       { "name": "css", "to": "/configuration-css" },
       { "name": "dev", "to": "/configuration-dev" },
       { "name": "env", "to": "/configuration-env" },
@@ -54,6 +65,7 @@
         "to": "/configuration-generate",
         "contents": [
           { "name": "dir", "to": "#dir" },
+          { "name": "interval", "to": "#interval" },
           { "name": "minify", "to": "#minify" },
           { "name": "routes", "to": "#routes" }
         ]
@@ -68,28 +80,38 @@
           { "name": "独自のコンポーネントを使う", "to": "#独自のコンポーネントを使う" }
         ]
       },
+      { "name": "loadingIndicator", "to": "/configuration-loading-indicator" },
+      { "name": "mode", "to": "/configuration-mode" },
+      { "name": "modules", "to": "/configuration-modules" },
+      { "name": "plugins", "to": "/configuration-plugins" },
       {
-        "name": "performance",
-        "to": "/configuration-performance",
+        "name": "render",
+        "to": "/configuration-render",
         "contents": [
+          { "name": "bundleRenderer", "to": "#bundleRenderer" },
+          { "name": "etag", "to": "#etag" },
           { "name": "gzip", "to": "#gzip" },
-          { "name": "prefetch", "to": "#prefetch" }
+          { "name": "http2", "to": "#http2" },
+          { "name": "resourceHints", "to": "#resourceHints" },
+          { "name": "ssr", "to": "#ssr" },
+          { "name": "static", "to": "#static" }
         ]
       },
-      { "name": "plugins", "to": "/configuration-plugins" },
       { "name": "rootDir", "to": "/configuration-rootdir" },
       {
         "name": "router",
         "to": "/configuration-router",
         "contents": [
           { "name": "base", "to": "#base" },
-          { "name": "mode", "to": "#mode" },
+          { "name": "extendRoutes", "to": "#extendroutes" },
           { "name": "linkActiveClass", "to": "#linkactiveclass" },
-          { "name": "scrollBehavior", "to": "#scrollbehavior" },
+          { "name": "linkExactActiveClass", "to": "#linkexactactiveclass" },
           { "name": "middleware", "to": "#middleware" },
-          { "name": "extendRoutes", "to": "#extendroutes" }
+          { "name": "mode", "to": "#mode" },
+          { "name": "scrollBehavior", "to": "#scrollbehavior" }
         ]
       },
+      { "name": "serverMiddleware", "to": "/configuration-servermiddleware" },
       { "name": "srcDir", "to": "/configuration-srcdir" },
       { "name": "transition", "to": "/configuration-transition" },
       {
@@ -103,12 +125,23 @@
     ]
   },
   {
-    "title": "Nuxt モジュール",
+    "title": "プログラムで使う",
     "links": [
-      { "name": "Nuxt.js をプログラムで使う", "to": "/nuxt" },
+      { "name": "使い方", "to": "/nuxt" },
       { "name": "render", "to": "/nuxt-render" },
       { "name": "renderRoute", "to": "/nuxt-render-route" },
       { "name": "renderAndGetWindow", "to": "/nuxt-render-and-get-window" }
+    ]
+  },
+  {
+    "title": "内部",
+    "links": [
+      { "name": "はじめに", "to": "/internals" },
+      { "name": "Nuxt", "to": "/internals-nuxt" },
+      { "name": "Renderer", "to": "/internals-renderer" },
+      { "name": "Module Container", "to": "/internals-module-container" },
+      { "name": "Builder", "to": "/internals-builder" },
+      { "name": "Generator", "to": "/internals-generator" }
     ]
   }
 ]
