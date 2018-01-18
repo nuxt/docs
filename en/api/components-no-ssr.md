@@ -8,7 +8,7 @@ description: Skip component rendering on server side rendering, and rendering pl
 > This component is used to purposely remove the component from the subject of server side rendering.
 
 **Props**:
-- placeholder: `string`
+- placeholder: `String`
   - This prop will be use to component innner `div`, it's displayed as text only on server side rendering.
 
 ```html
