@@ -79,7 +79,7 @@ module.exports = {
 }
 ```
 
-기본 webpack 구성에 대해 더 알고싶다면 [webpack 폴더](https://github.com/nuxt/nuxt.js/tree/master/lib/webpack) 를 확인해주세요.
+기본 webpack 구성에 대해 더 알고싶다면 [webpack 폴더](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack) 를 확인해주세요.
 
 ## filenames
 
