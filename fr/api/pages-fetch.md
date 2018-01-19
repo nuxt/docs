@@ -23,7 +23,7 @@ Exemple de `pages/index.vue` :
 <script>
 export default {
   fetch ({ store, params }) {
-    return axios.get('http://my-api/stars')
+    return axios.get('http://mon-api/stars')
     .then((res) => {
       store.commit('setStars', res.data)
     })
@@ -42,9 +42,35 @@ Vous pouvez également utiliser `async` / `await` pour rendre votre code plus pr
 <script>
 export default {
   async fetch ({ store, params }) {
-    let { data } = await axios.get('http://my-api/stars')
+    let { data } = await axios.get('http://mon-api/stars')
     store.commit('setStars', data)
   }
 }
 </script>
+```
+
+## Vuex
+
+Si vous voulez appeler une action du store, utilisez `store.dispatch` à l'intérieur de `fetch`, et assurez vous d'attendre la fin de l'action en utilisant `async` / `await` à l'intérieur :
+
+```html
+<script>
+export default {
+  async fetch ({ store, params }) {
+    await store.dispatch('GET_STARS');
+  }
+}
+</script>
+```
+
+`store/index.js`
+
+```js
+// ...
+export const actions = {
+  async GET_STARS ({ commit }) {
+    const { data } = await axios.get('http://mon-api/stars')
+    commit('SET_STARS', data)
+  }
+}
 ```
