@@ -1,5 +1,5 @@
 ---
-title: "API : La propriété The generate"
+title: "API : La propriété generate"
 description: Configure la génération de votre application web universelle vers une application web statique.
 ---
 
@@ -9,21 +9,21 @@ description: Configure la génération de votre application web universelle vers
 
 > Configure la génération de votre application web universelle vers une application web statique.
 
-Quand vous lancez `nuxt generate` ou appelez `nuxt.generate()`, Nuxt.js va utiliser la configuration définie dans la propriété `generate`.
+Quand vous lancez `nuxt generate` ou appelez `nuxt.generate()`, Nuxt.js utilisera la configuration définie dans la propriété `generate`.
 
 ## dir
 
 - Type : `String`
 - Par défaut : `'dist'`
 
-Nom du répertoire crée par `nuxt generate`.
+Nom du répertoire créé par `nuxt generate`.
 
 ## interval
 
 - Type : `Number`
 - Par défaut : `0`
 
-Interval entre 2 rendus pour éviter le flood d'appels à l'API quand faites par une API potentielle de l'application web.
+Interval entre 2 rendus pour éviter d'inonder les appels d'API effectués par une API potentielle de l'application web.
 
 ## minify
 
@@ -53,7 +53,7 @@ minify: {
 }
 ```
 
-Vous pouvez changer la configuration par défaut de [html-minifier](https://github.com/kangax/html-minifier) utilisée par Nuxt.js pour minifier les fichiers HTML crées pendant le processus de génération.
+Vous pouvez changer la configuration par défaut de [html-minifier](https://github.com/kangax/html-minifier) utilisée par Nuxt.js pour minifier les fichiers HTML créés pendant le processus de génération.
 
 ## routes
 
@@ -156,7 +156,7 @@ module.exports = {
 
 ### Augmenter la vitesse de génération d'une route dynamique avec `payload`
 
-Dans l'exemple ci-dessus, nous avons utilisé `user.id` depuis le serveur pour générer les routes mais jeter le reste des données. Typiquement, nous avons besoin de les récupérer de nouveau depuis `/utilisateurs/_id.vue`. Pendant que nous faisons cela, nous allons probablement avoir besoin de définir `generate.interval` avec quelque chose comme `100` pour ne pas flooder le serveus avec des appels. Parceque cela va augmenter le temps de génération du script, il serait préférable de passer avec l'objet `user` le contexte dans `_id.vue`. Nous pouvons faire cela en modifiant le code ci-dessus pour celui ci :
+Dans l'exemple ci-dessus, nous avons utilisé `user.id` depuis le serveur pour générer les routes mais jeter le reste des données. Typiquement, nous avons besoin de les récupérer de nouveau depuis `/utilisateurs/_id.vue`. Pendant que nous faisons cela, nous allons probablement avoir besoin de définir `generate.interval` avec quelque chose comme `100` pour ne pas inonder le serveur avec des appels. Parce que cela va augmenter le temps de génération du script, il serait préférable de passer avec l'objet `user` le contexte dans `_id.vue`. Nous pouvons faire cela en modifiant le code ci-dessus pour celui-ci :
 
 `nuxt.config.js`
 
@@ -208,7 +208,7 @@ Exemple :
 -------| index.html
 ```
 
-Quand mis à `false`, les fichier HTML seront générés en accord avec les chemins de routes :
+Quand il est mis à `false`, les fichier HTML seront générés en accord avec les chemins de routes :
 
 ```bash
 -| dist/
