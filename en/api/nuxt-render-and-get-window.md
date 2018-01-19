@@ -15,7 +15,7 @@ description: Get the `window` from a given URL of a Nuxt.js Application.
 
 > Get the window from a given url of a nuxt.js application.
 
-<p class="Alert Alert--info">This method is made for [test purposes](guide/development-tools#end-to-end-testing).</p>
+<p class="Alert Alert--info">This method is made for [test purposes](/guide/development-tools#end-to-end-testing).</p>
 
 To use this function, you have to install `jsdom`:
 
