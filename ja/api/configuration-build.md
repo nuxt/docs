@@ -34,11 +34,10 @@ module.exports = {
 
 ## babel
 
-- タイプ: `オブジェクト`
-
 > JS や Vue ファイルのために babel の設定をカスタマイズします。
 
-デフォルト:
+- タイプ: `オブジェクト`
+- デフォルト:
 
 ```js
 {
@@ -61,7 +60,7 @@ module.exports = {
 ## cssSourceMap
 
 - Type: `boolean`
-  - Default: `true` for dev and `false` for production.
+- Default: `true` for dev and `false` for production.
 
 > Enables CSS Source Map support
 
@@ -73,9 +72,9 @@ See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) 
 
 ## extend
 
-- タイプ: `関数`
-
 > クライアント及びサーバーのバンドルについて Webpack の設定を手動で拡張します。
+
+- タイプ: `関数`
 
 extend メソッドは一度はサーバーのバンドルのため、一度はクライアントのバンドルのため、つまり二度呼び出されます。メソッドの引数は次のとおり:
 
@@ -101,39 +100,37 @@ module.exports = {
 
 ## extractCSS
 
-- Type: `Boolean`
-  - Default: `false`
-
 > Enables Common CSS Extraction using vue SSR [guidelines](https://ssr.vuejs.org/en/css.html).
 
-Using extract-text-webpack-plugin to extract the CSS in the main chunk into a separate CSS file (auto injected with template),
-which allows the file to be individually cached. This is recommended when there is a lot of shared CSS.
-CSS inside async components will remain inlined as JavaScript strings and handled by vue-style-loader.
+- Type: `Boolean`
+- Default: `false`
+
+Using `extract-text-webpack-plugin` to extract the CSS in the main chunk into a separate CSS file (auto injected with template), which allows the file to be individually cached. This is recommended when there is a lot of shared CSS. CSS inside async components will remain inlined as JavaScript strings and handled by vue-style-loader.
 
 ## filenames
 
-- タイプ: `オブジェクト`
-
 > バンドルのファイル名をカスタマイズします。
 
-デフォルト:
+- タイプ: `オブジェクト`
+- デフォルト:
 
 ```js
 {
-  vendor: 'vendor.bundle.[hash].js',
-  app: 'nuxt.bundle.[chunkhash].js'
+  css: 'common.[contenthash].css',
+  manifest: 'manifest.[hash].js',
+  vendor: 'common.[chunkhash].js',
+  app: 'app.[chunkhash].js',
+  chunk: '[name].[chunkhash].js'
 }
 ```
 
-例（`nuxt.config.js`）:
+This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
 
 ```js
 module.exports = {
   build: {
     filenames: {
-      manifest: 'manifest.[hash].js',
-      vendor: 'vendor.[hash].js',
-      app: 'app.[chunkhash].js'
+      chunk: '[id].[chunkhash].js'
     }
   }
 }
@@ -149,10 +146,10 @@ See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware
 
 ## plugins
 
+> Webpack のプラグインを追加します。
+
 - タイプ: `配列`
 - デフォルト: `[]`
-
-> Webpack のプラグインを追加します。
 
 例（`nuxt.config.js`）:
 
@@ -172,15 +169,13 @@ module.exports = {
 
 ## postcss
 
-- タイプ: `配列`
-
 > [postcss](https://github.com/postcss/postcss) オプションをカスタマイズします。
 
-**NOTE:** While default preset is OK and flexible enough for normal use cases, the recommended 
-usage by [vue-loader](https://vue-loader.vuejs.org/en/options.html#postcss) is using `postcss.config.js` file in your project.
-By creating that file it will be automatically detected and this option is ignored.
+- タイプ: `配列`
 
-デフォルト:
+**Note:** While default preset is OK and flexible enough for normal use cases, the recommended usage by [`vue-loader`](https://vue-loader.vuejs.org/en/options.html#postcss) is using `postcss.config.js` file in your project. By creating that file it will be automatically detected and this option is ignored.
+
+- デフォルト:
 
 ```js
 [
@@ -209,10 +204,10 @@ module.exports = {
 
 ## publicPath
 
+> 最高のパフォーマンスを発揮させるために dist ディレクトリ内のファイルを CDN へアップロードできます。そのためには単に `publicPath` に利用する CDN をセットするだけです。
+
 - タイプ: `文字列`
 - デフォルト: `'/_nuxt/'`
-
-> 最高のパフォーマンスを発揮させるために dist ディレクトリ内のファイルを CDN へアップロードできます。そのためには単に `publicPath` に利用する CDN をセットするだけです。
 
 例（`nuxt.config.js`）:
 
@@ -228,48 +223,45 @@ module.exports = {
 
 ## ssr
 
-- Type: `Boolean`
-  - Default `true` for universal mode and `false` for spa mode
-
 > Creates special webpack bundle for SSR renderer.
+
+- Type: `Boolean`
+- Default `true` for universal mode and `false` for spa mode
 
 This option is automatically set based on `mode` value if not provided. 
 
 ## templates
 
-- Type: `Array`
- - Items: `Object`
+> Nuxt.js allows you provide your own templates which will be rendered based on Nuxt configuration. This feature is specially useful for using with [modules](/guide/modules).
 
-> Nuxt.js allows you provide your own templates which will be rendered based on nuxt configuration
-  This feature is specially useful for using with [modules](/guide/modules).
+- Type: `Array`
+- Items: `Object`
 
 Example (`nuxt.config.js`):
 
 ```js
 module.exports = {
   build: {
-      templates: [
-         {
-           src: '~/modules/support/plugin.js', // src can be absolute or relative
-           dst: 'support.js', // dst is relative to project `.nuxt` dir
-           options: { // Options are provided to template as `options` key
-               live_chat: false
-           }
-         }
-      ]
+    templates: [
+      {
+        src: '~/modules/support/plugin.js', // `src` can be absolute or relative
+        dst: 'support.js', // `dst` is relative to project `.nuxt` dir
+        options: { // Options are provided to template as `options` key
+          live_chat: false
+        }
+      }
+    ]
   }
 }
 ```
 
-Templates are rendered using [lodash.template](https://lodash.com/docs/#template) 
-you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
+Templates are rendered using [`lodash.template`](https://lodash.com/docs/#template) you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
 
 ## vendor
 
 > Nuxt.js では `vendor.bundle.js` ファイル内にモジュールを追加できます。このファイルは app バンドルファイルのサイズを小さくするために生成します。外部モジュール（例えば `axios` など）を使うときにとても便利です。
 
 - タイプ: `配列`
-  - 要素: `文字列`
 
 vendor バンドルファイル内にモジュール/ファイルを追加するには、`nuxt.config.js` 内の `build.vendor` キーに追加します:
 
@@ -296,18 +288,16 @@ module.exports = {
 
 ## watch
 
-- Type: `Array`
- - Items: `String`
+> You can provide your custom files to watch and regenerate after changes. This feature is specially useful for using with [modules](/guide/modules).
 
-> You can provide your custom files to watch and regenerate after changes.
-  This feature is specially useful for using with [modules](/guide/modules).
+- Type: `Array<String>`
 
 ```js
 module.exports = {
   build: {
-      watch: [
-          '~/.nuxt/support.js'
-      ]
+    watch: [
+      '~/.nuxt/support.js'
+    ]
   }
 }
 ```
