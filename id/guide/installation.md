@@ -1,55 +1,56 @@
 ---
-title: Installation
-description: Nuxt.js is really easy to get started with. A simple project only needs the `nuxt` dependency.
+title: Instalasi
+description: Memulai Nuxt.js itu ternyata sangat mudah. Satu proyek sederhana hanya memerlukan dependency `nuxt`
 ---
 
-> Nuxt.js is really easy to get started with. A simple project only needs the `nuxt` dependency.
+> Memulai Nuxt.js itu ternyata sangat mudah. Satu proyek sederhana hanya memerlukan dependency `nuxt`.
 
-## Using Nuxt.js starter template
+## Menggunakan templat awal Nuxt.js
 
-To get started quickly, the Nuxt.js team has created a [starter template](https://github.com/nuxt-community/starter-template).
+Untuk memulai dengan cepat, tim Nuxt.js telah membuat [templat awal](https://github.com/nuxt-community/starter-template).
 
-[Download the .zip](https://github.com/nuxt-community/starter-template/archive/master.zip) starter template or install it with vue-cli:
+[Unduh .zip](https://github.com/nuxt-community/starter-template/archive/master.zip) templat awal atau instal dengan vue-cli:
 
 ```bash
-$ vue init nuxt-community/starter-template <project-name>
+$ vue init nuxt-community/starter-template <nama-proyek>
 ```
 
-> If [vue-cli](https://github.com/vuejs/vue-cli) is not installed, please install it with `npm install -g vue-cli`
+> Jika [vue-cli](https://github.com/vuejs/vue-cli) tidak terinstal, silakan instal dengan `npm install -g vue-cli`
 
-then install the dependencies:
+lalu instal the dependencies:
 
 ```bash
-$ cd <project-name>
+$ cd <nama-proyek>
 $ npm install
 ```
 
-and launch the project with:
+dan jalankan proyek dengan:
 
 ```bash
 $ npm run dev
 ```
 
-The application is now running on http://localhost:3000.
+Kini aplikasi berjalan pada http://localhost:3000.
 
 <p class="Alert">Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.</p>
 
 To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
 
-## Starting from scratch
+## Mulai dari awal
 
-Creating a Nuxt.js application from scratch is also really easy, it only needs *1 file and 1 directory*. Let's create an empty directory to start working on the application:
+Membuat aplikasi Nuxt.js dari awal juga sangat mudah, hanya memerlukan *1 file dan 1 direktori*. Mari kita buat satu direktori kosong untuk mulai membuat aplikasinya: 
 
 ```bash
-$ mkdir <project-name>
-$ cd <project-name>
+$ mkdir <nama-proyek>
+$ cd <nama-proyek>
 ```
 
-<p class="Alert Alert--nuxt-green"><b>Info:</b> replace <code>&lt;project-name&gt;</nom-du-projet></code> by the name of the project.</p>
+<p class="Alert Alert--nuxt-green"><b>Info:</b> tukar <code>&lt;nama-proyek&gt;</nom-du-projet></code> dengan nama proyek yang diinginkan.</p>
 
-### The package.json
+### package.json
 
 The project needs a `package.json` file to specify how to start `nuxt`:
+Proyek memerlukan file `package.json` untuk memperinci bagaimana untuk memulai `nuxt`:
 
 ```json
 {
@@ -60,27 +61,27 @@ The project needs a `package.json` file to specify how to start `nuxt`:
 }
 ```
 
-`scripts` will launch Nuxt.js via `npm run dev`.
+`scripts` akan menjalankan Nuxt.js melalui `npm run dev`.
 
-### Installing `nuxt`
+### Memasang `nuxt`
 
-Once the `package.json` has been created, add `nuxt` to the project via npm:
+Setelah `package.json` selesai dibuat, tambahkan `nuxt` ke dalam proyek melalui npm:
 
 ```bash
 npm install --save nuxt
 ```
 
-### The `pages` directory
+### Direktori `pages`
 
-Nuxt.js will transform every `*.vue` file inside the `pages` directory as a route for the application.
+Nuxt.js akan mengubah setiap file `*.vue` di dalam direktori `pages` sebagai rute untuk aplikasi.
 
-Create the `pages` directory:
+Buat direktori `pages`:
 
 ```bash
 $ mkdir pages
 ```
 
-then create the first page in `pages/index.vue`:
+lalu buat halaman pertama dalam `pages/index.vue`:
 
 ```html
 <template>
@@ -88,14 +89,14 @@ then create the first page in `pages/index.vue`:
 </template>
 ```
 
-and launch the project with:
+dan jalankan proyek dengan:
 
 ```bash
 $ npm run dev
 ```
 
-The application is now running on http://localhost:3000.
+Kini aplikasi berjalan pada http://localhost:3000.
 
 <p class="Alert">Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.</p>
 
-To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
+Untuk mengetahui lebih lanjut tentang struktur direktori pada proyek: [Dokumentasi Struktur Direktori](/guide/directory-structure).
