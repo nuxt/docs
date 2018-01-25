@@ -1,13 +1,13 @@
 ---
-title: 'API: The '
-description: Display the current page.
+title: 'API: '
+description: Menampilkan halaman saat ini
 ---
 
-# The <nuxt-child> Component
+# Komponen <nuxt-child>
 
 > Komponen ini digunakan untuk menampilkan "children" komponen pada [nested route](/guide/routing#nested-routes)
 
-Example:
+Contoh:
 
 ```bash
 -| pages/
@@ -46,4 +46,4 @@ Untuk menampilkan komponen `child.vue`, kita harus memasukan `<nuxt-child/>` ke 
 </template>
 ```
 
-To see an example, take a look at the [nested-routes example](/examples/nested-routes).
+Untuk melihat contoh, silahkan lihat [contoh nested-routes](/examples/nested-routes).
