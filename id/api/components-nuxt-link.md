@@ -7,7 +7,7 @@ description: Menghubungkan antar halaman menggunakan nuxt-link.
 
 > Komponen ini digunakan sebagai penghubung antar halaman.
 
-At the moment, `<nuxt-link>` is the same as [`<router-link>`](https://router.vuejs.org/en/api/router-link.html), so we recommend you to see how to use it on the [Vue Router documentation](https://router.vuejs.org/en/api/router-link.html).
+Saat ini, `<nuxt-link>` sama dengan [`<router-link>`](https://router.vuejs.org/en/api/router-link.html), jadi kami sarankan Anda untuk melihat bagaimana menggunakannya di [dokumentasi Vue Router](https://router.vuejs.org/en/api/router-link.html) .
 
 Contoh (`pages/index.vue`):
 
@@ -20,4 +20,4 @@ Contoh (`pages/index.vue`):
 </template>
 ```
 
-In the future, we will add features to the `<nuxt-link>` component, like pre-fetching on the background for improving the responsiveness of Nuxt.js Applications.
+Ke depannya, kami akan menambahkan fitur pada komponen `<nuxt-link>`, yaitu mengambil terlebih dahulu (pre-fetching) melalui background untuk meningkatkan keresponsifan Aplikasi Nuxt.js.
