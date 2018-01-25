@@ -11,7 +11,7 @@ description: Melewati render komponen pada server side (rendering), dan menampil
 **Props**:
 
 - placeholder: `String`
-    - This prop will be used as a content of inner `div` and displayed as text only on server side rendering.
+    - Prop ini digunakan  sebagai konten di dalam `div` dan ditampilkan sebagai text pada server side rendering.
 
 ```html
 <template>
@@ -24,5 +24,5 @@ description: Melewati render komponen pada server side (rendering), dan menampil
 </template>
 ```
 
-This component is a clone of [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr).
-Thanks [@egoist](https://github.com/egoist)!
+Komponen ini adalah klon dari [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr).
+Terima kasih [@egoist](https://github.com/egoist)!
