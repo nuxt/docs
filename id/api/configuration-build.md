@@ -1,29 +1,29 @@
 ---
-title: 'API: The build Property'
-description: Nuxt.js lets you customize the webpack configuration for building your
-  web application as you want.
+title: 'API: Properti build'
+description: Nuxt.js memungkinkan Anda menyesuaikan konfigurasi webpack untuk membangun
+  aplikasi web Anda sesuai keinginan.
 ---
 
-# The build Property
+# Properti build
 
-> Nuxt.js lets you customize the webpack configuration for building your web application as you want.
+> Nuxt.js memungkinkan Anda menyesuaikan konfigurasi webpack untuk membangun aplikasi web Anda sesuai keinginan.
 
 ## analyze
 
-> Nuxt.js use [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer) to let you visualize your bundles and how to optimize them.
+> Nuxt.js menggunakan [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer) untuk memvisualisasikan bundel milik Anda dan bagaimana cara mengoptimalkannya.
 
-- Type: `Boolean` or `Object`
+- Type: `Boolean` atau `Object`
 - Default: `false`
 
 Jika itu merupakan Object, lihat properti yang tersedia [di sini](https://github.com/th0r/webpack-bundle-analyzer#as-plugin).
 
-Example (`nuxt.config.js`):
+Contoh (`nuxt.config.js`):
 
 ```js
 module.exports = {
   build: {
     analyze: true,
-    // or
+    // atau
     analyze: {
       analyzerMode: 'static'
     }
@@ -31,11 +31,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**Info:** you can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888).</p>
+<p class="Alert Alert--teal">**Info:** anda bisa menggunakan perintah `nuxt build --analyze` atau `nuxt build -a` untuk mem'build aplikasi dan menjalankan bundle analyzer pada [http://localhost:8888](http://localhost:8888).</p>
 
 ## babel
 
-> Customize Babel configuration for JavaScript and Vue files.
+> Kostumisasi konfigurasi Babel untuk file-file JavaScript dan Vue.
 
 - Type: `Object`
 
@@ -47,7 +47,7 @@ module.exports = {
     }
     ```
 
-Example (`nuxt.config.js`):
+Contoh (`nuxt.config.js`):
 
 ```js
 module.exports = {
@@ -62,15 +62,15 @@ module.exports = {
 ## cssSourceMap
 
 - Type: `boolean`
-- Default: `true` for dev and `false` for production.
+- Default: `true` untuk dev (development) dan `false` untuk production.
 
-> Enables CSS Source Map support
+> Mengaktifkan dukungan CSS Source Map
 
 ## devMiddleware
 
 - Type: `Object`
 
-See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) for available options.
+Lihat [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) untuk opsi yang tersedia.
 
 ## extend
 
@@ -80,16 +80,16 @@ See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) 
 
 Extend dipanggil (call) dua kali, satu kali untuk bundel server, dan satu kali untuk bundel klien. Uraian dari metode ini adalah:
 
-1. webpack config object,
-2. object with the following keys (all boolean): `isDev`, `isClient`, `isServer`.
+1. Konfigurasi object pada webpack,
+2. Object dengan keys berikut ini (semuanya boolean): `isDev`, `isClient`, `isServer`.
 
-Example (`nuxt.config.js`):
+Contoh (`nuxt.config.js`):
 
 ```js
 module.exports = {
   build: {
     extend (config, { isClient }) {
-      // Extend only webpack config for client-bundle
+      // hanya mengExtend webpack config untuk client-bundle
       if (isClient) {
         config.devtool = 'eval-source-map'
       }
@@ -111,7 +111,7 @@ Menggunakan `extract-text-webpack-plugin` untuk mengekstrak CSS menjadi beberapa
 
 ## filenames
 
-> Customize bundle filenames.
+> Kostumisasi bundle filenames (nama-nama file).
 
 - Type: `Object`
 
@@ -127,7 +127,7 @@ Menggunakan `extract-text-webpack-plugin` untuk mengekstrak CSS menjadi beberapa
     }
     ```
 
-This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
+Contoh berikut ini mengubah nama-nama chunk menjadi id numerik (`nuxt.config.js`):
 
 ```js
 module.exports = {
@@ -145,16 +145,16 @@ To understand a bit more about the use of manifest and vendor, take a look at th
 
 - Type: `Object`
 
-See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for available options.
+Lihat [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) untuk opsi yang tersedia.
 
 ## plugins
 
-> Add webpack plugins
+> Menambahkan plugin-plugin webpack
 
 - Type: `Array`
 - Default: `[]`
 
-Example (`nuxt.config.js`):
+Contoh (`nuxt.config.js`):
 
 ```js
 const webpack = require('webpack')
@@ -172,9 +172,9 @@ module.exports = {
 
 ## postcss
 
-> Customize [PostCSS Loader](https://github.com/postcss/postcss-loader#usage) plugins.
+> Kostumisasi plugin-plugin [PostCSS Loader](https://github.com/postcss/postcss-loader#usage).
 
-- Type: `Array`, `Object` (recommended), `Function` ou `Boolean`
+- Type: `Array`, `Object` (direkomendasikan), `Function` atau `Boolean`
 
     **Catatan:** Ketika preset standarnya adalah OK dan cukup fleksibel untuk kasus penggunaan normal, penggunaan yang direkomendasikan oleh [`vue-loader`](https://vue-loader.vuejs.org/en/options.html#postcss) adalah menggunakan file `postcss.config.js` pada proyek Anda. Dengan membuat file tersebut maka akan otomatis terdeteksi dan pilihan ini terabaikan.
 
@@ -190,7 +190,7 @@ module.exports = {
     }
     ```
 
-Example (`nuxt.config.js`):
+Contoh (`nuxt.config.js`):
 
 ```js
 module.exports = {
@@ -200,7 +200,7 @@ module.exports = {
         // Disable `postcss-url`
       'postcss-url': false
 
-      // Customize `postcss-cssnext` default options
+      // Kostumisasi `postcss-cssnext` default options
       'postcss-cssnext': {
         features: {
           customProperties: false
@@ -224,7 +224,7 @@ module.exports = {
 - Type: `String`
 - Default: `'/_nuxt/'`
 
-Example (`nuxt.config.js`):
+Contoh (`nuxt.config.js`):
 
 ```js
 module.exports = {
@@ -238,10 +238,10 @@ Kemudian, saat meluncurkan (launcing) `nuxt build` , unggah konten dari direktor
 
 ## ssr
 
-> Creates special webpack bundle for SSR renderer.
+> Membuat bundel webpack khusus untuk perender SSR.
 
 - Type: `Boolean`
-- Default: `true` for universal mode and `false` for spa mode
+- Default: `true` untuk mode Universal dan `false` untuk mode SPA
 
 Pengaturan ini dipilih secara otomatis berdasarkan nilai `mode` jika tidak disediakan.
 
@@ -251,7 +251,7 @@ Pengaturan ini dipilih secara otomatis berdasarkan nilai `mode` jika tidak dised
 
 - Type: `Array`
 
-Example (`nuxt.config.js`):
+Contoh (`nuxt.config.js`):
 
 ```js
 module.exports = {
@@ -269,7 +269,7 @@ module.exports = {
 }
 ```
 
-Templates are rendered using [`lodash.template`](https://lodash.com/docs/#template) you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
+Template dirender menggunakan [`lodash.template`](https://lodash.com/docs/#template). Anda dapat mempelajari lebih lanjut tentang cara menggunakannya [di sini](https://github.com/learn-co-students/javascript-lodash-templates-v-000) .
 
 ## vendor
 
@@ -287,7 +287,7 @@ module.exports = {
 }
 ```
 
-You can also give a path to a file, like a custom lib you created:
+Anda juga bisa membuat file path, seperti kustom librari yang sudah Anda buat:
 
 ```js
 module.exports = {
