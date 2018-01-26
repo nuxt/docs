@@ -1,10 +1,10 @@
 ---
-title: 'API: The css Property'
+title: 'API: Properti css'
 description: Nuxt.js memungkinkan Anda menentukan file/modul/librari CSS yang ingin
   Anda atur secara global (disertakan pada setiap halaman).
 ---
 
-# The css Property
+# Properti css
 
 > Nuxt.js memungkinkan Anda menentukan file/modul/librari CSS yang ingin Anda atur secara global (disertakan pada setiap halaman).
 
@@ -32,4 +32,4 @@ module.exports = {
 }
 ```
 
-Nuxt.js will automatically guess the file type by it's extension and use the appropriate pre-processor loader for webpack. You will still need to install the required loader if you need to use them.
+Nuxt.js akan secara otomatis membaca jenis file dengan ekstensi tersebut dan menggunakan pemroses pre-processor yang sesuai untuk webpack. Anda masih perlu menginstal loader yang diperlukan jika Anda perlu menggunakannya.
