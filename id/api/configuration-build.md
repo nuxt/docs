@@ -139,7 +139,7 @@ module.exports = {
 }
 ```
 
-To understand a bit more about the use of manifest and vendor, take a look at this [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/).
+Untuk lebih memahami penggunaan manifes dan vendor, lihat [dokumentasi webpack](https://webpack.js.org/guides/code-splitting-libraries/) ini.
 
 ## hotMiddleware
 
@@ -273,7 +273,7 @@ Template dirender menggunakan [`lodash.template`](https://lodash.com/docs/#templ
 
 ## vendor
 
-> Nuxt.js lets you add modules inside the `vendor.bundle.js` file to reduce the size of the application bundle. This is especially helpful when using external modules (like `axios` for example).
+> Nuxt.js memungkinkan Anda menambahkan modul ke dalam file `vendor.bundle.js` untuk mengurangi ukuran bundel aplikasi. Hal ini sangat membantu saat menggunakan modul eksternal (seperti `axios` misalnya).
 
 - Type: `Array`
 
