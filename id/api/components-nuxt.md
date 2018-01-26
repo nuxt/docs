@@ -1,9 +1,9 @@
 ---
-title: 'API: The '
+title: 'API: '
 description: Menampilkan komponen halaman di dalam layout
 ---
 
-# The <nuxt> Component
+# Komponen <nuxt>
 
 > Komponen ini hanya digunakan di dalam [layout](/guide/views#layouts) untuk menampilkan komponen halaman.
 
@@ -13,7 +13,7 @@ description: Menampilkan komponen halaman di dalam layout
     - Prop ini diset ke `<router-view/>`, berguna untuk membuat transisi di dalam halaman yang dinamis dan route yang berbeda.
     - Default: `$route.fullPath`
 
-Example (`layouts/default.vue`):
+Contoh (`layouts/default.vue`):
 
 ```html
 <template>
