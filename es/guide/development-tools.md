@@ -115,10 +115,11 @@ jsdom has some limitations because it does not use a browser. However, it will c
 
 ## ESLint && Prettier
 
-> ESLint is a great tool to keep your code clean
-> Prettier is a very popular formatter 
+> [ESLint](http://eslint.org) is a great tool to keep your code clean
 
-You can add [ESLint](http://eslint.org) pretty easily with nuxt.js, first, you need to add the npm dependencies:
+> [Prettier](prettier.io) is a very popular code formatter 
+
+You can add ESLint with Prettier pretty easily with nuxt.js, first, you need to add the npm dependencies:
 
 ```bash
 npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader eslint-plugin-vue eslint-plugin-prettier prettier
@@ -156,7 +157,7 @@ module.exports = {
 }
 ```
 
-Then, you can add a `lint`/`lintfix` script in your `package.json`:
+Then, you can add a `lint` and`lintfix` scripts in your `package.json`:
 
 ```js
 "scripts": {
@@ -165,11 +166,11 @@ Then, you can add a `lint`/`lintfix` script in your `package.json`:
 }
 ```
 
-You can now launch:
+You can now launch `lint` to just check for errors:
 ```bash
 npm run lint
 ```
-or 
+or `lintfix` to also fix those which are doable
 ```bash
 npm run lintfix
 ```
