@@ -33,7 +33,7 @@ description: ユニバーサルなウェブアプリケーションから静的�
 ```js
 minify: {
   collapseBooleanAttributes: true,
-  collapseWhitespace: true,
+  collapseWhitespace: false,
   decodeEntities: true,
   minifyCSS: true,
   minifyJS: true,
@@ -47,7 +47,7 @@ minify: {
   removeStyleLinkTypeAttributes: false,
   removeTagWhitespace: false,
   sortAttributes: true,
-  sortClassName: true,
+  sortClassName: false,
   trimCustomFragments: true,
   useShortDoctype: true
 }
