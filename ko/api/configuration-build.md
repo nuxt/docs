@@ -63,7 +63,7 @@ module.exports = {
 
 확장은 두번 호출되는데, 한 번은 서버 번들, 또 한번은 클라이언트 번들에서 입니다. 메서드의 인자는 아래와 같습니다:
 1. Webpack 설정 object
-2. 다음 키가 있는 객체 (모두 boolean): `dev`, `isClient`, `isServer`
+2. 다음 키가 있는 객체 (모두 boolean): `isDev`, `isClient`, `isServer`
 
 예제 (`nuxt.config.js`):
 ```js
@@ -79,7 +79,7 @@ module.exports = {
 }
 ```
 
-기본 webpack 구성에 대해 더 알고싶다면 [webpack 폴더](https://github.com/nuxt/nuxt.js/tree/master/lib/webpack) 를 확인해주세요.
+기본 webpack 구성에 대해 더 알고싶다면 [webpack 폴더](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack) 를 확인해주세요.
 
 ## filenames
 

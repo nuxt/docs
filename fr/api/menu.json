@@ -60,7 +60,7 @@
       { "name": "dev (En)", "to": "/configuration-dev" },
       { "name": "env (En)", "to": "/configuration-env" },
       {
-        "name": "generate (En)", "to": "/configuration-generate",
+        "name": "generate", "to": "/configuration-generate",
         "contents": [
           { "name": "dir (En)", "to": "#dir" },
           { "name": "interval (En)", "to": "#interval" },

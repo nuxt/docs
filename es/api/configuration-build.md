@@ -64,7 +64,7 @@ module.exports = {
 The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are:
 
 1. Webpack config object
-2. Object with the folowing keys (all boolean): `dev`, `isClient`, `isServer`
+2. Object with the folowing keys (all boolean): `isDev`, `isClient`, `isServer`
 
 Example (`nuxt.config.js`):
 ```js
@@ -80,7 +80,7 @@ module.exports = {
 }
 ```
 
-If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/webpack).
+If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack).
 
 ## filenames
 
