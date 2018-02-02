@@ -3,11 +3,11 @@ title: "API: The css Property"
 description: Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every page).
 ---
 
-# The css Property
+# The css Property (En)
 
 > Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every page).
 
-In case you want to use ```sass``` make sure that you have installed ```node-sass``` and ```sass-loader``` packages. If you didn't  just
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>In case you want to use ```sass``` make sure that you have installed ```node-sass``` and ```sass-loader``` packages. If you didn't  just</p>
 
 ```sh
 npm install --save-dev node-sass sass-loader

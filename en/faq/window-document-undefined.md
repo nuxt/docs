@@ -1,13 +1,13 @@
 ---
-title: window or document undefined
-description: window or document undefined with Nuxt.js?
+title: window / document undefined
+description: window / document undefined avec Nuxt.js ?
 ---
 
-# window or document undefined?
+# window / document undefined ?
 
-This is due to the server-side rendering. If you need to specify that you want to import a resource only on the client-side, you need to use the `process.browser` variable.
+Cette erreur est due au rendu côté serveur. Si vous devez spécifier que vous souhaitez importer une ressource uniquement côté client, vous devez utiliser la variable `process.browser`.
 
-For example, in your `.vue` file:
+Par exemple, dans votre fichier `.vue` :
 
 ```js
 if (process.browser) {
@@ -15,7 +15,7 @@ if (process.browser) {
 }
 ```
 
-If you are using this library within multiple files, we recommend that you add it into your [vendor bundle](/api/configuration-build#build-vendor) via `nuxt.config.js`:
+N'oubliez pas d'ajouter la librairie dans votre [paquetage vendor](/api/configuration-build#build-vendor) dans `nuxt.config.js` :
 
 ```js
   build: {

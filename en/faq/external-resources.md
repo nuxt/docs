@@ -1,13 +1,13 @@
 ---
-title: External resources
-description: How to use external resources with Nuxt.js?
+title: Ressources externes
+description: Comment utiliser des ressources externes avec Nuxt.js ?
 ---
 
-# How to use external resources?
+# Comment utiliser des ressources externes ?
 
-## Global Settings
+## Paramètres globaux
 
-Include your resources in the `nuxt.config.js` file:
+Ajoutez vos ressources dans le fichier `nuxt.config.js` :
 
 ```js
 module.exports = {
@@ -22,9 +22,9 @@ module.exports = {
 }
 ```
 
-## Local Settings
+## Paramètres locaux
 
-Include your resources in your `.vue` file inside the `pages/` directory:
+Ajoutez vos ressources dans votre fichier `.vue` dans votre répertoire `pages/` :
 
 ```html
 <template>

@@ -1,48 +1,48 @@
 ---
-title: GitHub Pages Deployment
-description: How to deploy Nuxt.js app on GitHub Pages?
+title: Déployer sur GitHub Pages
+description: Comment déployer une application Nuxt.js sur GitHub Pages
 ---
 
-# How to deploy on GitHub Pages?
+# Comment déployer sur GitHub Pages ?
 
-Nuxt.js gives you the possibility to host your web application on any static hosting like [GitHub Pages](https://pages.github.com/) for example.
+Nuxt.js vous offre la possibilité d'héberger votre application web sur n'importe quel hébergeur statique tel que [GitHub Pages](https://pages.github.com/) par exemple.
 
-To deploy on GitHub Pages, you need to generate your static web application:
+Pour déployer sur GitHub Pages, vous devez générer votre application web de manière statique :
 
 ```bash
 npm run generate
 ```
 
-It will create a `dist` folder with everything inside ready to be deployed on GitHub Pages hosting. Branch `gh-pages` for project repository OR branch `master` for user or organization site
+Cette commande crée un répertoire `dist` contenant l'intégralité de l'application prête à être déployée sur GitHub Pages. Cela sur la branche `gh-pages` pour un dépôt de projet OU sur la branche `master` pour le site d'un utilisateur ou d'une organisation.
 
-<p class="Alert Alert--nuxt-green"><b>Info:</b> If you use a custom domain for your GitHub Pages and put `CNAME` file, it is recommended that CNAME file is put in the `static` directory. [More documentation](/guide/assets#static) about it.</p>
+<p class="Alert Alert--nuxt-green"><b>Info :</b> si vous utilisez un nom de domaine personnalisé pour GitHub Pages à l'aide d'un fichier `CNAME`, il est recommandé de placer ce fichier dans le répertoire `static`. [Plus d'informations](/guide/assets#static) à ce propos.</p>
 
-## Deploying to GitHub Pages for repository
+## Déploiement d'un dépôt sur GitHub Pages
 
-If you are creating GitHub Pages for one specific repository, and you don't have any custom domain, the URL of the page will be in this format: `http://<username>.github.io/<repository-name>`.
+Si vous avez créer un système GitHub Pages pour un dépôt spécifique et que vous n'avez pas de domaine personnalisé, l'URL de la page sera de au format suivant `http://<utilisateur>.github.io/<nom-du-depot>`.
 
-If you deployed `dist` folder without adding [router base](https://nuxtjs.org/api/configuration-router/#base), when you visit the deployed site you will find that the site is not working due to missing assets. This is because we assume that the website root will be `/`, but in this case it is `/<repository-name>`.
+Si vous déployez le dossier `dist` sans ajouter une [base du router](https://nuxtjs.org/api/configuration-router/#base), quand vous visiterez le site déployé, les ressources de celui-ci seront indisponibles. Cela est du au fait que la base du site est `/` alors que dans le cas de GitHub Pages cette base est `/<repository-name>`.
 
-To fix the issue we need to add [router base](https://nuxtjs.org/api/configuration-router/#base) configuration in `nuxt.config.js`:
+Pour régler ce problème nous devons ajouter la configuration d'une [base au router](https://nuxtjs.org/api/configuration-router/#base) dans `nuxt.config.js` :
 
 ```js
 module.exports = {
   router: {
-    base: '/<repository-name>/'
+    base: '/<nom-du-depot>/'
   }
 }
 ```
 
-This way, all generated path asset will be prefixed with `/<repository-name>/`, and the next time you deploy the code to repository GitHub Pages, the site should be working properly.
+De cette manière, tous les chemins aux ressources seront préfixés avec `/<nom-du-depot>/` et le prochain déploiement de code sur GitHub Pages ferra que votre site fonctionnera.
 
-There is a downside adding `router.base` as the default setting in `nuxt.config.js` though, when you are running `npm run dev`, it won't be working properly since the base path changes. To fix this issue, we want to create a conditional for `router.base` whether to include `<repository-name>`:
+Il existe un inconvénient à ajouter un `router.base` par défaut dans `nuxt.config.js` cependant. Quand vous lancez `npm run dev`, cela ne fonctionnera plus puisque le chemin a changé. Pour résoudre ce problème, nous allons créer une condition pour `router.base` qui incluera le `<nom-du-depot>` :
 
 ```js
 /* nuxt.config.js */
-// only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
+// ajouter seulement `router.base = '/<nom-du-depot>/'` si `DEPLOY_ENV` est `GH_PAGES`
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
-    base: '/<repository-name>/'
+    base: '/<nom-du-depot>/'
   }
 } : {}
 
@@ -51,7 +51,7 @@ module.exports = {
 }
 ```
 
-and now we just need to set `DEPLOY_ENV='GH_PAGES'` to build the site for GitHub Pages:
+et maintenant nous avons juste besoin de mettre `DEPLOY_ENV='GH_PAGES'` pour créer le site pour GitHub Pages :
 
 ```js
 /* package.json */
@@ -61,30 +61,30 @@ and now we just need to set `DEPLOY_ENV='GH_PAGES'` to build the site for GitHub
 },
 ```
 
-For Windows user, you might want to install [cross-env](https://github.com/kentcdodds/cross-env) if you are not using `bash`
+Pour les utilisateurs Windows, vous voudrez peut-être installer [cross-env](https://github.com/kentcdodds/cross-env) si vous n'utilisez pas `bash`.
 
 ```sh
 npm install cross-env --save-dev
 ```
 
-then use it this way:
+puis l'utiliser de cette manière :
 
 ```js
   "build:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
   "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate"
 ```
 
-## Command line deployment
+## Déploiement en ligne de commande
 
-You can also use [push-dir package](https://github.com/L33T-KR3W/push-dir):
+Vous pouvez également utiliser le package [push-dir](https://github.com/L33T-KR3W/push-dir):
 
-First install it via npm:
+Installez-le via npm :
 
 ```bash
 npm install push-dir --save-dev
 ```
 
-Add a `deploy` command to your `package.json` with the branch as `gh-pages` for project repository OR `master` for user or organization site.
+Ajoutez une commande `deploy` à votre `package.json` avec la branche `gh-pages` pour un dépôt de projet OU avec la branche `master` pour le site d'un utilisateur ou d'une organisation.
 
 ```js
 "scripts": {
@@ -96,7 +96,7 @@ Add a `deploy` command to your `package.json` with the branch as `gh-pages` for 
 },
 ```
 
-Then generate and deploy your static application:
+Puis générez et déployez votre application statique :
 
 ```bash
 npm run generate

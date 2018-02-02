@@ -3,12 +3,12 @@ title: "API: The loading indicator Property"
 description: Show fancy loading indicator while SPA page is loading!
 ---
 
-# The loadingIndicator Property
+# The loadingIndicator Property (En)
 
 > Show fancy loading indicator while SPA page is loading!
 
-When running nuxt.js in SPA mode, there is no content from the server side on the first page load,
-So instead of showing a blank page while the page loads, we may show a spinner.
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>When running nuxt.js in SPA mode, there is no content from the server side on the first page load,
+So instead of showing a blank page while the page loads, we may show a spinner.</p>
 
 This property can have 3 different types: `string` or `false` or `object`.
 If a string value is provided it is converted to object style.

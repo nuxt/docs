@@ -1,9 +1,9 @@
 ---
 title: nginx proxy
-description: How to use nginx as a reverse proxy
+description: Comment utiliser nginx en tant que proxy inverse ?
 ---
 
-# Using nginx as a reverse proxy
+# Utiliser nginx comme proxy inverse
 
 ```nginx
 map $sent_http_content_type $expires {
@@ -13,8 +13,8 @@ map $sent_http_content_type $expires {
 }
 
 server {
-    listen          80;             # the port nginx is listening on
-    server_name     your-domain;    # setup your domain here
+    listen          80;				# le port nginx est maintenant écouté
+    server_name     your-domain;	# votre domaine ici
 
     gzip            on;
     gzip_types      text/plain application/xml text/css application/javascript;
@@ -30,17 +30,17 @@ server {
         proxy_set_header X-Forwarded-Proto  $scheme;
         proxy_read_timeout          1m;
         proxy_connect_timeout       1m;
-        proxy_pass                          http://127.0.0.1:3000; # set the adress of the Node.js instance here
+        proxy_pass                          http://127.0.0.1:3000; # l'URL de l'instance Node.js ici
     }
 }
 ```
 
-# nginx configuration for Laravel Forge
+# Configuration nginx pour Laravel Forge
 
-Change `YOUR_WEBSITE_FOLDER` to your web site folder and `YOUR_WEBSITE_DOMAIN` to your website URL. Laravel Forge will have filled out these values for you but be sure to double check.
+Changez `YOUR_WEBSITE_FOLDER` pour le dossier de votre site web et `YOUR_WEBSITE_DOMAIN` par l'URL de celui-ci. Laravel Forge va remplir ces valeurs pour vous mais assurez vous en avec une double vérification.
 
 ```nginx
-# FORGE CONFIG (DOT NOT REMOVE!)
+# CONFIG FORGE (NE PAS SUPPRIMER !)
 include forge-conf/YOUR_WEBSITE_FOLDER/before/*;
 
 map $sent_http_content_type $expires {
@@ -64,7 +64,7 @@ server {
     gzip_types      text/plain application/xml text/css application/javascript;
     gzip_min_length 1000;
 
-    # FORGE CONFIG (DOT NOT REMOVE!)
+    # CONFIG FORGE (NE PAS SUPPRIMER !)
     include forge-conf/YOUR_WEBSITE_FOLDER/server/*;
 
     location / {
@@ -77,7 +77,7 @@ server {
         proxy_set_header X-Forwarded-Proto  $scheme;
         proxy_read_timeout          1m;
         proxy_connect_timeout       1m;
-        proxy_pass                          http://127.0.0.1:3000; # set the adress of the Node.js
+        proxy_pass                          http://127.0.0.1:3000; # l'URL de l'instance Node.js ici
     }
 
     access_log off;
@@ -88,16 +88,16 @@ server {
     }
 }
 
-# FORGE CONFIG (DOT NOT REMOVE!)
+# CONFIG FORGE (NE PAS SUPPRIMER !)
 include forge-conf/YOUR_WEBSITE_FOLDER/after/*;
 ```
 
-# Secure Laravel Forge with TLS
+# Securisation de Laravel Forge avec TLS
 
-It's best to let Laravel Forge do the editing of the `nginx.conf` for you, by clicking on Sites -> YOUR_WEBSITE_DOMAIN (SERVER_NAME) and then click on SSL and install a certificate from one of the providers. Remember to activate the certificate. Your `nginx.conf` should now look something like this:
+C'est mieux si Laravel Forge édite le fichier `nginx.conf pour vous, en cliquant sur Sites -> YOUR_WEBSITE_DOMAIN (SERVER_NAME) et en cliquant sur SSL. Installer un certificat de l'un des fournisseurs. Rappeler vous d'activer le certificat. Votre fichier `nginx.conf` devrait maintenant ressembler à ça :
 
 ```nginx
-# FORGE CONFIG (DOT NOT REMOVE!)
+# CONFIG FORGE (NE PAS SUPPRIMER !)
 include forge-conf/YOUR_WEBSITE_FOLDER/before/*;
 
 map $sent_http_content_type $expires {
@@ -111,7 +111,7 @@ server {
     listen [::]:443 ssl http2;
     server_name YOUR_WEBSITE_DOMAIN;
 
-    # FORGE SSL (DO NOT REMOVE!)
+    # CONFIG FORGE (NE PAS SUPPRIMER !)
     ssl_certificate /etc/nginx/ssl/YOUR_WEBSITE_FOLDER/258880/server.crt;
     ssl_certificate_key /etc/nginx/ssl/YOUR_WEBSITE_FOLDER/258880/server.key;
 
@@ -130,7 +130,7 @@ server {
     gzip_types      text/plain application/xml text/css application/javascript;
     gzip_min_length 1000;
 
-    # FORGE CONFIG (DOT NOT REMOVE!)
+    # CONFIG FORGE (NE PAS SUPPRIMER !)
     include forge-conf/YOUR_WEBSITE_FOLDER/server/*;
 
     location / {
@@ -143,7 +143,7 @@ server {
         proxy_redirect              off;
         proxy_read_timeout          1m;
         proxy_connect_timeout       1m;
-        proxy_pass                          http://127.0.0.1:3000; # set the adress of the Node.js
+        proxy_pass                          http://127.0.0.1:3000; # l'URL de l'instance Node.js ici
     }
 
     access_log off;
@@ -154,6 +154,6 @@ server {
     }
 }
 
-# FORGE CONFIG (DOT NOT REMOVE!)
+# CONFIG FORGE (NE PAS SUPPRIMER !)
 include forge-conf/YOUR_WEBSITE_FOLDER/after/*;
 ```

@@ -1,19 +1,19 @@
 ---
-title: "API: nuxt.render(req, res)"
-description: You can use Nuxt.js as a middleware for your Node.js server.
+title: "API : nuxt.render(req, res)"
+description: Vous pouvez utiliser Nuxt.js comme un middleware pour votre serveur Node.js.
 ---
 
 # nuxt.render(req, res)
 
-- Type: `Function`
-- Arguments:
+- Type : `Function`
+- Arguments :
   1. [Request](https://nodejs.org/api/http.html#http_class_http_incomingmessage)
   2. [Response](https://nodejs.org/api/http.html#http_class_http_serverresponse)
-- Returns: `Promise`
+- Valeur de retour : `Promise`
 
-> You can use Nuxt.js as a middleware with `nuxt.render` for your node.js server.
+> Vous pouvez utiliser Nuxt.js comme un middleware avec `nuxt.render` pour votre serveur Node.js.
 
-Example with [Express](https://github.com/expressjs/express):
+Exemple avec [Express](https://github.com/expressjs/express) :
 
 ```js
 const { Nuxt, Builder } = require('nuxt')
@@ -22,15 +22,15 @@ const app = require('express')()
 const isProd = (process.env.NODE_ENV === 'production')
 const port = process.env.PORT || 3000
 
-// We instantiate nuxt.js with the options
+// Nous instancions Nuxt.js avec les options
 const config = require('./nuxt.config.js')
 config.dev = !isProd
 const nuxt = new Nuxt(config)
 
-// Render every route with Nuxt.js
+// Faire le rendu chaque route avec Nuxt.js
 app.use(nuxt.render)
 
-// Build only in dev mode with hot-reloading
+// Faire le build seulement en mode de développement avec du rechargement à chaud
 if (config.dev) {
   new Builder(nuxt).build()
   .then(listen)
@@ -44,10 +44,10 @@ else {
 }
 
 function listen() {
-  // Listen the server
+  // Écouter le serveur
   app.listen(port, '0.0.0.0')
-  console.log('Server listening on `localhost:' + port + '`.')
+  console.log('Le serveur écoute sur `localhost:' + port + '`.')
 }
 ```
 
-<p class="Alert">It's recommended to call `nuxt.render` at the end of your middlewares since it will handle the rendering of your web application and won't call `next()`</p>
+<p class="Alert">Il est recommandé d'appeler `nuxt.render` à la fin de vos middlewares ainsi il fera le rendu de votre application web et n'appellera pas `next()`.</p>

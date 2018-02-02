@@ -3,7 +3,7 @@ title: "API: The router Property"
 description: The router property lets you customize nuxt.js router.
 ---
 
-# The router Property
+# The router Property (En)
 
 > The router property lets you customize nuxt.js router ([vue-router](https://router.vuejs.org/en/)).
 
@@ -12,7 +12,7 @@ description: The router property lets you customize nuxt.js router.
 - Type: `String`
 - Default: `'/'`
 
-The base URL of the app. For example, if the entire single page application is served under `/app/`, then base should use the value `'/app/'`.
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>The base URL of the app. For example, if the entire single page application is served under `/app/`, then base should use the value `'/app/'`.</p>
 
 Example (`nuxt.config.js`):
 ```js

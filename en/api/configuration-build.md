@@ -1,28 +1,28 @@
 ---
-title: "API: The build Property"
-description: Nuxt.js lets you customize the webpack configuration for building your web application as you want.
+title: "API : La propriété build"
+description: Nuxt.js vous permet de personnaliser la configuration webpack pour générer l'application web que vous souhaitez.
 ---
 
-# The build Property
+# La propriété build
 
-> Nuxt.js lets you customize the webpack configuration for building your web application as you want.
+> Nuxt.js vous permet de personnaliser la configuration webpack pour générer l'application web que vous souhaitez.
 
 ## analyze
 
-> Nuxt.js use [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyze) to let you visualize your bundles and how to optimize them.
+> Nuxt.js utilise [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyze) pour vous permettre de visualiser vos paquetages (« bundles ») et les optimiser.
 
-- Type: `Boolean` or `Object`
-- Default: `false`
+- Type : `Boolean` ou `Object`
+- Par défaut : `false`
 
-If an object, see available properties [here](https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin).
+Si c'est un objet, consultez les propriétés disponibles [ici](https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin).
 
-Example (`nuxt.config.js`):
+Exemple (`nuxt.config.js`) :
 
 ```js
 module.exports = {
   build: {
     analyze: true,
-    // or
+    // ou
     analyze: {
       analyzerMode: 'static'
     }
@@ -30,14 +30,14 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**Info:** you can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888).</p>
+<p class="Alert Alert--teal">**Info :** vous pouvez utiliser la commande `nuxt build --analyze` ou `nuxt build -a` pour générer votre application et lancer l'analyse du paquetage sur [http://localhost:8888](http://localhost:8888).</p>
 
 ## babel
 
-> Customize Babel configuration for JavaScript and Vue files.
+> Personnaliser la configuration Babel pour les fichiers JavaScript et Vue.
 
-- Type: `Object`
-- Default:
+- Type : `Object`
+- Par défaut :
 
   ```js
   {
@@ -45,7 +45,7 @@ module.exports = {
   }
   ```
 
-Example (`nuxt.config.js`):
+Exemple (`nuxt.config.js`) :
 
 ```js
 module.exports = {
@@ -59,35 +59,35 @@ module.exports = {
 
 ## cssSourceMap
 
-- Type: `boolean`
-- Default: `true` for dev and `false` for production.
+- Type : `boolean`
+- Par défaut : `true` en développement et `false` en production.
 
-> Enables CSS Source Map support
+> Active le support Source Map du CSS
 
 ## devMiddleware
 
-- Type: `Object`
+- Type : `Object`
 
-See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) for available options.
+Voir [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) pour les options disponibles.
 
 ## extend
 
-> Extend the webpack configuration manually for the client & server bundles.
+> Étendre la configuration webpack manuellement pour les paquetages client et serveur.
 
-- Type: `Function`
+- Type : `Function`
 
-The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are:
+`extend` est appelé deux fois, une fois pour le paquetage serveur et une fois pour le paquetage client. Les arguments de la méthode sont :
 
-1. webpack config object,
-2. object with the following keys (all boolean): `isDev`, `isClient`, `isServer`.
+1. l'objet de configuration webpack,
+2. un objet avec les propriétés suivantes (toutes booléennes): `isDev`, `isClient`, `isServer`.
 
-Example (`nuxt.config.js`):
+Exemple (`nuxt.config.js`) :
 
 ```js
 module.exports = {
   build: {
     extend (config, { isClient }) {
-      // Extend only webpack config for client-bundle
+      // Étend la configuration webpack uniquement pour le paquetage client
       if (isClient) {
         config.devtool = 'eval-source-map'
       }
@@ -96,23 +96,23 @@ module.exports = {
 }
 ```
 
-If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack).
+Si vous voulez en savoir plus à propos de notre configuration webpack par défaut, consultez [le répertoire webpack](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack).
 
 ## extractCSS
 
-> Enables Common CSS Extraction using Vue Server Renderer [guidelines](https://ssr.vuejs.org/en/css.html).
+> Activer l'extraction des CSS communs en utilisant [le guide](https://ssr.vuejs.org/en/css.html) de Vue Server Renderer.
 
-- Type: `Boolean`
-- Default: `false`
+- Type : `Boolean`
+- Par défaut : `false`
 
-Using `extract-text-webpack-plugin` to extract the CSS in the main chunk into a separate CSS file (auto injected with template), which allows the file to be individually cached. This is recommended when there is a lot of shared CSS. CSS inside async components will remain inlined as JavaScript strings and handled by vue-style-loader.
+Utiliser `extract-text-webpack-plugin` pour extraire le CSS du fragment principal dans un fichier CSS séparé (injection automatique avec template), permet au fichier d'être mis en cache de manière individuel. Cela est recommandé quand il y a beaucoup de fichiers CSS partagés. Les fichiers CSS à l'intérieur des composants asynchrones vont rester en place en tant que chaines de caractères JavaScript et prise en charge par `vue-style-loader`.
 
 ## filenames
 
-> Customize bundle filenames.
+> Personnaliser les noms des paquetages.
 
-- Type: `Object`
-- Default:
+- Type : `Object`
+- Par défaut :
 
   ```js
   {
@@ -124,7 +124,7 @@ Using `extract-text-webpack-plugin` to extract the CSS in the main chunk into a 
   }
   ```
 
-This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
+Cet exemple change les noms des fichiers fragmentés par avec leur numéro d'identification (`nuxt.config.js`) :
 
 ```js
 module.exports = {
@@ -136,22 +136,22 @@ module.exports = {
 }
 ```
 
-To understand a bit more about the use of manifest and vendor, take a look at this [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/).
+Pour comprendre un peu mieux le rôle du manifeste et des éléments vendeurs, consultez cette [documentation webpack](https://webpack.js.org/guides/code-splitting-libraries/).
 
 ## hotMiddleware
 
-- Type: `Object`
+- Type : `Object`
 
-See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for available options.
+Consultez [`webpack-hot-middleware`](https://github.com/glenjamin/webpack-hot-middleware) pour les options disponibles.
 
 ## plugins
 
-> Add webpack plugins
+> Ajouter des plugins webpack
 
-- Type: `Array`
-- Default: `[]`
+- Type : `Array`
+- Par défaut : `[]`
 
-Example (`nuxt.config.js`):
+Exemple (`nuxt.config.js`) :
 
 ```js
 const webpack = require('webpack')
@@ -169,13 +169,13 @@ module.exports = {
 
 ## postcss
 
-> Customize [PostCSS Loader](https://github.com/postcss/postcss-loader#usage) plugins.
+> Personnaliser les plugins [loaders PostCSS](https://github.com/postcss/postcss-loader#usage).
 
-- Type: `Array`, `Object` (recommended), `Function` ou `Boolean`
+- Type: `Array`, `Object` (recommandé), `Function` ou `Boolean`
 
-  **Note:** While default preset is OK and flexible enough for normal use cases, the recommended usage by [`vue-loader`](https://vue-loader.vuejs.org/en/options.html#postcss) is using `postcss.config.js` file in your project. By creating that file it will be automatically detected and this option is ignored.
+  **Note :** alors que l'usage par défaut est OK et assez flexible pour des cas d'utilisations normaux, l'utilisation recommandée par [`vue-loader`](https://vue-loader.vuejs.org/en/options.html#postcss) est d'utiliser un fichier `postcss.config.js` dans votre projet. En créant ce fichier, il sera automatiquement détecté et les options seront ignorées.
 
-- Default:
+- Par défaut :
 
   ```js
   {
@@ -187,24 +187,24 @@ module.exports = {
   }
   ```
 
-Example (`nuxt.config.js`):
+Exemple (`nuxt.config.js`) :
 
 ```js
 module.exports = {
   build: {
     postcss: {
       plugins: {
-        // Disable `postcss-url`
+      // Désactiver `postcss-url`
       'postcss-url': false
 
-      // Customize `postcss-cssnext` default options
+      // Personnaliser les options par défaut de `postcss-cssnext`
       'postcss-cssnext': {
         features: {
           customProperties: false
         }
       }
 
-      // Add some plugins
+      // Ajouter divers plugins
       'postcss-nested': {},
       'postcss-responsive-type': {}
       'postcss-hexrgba': {}
@@ -216,12 +216,12 @@ module.exports = {
 
 ## publicPath
 
-> Nuxt.js lets you upload your dist files to your CDN for maximum performances, simply set the `publicPath` to your CDN.
+> Nuxt.js vous permet de charger vos fichiers dans `dist` vers un CDN pour des performances maximales, changez simplement `publicPath` pour votre CDN.
 
 - Type: `String`
-- Default: `'/_nuxt/'`
+- Par défaut : `'/_nuxt/'`
 
-Example (`nuxt.config.js`):
+Exemple (`nuxt.config.js`) :
 
 ```js
 module.exports = {
@@ -231,33 +231,33 @@ module.exports = {
 }
 ```
 
-Then, when launching `nuxt build`, upload the content of `.nuxt/dist/` directory to your CDN and voilà!
+Quand vous lancerez `nuxt build`, le contenu sera directement chargé sur le répertoire `.nuxt/dist/` sur votre CDN !
 
 ## ssr
 
 > Creates special webpack bundle for SSR renderer.
 
-- Type: `Boolean`
-- Default: `true` for universal mode and `false` for spa mode
+- Type : `Boolean`
+- Par défaut : `true` for universal mode and `false` for spa mode
 
-This option is automatically set based on `mode` value if not provided.
+Cette option est automatiquement créée en se basant sur la valeur de  `mode` si elle n'est pas fournie.
 
 ## templates
 
-> Nuxt.js allows you provide your own templates which will be rendered based on Nuxt configuration. This feature is specially useful for using with [modules](/guide/modules).
+> Nuxt.js vous permet de fournir vos propres templates qui seront rendus en se basant sur la configuration de Nuxt. Cette fonctionnalité est particulièrement utile quand utilisée avec [modules](/guide/modules).
 
-- Type: `Array`
+- Type : `Array<Object>`
 
-Example (`nuxt.config.js`):
+Exemple (`nuxt.config.js`) :
 
 ```js
 module.exports = {
   build: {
     templates: [
       {
-        src: '~/modules/support/plugin.js', // `src` can be absolute or relative
-        dst: 'support.js', // `dst` is relative to project `.nuxt` dir
-        options: { // Options are provided to template as `options` key
+        src: '~/modules/support/plugin.js', // `src` peut être absolue ou relatif
+        dst: 'support.js', // `dst` est relatif au dossier de `.nuxt`
+        options: { // Les options sont fournies au templases par la propriété `options`
           live_chat: false
         }
       }
@@ -266,15 +266,15 @@ module.exports = {
 }
 ```
 
-Templates are rendered using [`lodash.template`](https://lodash.com/docs/#template) you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
+Les templates sont rendus en utilisant [`lodash.template`](https://lodash.com/docs/#template). Vous pouvez en apprendre plus à propos de leur utilisation [ici](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
 
 ## vendor
 
-> Nuxt.js lets you add modules inside the `vendor.bundle.js` file to reduce the size of the application bundle. This is especially helpful when using external modules (like `axios` for example).
+> Nuxt.js vous permet d'ajouter des modules à l'intérieur des fichiers `vendor.bundle.js` pour réduire la taille des paquetages d'application. Cela est particulièrement utile avec l'utilisation de modules externe (comme `axios` par exemple).
 
-- Type: `Array`
+- Type: `Array<String>`
 
-To add a module/file inside the vendor bundle, add the `build.vendor` key inside `nuxt.config.js`:
+Pour ajouter un module / fichier à l'intérieur du paquetage vendeur, ajouter la propriété `build.vendor` à l'intérieur de `nuxt.config.js` :
 
 ```js
 module.exports = {
@@ -284,7 +284,7 @@ module.exports = {
 }
 ```
 
-You can also give a path to a file, like a custom lib you created:
+Vous pouvez aussi donner un chemin vers un fichier, comme une bibliothèque personnalisée que vous avez créée :
 
 ```js
 module.exports = {
@@ -299,7 +299,7 @@ module.exports = {
 
 ## watch
 
-> You can provide your custom files to watch and regenerate after changes. This feature is specially useful for using with [modules](/guide/modules).
+> Vous pouvez fournir des fichiers personnalisés à observer et à régénérer après chaque changement. Cette fonctionnalité est spécialement utile quand elle est utilisée avec [modules](/guide/modules).
 
 - Type: `Array<String>`
 

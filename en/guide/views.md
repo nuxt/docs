@@ -1,19 +1,19 @@
 ---
-title: Views
-description: The Views section describes all you need to configure data and views for a specific route in your Nuxt.js Application (Document, Layouts, Pages and HTML Head).
+title: Vues
+description: La section des vues décrit tout ce dont vous avez besoin pour configurer les données et les vues pour une route spécifique dans votre application Nuxt.js (document, mises en page, pages et entête HTML).
 ---
 
-> The Views section describes all you need to configure data and views for a specific route in your Nuxt.js Application (Document, Layouts, Pages and HTML Head).
+> La section des vues décrit tout ce dont vous avez besoin pour configurer les données et les vues pour une route spécifique dans votre application Nuxt.js (document, mises en page, pages et entête HTML).
 
 ![nuxt-views-schema](/nuxt-views-schema.png)
 
 ## Document
 
-> You can customise the main document with Nuxt.js.
+> Vous pouvez personnaliser le document principal avec Nuxt.js.
 
-To extend the HTML template, create `app.html` at the root of your project.
+Pour étendre le modèle HTML, créez un fichier `app.html` à la racine de votre projet.
 
-The default template is:
+Le modèle par défaut est le suivant :
 
 ```html
 <!DOCTYPE html>
@@ -27,11 +27,11 @@ The default template is:
 </html>
 ```
 
-One example is to add conditional CSS classes for IE:
+Un exemple pour ajouter des classes CSS conditionnelles pour IE :
 
 ```html
 <!DOCTYPE html>
-<!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
+<!--[if IE 9]><html lang="fr-FR" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
   <head>
     {{ HEAD }}
@@ -42,17 +42,17 @@ One example is to add conditional CSS classes for IE:
 </html>
 ```
 
-## Layouts
+## Mises en page
 
-Nuxt.js lets you extend the main layout or create custom layouts by adding them in the `layouts` directory.
+Nuxt.js vous permet d'étendre la mise en page principale ou de créer des mises en page personnalisées en les ajoutant dans le répertoire `layouts`.
 
-### Default Layout
+### Mise en page par défaut
 
-You can extend the main layout by adding a `layouts/default.vue` file.
+Vous pouvez étendre la mise en page principale en ajoutant un fichier `layouts/default.vue`.
 
-*Make sure to add the `<nuxt/>` component when creating a layout to display the page component.*
+*Assurez-vous d'ajouter le composant `<nuxt/>` lors de la création d'une mise en page afin d'afficher le composant de la page.*
 
-The default layout source code is:
+Le code source de mise en page par défaut est :
 
 ```html
 <template>
@@ -60,51 +60,51 @@ The default layout source code is:
 </template>
 ```
 
-### Error Page
+### Page d'erreur
 
-You can customize the error page by adding a `layouts/error.vue` file.
+Vous pouvez personnaliser la page d'erreur en ajoutant un fichier `layouts/error.vue`.
 
-This layout is special, since you should _not_ include `<nuxt/>` inside its template. You must see this layout as a component displayed when an error occurs (`404`, `500`, etc.).
+Cette mise en page est spéciale car vous ne devez pas inclure `<nuxt />` dans son modèle. Vous devez voir cette mise en page en tant que composant affiché lorsqu'une erreur se produit (404, 500, etc.).
 
-The default error page source code is [available on GitHub](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
+Le code source de la page d'erreur par défaut est [disponible sur GitHub](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
 
-Example of a custom error page in `layouts/error.vue`:
+Exemple d'une page d'erreur personnalisée à l'aide de `layouts/error.vue`:
 
 ```html
 <template>
   <div class="container">
-    <h1 v-if="error.statusCode === 404">Page not found</h1>
-    <h1 v-else>An error occurred</h1>
-    <nuxt-link to="/">Home page</nuxt-link>
+    <h1 v-if="error.statusCode === 404">Page non trouvée</h1>
+    <h1 v-else>Une erreur s'est produite</h1>
+    <nuxt-link to="/">Accueil</nuxt-link>
   </div>
 </template>
 
 <script>
 export default {
   props: ['error'],
-  layout: 'blog' // you can set a custom layout for the error page
+  layout: 'blog' // vous pouvez définir une mise en page personnalisée pour la page d'erreur
 }
 </script>
 ```
 
-### Custom Layout
+### Mise en page personnalisée
 
-Every file (*first level*) in the `layouts` directory will create a custom layout accessible with the `layout` property in the page component.
+Chaque fichier (*premier niveau*) dans le répertoire `layouts` créera une mise en page personnalisée accessible via la propriété `layout` dans le composant de la page.
 
-*Make sure to add the `<nuxt/>` component when creating a layout to display the page component.*
+*Assurez-vous d'ajouter le composant `<nuxt/>` lors de la création d'une mise en page afin d'afficher le composant de la page.*
 
-Example of `layouts/blog.vue`:
+Exemple avec `layouts/blog.vue` :
 
 ```html
 <template>
   <div>
-    <div>My blog navigation bar here</div>
+    <div>Ma navigation de blog est ici</div>
     <nuxt/>
   </div>
 </template>
 ```
 
-And then in `pages/posts.vue`, you can tell Nuxt.js to use your custom layout:
+Puis dans `pages/posts.vue`, vous pouvez spécifier à Nuxt.js d'utiliser votre mise en page personnalisée :
 
 ```html
 <script>
@@ -114,32 +114,32 @@ export default {
 </script>
 ```
 
-More information about the `layout` property: [API Pages `layout`](/api/pages-layout)
+Pour plus d'informations, consultez la configuration de l'API à propos de [La propriété `layout`](/api/pages-layout).
 
-Check the [demonstration video](https://www.youtube.com/watch?v=YOKnSTp7d38) to see it in action.
+Regardez la [vidéo de démonstration](https://www.youtube.com/watch?v=YOKnSTp7d38) pour la voir en action (EN).
 
 ## Pages
 
-Every Page component is a Vue component, but Nuxt.js adds special keys to make the development of your universal application as easy as possible.
+Chaque composant de page est un composant Vue, mais Nuxt.js ajoute des clés spéciales pour rendre le développement de votre application universelle le plus simple possible.
 
 ```html
 <template>
-  <h1 class="red">Hello {{ name }}!</h1>
+  <h1 class="red">Hello {{ name }} !</h1>
 </template>
 
 <script>
 export default {
   asyncData (context) {
-    // called every time before loading the component
+    // appelé avant le chargement du composant
     return { name: 'World' }
   },
   fetch () {
-    // The `fetch` method is used to fill the store before rendering the page
+    // La méthode `fetch` est utilisée pour peupler le store avant d'effectuer le rendu de la page
   },
   head () {
-    // Set Meta Tags for this Page
+    // Définit les balises meta pour cette page
   },
-  // and more functionality to discover
+  // et plus de fonctionnalités à découvrir
   ...
 }
 </script>
@@ -151,39 +151,39 @@ export default {
 </style>
 ```
 
-| Attribute | Description |
-|-----------|-------------|
-| `asyncData` | The most important key. It can be asynchronous and receives the context as argument. Please read the [async data documentation](/guide/async-data) to learn how it works. |
-| `fetch` | Used to fill the store before rendering the page. It's like the `data` method, except it doesn't set the component data. See the [API Pages `fetch` documentation](/api/pages-fetch). |
-| `head` | Set specific `<meta>` tags for the current page. See [API Pages `head` documentation](/api/pages-head). |
-| `layout` | Specify a layout defined in the `layouts` directory. See [API Pages `layout` documentation](/api/pages-layout). |
-| `transition` | Set a specific transition for the page. See [API Pages `transition`](/api/pages-transition). |
-| `scrollToTop` | Boolean (default: `false`). Specify if you want the page to scroll to the top before rendering the page. It's used for [nested routes](/guide/routing#nested-routes). |
-| `validate` | Validator function for [dynamic routes](/guide/routing#dynamic-routes). |
-| `middleware` | Set middleware for this page. The middleware will be called before rendering the page. See routes [middleware](/guide/routing#middleware). |
+| Attribut      | Description                                                                                                                                                                                                   |
+|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `asyncData`   | L'attribut le plus important. Il peut être asynchrone et reçoit le contexte comme argument, lisez la documentation sur les [Données asynchrones](/guide/async-data) pour savoir comment il fonctionne.        |
+| `fetch`       | Utilisé pour peupler le store avant de faire le rendu de la page, équivalent à la méthode `data` sauf qu'il ne peuple pas le composant `data`. Voir [la partie Pages de l'API sur `fetch`](/api/pages-fetch). |
+| `head`        | Défini des balises meta spécifiques pour la page en cours, voir [la partie Pages de l'API sur `head`](/api/pages-head).                                                                                       |
+| `layout`      | Défini une mise en page existantes dans le répertoire `layouts`, voir [la partie Pages de l'API sur `layout`](/api/pages-layout).                                                                             |
+| `transition`  | Défini une transition spécifique pour une page, voir [la partie Pages de l'API sur `transition`](/api/pages-transition).                                                                                      |
+| `scrollToTop` | Booléen, par défaut: `false`. Indiquez si vous souhaitez que la position se déplace vers le haut avant d'afficher la page, est utilisé pour les [Routes imbriquées](/guide/routing#routes-imbriqu-es).        |
+| `validate`    | Fonction de validation pour les [Routes dynamiques](/guide/routing#routes-dynamiques).                                                                                                                        |
+| `middleware`  | Défini un middleware pour cette page, ce middleware sera exécuté avant d'effectuer le rendu de la page, voir le [Middleware dans le Routage](/guide/routing#middleware).                                      |
 
-More information about the pages properties usage: [API Pages](/api)
+Pour plus d'informations à propos de l'utilisation des attributs de pages, consultez [la partie Pages de l'API](/api)
 
-## HTML Head
+## Entête HTML
 
-Nuxt.js uses [vue-meta](https://github.com/declandewet/vue-meta) to update the `headers` and `html attributes` of your application.
+Nuxt.js utilise [vue-meta](https://github.com/declandewet/vue-meta) pour mettre à jour les `headers` et les `html attributes` de votre application.
 
-Nuxt.js configures `vue-meta` with these options:
+Nuxt.js configure `vue-meta` avec les options suivantes :
 
 ```js
 {
-  keyName: 'head', // the component option name that vue-meta looks for meta info on.
-  attribute: 'data-n-head', // the attribute name vue-meta adds to the tags it observes
-  ssrAttribute: 'data-n-head-ssr', // the attribute name that lets vue-meta know that meta info has already been server-rendered
-  tagIDKeyName: 'hid' // the property name that vue-meta uses to determine whether to overwrite or append a tag
+  keyName: 'head', // le nom de l'option où vue-meta va chercher les informations.
+  attribute: 'data-n-head', // l'attribut que vue-meta ajoute aux balises observées
+  ssrAttribute: 'data-n-head-ssr', // le nom de l'attribut qui permet à vue-meta de savoir que la meta information a déjà été générée par le serveur
+  tagIDKeyName: 'hid' // Le nom de la propriété que vue-meta utilise pour déterminer s'il faut écraser ou ajouter une balise
 }
 ```
 
-### Default Meta Tags
+### Balises meta par défaut
 
-Nuxt.js lets you define all default `<meta>` tags for your application inside `nuxt.config.js`. Define them using the same `head` property:
+Nuxt.js vous permet de définir tous les meta par défaut de votre application dans `nuxt.config.js`, en utilisant la même propriété `head` :
 
-Example of a custom viewport with a custom Google font:
+Exemple d'un viewport spécifique et d'une police Google personnalisée :
 
 ```js
 head: {
@@ -197,12 +197,12 @@ head: {
 }
 ```
 
-To learn more about the options available for `head`, take a look at [vue-meta documentation](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
+Pour connaitre la liste des options que vous pouvez donner à `head`, jeter un œil à la [documentation vue-meta](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
 
 More information about the `head` method: [API Configuration `head`](/api/configuration-head).
 
-### Custom Meta Tags for a Page
+### Balises meta personnalisées pour une page
 
-More information about the head method: [API Pages `head`](/api/pages-head).
+Plus d'informations à propos de la méthode `head` dans [la partie Configuration de l'API sur `head`](/api/pages-head).
 
-<p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the `hid` key. [Learn more](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+<p class="Alert">Afin d'éviter toutes duplications lors de l'utilisation d'un composant enfant, donnez un identifiant unique à l'aide de l'attribut `hid`. Pour [en savoir plus](https://github.com/declandewet/vue-meta#lists-of-tags).</p>

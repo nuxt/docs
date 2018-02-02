@@ -3,7 +3,7 @@ title: "API: The mode Property"
 description: Change default nuxt mode
 ---
 
-# The mode Property
+# The mode Property (En)
 - Type: `string`
   - Default: `universal`
   - Possible values:
@@ -12,4 +12,4 @@ description: Change default nuxt mode
 
 > You can use this option to change default nuxt mode for your project using `nuxt.config.js`
 
-
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

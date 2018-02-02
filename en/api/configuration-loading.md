@@ -3,7 +3,7 @@ title: "API: The loading Property"
 description: Nuxt.js uses its own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
 ---
 
-# The loading Property
+# The loading Property (En)
 
 - Type: `Boolean` or `Object` or `String`
 
@@ -13,7 +13,7 @@ description: Nuxt.js uses its own component to show a progress bar between the r
 
 - Type: `Boolean`
 
-If you don't want to display the progress bar between the routes, simply add `loading: false` in your `nuxt.config.js` file:
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>If you don't want to display the progress bar between the routes, simply add `loading: false` in your `nuxt.config.js` file:</p>
 
 ```js
 module.exports = {

@@ -1,13 +1,13 @@
 ---
 title: JSX
-description: How to use JSX with Nuxt.js?
+description: Comment utiliser JSX avec Nuxt.js ?
 ---
 
-# How to use JSX?
+# Comment utiliser JSX ?
 
-Nuxt.js use the official [babel-preset-vue-app](https://github.com/vuejs/babel-preset-vue-app) for babel default configuration, so you can use JSX in your components.
+Nuxt.js utilise le preset [babel-preset-vue-app](https://github.com/vuejs/babel-preset-vue-app) officiel comme configuration par défaut afin de pouvoir utiliser JSX dans vos composants.
 
-You can now use JSX in your `render` method of your components:
+Vous pouvez utiliser JSX dans la méthode `render` de vos composants :
 
 ```html
 <script>
@@ -22,6 +22,6 @@ export default {
 </script>
 ```
 
-<p class="Alert Alert--info">Aliasing `createElement` to `h` is a common convention you’ll see in the Vue ecosystem but is actually optional for JSX since it [automatically injects](https://github.com/vuejs/babel-plugin-transform-vue-jsx#h-auto-injection) `const h = this.$createElement` in any method and getter (not functions or arrow functions) declared in ES2015 syntax that has JSX so you can drop the (h) parameter.</p>
+<p class="Alert Alert--info">Créer un alias `h` pour `createElement` est une convention commune que vous rencontrerez dans l'écosystème Vue mais n'est pas nécessaire pour JSX depuis qu'il [injecte automatiquement](https://github.com/vuejs/babel-plugin-transform-vue-jsx#h-auto-injection) `const h = this.$createElement` dans toutes les méthodes et les accesseurs (ce n'est pas le cas pour les fonctions et les fonctions fléchées) déclarées avec la syntaxe ES2015 supportant JSX. Vous pouvez alors laisser tomber le paramètre `h`.</p>
 
-You can learn more how to use it in the [JSX section](https://vuejs.org/v2/guide/render-function.html#JSX) of the Vue.js documentation.
+Vous pouvez en savoir plus dans la [section JSX](https://vuejs.org/v2/guide/render-function.html#JSX) de la documentation de Vue.js.

@@ -27,7 +27,7 @@ Cette option vous permet de définir le mode `development` ou le mode `productio
 
 ### env
 
-Cette option vous permet de définir des variables d'environnements disponible côté client et côté serveur.
+Cette option vous permet de définir des variables d'environnements disponibles côté client et côté serveur.
 
 [Consultez la documentation à propos de `env`](/api/configuration-env)
 

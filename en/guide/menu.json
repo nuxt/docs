@@ -5,79 +5,85 @@
       {
         "to": "", "name": "Introduction",
         "contents": [
-          { "to": "#what-is-nuxt-js-", "name": "What is Nuxt.js ?" },
-          { "to": "#how-it-works", "name": "How it Works" },
-          { "to": "#features", "name": "Features" },
-          { "to": "#schema", "name": "Schema" },
-          { "to": "#server-rendered-universal-ssr-", "name": "Server Rendered" },
-          { "to": "#single-page-applications-spa-", "name": "Single Page Application" },
-          { "to": "#static-generated-pre-rendering-", "name": "Static Generated" }
+          { "to": "#nuxt-js-qu-est-ce-que-c-est-", "name": "Nuxt.js, qu’est-ce que c’est ?" },
+          { "to": "#comment-a-marche", "name": "Comment ça marche" },
+          { "to": "#fonctionnalit-s", "name": "Fonctionnalités" },
+          { "to": "#sch-ma", "name": "Schéma" },
+          { "to": "#rendu-c-t-serveur-ssr-universel-", "name": "Rendu côté serveur" },
+          { "to": "#g-n-ration-statique-pr-rendu-", "name": "Génération statique" }
         ]
       },
-      { "to": "/contribution-guide", "name": "Contribution Guide" },
-      { "to": "/release-notes", "name": "Release Notes" }
+      { "to": "/contribution-guide", "name": "Guide de contribution",
+        "contents": [
+          { "to": "#rapports-de-probl-me", "name": "Rapports de problème" },
+          { "to": "#propositions-de-fusion", "name": "Propositions de fusion" }
+        ] },
+      { "to": "/release-notes", "name": "Notes de versions" }
     ]
   },
   {
-    "title": "Getting Started",
+    "title": "Pour commencer",
     "links": [
       {
         "to": "/installation", "name": "Installation",
         "contents": [
-          { "to": "#using-nuxt-js-starter-template", "name": "Using Nuxt.js starter template" },
-          { "to": "#starting-from-scratch", "name": "Starting from scratch" }
+          { "to": "#utiliser-le-template-de-base-de-nuxt-js", "name": "Utiliser le template de base de Nuxt.js" },
+          { "to": "#commencer-depuis-z-ro", "name": "Commencer depuis zéro" }
         ]
       },
       {
-        "to": "/directory-structure", "name": "Directory Structure",
+        "to": "/directory-structure", "name": "Structure des répertoires",
         "contents": [
-          { "to": "#directories", "name": "Directories" },
-          { "to": "#aliases", "name": "Aliases" }
+          { "to": "#r-pertoires", "name": "Répertoires" },
+          { "to": "#alias", "name": "Alias" }
         ]
       },
-      { "to": "/configuration", "name": "Configuration" },
-      {
-        "to": "/routing", "name": "Routing",
+      { "to": "/configuration", "name": "Configuration",
         "contents": [
-          { "to": "#basic-routes", "name": "Basic Routes" },
-          { "to": "#dynamic-routes", "name": "Dynamic Routes" },
-          { "to": "#nested-routes", "name": "Nested Routes" },
-          { "to": "#dynamic-nested-routes", "name": "Dynamic Nested Routes" },
+          { "to": "#options", "name": "Options" }
+        ] },
+      {
+        "to": "/routing", "name": "Routage",
+        "contents": [
+          { "to": "#routes-basiques", "name": "Routes basiques" },
+          { "to": "#routes-dynamiques", "name": "Routes dynamiques" },
+          { "to": "#routes-imbriqu-es", "name": "Routes imbriquées" },
+          { "to": "#routes-dynamiques-imbriqu-es", "name": "Routes dynamiques imbriquées" },
           { "to": "#transitions", "name": "Transitions" },
           { "to": "#middleware", "name": "Middleware" }
         ]
       },
       {
-        "to": "/views", "name": "Views",
+        "to": "/views", "name": "Vues",
         "contents": [
           { "to": "#document", "name": "Document" },
-          { "to": "#layouts", "name": "Layouts" },
+          { "to": "#mises-en-page", "name": "Mises-en-page" },
           { "to": "#pages", "name": "Pages" },
-          { "to": "#html-head", "name": "HTML Head" }
+          { "to": "#ent-te-html", "name": "Entête HTML" }
         ]
       },
       {
-        "to": "/async-data", "name": "Async Data",
+        "to": "/async-data", "name": "Données asynchrones",
         "contents": [
-          { "to": "#the-data-method", "name": "The asyncData Method" },
-          { "to": "#the-context", "name": "The Context" },
-          { "to": "#handling-errors", "name": "Handling Errors" }
+          { "to": "#la-m-thode-asyncdata", "name": "La méthode asyncData" },
+          { "to": "#le-contexte", "name": "Le contexte" },
+          { "to": "#gestion-des-erreurs", "name": "Gestion des erreurs" }
         ]
       },
       {
-        "to": "/assets", "name": "Assets",
+        "to": "/assets", "name": "Ressources",
         "contents": [
-          { "to": "#webpacked", "name": "Webpacked" },
-          { "to": "#static", "name": "Static" }
+          { "to": "#avec-webpack", "name": "Avec webpack" },
+          { "to": "#avec-des-fichiers-statiques", "name": "Avec des fichiers statiques" }
         ]
       },
       {
         "to": "/plugins", "name": "Plugins",
         "contents": [
-          { "to": "#external-packages", "name": "External Packages" },
-          { "to": "#vue-plugins", "name": "Vue Plugins" },
-          { "to": "#inject-in-root-amp-context", "name": "Inject in $root & context" },
-          { "to": "#client-side-only", "name": "Client-side only" }
+          { "to": "#modules-externes", "name": "Modules externes" },
+          { "to": "#plugins-vue", "name": "Plugins Vue" },
+          { "to": "#injection-dans-root-et-context", "name": "Injection dans $root et context" },
+          { "to": "#c-t-client-uniquement", "name": "Côté client uniquement" }
         ]
       },
       {
@@ -90,27 +96,27 @@
         ]
       },
       {
-        "to": "/vuex-store", "name": "Vuex Store",
+        "to": "/vuex-store", "name": "Store Vuex",
         "contents": [
-          { "to": "#activate-the-store", "name": "Activate the Store" },
-          { "to": "#classic-mode", "name": "Classic mode" },
-          { "to": "#modules-mode", "name": "Modules mode" },
-          { "to": "#the-fetch-method", "name": "The fetch Method" },
-          { "to": "#the-nuxtserverinit-action", "name": "The nuxtServerInit Action" }
+          { "to": "#activer-le-store", "name": "Activer le store" },
+          { "to": "#mode-classique", "name": "Mode classique" },
+          { "to": "#mode-modules", "name": "Mode modules" },
+          { "to": "#la-m-thode-fetch", "name": "La méthode fetch" },
+          { "to": "#l-39-action-nuxtserverinit", "name": "L'action nuxtServerInit" }
         ]
       },
       {
-        "to": "/commands", "name": "Commands and Deployment",
+        "to": "/commands", "name": "Commandes et déploiement",
         "contents": [
-          { "to": "#list-of-commands", "name": "List of Commands" },
-          { "to": "#development-environment", "name": "Development Enviroment" },
-          { "to": "#production-deployment", "name": "Production Deployment" }
+          { "to": "#liste-des-commandes", "name": "Liste des commandes" },
+          { "to": "#environnement-de-d-veloppement", "name": "Environnement de développement" },
+          { "to": "#d-ploiement-en-production", "name": "Déploiement en production" }
         ]
       },
       {
-        "to": "/development-tools", "name": "Development Tools",
+        "to": "/development-tools", "name": "Outils de développement",
         "contents": [
-          { "to": "#end-to-end-testing", "name": "End-to-End Testing" },
+          { "to": "#tests-de-bout-en-bout", "name": "Tests de bout en bout" },
           { "to": "#eslint", "name": "ESLint" }
         ]
       }

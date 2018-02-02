@@ -3,12 +3,12 @@ title: "API: The plugins Property"
 description: Use vue.js plugins with the plugins option of nuxt.js.
 ---
 
-# The plugins Property
+# The plugins Property (En)
 
 - Type: `Array`
   - Items: `String` or `Object`
 
-If the item is an object, the properties are:
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>If the item is an object, the properties are:</p>
 
   - src: `String` (path of the file)
   - ssr: `Boolean` (default to `true`) *If false, the file will be included only on the client-side.*

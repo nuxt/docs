@@ -1,39 +1,39 @@
 ---
-title: Google Analytics Integration
-description: How to use Google Analytics?
+title: Intégration de Google Analytics
+description: Comment intégrer Google Analytics ?
 ---
 
-# How to use Google Analytics?
+# Comment intégrer Google Analytics ?
 
-First, please check the [official Google Analytics module](https://github.com/nuxt-community/analytics-module) for Nuxt.js.
+Tout d'abord consultez le [module officiel Google Analytics](https://github.com/nuxt-community/analytics-module) pour Nuxt.js.
 
-Ortherwise, to use [Google Analytics](https://www.google.com/analytics/) with your Nuxt.js application, we recommend to create a file `plugins/ga.js`:
+Ensuite, pour utiliser [Google Analytics](https://www.google.com/analytics/) avec votre application Nuxt.js, nous recommandons de créer un plugin `plugins/ga.js` :
 
 ```js
 /* eslint-disable */
 
 export default ({ app }) => {
   /*
-  ** Only run on client-side and only in production mode
+  ** Seulement exécuté côté client et en mode production
   */
   if (process.env.NODE_ENV !== 'production') return
   /*
-  ** Include Google Analytics Script
+  ** Inclusion du script Google Analytics
   */
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   /*
-  ** Set the current page
+  ** Affecter la page courante
   */
   ga('create', 'UA-XXXXXXXX-X', 'auto')
   /*
-  ** Every time the route changes (fired on initialization too)
+  ** Chaque fois que la route change
   */
   app.router.afterEach((to, from) => {
     /*
-    ** We tell Google Analytics to add a `pageview`
+    ** Nous expliquons à Google Analytics d'ajouter une `pageview`
     */
     ga('set', 'page', to.fullPath)
     ga('send', 'pageview')
@@ -41,9 +41,9 @@ export default ({ app }) => {
 }
 ```
 
-> Replace `UA-XXXXXXXX-X` by your Google Analytics tracking ID.
+> Remplacez `UA-XXXXXXXX-X` par votre ID de suivi Google Analytics.
 
-Then, we tell Nuxt.js to import it in our main application:
+Puis nous expliquons à Nuxt.js d'importer le plugin dans notre application pricinpale :
 
 `nuxt.config.js`
 
@@ -55,6 +55,6 @@ module.exports = {
 }
 ```
 
-Voilà, Google Analytics is integrated into your Nuxt.js application and will track every page view!
+Voilà, Google Analytics est intégré dans notre application Nuxt.js et suivra chaque page vue !
 
-<p class="Alert Alert--nuxt-green"><b>Info:</b> you can use this method for any other tracking service.</p>
+<p class="Alert Alert--nuxt-green"><b>Info :</b> cette méthode est valable pour n'importe quel autre service de suivi.</p>

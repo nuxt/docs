@@ -1,13 +1,13 @@
 ---
-title: Routing
-description: Nuxt.js use the file-system to generate the routes of your web applications.
+title: Routage
+description: Nuxt.js utilise le système de fichiers pour générer les routes de votre application web.
 ---
 
-> Nuxt.js automatically generates the [vue-router](https://github.com/vuejs/vue-router) configuration based on your file tree of Vue files inside the `pages` directory.
+> Nuxt.js génère automatiquement la configuration pour [vue-router](https://github.com/vuejs/vue-router) en fonction de votre arborescence de fichiers Vue se trouvant au sein du répertoire `pages`.
 
-## Basic Routes
+## Routes basiques
 
-This file tree:
+Cette arborescence :
 
 ```bash
 pages/
@@ -17,7 +17,7 @@ pages/
 --| index.vue
 ```
 
-will automatically generate:
+génèrera automatiquement :
 
 ```js
 router: {
@@ -41,11 +41,11 @@ router: {
 }
 ```
 
-## Dynamic Routes
+## Routes dynamiques
 
-To define a dynamic route with a param, you need to define a .vue file OR a directory **prefixed by an underscore**.
+Pour définir une route dynamique à l'aide d'un paramètre, vous devez définir un fichier `.vue` OU un répertoire **préfixé par un souligné (`_`)**.
 
-This file tree:
+Cette arborescence :
 
 ```bash
 pages/
@@ -57,7 +57,7 @@ pages/
 --| index.vue
 ```
 
-will automatically generate:
+génèrera automatiquement :
 
 ```js
 router: {
@@ -86,38 +86,38 @@ router: {
 }
 ```
 
-As you can see the route named `users-id` has the path `:id?` which makes it optional, if you want to make it required, create an `index.vue` file in the `users/_id` directory.
+Comme vous pouvez le voir, la route nommée `users-id` contient le chemin `:id?` ce qui le rend optionnel. Si vous voulez le rendre obligatoire, créez un fichier `index.vue` dans le dossier `users/_id`.
 
-<p class="Alert Alert--info"><b>Warning:</b> dynamic routes are ignored by the `generate` command: [API Configuration generate](/api/configuration-generate#routes)</p>
+<p class="Alert Alert--info"><b>Attention :</b> les routes dynamiques sont ignorées par la commande `generate`, consultez la configuration de l'API à propos de [La propriété `generate`](/api/configuration-generate#routes)</p>
 
-### Validate Route Params
+### Validation des paramètres de route
 
-Nuxt.js lets you define a validator method inside your dynamic route component.
+Nuxt.js vous permet de définir une méthode de validation dans votre composant de routage dynamique.
 
-In this example: `pages/users/_id.vue`
+Par exemple : `pages/users/_id.vue`
 
 ```js
 export default {
   validate ({ params }) {
-    // Must be a number
+    // Doit être un nombre
     return /^\d+$/.test(params.id)
   }
 }
 ```
 
-If the validate method does not return `true`, Nuxt.js will automatically load the 404 error page.
+Si la méthode de validation ne renvoie pas `true`, Nuxt.js chargera automatiquement la page d'erreur 404.
 
-More information about the validate method: [API Pages validate](/api/pages-validate)
+Pour plus d'informations à propos de la méthode de validation, consultez [la partie Pages de l'API pour La méthode `validate`](/api/pages-validate)
 
-## Nested Routes
+## Routes imbriquées
 
-Nuxt.js lets you create nested route by using the children routes of vue-router.
+Nuxt.js vous permet de créer des routes imbriquées en utilisant les routes enfants de vue-router.
 
-To define the parent component of a nested route, you need to create a Vue file with the **same name as the directory** which contain your children views.
+Pour définir le composant parent d'une route imbriquée, vous devez créer un fichier Vue avec le **même nom que le répertoire** qui contient les vues enfants.
 
-<p class="Alert Alert--info"><b>Warning:</b> don't forget to write `<nuxt-child/>` inside the parent component (<code>.vue</code> file).</p>
+<p class="Alert Alert--info"><b>Attention :</b> n'oubliez pas d'écrire `<nuxt-child/>` au sein du composant parent (fichier <code>.vue</code>).</p>
 
-This file tree:
+Cette arborescence :
 
 ```bash
 pages/
@@ -127,7 +127,7 @@ pages/
 --| users.vue
 ```
 
-will automatically generate:
+génèrera automatiquement :
 
 ```js
 router: {
@@ -152,11 +152,11 @@ router: {
 }
 ```
 
-## Dynamic Nested Routes
+## Routes dynamiques imbriquées
 
-This scenario should not often happen, but it is possible with Nuxt.js: having dynamic children inside dynamic parents.
+Ce scénario ne devrait pas arriver souvent, mais il est possible avec Nuxt.js d'avoir des routes dynamiques enfants dans des routes dynamiques parentes.
 
-This file tree:
+Cette arborescence :
 
 ```bash
 pages/
@@ -170,7 +170,7 @@ pages/
 --| index.vue
 ```
 
-will automatically generate:
+génèrera automatiquement :
 
 ```js
 router: {
@@ -211,28 +211,32 @@ router: {
 }
 ```
 
-### SPA fallback
-You can enable SPA fallbacks for dynamic routes too. Nuxt.js will output an extra file that is the same as the index.html that would be used in `mode: 'spa'`. Most static hosting services can be configured to to use the SPA template if no file matches. It won't include the `head` info or any HTML, but it will still resolve and load the data from the API.
+### Alternative pour application monopage
 
-We enable this in our `nuxt.config.js` file:
+Vous pouvez activer l'alternative pour application monopage pour les routes dynamiques aussi. Nuxt.js va générer un fichier supplémentaire identique à `index.html` qui pourra être utilisé en `mode: 'spa'`. La plupard des services d'hébergement peuvent être configurés pour utiliser le template d'application monopage si aucun fichier ne concorde. Les informations de `head` ou HTML ne seront pas inclus mais les données seront toujours résolues et chargées depuis l'API.
+
+Nous pouvons activer cela dans notre fichier `nuxt.config.js` :
 
 ``` js
 module.exports = {
   generate: {
-    fallback: true, // if you want to use '404.html'
-    fallback: 'my-fallback/file.html' // if your hosting needs a custom location
+    fallback: true, // si vous souhaitez utiliser un fichier '404.html'
+    fallback: 'my-fallback/file.html' // si votre hébergement nécessite une localisation personnalisée
   }
 }
 ```
 
-#### Implementation for Surge
-Surge [can handle](https://surge.sh/help/adding-a-custom-404-not-found-page) both `200.html` and `404.html`. `generate.fallback` is set to `200.html` by default, so no need to change it.
+#### Implémentation pour Surge
 
-#### Implementation for GitHub Pages and Netlify
-GitHub Pages and Netlify recognize the `404.html` file automatically, so setting `generate.fallback` to `true` is all we have to do!
+Surge [peut gérer](https://surge.sh/help/adding-a-custom-404-not-found-page) aussi bien les fichiers `200.html` que `404.html`. `generate.fallback` est mis à `200.html` par défaut, donc vous devez changer cela.
 
-#### Implementation for Firebase Hosting
-To use on Firebase Hosting, configure `generate.fallback` to `true` and use the following config ([more info](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
+#### Implémentation pour GitHub Pages et Netlify
+
+GitHub Pages et Netlify reconnaissent les fichiers `404.html` automatiquement, donc mettre `generate.fallback` à `true` est tout ce que vous avez besoin de faire !
+
+#### Implémentation pour Firebase Hosting
+
+Pour utiliser Firebase Hosting, configurez `generate.fallback` à `true` et utilisez la configuration suivante ([plus d'informations](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)) :
 
 ``` json
 {
@@ -255,26 +259,26 @@ To use on Firebase Hosting, configure `generate.fallback` to `true` and use the 
 
 ## Transitions
 
-Nuxt.js uses the [`<transition>`](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your routes.
+Nuxt.js utilise le composant [`<transition>`](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) afin de vous permettre de créer de superbes transitions / animations entre vos routes.
 
-### Global Settings
+### Paramètres globaux
 
-<p class="Alert Alert--nuxt-green"><b>Info :</b> Nuxt.js default transition name is `"page"`.</p>
+<p class="Alert Alert--nuxt-green"><b>Info :</b> dans Nuxt.js, le nom de la transition par défaut est `"page"`.</p>
 
-To add a fade transition to every page of your application, we need a CSS file that is shared across all our routes, so we start by creating a file in the `assets` folder.
+Pour ajouter une transition de fondu à chaque page de votre application, nous avons besoin d'un fichier CSS qui est partagé sur toutes nos routes. Commençons par créer un fichier dans le dossier `assets`.
 
-Our global css in `assets/main.css`:
+Notre CSS global dans `assets/main.css` :
 
 ```css
 .page-enter-active, .page-leave-active {
   transition: opacity .5s;
 }
-.page-enter, .page-leave-to {
+.page-enter, .page-leave-active {
   opacity: 0;
 }
 ```
 
-We add its path in our `nuxt.config.js` file:
+Nous ajoutons son chemin dans notre fichier de configuration `nuxt.config.js` :
 
 ```js
 module.exports = {
@@ -284,13 +288,13 @@ module.exports = {
 }
 ```
 
-More information about the transition key: [API Configuration transition](/api/pages-transition)
+Pour plus d'informations à propos des transitions, consultez [la partie Configuration de l'API pour La propriété `transition`](/api/pages-transition)
 
-### Page Settings
+### Paramètres des pages
 
-You can also define a custom transition for only one page with the `transition` property.
+Vous êtes également libre de définir une transition personnalisée pour une seule page à l'aide de la propriété `transition`.
 
-We add a new class in our global css in `assets/main.css`:
+Nous ajoutons une nouvelle classe dans notre CSS global `assets/main.css` :
 
 ```css
 .test-enter-active, .test-leave-active {
@@ -301,7 +305,7 @@ We add a new class in our global css in `assets/main.css`:
 }
 ```
 
-then, we use the transition property to define the class name to use for this page transition:
+puis, nous utilisons la propriété transition pour définir le nom de la classe à utiliser pour cette transition de page :
 
 ```js
 export default {
@@ -309,15 +313,15 @@ export default {
 }
 ```
 
-More information about the transition property: [API Pages transition](/api/pages-transition)
+Pour plus d'informations à propos de la propriété transition, consultez [la partie Configuration de l'API pour La propriété `transition`](/api/pages-transition)
 
 ## Middleware
 
-> Middleware lets you define custom functions that can be run before rendering either a page or a group of pages.
+> Le middleware vous permet de définir une fonction personnalisée qui sera exécutée avant le rendu d'une page ou d'un groupe de pages.
 
-**Every middleware should be placed in the `middleware/` directory.** The filename will be the name of the middleware (`middleware/auth.js` will be the `auth` middleware).
+**Tous les middlewares devraient être placés dans le répertoire `middleware/`.** Le nom du fichier étant le nom du middleware (`middleware/auth.js` deviendra le middleware `auth`).
 
-A middleware receives [the context](/api/context) as first argument:
+Un middleware reçoit [le contexte](/api#context) comme premier argument :
 
 ```js
 export default function (context) {
@@ -325,13 +329,13 @@ export default function (context) {
 }
 ```
 
-The middleware will be executed in series in this order:
+Le middleware sera exécuté en série dans l'ordre suivant :
 
 1. `nuxt.config.js`
-2. Matched layouts
-3. Matched pages
+2. Mises en page correspondantes
+3. Pages correspondantes
 
-A middleware can be asynchronous. To do this, simply return a `Promise` or use the 2nd `callback` argument:
+Un middleware peut être asynchrone, retourner une `Promise` ou utiliser une fonction de rappel en second argument :
 
 `middleware/stats.js`
 
@@ -345,7 +349,7 @@ export default function ({ route }) {
 }
 ```
 
-Then, in your `nuxt.config.js`, layout or page, use the `middleware` key:
+Puis, dans `nuxt.config.js`, pour une mise en page ou une page, utilisez le mot-clé `middleware` :
 
 `nuxt.config.js`
 
@@ -357,6 +361,6 @@ module.exports = {
 }
 ```
 
-The `stats` middleware will be called for every route changes.
+Le middleware `stats` sera appelé à chaque changement de routes.
 
-To see a real-life example using the middleware, please see [example-auth0](https://github.com/nuxt/example-auth0) on GitHub.
+Pour voir un exemple d'usage utilisant les middlewares, consultez [example-auth0](https://github.com/nuxt/example-auth0) sur GitHub.

@@ -1,13 +1,13 @@
 ---
-title: HOST and PORT
-description: How to edit HOST and PORT with Nuxt.js?
+title: HOST et PORT
+description: Comment changer le HOST et le PORT avec Nuxt.js ?
 ---
 
-# How to edit HOST and PORT?
+# Comment changer le HOST et le PORT ?
 
-You can configure the PORT with 3 different ways:
+Vous pouvez configurer le PORT de trois façons :
 
-1. With env variables
+1. Via une variable d'environnement
 
   ```js
   "scripts": {
@@ -15,11 +15,11 @@ You can configure the PORT with 3 different ways:
   }
   ```
 
-2. Add better cross platform development support.
+2. Ajoutez un meilleur support de développement qui fonctionne sur toutes les plateformes.
 
-  **Note**: for better cross platform development support you can use [cross-env](https://www.npmjs.com/package/cross-env) package.
+  **Note** : pour un meilleur développement qui fonctionne sur toutes les plateformes vous pouvez utiliser le package [cross-env](https://www.npmjs.com/package/cross-env).
 
-  Installation:
+  Installation :
 
   ```bash
   npm install --save-dev cross-env
@@ -31,9 +31,9 @@ You can configure the PORT with 3 different ways:
   }
   ```
 
-3. Via a `nuxt` config in the `package.json`:
+3. Via la configuration `nuxt` dans `package.json` :
 
-  Inside your `package.json`:
+  Dans votre `package.json` :
 
   ```js
   "config": {

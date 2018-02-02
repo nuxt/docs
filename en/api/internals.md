@@ -1,70 +1,70 @@
 ---
-title: "API: Nuxt Modules Intro"
-description: Better understand Nuxt internals
+title: "API : introduction aux modules Nuxt"
+description: Mieux comprendre les mécanismes de Nuxt
 ---
 
-# Nuxt Internals
+# Mécanismes de Nuxt
 
-Nuxt.js has a fully modular architecture which allows developers extending any part of Nuxt Core using a flexible API.
+Nuxt.js a une architecture intégralement modulable permettant au développeur d'étendre n'importe quelle partie du cœur de Nuxt en utilisant son API.
 
-Please see [Modules Guide](/guide/modules) for more detailed information if interested developing your own module.
+Consultez le [guide sur les modules](/guide/modules) pour des informations plus détaillées si vous souhaitez développer votre propre module.
 
-This section helps getting familiar to Nuxt internals and can be used as a reference to understand it better while writing your own modules.
+Cette section vous aidera à vous familiariser avec les mécanismes de Nuxt et vous servira de référence pour mieux comprendre comment écrire votre propre module.
 
-### Core
+### Le cœur
 
-These classes are the hearth of Nuxt and should exist on both runtime and build time.
+Ces classes sont les piliers de Nuxt et devraient exister à l'exécution ou pour le build.
 
 #### Nuxt
 
-- [`Nuxt` Class](/api/internals-nuxt)
-- Source: [core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/nuxt.js)
+- [Classe `Nuxt`](/api/internals-nuxt)
+- Source : [core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/nuxt.js)
 
 #### Renderer
 
-- [`Renderer` Class](/api/internals-renderer)
-- Source: [core/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/renderer.js)
+- [Classe `Renderer`](/api/internals-renderer)
+- Source : [core/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/renderer.js)
 
 #### ModuleContainer
 
-- [`ModuleContainer` Class](/api/internals-module-container)
-- Source: [core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/module.js)
+- [Classe `ModuleContainer`](/api/internals-module-container)
+- Source : [core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/module.js)
 
 ### Build
 
-These classes are only needed for build or dev mode.
+Ces classes sont seulement utiles pour le build ou le mode développement.
 
 ### Builder
 
-- [`Builder` Class](/api/internals-builder)
-- Source: [builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)
+- [Classe `Builder`](/api/internals-builder)
+- Source : [builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)
 
 #### Generator
 
-- [`Generator` Class](/api/internals-generator)
-- Source: [generator/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/generator.js)
+- [Classe `Generator`](/api/internals-generator)
+- Source : [generator/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/generator.js)
 
-### Common
+### Communes
 
-#### Utils
+#### Utilitaires
 
-- Source: [common/utils.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/common/utils.js)
+- Source : [common/utils.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/common/utils.js)
 
 #### Options
 
-- Source: [common/options.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/common/options.js)
+- Source : [common/options.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/common/options.js)
 
-## Packaging & Usage
+## Utilisation et paquetage
 
-Nuxt exports all classes by default. To require them:
+Nuxt exporte toutes les classes par défaut. Voici comment les `require` :
 
 ```js
 const { Nuxt, Builder, Utils } = require('nuxt')
 ```
 
-## Common patterns
+## Pans de codes communs
 
-All Nuxt classes have a reference to `nuxt` instance and options. Every class extends [`tappable`](https://github.com/nuxt/tappable), this way we always have a consistent API across classes to access `options` and `nuxt`.
+Toutes les classes Nuxt ont une référence à l'instance `nuxt` et aux `options`. Chaque classe étend [`tappable`](https://github.com/nuxt/tappable), de cette manière nous avons toujours une API cohérente à travers les classes pour accéder à `options` et à `nuxt`.
 
 ```js
 const Tapable = require('tappable')
@@ -77,12 +77,12 @@ class SomeClass extends Tapable {
   }
 
   someFunction() {
-    // We have access to `this.nuxt` and `this.options`
+    // Nous avons accès à `this.nuxt` and `this.options`
   }
 }
 ```
 
-Classes are *plugable* so they should register a plugin on main `nuxt` container to register more hooks.
+Les classes sont *plugable* aussi elle devrait enregistrer un plugin sur le conteneur `nuxt` principal pour enregistrer plus de points d'ancrage.
 
 ```js
 class FooClass extends Tapable {
@@ -96,7 +96,7 @@ class FooClass extends Tapable {
 }
 ```
 
-So we can hook into `foo` module like this:
+Aussi nous pouvons l'ancrer dans le module `foo` comme ceci :
 
 ```js
 nuxt.plugin('foo', foo => {

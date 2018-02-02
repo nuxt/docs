@@ -1,16 +1,15 @@
 ---
-title: "API: The Generator Class"
-description: Nuxt Generator Class
+title: "API : la classe Generator"
+description: La classe `Generator` de Nuxt
 ---
 
-# Generator Class
+# La classe Generator
 
-- Source: **[builder/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/generator.js)**
+- Source : **[builder/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/generator.js)**
 
+## Plugins Tapable
 
-## Tapable plugins
-
-We can register hooks on certain life cycle events.
+Nous pouvons enregistrer des points d'ancrage sur certains évènements du cycle de vie.
 
 ```js
 nuxt.plugin('generator', generator => {
@@ -20,7 +19,7 @@ nuxt.plugin('generator', generator => {
 })
 ```
 
-Plugin           | Arguments                   | When
------------------|-----------------------------|--------------------------------------------------------------------------------
-`generateRoutes` | {generator, generateRoutes} | After resolving routes to generate so we have change to customize them
-`generate`       | {generator, routes}         | Just before start generating routes. routes are decorated with payloads
+Plugin           | Arguments                   | Quand
+-----------------|-----------------------------|-------------------------------------------------------------------------------------------------
+`generateRoutes` | {generator, generateRoutes} | Après la résolution des routes pour génération afin de faire des changements personnalisés
+`generate`       | {generator, routes}         | Avant le démarrage de la génération des routes. Les routes sont décorées avec des charges utiles
