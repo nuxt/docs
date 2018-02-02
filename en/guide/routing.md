@@ -211,32 +211,32 @@ router: {
 }
 ```
 
-### SPA fallback
+### Alternative pour application monopage
 
-You can enable SPA fallbacks for dynamic routes too. Nuxt.js will output an extra file that is the same as the index.html that would be used in `mode: 'spa'`. Most static hosting services can be configured to to use the SPA template if no file matches. It won't include the `head` info or any HTML, but it will still resolve and load the data from the API.
+Vous pouvez activer l'alternative pour application monopage pour les routes dynamiques aussi. Nuxt.js va générer un fichier supplémentaire identique à `index.html` qui pourra être utilisé en `mode: 'spa'`. La plupard des services d'hébergement peuvent être configurés pour utiliser le template d'application monopage si aucun fichier ne concorde. Les informations de `head` ou HTML ne seront pas inclus mais les données seront toujours résolues et chargées depuis l'API.
 
-We enable this in our `nuxt.config.js` file:
+Nous pouvons activer cela dans notre fichier `nuxt.config.js` :
 
 ``` js
 module.exports = {
   generate: {
-    fallback: true, // if you want to use '404.html'
-    fallback: 'my-fallback/file.html' // if your hosting needs a custom location
+    fallback: true, // si vous souhaitez utiliser un fichier '404.html'
+    fallback: 'my-fallback/file.html' // si votre hébergement nécessite une localisation personnalisée
   }
 }
 ```
 
-#### Implementation for Surge
+#### Implémentation pour Surge
 
-Surge [can handle](https://surge.sh/help/adding-a-custom-404-not-found-page) both `200.html` and `404.html`. `generate.fallback` is set to `200.html` by default, so no need to change it.
+Surge [peut gérer](https://surge.sh/help/adding-a-custom-404-not-found-page) aussi bien les fichiers `200.html` que `404.html`. `generate.fallback` est mis à `200.html` par défaut, donc vous devez changer cela.
 
-#### Implementation for GitHub Pages and Netlify
+#### Implémentation pour GitHub Pages et Netlify
 
-GitHub Pages and Netlify recognize the `404.html` file automatically, so setting `generate.fallback` to `true` is all we have to do!
+GitHub Pages et Netlify reconnaissent les fichiers `404.html` automatiquement, donc mettre `generate.fallback` à `true` est tout ce que vous avez besoin de faire !
 
-#### Implementation for Firebase Hosting
+#### Implémentation pour Firebase Hosting
 
-To use on Firebase Hosting, configure `generate.fallback` to `true` and use the following config ([more info](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
+Pour utiliser Firebase Hosting, configurez `generate.fallback` à `true` et utilisez la configuration suivante ([plus d'informations](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)) :
 
 ``` json
 {
