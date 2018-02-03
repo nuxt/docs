@@ -155,7 +155,7 @@ export default {
 
 Atribut | Penjelasan
 --- | ---
-`asyncData` | The most important key. It can be asynchronous and receives the context as argument. Please read the [async data documentation](/guide/async-data) to learn how it works.
+`asyncData` | Kunci yang paling penting, bisa asinkronus dan menerima konteks sebagai argumen, baca [dokumentasi async data](/guide/async-data) untuk mengetahui bagaimana ia bekerja.
 `fetch` | Digunakan untuk mengisi store sebelum me-render halaman, ini seperti metode `data` kecuali ia tidak mengatur data komponen. Lihat [dokumentasi Halaman API `fetch`](/api/pages-fetch).
 `head` | Mengatur `<meta>` tag khusus untuk halaman (aktif) saat ini. Lihat [dokumentasi Halaman API `head`](/api/pages-head).
 `layout` | Menentukan layout yang ditetapkan dalam direktori `layouts`. Lihat [dokumentasi Halaman API `layout` ](/api/pages-layout).
@@ -181,7 +181,7 @@ Nuxt.js mengonfigurasi `vue-meta` dengan opsi ini:
 }
 ```
 
-### Default Meta Tags
+### Standar Meta Tag
 
 Nuxt.js memungkinkan Anda mendefinisikan semua `<meta>` standar (default) untuk aplikasi Anda di dalam file `nuxt.config.js`. Gunakan properti `head` yang sama:
 
@@ -199,12 +199,12 @@ head: {
 }
 ```
 
-To learn more about the options available for `head`, take a look at [vue-meta documentation](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
+Untuk mengetahui daftar pilihan yang dapat Anda berikan pada metode `head`, lihat [dokumentasi vue-meta ](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
 
-More information about the `head` method: <a href="/api/configuration-head" data-md-type="link">API Configuration `head`</a>.
+Informasi lebih lanjut tentang metode `head` : <a href="/api/configuration-head" data-md-type="link">Konfigurasi API `head`</a>.
 
 ### Kustomisasi Meta Tag pada sebuah Halaman
 
-More information about the head method: [API Pages `head`](/api/pages-head).
+Informasi lebih lanjut tentang metode head : [Halaman API `head`](/api/pages-head).
 
 <p class="Alert">Untuk menghindari duplikasi saat menggunakannya pada child komponen, berikan pengenal unik dengan key `hid`. [Baca lebih lanjut] (https://github.com/declandewet/vue-meta#lists-of-tags) .</p>
