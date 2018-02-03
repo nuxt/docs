@@ -1,5 +1,5 @@
 ---
-title: Views
+title: View (Tampilan)
 description: Bagian View (Tampilan) menggambarkan semua yang Anda perlukan untuk mengonfigurasi
   data dan tampilan untuk rute tertentu pada Aplikasi Nuxt.js Anda (Dokumen, Layout,
   Halaman, dan HTML Head).
@@ -9,7 +9,7 @@ description: Bagian View (Tampilan) menggambarkan semua yang Anda perlukan untuk
 
 ![nuxt-views-schema](/nuxt-views-schema.png)
 
-## Document
+## Dokumen
 
 > Anda dapat mengkustomisasi dokumen utama dengan Nuxt.js.
 
@@ -48,11 +48,11 @@ Salah satu contoh jika menambahkan kelas CSS bersyarat (conditional CSS) untuk I
 
 Nuxt.js memungkinkan Anda meng-extend layout utama atau membuat layout secara kustom dengan menambahkannya ke dalam folder `layouts`.
 
-### Default Layout
+### Layout Default 
 
 Anda bisa meng-extend layout utama dengan menambahkan file `layouts/default.vue` .
 
-*Make sure to add the `<nuxt/>` component when creating a layout to display the page component.*
+*Pastikan untuk menambahkan komponen `<nuxt/>` saat membuat layout untuk menampilkan komponen halaman.*
 
 Kode sumber layout yang default adalah:
 
@@ -95,7 +95,7 @@ Setiap file (*level pertama *) pada folder `layouts` akan membuat kustom layout 
 
 *Pastikan Anda menambahkan komponen `<nuxt/>` ketika membuat layout untuk menampilkan komponen halaman.*
 
-Example of `layouts/blog.vue`:
+Contoh `layouts/blog.vue`:
 
 ```html
 <template>
@@ -153,7 +153,7 @@ export default {
 </style>
 ```
 
-Attribute | Description
+Atribut | Penjelasan
 --- | ---
 `asyncData` | The most important key. It can be asynchronous and receives the context as argument. Please read the [async data documentation](/guide/async-data) to learn how it works.
 `fetch` | Digunakan untuk mengisi store sebelum me-render halaman, ini seperti metode `data` kecuali ia tidak mengatur data komponen. Lihat [dokumentasi Halaman API `fetch`](/api/pages-fetch).
@@ -164,13 +164,13 @@ Attribute | Description
 `validate` | Fungsi Validator untuk [rute dinamis](/guide/routing#dynamic-routes).
 `middleware` | Menetapkan middleware untuk halaman ini. Middleware akan dipanggil sebelum me-render halaman, melihat rute [middleware](/guide/routing#middleware).
 
-More information about the pages properties usage: [API Pages](/api)
+Informasi lebih lanjut tentang penggunaan properti halaman: [Halaman API](/api)
 
 ## HTML Head
 
 Nuxt.js menggunakan [vue-meta](https://github.com/declandewet/vue-meta) untuk memperbarui `headers` dan `atribut-atribut html` pada aplikasi Anda.
 
-Nuxt.js configures `vue-meta` with these options:
+Nuxt.js mengonfigurasi `vue-meta` dengan opsi ini:
 
 ```js
 {
