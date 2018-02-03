@@ -8,7 +8,7 @@ description: Skip component rendering on server side(rendering), and display pla
 > This component is used to purposely remove the component from the subject of server side rendering.
 
 **Props**:
-- placeholder: `String`
+- placeholder: `string`
   - This prop will be used as a content of inner `div` and displayed as text only on server side rendering.
 
 ```html
@@ -22,5 +22,4 @@ description: Skip component rendering on server side(rendering), and display pla
 </template>
 ```
 
-This component is a clone of [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr).
-Thanks [@egoist](https://github.com/egoist)!
+This component is a clone of [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr). Thanks [@egoist](https://github.com/egoist)!
