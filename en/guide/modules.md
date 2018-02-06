@@ -211,7 +211,7 @@ module.exports = function nuxtBootstrapVue (moduleOptions) {
 
 ### Add a CSS library
 
-It is recommended checking if user already not provided same library to avoid adding duplicates. Also always consider having **an option to disable** adding css files by module.
+It is recommended checking if user already not provided same library to avoid adding duplicates. Also always consider having **an option to disable** adding CSS files by module.
 
 **module.js**
 
