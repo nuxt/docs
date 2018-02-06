@@ -211,6 +211,52 @@ router: {
 }
 ```
 
+### Alternative pour application monopage
+
+Vous pouvez activer l'alternative pour application monopage pour les routes dynamiques aussi. Nuxt.js va générer un fichier supplémentaire identique à `index.html` qui pourra être utilisé en `mode: 'spa'`. La plupart des services d'hébergement peuvent être configurés pour utiliser le template d'application monopage si aucun fichier ne concorde. Les informations de `head` ou HTML ne seront pas inclus mais les données seront toujours résolues et chargées depuis l'API.
+
+Nous pouvons activer cela dans notre fichier `nuxt.config.js` :
+
+``` js
+module.exports = {
+  generate: {
+    fallback: true, // si vous souhaitez utiliser un fichier '404.html'
+    fallback: 'my-fallback/file.html' // si votre hébergement nécessite une localisation personnalisée
+  }
+}
+```
+
+#### Implémentation pour Surge
+
+Surge [peut gérer](https://surge.sh/help/adding-a-custom-404-not-found-page) aussi bien les fichiers `200.html` que `404.html`. `generate.fallback` est mis à `200.html` par défaut, donc vous devez changer cela.
+
+#### Implémentation pour GitHub Pages et Netlify
+
+GitHub Pages et Netlify reconnaissent les fichiers `404.html` automatiquement, donc mettre `generate.fallback` à `true` est tout ce que vous avez besoin de faire !
+
+#### Implémentation pour Firebase Hosting
+
+Pour utiliser Firebase Hosting, configurez `generate.fallback` à `true` et utilisez la configuration suivante ([plus d'informations](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)) :
+
+``` json
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/404.html"
+      }
+    ]
+  }
+}
+```
+
 ## Transitions
 
 Nuxt.js utilise le composant [`<transition>`](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) afin de vous permettre de créer de superbes transitions / animations entre vos routes.

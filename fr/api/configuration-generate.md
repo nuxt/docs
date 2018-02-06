@@ -18,6 +18,13 @@ Quand vous lancez `nuxt generate` ou appelez `nuxt.generate()`, Nuxt.js utiliser
 
 Nom du répertoire créé par `nuxt generate`.
 
+## fallback
+
+- Type: `String` or `Boolean`
+- Default: `'200.html'`
+
+The path to the SPA fallback. This file can be used when doing deploys of generated sites to static hosting. It falls back to `mode: 'spa'` when a route isn't generated.
+
 ## interval
 
 - Type : `Number`
