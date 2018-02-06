@@ -79,7 +79,7 @@ Not all modules will do everything synchronous. For example you may want to deve
 
 ### Use async/await
 
-<p class="Alert Alert--orange">Be aware that `async`/`await` is only supported in Node.js > 7.2. So if you are a module developer at least warn users about that if using them. For heavily async modules or better legacy support you can use either a bundler to transform it for older Node.js compatibility or using promise method.</p>
+<p class="Alert Alert--orange">Be aware that `async`/`await` is only supported in Node.js > 7.2. So if you are a module developer at least warn users about that if using them. For heavily async modules or better legacy support you can use either a bundler to transform it for older Node.js compatibility or a promise method.</p>
 
 ```js
 const fse = require('fs-extra')
@@ -211,7 +211,7 @@ module.exports = function nuxtBootstrapVue (moduleOptions) {
 
 ### Add a CSS library
 
-It is recommended checking if user already not provided same library to avoid adding duplicates. Also always consider having **an option to disable** adding CSS files by module.
+Consider doing a check if a CSS library exists to avoid duplicates and add **an option to disable** the CSS libray in the module. See the example shown below.
 
 **module.js**
 

@@ -211,6 +211,52 @@ router: {
 }
 ```
 
+### SPA fallback
+
+You can enable SPA fallbacks for dynamic routes too. Nuxt.js will output an extra file that is the same as the `index.html` that would be used in `mode: 'spa'`. Most static hosting services can be configured to use the SPA template if no file matches. It won't include the `head` info or any HTML, but it will still resolve and load the data from the API.
+
+We enable this in our `nuxt.config.js` file:
+
+``` js
+module.exports = {
+  generate: {
+    fallback: true, // if you want to use '404.html'
+    fallback: 'my-fallback/file.html' // if your hosting needs a custom location
+  }
+}
+```
+
+#### Implementation for Surge
+
+Surge [can handle](https://surge.sh/help/adding-a-custom-404-not-found-page) both `200.html` and `404.html`. `generate.fallback` is set to `200.html` by default, so no need to change it.
+
+#### Implementation for GitHub Pages and Netlify
+
+GitHub Pages and Netlify recognize the `404.html` file automatically, so setting `generate.fallback` to `true` is all we have to do!
+
+#### Implementation for Firebase Hosting
+
+To use on Firebase Hosting, configure `generate.fallback` to `true` and use the following config ([more info](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
+
+``` json
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/404.html"
+      }
+    ]
+  }
+}
+```
+
 ## Transitions
 
 Nuxt.js uses the [`<transition>`](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your routes.
