@@ -1,34 +1,34 @@
 ---
-title: "API: The css Property"
-description: Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every page).
+title: "API : La propriété css"
+description: Nuxt.js vous permet de définir le fichier, la bibliothèque ou le module CSS que vous souhaiter définir globalement (inclue sur toutes les pages).
 ---
 
-# The css Property (En)
+# La propriété css
 
-> Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every page).
+> Nuxt.js vous permet de définir le fichier, la bibliothèque ou le module CSS que vous souhaitez définir globalement (inclue sur toutes les pages).
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>In case you want to use ```sass``` make sure that you have installed ```node-sass``` and ```sass-loader``` packages. If you didn't  just</p>
+Dans le cas où vous souhaiteriez utiliser ```sass```, assurez-vous d'avoir installé les packages ```node-sass``` et ```sass-loader```. Si non, utilisez cette commande :
 
 ```sh
 npm install --save-dev node-sass sass-loader
 ```
 
-- Type: `Array`
- - Items: `String`
+- Type : `Array`
+ - Éléments : `string`
 
-In `nuxt.config.js`, add the CSS resources:
+Dans `nuxt.config.js`, ajouter les ressources CSS :
 
 ```js
 module.exports = {
   css: [
-    // Load a node module directly (here it's a SASS file)
+    // Charge un module Node.js directement (ici un fichier Sass)
     'bulma',
-    // CSS file in the project
+    // fichier CSS dans le projet
     '@/assets/css/main.css',
-    // SCSS file in the project
+    // un fichier SCSS dans le projet
     '@/assets/css/main.scss'
   ]
 }
 ```
 
-Nuxt.js will automatically guess the file type by it's extension and use the appropriate pre-processor loader for webpack. You will still need to install the required loader if you need to use them.
+Nuxt.js va automatiquement deviner le type de fichier grâce à son extension et utiliser l'adaptateur de préprocesseur approprié pour webpack. Vous devez toujours installer les adaptateurs requis si vous avez besoin de les utiliser.

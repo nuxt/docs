@@ -9,12 +9,12 @@ description: Nuxt.js vous permet de personnaliser la configuration webpack pour 
 
 ## analyze
 
-> Nuxt.js utilise [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer) pour vous permettre de visualiser vos paquetages (« bundles ») et comment les optimiser.
+> Nuxt.js utilise [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyze) pour vous permettre de visualiser vos paquetages (« bundles ») et les optimiser.
 
 - Type : `Boolean` ou `Object`
 - Par défaut : `false`
 
-Si c'est un objet, consultez les propriétés disponibles [ici](https://github.com/th0r/webpack-bundle-analyzer#as-plugin).
+Si c'est un objet, consultez les propriétés disponibles [ici](https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin).
 
 Exemple (`nuxt.config.js`) :
 
@@ -253,15 +253,15 @@ Exemple (`nuxt.config.js`) :
 ```js
 module.exports = {
   build: {
-      templates: [
-         {
-           src: '~/modules/support/plugin.js', // `src` peut être absolue ou relatif
-           dst: 'support.js', // `dst` est relatif au dossier de `.nuxt`
-           options: { // Les options sont fournies au templases par la propriété `options`
-               live_chat: false
-           }
-         }
-      ]
+    templates: [
+      {
+        src: '~/modules/support/plugin.js', // `src` peut être absolue ou relatif
+        dst: 'support.js', // `dst` est relatif au dossier de `.nuxt`
+        options: { // Les options sont fournies au templases par la propriété `options`
+          live_chat: false
+        }
+      }
+    ]
   }
 }
 ```
@@ -306,9 +306,9 @@ module.exports = {
 ```js
 module.exports = {
   build: {
-      watch: [
-          '~/.nuxt/support.js'
-      ]
+    watch: [
+      '~/.nuxt/support.js'
+    ]
   }
 }
 ```
