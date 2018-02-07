@@ -33,6 +33,8 @@ It is recommended to not use this option as Nuxt.js is already providing best SS
 - Type: `object`
   - Default: `{ weak: true }`
 
+To disable etag for pages set `etag: false`
+
 See [etag](https://www.npmjs.com/package/etag) docs for possible options.
 
 ### gzip
