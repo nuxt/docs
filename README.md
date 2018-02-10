@@ -23,7 +23,7 @@ Then access the docs via the website running on `http://nuxt:3000` (see instruct
 
 Russian translation is maintained by Translation Gang.
 
-* Translation Repo — [/translation-gang/ru.docs.nuxtjs](https://github.com/translation-gang/ru.docs.nuxtjs)
+* Translation Repo - [/translation-gang/ru.docs.nuxtjs](https://github.com/translation-gang/ru.docs.nuxtjs)
 * Primary maintainer - [Grigoriy Beziuk](https://gbezyuk.github.io)
 * Primary translator - [Nicholas Shachmatov](https://github.com/theOnlyBoy)
 
@@ -31,15 +31,17 @@ Russian translation is maintained by Translation Gang.
 
 Chinese translation is maintained by AOTU Labs from China, Shenzhen.
 
-* Translation Repo — [/o2team/i18n-cn-nuxtjs-docs](https://github.com/o2team/i18n-cn-nuxtjs-docs)
+* Translation Repo - [/o2team/i18n-cn-nuxtjs-docs](https://github.com/o2team/i18n-cn-nuxtjs-docs)
 * Primary maintainer - [AOTU Labs](https://aotu.io)
 * Primary translator - [Levin Wong](http://faso.me), [Edward Chu](https://github.com/chuyik)
 
 ### Japanese
 
+Japanese translation team is using a translation tool called [GitLocalize](https://gitlocalize.com) in principle. See the following "Want to help with the translation?" section. 
+
 Japanese translation is maintained by INOUE Takuya.
 
-* Translation Repo — [/inouetakuya/ja.docs.nuxtjs](https://github.com/inouetakuya/ja.docs.nuxtjs)
+* Translation Repo - [https://gitlocalize.com/repo/100/ja](https://gitlocalize.com/repo/100/ja)
 * Primary maintainer - [INOUE Takuya](http://blog.inouetakuya.info/)
 * Primary translator - [INOUE Takuya](https://github.com/inouetakuya)
 
@@ -47,7 +49,7 @@ Japanese translation is maintained by INOUE Takuya.
 
 Korean translation is maintained by Taewoong La.
 
-* Translation Repo — [/DiyLecko/ko.docs.nuxtjs](https://github.com/DiyLecko/ko.docs.nuxtjs)
+* Translation Repo - [/DiyLecko/ko.docs.nuxtjs](https://github.com/DiyLecko/ko.docs.nuxtjs)
 * Primary maintainer - [Taewoong La](http://blog.naver.com/diy_lecko)
 * Primary translator - [june](http://jicjjang.github.io), [wanybae](https://github.com/wanybae), [rellario](https://github.com/rellario)
 
@@ -55,7 +57,7 @@ Korean translation is maintained by Taewoong La.
 
 French translation is maintained by [Vuejs-FR](https://github.com/vuejs-fr/nuxt/issues/1) Team.
 
-* Translation Repo — [/vuejs-fr/nuxt](https://github.com/vuejs-fr/nuxt)
+* Translation Repo - [/vuejs-fr/nuxt](https://github.com/vuejs-fr/nuxt)
 * Primary maintainer - [Bruno Lesieur](https://www.lesieur.name/) ([Orchard ID](https://www.orchard-id.com/))
 * Primary translator - [Julien Grünhagel](https://rspt.io/) ([laruche](https://laruche.io))
 
