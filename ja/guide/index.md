@@ -66,7 +66,7 @@ Nuxt.js をプロジェクトの UI レンダリング全体を担うフレー�
 
 ### シングルページアプリケーション（SPA）
 
-If, for any reason, you prefer not to use server side rendering or need static hosting for your applications, you can simply use SPA mode using `nuxt --spa`. In combination with the *generate* feature, it gives you a powerful SPA deployment mechanism without the need to use a Node.js runtime or any special server handling.
+もし何らかの理由でサーバーサイドレンダリングを使いたくない、あるいはアプリケーションを静的にホスティングする必要があるときは `nuxt --spa` を使って、シンプルに SPA モードを使うことができます。*generate* 機能と組み合わせて使うことで、Node.js ランタイムや特別なサーバー処理を利用する必要なしに、SPA のパワフルなデプロイを実現できます。
 
 コマンドについてより深く理解するには [コマンド](/guide/commands) を参照してください。
 
