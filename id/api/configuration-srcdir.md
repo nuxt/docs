@@ -1,16 +1,16 @@
 ---
-title: 'API: The srcDir Property'
+title: 'API: Properti srcDir'
 description: Menentukan direktori asal pada aplikasi Nuxt.js Anda.
 ---
 
-# The srcDir Property
+# Properti srcDir
 
 - Type: `String`
 - Default: [rootDir value](/api/configuration-rootdir)
 
 > Menentukan direktori asal pada aplikasi nuxt.js Anda.
 
-Example (`nuxt.config.js`):
+Contoh (`nuxt.config.js`):
 
 ```js
 module.exports = {
@@ -18,7 +18,7 @@ module.exports = {
 }
 ```
 
-Then, your application structure can be:
+Kemudian, struktur aplikasi seperti:
 
 ```bash
 -| app/
