@@ -1,5 +1,5 @@
 ---
-title: Plugins
+title: Plugin
 description: Nuxt.js memungkinkan Anda menentukan plugin JavaScript yang akan dijalankan
   sebelum menginstal Aplikasi root Vue.js. Hal ini sangat membantu saat menggunakan
   pustaka (library) atau modul eksternal Anda sendiri.
@@ -9,17 +9,17 @@ description: Nuxt.js memungkinkan Anda menentukan plugin JavaScript yang akan di
 
 <div class="Alert">Penting untuk diketahui bahwa dalam Vue [instance lifecycle] (https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram), hanya kait (hook) `beforeCreate` dan` created` yang disebut **keduanya dari sisi-klien dan sisi-server**. Semua kait (hook) lainnya hanya dipanggil dari sisi-klien.</div>
 
-## External Packages
+## Paket Eksternal
 
 Kita mungkin ingin menggunakan paket/modul eksternal dalam aplikasi kita, salah satu contoh bagusnya adalah [axios](https://github.com/mzabriskie/axios) untuk membuat permintaan (request) HTTP untuk server dan klien.
 
-We install it via npm:
+Kita menginstalnya melalui npm:
 
 ```bash
 npm install --save axios
 ```
 
-Then, we can use it directly in our pages:
+Kemudian, kita bisa menggunakannya langsung di halaman kita:
 
 ```html
 <template>
@@ -50,11 +50,11 @@ module.exports = {
 
 Kemudian, kita bisa mengimport `axios` di mana saja tanpa harus khawatir membuat bundel menjadi lebih besar!
 
-## Vue Plugins
+## Plugin Vue
 
 Jika kita ingin menggunakan [vue-notifications](https://github.com/se-panfilov/vue-notifications) untuk menampilkan pemberitahuan pada aplikasi kita, kita perlu menyiapkan plugin sebelum meluncurkan aplikasi.
 
-File `plugins/vue-notifications.js`:
+File `plugins/vue-notifications.js` :
 
 ```js
 import Vue from 'vue'
@@ -63,7 +63,7 @@ import VueNotifications from 'vue-notifications'
 Vue.use(VueNotifications)
 ```
 
-Then, we add the file inside the `plugins` key of `nuxt.config.js`:
+Kemudian, kita tambahkan file di dalam kunci `plugins` `nuxt.config.js`:
 
 ```js
 module.exports = {
@@ -124,7 +124,7 @@ Silakan lihat [contoh i18n](/examples/i18n) untuk melihat bagaimana cara  menggu
 
 Beberapa plugin mungkin **hanya berfungsi untuk browser**, Anda dapat menggunakan opsi `ssr: false` di `plugins` untuk menjalankan file hanya pada sisi-klien.
 
-Example:
+Contoh:
 
 `nuxt.config.js`:
 
