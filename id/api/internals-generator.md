@@ -19,7 +19,7 @@ nuxt.plugin('generator', generator => {
 })
 ```
 
-Plugin | Argumen | Sewaktu
+Plugin | Argumen | Keterangan
 --- | --- | ---
 `generateRoutes` | {generator, generateRoutes} | Setelah menyelesaikan rute untuk menghasilkan (generate), maka kita memiliki perubahan untuk menyesuaikannya
 `generate` | {generator, routes} | Tepat sebelum mulai menghasilkan rute. Rute didekorasi dengan payload
