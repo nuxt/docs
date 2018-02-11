@@ -1,5 +1,5 @@
 ---
-title: Caching Components
+title: Komponen Caching
 description: Bagaimana cara men-cache sebuah komponen?
 ---
 
@@ -9,7 +9,7 @@ description: Bagaimana cara men-cache sebuah komponen?
 
 Untuk menghindari boilerplate, gunakan [modul Component Cache](https://github.com/nuxt-community/modules/tree/master/packages/component-cache) untuk Nuxt.js. Modul ini menggunakan vue-server-renderer untuk menambahkan dukungan cache LRU pada komponen Vue.
 
-## Usage
+## Cara Penggunaan
 
 - Tambahkan `@nuxtjs/component-cache` menggunakan  `Yarn` atau `npm` di proyek Anda.
 - Tambahkan `@nuxtjs/component-cache` ke bagian `modules` pada `nuxt.config.js`
@@ -17,10 +17,7 @@ Untuk menghindari boilerplate, gunakan [modul Component Cache](https://github.co
 ```js
 {
   modules: [
-    // Simple usage
     '@nuxtjs/component-cache',
-
-    // With options
     ['@nuxtjs/component-cache', {
       max: 10000,
       maxAge: 1000 * 60 * 60
@@ -29,9 +26,9 @@ Untuk menghindari boilerplate, gunakan [modul Component Cache](https://github.co
 }
 ```
 
-See [component-level caching](http://ssr.vuejs.org/en/caching.html#component-level-caching) for more information.
+Baca [component-level caching](http://ssr.vuejs.org/en/caching.html#component-level-caching) untuk keterangan lebih lanjut.
 
-## Don't forget, that
+## Dan, jangan lupa 
 
 - Komponen yang bisa di-cache **harus didefinisikan dengan `name` yang unik**.
 - Anda ***DILARANG*** menggunakan cache komponen, jika
