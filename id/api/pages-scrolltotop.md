@@ -1,10 +1,10 @@
 ---
-title: 'API: The scrollToTop Property'
+title: 'API: Properti scrollToTop'
 description: Properti `scrollToTop`  memungkinkan Anda memberitahu Nuxt.js untuk menggulir
   (scroll) ke atas sebelum me-render halaman.
 ---
 
-# The scrollToTop Property
+# Properti scrollToTop
 
 > Properti scrollToTop  memungkinkan Anda memberitahu Nuxt.js untuk menggulir (scroll) ke atas sebelum me-render halaman.
 
