@@ -21,7 +21,7 @@ nuxt.plugin('renderer', renderer => {
 })
 ```
 
-Plugin | Argumen | Sewaktu
+Plugin | Argumen | Keterangan
 --- | --- | ---
 `ready` | renderer | SSR Middleware dan semua sumbernya sudah siap
 `setupMiddleware` | sambungkan instansi (app) | Sebelum Nuxt menambahkan tumpukan middleware itu. Kita bisa menggunakannya untuk mendaftarkan middleware sisi-server kustom
