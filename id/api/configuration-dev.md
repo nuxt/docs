@@ -66,4 +66,4 @@ Kemudian pada `package.json`:
 }
 ```
 
-Note: You'll need to run `npm install --save-dev cross-env` for the above example to work. If you're *not* developing on Windows you can leave cross-env out of your `start` script and set `NODE_ENV` directly.
+Catatan: Anda harus menjalankan `npm install --save-dev cross-env` pada contoh di atas supaya bisa bekerja. Jika Anda *tidak* bekerja menggunakan Windows, Anda dapat mengabaikan cross-env dil uar dari script `start` milik Anda dan mengatur `NODE_ENV` secara langsung.
