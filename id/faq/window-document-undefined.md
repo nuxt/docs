@@ -11,7 +11,7 @@ Sebagai contoh, di file `.vue` Anda:
 
 ```js
 if (process.browser) {
-  require('external_library')
+  require('pustaka_eksternal')
 }
 ```
 
@@ -19,6 +19,6 @@ Jika Anda menggunakan pustaka (library) ini dalam beberapa file, sebaiknya tamba
 
 ```js
   build: {
-    vendor: ['external_library']
+    vendor: ['pustaka_eksternal']
   }
 ```
