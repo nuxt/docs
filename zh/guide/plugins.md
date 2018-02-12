@@ -63,7 +63,7 @@ Vue.use(VueNotifications)
 然后, 在 `nuxt.config.js` 内配置 `plugins` 如下：
 ```js
 module.exports = {
-  plugins: ['~plugins/vue-notifications']
+  plugins: ['~/plugins/vue-notifications']
 }
 ```
 
@@ -75,9 +75,9 @@ module.exports = {
 ```js
 module.exports = {
   build: {
-    vendor: ['vue-notifications']
+    vendor: ['~/plugins/vue-notifications']
   },
-  plugins: ['~plugins/vue-notifications']
+  plugins: ['~/plugins/vue-notifications']
 }
 ```
 
@@ -91,7 +91,7 @@ module.exports = {
 ```js
 module.exports = {
   plugins: [
-    { src: '~plugins/vue-notifications', ssr: false }
+    { src: '~/plugins/vue-notifications', ssr: false }
   ]
 }
 ```
