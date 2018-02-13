@@ -7,11 +7,11 @@ description: Kelas ModuleContainer Nuxt
 
 - Sumber: **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/module.js)**
 
-All [modules](/guide/modules) will be called within context of `ModuleContainer` instance.
+Semua [modules](/guide/modules) akan dipanggil di dalam konteks dari instansi `ModuleContainer`.
 
-## Tapable plugins
+## Plugin yang dapat ditukar (Tapable plugins)
 
-We can register hooks on certain life cycle events.
+Kita bisa mendaftarkan kait (hooks) pada peristiwa siklus hidup (life cycle) tertentu.
 
 ```js
 nuxt.moduleContainer.plugin('ready', async moduleContainer => {
@@ -19,7 +19,7 @@ nuxt.moduleContainer.plugin('ready', async moduleContainer => {
 })
 ```
 
-Inside [modules](/guide/modules) context we can use this instead:
+Di dalam konteks [modules](/guide/modules) kita bisa menggunakan ini sebagai gantinya:
 
 ```js
 this.plugin('ready', async moduleContainer => {
@@ -27,7 +27,7 @@ this.plugin('ready', async moduleContainer => {
 })
 ```
 
-Plugin | Argumen | When
+Plugin | Argumen | Keterangan
 --- | --- | ---
 `ready` | moduleContainer | Semua modul di `nuxt.config.js` telah diinisialisasi
 
@@ -39,12 +39,12 @@ Menambahkan ke `options.build.vendor` dan menerapkan filter yang unik.
 
 ### addTemplate (template)
 
-- **template**: `String` ou `Object`
+- **template**: `String` atau `Object`
     - `src`
     - `options`
     - `fileName`
 
-Renders given template using [lodash template](https://lodash.com/docs/4.17.4#template) during build into project `buildDir` (`.nuxt`).
+Me-render templat yang diberikan menggunakan [lodash template](https://lodash.com/docs/4.17.4#template) selama membangun (build) ke `buildDir` proyek (`.nuxt`).
 
 Jika `fileName` tidak tersedia atau `template` adalah string, nama default target berkas (file) menjadi `[dirName].[fileName].[pathHash].[ext]`.
 
