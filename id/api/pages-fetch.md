@@ -1,20 +1,20 @@
 ---
-title: 'API: The fetch Method'
+title: 'API: Metode fetch'
 description: Metode `fetch` digunakan untuk mengisi store sebelum me-render halaman,
   ia seperti metode `asyncData` tetapi ia tidak mengatur data komponen.
 ---
 
-# The fetch Method
+# Metode fetch
 
 > Metode fetch digunakan untuk mengisi store sebelum me-render halaman, ia seperti metode `asyncData` tetapi ia tidak mengatur data komponen.
 
-- **Type:** `Function`
+- **Tipe:** `Function`
 
 Metode `fetch`, *jika diatur*, dipanggil setiap saat sebelum memuat komponen (**hanya untuk komponen halaman**). Dia bisa dipanggil dari sisi-server atau sebelum mengarah ke rute yang sesuai.
 
 Metode `fetch` menerima [objek `context`](/api/context) sebagai argumen pertama, kita dapat menggunakannya untuk mengambil beberapa data dan mengisi store. Untuk membuat metode `fetch` asinkron (asynchronous), **mengembalikan sebuah Promise**, Nuxt.js akan menunggu promise selesai (resolved) sebelum me-render komponen.
 
-Example of `pages/index.vue`:
+Contoh dari `pages/index.vue`:
 
 ```html
 <template>
@@ -33,7 +33,7 @@ export default {
 </script>
 ```
 
-You can also use `async`/`await` to make your code cleaner:
+Anda juga bisa menggunakan `async`/`await` untuk membuat kode Anda lebih jelas:
 
 ```html
 <template>
