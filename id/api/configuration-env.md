@@ -1,15 +1,15 @@
 ---
-title: 'API: The env Property'
+title: 'API: Properti env'
 description: Berbagi variabel lingkungan (environment) antara klien dan server.
 ---
 
-# The env Property
+# Properti env
 
 - Type: `Object`
 
 > Nuxt.js memungkinkan Anda membuat variabel lingkungan (environment) yang akan dibagikan untuk klien dan sisi-server.
 
-Example (`nuxt.config.js`):
+Contoh (`nuxt.config.js`):
 
 ```js
 module.exports = {
@@ -24,11 +24,11 @@ Ini memungkinkan kita membuat properti `baseUrl` yang akan sama dengan variabel 
 Kemudian, kita bisa mengakses variabel `baseUrl` di atas dengan 2 cara:
 
 1. Melalui `process.env.baseUrl`, atau
-2. Via `context.env.baseUrl`, see [context api](/api/context)
+2. Melalui `context.env.baseUrl`, lihat [context api](/api/context)
 
 Anda dapat menggunakan properti `env` untuk memberikan "public token" sebagai contoh.
 
-For the example above, we can use it to configure [axios](https://github.com/mzabriskie/axios).
+Untuk contoh di atas, kita bisa menggunakannya untuk mengkonfigurasi [axios](https://github.com/mzabriskie/axios) .
 
 `plugins/axios.js`:
 
@@ -48,13 +48,13 @@ Perhatikan bahwa nuxt menggunakan Webpack ini `definePlugin` untuk mendefinisika
 
 Artinya, `console.log(process.env)` akan menampilkan `{}`, tetapi `console.log(process.env.you_var)` masih akan menghasilkan nilai yang sudah Anda tetapkan sebelumnya. Saat webpack menyusun kode milik Anda, ia akan mengganti semua instansi `process.env.your_var` menjadi nilai yang Anda tetapkan. Yaitu: `env.test = 'testing123'` . Jika Anda menggunakan `process.env.test` di dalam kode Anda pada suatu tempat, itu sebenarnya diterjemahkan ke 'testing123'.
 
-before
+Sebelum
 
 ```
 if (process.env.test == 'testing123')
 ```
 
-after
+Sesudah
 
 ```
 if ('testing123' == 'testing123')
