@@ -30,10 +30,10 @@ const bodyParser = require('body-parser')
 const session = require('express-session')
 const app = require('express')()
 
-// Body parser, to access `req.body`
+// Body parser, untuk mengakses `req.body`
 app.use(bodyParser.json())
 
-// Sessions to create `req.session`
+// Sessions untuk membuat `req.session`
 app.use(session({
   secret: 'super-secret-key',
   resave: false,
@@ -41,7 +41,7 @@ app.use(session({
   cookie: { maxAge: 60000 }
 }))
 
-// POST `/api/login` to log in the user and add him to the `req.session.authUser`
+// POST `/api/login` untuk memasukkan (log in) pengguna dan menambahkannya ke `req.session.authUser`
 app.post('/api/login', function (req, res) {
   if (req.body.username === 'demo' && req.body.password === 'demo') {
     req.session.authUser = { username: 'demo' }
@@ -50,16 +50,16 @@ app.post('/api/login', function (req, res) {
   res.status(401).json({ error: 'Bad credentials' })
 })
 
-// POST `/api/logout` to log out the user and remove it from the `req.session`
+// POST `/api/logout` untuk mengeluarkan (log out) pengguna dan menghapusnya dari `req.session`
 app.post('/api/logout', function (req, res) {
   delete req.session.authUser
   res.json({ ok: true })
 })
 
-// We instantiate Nuxt.js with the options
+// Kita instantiate Nuxt.js dengan opsi
 const isProd = process.env.NODE_ENV === 'production'
 const nuxt = new Nuxt({ dev: !isProd })
-// No build in production
+// Tidak menggunakan build saat produksi
 if (!isProd) {
   const builder = new Builder(nuxt)
   builder.build()
@@ -69,7 +69,7 @@ app.listen(3000)
 console.log('Server is listening on http://localhost:3000')
 ```
 
-And we update our `package.json` scripts:
+Dan kita perbarui skrip `package.json` kita:
 
 ```json
 // ...
@@ -81,7 +81,7 @@ And we update our `package.json` scripts:
 // ...
 ```
 
-Note: You'll need to run `npm install --save-dev cross-env` for the above example to work. If you're *not* developing on Windows you can leave cross-env out of your `start` script and set `NODE_ENV` directly.
+Catatan: Anda perlu untuk menjalankan `npm install --save-dev cross-env` agar contoh di atas dapat bekerja. Jika Anda *tidak* mengembangkan di Windows Anda tidak memerlukan cross-env di dalam skrip `start` Anda dan mengatur `NODE_ENV` secara langsung.
 
 ## Menggunakan store
 
@@ -122,9 +122,9 @@ export default store
 1. Kita mengimpor `Vue` dan `Vuex` (sudah termasuk di dalam Nuxt.js) dan kita memberitahu Vue untuk menggunakan Vuex agar kita dapat menggunakan `$store` di komponen-komponen kita.
 2. Kita `require('whatwg-fetch')` untuk polyfill metode `fetch()` di semua browser (lihat [fetch repo](https://github.com/github/fetch)).
 3. Kita membuat mutasi (mutation) `SET_USER` yang akan mengatur `state.authUser` ke pengguna yang terhubung.
-4. We export our store instance to Nuxt.js can inject it to our main application.
+4. Kita mengekspor "store instance" ke Nuxt.js dapat memasukkannya ke aplikasi utama kita.
 
-### nuxtServerInit() action
+### Aksi nuxtServerInit()
 
 Nuxt.js akan memanggil tindakan spesifik yang disebut `nuxtServerInit` dengan konteks dalam argumen, jadi saat aplikasi akan dimuat, store akan sudah terisi dengan beberapa data yang bisa kita dapatkan dari server.
 
@@ -143,7 +143,7 @@ Untuk membuat metode data asinkron, Nuxt.js menawarkan beragam cara, pilih yang 
 1. mengembalikan `Promise`, Nuxt.js akan menunggu promise terselesaikan sebelum me-render komponennya.
 2. Menggunakan [proposal `async`/`await`](https://github.com/lukehoban/ecmascript-asyncawait) ([pelajari lebih lanjut](https://zeit.co/blog/async-and-await)).
 
-### login() action
+### Aksi login()
 
 Kita menambahkan sebuah aksi `login` yang akan dipanggil dari komponen halaman kita untuk memasukkan (log in) pengguna:
 
@@ -174,7 +174,7 @@ login ({ commit }, { username, password }) {
 }
 ```
 
-### logout() method
+### Metode logout()
 
 ```js
 logout ({ commit }) {
@@ -193,9 +193,9 @@ logout ({ commit }) {
 
 Kemudian kita bisa menggunakan `$store.state.authUser` di komponen halaman kita untuk memeriksa apakah pengguna terhubung dalam aplikasi kita atau tidak.
 
-### Redirect user if not connected
+### Mengalihkan pengguna jika tidak terhubung
 
-Let's add a `/secret` route where only the connected user can see its content:
+Mari tambahkan sebuah rute `/secret` di mana hanya pengguna yang terhubung yang dapat melihat kontennya:
 
 ```html
 <template>
