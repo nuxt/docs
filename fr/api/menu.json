@@ -30,34 +30,35 @@
     "links": [
       { "name": "nuxt", "to": "/components-nuxt" },
       { "name": "nuxt-child", "to": "/components-nuxt-child" },
-      { "name": "nuxt-link", "to": "/components-nuxt-link" }
+      { "name": "nuxt-link", "to": "/components-nuxt-link" },
+      { "name": "no-ssr", "to": "/components-no-ssr" }
     ]
   },
   {
     "title": "Configuration",
     "links": [
       {
-        "name": "build (En)", "to": "/configuration-build",
+        "name": "build", "to": "/configuration-build",
         "contents": [
-          { "name": "analyze (En)", "to": "#analyze" },
-          { "name": "babel (En)", "to": "#babel" },
-          { "name": "cssSourceMap (En)", "to": "#csssourcemap" },
-          { "name": "devMiddleware (En)", "to": "#devmiddleware" },
-          { "name": "extend (En)", "to": "#extend" },
-          { "name": "extractCSS (En)", "to": "#extractcss" },
-          { "name": "filenames (En)", "to": "#filenames" },
-          { "name": "hotMiddleware (En)", "to": "#hotmiddleware" },
-          { "name": "plugins (En)", "to": "#plugins" },
-          { "name": "postcss (En)", "to": "#postcss" },
-          { "name": "publicPath (En)", "to": "#publicpath" },
-          { "name": "ssr (En)", "to": "#ssr" },
-          { "name": "templates (En)", "to": "#templates" },
-          { "name": "vendor (En)", "to": "#vendor" },
-          { "name": "watch (En)", "to": "#watch" }
+          { "name": "analyze", "to": "#analyze" },
+          { "name": "babel", "to": "#babel" },
+          { "name": "cssSourceMap", "to": "#csssourcemap" },
+          { "name": "devMiddleware", "to": "#devmiddleware" },
+          { "name": "extend", "to": "#extend" },
+          { "name": "extractCSS", "to": "#extractcss" },
+          { "name": "filenames", "to": "#filenames" },
+          { "name": "hotMiddleware", "to": "#hotmiddleware" },
+          { "name": "plugins", "to": "#plugins" },
+          { "name": "postcss", "to": "#postcss" },
+          { "name": "publicPath", "to": "#publicpath" },
+          { "name": "ssr", "to": "#ssr" },
+          { "name": "templates", "to": "#templates" },
+          { "name": "vendor", "to": "#vendor" },
+          { "name": "watch", "to": "#watch" }
         ]
       },
-      { "name": "css (En)", "to": "/configuration-css" },
-      { "name": "dev (En)", "to": "/configuration-dev" },
+      { "name": "css", "to": "/configuration-css" },
+      { "name": "dev", "to": "/configuration-dev" },
       { "name": "env (En)", "to": "/configuration-env" },
       {
         "name": "generate", "to": "/configuration-generate",

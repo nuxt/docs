@@ -7,7 +7,7 @@ description: Menghubungkan antar halaman menggunakan nuxt-link.
 
 > Komponen ini digunakan sebagai penghubung antar halaman.
 
-Saat ini, `<nuxt-link>` sama dengan [`<router-link>`](https://router.vuejs.org/en/api/router-link.html), jadi kami sarankan Anda untuk melihat bagaimana menggunakannya di [dokumentasi Vue Router](https://router.vuejs.org/en/api/router-link.html) .
+Saat ini, `<nuxt-link>` sama dengan [`<router-link>`](https://router.vuejs.org/en/api/router-link.html), jadi kami sarankan Anda untuk melihat bagaimana menggunakannya di [dokumentasi Vue Router](https://router.vuejs.org/en/api/router-link.html).
 
 Contoh (`pages/index.vue`):
 

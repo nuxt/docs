@@ -9,12 +9,12 @@ description: Nuxt.js lets you customize the webpack configuration for building y
 
 ## analyze
 
-> Nuxt.js use [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer) to let you visualize your bundles and how to optimize them.
+> Nuxt.js use [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyze) to let you visualize your bundles and how to optimize them.
 
 - Type: `Boolean` or `Object`
 - Default: `false`
 
-If an object, see available properties [here](https://github.com/th0r/webpack-bundle-analyzer#as-plugin).
+If an object, see available properties [here](https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin).
 
 Example (`nuxt.config.js`):
 

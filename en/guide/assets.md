@@ -86,7 +86,7 @@ If you want to update these loaders or disable them, please use [build.extend](/
 
 If you don't want to use webpacked Assets from the `assets` directory, you can create and use the `static` directory in your project root directory.
 
-These files will be automatically serve by Nuxt and accessible in your project root URL.
+These files will be automatically served by Nuxt and accessible in your project root URL.
 
 This option is helpful for files like `robots.txt`, `sitemap.xml` or `CNAME` (for like GitHub Pages).
 

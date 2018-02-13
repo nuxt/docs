@@ -1,6 +1,6 @@
 ---
 title: Testing
-description: Testing example with Nuxt.js
+description: Contoh Testing pada Nuxt.js
 github: with-ava
-documentation: /guide/development-tools#end-to-end-testing
+documentation: "/guide/development-tools#end-to-end-testing"
 ---

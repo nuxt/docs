@@ -18,6 +18,13 @@ When launching `nuxt generate` or calling `nuxt.generate()`, Nuxt.js will use th
 
 Directory name created by `nuxt generate`.
 
+## fallback
+
+- Type: `String` or `Boolean`
+- Default: `'200.html'`
+
+The path to the SPA fallback. This file can be used when doing deploys of generated sites to static hosting. It falls back to `mode: 'spa'` when a route isn't generated.
+
 ## interval
 
 - Type: `Number`
@@ -33,7 +40,7 @@ Interval between 2 render to avoid flooding the API calls made to a potential AP
 ```js
 minify: {
   collapseBooleanAttributes: true,
-  collapseWhitespace: true,
+  collapseWhitespace: false,
   decodeEntities: true,
   minifyCSS: true,
   minifyJS: true,
@@ -47,7 +54,7 @@ minify: {
   removeStyleLinkTypeAttributes: false,
   removeTagWhitespace: false,
   sortAttributes: true,
-  sortClassName: true,
+  sortClassName: false,
   trimCustomFragments: true,
   useShortDoctype: true
 }

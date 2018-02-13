@@ -1,12 +1,12 @@
 ---
 title: 'API: Properti css'
-description: Nuxt.js memungkinkan Anda menentukan file/modul/librari CSS yang ingin
-  Anda atur secara global (disertakan pada setiap halaman).
+description: Nuxt.js memungkinkan Anda menentukan file/modules/libraries CSS yang
+  ingin Anda atur secara global (disertakan pada setiap halaman).
 ---
 
 # Properti css
 
-> Nuxt.js memungkinkan Anda menentukan file/modul/librari CSS yang ingin Anda atur secara global (disertakan pada setiap halaman).
+> Nuxt.js memungkinkan Anda menentukan file/modules/libraries CSS yang ingin Anda atur secara global (disertakan pada setiap halaman).
 
 Jika Anda ingin menggunakan `sass` pastikan Anda telah menginstal paket `node-sass` dan `sass-loader`. Jika belum, instal saja:
 
@@ -17,7 +17,7 @@ npm install --save-dev node-sass sass-loader
 - Type: `Array`
 - Items: `String`
 
-Di dalam `nuxt.config.js`, tambahkan source CSS:
+Pada file `nuxt.config.js`, tambahkan sumber CSS:
 
 ```js
 module.exports = {
@@ -32,4 +32,4 @@ module.exports = {
 }
 ```
 
-Nuxt.js akan secara otomatis membaca jenis file dengan ekstensi tersebut dan menggunakan pemroses pre-processor yang sesuai untuk webpack. Anda masih perlu menginstal loader yang diperlukan jika Anda perlu menggunakannya.
+Nuxt.js secara otomatis akan membaca jenis file dengan ekstensi itu dan menggunakan pemroses pra-prosesor yang sesuai untuk webpack. Anda masih perlu menginstal loader yang diperlukan jika Anda perlu menggunakannya.

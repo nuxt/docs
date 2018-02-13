@@ -1,11 +1,11 @@
 ---
 title: 'API: '
-description: Menampilkan halaman saat ini
+description: Menampilkan halaman saat ini.
 ---
 
 # Komponen <nuxt-child>
 
-> Komponen ini digunakan untuk menampilkan "children" komponen pada [nested route](/guide/routing#nested-routes)
+> Komponen ini digunakan untuk menampilkan "children" komponen pada [rute bersarang](/guide/routing#nested-routes).
 
 Contoh:
 
@@ -16,7 +16,7 @@ Contoh:
 ---| parent.vue
 ```
 
-File tree di atas akan menghasilkan routes sebagai berikut:
+File tree di atas akan menghasilkan rute sebagai berikut:
 
 ```js
 [
@@ -35,7 +35,7 @@ File tree di atas akan menghasilkan routes sebagai berikut:
 ]
 ```
 
-Untuk menampilkan komponen `child.vue`, kita harus memasukan `<nuxt-child/>` ke dalam `pages/parent.vue`:
+Untuk menampilkan komponen `child.vue`, kita harus memasukkan `<nuxt-child/>` di dalam `pages/parent.vue`:
 
 ```html
 <template>
@@ -46,4 +46,4 @@ Untuk menampilkan komponen `child.vue`, kita harus memasukan `<nuxt-child/>` ke 
 </template>
 ```
 
-Untuk melihat contoh, silahkan lihat [contoh nested-routes](/examples/nested-routes).
+Untuk melihat contoh, silakan lihat [contoh rute-bersarang](/examples/nested-routes).

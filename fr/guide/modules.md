@@ -208,7 +208,7 @@ module.exports = function nuxtBootstrapVue (moduleOptions) {
 
 ### Ajouter une bibliothèque CSS
 
-Il est recommandé de vérifier si un utilisateur ne fournit pas déjà la même bibliothèque pour éviter les ajouts en doublon. Fournissez donc toujours une **option de désactivation** lors de l'ajout de fichier CSS par un module.
+Vérifiez toujours si la même bibliothèque CSS n'a pas déjà été fournie pour éviter les ajouts en doublon et ajoutez toujours une **option de désactivation** de la bibliothèque CSS dans votre module. Voyez cela dans l'exemple ci-dessous.
 
 **module.js**
 

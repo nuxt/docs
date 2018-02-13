@@ -1,6 +1,6 @@
 ---
 title: Middleware
-description: Middleware example with Nuxt.js
+description: Contoh Middleware pada Nuxt.js
 github: middleware
-documentation: /guide/routing#middleware
+documentation: "/guide/routing#middleware"
 ---

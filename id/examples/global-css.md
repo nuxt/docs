@@ -1,7 +1,7 @@
 ---
 title: Global CSS
-description: Global CSS example with Nuxt.js
+description: Contoh Global CSS pada Nuxt.js
 github: global-css
 livedemo: https://global-css.nuxtjs.org
-documentation: /api/configuration-css
+documentation: "/api/configuration-css"
 ---

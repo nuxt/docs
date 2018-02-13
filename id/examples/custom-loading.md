@@ -1,7 +1,7 @@
 ---
-title: Custom Loading Component
-description: Custom Loading Component example with Nuxt.js
+title: Komponen Custom Loading
+description: Contoh Komponen Custom Loading pada Nuxt.js
 github: custom-loading
 livedemo: https://custom-loading.nuxtjs.org
-documentation: /api/configuration-loading
+documentation: "/api/configuration-loading"
 ---
