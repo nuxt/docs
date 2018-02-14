@@ -121,7 +121,7 @@ jsdom has some limitations because it does not use a browser. However, it will c
 
 > ESLint adalah alat yang hebat untuk menjaga kode Anda tetap bersih
 
-> [Prettier](prettier.io) is a very popular code formatter
+> [Prettier](prettier.io) adalah pemformat kode yang sangat populer
 
 You can add ESLint with Prettier pretty easily with nuxt.js, first, you need to add the npm dependencies:
 
@@ -144,15 +144,15 @@ module.exports = {
   extends: [
     "eslint:recommended",
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+    // Pertimbangkan untuk menggunakan `plugin:vue/strongly-recommended` atau `plugin:vue/recommended` untuk memperketat aturan.
     "plugin:vue/recommended",
     "plugin:prettier/recommended"
   ],
-  // required to lint *.vue files
+  // diperlukan untuk melinting file *.vue
   plugins: [
     'vue'
   ],
-  // add your custom rules here
+  // tambahkan aturan anda disini
   rules: {
     "semi": [2, "never"],
     "no-console": "off",
@@ -162,7 +162,7 @@ module.exports = {
 }
 ```
 
-Then, you can add a `lint` and`lintfix` scripts in your `package.json`:
+Kemudian, Anda bisa menambahkan skrip `lint` dan`lintfix` di `package.json` anda:
 
 ```js
 "scripts": {
@@ -171,13 +171,13 @@ Then, you can add a `lint` and`lintfix` scripts in your `package.json`:
 }
 ```
 
-You can now launch `lint` to just check for errors:
+Anda sekarang bisa menggunakan `lint` hanya untuk memeriksa apakah ada kesalahan:
 
 ```bash
 npm run lint
 ```
 
-or `lintfix` to also fix those which are doable
+Atau `lintfix` untuk bisa memperbaikinya
 
 ```bash
 npm run lintfix
