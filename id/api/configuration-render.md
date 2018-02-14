@@ -3,7 +3,7 @@ title: 'API: Properti render'
 description: Nuxt.js memungkinkan Anda menyesuaikan opsi runtime untuk me-render halaman
 ---
 
-# The render Property
+# Properti Render
 
 > Nuxt.js memungkinkan Anda menyesuaikan opsi runtime untuk me-render halaman
 
@@ -11,7 +11,7 @@ description: Nuxt.js memungkinkan Anda menyesuaikan opsi runtime untuk me-render
 
 - Type: `object`
 
-> Use this option to customize vue SSR bundle renderer. This option is skipped for spa mode.
+> Gunakan opsi ini untuk menyesuaikan vue SSR (bundle renderer). Pilihan ini akan diabaikan pada mode spa.
 
 ```js
 module.exports = {
@@ -27,47 +27,46 @@ module.exports = {
 }
 ```
 
-Learn more about available options on [Vue SSR API Reference](https://ssr.vuejs.org/en/api.html#renderer-options).
-It is recommended to not use this option as Nuxt.js is already providing best SSR defaults and misconfiguration might lead to SSR problems.
+Pelajari lebih lanjut tentang opsi yang tersedia pada [Referensi API Vue SSR](https://ssr.vuejs.org/en/api.html#renderer-options). Dianjurkan untuk tidak menggunakan opsi ini karena Nuxt.js sudah menyediakan standar SSR yang terbaik dan kesalahan konfigurasi dapat menyebabkan masalah SSR.
 
 ## etag
 
 - Type: `object`
     - Default: `{ weak: true }`
 
-To disable etag for pages set `etag: false`
+Untuk menonaktifkan etag pada halaman gunakan `etag: false`
 
-See [etag](https://www.npmjs.com/package/etag) docs for possible options.
+Lihat dokumentasi [etag](https://www.npmjs.com/package/etag) untuk opsi lainnya.
 
 ### gzip
 
 - Type `object`
     - Default: `{ threshold: 0 }`
 
-See [compression](https://www.npmjs.com/package/compression) docs for possible options.
+Lihat dokumentasi [compression](https://www.npmjs.com/package/compression) untuk opsi lainnya.
 
 ### http2
 
 - Type `object`
     - Default: `{ push: false }`
 
-Activate HTTP2 push headers.
+Aktifkan header push HTTP2.
 
 ## resourceHints
 
 - Type: `boolean`
     - Default: `true`
 
-> Adds `prefetch` and `preload` links for faster initial page load time.
+> Menambahkan link `prefetch` dan `preload` untuk membuka halaman awal menjadi lebih cepat.
 
-You may want to only disable this option if have many pages and routes.
+Anda mungkin hanya ingin menonaktifkan opsi ini jika memiliki banyak halaman dan route.
 
 ## ssr
 
 - Type: `boolean`
     - Default: `true` pada mode universal dan `false` pada mode spa
 
-> Enable SSR rendering
+> Aktifkan render SSR
 
 Pilihan ini diatur secara otomatis berdasarkan nilai `mode` jika tidak ditentukan. Ini bisa berguna untuk mengaktifkan/menonaktifkan SSR secara dinamis pada saat runtime setelah build image. (Dengan docker misalnya)
 
@@ -76,4 +75,4 @@ Pilihan ini diatur secara otomatis berdasarkan nilai `mode` jika tidak ditentuka
 - Type: `object`
     - Default: `{}`
 
-See [serve-static](https://www.npmjs.com/package/serve-static) docs for possible options.
+Lihat dokumentasi [serve-static](https://www.npmjs.com/package/serve-static) untuk opsi lainnya.
