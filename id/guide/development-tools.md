@@ -1,13 +1,13 @@
 ---
-title: Development Tools
+title: Alat Pengembangan (Development Tools)
 description: Nuxt.js membantu Anda membuat pengembangan web menjadi menyenangkan.
 ---
 
 > Menguji aplikasi Anda adalah bagian dari pengembangan web. Nuxt.js membantu Anda membuatnya semudah mungkin.
 
-## End-to-End Testing
+## Pengujian Ujung-ke-Ujung (End-to-End)
 
-[AVA](https://github.com/avajs/ava) is a powerful JavaScript testing framework, mixed with [jsdom](https://github.com/tmpvar/jsdom), we can use them to do end-to-end testing easily.
+[AVA](https://github.com/avajs/ava) adalah kerangka (framework) pengujian JavaScript yang hebat, dicampur dengan [jsdom](https://github.com/tmpvar/jsdom), kita dapat menggunakannya untuk melakukan pengujian dari ujung ke ujung dengan mudah.
 
 Pertama, kita perlu menambahkan AVA dan jsdom sebagai dependensi pembangunan:
 
@@ -15,7 +15,7 @@ Pertama, kita perlu menambahkan AVA dan jsdom sebagai dependensi pembangunan:
 npm install --save-dev ava jsdom
 ```
 
-Then add a test script to our `package.json` and configure AVA to compile files that we import into our tests.
+Kemudian tambahkan skrip uji ke `package.json` kita dan konfigurasikan AVA untuk mengkompilasi file yang kita impor ke dalam pengujian kita.
 
 ```javascript
 "scripts": {
@@ -33,7 +33,7 @@ Then add a test script to our `package.json` and configure AVA to compile files 
 }
 ```
 
-We are going to write our tests in the `test` folder:
+Kita akan menulis tes kita di folder `test` :
 
 ```bash
 mkdir test
@@ -61,20 +61,20 @@ export default {
 </style>
 ```
 
-When we launch our app with `npm run dev` and open http://localhost:3000, we can see our red `Hello world!` title.
+Saat kita meluncurkan aplikasi kita dengan `npm run dev` dan buka http: // localhost: 3000, kita bisa melihat judul `Hello world!` berwarna merah.
 
-We add our test file `test/index.test.js`:
+Kita tambahkan file test `test/index.test.js`:
 
 ```js
 import test from 'ava'
 import { Nuxt, Builder } from 'nuxt'
 import { resolve } from 'path'
 
-// We keep a reference to Nuxt so we can close
-// the server at the end of the test
+// Kita tetap mengacu kepada Nuxt agar kita bisa
+// menutup server pada akhir tes
 let nuxt = null
 
-// Init Nuxt.js and start listening on localhost:4000
+// Init Nuxt.js dan mulai `listening` pada localhost:4000
 test.before('Init Nuxt.js', async t => {
   const rootDir = resolve(__dirname, '..')
   let config = {}
@@ -86,7 +86,7 @@ test.before('Init Nuxt.js', async t => {
   nuxt.listen(4000, 'localhost')
 })
 
-// Example of testing only generated html
+// Contoh `testing` only generated html
 test('Route / exits and render HTML', async t => {
   let context = {}
   const { html } = await nuxt.renderRoute('/', context)
@@ -109,13 +109,13 @@ test.after('Closing server', t => {
 })
 ```
 
-We can now launch our tests:
+Kita sekarang bisa meluncurkan tes kita:
 
 ```bash
 npm test
 ```
 
-jsdom has some limitations because it does not use a browser. However, it will cover most of our tests. If you want to use a browser to test your application, you might want to check out [Nightwatch.js](http://nightwatchjs.org).
+jsdom memiliki beberapa keterbatasan karena tidak menggunakan browser. Namun, ini akan mencakup sebagian besar tes kita. Jika Anda ingin menggunakan browser untuk menguji aplikasi Anda, Anda mungkin ingin lihat [Nightwatch.js](http://nightwatchjs.org).
 
 ## ESLint && Prettier
 
@@ -123,7 +123,7 @@ jsdom has some limitations because it does not use a browser. However, it will c
 
 > [Prettier](prettier.io) adalah pemformat kode yang sangat populer
 
-You can add ESLint with Prettier pretty easily with nuxt.js, first, you need to add the npm dependencies:
+Anda dapat menambahkan ESLint dengan mudah di Nuxt.js. Pertama, Anda perlu menambahkan dependensi npm:
 
 ```bash
 npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader eslint-plugin-vue eslint-plugin-prettier prettier
@@ -183,6 +183,6 @@ Atau `lintfix` untuk bisa memperbaikinya
 npm run lintfix
 ```
 
-ESLint will lint every of your JavaScript and Vue files while ignoring your ignored files defined in your `.gitignore`.
+ESLint akan membungkus setiap file JavaScript dan Vue Anda sambil mengabaikan file yang Anda abaikan yang didefinisikan di  `.gitignore` anda.
 
-<p class="Alert Alert--info">One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before commiting your code.</p>
+<p class="Alert Alert--info">Salah satu praktik terbaik adalah menambahkan juga `"precommit": "npm run lint"` di package.json Anda untuk memeriksa kode Anda secara otomatis sebelum menyerahkan (commit) kode Anda.</p>
