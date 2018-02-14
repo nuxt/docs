@@ -1,28 +1,28 @@
 ---
-title: Auth Routes
-description: Authenticated routes example with Nuxt.js
+title: Rute Terautentikasi (Auth Routes)
+description: Contoh rute terautentikasi (Authenticated routes) menggunakan Nuxt.js
 github: auth-routes
 livedemo: https://nuxt-auth-routes.gomix.me
 liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 ---
 
-# Documentation
+# Dokumentasi
 
-> Nuxt.js can be used to create authenticated routes easily.
+> Nuxt.js dapat digunakan untuk membuat rute terautentikasi dengan mudah.
 
-## Using Express and Sessions
+## Menggunakan Express dan Sessions
 
-To add the sessions feature in our application, we will use `express` and `express-session`, for this, we need to use Nuxt.js programmatically.
+Untuk menambahkan fitur sesi (sessions) di aplikasi kita, kita akan menggunakan `express` dan `express-session`, untuk hal ini, kita perlu menggunakan Nuxt.js secara terprogram.
 
-First, we install the dependencies:
+Pertama, kita instal dependensi:
 
 ```bash
 yarn add express express-session body-parser whatwg-fetch
 ```
 
-*We will talk about `whatwg-fetch` later.*
+*Kita akan membahas tentang `whatwg-fetch` nanti.*
 
-Then we create our `server.js`:
+Kemudian buat `server.js` kita:
 
 ```js
 const { Nuxt, Builder } = require('nuxt')
@@ -30,10 +30,10 @@ const bodyParser = require('body-parser')
 const session = require('express-session')
 const app = require('express')()
 
-// Body parser, to access `req.body`
+// Body parser, untuk mengakses `req.body`
 app.use(bodyParser.json())
 
-// Sessions to create `req.session`
+// Sessions untuk membuat `req.session`
 app.use(session({
   secret: 'super-secret-key',
   resave: false,
@@ -41,7 +41,7 @@ app.use(session({
   cookie: { maxAge: 60000 }
 }))
 
-// POST `/api/login` to log in the user and add him to the `req.session.authUser`
+// POST `/api/login` untuk memasukkan (log in) pengguna dan menambahkannya ke `req.session.authUser`
 app.post('/api/login', function (req, res) {
   if (req.body.username === 'demo' && req.body.password === 'demo') {
     req.session.authUser = { username: 'demo' }
@@ -50,16 +50,16 @@ app.post('/api/login', function (req, res) {
   res.status(401).json({ error: 'Bad credentials' })
 })
 
-// POST `/api/logout` to log out the user and remove it from the `req.session`
+// POST `/api/logout` untuk mengeluarkan (log out) pengguna dan menghapusnya dari `req.session`
 app.post('/api/logout', function (req, res) {
   delete req.session.authUser
   res.json({ ok: true })
 })
 
-// We instantiate Nuxt.js with the options
+// Kita instantiate Nuxt.js dengan opsi
 const isProd = process.env.NODE_ENV === 'production'
 const nuxt = new Nuxt({ dev: !isProd })
-// No build in production
+// Tidak menggunakan build saat produksi
 if (!isProd) {
   const builder = new Builder(nuxt)
   builder.build()
@@ -69,7 +69,7 @@ app.listen(3000)
 console.log('Server is listening on http://localhost:3000')
 ```
 
-And we update our `package.json` scripts:
+Dan kita perbarui skrip `package.json` kita:
 
 ```json
 // ...
@@ -81,13 +81,13 @@ And we update our `package.json` scripts:
 // ...
 ```
 
-Note: You'll need to run `npm install --save-dev cross-env` for the above example to work. If you're *not* developing on Windows you can leave cross-env out of your `start` script and set `NODE_ENV` directly.
+Catatan: Anda perlu untuk menjalankan `npm install --save-dev cross-env` agar contoh di atas dapat bekerja. Jika Anda *tidak* mengembangkan di Windows Anda tidak memerlukan cross-env di dalam skrip `start` Anda dan mengatur `NODE_ENV` secara langsung.
 
-## Using the store
+## Menggunakan store
 
-We need a global state to let our application know if the user is connected **across the pages**.
+Kita memerlukan sebuah status global (global state) agar aplikasi kita tahu jika pengguna terhubung **di seluruh halaman**.
 
-To let Nuxt.js use Vuex, we create a `store/index.js` file:
+Agar Nuxt.js menggunakan Vuex, kita buat file `store/index.js` :
 
 ```js
 import Vue from 'vue'
@@ -95,7 +95,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-// Polyfill for `window.fetch()`
+// Polyfill untuk `window.fetch()`
 require('whatwg-fetch')
 
 const store = () => new Vuex.Store({
@@ -119,16 +119,16 @@ const store = () => new Vuex.Store({
 export default store
 ```
 
-1. We import `Vue` and `Vuex` (included in Nuxt.js) and we tell Vue to use Vuex to let us use `$store` in our components.
-2. We `require('whatwg-fetch')` to polyfill the `fetch()` method across all browsers (see [fetch repo](https://github.com/github/fetch)).
-3. We create our `SET_USER` mutation which will set the `state.authUser` to the connected user.
-4. We export our store instance to Nuxt.js can inject it to our main application.
+1. Kita mengimpor `Vue` dan `Vuex` (sudah termasuk di dalam Nuxt.js) dan kita memberitahu Vue untuk menggunakan Vuex agar kita dapat menggunakan `$store` di komponen-komponen kita.
+2. Kita `require('whatwg-fetch')` untuk polyfill metode `fetch()` di semua browser (lihat [fetch repo](https://github.com/github/fetch)).
+3. Kita membuat mutasi (mutation) `SET_USER` yang akan mengatur `state.authUser` ke pengguna yang terhubung.
+4. Kita mengekspor "store instance" ke Nuxt.js dapat memasukkannya ke aplikasi utama kita.
 
-### nuxtServerInit() action
+### Aksi nuxtServerInit()
 
-Nuxt.js will call a specific action called `nuxtServerInit` with the context in argument, so when the app will be loaded, the store will be already filled with some data we can get from the server.
+Nuxt.js akan memanggil tindakan spesifik yang disebut `nuxtServerInit` dengan konteks dalam argumen, jadi saat aplikasi akan dimuat, store akan sudah terisi dengan beberapa data yang bisa kita dapatkan dari server.
 
-In our `store/index.js`, we can add the `nuxtServerInit` action:
+Di `store/index.js`, kita dapat menambahkan aksi `nuxtServerInit`:
 
 ```js
 nuxtServerInit ({ commit }, { req }) {
@@ -138,19 +138,19 @@ nuxtServerInit ({ commit }, { req }) {
 }
 ```
 
-To make the data method asynchronous, Nuxt.js offers you different ways, choose the one you're the most familiar with:
+Untuk membuat metode data asinkron, Nuxt.js menawarkan beragam cara, pilih yang paling Anda kenal:
 
-1. returning a `Promise`, Nuxt.js will wait for the promise to be resolved before rendering the component.
-2. Using the [`async`/`await` proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await)).
+1. mengembalikan `Promise`, Nuxt.js akan menunggu promise terselesaikan sebelum me-render komponennya.
+2. Menggunakan [proposal `async`/`await`](https://github.com/lukehoban/ecmascript-asyncawait) ([pelajari lebih lanjut](https://zeit.co/blog/async-and-await)).
 
-### login() action
+### Aksi login()
 
-We add a `login` action which will be called from our pages component to log in the user:
+Kita menambahkan sebuah aksi `login` yang akan dipanggil dari komponen halaman kita untuk memasukkan (log in) pengguna:
 
 ```js
 login ({ commit }, { username, password }) {
   return fetch('/api/login', {
-    // Send the client cookies to the server
+    // Mengirim cookies client ke server
     credentials: 'same-origin',
     method: 'POST',
     headers: {
@@ -174,12 +174,12 @@ login ({ commit }, { username, password }) {
 }
 ```
 
-### logout() method
+### Metode logout()
 
 ```js
 logout ({ commit }) {
   return fetch('/api/logout', {
-    // Send the client cookies to the server
+    // Mengirim cookies client ke server
     credentials: 'same-origin',
     method: 'POST'
   })
@@ -189,13 +189,13 @@ logout ({ commit }) {
 }
 ```
 
-## Pages components
+## Komponen halaman
 
-Then we can use `$store.state.authUser` in our pages components to check if the user is connected in our application or not.
+Kemudian kita bisa menggunakan `$store.state.authUser` di komponen halaman kita untuk memeriksa apakah pengguna terhubung dalam aplikasi kita atau tidak.
 
-### Redirect user if not connected
+### Mengalihkan pengguna jika tidak terhubung
 
-Let's add a `/secret` route where only the connected user can see its content:
+Mari tambahkan sebuah rute `/secret` di mana hanya pengguna yang terhubung yang dapat melihat kontennya:
 
 ```html
 <template>
@@ -207,7 +207,7 @@ Let's add a `/secret` route where only the connected user can see its content:
 
 <script>
 export default {
-  // we use fetch() because we do not need to set data to this component
+  // kita menggunakan fetch() karena kita tidak ingin mengatur data untuk komponen ini
   fetch ({ store, redirect }) {
     if (!store.state.authUser) {
       return redirect('/')
@@ -217,4 +217,4 @@ export default {
 </script>
 ```
 
-We can see in the `fetch` method that we call `redirect('/')` when our user is not connected.
+Kita bisa melihat dalam metode `fetch` bahwa kita memanggil `redirect('/')` ketika pengguna tidak terhubung.
