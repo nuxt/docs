@@ -8,19 +8,18 @@ description: Mendefinisikan middleware sisi-server.
 - Tipe: `Array`
     - Item: `String` atau `Object` atau `Function`
 
-Nuxt internally creates a [connect](https://github.com/senchalabs/connect) instance,
-so we can register our middleware to it's stack and having chance
-to provide more routes like API **without need to an external server**.
-Because connect itself is a middleware, registered middleware will work with both `nuxt start`
-and also when used as a middleware with programmatic usages like [express-template](https://github.com/nuxt-community/express-template).
-Nuxt [Modules](/guide/modules) can also provide `serverMiddleware`
-using [this.addServerMiddleware()](/api/internals-module-container#addservermiddleware-middleware-)
+Nuxt secara internal membuat sebuah instansi [connect](https://github.com/senchalabs/connect),
+jadi kita bisa mendaftarkan middleware ke stack-nya dan berkesempatan
+untuk menyediakan lebih banyak rute seperti API **tanpa perlu server eksternal**.
+Karena `connect` sendiri adalah sebuah middleware, middleware yang terdaftar akan bekerja baik di `nuxt start`
+dan juga ketika digunakan sebagai middleware dengan penggunaan terprogram seperti [express-template](https://github.com/nuxt-community/express-template).
+[Modules](/guide/modules) Nuxt juga dapat menyediakan `serverMiddleware`
+menggunakan [this.addServerMiddleware()](/api/internals-module-container#addservermiddleware-middleware-)
 
 ## serverMiddleware vs middleware!
 
-Don't confuse it with [routes middleware](/guide/routing#middleware) which are being called before each route by Vue in Client Side or SSR.
-`serverMiddleware` are just running in server side **before** vue-server-renderer and can be used for server specific tasks
-like handling API requests or serving assets.
+Jangan bingung dengan [rute middleware](/guide/routing#middleware) yang dipanggil sebelum masing-masing rute oleh Vue di Sisi-Client atau Sisi-Server (SSR).
+`serverMiddleware` hanya berjalan di sisi-server  **sebelum** vue-server-renderer dan dapat digunakan untuk tugas-tugas spesifik server seperti menangani permintaan API atau aset layanan (serving assets).
 
 ## Penggunaan
 
@@ -33,23 +32,19 @@ const serveStatic = require('serve-static')
 
 module.exports = {
   serverMiddleware: [
-      // Will register redirect-ssl npm package
+      // Akan mendaftarkan paket npm redirect-ssl
       'redirect-ssl',
 
-      // Will register file from project api directory to handle /api/* requires
+      // Akan mendaftarkan berkas dari direktori api proyek untuk menangani /api/*
       { path: '/api', handler: '~/api/index.js' },
 
-      // We can create custom instances too
+      // Kita juga dapat membuat instansi sendiri (custom)
       { path: '/static2', handler: serveStatic(__dirname + '/static2') }
   ]
 }
 ```
 
-<p class="Alert Alert--danger">
-    <b>HEADS UP! </b>
-    If you don't want middleware to register for all routes you have to use Object form with specific path,
-    otherwise nuxt default handler won't work!
-</p>
+<p class="Alert Alert--danger"><b>Mohon Diperhatikan! </b> Jika Anda tidak ingin middleware mendaftar ke semua rute, Anda harus menggunakan bentuk Object dengan jalur (path) tertentu, jika tidak, penanganan default nuxt tidak akan bekerja!</p>
 
 ## Server Middleware Sendiri
 
