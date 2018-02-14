@@ -1,0 +1,109 @@
+[
+  {
+    "title": "Prologue",
+    "links": [
+      {
+        "to": "", "name": "Introduction",
+        "contents": [
+          { "to": "#what-is-nuxt-js-", "name": "What is Nuxt.js ?" },
+          { "to": "#how-it-works", "name": "How it Works" },
+          { "to": "#features", "name": "Features" },
+          { "to": "#schema", "name": "Schema" },
+          { "to": "#server-rendered", "name": "Server Rendered" },
+          { "to": "#static-generated", "name": "Static Generated" }
+        ]
+      },
+      { "to": "/contribution-guide", "name": "Contribution Guide" },
+      { "to": "/release-notes", "name": "Release Notes" }
+    ]
+  },
+  {
+    "title": "Getting Started",
+    "links": [
+      {
+        "to": "/installation", "name": "Installation",
+        "contents": [
+          { "to": "#using-nuxt-js-starter-template", "name": "Using Nuxt.js starter template" },
+          { "to": "#starting-from-scratch", "name": "Starting from scratch" }
+        ]
+      },
+      {
+        "to": "/directory-structure", "name": "Directory structure",
+        "contents": [
+          { "to": "#directories", "name": "Directories" },
+          { "to": "#aliases", "name": "Aliases" }
+        ]
+      },
+      { "to": "/configuration", "name": "Configuration" },
+      {
+        "to": "/routing", "name": "Routing",
+        "contents": [
+          { "to": "#basic-routes", "name": "Basic Routes" },
+          { "to": "#dynamic-routes", "name": "Dynamic Routes" },
+          { "to": "#nested-routes", "name": "Nested Routes" },
+          { "to": "#dynamic-nested-routes", "name": "Dynamic Nested Routes" },
+          { "to": "#transitions", "name": "Transitions" },
+          { "to": "#middleware", "name": "Middleware" }
+        ]
+      },
+      {
+        "to": "/views", "name": "Views",
+        "contents": [
+          { "to": "#document", "name": "Document" },
+          { "to": "#layouts", "name": "Layouts" },
+          { "to": "#pages", "name": "Pages" },
+          { "to": "#html-head", "name": "HTML Head" }
+        ]
+      },
+      {
+        "to": "/async-data", "name": "Async Data",
+        "contents": [
+          { "to": "#the-data-method", "name": "The asyncData Method" },
+          { "to": "#the-context", "name": "The Context" },
+          { "to": "#handling-errors", "name": "Handling Errors" }
+        ]
+      },
+      {
+        "to": "/assets", "name": "Assets",
+        "contents": [
+          { "to": "#webpacked", "name": "Webpacked" },
+          { "to": "#static", "name": "Static" }
+        ]
+      },
+      {
+        "to": "/plugins", "name": "Plugins",
+        "contents": [
+          { "to": "#external-packages", "name": "External Packages" },
+          { "to": "#vue-plugins", "name": "Vue Plugins" },
+          { "to": "#inject-in-root-amp-context", "name": "Inject in $root & context" },
+          { "to": "#client-side-only", "name": "Client-side only" }
+        ]
+      },
+      {
+        "to": "/vuex-store", "name": "Vuex Store",
+        "contents": [
+          { "to": "#activate-the-store", "name": "Activate the Store" },
+          { "to": "#classic-mode", "name": "Classic mode" },
+          { "to": "#modules-mode", "name": "Modules mode" },
+          { "to": "#the-fetch-method", "name": "The fetch Method" },
+          { "to": "#the-nuxtserverinit-action", "name": "The nuxtServerInit Action" }
+        ]
+      },
+      {
+        "to": "/commands", "name": "Commands",
+        "contents": [
+          { "to": "#list-of-commands", "name": "List of Commands" },
+          { "to": "#development-environment", "name": "Development Enviroment" },
+          { "to": "#production-deployment", "name": "Production Deployment" }
+        ]
+      },
+      {
+        "to": "/development-tools", "name": "Development Tools",
+        "contents": [
+          { "to": "#end-to-end-testing", "name": "End-to-End Testing" },
+          { "to": "#eslint", "name": "ESLint" }
+        ]
+      }
+    ]
+  }
+]

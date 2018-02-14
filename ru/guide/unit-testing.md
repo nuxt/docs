@@ -54,13 +54,12 @@ export default {
 
 ```js
 import test from 'ava'
-import Nuxt from 'nuxt'
+import { Nuxt, Builder } from 'nuxt'
 import { resolve } from 'path'
 
 // Сохраним экземпляры nuxt и server.
 // Мы сможем сбросить их в конце теста.
 let nuxt = null
-let server = null
 
 // Инициализируем Nuxt.js и создадим сервер по адресу localhost:4000
 test.before('Init Nuxt.js', async t => {
@@ -70,9 +69,8 @@ test.before('Init Nuxt.js', async t => {
   config.rootDir = rootDir // папка проекта
   config.dev = false // финальная сборка
   nuxt = new Nuxt(config)
-  await nuxt.build()
-  server = new nuxt.Server(nuxt)
-  server.listen(4000, 'localhost')
+  await new Builder(nuxt).build()
+  nuxt.listen(4000, 'localhost')
 })
 
 // Пример генерации html-кода только для этого теста
@@ -94,7 +92,6 @@ test('Route / exits and render HTML with CSS applied', async t => {
 
 // Остановить сервер и попросить nuxt не отслеживать изменения файлов
 test.after('Closing server and nuxt.js', t => {
-  server.close()
   nuxt.close()
 })
 ```

@@ -3,15 +3,20 @@ title: Google Analytics Integration
 description: How to use Google Analytics?
 ---
 
-## How to use Google Analytics?
+# How to use Google Analytics?
 
-To use [Google Analytics](https://analytics.google.com/analytics/web/) with your nuxt.js application, we recommend to create a file `plugins/ga.js`:
+First, please check the [official Google Analytics module](https://github.com/nuxt-community/analytics-module) for Nuxt.js.
+
+Ortherwise, to use [Google Analytics](https://www.google.com/analytics/) with your Nuxt.js application, we recommend to create a file `plugins/ga.js`:
 
 ```js
-/*
-** Only run on client-side and only in production mode
-*/
-if (process.BROWSER_BUILD && process.env.NODE_ENV === 'production') {
+/* eslint-disable */
+
+export default ({ app }) => {
+  /*
+  ** Only run on client-side and only in production mode
+  */
+  if (process.env.NODE_ENV !== 'production') return
   /*
   ** Include Google Analytics Script
   */
@@ -23,38 +28,33 @@ if (process.BROWSER_BUILD && process.env.NODE_ENV === 'production') {
   ** Set the current page
   */
   ga('create', 'UA-XXXXXXXX-X', 'auto')
-  ga('send', 'pageview')
   /*
-  ** When the app is mounted
+  ** Every time the route changes (fired on initialization too)
   */
-  window.onNuxtReady((app) => {
+  app.router.afterEach((to, from) => {
     /*
-    ** Every time the route changes
+    ** We tell Google Analytics to add a `pageview`
     */
-    app.$nuxt.$on('routeChanged', (to, from) => {
-      /*
-      ** We tell Google Analytic to add a page view
-      */
-      ga('set', 'page', to.fullPath)
-      ga('send', 'pageview')
-    })
+    ga('set', 'page', to.fullPath)
+    ga('send', 'pageview')
   })
 }
 ```
 
 > Replace `UA-XXXXXXXX-X` by your Google Analytics tracking ID.
 
-Then, we tell nuxt.js to import it in our main application:
+Then, we tell Nuxt.js to import it in our main application:
 
 `nuxt.config.js`
+
 ```js
 module.exports = {
   plugins: [
-    '~plugins/ga.js'
+    { src: '~plugins/ga.js', ssr: false }
   ]
 }
 ```
 
-Voilà, Google Analytics is integrated into your nuxt.js application and will track every page view!
+Voilà, Google Analytics is integrated into your Nuxt.js application and will track every page view!
 
-<p class="Alert Alert--nuxt-green"><b>INFO:</b> you can use this method for any other tracking service.</p>
+<p class="Alert Alert--nuxt-green"><b>Info:</b> you can use this method for any other tracking service.</p>

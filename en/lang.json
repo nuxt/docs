@@ -1,5 +1,6 @@
 {
   "iso": "en",
+  "docVersion": "1.3.0",
   "links": {
     "api": "API",
     "blog": "Blog",
@@ -10,7 +11,7 @@
     "ecosystem": "Ecosystem",
     "faq": "FAQ",
     "get_started": "get started",
-    "github": "Github",
+    "github": "GitHub",
     "guide": "Guide",
     "homepage": "Home page",
     "live_demo": "Live Demo",
@@ -20,7 +21,7 @@
     "vue_jobs": "Vue Jobs"
   },
   "text": {
-    "an_error_occured": "An error occured",
+    "an_error_occured": "An error occurred",
     "api_page_not_found": "API page not found",
     "example_file": "Example Files",
     "please_wait": "Please wait...",
@@ -42,7 +43,7 @@
   "guide": {
     "release_notes": "Release Notes",
     "contribute": "Caught a mistake or want to contribute to the documentation?",
-    "edit_on_github": "Edit this page on Github!"
+    "edit_on_github": "Edit this page on GitHub!"
   },
   "examples": {
     "source_code": "Source Code"

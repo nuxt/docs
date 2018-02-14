@@ -1,6 +1,6 @@
 ---
-title: Extend Webpack
-description: How to extend webpack config?
+title: Extend webpack
+description: How to extend webpack config into my Nuxt.js application ?
 ---
 
 # How to extend webpack config?

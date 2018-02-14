@@ -1,6 +1,6 @@
 ---
 title: "API: The <nuxt-child> Component"
-description: Display the current page
+description: Display the current page.
 ---
 
 # The &lt;nuxt-child&gt; Component
@@ -17,16 +17,17 @@ Example:
 ```
 
 This file tree will generate these routes:
+
 ```js
 [
   {
     path: '/parent',
-    component: '~pages/parent.vue',
+    component: '~/pages/parent.vue',
     name: 'parent',
     children: [
       {
         path: 'child',
-        component: '~pages/parent/child.vue',
+        component: '~/pages/parent/child.vue',
         name: 'parent-child'
       }
     ]
@@ -34,7 +35,7 @@ This file tree will generate these routes:
 ]
 ```
 
-To display the `child.vue` component, I have to insert `<nuxt-child/>` inside `pages/parent.vue`:
+To display the `child.vue` component, we have to insert `<nuxt-child/>` inside `pages/parent.vue`:
 
 ```html
 <template>

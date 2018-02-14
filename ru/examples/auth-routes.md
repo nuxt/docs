@@ -23,7 +23,7 @@ yarn add express express-session body-parser whatwg-fetch
 
 Then we create our `server.js`:
 ```js
-const Nuxt = require('nuxt')
+const { Nuxt, Builder } = require('nuxt')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const app = require('express')()
@@ -58,16 +58,13 @@ app.post('/api/logout', function (req, res) {
 const isProd = process.env.NODE_ENV === 'production'
 const nuxt = new Nuxt({ dev: !isProd })
 // No build in production
-const promise = (isProd ? Promise.resolve() : nuxt.build())
-promise.then(() => {
-  app.use(nuxt.render)
-  app.listen(3000)
-  console.log('Server is listening on http://localhost:3000')
-})
-.catch((error) => {
-  console.error(error)
-  process.exit(1)
-})
+if (!isProd) {
+  const builder = new Builder(nuxt)
+  builder.build()
+}
+app.use(nuxt.render)
+app.listen(3000)
+console.log('Server is listening on http://localhost:3000')
 ```
 
 And we update our `package.json` scripts:
@@ -76,10 +73,11 @@ And we update our `package.json` scripts:
 "scripts": {
   "dev": "node server.js",
   "build": "nuxt build",
-  "start": "NODE_ENV=production node server.js"
+  "start": "cross-env NODE_ENV=production node server.js"
 }
 // ...
 ```
+Note: You'll need to run `npm install --save-dev cross-env` for the above example to work. If you're *not* developing on Windows you can leave cross-env out of your `start` script and set `NODE_ENV` directly.
 
 ## Using the store
 
@@ -96,7 +94,7 @@ Vue.use(Vuex)
 // Polyfill for window.fetch()
 require('whatwg-fetch')
 
-const store = new Vuex.Store({
+const store = () => new Vuex.Store({
 
   state: {
     authUser: null
@@ -119,7 +117,7 @@ export default store
 
 1. We import `Vue` and `Vuex` (included in Nuxt.js) and we tell Vue to use Vuex to let us use `$store` in our components
 2. We `require('whatwg-fetch')` to polyfill the `fetch()` method across all browsers (see [fetch repo](https://github.com/github/fetch))
-3. We create our `SET_USER` mutation which will set the `state.authUser` to the conntected user
+3. We create our `SET_USER` mutation which will set the `state.authUser` to the connected user
 4. We export our store instance to Nuxt.js can inject it to our main application
 
 ### nuxtServerInit() action

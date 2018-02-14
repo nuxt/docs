@@ -1,0 +1,33 @@
+[
+  {
+    "title": "필수",
+    "links": [
+      { "name": "Hello world", "to": "" },
+      { "name": "SEO HTML Head", "to": "/seo-html-head" }
+    ]
+  },
+  {
+    "title": "사용자 정의",
+    "links": [
+      { "name": "캐시된 컴포넌트", "to": "/cached-components" },
+      { "name": "사용자 지정 로딩 컴포넌트", "to": "/custom-loading" },
+      { "name": "사용자 지정 경로", "to": "/custom-routes" },
+      { "name": "전역 CSS", "to": "/global-css" },
+      { "name": "레이아웃", "to": "/layouts" },
+      { "name": "미들웨어", "to": "/middleware" },
+      { "name": "중첩 경로", "to": "/nested-routes" },
+      { "name": "플러그인", "to": "/plugins" },
+      { "name": "경로 전환", "to": "/routes-transitions" }
+    ]
+  },
+  {
+    "title": "고급",
+    "links": [
+      { "name": "비동기 데이터", "to": "/async-data" },
+      { "name": "인증 경로", "to": "/auth-routes" },
+      { "name": "Vuex Store", "to": "/vuex-store" },
+      { "name": "국제화 (i18n)", "to": "/i18n" },
+      { "name": "테스팅", "to": "/testing" }
+    ]
+  }
+]

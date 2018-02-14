@@ -25,7 +25,8 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-const store = new Vuex.Store({
+const store = () => new Vuex.Store({
+
   state: {
     counter: 0
   },
@@ -56,9 +57,9 @@ export default store
 Если вы хотите использовать этот подход, экспортируйте в `store/index.js` состояние, мутации и действия, а не экземпляр хранилища:
 
 ```js
-export const state = {
+export const state = () => ({
   counter: 0
-}
+})
 
 export const mutations = {
   increment (state) {
@@ -69,9 +70,9 @@ export const mutations = {
 
 Предположим, у нас есть модуль `store/todos.js`:
 ```js
-export const state = {
+export const state = () => ({
   list: []
-}
+})
 
 export const mutations = {
   add (state, text) {
