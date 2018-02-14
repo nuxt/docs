@@ -1,12 +1,13 @@
 ---
 title: 'API: Nuxt(pilihan)'
-description: You can use Nuxt.js programmatically to use it as a middleware giving
-  you the freedom of creating your own server for rendering your web applications.
+description: Anda dapat menggunakan Nuxt.js secara terprogram untuk menggunakannya
+  sebagai middleware yang memberi Anda kebebasan untuk membuat server Anda sendiri
+  untuk me-render aplikasi web Anda.
 ---
 
-# Using Nuxt.js Programmatically
+# Menggunakan Nuxt.js secara Terprogram
 
-You might want to use your own server with your middleware and your API. That's why you can use Nuxt.js programmatically.
+Anda mungkin ingin menggunakan server sendiri dengan middleware dan API sendiri. Itu sebabnya Anda bisa menggunakan Nuxt.js secara terprogram.
 
 Anda bisa require Nuxt.js seperti ini:
 
@@ -40,7 +41,7 @@ Anda dapat melihat/menggunakan [nuxt-express](https://github.com/nuxt/express) d
 
 ### Debug log
 
-If you want to display nuxt.js logs, you can add to the top of your file:
+Jika Anda ingin menampilkan log Nuxt.js, Anda dapat menambahkannya ke bagian atas dari file Anda:
 
 ```js
 process.env.DEBUG = 'nuxt:*'
