@@ -1,5 +1,5 @@
 ---
-title: Vuex Store
+title: Vuex Store (Penyimpanan).
 description: Menggunakan store untuk mengelola state adalah penting untuk setiap aplikasi
   besar, itulah sebabnya Nuxt.js menerapkan Vuex sebagai inti.
 ---
@@ -19,7 +19,7 @@ Nuxt.js memungkinkan Anda memiliki **2 mode store**, pilih yang sesuai:
 - **Klasik:** `store/index.js` mengembalikan instansi store.
 - **Modul:** setiap file `.js` pada direktori `store` akan diubah sebagai [modul namespace](http://vuex.vuejs.org/en/modules.html) (`index` menjadi modul root).
 
-## Classic mode
+## Mode Klasik
 
 Untuk mengaktifkan store pada mode klasik, kita buat file `store/index.js` yang mana harus mengekspor sebuah metode yang mengembalikan instansi Vuex:
 
