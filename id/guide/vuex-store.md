@@ -10,18 +10,18 @@ description: Menggunakan store untuk mengelola state adalah penting untuk setiap
 
 Nuxt.js akan mencari direktori `store`, jika ada, maka akan:
 
-1. Import Vuex,
+1. Mengimpor Vuex,
 2. Menambahkan modul `vuex` pada bundel vendor,
-3. Add the `store` option to the root Vue instance.
+3. Menambahkan opsi `store` ke instansi root Vue.
 
-Nuxt.js lets you have **2 modes of store**, choose the one you prefer:
+Nuxt.js memungkinkan Anda memiliki **2 mode store**, pilih yang sesuai:
 
-- **Classic:** `store/index.js` returns a store instance.
+- **Klasik:** `store/index.js` mengembalikan instansi store.
 - **Modul:** setiap file `.js` pada direktori `store` akan diubah sebagai [modul namespace](http://vuex.vuejs.org/en/modules.html) (`index` menjadi modul root).
 
 ## Classic mode
 
-To activate the store with the classic mode, we create the `store/index.js` file which should export a method which returns a Vuex instance:
+Untuk mengaktifkan store pada mode klasik, kita buat file `store/index.js` yang mana harus mengekspor sebuah metode yang mengembalikan instansi Vuex:
 
 ```js
 import Vuex from 'vuex'
@@ -44,7 +44,7 @@ export default createStore
 
 > Kita tidak perlu lagi menginstal `vuex` karena sudah tersedia bersama Nuxt.js.
 
-We can now use `this.$store` inside our components:
+Sekarang kita bisa menggunakan `this.$store` di dalam komponen kita:
 
 ```html
 <template>
@@ -54,9 +54,9 @@ We can now use `this.$store` inside our components:
 
 ## Mode Modules
 
-> Nuxt.js lets you have a `store` directory with every file corresponding to a module.
+> Nuxt.js memungkinkan Anda memiliki direktori `store` bersamaan dengan file-file yang sesuai dengan modul.
 
-If you want this option, export the state as a function, and the mutations and actions as objects in `store/index.js` instead of a store instance:
+Jika Anda ingin menerapkannya, ekspor state sebagai fungsi (function), mutasi (mutations) dan actions sebagai objek-objek di dalam `store/index.js` sebagai ganti instansi store:
 
 ```js
 export const state = () => ({
@@ -70,7 +70,7 @@ export const mutations = {
 }
 ```
 
-Then, you can have a `store/todos.js` file:
+Kemudian, Anda dapat memiliki file `store/todos.js`:
 
 ```js
 export const state = () => ({
@@ -93,7 +93,7 @@ export const mutations = {
 }
 ```
 
-The store will be as such:
+Store akan menjadi seperti:
 
 ```js
 new Vuex.Store({
@@ -166,11 +166,11 @@ export default {
 </style>
 ```
 
-<div class="Alert">You can also have modules by exporting a store instance, you will have to add them manually on your store.</div>
+<div class="Alert">Anda juga dapat memiliki modul-modul dengan cara mengekspor instansi store, Anda harus menambahkannya secara manual pada store Anda.</div>
 
 ### Plugins
 
-You can add additional plugin to the store (in Modules Mode) putting it into the `store/index.js` file:
+Anda dapat menambahkan plugin tambahan pada store (pada mode Module) dan meletakkannya ke dalam file `store/index.js`:
 
 ```js
 import myPlugin from 'myPlugin'
@@ -190,17 +190,17 @@ export const mutations = {
 
 Informasi lebih lanjut tentang plugin: [dokumentasi Vuex](https://vuex.vuejs.org/en/plugins.html).
 
-## The fetch Method
+## Metode Pengambilan Data (fetch)
 
-> The `fetch` method is used to fill the store before rendering the page, it's like the `data` method except it doesn't set the component data.
+> Metode `fetch` digunakan untuk mengisikan data pada store sebelum me-render halaman, ia seperti metode `data`, bedanya ia tidak mengatur data komponen.
 
 Informasi lebih lanjut tentang metode fetch: [API Pages fetch](/api/pages-fetch).
 
 ## The nuxtServerInit Action
 
-If the action `nuxtServerInit` is defined in the store, Nuxt.js will call it with the context (only from the server-side). It's useful when we have some data on the server we want to give directly to the client-side.
+Jika `nuxtServerInit` terdefinisi pada store actions, Nuxt.js akan memanggilnya bersama context (hanya pada sisi-server). Itu berguna ketika kita memiliki beberapa data pada server yang ingin diberikan secara langsung pada sisi-klien.
 
-For example, let's say we have sessions on the server-side and we can access the connected user through `req.session.user`. To give the authenticated user to our store, we update our `store/index.js` to the following:
+Sebagai contoh, katakan kita mempunyai sessions pada sisi-server dan kita bisa mengakses user yang terkoneksi melalui `req.session.user`. Untuk memberikan user yang terotentikasi pada store, kita perbarui `store/index.js` sebagai berikut:
 
 ```js
 actions: {
@@ -212,8 +212,8 @@ actions: {
 }
 ```
 
-> If you are using the *Modules* mode of the Vuex store, only the primary module (in `store/index.js`) will receive this action. You'll need to chain your module actions from there.
+> Apabila Anda menggunakan mode *Modules* Vuex store, hanya modul utama (di dalam `store/index.js`) akan menerima action ini. Anda harus mengatur modul actions Anda dari sana.
 
-The [context](/api/context) is given to `nuxtServerInit` as the 2nd argument, it is the same as `asyncData` or `fetch` method.
+[Context](/api/context) akan dilemparkan ke `nuxtServerInit` sebagai argumen kedua, hal ini sama dengan `asyncData` atau metode `fetch`.
 
-> Note: Asynchronous `nuxtServerInit` actions must return a Promise to allow the `nuxt` server to wait on them.
+> Catatan: Actions asynchronous `nuxtServerInit` harus mengembalikan (return) Promise untuk mengijinkan server `nuxt` untuk menunggunya.
