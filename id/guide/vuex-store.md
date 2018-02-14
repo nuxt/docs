@@ -196,7 +196,7 @@ Informasi lebih lanjut tentang plugin: [dokumentasi Vuex](https://vuex.vuejs.org
 
 Informasi lebih lanjut tentang metode fetch: [API Pages fetch](/api/pages-fetch).
 
-## The nuxtServerInit Action
+## Tindakan nuxtServerInit
 
 Jika `nuxtServerInit` terdefinisi pada store actions, Nuxt.js akan memanggilnya bersama context (hanya pada sisi-server). Itu berguna ketika kita memiliki beberapa data pada server yang ingin diberikan secara langsung pada sisi-klien.
 
