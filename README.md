@@ -61,6 +61,16 @@ French translation is maintained by [Vuejs-FR](https://github.com/vuejs-fr/nuxt/
 * Primary maintainer - [Bruno Lesieur](https://www.lesieur.name/) ([Orchard ID](https://www.orchard-id.com/))
 * Primary translator - [Julien Grünhagel](https://rspt.io/) ([laruche](https://laruche.io))
 
+### Indonesian
+
+Indonesian translation is maintained by [Nuxt.js Indonesian Community](https://github.com/nuxtjs-id) Team.
+
+* Translation Repo - [https://gitlocalize.com/repo/100/id](https://gitlocalize.com/repo/100/id)
+* Primary maintainer - [Achan](http://achan.id/)
+* Primary translator - [afrianjunior](https://github.com/afrianjunior), [fikrizufri](https://github.com/fikrizufri), [huiralb](https://github.com/huiralb), [jefrydco](https://github.com/jefrydco), [muhibbudins](https://github.com/muhibbudins), [nusendra](https://github.com/nusendra), [perjakasunda](https://github.com/perjakasunda), [tapitapeh](https://github.com/tapitapeh), [wahwahid](https://github.com/wahwahid)
+
+
+
 ### Want to help with the translation?
 
 [gl]: https://gitlocalize.com
