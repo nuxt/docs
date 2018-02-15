@@ -1,48 +1,49 @@
 ---
-title: Хранилище Vuex
-description: Использование единого хранилища для управления состоянием приложения важно для любого крупного проекта, поэтому nuxt.js в своём ядре использует Vuex.
+title: Vuex Store
+description: Using a store to manage the state is important for every big application, that's why nuxt.js implements Vuex in its core.
 ---
 
-> Использование единого хранилища для управления состоянием приложения важно для любого крупного проекта, поэтому nuxt.js в своём ядре использует Vuex.
+> Using a store to manage the state is important to every big application, that's why nuxt.js implement [vuex](https://github.com/vuejs/vuex) in its core.
 
-## Активация хранилища
+## Activate the Store
 
-Если Nuxt.js обнаруживает каталог `store`, происходит следующее:
+Nuxt.js will look for the `store` directory, if it exists, it will:
 
-1. Импортируется Vuex
-2. Модуль `vuex` добавляется в сборку vendors
-3. Опция `store` добавляется к корневому экземпляру `Vue`.
+1. Import Vuex
+2. Add `vuex` module in the vendors bundle
+3. Add the `store` option to the root `Vue` instance.
 
-Nuxt.js позволяет выбрать один из двух подходов при работе с хранилищем:
-- **Обыкновенный:** `store/index.js` возвращает экземпляр хранилища
-- **Модульный:** каждый `.js`-файл в папке `store` считается [модулем с пространством имён](http://vuex.vuejs.org/en/modules.html) (`index` считается корневым модулем)
+Nuxt.js lets you have **2 modes of store**, choose the one you prefer:
 
-Для использования хранилища в обычном режиме, мы создаём файл `store/index.js` и экспортируем экземпляр хранилища:
+- **Classic:** `store/index.js` returns a store instance
+- **Modules:** every `.js` file inside the `store` directory is transformed as a [namespaced module](http://vuex.vuejs.org/en/modules.html) (`index` being the root module)
+
+## Classic mode
+
+To activate the store with the classic mode, we create the `store/index.js` file which should export a method which returns a Vuex instance:
 
 ```js
-import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
-
-const store = () => new Vuex.Store({
-
-  state: {
-    counter: 0
-  },
-  mutations: {
-    increment (state) {
-      state.counter++
+const createStore = () => {
+  return new Vuex.Store({
+    state: {
+      counter: 0
+    },
+    mutations: {
+      increment (state) {
+        state.counter++
+      }
     }
-  }
-})
+  })
+}
 
-export default store
+export default createStore
 ```
 
-> Нет необходимости отдельно устанавливать `vuex` — он идёт в комплекте с nuxt.js
+> We don't need to install `vuex` since it's shipped with nuxt.js
 
-Теперь в наших компонентах можно использовать `this.$store`:
+We can now use `this.$store` inside our components:
 
 ```html
 <template>
@@ -50,11 +51,11 @@ export default store
 </template>
 ```
 
-## Файлы модулей
+## Modules mode
 
-> Nuxt.js позволяет использовать каждый файл в директории `store` как отдельный модуль хранилища.
+> Nuxt.js lets you have a `store` directory with every file corresponding to a module.
 
-Если вы хотите использовать этот подход, экспортируйте в `store/index.js` состояние, мутации и действия, а не экземпляр хранилища:
+If you want this option, export the state as a function, and the mutations and actions as objects in `store/index.js` instead of a store instance:
 
 ```js
 export const state = () => ({
@@ -68,7 +69,7 @@ export const mutations = {
 }
 ```
 
-Предположим, у нас есть модуль `store/todos.js`:
+Then, you can have a `store/todos.js` file:
 ```js
 export const state = () => ({
   list: []
@@ -81,13 +82,49 @@ export const mutations = {
       done: false
     })
   },
+  remove (state, { todo }) {
+    state.list.splice(state.list.indexOf(todo), 1)
+  },
   toggle (state, todo) {
     todo.done = !todo.done
   }
 }
 ```
 
-И в `pages/todos.vue` мы используем модуль `todos`:
+The store will be as such:
+```js
+new Vuex.Store({
+  state: { counter: 0 },
+  mutations: {
+    increment (state) {
+      state.counter++
+    }
+  },
+  modules: {
+    todos: {
+      state: {
+        list: []
+      },
+      mutations: {
+        add (state, { text }) {
+          state.list.push({
+            text,
+            done: false
+          })
+        },
+        remove (state, { todo }) {
+          state.list.splice(state.list.indexOf(todo), 1)
+        },
+        toggle (state, { todo }) {
+          todo.done = !todo.done
+        }
+      }
+    }
+  }
+})
+```
+
+And in your `pages/todos.vue`, using the `todos` module:
 
 ```html
 <template>
@@ -126,69 +163,54 @@ export default {
 </style>
 ```
 
-<div class="Alert">Модули, экспортирующие экземпляр хранилища, использовать тоже можно — но подключать их придётся вручную.</div>
+<div class="Alert">You can also have modules by exporting a store instance, you will have to add them manually on your store.</div>
 
-## Метод fetch
+### Plugins
 
-> Метод `fetch` используется для заполнения хранилища перед рендерингом страницы. Он похож на метод `data`, но не устанавливает данные компонента.
+You can add additional plugin to the store (in Modules Mode) putting it into the `store/index.js` file:
 
-Метод `fetch`, *если он указан*, вызывается каждый раз перед загрузкой компонента (**вышесказанное справедливо только для компонентов-страниц**). Он может быть вызван как при рендеренге на сервере, так и при переходе по ссылке на клиенте.
+```js
+import myPlugin from 'myPlugin'
 
-Метод `fetch` получает в качестве первого аргумента [контекст](/api/pages-context). Чтобы сделать метод асинхронным, **верните промис** — nuxt.js дождётся его разрешения перед тем как рендерить компонент.
+export const plugins = [ myPlugin ]
 
-Пример `pages/index.vue`:
-```html
-<template>
-  <h1>Звёзды: {{ $store.state.stars }}</h1>
-</template>
+export const state = () => ({
+  counter: 0
+})
 
-<script>
-export default {
-  fetch ({ store, params }) {
-    return axios.get('http://my-api/stars')
-    .then((res) => {
-      store.commit('setStars', res.data)
-    })
+export const mutations = {
+  increment (state) {
+    state.counter++
   }
 }
-</script>
 ```
 
-Чтобы сделать код чище, можно использовать async/await:
+More information about the plugins: [Vuex documentation](https://vuex.vuejs.org/en/plugins.html)
 
-```html
-<template>
-  <h1>Звёзды: {{ $store.state.stars }}</h1>
-</template>
+## The fetch Method
 
-<script>
-export default {
-  async fetch ({ store, params }) {
-    let { data } = await axios.get('http://my-api/stars')
-    store.commit('setStars', data)
-  }
-}
-</script>
-```
+> The fetch method is used to fill the store before rendering the page, it's like the data method except it doesn't set the component data.
 
-## Контекст
+More information about the fetch method: [API Pages fetch](/api/pages-fetch)
 
-Чтобы увидеть список доступных ключей в `context`, взгляните на [документацию api контекста страницы](/api/pages-context).
+## The nuxtServerInit Action
 
-## Действие nuxtServerInit
+If the action `nuxtServerInit` is defined in the store, nuxt.js will call it with the context (only from the server-side). It's useful when we have some data on the server we want to give directly to the client-side.
 
-Если действие `nuxtServerInit` определено для хранилища, nuxt.js вызовет его в рамках контекста (только на сервере). Это может быть полезным, если у нас есть данные на сервере, которые мы хотим передать клиентскому приложению напрямую. 
-
-Например, предположим что у нас есть хранилище сессий и мы можем получить доступ к пользователю через `req.authUser`. Чтобы указать данные о пользователе в хранилище, добавьте в `store/index.js` следующий код:
+For example, let's say we have sessions on the server-side and we can access the connected user through `req.session.user`. To give the authenticated user to our store, we update our `store/index.js` to the following:
 
 ```js
 actions: {
   nuxtServerInit ({ commit }, { req }) {
-    if (req.authUser) {
-      commit('user', req.authUser)
+    if (req.session.user) {
+      commit('user', req.session.user)
     }
   }
 }
 ```
 
-Контекст передаётся в `nuxtServerInit` в качестве второго параметра. В целом метод работает так же как `data` или `fetch`, за исключением того, что `context.redirect()` и `context.error()` опускаются.
+> If you are using the _Modules_ mode of the Vuex store, only the primary module (in `store/index.js`) will receive this action. You'll need to chain your module actions from there.
+
+The context is given to `nuxtServerInit` as the 2nd argument, it is the same as the `data` or `fetch` method except that `context.redirect()` and `context.error()` are omitted.
+
+> Note: Asynchronous `nuxtServerInit` actions must return a Promise to allow the `nuxt` server to wait on them.

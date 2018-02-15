@@ -1,11 +1,11 @@
 ---
-title: Плагины Postcss
-description: Как добавить плагины Postcss?
+title: Postcss plugins
+description: How to add postcss plugins?
 ---
 
-# Как добавить плагины Postcss?
+# How to add postcss plugins?
 
-В вашем файле конфигурации nuxt.config.js укажите:
+In your `nuxt.config.js` file:
 
 ```js
 module.exports = {

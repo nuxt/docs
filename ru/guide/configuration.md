@@ -1,61 +1,90 @@
 ---
 title: Конфигурация
-description: Поставляемая по-умолчанию конфигурация Nuxt.js покрывает большую часть потребностей. Однако, файл настроек nuxt.config.js даёт возможность изменить её.
+description: Nuxt.js по умолчанию настроен для большинства случаев. Эта конфигурация по умолчанию может быть изменена с помощью файла nuxt.config.js.
 ---
 
-> Поставляемая по-умолчанию конфигурация Nuxt.js покрывает большую часть потребностей. Однако, файл настроек `nuxt.config.js` даёт возможность изменить её.
+> Nuxt.js по умолчанию настроен для большинства случаев. Эта конфигурация по умолчанию может быть изменена с помощью файла nuxt.config.js.
 
 ### build
 
-Опция позволяет добавлять модули в генерируемый файл `vendor.bundle.js`, чтобы уменьшить размер финального приложения. Это действительно удобно при использовании внешних модулей.
+This option lets you add modules inside the vendor.bundle.js file to reduce the size of the application bundle. This is especially helpful when using external modules.
 
-[Документация по build](/api/configuration-build)
+[Документация об интеграции build](/api/configuration-build)
 
 ### cache
 
-Опция позволяет включить кешируемые компоненты для улучшения быстродействия.
+This option lets you enable cached components for better render performances.
 
-[Документация по cache](/api/configuration-cache)
+[Документация об интеграции cache](/api/configuration-cache)
 
 ### css
 
-Опция позволяет определить файлы CSS/модули/библиотеки, которые вы хотите установить в качестве глобальных (подключенных к каждой странице).
+This option lets you define the CSS files/modules/libraries you want to set as globals (included in every page).
 
-[Документация по css](/api/configuration-css)
+[Документация об интеграции css](/api/configuration-css)
+
+### dev
+
+This option lets you define the development or production mode of nuxt.js
+
+[Документация об интеграции dev](/api/configuration-dev)
 
 ### env
 
-Опция позволяет определить переменные окружения для обоих клиентской и серверной сторон.
+This option lets you define environment variables available both the client and the server.
 
-[Документация по env](/api/configuration-env)
+[Документация об интеграции env](/api/configuration-env)
 
 ### generate
 
-Опция позволяет определить значения параметров для всех динамических маршрутов в вашем приложении, которые Nuxt.js трансформирует в HTML-файлы.
+This option lets you to define each parameters value for every dynamic route in your application to be transformed into HTML files by Nuxt.js.
 
-[Документация по generate](/api/configuration-generate)
+[Документация об интеграции generate](/api/configuration-generate)
 
 ### head
 
-Опция позволяет определить все мета-значения по-умолчанию в вашем приложении.
+This option lets you to define all default meta tags for your application.
 
-[Документация по integration](/api/configuration-head)
+[Документация об интеграции head](/api/configuration-head)
 
 ### loading
 
-Опция позволяет настроить компонент индикатора загрузки, который используется по-умолчанию в Nuxt.js при переходе между маршрутами.
+This option lets you to customize the loading component which is loaded by default with Nuxt.js.
 
-[Документация по loading](/api/configuration-loading)
+[Документация об интеграции loading](/api/configuration-loading)
+
+### modules
+
+This option lets you add nuxt modules to your project.
+
+[Документация об интеграции modules](/api/configuration-modules)
 
 ### plugins
 
-Опция позволяет указать JavaScript-плагины, которые вы хотите запустить перед
-созданием экземпляра корневого приложения vue.js.
+This option lets you to define JavaScript plugins to be run before instantiating the root vue.js application.
 
-[Документация по plugins](/api/configuration-plugins)
+[Документация об интеграции plugins](/api/configuration-plugins)
+
+### rootDir
+
+This option lets you define the workspace of your nuxt.js application.
+
+[Документация об интеграции rootDir](/api/configuration-rootdir)
 
 ### router
 
-Опция позволяет переписать конфигурацию vue-маршрутизатора, поставляемую по-умолчанию в Nuxt.js.
+Эта опция позволяет вам переопределить конфигурацию по умолчанию для vue-router.
 
-[Документация по router](/api/configuration-router)
+[Документация об интеграции router](/api/configuration-router)
+
+### srcDir
+
+Эта опция позволяет установить каталог с исходными кодами вашего nuxt.js приложения.
+
+[Документация об интеграции srcDir](/api/configuration-srcdir)
+
+### transition
+
+Эта опция позволяет установить свойства по умолчанию для анимации смены страниц.
+
+[Документация об интеграции transition](/api/configuration-transition)

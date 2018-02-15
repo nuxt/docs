@@ -1,16 +1,16 @@
 {
   "iso": "ru",
-  "docVersion": "0.10.7",
+  "docVersion": "1.0.0-rc10",
   "links": {
     "api": "API",
     "blog": "Блог",
     "chat": "Чат",
-    "documentation": "документация",
+    "documentation": "Документация",
     "download": "Скачать",
     "examples": "Примеры",
     "ecosystem": "Экосистема",
-    "faq": "ЧАВО",
-    "get_started": "начало работы",
+    "faq": "FAQ",
+    "get_started": "Начало работы",
     "github": "GitHub",
     "guide": "Руководство",
     "homepage": "Главная",
@@ -21,29 +21,29 @@
     "vue_jobs": "Vue Jobs"
   },
   "text": {
-    "an_error_occurred": "An error occurred",
-    "api_page_not_found": "API page not found",
-    "example_file": "Example Files",
-    "please_wait": "Please wait...",
-    "please_define_title": "Please define a title in the front matter",
-    "please_define_description": "Please define a description in the front matter",
+    "an_error_occured": "Произошла ошибка",
+    "api_page_not_found": "Страница API не найдена",
+    "example_file": "Файлы примеров",
+    "please_wait": "Подождите...",
+    "please_define_title": "Пожалуйста укажите заголовок",
+    "please_define_description": "Пожалуйста укажите описание",
     "search": "Поиск",
     "version": "Версия"
   },
   "homepage": {
     "title": "Универсальные приложения на Vue.js",
     "meta": {
-        "title": "Nuxt.js — Универсальные приложения на Vue.js",
-        "description": "Nuxt.js — это минималистичный фреймворк для создания приложений на Vue.js с серверным рендерингом, разделением кода, горячей заменой модулей, статической генерацией и другими крутыми штуками!"
+      "title": "Nuxt.js — Универсальные приложения на Vue.js",
+      "description": "Nuxt.js — это минималистичный фреймворк для создания приложений на Vue.js с серверным рендерингом, разделением кода, горячей заменой модулей, статической генерацией и другими крутыми штуками!"
     }
   },
   "footer": {
     "authors": "Создано братьями Chopin"
   },
   "guide": {
-    "release_notes": "Замечания о релизе",
+    "release_notes": "Информация о релизах",
     "contribute": "Обнаружили ошибку или хотите внести свой вклад в документацию?",
-    "edit_on_github": "Отредактировать эту страницу на GitHub!"
+    "edit_on_github": "Изменить эту страницу на GitHub!"
   },
   "examples": {
     "source_code": "Исходный код"
