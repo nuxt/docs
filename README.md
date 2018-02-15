@@ -8,7 +8,7 @@
 
 :warning: You must also have the main [nuxtjs.org](https://github.com/nuxt/nuxtjs.org) website repo up and running on localhost to be able to run the docs...
 
-Start a dev server on `localhost:4000`
+Start a dev server on `localhost:4000`:
 
 ```bash
 npm install
@@ -23,7 +23,7 @@ Then access the docs via the website running on `http://nuxt:3000` (see instruct
 
 Russian translation is maintained by Translation Gang.
 
-* Translation Repo — [/translation-gang/ru.docs.nuxtjs](https://github.com/translation-gang/ru.docs.nuxtjs)
+* Translation Repo - [/translation-gang/ru.docs.nuxtjs](https://github.com/translation-gang/ru.docs.nuxtjs)
 * Primary maintainer - [Grigoriy Beziuk](https://gbezyuk.github.io)
 * Primary translator - [Nicholas Shachmatov](https://github.com/theOnlyBoy)
 
@@ -31,15 +31,17 @@ Russian translation is maintained by Translation Gang.
 
 Chinese translation is maintained by AOTU Labs from China, Shenzhen.
 
-* Translation Repo — [/o2team/i18n-cn-nuxtjs-docs](https://github.com/o2team/i18n-cn-nuxtjs-docs)
+* Translation Repo - [/o2team/i18n-cn-nuxtjs-docs](https://github.com/o2team/i18n-cn-nuxtjs-docs)
 * Primary maintainer - [AOTU Labs](https://aotu.io)
 * Primary translator - [Levin Wong](http://faso.me), [Edward Chu](https://github.com/chuyik)
 
 ### Japanese
 
+Japanese translation team is using a translation tool called [GitLocalize](https://gitlocalize.com) in principle. See the following "Want to help with the translation?" section. 
+
 Japanese translation is maintained by INOUE Takuya.
 
-* Translation Repo — [/inouetakuya/ja.docs.nuxtjs](https://github.com/inouetakuya/ja.docs.nuxtjs)
+* Translation Repo - [https://gitlocalize.com/repo/100/ja](https://gitlocalize.com/repo/100/ja)
 * Primary maintainer - [INOUE Takuya](http://blog.inouetakuya.info/)
 * Primary translator - [INOUE Takuya](https://github.com/inouetakuya)
 
@@ -47,22 +49,44 @@ Japanese translation is maintained by INOUE Takuya.
 
 Korean translation is maintained by Taewoong La.
 
-* Translation Repo — [/DiyLecko/ko.docs.nuxtjs](https://github.com/DiyLecko/ko.docs.nuxtjs)
+* Translation Repo - [/DiyLecko/ko.docs.nuxtjs](https://github.com/DiyLecko/ko.docs.nuxtjs)
 * Primary maintainer - [Taewoong La](http://blog.naver.com/diy_lecko)
 * Primary translator - [june](http://jicjjang.github.io), [wanybae](https://github.com/wanybae), [rellario](https://github.com/rellario)
 
 ### French
 
-French translation is maintained by Julien Grünhagel/@rspt for [laruche](https://laruche.io).
+French translation is maintained by [Vuejs-FR](https://github.com/vuejs-fr/nuxt/issues/1) Team.
 
-* Translation Repo — [/larucheio/fr.docs.nuxtjs](https://github.com/larucheio/fr.docs.nuxtjs)
-* Primary maintainer - [laruche](https://laruche.io/)
-* Primary translator - [Julien Grünhagel](https://rspt.io/)
+* Translation Repo - [/vuejs-fr/nuxt](https://github.com/vuejs-fr/nuxt)
+* Primary maintainer - [Bruno Lesieur](https://www.lesieur.name/) ([Orchard ID](https://www.orchard-id.com/))
+* Primary translator - [Julien Grünhagel](https://rspt.io/) ([laruche](https://laruche.io))
+
+### Indonesian
+
+Indonesian translation is maintained by [Nuxt.js Indonesian Community](https://github.com/nuxtjs-id) Team.
+
+* Translation Repo - [https://gitlocalize.com/repo/100/id](https://gitlocalize.com/repo/100/id)
+* Primary maintainer - [Achan](http://achan.id/)
+* Primary translator - [afrianjunior](https://github.com/afrianjunior), [fikrizufri](https://github.com/fikrizufri), [huiralb](https://github.com/huiralb), [jefrydco](https://github.com/jefrydco), [muhibbudins](https://github.com/muhibbudins), [nusendra](https://github.com/nusendra), [perjakasunda](https://github.com/perjakasunda), [tapitapeh](https://github.com/tapitapeh), [wahwahid](https://github.com/wahwahid)
+
+
 
 ### Want to help with the translation?
 
-If you feel okay with translating sorta alone, just fork the repo, create a "work-in-progress" pull request (mark it with [WIP], see [Russian translation](https://github.com/nuxt/docs/pull/3) if you need an example) — and just go on.
+[gl]: https://gitlocalize.com
+[gl-help]: https://docs.gitlocalize.com/ 
+[gl-issue-tracker]: https://github.com/gitlocalize/feedback
+[gl-repo]: https://gitlocalize.com/repo/100
 
-If you are more of a team player, maybe Translation Gang is for you? Then just let us know somehow that you're ready to join this international open-source translators community. Feel free to contact [Grigoriy Beziuk](https://gbezyuk.github.io) or anybody else from the team.
+We are using a translation tool called [GitLocalize][gl]. 
 
-And thank you in advance ;)
+Follow these steps to get started with your contribution:
+
+1. Go to [GitLocalize's nuxt/docs repository][gl-repo].
+1. Sign up using your GitHub account :octocat:.
+1. Find the document you are going to translate. 
+1. Happy translating :sparkles: .
+1. When you are done, send the translation for reviews.
+1. Reviewed translation will be sent as a Pull Request to GitHub by language admin in the community.
+
+To learn more about how GitLocalize works, visit their [help page][gl-help]. If you find any issues or feature requests, please file them in [GitLocalize's issue tracker][gl-issue-tracker].

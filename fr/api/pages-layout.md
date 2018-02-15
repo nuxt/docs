@@ -1,15 +1,15 @@
 ---
-title: "API: la propriété layout"
-description: Chaque fichier (premier niveau) dans le répertoire layouts créera un layout personnalisé accessible avec la propriété layout dans le composant page.
+title: "API : la propriété layout"
+description: Chaque fichier (premier niveau) dans le répertoire `layouts` créera un layout personnalisé accessible avec la propriété layout dans le composant page.
 ---
 
 # La propriété layout
 
-> Chaque fichier (premier niveau) dans le répertoire layouts créera un layout personnalisé accessible avec la propriété layout dans le composant page.
+> Chaque fichier (premier niveau) dans le répertoire `layouts` créera une mise en page personnalisée accessible avec la propriété `layout` dans le composant de page.
 
-- **Type:** `String` ou `Function` (defaut: `'default'`)
+- **Type :** `String` ou `Function` (par défaut : `'default'`)
 
-Utilisez la clef `layout` dans vos composants de pages pour définir le layout à utiliser:
+Utilisez la clé `layout` dans vos composants de page pour définir la mise en page à utiliser :
 
 ```js
 export default {
@@ -21,8 +21,8 @@ export default {
 }
 ```
 
-Dans cet exemple, Nuxt.js incluera le fichier `layouts/blog.vue` comme layout pour ce composant page.
+Dans cet exemple, Nuxt.js inclura le fichier `layouts/blog.vue` comme mise en page pour ce composant de page.
 
-En action dans [cette vidéo de démonstration](https://www.youtube.com/watch?v=YOKnSTp7d38).
+Voyez cela en action dans [cette vidéo de démonstration](https://www.youtube.com/watch?v=YOKnSTp7d38).
 
-Afin de comprendre comment les layouts fonctionnent avec nuxt.js, regarder la [documentation sur les layouts](/guide/views#layouts).
+Afin de comprendre comment les mises en page fonctionnent avec Nuxt.js, regardez la documentation sur les [Mises en page](/guide/views#mises-en-page).

@@ -1,32 +1,34 @@
 ---
-title: "API: The css Property"
-description: Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every pages).
+title: "API : La propriété css"
+description: Nuxt.js vous permet de définir le fichier, la bibliothèque ou le module CSS que vous souhaiter définir globalement (inclue sur toutes les pages).
 ---
 
-# The css Property
+# La propriété css
 
-> Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every pages).
+> Nuxt.js vous permet de définir le fichier, la bibliothèque ou le module CSS que vous souhaitez définir globalement (inclue sur toutes les pages).
 
-- Type: `Array`
- - Items: `String` or `Object`
+Dans le cas où vous souhaiteriez utiliser ```sass```, assurez-vous d'avoir installé les packages ```node-sass``` et ```sass-loader```. Si non, utilisez cette commande :
 
-If the item is an object, the properties are:
-- src: `String` (path of the file)
-- lang: `String` ([pre-processor used](/faq/pre-processors))
+```sh
+npm install --save-dev node-sass sass-loader
+```
 
-In `nuxt.config.js`, add the CSS resources:
+- Type : `Array`
+ - Éléments : `string`
+
+Dans `nuxt.config.js`, ajouter les ressources CSS :
 
 ```js
 module.exports = {
   css: [
-    // Load a node.js module
-    'hover.css/css/hover-min.css',
-    // node.js module but we specify the pre-processor
-    { src: 'bulma', lang: 'sass' },
-    // Css file in the project
-    '~assets/css/main.css',
-    // Sass file in the project
-    { src: '~assets/css/main.scss', lang: 'scss' } // scss instead of sass
+    // Charge un module Node.js directement (ici un fichier Sass)
+    'bulma',
+    // fichier CSS dans le projet
+    '@/assets/css/main.css',
+    // un fichier SCSS dans le projet
+    '@/assets/css/main.scss'
   ]
 }
 ```
+
+Nuxt.js va automatiquement deviner le type de fichier grâce à son extension et utiliser l'adaptateur de préprocesseur approprié pour webpack. Vous devez toujours installer les adaptateurs requis si vous avez besoin de les utiliser.

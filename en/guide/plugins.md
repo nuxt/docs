@@ -1,6 +1,6 @@
 ---
 title: Plugins
-description: Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root vue.js application. This is especially helpful when using your own libraries or external modules.
+description: Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root Vue.js Application. This is especially helpful when using your own libraries or external modules.
 ---
 
 > Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root vue.js application. This is especially helpful when using your own libraries or external modules.
@@ -36,7 +36,7 @@ export default {
 </script>
 ```
 
-But there is **one problem here**, if we import axios in another page, it will be included again for the page bundle. We want to include `axios` only once in our application, for this, we use the `build.vendor` key in our `nuxt.config.js`:
+But there is **one problem here**. If we import axios in another page, it will be included again for the page bundle. We want to include `axios` only once in our application. To do this, we use the `build.vendor` key in our `nuxt.config.js`:
 
 ```js
 module.exports = {
@@ -46,13 +46,14 @@ module.exports = {
 }
 ```
 
-Then, I can import `axios` anywhere without having to worry about making the bundle bigger!
+Then, we can import `axios` anywhere without having to worry about making the bundle bigger!
 
 ## Vue Plugins
 
 If we want to use [vue-notifications](https://github.com/se-panfilov/vue-notifications) to display notification in our application, we need to setup the plugin before launching the app.
 
 File `plugins/vue-notifications.js`:
+
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
@@ -61,10 +62,11 @@ Vue.use(VueNotifications)
 ```
 
 Then, we add the file inside the `plugins` key of `nuxt.config.js`:
+
 ```js
 module.exports = {
   plugins: ['~/plugins/vue-notifications']
-}renderer from the server-side
+}
 ```
 
 To learn more about the `plugins` configuration key, check out the [plugins api](/api/configuration-plugins).
@@ -72,6 +74,7 @@ To learn more about the `plugins` configuration key, check out the [plugins api]
 Actually, `vue-notifications` will be included in the app bundle, but because it's a library, we want to include it in the vendor bundle for better caching.
 
 We can update our `nuxt.config.js` to add `vue-notifications` in the vendor bundle:
+
 ```js
 module.exports = {
   build: {
@@ -83,25 +86,27 @@ module.exports = {
 
 ## Inject in $root & context
 
-Some plugins need to be injected in the App root to be used, like [vue-18n](https://github.com/kazupon/vue-i18n). Nuxt.js gives you the possibility to export a function in your plugin to receives the root component but also the context.
+Some plugins need to be injected in the App root to be used, like [vue-i18n](https://github.com/kazupon/vue-i18n). With Nuxt.js, you can use `app` available into the `context` when exporting a method:
 
 `plugins/i18n.js`:
+
 ```js
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 
 Vue.use(VueI18n)
 
-export default ({ app, store }) => {
-  // Set i18n instance on app
-  // This way we can use it in middleware and pages asyncData & fetch
+export default ({ app }, inject) => {
+  // Set `i18n` instance on `app`
+  // This way we can use it in middleware and pages `asyncData`/`fetch`
   app.i18n = new VueI18n({
-    /* vue-i18n options... */
+    /* `VueI18n` options... */
   })
 }
 ```
 
 `nuxt.config.js`:
+
 ```js
 module.exports = {
   build: {
@@ -120,6 +125,7 @@ Some plugins might work **only for the browser**, you can use the `ssr: false` o
 Example:
 
 `nuxt.config.js`:
+
 ```js
 module.exports = {
   plugins: [
@@ -129,6 +135,7 @@ module.exports = {
 ```
 
 `plugins/vue-notifications.js`:
+
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'

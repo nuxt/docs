@@ -1,13 +1,13 @@
 ---
 title: "API: The <nuxt-child> Component"
-description: Display the current page
+description: Display the current page.
 ---
 
-# The &lt;nuxt-child&gt; Component
+# Le composant &lt;nuxt-child&gt;
 
-> This component is used for displaying the children components in a [nested route](/guide/routing#nested-routes).
+> Ce composant est utilisé pour afficher les composants enfants dans une [route imbriquée](/guide/routing#routes-imbriqu-es).
 
-Example:
+Exemple :
 
 ```bash
 -| pages/
@@ -16,17 +16,18 @@ Example:
 ---| parent.vue
 ```
 
-This file tree will generate these routes:
+Cet arbre de fichier va générer ces routes :
+
 ```js
 [
   {
     path: '/parent',
-    component: '~pages/parent.vue',
+    component: '~/pages/parent.vue',
     name: 'parent',
     children: [
       {
         path: 'child',
-        component: '~pages/parent/child.vue',
+        component: '~/pages/parent/child.vue',
         name: 'parent-child'
       }
     ]
@@ -34,15 +35,15 @@ This file tree will generate these routes:
 ]
 ```
 
-To display the `child.vue` component, I have to insert `<nuxt-child/>` inside `pages/parent.vue`:
+Pour afficher le composant `child.vue`, nous avons dû insérer `<nuxt-child/>` à l'intérieur de `pages/parent.vue` :
 
 ```html
 <template>
   <div>
-    <h1>I am the parent view</h1>
+    <h1>Je suis la vue parente</h1>
     <nuxt-child/>
   </div>
 </template>
 ```
 
-To see an example, take a look at the [nested-routes example](/examples/nested-routes).
+Pour voir un exemple, consultez l'[exemple de routes imbriquées](/examples/nested-routes).

@@ -1,6 +1,6 @@
 ---
 title: Hello World
-description: Exemple Hello World avec Nuxt.js
+description: Exemple de Hello World avec Nuxt.js
 github: hello-world
 youtube: https://www.youtube.com/embed/kmf-p-pTi40
 livedemo: https://hello-world.nuxtjs.org

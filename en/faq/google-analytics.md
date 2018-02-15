@@ -5,9 +5,9 @@ description: How to use Google Analytics?
 
 # How to use Google Analytics?
 
-First, please check the [official Google Analytics module](https://github.com/nuxt-community/modules/tree/master/modules/google-analytics) for nuxt.js*
+First, please check the [official Google Analytics module](https://github.com/nuxt-community/analytics-module) for Nuxt.js.
 
-Ortherwise, to use [Google Analytics](https://analytics.google.com/analytics/web/) with your nuxt.js application, we recommend to create a file `plugins/ga.js`:
+Ortherwise, to use [Google Analytics](https://www.google.com/analytics/) with your Nuxt.js application, we recommend to create a file `plugins/ga.js`:
 
 ```js
 /* eslint-disable */
@@ -33,7 +33,7 @@ export default ({ app }) => {
   */
   app.router.afterEach((to, from) => {
     /*
-    ** We tell Google Analytic to add a page view
+    ** We tell Google Analytics to add a `pageview`
     */
     ga('set', 'page', to.fullPath)
     ga('send', 'pageview')
@@ -43,9 +43,10 @@ export default ({ app }) => {
 
 > Replace `UA-XXXXXXXX-X` by your Google Analytics tracking ID.
 
-Then, we tell nuxt.js to import it in our main application:
+Then, we tell Nuxt.js to import it in our main application:
 
 `nuxt.config.js`
+
 ```js
 module.exports = {
   plugins: [
@@ -54,6 +55,6 @@ module.exports = {
 }
 ```
 
-Voilà, Google Analytics is integrated into your nuxt.js application and will track every page view!
+Voilà, Google Analytics is integrated into your Nuxt.js application and will track every page view!
 
-<p class="Alert Alert--nuxt-green"><b>INFO:</b> you can use this method for any other tracking service.</p>
+<p class="Alert Alert--nuxt-green"><b>Info:</b> you can use this method for any other tracking service.</p>

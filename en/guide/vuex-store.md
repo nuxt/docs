@@ -1,22 +1,22 @@
 ---
 title: Vuex Store
-description: Using a store to manage the state is important for every big application, that's why nuxt.js implements Vuex in its core.
+description: Using a store to manage the state is important for every big application, that's why Nuxt.js implements Vuex in its core.
 ---
 
-> Using a store to manage the state is important to every big application, that's why nuxt.js implement [vuex](https://github.com/vuejs/vuex) in its core.
+> Using a store to manage the state is important to every big application, that's why nuxt.js implement [Vuex](https://vuex.vuejs.org/en/) in its core.
 
 ## Activate the Store
 
 Nuxt.js will look for the `store` directory, if it exists, it will:
 
-1. Import Vuex
-2. Add `vuex` module in the vendors bundle
-3. Add the `store` option to the root `Vue` instance.
+1. Import Vuex,
+2. Add `vuex` module in the vendors bundle,
+3. Add the `store` option to the root Vue instance.
 
 Nuxt.js lets you have **2 modes of store**, choose the one you prefer:
 
-- **Classic:** `store/index.js` returns a store instance
-- **Modules:** every `.js` file inside the `store` directory is transformed as a [namespaced module](http://vuex.vuejs.org/en/modules.html) (`index` being the root module)
+- **Classic:** `store/index.js` returns a store instance.
+- **Modules:** every `.js` file inside the `store` directory is transformed as a [namespaced module](http://vuex.vuejs.org/en/modules.html) (`index` being the root module).
 
 ## Classic mode
 
@@ -41,7 +41,7 @@ const createStore = () => {
 export default createStore
 ```
 
-> We don't need to install `vuex` since it's shipped with nuxt.js
+> We don't need to install `vuex` since it's shipped with Nuxt.js.
 
 We can now use `this.$store` inside our components:
 
@@ -70,6 +70,7 @@ export const mutations = {
 ```
 
 Then, you can have a `store/todos.js` file:
+
 ```js
 export const state = () => ({
   list: []
@@ -92,6 +93,7 @@ export const mutations = {
 ```
 
 The store will be as such:
+
 ```js
 new Vuex.Store({
   state: { counter: 0 },
@@ -185,17 +187,17 @@ export const mutations = {
 }
 ```
 
-More information about the plugins: [Vuex documentation](https://vuex.vuejs.org/en/plugins.html)
+More information about the plugins: [Vuex documentation](https://vuex.vuejs.org/en/plugins.html).
 
 ## The fetch Method
 
-> The fetch method is used to fill the store before rendering the page, it's like the data method except it doesn't set the component data.
+> The `fetch` method is used to fill the store before rendering the page, it's like the `data` method except it doesn't set the component data.
 
-More information about the fetch method: [API Pages fetch](/api/pages-fetch)
+More information about the fetch method: [API Pages fetch](/api/pages-fetch).
 
 ## The nuxtServerInit Action
 
-If the action `nuxtServerInit` is defined in the store, nuxt.js will call it with the context (only from the server-side). It's useful when we have some data on the server we want to give directly to the client-side.
+If the action `nuxtServerInit` is defined in the store, Nuxt.js will call it with the context (only from the server-side). It's useful when we have some data on the server we want to give directly to the client-side.
 
 For example, let's say we have sessions on the server-side and we can access the connected user through `req.session.user`. To give the authenticated user to our store, we update our `store/index.js` to the following:
 
@@ -211,6 +213,6 @@ actions: {
 
 > If you are using the _Modules_ mode of the Vuex store, only the primary module (in `store/index.js`) will receive this action. You'll need to chain your module actions from there.
 
-The context is given to `nuxtServerInit` as the 2nd argument, it is the same as the `data` or `fetch` method except that `context.redirect()` and `context.error()` are omitted.
+The [context](/api/context) is given to `nuxtServerInit` as the 2nd argument, it is the same as `asyncData` or `fetch` method.
 
 > Note: Asynchronous `nuxtServerInit` actions must return a Promise to allow the `nuxt` server to wait on them.

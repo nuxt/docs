@@ -9,7 +9,7 @@ description: The default Nuxt.js application structure is intended to provide a 
 
 ### The Assets Directory
 
-The `assets` directory contains your un-compiled assets such as LESS, SASS or JavaScript.
+The `assets` directory contains your un-compiled assets such as Less, Sass or JavaScript.
 
 [More documentation about Assets integration](/guide/assets)
 
@@ -41,15 +41,15 @@ _This directory cannot be renamed._
 
 ### The Plugins Directory
 
-The `plugins` directory contains your Javascript plugins that you want to run before instantiating the root vue.js application.
+The `plugins` directory contains your Javascript plugins that you want to run before instantiating the root Vue.js Application.
 
 [More documentation about Plugins integration](/guide/plugins)
 
 ### The Static Directory
 
-The `static` directory contains your static files. Each file inside this directory is mapped to /.
+The `static` directory contains your static files. Each file inside this directory is mapped to `/`.
 
-**Example:** /static/robots.txt is mapped as /robots.txt
+**Example:** `/static/robots.txt` is mapped as `/robots.txt`
 
 _This directory cannot be renamed._
 
@@ -57,7 +57,7 @@ _This directory cannot be renamed._
 
 ### The Store Directory
 
-The `store` directory contains your [Vuex Store](http://vuex.vuejs.org) files. The Vuex Store option is implemented in the Nuxt.js framework. Creating an `index.js` file in this directory enables the option in the framework automatically.
+The `store` directory contains your [Vuex Store](http://vuex.vuejs.org/en/) files. The Vuex Store option is implemented in the Nuxt.js framework. Creating an `index.js` file in this directory enables the option in the framework automatically.
 
 _This directory cannot be renamed._
 
@@ -69,7 +69,7 @@ The `nuxt.config.js` file contains your Nuxt.js custom configuration.
 
 _This file can not be renamed._
 
-[More documentation about nuxt.config.js integration](/guide/configuration)
+[More documentation about `nuxt.config.js` integration](/guide/configuration)
 
 ### The package.json File
 
@@ -86,4 +86,4 @@ _This file can not be renamed._
 
 By default, `srcDir` is the same as `rootDir`.
 
-<p class="Alert Alert--nuxt-green"><b>INFO:</b> Inside your `vue` templates, if you need to link to your `assets` or `static` directory, use `~assets/your_image.png` and `~static/your_image.png`.</p>
+<p class="Alert Alert--nuxt-green"><b>Info:</b> Inside your `vue` templates, if you need to link to your `assets` or `static` directory, use `~/assets/your_image.png` and `~/static/your_image.png`.</p>

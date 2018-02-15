@@ -1,35 +1,41 @@
 ---
 title: "API: nuxt.renderAndGetWindow(url, options)"
-description: Get the window from a given url of a nuxt.js application.
+description: Obtient la `window` depuis un URL donné d'une application Nuxt.js.
 ---
 
 # nuxt.renderAndGetWindow(url, options = {})
 
-- Type: `Function`
-- Argument: `String`
-  1. `String`: url to render
-  2. *Optional*, `Object`: options
-    - virtualConsole: `Boolean` (default: `true`)
-- Returns: `Promise`
-  - Returns: `window`
+- Type : `Function`
+- Argument : `String`
+  1. `String` : l'URL à rendre
+  2. *Optional*, `Object` : options
+    - virtualConsole : `Boolean` (par défaut : `true`)
+- Valeur de retour : `Promise`
+  - Valeur de retour : `window`
 
-> Get the window from a given url of a nuxt.js application.
+> Obtient la `window` à un URL donné d'une application Nuxt.js.
 
-<p class="Alert Alert--info">This method is made for [test purposes](guide/development-tools#end-to-end-testing).</p>
+<p class="Alert Alert--info">Cette méthode est faite pour les [tests](guide/development-tools#tests-de-bout-en-bout).</p>
 
-To use this function, you have to install `jsdom`:
+Pour utiliser cette fonction, vous devez installer `jsdom` :
+
 ```bash
 npm install --save-dev jsdom
 ```
 
-Example:
+Exemple :
+
 ```js
-const Nuxt = require('nuxt')
-const nuxt = new Nuxt()
+const { Nuxt, Builder } = require('nuxt')
+
+const config = require('./nuxt.config.js')
+config.dev = false
+
+const nuxt = new Nuxt(config)
 
 nuxt.renderAndGetWindow('http://localhost:3000')
 .then((window) => {
-  // Display the head <title>
+  // Afficher l'entête `<title>`
   console.log(window.document.title)
 })
 ```

@@ -1,43 +1,45 @@
 ---
-title: "API: nuxt.renderRoute(route, context)"
-description: Render a specific route with a given context.
+title: "API : nuxt.renderRoute(route, context)"
+description: Faire le rendu d'une route spécifique avec un contexte donné.
 ---
 
 # nuxt.renderRoute(route, context = {})
 
-- Type: `Function`
-- Arguments:
-  1. `String`, route to render
-  2. *Optional*, `Object`, context given, available keys: `req` & `res`
-- Returns: `Promise`
+- Type : `Function`
+- Arguments :
+  1. `String` : route sur laquelle faire le rendu
+  2. *Optionnel*, `Object`, donne le contexte, propriétés disponibles : `req` & `res`
+- Valeur de retour : `Promise`
   - `html`: `String`
-  - `error`: `null` or `Object`
-  - `redirected`: `false` or `Object`
+  - `error`: `null` ou `Object`
+  - `redirected`: `false` ou `Object`
 
-> Render a specific route with a given context.
+> Faire le rendu d'une route spécifique avec un contexte donné.
 
-This method should be used mostly for [test purposes](/guide/development-tools#end-to-end-testing) as well with [nuxt.renderAndGetWindow](/api/nuxt-render-and-get-window).
+Cette méthode devrait être utilisée en particulier pour les [tests](guide/development-tools#tests-de-bout-en-bout) aussi bien que [`nuxt.renderAndGetWindow`](/api/nuxt-render-and-get-window).
 
-<p class="Alert Alert--info">`nuxt.renderRoute` should be executed after the build process in production mode (dev: false).</p>
+<p class="Alert Alert--info">`nuxt.renderRoute` devrait être exécuté après le processus de build en mode production (`dev: false`).</p>
 
-Example:
+Exemple :
+
 ```js
-const Nuxt = require('nuxt')
-let config = require('./nuxt.config.js')
+const { Nuxt, Builder } = require('nuxt')
+
+const config = require('./nuxt.config.js')
 config.dev = false
+
 const nuxt = new Nuxt(config)
 
-nuxt.build()
-.then(() => {
-  return nuxt.renderRoute('/')
-})
+new Builder(nuxt)
+.build()
+.then(() => nuxt.renderRoute('/'))
 .then(({ html, error, redirected }) => {
-  // html will be always a string
+  // `html` sera toujours une chaine de caractères
 
-  // error not null when the error layout is displayed, the error format is:
-  // { statusCode: 500, message: 'My error message' }
+  // `error` sera non `null` quand le layout d'erreur est affiché, le format d'erreur est :
+  // { statusCode: 500, message: 'Mon message d\'erreur' }
 
-  // redirected is not false when redirect() has been used in data() or fetch()
+  // `redirected` n'est pas `false` quand `redirect()` est utilisé dans `data()` ou `fetch()`
   // { path: '/other-path', query: {}, status: 302 }
 })
 ```

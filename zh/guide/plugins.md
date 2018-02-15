@@ -63,7 +63,7 @@ Vue.use(VueNotifications)
 然后, 在 `nuxt.config.js` 内配置 `plugins` 如下：
 ```js
 module.exports = {
-  plugins: ['~plugins/vue-notifications']
+  plugins: ['~/plugins/vue-notifications']
 }
 ```
 
@@ -75,9 +75,9 @@ module.exports = {
 ```js
 module.exports = {
   build: {
-    vendor: ['vue-notifications']
+    vendor: ['~/plugins/vue-notifications']
   },
-  plugins: ['~plugins/vue-notifications']
+  plugins: ['~/plugins/vue-notifications']
 }
 ```
 
@@ -91,7 +91,7 @@ module.exports = {
 ```js
 module.exports = {
   plugins: [
-    { src: '~plugins/vue-notifications', ssr: false }
+    { src: '~/plugins/vue-notifications', ssr: false }
   ]
 }
 ```
@@ -104,4 +104,4 @@ import VueNotifications from 'vue-notifications'
 Vue.use(VueNotifications)
 ```
 
-同样地，如果有些脚本库你只想在服务端使用，在 Webpack 打包 `server.bundle.js` 文件的时候你可以将 `process.SERVER_BUILD` 变量设置成 `true`。
+同样地，如果有些脚本库你只想在服务端使用，在 Webpack 打包 `server.bundle.js` 文件的时候会将 `process.server` 变量设置成 `true`。

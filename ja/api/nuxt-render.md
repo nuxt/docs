@@ -16,30 +16,29 @@ description: Nuxt.js を独自の Node.js サーバーのミドルウェアと�
 Nuxt.js を [express](https://github.com/expressjs/express) と一緒に使う例:
 
 ```js
-const Nuxt = require('nuxt')
 const app = require('express')()
-const isProd = (process.env.NODE_ENV === 'production')
+const { Nuxt, Builder } = require('nuxt')
+
+const host = process.env.HOST || '127.0.0.1'
 const port = process.env.PORT || 3000
 
 // Nuxt.js をオプションとともにインスタンス化する
 let config = require('./nuxt.config.js')
-config.dev = !isProd
+config.dev = !(process.env.NODE_ENV === 'production')
+
 const nuxt = new Nuxt(config)
+
+// ホットリローディングする開発モードのときのみビルドする
+if (config.dev) {
+  const builder = new Builder(nuxt)
+  builder.build()
+}
 
 // すべてのルートを Nuxt.js でレンダリングする
 app.use(nuxt.render)
 
-// ホットリローディングする開発モードのときのみビルドする
-if (config.dev) {
-  nuxt.build()
-  .catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
-}
-
 // サーバーを Listen する
-app.listen(port, '0.0.0.0')
+app.listen(port, host)
 console.log('Server listening on localhost:' + port)
 ```
 

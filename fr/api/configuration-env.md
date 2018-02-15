@@ -3,13 +3,13 @@ title: "API: The env Property"
 description: Share environment variables between client and server.
 ---
 
-# The env Property
+# The env Property (En)
 
 - Type: `Object`
 
 > Nuxt.js lets you create environment variables that will be shared for the client and server-side.
 
-Example (`nuxt.config.js`):
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Example (`nuxt.config.js`):</p>
 
 ```js
 module.exports = {
@@ -22,8 +22,9 @@ module.exports = {
 This lets me create a `baseUrl` property that will be equal to the `BASE_URL` environment variable if defined, otherwise, equal to `http://localhost:3000`.
 
 Then, I can access my `baseUrl` variable with 2 ways:
+
 1. Via `process.env.baseUrl`
-2. Via `context.baseUrl`, see [context api](/api#context)
+2. Via `context.env.baseUrl`, see [context api](/api/context)
 
 You can use the `env` property for giving public token for example.
 
@@ -38,4 +39,21 @@ export default axios.create({
 })
 ```
 
-Then, in your pages, you can import axios like this: `import axios from '~plugins/axios'`
+Then, in your pages, you can import axios like this: `import axios from '~/plugins/axios'`
+
+## process.env == {}
+Note that nuxt uses webpack's `definePlugin` to define the environmental variable. This means that, the actual `process` or `process.env` from node is not available and is not defined. Each of the env properties defined in nuxt.config.js is individually mapped to process.env.xxxx and converted during compilation. 
+
+Meaning, `console.log(process.env)` will output `{}` but `console.log(process.env.you_var)` will still output your value. When webpack compiles your code, it replaces all instances of `process.env.your_var` to the value you've set it to. ie: `env.test = 'testing123'`. If you use `process.env.test` in your code somewhere, it is actually translated to 'testing123'.
+
+before
+```
+if (process.env.test == 'testing123')
+```
+
+after
+```
+if ('testing123' == 'testing123')
+```
+
+

@@ -1,6 +1,6 @@
 ---
 title: "API: The scrollToTop Property"
-description: The scrollToTop property lets you tell nuxt.js to scroll to the top before rendering the page.
+description: The `scrollToTop` property lets you tell Nuxt.js to scroll to the top before rendering the page.
 ---
 
 # The scrollToTop Property
@@ -9,7 +9,7 @@ description: The scrollToTop property lets you tell nuxt.js to scroll to the top
 
 - **Type:** `Boolean` (default: `false`)
 
-By default, nuxt.js scrolls to the top when you go to another page, but with children routes, nuxt.js keeps the scroll position. If you want to tell nuxt.js to scroll to the top when rendering your child route, set `scrollToTop: true`:
+By default, Nuxt.js scrolls to the top when you go to another page, but with children routes, Nuxt.js keeps the scroll position. If you want to tell Nuxt.js to scroll to the top when rendering your child route, set `scrollToTop: true`:
 
 ```html
 <template>

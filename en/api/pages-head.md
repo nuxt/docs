@@ -1,6 +1,6 @@
 ---
 title: "API: The head Method"
-description: Nuxt.js uses vue-meta to update the `headers` and `html attributes` of your application.
+description: Nuxt.js uses vue-meta to update the headers and HTML attributes of your application.
 ---
 
 # The head Method

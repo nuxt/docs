@@ -66,13 +66,12 @@ export default {
 
 ```js
 import test from 'ava'
-import Nuxt from 'nuxt'
+import { Nuxt, Builder } from 'nuxt'
 import { resolve } from 'path'
 
 // nuxt 와 server 인스턴스를 여기에 확보해둡니다.
 // 그러면 테스트가 종료되었을 때 이것들을 close할 수 있습니다.
 let nuxt = null
-let server = null
 
 // Nuxt.js 를 초기화하고 localhost:4000 에서 리스닝하는 서버를 작성합니다.
 test.before('Init Nuxt.js', async t => {
@@ -82,9 +81,8 @@ test.before('Init Nuxt.js', async t => {
   config.rootDir = rootDir // project folder
   config.dev = false // production build
   nuxt = new Nuxt(config)
-  await nuxt.build()
-  server = new nuxt.Server(nuxt)
-  server.listen(4000, 'localhost')
+  await new Builder(nuxt).build()
+  nuxt.listen(4000, 'localhost')
 })
 
 // 생성된 HTML 만을 테스트하는 예제
@@ -106,7 +104,6 @@ test('Route / exits and render HTML with CSS applied', async t => {
 
 // 서버를 닫고 nuxt 에 파일갱신 리스닝을 중지시킨다
 test.after('Closing server and nuxt.js', t => {
-  server.close()
   nuxt.close()
 })
 ```
@@ -126,7 +123,7 @@ jsdom 은 브라우저를 사용하지 않기 때문에 제약점이 몇가지 �
 매우 간단하게 [ESLint](http://eslint.org) 를 Nuxt.js 와 같이 사용할 수 있습니다. 우선 npm 디펜던시를 추가해야 합니다:
 
 ```bash
-npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-html eslint-plugin-promise eslint-plugin-standard
+npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-html eslint-plugin-promise eslint-plugin-standard eslint-plugin-import eslint-plugin-node
 ```
 
 그리고 `.eslintrc.js` 파일을 프로젝트의 루트 디렉토리에 두고 ESLint를 설정합니다:

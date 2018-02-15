@@ -54,7 +54,7 @@ export default store
 
 > Nuxt.js では `store` ディレクトリ内にモジュールと対応するファイルを持つことができます。
 
-このオプションを使いたいときは、ストアインスタンスの代わりに、`store/index.js` 内でストア、ミューテーション、アクションをエクスポートします:
+このオプションを使いたいときは、ストアインスタンスの代わりに、`store/index.js` 内でステート、ミューテーション、アクションをエクスポートします:
 
 ```js
 export const state = () => ({
@@ -164,7 +164,30 @@ export default {
 </style>
 ```
 
+
 <div class="Alert">ストアインスタンスをエクスポートすることでモジュールを持つこともできます。その際にはモジュールをストアに手動で追加する必要があります。</div>
+
+### プラグイン
+
+プラグインを `store/index.js` ファイルに置くことで、ストア（モジュールモード）に追加できます:
+
+```js
+import myPlugin from 'myPlugin'
+
+export const plugins = [ myPlugin ]
+
+export const state = () => ({
+  counter: 0
+})
+
+export const mutations = {
+  increment (state) {
+    state.counter++
+  }
+}
+```
+
+プラグインについてのさらに詳しい情報は [Vuex ドキュメント](https://vuex.vuejs.org/en/plugins.html) を参照してください。
 
 ## fetch メソッド
 
@@ -188,7 +211,7 @@ actions: {
 }
 ```
 
-> Vuex ストアの _モジュール_ モードを使っている場合はなら、プライマリモジュール（`store/index.js`）のみ、このアクションを受け取ることができます。その他のモジュールのアクションでも使いたい場合は、プライマリモジュールからチェインする必要があります。
+> Vuex ストアの *モジュール* モードを使っている場合はなら、プライマリモジュール（`store/index.js`）のみ、このアクションを受け取ることができます。その他のモジュールのアクションでも使いたい場合は、プライマリモジュールからチェインする必要があります。
 
 コンテキストは `nuxtServerInit` へ第二引数として渡されます。`context.redirect()` や `context.error()` が除外される点を除いては `data` メソッドや `fetch` メソッドと共通しています。
 

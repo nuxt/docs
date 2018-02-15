@@ -1,11 +1,12 @@
 ---
-title: Déployer avec Now.sh
-description: Déployer nuxt.js avec Now.sh
+title: Déployer avec Now
+description: Comment déployer une application Nuxt.js avec Now ?
 ---
 
-# Déployer avec Now.sh
+# Comment déployer avec Now ?
 
-Pour déployer avec [now.sh](https://zeit.co/now), un fichier `package.json` comme suit est recommandé:
+Pour déployer avec [Now](https://zeit.co/now), un fichier `package.json` comme suit est recommandé :
+
 ```json
 {
   "name": "my-app",
@@ -20,6 +21,6 @@ Pour déployer avec [now.sh](https://zeit.co/now), un fichier `package.json` com
 }
 ```
 
-Puis exécutez `now` et profiter!
+Puis exécutez `now` et profitez !
 
-Note: nous recommandons d'ajouter `.nuxt` dans `.npmignore` ou `.gitignore`.
+Note : nous recommandons d'ajouter `.nuxt` dans `.npmignore` ou `.gitignore`.

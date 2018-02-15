@@ -12,7 +12,8 @@ Set the middleware for a specific page of the application.
 
 Example:
 
-`pages/secret.vue`
+`pages/secret.vue`:
+
 ```html
 <template>
   <h1>Secret page</h1>
@@ -25,7 +26,8 @@ export default {
 </script>
 ```
 
-`middleware/authenticated.js`
+`middleware/authenticated.js`:
+
 ```js
 export default function ({ store, redirect }) {
   // If the user is not authenticated

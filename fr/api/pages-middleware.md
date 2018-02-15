@@ -1,18 +1,19 @@
 ---
-title: "API: La propriété middleware"
+title: "API : la propriété middleware"
 description: Définit le middleware pour une page spécifique de l'application.
 ---
 
 # La propriété middleware
 
-- Type: `String` ou `Array`
-  - Items: `String`
+- Type : `String` ou `Array`
+  - Type des éléments : `String`
 
 Définit le middleware pour une page spécifique de l'application.
 
-Exemple:
+Exemple :
 
-`pages/secret.vue`
+`pages/secret.vue` :
+
 ```html
 <template>
   <h1>Page secrète</h1>
@@ -25,7 +26,8 @@ export default {
 </script>
 ```
 
-`middleware/authenticated.js`
+`middleware/authenticated.js` :
+
 ```js
 export default function ({ store, redirect }) {
   // Si l'utilisateur n'est pas authentifié
@@ -35,4 +37,4 @@ export default function ({ store, redirect }) {
 }
 ```
 
-Pour en savoir plus sur les middleware, voir le [guide middleware](/guide/routing#middleware).
+Pour en savoir plus sur les middlewares, voir le [guide middleware](/guide/routing#middleware).

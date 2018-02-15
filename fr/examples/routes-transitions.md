@@ -1,5 +1,5 @@
 ---
-title: Routes transitions
+title: Transitions de routes
 description: Exemple de transitions de routes avec Nuxt.js
 github: routes-transitions
 youtube: https://www.youtube.com/embed/RIXOzJWFfc8

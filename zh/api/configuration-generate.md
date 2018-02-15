@@ -26,7 +26,7 @@ description: 配置 Nuxt.js 应用生成静态站点的具体方式。
 ```js
 minify: {
   collapseBooleanAttributes: true,
-  collapseWhitespace: true,
+  collapseWhitespace: false,
   decodeEntities: true,
   minifyCSS: true,
   minifyJS: true,
@@ -40,7 +40,7 @@ minify: {
   removeStyleLinkTypeAttributes: false,
   removeTagWhitespace: false,
   sortAttributes: true,
-  sortClassName: true,
+  sortClassName: false,
   trimCustomFragments: true,
   useShortDoctype: true
 }

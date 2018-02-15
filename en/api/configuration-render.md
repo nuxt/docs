@@ -14,9 +14,13 @@ description: Nuxt.js lets you customize runtime options for rendering pages
 
 ```js
 module.exports = {
-  build: {
-    ssr: {
-        runInNewContext: false
+  render: {
+    bundleRenderer: {
+      directives: {
+        custom1: function (el, dir) {
+          // something ...
+        }
+      }
     }
   }
 }
@@ -28,6 +32,8 @@ It is recommended to not use this option as Nuxt.js is already providing best SS
 ## etag
 - Type: `object`
   - Default: `{ weak: true }`
+
+To disable etag for pages set `etag: false`
 
 See [etag](https://www.npmjs.com/package/etag) docs for possible options.
 

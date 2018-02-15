@@ -1,13 +1,13 @@
 ---
 title: Ressources externes
-description: Comment utiliser des ressources externes avec Nuxt.js?
+description: Comment utiliser des ressources externes avec Nuxt.js ?
 ---
 
-# Comment utiliser des ressources externes?
+# Comment utiliser des ressources externes ?
 
 ## Paramètres globaux
 
-Inclure vos ressources dans le fichier `nuxt.config.js`:
+Ajoutez vos ressources dans le fichier `nuxt.config.js` :
 
 ```js
 module.exports = {
@@ -24,11 +24,11 @@ module.exports = {
 
 ## Paramètres locaux
 
-Inclure vos ressources dans votre fichier .vue dans votre répertoire *pages*:
+Ajoutez vos ressources dans votre fichier `.vue` dans votre répertoire `pages/` :
 
 ```html
 <template>
-  <h1>Page avec jQuery et la police de caractère Roboto</h1>
+  <h1>About page with jQuery and Roboto font</h1>
 </template>
 
 <script>
@@ -43,4 +43,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+h1 {
+  font-family: Roboto, sans-serif;
+}
+</style>
 ```
