@@ -171,7 +171,7 @@ module.exports = {
 
 > Customize [PostCSS Loader](https://github.com/postcss/postcss-loader#usage) plugins.
 
-- Type: `Array`, `Object` (recommended), `Function` ou `Boolean`
+- Type: `Array`, `Object` (recommended), `Function` or `Boolean`
 
   **Note:** While default preset is OK and flexible enough for normal use cases, the recommended usage by [`vue-loader`](https://vue-loader.vuejs.org/en/options.html#postcss) is using `postcss.config.js` file in your project. By creating that file it will be automatically detected and this option is ignored.
 
