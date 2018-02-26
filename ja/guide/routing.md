@@ -88,7 +88,6 @@ router: {
 
 `user-id` と名付けられたルートに `:id?` というパスがありますが、これはこの `:id` が必須ではないことを表します。もし必須にしたい場合は `users/_id` ディレクトリ内に `index.vue` ファイルを作成してください。
 
-
 <p class="Alert Alert--info">警告: `generate` コマンドでは 動的なルーティング は無視されます。 : [generate 設定 API](/api/configuration-generate#routes)</p>
 
 ### ルーティングのパラメータのバリデーション
@@ -116,8 +115,7 @@ Nuxt.js では vue-router の子ルートを使ってルートをネストさせ
 
 ネストされたルートの親コンポーネントを定義するには、子ビューを含む **ディレクトリと同じ名前** の Vue ファイルを作成する必要があります。
 
-
-<p class="Alert Alert--info">Nuxt.js のデフォルトのトランジション名は `"page"` です。</p>
+<p class="Alert Alert--info"><b>Warning:</b> don't forget to write `<nuxt-child>` inside the parent component (<code>.vue</code> file).</nuxt-child></p>
 
 下記のようなファイルの木構造のとき:
 
@@ -213,12 +211,57 @@ router: {
 }
 ```
 
+### SPA フォールバック
+
+動的なルーティングに対しても SPA フォールバックを有効にすることができます。Nuxt.js は `mode: 'spa'` を使って生成された index.html ファイルと同様のファイルを出力します。多くの静的ホスティングサービスは、一致するファイルがない場合に SPA テンプレートを使用するよう設定できます。`head` 情報や HTML は含まれませんが、API からデータをロードし解決します。
+
+`nuxt.config.js` で SPA フォールバックを有効化:
+
+```js
+module.exports = {
+  generate: {
+    fallback: true, // if you want to use '404.html'
+    fallback: 'my-fallback/file.html' // if your hosting needs a custom location
+  }
+}
+```
+
+#### Surge 向けの実装
+
+Surge は `200.html` と `404.html` 両方を[扱うことが出来ます](https://surge.sh/help/adding-a-custom-404-not-found-page)。`generate.fallback` はデフォルトで `200.html` を設定するので、変更する必要はありません。
+
+#### GitHub Pages と Netlify 向けの実装
+
+GitHub Pages と Netlify は `404.html` ファイルを自動的に認識するため、設定すべきことは`generate.fallback` を `true` にするだけです！
+
+#### Firebase ホスティング向けの実装
+
+Firebase ホスティングを使うめには、`generate.fallback` を `true` にし、以下のの設定を使用します。 ([さらに詳しく](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
+
+```json
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/404.html"
+      }
+    ]
+  }
+}
+```
+
 ## トランジション
 
-Nuxt.js では [<transition>](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) コンポーネントを使って、ページ間を遷移する際のトランジション/アニメーションを行うことができます。
+Nuxt.js では [<transition> コンポーネントを使って、ページ間を遷移する際のトランジション/アニメーションを行うことができます。</transition>](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components)
 
 ### グローバルな設定
-
 
 <p class="Alert Alert--nuxt-green"><b>情報:</b> Nuxt.js のデフォルトのトランジション名は `"page"`です。</p>
 
@@ -292,7 +335,7 @@ export default function (context) {
 2. マッチしたレイアウト
 3. マッチしたページ
 
-ミドルウェアは、`Promise` を返すようにするか、もしくは第二引数の `callback` を使って、非同期に実行することができます:
+ミドルウェアは非同期に実行することが出来ます。これを行うには、単に `Promise` を返却するか、`callback` の第二引数を使用します:
 
 `middleware/stats.js`
 
@@ -320,4 +363,4 @@ module.exports = {
 
 `stats` ミドルウェアはすべてのルート変更時に呼び出されるようになります。
 
-ミドルウェアを使った実際の例を見たい場合は GitHub 上にある [example-auth0](https://github.com/nuxt/example-auth0) を見てみてください。
+ミドルウェアを使った実際の例を見たい場合は GitHub 上にある [example-auth0](https://github.com/nuxt/example-auth0) を参照してください。
