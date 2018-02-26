@@ -117,7 +117,7 @@ npm test
 
 jsdom has some limitations because it does not use a browser. However, it will cover most of our tests. If you want to use a browser to test your application, you might want to check out [Nightwatch.js](http://nightwatchjs.org).
 
-## ESLint && Prettier
+## ESLint and Prettier
 
 > [ESLint](http://eslint.org) is a great tool to keep your code clean
 
