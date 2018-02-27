@@ -181,4 +181,28 @@ npm run lintfix
 
 ESLint will lint every of your JavaScript and Vue files while ignoring your ignored files defined in your `.gitignore`.
 
+It is also recommended to enable ESLint at hot reloading mode via webpack. This way ESLint will run on save during `npm run dev`. Just add the following to your `nuxt.config.js`:
+```
+...
+  /*
+   ** Build configuration
+  */
+  build: {
+   /*
+    ** You can extend webpack config here
+   */
+   extend(config, ctx) {      
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: "pre",
+          test: /\.(js|vue)$/,
+          loader: "eslint-loader",
+          exclude: /(node_modules)/
+        })
+      }      
+    }
+  }
+```
+
 <p class="Alert Alert--info">One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before commiting your code.</p>
