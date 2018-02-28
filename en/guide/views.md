@@ -154,7 +154,7 @@ export default {
 | Attribute | Description |
 |-----------|-------------|
 | `asyncData` | The most important key. It can be asynchronous and receives the context as argument. Please read the [async data documentation](/guide/async-data) to learn how it works. |
-| `fetch` | Used to fill the store before rendering the page. It's like the `data` method, except it doesn't set the component data. See the [API Pages `fetch` documentation](/api/pages-fetch). |
+| `fetch` | Used to fill the store before rendering the page. It's like the `asyncData` method, except it doesn't set the component data. See the [API Pages `fetch` documentation](/api/pages-fetch). |
 | `head` | Set specific `<meta>` tags for the current page. See [API Pages `head` documentation](/api/pages-head). |
 | `layout` | Specify a layout defined in the `layouts` directory. See [API Pages `layout` documentation](/api/pages-layout). |
 | `transition` | Set a specific transition for the page. See [API Pages `transition`](/api/pages-transition). |
