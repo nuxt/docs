@@ -8,7 +8,7 @@ description: Nuxt `Builder` Class
 - Source: **[builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)**
 
 
-## Tapable plugins
+## Hooks
 
 We can register hooks on certain life cycle events.
 
