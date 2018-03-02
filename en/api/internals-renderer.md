@@ -21,7 +21,7 @@ nuxt.plugin('renderer', renderer => {
 })
 ```
 
-Plugin            | Arguments              | When
+Hook            | Arguments              | When
 ------------------|------------------------|------------------------------------------------------------------------------------------------
  `render:before`          |   | *description missing*  
  `render:setupMiddleware` | connect instance (app)  | Before Nuxt adds it's middleware stack. We can use it to register custom server side middleware  
