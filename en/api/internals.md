@@ -99,7 +99,7 @@ class FooClass extends Tapable {
 So we can hook into `foo` module like this:
 
 ```js
-this.nuxt.hook('foo', foo => {
+nuxt.hook('foo', foo => {
     // ...
 })
 ```
