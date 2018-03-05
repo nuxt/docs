@@ -13,13 +13,7 @@ This class is exporting a connect middleware which handles and serves all SSR an
 
 We can register hooks on certain life cycle events.
 
-```js
-nuxt.plugin('renderer', renderer => {
-    renderer.plugin('setupMiddleware', app => {
-        // ...
-    })
-})
-```
+
 
 Hook            | Arguments              | When
 ------------------|------------------------|------------------------------------------------------------------------------------------------
