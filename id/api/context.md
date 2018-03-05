@@ -28,5 +28,4 @@ Kunci | Tipe | Tersedia | Deskripsi
 `redirect` | `Function` | Klien & Server | Gunakan metode ini untuk mengalihkan (redirect) pengguna ke rute lain, kode status (status code) digunakan di sisi-server, secara default `302`. `redirect([status,] path [, query])`.
 `error` | `Function` | Klien & Server | Gunakan metode ini untuk menampilkan halaman error: `error(parameter)`. `Parameter`-nya harus memiliki properti `statusCode` dan `message`.
 `nuxtState` | `Object` | Klien | Status Nuxt, berguna untuk plugin yang menggunakan `beforeNuxtRender` untuk mendapatkan status nuxt pada sisi klien sebelum hidrasi. **Hanya tersedia dalam mode `universal`**.
-`beforeNuxtRender(fn)` | `Function` | Server | Gunakan metode ini untuk memperbarui (update) variabel `__NUXT__` yang di-render di sisi-klien,
- `fn` (dapat berupa asynchronous) dipanggil dengan `{ Components, nuxtState }`, lihat [contoh](https://github.com/nuxt/nuxt.js/blob/cf6b0df45f678c5ac35535d49710c606ab34787d/test/fixtures/basic/pages/special-state.vue).
+`beforeNuxtRender(fn)` | `Function` | Server | Gunakan metode ini untuk memperbarui (update) variabel `__NUXT__` yang di-render di sisi-klien, `fn` (dapat berupa asynchronous) dipanggil dengan `{ Components, nuxtState }`, lihat [contoh](https://github.com/nuxt/nuxt.js/blob/cf6b0df45f678c5ac35535d49710c606ab34787d/test/fixtures/basic/pages/special-state.vue).
