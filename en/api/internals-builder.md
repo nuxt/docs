@@ -20,8 +20,7 @@ this.nuxt.hook('build:done', (builder) => {
 ```
 
 Plugin         | Arguments                               | When
----------------|-----------------------------------------|--------------------------------------------------------------------------------
-
+---------------|-----------------------------------------|--------------------
 `build:before`           | (nuxt, buildOptions) | Before Nuxt build started
 `build:templates`        | ({ templateFiles, templateVars, resolve })  | Generating `.nuxt` template files    
 `build:extendRoutes`     | (routes, resolve) | Generating routes
