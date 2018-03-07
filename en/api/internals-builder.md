@@ -13,20 +13,18 @@ description: Nuxt `Builder` Class
 We can register hooks on certain life cycle events.
 
 ```js
-  // Add hook for build
-  this.nuxt.hook('build:done', (builder) => {
-    ...
-  })
-
+// Add hook for build
+this.nuxt.hook('build:done', (builder) => {
+  ...
+})
 ```
 
 Plugin         | Arguments                               | When
 ---------------|-----------------------------------------|--------------------------------------------------------------------------------
 
-`build:before`           |   |  Before build started
-`build:templates`        |   | Generating `.nuxt` template files    
-`build:extendRoutes`     |   | Generating routes
-`build:compile`          |   | Before webpack compile (compiler is a `MultiCompiler` instance) 
-`build:compiled`         |   | webpack build finished
-`build:close`            |   | *description missing*    
-`build:done`             |   |  webpack build was done
+`build:before`           | (nuxt, buildOptions) | Before Nuxt build started
+`build:templates`        | ({ templateFiles, templateVars, resolve })  | Generating `.nuxt` template files    
+`build:extendRoutes`     | (routes, resolve) | Generating routes
+`build:compile`          | ({ name, compiler }) | Before webpack compile (compiler is a Webpack `Compiler` instance), if universal mode, called twice with name `'client'` and `'server'`
+`build:compiled`         | ({ name, compiler, stats }) | Webpack build finished 
+`build:done`             | (nuxt) | Nuxt build finished
