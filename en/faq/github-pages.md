@@ -181,7 +181,7 @@ Next, in the root of your repository, create an `appveyor.yml` configuration fil
 
 ````yaml
 environment:
-  # Nuxt required node v8 minimum
+  # Nuxt requires node v8 minimum
   nodejs_version: "8"
   # Encrypt sensitive data (https://ci.appveyor.com/tools/encrypt)
   github_access_token:
