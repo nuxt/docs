@@ -220,7 +220,7 @@ Before you commit this file however, you'll need to change the `ENCRYPTED_GITHUB
 Once updated, commit the file to your repository
 
 ````bash
-git add .appveyor.yml
+git add appveyor.yml
 git commit -m "Adding appveyor deploy configuration"
 git push origin
 ````
