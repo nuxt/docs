@@ -102,3 +102,69 @@ Then generate and deploy your static application:
 npm run generate
 npm run deploy
 ```
+
+## Build server deployment
+
+We can take deployment one step further and rather than having to manually compile and deploy the files from our local install, we can make use of a builder server to monitor our github repository for new commits and then checkout, compile and deploy everything for us automatically.
+
+Before you configure the build server, you'll first need to [generate a Github personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token) in order to grant the build server permission to perform tasks on your behalf. Once you have created your token, keep a copy of it safe ready to use a little later on.
+
+### Travis CI
+
+To deploy with [Travis CI](https://travis-ci.org/) (free for public repositories), sign in via your Github account, granting Travis access to view your repositories, and then enable the build server for your repository by toggling the switch next to your repositories name in the list displayed.
+
+[TODO PICTURE]
+
+Next, click the cog icon beside your repository name to configure the general settings of the build sever and enable the 'Build only if .travis.yml is present' feature by toggling the switch.
+
+[TODO PICTURE]
+
+On the same screen, scroll down to the Environment Variables section and create a new variables named `GITHUB_ACCESS_TOKEN` and in the value field past a copy of the Github personal access token your created earlier and click 'Add'.
+
+[TODO PICTURE]
+
+Finally, create a `.travis.yml` configuration file in the root of your repository with the following contents
+
+````yaml
+language: node_js
+node_js:
+  - "8"
+
+cache:
+  directories:
+    - "node_modules"
+
+branches:
+  only:
+  - master
+
+install:
+  - npm install
+  - npm run generate
+
+script:
+  - echo "Skipping tests"
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_ACCESS_TOKEN  # Set in travis-ci.org dashboard, marked secure https://docs.travis-ci.com/user/deployment/pages/#Setting-the-GitHub-token
+  target-branch: gh-pages
+  local-dir: dist
+  on:
+    branch: master
+````
+And then commit this to your repository
+
+````bash
+git add .travis.yml
+git commit -m "Adding travis deploy configuration"
+git push origin
+````
+Now, whenever you commit any changes to your repository you'll see Travis auto detect these changes and start a new build
+
+[TODO PICTURE]
+
+and on completion, see our Github pages site automatically updated.
+
+### Appveyor
