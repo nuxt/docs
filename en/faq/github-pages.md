@@ -105,13 +105,13 @@ npm run deploy
 
 ## Build server deployment
 
-You can take deployment one step further and rather than having to manually compile and deploy the files from your local install, you can make use of a build server to monitor your Github repository for new commits and then checkout, compile and deploy everything for you automatically.
+You can take deployment one step further and rather than having to manually compile and deploy the files from your local install, you can make use of a build server to monitor your GitHub repository for new commits and then checkout, compile and deploy everything for you automatically.
 
-Before you configure the build server, you'll first need to [generate a Github personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token) in order to grant the build server permission to perform tasks on your behalf. Once you have created your token, keep a copy of it safe ready to use a little later on.
+Before you configure the build server, you'll first need to [generate a GitHub personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token) in order to grant the build server permission to perform tasks on your behalf. Once you have created your token, keep a copy of it safe ready to use a little later on.
 
 ### Travis CI
 
-To deploy with [Travis CI](https://travis-ci.org/), a free for open source projects build server, sign in via your Github account, granting Travis access to view your repositories, and then enable the build server for your repository by toggling the switch next to your repositories name in the list displayed.
+To deploy with [Travis CI](https://travis-ci.org/), a free for open source projects build server, sign in via your GitHub account, granting Travis access to view your repositories, and then enable the build server for your repository by toggling the switch next to your repositories name in the list displayed.
 
 [TODO PICTURE]
 
@@ -119,7 +119,7 @@ Next, click the cog icon beside your repository name to configure the general se
 
 [TODO PICTURE]
 
-On the same screen, scroll down to the Environment Variables section and create a new variables named `GITHUB_ACCESS_TOKEN` and in the value field paste a copy of the Github personal access token your created earlier and click the 'Add' button.
+On the same screen, scroll down to the Environment Variables section and create a new variables named `GITHUB_ACCESS_TOKEN` and in the value field paste a copy of the GitHub personal access token your created earlier and click the 'Add' button.
 
 [TODO PICTURE]
 
@@ -165,11 +165,11 @@ Now, whenever you commit any changes to your repository, from within Travis, you
 
 [TODO PICTURE]
 
-and on completion, you'll see your Github pages site automatically updated.
+and on completion, you'll see your GitHub pages site automatically updated.
 
 ### Appveyor
 
-To deploy via [Appveyor](https://www.appveyor.com), another free for open source projects build server, sign up for a new account choosing the Github authentication option to sign in using your Github account.
+To deploy via [Appveyor](https://www.appveyor.com), another free for open source projects build server, sign up for a new account choosing the GitHub authentication option to sign in using your GitHub account.
 
 [TODO PICTURE]
 
@@ -206,7 +206,7 @@ install:
   - git config --global credential.helper store
   - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
   - git config --global user.email $env:github_email
-  # deploy to github pages
+  # deploy to GitHub pages
   - npm run deploy
 
 # No tests to run
@@ -218,7 +218,7 @@ build: off
 
 ***NB*** This configuration assumes you've configured your `package.json` file as per the [Command line deployment](#command-line-deployment) instructions
 
-Before you commit this file however, you'll need to change the `ENCRYPTED_GITHUB_ACCESS_TOKEN` and `ENCRYPTED_GITHUB_EMAIL` variables with your Github personal access token from earlier and your github email address, encrypted using the [Appveyor encryption tool](https://ci.appveyor.com/tools/encrypt).
+Before you commit this file however, you'll need to change the `ENCRYPTED_GITHUB_ACCESS_TOKEN` and `ENCRYPTED_GITHUB_EMAIL` variables with your GitHub personal access token from earlier and your GitHub email address, encrypted using the [Appveyor encryption tool](https://ci.appveyor.com/tools/encrypt).
 
 Once updated, commit the file to your repository
 
@@ -231,4 +231,4 @@ Now, whenever you commit any changes to your repository, from within Appveyor, y
 
 [TODO PICTURE]
 
-and on completion, you'll see your Github pages site automatically updated.
+and on completion, you'll see your GitHub pages site automatically updated.
