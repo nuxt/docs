@@ -105,7 +105,7 @@ npm run deploy
 
 ## Build server deployment
 
-We can take deployment one step further and rather than having to manually compile and deploy the files from our local install, we can make use of a builder server to monitor our github repository for new commits and then checkout, compile and deploy everything for us automatically.
+You can take deployment one step further and rather than having to manually compile and deploy the files from your local install, you can make use of a build server to monitor your Github repository for new commits and then checkout, compile and deploy everything for you automatically.
 
 Before you configure the build server, you'll first need to [generate a Github personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token) in order to grant the build server permission to perform tasks on your behalf. Once you have created your token, keep a copy of it safe ready to use a little later on.
 
@@ -119,7 +119,7 @@ Next, click the cog icon beside your repository name to configure the general se
 
 [TODO PICTURE]
 
-On the same screen, scroll down to the Environment Variables section and create a new variables named `GITHUB_ACCESS_TOKEN` and in the value field past a copy of the Github personal access token your created earlier and click 'Add'.
+On the same screen, scroll down to the Environment Variables section and create a new variables named `GITHUB_ACCESS_TOKEN` and in the value field paste a copy of the Github personal access token your created earlier and click the 'Add' button.
 
 [TODO PICTURE]
 
@@ -154,17 +154,17 @@ deploy:
   on:
     branch: master
 ````
-And then commit this to your repository
+and then commit this to your repository
 
 ````bash
 git add .travis.yml
 git commit -m "Adding travis deploy configuration"
 git push origin
 ````
-Now, whenever you commit any changes to your repository you'll see Travis auto detect these changes and start a new build
+Now, whenever you commit any changes to your repository, from within Travis, you'll see a new build start up
 
 [TODO PICTURE]
 
-and on completion, see our Github pages site automatically updated.
+and on completion, you'll see your Github pages site automatically updated.
 
 ### Appveyor
