@@ -234,3 +234,11 @@ actions: {
 The [context](/api/context) is given to `nuxtServerInit` as the 2nd argument, it is the same as `asyncData` or `fetch` method.
 
 > Note: Asynchronous `nuxtServerInit` actions must return a Promise to allow the `nuxt` server to wait on them.
+
+```js
+actions: {
+  async nuxtServerInit({ dispatch }) {
+    await dispatch('core/load')
+  }
+}  
+```
