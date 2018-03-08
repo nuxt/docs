@@ -215,6 +215,9 @@ test: off
 # Don't actually build.
 build: off
 ````
+
+***NB*** This configuration assumes you've configured your `package.json` file as per the [Command line deployment](#command-line-deployment) instructions
+
 Before you commit this file however, you'll need to change the `ENCRYPTED_GITHUB_ACCESS_TOKEN` and `ENCRYPTED_GITHUB_EMAIL` variables with your Github personal access token from earlier and your github email address, encrypted using the [Appveyor encryption tool](https://ci.appveyor.com/tools/encrypt).
 
 Once updated, commit the file to your repository
