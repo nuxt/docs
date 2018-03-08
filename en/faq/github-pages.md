@@ -111,7 +111,7 @@ Before you configure the build server, you'll first need to [generate a Github p
 
 ### Travis CI
 
-To deploy with [Travis CI](https://travis-ci.org/) (free for public repositories), sign in via your Github account, granting Travis access to view your repositories, and then enable the build server for your repository by toggling the switch next to your repositories name in the list displayed.
+To deploy with [Travis CI](https://travis-ci.org/), a free for open source projects build server, sign in via your Github account, granting Travis access to view your repositories, and then enable the build server for your repository by toggling the switch next to your repositories name in the list displayed.
 
 [TODO PICTURE]
 
@@ -168,3 +168,64 @@ Now, whenever you commit any changes to your repository, from within Travis, you
 and on completion, you'll see your Github pages site automatically updated.
 
 ### Appveyor
+
+To deploy via [Appveyor](https://www.appveyor.com), another free for open source projects build server, sign up for a new account choosing the Github authentication option to sign in using your Github account.
+
+[TODO PICTURE]
+
+Once signed in, click the 'New project' link and select your repository from the list to enable the build server on your repository.
+
+[TODO PICTURE]
+
+Next, in the root of your repository, create an `appveyor.yml` configuration file with the following contents
+
+````yaml
+environment:
+  # Nuxt required node v8 minimum
+  nodejs_version: "8"
+  # Encrypt sensitive data (https://ci.appveyor.com/tools/encrypt)
+  github_access_token:
+    secure: ENCRYPTED_GITHUB_ACCESS_TOKEN
+  github_email:
+    secure: ENCRYPTED_GITHUB_EMAIL
+
+# Only run on master branch
+branches:
+  only:
+  - master
+
+# Install scripts. (runs after repo cloning)
+install:
+  # switch nodejs version
+  - ps: Install-Product node $env:nodejs_version
+  # install modules
+  - npm install
+  # generate static files
+  - npm run generate
+  # configure global git credentials store (https://www.appveyor.com/docs/how-to/git-push/)
+  - git config --global credential.helper store
+  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
+  - git config --global user.email $env:github_email
+  # deploy to github pages
+  - npm run deploy
+
+# No tests to run
+test: off
+
+# Don't actually build.
+build: off
+````
+Before you commit this file however, you'll need to change the `ENCRYPTED_GITHUB_ACCESS_TOKEN` and `ENCRYPTED_GITHUB_EMAIL` variables with your Github personal access token from earlier and your github email address, encrypted using the [Appveyor encryption tool](https://ci.appveyor.com/tools/encrypt).
+
+Once updated, commit the file to your repository
+
+````bash
+git add .appveyor.yml
+git commit -m "Adding appveyor deploy configuration"
+git push origin
+````
+Now, whenever you commit any changes to your repository, from within Appveyor, you'll see a new build start up
+
+[TODO PICTURE]
+
+and on completion, you'll see your Github pages site automatically updated.
