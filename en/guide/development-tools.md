@@ -119,11 +119,11 @@ jsdom has some limitations because it does not use a browser. However, it will c
 
 ## ESLint and Prettier
 
-> [ESLint](http://eslint.org) is a great tool to keep your code clean
+> [ESLint](http://eslint.org) is a great tool to keep your code clean.
 
-> [Prettier](prettier.io) is a very popular code formatter 
+> [Prettier](prettier.io) is a very popular code formatter.
 
-You can add ESLint with Prettier pretty easily with nuxt.js, first, you need to add the npm dependencies:
+You can add ESLint with Prettier pretty easily with Nuxt.js, first, you need to add the npm dependencies:
 
 ```bash
 npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader eslint-plugin-vue eslint-plugin-prettier prettier
@@ -161,7 +161,7 @@ module.exports = {
 }
 ```
 
-Then, you can add a `lint` and`lintfix` scripts in your `package.json`:
+Then, you can add a `lint` and `lintfix` scripts in your `package.json`:
 
 ```js
 "scripts": {
@@ -171,10 +171,13 @@ Then, you can add a `lint` and`lintfix` scripts in your `package.json`:
 ```
 
 You can now launch `lint` to just check for errors:
+
 ```bash
 npm run lint
 ```
+
 or `lintfix` to also fix those which are doable
+
 ```bash
 npm run lintfix
 ```
@@ -182,6 +185,7 @@ npm run lintfix
 ESLint will lint every of your JavaScript and Vue files while ignoring your ignored files defined in your `.gitignore`.
 
 It is also recommended to enable ESLint at hot reloading mode via webpack. This way ESLint will run on save during `npm run dev`. Just add the following to your `nuxt.config.js`:
+
 ```
 ...
   /*
@@ -191,7 +195,7 @@ It is also recommended to enable ESLint at hot reloading mode via webpack. This 
    /*
     ** You can extend webpack config here
    */
-   extend(config, ctx) {      
+   extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
@@ -200,7 +204,7 @@ It is also recommended to enable ESLint at hot reloading mode via webpack. This 
           loader: "eslint-loader",
           exclude: /(node_modules)/
         })
-      }      
+      }
     }
   }
 ```
