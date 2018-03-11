@@ -28,24 +28,31 @@ module.exports = {
 
 > このオプションは vue-router の [Router コンストラクタ](https://router.vuejs.org/en/api/options.html) に直接付与されます。
 
-## mode
+## extendRoutes
 
-- タイプ: `文字列`
-- デフォルト: `'history'`
+- タイプ: `関数`
 
-ルーティングのモードを設定します。サーバーサイドレンダリングのため、この設定を変更することは非推奨です。
+Nuxt.js によって作成されるルーティングを拡張したいことがあるかもしれません。それは `extendRoutes` オプションで実現できます。
 
-例（`nuxt.config.js`）:
+独自のルートを追加する例:
+
+`nuxt.config.js`
 
 ```js
 module.exports = {
   router: {
-    mode: 'hash'
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, 'pages/404.vue')
+      })
+    }
   }
 }
 ```
 
-> このオプションは直接 vue-router の [Router コンストラクタ](https://router.vuejs.org/en/api/options.html) に渡されます。
+ルートのスキーマは [vue-router](https://router.vuejs.org/en/) のスキーマを尊重すべきです。
 
 ## linkActiveClass
 
@@ -84,6 +91,56 @@ module.exports = {
 ```
 
 > このオプションは [vue-router Router constructor](https://router.vuejs.org/en/api/options.html) に直接付与されます.
+
+## middleware
+
+- タイプ: `文字列` または `配列`
+  - 要素: `文字列`
+
+アプリケーションのすべてのページに対してデフォルトのミドルウェアをセットします。
+
+例:
+
+`nuxt.config.js`
+
+```js
+module.exports = {
+  router: {
+    // すべてのページで middleware/user-agent.js を実行します
+    middleware: 'user-agent'
+  }
+}
+```
+
+`middleware/user-agent.js`
+
+```js
+export default function (context) {
+  // userAgent プロパティを context 内に追加します（context は `data` メソッドや `fetch` メソッド内で利用できます）
+  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+}
+```
+
+ミドルウェアについてより深く理解するには [ミドルウェア](/guide/routing#ミドルウェア) ガイドを参照してください。
+
+## mode
+
+- タイプ: `文字列`
+- デフォルト: `'history'`
+
+ルーティングのモードを設定します。サーバーサイドレンダリングのため、この設定を変更することは非推奨です。
+
+例（`nuxt.config.js`）:
+
+```js
+module.exports = {
+  router: {
+    mode: 'hash'
+  }
+}
+```
+
+> このオプションは直接 vue-router の [Router コンストラクタ](https://router.vuejs.org/en/api/options.html) に渡されます。
 
 ## scrollBehavior
 
@@ -133,60 +190,3 @@ module.exports = {
 ```
 
 > このオプションは vue-router の [Router コンストラクタ](https://router.vuejs.org/en/api/options.html) に直接付与されます。
-
-## middleware
-
-- タイプ: `文字列` または `配列`
-  - 要素: `文字列`
-
-アプリケーションのすべてのページに対してデフォルトのミドルウェアをセットします。
-
-例:
-
-`nuxt.config.js`
-
-```js
-module.exports = {
-  router: {
-    // すべてのページで middleware/user-agent.js を実行します
-    middleware: 'user-agent'
-  }
-}
-```
-
-`middleware/user-agent.js`
-
-```js
-export default function (context) {
-  // userAgent プロパティを context 内に追加します（context は `data` メソッドや `fetch` メソッド内で利用できます）
-  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
-}
-```
-
-ミドルウェアについてより深く理解するには [ミドルウェア](/guide/routing#ミドルウェア) ガイドを参照してください。
-
-## extendRoutes
-
-- タイプ: `関数`
-
-Nuxt.js によって作成されるルーティングを拡張したいことがあるかもしれません。それは `extendRoutes` オプションで実現できます。
-
-独自のルートを追加する例:
-
-`nuxt.config.js`
-
-```js
-module.exports = {
-  router: {
-    extendRoutes (routes, resolve) {
-      routes.push({
-        name: 'custom',
-        path: '*',
-        component: resolve(__dirname, 'pages/404.vue')
-      })
-    }
-  }
-}
-```
-
-ルートのスキーマは [vue-router](https://router.vuejs.org/en/) のスキーマを尊重すべきです。
