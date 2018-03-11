@@ -1,16 +1,16 @@
 ---
-title: 'API:  '
-description: サーバーサイドレンダリングでのコンポーネントレンダリングをスキップします。そしてplaceholderのテキストを表示できます。
+title: "API: <no-ssr> コンポーネント"
+description: サーバーサイドレンダリングでのコンポーネントレンダリングをスキップします。そしてプレースホルダーのテキストを表示できます。
 ---
 
-# <no-ssr> コンポーネント
+# &lt;no-ssr&gt; コンポーネント
 
 > このコンポーネントは意図的にサーバーサイドレンダリングの対象からコンポーネントを除外するために使われます。
 
 **Props**:
 
-- placeholder: `String`
-    - このプロパティは`div`タグ内のコンテンツに利用され、サーバーサイドレンダリングの時のみテキストとして表示されます。
+- placeholder: `文字列`
+  - このプロパティは `div` タグ内のコンテンツに利用され、サーバーサイドレンダリングの時のみテキストとして表示されます。
 
 ```html
 <template>
@@ -23,5 +23,4 @@ description: サーバーサイドレンダリングでのコンポーネント�
 </template>
 ```
 
-このコンポーネントは[egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr)のcloneしたものです。
-[@egoist](https://github.com/egoist)に感謝します!
+このコンポーネントは [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr) の clone したものです。[@egoist](https://github.com/egoist) に感謝します！
