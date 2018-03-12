@@ -59,16 +59,16 @@ module.exports = {
 
 ## cssSourceMap
 
-- Type: `boolean`
-- Default: `true` for dev and `false` for production.
+- タイプ: `ブーリアン`
+- デフォルト: 開発モードでは `true` でプロダクションモードでは `false`
 
 > Enables CSS Source Map support
 
 ## devMiddleware
 
-- Type: `Object`
+- タイプ: `オブジェクト`
 
-See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) for available options.
+利用できるオプションは [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) を参照してください。
 
 ## extend
 
@@ -100,12 +100,12 @@ module.exports = {
 
 ## extractCSS
 
-> Enables Common CSS Extraction using vue SSR [guidelines](https://ssr.vuejs.org/en/css.html).
+> Vue のサーバーサイドレンダリングを利用して、共通の CSS を抽出できるようにします [guidelines](https://ssr.vuejs.org/en/css.html)
 
-- Type: `Boolean`
-- Default: `false`
+- タイプ: `ブーリアン`
+- デフォルト: `false`
 
-Using `extract-text-webpack-plugin` to extract the CSS in the main chunk into a separate CSS file (auto injected with template), which allows the file to be individually cached. This is recommended when there is a lot of shared CSS. CSS inside async components will remain inlined as JavaScript strings and handled by vue-style-loader.
+CSS を抽出して、メインのチャンクに独立した CSS ファイルを挿入する（自動的にテンプレートに注入される）ために、ファイルを個別にキャッシュさせることができる `extract-text-webpack-plugin` を使います。これは共通して利用される CSS が多く存在するときに推奨されます。非同期コンポーネントの内部の CSS は JavaScript の文字列としてインラインで保持され、vue-style-loader で取り扱われます。
 
 ## filenames
 
@@ -124,7 +124,7 @@ Using `extract-text-webpack-plugin` to extract the CSS in the main chunk into a 
 }
 ```
 
-This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
+この例ではチャンク名を数値の ID に変更します（`nuxt.config.js`）:
 
 ```js
 module.exports = {
@@ -140,9 +140,9 @@ manifest や vendor についての利用についてより深く理解するに
 
 ## hotMiddleware
 
-- Type: `Object`
+- タイプ: `オブジェクト`
 
-See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for available options.
+利用可能なオプションは [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) を参照してください。
 
 ## plugins
 
@@ -169,20 +169,22 @@ module.exports = {
 
 ## postcss
 
-> [postcss](https://github.com/postcss/postcss) オプションをカスタマイズします。
+> [PostCSS Loader](https://github.com/postcss/postcss-loader#usage) プラグインをカスタマイズします。
 
-- タイプ: `配列`
+- タイプ: `配列`、`オブジェクト`（推奨）、`関数` または `ブーリアン`
 
 **Note:** While default preset is OK and flexible enough for normal use cases, the recommended usage by [`vue-loader`](https://vue-loader.vuejs.org/en/options.html#postcss) is using `postcss.config.js` file in your project. By creating that file it will be automatically detected and this option is ignored.
 
 - デフォルト:
 
 ```js
-[
-  require('autoprefixer')({
-    browsers: ['last 3 versions']
-  })
-]
+{
+  plugins: {
+  'postcss-import': {},
+  'postcss-url': {},
+  'postcss-cssnext': {}
+  }
+}
 ```
 
 例（`nuxt.config.js`）:
@@ -190,14 +192,24 @@ module.exports = {
 ```js
 module.exports = {
   build: {
-    postcss: [
-      require('postcss-nested')(),
-      require('postcss-responsive-type')(),
-      require('postcss-hexrgba')(),
-      require('autoprefixer')({
-        browsers: ['last 3 versions']
-      })
-    ]
+    postcss: {
+      plugins: {
+        // Disable `postcss-url`
+      'postcss-url': false,
+
+      // Customize `postcss-cssnext` default options
+      'postcss-cssnext': {
+        features: {
+          customProperties: false
+        }
+      }
+
+      // Add some plugins
+      'postcss-nested': {},
+      'postcss-responsive-type': {},
+      'postcss-hexrgba': {}
+      }
+    }
   }
 }
 ```

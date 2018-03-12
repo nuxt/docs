@@ -30,7 +30,8 @@
     "links": [
       { "name": "nuxt", "to": "/components-nuxt" },
       { "name": "nuxt-child", "to": "/components-nuxt-child" },
-      { "name": "nuxt-link", "to": "/components-nuxt-link" }
+      { "name": "nuxt-link", "to": "/components-nuxt-link" },
+      { "name": "no-ssr", "to": "/components-no-ssr" }
     ]
   },
   {
