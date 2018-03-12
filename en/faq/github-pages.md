@@ -113,15 +113,15 @@ Before you configure the build server, you'll first need to [generate a GitHub p
 
 To deploy with [Travis CI](https://travis-ci.org/), a free for open source projects build server, sign in via your GitHub account, granting Travis access to view your repositories, and then enable the build server for your repository by toggling the switch next to your repositories name in the list displayed.
 
-[TODO PICTURE]
+![Travis Builder Server Enable](/en/img/github_pages_travis_01.png)
 
 Next, click the cog icon beside your repository name to configure the general settings of the build sever and enable the 'Build only if .travis.yml is present' feature by toggling the switch.
 
-[TODO PICTURE]
+![Travis Builder Server Settings](/en/img/github_pages_travis_02.png)
 
 On the same screen, scroll down to the Environment Variables section and create a new variables named `GITHUB_ACCESS_TOKEN` and in the value field paste a copy of the GitHub personal access token your created earlier and click the 'Add' button.
 
-[TODO PICTURE]
+![Travis Builder Server Environment Variables](/en/img/github_pages_travis_03.png)
 
 Finally, create a `.travis.yml` configuration file in the root of your repository with the following contents
 
@@ -163,7 +163,7 @@ git push origin
 ````
 Now, whenever you commit any changes to your repository, from within Travis, you'll see a new build start up
 
-[TODO PICTURE]
+![Travis Builder Server Output](/en/img/github_pages_travis_04.png)
 
 and on completion, you'll see your GitHub pages site automatically updated.
 
@@ -171,11 +171,9 @@ and on completion, you'll see your GitHub pages site automatically updated.
 
 To deploy via [Appveyor](https://www.appveyor.com), another free for open source projects build server, sign up for a new account choosing the GitHub authentication option to sign in using your GitHub account.
 
-[TODO PICTURE]
+Once signed in, click the 'New project' link and then click the 'Add' button beside your repository name in the list displayed to enable the build server on your repository.
 
-Once signed in, click the 'New project' link and select your repository from the list to enable the build server on your repository.
-
-[TODO PICTURE]
+![Appveyor Builder Server Enable](/en/img/github_pages_appveyor_01.png)
 
 Next, in the root of your repository, create an `appveyor.yml` configuration file with the following contents
 
@@ -229,6 +227,6 @@ git push origin
 ````
 Now, whenever you commit any changes to your repository, from within Appveyor, you'll see a new build start up
 
-[TODO PICTURE]
+![Appveyor Builder Server Output](/en/img/github_pages_appveyor_02.png)
 
 and on completion, you'll see your GitHub pages site automatically updated.
