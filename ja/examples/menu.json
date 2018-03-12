@@ -24,6 +24,7 @@
     "links": [
       { "name": "非同期データ", "to": "/async-data" },
       { "name": "認証ルート", "to": "/auth-routes" },
+      { "name": "外部認証 API（JWT）", "to": "/auth-external-jwt" },
       { "name": "Vuex ストア", "to": "/vuex-store" },
       { "name": "国際化（i18n）", "to": "/i18n" },
       { "name": "テスト", "to": "/testing" }
