@@ -28,24 +28,31 @@ module.exports = {
 
 > このオプションは vue-router の [Router コンストラクタ](https://router.vuejs.org/en/api/options.html) に直接付与されます。
 
-## mode
+## extendRoutes
 
-- タイプ: `文字列`
-- デフォルト: `'history'`
+- タイプ: `関数`
 
-ルーティングのモードを設定します。サーバーサイドレンダリングのため、この設定を変更することは非推奨です。
+Nuxt.js によって作成されるルーティングを拡張したいことがあるかもしれません。それは `extendRoutes` オプションで実現できます。
 
-例（`nuxt.config.js`）:
+独自のルートを追加する例:
+
+`nuxt.config.js`
 
 ```js
 module.exports = {
   router: {
-    mode: 'hash'
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, 'pages/404.vue')
+      })
+    }
   }
 }
 ```
 
-> このオプションは直接 vue-router の [Router コンストラクタ](https://router.vuejs.org/en/api/options.html) に渡されます。
+ルートのスキーマは [vue-router](https://router.vuejs.org/en/) のスキーマを尊重すべきです。
 
 ## linkActiveClass
 
@@ -85,55 +92,6 @@ module.exports = {
 
 > このオプションは [vue-router Router constructor](https://router.vuejs.org/en/api/options.html) に直接付与されます.
 
-## scrollBehavior
-
-- タイプ: `関数`
-
-`scrollBehavior` オプションを使って、ページ間のスクロール位置についての独自の振る舞いを定義できます。このメソッドはページがレンダリングされるたびに毎回呼び出されます。  
-
-デフォルトでは scrollBehavior オプションは次のようにセットされています:
-
-```js
-const scrollBehavior = (to, from, savedPosition) => {
-  // savedPosition は popState ナビゲーションでのみ利用できます
-  if (savedPosition) {
-    return savedPosition
-  } else {
-    let position = {}
-    // 子パスが見つからないとき
-    if (to.matched.length < 2) {
-      // ページのトップへスクロールする
-      position = { x: 0, y: 0 }
-    }
-    else if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
-      // 子パスのひとつが scrollToTop オプションが true にセットされているとき
-      position = { x: 0, y: 0 }
-    }
-    // アンカーがあるときは、セレクタを返すことでアンカーまでスクロールする
-    if (to.hash) {
-      position = { selector: to.hash }
-    }
-    return position
-  }
-}
-```
-
-すべてのルートにおいて強制的にトップまでスクロールさせる例:
-
-`nuxt.config.js`
-
-```js
-module.exports = {
-  router: {
-    scrollBehavior: function (to, from, savedPosition) {
-      return { x: 0, y: 0 }
-    }
-  }
-}
-```
-
-> このオプションは vue-router の [Router コンストラクタ](https://router.vuejs.org/en/api/options.html) に直接付与されます。
-
 ## middleware
 
 - タイプ: `文字列` または `配列`
@@ -165,28 +123,80 @@ export default function (context) {
 
 ミドルウェアについてより深く理解するには [ミドルウェア](/guide/routing#ミドルウェア) ガイドを参照してください。
 
-## extendRoutes
+## mode
+
+- タイプ: `文字列`
+- デフォルト: `'history'`
+
+ルーティングのモードを設定します。サーバーサイドレンダリングのため、この設定を変更することは非推奨です。
+
+例（`nuxt.config.js`）:
+
+```js
+module.exports = {
+  router: {
+    mode: 'hash'
+  }
+}
+```
+
+> このオプションは直接 vue-router の [Router コンストラクタ](https://router.vuejs.org/en/api/options.html) に渡されます。
+
+## scrollBehavior
 
 - タイプ: `関数`
 
-Nuxt.js によって作成されるルーティングを拡張したいことがあるかもしれません。それは `extendRoutes` オプションで実現できます。
+`scrollBehavior` オプションを使って、ページ間のスクロール位置についての独自の振る舞いを定義できます。このメソッドはページがレンダリングされるたびに毎回呼び出されます。  
 
-独自のルートを追加する例:
+デフォルトでは scrollBehavior オプションは次のようにセットされています:
+
+```js
+const scrollBehavior = function (to, from, savedPosition) {
+  // 返された位置が偽または空のオブジェクトだったときは、
+  // 現在のスクロール位置を保持する
+  let position = false
+
+  // 子パスが見つからないとき
+  if (to.matched.length < 2) {
+    // ページのトップへスクロールする
+    position = { x: 0, y: 0 }
+  } else if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
+    // 子パスのひとつが scrollToTop オプションが true にセットされているとき
+    position = { x: 0, y: 0 }
+  }
+
+  // savedPosition は popState ナビゲーションでのみ利用できます（戻るボタン）
+  if (savedPosition) {
+    position = savedPosition
+  }
+
+  return new Promise(resolve => {
+    //（必要であれば）out トランジションが完了するのを待つ
+    window.$nuxt.$once('triggerScroll', () => {
+      // セレクタが渡されなかったとき、
+      // または、セレクタがどの要素にもマッチしなかったときは、座標が用いられる
+      if (to.hash && document.querySelector(to.hash)) {
+        // セレクタを返すことでアンカーまでスクロールする
+        position = { selector: to.hash }
+      }
+      resolve(position)
+    })
+  })
+}
+```
+
+すべてのルートにおいて強制的にトップまでスクロールさせる例:
 
 `nuxt.config.js`
 
 ```js
 module.exports = {
   router: {
-    extendRoutes (routes, resolve) {
-      routes.push({
-        name: 'custom',
-        path: '*',
-        component: resolve(__dirname, 'pages/404.vue')
-      })
+    scrollBehavior: function (to, from, savedPosition) {
+      return { x: 0, y: 0 }
     }
   }
 }
 ```
 
-ルートのスキーマは [vue-router](https://router.vuejs.org/en/) のスキーマを尊重すべきです。
+> このオプションは vue-router の [Router コンストラクタ](https://router.vuejs.org/en/api/options.html) に直接付与されます。
