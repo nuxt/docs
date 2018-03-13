@@ -9,12 +9,12 @@ description: Nuxt Core Class
 
 This is the core container which allows all modules and classes communicate with each other. All modules has access to Nuxt instance using `this.nuxt`.
 
-## Tapable plugins
+## Hooks
 
 We can register hooks on certain life cycle events.
 
 ```js
-nuxt.plugin('ready', async nuxt => {
+nuxt.hook('ready', async nuxt => {
     // Your custom code here
 })
 ```
