@@ -9,7 +9,7 @@ description: Nuxt.js vous permet de personnaliser la configuration webpack pour 
 
 ## analyze
 
-> Nuxt.js utilise [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyze) pour vous permettre de visualiser vos paquetages (« bundles ») et les optimiser.
+> Nuxt.js utilise [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) pour vous permettre de visualiser vos paquetages (« bundles ») et les optimiser.
 
 - Type : `Boolean` ou `Object`
 - Par défaut : `false`
