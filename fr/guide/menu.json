@@ -117,7 +117,7 @@
         "to": "/development-tools", "name": "Outils de développement",
         "contents": [
           { "to": "#tests-de-bout-en-bout", "name": "Tests de bout en bout" },
-          { "to": "#eslint", "name": "ESLint" }
+          { "to": "#eslint-et-prettier", "name": "ESLint et Prettier" }
         ]
       }
     ]

@@ -165,6 +165,26 @@ export default {
 </style>
 ```
 
+> La méthode module fonctionne également pour les définitions de premier niveau sans implémenter de sous-répertoire dans le dossier `store`
+
+Exemple pour l'état ; créer un fichier `store/state.js` et ajouter ceci
+
+```js
+export default {
+  counter: 0
+}
+```
+
+Et les mutations correspondantes peuvent être dans le fichier `store/mutations.js`
+
+```js
+export default {
+  increment (state) {
+    state.counter++
+  }
+}
+```
+
 <div class="Alert">Vous pouvez également avoir des modules en exportant une instance de store vous devrez les ajouter manuellement sur votre store.</div>
 
 ### Plugins
@@ -213,6 +233,14 @@ actions: {
 
 > Si vous utilisez le mode _Modules_ du store Vuex, seul le module principal (dans `store/index.js`) recevra cette action. Vous devrez chainer vos actions de module à partir de là.
 
-Le contexte est fourni par `nuxtServerInit` comme deuxième argument. C'est le même que pour les méthodes `data` et `fetch` excepté que `context.redirect()` et `context.error()` sont omis.
+Le [contexte](/api/context) est fourni par `nuxtServerInit` comme deuxième argument. C'est le même que pour les méthodes `data` et `fetch`.
 
 > Note : Les actions `nuxtServerInit` asynchrones doivent retourner une promesse pour permettre au serveur `nuxt` de les attendre.
+
+```js
+actions: {
+  async nuxtServerInit({ dispatch }) {
+    await dispatch('core/load')
+  }
+}
+```
