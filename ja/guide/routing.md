@@ -115,7 +115,7 @@ Nuxt.js では vue-router の子ルートを使ってルートをネストさせ
 
 ネストされたルートの親コンポーネントを定義するには、子ビューを含む **ディレクトリと同じ名前** の Vue ファイルを作成する必要があります。
 
-<p class="Alert Alert--info"><b>Warning:</b> don't forget to write `<nuxt-child>` inside the parent component (<code>.vue</code> file).</nuxt-child></p>
+<p class="Alert Alert--info">Nuxt.js のデフォルトのトランジション名は `"page"` です。</p>
 
 下記のようなファイルの木構造のとき:
 
