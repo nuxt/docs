@@ -164,6 +164,26 @@ export default {
 </style>
 ```
 
+> モジュールメソッドは、 `store` ディレクトリにあるサブディレクトリの実装なしにトップレベルの定義に対しても機能します。
+
+ステートの例です。`store/state.js` を作成し、以下の行を追加します。
+
+```js
+export default {
+  counter: 0
+}
+```
+
+対応するミューテーションは `store/mutations.js` にあります。
+
+```js
+export default {
+  increment (state) {
+    state.counter++
+  }
+}
+```
+
 <div class="Alert">ストアインスタンスをエクスポートすることでモジュールを持つこともできます。その際にはモジュールをストアに手動で追加する必要があります。</div>
 
 ### プラグイン
@@ -213,6 +233,14 @@ actions: {
 > Vuex ストアの *モジュール* モードを使っている場合はなら、プライマリモジュール（`store/index.js`）のみ、このアクションを受け取ることができます。その他のモジュールのアクションでも使いたい場合は、プライマリモジュールからチェインする必要があります。
 
 [コンテキスト](/api/context)は、`asyncData`や `fetch` メソッドと同様に
- `nuxtServerInit` に第二引数として渡されます。
+`nuxtServerInit` に第二引数として渡されます。
 
 > 注意: 非同期の nuxtServerInit アクションは nuxt サーバーの待機を可能にするために Promise を返さなければなりません
+
+```js
+actions: {
+  async nuxtServerInit({ dispatch }) {
+    await dispatch('core/load')
+  }
+}
+```
