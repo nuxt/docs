@@ -277,29 +277,29 @@ module.exports = function (moduleOptions) {
 
 ```js
 module.exports = function () {
-  // モジュールにフックを追加する
-  this.nuxt.plugin('module', moduleContainer => {
-    // ここはすべてのモジュールがロードし終わったときに呼び出される
+  // modules 用にフックを追加する
+  this.nuxt.hook('module', moduleContainer => {
+    // 全てのモジュールのロードが完了したときに呼ばれます
   })
 
-  // レンダラーにフックを追加する
-  this.nuxt.plugin('renderer', renderer => {
-    // ここはレンダラーが作成されたときに呼び出される
+  // renderer 用にフックを追加する
+  this.nuxt.hook('renderer', renderer => {
+    // renderer wが作成された時に呼ばれます
   })
 
-  // ビルドにフックを追加する
-  this.nuxt.plugin('build', async builder => {
-    // ここはビルダーが作成されたときに一度呼び出される
+  // build 用にフックを追加する
+  this.nuxt.hook('build', async builder => {
+    // builder が作成された時に一度だけ呼ばれます
 
-    // ここに内部的なフックも登録できる
-    builder.plugin('compile', ({compiler}) => {
-        // ここは Webpack のコンパイラが処理を開始する直前に実行される
+    // 内部用のフックはここに登録できます
+    builder.hook('compile', ({compiler}) => {
+        // webpack のコンパイラが処理を開始する前に実行されます
     })
   })
 
-  // generate にフックを追加する
-  this.nuxt.plugin('generate', async generator => {
-    // ここは Nuxt generate が開始されたときに呼び出される
+  // generate 用にフックを追加する
+  this.nuxt.hook('generate', async generator => {
+    // This will be called when a Nuxt generate starts
   })
 }
 ```
