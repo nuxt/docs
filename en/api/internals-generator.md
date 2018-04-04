@@ -15,11 +15,11 @@ We can register hooks on certain life cycle events.
 
 Plugin           | Arguments                   | When
 -----------------|-----------------------------|--------------------------------------------------------------------------------
-`generate:before`        |   | Hook on before generation     |                                  
-`generate:distRemoved`   |   | Hook on  destination folder  cleaned   |                                |  
-`generate:distCopied`    |   | Hook on copy static and built files     |    
-`generate:page`          |   | Hook to let user update the path & html     |                                 |  
-`generate:routeCreated`  |   | *description missing*     |           
-`generate:extendRoutes`  |   | *description missing*     |          
-`generate:routeFailed`   |   | *description missing*     |   
-`generate:done`          |   | Hook on generation finished     | 
+`generate:before`        | (nuxt, generateOptions) | Hook on before generation
+`generate:distRemoved`   | (nuxt)  | Hook on  destination folder  cleaned
+`generate:distCopied`    | (nuxt) | Hook on copy static and built files
+`generate:page`          | ({route, path, html})  | Hook to let user update the path & html
+`generate:routeCreated`  | (route, path, errors) | Hook on saving generated page success
+`generate:extendRoutes`  | (routes) | Hook to let user update the routes to generate          
+`generate:routeFailed`   | (route, errors)  | Hook on saving generated page failure
+`generate:done`          | (nuxt, errors)  | Hook on generation finished
