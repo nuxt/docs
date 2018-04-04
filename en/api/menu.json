@@ -58,6 +58,7 @@
           { "name": "watch", "to": "#watch" }
         ]
       },
+      { "name": "buildDir", "to": "/configuration-builddir" },
       { "name": "css", "to": "/configuration-css" },
       { "name": "dev", "to": "/configuration-dev" },
       { "name": "env", "to": "/configuration-env" },
