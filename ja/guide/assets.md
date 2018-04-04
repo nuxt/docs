@@ -1,10 +1,10 @@
 ---
 title: アセット
-description: Nuxt.js はアセットファイルを配信するために（デフォルトでは）Webpack のローダーとして vue-loader、file-loader
-  及び url-loader を使います。しかし Webpack の取り扱う対象としない静的ファイル専用のディレクトリを使うこともできます。
+description: デフォルトでは、Nuxt はvue-loader、file-loader、url-loader webpack ローダーを使用して、強力なアセットを提供します。
+  静的アセットには静的ディレクトリを使用することもできます。
 ---
 
-> Nuxt.js はアセットファイルを配信するために（デフォルトでは）Webpack のローダーとして vue-loader、file-loader 及び url-loader を使います。しかし Webpack の取り扱う対象としない静的ファイル専用のディレクトリを使うこともできます。
+> デフォルトでは、Nuxt はvue-loader、file-loader、url-loader webpack ローダーを使用して、強力なアセットを提供します。 静的アセットには静的ディレクトリを使用することもできます。
 
 ## Webpack で取り扱う
 
@@ -37,7 +37,7 @@ createElement('img', { attrs: { src: require('~assets/image.png') }})
 
 PNG ファイル JavaScript ファイルではないため、Nuxt.js は Webpack が PNG ファイルを扱えるように [file-loader](https://github.com/webpack/file-loader) と [url-loader](https://github.com/webpack/url-loader) を使う設定を行います。
 
-file-loader と url-loader の役割:
+file-loader と url-loader を使用する利点:
 
 - `file-loader` はアセットファイルをどこにコピーし配置すべきか、また、ファイル名をどうすべきかを決定します。ファイル名は上手にキャッシュするためにバージョンのハッシュ値を含める等を行います。
 - `url-loader` はもしファイルサイズが閾値よりも小さければ、ファイルの内容を Base64 エンコードして埋め込みます。こうすると小さなファイルを取得するための HTTP リクエストの数を減らすことができます。一方で、もしファイルサイズが閾値よりも大きければ、自動的に `file-loader` にフォールバックします。
@@ -50,7 +50,7 @@ file-loader と url-loader の役割:
     test: /\.(png|jpe?g|gif|svg)$/,
     loader: 'url-loader',
     query: {
-      limit: 1000, // 1KO
+      limit: 1000, // 1kB
       name: 'img/[name].[hash:7].[ext]'
     }
   },
@@ -58,14 +58,14 @@ file-loader と url-loader の役割:
     test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
     loader: 'url-loader',
     query: {
-      limit: 1000, // 1 KO
+      limit: 1000, // 1kB
       name: 'fonts/[name].[hash:7].[ext]'
     }
   }
 ]
 ```
 
-ファイルサイズが 1KB を下回るファイルはすべて Base64 エンコードされて埋め込まれます。反対に 1KB を上回る画像やフォントは（`.nuxt` ディレクトリ配下の）対応するディレクトリにコピーされます。このときファイル名はうまくキャッシュさせるためにバージョンのハッシュ値を含んだものになります。
+つまり、1 KB 未満のすべてのファイルは Base64 データ URL としてインライン化されます。 それ以外の場合、画像/フォントは、対応するフォルダ（`.nuxt` ディレクトリ下）にコピーされ、より良いキャッシュのためにバージョンハッシュを含む名前が付けられます。
 
 アプリケーションを `nuxt` コマンドで起動するとき、`pages/index.vue` 内のテンプレートは下記のようになっており:
 
@@ -87,7 +87,7 @@ file-loader と url-loader の役割:
 
 Webpack で扱う対象となる `assets` ディレクトリを使いたくない場合は、プロジェクトのルートディレクトリに `static` ディレクトリを作成して利用することができます。
 
-これらのファイルは自動的に Nuxt.js により配信され、またプロジェクトのルート URL からアクセス可能になります。
+これらのファイルは Nuxt によって自動的に提供され、プロジェクトのルートURLからアクセスできます。
 
 このオプションは `robots.txt` や `sitemap.xml`、`CNAME`（GitHub Pages などで使う）などのファイルの扱いに役立ちます。
 
