@@ -35,7 +35,7 @@ CSS で `url('~assets/image.png')` と書いていたら、それは `require('~
 createElement('img', { attrs: { src: require('~assets/image.png') }})
 ```
 
-PNG ファイル JavaScript ファイルではないため、Nuxt.js は Webpack が PNG ファイルを扱えるように [file-loader](https://github.com/webpack/file-loader) と [url-loader](https://github.com/webpack/url-loader) を使う設定を行います。
+`.png` は JavaScript ファイルではないため、Nuxt.js は Webpack が PNG ファイルを扱えるように [file-loader](https://github.com/webpack/file-loader) と [url-loader](https://github.com/webpack/url-loader) を使う設定を行います。
 
 file-loader と url-loader を使用する利点:
 
