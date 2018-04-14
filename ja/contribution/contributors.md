@@ -1,4 +1,6 @@
 ---
-title: 貢献
-description: Nuxt 日本語公式ドキュメントへの貢献
+title: 貢献者一覧
+description: Nuxt 日本語公式ドキュメントの貢献者一覧
 ---
+
+# 貢献者一覧
