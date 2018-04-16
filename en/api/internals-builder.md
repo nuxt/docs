@@ -24,6 +24,6 @@ Plugin         | Arguments                               | When
 `build:before`           | (nuxt, buildOptions) | Before Nuxt build started
 `build:templates`        | ({ templateFiles, templateVars, resolve })  | Generating `.nuxt` template files    
 `build:extendRoutes`     | (routes, resolve) | Generating routes
-`build:compile`          | ({ name, compiler }) | Before webpack compile (compiler is a Webpack `Compiler` instance), if universal mode, called twice with name `'client'` and `'server'`
-`build:compiled`         | ({ name, compiler, stats }) | Webpack build finished 
+`build:compile`          | ({ name, compiler }) | Before webpack compile (compiler is a webpack `Compiler` instance), if universal mode, called twice with name `'client'` and `'server'`
+`build:compiled`         | ({ name, compiler, stats }) | webpack build finished 
 `build:done`             | (nuxt) | Nuxt build finished
