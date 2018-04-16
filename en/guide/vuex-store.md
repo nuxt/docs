@@ -30,6 +30,9 @@ const createStore = () => {
     state: {
       counter: 0
     },
+    getters: {
+      counter: state => state.counter
+    },
     mutations: {
       increment (state) {
         state.counter++
@@ -47,7 +50,7 @@ We can now use `this.$store` inside our components:
 
 ```html
 <template>
-  <button @click="$store.commit('increment')">{{ $store.state.counter }}</button>
+  <button @click="$store.commit('increment')">{{ $store.getters.counter }}</button>
 </template>
 ```
 
