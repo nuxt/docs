@@ -1,6 +1,6 @@
 ---
 title: webpack プラグイン
-description: How to add webpack plugins into my Nuxt.js application?
+description: Webpack プラグインを追加するには？
 ---
 
 # Webpack プラグインを追加するには？
