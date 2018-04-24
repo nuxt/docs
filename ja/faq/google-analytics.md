@@ -7,8 +7,7 @@ description: Google アナリティクスを使うには？
 
 はじめに、Nuxt.js用の [公式 Google アナリティクスモジュール](https://github.com/nuxt-community/analytics-module) があるのでそちらを確認してください。
 
-それ以外の方法で、[Google アナリティクス](https://www.google.com/analytics/) を
- Nuxt.js アプリケーションで使うには `plugins/ga.js` というファイルを作成することを推奨します:
+Otherwise, to use [Google Analytics](https://www.google.com/analytics/) with your Nuxt.js application, we recommend you create a file `plugins/ga.js`:
 
 ```js
 /* eslint-disable */
