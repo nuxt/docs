@@ -9,17 +9,40 @@ description: Skip component rendering on server side(rendering), and display pla
 
 **Props**:
 - placeholder: `string`
-  - This prop will be used as a content of inner `div` and displayed as text only on server side rendering.
+  - Use a text as placeholder until <no-ssr /> is mounted on client-side.
 
 ```html
 <template>
   <div>
-    <ssrfrendly-component />
-    <no-ssr>
-      <not-ssrfrendly />
+    <sidebar />
+    <no-ssr placeholder="Loading...">
+      <!-- this component will only be rendered on client-side -->
+      <comments />
     </no-ssr>
   </div>
 </template>
 ```
+
+**Slots**:
+
+- placeholder:
+  - Use a slot as placeholder until <no-ssr /> is mounted on client-side.
+ 
+ ```html
+<template>
+  <div>
+    <sidebar />
+    <no-ssr>
+      <!-- this component will only be rendered on client-side -->
+      <comments />
+  
+      <!-- loading indicator -->
+      <comments-placeholder slot="placeholder" />
+    </no-ssr>
+  </div>
+</template>
+```
+
+> Note that <no-ssr /> can only contain at most ONE child component/element.
 
 This component is a clone of [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr). Thanks [@egoist](https://github.com/egoist)!
