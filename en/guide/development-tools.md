@@ -28,7 +28,7 @@ Then add a test script to our `package.json` and configure AVA to compile files 
 },
 "babel": {
   "presets": [
-    "es2015"
+    "env"
   ]
 }
 ```
