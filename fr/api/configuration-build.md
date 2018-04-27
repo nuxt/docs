@@ -180,7 +180,7 @@ module.exports = {
   ```js
   {
     plugins: {
-    'postcss-import' : {},
+    'postcss-import': {},
     'postcss-url': {},
     'postcss-cssnext': {}
     }
@@ -206,7 +206,7 @@ module.exports = {
 
       // Ajouter divers plugins
       'postcss-nested': {},
-      'postcss-responsive-type': {}
+      'postcss-responsive-type': {},
       'postcss-hexrgba': {}
       }
     }

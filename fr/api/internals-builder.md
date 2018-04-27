@@ -7,25 +7,22 @@ description: La classe `Builder` de Nuxt
 
 - Source : **[builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)**
 
-
-## Plugins Tapable
+## Points d'ancrage
 
 Nous pouvons enregistrer des points d'ancrage sur certains évènements du cycle de vie.
 
 ```js
-nuxt.plugin('build', builder => {
-    builder.plugin('extendRoutes', async ({routes}) =>  {
-        // ...
-    })
+// Add hook for build
+this.nuxt.hook('build:done', (builder) => {
+  ...
 })
 ```
 
-Plugin         | Arguments                               | Quand
----------------|-----------------------------------------|-------------------------------------------------------------------------------
-`build`        | builder                                 | Au démarrage du premier build
-`built`        | builder                                 | À la fin du premier build
-`extendRoutes` | {routes, templateVars, r}               | À la génération des routes
-`generate`     | {builder, templatesFiles, templateVars} | À la génération des fichiers template `.nuxt`
-`done`         | {builder, stats}                        | Quand les builds webpack sont finis
-`compile`      | {builder, compiler}                     | Avant la compilation webpack (le compilateur est une instance `MultiCompiler`)
-`compiled`     | builder                                 | À la fin du build webpack
+Point d'ancrage      | Arguments                                  | Quand
+---------------------|--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+`build:before`       | (nuxt, buildOptions)                       | Après que le build de Nuxt ai démarré
+`built:templates`    | ({ templateFiles, templateVars, resolve }) | À la génération des fichiers de template `.nuxt`
+`build:extendRoutes` | (routes, resolve)                          | À la génération des routes
+`build:compile`      | ({ name, compiler })                       | Avant la compilation webpack (le compilateur est une instance `Compiler` de webpack), si en mode universel, appelez deux fois avec les noms `'client'` et `'server'`
+`build:compiled`     | ({ name, compiler, stats })                | À la fin du build webpack
+`build:done`         | (nuxt)                                     | Quand le build Nuxt est fini

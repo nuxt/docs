@@ -30,7 +30,7 @@ npm install cookieparser --save
 
 ## Page de connexion
 
-À l'intérieur du dossier des pages créez un fichier `login.vue` et dans ce fichier, dans la partie script, ajoutez :
+À l'intérieur du dossier des pages, créez un fichier `login.vue` et dans ce fichier, dans la partie script, ajoutez :
 
 ```js
 import Cookie from 'js-cookie'
@@ -115,4 +115,4 @@ export default function ({ store, redirect }) {
 }
 ```
 
-> Note : utilisez le middleware `authenticated.js` pour les pages qui ont besoin d'une authentification et le middleware `notAuthenticated.js` à l'intérieur des pages de type connexion / inscriptions, etc.
+> Note : utilisez le middleware `authenticated` pour les pages qui ont besoin d'une authentification et le middleware `notAuthenticated` à l'intérieur des pages de type connexion / inscription, etc.
