@@ -9,7 +9,7 @@ description: Skip component rendering on server side(rendering), and display pla
 
 **Props**:
 - placeholder: `string`
-  - Use a text as placeholder until <no-ssr /> is mounted on client-side.
+  - Use a text as placeholder until `<no-ssr />` is mounted on client-side.
 
 ```html
 <template>
@@ -26,7 +26,7 @@ description: Skip component rendering on server side(rendering), and display pla
 **Slots**:
 
 - placeholder:
-  - Use a slot as placeholder until <no-ssr /> is mounted on client-side.
+  - Use a slot as placeholder until `<no-ssr />` is mounted on client-side.
  
  ```html
 <template>
@@ -43,6 +43,6 @@ description: Skip component rendering on server side(rendering), and display pla
 </template>
 ```
 
-> Note that <no-ssr /> can only contain at most ONE child component/element.
+> Note that `<no-ssr />` can only contain at most ONE child component/element.
 
 This component is a clone of [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr). Thanks [@egoist](https://github.com/egoist)!
