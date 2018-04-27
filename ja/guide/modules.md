@@ -79,9 +79,7 @@ module.exports = {
 
 ### async/await を利用する
 
-
-<p class="Alert Alert--orange">`async`/`await` は Node.js では 7.2 より上のバージョンでしかサポートされていないことに注意してください。したがって、あなたがモジュール開発者であれば `async`/`await` を利用しているかどうかをユーザーに知らせてください。大きめの非同期モジュールを作成したり、レガシーサポートを行いやすくするため、バンドラを利用して、古めの Nuxt.js でも動くように変換するか、Promise メソッドを使うように変換するか選ぶことができます。
-</p>
+<p class="Alert Alert--orange">`async`/`await` は Node.js 7.2 より上のバージョンでしかサポートされていないことに注意してください。そのため、あなたがモジュール開発者であれば、少なくとも `async`/`await` を使用しているかどうかをユーザーに知らせてください。大きめの非同期モジュールを作成したり、レガシーサポートを行いやすくするため、バンドラを利用して古い Node.js と互換性を持たせるよう変換するか、Promise メソッドに変換するかを選ぶことができます。</p>
 
 ```js
 const fse = require('fs-extra')
@@ -124,7 +122,7 @@ module.exports = function asyncModule(callback) {
 
 ### トップレベルのオプション
 
-モジュールを `nuxt.config.js` に登録するときに、トップレベルのオプションを利用できれば便利な場合があるため、複数のオプションを結合できるようになっています。
+`nuxt.config.js` に登録しているモジュールのトップレベルのオプションを使用すると、より便利な時があります。オプションは複数組み合わせることができます。
 
 **nuxt.config.js**
 
@@ -212,7 +210,7 @@ module.exports = function nuxtBootstrapVue (moduleOptions) {
 
 ### CSS ライブラリを追加する
 
-重複して同じライブラリを追加してしまうことを避けるために、ユーザーが既に当該ライブラリを利用しているか否かチェックすることが推奨されています。また、モジュールが CSS ファイルを追加**しないようにするオプション**を持たせることも常に検討してみてください。
+重複を回避するために CSS ライブラリが存在しているかの確認や、モジュール内の CSS ライブラリの**無効化オプション**の追加を検討してください。以下の例を参照してください。
 
 **module.js**
 
@@ -279,33 +277,32 @@ module.exports = function (moduleOptions) {
 
 ```js
 module.exports = function () {
-  // モジュールにフックを追加する
-  this.nuxt.plugin('module', moduleContainer => {
-    // ここはすべてのモジュールがロードし終わったときに呼び出される
+  // modules 用にフックを追加する
+  this.nuxt.hook('module', moduleContainer => {
+    // 全てのモジュールのロードが完了したときに呼ばれます
   })
 
-  // レンダラーにフックを追加する
-  this.nuxt.plugin('renderer', renderer => {
-    // ここはレンダラーが作成されたときに呼び出される
+  // renderer 用にフックを追加する
+  this.nuxt.hook('renderer', renderer => {
+    // renderer wが作成された時に呼ばれます
   })
 
-  // ビルドにフックを追加する
-  this.nuxt.plugin('build', async builder => {
-    // ここはビルダーが作成されたときに一度呼び出される
+  // build 用にフックを追加する
+  this.nuxt.hook('build', async builder => {
+    // builder が作成された時に一度だけ呼ばれます
 
-    // ここに内部的なフックも登録できる
-    builder.plugin('compile', ({compiler}) => {
-        // ここは Webpack のコンパイラが処理を開始する直前に実行される
+    // 内部用のフックはここに登録できます
+    builder.hook('compile', ({compiler}) => {
+        // webpack のコンパイラが処理を開始する前に実行されます
     })
   })
 
-  // generate にフックを追加する
-  this.nuxt.plugin('generate', async generator => {
-    // ここは Nuxt generate が開始されたときに呼び出される
+  // generate 用にフックを追加する
+  this.nuxt.hook('generate', async generator => {
+    // This will be called when a Nuxt generate starts
   })
 }
 ```
-
 
 <p class="Alert">モジュールには他にも多くのフックがあり、また他にももっとできることがあります。Nuxt の内部 API については [Nuxt Internals](/api/internals) を参照してください。
 </p>

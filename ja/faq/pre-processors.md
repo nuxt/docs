@@ -28,5 +28,5 @@ module.exports = data: ->
 これらのプリプロセッサを使うために Webpack のローダーをインストールする必要があります。
 
 ```bash
-npm install --save-dev pug@2.0.0-beta6 pug-loader coffee-script coffee-loader node-sass sass-loader
+npm install --save-dev pug@2.0.0-beta6 pug-loader coffeescript coffee-loader node-sass sass-loader
 ```

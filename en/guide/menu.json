@@ -111,7 +111,7 @@
         "to": "/development-tools", "name": "Development Tools",
         "contents": [
           { "to": "#end-to-end-testing", "name": "End-to-End Testing" },
-          { "to": "#eslint", "name": "ESLint" }
+          { "to": "#eslint-and-prettier", "name": "ESLint and Prettier" }
         ]
       }
     ]

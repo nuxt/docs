@@ -1,0 +1,51 @@
+{
+  "iso": "id",
+  "docVersion": "1.0.0-rc11",
+  "links": {
+    "api": "API",
+    "blog": "Blog",
+    "chat": "Obrolan",
+    "documentation": "Dokumentasi",
+    "download": "Unduh",
+    "examples": "Contoh",
+    "ecosystem": "Ekosistem",
+    "faq": "Tanya Jawab",
+    "get_started": "Memulai",
+    "github": "GitHub",
+    "guide": "Petunjuk",
+    "homepage": "Beranda",
+    "live_demo": "Demo Langsung",
+    "live_edit": "Sunting Langsung",
+    "twitter": "Twitter",
+    "vuejs": "Vue.js",
+    "vue_jobs": "Vue Jobs"
+  },
+  "text": {
+    "an_error_occured": "An error occurred",
+    "api_page_not_found": "Halaman API tidak ditemukan",
+    "example_file": "Contoh File",
+    "please_wait": "Tunggu sebentar...",
+    "please_define_title": "Please define a title in the front matter",
+    "please_define_description": "Please define a description in the front matter",
+    "search": "Cari",
+    "version": "Versi"
+  },
+  "homepage": {
+    "title": "Aplikasi Vue.js Universal",
+    "meta": {
+      "title": "Nuxt.js - Aplikasi Vue.js Universal",
+      "description": "Nuxt.js adalah framework minimalis untuk membuat aplikasi Vue.js dengan server side rendering, hot-reloading, static generation, dan banyak lagi!"
+    }
+  },
+  "footer": {
+    "authors": "Made by Chopin Brothers"
+  },
+  "guide": {
+    "release_notes": "Release Notes",
+    "contribute": "Jumpa kesalahan atau ingin berkontribusi pada dokumentasi ini?",
+    "edit_on_github": "Sunting halaman ini di GitHub!"
+  },
+  "examples": {
+    "source_code": "Kode Sumber"
+  }
+}

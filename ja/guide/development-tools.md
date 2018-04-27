@@ -117,14 +117,16 @@ npm test
 
 jsdom はブラウザを使っていないため制約がいくつかありますが、ほとんどのテストはカバーできます。もしアプリケーションをテストするためにブラウザを使いたいときは [Nightwatch.js](http://nightwatchjs.org) を調べるとよいかもしれません。
 
-## ESLint
+## ESLint と Prettier
 
-> ESLint はコードを綺麗に保てる優れたツールです。
+> [ESLint](http://eslint.org) はコードをきれいに保つ優れたツールです。
 
-とても簡単に [ESLint](http://eslint.org) を Nuxt.js と一緒に使うことができます。まず npm の依存パッケージを追加する必要があります:
+> [Prettier](prettier.io) はとても人気のあるコードフォーマッタです。
+
+Nuxt.jsを使ってとても簡単に Prettier と ESLint を追加することができます。まず、npmの依存パッケージを追加する必要があります:
 
 ```bash
-npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-html eslint-plugin-promise eslint-plugin-standard eslint-plugin-import eslint-plugin-node
+npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader eslint-plugin-vue eslint-plugin-prettier prettier
 ```
 
 それから `.eslintrc.js` ファイルをプロジェクトのルートディレクトに置いて ESLint を設定できます:
@@ -132,37 +134,80 @@ npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-
 ```js
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
   env: {
     browser: true,
     node: true
   },
-  extends: 'standard',
-  // *.vue ファイルを lint するために必要
-  plugins: [
-    'html'
+  parserOptions: {
+    parser: 'babel-eslint'
+  },
+  extends: [
+    "eslint:recommended",
+    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+    // より厳しいルールにするには`plugin:vue/strongly-recommended` もしくは `plugin:vue/recommended` に切り替えることを検討してください。
+    "plugin:vue/recommended",
+    "plugin:prettier/recommended"
   ],
-  // ここにカスタムルールを追加します
-  rules: {},
-  globals: {}
+  // *.vue files を lint にかけるために必要
+  plugins: [
+    'vue'
+  ],
+  // ここにカスタムルールを追加します。
+  rules: {
+    "semi": [2, "never"],
+    "no-console": "off",
+    "vue/max-attributes-per-line": "off",
+    "prettier/prettier": ["error", { "semi": false }]
+  }
 }
 ```
 
-それから `lint` スクリプトを `package.json` 内に追加できます:
+次に、 `package.json` に `lint` と `lintfix` スクリプトを追加することができます :
 
 ```js
 "scripts": {
-  "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+  "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
 }
 ```
 
-lint を実行できます:
+エラーの確認に `lint` を実行できます:
 
 ```bash
 npm run lint
 ```
 
+また、`lintfix` もまた実行可能なものの修正に使えます。
+
+```bash
+npm run lintfix
+```
+
 ESLint は `.gitignore` に定義されたファイルを無視しつつ、それ以外のすべての JavaScript と Vue ファイルを lint します。
 
+webpackを用いてホットリローディングモードで ESLint を有効にすることをお勧めします。この方法で ESLint は `npm run dev` 中に実行されます。`nuxt.config.js` に以下のコードを追加してください:
+
+```
+...
+  /*
+   ** Build configuration
+  */
+  build: {
+   /*
+    ** ここで webpack config を拡張できます
+   */
+   extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: "pre",
+          test: /\.(js|vue)$/,
+          loader: "eslint-loader",
+          exclude: /(node_modules)/
+        })
+      }
+    }
+  }
+```
 
 <p class="Alert Alert--info">`"precommit": "npm run lint"` を package.json に追加してコードをコミットする前に自動的に lint するのはベストプラクティスのひとつです。</p>

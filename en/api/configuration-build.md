@@ -9,7 +9,7 @@ description: Nuxt.js lets you customize the webpack configuration for building y
 
 ## analyze
 
-> Nuxt.js use [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyze) to let you visualize your bundles and how to optimize them.
+> Nuxt.js use [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) to let you visualize your bundles and how to optimize them.
 
 - Type: `Boolean` or `Object`
 - Default: `false`
@@ -171,7 +171,7 @@ module.exports = {
 
 > Customize [PostCSS Loader](https://github.com/postcss/postcss-loader#usage) plugins.
 
-- Type: `Array`, `Object` (recommended), `Function` ou `Boolean`
+- Type: `Array`, `Object` (recommended), `Function` or `Boolean`
 
   **Note:** While default preset is OK and flexible enough for normal use cases, the recommended usage by [`vue-loader`](https://vue-loader.vuejs.org/en/options.html#postcss) is using `postcss.config.js` file in your project. By creating that file it will be automatically detected and this option is ignored.
 
@@ -180,7 +180,7 @@ module.exports = {
   ```js
   {
     plugins: {
-    'postcss-import' : {},
+    'postcss-import': {},
     'postcss-url': {},
     'postcss-cssnext': {}
     }
@@ -195,7 +195,7 @@ module.exports = {
     postcss: {
       plugins: {
         // Disable `postcss-url`
-      'postcss-url': false
+      'postcss-url': false,
 
       // Customize `postcss-cssnext` default options
       'postcss-cssnext': {
@@ -206,7 +206,7 @@ module.exports = {
 
       // Add some plugins
       'postcss-nested': {},
-      'postcss-responsive-type': {}
+      'postcss-responsive-type': {},
       'postcss-hexrgba': {}
       }
     }

@@ -1,0 +1,148 @@
+[
+  {
+    "title": "Essential",
+    "links": [
+      { "name": "Context", "to": "/context" }
+    ]
+  },
+  {
+    "title": "Pages",
+    "links": [
+      { "name": "asyncData", "to": "/" },
+      { "name": "fetch", "to": "/pages-fetch" },
+      { "name": "head", "to": "/pages-head" },
+      { "name": "layout", "to": "/pages-layout" },
+      { "name": "middleware", "to": "/pages-middleware" },
+      { "name": "scrollToTop", "to": "/pages-scrolltotop" },
+      {
+        "name": "transition", "to": "/pages-transition",
+        "contents": [
+          { "name": "String", "to": "#string" },
+          { "name": "Object", "to": "#object" },
+          { "name": "Function", "to": "#function" }
+        ]
+      },
+      { "name": "validate", "to": "/pages-validate" }
+    ]
+  },
+  {
+    "title": "Components",
+    "links": [
+      { "name": "nuxt", "to": "/components-nuxt" },
+      { "name": "nuxt-child", "to": "/components-nuxt-child" },
+      { "name": "nuxt-link", "to": "/components-nuxt-link" },
+      { "name": "no-ssr", "to": "/components-no-ssr" }
+    ]
+  },
+  {
+    "title": "Configuration",
+    "links": [
+      {
+        "name": "build",
+        "to": "/configuration-build",
+        "contents": [
+          { "name": "analyze", "to": "#analyze" },
+          { "name": "babel", "to": "#babel" },
+          { "name": "cssSourceMap", "to": "#csssourcemap" },
+          { "name": "devMiddleware", "to": "#devmiddleware" },
+          { "name": "extend", "to": "#extend" },
+          { "name": "extractCSS", "to": "#extractcss" },
+          { "name": "filenames", "to": "#filenames" },
+          { "name": "hotMiddleware", "to": "#hotmiddleware" },
+          { "name": "plugins", "to": "#plugins" },
+          { "name": "postcss", "to": "#postcss" },
+          { "name": "publicPath", "to": "#publicpath" },
+          { "name": "ssr", "to": "#ssr" },
+          { "name": "templates", "to": "#templates" },
+          { "name": "vendor", "to": "#vendor" },
+          { "name": "watch", "to": "#watch" }
+        ]
+      },
+      { "name": "css", "to": "/configuration-css" },
+      { "name": "dev", "to": "/configuration-dev" },
+      { "name": "env", "to": "/configuration-env" },
+      {
+        "name": "generate",
+        "to": "/configuration-generate",
+        "contents": [
+          { "name": "dir", "to": "#dir" },
+          { "name": "interval", "to": "#interval" },
+          { "name": "minify", "to": "#minify" },
+          { "name": "routes", "to": "#routes" }
+        ]
+      },
+      { "name": "head", "to": "/configuration-head" },
+      {
+        "name": "loading",
+        "to": "/configuration-loading",
+        "contents": [
+          { "name": "Disable the Progress Bar", "to": "#disable-the-progress-bar" },
+          { "name": "Customize the Progress Bar", "to": "#customize-the-progress-bar" },
+          { "name": "Use a Custom Loading Component", "to": "#use-a-custom-loading-component" }
+        ]
+      },
+      { "name": "loadingIndicator", "to": "/configuration-loading-indicator" },
+      { "name": "mode", "to": "/configuration-mode" },
+      { "name": "modules", "to": "/configuration-modules" },
+      { "name": "plugins", "to": "/configuration-plugins" },
+      {
+        "name": "render",
+        "to": "/configuration-render",
+        "contents": [
+          { "name": "bundleRenderer", "to": "#bundleRenderer" },
+          { "name": "etag", "to": "#etag" },
+          { "name": "gzip", "to": "#gzip" },
+          { "name": "http2", "to": "#http2" },
+          { "name": "resourceHints", "to": "#resourceHints" },
+          { "name": "ssr", "to": "#ssr" },
+          { "name": "static", "to": "#static" }
+        ]
+      },
+      { "name": "rootDir", "to": "/configuration-rootdir" },
+      {
+        "name": "router",
+        "to": "/configuration-router",
+        "contents": [
+          { "name": "base", "to": "#base" },
+          { "name": "extendRoutes", "to": "#extendroutes" },
+          { "name": "linkActiveClass", "to": "#linkactiveclass" },
+          { "name": "linkExactActiveClass", "to": "#linkexactactiveclass" },
+          { "name": "middleware", "to": "#middleware" },
+          { "name": "mode", "to": "#mode" },
+          { "name": "scrollBehavior", "to": "#scrollbehavior" }
+        ]
+      },
+      { "name": "serverMiddleware", "to": "/configuration-servermiddleware" },
+      { "name": "srcDir", "to": "/configuration-srcdir" },
+      { "name": "transition", "to": "/configuration-transition" },
+      {
+        "name": "watchers",
+        "to": "/configuration-watchers",
+        "contents": [
+          { "name": "chokidar", "to": "#chokidar" },
+          { "name": "webpack", "to": "#webpack" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Programmatically",
+    "links": [
+      { "name": "Usage", "to": "/nuxt" },
+      { "name": "render", "to": "/nuxt-render" },
+      { "name": "renderRoute", "to": "/nuxt-render-route" },
+      { "name": "renderAndGetWindow", "to": "/nuxt-render-and-get-window" }
+    ]
+  },
+  {
+    "title": "Internals",
+    "links": [
+      { "name": "Intro", "to": "/internals" },
+      { "name": "Nuxt", "to": "/internals-nuxt" },
+      { "name": "Renderer", "to": "/internals-renderer" },
+      { "name": "Module Container", "to": "/internals-module-container" },
+      { "name": "Builder", "to": "/internals-builder" },
+      { "name": "Generator", "to": "/internals-generator" }
+    ]
+  }
+]
