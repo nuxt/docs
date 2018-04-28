@@ -3,7 +3,7 @@ title: "API: The watchQuery Property"
 description: Watch query strings and execute component methods on change (asyncData, fetch, validate, layout, ...)
 ---
 
-# The layout Property
+# The watchQuery Property
 
 > Watch query strings and execute component methods on change (asyncData, fetch, validate, layout, ...)
 - **Type:** `Array` (default: `[]`)
