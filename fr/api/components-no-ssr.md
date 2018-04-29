@@ -9,17 +9,40 @@ description: Passe le rendu de composant du côté serveur et affiche un texte �
 
 **Props** :
 - placeholder : `string`
-  - Cette propriété peut être utilisée pour le contenu de la `div` et affiche du texte comme rendu pour la partie générée côté serveur.
+  - Utilise un texte comme valeur par défaut jusqu'à ce qu'un `<no-ssr />` soit monté sur côté client.
 
 ```html
 <template>
   <div>
-    <ssrfrendly-component />
-    <no-ssr>
-      <not-ssrfrendly />
+    <sidebar />
+    <no-ssr placeholder="Chargement...">
+      <!-- ce composant sera uniquement rendu côté client -->
+      <comments />
     </no-ssr>
   </div>
 </template>
 ```
+
+**Slots**:
+
+- placeholder:
+  - Utilise un texte comme valeur par défaut jusqu'à ce qu'un `<no-ssr />` soit monté sur côté client.
+
+ ```html
+<template>
+  <div>
+    <sidebar />
+    <no-ssr>
+      <!-- this component will only be rendered on client-side -->
+      <comments />
+  
+      <!-- loading indicator -->
+      <comments-placeholder slot="placeholder" />
+    </no-ssr>
+  </div>
+</template>
+```
+
+> Notez que `<no-ssr />` ne peut contenir qu'UN élément / composant enfant.
 
 Ce composant est un clone de [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr). Merci [@egoist](https://github.com/egoist) !

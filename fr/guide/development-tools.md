@@ -28,7 +28,7 @@ Puis ajouter un script de test à notre `package.json` et configurer AVA pour co
 },
 "babel": {
   "presets": [
-    "es2015"
+    "env"
   ]
 }
 ```

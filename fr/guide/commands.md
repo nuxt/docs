@@ -103,9 +103,9 @@ L'idée de l'application monopage est simple ! Quand le mode SPA est activé en 
 
 Donc pour un déploiement en mode SPA, vous devez :
 
-- Changer le `mode` dans `nuxt.config.js` pour `spa`.
-- Lancer `npm run build`.
-- Déployer le dossier `dist/` créé sur votre hébergement statique comme Surge, GitHub Pages ou nginx.
+- Changez le `mode` dans `nuxt.config.js` pour `spa`.
+- Lancez `npm run build`.
+- Déployez le dossier `dist/` créé sur votre hébergement statique comme Surge, GitHub Pages ou nginx.
 
 Une autre possibilité de déploiement est que nous pouvons utiliser Nuxt comme un middleware dans des frameworks si le mode est `spa`. Ceci aide à réduire le temps de chargement et à utiliser Nuxt dans des projets ou le SSR n'est pas possible.
 
