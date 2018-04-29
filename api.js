@@ -81,6 +81,8 @@ async function getFiles (cwd) {
   await getMenu(cwd)
   // Construct the lang object
   await getLanguages(cwd)
+  // Construct the contributors object
+  await getContributors(cwd)
 }
 
 // Get doc file and sent back it's attributes and html body
@@ -152,6 +154,30 @@ async function getLanguages (cwd) {
   _LANG_ = tmpLang
 }
 
+// Get contributors files and create the contributors object
+let _CONTRIBUTORS_ = {}
+async function getContributors (cwd) {
+  console.log('Building contributors...')
+  cwd = cwd || process.cwd()
+  let contributorsPaths = await glob('*/contribution/contributors.json', {
+    cwd: cwd,
+    ignore: 'node_modules/**/*',
+    nodir: true
+  })
+  let tmpContributors = {}
+  let promises = []
+  contributorsPaths.forEach((path) => {
+    let lang = path.split('/')[0]
+    let promise = readFile(resolve(cwd, path), 'utf-8')
+    promise.then((fileContent) => {
+      tmpContributors[lang] = JSON.parse(fileContent)
+    })
+    promises.push(promise)
+  })
+  await Promise.all(promises)
+  _CONTRIBUTORS_ = tmpContributors
+}
+
 // watch file changes
 function watchFiles () {
   console.log('Watch files changes...')
@@ -201,7 +227,7 @@ const server = micro(async function (req, res) {
     let category = req.url.split('/')[3]
     if (lang && category && _MENU_[lang] && _MENU_[lang][category]) return send(res, 200, _MENU_[lang][category])
     if (lang && _MENU_[lang]) return send(res, 200, _MENU_[lang])
-    else if (lang) return send(res, 404, 'Language not found')
+    else if (lang) return send(res, 404, 'Menu not found')
     return send(res, 200, _MENU_)
   }
   // Lang
@@ -210,6 +236,13 @@ const server = micro(async function (req, res) {
     if (lang && _LANG_[lang]) return send(res, 200, _LANG_[lang])
     else if (lang) return send(res, 404, 'Language not found')
     return send(res, 200, _LANG_)
+  }
+  // Contributors
+  if (req.url.indexOf('/contributors') === 0) {
+    let lang = req.url.split('/')[2]
+    if (lang && _CONTRIBUTORS_[lang]) return send(res, 200, _CONTRIBUTORS_[lang])
+    else if (lang) return send(res, 404, 'Contributors not found')
+    return send(res, 200, _CONTRIBUTORS_)
   }
   // remove first /
   let path = req.url.slice(1) + '.md'
