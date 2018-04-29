@@ -15,6 +15,8 @@ description: Nuxt.js でホストとポート番号を変更するには？
 }
 ```
 
+1. より良いクロスプラットフォーム開発サポートを追加する
+
 **メモ**: より良いクロスプラットフォーム開発サポートのために [cross-env](https://www.npmjs.com/package/cross-env) を使うことができます。
 
 インストール:
@@ -29,9 +31,9 @@ npm install --save-dev cross-env
 }
 ```
 
-- `package.json` 内の nuxt 設定を使う:
+1. `package.json` 内の nuxt 設定を使う:
 
-1. `package.json` 内:
+`package.json` 内:
 
 ```js
 "config": {
