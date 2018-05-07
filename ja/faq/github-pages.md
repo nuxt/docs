@@ -22,7 +22,7 @@ GitHub Pages のホスティングにデプロイするもの全てが入った
 
 ある特定のリポジトリに GitHub Pages を作成しており、カスタムドメインをお持ちでない場合、ページの URL はこの形式になります:  `http://<username>.github.io/<repository-name>`。
 
-If you deployed `dist` folder without adding [router base](https://nuxtjs.org/api/configuration-router/#base), when you visit the deployed site you will find that the site is not working due to missing assets. This is because we assume that the website root will be `/`, but in this case it is `/<repository-name>`.
+もし、[router プロパティの base](https://nuxtjs.org/api/configuration-router/#base) を追加せずに `dist` フォルダをデプロイし、デプロイしたサイトにアクセスした場合、アセットが見つからないため、サイトが機能していないことが分かるはずです。 これは、ウェブサイトのルートが `/` となることを想定したためです。しかし実際には、GitHub Pages にデプロイした場合、`/<repository-name>` となります。
 
 この問題を解決するためには、`nuxt.config.js` に [router base](https://nuxtjs.org/api/configuration-router/#base) の設定を追加する必要があります:
 
@@ -34,13 +34,13 @@ module.exports = {
 }
 ```
 
-This way, all generated path asset will be prefixed with `/<repository-name>/`, and the next time you deploy the code to repository GitHub Pages, the site should be working properly.
+こうすると、生成されたすべてのパスアセットに {`/<repository-name>/` という接頭辞が付けられるため、次に GitHub ページリポジトリにコードをデプロイした時には、サイトは正常に動作するはずです。
 
-There is a downside adding `router.base` as the default setting in `nuxt.config.js` though, when you are running `npm run dev`, it won't be working properly since the base path changes. To fix this issue, we want to create a conditional for `router.base` whether to include `<repository-name>`:
+しかし、`router.base` を`nuxt.config.js` 内でデフォルトで設定することには問題もあります。ベースパスが変更されているため、`npm run dev` が上手く動作しないのです。この問題を解決するには、次のように `router.base` に `<repository-name>` を含めるかどうかを判定する条件式を追加します。
 
 ```js
 /* nuxt.config.js */
-// only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
+// `DEPLOY_ENV` が `GH_PAGES` の場合のみ `router.base = '/<repository-name>/'` を追加する
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
     base: '/<repository-name>/'
@@ -52,7 +52,7 @@ module.exports = {
 }
 ```
 
-and now we just need to set `DEPLOY_ENV='GH_PAGES'` to build the site for GitHub Pages:
+設定を変更したので、GitHub Pages 用のサイトをビルドするためには、`DEPLOY_ENV='GH_PAGES'` と設定する必要があります:
 
 ```js
 /* package.json */
@@ -62,7 +62,7 @@ and now we just need to set `DEPLOY_ENV='GH_PAGES'` to build the site for GitHub
 },
 ```
 
-For Windows user, you might want to install [cross-env](https://github.com/kentcdodds/cross-env) if you are not using `bash`
+Windows ユーザーの場合、 `bash` を使用していなければ、[cross-env](https://github.com/kentcdodds/cross-env) をインストールするといいかもしれません。
 
 ```sh
 npm install cross-env --save-dev
@@ -104,23 +104,23 @@ npm run generate
 npm run deploy
 ```
 
-## Build server deployment
+## サーバーでのデプロイビルド
 
-You can take deployment one step further and rather than having to manually compile and deploy the files from your local install, you can make use of a build server to monitor your GitHub repository for new commits and then checkout, compile and deploy everything for you automatically.
+デプロイをさらに一歩進めることもできます。ローカルで手動でファイルをコンパイルしてデプロイする代わりに、ビルドサーバーを利用して GitHub リポジトリの新しいコミットを監視させ、自動的にチェックアウト・コンパイル・デプロイを行ってもらうのです。
 
-Before you configure the build server, you'll first need to [generate a GitHub personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token) in order to grant the build server permission to perform tasks on your behalf. Once you have created your token, keep a copy of it safe ready to use a little later on.
+ビルドサーバーを設定する前に、あなたの代わりにタスクを実行してもらうために [GitHub personal access token を生成する](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token) 必要があります。トークンを生成したら、すぐ後で使うので安全な場所にメモしておいてください。
 
 ### Travis CI
 
-To deploy with [Travis CI](https://travis-ci.org/), a free for open source projects build server, sign in via your GitHub account, granting Travis access to view your repositories, and then enable the build server for your repository by toggling the switch next to your repositories name in the list displayed.
+オープンソースプロジェクトには無料で使えるビルドサーバーの [Travis CI](https://travis-ci.org/) を利用してデプロイするには、まず GitHub アカウントでサインインし、Travis にリポジトリの読み取り権限を与え、そして表示されたリストのリポジトリ名の横にあるスイッチをクリックして、リポジトリに対してビルドサーバーを有効にしてください。
 
 ![Travis Builder Server Enable](/github_pages_travis_01.png)
 
-Next, click the cog icon beside your repository name to configure the general settings of the build sever and enable the 'Build only if .travis.yml is present' feature by toggling the switch.
+次に、リポジトリ名の横にある歯車のアイコンをクリックし、ビルドサーバーの一般的な設定を行い、'Build only if .travis.yml is present' 機能を有効にするスイッチを押します。
 
 ![Travis Builder Server Settings](/github_pages_travis_02.png)
 
-On the same screen, scroll down to the Environment Variables section and create a new variables named `GITHUB_ACCESS_TOKEN` and in the value field paste a copy of the GitHub personal access token your created earlier and click the 'Add' button.
+同じ画面を下にスクロールして Environment Variables (環境変数) セクションを表示させたら、`GITHUB_ACCESS_TOKEN` という名前の新しい変数を作成し、値のフィールドにさきほど生成したおいた GitHub personal access token を入力し、'Add' (追加) ボタンをクリックします。
 
 ![Travis Builder Server Environment Variables](/github_pages_travis_03.png)
 
@@ -164,64 +164,64 @@ git commit -m "Adding travis deploy configuration"
 git push origin
 ```
 
-Now, whenever you commit any changes to your repository, from within Travis, you'll see a new build start up
+これで、リポジトリに変更を加えるたびに、Travis 内から新しいビルドが開始されるようになりました。
 
 ![Travis Builder Server Output](/github_pages_travis_04.png)
 
-and on completion, you'll see your GitHub pages site automatically updated.
+ビルドが完了したら、GitHub pages のサイトが自動的に更新されていることが確認できるはずです。
 
 ### Appveyor
 
-To deploy via [Appveyor](https://www.appveyor.com), another free for open source projects build server, sign up for a new account choosing the GitHub authentication option to sign in using your GitHub account.
+もう1つのオープンソースプロジェクトのビルドサーバーである [Appveyor](https://www.appveyor.com) でデプロイするには、GitHub の認証を使用して、自分の GitHub アカウントを使って新しいアカウントを作成します。
 
-Once signed in, click the 'New project' link and then click the 'Add' button beside your repository name in the list displayed to enable the build server on your repository.
+サインインしたら、'New project' (新規プロジェクト) のリンクをクリックして、表示されたリスト中のリポジトリ名の横にある 'Add' (追加) ボタンを押して、リポジトリに対してビルドサーバーを有効にします。
 
 ![Appveyor Builder Server Enable](/github_pages_appveyor_01.png)
 
-Next, in the root of your repository, create an `appveyor.yml` configuration file with the following contents
+次に、リポジトリのルートに以下の内容で `appveyor.yml` 設定ファイルを作成してください。
 
 ```yaml
 environment:
-  # Nuxt requires node v8 minimum
+  # Nuxt には最低でも node v8 が必要
   nodejs_version: "8"
-  # Encrypt sensitive data (https://ci.appveyor.com/tools/encrypt)
+  # 暗号化したセンシティブなデータ (https://ci.appveyor.com/tools/encrypt)
   github_access_token:
     secure: ENCRYPTED_GITHUB_ACCESS_TOKEN
   github_email:
     secure: ENCRYPTED_GITHUB_EMAIL
 
-# Only run on master branch
+# master ブランチのみで実行する
 branches:
   only:
   - master
 
-# Install scripts. (runs after repo cloning)
+# スクリプトをインストール (リポジトリのクローン後に実行する)
 install:
-  # switch nodejs version
+  # nodejs のバージョンを変更
   - ps: Install-Product node $env:nodejs_version
-  # install modules
+  # モジュールのインストール
   - npm install
-  # generate static files
+  # 静的ファイルの生成
   - npm run generate
-  # configure global git credentials store (https://www.appveyor.com/docs/how-to/git-push/)
+  # グローバルな git credentials store を設定 (https://www.appveyor.com/docs/how-to/git-push/)
   - git config --global credential.helper store
   - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
   - git config --global user.email $env:github_email
-  # deploy to GitHub pages
+  # GitHub pages へデプロイ
   - npm run deploy
 
-# No tests to run
+# テストをスキップ
 test: off
 
-# Don't actually build.
+# 実際のビルドを行わない
 build: off
 ```
 
-***NB*** This configuration assumes you've configured your `package.json` file as per the [Command line deployment](#command-line-deployment) instructions
+***メモ*** この設定ファイルでは、`package.json` ファイル内に [コマンドラインでデプロイする](#command-line-deployment) のコマンドがあらかじめ設定されているをことを想定しています。
 
-Before you commit this file however, you'll need to change the `ENCRYPTED_GITHUB_ACCESS_TOKEN` and `ENCRYPTED_GITHUB_EMAIL` variables with your GitHub personal access token from earlier and your GitHub email address, encrypted using the [Appveyor encryption tool](https://ci.appveyor.com/tools/encrypt).
+このファイルをコミットする前に、先ほどメモしておいた GitHub personal access token と GitHub アカウントのメールアドレスを [Appveyor encryption tool](https://ci.appveyor.com/tools/encrypt) を使用して暗号化し、それら暗号化した値を `ENCRYPTED_GITHUB_ACCESS_TOKEN` と `ENCRYPTED_GITHUB_EMAIL` の両変数に設定しておく必要があります。
 
-Once updated, commit the file to your repository
+設定を変更したら、ファイルをリポジトリにコミットします。
 
 ```bash
 git add appveyor.yml
@@ -229,8 +229,8 @@ git commit -m "Adding appveyor deploy configuration"
 git push origin
 ```
 
-Now, whenever you commit any changes to your repository, from within Appveyor, you'll see a new build start up
+これで、リポジトリに変更を加えるたびに、Appveyor 内から新しいビルドが開始されるようになりました。
 
 ![Appveyor Builder Server Output](/github_pages_appveyor_02.png)
 
-and on completion, you'll see your GitHub pages site automatically updated.
+ビルドが完了したら、GitHub pages のサイトが自動的に更新されていることが確認できるはずです。
