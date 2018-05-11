@@ -1,6 +1,6 @@
 ---
 title: ルーティング
-description: Nuxt.js はウェブアプリケーションのルーティングを生成するためにファイルシステムを利用します。それは PHP がルーティングを生成するようにシンプルです。
+description: Nuxt.js はウェブアプリケーションのルーティングを生成するためにファイルシステムを利用します。
 ---
 
 > Nuxt.js は `pages` ディレクトリ内の Vue ファイルの木構造に沿って、自動的に [vue-router](https://github.com/vuejs/vue-router) の設定を生成します。
@@ -88,7 +88,7 @@ router: {
 
 `user-id` と名付けられたルートに `:id?` というパスがありますが、これはこの `:id` が必須ではないことを表します。もし必須にしたい場合は `users/_id` ディレクトリ内に `index.vue` ファイルを作成してください。
 
-<p class="Alert Alert--info">警告: `generate` コマンドでは 動的なルーティング は無視されます。 : [generate 設定 API](/api/configuration-generate#routes)</p>
+<p class="Alert Alert--info"><b>警告</b>: `generate` コマンドでは 動的なルーティング は無視されます。:  [generate 設定 API](/api/configuration-generate#routes)</p>
 
 ### ルーティングのパラメータのバリデーション
 
@@ -115,7 +115,7 @@ Nuxt.js では vue-router の子ルートを使ってルートをネストさせ
 
 ネストされたルートの親コンポーネントを定義するには、子ビューを含む **ディレクトリと同じ名前** の Vue ファイルを作成する必要があります。
 
-<p class="Alert Alert--info">Nuxt.js のデフォルトのトランジション名は `"page"` です。</p>
+<p class="Alert Alert--info"><b>警告:</b> `<nuxt-child>` を親コンポーネント内 (<code>.vue</code> ファイル内) に書くことを忘れないでください。</nuxt-child></p>
 
 下記のようなファイルの木構造のとき:
 
@@ -220,15 +220,15 @@ router: {
 ```js
 module.exports = {
   generate: {
-    fallback: true, // if you want to use '404.html'
-    fallback: 'my-fallback/file.html' // if your hosting needs a custom location
+    fallback: true, // '404.html' を使用したい場合
+    fallback: 'my-fallback/file.html' // ホスティングサービスで特定のロケーションを指定する必要がある場合
   }
 }
 ```
 
 #### Surge 向けの実装
 
-Surge は `200.html` と `404.html` 両方を[扱うことが出来ます](https://surge.sh/help/adding-a-custom-404-not-found-page)。`generate.fallback` はデフォルトで `200.html` を設定するので、変更する必要はありません。
+Surge は `200.html` と `404.html` の両方を[ハンドリングできます](https://surge.sh/help/adding-a-custom-404-not-found-page)。`generate.fallback` はデフォルトで `200.html` に設定されるので、変更する必要はありません。
 
 #### GitHub Pages と Netlify 向けの実装
 
@@ -236,7 +236,7 @@ GitHub Pages と Netlify は `404.html` ファイルを自動的に認識する�
 
 #### Firebase ホスティング向けの実装
 
-Firebase ホスティングを使うめには、`generate.fallback` を `true` にし、以下のの設定を使用します。 ([さらに詳しく](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
+Firebase ホスティングを使うためには、`generate.fallback` を `true` にし、以下の設定を使用します。 ([さらに詳しく](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
 
 ```json
 {
@@ -270,10 +270,10 @@ Nuxt.js では [<transition> コンポーネントを使って、ページ間を
 `assets/main.css` 内にグローバルな CSS を書きます:
 
 ```css
-.page-enter-active, .page-leave-to {
+.page-enter-active, .page-leave-active {
   transition: opacity .5s;
 }
-.page-enter, .page-leave-active {
+.page-enter, .page-leave-to {
   opacity: 0;
 }
 ```
@@ -317,7 +317,7 @@ export default {
 
 ## ミドルウェア
 
-> ミドルウェアを使って、あるページまたはあるページのグループがレンダリングされる前に実行される関数を定義することができます。
+> ミドルウェアを使うと、特定のページやいくつかのページのグループがレンダリングされる前に実行されるカスタム関数を定義することができます。
 
 **ミドルウェアは `middleware/` ディレクトリに入れます。** ファイル名はミドルウェアの名前となります（`middleware/auth.js` は `auth` ミドルウェアになります）
 
@@ -335,7 +335,7 @@ export default function (context) {
 2. マッチしたレイアウト
 3. マッチしたページ
 
-ミドルウェアは非同期に実行することが出来ます。これを行うには、単に `Promise` を返却するか、`callback` の第二引数を使用します:
+ミドルウェアは非同期に実行することもできます。そのためには、単に `Promise` を返却するか、第2引数の `callback` を使用します:
 
 `middleware/stats.js`
 
