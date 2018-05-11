@@ -1,26 +1,26 @@
 ---
-title: Caching Components
-description: How to cache components?
+title: コンポーネントをキャッシュする
+description: コンポーネントをキャッシュするには？
 ---
 
-# How to cache Vue components?
+# Vue コンポーネントをキャッシュするには？
 
-> Although Vue's SSR is quite fast, it can't match the performance of pure string-based templating due to the cost of creating component instances and Virtual DOM nodes. In cases where SSR performance is critical, wisely leveraging caching strategies can greatly improve response time and reduce server load.
+> Vue の SSR は非常に高速ですが、コンポーネントインスタンスや仮想 DOM ノードの作成コストのため純粋な文字ベースのテンプレートのパフォーマンスにはかないません。 SSR のパフォーマンスが重大である場合、キャッシュを賢く活用することで応答時間が大幅に改善され、サーバーの負荷が軽減されます。	
 
-To avoid boilerplate, use [Component Cache module](https://github.com/nuxt-community/modules/tree/master/packages/component-cache) for Nuxt.js. This module uses vue-server-renderer to add LRU cache support for Vue components.
+ボイラープレートを避けるために、Nuxt.js で[コンポーネントキャッシュモデル](https://github.com/nuxt-community/modules/tree/master/packages/component-cache)を使用してください。このモジュールは、Vue コンポーネント向けに vue-server-renderer  を使って LRU キャッシュのサポートを追加します。
 
-## Usage
+## 使い方
 
-- Add `@nuxtjs/component-cache` dependency using Yarn or npm to your project
-- Add `@nuxtjs/component-cache` to `modules` section of `nuxt.config.js`
+- Yarn または npm を使用してプロジェクトに `@nuxtjs/component-cache` の依存関係を追加してください
+- `nuxt.config.js` の `modules` セクションに `@nuxtjs/component-cache` を追加してください
 
 ```js
 {
   modules: [
-    // Simple usage
+    // シンプルな使い方
     '@nuxtjs/component-cache',
 
-    // With options
+    // オプション
     ['@nuxtjs/component-cache', {
       max: 10000,
       maxAge: 1000 * 60 * 60
@@ -29,11 +29,11 @@ To avoid boilerplate, use [Component Cache module](https://github.com/nuxt-commu
 }
 ```
 
-See [component-level caching](http://ssr.vuejs.org/en/caching.html#component-level-caching) for more information.
+より詳しい情報は[コンポーネントレベルでのキャッシュ](http://ssr.vuejs.org/en/caching.html#component-level-caching)を参照してください。
 
-## Don't forget, that
+## 忘れないでください
 
-- Cache-able component **must define a unique `name` option**.
-- You should ***NOT*** cache components, that
-  - has child components that may rely on global state.
-  - has child components that produces side effects on the render `context`.
+- キャッシュ可能なコンポーネントは **ユニークな `name` オプションを定義する必要があります。**
+- 以下のコンポーネントはキャッシュ***しないで***ください。
+    - グローバルな状態に依存する子コンポーネントを持つ
+    - レンダリングされる `context` に副作用をもたらす子コンポーネントを持つ 
