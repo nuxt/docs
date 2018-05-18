@@ -5,7 +5,7 @@ description: Nuxt.js uses vue-meta to update the headers and HTML attributes of 
 
 # The head Method
 
-> Nuxt.js uses [vue-meta](https://github.com/declandewet/vue-meta) to update the `headers` and `html attributes` of your application.
+> Nuxt.js uses [vue-meta](https://github.com/declandewet/vue-meta) to update the `headers` and `html attributes` of your application. Except for `script` it has [a different implementation method](https://nuxtjs.org/faq/).
 
 - **Type:** `Object` or `Function`
 
