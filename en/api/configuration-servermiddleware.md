@@ -9,7 +9,7 @@ description: Define server-side middleware.
     - Items: `String` or `Object` or `Function`
 
 Nuxt internally creates a [connect](https://github.com/senchalabs/connect) instance,
-so we can register our middleware to it's stack and having chance
+so we can register our middleware to its stack and having chance
 to provide more routes like API **without need to an external server**.
 Because connect itself is a middleware, registered middleware will work with both `nuxt start`
 and also when used as a middleware with programmatic usages like [express-template](https://github.com/nuxt-community/express-template).
