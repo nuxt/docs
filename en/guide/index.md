@@ -5,7 +5,7 @@ description: "The 25th of October 2016, the team behind zeit.co, announced Next.
 
 > The 25th of October 2016, the team behind [zeit.co](https://zeit.co/), announced [Next.js](https://zeit.co/blog/next), a framework for server-rendered React applications. A few hours after the announcement, the idea of creating server-rendered [Vue.js](https://vuejs.org) applications the same way as Next.js was obvious: **Nuxt.js** was born.
 
-## What is Nuxt.js ?
+## What is Nuxt.js?
 
 Nuxt.js is a framework for creating Universal Vue.js Applications.
 
