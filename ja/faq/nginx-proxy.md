@@ -1,9 +1,9 @@
 ---
 title: nginx proxy
-description: How to use nginx as a reverse proxy
+description: nginx をリバースプロキシとして使うには？
 ---
 
-# Using nginx as a reverse proxy
+# nginx をリバースプロキシとして使う
 
 ```nginx
 map $sent_http_content_type $expires {
@@ -13,8 +13,8 @@ map $sent_http_content_type $expires {
 }
 
 server {
-    listen          80;             # the port nginx is listening on
-    server_name     your-domain;    # setup your domain here
+    listen          80;             # nginx が見るポート番号
+    server_name     your-domain;    # ドメインはここで設定してください
 
     gzip            on;
     gzip_types      text/plain application/xml text/css application/javascript;
@@ -30,17 +30,17 @@ server {
         proxy_set_header X-Forwarded-Proto  $scheme;
         proxy_read_timeout          1m;
         proxy_connect_timeout       1m;
-        proxy_pass                          http://127.0.0.1:3000; # set the adress of the Node.js instance here
+        proxy_pass                          http://127.0.0.1:3000; # Node.js のアドレスはここで設定してください
     }
 }
 ```
 
-# nginx configuration for Laravel Forge
+# Laravel Forge 用の nginx の設定
 
-Change `YOUR_WEBSITE_FOLDER` to your web site folder and `YOUR_WEBSITE_DOMAIN` to your website URL. Laravel Forge will have filled out these values for you but be sure to double check.
+`YOUR_WEBSITE_FOLDER` をウェブサイトのフォルダ名に、`YOUR_WEBSITE_DOMAIN` をウェブサイトの URL に変更してください。Laravel Forge はこれらの値を補完しますが、ダブルチェックを行ってください。
 
 ```nginx
-# FORGE CONFIG (DOT NOT REMOVE!)
+# FORGE CONFIG (消さないでください！)
 include forge-conf/YOUR_WEBSITE_FOLDER/before/*;
 
 map $sent_http_content_type $expires {
@@ -64,7 +64,7 @@ server {
     gzip_types      text/plain application/xml text/css application/javascript;
     gzip_min_length 1000;
 
-    # FORGE CONFIG (DOT NOT REMOVE!)
+    # FORGE CONFIG (消さないでください！)
     include forge-conf/YOUR_WEBSITE_FOLDER/server/*;
 
     location / {
@@ -77,7 +77,7 @@ server {
         proxy_set_header X-Forwarded-Proto  $scheme;
         proxy_read_timeout          1m;
         proxy_connect_timeout       1m;
-        proxy_pass                          http://127.0.0.1:3000; # set the adress of the Node.js
+        proxy_pass                          http://127.0.0.1:3000; # Node.js のアドレスを設定してください
     }
 
     access_log off;
@@ -88,16 +88,16 @@ server {
     }
 }
 
-# FORGE CONFIG (DOT NOT REMOVE!)
+# FORGE CONFIG (消さないでください！)
 include forge-conf/YOUR_WEBSITE_FOLDER/after/*;
 ```
 
-# Secure Laravel Forge with TLS
+# TLS で Laravel Forge を保護する
 
-It's best to let Laravel Forge do the editing of the `nginx.conf` for you, by clicking on Sites -> YOUR_WEBSITE_DOMAIN (SERVER_NAME) and then click on SSL and install a certificate from one of the providers. Remember to activate the certificate. Your `nginx.conf` should now look something like this:
+Laravel Forge に `nginx.conf` の編集を許可するには、Sites -> ウェブサイトドメイン (サーバー名) をクリック 、SSL をクリックしてプロバイダの1つから証明書をインストールします。証明書を有効にすることを忘れないでください。`nginx.conf` は以下のようになります:
 
 ```nginx
-# FORGE CONFIG (DOT NOT REMOVE!)
+# FORGE CONFIG (消さないでください！)
 include forge-conf/YOUR_WEBSITE_FOLDER/before/*;
 
 map $sent_http_content_type $expires {
@@ -111,7 +111,7 @@ server {
     listen [::]:443 ssl http2;
     server_name YOUR_WEBSITE_DOMAIN;
 
-    # FORGE SSL (DO NOT REMOVE!)
+    # FORGE SSL (消さないでください！)
     ssl_certificate /etc/nginx/ssl/YOUR_WEBSITE_FOLDER/258880/server.crt;
     ssl_certificate_key /etc/nginx/ssl/YOUR_WEBSITE_FOLDER/258880/server.key;
 
@@ -130,7 +130,7 @@ server {
     gzip_types      text/plain application/xml text/css application/javascript;
     gzip_min_length 1000;
 
-    # FORGE CONFIG (DOT NOT REMOVE!)
+    # FORGE CONFIG (消さないでください！)
     include forge-conf/YOUR_WEBSITE_FOLDER/server/*;
 
     location / {
@@ -143,7 +143,7 @@ server {
         proxy_redirect              off;
         proxy_read_timeout          1m;
         proxy_connect_timeout       1m;
-        proxy_pass                          http://127.0.0.1:3000; # set the adress of the Node.js
+        proxy_pass                          http://127.0.0.1:3000; # Node.js のアドレスを設定してください
     }
 
     access_log off;
@@ -154,6 +154,6 @@ server {
     }
 }
 
-# FORGE CONFIG (DOT NOT REMOVE!)
+# FORGE CONFIG (消さないでください！)
 include forge-conf/YOUR_WEBSITE_FOLDER/after/*;
 ```
