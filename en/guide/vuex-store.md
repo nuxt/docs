@@ -251,7 +251,7 @@ Strict mode is enabled by default on dev mode and turned off in production mode.
 ### Module Mode
 `export const strict = false`
 
-### Clasic Mode
+### Classic Mode
 ```
 import Vuex from 'vuex'
 
