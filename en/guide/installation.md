@@ -15,7 +15,7 @@ To get started quickly, the Nuxt.js team has created a [starter template](https:
 $ vue init nuxt-community/starter-template <project-name>
 ```
 
-> If [vue-cli](https://github.com/vuejs/vue-cli) is not installed, please install it with `npm install -g vue-cli`
+> If [vue-cli](https://github.com/vuejs/vue-cli) is not installed, please install it with `npm install -g @vue/cli-init`
 
 then install the dependencies:
 
