@@ -101,7 +101,7 @@ The best example is this website. It is generated and hosted on GitHub Pages:
 - [Source code](https://github.com/nuxt/nuxtjs.org)
 - [Generated code](https://github.com/nuxt/nuxtjs.org/tree/gh-pages)
 
-We don't want to manually generate the application every time we update the [docs repository](https://github.com/nuxt/docs), so each push made calls an AWS Lambda function which:
+We don't want to manually generate the application every time we update the [docs repository](https://github.com/nuxt/docs), so each push made calls to an AWS Lambda function which:
 
 1. Clones the [nuxtjs.org repository](https://github.com/nuxt/nuxtjs.org)
 2. Installs the dependencies via `npm install`
