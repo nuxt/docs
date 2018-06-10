@@ -24,4 +24,4 @@ Plugin   | Arguments              | When
 `ready`  | nuxt                   | All modules initialized and before initializing renderer
 `error`  | error args             | An unhandled error by one of Nuxt modules caught
 `close`  | -                      | Nuxt instance is gracefully closing
-`listen` | ({server, host, port}) | Nuxt **Internal** server starts listening. (Using `nuxt start` or `nuxt dev`)
+`listen` | (server, {host, port}) | Nuxt **Internal** server starts listening. (Using `nuxt start` or `nuxt dev`)

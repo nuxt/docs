@@ -3,6 +3,8 @@ title: 개발 툴
 description: Nuxt.js는 개발을 보다 재미있게 할 수 있도록 도와줍니다.
 ---
 
+> 어플리케이션 테스트는 웹 개발의 일부 입니다. Nuxt.js는 이를 쉽게 만들 수 있도록 도와 줍니다.
+
 ## End-To-End 테스트
 
 [Ava](https://github.com/avajs/ava)는 [jsdom](https://github.com/tmpvar/jsdom)과 같이 사용할 수 있는 JavaScript의 강력한 테스트 프레임워크입니다. 엔드 투 엔드 테스트를 쉽게 하기 위해서 이 두가지를 사용합니다.
@@ -58,7 +60,6 @@ export default {
 }
 </style>
 ```
-<!-- When we launch our app with `npm run dev` and open [http://localhost:3000](http://localhost:3000), we can see our red `Hello world!` title. -->
 
 `npm run dev` 로 어플리케이션을 기동하고 [http://localhost:3000](http://localhost:3000) 으로 접근하면 `Hello world!` 타이틀이 표시가 됩니다.
 
@@ -116,14 +117,16 @@ npm test
 
 jsdom 은 브라우저를 사용하지 않기 때문에 제약점이 몇가지 있지만, 대부분의 테스트는 커버할 수 있습니다. 혹시 어플리케이션을 테스트하기 위해서 브라우저를 사용하고 싶을 경우에는 [Nightwatch.js](http://nightwatchjs.org) 를 체크해 보시면 될 것 같습니다.
 
-## ESLint
+## ESLint와 Prettier
 
-> ESLint 는 깔끔한 코드를 유지할 수 있도록 해주는 멋진 툴입니다.
+> [ESLint](http://eslint.org) 는 깔끔한 코드를 유지할 수 있도록 해주는 멋진 툴입니다.
+
+> [Prettier](prettier.io)는 매우 유명한 코드 포매터 입니다.
 
 매우 간단하게 [ESLint](http://eslint.org) 를 Nuxt.js 와 같이 사용할 수 있습니다. 우선 npm 디펜던시를 추가해야 합니다:
 
 ```bash
-npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-html eslint-plugin-promise eslint-plugin-standard eslint-plugin-import eslint-plugin-node
+npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader eslint-plugin-vue eslint-plugin-prettier prettier
 ```
 
 그리고 `.eslintrc.js` 파일을 프로젝트의 루트 디렉토리에 두고 ESLint를 설정합니다:
@@ -131,36 +134,80 @@ npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-
 ```js
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
   env: {
     browser: true,
     node: true
   },
-  extends: 'standard',
-  // *.vue 파일을 lint 하기위해서 필요함
-  plugins: [
-    'html'
+  parserOptions: {
+    parser: 'babel-eslint'
+  },
+  extends: [
+    "eslint:recommended",
+    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+    "plugin:vue/recommended",
+    "plugin:prettier/recommended"
   ],
-  // 여기에 커스텀룰을 추가합니다.
-  rules: {},
-  globals: {}
+  // required to lint *.vue files
+  plugins: [
+    'vue'
+  ],
+  // add your custom rules here
+  rules: {
+    "semi": [2, "never"],
+    "no-console": "off",
+    "vue/max-attributes-per-line": "off",
+    "prettier/prettier": ["error", { "semi": false }]
+  }
 }
 ```
 
-그리고나서 `lint` 스크립트를 `package.json` 안에 추가합니다:
+그리고, `package.json`에 `lint`와 `lintfix` 스크립트를 추가할 수 있습니다. :
 
 ```js
 "scripts": {
-  "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+  "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
 }
 ```
 
-이제 lint 를 실행할 수 있습니다:
+이제 `lint`를 시작하여 오류를 확인할 수 있습니다.:
 
 ```bash
 npm run lint
 ```
 
-ESLint 는 `.gitignore` 에 정의되어 있는 파일을 무시하고, 그 외의 모든 JavaScript 와 Vue 파일을 lint 합니다。
+또는`lintfix`를 수정하여 실행 가능한 코드를 수정합니다.
 
-<p class="Alert Alert--info">`"precommit": "npm run lint"` 를 package.json 에 추가하여 코드를 커밋하기 전에 자동적으로 lint 가 돌도록 하는 것은 아주 좋은 예일것 같습니다.</p>
+```bash
+npm run lintfix
+```
+
+ESLint 는 `.gitignore`에 정의된 파일들을 무시하면서 모든 JavaScript 및 Vue 파일을 lint 합니다.
+
+또한 webpakc을 통해 핫 리로드 모드에서 ESLink를 활성화하는 것이 좋습니다. 이렇게 하면 ESLint는 `npm run dev` 실행 동안 저장시 실행 됩니다. `nuxt.config.js`에 다음을 추가하십시오.:
+
+```
+...
+  /*
+   ** Build configuration
+  */
+  build: {
+   /*
+    ** You can extend webpack config here
+   */
+   extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: "pre",
+          test: /\.(js|vue)$/,
+          loader: "eslint-loader",
+          exclude: /(node_modules)/
+        })
+      }
+    }
+  }
+```
+
+<p class="Alert Alert--info">하나의 모범 사례는 package.json에 `"precommit": "npm run lint"`를 추가하여 코드를 커밋하기 전에 코드를 자동으로 lint 하는 것 입니다.</p>

@@ -7,6 +7,6 @@ description: なぜ CSS Flash が見えるのか？
 
 ![cssflash](/flash_css.gif)
 
-これが見えるのは Webpack をとおしてホットリローディングする **開発モード** でビルドした JavaScript の中に CSS が埋め込まれているためです。
+これは、webpack 経由でホットリロードが行われる**開発モード**で JavaScript 内の CSS がビルドされるためです。 このフラッシュは [FOUC](https://en.wikipedia.org/wiki/Flash_of_unstyled_content) と呼ばれています。
 
-大丈夫です。プロダクションモードでは  CSS は分離されて head に置かれるため、このような "flash" は見えません。
+**プロダクションモード**について心配する必要はありません。CSS は分割されてヘッダーに挿入されます。そのため、このスタイルのないコンテンツのフラッシュが表示されることはありません。

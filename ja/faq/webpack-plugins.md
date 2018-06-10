@@ -1,5 +1,5 @@
 ---
-title: Webpack プラグイン
+title: webpack プラグイン
 description: Webpack プラグインを追加するには？
 ---
 

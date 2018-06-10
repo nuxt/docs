@@ -1,5 +1,5 @@
 ---
-title: Webpack 設定を拡張する
+title: webpack の拡張
 description: Webpack の設定を拡張するには？
 ---
 

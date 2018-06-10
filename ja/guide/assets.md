@@ -1,14 +1,14 @@
 ---
 title: アセット
-description: デフォルトでは、Nuxt はvue-loader、file-loader、url-loader webpack ローダーを使用して、強力なアセットを提供します。
+description: デフォルトでは、Nuxt は vue-loader、file-loader、url-loader webpack ローダーを使用して、強力なアセットを提供します。
   静的アセットには静的ディレクトリを使用することもできます。
 ---
 
-> デフォルトでは、Nuxt はvue-loader、file-loader、url-loader webpack ローダーを使用して、強力なアセットを提供します。 静的アセットには静的ディレクトリを使用することもできます。
+> デフォルトでは、Nuxt は vue-loader、file-loader、url-loader webpack ローダーを使用して、強力なアセットを提供します。 静的アセットには静的ディレクトリを使用することもできます。
 
 ## Webpack で取り扱う
 
-デフォルトでは [vue-loader](http://vue-loader.vuejs.org/en/) は `css-loader` 及び `vue-template-compiler` を用いて、スタイルやテンプレートファイルを処理します。このコンパイル処理の中で、`<img src="...">` や `background: url(...)` や CSS `@import` などのすべての URL はモジュールの依存関係のように解決されます。
+デフォルトでは [vue-loader](http://vue-loader.vuejs.org/en/) は css-loader および vue-template-compiler を用いて、スタイルやテンプレートファイルを処理します。このコンパイル処理の中で、`<img src="...">` や `background: url(...)` や CSS `@import` などのすべての URL はモジュールの依存関係のように解決されます。
 
 例えば、次のようなファイルがあるとします:
 
@@ -19,7 +19,7 @@ description: デフォルトでは、Nuxt はvue-loader、file-loader、url-load
 ----| index.vue
 ```
 
-CSS で `url('~assets/image.png')` と書いていたら、それは `require('~assets/image.png')` に変換されます。
+CSS で `url('~/assets/image.png')` と書いていたら、それは `require('~/assets/image.png')` に変換されます。
 
 あるいは `pages/index.vue` の中で下記のように書いていたとします:
 
@@ -35,7 +35,7 @@ CSS で `url('~assets/image.png')` と書いていたら、それは `require('~
 createElement('img', { attrs: { src: require('~assets/image.png') }})
 ```
 
-PNG ファイル JavaScript ファイルではないため、Nuxt.js は Webpack が PNG ファイルを扱えるように [file-loader](https://github.com/webpack/file-loader) と [url-loader](https://github.com/webpack/url-loader) を使う設定を行います。
+`.png` は JavaScript ファイルではないため、Nuxt.js は Webpack が PNG ファイルを扱えるように [file-loader](https://github.com/webpack/file-loader) と [url-loader](https://github.com/webpack/url-loader) を使う設定を行います。
 
 file-loader と url-loader を使用する利点:
 
@@ -71,7 +71,7 @@ file-loader と url-loader を使用する利点:
 
 ```html
 <template>
-  <img src="~assets/image.png">
+  <img src="~/assets/image.png">
 </template>
 ```
 

@@ -1,9 +1,9 @@
 ---
 title: Now を使ったデプロイ
-description: Now を使ってデプロイするには？
+description: Now へデプロイするには？
 ---
 
-# Now を使ってデプロイするには？
+# Now へデプロイするには？
 
 [now.sh](https://zeit.co/now) を使ってデプロイするには `package.json` を次のように記述することが推奨されます:
 

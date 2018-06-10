@@ -1,9 +1,9 @@
 ---
 title: Modules
-description: Modules are Nuxt.js extensions which can extend it's core functionality and add endless integrations.
+description: Modules are Nuxt.js extensions which can extend its core functionality and add endless integrations.
 ---
 
-> Modules are Nuxt.js extensions which can extend it's core functionality and add endless integrations.
+> Modules are Nuxt.js extensions which can extend its core functionality and add endless integrations.
 
 ## Introduction
 

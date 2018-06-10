@@ -74,3 +74,7 @@ export const actions = {
   }
 }
 ```
+
+## Listening to query string changes
+
+The fetch method **is not called** on query string changes by default. If you want to change this behavior, for example when building a pagination component, you can setup parameters that should be listened to through the `watchQuery` property of your page component. Learn more on the [API `watchQuery` page](/api/pages-watchquery).

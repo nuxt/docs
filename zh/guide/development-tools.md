@@ -70,7 +70,7 @@ import test from 'ava'
 import { Nuxt, Builder } from 'nuxt'
 import { resolve } from 'path'
 
-// 我们用两个变量保留 nuxt 和 server 实例的引用
+// 我们用一个变量保留 nuxt 和 server 实例的引用
 // 这样可以在单元测试结束之后关掉它们
 let nuxt = null
 
