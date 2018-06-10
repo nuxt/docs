@@ -75,6 +75,10 @@ Pour voir la liste des attributs disponibles dans `context`, jeter un œil à [l
 
 Vous pouvez utiliser l'objet du contexte injecté à la propriété `asyncData` afin d'accéder aux données des routes dynamiques. Par exemple, les données des routes dynamiques peuvent être accédées en utilisant le nom du fichier ou du dossier qui la configure. Si vous définissez un fichier nommé `_slug.vue`, vous pourrez y accéder via `context.params.slug`.
 
+### Écouter les changement de query
+
+La méthode `asyncData` **n'est pas appelée** sur la chaine de caractère de query par défaut. Si vous souhaitez changer ce comportement, par exemple quand vous construisez un composant de pagination, vous pouvez initialiser les paramètres qui devraient être écoutés avec la propriété `watchQuery` de votre page de composant. Consultez la page [de l'API `watchQuery`](/api/pages-watchquery) pour en savoir plus.
+
 ## Gestion des erreurs
 
 Nuxt.js ajoute la méthode `error(params)` au `context`, vous pouvez l'appeler pour afficher la page d'erreur. `params.statusCode` sera également utilisée pour faire le rendu avec le code de statut approprié côté serveur.

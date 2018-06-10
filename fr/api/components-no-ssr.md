@@ -33,10 +33,10 @@ description: Passe le rendu de composant du côté serveur et affiche un texte �
   <div>
     <sidebar />
     <no-ssr>
-      <!-- this component will only be rendered on client-side -->
+      <!-- ce composant sera uniquement rendu côté client -->
       <comments />
-  
-      <!-- loading indicator -->
+
+      <!-- indicateur de chargement -->
       <comments-placeholder slot="placeholder" />
     </no-ssr>
   </div>

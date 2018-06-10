@@ -246,12 +246,15 @@ actions: {
 ```
 
 ## Vuex Strict Mode
-Strict mode is enabled by default on dev mode and turned off in production mode. To disable strict mode in dev, 
+
+Strict mode is enabled by default on dev mode and turned off in production mode. To disable strict mode in dev, follow the below example.
 
 ### Module Mode
+
 `export const strict = false`
 
 ### Classic Mode
+
 ```
 import Vuex from 'vuex'
 

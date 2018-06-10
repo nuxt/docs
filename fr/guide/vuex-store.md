@@ -244,3 +244,33 @@ actions: {
   }
 }
 ```
+
+## Mode stric de Vuex
+
+Le mode strict est activé par défaut sur le mode développement et est désactivé par défaut sur le mode production. Désactivez le mode strict en développement en procédent comme ci-après.
+
+### Module Mode
+
+`export const strict = false`
+
+### Classic Mode
+
+```
+import Vuex from 'vuex'
+
+const createStore = () => {
+  return new Vuex.Store({
+    strict: false,
+    state: {
+      counter: 0
+    },
+    mutations: {
+      increment (state) {
+        state.counter++
+      }
+    }
+  })
+}
+
+export default createStore
+```

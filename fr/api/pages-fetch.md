@@ -74,3 +74,7 @@ export const actions = {
   }
 }
 ```
+
+### Écouter les changement de query
+
+La méthode `fetch` **n'est pas appelée** sur la chaine de caractère de query par défaut. Si vous souhaitez changer ce comportement, par exemple quand vous construisez un composant de pagination, vous pouvez initialiser les paramètres qui devraient être écoutés avec la propriété `watchQuery` de votre page de composant. Consultez la page [de l'API `watchQuery`](/api/pages-watchquery) pour en savoir plus.
