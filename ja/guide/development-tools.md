@@ -28,7 +28,7 @@ npm install --save-dev ava jsdom
 },
 "babel": {
   "presets": [
-    "es2015"
+    "env"
   ]
 }
 ```
@@ -162,7 +162,7 @@ module.exports = {
 }
 ```
 
-次に、 `package.json` に `lint` と `lintfix` スクリプトを追加することができます :
+そして、`lint` と `lintfix` スクリプトを `package.json` に追加することができます:
 
 ```js
 "scripts": {
@@ -171,7 +171,7 @@ module.exports = {
 }
 ```
 
-エラーの確認に `lint` を実行できます:
+エラーを確認するために、`lint` を実行できます:
 
 ```bash
 npm run lint
@@ -183,9 +183,9 @@ npm run lint
 npm run lintfix
 ```
 
-ESLint は `.gitignore` に定義されたファイルを無視しつつ、それ以外のすべての JavaScript と Vue ファイルを lint します。
+ESLint は `.gitignore` に定義されたファイルを無視しますが、それ以外の全ての JavaScript と Vue ファイルを lint します。
 
-webpackを用いてホットリローディングモードで ESLint を有効にすることをお勧めします。この方法で ESLint は `npm run dev` 中に実行されます。`nuxt.config.js` に以下のコードを追加してください:
+また、Webpack を使用してホットリロードモードで ESLint を有効にすることをお勧めします。この方法で ESLint は `npm run dev` 中に保存で実行されます。`nuxt.config.js` に以下を追加してください：
 
 ```
 ...
@@ -210,4 +210,4 @@ webpackを用いてホットリローディングモードで ESLint を有効�
   }
 ```
 
-<p class="Alert Alert--info">`"precommit": "npm run lint"` を package.json に追加してコードをコミットする前に自動的に lint するのはベストプラクティスのひとつです。</p>
+<p class="Alert Alert--info">package.json に `"precommit": "npm run lint"` を追加してコードをコミットする前に自動的に lint するのはベストプラクティスのひとつです。</p>
