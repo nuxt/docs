@@ -76,7 +76,7 @@ You can use the context object injected into the `asyncData` property to access 
 
 ### Listening to query changes
 
-The asyncData method **is not called** on query string changes by default. If you want to change this behavior, for example when building a pagination component, you can setup parameters that should be listened to through the `watchQuery` property of your page component. Learn more on the [API `watchQuery` page](/api/pages-watchquery).
+The `asyncData` method **is not called** on query string changes by default. If you want to change this behavior, for example when building a pagination component, you can setup parameters that should be listened to through the `watchQuery` property of your page component. Learn more on the [API `watchQuery` page](/api/pages-watchquery).
 
 ## Handling Errors
 

@@ -7,7 +7,7 @@ description: Nuxt utilise vue-loader, file-loader et url-loader avec webpack par
 
 ## Avec webpack
 
-Par défaut, [vue-loader](http://vue-loader.vuejs.org/en/) traite automatiquement vos fichiers de styles et vos templates à l'aide de `css-loader` et du compilateur de template de Vue. Dans ce processus de compilation, toutes les URL des fichiers comme `<img src="...">`, `background: url(...)` et les CSS `@import` sont résolus en tant que dépendances des modules.
+Par défaut, [vue-loader](http://vue-loader.vuejs.org/) traite automatiquement vos fichiers de styles et vos templates à l'aide de `css-loader` et du compilateur de template de Vue. Dans ce processus de compilation, toutes les URL des fichiers comme `<img src="...">`, `background: url(...)` et les CSS `@import` sont résolus en tant que dépendances des modules.
 
 Imaginons par exemple cette arborescence :
 

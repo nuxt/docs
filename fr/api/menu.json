@@ -22,7 +22,8 @@
           { "name": "Fonction", "to": "#fonction" }
         ]
       },
-      { "name": "validate", "to": "/pages-validate" }
+      { "name": "validate", "to": "/pages-validate" },
+      { "name": "watchQuery", "to": "/pages-watchquery" }
     ]
   },
   {

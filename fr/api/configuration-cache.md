@@ -3,7 +3,7 @@ title: "API: The cache Property"
 description: Nuxt.js use lru-cache to allow cached components for better render performances
 ---
 
-# The cache Property
+# The cache Property (EN)
 
 > Nuxt.js use [lru-cache](https://github.com/isaacs/node-lru-cache) to allow cached components for better render performances
 
@@ -11,7 +11,7 @@ description: Nuxt.js use lru-cache to allow cached components for better render 
 
 - Type: `Boolean` or `Object` (Default: `false`)
 
-If an object, see [lru-cache options](https://github.com/isaacs/node-lru-cache#options).
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>If an object, see [lru-cache options](https://github.com/isaacs/node-lru-cache#options).</p>
 
 Use the `cache` key in your `nuxt.config.js`:
 ```js
