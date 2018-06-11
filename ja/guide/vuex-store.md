@@ -244,3 +244,28 @@ actions: {
   }
 }
 ```
+
+## Vuex Strict モード
+
+Strict モードは dev モードではデフォルトで有効化されており、production モードでは無効化されています。strict モードを dev で無効化するには、
+
+### モジュールモード
+
+`export const strict = false`
+
+### クラシックモード
+
+```
+import Vuex from 'vuex'
+const store = () => new Vuex.Store({
+  state: {
+    counter: 0
+  },
+  mutations: {
+    increment (state) {
+      state.counter++
+    }
+  }
+})
+export default store
+```
