@@ -243,6 +243,7 @@ actions: {
     await dispatch('core/load')
   }
 }
+```
 
 ## Vuex Strict Mode
 
