@@ -9,7 +9,7 @@ description: ユニバーサルなウェブアプリケーションから静的�
 
 > ユニバーサルなウェブアプリケーションから静的なウェブアプリケーションの生成について設定します。
 
-`nuxt generate` コマンドを実行するか `nuxt.generate()` を呼び出したとき、Nuxt.js は `generete` プロパティで定義された設定を使います。
+`nuxt generate` コマンドを実行するか `nuxt.generate()` を呼び出したとき、Nuxt.js は `generate` プロパティで定義された設定を使います。
 
 ## dir
 

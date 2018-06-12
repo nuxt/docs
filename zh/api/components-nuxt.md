@@ -5,7 +5,7 @@ description: 该组件用于在布局中显示页面组件（即非布局内容�
 
 # &lt;nuxt&gt; 组件
 
-> 该组件只适用于在[布局]((/guide/views#布局))中显示页面组件（即非布局内容）。
+> 该组件只适用于在[布局](/guide/views#布局)中显示页面组件（即非布局内容）。
 
 例如 (`layouts/default.vue`)：
 

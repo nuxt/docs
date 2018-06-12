@@ -47,7 +47,7 @@ createElement('img', { attrs: { src: require('~assets/image.png') }})
     test: /\.(png|jpe?g|gif|svg)$/,
     loader: 'url-loader',
     query: {
-      limit: 1000, // 1KO
+      limit: 1000, // 1KB
       name: 'img/[name].[hash:7].[ext]'
     }
   },
@@ -55,7 +55,7 @@ createElement('img', { attrs: { src: require('~assets/image.png') }})
     test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
     loader: 'url-loader',
     query: {
-      limit: 1000, // 1 KO
+      limit: 1000, // 1 KB
       name: 'fonts/[name].[hash:7].[ext]'
     }
   }

@@ -28,7 +28,7 @@ Then add a test script to our `package.json` and configure AVA to compile files 
 },
 "babel": {
   "presets": [
-    "es2015"
+    "env"
   ]
 }
 ```
@@ -161,7 +161,7 @@ module.exports = {
 }
 ```
 
-Then, you can add a `lint` and `lintfix` scripts in your `package.json`:
+Then, you can add `lint` and `lintfix` scripts to your `package.json`:
 
 ```js
 "scripts": {
@@ -170,7 +170,7 @@ Then, you can add a `lint` and `lintfix` scripts in your `package.json`:
 }
 ```
 
-You can now launch `lint` to just check for errors:
+You can now launch `lint` to check for errors:
 
 ```bash
 npm run lint
@@ -182,9 +182,9 @@ or `lintfix` to also fix those which are doable
 npm run lintfix
 ```
 
-ESLint will lint every of your JavaScript and Vue files while ignoring your ignored files defined in your `.gitignore`.
+ESLint will lint all of your JavaScript and Vue files while ignoring your ignored files defined in your `.gitignore`.
 
-It is also recommended to enable ESLint at hot reloading mode via webpack. This way ESLint will run on save during `npm run dev`. Just add the following to your `nuxt.config.js`:
+It is also recommended to enable ESLint hot reloading mode via webpack. This way ESLint will run on save during `npm run dev`. Just add the following to your `nuxt.config.js`:
 
 ```
 ...

@@ -9,6 +9,22 @@ description: Nuxt.js uses its own component to show a progress bar between the r
 
 > Nuxt.js uses its own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
 
+In your component you can use `this.$nuxt.$loading.start()` to start the loading bar and `this.$nuxt.$loading.finish()` to finish it.
+
+```javascript
+export default {
+  mounted () {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 500)
+    })
+  }
+ }
+```
+
+> If you want to start it in the `mounted` method, make sure to use ` this.$nextTick`, because $loading may not be available immediately. 
+
 ## Disable the Progress Bar
 
 - Type: `Boolean`

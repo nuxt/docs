@@ -40,7 +40,7 @@ Adds to `options.build.vendor` and apply unique filter.
 
 ### addTemplate (template)
 
-- **template**: `String` ou `Object`
+- **template**: `String` or `Object`
     - `src`
     - `options`
     - `fileName`

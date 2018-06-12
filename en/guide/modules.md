@@ -1,9 +1,9 @@
 ---
 title: Modules
-description: Modules are Nuxt.js extensions which can extend it's core functionality and add endless integrations.
+description: Modules are Nuxt.js extensions which can extend its core functionality and add endless integrations.
 ---
 
-> Modules are Nuxt.js extensions which can extend it's core functionality and add endless integrations.
+> Modules are Nuxt.js extensions which can extend its core functionality and add endless integrations.
 
 ## Introduction
 
@@ -279,27 +279,27 @@ Your module may need to do things only on specific conditions not just during Nu
 ```js
 module.exports = function () {
   // Add hook for modules
-  this.nuxt.plugin('module', moduleContainer => {
+  this.nuxt.hook('module', moduleContainer => {
     // This will be called when all modules finished loading
   })
 
   // Add hook for renderer
-  this.nuxt.plugin('renderer', renderer => {
+  this.nuxt.hook('renderer', renderer => {
     // This will be called when renderer was created
   })
 
   // Add hook for build
-  this.nuxt.plugin('build', async builder => {
+  this.nuxt.hook('build', async builder => {
     // This will be called once when builder created
 
     // We can even register internal hooks here
-    builder.plugin('compile', ({compiler}) => {
+    builder.hook('compile', ({compiler}) => {
         // This will be run just before webpack compiler starts
     })
   })
 
   // Add hook for generate
-  this.nuxt.plugin('generate', async generator => {
+  this.nuxt.hook('generate', async generator => {
     // This will be called when a Nuxt generate starts
   })
 }

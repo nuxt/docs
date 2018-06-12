@@ -226,7 +226,7 @@ module.exports = {
 }
 ```
 
-通过以上配置，当运行 `nuxt build` 时，`.nuxt/dist/` 目录内的内容会被上传至指定的 CDN 路径。
+通过以上配置，当运行 `nuxt build` 时，再将`.nuxt/dist/`目录的内容上传到您的CDN，然后瞧！
 
 ## vendor
 

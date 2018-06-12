@@ -9,7 +9,7 @@ description: 2016年10月25日 zeit.co のチームが React アプリケーシ�
 
 ## Nuxt.js とは何か？
 
-Nuxt.js とはユニバーサルな Vue.js アプリケーションを構築するためのフレームワークです。
+Nuxt.js はユニバーサルな Vue.js アプリケーションを構築するためのフレームワークです。
 
 サーバサイドとクライアントサイドの違いを抽象化することで無視して、一貫した方法で **UIレンダリングすること** に焦点を当てています。
 
@@ -104,10 +104,10 @@ Nuxt.js をプロジェクトの UI レンダリング全体を担うフレー�
 
 私たちは [docs リポジトリ](https://github.com/nuxt/docs) を更新するたびに毎回手動でアプリケーションを生成するのは面倒だったので、AWS Lambda function から生成機能を実行しています:
 
-1. [nuxtjs.org リポジトリ](https://github.com/nuxt/nuxtjs.org) をクローンする
-2. `npm install` で依存しているパッケージをインストールする
+1. [nuxtjs.org リポジトリ](https://github.com/nuxt/nuxtjs.org)をクローンする
+2. `npm install` で依存関係のあるパッケージをインストールする
 3. `nuxt generate` を実行する
-4. `dist` フォルダーを `gh-pages` ブランチにプッシュする
+4. `gh-pages` ブランチに `dist` フォルダをプッシュする
 
 こうして私たちは **サーバーレスで静的に生成されたウェブアプリケーション** を手に入れたのでした。:)
 

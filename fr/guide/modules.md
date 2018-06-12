@@ -276,27 +276,27 @@ Votre module peut avoir besoin de choses seulement sous certaines conditions et 
 ```js
 module.exports = function () {
   // Ajoute un point d'ancrage au module
-  this.nuxt.plugin('module', moduleContainer => {
+  this.nuxt.hook('module', moduleContainer => {
     // Ceci sera appelé quand tous les modules auront fini d'être chargés
   })
 
   // Ajoute un point d'ancrage au moteur de rendu
-  this.nuxt.plugin('renderer', renderer => {
+  this.nuxt.hook('module', moduleContainer => {
     // Ceci sera appelé quand le moteur de rendu aura été créé
   })
 
   // Ajoute un point d'ancrage au build
-  this.nuxt.plugin('build', async builder => {
+  this.nuxt.hook('build', async builder => {
     // Ceci sera appelé une fois le build fait
 
     // On peut également enregistrer des points d'ancrage interne ici
-    builder.plugin('compile', ({compiler}) => {
+    builder.hook('compile', ({compiler}) => {
         // Ceci sera lancé juste avant que le compilateur de webpack démarre
     })
   })
 
   // Ajoute un point d'ancrage à la génération
-  this.nuxt.plugin('generate', async generator => {
+  this.nuxt.hook('generate', async generator => {
     // Ceci sera appelé quand la génération de Nuxt va commencer
   })
 }

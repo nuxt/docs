@@ -5,7 +5,7 @@ description: Heroku へデプロイするには？
 
 # Heroku へデプロイするには？
 
-[Node.js 用の Heroku ドキュメント](https://devcenter.heroku.com/articles/nodejs-support) をお読みになることをお勧めします。
+[Node.js 向けの Heroku のドキュメント ](https://devcenter.heroku.com/articles/nodejs-support)を読むことをお勧めします。
 
 まず `npm run build` を実行できるようにするために、Heroku にプロジェクトの `devDependencies` をインストールすることを伝える必要があります:
 

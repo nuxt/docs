@@ -5,7 +5,7 @@ description: "The 25th of October 2016, the team behind zeit.co, announced Next.
 
 > The 25th of October 2016, the team behind [zeit.co](https://zeit.co/), announced [Next.js](https://zeit.co/blog/next), a framework for server-rendered React applications. A few hours after the announcement, the idea of creating server-rendered [Vue.js](https://vuejs.org) applications the same way as Next.js was obvious: **Nuxt.js** was born.
 
-## What is Nuxt.js ?
+## What is Nuxt.js?
 
 Nuxt.js is a framework for creating Universal Vue.js Applications.
 
@@ -101,12 +101,12 @@ The best example is this website. It is generated and hosted on GitHub Pages:
 - [Source code](https://github.com/nuxt/nuxtjs.org)
 - [Generated code](https://github.com/nuxt/nuxtjs.org/tree/gh-pages)
 
-We don't want to manually generate the application every time we update the [docs repository](https://github.com/nuxt/docs), so each push made calls an AWS Lambda function which:
+We don't want to manually generate the application every time we update the [docs repository](https://github.com/nuxt/docs), so each push made calls to an AWS Lambda function which:
 
-1. Clone the [nuxtjs.org repository](https://github.com/nuxt/nuxtjs.org)
-2. Install the dependencies via `npm install`
-3. Run `nuxt generate`
-4. Push the `dist` folder to the `gh-pages` branch
+1. Clones the [nuxtjs.org repository](https://github.com/nuxt/nuxtjs.org)
+2. Installs the dependencies via `npm install`
+3. Runs `nuxt generate`
+4. Pushes the `dist` folder to the `gh-pages` branch
 
 We now have a **Serverless Static Generated Web Application** :)
 
