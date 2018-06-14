@@ -247,7 +247,7 @@ actions: {
 
 ## Vuex Strict モード
 
-Strict モードは dev モードではデフォルトで有効化されており、production モードでは無効化されています。strict モードを dev で無効化するには、
+Strict モードは dev モードではデフォルトで有効化されており、production モードでは無効化されています。strict モードを dev で無効化するには、以下の例を参照してください。
 
 ### モジュールモード
 
