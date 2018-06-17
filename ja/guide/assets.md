@@ -25,14 +25,14 @@ CSS で `url('~/assets/image.png')` と書いていたら、それは `require('
 
 ```html
 <template>
-  <img src="~assets/image.png">
+  <img src="~/assets/image.png">
 </template>
 ```
 
 それは次のようにコンパイルされます:
 
 ```js
-createElement('img', { attrs: { src: require('~assets/image.png') }})
+createElement('img', { attrs: { src: require('~/assets/image.png') }})
 ```
 
 `.png` は JavaScript ファイルではないため、Nuxt.js は Webpack が PNG ファイルを扱えるように [file-loader](https://github.com/webpack/file-loader) と [url-loader](https://github.com/webpack/url-loader) を使う設定を行います。
