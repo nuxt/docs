@@ -312,3 +312,21 @@ module.exports = {
   }
 }
 ```
+
+## profile
+
+## maxChunkSize
+
+## parallel
+
+## cache
+
+## styleResources
+
+## optimization
+
+## splitChunks
+
+## transpile
+
+## vueLoader

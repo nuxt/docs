@@ -71,3 +71,5 @@ This can be useful to dynamically enable/disable SSR on runtime after image buil
   - Default: `{}`
 
 See [serve-static](https://www.npmjs.com/package/serve-static) docs for possible options.
+
+## csp

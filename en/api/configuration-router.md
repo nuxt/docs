@@ -191,4 +191,10 @@ module.exports = {
 }
 ```
 
+## parseQuery
+
+## stringifyQuery
+
+## fallback
+
 > This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
