@@ -229,4 +229,7 @@ _Note: this option could be useful using [Netlify](https://netlify.com) or any s
 
 ## concurrency
 
-## env
+- Type: `Number`
+- Default: `500`
+
+The generation of routes are concurrent, `generate.concurrency` specifies the amount of routes that run in one thread.
