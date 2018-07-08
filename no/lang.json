@@ -1,0 +1,51 @@
+{
+  "iso": "no",
+  "docVersion": "1.4.0",
+  "links": {
+    "api": "API",
+    "blog": "Blogg",
+    "chat": "Chat",
+    "documentation": "Dokumentasjon",
+    "download": "Last ned",
+    "examples": "Eksempler",
+    "ecosystem": "Økosystem",
+    "faq": "FAQ",
+    "get_started": "kom i gang",
+    "github": "GitHub",
+    "guide": "Guide",
+    "homepage": "Hjem",
+    "live_demo": "Live demo",
+    "live_edit": "Live redigering",
+    "twitter": "Twitter",
+    "vuejs": "Vue.js",
+    "vue_jobs": "Vue jobber"
+  },
+  "text": {
+    "an_error_occured": "Det har skjedd en feil",
+    "api_page_not_found": "API - fant ikke siden",
+    "example_file": "Eksempelfiler",
+    "please_wait": "Vennligst vent...",
+    "please_define_title": "Vennligst angi en tittel",
+    "please_define_description": "Vennligst angi en beskrivelse",
+    "search": "Søk",
+    "version": "Versjon"
+  },
+  "homepage": {
+    "title": "Universelle Vue.js-applikasjoner",
+    "meta": {
+      "title": "Nuxt.js - Universelle Vue.js-applikasjoner",
+      "description": "Nuxt.js er et minimalistisk rammeverk for å lage Vue.js-applikasjoner med server side rendering, code-splitting, hot-reloading, statisk generering og mer!"
+    }
+  },
+  "footer": {
+    "authors": "Laget av Chopin-brødrene"
+  },
+  "guide": {
+    "release_notes": "Release Notes",
+    "contribute": "Har du funnet en feil eller ønsker å bidra med dokumentering?",
+    "edit_on_github": "Redigér denne siden på GitHub!"
+  },
+  "examples": {
+    "source_code": "Kildekode"
+  }
+}
