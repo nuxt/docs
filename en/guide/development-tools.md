@@ -121,7 +121,7 @@ jsdom has some limitations because it does not use a browser. However, it will c
 
 > [ESLint](http://eslint.org) is a great tool to keep your code clean.
 
-> [Prettier](prettier.io) is a very popular code formatter.
+> [Prettier](http://prettier.io) is a very popular code formatter.
 
 You can add ESLint with Prettier pretty easily with Nuxt.js, first, you need to add the npm dependencies:
 
