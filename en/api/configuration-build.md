@@ -315,18 +315,114 @@ module.exports = {
 
 ## profile
 
-## maxChunkSize
+- Type: `Boolean`
+- Default: enabled by command line argument `--profile`
+
+Enable the profiler in [WebpackBar](https://github.com/nuxt/webpackbar#profile)
 
 ## parallel
 
+- Type: `Boolean`
+- Default: `false`
+
+Enable [thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) in webpack building
+
 ## cache
+
+- Type: `Boolean`
+- Default: `false`
+
+Enable cache of [uglifyjs-webpack-plugin ](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
 
 ## styleResources
 
+- Type: `Object`
+- Default: `{}`
+
+This is useful when you need to inject some variables and mixins in your pages without having to import them every time.
+
+Nuxt.js uses https://github.com/yenshih/style-resources-loader to achieve this behaviour.
+
+You need to specify the patterns/path you want to include for the given pre-processors: `less`, `sass`, `scss` or `stylus`
+
+:warning: You cannot use path aliases here (`~` and `@`), you need to use relative or absolute paths.
+
+`nuxt.config.js`:
+
+```js
+{
+  build: {
+    styleResources: {
+      scss: './assets/variables.scss',
+      less: './assets/*.less',
+      // sass: ...,
+      // scss: ...
+      options: {
+        // See https://github.com/yenshih/style-resources-loader#options
+        // Except `patterns` property
+      }
+    }
+  }
+}
+```
+
 ## optimization
+
+- Type: `Object`
+- Default:
+
+  ```js
+  {
+    splitChunks: {
+      chunks: 'all',
+      automaticNameDelimiter: '.',
+      name: undefined,
+      cacheGroups: {}
+    }
+  }
+  ```
+
+The default value of `splitChunks.name` is `true` in `dev` or `analyze` mode.
+
+Webpack [optimization](https://webpack.js.org/configuration/optimization/)
 
 ## splitChunks
 
+- Type: `Object`
+- Default:
+
+  ```js
+  {
+    layouts: false,
+    pages: true,
+    commons: true
+  }
+  ```
+
+If split codes for `layout`, `pages` and `commons`(common libs: vue|vue-loader|vue-router|vuex...)
+
 ## transpile
 
+- Type: `Array<string | RegExp>`
+- Default: `[]`
+
+If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Item in transpile can be string or regex object for matching dependencies file name.
+
 ## vueLoader
+
+- Type: `Object`
+- Default
+
+  ```js
+  {
+    productionMode: !this.options.dev,
+    transformAssetUrls: {
+      video: 'src',
+      source: 'src',
+      object: 'src',
+      embed: 'src'
+    }
+  }
+  ```
+
+Specify the [Vue Loader Options](https://vue-loader.vuejs.org/options.html)
