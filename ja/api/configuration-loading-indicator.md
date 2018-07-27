@@ -1,19 +1,18 @@
 ---
-title: "API: The loading indicator Property"
-description: Show fancy loading indicator while SPA page is loading!
+title: "API: Loading indicator プロパティ"
+description: SPA のページ読み込み中に素敵なローディングインジケータを表示します！
 ---
 
-# The loadingIndicator Property
+# LoadingIndicator プロパティ
 
-> Show fancy loading indicator while SPA page is loading!
+> SPA のページ読み込み中に素敵なローディングインジケータを表示します！
 
-When running nuxt.js in SPA mode, there is no content from the server side on the first page load,
-So instead of showing a blank page while the page loads, we may show a spinner.
+SPA モードで Nuxt.js を実行すると、はじめのページ読み込み時にはサーバーからのコンテンツがないため、ページが読み込まれている間に空白のページの代わりとしてスピナーを表示することがあるでしょう。
 
-This property can have 3 different types: `string` or `false` or `object`.
-If a string value is provided it is converted to object style.
+このプロパティには、 `string`, `false`, `object` の 3 ついずれかの型を持つことができます。
+文字列が与えられた場合には、オブジェクトへと変換されます。
 
-Default value is: 
+デフォルト値:
 ```js
 {
   name: 'circle',
@@ -22,10 +21,10 @@ Default value is:
 }
 ```
 
-## Built-in Indicators
+## 内蔵されているインジケータ
 
-This indicators are ported from awesome [Spinkit](http://tobiasahlin.com/spinkit) project.
-You can use it's demo page to preview spinners.
+このインジケータは、素晴らしい [Spinkit](http://tobiasahlin.com/spinkit) プロジェクトから移植されています。
+Spinkit のデモページを見ることで、スピナーを試してみることができます。
 
 - circle
 - cube-grid
@@ -39,11 +38,11 @@ You can use it's demo page to preview spinners.
 - three-bounce
 - wandering-cubes
 
-Built-in indicators support `color` and `background` options.
+内蔵インジケータは、 `color` および `background` オプションをサポートしています。
 
-## Custom indicators
+## カスタムインジケータ
 
-If you need your own special indicator, a String value or Name key can also be a path to an html template of indicator source code!
-All of the options are passed to the template too.
+もし独自の特別なインジケータを必要とする場合は、 String 値もしくは Name キーにインジケータのソースコードを HTML テンプレートへのパスとして設定することができます！
+その際、全てのオプションもテンプレートへと渡されます。
 
-Nuxt Built-ins [source code](https://github.com/nuxt/nuxt.js/tree/dev/lib/app/views/loading) is also available if you need a base!
+ベースが必要な場合は、 Nuxt の組み込み[ソースコード]((https://github.com/nuxt/nuxt.js/tree/dev/lib/app/views/loading)をベースとして使用できます。
