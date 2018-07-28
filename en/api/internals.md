@@ -13,7 +13,7 @@ This section helps getting familiar to Nuxt internals and can be used as a refer
 
 ### Core
 
-These classes are the hearth of Nuxt and should exist on both runtime and build time.
+These classes are the heart of Nuxt and should exist on both runtime and build time.
 
 #### Nuxt
 
