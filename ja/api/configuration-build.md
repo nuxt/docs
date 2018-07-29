@@ -248,7 +248,7 @@ module.exports = {
 
 > Nuxt.jsでは、設定に基づいてレンダリングされる独自のテンプレートを提供できます。 この機能は[モジュール](/guide/modules)を使用する場合にとりわけ便利です。
 
-- Type: `Array`
+- タイプ: `配列`
 
 例 (`nuxt.config.js`):
 
