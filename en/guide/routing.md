@@ -4,15 +4,16 @@ description: Nuxt.js use the file-system to generate the routes of your web appl
 ---
 
 > Nuxt.js automatically generates the [vue-router](https://github.com/vuejs/vue-router) configuration based on your file tree of Vue files inside the `pages` directory.
-> These routes can be used in your template with [`nuxt-link`](https://nuxtjs.org/api/components-nuxt-link#the-lt-nuxt-link-gt-component) and [vue-router](https://router.vuejs.org/guide/#html).  For example:
-```
+
+<div class="Alert Alert--grey">To navigate between pages, we recommend to use [`<nuxt-link>`](/api/components-nuxt-link) component.</div>
+
+For example:
+
+```html
 <template>
   <nuxt-link to="/">Home page</nuxt-link>
 </template>
 ```
-
-
-<div class="Alert Alert--grey">To navigate between pages, we recommend to use the [`<nuxt-link>`](/api/components-nuxt-link) component.</div>
 
 ## Basic Routes
 
