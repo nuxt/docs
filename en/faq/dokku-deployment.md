@@ -41,6 +41,12 @@ Then, we tell Dokku to launch `npm run build` via the `scripts.dokku.predeploy` 
 }
 ```
 
+To launch the application we run `npm run start` using the [Procfile](http://dokku.viewdocs.io/dokku/deployment/methods/dockerfiles/#procfiles-and-multiple-processes):
+
+```
+web: npm run start
+```
+
 Finally, we can push our app on Dokku with:
 
 ```bash
