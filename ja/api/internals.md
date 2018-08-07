@@ -1,5 +1,5 @@
 ---
-title: "API: Nuxt のモジュールの紹介"
+title: 'API: Nuxt のモジュールの紹介'
 description: Nuxt の内部をより深く理解する
 ---
 
@@ -101,7 +101,7 @@ class FooClass extends Tapable {
 `foo` モジュールにフックするにはこうします:
 
 ```js
-nuxt.plugin('foo', foo => {
+nuxt.hook('foo', foo => {
     // ...
 })
 ```
