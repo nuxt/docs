@@ -1,5 +1,5 @@
 ---
-title: "API: dev プロパティ"
+title: 'API: dev プロパティ'
 description: 開発モードかプロダクションモードかを指定します。
 ---
 
@@ -41,7 +41,7 @@ app.use(nuxt.render)
 
 // 開発モードのときのみビルドする
 if (config.dev) {
-  nuxt.build()
+  new Builder(nuxt).build()
   .catch((error) => {
     console.error(error)
     process.exit(1)
@@ -49,8 +49,9 @@ if (config.dev) {
 }
 
 // サーバーを Listen する
-app.listen(port, '0.0.0.0')
-console.log('Server listening on localhost:' + port)
+app.listen(port, '0.0.0.0').then(() => {
+  nuxt.showOpen()
+})
 ```
 
 それから `package.json` に次のように書きます:
