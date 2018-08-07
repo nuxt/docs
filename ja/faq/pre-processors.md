@@ -23,6 +23,12 @@ module.exports = data: ->
 .red
   color: red
 </style>
+
+<style lang="scss">
+.red {
+  color: red
+}
+</style>
 ```
 
 これらのプリプロセッサを使うために Webpack のローダーをインストールする必要があります。
