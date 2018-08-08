@@ -11,7 +11,6 @@ description: Nuxt.js の plugins オプションで Vue.js プラグインを使
 オブジェクトの場合にはプロパティは次のとおり:
 
 - src: `文字列`（ファイルパス）
-- injectAs: `文字列`（デフォルトは `false`）*設定されている場合は、エクスポートされたプラグインのオブジェクトが、ルートのアプリケーションとコンテキストに挿入されます*
 - ssr: `ブーリアン`（デフォルトは `true`）*false のときは、クライアントサイドでのみファイルがインクルードされます*
 
 > plugins プロパティを使うと Vue.js プラグインをメインアプリケーションに簡単に追加できます。
@@ -20,7 +19,7 @@ description: Nuxt.js の plugins オプションで Vue.js プラグインを使
 
 ```js
 module.exports = {
-  plugins: ['~plugins/vue-notifications']
+  plugins: ['~/plugins/vue-notifications']
 }
 ```
 

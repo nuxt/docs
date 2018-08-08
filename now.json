@@ -1,11 +1,8 @@
 {
   "name": "docs-api",
-  "aliases": [
+  "alias": [
     "docs.api.nuxtjs.org"
   ],
-  "engines": {
-    "node": "7.4.0"
-  },
   "env": {
     "NODE_ENV": "production",
     "GITHUB_TOKEN": "@docs-api-github-token",

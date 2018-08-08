@@ -1,5 +1,5 @@
 ---
-title: "API: build プロパティ"
+title: 'API: build プロパティ'
 description: Nuxt.js ではウェブアプリケーションを自由にビルドできるよう Webpack 設定をカスタマイズできます。
 ---
 
@@ -37,13 +37,14 @@ module.exports = {
 > JS や Vue ファイルのために babel の設定をカスタマイズします。
 
 - タイプ: `オブジェクト`
+
 - デフォルト:
 
-```js
-{
-  presets: ['vue-app']
-}
-```
+    ```js
+    {
+      presets: ['vue-app']
+    }
+    ```
 
 例（`nuxt.config.js`）:
 
@@ -62,7 +63,7 @@ module.exports = {
 - タイプ: `ブーリアン`
 - デフォルト: 開発モードでは `true` でプロダクションモードでは `false`
 
-> Enables CSS Source Map support
+> CSS ソースマップのサポートを有効にします。
 
 ## devMiddleware
 
@@ -100,7 +101,7 @@ module.exports = {
 
 ## extractCSS
 
-> Vue のサーバーサイドレンダリングを利用して、共通の CSS を抽出できるようにします [guidelines](https://ssr.vuejs.org/en/css.html)
+> Vue のサーバーサイドレンダリング [ガイドライン](https://ssr.vuejs.org/en/css.html)を利用して、共通の CSS を抽出できるようにします。
 
 - タイプ: `ブーリアン`
 - デフォルト: `false`
@@ -112,17 +113,18 @@ CSS を抽出して、メインのチャンクに独立した CSS ファイル�
 > バンドルのファイル名をカスタマイズします。
 
 - タイプ: `オブジェクト`
+
 - デフォルト:
 
-```js
-{
-  css: 'common.[contenthash].css',
-  manifest: 'manifest.[hash].js',
-  vendor: 'common.[chunkhash].js',
-  app: 'app.[chunkhash].js',
-  chunk: '[name].[chunkhash].js'
-}
-```
+    ```js
+    {
+      css: 'common.[contenthash].css',
+      manifest: 'manifest.[hash].js',
+      vendor: 'common.[chunkhash].js',
+      app: 'app.[chunkhash].js',
+      chunk: '[name].[chunkhash].js'
+    }
+    ```
 
 この例ではチャンク名を数値の ID に変更します（`nuxt.config.js`）:
 
@@ -136,13 +138,13 @@ module.exports = {
 }
 ```
 
-manifest や vendor についての利用についてより深く理解するには [Webpack のドキュメント](https://webpack.js.org/guides/code-splitting-libraries/) を参照してください。
+manifest や vendor の使い方をより理解するためには [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/) を参照してください。
 
 ## hotMiddleware
 
 - タイプ: `オブジェクト`
 
-利用可能なオプションは [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) を参照してください。
+利用できるオプションは [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) を参照してください。
 
 ## plugins
 
@@ -173,19 +175,19 @@ module.exports = {
 
 - タイプ: `配列`、`オブジェクト`（推奨）、`関数` または `ブーリアン`
 
-**Note:** While default preset is OK and flexible enough for normal use cases, the recommended usage by [`vue-loader`](https://vue-loader.vuejs.org/en/options.html#postcss) is using `postcss.config.js` file in your project. By creating that file it will be automatically detected and this option is ignored.
+    **注意：**デフォルトのプリセットは OK で、通常使いには十分柔軟ですが、推奨使用方法はプロジェクト内の `postcss.config.js` ファイルで [`vue-loader`](https://vue-loader.vuejs.org/en/options.html#postcss) を使用することです。 このファイルを作成するとにより自動的に検出され、このオプションは無視されます。
 
 - デフォルト:
 
-```js
-{
-  plugins: {
-  'postcss-import': {},
-  'postcss-url': {},
-  'postcss-cssnext': {}
-  }
-}
-```
+    ```js
+    {
+      plugins: {
+      'postcss-import': {},
+      'postcss-url': {},
+      'postcss-cssnext': {}
+      }
+    }
+    ```
 
 例（`nuxt.config.js`）:
 
@@ -194,17 +196,17 @@ module.exports = {
   build: {
     postcss: {
       plugins: {
-        // Disable `postcss-url`
+        // `postcss-url` の無効化
       'postcss-url': false,
 
-      // Customize `postcss-cssnext` default options
+      // `postcss-cssnext` のデフォルトオプションをカスタマイズする
       'postcss-cssnext': {
         features: {
           customProperties: false
         }
       }
 
-      // Add some plugins
+      // plugin の追加
       'postcss-nested': {},
       'postcss-responsive-type': {},
       'postcss-hexrgba': {}
@@ -216,7 +218,7 @@ module.exports = {
 
 ## publicPath
 
-> 最高のパフォーマンスを発揮させるために dist ディレクトリ内のファイルを CDN へアップロードできます。そのためには単に `publicPath` に利用する CDN をセットするだけです。
+> CDN に `publicPath` をセットすると、Nuxt.js は dist ディレクトリ内のファイルを CDN へアップロードし最大のパフォーマンスを発揮します。
 
 - タイプ: `文字列`
 - デフォルト: `'/_nuxt/'`
@@ -235,30 +237,29 @@ module.exports = {
 
 ## ssr
 
-> Creates special webpack bundle for SSR renderer.
+> SSR レンダラー用の webpack バンドルを作成します。
 
-- Type: `Boolean`
-- Default `true` for universal mode and `false` for spa mode
+- タイプ: `ブーリアン`
+- ユニバーサルモードでのデフォルト値は `true`、spa モードでのデフォルト値は `false{/code}です。`
 
-This option is automatically set based on `mode` value if not provided. 
+このオプションは、提供されていない場合は `mode` 値に基づいて自動的に設定されます。
 
 ## templates
 
-> Nuxt.js allows you provide your own templates which will be rendered based on Nuxt configuration. This feature is specially useful for using with [modules](/guide/modules).
+> Nuxt.jsでは、設定に基づいてレンダリングされる独自のテンプレートを提供できます。 この機能は[モジュール](/guide/modules)を使用する場合にとりわけ便利です。
 
-- Type: `Array`
-- Items: `Object`
+- タイプ: `配列`
 
-Example (`nuxt.config.js`):
+例 (`nuxt.config.js`):
 
 ```js
 module.exports = {
   build: {
     templates: [
       {
-        src: '~/modules/support/plugin.js', // `src` can be absolute or relative
-        dst: 'support.js', // `dst` is relative to project `.nuxt` dir
-        options: { // Options are provided to template as `options` key
+        src: '~/modules/support/plugin.js', // `src` は絶対パスもしくは相対パスで指定してください
+        dst: 'support.js', // `dst` は `.nuxt` ディレクトリからみた相対パスです
+        options: { // Options は `options` キーとしてテンプレートから提供されます
           live_chat: false
         }
       }
@@ -267,7 +268,7 @@ module.exports = {
 }
 ```
 
-Templates are rendered using [`lodash.template`](https://lodash.com/docs/#template) you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
+テンプレートは [`lodash.template`](https://lodash.com/docs/#template) を使ってレンダリングされます。[こちら](https://github.com/learn-co-students/javascript-lodash-templates-v-000)でより詳細な使い方を知ることができます。
 
 ## vendor
 
@@ -300,9 +301,9 @@ module.exports = {
 
 ## watch
 
-> You can provide your custom files to watch and regenerate after changes. This feature is specially useful for using with [modules](/guide/modules).
+> 監視や変更後に再生成を行うカスタムファイルを提供することができます。 この機能は[モジュール](/guide/modules)を使用する場合にとりわけ便利です。
 
-- Type: `Array<String>`
+- タイプ: `配列<String>`
 
 ```js
 module.exports = {
@@ -313,3 +314,120 @@ module.exports = {
   }
 }
 ```
+
+## profile
+
+- タイプ: `ブーリアン`
+- デフォルト: コマンドライン引数 `--profile` で有効にします。
+
+[WebpackBar](https://github.com/nuxt/webpackbar#profile) の profiler で有効にします。
+
+## parallel
+
+- タイプ: `ブーリアン`
+- デフォルト: `false`
+
+webpack のビルドで[thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) を有効にします。 
+
+## cache
+
+- タイプ: `ブーリアン`
+- デフォルト: `false`
+
+[uglifyjs-webpack-plugin ](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) と [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) でキャッシュを有効化します。
+
+## styleResources
+
+- タイプ: `オブジェクト`
+- デフォルト: `{}`
+
+毎回インポートせずに変数やミックスインをページに挿入する必要がある場合に便利です。
+
+Nuxt.js はこの動作を実現するために https://github.com/yenshih/style-resources-loader を使用します。
+
+特定のプリプロセッサに含めるパターン/パスを指定する必要があります: `less`、`sass`、`scss`、`stylus`
+
+：警告：ここではパスのエイリアス（`~` や `@`）を使用することができないため、相対パスまたは絶対パスを使用する必要があります。
+
+`nuxt.config.js`:
+
+```js
+{
+  build: {
+    styleResources: {
+      scss: './assets/variables.scss',
+      less: './assets/*.less',
+      // sass: ...,
+      // scss: ...
+      options: {
+        // https://github.com/yenshih/style-resources-loader#options の
+        // `patterns` プロパティ以外を参照してください。
+      }
+    }
+  }
+}
+```
+
+## optimization
+
+- タイプ: `オブジェクト`
+
+- デフォルト:
+
+    ```js
+    {
+      splitChunks: {
+        chunks: 'all',
+        automaticNameDelimiter: '.',
+        name: undefined,
+        cacheGroups: {}
+      }
+    }
+    ```
+
+`dev` または `analyze` モードでは、`splitChunks.name` のデフォルト値は `true` になっています。
+
+Webpack の[最適化](https://webpack.js.org/configuration/optimization/)
+
+## splitChunks
+
+- タイプ: `オブジェクト`
+
+- デフォルト:
+
+    ```js
+    {
+      layouts: false,
+      pages: true,
+      commons: true
+    }
+    ```
+
+`layout`、`pages` や `commons` で分割したコードの場合（共通ライブラリ: vue|vue-loader|vue-router|vuex...）
+
+## Transpile
+
+- タイプ: `配列<string | RegExp>`
+- デフォルト: `[]`
+
+特定の依存関係を Babel で変換したい場合、`build.transpile` を追加することができます。transpile の項目は、マッチする依存ファイル名の文字列または正規表現オブジェクトになります。
+
+## vueLoader
+
+- タイプ: `オブジェクト`
+
+- デフォルト
+
+    ```js
+    {
+      productionMode: !this.options.dev,
+      transformAssetUrls: {
+        video: 'src',
+        source: 'src',
+        object: 'src',
+        embed: 'src'
+      }
+    }
+    ```
+
+[Vue Loader Options](https://vue-loader.vuejs.org/options.html) の指定
