@@ -226,3 +226,10 @@ When set to false, HTML files are generated according to the route path:
 ```
 
 _Note: this option could be useful using [Netlify](https://netlify.com) or any static hosting using HTML fallbacks._
+
+## concurrency
+
+- Type: `Number`
+- Default: `500`
+
+The generation of routes are concurrent, `generate.concurrency` specifies the amount of routes that run in one thread.

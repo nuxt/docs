@@ -102,7 +102,7 @@ Nuxt.js をプロジェクトの UI レンダリング全体を担うフレー�
 - [ソースコード](https://github.com/nuxt/nuxtjs.org)
 - [生成されたコード](https://github.com/nuxt/nuxtjs.org/tree/gh-pages)
 
-私たちは [docs リポジトリ](https://github.com/nuxt/docs) を更新するたびに毎回手動でアプリケーションを生成するのは面倒だったので、AWS Lambda function から生成機能を実行しています:
+[docs repository](https://github.com/nuxt/docs) をアップデートするたびに手動でアプリケーションを生成したくないので、プッシュ毎で AWS Lambda ファンクションを呼び出します：
 
 1. [nuxtjs.org リポジトリ](https://github.com/nuxt/nuxtjs.org)をクローンする
 2. `npm install` で依存関係のあるパッケージをインストールする

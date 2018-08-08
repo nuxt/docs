@@ -13,7 +13,7 @@ This section helps getting familiar to Nuxt internals and can be used as a refer
 
 ### Core
 
-These classes are the hearth of Nuxt and should exist on both runtime and build time.
+These classes are the heart of Nuxt and should exist on both runtime and build time.
 
 #### Nuxt
 
@@ -34,7 +34,7 @@ These classes are the hearth of Nuxt and should exist on both runtime and build 
 
 These classes are only needed for build or dev mode.
 
-### Builder
+#### Builder
 
 - [`Builder` Class](/api/internals-builder)
 - Source: [builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)

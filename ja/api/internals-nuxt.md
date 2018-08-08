@@ -1,27 +1,27 @@
 ---
-title: "API: The Nuxt Class"
-description: Nuxt Core Class
+title: 'API: Nuxt のクラス'
+description: Nuxt のコアのクラス
 ---
 
-# Nuxt Class
+# Nuxt のクラス
 
-- Source: **[core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/nuxt.js)**
+- ソース: **[core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/nuxt.js)**
 
-This is the core container which allows all modules and classes communicate with each other. All modules has access to Nuxt instance using `this.nuxt`.
+すべてのモジュールとクラスが通信できるようにするためのコアのコンテナです。すべてのモジュールは Nuxt インスタンスに `this.nuxt` を使ってアクセスできます。
 
-## Tapable plugins
+## タップ可能なプラグイン
 
-We can register hooks on certain life cycle events.
+特定のライフサイクルイベントでのフックを登録できます。
 
 ```js
-nuxt.plugin('ready', async nuxt => {
-    // Your custom code here
+nuxt.hook('ready', async nuxt => {
+    // ここにコードを記述してください
 })
 ```
 
-Plugin   | Arguments              | When
----------|------------------------|------------------------------------------------------------------------------
-`ready`  | nuxt                   | All modules initialized and before initializing renderer
-`error`  | error args             | An unhandled error by one of Nuxt modules caught
-`close`  | -                      | Nuxt instance is gracefully closing
-`listen` | ({server, host, port}) | Nuxt **Internal** server starts listening. (Using `nuxt start` or `nuxt dev`)
+プラグイン | 引数 | タイミング
+--- | --- | ---
+`ready` | nuxt | すべてのモジュールが初期化されたあと、レンダラーを初期化する前
+`error` | error args | Nuxt モジュールのいずれかにより未処理のエラーが補足された
+`close` | - | Nuxt インスタンスがきちんと終わろうとしている
+`listen` | ({server, host, port}) | Nuxt の**内部**サーバーがリッスンを始めた（`nuxt start` または `nuxt dev` により起こる）
