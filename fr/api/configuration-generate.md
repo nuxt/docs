@@ -226,3 +226,10 @@ Quand il est mis à `false`, les fichier HTML seront générés en accord avec l
 ```
 
 _Note : cette option peut être utile en utilisant [Netlify](https://netlify.com) ou n'importe quel hébergement utilisant des alternatives HTML._
+
+## concurrence
+
+- Type: `Number`
+- Default: `500`
+
+La génération de routes est concurrente, `generate.concurrency` spécifie le nombre de routes qui peuvent être exécuté par un thread.

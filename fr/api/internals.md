@@ -34,7 +34,7 @@ Ces classes sont les piliers de Nuxt et devraient exister à l'exécution ou pou
 
 Ces classes sont seulement utiles pour le build ou le mode développement.
 
-### Builder
+#### Builder
 
 - [Classe `Builder`](/api/internals-builder)
 - Source : [builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)
