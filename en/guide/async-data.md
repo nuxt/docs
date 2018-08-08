@@ -33,8 +33,6 @@ export default {
 }
 ```
 
-Note: To 
-
 ### Using async/await
 
 ```js
