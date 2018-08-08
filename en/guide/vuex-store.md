@@ -187,6 +187,10 @@ export default {
 
 <div class="Alert">You can also have modules by exporting a store instance, you will have to add them manually on your store.</div>
 
+### Module files
+
+You can optionally break down a module file into separate files: `state.js`, `actions.js`, `mutations.js` and `getters.js`. If you maintain an `index.js` file with state, getters and mutations while having a single separate file for actions, that will also still be properly recognized.
+
 ### Plugins
 
 You can add additional plugin to the store (in Modules Mode) putting it into the `store/index.js` file:
