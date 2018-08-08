@@ -318,21 +318,21 @@ module.exports = {
 - Type: `Boolean`
 - Default: enabled by command line argument `--profile`
 
-Enable the profiler in [WebpackBar](https://github.com/nuxt/webpackbar#profile)
+> Enable the profiler in [WebpackBar](https://github.com/nuxt/webpackbar#profile)
 
 ## parallel
 
 - Type: `Boolean`
 - Default: `false`
 
-Enable [thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) in webpack building
+> Enable [thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) in webpack building
 
 ## cache
 
 - Type: `Boolean`
 - Default: `false`
 
-Enable cache of [uglifyjs-webpack-plugin ](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
+> Enable cache of [uglifyjs-webpack-plugin ](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
 
 ## styleResources
 
@@ -384,7 +384,7 @@ You need to specify the patterns/path you want to include for the given pre-proc
 
 The default value of `splitChunks.name` is `true` in `dev` or `analyze` mode.
 
-Webpack [optimization](https://webpack.js.org/configuration/optimization/)
+webpack [optimization](https://webpack.js.org/configuration/optimization/)
 
 ## splitChunks
 
@@ -399,7 +399,7 @@ Webpack [optimization](https://webpack.js.org/configuration/optimization/)
   }
   ```
 
-If split codes for `layout`, `pages` and `commons`(common libs: vue|vue-loader|vue-router|vuex...)
+If split codes for `layout`, `pages` and `commons` (common libs: vue|vue-loader|vue-router|vuex...).
 
 ## transpile
 
@@ -411,7 +411,7 @@ If you want to transpile specific dependencies with Babel, you can add them in `
 ## vueLoader
 
 - Type: `Object`
-- Default
+- Default:
 
   ```js
   {
@@ -425,4 +425,4 @@ If you want to transpile specific dependencies with Babel, you can add them in `
   }
   ```
 
-Specify the [Vue Loader Options](https://vue-loader.vuejs.org/options.html)
+> Specify the [Vue Loader Options](https://vue-loader.vuejs.org/options.html).
