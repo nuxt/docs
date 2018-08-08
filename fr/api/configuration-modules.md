@@ -3,7 +3,7 @@ title: "API: The modules Property"
 description: Modules are Nuxt.js extensions which can extend it's core functionality and add endless integrations.
 ---
 
-# The *modules* Property (En)
+# The modules Property (En)
 
 - Type: `Array`
 

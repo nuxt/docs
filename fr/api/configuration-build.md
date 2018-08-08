@@ -89,7 +89,7 @@ module.exports = {
     extend (config, { isClient }) {
       // Étend la configuration webpack uniquement pour le paquetage client
       if (isClient) {
-        config.devtool = 'eval-source-map'
+        config.devtool = '#source-map'
       }
     }
   }
@@ -312,3 +312,117 @@ module.exports = {
   }
 }
 ```
+
+## profile
+
+- Type : `Boolean`
+- Par défaut : activé par l'argument de ligne de commande `--profile`
+
+> Activer le profileur dans [WebpackBar](https://github.com/nuxt/webpackbar#profile)
+
+## parallel
+
+- Type : `Boolean`
+- Par défaut : `false`
+
+> Activer [thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) dans le constructeur webpack
+
+## cache
+
+- Type : `Boolean`
+- Par défaut : `false`
+
+> Activer le cache de [uglifyjs-webpack-plugin](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) et [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
+
+## styleResources
+
+- Type : `Object`
+- Par défaut : `{}`
+
+Ceci est utile quand vous avez besoin d'injecter diverses variables et mixins dans vos pages sans avoir à les importer à chaque fois.
+
+Nuxt.js utilise https://github.com/yenshih/style-resources-loader pour accomplir cette tâche.
+
+Vous devez spécifier un motif/chemin souhaitez pour inclure les préprocesseurs : `less`, `sass`, `scss` ou `stylus`.
+
+:warning: Vous ne pouvez pas utiliser les aliases de chemin (`~` et `@`) ici, vous devez utiliser des chemins relatifs ou absolues.
+
+`nuxt.config.js`:
+
+```js
+{
+  build: {
+    styleResources: {
+      scss: './assets/variables.scss',
+      less: './assets/*.less',
+      // sass: ...,
+      // scss: ...
+      options: {
+        // See https://github.com/yenshih/style-resources-loader#options
+        // Except `patterns` property
+      }
+    }
+  }
+}
+```
+
+## optimization
+
+- Type : `Object`
+- Par défaut :
+
+  ```js
+  {
+    splitChunks: {
+      chunks: 'all',
+      automaticNameDelimiter: '.',
+      name: undefined,
+      cacheGroups: {}
+    }
+  }
+  ```
+
+La valeur par défaut de `splitChunks.name` est `true` en `dev` ou avec le mode `analyze`.
+
+webpack [optimization](https://webpack.js.org/configuration/optimization/)
+
+## splitChunks
+
+- Type: `Object`
+- Par défaut :
+
+  ```js
+  {
+    layouts: false,
+    pages: true,
+    commons: true
+  }
+  ```
+
+Si vous voulez scindez le code pour `layout`, `pages` ou `commons` (common libs: vue|vue-loader|vue-router|vuex...)
+
+## transpile
+
+- Type: `Array<string | RegExp>`
+- Par défaut : `[]`
+
+Si vous voulez transpiler des dépendances spécifiques avec Babel, vous pouvez les ajouter dans `build.transpile`. Les éléments pour la transpilation peuvent être des chaines de caractères ou des expressions régulières pour concorder avec le nom des fichiers.
+
+## vueLoader
+
+- Type: `Object`
+- Par défaut :
+
+  ```js
+  {
+    productionMode: !this.options.dev,
+    transformAssetUrls: {
+      video: 'src',
+      source: 'src',
+      object: 'src',
+      embed: 'src'
+    }
+  }
+  ```
+
+> Spécifier les [options Vue Loader](https://vue-loader.vuejs.org/options.html).

@@ -8,7 +8,7 @@ description: Nuxt.js lets you customize runtime options for rendering pages
 > Nuxt.js lets you customize runtime options for rendering pages
 
 ## bundleRenderer
-- Type: `object`
+- Type: `Object`
 
 > Use this option to customize vue SSR bundle renderer. This option is skipped for spa mode.
 
@@ -30,7 +30,7 @@ module.exports = {
 It is recommended to not use this option as Nuxt.js is already providing best SSR defaults and misconfiguration might lead to SSR problems.</p>
 
 ## etag
-- Type: `object`
+- Type: `Object`
   - Default: `{ weak: true }`
 
 To disable etag for pages set `etag: false`
@@ -38,13 +38,13 @@ To disable etag for pages set `etag: false`
 See [etag](https://www.npmjs.com/package/etag) docs for possible options.
 
 ### gzip
-- Type `object`
+- Type `Object`
   - Default: `{ threshold: 0 }`
 
 See [compression](https://www.npmjs.com/package/compression) docs for possible options.
 
 ### http2
-- Type `object`
+- Type `Object`
   - Default: `{ push: false }`
 
 Activate HTTP2 push headers.
@@ -67,7 +67,37 @@ This option is automatically set based on `mode` value if not provided.
 This can be useful to dynamically enable/disable SSR on runtime after image builds. (With docker for example)
 
 ## static
-- Type: `object`
+- Type: `Object`
   - Default: `{}`
 
 See [serve-static](https://www.npmjs.com/package/serve-static) docs for possible options.
+
+## csp
+
+> Use this to configure to load external resources of Content-Security-Policy
+
+- Type: `Boolean` or `Object`
+  - Default: `false`
+
+Example (`nuxt.config.js`)
+
+```js
+export default {
+  render: {
+    csp: true
+  }
+}
+
+// OR
+
+export default {
+  render: {
+    csp: {
+      hashAlgorithm: 'sha256',
+      allowedSources: undefined,
+      policies: undefined
+    }
+  }
+}
+
+```
