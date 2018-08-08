@@ -89,7 +89,7 @@ module.exports = {
     extend (config, { isClient }) {
       // Extend only webpack config for client-bundle
       if (isClient) {
-        config.devtool = 'eval-source-map'
+        config.devtool = '#source-map'
       }
     }
   }
