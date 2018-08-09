@@ -86,22 +86,53 @@ module.exports = {
 
 ## Inject in $root & context
 
-Some plugins need to be injected in the App root to be used, like [vue-i18n](https://github.com/kazupon/vue-i18n). With Nuxt.js, you can use `app` available into the `context` when exporting a method:
+Sometimes you want to make functions or values available across the app.
+You can inject those variables into Vue instances (client side), the context (server side) and even in the Vuex store.
+It is a convention to prefix those functions with a `$`.
 
-`plugins/i18n.js`:
+### Inject into Vue instances
+
+Injecting content into Vue instances works similar to when doing this in standard Vue apps.
+
+`plugins/vue-inject.js`:
 
 ```js
 import Vue from 'vue'
-import VueI18n from 'vue-i18n'
 
-Vue.use(VueI18n)
+Vue.prototype.$myInjectedFunction = (string) => console.log("This is an example", string)
+```
 
+`nuxt.config.js`:
+
+```js
+module.exports = {
+  plugins: ['~/plugins/vue-inject.js']
+}
+```
+
+You can now use the function in all your Vue components.
+
+`example-component.vue`:
+
+```js
+export default {
+  mounted(){
+    this.$myInjectedFunction('test')
+  }
+}
+```
+
+
+### Inject into context
+
+Injecting content into Vue instances works similar to when doing this in standard Vue apps.
+
+`plugins/ctx-inject.js`:
+
+```js
 export default ({ app }, inject) => {
-  // Set `i18n` instance on `app`
-  // This way we can use it in middleware and pages `asyncData`/`fetch`
-  app.i18n = new VueI18n({
-    /* `VueI18n` options... */
-  })
+  // Set the function directly on the context.app object
+  app.myInjectedFunction = (string) => console.log('Okay, another function', string)
 }
 ```
 
@@ -109,14 +140,84 @@ export default ({ app }, inject) => {
 
 ```js
 module.exports = {
-  build: {
-    vendor: ['vue-i18n']
-  },
-  plugins: ['~/plugins/i18n.js']
+  plugins: ['~/plugins/ctx-inject.js']
 }
 ```
 
-Please take a look at the [i18n example](/examples/i18n) to see how we use it.
+The function is now available whenever you have access to the `context` (for example in `asyncData` and `fetch`).
+
+`ctx-example-component.vue`:
+
+```js
+export default {
+  asyncData(context){
+    context.app.myInjectedFunction('ctx!')
+  }
+}
+```
+
+### Combined inject
+
+If you need the function in the `context`, Vue instances and maybe even in the Vuex store, you can use the `inject` function, which is the second parameter of the plugins exported function.
+
+Injecting content into Vue instances works similar to when doing this in standard Vue apps.
+
+`plugins/combined-inject.js`:
+
+```js
+export default ({ app }, inject) => {
+  inject('myInjectedFunction', (string) => console.log('That was easy!', string))
+}
+```
+
+`nuxt.config.js`:
+
+```js
+module.exports = {
+  plugins: ['~/plugins/combined-inject.js']
+}
+```
+
+Now the function can be used from `context`, via `this` in Vue instances and via `this` in store `actions`/`mutations`.
+
+`ctx-example-component.vue`:
+
+```js
+export default {
+  mounted(){
+      this.$myInjectedFunction('works in mounted')
+  },
+  asyncData(context){
+    context.app.myInjectedFunction('works with context')
+  }
+}
+```
+
+`store/index.js`:
+
+```js
+export const state = () => ({
+  someValue: ''
+})
+
+export const mutations = {
+  changeSomeValue(state, new) {
+    this.$myInjectedFunction('accessible in mutations')
+    state.someValue = new
+  }
+}
+
+export const actions = {
+  setSomeValueToWhatever ({ commit }) {
+    this.$myInjectedFunction('accessible in actions')
+    const new = "whatever"
+    commit('changeSomeValue', new)
+  }
+}
+
+```
+
+
 
 ## Client-side only
 
