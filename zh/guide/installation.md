@@ -15,7 +15,7 @@ description: Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt` 
 $ vue init nuxt-community/starter-template <project-name>
 ```
 
-> 如果 [vue-cli](https://github.com/vuejs/vue-cli) 没有安装, 需先通过 `npm install -g vue-cli` 来安装。
+> 如果 [Vue CLI](https://github.com/vuejs/vue-cli) 没有安装, 需先通过 `npm install -g @vue/cli @vue/cli-init` 来安装。
 
 然后安装依赖包：
 
