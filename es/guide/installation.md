@@ -9,13 +9,13 @@ description: Con `nuxt` es realmente facil empezar. Un proyecto simple solo nece
 
 Para comenzar rapidamente, el equipo de Nuxt.js a creado una [plantilla de inicio](https://github.com/nuxt-community/starter-template).
 
-Descargue el  [.zip con la plantilla de inicio](https://github.com/nuxt-community/starter-template/archive/master.zip) o instalela con with vue-cli:
+Descargue el  [.zip con la plantilla de inicio](https://github.com/nuxt-community/starter-template/archive/master.zip) o instalela con with Vue CLI:
 
 ```bash
 $ vue init nuxt-community/starter-template <project-name>
 ```
 
-> Si [vue-cli](https://github.com/vuejs/vue-cli) no se encuentra instalado, por favor instalelo con el comando `npm install -g vue-cli` 
+> Si [Vue CLI](https://github.com/vuejs/vue-cli) no se encuentra instalado, por favor instalelo con el comando `npm install -g @vue/cli @vue/cli-init`
 
 luego instale las dependencias:
 
@@ -28,7 +28,7 @@ y lance el proyecto con:
 ```bash
 $ npm run dev
 ```
-La aplicación ahora estara ejecutandose en http://localhost:3000 
+La aplicación ahora estara ejecutandose en http://localhost:3000
 
 <p class="Alert">Nuxt.js escuchara los cambios en los archivos dentro del directorio `pages`, por lo cual no es necesario reiniciar la aplicación cada vez que cambie o agregue una nueva pagina</p>
 
