@@ -9,13 +9,13 @@ description: Nuxt.js はとても簡単に始められます。シンプルな�
 
 素早くスタートできるようにするため、Nuxt.js チームは [スターターテンプレート](https://github.com/nuxt-community/starter-template) を用意しました。
 
-[ZIP をダウンロード](https://github.com/nuxt-community/starter-template/archive/master.zip) するか、vue-cli を使ってインストールしてください:
+[ZIP をダウンロード](https://github.com/nuxt-community/starter-template/archive/master.zip) するか、 Vue CLI を使ってインストールしてください:
 
 ```bash
 $ vue init nuxt-community/starter-template <project-name>
 ```
 
-> もし [vue-cli](https://github.com/vuejs/vue-cli) をインストールしていなければ、`npm install -g vue-cli` でインストールしてください。
+> もし [Vue CLI](https://github.com/vuejs/vue-cli) をインストールしていなければ、`npm install -g @vue/cli @vue/cli-init` でインストールしてください。
 
 それから依存するパッケージをインストールしてください:
 

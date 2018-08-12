@@ -72,6 +72,14 @@ This can be useful to dynamically enable/disable SSR on runtime after image buil
 
 See [serve-static](https://www.npmjs.com/package/serve-static) docs for possible options.
 
+## dist
+- Type: `Object`
+  - Default: `{ maxAge: '1y', index: false }`
+
+The options used for serving distribution files. Only applicable in production.
+
+See [serve-static](https://www.npmjs.com/package/serve-static) docs for possible options.
+
 ## csp
 
 > Use this to configure to load external resources of Content-Security-Policy
