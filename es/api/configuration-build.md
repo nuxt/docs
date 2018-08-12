@@ -232,6 +232,15 @@ module.exports = {
 
 Then, when launching `nuxt build`, upload the content of `.nuxt/dist/` directory to your CDN and voilà!
 
+## quiet
+
+> If you want to run Nuxt build in a quiet mode which suppresses all building logs and warnings, use this config
+
+- Type: `Boolean` or `Object`
+- Default: `Boolean(env.ci || env.test)`
+
+By default, quiet mode is enable in CI or test environment.
+
 ## vendor
 
 > Nuxt.js lets you add modules inside the `vendor.bundle.js` file generated to reduce the size of the app bundle. It's really useful when using external modules (like `axios` for example)
