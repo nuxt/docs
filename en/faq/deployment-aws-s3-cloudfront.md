@@ -47,7 +47,7 @@ You should now have this data:
 
 For step 3, we need to create a user that can:
   - Update the bucket contents
-  - Invalidate the cloudfront distribution (propigates changes to users faster)
+  - Invalidate the cloudfront distribution (propagates changes to users faster)
 
 [Create a programmatic user with this policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html):
 
