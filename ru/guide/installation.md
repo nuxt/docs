@@ -15,7 +15,7 @@ description: Начать работу с Nuxt.js действительно о�
 $ vue init nuxt-community/starter-template <project-name>
 ```
 
-> Если [vue-cli](https://github.com/vuejs/vue-cli) ещё не установлен, это можно сделать так: `npm install -g vue-cli`
+> Если [Vue CLI](https://github.com/vuejs/vue-cli) ещё не установлен, это можно сделать так: `npm install -g @vue/cli @vue/cli-init`
 
 затем установите зависимости:
 
