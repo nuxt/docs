@@ -115,6 +115,7 @@
           { "name": "scrollBehavior", "to": "#scrollbehavior" }
         ]
       },
+      { "name": "server", "to": "/configuration-server" },
       { "name": "serverMiddleware", "to": "/configuration-servermiddleware" },
       { "name": "srcDir", "to": "/configuration-srcdir" },
       { "name": "transition", "to": "/configuration-transition" },
