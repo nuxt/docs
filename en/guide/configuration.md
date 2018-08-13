@@ -53,6 +53,13 @@ This option lets you add Nuxt modules to your project.
 
 [Documentation about `modules` integration](/api/configuration-modules)
 
+### modulesDir
+
+This option lets you define the node_modules folder of your Nuxt.js Application.
+ 
+[Documentation about `modulesDir` integration](/api/configuration-modulesdir)
+
+
 ### plugins
 
 This option lets you define JavaScript plugins to be run before instantiating the root Vue.js Application.
