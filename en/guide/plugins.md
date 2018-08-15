@@ -201,17 +201,17 @@ export const state = () => ({
 })
 
 export const mutations = {
-  changeSomeValue(state, new) {
+  changeSomeValue(state, newValue) {
     this.$myInjectedFunction('accessible in mutations')
-    state.someValue = new
+    state.someValue = newValue
   }
 }
 
 export const actions = {
   setSomeValueToWhatever ({ commit }) {
     this.$myInjectedFunction('accessible in actions')
-    const new = "whatever"
-    commit('changeSomeValue', new)
+    const newValue = "whatever"
+    commit('changeSomeValue', newValue)
   }
 }
 
