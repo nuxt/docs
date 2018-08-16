@@ -93,7 +93,7 @@ module.exports = {
 - Type: `String` or `Array`
   - Items: `String`
 
-Set the default(s) middleware for every pages of the application.
+Set the default(s) middleware for every page of the application.
 
 Example:
 
