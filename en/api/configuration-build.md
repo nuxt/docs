@@ -173,16 +173,16 @@ module.exports = {
 
 - Type: `Array`, `Object` (recommended), `Function` or `Boolean`
 
-  **Note:** While default preset is OK and flexible enough for normal use cases, the recommended usage by [`vue-loader`](https://vue-loader.vuejs.org/en/options.html#postcss) is using `postcss.config.js` file in your project. By creating that file it will be automatically detected and this option is ignored.
-
+  **Note:** Nuxt.js has applied [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env). By default it enables [Stage 2 features](https://cssdb.org/) and [Autoprefixer](https://github.com/postcss/autoprefixer), you can use `build.postcss.preset` to config it.
 - Default:
 
   ```js
   {
     plugins: {
-    'postcss-import': {},
-    'postcss-url': {},
-    'postcss-cssnext': {}
+      'postcss-import': {},
+      'postcss-url': {},
+      'postcss-preset-env': {},
+      'cssnano': { preset: 'default' } // disabled in dev mode
     }
   }
   ```
@@ -194,20 +194,17 @@ module.exports = {
   build: {
     postcss: {
       plugins: {
-        // Disable `postcss-url`
-      'postcss-url': false,
-
-      // Customize `postcss-cssnext` default options
-      'postcss-cssnext': {
-        features: {
-          customProperties: false
+          // Disable `postcss-url`
+        'postcss-url': false,
+        // Add some plugins
+        'postcss-nested': {},
+        'postcss-responsive-type': {},
+        'postcss-hexrgba': {}
+      },
+      preset: {
+        autoprefixer: {
+          grid: true
         }
-      }
-
-      // Add some plugins
-      'postcss-nested': {},
-      'postcss-responsive-type': {},
-      'postcss-hexrgba': {}
       }
     }
   }
