@@ -93,7 +93,7 @@ module.exports = {
 - Type: `String` or `Array`
   - Items: `String`
 
-Set the default(s) middleware for every pages of the application.
+Set the default(s) middleware for every page of the application.
 
 Example:
 
@@ -101,7 +101,7 @@ Example:
 ```js
 module.exports = {
   router: {
-    // Run the middleware/user-agent.js on every pages
+    // Run the middleware/user-agent.js on every page
     middleware: 'user-agent'
   }
 }
