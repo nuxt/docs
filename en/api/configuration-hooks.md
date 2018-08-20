@@ -1,41 +1,30 @@
 ---
-title: "API: The modules Property"
-description: Modules are Nuxt.js extensions which can extend it's core functionality and add endless integrations.
+title: "API: The hooks Property"
+description: Hooks are listeners to Nuxt events that are typically used in Nuxt modules, but are also available in `nuxt.config.js`.
 ---
 
-# The modules Property
+# The hooks Property
 
-- Type: `Array`
+- Type: `Object`
 
-> Modules are Nuxt.js extensions which can extend it's core functionality and add endless integrations.  [Learn More](/guide/modules)
+> Hooks are [listeners to Nuxt events](/api/internals) that are typically used in Nuxt modules, but are also available in `nuxt.config.js`. [Learn More](/api/internals)
 
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
-  modules: [
-    // Using package name
-    '@nuxtjs/axios',
+import fs from 'fs'
+import path from 'path'
 
-    // Relative to your project srcDir
-    '~/modules/awesome.js',
-
-    // Providing options
-    ['@nuxtjs/google-analytics', { ua: 'X1234567' }],
-
-    // Inline definition
-    function () { }
-  ]
+export default {
+  hooks: {
+    build: {
+      done(builder) {
+        const extraFilePath = path.join(builder.nuxt.options.buildDir, 'extra-file')
+        fs.writeFileSync(extraFilePath, 'Something extra')
+      }
+    }
+  }
 }
 ```
-Module developers usually provide additional needed steps and details for usage.
 
-Nuxt.js tries to resolve each item in the modules array using node require path (in the `node_modules`) and then
-Will be resolved from project `srcDir` if `~` alias is used. Modules are executed sequential so the order is important.
-
-Modules should export a function to enhance nuxt build/runtime and optionally return a promise until their job is finished.
-Note that they are required at runtime so should be already transpiled if depending on modern ES6 features.
-
-
-Please see [Modules Guide](/guide/modules) for more detailed information on how they work or if interested developing your own module.
-Also we have provided an official [Modules](https://github.com/nuxt-community/awesome-nuxt#modules) Section listing dozens of production ready modules made by Nuxt Community.
+Internally, hooks follow a naming pattern using colons (e.g., `build:done`). For ease of configuration, you can structure them as an hierarchical object when using `nuxt.config.js` (as exemplifed above) to set your own hooks. See [Nuxt Internals](/api/internals) for more detailed information on how they work.
