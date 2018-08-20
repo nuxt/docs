@@ -160,7 +160,7 @@ export default {
 
 If you need the function in the `context`, Vue instances and maybe even in the Vuex store, you can use the `inject` function, which is the second parameter of the plugins exported function.
 
-Injecting content into Vue instances works similar to when doing this in standard Vue apps.
+Injecting content into Vue instances works similar to when doing this in standard Vue apps. The `$` will be prepended automatically to the function.
 
 `plugins/combined-inject.js`:
 
@@ -188,7 +188,7 @@ export default {
       this.$myInjectedFunction('works in mounted')
   },
   asyncData(context){
-    context.app.myInjectedFunction('works with context')
+    context.app.$myInjectedFunction('works with context')
   }
 }
 ```
