@@ -9,7 +9,7 @@ description: router プロパティを使って Nuxt.js のルーターをカス
 
 ## base
 
-- タイプ: `文字列`
+- 型: `文字列`
 - デフォルト: `'/'`
 
 アプリケーションのベース URL です。例えばシングルページアプリケーション全体を `/app/` 配下で配信したい場合は base に `'/app/'` を設定します。
@@ -30,7 +30,7 @@ module.exports = {
 
 ## extendRoutes
 
-- タイプ: `関数`
+- 型: `関数`
 
 Nuxt.js によって作成されるルーティングを拡張したいことがあるかもしれません。それは `extendRoutes` オプションで実現できます。
 
@@ -56,7 +56,7 @@ module.exports = {
 
 ## linkActiveClass
 
-- タイプ: `文字列`
+- 型: `文字列`
 - デフォルト: `'nuxt-link-active'`
 
 [`<nuxt-link>`](/api/components-nuxt-link) のデフォルトの active class をグローバルに設定します。
@@ -75,7 +75,7 @@ module.exports = {
 
 ## linkExactActiveClass
 
-- タイプ `文字列`
+- 型 `文字列`
 - デフォルト: `'nuxt-link-exact-active'`
 
 [`<nuxt-link>`](/api/components-nuxt-link) のデフォルトの active class をグローバルに設定します。
@@ -94,7 +94,7 @@ module.exports = {
 
 ## middleware
 
-- タイプ: `文字列` または `配列`
+- 型: `文字列` または `配列`
   - 要素: `文字列`
 
 アプリケーションのすべてのページに対してデフォルトのミドルウェアをセットします。
@@ -125,7 +125,7 @@ export default function (context) {
 
 ## mode
 
-- タイプ: `文字列`
+- 型: `文字列`
 - デフォルト: `'history'`
 
 ルーティングのモードを設定します。サーバーサイドレンダリングのため、この設定を変更することは非推奨です。
@@ -144,7 +144,7 @@ module.exports = {
 
 ## scrollBehavior
 
-- タイプ: `関数`
+- 型: `関数`
 
 `scrollBehavior` オプションを使って、ページ間のスクロール位置についての独自の振る舞いを定義できます。このメソッドはページがレンダリングされるたびに毎回呼び出されます。  
 

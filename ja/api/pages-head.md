@@ -7,7 +7,7 @@ description: Nuxt.js はアプリケーションの `headers` 及び `html attri
 
 > Nuxt.js はアプリケーションの `headers` 及び `html attributes` を更新するために [vue-meta](https://github.com/declandewet/vue-meta) を使います。
 
-- **タイプ:** `オブジェクト` または `関数`
+- **型:** `オブジェクト` または `関数`
 
 現在のページの HTML の head タグを設定するために `head` メソッド使います。
 
