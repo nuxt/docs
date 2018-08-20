@@ -74,6 +74,7 @@
         ]
       },
       { "name": "head", "to": "/configuration-head" },
+      { "name": "hooks", "to": "/configuration-hooks" },
       { "name": "ignore", "to": "/configuration-ignore" },
       {
         "name": "loading",
