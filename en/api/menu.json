@@ -74,6 +74,7 @@
         ]
       },
       { "name": "head", "to": "/configuration-head" },
+      { "name": "hooks", "to": "/configuration-hooks" },
       { "name": "ignore", "to": "/configuration-ignore" },
       {
         "name": "loading",
@@ -120,7 +121,6 @@
       { "name": "srcDir", "to": "/configuration-srcdir" },
       { "name": "transition", "to": "/configuration-transition" },
       { "name": "watch", "to": "/configuration-watch" },
-      { "name": "hooks", "to": "/configuration-hooks" },
       {
         "name": "watchers",
         "to": "/configuration-watchers",
