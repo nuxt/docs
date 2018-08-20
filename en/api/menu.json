@@ -120,6 +120,7 @@
       { "name": "srcDir", "to": "/configuration-srcdir" },
       { "name": "transition", "to": "/configuration-transition" },
       { "name": "watch", "to": "/configuration-watch" },
+      { "name": "hooks", "to": "/configuration-hooks" },
       {
         "name": "watchers",
         "to": "/configuration-watchers",
