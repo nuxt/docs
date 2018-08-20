@@ -228,7 +228,7 @@ module.exports = {
 }
 ```
 
-Then, when launching `nuxt build`, upload the content of `.nuxt/dist/` directory to your CDN and voilà!
+Then, when launching `nuxt build`, upload the content of `.nuxt/dist/client` directory to your CDN and voilà!
 
 ## ssr
 
