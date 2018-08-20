@@ -5,7 +5,7 @@ description: Nuxt.js アプリケーションのソースディレクトリを�
 
 # srcDir プロパティ
 
-- タイプ: `文字列`
+- 型: `文字列`
 - デフォルト: [rootDir の値](/api/configuration-rootdir)
 
 > Nuxt.js アプリケーションのソースディレクトリを指定します。
