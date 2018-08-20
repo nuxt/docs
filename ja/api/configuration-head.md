@@ -7,7 +7,7 @@ description: Nuxt.js では nuxt.config.js 内にアプリケーションのデ�
 
 > Nuxt.js では `nuxt.config.js` 内にアプリケーションのデフォルトのメタ情報を定義できます。それには `head` プロパティを使います:
 
-- タイプ: `オブジェクト`
+- 型: `オブジェクト`
 
 ```js
 module.exports = {

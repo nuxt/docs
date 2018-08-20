@@ -5,7 +5,7 @@ description: Nuxt.js アプリケーションの URL を渡して window を取�
 
 # nuxt.renderAndGetWindow(url, options = {})
 
-- タイプ: `関数`
+- 型: `関数`
 - 引数: `文字列`
   1. `文字列`: レンダリングする URL
   2. *オプション*, `オブジェクト`: オプション
