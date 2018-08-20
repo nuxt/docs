@@ -13,7 +13,7 @@ description: 配置 Nuxt.js 应用生成静态站点的具体方式。
 
 ## dir
 
-- 类型： 'Sring'
+- 类型： 'String'
 - 默认值： `'dist'`
 
 `nuxt generate` 生成的目录名称。
