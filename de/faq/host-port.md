@@ -1,15 +1,15 @@
 ---
-title: Host and Port
-description: How to edit host and port with Nuxt.js?
+title: Host und Port
+description: Host und Port anpassen mit Nuxt.js
 ---
 
-# How to edit host and port?
+# Host und Port anpassen
 
-You can configure the connection variables in different ways, listed from lowest to highest priority:
+Die Verbindungsvariablen können auf verschiedene Weisen angepasst werden, hier in aufsteigender Priorität gelistet:
 
-## Via a `nuxt` config in the `package.json`:
+## Mithilfe von `nuxt` in der `package.json`:
 
-Inside your `package.json`:
+In der `package.json`:
 
 ```json
 "config": {
@@ -23,8 +23,7 @@ Inside your `package.json`:
 }
 ```
 
-
-## With HOST and PORT env variables
+## Mithilfe der Umgebungsvariablen HOST und PORT
 
 ```js
 "scripts": {
@@ -32,9 +31,9 @@ Inside your `package.json`:
 }
 ```
 
-**Note**: for better cross platform development support you can use [cross-env](https://www.npmjs.com/package/cross-env) package.
+**Hinweis**: Für bessere Unterstützung von system-übergreifender Entwicklung kann das  [cross-env](https://www.npmjs.com/package/cross-env) Paket genutzt werden.
 
-Installation:
+Einrichtung:
 
 ```bash
 npm install --save-dev cross-env
@@ -46,9 +45,9 @@ npm install --save-dev cross-env
 }
 ```
 
-## With NUXT_HOST and NUXT_PORT env variables
+## Mithilfe der Umgebungsvariablen NUXT_HOST und NUXT_PORT
 
-Similar to HOST and PORT but more specific in case you need those for something else.
+Falls HOST und PORT für andere Zwecke genutzt werden, können genauso auch NUXT_HOST und NUXT_PORT verwendet werden.
 
 ```js
 "scripts": {
@@ -56,7 +55,7 @@ Similar to HOST and PORT but more specific in case you need those for something 
 }
 ```
 
-## As direct arguments
+## Als direkte Argumente
 
 ```js
 "scripts": {
