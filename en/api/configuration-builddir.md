@@ -18,4 +18,4 @@ module.exports = {
 }
 ```
 
-By default, many tools assumes that `.nuxt` is hidden directory, because it's name starts with dot. You can use this option to make dist folder not hidden.
+By default, many tools assume that `.nuxt` is a hidden directory, because its name starts with a dot. You can use this option to prevent that.
