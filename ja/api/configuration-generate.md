@@ -18,6 +18,13 @@ description: ユニバーサルなウェブアプリケーションから静的�
 
 `nuxt generate` で作成されるディレクトリ名です。
 
+## fallback <!-- TODO: translate -->
+
+- Type: `String` or `Boolean`
+- Default: `'200.html'`
+
+The path to the SPA fallback. This file can be used when doing deploys of generated sites to static hosting. It falls back to `mode: 'spa'` when a route isn't generated.
+
 ## interval
 
 - 型: `数値`
@@ -79,11 +86,7 @@ generate コマンドでは [動的なルーティング](/guide/routing#動的�
 ```js
 module.exports = {
   generate: {
-    routes: [
-      '/users/1',
-      '/users/2',
-      '/users/3'
-    ]
+    routes: ['/users/1', '/users/2', '/users/3']
   }
 }
 ```
@@ -119,14 +122,10 @@ const axios = require('axios')
 
 module.exports = {
   generate: {
-    routes: function () {
-      return axios.get('https://my-api/users')
-      .then((res) => {
-        return res.data.map((user) => {
-          return '/users/' + user.id
-        })
-      })      
-    }
+    routes: () =>
+      axios
+        .get('https://my-api/users')
+        .then(res => res.data.map(user => '/users/' + user.id))
   }
 }
 ```
@@ -140,16 +139,142 @@ const axios = require('axios')
 
 module.exports = {
   generate: {
-    routes: function (callback) {
-      axios.get('https://my-api/users')
-      .then((res) => {
-        var routes = res.data.map((user) => {
-          return '/users/' + user.id
-        })
+    routes: callback =>
+      axios
+        .get('https://my-api/users')
+        .then(res => {
+          const routes = res.data.map(user => '/users/' + user.id)
         callback(null, routes)
       })
       .catch(callback)
     }
   }
+```
+
+<!-- TODO: translate from here downwards -->
+
+### Speeding up dynamic route generation with `payload`
+
+In the example above, we're using the `user.id` from the server to generate the routes but tossing out the rest of the data. Typically, we need to fetch it again from inside the `/users/_id.vue`. While we can do that, we'll probably need to set the `generate.interval` to something like `100` in order not to flood the server with calls. Because this will increase the run time of the generate script, it would be preferable to pass along the entire `user` object to the context in `_id.vue`. We do that by modifying the code above to this:
+
+`nuxt.config.js`
+
+```js
+const axios = require('axios')
+
+module.exports = {
+  generate: {
+    routes: () =>
+      axios.get('https://my-api/users').then(res =>
+        res.data.map(user => ({
+          route: '/users/' + user.id,
+          payload: user
+        }))
+      )
+  }
 }
 ```
+In the example above, we're using the `user.id` from the server to generate the routes but tossing out the rest of the data. Typically, we need to fetch it again from inside the `/users/_id.vue`. While we can do that, we'll probably need to set the `generate.interval` to something like `100` in order not to flood the server with calls. Because this will increase the run time of the generate script, it would be preferable to pass along the entire `user` object to the context in `_id.vue`. We do that by modifying the code above to this:
+
+`nuxt.config.js`
+
+```js
+const axios = require('axios')
+
+module.exports = {
+  generate: {
+    routes: () =>
+      axios.get('https://my-api/users').then(res =>
+        res.data.map(user => ({
+          route: '/users/' + user.id,
+          payload: user
+        }))
+      )
+  }
+}
+```
+In the example above, we're using the `user.id` from the server to generate the routes but tossing out the rest of the data. Typically, we need to fetch it again from inside the `/users/_id.vue`. While we can do that, we'll probably need to set the `generate.interval` to something like `100` in order not to flood the server with calls. Because this will increase the run time of the generate script, it would be preferable to pass along the entire `user` object to the context in `_id.vue`. We do that by modifying the code above to this:
+
+`nuxt.config.js`
+
+```js
+const axios = require('axios')
+
+module.exports = {
+  generate: {
+    routes: () =>
+      axios.get('https://my-api/users').then(res =>
+        res.data.map(user => ({
+          route: '/users/' + user.id,
+          payload: user
+        }))
+      )
+  }
+}
+```
+In the example above, we're using the `user.id` from the server to generate the routes but tossing out the rest of the data. Typically, we need to fetch it again from inside the `/users/_id.vue`. While we can do that, we'll probably need to set the `generate.interval` to something like `100` in order not to flood the server with calls. Because this will increase the run time of the generate script, it would be preferable to pass along the entire `user` object to the context in `_id.vue`. We do that by modifying the code above to this:
+
+`nuxt.config.js`
+
+```js
+const axios = require('axios')
+
+module.exports = {
+  generate: {
+    routes: () =>
+      axios.get('https://my-api/users').then(res =>
+        res.data.map(user => ({
+          route: '/users/' + user.id,
+          payload: user
+        }))
+      )
+  }
+}
+```
+
+Now we can access the `payload` from `/users/_id.vue` like so:
+
+```js
+asyncData: async ({ params, error, payload }) =>
+  payload
+  ? { user: payload }
+  : { user: await backend.fetchUser(params.id) }
+```
+
+## subFolders
+
+- Type: `Boolean`
+- Default: `true`
+
+By default, running `nuxt generate` will create a directory for each route & serve an `index.html` file.
+
+Example:
+
+```bash
+-| dist/
+---| index.html
+---| about/
+-----| index.html
+---| products/
+-----| item/
+-------| index.html
+```
+
+When set to false, HTML files are generated according to the route path:
+
+```bash
+-| dist/
+---| index.html
+---| about.html
+---| products/
+-----| item.html
+```
+
+_Note: this option could be useful using [Netlify](https://netlify.com) or any static hosting using HTML fallbacks._
+
+## concurrency
+
+- Type: `Number`
+- Default: `500`
+
+The generation of routes are concurrent, `generate.concurrency` specifies the amount of routes that run in one thread.

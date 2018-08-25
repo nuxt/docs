@@ -1,5 +1,5 @@
 ---
-title: "API: The generate Property"
+title: 'API: The generate Property'
 description: Configure the generation of your universal web application to a static web application.
 ---
 
@@ -86,11 +86,7 @@ We add routes for `/users/:id` in `nuxt.config.js`:
 ```js
 module.exports = {
   generate: {
-    routes: [
-      '/users/1',
-      '/users/2',
-      '/users/3'
-    ]
+    routes: ['/users/1', '/users/2', '/users/3']
   }
 }
 ```
@@ -126,14 +122,10 @@ const axios = require('axios')
 
 module.exports = {
   generate: {
-    routes: function () {
-      return axios.get('https://my-api/users')
-      .then((res) => {
-        return res.data.map((user) => {
-          return '/users/' + user.id
-        })
-      })
-    }
+    routes: () =>
+      axios
+        .get('https://my-api/users')
+        .then(res => res.data.map(user => '/users/' + user.id))
   }
 }
 ```
@@ -147,16 +139,14 @@ const axios = require('axios')
 
 module.exports = {
   generate: {
-    routes: function (callback) {
-      axios.get('https://my-api/users')
-      .then((res) => {
-        var routes = res.data.map((user) => {
-          return '/users/' + user.id
+    routes: callback =>
+      axios
+        .get('https://my-api/users')
+        .then(res => {
+          const routes = res.data.map(user => '/users/' + user.id)
+          callback(null, routes)
         })
-        callback(null, routes)
-      })
-      .catch(callback)
-    }
+        .catch(callback)
   }
 }
 ```
@@ -172,17 +162,13 @@ const axios = require('axios')
 
 module.exports = {
   generate: {
-    routes: function () {
-      return axios.get('https://my-api/users')
-      .then((res) => {
-        return res.data.map((user) => {
-          return {
-            route: '/users/' + user.id,
-            payload: user
-          }
-        })
-      })
-    }
+    routes: () =>
+      axios.get('https://my-api/users').then(res =>
+        res.data.map(user => ({
+          route: '/users/' + user.id,
+          payload: user
+        }))
+      )
   }
 }
 ```
@@ -190,10 +176,10 @@ module.exports = {
 Now we can access the `payload` from `/users/_id.vue` like so:
 
 ```js
-async asyncData ({ params, error, payload }) {
-  if (payload) return { user: payload }
-  else return { user: await backend.fetchUser(params.id) }
-}
+asyncData: async ({ params, error, payload }) =>
+  payload
+  ? { user: payload }
+  : { user: await backend.fetchUser(params.id) }
 ```
 
 ## subFolders

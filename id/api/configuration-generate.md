@@ -86,11 +86,7 @@ Kita tambahkan rute untuk `/users/:id` di dalam file `nuxt.config.js`:
 ```js
 module.exports = {
   generate: {
-    routes: [
-      '/users/1',
-      '/users/2',
-      '/users/3'
-    ]
+    routes: ['/users/1', '/users/2', '/users/3']
   }
 }
 ```
@@ -126,19 +122,15 @@ const axios = require('axios')
 
 module.exports = {
   generate: {
-    routes: function () {
-      return axios.get('https://my-api/users')
-      .then((res) => {
-        return res.data.map((user) => {
-          return '/users/' + user.id
-        })
-      })
+    routes: () =>
+      axios
+        .get('https://my-api/users')
+        .then(res => res.data.map(user => '/users/' + user.id))
     }
   }
-}
 ```
 
-### Function dengan menggunakan callback
+### Function with a callback
 
 `nuxt.config.js`
 
@@ -147,18 +139,16 @@ const axios = require('axios')
 
 module.exports = {
   generate: {
-    routes: function (callback) {
-      axios.get('https://my-api/users')
-      .then((res) => {
-        var routes = res.data.map((user) => {
-          return '/users/' + user.id
-        })
+    routes: callback =>
+      axios
+        .get('https://my-api/users')
+        .then(res => {
+          const routes = res.data.map(user => '/users/' + user.id)
         callback(null, routes)
       })
       .catch(callback)
     }
   }
-}
 ```
 
 ### Mempercepat proses generate dynamic route menggunakan `payload`
@@ -172,17 +162,13 @@ const axios = require('axios')
 
 module.exports = {
   generate: {
-    routes: function () {
-      return axios.get('https://my-api/users')
-      .then((res) => {
-        return res.data.map((user) => {
-          return {
+    routes: () =>
+      axios.get('https://my-api/users').then(res =>
+        res.data.map(user => ({
             route: '/users/' + user.id,
             payload: user
-          }
-        })
-      })
-    }
+        }))
+      )
   }
 }
 ```
@@ -190,10 +176,10 @@ module.exports = {
 Sekarang kita bisa mengakses `payload` dari `/users/_id.vue` seperti ini:
 
 ```js
-async asyncData ({ params, error, payload }) {
-  if (payload) return { user: payload }
-  else return { user: await backend.fetchUser(params.id) }
-}
+asyncData: async ({ params, error, payload }) =>
+  payload
+  ? { user: payload }
+  : { user: await backend.fetchUser(params.id) }
 ```
 
 ## subFolders
@@ -226,3 +212,10 @@ Ketika di-set menjadi false, file-file HTML akan di-generate berdasarkan path pa
 ```
 
 *Catatan: cara ini akan lebih bermanfaat ketika kita menggunakan [Netlify](https://netlify.com) atau hosting statis menggunakan HTML fallbacks.*
+
+## concurrency <!-- TODO: translate -->
+
+- Type: `Number`
+- Default: `500`
+
+The generation of routes are concurrent, `generate.concurrency` specifies the amount of routes that run in one thread.
