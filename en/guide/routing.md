@@ -115,7 +115,7 @@ export default {
 }
 ```
 
-If the validate method does not return `true`, Nuxt.js will automatically load the 404 error page.
+If the validate method does not return `true` or a `Promise` that resolve to `true`, Nuxt.js will automatically load the 404 error page.
 
 More information about the validate method: [API Pages validate](/api/pages-validate)
 
