@@ -1,11 +1,11 @@
 ---
 title: "API: The router Property"
-description: The router property lets you customize nuxt.js router.
+description: The router property lets you customize Nuxt.js router.
 ---
 
 # The router Property
 
-> The router property lets you customize nuxt.js router ([vue-router](https://router.vuejs.org/en/)).
+> The router property lets you customize Nuxt.js router ([vue-router](https://router.vuejs.org/en/)).
 
 ## base
 
@@ -23,7 +23,7 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert-blue">When `base` is set, nuxt.js will also add in the document header `<base href="{{ router.base }}"/>`.</p>
+<p class="Alert Alert-blue">When `base` is set, Nuxt.js will also add in the document header `<base href="{{ router.base }}"/>`.</p>
 
 > This option is given directly to the vue-router [base](https://router.vuejs.org/api/#base).
 
@@ -31,7 +31,7 @@ module.exports = {
 
 - Type: `Function`
 
-You may want to extend the routes created by nuxt.js. You can do it via the `extendRoutes` option.
+You may want to extend the routes created by Nuxt.js. You can do so via the `extendRoutes` option.
 
 Example of adding a custom route:
 
