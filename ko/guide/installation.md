@@ -32,7 +32,7 @@ $ npm run dev
 
 애플리케이션이 이제 http://localhost:3000 로 실행되었습니다.
 
-<p class="Alert">Nuxt.js는 <code> pages </code> 디렉토리 내의 파일 변경 사항을 수신하므로 새 페이지를 추가 할 때 응용 프로그램을 다시 시작할 필요가 없습니다.</p>
+<p class="Alert">Nuxt.js는 <code>pages</code> 디렉토리 내의 파일 변경 사항을 수신하므로 새 페이지를 추가 할 때 응용 프로그램을 다시 시작할 필요가 없습니다.</p>
 
 프로젝트의 디렉토리 구조에 대해 자세히 알고싶다면 [디렉토리 구조 문서](/guide/directory-structure)에서 확인할 수 있습니다.
 
@@ -45,7 +45,7 @@ $ mkdir <project-name>
 $ cd <project-name>
 ```
 
-<p class="Alert Alert--nuxt-green"><b>정보 : </b><code><project-name></code>을 프로젝트 이름으로 바꿉니다.</p>
+<p class="Alert Alert--nuxt-green"><b>정보 : </b><code>&lt;project-name&gt;</code>을 프로젝트 이름으로 바꿉니다.</p>
 
 ### package.json
 
