@@ -55,3 +55,14 @@ export default {
   }
 }
 ```
+
+You can also throw expected or unexpected errors during validate function executation:
+
+```js
+export default {
+  async validate ({ params, store }) {
+    // Throws a 500 internal server error with custom message
+    throw new Error('Under Construction!')
+  }
+}
+```
