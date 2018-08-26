@@ -37,11 +37,9 @@ Chinese translation is maintained by AOTU Labs from China, Shenzhen.
 
 ### Japanese
 
-Japanese translation team is using a translation tool called [GitLocalize](https://gitlocalize.com) in principle. See the following "Want to help with the translation?" section. 
+Japanese translation is maintained by [Vue.js Japan User Group](https://github.com/vuejs-jp/home).
 
-Japanese translation is maintained by INOUE Takuya.
-
-* Translation Repo - [https://gitlocalize.com/repo/100/ja](https://gitlocalize.com/repo/100/ja)
+* Translation Repo - [https://github.com/vuejs-jp/ja.docs.nuxtjs](https://github.com/vuejs-jp/ja.docs.nuxtjs)
 * Primary maintainer - [INOUE Takuya](http://blog.inouetakuya.info/)
 * Primary translator - [INOUE Takuya](https://github.com/inouetakuya)
 
