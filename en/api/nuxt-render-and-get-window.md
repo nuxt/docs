@@ -13,7 +13,7 @@ description: Get the `window` from a given URL of a Nuxt.js Application.
 - Returns: `Promise`
   - Returns: `window`
 
-> Get the window from a given url of a nuxt.js application.
+> Get the window from a given url of a Nuxt.js application.
 
 <p class="Alert Alert--info">This method is made for [test purposes](/guide/development-tools#end-to-end-testing).</p>
 
