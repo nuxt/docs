@@ -73,7 +73,7 @@ Indonesian translation is maintained by [Nuxt.js Indonesian Community](https://g
 
 [gl]: https://gitlocalize.com
 
-Much of the translation was done using a tool called [GitLocalize][gl], which is unfortunately reaching its end of service soon. Hence, we're currently exploring and open to suggetions on how to keep this process as streamlined as possible.
+Much of the translation was done using a tool called [GitLocalize][gl], which is unfortunately reaching its end of service soon. Hence, we're currently exploring and open to suggestions on how to keep this process as streamlined as possible.
 
 For now, **always check the `en/` version** of a document for its latest revision before starting a translation.  
 
