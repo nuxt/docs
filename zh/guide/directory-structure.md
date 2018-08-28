@@ -86,6 +86,7 @@ _该文件名为Nuxt.js保留的，不可更改。_
 | ~ | / |
 | ~assets | /assets |
 | ~components | /components |
+| ~middleware | /middleware |
 | ~pages | /pages |
 | ~plugins | /plugins |
 | ~static | /static |
