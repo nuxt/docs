@@ -74,7 +74,7 @@ import { resolve } from 'path'
 // 这样可以在单元测试结束之后关掉它们
 let nuxt = null
 
-// 初始化 Nuxt.js 并创建一个监听 localhost:4000 的服务器
+// 初始化 Nuxt.js 并创建一个监听 localhost:3000 的服务器
 test.before('Init Nuxt.js', async t => {
   const rootDir = resolve(__dirname, '..')
   let config = {}
