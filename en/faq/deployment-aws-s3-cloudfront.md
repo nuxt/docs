@@ -1,5 +1,5 @@
 ---
-title: AWS: S3+Cloudfront Deployment
+title: "AWS: S3+Cloudfront Deployment"
 description: Static Hosting on AWS with S3 and Cloudfront
 ---
 
