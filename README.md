@@ -40,8 +40,8 @@ Chinese translation is maintained by AOTU Labs from China, Shenzhen.
 Japanese translation is maintained by [Vue.js Japan User Group](https://github.com/vuejs-jp/home).
 
 * Translation Repo - [https://github.com/vuejs-jp/ja.docs.nuxtjs](https://github.com/vuejs-jp/ja.docs.nuxtjs)
-* Primary maintainer - [INOUE Takuya](http://blog.inouetakuya.info/)
-* Primary translator - [INOUE Takuya](https://github.com/inouetakuya)
+* Primary maintainer - [INOUE Takuya](http://blog.inouetakuya.info/), [HANATANI Takuma(@potato4d)](https://github.com/potato4d)
+* Primary translator - [INOUE Takuya](https://github.com/inouetakuya), [HANATANI Takuma(@potato4d)](https://github.com/potato4d)
 
 ### Korean
 
