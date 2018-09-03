@@ -110,7 +110,7 @@ module.exports = {
 `middleware/user-agent.js`
 ```js
 export default function (context) {
-  // Add the userAgent property in the context (available in `data` and `fetch`)
+  // Add the userAgent property in the context (available in `asyncData` and `fetch`)
   context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```

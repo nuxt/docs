@@ -266,7 +266,7 @@ module.exports = function (moduleOptions) {
 
       // Customize existing loaders
       // Refer to source code for Nuxt internals:
-      // https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/webpack/base.config.js
+      // https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/webpack/base.js
       const barLoader = config.module.rules.find(rule => rule.loader === 'bar-loader')
   })
 }
