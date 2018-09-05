@@ -2,32 +2,84 @@
   {
     "title": "基本的な使い方",
     "links": [
-      { "name": "Hello world", "to": "" },
-      { "name": "SEO HTML Head", "to": "/seo-html-head" }
+      {
+        "name": "Hello world",
+        "to": ""
+      },
+      {
+        "name": "SEO HTML Head",
+        "to": "/seo-html-head"
+      }
     ]
   },
   {
     "title": "カスタマイズ",
     "links": [
-      { "name": "カスタムローディング", "to": "/custom-loading" },
-      { "name": "カスタムルーティング", "to": "/custom-routes" },
-      { "name": "グローバル CSS", "to": "/global-css" },
-      { "name": "レイアウト", "to": "/layouts" },
-      { "name": "ミドルウェア", "to": "/middleware" },
-      { "name": "ネストされたルート", "to": "/nested-routes" },
-      { "name": "プラグイン", "to": "/plugins" },
-      { "name": "ページ遷移時のトランジション", "to": "/routes-transitions" }
+      {
+        "name": "カスタムローディング",
+        "to": "/custom-loading"
+      },
+      {
+        "name": "カスタムページローディング",
+        "to": "/custom-page-loading"
+      },
+      {
+        "name": "カスタムルーティング",
+        "to": "/custom-routes"
+      },
+      {
+        "name": "グローバル CSS",
+        "to": "/global-css"
+      },
+      {
+        "name": "レイアウト",
+        "to": "/layouts"
+      },
+      {
+        "name": "ミドルウェア",
+        "to": "/middleware"
+      },
+      {
+        "name": "ネストされたルート",
+        "to": "/nested-routes"
+      },
+      {
+        "name": "プラグイン",
+        "to": "/plugins"
+      },
+      {
+        "name": "ページ遷移時のトランジション",
+        "to": "/routes-transitions"
+      }
     ]
   },
   {
     "title": "高度な使い方",
     "links": [
-      { "name": "非同期データ", "to": "/async-data" },
-      { "name": "認証ルート", "to": "/auth-routes" },
-      { "name": "外部認証 API（JWT）", "to": "/auth-external-jwt" },
-      { "name": "Vuex ストア", "to": "/vuex-store" },
-      { "name": "国際化（i18n）", "to": "/i18n" },
-      { "name": "テスト", "to": "/testing" }
+      {
+        "name": "非同期データ",
+        "to": "/async-data"
+      },
+      {
+        "name": "認証ルート",
+        "to": "/auth-routes"
+      },
+      {
+        "name": "外部認証 API（JWT）",
+        "to": "/auth-external-jwt"
+      },
+      {
+        "name": "Vuex ストア",
+        "to": "/vuex-store"
+      },
+      {
+        "name": "国際化（i18n）",
+        "to": "/i18n"
+      },
+      {
+        "name": "テスト",
+        "to": "/testing"
+      }
     ]
   }
 ]
