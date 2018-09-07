@@ -14,7 +14,7 @@ description: "`context`は、従来 Vue コンポーネントが使用できな�
 `app` | ルートの Vue インスタンス | クライアント及びサーバー | すべてのプラグインを含むルートの Vue インスタンス。 たとえば、`axios` を使用する場合、`context.app.$axios` から `$axios` にアクセスすることができます。
 `isClient` | `ブーリアン` | クライアント及びサーバー | クライアントサイド からレンダリングしているかどうかを知らせます(*廃止予定*。`process.client` を使用してください）。
 `isServer` | `ブーリアン` | クライアント及びサーバー | サーバーサイド からレンダリングしているかどうかを知らせます(*廃止予定*。`process.server` を使用してください）。
-`isStatic` | `ブーリアン` | クライアント及びサーバー | Boolean to let you know if you're actually inside a generated app (via `nuxt generate`) (*deprecated.* use `process.static`).
+`isStatic` | `ブーリアン` | クライアント及びサーバー | `nuxt generate` 経由で生成された静的アプリ内か否かを知らせます（このキーは *deprecated* です。`process.static` を使ってください）
 `isDev` | `ブーリアン` | クライアント及びサーバー | 開発モードであるかどうかを知らせます。このキーはプロダクションの一部のデータをキャッシュさせるのに便利です。
 `isHMR` | `ブーリアン` | クライアント及びサーバー | メソッド/ミドルウェアが webpack の hot module replacement（*開発モードでのクライアントサイドに限る*）から呼び出されたかどうかを知らせます。
 `route` | [Vue Router Route](https://router.vuejs.org/en/api/route-object.html) | クライアント及びサーバー | Vue Router のルートインスタンス
