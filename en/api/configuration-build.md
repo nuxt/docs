@@ -107,7 +107,7 @@ If you want to see more about our default webpack configuration, take a look at 
 
 ### loaders in extend
 
-loaders is same object structure as [build.loaders](#loaders), so you can change the options of loaders inside `extend`.
+`loaders` has the same object structure as [build.loaders](#loaders), so you can change the options of loaders inside `extend`.
 
 Example (`nuxt.config.js`):
 
