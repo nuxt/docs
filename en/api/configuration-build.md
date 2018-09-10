@@ -86,7 +86,7 @@ See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) 
 The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are:
 
 1. webpack config object,
-2. object with the following keys (all boolean): `isDev`, `isClient`, `isServer`.
+2. object with the following keys (all boolean): `isDev`, `isClient`, `isServer`, `loaders`.
 
 Example (`nuxt.config.js`):
 
@@ -104,6 +104,25 @@ module.exports = {
 ```
 
 If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack).
+
+### loaders in extend
+
+`loaders` has the same object structure as [build.loaders](#loaders), so you can change the options of loaders inside `extend`.
+
+Example (`nuxt.config.js`):
+
+```js
+module.exports = {
+  build: {
+    extend (config, { loaders: { vue } }) {
+      // Extend only webpack config for client-bundle
+      if (isClient) {
+        vue.transformAssetUrls.video = ['src', 'poster']
+      }
+    }
+  }
+}
+```
 
 ## extractCSS
 
@@ -151,6 +170,77 @@ To understand a bit more about the use of manifest and vendor, take a look at th
 - Type: `Object`
 
 See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for available options.
+
+## loaders
+
+> Customize options of Nuxt.js integrated webpack loaders.
+
+- Type: `Object`
+- Default:
+
+```js
+{
+  file: {},
+  fontUrl: { limit: 1000 },
+  imgUrl: { limit: 1000 },
+  pugPlain: {},
+  vue: {
+    transformAssetUrls: {
+      video: 'src',
+      source: 'src',
+      object: 'src',
+      embed: 'src'
+    }
+  },
+  css: {},
+  cssModules: {
+    localIdentName: '[local]_[hash:base64:5]'
+  },
+  less: {},
+  sass: {
+    indentedSyntax: true
+  },
+  scss: {},
+  stylus: {},
+  vueStyle: {}
+}
+```
+
+> Note: In addition to specifying the configurations in `nuxt.config.js`, it can also be modified by [build.extend](#extend)
+
+### loaders.file
+
+> More details are in [file-loader options](https://github.com/webpack-contrib/file-loader#options).
+
+### loaders.fontUrl and loaders.imgUrl
+
+> More details are in [url-loader options](https://github.com/webpack-contrib/url-loader#options).
+
+### loaders.pugPlain
+
+> More details are in [pug-plain-loader](https://github.com/yyx990803/pug-plain-loader) or [Pug compiler options](https://pugjs.org/api/reference.html#options).
+
+### loaders.vue
+
+> More details are in [vue-loader options](https://vue-loader.vuejs.org/options.html).
+
+### loaders.css and loaders.cssModules
+
+> More details are in [css-loader options](https://github.com/webpack-contrib/css-loader#options).
+> Note: cssModules is loader options for usage of [CSS Modules](https://vue-loader.vuejs.org/guide/css-modules.html#css-modules)
+
+### loaders.less
+
+> You can pass any Less specific options to the `less-loader via` via `loaders.less`. See the [Less documentation](http://lesscss.org/usage/#command-line-usage-options) for all available options in dash-case.
+
+### loaders.sass and loaders.scss
+
+> See the [Node Sass documentation](https://github.com/sass/node-sass/blob/master/README.md#options) for all available Sass options.
+> Note: `loaders.sass` is for [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html)
+
+### loaders.vueStyle
+
+> More details are in [vue-style-loader options](https://github.com/vuejs/vue-style-loader#options).
 
 ## optimization
 
