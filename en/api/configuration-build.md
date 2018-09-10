@@ -57,6 +57,13 @@ module.exports = {
 }
 ```
 
+## cache
+
+- Type: `Boolean`
+- Default: `false`
+
+> Enable cache of [uglifyjs-webpack-plugin ](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
+
 ## cssSourceMap
 
 - Type: `boolean`
@@ -145,6 +152,33 @@ To understand a bit more about the use of manifest and vendor, take a look at th
 
 See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for available options.
 
+## optimization
+
+- Type: `Object`
+- Default:
+
+  ```js
+  {
+    splitChunks: {
+      chunks: 'all',
+      automaticNameDelimiter: '.',
+      name: undefined,
+      cacheGroups: {}
+    }
+  }
+  ```
+
+The default value of `splitChunks.name` is `true` in `dev` or `analyze` mode.
+
+webpack [optimization](https://webpack.js.org/configuration/optimization/)
+
+## parallel
+
+- Type: `Boolean`
+- Default: `false`
+
+> Enable [thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) in webpack building
+
 ## plugins
 
 > Add webpack plugins
@@ -212,6 +246,13 @@ module.exports = {
 }
 ```
 
+## profile
+
+- Type: `Boolean`
+- Default: enabled by command line argument `--profile`
+
+> Enable the profiler in [WebpackBar](https://github.com/nuxt/webpackbar#profile)
+
 ## publicPath
 
 > Nuxt.js lets you upload your dist files to your CDN for maximum performances, simply set the `publicPath` to your CDN.
@@ -231,6 +272,22 @@ module.exports = {
 
 Then, when launching `nuxt build`, upload the content of `.nuxt/dist/client` directory to your CDN and voilà!
 
+## splitChunks
+
+- Type: `Object`
+- Default:
+
+  ```js
+  {
+    layouts: false,
+    pages: true,
+    commons: true
+  }
+  ```
+
+If split codes for `layout`, `pages` and `commons` (common libs: vue|vue-loader|vue-router|vuex...).
+
+
 ## ssr
 
 > Creates special webpack bundle for SSR renderer.
@@ -239,98 +296,6 @@ Then, when launching `nuxt build`, upload the content of `.nuxt/dist/client` dir
 - Default: `true` for universal mode and `false` for spa mode
 
 This option is automatically set based on `mode` value if not provided.
-
-## templates
-
-> Nuxt.js allows you provide your own templates which will be rendered based on Nuxt configuration. This feature is specially useful for using with [modules](/guide/modules).
-
-- Type: `Array`
-
-Example (`nuxt.config.js`):
-
-```js
-module.exports = {
-  build: {
-    templates: [
-      {
-        src: '~/modules/support/plugin.js', // `src` can be absolute or relative
-        dst: 'support.js', // `dst` is relative to project `.nuxt` dir
-        options: { // Options are provided to template as `options` key
-          live_chat: false
-        }
-      }
-    ]
-  }
-}
-```
-
-Templates are rendered using [`lodash.template`](https://lodash.com/docs/#template) you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
-
-## vendor
-
-> Nuxt.js lets you add modules inside the `vendor.bundle.js` file to reduce the size of the application bundle. This is especially helpful when using external modules (like `axios` for example).
-
-- Type: `Array`
-
-To add a module/file inside the vendor bundle, add the `build.vendor` key inside `nuxt.config.js`:
-
-```js
-module.exports = {
-  build: {
-    vendor: ['axios']
-  }
-}
-```
-
-You can also give a path to a file, like a custom lib you created:
-
-```js
-module.exports = {
-  build: {
-    vendor: [
-      'axios',
-      '~/plugins/my-lib.js'
-    ]
-  }
-}
-```
-
-## watch
-
-> You can provide your custom files to watch and regenerate after changes. This feature is specially useful for using with [modules](/guide/modules).
-
-- Type: `Array<String>`
-
-```js
-module.exports = {
-  build: {
-    watch: [
-      '~/.nuxt/support.js'
-    ]
-  }
-}
-```
-
-## profile
-
-- Type: `Boolean`
-- Default: enabled by command line argument `--profile`
-
-> Enable the profiler in [WebpackBar](https://github.com/nuxt/webpackbar#profile)
-
-## parallel
-
-- Type: `Boolean`
-- Default: `false`
-
-> Enable [thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) in webpack building
-
-## cache
-
-- Type: `Boolean`
-- Default: `false`
-
-> Enable cache of [uglifyjs-webpack-plugin ](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
 
 ## styleResources
 
@@ -364,40 +329,31 @@ You need to specify the patterns/path you want to include for the given pre-proc
 }
 ```
 
-## optimization
+## templates
 
-- Type: `Object`
-- Default:
+> Nuxt.js allows you provide your own templates which will be rendered based on Nuxt configuration. This feature is specially useful for using with [modules](/guide/modules).
 
-  ```js
-  {
-    splitChunks: {
-      chunks: 'all',
-      automaticNameDelimiter: '.',
-      name: undefined,
-      cacheGroups: {}
-    }
+- Type: `Array`
+
+Example (`nuxt.config.js`):
+
+```js
+module.exports = {
+  build: {
+    templates: [
+      {
+        src: '~/modules/support/plugin.js', // `src` can be absolute or relative
+        dst: 'support.js', // `dst` is relative to project `.nuxt` dir
+        options: { // Options are provided to template as `options` key
+          live_chat: false
+        }
+      }
+    ]
   }
-  ```
+}
+```
 
-The default value of `splitChunks.name` is `true` in `dev` or `analyze` mode.
-
-webpack [optimization](https://webpack.js.org/configuration/optimization/)
-
-## splitChunks
-
-- Type: `Object`
-- Default:
-
-  ```js
-  {
-    layouts: false,
-    pages: true,
-    commons: true
-  }
-  ```
-
-If split codes for `layout`, `pages` and `commons` (common libs: vue|vue-loader|vue-router|vuex...).
+Templates are rendered using [`lodash.template`](https://lodash.com/docs/#template) you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
 
 ## transpile
 
@@ -405,6 +361,35 @@ If split codes for `layout`, `pages` and `commons` (common libs: vue|vue-loader|
 - Default: `[]`
 
 If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Item in transpile can be string or regex object for matching dependencies file name.
+
+## vendor
+
+> Nuxt.js lets you add modules inside the `vendor.bundle.js` file to reduce the size of the application bundle. This is especially helpful when using external modules (like `axios` for example).
+
+- Type: `Array`
+
+To add a module/file inside the vendor bundle, add the `build.vendor` key inside `nuxt.config.js`:
+
+```js
+module.exports = {
+  build: {
+    vendor: ['axios']
+  }
+}
+```
+
+You can also give a path to a file, like a custom lib you created:
+
+```js
+module.exports = {
+  build: {
+    vendor: [
+      'axios',
+      '~/plugins/my-lib.js'
+    ]
+  }
+}
+```
 
 ## vueLoader
 
@@ -424,3 +409,19 @@ If you want to transpile specific dependencies with Babel, you can add them in `
   ```
 
 > Specify the [Vue Loader Options](https://vue-loader.vuejs.org/options.html).
+
+## watch
+
+> You can provide your custom files to watch and regenerate after changes. This feature is specially useful for using with [modules](/guide/modules).
+
+- Type: `Array<String>`
+
+```js
+module.exports = {
+  build: {
+    watch: [
+      '~/.nuxt/support.js'
+    ]
+  }
+}
+```
