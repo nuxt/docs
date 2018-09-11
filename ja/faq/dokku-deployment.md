@@ -41,6 +41,12 @@ dokku config:set my-nuxt-app HOST=0.0.0.0 NODE_ENV=production
 }
 ```
 
+To launch the application we run `npm run start` using the [Procfile](http://dokku.viewdocs.io/dokku/deployment/methods/dockerfiles/#procfiles-and-multiple-processes):
+
+```
+web: npm run start
+```
+
 最後にアプリケーションを Dokku に git push します:
 
 ```bash
