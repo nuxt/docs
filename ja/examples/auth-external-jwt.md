@@ -1,36 +1,37 @@
 ---
-title: Auth External API (JWT)
-description: Authentication with external API service (jsonwebtoken) example with Nuxt.js
+title: 外部認証API (JWT)
+description: Nuxt.jsでjsonwebtokenを使った認証の例
 github: auth-jwt
 code: https://github.com/ahadyekta/nuxt-auth-external-jwt
 ---
 
-# Documentation
+# ドキュメント
 
-In auth-routes example both api and nuxt start together and use one Node.js server instance. However, sometimes we should work with external api with jsonWebToken. In this example it will be explained in a simple way.
+auth-routesの例では、apiとnuxtの両方を一緒に起動し、1つのNode.jsサーバーインスタンスを使用していました。
+しかし、時にはjsonWebTokenを使って外部APIを使う必要があります。 ここでは簡単に説明します。
 
-## Structure
+## 仕組み
 
-Since Nuxt.js provides both server and client rendering and the cookie of browser is different from cookie of the Node.js server, we should push token data to some storage that can be accessible in both sides.
+Nuxt.jsはサーバとクライアントの両方のレンダリングを提供しており、ブラウザのクッキーはNode.jsのサーバサイドのクッキーとは異なるため、トークンのデータを双方からアクセスできる場所に保存する必要があります。
 
-### For server rendering
+### サーバーサイドレンダリングの場合
 
-We should save the token in session browser cookie after login, then it can be accessed through `req.headers.cookie` in middleware files, `nuxtServerInit` function or  wherever you can access the `req`.
+ログイン後にトークンをセッションブラウザのクッキーに保存し、ミドルウェアファイルの `req.headers.cookie`、 `nuxtServerInit`関数、または `req`を介してどこからでもアクセスできます。
 
-### For client rendering
+### クライアントサイドレンダリングの場合
 
-We directly commit token in the store, as long as the page is not closed or reloaded, we have the token.
+store内のトークンを直接保存します。ページが閉じられたり再読み込みされない限り、トークンが保たれます。
 
-First, we install the dependencies:
+まず依存パッケージをインストールします:
 
 ```bash
 npm install js-cookie --save
 npm install cookieparser --save
 ```
 
-## Login Page
+## ログインページ
 
-Then inside page directory make a `login.vue` file, and inside the script section, add:
+次に、ページディレクトリー以下に `login.vue`ファイルを作り、script部分に以下のコードを追加します:
 
 ```js
 import Cookie from 'js-cookie'
@@ -43,8 +44,8 @@ export default {
         const auth = {
           accessToken: 'someStringGotFromApiServiceWithAjax'
         }
-        this.$store.commit('update', auth) // mutating to store for client rendering
-        Cookie.set('auth', auth) // saving token in cookie for server rendering
+        this.$store.commit('update', auth) // クライアントレンダリング用に変更する
+        Cookie.set('auth', auth) // サーバサイドレンダリングのためにクッキーにトークンを保存する
         this.$router.push('/')
       }, 1000)
     }
@@ -52,11 +53,11 @@ export default {
 }
 ```
 
-> Note: we simulate the async request with timeout.
+> 注: この例では非同期のリクエストをタイムアウトを使って再現しています。
 
-## Using the store
+## storeを使った例
 
-After that make `index.js` in `store` directory like below :
+その後、 `store`ディレクトリー内に `index.js`をこのように作成します:
 
 ```javascript
 import Vuex from 'vuex'
@@ -89,30 +90,31 @@ const createStore = () => {
 export default createStore
 ```
 
-> Note: the `nuxtServerInit` function only runs in every server side rendering. So we use it to mutate the session browser cookie in the store. We can get the session browser cookie by using `req.headers.cookie` and parse it using `cookieparser`.
+>注: `nuxtServerInit`関数はサーバサイドでレンダリングされるたびに実行されます。これを使ってストア内のセッションブラウザのクッキーを更新します。
+その後、`req.headers.cookie`を使ってそのクッキーを取得して、`cookieparser`を使ってパースすることができます。
 
-## checking auth middlewares
+## 認証用ミドルウェアによるチェック
 
-We can check the store for havin the accessToken in every page we need to limit access. In middleware directory we make `authenticated.js` file:
+アクセス制限が必要な全ページで、アクセストークンを持っているかどうかをstoreを使ってチェックできます。middlewareのディレクトリーに `authenticated.js`を作成します:
 
 ```javascript
 export default function ({ store, redirect }) {
-  // If the user is not authenticated
+  // ユーザーが認証されていない場合
   if (!store.state.auth) {
     return redirect('/login')
   }
 }
 ```
 
-and in middleware directory make `notAuthenticated.js` file for login page:
+次に、middlewareのディレクトリーにloginページ用の `notAuthenticated.js`を作成します:
 
 ```javascript
 export default function ({ store, redirect }) {
-  // If the user is authenticated redirect to home page
+  // ユーザーが認証されてホームページにリダイレクトされた場合
   if (store.state.auth) {
     return redirect('/')
   }
 }
 ```
 
-> Note: use `authenticated` middleware for pages which need authentication and use `notAuthenticated` middleware inside the login/register and similar pages.
+> 注: 認証が必要なページには `authenticated`ミドルウェアを使用し、login/registerなどページには`notAuthenticated`ミドルウェアを使います。
