@@ -114,7 +114,7 @@ Example (`nuxt.config.js`):
 ```js
 module.exports = {
   build: {
-    extend (config, { loaders: { vue } }) {
+    extend (config, { isClient, loaders: { vue } }) {
       // Extend only webpack config for client-bundle
       if (isClient) {
         vue.transformAssetUrls.video = ['src', 'poster']
