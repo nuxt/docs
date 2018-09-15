@@ -187,9 +187,9 @@ export default {
 
 <div class="Alert">Vous pouvez également avoir des modules en exportant une instance de store vous devrez les ajouter manuellement sur votre store.</div>
 
-### Module files
+### Fichiers de module
 
-You can optionally break down a module file into separate files: `state.js`, `actions.js`, `mutations.js` and `getters.js`. If you maintain an `index.js` file with state, getters and mutations while having a single separate file for actions, that will also still be properly recognized.
+Vous pouvez optionnellement scinder un fichier de module en plusieurs fichiers séparés : `state.js`, `actions.js`, `mutations.js` et `getters.js`. Si vous maintenez un fichier `index.js` avec un état, des accesseurs et des mutations alors que les actions sont dans un fichier séparé, cela va également être proprement interprété.
 
 ### Plugins
 
