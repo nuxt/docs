@@ -3,7 +3,7 @@ title: Vuex Store
 description: Using a store to manage the state is important for every big application, that's why Nuxt.js implements Vuex in its core.
 ---
 
-> Using a store to manage the state is important to every big application, that's why nuxt.js implement [Vuex](https://vuex.vuejs.org/en/) in its core.
+> Using a store to manage the state is important to every big application, that's why Nuxt.js implements [Vuex](https://vuex.vuejs.org/en/) in its core.
 
 ## Activate the Store
 
@@ -186,6 +186,10 @@ export default {
 ```
 
 <div class="Alert">You can also have modules by exporting a store instance, you will have to add them manually on your store.</div>
+
+### Module files
+
+You can optionally break down a module file into separate files: `state.js`, `actions.js`, `mutations.js` and `getters.js`. If you maintain an `index.js` file with state, getters and mutations while having a single separate file for actions, that will also still be properly recognized.
 
 ### Plugins
 

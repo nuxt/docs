@@ -25,7 +25,7 @@ module.exports = {
 
 <p class="Alert Alert-blue">When `base` is set, nuxt.js will also add in the document header `<base href="{{ router.base }}"/>`.</p>
 
-> This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
+> This option is given directly to the vue-router [base](https://router.vuejs.org/api/#base).
 
 ## extendRoutes
 
@@ -68,7 +68,7 @@ module.exports = {
 }
 ```
 
-> This option is given directly to the [vue-router Router constructor](https://router.vuejs.org/en/api/options.html).
+> This option is given directly to the vue-router [linkactiveclass](https://router.vuejs.org/api/#linkactiveclass).
 
 ## linkExactActiveClass
 
@@ -86,7 +86,7 @@ module.exports = {
 }
 ```
 
-> This option is given directly to the [vue-router Router constructor](https://router.vuejs.org/en/api/options.html).
+> This option is given directly to the vue-router [linkexactactiveclass](https://router.vuejs.org/api/#linkexactactiveclass).
 
 ## middleware
 
@@ -133,7 +133,7 @@ module.exports = {
 }
 ```
 
-> This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
+> This option is given directly to the vue-router [mode](https://router.vuejs.org/api/#mode).
 
 ## scrollBehavior
 
@@ -191,4 +191,21 @@ module.exports = {
 }
 ```
 
-> This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
+## parseQuery / stringifyQuery
+
+- Type: `Function`
+
+Provide custom query string parse / stringify functions. Overrides the default.
+
+> This option is given directly to the vue-router [parseQuery / stringifyQuery](https://router.vuejs.org/api/#parsequery-stringifyquery).
+
+## fallback
+
+- Type: `boolean`
+- Default: `false`
+
+Controls whether the router should fallback to hash mode when the browser does not support history.pushState but mode is set to history.
+
+Setting this to false essentially makes every router-link navigation a full page refresh in IE9. This is useful when the app is server-rendered and needs to work in IE9, because a hash mode URL does not work with SSR.
+
+> This option is given directly to the vue-router [fallback](https://router.vuejs.org/api/#fallback).

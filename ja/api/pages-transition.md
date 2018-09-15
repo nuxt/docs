@@ -7,7 +7,7 @@ description: Nuxt.js では transition コンポーネントを使って、ペ�
 
 > Nuxt.js は [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) コンポーネントを使って、ページ間を遷移する際のトランジション/アニメーションを行うことができます。
 
-- **タイプ:** `文字列` または `オブジェクト` または `関数`
+- **型:** `文字列` または `オブジェクト` または `関数`
 
 特定のルートに対してカスタムトランジションを設定するには、ページコンポーネントに `transition` キーを追加してください。
 
@@ -59,7 +59,7 @@ export default {
 
 `transition` オブジェクトが持つことができるプロパティは以下のとおり:
 
-| キー | タイプ | デフォルト | 定義 |
+| キー | 型 | デフォルト | 定義 |
 |------|------|---------|-----------|
 | `name` | 文字列 | `"page"` | すべてのトランジション時に適用されるトランジション名 |
 | `mode` | 文字列 | `"out-in"` | すべてのトランジション時に適用されるトランジションモード。詳細は [Vue.js のドキュメント](http://vuejs.org/v2/guide/transitions.html#Transition-Modes) 参照 |

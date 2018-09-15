@@ -5,6 +5,16 @@ description: Nuxt.js utilise le système de fichiers pour générer les routes d
 
 > Nuxt.js génère automatiquement la configuration pour [vue-router](https://github.com/vuejs/vue-router) en fonction de votre arborescence de fichiers Vue se trouvant au sein du répertoire `pages`.
 
+<div class="Alert Alert--grey">Pour naviguer entre les pages, nous recommandons l'utilisation du composant [`<nuxt-link>`](/api/components-nuxt-link).</div>
+
+Par exemple :
+
+```html
+<template>
+  <nuxt-link to="/">Accueil</nuxt-link>
+</template>
+```
+
 ## Routes basiques
 
 Cette arborescence :

@@ -72,6 +72,7 @@
         ]
       },
       { "name": "head (En)", "to": "/configuration-head" },
+      { "name": "ignore (En)", "to": "/configuration-ignore" },
       {
         "name": "loading (En)", "to": "/configuration-loading",
         "contents": [

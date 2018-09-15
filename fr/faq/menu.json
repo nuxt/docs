@@ -26,8 +26,9 @@
     "title": "Déploiement",
     "links": [
       { "name": "Déployer sur Heroku", "to": "/heroku-deployment" },
-      { "name": "Déployer sur Dokku", "to": "/dokku-deployment" },
+      { "name": "Déployer avec Netlify (EN)", "to": "/netlify-deployment" },
       { "name": "Déployer avec Now", "to": "/now-deployment" },
+      { "name": "Déployer sur Dokku", "to": "/dokku-deployment" },
       { "name": "Déployer avec Surge", "to": "/surge-deployment" },
       { "name": "Déployer sur GitHub Pages", "to": "/github-pages" },
       { "name": "Utiliser nginx en tant que proxy", "to": "/nginx-proxy" }

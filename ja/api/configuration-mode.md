@@ -1,15 +1,14 @@
 ---
-title: "API: The mode Property"
-description: Change default nuxt mode
+title: 'API: mode プロパティ'
+description: デフォルトの nuxt モードを変更します。
 ---
 
-# The mode Property
-- Type: `string`
-  - Default: `universal`
-  - Possible values:
-    - `'spa'`: No server-side rendering (only client-side navigation)
-    - `'universal'`: Isomorphic application (server-side rendering + client-side navigation)
+# mode プロパティ
+- 型: `string`
+  - デフォルト値: `'universal'`
+  - 受け取ることができる値:
+    - `'spa'`: サーバーサイドレンダリングを行わない (クライアントでのナビゲーションのみ)
+    - `'universal'`: アイソモーフィックなアプリケーション (サーバーサイドレンダリングに加え、クライアントでのナビゲーションを行う)
 
-> You can use this option to change default nuxt mode for your project using `nuxt.config.js`
-
+> このオプションを利用すると、 `nuxt.config.js` を利用してプロジェクトのデフォルトの nuxt のモードを変更することができます。
 

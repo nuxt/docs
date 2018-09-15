@@ -22,7 +22,7 @@ const app = require('express')()
 const isProd = (process.env.NODE_ENV === 'production')
 const port = process.env.PORT || 3000
 
-// We instantiate nuxt.js with the options
+// We instantiate Nuxt.js with the options
 const config = require('./nuxt.config.js')
 config.dev = !isProd
 const nuxt = new Nuxt(config)

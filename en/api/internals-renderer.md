@@ -15,9 +15,11 @@ We can register hooks on certain life cycle events.
 
 Hook                      | Arguments              | When
 --------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------
- `render:before`          |                        | *description missing*
- `render:setupMiddleware` | connect instance (app) | Before Nuxt adds it's middleware stack. We can use it to register custom server side middleware
- `render:resourcesLoaded` |                        | *description missing*
- `render:errorMiddleware` | connect instance (app) | Call your own middleware before using Nuxt's. See the [Sentry module](https://github.com/nuxt-community/sentry-module/blob/master/lib/sentry.js) for more info.
- `render:route`           |                        | *description missing*
- `render:done`            |  renderer              | SSR Middleware and all resources are ready
+ `render:before`          | (renderer, options)      | Before setting up middleware and resources for the Renderer class, useful to overload some methods or options.
+ `render:setupMiddleware` | (app) *connect instance* | Before Nuxt adds it's middleware stack. We can use it to register custom server side middleware.
+ `render:errorMiddleware` | (app) *connect instance* | Before adding Nuxt error middleware, useful to add your own middleware before using Nuxt's. See the [Sentry module](https://github.com/nuxt-community/sentry-module/blob/master/lib/sentry.js) for more info.
+ `render:resourcesLoaded` | (resources)              | Called after resources for renderer are loaded (client manifest, server bundle, etc).
+ `render:done`            |  (renderer)              | SSR Middleware and all resources are ready (Renderer ready)
+ `render:context`         |  (context.nuxt)          | *Every time a route is server-rendered and before `render:route` hook*. Called before serializing Nuxt context into `window.__NUXT__`, useful to add some data that you can fetch on client-side.
+ `render:route`           |  (url, result, context)  | *Every time a route is server-rendered*. Called before 
+

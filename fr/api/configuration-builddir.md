@@ -10,6 +10,8 @@ description: Définissez le dossier dist de votre application Nuxt.js
 
 > Définissez le répertoire dist de votre application Nuxt.js
 
+Exemple (`nuxt.config.js`):
+
 ```js
 module.exports = {
   buildDir: 'nuxt-dist'
