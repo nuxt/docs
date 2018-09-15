@@ -11,7 +11,7 @@ description: Nuxt.js ではウェブアプリケーションを自由にビル�
 
 > Nuxt.js では [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer) を使ってバンドルファイルと最適化の仕方を視覚化できます。
 
-- タイプ: `ブーリアン` または `オブジェクト`
+- 型: `ブーリアン` または `オブジェクト`
 - デフォルト: `false`
 
 オブジェクトの場合は、利用できるプロパティは [こちら](https://github.com/th0r/webpack-bundle-analyzer#as-plugin) を参照してください。
@@ -36,7 +36,7 @@ module.exports = {
 
 > JS や Vue ファイルのために babel の設定をカスタマイズします。
 
-- タイプ: `オブジェクト`
+- 型: `オブジェクト`
 
 - デフォルト:
 
@@ -60,14 +60,14 @@ module.exports = {
 
 ## cssSourceMap
 
-- タイプ: `ブーリアン`
+- 型: `ブーリアン`
 - デフォルト: 開発モードでは `true` でプロダクションモードでは `false`
 
 > CSS ソースマップのサポートを有効にします。
 
 ## devMiddleware
 
-- タイプ: `オブジェクト`
+- 型: `オブジェクト`
 
 利用できるオプションは [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) を参照してください。
 
@@ -75,7 +75,7 @@ module.exports = {
 
 > クライアント及びサーバーのバンドルについて Webpack の設定を手動で拡張します。
 
-- タイプ: `関数`
+- 型: `関数`
 
 extend メソッドは一度はサーバーのバンドルのため、一度はクライアントのバンドルのため、つまり二度呼び出されます。メソッドの引数は次のとおり:
 
@@ -103,7 +103,7 @@ module.exports = {
 
 > Vue のサーバーサイドレンダリング [ガイドライン](https://ssr.vuejs.org/en/css.html)を利用して、共通の CSS を抽出できるようにします。
 
-- タイプ: `ブーリアン`
+- 型: `ブーリアン`
 - デフォルト: `false`
 
 CSS を抽出して、メインのチャンクに独立した CSS ファイルを挿入する（自動的にテンプレートに注入される）ために、ファイルを個別にキャッシュさせることができる `extract-text-webpack-plugin` を使います。これは共通して利用される CSS が多く存在するときに推奨されます。非同期コンポーネントの内部の CSS は JavaScript の文字列としてインラインで保持され、vue-style-loader で取り扱われます。
@@ -112,7 +112,7 @@ CSS を抽出して、メインのチャンクに独立した CSS ファイル�
 
 > バンドルのファイル名をカスタマイズします。
 
-- タイプ: `オブジェクト`
+- 型: `オブジェクト`
 
 - デフォルト:
 
@@ -142,7 +142,7 @@ manifest や vendor の使い方をより理解するためには [webpack docum
 
 ## hotMiddleware
 
-- タイプ: `オブジェクト`
+- 型: `オブジェクト`
 
 利用できるオプションは [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) を参照してください。
 
@@ -150,7 +150,7 @@ manifest や vendor の使い方をより理解するためには [webpack docum
 
 > Webpack のプラグインを追加します。
 
-- タイプ: `配列`
+- 型: `配列`
 - デフォルト: `[]`
 
 例（`nuxt.config.js`）:
@@ -173,7 +173,7 @@ module.exports = {
 
 > [PostCSS Loader](https://github.com/postcss/postcss-loader#usage) プラグインをカスタマイズします。
 
-- タイプ: `配列`、`オブジェクト`（推奨）、`関数` または `ブーリアン`
+- 型: `配列`、`オブジェクト`（推奨）、`関数` または `ブーリアン`
 
     **注意：**デフォルトのプリセットは OK で、通常使いには十分柔軟ですが、推奨使用方法はプロジェクト内の `postcss.config.js` ファイルで [`vue-loader`](https://vue-loader.vuejs.org/en/options.html#postcss) を使用することです。 このファイルを作成するとにより自動的に検出され、このオプションは無視されます。
 
@@ -220,7 +220,7 @@ module.exports = {
 
 > CDN に `publicPath` をセットすると、Nuxt.js は dist ディレクトリ内のファイルを CDN へアップロードし最大のパフォーマンスを発揮します。
 
-- タイプ: `文字列`
+- 型: `文字列`
 - デフォルト: `'/_nuxt/'`
 
 例（`nuxt.config.js`）:
@@ -239,7 +239,7 @@ module.exports = {
 
 > SSR レンダラー用の webpack バンドルを作成します。
 
-- タイプ: `ブーリアン`
+- 型: `ブーリアン`
 - ユニバーサルモードでのデフォルト値は `true`、spa モードでのデフォルト値は `false{/code}です。`
 
 このオプションは、提供されていない場合は `mode` 値に基づいて自動的に設定されます。
@@ -248,7 +248,7 @@ module.exports = {
 
 > Nuxt.jsでは、設定に基づいてレンダリングされる独自のテンプレートを提供できます。 この機能は[モジュール](/guide/modules)を使用する場合にとりわけ便利です。
 
-- タイプ: `配列`
+- 型: `配列`
 
 例 (`nuxt.config.js`):
 
@@ -274,7 +274,7 @@ module.exports = {
 
 > Nuxt.js では `vendor.bundle.js` ファイル内にモジュールを追加できます。このファイルは app バンドルファイルのサイズを小さくするために生成します。外部モジュール（例えば `axios` など）を使うときにとても便利です。
 
-- タイプ: `配列`
+- 型: `配列`
 
 vendor バンドルファイル内にモジュール/ファイルを追加するには、`nuxt.config.js` 内の `build.vendor` キーに追加します:
 
@@ -303,7 +303,7 @@ module.exports = {
 
 > 監視や変更後に再生成を行うカスタムファイルを提供することができます。 この機能は[モジュール](/guide/modules)を使用する場合にとりわけ便利です。
 
-- タイプ: `配列<String>`
+- 型: `配列<String>`
 
 ```js
 module.exports = {
@@ -317,28 +317,28 @@ module.exports = {
 
 ## profile
 
-- タイプ: `ブーリアン`
+- 型: `ブーリアン`
 - デフォルト: コマンドライン引数 `--profile` で有効にします。
 
 [WebpackBar](https://github.com/nuxt/webpackbar#profile) の profiler で有効にします。
 
 ## parallel
 
-- タイプ: `ブーリアン`
+- 型: `ブーリアン`
 - デフォルト: `false`
 
 webpack のビルドで[thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) を有効にします。 
 
 ## cache
 
-- タイプ: `ブーリアン`
+- 型: `ブーリアン`
 - デフォルト: `false`
 
 [uglifyjs-webpack-plugin ](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) と [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) でキャッシュを有効化します。
 
 ## styleResources
 
-- タイプ: `オブジェクト`
+- 型: `オブジェクト`
 - デフォルト: `{}`
 
 毎回インポートせずに変数やミックスインをページに挿入する必要がある場合に便利です。
@@ -370,7 +370,7 @@ Nuxt.js はこの動作を実現するために https://github.com/yenshih/style
 
 ## optimization
 
-- タイプ: `オブジェクト`
+- 型: `オブジェクト`
 
 - デフォルト:
 
@@ -391,7 +391,7 @@ Webpack の[最適化](https://webpack.js.org/configuration/optimization/)
 
 ## splitChunks
 
-- タイプ: `オブジェクト`
+- 型: `オブジェクト`
 
 - デフォルト:
 
@@ -407,14 +407,14 @@ Webpack の[最適化](https://webpack.js.org/configuration/optimization/)
 
 ## Transpile
 
-- タイプ: `配列<string | RegExp>`
+- 型: `配列<string | RegExp>`
 - デフォルト: `[]`
 
 特定の依存関係を Babel で変換したい場合、`build.transpile` を追加することができます。transpile の項目は、マッチする依存ファイル名の文字列または正規表現オブジェクトになります。
 
 ## vueLoader
 
-- タイプ: `オブジェクト`
+- 型: `オブジェクト`
 
 - デフォルト
 

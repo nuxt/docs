@@ -5,7 +5,7 @@ description: Dokku へデプロイするには？
 
 # Dokku へデプロイするには？
 
-[Dokku のセットアップに関するドキュメント](http://dokku.viewdocs.io/dokku/getting-started/installation/) と [Dokku を使って Digital Ocean 上に Node.js アプリケーションにデプロイする](http://jakeklassen.com/post/deploying-a-node-app-on-digital-ocean-using-dokku/)を読むことをお勧めします。
+[Dokku のセットアップに関するドキュメント](http://dokku.viewdocs.io/dokku/getting-started/installation/) と [Dokku を使って Digital Ocean 上に Node.js アプリケーションにデプロイする](http://jakeklassen.com/post/deploying-a-node-app-on-digital-ocean-using-dokku/) を読むことをお勧めします。
 
 例として、Nuxt.js アプリケーションを `my-nuxt-app` としましょう。
 
@@ -39,6 +39,12 @@ dokku config:set my-nuxt-app HOST=0.0.0.0 NODE_ENV=production
     }
   }
 }
+```
+
+[Procfile](http://dokku.viewdocs.io/dokku/deployment/methods/dockerfiles/#procfiles-and-multiple-processes) を使ってアプリケーションを起動するために `npm run start` を実行します:
+
+```
+web: npm run start
 ```
 
 最後にアプリケーションを Dokku に git push します:

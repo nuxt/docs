@@ -11,7 +11,7 @@ description: The `fetch` method is used to fill the store before rendering the p
 
 The `fetch` method, *if set*, is called every time before loading the component (**only for page components**). It can be called from the server-side or before navigating to the corresponding route.
 
-The `fetch` method receives [the `context`](/api/context) object as the first argument, we can use it to fetch some data and fill the store. To make the `fetch` method asynchronous, **return a Promise**, nuxt.js will wait for the promise to be resolved before rendering the component.
+The `fetch` method receives [the `context`](/api/context) object as the first argument, we can use it to fetch some data and fill the store. To make the `fetch` method asynchronous, **return a Promise**, Nuxt.js will wait for the promise to be resolved before rendering the component.
 
 Example of `pages/index.vue`:
 

@@ -43,7 +43,7 @@ export default ({ app }) => {
 
 > Remplacez `UA-XXXXXXXX-X` par votre ID de suivi Google Analytics.
 
-Puis nous expliquons à Nuxt.js d'importer le plugin dans notre application pricinpale :
+Puis nous expliquons à Nuxt.js d'importer le plugin dans notre application principale :
 
 `nuxt.config.js`
 

@@ -76,3 +76,13 @@ Registers module. `moduleOpts` can be string or `[src, options]`. If `requireOnc
 ### requireModule (moduleOpts)
 
 Is shortcut to `addModule(moduleOpts, true)`
+
+## Hooks
+
+We can register hooks on certain life cycle events.
+
+Hook                      | Arguments              | When
+--------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------
+ `modules:before`         | (moduleContainer, options) | Called before creating ModuleContainer class, useful to overload methods and options.
+ `modules:done`           | (moduleContainer) | Called when all modules has been loaded.
+

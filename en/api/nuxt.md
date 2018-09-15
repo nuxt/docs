@@ -39,7 +39,7 @@ You can take a look at the [nuxt-express](https://github.com/nuxt/express) and [
 
 ### Debug logs
 
-If you want to display nuxt.js logs, you can add to the top of your file:
+If you want to display Nuxt.js logs, you can add the following to the top of your file:
 
 ```js
 process.env.DEBUG = 'nuxt:*'

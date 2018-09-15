@@ -5,7 +5,7 @@ description: Node.js サーバーのミドルウェアとして Nuxt.js を使�
 
 # nuxt.render(req, res)
 
-- タイプ: `関数`
+- 型: `関数`
 - 引数:
     1. [リクエスト](https://nodejs.org/api/http.html#http_class_http_incomingmessage)
     2. [レスポンス](https://nodejs.org/api/http.html#http_class_http_serverresponse)

@@ -20,6 +20,8 @@ For example, we have this file tree:
 
 In your CSS, if you use `url('~/assets/image.png')`, it will be translated into `require('~/assets/image.png')`.
 
+> Note that `~assets` (without a slash) won't work because `~` is a special indicator in `css-loader` and will be resolved to [modules](https://github.com/css-modules/css-modules).
+
 Or if in your `pages/index.vue` you use:
 
 ```html

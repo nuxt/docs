@@ -7,7 +7,7 @@ description: Nuxt.js では動的なルーティングを行うコンポーネ�
 
 > Nuxt.js では動的なルーティングを行うコンポーネント内でバリデーションメソッドを定義できます。
 
-- **タイプ:** `関数`
+- **型:** `関数`
 
 ```js
 validate({ params, query, store }) {
