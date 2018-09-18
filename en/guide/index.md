@@ -3,9 +3,9 @@ title: Introduction
 description: "Nuxt.js is a Framework for creating Vue Applications, you can choose between Universal, Static Generated or Single Page application."
 ---
 
-## What is Nuxt.js?
+> Nuxt.js is a framework for creating Vue.js applications, you can choose between Universal, Static Generated or Single Page application.
 
-Nuxt.js is a framework for creating Vue.js applications, you can choose between Universal, Static Generated or Single Page application.
+## What is Nuxt.js?
 
 Its main scope is **UI rendering** while abstracting away the client/server distribution.
 
