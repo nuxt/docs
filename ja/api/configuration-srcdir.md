@@ -1,6 +1,6 @@
 ---
-title: "API: srcDir プロパティ"
-description: Nuxt.js アプリケーションのソースディレクトリを指定します。
+title: 'API: srcDir プロパティ'
+description: Nuxt.js アプリケーションのソースディレクトリを指定します
 ---
 
 # srcDir プロパティ
@@ -8,7 +8,7 @@ description: Nuxt.js アプリケーションのソースディレクトリを�
 - 型: `文字列`
 - デフォルト: [rootDir の値](/api/configuration-rootdir)
 
-> Nuxt.js アプリケーションのソースディレクトリを指定します。
+> Nuxt.js アプリケーションのソースディレクトリを指定します
 
 例（`nuxt.config.js`）:
 
