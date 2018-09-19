@@ -22,12 +22,12 @@ description: 現在のページを表示します。
 [
   {
     path: '/parent',
-    component: '~pages/parent.vue',
+    component: '~/pages/parent.vue',
     name: 'parent',
     children: [
       {
         path: 'child',
-        component: '~pages/parent/child.vue',
+        component: '~/pages/parent/child.vue',
         name: 'parent-child'
       }
     ]
