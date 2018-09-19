@@ -1,15 +1,15 @@
 ---
-title: 'API: Nuxt のクラス'
-description: Nuxt のコアのクラス
+title: 'API: Nuxt クラス'
+description: Nuxt のコアクラス
 ---
 
-# Nuxt のクラス
+# Nuxt クラス
 
 - ソース: **[core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/nuxt.js)**
 
 すべてのモジュールとクラスが通信できるようにするためのコアのコンテナです。すべてのモジュールは Nuxt インスタンスに `this.nuxt` を使ってアクセスできます。
 
-## タップ可能なプラグイン
+## フック
 
 特定のライフサイクルイベントでのフックを登録できます。
 
@@ -21,7 +21,7 @@ nuxt.hook('ready', async nuxt => {
 
 プラグイン | 引数 | タイミング
 --- | --- | ---
-`ready` | nuxt | すべてのモジュールが初期化されたあと、レンダラーを初期化する前
-`error` | error args | Nuxt モジュールのいずれかにより未処理のエラーが補足された
-`close` | - | Nuxt インスタンスがきちんと終わろうとしている
-`listen` | ({server, host, port}) | Nuxt の**内部**サーバーがリッスンを始めた（`nuxt start` または `nuxt dev` により起こる）
+`ready` | (nuxt) | Nuxt が稼働する準備が整ったとき（`ModuleContainer` と`Renderer` の準備が整ったとき）
+`error` | (error) | フックを呼び出しにおいて未処理のエラーが発生したとき
+`close` | (nuxt) | Nuxt インスタンスが graceful に終了しようとしているとき
+`listen` | (server, {host, port}) | Nuxt **内部の**サーバーがリッスンを始めたとき（`nuxt start` または `nuxt dev` を使っているときに発生する）
