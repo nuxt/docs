@@ -154,7 +154,7 @@ export default {
 `fetch` | ページをレンダリングする前にストアを満たすために使用されます。`data` メソッドに似ていますが、コンポーネントデータは設定しません。[`fetch` メソッド](/api/pages-fetch)を参照してください。
 `head` | 現在のページに対して特定の `<meta>` タグを設定します。[`head` メソッド](/api/pages-head)を参照してください。
 `layout` | `layouts` ディレクトリに定義されているレイアウトを指定します。 [`layout` プロパティ](/api/pages-layout)を参照してください。
-`loading` | `false` に設定すると、入力したページが自動的に `this.$nuxt.$loading.finish()` を呼び出すのを防ぎ、`this.$nuxt.$loading.start()` を使用して動作を **手動で** 制御できます、[example](/examples/custom-page-loading)を参照してください。`loading` は `nuxt.config.js` で設定されている場合のみ適用されます。[`loading` プロパティ](/api/configuration-loading)を参照してください。
+`loading` | `false` に設定すると、ページから自動的に `this.$nuxt.$loading.finish()` と `this.$nuxt.$loading.start()` が呼び出されるのを防ぎます。この **手動で** 制御する動作は、[example](/examples/custom-page-loading)から確認できます。`loading` は `nuxt.config.js` で設定されている場合のみ適用されます。[`loading` プロパティ](/api/configuration-loading)を参照してください。
 `transition` | ページの特定のトランジションを設定します。[`transition` プロパティ](/api/pages-transition)を参照してください。
 `scrollToTop` | Boolean型（デフォルト値：`false`）で、ページをレンダリングする前にページを一番上にスクロールするかどうかを指定します。これは[ネストされたルート](/guide/routing#nested-routes)に使用されます。
 `validate` | [動的なルーティング](/guide/routing#dynamic-routes)に対する検証関数です。
