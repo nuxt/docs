@@ -1,5 +1,5 @@
 ---
-title: 'API: '
+title: 'API: <nuxt-child> コンポーネント'
 description: 現在のページを表示します。
 ---
 
