@@ -3,11 +3,11 @@ title: インストール
 description: Nuxt.js はとても簡単に始められます。シンプルなプロジェクトでは必要な依存パッケージは `nuxt` だけです。
 ---
 
-> Nuxt.js はとても簡単に始められます。シンプルなプロジェクトでは必要な依存パッケージは `nuxt` だけです。
+> Nuxt.js はとても簡単に始められます。シンプルなプロジェクトでは、必要になる依存パッケージは `nuxt` のみです。
 
 ## Nuxt.js を使ったスターターテンプレート
 
-素早くスタートできるようにするため、Nuxt.js チームは [スターターテンプレート](https://github.com/nuxt-community/starter-template) を用意しました。
+Nuxtを素早く開始するため、 Nuxt.js チームは [スターターテンプレート](https://github.com/nuxt-community/starter-template) を用意しました。
 
 [ZIP をダウンロード](https://github.com/nuxt-community/starter-template/archive/master.zip) するか、vue-cli を使ってインストールしてください:
 
@@ -17,20 +17,20 @@ $ vue init nuxt-community/starter-template <project-name>
 
 > もし [vue-cli](https://github.com/vuejs/vue-cli) をインストールしていなければ、`npm install -g vue-cli` でインストールしてください。
 
-それから依存するパッケージをインストールしてください:
+次に、依存するパッケージをインストールしてください:
 
 ```bash
 $ cd <project-name>
 $ npm install
 ```
 
-そしてプロジェクトを起動してください:
+その後プロジェクトを起動してください:
 
 ```bash
 $ npm run dev
 ```
 
-するとアプリケーションは http://localhost:3000 で動いています。
+起動したアプリケーションには http://localhost:3000 でアクセスする事ができます。
 
 <p class="Alert">Nuxt.js は `pages` ディレクトリ内のファイルの更新を監視します。そのため、新しいページを追加したときにアプリケーションを再起動する必要はありません。</p>
 
@@ -45,7 +45,7 @@ $ mkdir <project-name>
 $ cd <project-name>
 ```
 
-*メモ: `<project-name>` の箇所は置き換えてください。*
+*メモ: `<project-name>` の箇所は任意のプロジェクト名に置き換えてください。*
 
 ### package.json
 
@@ -60,7 +60,7 @@ $ cd <project-name>
 }
 ```
 
-上のように書いておけば `npm run dev` で Nuxt.js を起動できます。
+上のように書いておけば `npm run dev` で Nuxt.js を起動することができます。
 
 ### `nuxt` のインストール
 
@@ -80,7 +80,7 @@ Nuxt.js は `pages` ディレクトリ内の `*.vue` ファイルについて、
 $ mkdir pages
 ```
 
-それから最初のページを `pages/index.vue` に作ります:
+次に、最初のページを `pages/index.vue` に作ります:
 
 ```html
 <template>
@@ -88,13 +88,13 @@ $ mkdir pages
 </template>
 ```
 
-そして、プロジェクトを起動します:
+その後、プロジェクトを起動してください:
 
 ```bash
 $ npm run dev
 ```
 
-すると、アプリケーションは http://localhost:3000 で動いています。
+起動したアプリケーションには http://localhost:3000 でアクセスする事ができます。
 
 <p class="Alert">Nuxt.js は `pages` ディレクトリ内のファイルの更新を監視します。そのため新しいページを追加した場合にアプリケーションを再起動する必要はありません。</p>
 
