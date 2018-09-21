@@ -20,7 +20,7 @@ GitHub Pages のホスティングにデプロイするもの全てが入った
 
 ## リポジトリに GitHub Pages をデプロイする
 
-ある特定のリポジトリに GitHub Pages を作成しており、カスタムドメインをお持ちでない場合、ページの URL はこの形式になります:  `http://<username>.github.io/<repository-name>`。
+ある特定のリポジトリに GitHub Pages を作成しており、カスタムドメインをお持ちでない場合、ページの URL はこの形式になります:  `https://<username>.github.io/<repository-name>`。
 
 もし、[router プロパティの base](https://nuxtjs.org/api/configuration-router/#base) を追加せずに `dist` フォルダをデプロイし、デプロイしたサイトにアクセスした場合、アセットが見つからないため、サイトが機能していないことが分かるはずです。 これは、ウェブサイトのルートが `/` となることを想定したためです。しかし実際には、GitHub Pages にデプロイした場合、`/<repository-name>` となります。
 
