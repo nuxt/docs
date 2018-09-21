@@ -185,7 +185,7 @@ Now the function can be used from `context`, via `this` in Vue instances and via
 ```js
 export default {
   mounted(){
-      this.$myInjectedFunction('works in mounted')
+    this.$myInjectedFunction('works in mounted')
   },
   asyncData(context){
     context.app.$myInjectedFunction('works with context')
