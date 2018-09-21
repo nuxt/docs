@@ -97,11 +97,11 @@ import VueI18n from 'vue-i18n'
 Vue.use(VueI18n)
 
 export default ({ app }, inject) => {
-  // Set `i18n` instance on `app`
-  // This way we can use it in middleware and pages `asyncData`/`fetch`
-  app.i18n = new VueI18n({
+  // Inject `i18n` into both Vue and Nuxt.
+  // This way we can use it in middleware, componenents and actions/mutations.
+  inject('i18n', new VueI18n({
     /* `VueI18n` options... */
-  })
+  }))
 }
 ```
 
