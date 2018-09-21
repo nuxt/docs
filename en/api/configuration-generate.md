@@ -48,7 +48,7 @@ minify: {
   removeAttributeQuotes: false,
   removeComments: false,
   removeEmptyAttributes: true,
-  removeOptionalTags: true,
+  removeOptionalTags: false,
   removeRedundantAttributes: true,
   removeScriptTypeAttributes: false,
   removeStyleLinkTypeAttributes: false,

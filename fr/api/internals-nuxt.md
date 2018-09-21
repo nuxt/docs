@@ -20,8 +20,8 @@ nuxt.hook('ready', async nuxt => {
 ```
 
 Plugin   | Arguments              | Quand
----------|------------------------|-----------------------------------------------------------------------------------------
-`ready`  | nuxt                   | Après l'initialisation de tous les modules et avant l'initialisation du moteur de rendu
-`error`  | error args             | Une erreur non gérée par un des modules Nuxt attrapée
-`close`  | -                      | L'instance de Nuxt est gracieusement fermée
-`listen` | ({server, host, port}) | Les **mécanismes** serveur de Nuxt commencent à écouter. (Avec `nuxt start` ou `nuxt dev`)
+---------|------------------------|---------------------------------------------------------------------------------------------
+`ready`  | (nuxt)                 | Nuxt est prèt à fonctionner (`ModuleContainer` et `Renderer` sont prèt).
+`error`  | (error)                | Une erreur non gérée quand un point d'ancrage est appelé.
+`close`  | (nuxt)                 | L'instance de Nuxt est gracieusement fermée.
+`listen` | (server, {host, port}) | Les mécanismes serveur **internes** commencent à écouter. (Avec `nuxt start` ou `nuxt dev`).

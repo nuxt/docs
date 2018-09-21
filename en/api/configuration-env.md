@@ -42,6 +42,10 @@ export default axios.create({
 
 Then, in your pages, you can import axios like this: `import axios from '~/plugins/axios'`
 
+## Automatic injection of environment variables
+
+If you define environment variables starting with `NUXT_ENV_` in the build phase (f.ex. `NUXT_ENV_COOL_WORD=freezing nuxt build`, they'll be automatically injected into the process environment. Be aware that they'll potentially take precedence over defined variables in your `nuxt.config.js` with the same name.
+
 ## process.env == {}
 
 Note that Nuxt uses webpack's `definePlugin` to define the environmental variable. This means that the actual `process` or `process.env` from Node.js is neither available nor defined. Each of the `env` properties defined in nuxt.config.js is individually mapped to `process.env.xxxx` and converted during compilation.

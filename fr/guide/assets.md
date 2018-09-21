@@ -20,6 +20,8 @@ Imaginons par exemple cette arborescence :
 
 Dans votre CSS, si nous utilisons `url('~/assets/image.png')`, ce sera transformé en `require('~/assets/image.png')`.
 
+> Notez que `~assets` (sans le slash) ne va pas fonctionner car `~` est un indicateur special dans `css-loader` et qu'il est résolu par ces [modules](https://github.com/css-modules/css-modules).
+
 Ou si dans `pages/index.vue` vous utilisez :
 
 ```html

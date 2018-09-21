@@ -31,6 +31,8 @@ Vous pouvez utiliser le module [Component Cache](https://github.com/nuxt-communi
 
 Voir [la mise en cache au niveau composant](http://ssr.vuejs.org/en/caching.html#mise-en-cache-au-niveau-du-composant) pour plus d'informations.
 
+## N'oubliez pas
+
 - Les composants à mettre en cache **doivent définir une option `name` unique**.
 - Vous **NE** devez ***PAS*** mettre en cache un composant si
   - ses composants enfants sont liés à l'état global ou si

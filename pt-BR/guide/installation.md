@@ -9,13 +9,13 @@ description: Nuxt.js is really easy to get started with. A simple project only n
 
 To get started quickly, the Nuxt.js team has created a [starter template](https://github.com/nuxt-community/starter-template).
 
-[Download the .zip](https://github.com/nuxt-community/starter-template/archive/master.zip) starter template or install it with vue-cli:
+[Download the .zip](https://github.com/nuxt-community/starter-template/archive/master.zip) starter template or install it with Vue CLI:
 
 ```bash
 $ vue init nuxt-community/starter-template <project-name>
 ```
 
-> If [vue-cli](https://github.com/vuejs/vue-cli) is not installed, please install it with `npm install -g vue-cli`
+> If [Vue CLI](https://github.com/vuejs/vue-cli) is not installed, please install it with `npm install -g @vue/cli @vue/cli-init`
 
 then install the dependencies:
 
