@@ -1,11 +1,11 @@
 ---
 title: "API: The router Property"
-description: The router property lets you customize nuxt.js router.
+description: The router property lets you customize Nuxt.js router.
 ---
 
 # The router Property (En)
 
-> The router property lets you customize nuxt.js router ([vue-router](https://router.vuejs.org/en/)).
+> The router property lets you customize Nuxt.js router ([vue-router](https://router.vuejs.org/en/)).
 
 ## base
 
@@ -23,7 +23,7 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert-blue">When `base` is set, nuxt.js will also add in the document header `<base href="{{ router.base }}"/>`.</p>
+<p class="Alert Alert-blue">When `base` is set, Nuxt.js will also add in the document header `<base href="{{ router.base }}"/>`.</p>
 
 > This option is given directly to the vue-router [base](https://router.vuejs.org/api/#base).
 
@@ -31,7 +31,7 @@ module.exports = {
 
 - Type: `Function`
 
-You may want to extend the routes created by nuxt.js. You can do it via the `extendRoutes` option.
+You may want to extend the routes created by Nuxt.js. You can do so via the `extendRoutes` option.
 
 Example of adding a custom route:
 
@@ -93,7 +93,7 @@ module.exports = {
 - Type: `String` or `Array`
   - Items: `String`
 
-Set the default(s) middleware for every pages of the application.
+Set the default(s) middleware for every page of the application.
 
 Example:
 
@@ -101,7 +101,7 @@ Example:
 ```js
 module.exports = {
   router: {
-    // Run the middleware/user-agent.js on every pages
+    // Run the middleware/user-agent.js on every page
     middleware: 'user-agent'
   }
 }
@@ -110,7 +110,7 @@ module.exports = {
 `middleware/user-agent.js`
 ```js
 export default function (context) {
-  // Add the userAgent property in the context (available in `data` and `fetch`)
+  // Add the userAgent property in the context (available in `asyncData` and `fetch`)
   context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
