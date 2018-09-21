@@ -13,8 +13,8 @@ This class is exporting a connect middleware which handles and serves all SSR an
 
 We can register hooks on certain life cycle events.
 
-Hook                      | Arguments              | When
---------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Hook                      | Arguments                | When
+--------------------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  `render:before`          | (renderer, options)      | Before setting up middleware and resources for the Renderer class, useful to overload some methods or options.
  `render:setupMiddleware` | (app) *connect instance* | Before Nuxt adds it's middleware stack. We can use it to register custom server side middleware.
  `render:errorMiddleware` | (app) *connect instance* | Before adding Nuxt error middleware, useful to add your own middleware before using Nuxt's. See the [Sentry module](https://github.com/nuxt-community/sentry-module/blob/master/lib/sentry.js) for more info.
