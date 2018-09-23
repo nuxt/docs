@@ -17,7 +17,7 @@ If the item is an object, the properties are:
 
 Example (`nuxt.config.js`):
 ```js
-module.exports = {
+export default {
   plugins: ['~/plugins/vue-notifications']
 }
 ```
