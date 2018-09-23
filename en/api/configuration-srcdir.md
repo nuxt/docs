@@ -13,7 +13,7 @@ description: Define the source directory of your Nuxt.js application
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   srcDir: 'client/'
 }
 ```
