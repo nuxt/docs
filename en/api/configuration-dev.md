@@ -22,7 +22,7 @@ Example:
 `nuxt.config.js`
 
 ```js
-module.exports = {
+export default {
   dev: (process.env.NODE_ENV !== 'production')
 }
 ```
