@@ -16,7 +16,7 @@ The base URL of the app. For example, if the entire single page application is s
 
 Example (`nuxt.config.js`):
 ```js
-module.exports = {
+export default {
   router: {
     base: '/app/'
   }
@@ -37,7 +37,7 @@ Example of adding a custom route:
 
 `nuxt.config.js`
 ```js
-module.exports = {
+export default {
   router: {
     extendRoutes (routes, resolve) {
       routes.push({
@@ -61,7 +61,7 @@ Globally configure [`<nuxt-link>`](/api/components-nuxt-link) default active cla
 
 Example (`nuxt.config.js`):
 ```js
-module.exports = {
+export default {
   router: {
     linkActiveClass: 'active-link'
   }
@@ -79,7 +79,7 @@ Globally configure [`<nuxt-link>`](/api/components-nuxt-link) default exact acti
 
 Example (`nuxt.config.js`):
 ```js
-module.exports = {
+export default {
   router: {
     linkExactActiveClass: 'exact-active-link'
   }
@@ -99,7 +99,7 @@ Example:
 
 `nuxt.config.js`
 ```js
-module.exports = {
+export default {
   router: {
     // Run the middleware/user-agent.js on every page
     middleware: 'user-agent'
@@ -126,7 +126,7 @@ Configure the router mode, this is not recommended to change it due to server-si
 
 Example (`nuxt.config.js`):
 ```js
-module.exports = {
+export default {
   router: {
     mode: 'hash'
   }
@@ -182,7 +182,7 @@ Example of forcing the scroll position to the top for every routes:
 
 `nuxt.config.js`
 ```js
-module.exports = {
+export default {
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       return { x: 0, y: 0 }
