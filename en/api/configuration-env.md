@@ -12,7 +12,7 @@ description: Share environment variables between client and server.
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   }
