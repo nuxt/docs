@@ -84,7 +84,7 @@ If you want Nuxt.js to generate routes with dynamic params, you need to set an a
 We add routes for `/users/:id` in `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   generate: {
     routes: [
       '/users/1',
@@ -124,7 +124,7 @@ Great, but what if we have **dynamic params**?
 ```js
 const axios = require('axios')
 
-module.exports = {
+export default {
   generate: {
     routes: function () {
       return axios.get('https://my-api/users')
@@ -145,7 +145,7 @@ module.exports = {
 ```js
 const axios = require('axios')
 
-module.exports = {
+export default {
   generate: {
     routes: function (callback) {
       axios.get('https://my-api/users')
@@ -170,7 +170,7 @@ In the example above, we're using the `user.id` from the server to generate the 
 ```js
 const axios = require('axios')
 
-module.exports = {
+export default {
   generate: {
     routes: function () {
       return axios.get('https://my-api/users')
