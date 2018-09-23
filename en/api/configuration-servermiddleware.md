@@ -30,7 +30,7 @@ Example (`nuxt.config.js`):
 ```js
 const serveStatic = require('serve-static')
 
-module.exports = {
+export default {
   serverMiddleware: [
       // Will register redirect-ssl npm package
       'redirect-ssl',
