@@ -1,5 +1,5 @@
 ---
-title: "API: The generate Property"
+title: 'API: The generate Property'
 description: Configure the generation of your universal web application to a static web application.
 ---
 
@@ -84,15 +84,11 @@ If you want Nuxt.js to generate routes with dynamic params, you need to set an a
 We add routes for `/users/:id` in `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   generate: {
-    routes: [
-      '/users/1',
-      '/users/2',
-      '/users/3'
-    ]
-  }
-}
+    routes: ['/users/1', '/users/2', '/users/3'],
+  },
+};
 ```
 
 Then when we launch `nuxt generate`:
@@ -122,20 +118,19 @@ Great, but what if we have **dynamic params**?
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+const axios = require('axios');
 
-module.exports = {
+export default {
   generate: {
-    routes: function () {
-      return axios.get('https://my-api/users')
-      .then((res) => {
-        return res.data.map((user) => {
-          return '/users/' + user.id
-        })
-      })
-    }
-  }
-}
+    routes: function() {
+      return axios.get('https://my-api/users').then(res => {
+        return res.data.map(user => {
+          return '/users/' + user.id;
+        });
+      });
+    },
+  },
+};
 ```
 
 ### Function with a callback
@@ -143,22 +138,23 @@ module.exports = {
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+const axios = require('axios');
 
-module.exports = {
+export default {
   generate: {
-    routes: function (callback) {
-      axios.get('https://my-api/users')
-      .then((res) => {
-        var routes = res.data.map((user) => {
-          return '/users/' + user.id
+    routes: function(callback) {
+      axios
+        .get('https://my-api/users')
+        .then(res => {
+          var routes = res.data.map(user => {
+            return '/users/' + user.id;
+          });
+          callback(null, routes);
         })
-        callback(null, routes)
-      })
-      .catch(callback)
-    }
-  }
-}
+        .catch(callback);
+    },
+  },
+};
 ```
 
 ### Speeding up dynamic route generation with `payload`
@@ -168,23 +164,22 @@ In the example above, we're using the `user.id` from the server to generate the 
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+const axios = require('axios');
 
-module.exports = {
+export default {
   generate: {
-    routes: function () {
-      return axios.get('https://my-api/users')
-      .then((res) => {
-        return res.data.map((user) => {
+    routes: function() {
+      return axios.get('https://my-api/users').then(res => {
+        return res.data.map(user => {
           return {
             route: '/users/' + user.id,
-            payload: user
-          }
-        })
-      })
-    }
-  }
-}
+            payload: user,
+          };
+        });
+      });
+    },
+  },
+};
 ```
 
 Now we can access the `payload` from `/users/_id.vue` like so:

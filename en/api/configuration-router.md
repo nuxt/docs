@@ -1,5 +1,5 @@
 ---
-title: "API: The router Property"
+title: 'API: The router Property'
 description: The router property lets you customize Nuxt.js router.
 ---
 
@@ -15,12 +15,13 @@ description: The router property lets you customize Nuxt.js router.
 The base URL of the app. For example, if the entire single page application is served under `/app/`, then base should use the value `'/app/'`.
 
 Example (`nuxt.config.js`):
+
 ```js
-module.exports = {
+export default {
   router: {
-    base: '/app/'
-  }
-}
+    base: '/app/',
+  },
+};
 ```
 
 <p class="Alert Alert-blue">When `base` is set, Nuxt.js will also add in the document header `<base href="{{ router.base }}"/>`.</p>
@@ -36,18 +37,19 @@ You may want to extend the routes created by Nuxt.js. You can do so via the `ext
 Example of adding a custom route:
 
 `nuxt.config.js`
+
 ```js
-module.exports = {
+export default {
   router: {
-    extendRoutes (routes, resolve) {
+    extendRoutes(routes, resolve) {
       routes.push({
         name: 'custom',
         path: '*',
-        component: resolve(__dirname, 'pages/404.vue')
-      })
-    }
-  }
-}
+        component: resolve(__dirname, 'pages/404.vue'),
+      });
+    },
+  },
+};
 ```
 
 The schema of the route should respect the [vue-router](https://router.vuejs.org/en/) schema.
@@ -60,12 +62,13 @@ The schema of the route should respect the [vue-router](https://router.vuejs.org
 Globally configure [`<nuxt-link>`](/api/components-nuxt-link) default active class.
 
 Example (`nuxt.config.js`):
+
 ```js
-module.exports = {
+export default {
   router: {
-    linkActiveClass: 'active-link'
-  }
-}
+    linkActiveClass: 'active-link',
+  },
+};
 ```
 
 > This option is given directly to the vue-router [linkactiveclass](https://router.vuejs.org/api/#linkactiveclass).
@@ -78,12 +81,13 @@ module.exports = {
 Globally configure [`<nuxt-link>`](/api/components-nuxt-link) default exact active class.
 
 Example (`nuxt.config.js`):
+
 ```js
-module.exports = {
+export default {
   router: {
-    linkExactActiveClass: 'exact-active-link'
-  }
-}
+    linkExactActiveClass: 'exact-active-link',
+  },
+};
 ```
 
 > This option is given directly to the vue-router [linkexactactiveclass](https://router.vuejs.org/api/#linkexactactiveclass).
@@ -98,20 +102,22 @@ Set the default(s) middleware for every page of the application.
 Example:
 
 `nuxt.config.js`
+
 ```js
-module.exports = {
+export default {
   router: {
     // Run the middleware/user-agent.js on every page
-    middleware: 'user-agent'
-  }
-}
+    middleware: 'user-agent',
+  },
+};
 ```
 
 `middleware/user-agent.js`
+
 ```js
-export default function (context) {
+export default function(context) {
   // Add the userAgent property in the context (available in `asyncData` and `fetch`)
-  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent;
 }
 ```
 
@@ -125,12 +131,13 @@ To learn more about the middleware, see the [middleware guide](/guide/routing#mi
 Configure the router mode, this is not recommended to change it due to server-side rendering.
 
 Example (`nuxt.config.js`):
+
 ```js
-module.exports = {
+export default {
   router: {
-    mode: 'hash'
-  }
-}
+    mode: 'hash',
+  },
+};
 ```
 
 > This option is given directly to the vue-router [mode](https://router.vuejs.org/api/#mode).
@@ -144,23 +151,23 @@ The `scrollBehavior` option lets you define a custom behavior for the scroll pos
 By default, the scrollBehavior option is set to:
 
 ```js
-const scrollBehavior = function (to, from, savedPosition) {
+const scrollBehavior = function(to, from, savedPosition) {
   // if the returned position is falsy or an empty object,
   // will retain current scroll position.
-  let position = false
+  let position = false;
 
   // if no children detected
   if (to.matched.length < 2) {
     // scroll to the top of the page
-    position = { x: 0, y: 0 }
-  } else if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
+    position = { x: 0, y: 0 };
+  } else if (to.matched.some(r => r.components.default.options.scrollToTop)) {
     // if one of the children has scrollToTop option set to true
-    position = { x: 0, y: 0 }
+    position = { x: 0, y: 0 };
   }
 
   // savedPosition is only available for popstate navigations (back button)
   if (savedPosition) {
-    position = savedPosition
+    position = savedPosition;
   }
 
   return new Promise(resolve => {
@@ -170,25 +177,26 @@ const scrollBehavior = function (to, from, savedPosition) {
       // or if the selector didn't match any element.
       if (to.hash && document.querySelector(to.hash)) {
         // scroll to anchor by returning the selector
-        position = { selector: to.hash }
+        position = { selector: to.hash };
       }
-      resolve(position)
-    })
-  })
-}
+      resolve(position);
+    });
+  });
+};
 ```
 
 Example of forcing the scroll position to the top for every routes:
 
 `nuxt.config.js`
+
 ```js
-module.exports = {
+export default {
   router: {
-    scrollBehavior: function (to, from, savedPosition) {
-      return { x: 0, y: 0 }
-    }
-  }
-}
+    scrollBehavior: function(to, from, savedPosition) {
+      return { x: 0, y: 0 };
+    },
+  },
+};
 ```
 
 ## parseQuery / stringifyQuery

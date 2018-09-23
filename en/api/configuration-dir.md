@@ -1,5 +1,5 @@
 ---
-title: "API: The dir Property"
+title: 'API: The dir Property'
 description: Define the custom directories for your Nuxt.js application
 ---
 
@@ -24,14 +24,14 @@ description: Define the custom directories for your Nuxt.js application
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   dir: {
     assets: 'custom-assets',
     layouts: 'custom-layouts',
     middleware: 'custom-middleware',
     pages: 'custom-pages',
     static: 'custom-static',
-    store: 'custom-store'
-  }
-}
+    store: 'custom-store',
+  },
+};
 ```

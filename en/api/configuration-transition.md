@@ -1,5 +1,5 @@
 ---
-title: "API: The transition Property"
+title: 'API: The transition Property'
 description: Set the default properties of the page transitions.
 ---
 
@@ -10,6 +10,7 @@ description: Set the default properties of the page transitions.
 > Used to set the default properties of the page transitions.
 
 Default:
+
 ```js
 {
   name: 'page',
@@ -20,7 +21,7 @@ Default:
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   transition: 'page'
   // or
   transition: {
@@ -53,7 +54,7 @@ Default:
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   layoutTransition: 'layout'
   // or
   transition: {
@@ -66,10 +67,12 @@ module.exports = {
 Example global `css`:
 
 ```css
-.layout-enter-active, .layout-leave-active {
-  transition: opacity .5s
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.5s;
 }
-.layout-enter, .layout-leave-active {
-  opacity: 0
+.layout-enter,
+.layout-leave-active {
+  opacity: 0;
 }
 ```

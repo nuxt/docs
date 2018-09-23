@@ -1,5 +1,5 @@
 ---
-title: "API: The build Property"
+title: 'API: The build Property'
 description: Nuxt.js lets you customize the webpack configuration for building your web application as you want.
 ---
 
@@ -19,15 +19,15 @@ If an object, see available properties [here](https://github.com/webpack-contrib
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     analyze: true,
     // or
     analyze: {
-      analyzerMode: 'static'
-    }
-  }
-}
+      analyzerMode: 'static',
+    },
+  },
+};
 ```
 
 <p class="Alert Alert--teal">**Info:** you can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888).</p>
@@ -41,20 +41,20 @@ module.exports = {
 
   ```js
   {
-    presets: ['vue-app']
+    presets: ['vue-app'];
   }
   ```
 
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     babel: {
-      presets: ['es2015', 'stage-0']
-    }
-  }
-}
+      presets: ['es2015', 'stage-0'],
+    },
+  },
+};
 ```
 
 ## cache
@@ -91,16 +91,16 @@ The extend is called twice, one time for the server bundle, and one time for the
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
-    extend (config, { isClient }) {
+    extend(config, { isClient }) {
       // Extend only webpack config for client-bundle
       if (isClient) {
-        config.devtool = '#source-map'
+        config.devtool = '#source-map';
       }
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack).
@@ -112,16 +112,22 @@ If you want to see more about our default webpack configuration, take a look at 
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
-    extend (config, { isClient, loaders: { vue } }) {
+    extend(
+      config,
+      {
+        isClient,
+        loaders: { vue },
+      }
+    ) {
       // Extend only webpack config for client-bundle
       if (isClient) {
-        vue.transformAssetUrls.video = ['src', 'poster']
+        vue.transformAssetUrls.video = ['src', 'poster'];
       }
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 ## extractCSS
@@ -154,13 +160,13 @@ Using `extract-text-webpack-plugin` to extract the CSS in the main chunk into a 
 This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     filenames: {
-      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[chunkhash].js'
-    }
-  }
-}
+      chunk: ({ isDev }) => (isDev ? '[name].js' : '[id].[chunkhash].js'),
+    },
+  },
+};
 ```
 
 To understand a bit more about the use of manifest and vendor, take a look at this [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/).
@@ -279,17 +285,17 @@ webpack [optimization](https://webpack.js.org/configuration/optimization/)
 Example (`nuxt.config.js`):
 
 ```js
-const webpack = require('webpack')
+const webpack = require('webpack');
 
 module.exports = {
   build: {
     plugins: [
       new webpack.DefinePlugin({
-        'process.VERSION': require('./package.json').version
-      })
-    ]
-  }
-}
+        'process.VERSION': require('./package.json').version,
+      }),
+    ],
+  },
+};
 ```
 
 ## postcss
@@ -299,6 +305,7 @@ module.exports = {
 - Type: `Array`, `Object` (recommended), `Function` or `Boolean`
 
   **Note:** Nuxt.js has applied [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env). By default it enables [Stage 2 features](https://cssdb.org/) and [Autoprefixer](https://github.com/postcss/autoprefixer), you can use `build.postcss.preset` to config it.
+
 - Default:
 
   ```js
@@ -315,25 +322,25 @@ module.exports = {
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     postcss: {
       plugins: {
-          // Disable `postcss-url`
+        // Disable `postcss-url`
         'postcss-url': false,
         // Add some plugins
         'postcss-nested': {},
         'postcss-responsive-type': {},
-        'postcss-hexrgba': {}
+        'postcss-hexrgba': {},
       },
       preset: {
         autoprefixer: {
-          grid: true
-        }
-      }
-    }
-  }
-}
+          grid: true,
+        },
+      },
+    },
+  },
+};
 ```
 
 ## profile
@@ -353,11 +360,11 @@ module.exports = {
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
-    publicPath: 'https://cdn.nuxtjs.org'
-  }
-}
+    publicPath: 'https://cdn.nuxtjs.org',
+  },
+};
 ```
 
 Then, when launching `nuxt build`, upload the content of `.nuxt/dist/client` directory to your CDN and voilà!
@@ -376,7 +383,6 @@ Then, when launching `nuxt build`, upload the content of `.nuxt/dist/client` dir
   ```
 
 If split codes for `layout`, `pages` and `commons` (common libs: vue|vue-loader|vue-router|vuex...).
-
 
 ## ssr
 
@@ -428,19 +434,20 @@ You need to specify the patterns/path you want to include for the given pre-proc
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     templates: [
       {
         src: '~/modules/support/plugin.js', // `src` can be absolute or relative
         dst: 'support.js', // `dst` is relative to project `.nuxt` dir
-        options: { // Options are provided to template as `options` key
-          live_chat: false
-        }
-      }
-    ]
-  }
-}
+        options: {
+          // Options are provided to template as `options` key
+          live_chat: false,
+        },
+      },
+    ],
+  },
+};
 ```
 
 Templates are rendered using [`lodash.template`](https://lodash.com/docs/#template) you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
@@ -461,24 +468,21 @@ If you want to transpile specific dependencies with Babel, you can add them in `
 To add a module/file inside the vendor bundle, add the `build.vendor` key inside `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   build: {
-    vendor: ['axios']
-  }
-}
+    vendor: ['axios'],
+  },
+};
 ```
 
 You can also give a path to a file, like a custom lib you created:
 
 ```js
-module.exports = {
+export default {
   build: {
-    vendor: [
-      'axios',
-      '~/plugins/my-lib.js'
-    ]
-  }
-}
+    vendor: ['axios', '~/plugins/my-lib.js'],
+  },
+};
 ```
 
 ## vueLoader
@@ -507,11 +511,9 @@ module.exports = {
 - Type: `Array<String>`
 
 ```js
-module.exports = {
+export default {
   build: {
-    watch: [
-      '~/.nuxt/support.js'
-    ]
-  }
-}
+    watch: ['~/.nuxt/support.js'],
+  },
+};
 ```

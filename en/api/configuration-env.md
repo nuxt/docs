@@ -1,5 +1,5 @@
 ---
-title: "API: The env Property"
+title: 'API: The env Property'
 description: Share environment variables between client and server.
 ---
 
@@ -12,11 +12,11 @@ description: Share environment variables between client and server.
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
-  }
-}
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+  },
+};
 ```
 
 This lets you create a `baseUrl` property that will be equal to the `BASE_URL` environment variable if defined, otherwise, equal to `'http://localhost:3000'`.
@@ -33,11 +33,11 @@ For the example above, we can use it to configure [axios](https://github.com/mza
 `plugins/axios.js`:
 
 ```js
-import axios from 'axios'
+import axios from 'axios';
 
 export default axios.create({
-  baseURL: process.env.baseUrl
-})
+  baseURL: process.env.baseUrl,
+});
 ```
 
 Then, in your pages, you can import axios like this: `import axios from '~/plugins/axios'`

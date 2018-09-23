@@ -1,5 +1,5 @@
 ---
-title: "API: The dev Property"
+title: 'API: The dev Property'
 description: Define the development or production mode.
 ---
 
@@ -22,36 +22,35 @@ Example:
 `nuxt.config.js`
 
 ```js
-module.exports = {
-  dev: (process.env.NODE_ENV !== 'production')
-}
+export default {
+  dev: process.env.NODE_ENV !== 'production',
+};
 ```
 
 `server.js`
 
 ```js
-const { Nuxt, Builder } = require('nuxt')
-const app = require('express')()
-const port = process.env.PORT || 3000
+const { Nuxt, Builder } = require('nuxt');
+const app = require('express')();
+const port = process.env.PORT || 3000;
 
 // We instantiate Nuxt.js with the options
-let config = require('./nuxt.config.js')
-const nuxt = new Nuxt(config)
-app.use(nuxt.render)
+let config = require('./nuxt.config.js');
+const nuxt = new Nuxt(config);
+app.use(nuxt.render);
 
 // Build only in dev mode
 if (config.dev) {
-  new Builder(nuxt).build()
-  .catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
+  new Builder(nuxt).build().catch(error => {
+    console.error(error);
+    process.exit(1);
+  });
 }
 
 // Listen the server
 app.listen(port, '0.0.0.0').then(() => {
-  nuxt.showOpen()
-})
+  nuxt.showOpen();
+});
 ```
 
 Then in your `package.json`:
@@ -66,4 +65,4 @@ Then in your `package.json`:
 }
 ```
 
-Note: You'll need to run `npm install --save-dev cross-env` for the above example to work. If you're *not* developing on Windows you can leave `cross-env` out of your `start` script and set `NODE_ENV` directly.
+Note: You'll need to run `npm install --save-dev cross-env` for the above example to work. If you're _not_ developing on Windows you can leave `cross-env` out of your `start` script and set `NODE_ENV` directly.
