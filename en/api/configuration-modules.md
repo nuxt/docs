@@ -12,7 +12,7 @@ description: Modules are Nuxt.js extensions which can extend its core functional
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   modules: [
     // Using package name
     '@nuxtjs/axios',
