@@ -285,7 +285,7 @@ webpack [optimization](https://webpack.js.org/configuration/optimization/)
 Example (`nuxt.config.js`):
 
 ```js
-const webpack = require('webpack');
+const webpack = require('webpack')
 
 export default {
   build: {
