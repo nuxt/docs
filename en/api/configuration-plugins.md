@@ -19,8 +19,8 @@ Example (`nuxt.config.js`):
 
 ```js
 export default {
-  plugins: ['~/plugins/vue-notifications'],
-};
+  plugins: ['~/plugins/vue-notifications']
+}
 ```
 
 Then, we need to create a file in `plugins/vue-notifications.js`:

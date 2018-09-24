@@ -287,7 +287,7 @@ Example (`nuxt.config.js`):
 ```js
 const webpack = require('webpack');
 
-module.exports = {
+export default {
   build: {
     plugins: [
       new webpack.DefinePlugin({
