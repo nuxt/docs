@@ -24,10 +24,10 @@ export default {
     analyze: true,
     // or
     analyze: {
-      analyzerMode: 'static',
-    },
-  },
-};
+      analyzerMode: 'static'
+    }
+  }
+}
 ```
 
 <p class="Alert Alert--teal">**Info:** you can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888).</p>
@@ -41,7 +41,7 @@ export default {
 
   ```js
   {
-    presets: ['vue-app'];
+    presets: ['vue-app']
   }
   ```
 
@@ -51,10 +51,10 @@ Example (`nuxt.config.js`):
 export default {
   build: {
     babel: {
-      presets: ['es2015', 'stage-0'],
-    },
-  },
-};
+      presets: ['es2015', 'stage-0']
+    }
+  }
+}
 ```
 
 ## cache
@@ -96,11 +96,11 @@ export default {
     extend(config, { isClient }) {
       // Extend only webpack config for client-bundle
       if (isClient) {
-        config.devtool = '#source-map';
+        config.devtool = '#source-map'
       }
-    },
-  },
-};
+    }
+  }
+}
 ```
 
 If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack).
@@ -123,11 +123,11 @@ export default {
     ) {
       // Extend only webpack config for client-bundle
       if (isClient) {
-        vue.transformAssetUrls.video = ['src', 'poster'];
+        vue.transformAssetUrls.video = ['src', 'poster']
       }
-    },
-  },
-};
+    }
+  }
+}
 ```
 
 ## extractCSS
@@ -163,10 +163,10 @@ This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
 export default {
   build: {
     filenames: {
-      chunk: ({ isDev }) => (isDev ? '[name].js' : '[id].[chunkhash].js'),
-    },
-  },
-};
+      chunk: ({ isDev }) => (isDev ? '[name].js' : '[id].[chunkhash].js')
+    }
+  }
+}
 ```
 
 To understand a bit more about the use of manifest and vendor, take a look at this [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/).
@@ -291,11 +291,11 @@ module.exports = {
   build: {
     plugins: [
       new webpack.DefinePlugin({
-        'process.VERSION': require('./package.json').version,
-      }),
-    ],
-  },
-};
+        'process.VERSION': require('./package.json').version
+      })
+    ]
+  }
+}
 ```
 
 ## postcss
@@ -335,12 +335,12 @@ export default {
       },
       preset: {
         autoprefixer: {
-          grid: true,
-        },
-      },
-    },
-  },
-};
+          grid: true
+        }
+      }
+    }
+  }
+}
 ```
 
 ## profile
@@ -362,9 +362,9 @@ Example (`nuxt.config.js`):
 ```js
 export default {
   build: {
-    publicPath: 'https://cdn.nuxtjs.org',
-  },
-};
+    publicPath: 'https://cdn.nuxtjs.org'
+  }
+}
 ```
 
 Then, when launching `nuxt build`, upload the content of `.nuxt/dist/client` directory to your CDN and voilà!
@@ -442,12 +442,12 @@ export default {
         dst: 'support.js', // `dst` is relative to project `.nuxt` dir
         options: {
           // Options are provided to template as `options` key
-          live_chat: false,
-        },
-      },
-    ],
-  },
-};
+          live_chat: false
+        }
+      }
+    ]
+  }
+}
 ```
 
 Templates are rendered using [`lodash.template`](https://lodash.com/docs/#template) you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
@@ -470,9 +470,9 @@ To add a module/file inside the vendor bundle, add the `build.vendor` key inside
 ```js
 export default {
   build: {
-    vendor: ['axios'],
-  },
-};
+    vendor: ['axios']
+  }
+}
 ```
 
 You can also give a path to a file, like a custom lib you created:
@@ -480,9 +480,9 @@ You can also give a path to a file, like a custom lib you created:
 ```js
 export default {
   build: {
-    vendor: ['axios', '~/plugins/my-lib.js'],
-  },
-};
+    vendor: ['axios', '~/plugins/my-lib.js']
+  }
+}
 ```
 
 ## vueLoader
@@ -513,7 +513,7 @@ export default {
 ```js
 export default {
   build: {
-    watch: ['~/.nuxt/support.js'],
-  },
-};
+    watch: ['~/.nuxt/support.js']
+  }
+}
 ```
