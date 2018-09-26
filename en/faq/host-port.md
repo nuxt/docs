@@ -20,10 +20,9 @@ Or
 }
 ```
 
+## Configure in `nuxt.config.js`:
 
-## Configure in `nuxt.config.json`:
-
-Inside your `nuxt.config.json`:
+Inside your `nuxt.config.js`:
 
 ```js
 module.exports = {
