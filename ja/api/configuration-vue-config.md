@@ -4,7 +4,7 @@ description: Vue.config のための config オブジェクト
 ---
 
 
-# vue.configプロパティ
+# vue.config プロパティ
 
 - 型: `Object`
 - デフォルト: `{ silent: !isDev, performance: isDev }`
