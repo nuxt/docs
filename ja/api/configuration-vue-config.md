@@ -1,18 +1,18 @@
 ---
-title: "API: The vue.config Property"
-description: A config object for Vue.config
+title: "API: vue.config プロパティ"
+description: Vue.config のための config オブジェクト
 ---
 
 
-# The vue.config Property
+# vue.configプロパティ
 
-- Type: `Object`
-- Default: `{ silent: !isDev, performance: isDev }`
+- 型: `Object`
+- デフォルト: `{ silent: !isDev, performance: isDev }`
 
-> The vue.config property provides a direct configuration bridge for the `Vue.config`
+> vue.config プロパティ は `Vue.config` に直接設定するための橋を提供してくれます。
 
 
-**Example**
+**例**
 
 ```js
 export default {
@@ -25,7 +25,7 @@ export default {
 }
 ```
 
-This configuration will lead to the following Vue.config:
+この設定により、次の Vue.config が生成されます。
 
 ``` js
 Vue.config.productTip // true
@@ -35,4 +35,4 @@ Vue.config.performance // isDev [default value]
 ```
 
 
-To learn more about the `Vue.config` API, check out the [official Vue documentation](https://vuejs.org/v2/api/#Global-Config)
+`Vue.config` API についてもっと学びたければ、[公式のVueドキュメント](https://vuejs.org/v2/api/#Global-Config)を参照してください。
