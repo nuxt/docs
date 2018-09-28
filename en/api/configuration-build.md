@@ -171,6 +171,36 @@ To understand a bit more about the use of manifest and vendor, take a look at th
 
 See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for available options.
 
+## html.minify
+
+- Type: `Object`
+- Default:
+
+```js
+{
+  collapseBooleanAttributes: true,
+  collapseWhitespace: false,
+  decodeEntities: true,
+  minifyCSS: true,
+  minifyJS: true,
+  processConditionalComments: true,
+  removeAttributeQuotes: false,
+  removeComments: false,
+  removeEmptyAttributes: true,
+  removeOptionalTags: false,
+  removeRedundantAttributes: true,
+  removeScriptTypeAttributes: false,
+  removeStyleLinkTypeAttributes: false,
+  removeTagWhitespace: false,
+  sortClassName: false,
+  trimCustomFragments: true,
+  useShortDoctype: true
+}
+```
+
+Configuration for the [html-minifier](https://github.com/kangax/html-minifier) plugin used to minify
+HTML files created during the build process (will be applied for *all modes*).
+
 ## loaders
 
 > Customize options of Nuxt.js integrated webpack loaders.
