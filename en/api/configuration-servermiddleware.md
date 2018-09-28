@@ -1,12 +1,12 @@
 ---
-title: "API: The serverMiddleware Property"
+title: 'API: The serverMiddleware Property'
 description: Define server-side middleware.
 ---
 
 # The serverMiddleware Property
 
 - Type: `Array`
-    - Items: `String` or `Object` or `Function`
+  - Items: `String` or `Object` or `Function`
 
 Nuxt internally creates a [connect](https://github.com/senchalabs/connect) instance,
 so we can register our middleware to its stack and having chance
@@ -17,31 +17,32 @@ Nuxt [Modules](/guide/modules) can also provide `serverMiddleware`
 using [this.addServerMiddleware()](/api/internals-module-container#addservermiddleware-middleware-)
 
 ## serverMiddleware vs middleware!
+
 Don't confuse it with [routes middleware](/guide/routing#middleware) which are being called before each route by Vue in Client Side or SSR.
 `serverMiddleware` are just running in server side **before** vue-server-renderer and can be used for server specific tasks
 like handling API requests or serving assets.
 
 ## Usage
 
-If middleware is String Nuxt.js will try to automatically resolve and require it. 
+If middleware is String Nuxt.js will try to automatically resolve and require it.
 
 Example (`nuxt.config.js`):
 
 ```js
-const serveStatic = require('serve-static')
+const serveStatic = require('serve-static');
 
-module.exports = {
+export default {
   serverMiddleware: [
-      // Will register redirect-ssl npm package
-      'redirect-ssl',
+    // Will register redirect-ssl npm package
+    'redirect-ssl',
 
-      // Will register file from project api directory to handle /api/* requires
-      { path: '/api', handler: '~/api/index.js' },
+    // Will register file from project api directory to handle /api/* requires
+    { path: '/api', handler: '~/api/index.js' },
 
-      // We can create custom instances too
-      { path: '/static2', handler: serveStatic(__dirname + '/static2') }
-  ]
-}
+    // We can create custom instances too
+    { path: '/static2', handler: serveStatic(__dirname + '/static2') },
+  ],
+};
 ```
 
 <p class="Alert Alert--danger">
@@ -57,22 +58,20 @@ It is also possible writing custom middleware. For more information See [Connect
 Middleware (`api/logger.js`):
 
 ```js
-module.exports = function (req, res, next) {
-    // req is the Node.js http request object
-    console.log(req.path)
-    
-    // res is the Node.js http response object
+module.exports = function(req, res, next) {
+  // req is the Node.js http request object
+  console.log(req.path);
 
-    // next is a function to call to invoke the next middleware
-    // Don't forget to call next at the end if your middleware is not an endpoint!
-    next()
-}
+  // res is the Node.js http response object
+
+  // next is a function to call to invoke the next middleware
+  // Don't forget to call next at the end if your middleware is not an endpoint!
+  next();
+};
 ```
 
 Nuxt Config (`nuxt.config.js`):
 
 ```js
-serverMiddleware: [
-    '~/api/logger'
-]
+serverMiddleware: ['~/api/logger'];
 ```

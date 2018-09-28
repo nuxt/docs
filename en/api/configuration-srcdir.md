@@ -1,5 +1,5 @@
 ---
-title: "API: The srcDir Property"
+title: 'API: The srcDir Property'
 description: Define the source directory of your Nuxt.js application
 ---
 
@@ -13,12 +13,13 @@ description: Define the source directory of your Nuxt.js application
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
-  srcDir: 'client/'
-}
+export default {
+  srcDir: 'client/',
+};
 ```
 
 Then, your application structure can be:
+
 ```bash
 -| app/
 ---| node_modules/

@@ -1,5 +1,5 @@
 ---
-title: "API: The buildDir Property"
+title: 'API: The buildDir Property'
 description: Define the dist directory for your Nuxt.js application
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "API: The build Property"
+title: 'API: The build Property'
 description: Nuxt.js lets you customize the webpack configuration for building your web application as you want.
 ---
 
@@ -93,7 +93,7 @@ Example (`nuxt.config.js`):
 ```js
 export default {
   build: {
-    extend (config, { isClient }) {
+    extend(config, { isClient }) {
       // Extend only webpack config for client-bundle
       if (isClient) {
         config.devtool = '#source-map'
@@ -114,7 +114,13 @@ Example (`nuxt.config.js`):
 ```js
 export default {
   build: {
-    extend (config, { isClient, loaders: { vue } }) {
+    extend(
+      config,
+      {
+        isClient,
+        loaders: { vue },
+      }
+    ) {
       // Extend only webpack config for client-bundle
       if (isClient) {
         vue.transformAssetUrls.video = ['src', 'poster']
@@ -157,7 +163,7 @@ This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
 export default {
   build: {
     filenames: {
-      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[chunkhash].js'
+      chunk: ({ isDev }) => (isDev ? '[name].js' : '[id].[chunkhash].js')
     }
   }
 }
@@ -299,6 +305,7 @@ export default {
 - Type: `Array`, `Object` (recommended), `Function` or `Boolean`
 
   **Note:** Nuxt.js has applied [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env). By default it enables [Stage 2 features](https://cssdb.org/) and [Autoprefixer](https://github.com/postcss/autoprefixer), you can use `build.postcss.preset` to config it.
+
 - Default:
 
   ```js
@@ -319,12 +326,12 @@ export default {
   build: {
     postcss: {
       plugins: {
-          // Disable `postcss-url`
+        // Disable `postcss-url`
         'postcss-url': false,
         // Add some plugins
         'postcss-nested': {},
         'postcss-responsive-type': {},
-        'postcss-hexrgba': {}
+        'postcss-hexrgba': {},
       },
       preset: {
         autoprefixer: {
@@ -376,7 +383,6 @@ Then, when launching `nuxt build`, upload the content of `.nuxt/dist/client` dir
   ```
 
 If split codes for `layout`, `pages` and `commons` (common libs: vue|vue-loader|vue-router|vuex...).
-
 
 ## ssr
 
@@ -434,7 +440,8 @@ export default {
       {
         src: '~/modules/support/plugin.js', // `src` can be absolute or relative
         dst: 'support.js', // `dst` is relative to project `.nuxt` dir
-        options: { // Options are provided to template as `options` key
+        options: {
+          // Options are provided to template as `options` key
           live_chat: false
         }
       }
@@ -473,10 +480,7 @@ You can also give a path to a file, like a custom lib you created:
 ```js
 export default {
   build: {
-    vendor: [
-      'axios',
-      '~/plugins/my-lib.js'
-    ]
+    vendor: ['axios', '~/plugins/my-lib.js']
   }
 }
 ```
@@ -509,9 +513,7 @@ export default {
 ```js
 export default {
   build: {
-    watch: [
-      '~/.nuxt/support.js'
-    ]
+    watch: ['~/.nuxt/support.js']
   }
 }
 ```
