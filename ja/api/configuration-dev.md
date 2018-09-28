@@ -8,21 +8,21 @@ description: 開発モードかプロダクションモードかを指定しま�
 - 型: `ブーリアン`
 - デフォルト: `true`
 
-> Nuxt.js の開発モードなのかプロダクションモードなのかを指定します。
+> 開発モードかプロダクションモードかを指定します。
 
 このプロパティは [nuxt コマンド](/guide/commands) によって上書きされます:
 
 - `nuxt` コマンドを使うときは `dev` は強制的に `true` になります
 - `nuxt build`、`nuxt start`、`nuxt generate` コマンドを使うときは `dev` は強制的に `false` になります
 
-このプロパティは [Nuxt.js をプログラムで使う](/api/nuxt) ときに合わせて使うと良いです:
+このプロパティは [Nuxt.js をプログラムで使う](/api/nuxt) ときに設定します:
 
 例:
 
 `nuxt.config.js`
 
 ```js
-module.exports = {
+export default {
   dev: (process.env.NODE_ENV !== 'production')
 }
 ```
