@@ -1,6 +1,6 @@
 ---
 title: "API: watch プロパティ"
-description: watch プロパティはサーバー再起動のためにカスタムファイルを監視してくれます。
+description: watch プロパティはサーバーの再起動のためにカスタムファイルを監視してくれます。
 ---
 
 # watch プロパティ
@@ -8,10 +8,10 @@ description: watch プロパティはサーバー再起動のためにカスタ�
 - 型: `Object`
 - デフォルト: `[]`
 
-> watch プロパティはサーバー再起動のためにカスタムファイルを監視してくれます。
+> watch プロパティはサーバーの再起動のためにカスタムファイルを監視してくれます。
 
 ```js
 watch: ['~/custom/*.js']
 ```
 
-[chokidar](https://github.com/paulmillr/chokidar) はウォッチャーを設定するために使用されます。より chokidar のパターンオプションについて知りたければ、[chokidar API](https://github.com/paulmillr/chokidar#api) を参照してください。
+[chokidar](https://github.com/paulmillr/chokidar) はウォッチャを設定するために使用されます。より chokidar のパターンオプションについて知りたければ、[chokidar API](https://github.com/paulmillr/chokidar#api) を参照してください。
