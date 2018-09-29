@@ -7,7 +7,7 @@ description: Nuxt.js is really easy to get started with. A simple project only n
 
 ## Using `create-nuxt-app`
 
-To get started quickly, the Nuxt.js team has created scaffolding tool [create-nuxt-app](https://github.com/nuxt-community/create-nuxt-app).
+To get started quickly, the Nuxt.js team has created scaffolding tool [create-nuxt-app](https://github.com/nuxt/create-nuxt-app).
 
 Make sure you have [npx](https://www.npmjs.com/package/npx) installed (`npx` is shipped by default since NPM `5.2.0`)
 
@@ -42,6 +42,7 @@ It will ask you some questions:
 3. The Nuxt mode you want (`Universal` or `SPA`)
 4. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
 5. Add [EsLint](https://eslint.org/) to Lint your code on save.
+5. Add [Prettier](https://prettier.io/) to prettify your code on save.
 
 When answered, it will install all the dependencies so the next step is to launch the project with:
 

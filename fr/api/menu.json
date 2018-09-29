@@ -113,6 +113,7 @@
       { "name": "serverMiddleware (En)", "to": "/configuration-servermiddleware" },
       { "name": "srcDir (En)", "to": "/configuration-srcdir" },
       { "name": "transition (En)", "to": "/configuration-transition" },
+      { "name": "watch (En)", "to": "/configuration-watch" },
       {
         "name": "watchers (En)", "to": "/configuration-watchers",
         "contents": [

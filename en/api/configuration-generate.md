@@ -30,7 +30,7 @@ The path to the SPA fallback. This file can be used when doing deploys of genera
 - Type: `Number`
 - Default: `0`
 
-Interval between 2 render to avoid flooding the API calls made to a potential API from the web application.
+Interval between two render cycles to avoid flooding a potential API with API calls from the web application.
 
 ## minify
 
@@ -60,7 +60,7 @@ minify: {
 }
 ```
 
-You can change the default configuration of [html-minifier](https://github.com/kangax/html-minifier) used by Nuxt.js to minify HTML files created during generate process.
+You can change the default configuration of [html-minifier](https://github.com/kangax/html-minifier) used by Nuxt.js to minify HTML files created during generation.
 
 ## routes
 
@@ -84,7 +84,7 @@ If you want Nuxt.js to generate routes with dynamic params, you need to set an a
 We add routes for `/users/:id` in `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   generate: {
     routes: [
       '/users/1',
@@ -124,7 +124,7 @@ Great, but what if we have **dynamic params**?
 ```js
 const axios = require('axios')
 
-module.exports = {
+export default {
   generate: {
     routes: function () {
       return axios.get('https://my-api/users')
@@ -145,7 +145,7 @@ module.exports = {
 ```js
 const axios = require('axios')
 
-module.exports = {
+export default {
   generate: {
     routes: function (callback) {
       axios.get('https://my-api/users')
@@ -163,14 +163,14 @@ module.exports = {
 
 ### Speeding up dynamic route generation with `payload`
 
-In the example above, we're using the `user.id` from the server to generate the routes but tossing out the rest of the data. Typically, we need to fetch it again from inside the `/users/_id.vue`. While we can do that, we'll probably need to set the `generate.interval` to something like `100` in order not to flood the server with calls. Because this will increase the run time of the generate script, it would be preferable to pass along the entire `user` object to the context in `_id.vue`. We do that with by modifying the code above to this:
+In the example above, we're using the `user.id` from the server to generate the routes but tossing out the rest of the data. Typically, we need to fetch it again from inside the `/users/_id.vue`. While we can do that, we'll probably need to set the `generate.interval` to something like `100` in order not to flood the server with calls. Because this will increase the run time of the generate script, it would be preferable to pass along the entire `user` object to the context in `_id.vue`. We do that by modifying the code above to this:
 
 `nuxt.config.js`
 
 ```js
 const axios = require('axios')
 
-module.exports = {
+export default {
   generate: {
     routes: function () {
       return axios.get('https://my-api/users')

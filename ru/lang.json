@@ -35,7 +35,15 @@
     "meta": {
         "title": "Nuxt.js — Универсальные приложения на Vue.js",
         "description": "Nuxt.js — это минималистичный фреймворк для создания приложений на Vue.js с серверным рендерингом, разделением кода, горячей заменой модулей, статической генерацией и другими крутыми штуками!"
-    }
+    },
+    "codesandbox_title": "Play with Nuxt.js online",
+    "codesandbox_open": "Open on CodeSandBox.io",
+    "codesandbox_examples": "See more examples"
+  },
+  "sponsors": {
+    "title": "Sponsors",
+    "become": "Support us and",
+    "become_partner": "become a partner"
   },
   "footer": {
     "authors": "Создано братьями Chopin"

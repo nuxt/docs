@@ -11,7 +11,7 @@ description: La méthode `fetch` est utilisée pour remplir le store avant de fa
 
 La méthode `fetch` est appelée avant chaque chargement de composant (**uniquement pour les composants de page**). Elle peut être appelée côté serveur ou avant de naviguer sur la route correspondante.
 
-La méthode `fetch` reçoit l'objet [`context`](/api#context) comme premier argument, vous pouvez l'utiliser afin de récupérer des données et remplir le store. Pour rendre la méthode `fetch` asynchrone, **retournez une promesse**, Nuxt.js attendra la résolution de la promesse avant de faire le rendu du composant.
+La méthode `fetch` reçoit l'objet [`context`](/api/context) comme premier argument, vous pouvez l'utiliser afin de récupérer des données et remplir le store. Pour rendre la méthode `fetch` asynchrone, **retournez une promesse**, Nuxt.js attendra la résolution de la promesse avant de faire le rendu du composant.
 
 Exemple de `pages/index.vue` :
 

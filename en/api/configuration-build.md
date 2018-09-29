@@ -19,7 +19,7 @@ If an object, see available properties [here](https://github.com/webpack-contrib
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     analyze: true,
     // or
@@ -48,7 +48,7 @@ module.exports = {
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     babel: {
       presets: ['es2015', 'stage-0']
@@ -91,7 +91,7 @@ The extend is called twice, one time for the server bundle, and one time for the
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     extend (config, { isClient }) {
       // Extend only webpack config for client-bundle
@@ -112,7 +112,7 @@ If you want to see more about our default webpack configuration, take a look at 
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     extend (config, { isClient, loaders: { vue } }) {
       // Extend only webpack config for client-bundle
@@ -154,7 +154,7 @@ Using `extract-text-webpack-plugin` to extract the CSS in the main chunk into a 
 This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     filenames: {
       chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[chunkhash].js'
@@ -281,7 +281,7 @@ Example (`nuxt.config.js`):
 ```js
 const webpack = require('webpack')
 
-module.exports = {
+export default {
   build: {
     plugins: [
       new webpack.DefinePlugin({
@@ -315,7 +315,7 @@ module.exports = {
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     postcss: {
       plugins: {
@@ -353,7 +353,7 @@ module.exports = {
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     publicPath: 'https://cdn.nuxtjs.org'
   }
@@ -428,7 +428,7 @@ You need to specify the patterns/path you want to include for the given pre-proc
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     templates: [
       {
@@ -461,7 +461,7 @@ If you want to transpile specific dependencies with Babel, you can add them in `
 To add a module/file inside the vendor bundle, add the `build.vendor` key inside `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   build: {
     vendor: ['axios']
   }
@@ -471,7 +471,7 @@ module.exports = {
 You can also give a path to a file, like a custom lib you created:
 
 ```js
-module.exports = {
+export default {
   build: {
     vendor: [
       'axios',
@@ -507,7 +507,7 @@ module.exports = {
 - Type: `Array<String>`
 
 ```js
-module.exports = {
+export default {
   build: {
     watch: [
       '~/.nuxt/support.js'

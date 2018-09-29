@@ -1,6 +1,6 @@
 ---
 title: "API: The plugins Property"
-description: Use vue.js plugins with the plugins option of nuxt.js.
+description: Use vue.js plugins with the plugins option of Nuxt.js.
 ---
 
 # The plugins Property
@@ -17,7 +17,7 @@ If the item is an object, the properties are:
 
 Example (`nuxt.config.js`):
 ```js
-module.exports = {
+export default {
   plugins: ['~/plugins/vue-notifications']
 }
 ```

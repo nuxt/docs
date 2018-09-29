@@ -1,6 +1,6 @@
 ---
 title: "API: The modules Property"
-description: Modules are Nuxt.js extensions which can extend it's core functionality and add endless integrations.
+description: Modules are Nuxt.js extensions which can extend its core functionality and add endless integrations.
 ---
 
 # The modules Property (En)
@@ -28,10 +28,9 @@ module.exports = {
   ]
 }
 ```
-Module developers usually provide additional needed steps and details for usage.
+Module developers usually provide additionally needed steps and details for usage.
 
-Nuxt.js tries to resolve each item in the modules array using node require path (in the `node_modules`) and then
-Will be resolved from project `srcDir` if `~` alias is used. Modules are executed sequential so the order is important.
+Nuxt.js tries to resolve each item in the modules array using node require path (in the `node_modules`) and then will be resolved from project `srcDir` if `~` alias is used. Modules are executed sequentially so the order is important.
 
 Modules should export a function to enhance nuxt build/runtime and optionally return a promise until their job is finished.
 Note that they are required at runtime so should be already transpiled if depending on modern ES6 features.

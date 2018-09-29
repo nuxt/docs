@@ -1,26 +1,26 @@
 ---
-title: Caching Components
-description: How to cache components?
+title: Komponenten cachen
+description: Komponenten cachen
 ---
 
-# How to cache Vue components?
+# Vue-Komponenten cachen
 
-> Although Vue's SSR is quite fast, it can't match the performance of pure string-based templating due to the cost of creating component instances and Virtual DOM nodes. In cases where SSR performance is critical, wisely leveraging caching strategies can greatly improve response time and reduce server load.
+> Auch wenn Vues serverseitiges Rendering (SSR) ziemlich schnell ist, kann es - aufgrund der Erstellung von Komponenten und virtuellen DOM-Nodes - nicht die Leistung eines rein String-basierten Templatings erreichen. In Fällen, in denen die Leistung des SSR entscheidend ist, kann der Einsatz von Caching die Antwortzeiten verbessern und die Serverlast verringern.
 
 To avoid boilerplate, use [Component Cache module](https://github.com/nuxt-community/modules/tree/master/packages/component-cache) for Nuxt.js. This module uses vue-server-renderer to add LRU cache support for Vue components.
 
-## Usage
+## Verwendung
 
-- Add `@nuxtjs/component-cache` dependency using Yarn or npm to your project
-- Add `@nuxtjs/component-cache` to `modules` section of `nuxt.config.js`
+- Füge mithilfe von yarn oder npm das Paket `@nuxtjs/component-cache` dem Projekt hinzu
+- Erweitere wie folgt den Abschnitt `modules` der `nuxt.config.js` um `@nuxtjs/component-cache`
 
 ```js
 {
   modules: [
-    // Simple usage
+    // Einfache Nutzung
     '@nuxtjs/component-cache',
 
-    // With options
+    // Mit Optionen
     ['@nuxtjs/component-cache', {
       max: 10000,
       maxAge: 1000 * 60 * 60
@@ -29,11 +29,11 @@ To avoid boilerplate, use [Component Cache module](https://github.com/nuxt-commu
 }
 ```
 
-See [component-level caching](http://ssr.vuejs.org/en/caching.html#component-level-caching) for more information.
+Weitere Informationen dazu findest du [in der Dokumentation von Vue.js](http://ssr.vuejs.org/en/caching.html#component-level-caching).
 
-## Don't forget, that
+## Merke, dass
 
-- Cache-able component **must define a unique `name` option**.
-- You should ***NOT*** cache components, that
-  - has child components that may rely on global state.
-  - has child components that produces side effects on the render `context`.
+- Cache-kompatible Komponenten **eine eindeutige Zuweisung von `name` besitzen müssen**.
+- ***KEINE*** Komponenten gecachet werden sollten, die
+    - has child components that may rely on global state.
+    - has child components that produces side effects on the render `context`.

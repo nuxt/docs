@@ -399,7 +399,7 @@ webpack [optimization](https://webpack.js.org/configuration/optimization/)
   }
   ```
 
-Si vous voulez scindez le code pour `layout`, `pages` ou `commons` (common libs: vue|vue-loader|vue-router|vuex...)
+Si vous voulez scindez le code pour `layout`, `pages` ou `commons` (common libs: vue|vue-loader|vue-router|vuex...).
 
 ## transpile
 

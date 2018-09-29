@@ -74,6 +74,7 @@
         ]
       },
       { "name": "head", "to": "/configuration-head" },
+      { "name": "ignore", "to": "/configuration-ignore" },
       {
         "name": "loading",
         "to": "/configuration-loading",
@@ -117,6 +118,7 @@
       { "name": "serverMiddleware", "to": "/configuration-servermiddleware" },
       { "name": "srcDir", "to": "/configuration-srcdir" },
       { "name": "transition", "to": "/configuration-transition" },
+      { "name": "watch", "to": "/configuration-watch" },
       {
         "name": "watchers",
         "to": "/configuration-watchers",

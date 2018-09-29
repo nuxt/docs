@@ -37,13 +37,11 @@ Chinese translation is maintained by AOTU Labs from China, Shenzhen.
 
 ### Japanese
 
-Japanese translation team is using a translation tool called [GitLocalize](https://gitlocalize.com) in principle. See the following "Want to help with the translation?" section. 
+Japanese translation is maintained by [Vue.js Japan User Group](https://github.com/vuejs-jp/home).
 
-Japanese translation is maintained by INOUE Takuya.
-
-* Translation Repo - [https://gitlocalize.com/repo/100/ja](https://gitlocalize.com/repo/100/ja)
-* Primary maintainer - [INOUE Takuya](http://blog.inouetakuya.info/)
-* Primary translator - [INOUE Takuya](https://github.com/inouetakuya)
+* Translation Repo - [https://github.com/vuejs-jp/ja.docs.nuxtjs](https://github.com/vuejs-jp/ja.docs.nuxtjs)
+* Primary maintainer - [INOUE Takuya(@inouetakuya)](http://blog.inouetakuya.info/), [HANATANI Takuma(@potato4d)](https://github.com/potato4d), [numa(@aytdm)](https://github.com/aytdm)
+* Primary translator - [INOUE Takuya(@inouetakuya)](https://github.com/inouetakuya), [HANATANI Takuma(@potato4d)](https://github.com/potato4d), [numa(@aytdm)](https://github.com/aytdm)
 
 ### Korean
 
@@ -74,19 +72,8 @@ Indonesian translation is maintained by [Nuxt.js Indonesian Community](https://g
 ### Want to help with the translation?
 
 [gl]: https://gitlocalize.com
-[gl-help]: https://docs.gitlocalize.com/ 
-[gl-issue-tracker]: https://github.com/gitlocalize/feedback
-[gl-repo]: https://gitlocalize.com/repo/100
 
-We are using a translation tool called [GitLocalize][gl]. 
+Much of the translation was done using a tool called [GitLocalize][gl], which is unfortunately reaching its end of service soon. Hence, we're currently exploring and open to suggestions on how to keep this process as streamlined as possible.
 
-Follow these steps to get started with your contribution:
+For now, **always check the `en/` version** of a document for its latest revision before starting a translation.  
 
-1. Go to [GitLocalize's nuxt/docs repository][gl-repo].
-1. Sign up using your GitHub account :octocat:.
-1. Find the document you are going to translate. 
-1. Happy translating :sparkles: .
-1. When you are done, send the translation for reviews.
-1. Reviewed translation will be sent as a Pull Request to GitHub by language admin in the community.
-
-To learn more about how GitLocalize works, visit their [help page][gl-help]. If you find any issues or feature requests, please file them in [GitLocalize's issue tracker][gl-issue-tracker].

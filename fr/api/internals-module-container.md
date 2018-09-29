@@ -75,3 +75,12 @@ Enregistre le module. `moduleOpts` peut être une chaine de caractères ou `[src
 ### requireModule (moduleOpts)
 
 C'est un alias raccourci de `addModule(moduleOpts, true)`
+
+## Points d'ancrage
+
+We can register hooks on certain life cycle events.
+
+Points d'ancrage          | Arguments                  | Quand
+--------------------------|----------------------------|-------------------------------------------------------------------------------------------------------
+ `modules:before`         | (moduleContainer, options) | Appelé avant la création de la classe ModuleContainer, utile pour surcharger les méthodess et options.
+ `modules:done`           | (moduleContainer)          | Appelé quand tous les modules ont été chargés.
