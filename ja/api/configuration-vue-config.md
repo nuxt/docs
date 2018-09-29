@@ -9,7 +9,7 @@ description: Vue.config のための config オブジェクト
 - 型: `Object`
 - デフォルト: `{ silent: !isDev, performance: isDev }`
 
-> vue.config プロパティ は `Vue.config` に直接設定するための橋を提供してくれます。
+> vue.config プロパティ は `Vue.config` を直接設定するための橋渡しをしてくれます。
 
 
 **例**
@@ -35,4 +35,4 @@ Vue.config.performance // isDev [default value]
 ```
 
 
-`Vue.config` API についてもっと学びたければ、[公式のVueドキュメント](https://vuejs.org/v2/api/#Global-Config)を参照してください。
+`Vue.config` API についてもっと学びたければ、[公式の Vue ドキュメント](https://vuejs.org/v2/api/#Global-Config)を参照してください。
