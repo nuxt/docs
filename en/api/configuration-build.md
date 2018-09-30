@@ -163,7 +163,7 @@ export default {
 }
 ```
 
-To understand a bit more about the use of manifest and vendor, take a look at this [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/).
+To understand a bit more about the use of manifests, take a look at this [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/).
 
 ## hotMiddleware
 
@@ -527,35 +527,6 @@ Templates are rendered using [`lodash.template`](https://lodash.com/docs/#templa
 - Default: `[]`
 
 If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Item in transpile can be string or regex object for matching dependencies file name.
-
-## vendor
-
-> Nuxt.js lets you add modules inside the `vendor.bundle.js` file to reduce the size of the application bundle. This is especially helpful when using external modules (like `axios` for example).
-
-- Type: `Array`
-
-To add a module/file inside the vendor bundle, add the `build.vendor` key inside `nuxt.config.js`:
-
-```js
-export default {
-  build: {
-    vendor: ['axios']
-  }
-}
-```
-
-You can also give a path to a file, like a custom lib you created:
-
-```js
-export default {
-  build: {
-    vendor: [
-      'axios',
-      '~/plugins/my-lib.js'
-    ]
-  }
-}
-```
 
 ## vueLoader
 
