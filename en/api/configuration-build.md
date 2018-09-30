@@ -278,8 +278,8 @@ See [Webpack Optimization](https://webpack.js.org/configuration/optimization).
 ```js
 {
   parallel: true,
-  cache: // enabled when cache is enabled,
-  sourceMap: // enabled when cdevtool matches source-?map,
+  cache: false,
+  sourceMap: false,
   extractComments: {
     filename: 'LICENSES'
   },
@@ -293,6 +293,8 @@ See [Webpack Optimization](https://webpack.js.org/configuration/optimization).
 
 Terser plugin options. Set to `false` to disable this plugin.
 
+`soruceMap` will be enabled when webpack `confing.devtool` matches `source-?map`
+
 See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin).
 
 ## optimizeCSS
@@ -302,7 +304,7 @@ See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/t
   - `false`
   - `{}` when extractCSS is enabled
 
-OptimizeCSSAssets Webpack Plugin options.
+OptimizeCSSAssets plugin options.
 
 See [NMFR/optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin).
 
