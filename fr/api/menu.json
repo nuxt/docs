@@ -114,6 +114,7 @@
       { "name": "serverMiddleware (En)", "to": "/configuration-servermiddleware" },
       { "name": "srcDir (En)", "to": "/configuration-srcdir" },
       { "name": "transition (En)", "to": "/configuration-transition" },
+      { "name": "vue.config (En)", "to": "/configuration-vue-config" },
       { "name": "watch (En)", "to": "/configuration-watch" },
       {
         "name": "watchers (En)", "to": "/configuration-watchers",
