@@ -87,6 +87,7 @@
       { "name": "loadingIndicator", "to": "/configuration-loading-indicator" },
       { "name": "mode", "to": "/configuration-mode" },
       { "name": "modules", "to": "/configuration-modules" },
+      { "name": "modulesDir", "to": "/configuration-modulesdir" },
       { "name": "plugins", "to": "/configuration-plugins" },
       {
         "name": "render",
