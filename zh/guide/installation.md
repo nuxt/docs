@@ -1,6 +1,6 @@
 ---
-安装
-description: Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt` 添加为依赖组件即可。
+title: "安装"
+description: "Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt` 添加为依赖组件即可。"
 ---
 
 > Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt` 添加为依赖组件即可。
