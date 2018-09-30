@@ -103,6 +103,7 @@ new Vuex.Store({
     }
   },
   modules: {
+    namespaced: true,
     todos: {
       state: {
         list: []
