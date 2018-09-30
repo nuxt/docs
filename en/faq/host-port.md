@@ -20,7 +20,6 @@ Or
 }
 ```
 
-
 ## Configure in `nuxt.config.js`:
 
 Inside your `nuxt.config.js`:

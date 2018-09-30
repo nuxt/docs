@@ -171,6 +171,36 @@ To understand a bit more about the use of manifest and vendor, take a look at th
 
 See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for available options.
 
+## html.minify
+
+- Type: `Object`
+- Default:
+
+```js
+{
+  collapseBooleanAttributes: true,
+  collapseWhitespace: false,
+  decodeEntities: true,
+  minifyCSS: true,
+  minifyJS: true,
+  processConditionalComments: true,
+  removeAttributeQuotes: false,
+  removeComments: false,
+  removeEmptyAttributes: true,
+  removeOptionalTags: false,
+  removeRedundantAttributes: true,
+  removeScriptTypeAttributes: false,
+  removeStyleLinkTypeAttributes: false,
+  removeTagWhitespace: false,
+  sortClassName: false,
+  trimCustomFragments: true,
+  useShortDoctype: true
+}
+```
+
+Configuration for the [html-minifier](https://github.com/kangax/html-minifier) plugin used to minify
+HTML files created during the build process (will be applied for *all modes*).
+
 ## loaders
 
 > Customize options of Nuxt.js integrated webpack loaders.
@@ -249,6 +279,11 @@ See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware
 
   ```js
   {
+    minimize: true,
+    minimizer: [
+      // terser-webpack-plugin
+      // optimize-css-assets-webpack-plugin
+    ],
     splitChunks: {
       chunks: 'all',
       automaticNameDelimiter: '.',
@@ -260,7 +295,48 @@ See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware
 
 The default value of `splitChunks.name` is `true` in `dev` or `analyze` mode.
 
-webpack [optimization](https://webpack.js.org/configuration/optimization/)
+You can set `minimizer` to a customized Array of plugins or set `minimize` to `false` to disable all minimizers.
+(`minimize` is being disabled for development by default)
+
+See [Webpack Optimization](https://webpack.js.org/configuration/optimization).
+
+## terser
+
+- Type: `Object` or `Boolean`
+- Default:
+
+```js
+{
+  parallel: true,
+  cache: false,
+  sourceMap: false,
+  extractComments: {
+    filename: 'LICENSES'
+  },
+  terserOptions: {
+    output: {
+      comments: /^\**!|@preserve|@license|@cc_on/
+    }
+  }
+}
+```
+
+Terser plugin options. Set to `false` to disable this plugin.
+
+`soruceMap` will be enabled when webpack `confing.devtool` matches `source-?map`
+
+See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin).
+
+## optimizeCSS
+
+- Type: `Object` or `Boolean`
+- Default:
+  - `false`
+  - `{}` when extractCSS is enabled
+
+OptimizeCSSAssets plugin options.
+
+See [NMFR/optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin).
 
 ## parallel
 

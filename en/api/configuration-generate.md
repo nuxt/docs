@@ -34,33 +34,8 @@ Interval between two render cycles to avoid flooding a potential API with API ca
 
 ## minify
 
-- Type: `Object`
-- Default:
-
-```js
-minify: {
-  collapseBooleanAttributes: true,
-  collapseWhitespace: false,
-  decodeEntities: true,
-  minifyCSS: true,
-  minifyJS: true,
-  processConditionalComments: true,
-  removeAttributeQuotes: false,
-  removeComments: false,
-  removeEmptyAttributes: true,
-  removeOptionalTags: false,
-  removeRedundantAttributes: true,
-  removeScriptTypeAttributes: false,
-  removeStyleLinkTypeAttributes: false,
-  removeTagWhitespace: false,
-  sortAttributes: true,
-  sortClassName: false,
-  trimCustomFragments: true,
-  useShortDoctype: true
-}
-```
-
-You can change the default configuration of [html-minifier](https://github.com/kangax/html-minifier) used by Nuxt.js to minify HTML files created during generation.
+- **Deprecated!**
+- Use [build.html.minify](/api/configuration-build#html-minify) instead
 
 ## routes
 
