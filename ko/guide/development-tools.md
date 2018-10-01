@@ -185,7 +185,7 @@ npm run lintfix
 
 ESLint 는 `.gitignore`에 정의된 파일들을 무시하면서 모든 JavaScript 및 Vue 파일을 lint 합니다.
 
-또한 webpakc을 통해 핫 리로드 모드에서 ESLink를 활성화하는 것이 좋습니다. 이렇게 하면 ESLint는 `npm run dev` 실행 동안 저장시 실행 됩니다. `nuxt.config.js`에 다음을 추가하십시오.:
+또한 webpack을 통해 핫 리로드 모드에서 ESLink를 활성화하는 것이 좋습니다. 이렇게 하면 ESLint는 `npm run dev` 실행 동안 저장시 실행 됩니다. `nuxt.config.js`에 다음을 추가하십시오.:
 
 ```
 ...
