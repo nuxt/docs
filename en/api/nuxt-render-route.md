@@ -23,9 +23,9 @@ This method should be used mostly for [test purposes](/guide/development-tools#e
 Example:
 
 ```js
-const { Nuxt, Builder } = require('nuxt')
+import { Nuxt, Builder } from 'nuxt'
+import config from './nuxt.config.js'
 
-const config = require('./nuxt.config.js')
 config.dev = false
 
 const nuxt = new Nuxt(config)

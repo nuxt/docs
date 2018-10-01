@@ -355,13 +355,13 @@ See [NMFR/optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-c
 Example (`nuxt.config.js`):
 
 ```js
-const webpack = require('webpack')
-
+import webpack from 'webpack'
+import { version } from './package.json'
 export default {
   build: {
     plugins: [
       new webpack.DefinePlugin({
-        'process.VERSION': require('./package.json').version
+        'process.VERSION': version
       })
     ]
   }

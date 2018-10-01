@@ -28,7 +28,7 @@ If middleware is String Nuxt.js will try to automatically resolve and require it
 Example (`nuxt.config.js`):
 
 ```js
-const serveStatic = require('serve-static')
+import serveStatic from 'serve-static'
 
 export default {
   serverMiddleware: [

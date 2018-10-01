@@ -8,7 +8,7 @@ description: How to add webpack plugins into my Nuxt.js application?
 In your `nuxt.config.js` file:
 
 ```js
-const webpack = require('webpack')
+import webpack from 'webpack'
 
 export default {
   build: {

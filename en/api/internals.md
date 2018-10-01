@@ -56,10 +56,10 @@ These classes are only needed for build or dev mode.
 
 ## Packaging & Usage
 
-Nuxt exports all classes by default. To require them:
+Nuxt exports all classes by default. To import them:
 
 ```js
-const { Nuxt, Builder, Utils } = require('nuxt')
+import { Nuxt, Builder, Utils } from 'nuxt'
 ```
 
 ## Common patterns

@@ -97,7 +97,7 @@ Great, but what if we have **dynamic params**?
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
 export default {
   generate: {
@@ -118,14 +118,14 @@ export default {
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
 export default {
   generate: {
     routes: function (callback) {
       axios.get('https://my-api/users')
       .then((res) => {
-        var routes = res.data.map((user) => {
+        const routes = res.data.map((user) => {
           return '/users/' + user.id
         })
         callback(null, routes)
@@ -143,7 +143,7 @@ In the example above, we're using the `user.id` from the server to generate the 
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
 export default {
   generate: {

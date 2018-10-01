@@ -25,10 +25,12 @@ yarn add express express-session body-parser whatwg-fetch
 Then we create our `server.js`:
 
 ```js
-const { Nuxt, Builder } = require('nuxt')
-const bodyParser = require('body-parser')
-const session = require('express-session')
-const app = require('express')()
+import { Nuxt, Builder } from 'nuxt'
+import bodyParser from 'body-parser'
+import session from 'express-session'
+import express from 'express'
+
+const app = express()
 
 // Body parser, to access `req.body`
 app.use(bodyParser.json())
@@ -74,9 +76,9 @@ And we update our `package.json` scripts:
 ```json
 // ...
 "scripts": {
-  "dev": "node server.js",
+  "dev": "node -r esm server.js",
   "build": "nuxt build",
-  "start": "cross-env NODE_ENV=production node server.js"
+  "start": "cross-env NODE_ENV=production node -r esm server.js"
 }
 // ...
 ```
@@ -96,7 +98,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 // Polyfill for `window.fetch()`
-require('whatwg-fetch')
+import 'whatwg-fetch'
 
 const store = () => new Vuex.Store({
 
@@ -120,7 +122,7 @@ export default store
 ```
 
 1. We import `Vue` and `Vuex` (included in Nuxt.js) and we tell Vue to use Vuex to let us use `$store` in our components.
-2. We `require('whatwg-fetch')` to polyfill the `fetch()` method across all browsers (see [fetch repo](https://github.com/github/fetch)).
+2. We `import 'whatwg-fetch'` to polyfill the `fetch()` method across all browsers (see [fetch repo](https://github.com/github/fetch)).
 3. We create our `SET_USER` mutation which will set the `state.authUser` to the connected user.
 4. We export our store instance to Nuxt.js can inject it to our main application.
 

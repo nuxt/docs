@@ -82,7 +82,7 @@ Not all modules will do everything synchronous. For example you may want to deve
 <p class="Alert Alert--orange">Be aware that `async`/`await` is only supported in Node.js > 7.2. So if you are a module developer at least warn users about that if using them. For heavily async modules or better legacy support you can use either a bundler to transform it for older Node.js compatibility or a promise method.</p>
 
 ```js
-const fse = require('fs-extra')
+import fse from 'fs-extra'
 
 export default async function asyncModule() {
   // You can do async works here using `async`/`await`
@@ -93,7 +93,7 @@ export default async function asyncModule() {
 ### Return a Promise
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
 export default function asyncModule() {
   return axios.get('https://jsonplaceholder.typicode.com/users')
@@ -107,7 +107,7 @@ export default function asyncModule() {
 ### Use callbacks
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
 export default function asyncModule(callback) {
   axios.get('https://jsonplaceholder.typicode.com/users')
@@ -166,7 +166,7 @@ Vue.use(BootstrapVue)
 **module.js**
 
 ```js
-const path = require('path')
+import path from 'path'
 
 export default function nuxtBootstrapVue (moduleOptions) {
   // Register `plugin.js` template
@@ -192,7 +192,7 @@ ga('create', '<%= options.ua %>', 'auto')
 **module.js**
 
 ```js
-const path = require('path')
+import path from 'path'
 
 export default function nuxtBootstrapVue (moduleOptions) {
   // Register `plugin.js` template
