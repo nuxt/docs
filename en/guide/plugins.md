@@ -39,7 +39,7 @@ export default {
 But there is **one problem here**. If we import axios in another page, it will be included again for the page bundle. We want to include `axios` only once in our application. To do this, we use the `build.vendor` key in our `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   build: {
     vendor: ['axios']
   }
@@ -64,7 +64,7 @@ Vue.use(VueNotifications)
 Then, we add the file inside the `plugins` key of `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   plugins: ['~/plugins/vue-notifications']
 }
 ```
@@ -76,7 +76,7 @@ Actually, `vue-notifications` will be included in the app bundle, but because it
 We can update our `nuxt.config.js` to add `vue-notifications` in the vendor bundle:
 
 ```js
-module.exports = {
+export default {
   build: {
     vendor: ['vue-notifications']
   },
@@ -105,7 +105,7 @@ Vue.prototype.$myInjectedFunction = (string) => console.log("This is an example"
 `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   plugins: ['~/plugins/vue-inject.js']
 }
 ```
@@ -139,7 +139,7 @@ export default ({ app }, inject) => {
 `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   plugins: ['~/plugins/ctx-inject.js']
 }
 ```
@@ -173,7 +173,7 @@ export default ({ app }, inject) => {
 `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   plugins: ['~/plugins/combined-inject.js']
 }
 ```
@@ -228,7 +228,7 @@ Example:
 `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   plugins: [
     { src: '~/plugins/vue-notifications', ssr: false }
   ]

@@ -8,7 +8,7 @@ description: How to add PostCSS plugins?
 In your `nuxt.config.js` file:
 
 ```js
-module.exports = {
+export default {
   build: {
     postcss: [
       require('postcss-nested')(),

@@ -13,7 +13,7 @@ description: Nuxt.js lets you customize runtime options for rendering pages
 > Use this option to customize vue SSR bundle renderer. This option is skipped for spa mode.
 
 ```js
-module.exports = {
+export default {
   render: {
     bundleRenderer: {
       directives: {

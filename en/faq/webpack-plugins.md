@@ -10,7 +10,7 @@ In your `nuxt.config.js` file:
 ```js
 const webpack = require('webpack')
 
-module.exports = {
+export default {
   build: {
     plugins: [
       new webpack.ProvidePlugin({

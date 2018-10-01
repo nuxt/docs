@@ -23,7 +23,7 @@ export default {
  }
 ```
 
-> If you want to start it in the `mounted` method, make sure to use ` this.$nextTick`, because $loading may not be available immediately. 
+> If you want to start it in the `mounted` method, make sure to use ` this.$nextTick`, because $loading may not be available immediately.
 
 ## Disable the Progress Bar
 
@@ -32,7 +32,7 @@ export default {
 If you don't want to display the progress bar between the routes, simply add `loading: false` in your `nuxt.config.js` file:
 
 ```js
-module.exports = {
+export default {
   loading: false
 }
 ```
@@ -55,7 +55,7 @@ List of properties to customize the progress bar.
 For a blue progress bar with 5px of height, we update the `nuxt.config.js` to the following:
 
 ```js
-module.exports = {
+export default {
   loading: {
     color: 'blue',
     height: '5px'
@@ -121,7 +121,7 @@ export default {
 Then, we update our `nuxt.config.js` to tell Nuxt.js to use our component:
 
 ```js
-module.exports = {
+export default {
   loading: '~/components/loading.vue'
 }
 ```
