@@ -50,7 +50,7 @@ npm run dev
 
 ## Production Deployment
 
-Nuxt.js lets your choose between three modes to deploy your application: Server Rendered, SPA or Static Generated.
+Nuxt.js lets you choose between three modes to deploy your application: Server Rendered, SPA or Static Generated.
 
 ### Server Rendered Deployment (Universal)
 
