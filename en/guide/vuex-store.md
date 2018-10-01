@@ -10,8 +10,7 @@ description: Using a store to manage the state is important for every big applic
 Nuxt.js will look for the `store` directory, if it exists, it will:
 
 1. Import Vuex,
-2. Add `vuex` module in the vendors bundle,
-3. Add the `store` option to the root Vue instance.
+2. Add the `store` option to the root Vue instance.
 
 Nuxt.js lets you have **2 modes of store**, choose the one you prefer:
 
