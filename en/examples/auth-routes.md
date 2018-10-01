@@ -100,9 +100,9 @@ require('whatwg-fetch')
 
 const store = () => new Vuex.Store({
 
-  state: {
+  state: () => ({
     authUser: null
-  },
+  }),
 
   mutations: {
     SET_USER: function (state, user) {

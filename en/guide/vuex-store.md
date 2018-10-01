@@ -18,6 +18,8 @@ Nuxt.js lets you have **2 modes of store**, choose the one you prefer:
 - **Classic:** `store/index.js` returns a store instance.
 - **Modules:** every `.js` file inside the `store` directory is transformed as a [namespaced module](http://vuex.vuejs.org/en/modules.html) (`index` being the root module).
 
+Regardless of the mode, your `state` value should **always be a `function`** to avoid unwanted *shared* state on the server side.
+
 ## Classic mode
 
 To activate the store with the classic mode, we create the `store/index.js` file which should export a method which returns a Vuex instance:
@@ -27,9 +29,9 @@ import Vuex from 'vuex'
 
 const createStore = () => {
   return new Vuex.Store({
-    state: {
+    state: () => ({
       counter: 0
-    },
+    }),
     mutations: {
       increment (state) {
         state.counter++
@@ -96,7 +98,9 @@ The store will be as such:
 
 ```js
 new Vuex.Store({
-  state: { counter: 0 },
+  state: () => ({
+    counter: 0
+  }),
   mutations: {
     increment (state) {
       state.counter++
@@ -105,9 +109,9 @@ new Vuex.Store({
   modules: {
     namespaced: true,
     todos: {
-      state: {
+      state: () => ({
         list: []
-      },
+      }),
       mutations: {
         add (state, { text }) {
           state.list.push({
@@ -171,9 +175,9 @@ export default {
 Example for state; you create a file `store/state.js` and add the following
 
 ```js
-export default {
+export default () => ({
   counter: 0
-}
+})
 ```
 
 And the corresponding mutations can be in the file `store/mutations.js`
@@ -266,9 +270,9 @@ import Vuex from 'vuex'
 const createStore = () => {
   return new Vuex.Store({
     strict: false,
-    state: {
+    state: () => ({
       counter: 0
-    },
+    }),
     mutations: {
       increment (state) {
         state.counter++

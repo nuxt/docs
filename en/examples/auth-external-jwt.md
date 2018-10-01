@@ -65,9 +65,9 @@ const cookieparser = process.server ? require('cookieparser') : undefined
 
 const createStore = () => {
   return new Vuex.Store({
-    state: {
+    state: () => ({
       auth: null
-    },
+    }),
     mutations: {
       setAuth(state, auth) {
         state.auth = auth
