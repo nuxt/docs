@@ -8,9 +8,9 @@ description: How to extend webpack config into my Nuxt.js application ?
 You can extend the webpack configuration via the `extend` option in your `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   build: {
-     extend (config, { dev, isClient }) {
+     extend (config, { isDev, isClient }) {
        // ...
      }
   }

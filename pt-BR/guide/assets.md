@@ -7,7 +7,7 @@ description: By default, Nuxt uses vue-loader, file-loader and url-loader webpac
 
 ## webpacked
 
-By default, [vue-loader](http://vue-loader.vuejs.org/en/) automatically processes your style and template files with css-loader and the Vue template compiler. In this compilation process, all asset URLs such as `<img src="...">`, `background: url(...)` and CSS `@import` are resolved as module dependencies.
+By default, [vue-loader](http://vue-loader.vuejs.org/) automatically processes your style and template files with css-loader and the Vue template compiler. In this compilation process, all asset URLs such as `<img src="...">`, `background: url(...)` and CSS `@import` are resolved as module dependencies.
 
 For example, we have this file tree:
 
@@ -18,7 +18,9 @@ For example, we have this file tree:
 ----| index.vue
 ```
 
-In your CSS, if you use `url('~/assets/image.png')`, it will be translated into `require('~/assets/image.png')`.
+In your CSS, if you use `url('~assets/image.png')`, it will be translated into `require('~/assets/image.png')`.
+
+> Note that starting from Nuxt 2.0 due to css-loader upgradation you should use `~assets` (without a slash) in <url> CSS data type, e.g., background: url("~assets/banner.svg")
 
 Or if in your `pages/index.vue` you use:
 
@@ -49,7 +51,7 @@ Actually, Nuxt.js default assets loaders configuration is:
     test: /\.(png|jpe?g|gif|svg)$/,
     loader: 'url-loader',
     query: {
-      limit: 1000, // 1KO
+      limit: 1000, // 1kB
       name: 'img/[name].[hash:7].[ext]'
     }
   },
@@ -64,7 +66,7 @@ Actually, Nuxt.js default assets loaders configuration is:
 ]
 ```
 
-Which means that every file below 1 KO will be inlined as base-64 data URL. Otherwise, the image/font will be copied in its corresponding folder (under the `.nuxt` directory) with a name containing a version hashes for better caching.
+Which means that every file below 1 KB will be inlined as base-64 data URL. Otherwise, the image/font will be copied in its corresponding folder (under the `.nuxt` directory) with a name containing a version hashes for better caching.
 
 When launching our application with `nuxt`, our template in `pages/index.vue`:
 
@@ -86,7 +88,7 @@ If you want to update these loaders or disable them, please use [build.extend](/
 
 If you don't want to use webpacked Assets from the `assets` directory, you can create and use the `static` directory in your project root directory.
 
-These files will be automatically serve by Nuxt and accessible in your project root URL.
+These files will be automatically served by Nuxt and accessible in your project root URL.
 
 This option is helpful for files like `robots.txt`, `sitemap.xml` or `CNAME` (for like GitHub Pages).
 

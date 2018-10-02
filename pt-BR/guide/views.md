@@ -11,7 +11,7 @@ description: The Views section describes all you need to configure data and view
 
 > You can customise the main document with Nuxt.js.
 
-To extend the HTML template, create a `app.html` at the root of your project.
+To extend the HTML template, create `app.html` at the root of your project.
 
 The default template is:
 
@@ -27,7 +27,7 @@ The default template is:
 </html>
 ```
 
-One example if to add conditional CSS classes for IE:
+One example is to add conditional CSS classes for IE:
 
 ```html
 <!DOCTYPE html>
@@ -64,7 +64,7 @@ The default layout source code is:
 
 You can customize the error page by adding a `layouts/error.vue` file.
 
-This layout is special since you should not include `<nuxt/>` inside its template. You must see this layout as a component displayed when an error occurs (404, 500, etc).
+This layout is special, since you should _not_ include `<nuxt/>` inside its template. You must see this layout as a component displayed when an error occurs (`404`, `500`, etc.).
 
 The default error page source code is [available on GitHub](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
 
@@ -94,6 +94,7 @@ Every file (*first level*) in the `layouts` directory will create a custom layou
 *Make sure to add the `<nuxt/>` component when creating a layout to display the page component.*
 
 Example of `layouts/blog.vue`:
+
 ```html
 <template>
   <div>
@@ -119,7 +120,7 @@ Check the [demonstration video](https://www.youtube.com/watch?v=YOKnSTp7d38) to 
 
 ## Pages
 
-Every Page component is a Vue component, but Nuxt.js adds special keys to make the development of your universal application the easiest way possible.
+Every Page component is a Vue component, but Nuxt.js adds special keys to make the development of your universal application as easy as possible.
 
 ```html
 <template>
@@ -152,14 +153,15 @@ export default {
 
 | Attribute | Description |
 |-----------|-------------|
-| asyncData | The most important key, it can be asynchronous and receives the context as argument, please read the [async data documentation](/guide/async-data) to learn how it works. |
-| fetch | Used to fill the store before rendering the page, it's like the data method except it doesn't set the component data. See the [API Pages `fetch` documentation](/api/pages-fetch). |
-| head | Set specific Meta Tags for the current page, see [API Pages `head` documentation](/api/pages-head). |
-| layout | Specify a layout defined in the `layouts` directory, see [API Pages `layout` documentation](/api/pages-layout). |
-| transition | Set a specific transition for the page, see [API Pages `transition`](/api/pages-transition). |
-| scrollToTop | Boolean, by default: `false`. Specify if you want the page to scroll to the top before rendering the page, it's used for [nested routes](/guide/routing#nested-routes). |
-| validate | Validator function for [dynamic routes](/guide/routing#dynamic-routes). |
-| middleware | Set a middleware for this page, the middleware will be called before rendering the page, see routes [middleware](/guide/routing#middleware). |
+| `asyncData` | The most important key. It can be asynchronous and receives the context as argument. Please read the [async data documentation](/guide/async-data) to learn how it works. |
+| `fetch` | Used to fill the store before rendering the page. It's like the `data` method, except it doesn't set the component data. See the [API Pages `fetch` documentation](/api/pages-fetch). |
+| `head` | Set specific `<meta>` tags for the current page. See [API Pages `head` documentation](/api/pages-head). |
+| `layout` | Specify a layout defined in the `layouts` directory. See [API Pages `layout` documentation](/api/pages-layout). |
+| `loading` | If set to `false`, prevents a page from automatically calling `this.$nuxt.$loading.finish()` as you enter it and `this.$nuxt.$loading.start()` as you leave it, allowing you to **manually** control the behavior, see [example](https://nuxtjs.org/examples/custom-page-loading). Only applies if `loading` is also set in `nuxt.config.js`. See [API Configuration `loading` documentation](/api/configuration-loading). 
+| `transition` | Set a specific transition for the page. See [API Pages `transition`](/api/pages-transition). |
+| `scrollToTop` | Boolean (default: `false`). Specify if you want the page to scroll to the top before rendering the page. It's used for [nested routes](/guide/routing#nested-routes). |
+| `validate` | Validator function for [dynamic routes](/guide/routing#dynamic-routes). |
+| `middleware` | Set middleware for this page. The middleware will be called before rendering the page. See routes [middleware](/guide/routing#middleware). |
 
 More information about the pages properties usage: [API Pages](/api)
 
@@ -168,6 +170,7 @@ More information about the pages properties usage: [API Pages](/api)
 Nuxt.js uses [vue-meta](https://github.com/declandewet/vue-meta) to update the `headers` and `html attributes` of your application.
 
 Nuxt.js configures `vue-meta` with these options:
+
 ```js
 {
   keyName: 'head', // the component option name that vue-meta looks for meta info on.
@@ -179,7 +182,7 @@ Nuxt.js configures `vue-meta` with these options:
 
 ### Default Meta Tags
 
-Nuxt.js let you define all default meta for your application inside `nuxt.config.js`, use the same `head` property:
+Nuxt.js lets you define all default `<meta>` tags for your application inside `nuxt.config.js`. Define them using the same `head` property:
 
 Example of a custom viewport with a custom Google font:
 
@@ -195,7 +198,7 @@ head: {
 }
 ```
 
-To know the list of options you can give to `head`, take a look at [vue-meta documentation](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
+To learn more about the options available for `head`, take a look at [vue-meta documentation](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
 
 More information about the `head` method: [API Configuration `head`](/api/configuration-head).
 
@@ -203,4 +206,4 @@ More information about the `head` method: [API Configuration `head`](/api/config
 
 More information about the head method: [API Pages `head`](/api/pages-head).
 
-<p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+<p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the `hid` key. [Learn more](https://github.com/declandewet/vue-meta#lists-of-tags).</p>

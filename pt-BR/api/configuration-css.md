@@ -14,14 +14,14 @@ npm install --save-dev node-sass sass-loader
 ```
 
 - Type: `Array`
- - Items: `String`
+ - Items: `string`
 
 In `nuxt.config.js`, add the CSS resources:
 
 ```js
-module.exports = {
+export default {
   css: [
-    // Load a node module directly (here it's a SASS file)
+    // Load a Node.js module directly (here it's a Sass file)
     'bulma',
     // CSS file in the project
     '@/assets/css/main.css',
@@ -31,4 +31,4 @@ module.exports = {
 }
 ```
 
-Nuxt.js will automatically guess the file type by it's extension and use the appropriate pre-processor loader for webpack. You will still need to install the required loader if you need to use them.
+Nuxt.js will automatically guess the file type by its extension and use the appropriate pre-processor loader for webpack. You will still need to install the required loader if you need to use them.

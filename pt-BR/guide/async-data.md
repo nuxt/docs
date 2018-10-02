@@ -18,6 +18,8 @@ Nuxt.js offers you different ways to use `asyncData`. Choose the one you're the 
 2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await))
 3. Define a callback as second argument. It has to be called like this: `callback(err, data)`
 
+<div class="Alert Alert--grey">We are using [axios](https://github.com/mzabriskie/axios) to make isomorphic HTTP requests, we <strong>strongly recommend</strong> to use our [axios module](https://axios.nuxtjs.org/) for your Nuxt projects.</div>
+
 ### Returning a Promise
 
 ```js
@@ -73,6 +75,10 @@ To see the list of available keys in `context`, take a look at the [API Essentia
 ### Accessing dynamic route data
 
 You can use the context object injected into the `asyncData` property to access dynamic route data. For example, dynamic route params can be accessed using the name of the file or folder that configured it. So, if you define a file named `_slug.vue`, you can acccess it via `context.params.slug`.
+
+### Listening to query changes
+
+The `asyncData` method **is not called** on query string changes by default. If you want to change this behavior, for example when building a pagination component, you can setup parameters that should be listened to through the `watchQuery` property of your page component. Learn more on the [API `watchQuery` page](/api/pages-watchquery).
 
 ## Handling Errors
 

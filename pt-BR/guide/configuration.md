@@ -7,7 +7,7 @@ description: By default, Nuxt.js is configured to cover most use cases. This def
 
 ### build
 
-This option lets you add modules inside the `vendor.bundle.js` file to reduce the size of the application bundle. This is especially helpful when using external modules.
+This option lets you configure various settings for the `build` step, including `loaders`, `filenames`, the `webpack` config and `transpilation`.
 
 [Documentation about `build` integration](/api/configuration-build)
 
@@ -25,25 +25,25 @@ This option lets you define the `development` or `production` mode of Nuxt.js
 
 ### env
 
-This option lets you define environment variables available both the client and the server.
+This option lets you define environment variables available to both the client and the server.
 
 [Documentation about `env` integration](/api/configuration-env)
 
 ### generate
 
-This option lets you to define parameters values for every dynamic route in your application that will be transformed into HTML files by Nuxt.js.
+This option lets you define parameters values for every dynamic route in your application that will be transformed into HTML files by Nuxt.js.
 
 [Documentation about generate integration](/api/configuration-generate)
 
 ### head
 
-This option lets you to define all default meta tags for your application.
+This option lets you define all default meta tags for your application.
 
 [Documentation about head integration](/api/configuration-head)
 
 ### loading
 
-This option lets you to customize the loading component Nuxt.js loads by default.
+This option lets you customize the loading component Nuxt.js loads by default.
 
 [Documentation about `loading` integration](/api/configuration-loading)
 
@@ -53,9 +53,16 @@ This option lets you add Nuxt modules to your project.
 
 [Documentation about `modules` integration](/api/configuration-modules)
 
+### modulesDir
+
+This option lets you define the node_modules folder of your Nuxt.js Application.
+
+[Documentation about `modulesDir` integration](/api/configuration-modulesdir)
+
+
 ### plugins
 
-This option lets you to define JavaScript plugins to be run before instantiating the root Vue.js Application.
+This option lets you define JavaScript plugins to be run before instantiating the root Vue.js Application.
 
 [Documentation about `plugins` integration](/api/configuration-plugins)
 
@@ -64,6 +71,12 @@ This option lets you to define JavaScript plugins to be run before instantiating
 This option lets you define the workspace of your Nuxt.js Application.
 
 [Documentation about `rootDir` integration](/api/configuration-rootdir)
+
+### server
+
+This option lets you configure the connection variables for the server instance of your Nuxt.js Application.
+
+[Documentation about `server` integration](/api/configuration-server)
 
 ### router
 
