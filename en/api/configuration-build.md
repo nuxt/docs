@@ -438,6 +438,13 @@ export default {
 
 Then, when launching `nuxt build`, upload the content of `.nuxt/dist/client` directory to your CDN and voilà!
 
+## quite
+
+> Suppresses most of the build output log
+
+- Type: `Boolean`
+- Default: Enabled when a `CI` or `test` environment is detected by [std-env](https://github.com/blindmedia/std-env)
+
 ## splitChunks
 
 - Type: `Object`
