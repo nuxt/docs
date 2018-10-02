@@ -438,7 +438,7 @@ export default {
 
 Then, when launching `nuxt build`, upload the content of `.nuxt/dist/client` directory to your CDN and voilà!
 
-## quite
+## quiet
 
 > Suppresses most of the build output log
 
