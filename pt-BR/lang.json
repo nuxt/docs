@@ -1,59 +1,52 @@
-{
-  "iso": "en",
-  "docVersion": "1.0.0-rc11",
-  "links": {
-    "api": "API",
-    "blog": "Blog",
-    "chat": "Chat",
-    "documentation": "Documentation",
-    "download": "Download",
-    "examples": "Examples",
-    "ecosystem": "Ecosystem",
-    "faq": "FAQ",
-    "get_started": "get started",
-    "github": "GitHub",
-    "guide": "Guide",
-    "homepage": "Home page",
-    "live_demo": "Live Demo",
-    "live_edit": "Live Edit",
-    "twitter": "Twitter",
-    "vuejs": "Vue.js",
-    "vue_jobs": "Vue Jobs"
-  },
-  "text": {
-    "an_error_occured": "An error occurred",
-    "api_page_not_found": "API page not found",
-    "example_file": "Example Files",
-    "please_wait": "Please wait...",
-    "please_define_title": "Please define a title in the front matter",
-    "please_define_description": "Please define a description in the front matter",
-    "search": "Search",
-    "version": "Version"
-  },
-  "homepage": {
-    "title": "Universal Vue.js Applications",
-    "meta": {
-      "title": "Nuxt.js - Universal Vue.js Applications",
-      "description": "Nuxt.js is a minimal framework for creating Vue.js applications with server side rendering, code-splitting, hot-reloading, static generation and more!"
-    },
-    "codesandbox_title": "Play with Nuxt.js online",
-    "codesandbox_open": "Open on CodeSandBox.io",
-    "codesandbox_examples": "See more examples"
-  },
-  "sponsors": {
-    "title": "Sponsors",
-    "become": "Support us and",
-    "become_partner": "become a partner"
-  },
-  "footer": {
-    "authors": "Made by Chopin Brothers"
-  },
-  "guide": {
-    "release_notes": "Release Notes",
-    "contribute": "Caught a mistake or want to contribute to the documentation?",
-    "edit_on_github": "Edit this page on GitHub!"
-  },
-  "examples": {
-    "source_code": "Source Code"
-  }
-}
+---
+iso: en
+links:
+  api: API
+  blog: Blog
+  chat: Chat
+  faq: FAQ
+  github: GitHub
+  live_demo: Live Demo
+  live_edit: Live Edit
+  twitter: Twitter
+  vue_jobs: Vue Jobs
+  vuejs: Vue.js
+  documentation: Documentação
+  download: Baixar
+  ecosystem: Ecossistema
+  examples: Exemplos
+  get_started: Começar
+  guide: Guia
+  homepage: Página inicial
+docVersion: 2.1.0
+examples:
+  source_code: Código-fonte
+footer:
+  authors: Criado pelos irmãos Chopin
+guide:
+  contribute: Achou algum erro ou quer contribuir para documentação?
+  edit_on_github: Altere esta página no GitHub!
+  release_notes: Notas de lançamento
+homepage:
+  codesandbox_examples: Veja mais exemplos
+  codesandbox_open: Abrir no CodeSandBox.io
+  codesandbox_title: Experimente o Nuxt.js online
+  meta:
+    description: Nuxt.js é um framework minimalista para aplicações Vue.js com recursos
+      como SSR(Server Side Rendering ), code-splitting, hot-reloading, gerador de
+      arquivos estáticos e muito mais!
+    title: Nuxt.js - Aplicações Vue.js universais
+  title: Aplicações Vue.js universais
+sponsors:
+  become: Apoie-nos e
+  become_partner: torne-se um parceiro
+  title: 'Patrocinadores '
+text:
+  an_error_occured: Um erro ocorreu
+  api_page_not_found: Página da API não encontrada
+  example_file: Arquivos de exemplo
+  please_define_description: Por favor defina uma descrição a seguir
+  please_define_title: Por favor defina um título a seguir
+  please_wait: Por favor aguarde...
+  search: Pesquisar
+  version: Versão
