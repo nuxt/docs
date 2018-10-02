@@ -30,14 +30,12 @@ export default {
 `server.js`
 
 ```js
-import { Nuxt, Builder } from 'nuxt'
-import express from 'express'
-import config from './nuxt.config.js'
-
-const app = express()
+const { Nuxt, Builder } = require('nuxt')
+const app = require('express')()
 const port = process.env.PORT || 3000
 
 // We instantiate Nuxt.js with the options
+let config = require('./nuxt.config.js')
 const nuxt = new Nuxt(config)
 app.use(nuxt.render)
 
@@ -61,9 +59,9 @@ Then in your `package.json`:
 ```json
 {
   "scripts": {
-    "dev": "node -r esm server.js",
+    "dev": "node server.js",
     "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production node -r esm server.js"
+    "start": "cross-env NODE_ENV=production node server.js"
   }
 }
 ```

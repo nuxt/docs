@@ -16,15 +16,14 @@ description: You can use Nuxt.js as a middleware for your Node.js server.
 Example with [Express](https://github.com/expressjs/express):
 
 ```js
-import { Nuxt, Builder } from 'nuxt'
-import express from 'express'
-import config from './nuxt.config.js'
+const { Nuxt, Builder } = require('nuxt')
 
-const app = express()
+const app = require('express')()
 const isProd = (process.env.NODE_ENV === 'production')
 const port = process.env.PORT || 3000
 
 // We instantiate Nuxt.js with the options
+const config = require('./nuxt.config.js')
 config.dev = !isProd
 const nuxt = new Nuxt(config)
 
