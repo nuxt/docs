@@ -59,7 +59,7 @@
       {
         "to": "/async-data", "name": "Async Data",
         "contents": [
-          { "to": "#the-data-method", "name": "The asyncData Method" },
+          { "to": "#the-asyncdata-method", "name": "The asyncData Method" },
           { "to": "#the-context", "name": "The Context" },
           { "to": "#handling-errors", "name": "Handling Errors" }
         ]
@@ -111,7 +111,7 @@
         "to": "/development-tools", "name": "Development Tools",
         "contents": [
           { "to": "#end-to-end-testing", "name": "End-to-End Testing" },
-          { "to": "#eslint", "name": "ESLint" }
+          { "to": "#eslint-and-prettier", "name": "ESLint and Prettier" }
         ]
       }
     ]

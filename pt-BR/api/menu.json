@@ -22,7 +22,8 @@
           { "name": "Function", "to": "#function" }
         ]
       },
-      { "name": "validate", "to": "/pages-validate" }
+      { "name": "validate", "to": "/pages-validate" },
+      { "name": "watchQuery", "to": "/pages-watchquery" }
     ]
   },
   {
@@ -30,7 +31,8 @@
     "links": [
       { "name": "nuxt", "to": "/components-nuxt" },
       { "name": "nuxt-child", "to": "/components-nuxt-child" },
-      { "name": "nuxt-link", "to": "/components-nuxt-link" }
+      { "name": "nuxt-link", "to": "/components-nuxt-link" },
+      { "name": "no-ssr", "to": "/components-no-ssr" }
     ]
   },
   {
@@ -42,12 +44,15 @@
         "contents": [
           { "name": "analyze", "to": "#analyze" },
           { "name": "babel", "to": "#babel" },
-          { "name": "cssSourceMap", "to": "#css-source-map" },
+          { "name": "cssSourceMap", "to": "#csssourcemap" },
           { "name": "devMiddleware", "to": "#devmiddleware" },
           { "name": "extend", "to": "#extend" },
           { "name": "extractCSS", "to": "#extractcss" },
           { "name": "filenames", "to": "#filenames" },
           { "name": "hotMiddleware", "to": "#hotmiddleware" },
+          { "name": "optimization", "to": "#optimization" },
+          { "name": "terser", "to": "#terser" },
+          { "name": "optimizeCSS", "to": "#optimize-css" },
           { "name": "plugins", "to": "#plugins" },
           { "name": "postcss", "to": "#postcss" },
           { "name": "publicPath", "to": "#publicpath" },
@@ -57,6 +62,7 @@
           { "name": "watch", "to": "#watch" }
         ]
       },
+      { "name": "buildDir", "to": "/configuration-builddir" },
       { "name": "css", "to": "/configuration-css" },
       { "name": "dev", "to": "/configuration-dev" },
       { "name": "env", "to": "/configuration-env" },
@@ -71,6 +77,8 @@
         ]
       },
       { "name": "head", "to": "/configuration-head" },
+      { "name": "hooks", "to": "/configuration-hooks" },
+      { "name": "ignore", "to": "/configuration-ignore" },
       {
         "name": "loading",
         "to": "/configuration-loading",
@@ -83,6 +91,7 @@
       { "name": "loadingIndicator", "to": "/configuration-loading-indicator" },
       { "name": "mode", "to": "/configuration-mode" },
       { "name": "modules", "to": "/configuration-modules" },
+      { "name": "modulesDir", "to": "/configuration-modulesdir" },
       { "name": "plugins", "to": "/configuration-plugins" },
       {
         "name": "render",
@@ -111,9 +120,12 @@
           { "name": "scrollBehavior", "to": "#scrollbehavior" }
         ]
       },
+      { "name": "server", "to": "/configuration-server" },
       { "name": "serverMiddleware", "to": "/configuration-servermiddleware" },
       { "name": "srcDir", "to": "/configuration-srcdir" },
       { "name": "transition", "to": "/configuration-transition" },
+      { "name": "vue.config", "to": "/configuration-vue-config" },
+      { "name": "watch", "to": "/configuration-watch" },
       {
         "name": "watchers",
         "to": "/configuration-watchers",

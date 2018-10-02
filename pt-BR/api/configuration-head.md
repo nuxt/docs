@@ -10,7 +10,7 @@ description: Nuxt.js let you define all default meta for your application inside
 - Type: `Object`
 
 ```js
-module.exports = {
+export default {
   head: {
     titleTemplate: '%s - Nuxt.js',
     meta: [

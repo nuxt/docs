@@ -5,6 +5,16 @@ description: Nuxt.js use the file-system to generate the routes of your web appl
 
 > Nuxt.js automatically generates the [vue-router](https://github.com/vuejs/vue-router) configuration based on your file tree of Vue files inside the `pages` directory.
 
+<div class="Alert Alert--grey">To navigate between pages, we recommend to use the [`<nuxt-link>`](/api/components-nuxt-link) component.</div>
+
+For example:
+
+```html
+<template>
+  <nuxt-link to="/">Home page</nuxt-link>
+</template>
+```
+
 ## Basic Routes
 
 This file tree:
@@ -105,7 +115,7 @@ export default {
 }
 ```
 
-If the validate method does not return `true`, Nuxt.js will automatically load the 404 error page.
+If the validate method does not return `true` or a `Promise` that resolve to `true` or throws an Error, Nuxt.js will automatically load the 404 error page or 500 error page in case of an error.
 
 More information about the validate method: [API Pages validate](/api/pages-validate)
 
@@ -211,6 +221,52 @@ router: {
 }
 ```
 
+### SPA fallback
+
+You can enable SPA fallbacks for dynamic routes too. Nuxt.js will output an extra file that is the same as the `index.html` that would be used in `mode: 'spa'`. Most static hosting services can be configured to use the SPA template if no file matches. It won't include the `head` info or any HTML, but it will still resolve and load the data from the API.
+
+We enable this in our `nuxt.config.js` file:
+
+``` js
+export default {
+  generate: {
+    fallback: true, // if you want to use '404.html'
+    fallback: 'my-fallback/file.html' // if your hosting needs a custom location
+  }
+}
+```
+
+#### Implementation for Surge
+
+Surge [can handle](https://surge.sh/help/adding-a-custom-404-not-found-page) both `200.html` and `404.html`. `generate.fallback` is set to `200.html` by default, so no need to change it.
+
+#### Implementation for GitHub Pages and Netlify
+
+GitHub Pages and Netlify recognize the `404.html` file automatically, so setting `generate.fallback` to `true` is all we have to do!
+
+#### Implementation for Firebase Hosting
+
+To use on Firebase Hosting, configure `generate.fallback` to `true` and use the following config ([more info](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
+
+``` json
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/404.html"
+      }
+    ]
+  }
+}
+```
+
 ## Transitions
 
 Nuxt.js uses the [`<transition>`](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your routes.
@@ -235,7 +291,7 @@ Our global css in `assets/main.css`:
 We add its path in our `nuxt.config.js` file:
 
 ```js
-module.exports = {
+export default {
   css: [
     'assets/main.css'
   ]
@@ -308,7 +364,7 @@ Then, in your `nuxt.config.js`, layout or page, use the `middleware` key:
 `nuxt.config.js`
 
 ```js
-module.exports = {
+export default {
   router: {
     middleware: 'stats'
   }

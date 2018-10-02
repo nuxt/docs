@@ -1,19 +1,19 @@
 {
-  "iso": "en",
-  "docVersion": "1.0.0-rc11",
+  "iso": "pt-BR",
+  "docVersion": "2.1.0",
   "links": {
     "api": "API",
     "blog": "Blog",
     "chat": "Chat",
-    "documentation": "Documentation",
-    "download": "Download",
-    "examples": "Examples",
-    "ecosystem": "Ecosystem",
+    "documentation": "Documentação",
+    "download": "Baixar",
+    "examples": "Exemplos",
+    "ecosystem": "Ecosistema",
     "faq": "FAQ",
-    "get_started": "get started",
+    "get_started": "Começar",
     "github": "GitHub",
-    "guide": "Guide",
-    "homepage": "Home page",
+    "guide": "Guia",
+    "homepage": "Pagina inicial",
     "live_demo": "Live Demo",
     "live_edit": "Live Edit",
     "twitter": "Twitter",
@@ -21,39 +21,39 @@
     "vue_jobs": "Vue Jobs"
   },
   "text": {
-    "an_error_occured": "An error occurred",
-    "api_page_not_found": "API page not found",
-    "example_file": "Example Files",
-    "please_wait": "Please wait...",
+    "an_error_occured": "Ocorreu um erro",
+    "api_page_not_found": "Pagina da API não encontrada",
+    "example_file": "Arquivos de exemplo",
+    "please_wait": "Por favor, aguarde...",
     "please_define_title": "Please define a title in the front matter",
     "please_define_description": "Please define a description in the front matter",
-    "search": "Search",
-    "version": "Version"
+    "search": "Pesquisar",
+    "version": "Versão"
   },
   "homepage": {
     "title": "Universal Vue.js Applications",
     "meta": {
       "title": "Nuxt.js - Universal Vue.js Applications",
-      "description": "Nuxt.js is a minimal framework for creating Vue.js applications with server side rendering, code-splitting, hot-reloading, static generation and more!"
+      "description": "Nuxt.js é um framework minimalista para criação de aplicativos Vue.js com server side rendering, code-splitting, hot-reloading, static generation e muito mais!"
     },
-    "codesandbox_title": "Play with Nuxt.js online",
-    "codesandbox_open": "Open on CodeSandBox.io",
-    "codesandbox_examples": "See more examples"
+    "codesandbox_title": "Experimente o Nuxt.js online",
+    "codesandbox_open": "Abrir em CodeSandBox.io",
+    "codesandbox_examples": "Veja mais exemplos"
   },
   "sponsors": {
-    "title": "Sponsors",
-    "become": "Support us and",
-    "become_partner": "become a partner"
+    "title": "Patrocinadores",
+    "become": "Apoie-nos e",
+    "become_partner": "torne-se um parceiro"
   },
   "footer": {
-    "authors": "Made by Chopin Brothers"
+    "authors": "Criado pelos irmãos Chopin"
   },
   "guide": {
-    "release_notes": "Release Notes",
-    "contribute": "Caught a mistake or want to contribute to the documentation?",
-    "edit_on_github": "Edit this page on GitHub!"
+    "release_notes": "Notas de lançamento",
+    "contribute": "Achou algum erro ou deseja contribuir p?",
+    "edit_on_github": "Edite esta página no GitHub!"
   },
   "examples": {
-    "source_code": "Source Code"
+    "source_code": "Código fonte"
   }
 }

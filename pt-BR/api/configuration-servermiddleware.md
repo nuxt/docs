@@ -9,7 +9,7 @@ description: Define server-side middleware.
     - Items: `String` or `Object` or `Function`
 
 Nuxt internally creates a [connect](https://github.com/senchalabs/connect) instance,
-so we can register our middleware to it's stack and having chance
+so we can register our middleware to its stack and having chance
 to provide more routes like API **without need to an external server**.
 Because connect itself is a middleware, registered middleware will work with both `nuxt start`
 and also when used as a middleware with programmatic usages like [express-template](https://github.com/nuxt-community/express-template).
@@ -23,14 +23,14 @@ like handling API requests or serving assets.
 
 ## Usage
 
-If middleware is String Nuxt.js will try to automatically resolve and require it. 
+If middleware is String Nuxt.js will try to automatically resolve and require it.
 
 Example (`nuxt.config.js`):
 
 ```js
-const serveStatic = require('serve-static')
+import serveStatic from 'serve-static'
 
-module.exports = {
+export default {
   serverMiddleware: [
       // Will register redirect-ssl npm package
       'redirect-ssl',
@@ -57,10 +57,10 @@ It is also possible writing custom middleware. For more information See [Connect
 Middleware (`api/logger.js`):
 
 ```js
-module.exports = function (req, res, next) {
+export default function (req, res, next) {
     // req is the Node.js http request object
     console.log(req.path)
-    
+
     // res is the Node.js http response object
 
     // next is a function to call to invoke the next middleware

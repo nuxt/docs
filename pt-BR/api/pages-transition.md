@@ -57,7 +57,7 @@ Nuxt.js will use these settings to set the component as follows:
 <transition name="test" mode="out-in">
 ```
 
-The following properties that the `transition` object can have:
+The `transition` object can have the following properties:
 
 | key                | Type      | Default    | definition                                                                                                                                                                                                                 |
 |--------------------|-----------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

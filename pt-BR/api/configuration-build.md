@@ -9,16 +9,17 @@ description: Nuxt.js lets you customize the webpack configuration for building y
 
 ## analyze
 
-> Nuxt.js use [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer) to let you visualize your bundles and how to optimize them.
+> Nuxt.js use [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) to let you visualize your bundles and how to optimize them.
 
 - Type: `Boolean` or `Object`
 - Default: `false`
 
-If an object, see available properties [here](https://github.com/th0r/webpack-bundle-analyzer#as-plugin).
+If an object, see available properties [here](https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin).
 
 Example (`nuxt.config.js`):
+
 ```js
-module.exports = {
+export default {
   build: {
     analyze: true,
     // or
@@ -29,24 +30,25 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**INFO:** You can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)</p>
+<p class="Alert Alert--teal">**Info:** you can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888).</p>
 
 ## babel
 
+> Customize Babel configuration for JavaScript and Vue files.
+
 - Type: `Object`
+- Default:
 
-> Customize babel configuration for JS and Vue files.
-
-Default:
-```js
-{
-  presets: ['vue-app']
-}
-```
+  ```js
+  {
+    presets: ['vue-app']
+  }
+  ```
 
 Example (`nuxt.config.js`):
+
 ```js
-module.exports = {
+export default {
   build: {
     babel: {
       presets: ['es2015', 'stage-0']
@@ -55,108 +57,311 @@ module.exports = {
 }
 ```
 
+## cache
+
+- Type: `Boolean`
+- Default: `false`
+
+> Enable cache of [uglifyjs-webpack-plugin ](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
+
 ## cssSourceMap
 
 - Type: `boolean`
-  - Default: `true` for dev and `false` for production.
+- Default: `true` for dev and `false` for production.
 
 > Enables CSS Source Map support
 
 ## devMiddleware
+
 - Type: `Object`
 
 See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) for available options.
 
 ## extend
 
-- Type: `Function`
-
 > Extend the webpack configuration manually for the client & server bundles.
+
+- Type: `Function`
 
 The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are:
 
-1. Webpack config object
-2. Object with the folowing keys (all boolean): `dev`, `isClient`, `isServer`
+1. webpack config object,
+2. object with the following keys (all boolean): `isDev`, `isClient`, `isServer`, `loaders`.
 
 Example (`nuxt.config.js`):
+
 ```js
-module.exports = {
+export default {
   build: {
     extend (config, { isClient }) {
       // Extend only webpack config for client-bundle
       if (isClient) {
-        config.devtool = 'eval-source-map'
+        config.devtool = '#source-map'
       }
     }
   }
 }
 ```
 
-If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/webpack).
+If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack).
+
+### loaders in extend
+
+`loaders` has the same object structure as [build.loaders](#loaders), so you can change the options of loaders inside `extend`.
+
+Example (`nuxt.config.js`):
+
+```js
+export default {
+  build: {
+    extend (config, { isClient, loaders: { vue } }) {
+      // Extend only webpack config for client-bundle
+      if (isClient) {
+        vue.transformAssetUrls.video = ['src', 'poster']
+      }
+    }
+  }
+}
+```
 
 ## extractCSS
 
+> Enables Common CSS Extraction using Vue Server Renderer [guidelines](https://ssr.vuejs.org/en/css.html).
+
 - Type: `Boolean`
-  - Default: `false`
+- Default: `false`
 
-> Enables Common CSS Extraction using vue SSR [guidelines](https://ssr.vuejs.org/en/css.html).
-
-Using extract-text-webpack-plugin to extract the CSS in the main chunk into a separate CSS file (auto injected with template),
-which allows the file to be individually cached. This is recommended when there is a lot of shared CSS.
-CSS inside async components will remain inlined as JavaScript strings and handled by vue-style-loader.
+Using `extract-text-webpack-plugin` to extract the CSS in the main chunk into a separate CSS file (auto injected with template), which allows the file to be individually cached. This is recommended when there is a lot of shared CSS. CSS inside async components will remain inlined as JavaScript strings and handled by vue-style-loader.
 
 ## filenames
 
+> Customize bundle filenames.
+
 - Type: `Object`
+- Default:
 
-> Customize bundle filenames
-
-Default:
 ```js
 {
-  css: 'common.[contenthash].css',
-  manifest: 'manifest.[hash].js',
-  vendor: 'common.[chunkhash].js',
-  app: 'app.[chunkhash].js',
-  chunk: '[name].[chunkhash].js'
+  app: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
+  chunk: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
+  css: ({ isDev }) => isDev ? '[name].js' : '[contenthash].css',
+  img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[hash:7].[ext]',
+  font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[hash:7].[ext]',
+  video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[hash:7].[ext]'
 }
 ```
 
 This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     filenames: {
-      chunk: '[id].[chunkhash].js'
+      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[chunkhash].js'
     }
   }
 }
 ```
 
-To understand a bit more about the use of manifest and vendor, take a look at this [Webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/).
+To understand a bit more about the use of manifests, take a look at this [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/).
 
 ## hotMiddleware
+
 - Type: `Object`
 
 See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for available options.
 
+## html.minify
+
+- Type: `Object`
+- Default:
+
+```js
+{
+  collapseBooleanAttributes: true,
+  collapseWhitespace: false,
+  decodeEntities: true,
+  minifyCSS: true,
+  minifyJS: true,
+  processConditionalComments: true,
+  removeAttributeQuotes: false,
+  removeComments: false,
+  removeEmptyAttributes: true,
+  removeOptionalTags: false,
+  removeRedundantAttributes: true,
+  removeScriptTypeAttributes: false,
+  removeStyleLinkTypeAttributes: false,
+  removeTagWhitespace: false,
+  sortClassName: false,
+  trimCustomFragments: true,
+  useShortDoctype: true
+}
+```
+
+Configuration for the [html-minifier](https://github.com/kangax/html-minifier) plugin used to minify
+HTML files created during the build process (will be applied for *all modes*).
+
+## loaders
+
+> Customize options of Nuxt.js integrated webpack loaders.
+
+- Type: `Object`
+- Default:
+
+```js
+{
+  file: {},
+  fontUrl: { limit: 1000 },
+  imgUrl: { limit: 1000 },
+  pugPlain: {},
+  vue: {
+    transformAssetUrls: {
+      video: 'src',
+      source: 'src',
+      object: 'src',
+      embed: 'src'
+    }
+  },
+  css: {},
+  cssModules: {
+    localIdentName: '[local]_[hash:base64:5]'
+  },
+  less: {},
+  sass: {
+    indentedSyntax: true
+  },
+  scss: {},
+  stylus: {},
+  vueStyle: {}
+}
+```
+
+> Note: In addition to specifying the configurations in `nuxt.config.js`, it can also be modified by [build.extend](#extend)
+
+### loaders.file
+
+> More details are in [file-loader options](https://github.com/webpack-contrib/file-loader#options).
+
+### loaders.fontUrl and loaders.imgUrl
+
+> More details are in [url-loader options](https://github.com/webpack-contrib/url-loader#options).
+
+### loaders.pugPlain
+
+> More details are in [pug-plain-loader](https://github.com/yyx990803/pug-plain-loader) or [Pug compiler options](https://pugjs.org/api/reference.html#options).
+
+### loaders.vue
+
+> More details are in [vue-loader options](https://vue-loader.vuejs.org/options.html).
+
+### loaders.css and loaders.cssModules
+
+> More details are in [css-loader options](https://github.com/webpack-contrib/css-loader#options).
+> Note: cssModules is loader options for usage of [CSS Modules](https://vue-loader.vuejs.org/guide/css-modules.html#css-modules)
+
+### loaders.less
+
+> You can pass any Less specific options to the `less-loader via` via `loaders.less`. See the [Less documentation](http://lesscss.org/usage/#command-line-usage-options) for all available options in dash-case.
+
+### loaders.sass and loaders.scss
+
+> See the [Node Sass documentation](https://github.com/sass/node-sass/blob/master/README.md#options) for all available Sass options.
+> Note: `loaders.sass` is for [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html)
+
+### loaders.vueStyle
+
+> More details are in [vue-style-loader options](https://github.com/vuejs/vue-style-loader#options).
+
+## optimization
+
+- Type: `Object`
+- Default:
+
+  ```js
+  {
+    minimize: true,
+    minimizer: [
+      // terser-webpack-plugin
+      // optimize-css-assets-webpack-plugin
+    ],
+    splitChunks: {
+      chunks: 'all',
+      automaticNameDelimiter: '.',
+      name: undefined,
+      cacheGroups: {}
+    }
+  }
+  ```
+
+The default value of `splitChunks.name` is `true` in `dev` or `analyze` mode.
+
+You can set `minimizer` to a customized Array of plugins or set `minimize` to `false` to disable all minimizers.
+(`minimize` is being disabled for development by default)
+
+See [Webpack Optimization](https://webpack.js.org/configuration/optimization).
+
+## terser
+
+- Type: `Object` or `Boolean`
+- Default:
+
+```js
+{
+  parallel: true,
+  cache: false,
+  sourceMap: false,
+  extractComments: {
+    filename: 'LICENSES'
+  },
+  terserOptions: {
+    output: {
+      comments: /^\**!|@preserve|@license|@cc_on/
+    }
+  }
+}
+```
+
+Terser plugin options. Set to `false` to disable this plugin.
+
+`soruceMap` will be enabled when webpack `confing.devtool` matches `source-?map`
+
+See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin).
+
+## optimizeCSS
+
+- Type: `Object` or `Boolean`
+- Default:
+  - `false`
+  - `{}` when extractCSS is enabled
+
+OptimizeCSSAssets plugin options.
+
+See [NMFR/optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin).
+
+## parallel
+
+- Type: `Boolean`
+- Default: `false`
+
+> Enable [thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) in webpack building
+
 ## plugins
+
+> Add webpack plugins
 
 - Type: `Array`
 - Default: `[]`
 
-> Add Webpack plugins
-
 Example (`nuxt.config.js`):
-```js
-const webpack = require('webpack')
 
-module.exports = {
+```js
+import webpack from 'webpack'
+import { version } from './package.json'
+export default {
   build: {
     plugins: [
       new webpack.DefinePlugin({
-        'process.VERSION': require('./package.json').version
+        'process.VERSION': version
       })
     ]
   }
@@ -165,150 +370,195 @@ module.exports = {
 
 ## postcss
 
-- Type: `Array` or `Object` (recommended) or `Function` or `Boolean`
+> Customize [PostCSS Loader](https://github.com/postcss/postcss-loader#usage) plugins.
 
-> Customize [Postcss Loader](https://github.com/postcss/postcss-loader#usage) plugins.
+- Type: `Array`, `Object` (recommended), `Function` or `Boolean`
 
-**NOTE:** While default preset is OK and flexible enough for normal use cases, the recommended 
-usage by [vue-loader](https://vue-loader.vuejs.org/en/options.html#postcss) is using `postcss.config.js` file in your project.
-By creating that file it will be automatically detected and this option is ignored.
+  **Note:** Nuxt.js has applied [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env). By default it enables [Stage 2 features](https://cssdb.org/) and [Autoprefixer](https://github.com/postcss/autoprefixer), you can use `build.postcss.preset` to config it.
+- Default:
 
-Default:
-
-```js
-{
-  plugins: {
-  'postcss-import' : {},
-  'postcss-url': {},
-  'postcss-cssnext': {}
+  ```js
+  {
+    plugins: {
+      'postcss-import': {},
+      'postcss-url': {},
+      'postcss-preset-env': {},
+      'cssnano': { preset: 'default' } // disabled in dev mode
+    }
   }
-}
-```
+  ```
 
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     postcss: {
       plugins: {
-        // Disable postcss-url
-      'postcss-url': false
-
-      // Customize postcss-cssnext default options
-      'postcss-cssnext': {
-        features: {
-          customProperties: false
+          // Disable `postcss-url`
+        'postcss-url': false,
+        // Add some plugins
+        'postcss-nested': {},
+        'postcss-responsive-type': {},
+        'postcss-hexrgba': {}
+      },
+      preset: {
+        autoprefixer: {
+          grid: true
         }
-      }
-
-      // Add some plugins
-      'postcss-nested': {},
-      'postcss-responsive-type': {}
-      'postcss-hexrgba': {}
       }
     }
   }
 }
 ```
 
+## profile
+
+- Type: `Boolean`
+- Default: enabled by command line argument `--profile`
+
+> Enable the profiler in [WebpackBar](https://github.com/nuxt/webpackbar#profile)
+
 ## publicPath
+
+> Nuxt.js lets you upload your dist files to your CDN for maximum performances, simply set the `publicPath` to your CDN.
 
 - Type: `String`
 - Default: `'/_nuxt/'`
 
-> Nuxt.js lets you upload your dist files to your CDN for maximum performances, simply set the `publicPath` to your CDN.
-
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     publicPath: 'https://cdn.nuxtjs.org'
   }
 }
 ```
 
-Then, when launching `nuxt build`, upload the content of `.nuxt/dist/` directory to your CDN and voilà!
+Then, when launching `nuxt build`, upload the content of `.nuxt/dist/client` directory to your CDN and voilà!
+
+## splitChunks
+
+- Type: `Object`
+- Default:
+
+  ```js
+  {
+    layouts: false,
+    pages: true,
+    commons: true
+  }
+  ```
+
+If split codes for `layout`, `pages` and `commons` (common libs: vue|vue-loader|vue-router|vuex...).
+
 
 ## ssr
-- Type: `Boolean`
-  - Default `true` for universal mode and `false` for spa mode
 
 > Creates special webpack bundle for SSR renderer.
 
-This option is automatically set based on `mode` value if not provided. 
+- Type: `Boolean`
+- Default: `true` for universal mode and `false` for spa mode
+
+This option is automatically set based on `mode` value if not provided.
+
+## styleResources
+
+- Type: `Object`
+- Default: `{}`
+
+This is useful when you need to inject some variables and mixins in your pages without having to import them every time.
+
+Nuxt.js uses https://github.com/yenshih/style-resources-loader to achieve this behaviour.
+
+You need to specify the patterns/path you want to include for the given pre-processors: `less`, `sass`, `scss` or `stylus`
+
+:warning: You cannot use path aliases here (`~` and `@`), you need to use relative or absolute paths.
+
+`nuxt.config.js`:
+
+```js
+{
+  build: {
+    styleResources: {
+      scss: './assets/variables.scss',
+      less: './assets/*.less',
+      // sass: ...,
+      // scss: ...
+      options: {
+        // See https://github.com/yenshih/style-resources-loader#options
+        // Except `patterns` property
+      }
+    }
+  }
+}
+```
 
 ## templates
-- Type: `Array`
- - Items: `Object`
 
-> Nuxt.js allows you provide your own templates which will be rendered based on nuxt configuration
-  This feature is specially useful for using with [modules](/guide/modules).
+> Nuxt.js allows you provide your own templates which will be rendered based on Nuxt configuration. This feature is specially useful for using with [modules](/guide/modules).
+
+- Type: `Array`
 
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
-      templates: [
-         {
-           src: '~/modules/support/plugin.js', // src can be absolute or relative
-           dst: 'support.js', // dst is relative to project `.nuxt` dir
-           options: { // Options are provided to template as `options` key
-               live_chat: false
-           }
-         }
-      ]
-  }
-}
-```
-
-Templates are rendered using [lodash.template](https://lodash.com/docs/#template) 
-you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
-
-## vendor
-
-> Nuxt.js lets you add modules inside the `vendor.bundle.js` file to reduce the size of the application bundle. This is especially helpful when using external modules (like `axios` for example).
-
-- Type: `Array`
- - Items: `String`
-
-To add a module/file inside the vendor bundle, add the `build.vendor` key inside `nuxt.config.js`:
-
-```js
-module.exports = {
-  build: {
-    vendor: ['axios']
-  }
-}
-```
-
-You can also give a path to a file, like a custom lib you created:
-```js
-module.exports = {
-  build: {
-    vendor: [
-      'axios',
-      '~/plugins/my-lib.js'
+    templates: [
+      {
+        src: '~/modules/support/plugin.js', // `src` can be absolute or relative
+        dst: 'support.js', // `dst` is relative to project `.nuxt` dir
+        options: { // Options are provided to template as `options` key
+          live_chat: false
+        }
+      }
     ]
   }
 }
 ```
 
-## watch
-- Type: `Array`
- - Items: `String`
+Templates are rendered using [`lodash.template`](https://lodash.com/docs/#template) you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
 
-> You can provide your custom files to watch and regenerate after changes.
-  This feature is specially useful for using with [modules](/guide/modules).
+## transpile
+
+- Type: `Array<string | RegExp>`
+- Default: `[]`
+
+If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Item in transpile can be string or regex object for matching dependencies file name.
+
+## vueLoader
+
+- Type: `Object`
+- Default:
+
+  ```js
+  {
+    productionMode: !this.options.dev,
+    transformAssetUrls: {
+      video: 'src',
+      source: 'src',
+      object: 'src',
+      embed: 'src'
+    }
+  }
+  ```
+
+> Specify the [Vue Loader Options](https://vue-loader.vuejs.org/options.html).
+
+## watch
+
+> You can provide your custom files to watch and regenerate after changes. This feature is specially useful for using with [modules](/guide/modules).
+
+- Type: `Array<String>`
 
 ```js
-module.exports = {
+export default {
   build: {
-      watch: [
-          '~/.nuxt/support.js'
-      ]
+    watch: [
+      '~/.nuxt/support.js'
+    ]
   }
 }
 ```

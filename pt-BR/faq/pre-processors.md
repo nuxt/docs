@@ -15,7 +15,7 @@ Example of our `pages/index.vue` using [Pug](https://github.com/pugjs/pug), [Cof
 </template>
 
 <script lang="coffee">
-module.exports = data: ->
+export default data: ->
   { name: 'World' }
 </script>
 
@@ -23,10 +23,16 @@ module.exports = data: ->
 .red
   color: red
 </style>
+
+<style lang="scss">
+.red {
+  color: red
+}
+</style>
 ```
 
 To be able to use these pre-processors, we need to install their webpack loaders:
 
 ```bash
-npm install --save-dev pug@2.0.0-beta6 pug-loader coffee-script coffee-loader node-sass sass-loader
+npm install --save-dev pug@2.0.3 pug-plain-loader coffeescript coffee-loader node-sass sass-loader
 ```
