@@ -18,7 +18,7 @@ $ npx create-nuxt-app <项目名>
 或者用yarn ：
 
 ```bash
-$ yarn create-nuxt-app <项目名>
+$ yarn create nuxt-app <项目名>
 ```
 
 它会让你进行一些选择:
