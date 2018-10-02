@@ -132,7 +132,7 @@ npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader 
 
 Then, you can configure ESLint via a `.eslintrc.js` file in your root project directory:
 ```js
-module.exports = {
+export default {
   root: true,
   env: {
     browser: true,
