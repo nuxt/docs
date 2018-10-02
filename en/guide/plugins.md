@@ -36,18 +36,6 @@ export default {
 </script>
 ```
 
-But there is **one problem here**. If we import axios in another page, it will be included again for the page bundle. We want to include `axios` only once in our application. To do this, we use the `build.vendor` key in our `nuxt.config.js`:
-
-```js
-export default {
-  build: {
-    vendor: ['axios']
-  }
-}
-```
-
-Then, we can import `axios` anywhere without having to worry about making the bundle bigger!
-
 ## Vue Plugins
 
 If we want to use [vue-notifications](https://github.com/se-panfilov/vue-notifications) to display notification in our application, we need to setup the plugin before launching the app.
@@ -70,19 +58,6 @@ export default {
 ```
 
 To learn more about the `plugins` configuration key, check out the [plugins api](/api/configuration-plugins).
-
-Actually, `vue-notifications` will be included in the app bundle, but because it's a library, we want to include it in the vendor bundle for better caching.
-
-We can update our `nuxt.config.js` to add `vue-notifications` in the vendor bundle:
-
-```js
-export default {
-  build: {
-    vendor: ['vue-notifications']
-  },
-  plugins: ['~/plugins/vue-notifications']
-}
-```
 
 ## Inject in $root & context
 

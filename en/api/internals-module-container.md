@@ -36,6 +36,8 @@ Plugin | Arguments       | When
 
 ### addVendor (vendor)
 
+**Deprecated as `vendor` isn't used anymore**
+
 Adds to `options.build.vendor` and apply unique filter.
 
 ### addTemplate (template)
