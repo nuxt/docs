@@ -537,6 +537,8 @@ If you want to transpile specific dependencies with Babel, you can add them in `
 
 ## vueLoader
 
+> Note: This config has been removed since Nuxt 2.0, please use [`build.loaders.vue`](#loaders)instead.
+
 - Type: `Object`
 - Default:
 
