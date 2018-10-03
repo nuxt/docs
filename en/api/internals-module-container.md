@@ -9,7 +9,7 @@ description: Nuxt ModuleContainer Class
 
 All [modules](/guide/modules) will be called within context of `ModuleContainer` instance.
 
-## Tapable plugins
+## Tappable plugins
 
 We can register hooks on certain life cycle events.
 
