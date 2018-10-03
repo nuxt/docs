@@ -98,7 +98,7 @@
         ]
       },
       {
-        "to": "/commands", "name": "命 令",
+        "to": "/commands", "name": "命令和部署",
         "contents": [
           { "to": "#命令列表", "name": "命令列表" },
           { "to": "#开发模式", "name": "开发模式" },
