@@ -81,6 +81,133 @@ module.exports = {
 }
 ```
 
+## 注入 $root 和 context
+
+有时您希望在应用程序中提供功能或参数值。您可以将这些变量注入Vue实例（客户端），context（服务器端）甚至Vuex存储中。在Nuxt.js中使用前缀`$`为这些函数添加注入。
+
+### 注入 Vue 实例
+
+将内容注入Vue实例，避免重复引入，在Vue原型上挂载注入一个函数，所有组件内都可以访问(**不包含服务器端**)。
+
+`plugins/vue-inject.js`:
+
+```js
+import Vue from 'vue'
+
+Vue.prototype.$myInjectedFunction = (string) => console.log("This is an example", string)
+```
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: ['~/plugins/vue-inject.js']
+}
+```
+
+这时，您现在可以在所有Vue组件中使用该函数。
+
+`example-component.vue`:
+
+```js
+export default {
+  mounted(){
+    this.$myInjectedFunction('test')
+  }
+}
+```
+
+### 注入 context
+
+将内容注入context，避免重复引入，在`app`上挂载注入一个函数，所有组件内都可以访问(**不包含客户端**)。
+
+`plugins/ctx-inject.js`:
+
+```js
+export default ({ app }, inject) => {
+  // Set the function directly on the context.app object
+  app.myInjectedFunction = (string) => console.log('Okay, another function', string)
+}
+```
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: ['~/plugins/ctx-inject.js']
+}
+```
+
+只要您有权访问context，该函数现在就可用（例如在`asyncData`和`fetch`中）。
+
+`ctx-example-component.vue`:
+
+```js
+export default {
+  asyncData(context){
+    context.app.myInjectedFunction('ctx!')
+  }
+}
+```
+
+### 联合注入
+
+如果您需要在`context`中,`Vue`实例，甚至可能在`Vuex store`中，您可以使用`inject`方法，这个方法接受两个参数，`$`将自动添加到该函数中。
+
+`plugins/combined-inject.js`:
+
+```js
+export default ({ app }, inject) => {
+  inject('myInjectedFunction', (string) => console.log('That was easy!', string))
+}
+```
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: ['~/plugins/combined-inject.js']
+}
+```
+
+现在您就可以在`context`，或者`Vue`实例中使用`this`，或者在`Vuex`中的`actions/mutations`调用此方法。
+
+`ctx-example-component.vue`:
+
+```js
+export default {
+  mounted(){
+    this.$myInjectedFunction('works in mounted')
+  },
+  asyncData(context){
+    context.app.$myInjectedFunction('works with context')
+  }
+}
+```
+
+`store/index.js`:
+
+```js
+export const state = () => ({
+  someValue: ''
+})
+
+export const mutations = {
+  changeSomeValue(state, newValue) {
+    this.$myInjectedFunction('accessible in mutations')
+    state.someValue = newValue
+  }
+}
+
+export const actions = {
+  setSomeValueToWhatever ({ commit }) {
+    this.$myInjectedFunction('accessible in actions')
+    const newValue = "whatever"
+    commit('changeSomeValue', newValue)
+  }
+}
+```
+
 ## 只在浏览器里使用的插件
 
 有些插件可能只是在浏览器里使用，所以你可以用 `ssr: false` 变量来配置插件只从客户端还是服务端运行。
@@ -105,3 +232,5 @@ Vue.use(VueNotifications)
 ```
 
 同样地，如果有些脚本库你只想在服务端使用，在 Webpack 打包 `server.bundle.js` 文件的时候会将 `process.server` 变量设置成 `true`。
+
+此外，如果您需要知道您是否在生成的应用程序内(通过`nuxt generator`生成)，你可以检查`process.static`，在生成期间和之后设置为`true`。要知道在保存之前由`nuxt generator`服务器呈现页面的状态，您可以使用`process.static`或`process.server`。
