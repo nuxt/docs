@@ -24,4 +24,4 @@ export default {
 }
 ```
 
-<div class="Alert Alert--orange">`data` メソッド内で、コンポーネントのインスタンスに `this` を経由してアクセスしては**いけません**。なぜなら `data` メソッドはコンポーネントが **インスタンス化される前に** 呼び出されるためです。</div>
+<div class="Alert Alert--orange">`asyncData` メソッド内で、コンポーネントのインスタンスに `this` を経由してアクセスしては**いけません**。なぜなら `asyncData` メソッドはコンポーネントが **インスタンス化される前に** 呼び出されるためです。</div>
