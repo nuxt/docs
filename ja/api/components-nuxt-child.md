@@ -41,7 +41,7 @@ description: 現在のページを表示します。
 <template>
   <div>
     <h1>I am the parent view</h1>
-    <nuxt-child/>
+    <nuxt-child :foobar="123" />
   </div>
 </template>
 ```
