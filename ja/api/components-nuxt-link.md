@@ -1,5 +1,5 @@
 ---
-title: 'API: '
+title: "API: <nuxt-link> コンポーネント"
 description: ページ間を nuxt-link を使ってリンクさせます。
 ---
 
