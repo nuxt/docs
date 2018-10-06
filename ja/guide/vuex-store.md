@@ -25,19 +25,20 @@ Nuxt.js では **2つのモードのストア** があります。どちらか�
 ```js
 import Vuex from 'vuex'
 
-const store = () => new Vuex.Store({
-
-  state: {
-    counter: 0
-  },
-  mutations: {
-    increment (state) {
-      state.counter++
+const createStore = () => {
+  return new Vuex.Store({
+    state: () => ({
+      counter: 0
+    }),
+    mutations: {
+      increment (state) {
+        state.counter++
+      }
     }
-  }
-})
+  })
+}
 
-export default store
+export default createStore
 ```
 
 > `vuex` は Nuxt.js によって取り込まれているため、別途インストールする必要はありません。
@@ -95,17 +96,20 @@ export const mutations = {
 
 ```js
 new Vuex.Store({
-  state: { counter: 0 },
+  state: () => ({
+    counter: 0
+  }),
   mutations: {
     increment (state) {
       state.counter++
     }
   },
   modules: {
+    namespaced: true,
     todos: {
-      state: {
+      state: () => ({
         list: []
-      },
+      }),
       mutations: {
         add (state, { text }) {
           state.list.push({
@@ -169,9 +173,9 @@ export default {
 ステートの例です。`store/state.js` を作成し、以下の行を追加します。
 
 ```js
-export default {
+export default () => ({
   counter: 0
-}
+})
 ```
 
 対応するミューテーションは `store/mutations.js` にあります。
@@ -257,15 +261,20 @@ Strict モードは dev モードではデフォルトで有効化されてお�
 
 ```
 import Vuex from 'vuex'
-const store = () => new Vuex.Store({
-  state: {
-    counter: 0
-  },
-  mutations: {
-    increment (state) {
-      state.counter++
+
+const createStore = () => {
+  return new Vuex.Store({
+    strict: false,
+    state: () => ({
+      counter: 0
+    }),
+    mutations: {
+      increment (state) {
+        state.counter++
+      }
     }
-  }
-})
-export default store
+  })
+}
+
+export default createStore
 ```
