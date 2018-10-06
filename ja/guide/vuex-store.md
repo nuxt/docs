@@ -3,7 +3,7 @@ title: Vuex ストア
 description: 状態を管理してくれる Vuex ストアは、あらゆる大規模アプリケーションにとても役に立ちます。Nuxt.js が Vuex をコアに組み入れたのはそのような理由からです。
 ---
 
-> 状態を管理してくれる Vuex ストアは、あらゆる大規模アプリケーションにとても役に立ちます。Nuxt.js が [Vuex](https://github.com/vuejs/vuex) をコアに組み入れたのはそのような理由からです。
+> 状態を管理してくれる Vuex ストアは、あらゆる大規模アプリケーションにとても役に立ちます。Nuxt.js が [Vuex](https://vuex.vuejs.org/ja/) をコアに組み入れたのはそのような理由からです。
 
 ## ストアを有効にする
 
@@ -16,7 +16,7 @@ Nuxt.js は `store` ディレクトリを探索し存在するときには以下
 Nuxt.js では **2つのモードのストア** があります。どちらか好みのほうを選んで使ってください:
 
 - **クラシックモード:** `store/index.js` がストアインスタンスを返します
-- **モジュールモード:** `store` ディレクトリ内のすべての `*.js` ファイルが [モジュール](http://vuex.vuejs.org/en/modules.html) に変換されます（`index` はルートモジュールとして存在します）
+- **モジュールモード:** `store` ディレクトリ内のすべての `*.js` ファイルが [モジュール](https://vuex.vuejs.org/ja/guide/modules.html) に変換されます（`index` はルートモジュールとして存在します）
 
 ## クラシックモード
 
@@ -210,7 +210,7 @@ export const mutations = {
 }
 ```
 
-プラグインについてのさらに詳しい情報は [Vuex ドキュメント](https://vuex.vuejs.org/en/plugins.html) を参照してください。
+プラグインについてのさらに詳しい情報は [Vuex ドキュメント](https://vuex.vuejs.org/ja/guide/plugins.html) を参照してください。
 
 ## fetch メソッド
 
