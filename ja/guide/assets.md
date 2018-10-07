@@ -1,7 +1,6 @@
 ---
 title: アセット
-description: デフォルトでは、Nuxt は vue-loader、file-loader、url-loader webpack ローダーを使用して、強力なアセットを提供します。
-  静的アセットには静的ディレクトリを使用することもできます。
+description: デフォルトでは、Nuxt は vue-loader、file-loader、url-loader webpack ローダーを使用して、強力なアセットを提供します。静的アセットには静的ディレクトリを使用することもできます。
 ---
 
 > デフォルトでは、Nuxt は vue-loader、file-loader、url-loader webpack ローダーを使用して、強力なアセットを提供します。 静的アセットには静的ディレクトリを使用することもできます。
