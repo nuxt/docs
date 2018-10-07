@@ -20,6 +20,8 @@ description: デフォルトでは、Nuxt は vue-loader、file-loader、url-loa
 
 CSS で `url('~/assets/image.png')` と書いていたら、それは `require('~/assets/image.png')` に変換されます。
 
+> css-loader のアップグレードにより、Nuxt 2.0 から CSS のデータ型  <url> では、`~assets`（スラッシュなし）を使わなければなりません。例：background: url("~assets/banner.svg")
+
 あるいは `pages/index.vue` の中で下記のように書いていたとします:
 
 ```html
