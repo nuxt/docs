@@ -190,7 +190,7 @@ const scrollBehavior = function (to, from, savedPosition) {
 `nuxt.config.js`
 
 ```js
-nction (to, from, savedPosition) {
+export default {
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       return { x: 0, y: 0 }
@@ -201,7 +201,7 @@ nction (to, from, savedPosition) {
 
 ## parseQuery / stringifyQuery
 
-- Type: `関数`
+- 型: `関数`
 
 カスタムクエリ構文解析関数 / 文字列化関数を提供します。デフォルトを上書きします。
 
@@ -209,8 +209,8 @@ nction (to, from, savedPosition) {
 
 ## fallback
 
-- Type: `ブーリアン`
-- Default: `false`
+- 型: `ブーリアン`
+- デフォルト: `false`
 
 history.pushState がサポートされていないブラウザにおいて、モードが history に設定されているとき、ルーターを hash モードにフォールバックするかどうか制御します。
 
