@@ -19,9 +19,9 @@ description: Nuxt.js ではウェブアプリケーションを自由にビル�
 例（`nuxt.config.js`）:
 
 ```js
-module.exports = {
+export default {
   build: {
-    analyze: true
+    analyze: true,
     // または
     analyze: {
       analyzerMode: 'static'
@@ -49,7 +49,7 @@ module.exports = {
 例（`nuxt.config.js`）:
 
 ```js
-module.exports = {
+export default {
   build: {
     babel: {
       presets: ['es2015', 'stage-0']
@@ -92,12 +92,12 @@ extend メソッドは一度はサーバーのバンドルのため、一度は�
 例（`nuxt.config.js`）:
 
 ```js
-module.exports = {
+export default {
   build: {
     extend (config, { isClient }) {
       // クライアントのバンドルの Webpack 設定のみを拡張する
       if (isClient) {
-        config.devtool = 'eval-source-map'
+        config.devtool = '#source-map'
       }
     }
   }
@@ -125,21 +125,22 @@ CSS を抽出して、メインのチャンクに独立した CSS ファイル�
 
     ```js
     {
-      css: 'common.[contenthash].css',
-      manifest: 'manifest.[hash].js',
-      vendor: 'common.[chunkhash].js',
-      app: 'app.[chunkhash].js',
-      chunk: '[name].[chunkhash].js'
+  app: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
+  chunk: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
+  css: ({ isDev }) => isDev ? '[name].js' : '[contenthash].css',
+  img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[hash:7].[ext]',
+  font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[hash:7].[ext]',
+  video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[hash:7].[ext]'
     }
     ```
 
 この例ではチャンク名を数値の ID に変更します（`nuxt.config.js`）:
 
 ```js
-module.exports = {
+export default {
   build: {
     filenames: {
-      chunk: '[id].[chunkhash].js'
+      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[chunkhash].js'
     }
   }
 }
@@ -161,6 +162,11 @@ manifest や vendor の使い方をより理解するためには [webpack docum
 
     ```js
     {
+    minimize: true,
+    minimizer: [
+      // terser-webpack-plugin
+      // optimize-css-assets-webpack-plugin
+    ],
       splitChunks: {
         chunks: 'all',
         automaticNameDelimiter: '.',
@@ -191,13 +197,13 @@ webpack のビルドで[thread-loader](https://github.com/webpack-contrib/thread
 例（`nuxt.config.js`）:
 
 ```js
-const webpack = require('webpack')
-
-module.exports = {
+import webpack from 'webpack'
+import { version } from './package.json'
+export default {
   build: {
     plugins: [
       new webpack.DefinePlugin({
-        'process.VERSION': require('./package.json').version
+        'process.VERSION': version
       })
     ]
   }
@@ -216,35 +222,33 @@ module.exports = {
 
     ```js
     {
-      plugins: {
+    plugins: {
       'postcss-import': {},
       'postcss-url': {},
-      'postcss-cssnext': {}
-      }
+      'postcss-preset-env': {},
+      'cssnano': { preset: 'default' } // disabled in dev mode
     }
-    ```
+  }
+  ```
 
 例（`nuxt.config.js`）:
 
 ```js
-module.exports = {
+export default {
   build: {
     postcss: {
       plugins: {
         // `postcss-url` の無効化
-      'postcss-url': false,
-
-      // `postcss-cssnext` のデフォルトオプションをカスタマイズする
-      'postcss-cssnext': {
-        features: {
-          customProperties: false
+        'postcss-url': false,
+        // plugin の追加
+        'postcss-nested': {},
+        'postcss-responsive-type': {},
+        'postcss-hexrgba': {}
+      },
+      preset: {
+        autoprefixer: {
+          grid: true
         }
-      }
-
-      // plugin の追加
-      'postcss-nested': {},
-      'postcss-responsive-type': {},
-      'postcss-hexrgba': {}
       }
     }
   }
@@ -343,7 +347,7 @@ Nuxt.js はこの動作を実現するために https://github.com/yenshih/style
 例 (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     templates: [
       {
@@ -394,7 +398,7 @@ module.exports = {
 - 型: `配列<String>`
 
 ```js
-module.exports = {
+export default {
   build: {
     watch: [
       '~/.nuxt/support.js'
