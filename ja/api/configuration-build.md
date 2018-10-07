@@ -267,6 +267,10 @@ manifest の使い方をより理解するためには [webpack documentation](h
 > 利用可能な全てのオプションについては [Node Sass documentation](https://github.com/sass/node-sass/blob/master/README.md#options) を参照してください。
 > 注意: `loaders.sass` は [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html) 用です。
 
+### loaders.vueStyle
+
+> 詳細は [vue-style-loader options](https://github.com/vuejs/vue-style-loader#options) を参照してください。
+
 ## optimization
 
 - 型: `オブジェクト`
