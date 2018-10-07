@@ -40,10 +40,10 @@ export default {
 - デフォルト:
 
   ```js
-    {
-      presets: ['vue-app']
-    }
-    ```
+  {
+    presets: ['vue-app']
+  }
+  ```
 
 例（`nuxt.config.js`）:
 
@@ -141,15 +141,15 @@ export default {
 - デフォルト:
 
 ```js
-    {
+{
   app: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
   chunk: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
   css: ({ isDev }) => isDev ? '[name].js' : '[contenthash].css',
   img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[hash:7].[ext]',
   font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[hash:7].[ext]',
   video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[hash:7].[ext]'
-    }
-    ```
+}
+```
 
 この例ではチャンク名を数値の ID に変更します（`nuxt.config.js`）:
 
@@ -277,20 +277,20 @@ manifest の使い方をより理解するためには [webpack documentation](h
 - デフォルト:
 
   ```js
-    {
+  {
     minimize: true,
     minimizer: [
       // terser-webpack-plugin
       // optimize-css-assets-webpack-plugin
     ],
-      splitChunks: {
-        chunks: 'all',
-        automaticNameDelimiter: '.',
-        name: undefined,
-        cacheGroups: {}
-      }
+    splitChunks: {
+      chunks: 'all',
+      automaticNameDelimiter: '.',
+      name: undefined,
+      cacheGroups: {}
     }
-    ```
+  }
+  ```
 
 `dev` または `analyze` モードでは、`splitChunks.name` のデフォルト値は `true` になっています。
 
@@ -376,8 +376,8 @@ export default {
   **注意：**  Nuxt.js は [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env) を適用しました。デフォルトでは、[Stage 2 features](https://cssdb.org/) と [Autoprefixer](https://github.com/postcss/autoprefixer) が有効になっています。`build.postcss.preset` を使うことで設定が出来ます。
 - デフォルト:
 
-    ```js
-    {
+  ```js
+  {
     plugins: {
       'postcss-import': {},
       'postcss-url': {},
@@ -450,12 +450,12 @@ export default {
 - デフォルト:
 
   ```js
-    {
-      layouts: false,
-      pages: true,
-      commons: true
-    }
-    ```
+  {
+    layouts: false,
+    pages: true,
+    commons: true
+  }
+  ```
 
 `layout`、`pages` や `commons` で分割したコードの場合（共通ライブラリ: vue|vue-loader|vue-router|vuex...）
 
@@ -535,23 +535,24 @@ export default {
 
 ## vueLoader
 
-- 型: `オブジェクト`
+> 注意: この設定は Nuxt 2.0 から削除されました。[`build.loaders.vue`](#loaders) を変わりに使用してください。
 
+- 型: `オブジェクト`
 - デフォルト
 
-    ```js
-    {
-      productionMode: !this.options.dev,
-      transformAssetUrls: {
-        video: 'src',
-        source: 'src',
-        object: 'src',
-        embed: 'src'
-      }
+  ```js
+  {
+    productionMode: !this.options.dev,
+    transformAssetUrls: {
+      video: 'src',
+      source: 'src',
+      object: 'src',
+      embed: 'src'
     }
-    ```
+  }
+  ```
 
-[Vue Loader Options](https://vue-loader.vuejs.org/options.html) の指定
+[Vue Loader Options](https://vue-loader.vuejs.org/options.html) を指定します。
 
 ## watch
 
