@@ -90,9 +90,9 @@ file-loader と url-loader を使用する利点:
 
 これらのファイルは Nuxt によって自動的に提供され、プロジェクトのルートURLからアクセスできます。
 
-このオプションは `robots.txt` や `sitemap.xml`、`CNAME`（GitHub Pages のようなもの向け）などのファイルの扱いに役立ちます。
+このオプションは `robots.txt` や `sitemap.xml`、`CNAME`（GitHub Pages などで使う）などのファイルの扱いに役立ちます。
 
-それらのファイルを `/` URL で参照することができます:
+それらのファイルを `/` の URL で参照することができます:
 
 ```html
 <!-- 静的ディレクトリにある静的イメージ  -->
