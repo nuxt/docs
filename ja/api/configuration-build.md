@@ -253,6 +253,11 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 > 詳細は [vue-loader options](https://vue-loader.vuejs.org/options.html) を参照してください。
 
+### loaders.css と loaders.cssModules
+
+> 詳細は [css-loader options](https://github.com/webpack-contrib/css-loader#options) を参照してください。
+> 注意: cssModules は、[CSS Modules](https://vue-loader.vuejs.org/guide/css-modules.html#css-modules) を使うための loader オプションです。 
+
 ## optimization
 
 - 型: `オブジェクト`
