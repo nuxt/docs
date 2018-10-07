@@ -262,6 +262,11 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 > Less specific オプションは、`loaders.less` を介して `less-loader に渡すことができます。dash-case で利用可能な全てのオプションについては [Less documentation](http://lesscss.org/usage/#command-line-usage-options) を参照してください。
 
+### loaders.sass と loaders.scss
+
+> 利用可能な全てのオプションについては [Node Sass documentation](https://github.com/sass/node-sass/blob/master/README.md#options) を参照してください。
+> 注意: `loaders.sass` は [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html) 用です。
+
 ## optimization
 
 - 型: `オブジェクト`
