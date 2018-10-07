@@ -8,7 +8,7 @@ description: デフォルトでは、Nuxt は vue-loader、file-loader、url-loa
 
 ## Webpack で取り扱う
 
-デフォルトでは [vue-loader](http://vue-loader.vuejs.org/en/) は css-loader および vue-template-compiler を用いて、スタイルやテンプレートファイルを処理します。このコンパイル処理の中で、`<img src="...">` や `background: url(...)` や CSS `@import` などのすべての URL はモジュールの依存関係のように解決されます。
+デフォルトでは [vue-loader](http://vue-loader.vuejs.org/) は css-loader および vue-template-compiler を用いて、スタイルやテンプレートファイルを自動的に処理します。このコンパイル処理の中で、`<img src="...">` や `background: url(...)` や CSS `@import` などのすべてのアセット URL はモジュールの依存関係として解決されます。
 
 例えば、次のようなファイルがあるとします:
 
