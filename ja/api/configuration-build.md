@@ -174,6 +174,13 @@ manifest や vendor の使い方をより理解するためには [webpack docum
 
 Webpack の[最適化](https://webpack.js.org/configuration/optimization/)
 
+## parallel
+
+- 型: `ブーリアン`
+- デフォルト: `false`
+
+webpack のビルドで[thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) を有効にします。 
+
 ## plugins
 
 > Webpack のプラグインを追加します。
@@ -333,13 +340,6 @@ module.exports = {
 - デフォルト: コマンドライン引数 `--profile` で有効にします。
 
 [WebpackBar](https://github.com/nuxt/webpackbar#profile) の profiler で有効にします。
-
-## parallel
-
-- 型: `ブーリアン`
-- デフォルト: `false`
-
-webpack のビルドで[thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) を有効にします。 
 
 ## styleResources
 
