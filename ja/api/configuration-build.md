@@ -326,6 +326,17 @@ Terser プラグインのオプションです。 `false` を設定するとこ�
 
 [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin) を参照してください。
 
+## optimizeCSS
+
+- 型: `Object` or `Boolean`
+- デフォルト:
+  - `false`
+  - extractCSS が有効の場合は `{}`
+
+OptimizeCSSAssets プラグインのオプションです。.
+
+[NMFR/optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin) を参照してください。
+
 ## parallel
 
 - 型: `ブーリアン`
