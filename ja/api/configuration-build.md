@@ -200,6 +200,43 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 ビルドプロセス中に作成された HTML ファイルのミニファイに使われる [html-minifier](https://github.com/kangax/html-minifier) プラグインの設定（*全てのモード*に適用される）。
 
+## loaders
+
+> webpack loaders を統合した Nuxt.js のカスタマイズオプション
+
+- 型: `オブジェクト`
+- デフォルト:
+
+```js
+{
+  file: {},
+  fontUrl: { limit: 1000 },
+  imgUrl: { limit: 1000 },
+  pugPlain: {},
+  vue: {
+    transformAssetUrls: {
+      video: 'src',
+      source: 'src',
+      object: 'src',
+      embed: 'src'
+    }
+  },
+  css: {},
+  cssModules: {
+    localIdentName: '[local]_[hash:base64:5]'
+  },
+  less: {},
+  sass: {
+    indentedSyntax: true
+  },
+  scss: {},
+  stylus: {},
+  vueStyle: {}
+}
+```
+
+> 注意: `nuxt.config.js` の設定で指定することに加え、[build.extend](#extend) で変更することもできます。
+
 ## optimization
 
 - 型: `オブジェクト`
