@@ -1,5 +1,5 @@
 ---
-title: 'API: '
+title: "API: <nuxt-link> コンポーネント"
 description: ページ間を nuxt-link を使ってリンクさせます。
 ---
 
@@ -7,7 +7,7 @@ description: ページ間を nuxt-link を使ってリンクさせます。
 
 > ページ間を nuxt-link を使ってリンクさせます。
 
-現時点では、`<nuxt-link>` は [`<router-link>`](https://router.vuejs.org/en/api/router-link.html) と同じです。そのため、[Vue Router のドキュメント](https://router.vuejs.org/en/api/router-link.html) でこのコンポーネントの使い方を確認することをお勧めします。
+現時点では、`<nuxt-link>` は [`<router-link>`](https://router.vuejs.org/ja/api/#router-link) と同じです。そのため、[Vue Router のドキュメント](https://router.vuejs.org/ja/api/#router-link) でこのコンポーネントの使い方を確認することをお勧めします。
 
 例（`pages/index.vue`）:
 
@@ -20,4 +20,4 @@ description: ページ間を nuxt-link を使ってリンクさせます。
 </template>
 ```
 
-将来的には、バックグラウンドでプリフェッチするような Nuxt.js アプリケーションの応答性を改善するような機能を `<nuxt-link>` コンポーネントに追加する予定です。
+将来的には、Nuxt.js アプリケーションの応答性を改善するためにバックグラウンドでプリフェッチするような機能を `<nuxt-link>` コンポーネントに追加する予定です。
