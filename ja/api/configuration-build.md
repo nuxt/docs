@@ -373,8 +373,7 @@ export default {
 
 - 型: `配列`、`オブジェクト`（推奨）、`関数` または `ブーリアン`
 
-    **注意：**デフォルトのプリセットは OK で、通常使いには十分柔軟ですが、推奨使用方法はプロジェクト内の `postcss.config.js` ファイルで [`vue-loader`](https://vue-loader.vuejs.org/en/options.html#postcss) を使用することです。 このファイルを作成するとにより自動的に検出され、このオプションは無視されます。
-
+  **注意：**  Nuxt.js は [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env) を適用しました。デフォルトでは、[Stage 2 features](https://cssdb.org/) と [Autoprefixer](https://github.com/postcss/autoprefixer) が有効になっています。`build.postcss.preset` を使うことで設定が出来ます。
 - デフォルト:
 
     ```js
