@@ -237,6 +237,10 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 > 注意: `nuxt.config.js` の設定で指定することに加え、[build.extend](#extend) で変更することもできます。
 
+### loaders.file
+
+> 詳細は [file-loader options](https://github.com/webpack-contrib/file-loader#options) を参照してください。
+
 ## optimization
 
 - 型: `オブジェクト`
