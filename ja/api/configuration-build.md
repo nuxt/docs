@@ -249,6 +249,10 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 > 詳細は [pug-plain-loader](https://github.com/yyx990803/pug-plain-loader) または [Pug compiler options](https://pugjs.org/api/reference.html#options) を参照してください。
 
+### loaders.vue
+
+> 詳細は [vue-loader options](https://vue-loader.vuejs.org/options.html) を参照してください。
+
 ## optimization
 
 - 型: `オブジェクト`
