@@ -515,7 +515,7 @@ export default {
       {
         src: '~/modules/support/plugin.js', // `src` は絶対パスもしくは相対パスで指定してください
         dst: 'support.js', // `dst` は `.nuxt` ディレクトリからみた相対パスです
-        options: { // Options は `options` キーとしてテンプレートから提供されます
+        options: { // Options は `options` キーとしてテンプレートに提供されます
           live_chat: false
         }
       }
