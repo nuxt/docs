@@ -360,35 +360,6 @@ module.exports = {
 
 テンプレートは [`lodash.template`](https://lodash.com/docs/#template) を使ってレンダリングされます。[こちら](https://github.com/learn-co-students/javascript-lodash-templates-v-000)でより詳細な使い方を知ることができます。
 
-## vendor
-
-> Nuxt.js では `vendor.bundle.js` ファイル内にモジュールを追加できます。このファイルは app バンドルファイルのサイズを小さくするために生成します。外部モジュール（例えば `axios` など）を使うときにとても便利です。
-
-- 型: `配列`
-
-vendor バンドルファイル内にモジュール/ファイルを追加するには、`nuxt.config.js` 内の `build.vendor` キーに追加します:
-
-```js
-module.exports = {
-  build: {
-    vendor: ['axios']
-  }
-}
-```
-
-ファイルへのパスを指定することもできます。例えば自分で作成した独自ライブラリを使いたいときなどはファイルへのパスを指定します:
-
-```js
-module.exports = {
-  build: {
-    vendor: [
-      'axios',
-      '~plugins/my-lib.js'
-    ]
-  }
-}
-```
-
 ## transpile
 
 - 型: `配列<string | RegExp>`
