@@ -437,13 +437,20 @@ export default {
 
 設定すると、`nuxt build` を実行したタイミングで `.nuxt/dist/client` ディレクトリの内容が CDN にアップロードされます！
 
+## quiet
+
+> ビルド出力ログの大半を抑制します
+
+- 型: `Boolean`
+- デフォルト: [std-env](https://github.com/blindmedia/std-env) によって `CI` または `test` 環境で検出された際に有効になります
+
 ## splitChunks
 
 - 型: `オブジェクト`
 
 - デフォルト:
 
-    ```js
+  ```js
     {
       layouts: false,
       pages: true,
