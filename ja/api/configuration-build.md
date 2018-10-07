@@ -138,10 +138,9 @@ export default {
 > バンドルのファイル名をカスタマイズします。
 
 - 型: `オブジェクト`
-
 - デフォルト:
 
-    ```js
+```js
     {
   app: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
   chunk: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
@@ -164,7 +163,7 @@ export default {
 }
 ```
 
-manifest や vendor の使い方をより理解するためには [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/) を参照してください。
+manifest の使い方をより理解するためには [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/) を参照してください。
 
 ## hotMiddleware
 
