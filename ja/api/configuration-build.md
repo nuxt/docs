@@ -251,6 +251,13 @@ module.exports = {
 }
 ```
 
+## profile
+
+- 型: `ブーリアン`
+- デフォルト: コマンドライン引数 `--profile` で有効にします。
+
+[WebpackBar](https://github.com/nuxt/webpackbar#profile) の profiler で有効にします。
+
 ## publicPath
 
 > CDN に `publicPath` をセットすると、Nuxt.js は dist ディレクトリ内のファイルを CDN へアップロードし最大のパフォーマンスを発揮します。
@@ -333,13 +340,6 @@ module.exports = {
   }
 }
 ```
-
-## profile
-
-- 型: `ブーリアン`
-- デフォルト: コマンドライン引数 `--profile` で有効にします。
-
-[WebpackBar](https://github.com/nuxt/webpackbar#profile) の profiler で有効にします。
 
 ## styleResources
 
