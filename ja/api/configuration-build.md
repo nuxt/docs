@@ -34,13 +34,12 @@ export default {
 
 ## babel
 
-> JS や Vue ファイルのために babel の設定をカスタマイズします。
+> JavaScript や Vue ファイルのために Babel の設定をカスタマイズします。
 
 - 型: `オブジェクト`
-
 - デフォルト:
 
-    ```js
+  ```js
     {
       presets: ['vue-app']
     }
