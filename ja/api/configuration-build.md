@@ -241,6 +241,10 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 > 詳細は [file-loader options](https://github.com/webpack-contrib/file-loader#options) を参照してください。
 
+### loaders.fontUrl and loaders.imgUrl
+
+> 詳細は [url-loader options](https://github.com/webpack-contrib/url-loader#options) を参照してください。
+
 ## optimization
 
 - 型: `オブジェクト`
