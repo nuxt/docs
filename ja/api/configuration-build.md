@@ -302,6 +302,38 @@ module.exports = {
 
 このオプションは、提供されていない場合は `mode` 値に基づいて自動的に設定されます。
 
+## styleResources
+
+- 型: `オブジェクト`
+- デフォルト: `{}`
+
+毎回インポートせずに変数やミックスインをページに挿入する必要がある場合に便利です。
+
+Nuxt.js はこの動作を実現するために https://github.com/yenshih/style-resources-loader を使用します。
+
+特定のプリプロセッサに含めるパターン/パスを指定する必要があります: `less`、`sass`、`scss`、`stylus`
+
+：警告：ここではパスのエイリアス（`~` や `@`）を使用することができないため、相対パスまたは絶対パスを使用する必要があります。
+
+`nuxt.config.js`:
+
+```js
+{
+  build: {
+    styleResources: {
+      scss: './assets/variables.scss',
+      less: './assets/*.less',
+      // sass: ...,
+      // scss: ...
+      options: {
+        // https://github.com/yenshih/style-resources-loader#options の
+        // `patterns` プロパティ以外を参照してください。
+      }
+    }
+  }
+}
+```
+
 ## templates
 
 > Nuxt.jsでは、設定に基づいてレンダリングされる独自のテンプレートを提供できます。 この機能は[モジュール](/guide/modules)を使用する場合にとりわけ便利です。
@@ -353,38 +385,6 @@ module.exports = {
       'axios',
       '~plugins/my-lib.js'
     ]
-  }
-}
-```
-
-## styleResources
-
-- 型: `オブジェクト`
-- デフォルト: `{}`
-
-毎回インポートせずに変数やミックスインをページに挿入する必要がある場合に便利です。
-
-Nuxt.js はこの動作を実現するために https://github.com/yenshih/style-resources-loader を使用します。
-
-特定のプリプロセッサに含めるパターン/パスを指定する必要があります: `less`、`sass`、`scss`、`stylus`
-
-：警告：ここではパスのエイリアス（`~` や `@`）を使用することができないため、相対パスまたは絶対パスを使用する必要があります。
-
-`nuxt.config.js`:
-
-```js
-{
-  build: {
-    styleResources: {
-      scss: './assets/variables.scss',
-      less: './assets/*.less',
-      // sass: ...,
-      // scss: ...
-      options: {
-        // https://github.com/yenshih/style-resources-loader#options の
-        // `patterns` プロパティ以外を参照してください。
-      }
-    }
   }
 }
 ```
