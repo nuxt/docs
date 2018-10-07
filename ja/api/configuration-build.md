@@ -258,6 +258,10 @@ manifest の使い方をより理解するためには [webpack documentation](h
 > 詳細は [css-loader options](https://github.com/webpack-contrib/css-loader#options) を参照してください。
 > 注意: cssModules は、[CSS Modules](https://vue-loader.vuejs.org/guide/css-modules.html#css-modules) を使うための loader オプションです。 
 
+### loaders.less
+
+> Less specific オプションは、`loaders.less` を介して `less-loader に渡すことができます。dash-case で利用可能な全てのオプションについては [Less documentation](http://lesscss.org/usage/#command-line-usage-options) を参照してください。
+
 ## optimization
 
 - 型: `オブジェクト`
