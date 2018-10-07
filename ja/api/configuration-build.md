@@ -428,14 +428,14 @@ export default {
 例（`nuxt.config.js`）:
 
 ```js
-module.exports = {
+export default {
   build: {
     publicPath: 'https://cdn.nuxtjs.org'
   }
 }
 ```
 
-設定すると、`nuxt build` を実行したタイミングで `.nuxt/dist/` ディレクトリの内容が CDN にアップロードされます！
+設定すると、`nuxt build` を実行したタイミングで `.nuxt/dist/client` ディレクトリの内容が CDN にアップロードされます！
 
 ## splitChunks
 
