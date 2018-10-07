@@ -9,12 +9,12 @@ description: Nuxt.js ではウェブアプリケーションを自由にビル�
 
 ## analyze
 
-> Nuxt.js では [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer) を使ってバンドルファイルと最適化の仕方を視覚化できます。
+> Nuxt.js では [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) を使ってバンドルファイルと最適化の仕方を視覚化できます。
 
 - 型: `ブーリアン` または `オブジェクト`
 - デフォルト: `false`
 
-オブジェクトの場合は、利用できるプロパティは [こちら](https://github.com/th0r/webpack-bundle-analyzer#as-plugin) を参照してください。
+オブジェクトの場合は、利用できるプロパティは [こちら](https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin) を参照してください。
 
 例（`nuxt.config.js`）:
 
@@ -108,7 +108,7 @@ export default {
 
 ## extractCSS
 
-> Vue のサーバーサイドレンダリング [ガイドライン](https://ssr.vuejs.org/en/css.html)を利用して、共通の CSS を抽出できるようにします。
+> Vue のサーバーサイドレンダリング [ガイドライン](https://ssr.vuejs.org/ja/guide/css.html)を利用して、共通の CSS を抽出できるようにします。
 
 - 型: `ブーリアン`
 - デフォルト: `false`
