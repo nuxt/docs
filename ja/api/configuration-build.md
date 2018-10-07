@@ -389,7 +389,7 @@ Webpack の[最適化](https://webpack.js.org/configuration/optimization/)
 
 `layout`、`pages` や `commons` で分割したコードの場合（共通ライブラリ: vue|vue-loader|vue-router|vuex...）
 
-## Transpile
+## transpile
 
 - 型: `配列<string | RegExp>`
 - デフォルト: `[]`
