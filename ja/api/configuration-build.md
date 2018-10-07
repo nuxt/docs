@@ -171,13 +171,42 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 利用できるオプションは [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) を参照してください。
 
+## html.minify
+
+- 型: `オブジェクト`
+- デフォルト:
+
+```js
+{
+  collapseBooleanAttributes: true,
+  collapseWhitespace: false,
+  decodeEntities: true,
+  minifyCSS: true,
+  minifyJS: true,
+  processConditionalComments: true,
+  removeAttributeQuotes: false,
+  removeComments: false,
+  removeEmptyAttributes: true,
+  removeOptionalTags: false,
+  removeRedundantAttributes: true,
+  removeScriptTypeAttributes: false,
+  removeStyleLinkTypeAttributes: false,
+  removeTagWhitespace: false,
+  sortClassName: false,
+  trimCustomFragments: true,
+  useShortDoctype: true
+}
+```
+
+ビルドプロセス中に作成された HTML ファイルのミニファイに使われる [html-minifier](https://github.com/kangax/html-minifier) プラグインの設定（*全てのモード*に適用される）。
+
 ## optimization
 
 - 型: `オブジェクト`
 
 - デフォルト:
 
-    ```js
+  ```js
     {
     minimize: true,
     minimizer: [
