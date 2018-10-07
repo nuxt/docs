@@ -447,7 +447,6 @@ export default {
 ## splitChunks
 
 - 型: `オブジェクト`
-
 - デフォルト:
 
   ```js
