@@ -277,6 +277,22 @@ module.exports = {
 
 設定すると、`nuxt build` を実行したタイミングで `.nuxt/dist/` ディレクトリの内容が CDN にアップロードされます！
 
+## splitChunks
+
+- 型: `オブジェクト`
+
+- デフォルト:
+
+    ```js
+    {
+      layouts: false,
+      pages: true,
+      commons: true
+    }
+    ```
+
+`layout`、`pages` や `commons` で分割したコードの場合（共通ライブラリ: vue|vue-loader|vue-router|vuex...）
+
 ## ssr
 
 > SSR レンダラー用の webpack バンドルを作成します。
@@ -372,22 +388,6 @@ Nuxt.js はこの動作を実現するために https://github.com/yenshih/style
   }
 }
 ```
-
-## splitChunks
-
-- 型: `オブジェクト`
-
-- デフォルト:
-
-    ```js
-    {
-      layouts: false,
-      pages: true,
-      commons: true
-    }
-    ```
-
-`layout`、`pages` や `commons` で分割したコードの場合（共通ライブラリ: vue|vue-loader|vue-router|vuex...）
 
 ## transpile
 
