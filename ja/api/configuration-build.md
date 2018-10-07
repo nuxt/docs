@@ -153,6 +153,27 @@ manifest や vendor の使い方をより理解するためには [webpack docum
 
 利用できるオプションは [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) を参照してください。
 
+## optimization
+
+- 型: `オブジェクト`
+
+- デフォルト:
+
+    ```js
+    {
+      splitChunks: {
+        chunks: 'all',
+        automaticNameDelimiter: '.',
+        name: undefined,
+        cacheGroups: {}
+      }
+    }
+    ```
+
+`dev` または `analyze` モードでは、`splitChunks.name` のデフォルト値は `true` になっています。
+
+Webpack の[最適化](https://webpack.js.org/configuration/optimization/)
+
 ## plugins
 
 > Webpack のプラグインを追加します。
@@ -351,27 +372,6 @@ Nuxt.js はこの動作を実現するために https://github.com/yenshih/style
   }
 }
 ```
-
-## optimization
-
-- 型: `オブジェクト`
-
-- デフォルト:
-
-    ```js
-    {
-      splitChunks: {
-        chunks: 'all',
-        automaticNameDelimiter: '.',
-        name: undefined,
-        cacheGroups: {}
-      }
-    }
-    ```
-
-`dev` または `analyze` モードでは、`splitChunks.name` のデフォルト値は `true` になっています。
-
-Webpack の[最適化](https://webpack.js.org/configuration/optimization/)
 
 ## splitChunks
 
