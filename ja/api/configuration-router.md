@@ -71,7 +71,7 @@ export default {
 }
 ```
 
-> このオプションは [linkactiveclass](https://router.vuejs.org/ja/api/#linkactiveclass) に直接付与されます。
+> このオプションは vue-router の [linkactiveclass](https://router.vuejs.org/ja/api/#linkactiveclass) に直接付与されます。
 
 ## linkExactActiveClass
 
@@ -212,7 +212,7 @@ nction (to, from, savedPosition) {
 - Type: `ブーリアン`
 - Default: `false`
 
-history.pushState がサポートされていないブラウザにおいて、モードが history に設定されているとき、ルーターを hash モードにフォールバックかどうか制御します。
+history.pushState がサポートされていないブラウザにおいて、モードが history に設定されているとき、ルーターを hash モードにフォールバックするかどうか制御します。
 
 これを false に設定すると、本質的に全ての router-link ナビゲーションが IE9 においてフルページリフレッシュになります。これは、アプリケーションがサーバサイドレンダリングされ、 IE9 で動作する必要がある場合に便利です。なぜなら、サーバーサイドレンダリングではハッシュモードの URL が機能しないためです。
 
