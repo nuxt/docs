@@ -105,6 +105,25 @@ export default {
 
 デフォルトの Webpack の設定についてもう少し見てみたい場合は Nuxt.js の [webpack ディレクトリ](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack) を参照してください。
 
+### extend 内の loaders
+
+`loaders` は、[build.loaders](#loaders) と同じオブジェクト構造を持っているため、`extend` 内部の loaders のオプションを変えることができます。
+
+例（`nuxt.config.js`）:
+
+```js
+export default {
+  build: {
+    extend (config, { isClient, loaders: { vue } }) {
+      // クライアントのバンドルの Webpack 設定のみを拡張する
+      if (isClient) {
+        vue.transformAssetUrls.video = ['src', 'poster']
+      }
+    }
+  }
+}
+```
+
 ## extractCSS
 
 > Vue のサーバーサイドレンダリング [ガイドライン](https://ssr.vuejs.org/ja/guide/css.html)を利用して、共通の CSS を抽出できるようにします。
