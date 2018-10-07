@@ -299,6 +299,33 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 [Webpack の最適化](https://webpack.js.org/configuration/optimization/)を参照してください。
 
+## terser
+
+- 型: `オブジェクト` または `ブーリアン`
+- デフォルト:
+
+```js
+{
+  parallel: true,
+  cache: false,
+  sourceMap: false,
+  extractComments: {
+    filename: 'LICENSES'
+  },
+  terserOptions: {
+    output: {
+      comments: /^\**!|@preserve|@license|@cc_on/
+    }
+  }
+}
+```
+
+Terser プラグインのオプションです。 `false` を設定するとこのプラグインは無効になります。
+
+`soruceMap` は webpack の `confing.devtool` が `source-?map` と一致した際に有効になります。
+
+[webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin) を参照してください。
+
 ## parallel
 
 - 型: `ブーリアン`
