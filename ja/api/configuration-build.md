@@ -274,7 +274,6 @@ manifest の使い方をより理解するためには [webpack documentation](h
 ## optimization
 
 - 型: `オブジェクト`
-
 - デフォルト:
 
   ```js
@@ -295,7 +294,10 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 `dev` または `analyze` モードでは、`splitChunks.name` のデフォルト値は `true` になっています。
 
-Webpack の[最適化](https://webpack.js.org/configuration/optimization/)
+カスタマイズされたプラグインの配列に `minimizer` を設定するか、`minimize` を `false` にすることで全ての minimizer を無効にできます。
+（`minimize` はデフォルトで開発用に無効になっています）
+
+[Webpack の最適化](https://webpack.js.org/configuration/optimization/)を参照してください。
 
 ## parallel
 
