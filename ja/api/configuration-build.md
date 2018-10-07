@@ -58,6 +58,13 @@ module.exports = {
 }
 ```
 
+## cache
+
+- 型: `ブーリアン`
+- デフォルト: `false`
+
+> [uglifyjs-webpack-plugin ](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) と [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) でキャッシュを有効化します。
+
 ## cssSourceMap
 
 - 型: `ブーリアン`
@@ -328,13 +335,6 @@ module.exports = {
 - デフォルト: `false`
 
 webpack のビルドで[thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) を有効にします。 
-
-## cache
-
-- 型: `ブーリアン`
-- デフォルト: `false`
-
-[uglifyjs-webpack-plugin ](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) と [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) でキャッシュを有効化します。
 
 ## styleResources
 
