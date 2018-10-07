@@ -17,7 +17,7 @@ description: router プロパティを使って Nuxt.js のルーターをカス
 例（`nuxt.config.js`）:
 
 ```js
-module.exports = {
+export default {
   router: {
     base: '/app/'
   }
@@ -26,7 +26,7 @@ module.exports = {
 
 <p class="Alert Alert-blue">`base` がセットされているときは Nuxt.js はドキュメントのヘッダーに `<base href="{{ router.base }}"/>` を追加します。</p>
 
-> このオプションは vue-router の [Router コンストラクタ](https://router.vuejs.org/en/api/options.html) に直接付与されます。
+> このオプションは vue-router の [base](https://router.vuejs.org/ja/api/#base) に直接付与されます。
 
 ## extendRoutes
 
@@ -39,7 +39,7 @@ Nuxt.js によって作成されるルーティングを拡張したいことが
 `nuxt.config.js`
 
 ```js
-module.exports = {
+export default {
   router: {
     extendRoutes (routes, resolve) {
       routes.push({
@@ -64,14 +64,14 @@ module.exports = {
 例（`nuxt.config.js`）:
 
 ```js
-module.exports = {
+export default {
   router: {
     linkActiveClass: 'active-link'
   }
 }
 ```
 
-> このオプションは [vue-router の Router コンストラクタ](https://router.vuejs.org/en/api/options.html) に直接付与されます。
+> このオプションは [linkactiveclass](https://router.vuejs.org/ja/api/#linkactiveclass) に直接付与されます。
 
 ## linkExactActiveClass
 
@@ -83,14 +83,14 @@ module.exports = {
 例 (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   router: {
     linkExactActiveClass: 'exact-active-link'
   }
 }
 ```
 
-> このオプションは [vue-router Router constructor](https://router.vuejs.org/en/api/options.html) に直接付与されます.
+> このオプションは [linkexactactiveclass](https://router.vuejs.org/ja/api/#linkexactactiveclass) に直接付与されます.
 
 ## middleware
 
@@ -104,7 +104,7 @@ module.exports = {
 `nuxt.config.js`
 
 ```js
-module.exports = {
+export default {
   router: {
     // すべてのページで middleware/user-agent.js を実行します
     middleware: 'user-agent'
@@ -133,14 +133,14 @@ export default function (context) {
 例（`nuxt.config.js`）:
 
 ```js
-module.exports = {
+export default {
   router: {
     mode: 'hash'
   }
 }
 ```
 
-> このオプションは直接 vue-router の [Router コンストラクタ](https://router.vuejs.org/en/api/options.html) に渡されます。
+> このオプションは直接 vue-router の [mode](https://router.vuejs.org/ja/api/#mode) に渡されます。
 
 ## scrollBehavior
 
@@ -190,7 +190,7 @@ const scrollBehavior = function (to, from, savedPosition) {
 `nuxt.config.js`
 
 ```js
-module.exports = {
+nction (to, from, savedPosition) {
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       return { x: 0, y: 0 }
@@ -199,4 +199,21 @@ module.exports = {
 }
 ```
 
-> このオプションは vue-router の [Router コンストラクタ](https://router.vuejs.org/en/api/options.html) に直接付与されます。
+## parseQuery / stringifyQuery
+
+- Type: `関数`
+
+カスタムクエリ構文解析関数 / 文字列化関数を提供します。デフォルトを上書きします。
+
+> このオプションは vue-router の [parseQuery / stringifyQuery](https://router.vuejs.org/ja/api/#parsequery-stringifyquery) に直接付与されます。
+
+## fallback
+
+- Type: `ブーリアン`
+- Default: `false`
+
+history.pushState がサポートされていないブラウザにおいて、モードが history に設定されているとき、ルーターを hash モードにフォールバックかどうか制御します。
+
+これを false に設定すると、本質的に全ての router-link ナビゲーションが IE9 においてフルページリフレッシュになります。これは、アプリケーションがサーバサイドレンダリングされ、 IE9 で動作する必要がある場合に便利です。なぜなら、サーバーサイドレンダリングではハッシュモードの URL が機能しないためです。
+
+> このオプションは vue-router の [fallback](https://router.vuejs.org/ja/api/#fallback) に直接付与されます。
