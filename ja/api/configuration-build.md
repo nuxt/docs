@@ -245,6 +245,10 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 > 詳細は [url-loader options](https://github.com/webpack-contrib/url-loader#options) を参照してください。
 
+### loaders.pugPlain
+
+> 詳細は [pug-plain-loader](https://github.com/yyx990803/pug-plain-loader) または [Pug compiler options](https://pugjs.org/api/reference.html#options) を参照してください。
+
 ## optimization
 
 - 型: `オブジェクト`
