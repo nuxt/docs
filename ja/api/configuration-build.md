@@ -306,22 +306,6 @@ module.exports = {
 }
 ```
 
-## watch
-
-> 監視や変更後に再生成を行うカスタムファイルを提供することができます。 この機能は[モジュール](/guide/modules)を使用する場合にとりわけ便利です。
-
-- 型: `配列<String>`
-
-```js
-module.exports = {
-  build: {
-    watch: [
-      '~/.nuxt/support.js'
-    ]
-  }
-}
-```
-
 ## profile
 
 - 型: `ブーリアン`
@@ -431,3 +415,19 @@ Webpack の[最適化](https://webpack.js.org/configuration/optimization/)
     ```
 
 [Vue Loader Options](https://vue-loader.vuejs.org/options.html) の指定
+
+## watch
+
+> 監視や変更後に再生成を行うカスタムファイルを提供することができます。 この機能は[モジュール](/guide/modules)を使用する場合にとりわけ便利です。
+
+- 型: `配列<String>`
+
+```js
+module.exports = {
+  build: {
+    watch: [
+      '~/.nuxt/support.js'
+    ]
+  }
+}
+```
