@@ -1,18 +1,18 @@
 ---
 title: 外部認証API (JWT)
-description: Nuxt.jsでjsonwebtokenを使った認証の例
+description: Nuxt.jsでjsonwebtokenを使った外部認証の例
 github: auth-jwt
 code: https://github.com/ahadyekta/nuxt-auth-external-jwt
 ---
 
 # ドキュメント
 
-auth-routesの例では、apiとnuxtの両方を一緒に起動し、1つのNode.jsサーバーインスタンスを使用していました。
-しかし、時にはjsonWebTokenを使って外部APIを使う必要があります。 ここでは簡単に説明します。
+auth-routesの例では、apiとnuxtの両方を同時に起動し、1つのNode.jsサーバーインスタンスを使用していました。
+しかし、時にはjsonWebTokenを使って外部APIを使う必要が出てきます。ここでは簡単に説明します。
 
 ## 仕組み
 
-Nuxt.jsはサーバとクライアントの両方のレンダリングを提供しており、ブラウザのクッキーはNode.jsのサーバサイドのクッキーとは異なるため、トークンのデータを双方からアクセスできる場所に保存する必要があります。
+Nuxt.jsはサーバとクライアントの両方のレンダリングをしており、ブラウザのクッキーはNode.jsのサーバサイドのクッキーとは異なるため、トークンのデータを双方からアクセスできる場所に保存する必要があります。
 
 ### サーバーサイドレンダリングの場合
 
