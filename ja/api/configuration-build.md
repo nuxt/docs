@@ -328,7 +328,7 @@ Terser プラグインのオプションです。 `false` を設定するとこ�
 
 ## optimizeCSS
 
-- 型: `Object` or `Boolean`
+- 型: `オブジェクト` または `ブーリアン`
 - デフォルト:
   - `false`
   - extractCSS が有効の場合は `{}`
@@ -382,7 +382,7 @@ export default {
       'postcss-import': {},
       'postcss-url': {},
       'postcss-preset-env': {},
-      'cssnano': { preset: 'default' } // disabled in dev mode
+      'cssnano': { preset: 'default' } // 開発モードでは無効化されています
     }
   }
   ```
@@ -441,7 +441,7 @@ export default {
 
 > ビルド出力ログの大半を抑制します
 
-- 型: `Boolean`
+- 型: `ブーリアン`
 - デフォルト: [std-env](https://github.com/blindmedia/std-env) によって `CI` または `test` 環境で検出された際に有効になります
 
 ## splitChunks
