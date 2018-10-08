@@ -62,7 +62,7 @@ export default {
 - Type: `Boolean`
 - Default: `false`
 
-> Enable cache of [uglifyjs-webpack-plugin ](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
+> Enable cache of [terser-webpack-plugin ](https://github.com/webpack-contrib/terser-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
 
 ## cssSourceMap
 
