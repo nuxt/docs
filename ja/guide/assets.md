@@ -18,9 +18,9 @@ description: デフォルトでは、Nuxt は vue-loader、file-loader、url-loa
 ----| index.vue
 ```
 
-CSS で `url('~/assets/image.png')` と書いた場合、それは `require('~/assets/image.png')` に変換されます。
+CSS で `url('~assets/image.png')` と書いた場合、それは `require('~/assets/image.png')` に変換されます。
 
-> css-loader のアップグレードにより、Nuxt 2.0 から CSS のデータ型  <url> では、`~assets`（スラッシュなし）を使わなければなりません。例：background: url("~assets/banner.svg")
+> css-loader のアップグレードにより、Nuxt 2.0 から CSS のデータ型 <url> では、`~assets`（スラッシュなし）を使わなければなりません。例：background: url("~assets/banner.svg")
 
 あるいは `pages/index.vue` の中で下記のように書いていたとします:
 
@@ -40,10 +40,10 @@ createElement('img', { attrs: { src: require('~/assets/image.png') }})
 
 file-loader と url-loader を使用する利点:
 
-- `file-loader` では、アセットファイルをコピー・配置する場所と、キャッシュ改善のためにバージョンハッシュを用いてファイル名を指定することができます。
-- `url-loader` では、指定した閾値よりも小さい場合に、Base64 データ URL として条件付きでファイルに埋め込むことができます。これにより、小さなファイルのための HTTP リクエスト数を減らすことができます。もし閾値よりも大きい場合は、file-loader に自動的にフォールバックします。
+- `file-loader` は、アセットファイルをコピー・配置する場所と、キャッシュ改善のためにバージョンハッシュを用いてファイル名を指定することができます。
+- `url-loader` は、指定した閾値よりも小さい場合に、Base64 データ URL として条件付きでファイルに埋め込むことができます。これにより、小さなファイル取得のための HTTP リクエスト数を減らすことができます。もし閾値よりも大きい場合は、file-loader に自動的にフォールバックします。
 
-実際には Nuxt.js のデフォルトアセットローダーの設定は次のようになっています:
+実際に、Nuxt.js のデフォルトアセットローダーの設定は次のようになっています:
 
 ```js
 [
@@ -86,7 +86,7 @@ file-loader と url-loader を使用する利点:
 
 ## 静的
 
-`assets` ディレクトリから webpack されたアセットを使いたくない場合は、プロジェクトのルートディレクトリに `static` ディレクトリを作成して利用することができます。
+`assets` ディレクトリにある webpack されたアセットを使いたくない場合は、プロジェクトのルートディレクトリに `static` ディレクトリを作成して利用することができます。
 
 これらのファイルは Nuxt によって自動的に提供され、プロジェクトのルートURLからアクセスできます。
 
