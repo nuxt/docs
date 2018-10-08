@@ -12,7 +12,7 @@ To get started quickly, the Nuxt.js team has created scaffolding tool [create-nu
 Make sure you have [npx](https://www.npmjs.com/package/npx) installed (`npx` is shipped by default since NPM `5.2.0`)
 
 ```bash
-$ npx create-nuxt-app <project-name>
+$ npm create-nuxt-app <project-name>
 ```
 
 Or with [yarn](https://yarnpkg.com/en/):
