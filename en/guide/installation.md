@@ -38,6 +38,7 @@ It will ask you some questions:
   - [Bulma](https://github.com/jgthms/bulma)
   - [Tailwind](https://github.com/tailwindcss/tailwindcss)
   - [Element UI](https://github.com/ElemeFE/element)
+  - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
 3. The Nuxt mode you want (`Universal` or `SPA`)
 4. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.

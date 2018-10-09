@@ -38,6 +38,7 @@ $ yarn create nuxt-app <项目名>
   - [Bulma](https://github.com/jgthms/bulma)
   - [Tailwind](https://github.com/tailwindcss/tailwindcss)
   - [Element UI](https://github.com/ElemeFE/element)
+  - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
 3. 选择你想要的Nuxt模式 (`Universal` or `SPA`)
 4. 添加 [axios module](https://github.com/nuxt-community/axios-module) 以轻松地将HTTP请求发送到您的应用程序中。
