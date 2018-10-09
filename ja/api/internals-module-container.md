@@ -78,3 +78,12 @@ this.plugin('ready', async moduleContainer => {
 ### requireModule (moduleOpts)
 
 `addModule(moduleOpts, true)` の短縮形です。
+
+## フック
+
+特定のライフサイクルイベントでのフックを登録できます。
+
+フック                      | 引数                  | タイミング
+--------------------------|----------------------------|--------------------------------------------------------------------------------------
+ `modules:before`         | (moduleContainer, options) | ModuleContainer クラスが作られる前に呼ばれ、メソッドとオプションのオーバーロードに役立ちます。
+ `modules:done`           | (moduleContainer)          | すべてのモジュールがロードされたときに呼ばれます。
