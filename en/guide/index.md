@@ -53,7 +53,7 @@ Under the hood we use [webpack](https://github.com/webpack/webpack) with [vue-lo
 
 ## Schema
 
-This schema shows what is called by Nuxt.js when the server is called or when the user navigate through the app via `<nuxt-link>`:
+This schema shows what is called by Nuxt.js when the server is called or when the user navigates through the app via `<nuxt-link>`:
 
 ![nuxt-schema](/nuxt-schema.png)
 
@@ -107,6 +107,6 @@ We don't want to manually generate the application every time we update the [doc
 
 We now have an automated **Static Generated Web Application** :)
 
-We can go further by thinking of an e-commerce web application made with `nuxt generate` and hosted on a CDN. Everytime a product is out of stock or back in stock, we regenerate the web app. But if the user navigates through the web app in the meantime, it will be up to date thanks to the API calls made to the e-commerce API. No need to have multiple instances of a server + a cache anymore!
+We can go further by thinking of an e-commerce web application made with `nuxt generate` and hosted on a CDN. Every time a product is out of stock or back in stock, we regenerate the web app. But if the user navigates through the web app in the meantime, it will be up to date thanks to the API calls made to the e-commerce API. No need to have multiple instances of a server + a cache any more!
 
 <div class="Alert">See [How to deploy on Netlify?](/faq/netlify-deployment) for more details on how to deploy to Netlify.</div>
