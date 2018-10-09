@@ -36,17 +36,18 @@ this.plugin('ready', async moduleContainer => {
 
 ### addVendor (vendor)
 
-`options.build.vendor` に追加し、一意なフィルターを適用します。
+**`vendor` は非推奨です**
 
+`options.build.vendor` に追加し、一意なフィルターを適用します。
 
 ### addTemplate (template)
 
-- **テンプレート**: `String` または `Object`
+- **テンプレート**: `文字列` または `オブジェクト`
     - `src`
     - `options`
     - `fileName`
 
-与えられたテンプレートをプロジェクトの `buildDir` (`.nuxt`) に [lodash template](https://lodash.com/docs/4.17.4#template) を使ってビルド時にレンダリングします。
+ビルド時に、[lodash template](https://lodash.com/docs/4.17.4#template) を使って、与えられたテンプレートをプロジェクトの `buildDir` (`.nuxt`) にレンダリングします。
 
 `fileName` を与えない、または `template` が文字列の場合、ファイル名はデフォルトで `[dirName].[fileName].[pathHash].[ext]` となります。
 
@@ -54,7 +55,7 @@ this.plugin('ready', async moduleContainer => {
 
 ### addPlugin (template)
 
-`addTemplate` をでプラグインを登録し、`plugins[]` オプションの先頭に追加します。
+`addTemplate` でプラグインを登録し、`plugins[]` オプションの先頭に追加します。
 
 `template.ssr: false` を使って SSR バンドルを含むプラグインを無効化することができます。
 
@@ -72,7 +73,7 @@ this.plugin('ready', async moduleContainer => {
 
 ### addModule (moduleOpts, requireOnce)
 
-モジュールを登録します。`moduleOpts` は文字列または `[src, options]` です。`requireOnce` が `true` の場合、解決されたモジュールがエクスポートする `meta` が同じモジュールの登録を回避します。
+モジュールを登録します。`moduleOpts` は文字列または `[src, options]` です。`requireOnce` が `true` で解決されたモジュールが`meta` をエクスポートしている場合に、同じモジュールを二度登録するのを回避します。
 
 ### requireModule (moduleOpts)
 
