@@ -62,7 +62,7 @@ export default {
 - 型: `ブーリアン`
 - デフォルト: `false`
 
-> [uglifyjs-webpack-plugin ](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) と [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) でキャッシュを有効化します。
+> [uglifyjs-webpack-plugin](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) と [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) でキャッシュを有効化します。
 
 ## cssSourceMap
 
@@ -342,7 +342,7 @@ OptimizeCSSAssets プラグインのオプションです。.
 - 型: `ブーリアン`
 - デフォルト: `false`
 
-webpack のビルドで[thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) を有効にします。 
+webpack のビルドで[thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) を有効にします。
 
 ## plugins
 
@@ -502,7 +502,7 @@ Nuxt.js はこの動作を実現するために https://github.com/yenshih/style
 
 ## templates
 
-> Nuxt.jsでは、設定に基づいてレンダリングされる独自のテンプレートを提供できます。 この機能は[モジュール](/guide/modules)を使用する場合にとりわけ便利です。
+> Nuxt.js では、設定に基づいてレンダリングされる独自のテンプレートを提供できます。この機能は[モジュール](/guide/modules)を使用する場合にとりわけ便利です。
 
 - 型: `配列`
 
@@ -556,7 +556,7 @@ export default {
 
 ## watch
 
-> 監視や変更後に再生成を行うカスタムファイルを提供することができます。 この機能は[モジュール](/guide/modules)を使用する場合にとりわけ便利です。
+> 監視や変更後に再生成を行うカスタムファイルを提供することができます。この機能は[モジュール](/guide/modules)を使用する場合にとりわけ便利です。
 
 - 型: `配列<String>`
 
