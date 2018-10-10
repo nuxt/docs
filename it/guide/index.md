@@ -1,42 +1,42 @@
+﻿---
+title: Introduzione
+descrizione: "Nuxt.js è un framework nato per la creazione di applicazioni in Vue, dove puoi scegliere tra 3 tipi di applicazioni :  Universal, Static Generated oppure Single Page application."
 ---
-title: Introduction
-description: "Nuxt.js is a Framework for creating Vue Applications, you can choose between Universal, Static Generated or Single Page application."
----
 
-> Nuxt.js is a framework for creating Vue.js applications, you can choose between Universal, Static Generated or Single Page application.
+> Nuxt.js è un framework nato per la creazione di applicazioni in Vue, dove puoi scegliere tra 3 tipi di applicazioni :  Universal, Static Generated oppure Single Page application.
 
-## What is Nuxt.js?
+## Cos'è Nuxt.js?
 
-Its main scope is **UI rendering** while abstracting away the client/server distribution.
+Il suo scopo principale è l'  **UI rendering** (rendering dell'interfaccia utente) allontanandosi dalla distribuzione client/server.
 
-Our goal is to create a framework flexible enough that you can use it as a main project base or in addition to your current project based on Node.js.
+Il nostro obiettivo è quello di creare un framework flessibile abbastanza da poterlo usare come base per il tuo progetto principale, o in aggiunta a quel che già stai usando su Node.js.
 
-Nuxt.js presets all the configuration needed to make your development of a Vue.js Application **Server Rendered** more enjoyable.
+Nuxt.js imposta tutta la configurazione necessaria allo sviluppo di una applicazione Vue.js  **Renderizzata dal Server** in modo che l'utilizzo sia più piacevole.
 
-In addition, we also provide another deployment option called: *nuxt generate*. It will build a **Static Generated** Vue.js Application.
-We believe that option could be the next big step in the development of Web Applications with microservices.
+In aggiunta, forniamo in oltre un'altra opzione di deploy chiamata: *nuxt generate*. Ciò permetterà il build di un'Applicazione Vue.js **Generata Statica**.
+Noi crediamo che ciò possa essere il prossimo grande passo per lo sviluppo di Applicazioni Web a microservizi.
 
-Futhermore, you can also use Nuxt.js to create single page applications (`spa` mode) quickly, useful to keep Nuxt features while working on backoffice applications.
+Inoltre, puoi comunque usare Nuxt.js per creare velocemente delle **Single Page Application** (`spa`) ,utile per avere le funzionalità di Nuxt.js mentre si lavora ad applicazioni di "Back Office" .
 
-As a framework, Nuxt.js comes with a lot of features to help you in your development between the client side and the server side such as Asynchronous Data, Middleware, Layouts, etc.
+Come Framework, Nuxt.js arriva con una serie di funzionalità che possono aiutarti nello sviluppo tra client e server, come Dati Asincroni, Middleware, Layouts etc..
 
-## How it Works
+## Come Funziona
 
-![Vue with webpack and Babel](https://i.imgur.com/avEUftE.png)
+![Vue con Webpack e Babel](https://i.imgur.com/avEUftE.png)
 
-Nuxt.js includes the following to create a rich web application development:
+Nuxt.js include tutto ciò che segue al suo interno, per lo sviluppo di un' applicazione web corposa:
 
 - [Vue 2](https://vuejs.org/)
 - [Vue Router](https://router.vuejs.org/en/)
-- [Vuex](https://vuex.vuejs.org/en/) (included only when using the [store option](/guide/vuex-store))
-- [Vue Server Renderer](https://ssr.vuejs.org/en/) (excluded when using [`mode: 'spa'`](/api/configuration-mode))
+- [Vuex](https://vuex.vuejs.org/en/) (incluso solo quando si utilizza la [store option](/guide/vuex-store))
+- [Vue Server Renderer](https://ssr.vuejs.org/en/) (escluso quando si utilizza [`mode: 'spa'`](/api/configuration-mode))
 - [vue-meta](https://github.com/declandewet/vue-meta)
 
-A total of only **57kB min+gzip** (60kB with Vuex).
+Per un totale di soli **57kB min+gzip** (60kB con Vuex).
 
-Under the hood we use [webpack](https://github.com/webpack/webpack) with [vue-loader](https://github.com/vuejs/vue-loader) and [babel-loader](https://github.com/babel/babel-loader) to bundle, code-split and minify your code.
+"Sotto al cofano" è utilizzato [webpack](https://github.com/webpack/webpack) assieme a [vue-loader](https://github.com/vuejs/vue-loader) e [babel-loader](https://github.com/babel/babel-loader) per il bundle, la divisione del codice e la "miniaturizzazione" di esso.
 
-## Features
+## Funzionalità
 
 - Write Vue Files (`*.vue`)
 - Automatic Code Splitting
