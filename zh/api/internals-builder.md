@@ -5,11 +5,11 @@ description: Nuxt `Builder` Class
 
 # Builder Class
 
-- Source: **[builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)**
+- 来源: **[builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)**
 
 ## Hooks
 
-We can register hooks on certain life cycle events.
+我们可以在某些生命周期事件中注册钩子。
 
 ```js
 // Add hook for build
@@ -20,9 +20,9 @@ this.nuxt.hook('build:done', (builder) => {
 
 Hook                 | Arguments                                  | When
 ---------------------|--------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------
-`build:before`       | (nuxt, buildOptions)                       | Before Nuxt build started
-`build:templates`    | ({ templateFiles, templateVars, resolve }) | Generating `.nuxt` template files
-`build:extendRoutes` | (routes, resolve)                          | Generating routes
-`build:compile`      | ({ name, compiler })                       | Before webpack compile (compiler is a webpack `Compiler` instance), if universal mode, called twice with name `'client'` and `'server'`
-`build:compiled`     | ({ name, compiler, stats })                | webpack build finished
-`build:done`         | (nuxt)                                     | Nuxt build finished
+`build:before`       | (nuxt, buildOptions)                       | 在Nuxt构建开始之前
+`build:templates`    | ({ templateFiles, templateVars, resolve }) | 生成`.nuxt`模板文件
+`build:extendRoutes` | (routes, resolve)                          | 生成 路由
+`build:compile`      | ({ name, compiler })                       | 在webpack编译之前（编译器是webpack`编译器`实例），如果是通用模式，则调用两次名称为`'client'`和`'server'`
+`build:compiled`     | ({ name, compiler, stats })                | webpack构建完成
+`build:done`         | (nuxt)                                     | Nuxt构建完成
