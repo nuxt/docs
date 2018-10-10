@@ -38,46 +38,46 @@ Per un totale di soli **57kB min+gzip** (60kB con Vuex).
 
 ## Funzionalità
 
-- Write Vue Files (`*.vue`)
-- Automatic Code Splitting
-- Server-Side Rendering
-- Powerful Routing System with Asynchronous Data
-- Static File Serving
-- ES6/ES7 Transpilation
-- Bundling and minifying of your JS & CSS
-- Managing `<head>` element (`<title>`, `<meta>`, etc.)
-- Hot module replacement in Development
+- Scrittura di File Vue (`*.vue`)
+- Suddivisione Automatica del codice
+- Rendering Server-Side 
+- Sistema di routing  di Dati Asincroni
+- Serving di file statici
+- Compilazione ES6/ES7 
+- Raggruppamento and miniaturizzazione di JS & CSS
+- Gestione del contenuto in `<head>`(`<title>`, `<meta>`, etc.)
+- Hot reloading in Sviluppo
 - Pre-processor: Sass, Less, Stylus, etc.
 - HTTP/2 push headers ready
-- Extending with Modular architecture
+- Estensione con architetture modulari
 
 ## Schema
 
-This schema shows what is called by Nuxt.js when the server is called or when the user navigates through the app via `<nuxt-link>`:
+Questo schema mostra cosa è chiamato da Nuxt.js quando viene effettuata una chiamata al server o quando l'utente naviga tramite le pagine via `<nuxt-link>`:
 
 ![nuxt-schema](/nuxt-schema.png)
 
 ## Server Rendered (Universal SSR)
 
-You can use Nuxt.js as a framework to handle all the UI rendering of your project.
+Puoi usare Nuxt.js come un framework per gestire il rendering dell' UI del tuo progetto.
 
-When launching `nuxt`, it will start a development server with hot-reloading and [Vue Server Renderer](https://ssr.vuejs.org/en/) configured to automatically server-render your application.
+Lanciando il comando`nuxt`, si avvierà un server di sviluppo con l' hot-reloading attivo e il  [Vue Server Renderer](https://ssr.vuejs.org/en/) configurato per renderizzare automaticamente server-side la tua applicazione.
 
 ### Single Page Applications (SPA)
 
-If, for any reason, you prefer not to use server side rendering or need static hosting for your applications, you can simply use SPA mode using `nuxt --spa`. In combination with the *generate* feature, it gives you a powerful SPA deployment mechanism without the need to use a Node.js runtime or any special server handling.
+Se, per qualsiasi ragione, tu preferissi di non utilizzare il rendering server-side oppure avessi bisogno di un hosting statico per la tua applicazione, puoi semplicemente utilizzare la modalità SPA  lanciando il comando `nuxt --spa`. Combinato con la funzionalità *generate*, ti fornirà un potente meccanismo di produzione di Single Page Applications senza la necessità di utilizzare Node.js a runtime o qualche specifica gestione del server.
 
-Take a look at [the commands](/guide/commands) to learn more about usage.
+Dai un'occhiata  [ai comandi](/guide/commands) per saperne di più a riguardo.
 
-If you already have a server, you can plug Nuxt.js by using it as a middleware. There is no restriction at all when using Nuxt.js for developing your Universal Web Applications. See the [Using Nuxt.js Programmatically](/api/nuxt) guide.
+Se tu hai già un server, puoi aggiungere Nuxt.js usandolo come middleware. Non ci sono restrizioni quando lo si usa per l'utilizzo Nuxt.js per lo sviluppo di Universal Web Applications. Vedi la la seguente guida :  [Using Nuxt.js Programmatically](/api/nuxt).
 
-## Static Generated (Pre Rendering)
+## Generato Statico (Pre Rendering)
 
-The big innovation of Nuxt.js comes with the `nuxt generate` command.
+La grande innovazione di Nuxt.js arriva con il comando `nuxt generate`.
 
-When building your application, it will generate the HTML for every one of your routes and store it in a file.
+Quando fai il build della tua applicazione, verrà generato l'HTML  per ognuna delle tue rotte e memorizzato in un file.
 
-For example, the following file structure:
+Per esempio, vedi la seguente struttura:
 
 ```bash
 -| pages/
@@ -85,7 +85,7 @@ For example, the following file structure:
 ----| index.vue
 ```
 
-Will generate:
+Genererà:
 
 ```
 -| dist/
@@ -94,19 +94,19 @@ Will generate:
 ----| index.html
 ```
 
-With this, you can host your generated web application on any static hosting!
+Attraverso ciò, puoi hostare il tuo sito web, anche su un hosting statico!
 
-The best example is this website. It is generated and hosted on [Netlify](https://www.netlify.com), see our [source code](https://github.com/nuxt/nuxtjs.org).
+Il migliore esempio è questo sito web. è generato e hostato su [Netlify](https://www.netlify.com), Vedi il [codice sorgente](https://github.com/nuxt/nuxtjs.org).
 
-We don't want to manually generate the application every time we update the [docs repository](https://github.com/nuxt/docs), it triggers a hook to Netlify which:
+Noi non vogliamo generare manualmente l'applicazione ogni volta che c'è un aggiornamento a [docs repository](https://github.com/nuxt/docs), esso avviserà Netlify che in automatico:
 
-1. Clones the [nuxtjs.org repository](https://github.com/nuxt/nuxtjs.org)
-2. Installs the dependencies via `npm install`
-3. Runs `npm run generate`
-4. Serves the `dist` directory
+1. Clona il [repository nuxtjs.org](https://github.com/nuxt/nuxtjs.org)
+2. Installa le dipendenze attraverso `npm install`
+3. Lancia il comando `npm run generate`
+4. Serve la directory` dist` 
 
-We now have an automated **Static Generated Web Application** :)
+Noi così abbiamo quindi una  **Web application generata, statica** :)
 
-We can go further by thinking of an e-commerce web application made with `nuxt generate` and hosted on a CDN. Every time a product is out of stock or back in stock, we regenerate the web app. But if the user navigates through the web app in the meantime, it will be up to date thanks to the API calls made to the e-commerce API. No need to have multiple instances of a server + a cache any more!
+Si può pensare oltre, ad esempio a una web app di e-commerce fatta con  `nuxt generate` e hostata su di una CDN. Ogni volta che un prodotto è terminato o disponibile in magazzino, verrà rigenerata la web app. Ma se l'utente navigasse attraverso la web app contemporaneamente,avrà tutto aggiornato grazie alle chiamate alle API dell'e-commerce .Non c'è più bisogno di avere istanze multiple su di un server combinate con un sistema di caching!
 
-<div class="Alert">See [How to deploy on Netlify?](/faq/netlify-deployment) for more details on how to deploy to Netlify.</div>
+<div class="Alert">Vedi la guida [How to deploy on Netlify?](/faq/netlify-deployment) per maggiori informazioni su come eseguire un deploy su Netlify.</div>
