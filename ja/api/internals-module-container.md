@@ -73,7 +73,7 @@ this.plugin('ready', async moduleContainer => {
 
 ### addModule (moduleOpts, requireOnce)
 
-モジュールを登録します。`moduleOpts` は文字列または `[src, options]` です。`requireOnce` が `true` で解決されたモジュールが`meta` をエクスポートしている場合に、同じモジュールを二度登録するのを回避します。
+モジュールを登録します。`moduleOpts` は文字列または `[src, options]` です。`requireOnce` が `true` で解決されたモジュールが `meta` をエクスポートしている場合に、同じモジュールを二度登録するのを回避します。
 
 ### requireModule (moduleOpts)
 
