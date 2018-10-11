@@ -190,7 +190,7 @@ export default {
 
 ### 模块文件
 
-您可以将模块文件分解为单独的文件：`state.js`,`actions.js`,`mutations.jd`和`getters.js`。如果您使用`inxt.js`来维护`state`,`getters`,`actions`和`mutations`，同时具有单个单独的操作文件，那么仍然可以正确识别该文件。
+您可以将模块文件分解为单独的文件：`state.js`,`actions.js`,`mutations.jd`和`getters.js`。如果您使用`index.js`来维护`state`,`getters`,`actions`和`mutations`，同时具有单个单独的操作文件，那么仍然可以正确识别该文件。
 
 ### 插件
 
