@@ -190,6 +190,8 @@ See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware
 }
 ```
 
+**Attention:** If you make changes to `html.minify`, they won't be merged with the defaults!
+
 Configuration for the [html-minifier](https://github.com/kangax/html-minifier) plugin used to minify
 HTML files created during the build process (will be applied for *all modes*).
 
