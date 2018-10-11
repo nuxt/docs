@@ -36,7 +36,7 @@ this.plugin('ready', async moduleContainer => {
 
 ### addVendor (vendor)
 
-**`vendor` は非推奨です**
+**`vendor` は使われなくなったため非推奨です**
 
 `options.build.vendor` に追加し、一意なフィルターを適用します。
 
@@ -47,7 +47,7 @@ this.plugin('ready', async moduleContainer => {
     - `options`
     - `fileName`
 
-ビルド時に、[lodash template](https://lodash.com/docs/4.17.4#template) を使って、与えられたテンプレートをプロジェクトの `buildDir` (`.nuxt`) にレンダリングします。
+プロジェクトの `buildDir` (`.nuxt`) へのビルド中に、[lodash template](https://lodash.com/docs/4.17.4#template) を使って与えられたテンプレートをレンダリングします。
 
 `fileName` を与えない、または `template` が文字列の場合、ファイル名はデフォルトで `[dirName].[fileName].[pathHash].[ext]` となります。
 
