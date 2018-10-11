@@ -179,20 +179,12 @@ See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware
 ```js
 {
   collapseBooleanAttributes: true,
-  collapseWhitespace: false,
   decodeEntities: true,
   minifyCSS: true,
   minifyJS: true,
   processConditionalComments: true,
-  removeAttributeQuotes: false,
-  removeComments: false,
   removeEmptyAttributes: true,
-  removeOptionalTags: false,
   removeRedundantAttributes: true,
-  removeScriptTypeAttributes: false,
-  removeStyleLinkTypeAttributes: false,
-  removeTagWhitespace: false,
-  sortClassName: false,
   trimCustomFragments: true,
   useShortDoctype: true
 }
