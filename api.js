@@ -10,6 +10,20 @@ const { resolve } = require('path')
 const githubHook = require('./gh-hook')
 const readFile = pify(fs.readFile)
 const send = micro.send
+const op = require('openport');
+let openPort;
+op.find(
+  {
+    startingPort: 1000,
+    endingPort: 7777,
+    avoid: [ 3000 ]
+  },
+  (err, port) => {
+    if(err) { console.log(err); return; }
+    openPort = port;
+    // yea! we have an open port between 1024 and 2000, but not port 1025 or 1500.
+  }
+);
 
 // Use highlight.js for code blocks
 const renderer = new marked.Renderer()
@@ -230,7 +244,7 @@ module.exports = getFiles()
   if (process.env.NODE_ENV !== 'production') {
     watchFiles()
   }
-  const port = process.env.PORT || 4000
+  const port = process.env.PORT || openPort
   server.listen(port)
   console.log(`Server listening on localhost:${port}`)
   return server
