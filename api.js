@@ -21,7 +21,6 @@ op.find(
   (err, port) => {
     if(err) { console.log(err); return; }
     openPort = port;
-    // yea! we have an open port between 1024 and 2000, but not port 1025 or 1500.
   }
 );
 
