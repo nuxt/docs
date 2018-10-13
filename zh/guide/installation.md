@@ -1,36 +1,58 @@
 ---
-title: 安装
-description: Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt` 添加为依赖组件即可。
+title: "安装"
+description: "Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt` 添加为依赖组件即可。"
 ---
 
 > Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt` 添加为依赖组件即可。
 
-## 新手模板
+## 运行 create-nuxt-app
 
-为了便于大家快速使用，Nuxt.js提供了一个 [starter 模板](https://github.com/nuxt-community/starter-template)。
+为了快速入门，Nuxt.js团队创建了脚手架工具 [create-nuxt-app](https://github.com/nuxt/create-nuxt-app)。
 
-[下载模板的压缩包](https://github.com/nuxt-community/starter-template/archive/master.zip) 或利用 `vue-cli` 安装使用：
-
-```bash
-$ vue init nuxt-community/starter-template <project-name>
-```
-
-> 如果 [vue-cli](https://github.com/vuejs/vue-cli) 没有安装, 需先通过 `npm install -g vue-cli` 来安装。
-
-然后安装依赖包：
+确保安装了npx（npx在NPM版本5.2.0默认安装了）：
 
 ```bash
-$ cd <project-name>
-$ npm install
+$ npx create-nuxt-app <项目名>
 ```
 
-接着通过以下命令启动项目：
+或者用yarn ：
+
+```bash
+$ yarn create nuxt-app <项目名>
+```
+
+它会让你进行一些选择:
+
+1. 在集成的服务器端框架之间进行选择:
+  - None (Nuxt默认服务器)
+  - [Express](https://github.com/expressjs/express)
+  - [Koa](https://github.com/koajs/koa)
+  - [Hapi](https://github.com/hapijs/hapi)
+  - [Feathers](https://github.com/feathersjs/feathers)
+  - [Micro](https://github.com/zeit/micro)
+  - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
+2. 选择您喜欢的UI框架:
+  - None (无)
+  - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
+  - [Vuetify](https://github.com/vuetifyjs/vuetify)
+  - [Bulma](https://github.com/jgthms/bulma)
+  - [Tailwind](https://github.com/tailwindcss/tailwindcss)
+  - [Element UI](https://github.com/ElemeFE/element)
+  - [Buefy](https://buefy.github.io)
+3. 选择你想要的Nuxt模式 (`Universal` or `SPA`)
+4. 添加 [axios module](https://github.com/nuxt-community/axios-module) 以轻松地将HTTP请求发送到您的应用程序中。
+5. 添加 [EsLint](https://eslint.org/) 以在保存时代码规范和错误检查您的代码。
+5. 添加 [Prettier](https://prettier.io/) 以在保存时格式化/美化您的代码。
+
+当运行完时，它将安装所有依赖项，因此下一步是启动项目:
+
 ```bash
 $ npm run dev
 ```
-应用现在运行在 http://localhost:3000
 
-<p class="Alert">注意：Nuxt.js 会监听 `pages` 目录中的文件变更并自动重启， 当添加新页面时没有必要手工重启应用。</p>
+应用现在运行在 http://localhost:3000 上运行。
+
+<p class="Alert">注意：Nuxt.js 会监听 `pages` 目录中的文件更改，因此在添加新页面时无需重新启动应用程序。</p>
 
 了解模板项目的目录结构： [目录结构](/guide/directory-structure)。
 
@@ -43,7 +65,7 @@ $ mkdir <项目名>
 $ cd <项目名>
 ```
 
-*提示: 将 项目名 替换成为你想创建的实际项目名*
+<p class="Alert Alert--nuxt-green"><b>提示:</b> 将 <code>&lt;项目名&gt;</nom-du-projet></code> 替换成为你想创建的实际项目名。</p>
 
 ### 新建 package.json 文件
 
@@ -85,8 +107,8 @@ $ mkdir pages
 ```bash
 $ npm run dev
 ```
-Bingo！现在我们的应用运行在 http://localhost:3000
+现在我们的应用运行在 http://localhost:3000 上运行。
 
-<p class="Alert">注意：Nuxt.js 会监听 `pages` 目录中的文件变更并自动重启， 当添加新页面时没有必要手工重启应用。</p>
+<p class="Alert">注意：Nuxt.js 会监听 `pages` 目录中的文件更改，因此在添加新页面时无需重新启动应用程序。</p>
 
 了解更多关于Nuxt.js应用的目录结构： [目录结构](/guide/directory-structure)。

@@ -13,7 +13,7 @@ description: Nuxt.js lets you customize runtime options for rendering pages
 > Use this option to customize vue SSR bundle renderer. This option is skipped for spa mode.
 
 ```js
-module.exports = {
+export default {
   render: {
     bundleRenderer: {
       directives: {
@@ -37,11 +37,15 @@ To disable etag for pages set `etag: false`
 
 See [etag](https://www.npmjs.com/package/etag) docs for possible options.
 
-### gzip
+### compressor
 - Type `Object`
   - Default: `{ threshold: 0 }`
 
-See [compression](https://www.npmjs.com/package/compression) docs for possible options.
+When providing an object (or a falsy value), the [compression](https://www.npmjs.com/package/compression) middleware
+will be used (with respective options).
+
+If you want to use your own compression middleware, you can reference it
+directly (f.ex. `otherComp({ myOptions: 'example' })`).
 
 ### http2
 - Type `Object`
@@ -55,7 +59,7 @@ Activate HTTP2 push headers.
 
 > Adds `prefetch` and `preload` links for faster initial page load time.
 
-You may want to only disable this option if have many pages and routes. 
+You may want to only disable this option if have many pages and routes.
 
 ## ssr
 - Type: `boolean`
@@ -63,12 +67,20 @@ You may want to only disable this option if have many pages and routes.
 
 > Enable SSR rendering
 
-This option is automatically set based on `mode` value if not provided. 
+This option is automatically set based on `mode` value if not provided.
 This can be useful to dynamically enable/disable SSR on runtime after image builds. (With docker for example)
 
 ## static
 - Type: `Object`
   - Default: `{}`
+
+See [serve-static](https://www.npmjs.com/package/serve-static) docs for possible options.
+
+## dist
+- Type: `Object`
+  - Default: `{ maxAge: '1y', index: false }`
+
+The options used for serving distribution files. Only applicable in production.
 
 See [serve-static](https://www.npmjs.com/package/serve-static) docs for possible options.
 

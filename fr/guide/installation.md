@@ -15,7 +15,7 @@ Afin de démarrer rapidement, l'équipe Nuxt.js a créé un [template de démarr
 $ vue init nuxt-community/starter-template <project-name>
 ```
 
-> Si [vue-cli](https://github.com/vuejs/vue-cli) n'est pas installée, merci de l'installer via `npm install -g vue-cli`
+> Si [Vue CLI](https://github.com/vuejs/vue-cli) n'est pas installée, merci de l'installer via `npm install -g @vue/cli @vue/cli-init`
 
 puis installez les dépendances :
 

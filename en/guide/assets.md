@@ -18,9 +18,9 @@ For example, we have this file tree:
 ----| index.vue
 ```
 
-In your CSS, if you use `url('~/assets/image.png')`, it will be translated into `require('~/assets/image.png')`.
+In your CSS, if you use `url('~assets/image.png')`, it will be translated into `require('~/assets/image.png')`.
 
-> Note that `~assets` (without a slash) won't work because `~` is a special indicator in `css-loader` and will be resolved to [modules](https://github.com/css-modules/css-modules).
+> Note that starting from Nuxt 2.0 due to css-loader upgradation you should use `~assets` (without a slash) in <url> CSS data type, e.g., background: url("~assets/banner.svg")
 
 Or if in your `pages/index.vue` you use:
 

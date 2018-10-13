@@ -26,7 +26,7 @@ If you deployed `dist` folder without adding [router base](https://nuxtjs.org/ap
 To fix the issue we need to add [router base](https://nuxtjs.org/api/configuration-router/#base) configuration in `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   router: {
     base: '/<repository-name>/'
   }
@@ -46,7 +46,7 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   }
 } : {}
 
-module.exports = {
+export default {
   ...routerBase
 }
 ```

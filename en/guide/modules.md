@@ -9,7 +9,7 @@ description: Modules are Nuxt.js extensions which can extend its core functional
 
 While developing production-grade applications with Nuxt, you soon discover that the framework's core functionality is not enough. Nuxt can be extended with configuration options and plugins, but maintaining these customizations across multiple projects is tedious, repetitive and time-consuming. On the other hand, supporting every project's needs out of the box would make Nuxt very complex and hard to use.
 
-This is why Nuxt provides a higher-order module system that makes it easy to extend the core. Modules are simply **functions** that are called sequentially when booting Nuxt. The framework waits for each module to finish before continuing. In this way, modules can customize almost any aspect of Nuxt. Thanks to Nuxt's modular design (based on webpack's [Tapable](https://github.com/webpack/tapable)), modules can easily register hooks for certain entry points like builder initialization. Modules can also override templates, configure webpack loaders, add CSS libraries, and perform any of a number of other useful tasks. 
+This is why Nuxt provides a higher-order module system that makes it easy to extend the core. Modules are simply **functions** that are called sequentially when booting Nuxt. The framework waits for each module to finish before continuing. In this way, modules can customize almost any aspect of Nuxt. Thanks to Nuxt's modular design (based on webpack's [Tapable](https://github.com/webpack/tapable)), modules can easily register hooks for certain entry points like builder initialization. Modules can also override templates, configure webpack loaders, add CSS libraries, and perform any of a number of other useful tasks.
 
 Best of all, Nuxt modules can be incorporated into npm packages. This makes them easy to reuse across projects and to share with the Nuxt community, helping create an ecosystem of high-quality Nuxt add-ons.
 
@@ -29,7 +29,7 @@ As already mentioned modules are just simple functions. They can be packaged as 
 **modules/simple.js**
 
 ```js
-module.exports = function SimpleModule (moduleOptions) {
+export default function SimpleModule (moduleOptions) {
   // Write your code here
 }
 
@@ -60,7 +60,7 @@ This line is **required** if you are publishing module as an npm package. Nuxt i
 **nuxt.config.js**
 
 ```js
-module.exports = {
+export default {
   modules: [
     // Simple usage
     '~/modules/simple'
@@ -82,9 +82,9 @@ Not all modules will do everything synchronous. For example you may want to deve
 <p class="Alert Alert--orange">Be aware that `async`/`await` is only supported in Node.js > 7.2. So if you are a module developer at least warn users about that if using them. For heavily async modules or better legacy support you can use either a bundler to transform it for older Node.js compatibility or a promise method.</p>
 
 ```js
-const fse = require('fs-extra')
+import fse from 'fs-extra'
 
-module.exports = async function asyncModule() {
+export default async function asyncModule() {
   // You can do async works here using `async`/`await`
   let pages = await fse.readJson('./pages.json')
 }
@@ -93,9 +93,9 @@ module.exports = async function asyncModule() {
 ### Return a Promise
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
-module.exports = function asyncModule() {
+export default function asyncModule() {
   return axios.get('https://jsonplaceholder.typicode.com/users')
     .then(res => res.data.map(user => '/users/' + user.username))
     .then(routes => {
@@ -107,9 +107,9 @@ module.exports = function asyncModule() {
 ### Use callbacks
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
-module.exports = function asyncModule(callback) {
+export default function asyncModule(callback) {
   axios.get('https://jsonplaceholder.typicode.com/users')
     .then(res => res.data.map(user => '/users/' + user.username))
     .then(routes => {
@@ -128,7 +128,7 @@ Sometimes it is more convenient if we can use top level options while registerin
 **nuxt.config.js**
 
 ```js
-module.exports = {
+export default {
   modules: [
     '@nuxtjs/axios'
   ],
@@ -144,7 +144,7 @@ module.exports = {
 **module.js**
 
 ```js
-module.exports = function (moduleOptions) {
+export default function (moduleOptions) {
   const options = Object.assign({}, this.options.axios, moduleOptions)
   // ...
 }
@@ -166,9 +166,9 @@ Vue.use(BootstrapVue)
 **module.js**
 
 ```js
-const path = require('path')
+import path from 'path'
 
-module.exports = function nuxtBootstrapVue (moduleOptions) {
+export default function nuxtBootstrapVue (moduleOptions) {
   // Register `plugin.js` template
   this.addPlugin(path.resolve(__dirname, 'plugin.js'))
 }
@@ -192,9 +192,9 @@ ga('create', '<%= options.ua %>', 'auto')
 **module.js**
 
 ```js
-const path = require('path')
+import path from 'path'
 
-module.exports = function nuxtBootstrapVue (moduleOptions) {
+export default function nuxtBootstrapVue (moduleOptions) {
   // Register `plugin.js` template
   this.addPlugin({
     src: path.resolve(__dirname, 'plugin.js'),
@@ -216,7 +216,7 @@ Consider doing a check if a CSS library exists to avoid duplicates and add **an 
 **module.js**
 
 ```js
-module.exports = function (moduleOptions) {
+export default function (moduleOptions) {
   if (moduleOptions.fontAwesome !== false) {
     // Add Font Awesome
     this.options.css.push('font-awesome/css/font-awesome.css')
@@ -231,7 +231,7 @@ We can register webpack plugins to emit assets during build.
 **module.js**
 
 ```js
-module.exports = function (moduleOptions) {
+export default function (moduleOptions) {
   const info = 'Built by awesome module - 1.3 alpha on ' + Date.now()
 
   this.options.build.plugins.push({
@@ -256,7 +256,7 @@ We can do the same as `build.extend` in `nuxt.config.js` using `this.extendBuild
 **module.js**
 
 ```js
-module.exports = function (moduleOptions) {
+export default function (moduleOptions) {
     this.extendBuild((config, { isClient, isServer }) => {
       // `.foo` Loader
       config.module.rules.push({
@@ -277,7 +277,7 @@ module.exports = function (moduleOptions) {
 Your module may need to do things only on specific conditions not just during Nuxt initialization. We can use powerful [Tapable](https://github.com/webpack/tapable) plugin system to do tasks on specific events. Nuxt will await for us if hooks return a Promise or are defined as `async`.
 
 ```js
-module.exports = function () {
+export default function () {
   // Add hook for modules
   this.nuxt.hook('module', moduleContainer => {
     // This will be called when all modules finished loading

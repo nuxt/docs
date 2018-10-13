@@ -50,7 +50,7 @@ npm run dev
 
 ## Production Deployment
 
-Nuxt.js lets your choose between three modes to deploy your application: Server Rendered, SPA or Static Generated.
+Nuxt.js lets you choose between three modes to deploy your application: Server Rendered, SPA or Static Generated.
 
 ### Server Rendered Deployment (Universal)
 
@@ -60,6 +60,8 @@ To deploy, instead of running `nuxt`, you probably want to build ahead of time. 
 nuxt build
 nuxt start
 ```
+
+You can also set `server.https` in `nuxt.config.js` with the same set of options passed to [`https.createServer`](https://nodejs.org/api/https.html), should you choose to serve Nuxt in HTTPS mode. Unix sockets are also available if you set the `server.socket` option in `nuxt.config.js` (or `-n` in the [CLI](https://nuxtjs.org/guide/commands#list-of-commands)). When using [Unix sockets](https://en.wikipedia.org/wiki/Berkeley_sockets), make sure not to set the `host` and `port` parameters otherwise the `socket` parameter is ignored.
 
 The `package.json` like follows is recommended:
 

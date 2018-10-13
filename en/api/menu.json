@@ -44,18 +44,29 @@
         "contents": [
           { "name": "analyze", "to": "#analyze" },
           { "name": "babel", "to": "#babel" },
+          { "name": "cache", "to": "#cache" },
           { "name": "cssSourceMap", "to": "#csssourcemap" },
           { "name": "devMiddleware", "to": "#devmiddleware" },
           { "name": "extend", "to": "#extend" },
           { "name": "extractCSS", "to": "#extractcss" },
           { "name": "filenames", "to": "#filenames" },
           { "name": "hotMiddleware", "to": "#hotmiddleware" },
+          { "name": "html.minify", "to": "#html-minify" },
+          { "name": "loaders", "to": "#loaders" },
+          { "name": "optimization", "to": "#optimization" },
+          { "name": "terser", "to": "#terser" },
+          { "name": "optimizeCSS", "to": "#optimize-css" },
+          { "name": "parallel", "to": "#parallel" },
           { "name": "plugins", "to": "#plugins" },
           { "name": "postcss", "to": "#postcss" },
+          { "name": "profile", "to": "#profile" },
           { "name": "publicPath", "to": "#publicpath" },
+          { "name": "splitChunks", "to": "#splitChunks" },
           { "name": "ssr", "to": "#ssr" },
+          { "name": "styleResources", "to": "#styleresources" },
           { "name": "templates", "to": "#templates" },
-          { "name": "vendor", "to": "#vendor" },
+          { "name": "transpile", "to": "#transpile" },
+          { "name": "vueLoader", "to": "#vueloader" },
           { "name": "watch", "to": "#watch" }
         ]
       },
@@ -74,6 +85,7 @@
         ]
       },
       { "name": "head", "to": "/configuration-head" },
+      { "name": "hooks", "to": "/configuration-hooks" },
       { "name": "ignore", "to": "/configuration-ignore" },
       {
         "name": "loading",
@@ -87,6 +99,7 @@
       { "name": "loadingIndicator", "to": "/configuration-loading-indicator" },
       { "name": "mode", "to": "/configuration-mode" },
       { "name": "modules", "to": "/configuration-modules" },
+      { "name": "modulesDir", "to": "/configuration-modulesdir" },
       { "name": "plugins", "to": "/configuration-plugins" },
       {
         "name": "render",
@@ -115,9 +128,11 @@
           { "name": "scrollBehavior", "to": "#scrollbehavior" }
         ]
       },
+      { "name": "server", "to": "/configuration-server" },
       { "name": "serverMiddleware", "to": "/configuration-servermiddleware" },
       { "name": "srcDir", "to": "/configuration-srcdir" },
       { "name": "transition", "to": "/configuration-transition" },
+      { "name": "vue.config", "to": "/configuration-vue-config" },
       { "name": "watch", "to": "/configuration-watch" },
       {
         "name": "watchers",

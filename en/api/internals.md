@@ -56,21 +56,19 @@ These classes are only needed for build or dev mode.
 
 ## Packaging & Usage
 
-Nuxt exports all classes by default. To require them:
+Nuxt exports all classes by default. To import them:
 
 ```js
-const { Nuxt, Builder, Utils } = require('nuxt')
+import { Nuxt, Builder, Utils } from 'nuxt'
 ```
 
 ## Common patterns
 
-All Nuxt classes have a reference to `nuxt` instance and options. Every class extends [`tappable`](https://github.com/nuxt/tappable), this way we always have a consistent API across classes to access `options` and `nuxt`.
+All Nuxt classes have a reference to `nuxt` instance and options, this way we always have a consistent API across classes to access `options` and `nuxt`.
 
 ```js
-const Tapable = require('tappable')
-
-class SomeClass extends Tapable {
-  constructor (nuxt, builder) {
+class SomeClass {
+  constructor (nuxt) {
     super()
     this.nuxt = nuxt
     this.options = nuxt.options
@@ -85,13 +83,13 @@ class SomeClass extends Tapable {
 Classes are *plugable* so they should register a plugin on main `nuxt` container to register more hooks.
 
 ```js
-class FooClass extends Tapable {
-  constructor (nuxt, builder) {
+class FooClass {
+  constructor (nuxt) {
     super()
     this.nuxt = nuxt
     this.options = nuxt.options
 
-    this.nuxt.applyPluginsAsync('foo', this)
+    this.nuxt.callHook('foo', this)
   }
 }
 ```

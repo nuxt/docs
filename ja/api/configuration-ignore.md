@@ -1,21 +1,20 @@
 ---
-title: "API: The ignore Property"
-description: Define the ignore files for your Nuxt.js application
+title: "API: ignore プロパティ"
+description: ignore 対象とするファイルを定義します
 ---
 
-# The ignorePrefix Property
+# ignorePrefix プロパティ
 
-- Type: `String`
-- Default: `'-'`
+- 型: `文字列`
+- デフォルト: `'-'`
 
-> Any file in pages/ layout/ middleware/ or store/ will be ignored during building if its filename starts with the prefix specified by `ignorePrefix`.
+> pages/ layout/ middleware/ store/ ディレクトリに含まれるファイルの中で、ファイル名が `ignorePrefix` プロパティで指定された接頭辞から始まる場合にはビルド時に無視されます。
 
-By default all files which start with `-` will be ignored, such as `store/-foo.js` and `pages/-bar.vue`. This allows for co-locating tests, utilities, and components with their callers without themselves being converted into routes, stores, etc.
+デフォルトでは `-` で始まる `store/-foo.js` や `pages/-bar.vue` のようなファイルは全て無視されます。これによりルートやストア等に変換されることなく、呼び出し元と同じ場所にテスト、ユーティリティ、コンポーネント等のファイルを置くことができます。
 
-# The ignore Property
+# ignore プロパティ
 
-- Type: `Array`
-- Default: `['**/*.test.*']`
+- 型: `配列`
+- デフォルト: `['**/*.test.*']`
 
-> More customizable than `ignorePrefix`: all files matching glob patterns specified inside `ignore` will be ignored in building.
-
+> `ignorePrefix` よりもカスタマイズしやすいです: `ignore` プロパティに指定した glob パターンと一致する全てのファイルがビルド時に無視されます

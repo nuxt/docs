@@ -84,6 +84,7 @@
       { "name": "loadingIndicator (En)", "to": "/configuration-loading-indicator" },
       { "name": "mode (En)", "to": "/configuration-mode" },
       { "name": "modules (En)", "to": "/configuration-modules" },
+      { "name": "modulesDir (En)", "to": "/configuration-modulesdir" },
       { "name": "plugins (En)", "to": "/configuration-plugins" },
       {
         "name": "render (En)", "to": "/configuration-render",
@@ -113,6 +114,8 @@
       { "name": "serverMiddleware (En)", "to": "/configuration-servermiddleware" },
       { "name": "srcDir (En)", "to": "/configuration-srcdir" },
       { "name": "transition (En)", "to": "/configuration-transition" },
+      { "name": "vue.config (En)", "to": "/configuration-vue-config" },
+      { "name": "watch (En)", "to": "/configuration-watch" },
       {
         "name": "watchers (En)", "to": "/configuration-watchers",
         "contents": [

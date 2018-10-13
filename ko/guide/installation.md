@@ -15,7 +15,7 @@ starter 템플릿을 [.zip로 다운로드](https://github.com/nuxt-community/st
 $ vue init nuxt-community/starter-template <project-name>
 ```
 
-> 만약 [vue-cli](https://github.com/vuejs/vue-cli)가 설치되지 않았다면, `npm install -g vue-cli` 명령어로 설치할 수 있습니다.
+> 만약 [Vue CLI](https://github.com/vuejs/vue-cli)가 설치되지 않았다면, `npm install -g @vue/cli @vue/cli-init` 명령어로 설치할 수 있습니다.
 
 디펜던시를 설치하고:
 

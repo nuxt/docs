@@ -24,7 +24,7 @@ description: Define the custom directories for your Nuxt.js application
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   dir: {
     assets: 'custom-assets',
     layouts: 'custom-layouts',

@@ -15,7 +15,7 @@ Untuk memulai dengan cepat, tim Nuxt.js telah membuat [templat awal](https://git
 $ vue init nuxt-community/starter-template <nama-proyek>
 ```
 
-> Jika [vue-cli](https://github.com/vuejs/vue-cli) tidak terinstal, silakan instal dengan `npm install -g vue-cli`
+> Jika [Vue CLI](https://github.com/vuejs/vue-cli) tidak terinstal, silakan instal dengan `npm install -g @vue/cli @vue/cli-init`
 
 lalu instal the dependencies:
 
@@ -38,7 +38,7 @@ To discover more about the directory structure of the project: [Directory Struct
 
 ## Mulai dari awal
 
-Membuat aplikasi Nuxt.js dari awal juga sangat mudah, hanya memerlukan *1 file dan 1 direktori*. Mari kita buat satu direktori kosong untuk mulai membuat aplikasinya: 
+Membuat aplikasi Nuxt.js dari awal juga sangat mudah, hanya memerlukan *1 file dan 1 direktori*. Mari kita buat satu direktori kosong untuk mulai membuat aplikasinya:
 
 ```bash
 $ mkdir <nama-proyek>

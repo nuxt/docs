@@ -1,17 +1,17 @@
 ---
-title: "API: The watch Property"
-description: The watch property lets you watch custom files for restarting the server.
+title: "API: watch プロパティ"
+description: watch プロパティはサーバーの再起動のためにカスタムファイルを監視してくれます。
 ---
 
-# The watch Property
+# watch プロパティ
 
-- Type: `Object`
-- Default: `[]`
+- 型: `Object`
+- デフォルト: `[]`
 
-> The watch property lets you watch custom files for restarting the server.
+> watch プロパティはサーバーの再起動のためにカスタムファイルを監視してくれます。
 
 ```js
 watch: ['~/custom/*.js']
 ```
 
-[chokidar](https://github.com/paulmillr/chokidar) is used to set up the watchers. To learn more about chokidar's pattern options, see the [chokidar API](https://github.com/paulmillr/chokidar#api).
+[chokidar](https://github.com/paulmillr/chokidar) はウォッチャを設定するために使用されます。より chokidar のパターンオプションについて知りたければ、[chokidar API](https://github.com/paulmillr/chokidar#api) を参照してください。

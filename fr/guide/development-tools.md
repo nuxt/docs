@@ -79,8 +79,9 @@ test.before('Init Nuxt.js', async t => {
   const rootDir = resolve(__dirname, '..')
   let config = {}
   try { config = require(resolve(rootDir, 'nuxt.config.js')) } catch (e) {}
-  config.rootDir = rootDir // project folder
-  config.dev = false // production build
+  config.rootDir = rootDir // dossier du projet
+  config.dev = false // build de production
+  config.mode = 'universal' // application isomorphique
   nuxt = new Nuxt(config)
   await new Builder(nuxt).build()
   nuxt.listen(4000, 'localhost')

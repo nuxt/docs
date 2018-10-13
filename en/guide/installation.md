@@ -5,26 +5,46 @@ description: Nuxt.js is really easy to get started with. A simple project only n
 
 > Nuxt.js is really easy to get started with. A simple project only needs the `nuxt` dependency.
 
-## Using Nuxt.js starter template
+## Using `create-nuxt-app`
 
-To get started quickly, the Nuxt.js team has created a [starter template](https://github.com/nuxt-community/starter-template).
+To get started quickly, the Nuxt.js team has created scaffolding tool [create-nuxt-app](https://github.com/nuxt/create-nuxt-app).
 
-[Download the .zip](https://github.com/nuxt-community/starter-template/archive/master.zip) starter template or install it with vue-cli:
-
-```bash
-$ vue init nuxt-community/starter-template <project-name>
-```
-
-> If [vue-cli](https://github.com/vuejs/vue-cli) is not installed, please install it with `npm install -g @vue/cli @vue/cli-init`
-
-then install the dependencies:
+Make sure you have [npx](https://www.npmjs.com/package/npx) installed (`npx` is shipped by default since NPM `5.2.0`)
 
 ```bash
-$ cd <project-name>
-$ npm install
+$ npx create-nuxt-app <project-name>
 ```
 
-and launch the project with:
+Or with [yarn](https://yarnpkg.com/en/):
+
+```bash
+yarn create nuxt-app <my-project>
+```
+
+It will ask you some questions:
+
+1. Choose between integrated server-side frameworks:
+  - None (Nuxt default server)
+  - [Express](https://github.com/expressjs/express)
+  - [Koa](https://github.com/koajs/koa)
+  - [Hapi](https://github.com/hapijs/hapi)
+  - [Feathers](https://github.com/feathersjs/feathers)
+  - [Micro](https://github.com/zeit/micro)
+  - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
+2. Choose your favorite UI framework:
+  - None (feel free to add one later)
+  - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
+  - [Vuetify](https://github.com/vuetifyjs/vuetify)
+  - [Bulma](https://github.com/jgthms/bulma)
+  - [Tailwind](https://github.com/tailwindcss/tailwindcss)
+  - [Element UI](https://github.com/ElemeFE/element)
+  - [Buefy](https://buefy.github.io)
+3. The Nuxt mode you want (`Universal` or `SPA`)
+4. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
+5. Add [EsLint](https://eslint.org/) to Lint your code on save.
+5. Add [Prettier](https://prettier.io/) to prettify your code on save.
+
+When answered, it will install all the dependencies so the next step is to launch the project with:
 
 ```bash
 $ npm run dev

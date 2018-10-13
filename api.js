@@ -52,6 +52,9 @@ async function getReleases () {
   } catch (e) {
     console.error('Could not fetch nuxt.js release notes.')
   }
+  RELEASES.sort((a, b) => {
+    return new Date(b.date) - new Date(a.date)
+  })
   // Refresh every 15 minutes
   setTimeout(getReleases, 15 * 60 * 1000)
 }

@@ -34,33 +34,8 @@ Interval between two render cycles to avoid flooding a potential API with API ca
 
 ## minify
 
-- Type: `Object`
-- Default:
-
-```js
-minify: {
-  collapseBooleanAttributes: true,
-  collapseWhitespace: false,
-  decodeEntities: true,
-  minifyCSS: true,
-  minifyJS: true,
-  processConditionalComments: true,
-  removeAttributeQuotes: false,
-  removeComments: false,
-  removeEmptyAttributes: true,
-  removeOptionalTags: true,
-  removeRedundantAttributes: true,
-  removeScriptTypeAttributes: false,
-  removeStyleLinkTypeAttributes: false,
-  removeTagWhitespace: false,
-  sortAttributes: true,
-  sortClassName: false,
-  trimCustomFragments: true,
-  useShortDoctype: true
-}
-```
-
-You can change the default configuration of [html-minifier](https://github.com/kangax/html-minifier) used by Nuxt.js to minify HTML files created during generation.
+- **Deprecated!**
+- Use [build.html.minify](/api/configuration-build#html-minify) instead
 
 ## routes
 
@@ -84,7 +59,7 @@ If you want Nuxt.js to generate routes with dynamic params, you need to set an a
 We add routes for `/users/:id` in `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   generate: {
     routes: [
       '/users/1',
@@ -122,9 +97,9 @@ Great, but what if we have **dynamic params**?
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
-module.exports = {
+export default {
   generate: {
     routes: function () {
       return axios.get('https://my-api/users')
@@ -143,14 +118,14 @@ module.exports = {
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
-module.exports = {
+export default {
   generate: {
     routes: function (callback) {
       axios.get('https://my-api/users')
       .then((res) => {
-        var routes = res.data.map((user) => {
+        const routes = res.data.map((user) => {
           return '/users/' + user.id
         })
         callback(null, routes)
@@ -168,9 +143,9 @@ In the example above, we're using the `user.id` from the server to generate the 
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
-module.exports = {
+export default {
   generate: {
     routes: function () {
       return axios.get('https://my-api/users')

@@ -115,7 +115,7 @@ export default {
 }
 ```
 
-If the validate method does not return `true`, Nuxt.js will automatically load the 404 error page.
+If the validate method does not return `true` or a `Promise` that resolve to `true` or throws an Error, Nuxt.js will automatically load the 404 error page or 500 error page in case of an error.
 
 More information about the validate method: [API Pages validate](/api/pages-validate)
 
@@ -228,7 +228,7 @@ You can enable SPA fallbacks for dynamic routes too. Nuxt.js will output an extr
 We enable this in our `nuxt.config.js` file:
 
 ``` js
-module.exports = {
+export default {
   generate: {
     fallback: true, // if you want to use '404.html'
     fallback: 'my-fallback/file.html' // if your hosting needs a custom location
@@ -291,7 +291,7 @@ Our global css in `assets/main.css`:
 We add its path in our `nuxt.config.js` file:
 
 ```js
-module.exports = {
+export default {
   css: [
     'assets/main.css'
   ]
@@ -364,7 +364,7 @@ Then, in your `nuxt.config.js`, layout or page, use the `middleware` key:
 `nuxt.config.js`
 
 ```js
-module.exports = {
+export default {
   router: {
     middleware: 'stats'
   }

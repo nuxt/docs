@@ -10,13 +10,14 @@ description: Using a store to manage the state is important for every big applic
 Nuxt.js will look for the `store` directory, if it exists, it will:
 
 1. Import Vuex,
-2. Add `vuex` module in the vendors bundle,
-3. Add the `store` option to the root Vue instance.
+2. Add the `store` option to the root Vue instance.
 
 Nuxt.js lets you have **2 modes of store**, choose the one you prefer:
 
 - **Classic:** `store/index.js` returns a store instance.
 - **Modules:** every `.js` file inside the `store` directory is transformed as a [namespaced module](http://vuex.vuejs.org/en/modules.html) (`index` being the root module).
+
+Regardless of the mode, your `state` value should **always be a `function`** to avoid unwanted *shared* state on the server side.
 
 ## Classic mode
 
@@ -27,9 +28,9 @@ import Vuex from 'vuex'
 
 const createStore = () => {
   return new Vuex.Store({
-    state: {
+    state: () => ({
       counter: 0
-    },
+    }),
     mutations: {
       increment (state) {
         state.counter++
@@ -96,17 +97,20 @@ The store will be as such:
 
 ```js
 new Vuex.Store({
-  state: { counter: 0 },
+  state: () => ({
+    counter: 0
+  }),
   mutations: {
     increment (state) {
       state.counter++
     }
   },
   modules: {
+    namespaced: true,
     todos: {
-      state: {
+      state: () => ({
         list: []
-      },
+      }),
       mutations: {
         add (state, { text }) {
           state.list.push({
@@ -170,9 +174,9 @@ export default {
 Example for state; you create a file `store/state.js` and add the following
 
 ```js
-export default {
+export default () => ({
   counter: 0
-}
+})
 ```
 
 And the corresponding mutations can be in the file `store/mutations.js`
@@ -190,6 +194,8 @@ export default {
 ### Module files
 
 You can optionally break down a module file into separate files: `state.js`, `actions.js`, `mutations.js` and `getters.js`. If you maintain an `index.js` file with state, getters and mutations while having a single separate file for actions, that will also still be properly recognized.
+
+> Note: Whilst using split-file modules, you must remember that using arrow functions, ```this``` is only lexically available. Lexical scoping simply means that the ```this``` always references the owner of the arrow function. If the arrow function is not contained then ```this``` would be undefined. The solution is to use a "normal" function which produces its own scope and thus has ```this``` available.
 
 ### Plugins
 
@@ -265,9 +271,9 @@ import Vuex from 'vuex'
 const createStore = () => {
   return new Vuex.Store({
     strict: false,
-    state: {
+    state: () => ({
       counter: 0
-    },
+    }),
     mutations: {
       increment (state) {
         state.counter++

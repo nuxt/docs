@@ -50,9 +50,9 @@ _该目录名为Nuxt.js保留的，不可更改。_
 静态文件目录 `static` 用于存放应用的静态文件，此类文件不会被 Nuxt.js 调用 Webpack 进行构建编译处理。
 服务器启动的时候，该目录下的文件会映射至应用的根路径 `/` 下。
 
-**举个例子:** /static/robots.txt 映射至 /robots.txt
+**举个例子:** `/static/robots.txt` 映射至 `/robots.txt`
 
-_该目录名为Nuxt.js保留的，不可更改。_
+_该目录名为Nuxt.js保留，不可更改。_
 
 [关于静态文件的更多信息](/guide/assets#静态文件)
 
@@ -61,7 +61,7 @@ _该目录名为Nuxt.js保留的，不可更改。_
 `store` 目录用于组织应用的 [Vuex 状态树](http://vuex.vuejs.org) 文件。
 Nuxt.js 框架集成了 [Vuex 状态树](http://vuex.vuejs.org) 的相关功能配置，在 `store` 目录下创建一个 `index.js` 文件可激活这些配置。
 
-_该目录名为Nuxt.js保留的，不可更改。_
+_该目录名为Nuxt.js保留，不可更改。_
 
 [关于 store 的更多信息](/guide/vuex-store)
 
@@ -83,18 +83,9 @@ _该文件名为Nuxt.js保留的，不可更改。_
 
 | 别名 | 目录 |
 |-----|------|
-| ~ | / |
-| ~assets | /assets |
-| ~components | /components |
-| ~middleware | /middleware |
-| ~pages | /pages |
-| ~plugins | /plugins |
-| ~static | /static |
-| ~store | /store |
+| `~` 或 `@` | [src目录](/api/configuration-srcdir) |
+| `~~` 或 `@@` | [根目录](/api/configuration-rootdir) |
 
-文件别名：
+默认情况下，`src目录`和`根目录`相同
 
-| 别名 | 使用方法 | 描述 |
-|-------|------|--------------|
-| ~store | `const store = require('~store')` | 导入 `vuex` 状态树实例。 |
-| ~router | `const router = require('~router')`| 导入 `vue-router` 实例。 |
+<p class="Alert Alert--nuxt-green"><b>提示:</b> 在您的 `vue` 模板中, 如果你需要引入 `assets` 或者 `static` 目录, 使用 `~/assets/your_image.png` 和 `~/static/your_image.png`方式。</p>

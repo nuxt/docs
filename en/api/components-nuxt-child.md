@@ -41,9 +41,28 @@ To display the `child.vue` component, we have to insert `<nuxt-child/>` inside `
 <template>
   <div>
     <h1>I am the parent view</h1>
-    <nuxt-child/>
+    <nuxt-child :foobar="123" />
   </div>
 </template>
 ```
+
+`<nuxt-child/>` accepts `keep-alive` and `keep-alive-props`:
+
+```html
+<template>
+  <div>
+    <nuxt-child keep-alive :keep-alive-props="{ exclude: ['modal'] }" />
+  </div>
+</template>
+
+<!-- will be converted into something like this -->
+<div>
+  <keep-alive :exclude="['modal']">
+    <router-view />
+  </keep-alive>
+</div>
+```
+
+> Child components can also receive properties like a regular Vue component.
 
 To see an example, take a look at the [nested-routes example](/examples/nested-routes).

@@ -1,5 +1,5 @@
 ---
-title: 'API: '
+title: 'API: <nuxt-child> コンポーネント'
 description: 現在のページを表示します。
 ---
 
@@ -22,12 +22,12 @@ description: 現在のページを表示します。
 [
   {
     path: '/parent',
-    component: '~pages/parent.vue',
+    component: '~/pages/parent.vue',
     name: 'parent',
     children: [
       {
         path: 'child',
-        component: '~pages/parent/child.vue',
+        component: '~/pages/parent/child.vue',
         name: 'parent-child'
       }
     ]
@@ -41,9 +41,11 @@ description: 現在のページを表示します。
 <template>
   <div>
     <h1>I am the parent view</h1>
-    <nuxt-child/>
+    <nuxt-child :foobar="123" />
   </div>
 </template>
 ```
+
+> 子コンポーネントは、通常の Vue コンポーネントのようなプロパティも受け取ることができます。
 
 実際の例を見たいときは [ネストされたルートの例](/examples/nested-routes) を参照してください。

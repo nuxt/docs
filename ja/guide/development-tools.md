@@ -81,6 +81,7 @@ test.before('Init Nuxt.js', async t => {
   try { config = require(resolve(rootDir, 'nuxt.config.js')) } catch (e) {}
   config.rootDir = rootDir // project folder
   config.dev = false // production build
+  config.mode = 'universal' // Isomorphic application
   nuxt = new Nuxt(config)
   await new Builder(nuxt).build()
   nuxt.listen(4000, 'localhost')
@@ -148,7 +149,7 @@ module.exports = {
     "plugin:vue/recommended",
     "plugin:prettier/recommended"
   ],
-  // *.vue files を lint にかけるために必要
+  // *.vue ファイルを lint にかけるために必要
   plugins: [
     'vue'
   ],

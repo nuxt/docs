@@ -20,7 +20,7 @@ Default:
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   transition: 'page'
   // or
   transition: {
@@ -53,7 +53,7 @@ Default:
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   layoutTransition: 'layout'
   // or
   transition: {
