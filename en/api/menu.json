@@ -136,6 +136,7 @@
       { "name": "transition", "to": "/configuration-transition" },
       { "name": "vue.config", "to": "/configuration-vue-config" },
       { "name": "watch", "to": "/configuration-watch" },
+      { "name": "globalName", "to": "/configuration-global-name" },
       {
         "name": "watchers",
         "to": "/configuration-watchers",
