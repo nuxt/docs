@@ -7,7 +7,7 @@ description: How to edit host and port with Nuxt.js?
 
 You can configure the connection variables in different ways.  They are listed **from highest to lowest priority**.
 
-> **Note:** If port is assigned the string value of '0' (not 0, which is falsy) then it will be assigned an open port at random.
+> **Note:** If `port` is assigned the string value of `'0'` (not `0`, which is falsy), a random port will be assigned to your Nuxt application.
 
 ## As direct arguments
 
