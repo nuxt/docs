@@ -1,26 +1,26 @@
 ---
 title: 外部認証API (JWT)
-description: Nuxt.jsでjsonwebtokenを使った外部認証の例
+description: Nuxt.js で jsonwebtoken を使った外部認証の例
 github: auth-jwt
 code: https://github.com/ahadyekta/nuxt-auth-external-jwt
 ---
 
 # ドキュメント
 
-auth-routesの例では、apiとnuxtの両方を同時に起動し、1つのNode.jsサーバーインスタンスを使用していました。
-しかし、時にはjsonWebTokenを使って外部APIを使う必要が出てきます。ここでは簡単に説明します。
+auth-routes の例では、 api と nuxt の両方を同時に起動し、1つの Node.js サーバインスタンスを使用していました。
+しかし、時には jsonWebToken を使って外部APIを使う必要が出てきます。ここでは簡単に説明します。
 
 ## 仕組み
 
-Nuxt.jsはサーバとクライアントの両方のレンダリングをしており、ブラウザのクッキーはNode.jsのサーバサイドのクッキーとは異なるため、トークンのデータを双方からアクセスできる場所に保存する必要があります。
+Nuxt.js はサーバとクライアントの両方のレンダリングをしており、ブラウザのクッキーは Node.js のサーバサイドのクッキーとは異なるため、トークンのデータを双方からアクセスできる場所に保存する必要があります。
 
 ### サーバーサイドレンダリングの場合
 
-ログイン後にトークンをセッションブラウザのクッキーに保存し、ミドルウェアファイルの `req.headers.cookie`、 `nuxtServerInit`関数、または `req`を介してどこからでもアクセスできます。
+ログイン後にトークンをセッションブラウザのクッキーに保存し、ミドルウェアファイルの `req.headers.cookie` 、 `nuxtServerInit` 関数、または `req` を介してどこからでもアクセスできます。
 
 ### クライアントサイドレンダリングの場合
 
-store内のトークンを直接保存します。ページが閉じられたり再読み込みされない限り、トークンが保たれます。
+store 内のトークンを直接保存します。ページが閉じられたり再読み込みされない限り、トークンが保たれます。
 
 まず依存パッケージをインストールします:
 
@@ -31,7 +31,7 @@ npm install cookieparser --save
 
 ## ログインページ
 
-次に、ページディレクトリー以下に `login.vue`ファイルを作り、script部分に以下のコードを追加します:
+次に、ページディレクトリ以下に `login.vue`ファイルを作り、 script 部分に以下のコードを追加します:
 
 ```js
 import Cookie from 'js-cookie'
@@ -57,7 +57,7 @@ export default {
 
 ## storeを使った例
 
-その後、 `store`ディレクトリー内に `index.js`をこのように作成します:
+その後、 `store` ディレクトリ内に `index.js` をこのように作成します:
 
 ```javascript
 import Vuex from 'vuex'
@@ -90,31 +90,31 @@ const createStore = () => {
 export default createStore
 ```
 
->注: `nuxtServerInit`関数はサーバサイドでレンダリングされるたびに実行されます。これを使ってストア内のセッションブラウザのクッキーを更新します。
-その後、`req.headers.cookie`を使ってそのクッキーを取得して、`cookieparser`を使ってパースすることができます。
+>注: `nuxtServerInit` 関数はサーバサイドでレンダリングされるたびに実行されます。これを使ってストア内のセッションブラウザのクッキーを更新します。
+その後、 `req.headers.cookie` を使ってそのクッキーを取得して、 `cookieparser` を使ってパースすることができます。
 
 ## 認証用ミドルウェアによるチェック
 
-アクセス制限が必要な全ページで、アクセストークンを持っているかどうかをstoreを使ってチェックできます。middlewareのディレクトリーに `authenticated.js`を作成します:
+アクセス制限が必要な全ページで、アクセストークンを持っているかどうかを store を使ってチェックできます。middleware のディレクトリに `authenticated.js` を作成します:
 
 ```javascript
 export default function ({ store, redirect }) {
-  // ユーザーが認証されていない場合
+  // ユーザが認証されていない場合
   if (!store.state.auth) {
     return redirect('/login')
   }
 }
 ```
 
-次に、middlewareのディレクトリーにloginページ用の `notAuthenticated.js`を作成します:
+次に、 middleware のディレクトリに login ページ用の `notAuthenticated.js` を作成します:
 
 ```javascript
 export default function ({ store, redirect }) {
-  // ユーザーが認証されてホームページにリダイレクトされた場合
+  // ユーザが認証されてホームページにリダイレクトされた場合
   if (store.state.auth) {
     return redirect('/')
   }
 }
 ```
 
-> 注: 認証が必要なページには `authenticated`ミドルウェアを使用し、login/registerなどページには`notAuthenticated`ミドルウェアを使います。
+> 注: 認証が必要なページには `authenticated` ミドルウェアを使用し、 login/register などのページには `notAuthenticated` ミドルウェアを使います。
