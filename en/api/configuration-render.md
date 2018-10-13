@@ -37,7 +37,7 @@ To disable etag for pages set `etag: false`
 
 See [etag](https://www.npmjs.com/package/etag) docs for possible options.
 
-### compressor
+## compressor
 - Type `Object`
   - Default: `{ threshold: 0 }`
 
@@ -47,7 +47,7 @@ will be used (with respective options).
 If you want to use your own compression middleware, you can reference it
 directly (f.ex. `otherComp({ myOptions: 'example' })`).
 
-### http2
+## http2
 - Type `Object`
   - Default: `{ push: false }`
 
