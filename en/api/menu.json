@@ -105,13 +105,15 @@
         "name": "render",
         "to": "/configuration-render",
         "contents": [
-          { "name": "bundleRenderer", "to": "#bundleRenderer" },
+          { "name": "bundleRenderer", "to": "#bundlerenderer" },
           { "name": "etag", "to": "#etag" },
-          { "name": "gzip", "to": "#gzip" },
+          { "name": "compressor", "to": "#compressor" },
           { "name": "http2", "to": "#http2" },
-          { "name": "resourceHints", "to": "#resourceHints" },
+          { "name": "resourceHints", "to": "#resourcehints" },
           { "name": "ssr", "to": "#ssr" },
-          { "name": "static", "to": "#static" }
+          { "name": "static", "to": "#static" },
+          { "name": "dist", "to": "#dist" },
+          { "name": "csp", "to": "#csp" }
         ]
       },
       { "name": "rootDir", "to": "/configuration-rootdir" },
