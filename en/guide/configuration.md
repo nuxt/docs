@@ -72,17 +72,17 @@ This option lets you define the workspace of your Nuxt.js Application.
 
 [Documentation about `rootDir` integration](/api/configuration-rootdir)
 
-### server
-
-This option lets you configure the connection variables for the server instance of your Nuxt.js Application.
-
-[Documentation about `server` integration](/api/configuration-server)
-
 ### router
 
 This option lets you overwrite the default Nuxt.js configuration of Vue Router.
 
 [Documentation about `router` integration](/api/configuration-router)
+
+### server
+
+This option lets you configure the connection variables for the server instance of your Nuxt.js Application.
+
+[Documentation about `server` integration](/api/configuration-server)
 
 ### srcDir
 
