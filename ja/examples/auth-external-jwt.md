@@ -20,7 +20,7 @@ Nuxt.js はサーバとクライアントの両方のレンダリングをして
 
 ### クライアントサイドレンダリングの場合
 
-store 内のトークンを直接保存します。ページが閉じられたり再読み込みされない限り、トークンが保たれます。
+store にトークンを直接保存します。ページが閉じられたり再読み込みされない限り、トークンが保たれます。
 
 まず依存パッケージをインストールします:
 
@@ -53,7 +53,7 @@ export default {
 }
 ```
 
-> 注: この例では非同期のリクエストをタイムアウトを使って再現しています。
+> 注意: この例では非同期のリクエストをタイムアウトを使って再現しています。
 
 ## storeを使った例
 
@@ -90,12 +90,12 @@ const createStore = () => {
 export default createStore
 ```
 
->注: `nuxtServerInit` 関数はサーバサイドでレンダリングされるたびに実行されます。これを使ってストア内のセッションブラウザのクッキーを更新します。
+> 注意: `nuxtServerInit` 関数はサーバサイドでレンダリングされるたびに実行されます。これを使ってストア内のセッションブラウザのクッキーを更新します。
 その後、 `req.headers.cookie` を使ってそのクッキーを取得して、 `cookieparser` を使ってパースすることができます。
 
-## 認証用ミドルウェアによるチェック
+## 認証用ミドルウェアによる検証
 
-アクセス制限が必要な全ページで、アクセストークンを持っているかどうかを store を使ってチェックできます。middleware のディレクトリに `authenticated.js` を作成します:
+アクセス制限が必要な全ページで、アクセストークンを持っているかどうかを store を使って検証できます。middleware のディレクトリに `authenticated.js` を作成します:
 
 ```javascript
 export default function ({ store, redirect }) {
@@ -117,4 +117,4 @@ export default function ({ store, redirect }) {
 }
 ```
 
-> 注: 認証が必要なページには `authenticated` ミドルウェアを使用し、 login/register などのページには `notAuthenticated` ミドルウェアを使います。
+> 注意: 認証が必要なページには `authenticated` ミドルウェアを使用し、 login/register などのページには `notAuthenticated` ミドルウェアを使います。
