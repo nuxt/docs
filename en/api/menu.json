@@ -54,7 +54,6 @@
           { "name": "html.minify", "to": "#html-minify" },
           { "name": "loaders", "to": "#loaders" },
           { "name": "optimization", "to": "#optimization" },
-          { "name": "terser", "to": "#terser" },
           { "name": "optimizeCSS", "to": "#optimize-css" },
           { "name": "parallel", "to": "#parallel" },
           { "name": "plugins", "to": "#plugins" },
@@ -65,6 +64,7 @@
           { "name": "ssr", "to": "#ssr" },
           { "name": "styleResources", "to": "#styleresources" },
           { "name": "templates", "to": "#templates" },
+          { "name": "terser", "to": "#terser" },
           { "name": "transpile", "to": "#transpile" },
           { "name": "vueLoader", "to": "#vueloader" },
           { "name": "watch", "to": "#watch" }
