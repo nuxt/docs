@@ -294,33 +294,6 @@ You can set `minimizer` to a customized Array of plugins or set `minimize` to `f
 
 See [Webpack Optimization](https://webpack.js.org/configuration/optimization).
 
-## terser
-
-- Type: `Object` or `Boolean`
-- Default:
-
-```js
-{
-  parallel: true,
-  cache: false,
-  sourceMap: false,
-  extractComments: {
-    filename: 'LICENSES'
-  },
-  terserOptions: {
-    output: {
-      comments: /^\**!|@preserve|@license|@cc_on/
-    }
-  }
-}
-```
-
-Terser plugin options. Set to `false` to disable this plugin.
-
-`soruceMap` will be enabled when webpack `confing.devtool` matches `source-?map`
-
-See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin).
-
 ## optimizeCSS
 
 - Type: `Object` or `Boolean`
@@ -521,6 +494,33 @@ export default {
 ```
 
 Templates are rendered using [`lodash.template`](https://lodash.com/docs/#template) you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
+
+## terser
+
+- Type: `Object` or `Boolean`
+- Default:
+
+```js
+{
+  parallel: true,
+  cache: false,
+  sourceMap: false,
+  extractComments: {
+    filename: 'LICENSES'
+  },
+  terserOptions: {
+    output: {
+      comments: /^\**!|@preserve|@license|@cc_on/
+    }
+  }
+}
+```
+
+Terser plugin options. Set to `false` to disable this plugin.
+
+`sourceMap` will be enabled when webpack `config.devtool` matches `source-?map`
+
+See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin).
 
 ## transpile
 
