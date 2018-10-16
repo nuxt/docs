@@ -5,7 +5,7 @@ description: Nuxt.js lets you customize the global ID used in the main HTML temp
 
 # The globalName Property
 
-> uxt.js lets you customize the global ID used in the main HTML template as well as the main Vue instance name and other options.
+> Nuxt.js lets you customize the global ID used in the main HTML template as well as the main Vue instance name and other options.
 
 - Type: `Object`
 - Default: `nuxt`
