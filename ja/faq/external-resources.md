@@ -24,7 +24,7 @@ module.exports = {
 
 ## ローカルな設定
 
-pages ディレクトリの .vue ファイル内でリソースをインクルードします:
+`pages/` ディレクトリの `.vue` ファイル内でリソースをインクルードします:
 
 ```html
 <template>
@@ -33,14 +33,22 @@ pages ディレクトリの .vue ファイル内でリソースをインクル�
 
 <script>
 export default {
-  head: {
-    script: [
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
-    ],
-    link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
-    ]
+  head () {
+    return {
+      script: [
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
+      ],
+      link: [
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
+      ]
+    } 
   }
 }
 </script>
+
+<style scoped>
+h1 {
+  font-family: Roboto, sans-serif;
+}
+</style>
 ```

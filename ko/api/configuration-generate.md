@@ -26,7 +26,7 @@ description: 범용 웹 어플리케이션의 생성을 정적 웹 어플리케�
 ```js
 minify: {
   collapseBooleanAttributes: true,
-  collapseWhitespace: true,
+  collapseWhitespace: false,
   decodeEntities: true,
   minifyCSS: true,
   minifyJS: true,
@@ -40,7 +40,7 @@ minify: {
   removeStyleLinkTypeAttributes: false,
   removeTagWhitespace: false,
   sortAttributes: true,
-  sortClassName: true,
+  sortClassName: false,
   trimCustomFragments: true,
   useShortDoctype: true
 }

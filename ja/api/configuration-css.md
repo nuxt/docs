@@ -1,5 +1,5 @@
 ---
-title: "API: css プロパティ"
+title: 'API: css プロパティ'
 description: Nuxt.js ではグローバルに適用したい（すべてのページにインクルードしたい）CSS ファイル/モジュール/ライブラリを設定できます。
 ---
 
@@ -7,27 +7,28 @@ description: Nuxt.js ではグローバルに適用したい（すべてのペ�
 
 > Nuxt.js ではグローバルに適用したい（すべてのページにインクルードしたい）CSS ファイル/モジュール/ライブラリを設定できます。
 
-- タイプ: `配列`
-  - 要素: `文字列` または `オブジェクト`
+`sass` を利用したい場合は `node-sass` および `sass-loader` パッケージをインストールしてください。もしインストールしていなければ:
 
-要素がオブジェクトのときは、プロパティは次のとおりです:
+```sh
+npm install --save-dev node-sass sass-loader
+```
 
-- src: `文字列`（ファイルのパス）
-- lang: `文字列`（[プリプロセッサを使うには？](/faq/pre-processors)）
+- 型: `配列`
+- 要素: `文字列`
 
 `nuxt.config.js` 内で CSS リソースを追加するには:
 
 ```js
 module.exports = {
   css: [
-    // node.js モジュールをロード
-    'hover.css/css/hover-min.css',
-    // node.js モジュール。プリプロセッサを指定
-    { src: 'bulma', lang: 'sass' },
+    // node モジュールを直接ロードする (ここでは SASS ファイル)
+    'bulma',
     // プロジェクト内の CSS ファイル
-    '~assets/css/main.css',
-    // プロジェクト内の SASS ファイル
-    { src: '~assets/css/main.scss', lang: 'scss' } // SASS の代わりに SCSS を使う
+    '@/assets/css/main.css',
+    // プロジェクト内の SCSS ファイル
+    '@/assets/css/main.scss'
   ]
 }
 ```
+
+Nuxt.js は拡張子から自動的にファイルタイプを推測して Webpack のための適切なプリプロセッサローダを使用します。ただし使用する必要のあるローダは各自でインストールしてください。

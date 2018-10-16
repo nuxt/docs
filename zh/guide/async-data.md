@@ -18,10 +18,12 @@ Nuxt.js 提供了几种不同的方法来使用 `asyncData` 方法，你可以�
 2. 使用 [async 或 await](https://github.com/lukehoban/ecmascript-asyncawait) ([了解更多](https://zeit.co/blog/async-and-await))
 3. 为第二个参数指定一个回调函数. 注：该回调函数需符合通用的 NodeJs 回调函数的形式: `callback(err, data)`
 
+<div class="Alert Alert--grey">我们使用 [axios](https://github.com/mzabriskie/axios) 重构 HTTP 请求, 我们 <strong>强烈建议您</strong> 使用 [axios 模块](https://axios.nuxtjs.org/) 用于您的Nuxt项目中。</div>
+
 ### 返回 Promise
 ```js
 export default {
-  data ({ params }) {
+  asyncData ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
     .then((res) => {
       return { title: res.data.title }
@@ -33,7 +35,7 @@ export default {
 ### 使用 async或await
 ```js
 export default {
-  async data ({ params }) {
+  async asyncData ({ params }) {
     let { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
@@ -43,7 +45,7 @@ export default {
 ### 使用 回调函数
 ```js
 export default {
-  data ({ params }, callback) {
+  asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
     .then((res) => {
       callback(null, { title: res.data.title })
@@ -58,7 +60,7 @@ export default {
 
 ```js
 export default {
-  data (context) {
+  data () {
     return { foo: 'bar' }
   }
 }
@@ -66,7 +68,7 @@ export default {
 
 ### 数据的展示
 
-`asyncData` 方法返回的数据在融合 `data` 方法放回的数据后，一并返回给模板进行展示，如：
+`asyncData` 方法返回的数据在融合 `data` 方法返回的数据后，一并返回给模板进行展示，如：
 
 ```html
 <template>
@@ -76,7 +78,15 @@ export default {
 
 ## 上下文对象
 
-可通过 [页面数据API](/api) 来了解该对象的所有属性和方法。
+可通过 [API `context`](/api/context) 来了解该对象的所有属性和方法。
+
+### 访问动态路由数据
+
+您可以使用`注入`asyncData属性的`context`对象来访问动态路由数据。例如，可以使用配置它的文件或文件夹的名称访问动态路径参数。所以，如果你定义一个名为`_slug.vue`的文件，您可以通过`context.params.slug`来访问它。
+
+### 监听 query 参数改变
+
+默认情况下，query的改变不会调用`asyncData`方法。如果要监听这个行为，例如，在构建分页组件时，您可以设置应通过页面组件的`watchQuery`属性监听参数。了解更多有关[API watchQuery](/api/pages-watchquery)的信息。
 
 ## 错误处理
 

@@ -5,9 +5,9 @@ description: メタタグが重複したときは？
 
 # メタタグが重複したときは？
 
-これは [vue-meta](https://github.com/declandewet/vue-meta) の "特徴" です。[head 要素のドキュメント](/guide/views#html-の-head-情報) を参照してください。
+これは [vue-meta](https://github.com/declandewet/vue-meta) の "特徴" です。[head 要素のドキュメント](/guide/views#html-%E3%81%AE-head-%E6%83%85%E5%A0%B1) を参照してください。
 
-コンポーネントで vue-meta が使われたときに重複を避けるためには、ユニーク識別子を hid キーで付与してください。詳細は [こちら](https://github.com/declandewet/vue-meta#lists-of-tags) を参照してください。
+> 子コンポーネント利用された時にメタ情報が重複してしまうことを避けるために `hid` キーで一意な識別子を与えてください｡ これについてより深く理解するには [こちら](https://github.com/declandewet/vue-meta#lists-of-tags) を参照してください。
 
 例えば description のメタタグについて、`hid` ユニーク識別子を付与する必要があります。そうすれば vue-meta は、デフォルトのタグを上書きすべきということを知ることができます。
 
@@ -34,11 +34,11 @@ export default {
     return {
       title: `Page 1 (${this.name}-side)`,
       meta: [
-        { hid: 'description', name: 'description', content: "Page 1 description" }
-      ],
+        { hid: 'description', name: 'description', content: 'Page 1 description' }
+      ]
     }
   }
 }
 ```
 
-ページ内の `head` プロパティの使い方をより深く理解するには [HTML の head 情報のドキュメント](/guide/views#html-の-head-情報) を参照してください。
+ページ内の `head` プロパティの使い方をより深く理解するには [HTML の head 情報のドキュメント](/guide/views#html-%E3%81%AE-head-%E6%83%85%E5%A0%B1) を参照してください。

@@ -53,6 +53,18 @@ Nuxt.js 允许你在自动生成的 `vendor.bundle.js` 文件中添加一些模�
 
 [关于 loading 配置项的详细文档](/api/configuration-loading)
 
+### modules
+
+该配置项允许您将Nuxt模块添加到项目中。
+
+[关于 `modules` 配置项的详细文档](/api/configuration-modules)
+
+### modulesDir
+
+该配置项允许您定义`Nuxt.js`应用程序的`node_modules`文件夹。
+
+[关于 `modulesDir` 配置项的详细文档](/api/configuration-modulesdir)
+
 ### plugins
 
 该配置项用于配置那些需要在 `根vue.js应用` 实例化之前需要运行的 Javascript 插件。
@@ -61,7 +73,7 @@ Nuxt.js 允许你在自动生成的 `vendor.bundle.js` 文件中添加一些模�
 
 ### rootDir
 
-该配置项用于配置 Next.js 应用的根目录。
+该配置项用于配置 Nuxt.js 应用的根目录。
 
 [关于 rootDir 配置项的详细文档](/api/configuration-rootdir)
 

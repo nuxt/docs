@@ -5,15 +5,18 @@ description: Google アナリティクスを使うには？
 
 # Google アナリティクスを使うには？
 
-Nuxt.js アプリケーションで [Google アナリティクス](https://analytics.google.com/analytics/web/) を使うには `plugins/ga.js` というファイルを作成することを推奨します:
+はじめに、Nuxt.js用の [公式 Google アナリティクスモジュール](https://github.com/nuxt-community/analytics-module) があるのでそちらを確認してください。
+
+その他に [Google Analytics](https://www.google.com/analytics/) を Nuxt.js アプリケーションで使用するには、`plugins/ga.js`というファイルを作成することをお勧めします:
 
 ```js
 /* eslint-disable */
-import router from '~router'
-/*
-** クライアントサイドかつプロダクションモードでのみ実行
-*/
-if (process.env.NODE_ENV === 'production') {
+
+export default ({ app }) => {
+  /*
+  ** クライアントサイドかつプロダクションモードでのみ実行
+  */
+  if (process.env.NODE_ENV !== 'production') return
   /*
   ** Google アナリティクスのスクリプトをインクルード
   */
@@ -28,7 +31,7 @@ if (process.env.NODE_ENV === 'production') {
   /*
   ** ルートが変更されるたびに毎回実行（初期化も実行される）
   */
-  router.afterEach((to, from) => {
+  app.router.afterEach((to, from) => {
     /*
     ** Google アナリティクスにページビューが追加されたことを伝える
     */
@@ -40,7 +43,7 @@ if (process.env.NODE_ENV === 'production') {
 
 > `UA-XXXXXXXX-X`を Google アナリティクスのトラッキング ID に置き換えてください。
 
-それから `plugins/ga.js` をメインアプリケーション内でインポートすることを Nuxt.js に伝えます:
+それから plugins/ga.js をメインアプリケーション内でインポートすることを Nuxt.js に伝えます:
 
 `nuxt.config.js`
 

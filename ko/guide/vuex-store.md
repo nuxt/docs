@@ -24,7 +24,8 @@ Nuxt.js에서는 **2가지 store 모드** 를 지원하며, 선호하는 모드�
 ```js
 import Vuex from 'vuex'
 
-const store = new Vuex.Store({
+const store = () => new Vuex.Store({
+
   state: {
     counter: 0
   },
@@ -55,9 +56,9 @@ export default store
 만약 모듈 모드를 원한다면 `store/index.js` 파일에 store 인스턴스 대신 state와 mutaions, actions를 export 합니다:
 
 ```js
-export const state = {
+export const state = () => ({
   counter: 0
-}
+})
 
 export const mutations = {
   increment (state) {
@@ -68,9 +69,9 @@ export const mutations = {
 
 이제 `store/todos.js` 파일을 만들 수 있습니다:
 ```js
-export const state = {
+export const state = () => ({
   list: []
-}
+})
 
 export const mutations = {
   add (state, text) {
@@ -79,7 +80,7 @@ export const mutations = {
       done: false
     })
   },
-  delete (state, { todo }) {
+  remove (state, { todo }) {
     state.list.splice(state.list.indexOf(todo), 1)
   },
   toggle (state, todo) {
@@ -109,7 +110,7 @@ new Vuex.Store({
             done: false
           })
         },
-        delete (state, { todo }) {
+        remove (state, { todo }) {
           state.list.splice(state.list.indexOf(todo), 1)
         },
         toggle (state, { todo }) {

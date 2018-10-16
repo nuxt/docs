@@ -63,7 +63,7 @@ module.exports = {
 
 该扩展方法会被调用两次，一次在服务端打包构建的时候，另外一次是在客户端打包构建的时候。该方法的参数如下：
 1. Webpack 配置对象
-2. 构建环境对象，包括这些属性（全部为布尔类型）： `dev`， `isClient`， `isServer`
+2. 构建环境对象，包括这些属性（全部为布尔类型）： `isDev`， `isClient`， `isServer`
 
 例如 (`nuxt.config.js`)：
 ```js
@@ -79,7 +79,7 @@ module.exports = {
 }
 ```
 
-如果你想了解更多关于webpack的配置，可以移步 Nuxt.js 源码的 [webpack 目录](https://github.com/nuxt/nuxt.js/tree/master/lib/webpack)。
+如果你想了解更多关于webpack的配置，可以移步 Nuxt.js 源码的 [webpack 目录](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack)。
 
 ## filenames
 
@@ -226,7 +226,7 @@ module.exports = {
 }
 ```
 
-通过以上配置，当运行 `nuxt build` 时，`.nuxt/dist/` 目录内的内容会被上传至指定的 CDN 路径。
+通过以上配置，当运行 `nuxt build` 时，再将`.nuxt/dist/`目录的内容上传到您的CDN，然后瞧！
 
 ## vendor
 

@@ -67,13 +67,12 @@ export default {
 
 ```js
 import test from 'ava'
-import Nuxt from 'nuxt'
+import { Nuxt, Builder } from 'nuxt'
 import { resolve } from 'path'
 
-// 我们用两个变量保留 nuxt 和 server 实例的引用
+// 我们用一个变量保留 nuxt 和 server 实例的引用
 // 这样可以在单元测试结束之后关掉它们
 let nuxt = null
-let server = null
 
 // 初始化 Nuxt.js 并创建一个监听 localhost:4000 的服务器
 test.before('Init Nuxt.js', async t => {
@@ -83,9 +82,8 @@ test.before('Init Nuxt.js', async t => {
   config.rootDir = rootDir // 项目目录
   config.dev = false // 生产构建模式
   nuxt = new Nuxt(config)
-  await nuxt.build()
-  server = new nuxt.Server(nuxt)
-  server.listen(4000, 'localhost')
+  await new Builder(nuxt).build()
+  nuxt.listen(4000, 'localhost')
 })
 
 // 测试生成的html
@@ -107,7 +105,6 @@ test('路由 / 有效且渲染的HTML有特定的CSS样式', async t => {
 
 // 关掉服务器和Nuxt实例，停止文件监听。
 test.after('Closing server and nuxt.js', t => {
-  server.close()
   nuxt.close()
 })
 ```
@@ -127,7 +124,7 @@ npm test
 在 Nuxt.js 中集成 [ESLint](http://eslint.org) 是非常简单的，首先我们需要安装 ESLint 的一系列依赖包：
 
 ```bash
-npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-html eslint-plugin-promise eslint-plugin-standard
+npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-html eslint-plugin-promise eslint-plugin-standard eslint-plugin-import eslint-plugin-node
 ```
 
 然后, 在项目根目录下创建 `.eslintrc.js` 文件用于配置 ESLint：

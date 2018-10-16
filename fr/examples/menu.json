@@ -1,0 +1,85 @@
+[
+  {
+    "title": "Essentiels",
+    "links": [
+      {
+        "name": "Hello World",
+        "to": ""
+      },
+      {
+        "name": "Entête HTML SEO",
+        "to": "/seo-html-head"
+      }
+    ]
+  },
+  {
+    "title": "Personnalisation",
+    "links": [
+      {
+        "name": "Composant de chargement personnalisé",
+        "to": "/custom-loading"
+      },
+      {
+        "name": "Page de chargement personnalisé",
+        "to": "/custom-page-loading"
+      },
+      {
+        "name": "Routes personnalisées",
+        "to": "/custom-routes"
+      },
+      {
+        "name": "CSS global",
+        "to": "/global-css"
+      },
+      {
+        "name": "Mises en page",
+        "to": "/layouts"
+      },
+      {
+        "name": "Middleware",
+        "to": "/middleware"
+      },
+      {
+        "name": "Routes imbriquées",
+        "to": "/nested-routes"
+      },
+      {
+        "name": "Plugins",
+        "to": "/plugins"
+      },
+      {
+        "name": "Transitions de routes",
+        "to": "/routes-transitions"
+      }
+    ]
+  },
+  {
+    "title": "Avancé",
+    "links": [
+      {
+        "name": "Données asynchrones",
+        "to": "/async-data"
+      },
+      {
+        "name": "Authentification de routes",
+        "to": "/auth-routes"
+      },
+      {
+        "name": "API d'authentification externe (JWT)",
+        "to": "/auth-external-jwt"
+      },
+      {
+        "name": "Store Vuex",
+        "to": "/vuex-store"
+      },
+      {
+        "name": "i18n",
+        "to": "/i18n"
+      },
+      {
+        "name": "Tests",
+        "to": "/testing"
+      }
+    ]
+  }
+]

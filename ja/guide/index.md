@@ -1,15 +1,17 @@
 ---
 title: はじめに
-description: "2016年10月25日 zeit.co のチームが React アプリケーションをサーバーサイドレンダリングするためのフレームワーク Next.js を発表しました。そしてその発表から数時間後、Next.js と同じやり方で、しかし今度は Vue.js をサーバーサイドレンダリングするアプリケーションを構築するアイディアが生まれました。すなわち Nuxt.js の誕生です。"
+description: 2016年10月25日 zeit.co のチームが React アプリケーションをサーバーサイドレンダリングするためのフレームワーク Next.js
+  を発表しました。そしてその発表から数時間後、Next.js と同じやり方で、しかし今度は Vue.js をサーバーサイドレンダリングするアプリケーションを構築するアイディアが生まれました。すなわち
+  Nuxt.js の誕生です。
 ---
 
-> 2016年10月25日 [zeit.co](https://zeit.co/) のチームが React アプリケーションをサーバーサイドレンダリングするためのフレームワーク [Next.js](https://zeit.co/blog/next) を発表しました。そしてその発表からわずか数時間後、Next.js と同じやり方で、しかし今度は [Vue.js](https://vuejs.org) をサーバーサイドレンダリングするアプリケーションを構築するアイディアが生まれました。すなわち **Nuxt.js** の誕生です。
+> 2016年10月25日 [zeit.co](https://zeit.co/) のチームが React アプリケーションをサーバーサイドレンダリングするためのフレームワーク Next.js を発表しました。その発表から数時間後、Next.js と同じ方法で、[Vue.js](https://vuejs.org) アプリケーションをサーバーサイドレンダリングするアイディアが生まれました。すなわち **Nuxt.js** が誕生したのです。
 
 ## Nuxt.js とは何か？
 
-Nuxt.js とはユニバーサルな Vue.js アプリケーションを構築するためのフレームワークです。
+Nuxt.js はユニバーサルな Vue.js アプリケーションを構築するためのフレームワークです。
 
-クライアントサイド用のディストリビューションと、サーバーサイド用のディストリビューションとを分離して生成している間に行う **UI レンダリング** に焦点を当てています。
+サーバサイドとクライアントサイドの違いを抽象化することで無視して、一貫した方法で **UIレンダリングすること** に焦点を当てています。
 
 私たちのゴールは、あるプロジェクトの基礎として利用したり、あるいは既に進行中の Node.js ベースのプロジェクトに追加できる、柔軟なフレームワークを作成することです。
 
@@ -21,16 +23,17 @@ Nuxt.js はフレームワークとして、クライアントサイドとサー
 
 ## どのように動作するか？
 
-![Vue with Webpack and Babel](https://i.imgur.com/avEUftE.png)
+![Vue with webpack and Babel](https://i.imgur.com/avEUftE.png)
 
 Nuxt.js はリッチなウェブアプリケーションを構築するために下記のものを含んでいます:
 
-- [Vue 2](https://github.com/vuejs/vue)
-- [Vue-Router](https://github.com/vuejs/vue-router)
+- [Vue 2](https://vuejs.org/)
+- [Vue-Router](https://router.vuejs.org/en/)
 - [Vuex](https://github.com/vuejs/vuex)（[Vuex ストアのオプション](/guide/vuex-store) を利用しているときに限ります）
+- [Vue Server Renderer](https://ssr.vuejs.org/en/)（[`mode: 'spa'`](/api/configuration-mode) を利用しているときを除く)
 - [Vue-Meta](https://github.com/declandewet/vue-meta)
 
-すべて合わせてもわずか **28kb min+gzip** です（Vuex 利用時は 31kb）
+すべて合わせてもわずか **57kb min+gzip** です（Vuex 利用時は 53kb）
 
 また、ソースコードのバンドルや分割及びミニファイするために [Webpack](https://github.com/webpack/webpack) を使います。[vue-loader](https://github.com/vuejs/vue-loader) と [babel-loader](https://github.com/babel/babel-loader) も合わせて使います。
 
@@ -46,6 +49,8 @@ Nuxt.js はリッチなウェブアプリケーションを構築するために
 - Head 要素の管理
 - 開発モードにおけるホットリローディング
 - SASS, LESS, Stylus などのプリプロセッサのサポート
+- HTTP/2 push headers ready
+- モジュール構造で拡張できること
 
 ## 図解
 
@@ -59,17 +64,21 @@ Nuxt.js をプロジェクトの UI レンダリング全体を担うフレー�
 
 `nuxt` コマンドを実行すると開発サーバーが起動されます。このサーバーはホットリローディング及び vue-server-render を備えており、vue-server-render は自動的にアプリケーションをサーバーサイドレンダリングするよう設定されています。
 
+### シングルページアプリケーション（SPA）
+
+もし何らかの理由でサーバーサイドレンダリングを使いたくない、あるいはアプリケーションを静的にホスティングする必要があるときは `nuxt --spa` を使って、シンプルに SPA モードを使うことができます。*generate* 機能と組み合わせて使うことで、Node.js ランタイムや特別なサーバー処理を利用する必要なしに、SPA のパワフルなデプロイを実現できます。
+
 コマンドについてより深く理解するには [コマンド](/guide/commands) を参照してください。
 
-既にサーバーがあるならば Nuxt.js をミドルウェアとして追加ことができます。ユニバーサルなウェブアプリケーションを開発するために Nuxt.js を利用するにあたって何も制限はありません。[Nuxt.js](/api/nuxt) ガイドを見てみてください。
+既にサーバーがあるならば Nuxt.js をミドルウェアとして追加することができます。ユニバーサルなウェブアプリケーションの開発に Nuxt.js を利用する際、制限は何一つありません。 [Nuxt.js をプログラムで使う](/api/nuxt) ガイドを参照してください。
 
 ## 静的ファイルの生成
 
-Nuxt.js による大きなイノベーションがやってきました。それが `nuxt generate` です。
+`nuxt generate` コマンドにより Nuxt.js に大きなイノベーションがやってきました。
 
-`nuxt generate` はアプリケーションをビルドする際に、各ルートごとの HTML を生成します。
+アプリケーションをビルドする際、ルートやストアにあるファイル全てに対し HTML を生成します。
 
-例えば、下記のファイル群がある場合:
+例えば、以下のファイル構成だった場合:
 
 ```bash
 -| pages/
@@ -86,20 +95,22 @@ Nuxt.js による大きなイノベーションがやってきました。それ
 ----| index.html
 ```
 
-このやり方により、静的ファイルをホスティングするサービスであっても、生成されたウェブアプリケーションをホストできます。
+この方法により、生成されたウェブアプリケーションをどの静的ウェブサイトホスティングにもホストできます！
 
 最も良い例はこのウェブサイト自体です。このサイトは生成され GitHub Pages でホストされています:
 
 - [ソースコード](https://github.com/nuxt/nuxtjs.org)
 - [生成されたコード](https://github.com/nuxt/nuxtjs.org/tree/gh-pages)
 
-私たちは [docs リポジトリ](https://github.com/nuxt/docs) を更新するたびに毎回手動でアプリケーションを生成するのは面倒だったので、AWS Lambda function から生成機能を実行しています:
+[docs repository](https://github.com/nuxt/docs) をアップデートするたびに手動でアプリケーションを生成したくないので、プッシュ毎で AWS Lambda ファンクションを呼び出します：
 
-1. [nuxtjs.org リポジトリ](https://github.com/nuxt/nuxtjs.org) をクローンする
-2. `npm install` で依存しているパッケージをインストールする
+1. [nuxtjs.org リポジトリ](https://github.com/nuxt/nuxtjs.org)をクローンする
+2. `npm install` で依存関係のあるパッケージをインストールする
 3. `nuxt generate` を実行する
-4. `dist` フォルダーを `gh-pages` ブランチにプッシュする
+4. `gh-pages` ブランチに `dist` フォルダをプッシュする
 
 こうして私たちは **サーバーレスで静的に生成されたウェブアプリケーション** を手に入れたのでした。:)
 
-さらに進めて `nuxt generate` で生成された E コマースのウェブアプリケーションを考えてみましょう。そのアプリケーションは CDN でホストされ、商品が在庫切れになったり入荷されたりするたびにアプリケーションが再生成されます。ユーザーがアプリケーション遷移している間に、在庫の状態が（再生成のおかげで）最新の状態になるのです。つまり、サーバーでいろいろなインスタンスを起動したり、キャッシュを持ったりする必要はもうないのです！
+さらに `nuxt generate` で生成、CDN でホストされた E コマースのウェブアプリケーションを考えてみましょう。このアプリケーションは商品が在庫切れもしくは再入荷されるたびに再生成されます。ユーザーがアプリケーションを遷移している間に、在庫の状態が（再生成のおかげで）最新になるのです。もはや、サーバーで複数のインスタンスやキャッシュを持つ必要はないのです！
+
+<div class="Alert">GitHub Pages へデプロイする方法についての詳細は [GitHub Pages へデプロイするには？](/faq/github-pages) を参照してください。</div>

@@ -5,7 +5,7 @@ description: Heroku へデプロイするには？
 
 # Heroku へデプロイするには？
 
-[Node.js 用の Heroku ドキュメント](https://devcenter.heroku.com/articles/nodejs-support) をお読みになることをお勧めします。
+[Node.js 向けの Heroku のドキュメント ](https://devcenter.heroku.com/articles/nodejs-support)を読むことをお勧めします。
 
 まず `npm run build` を実行できるようにするために、Heroku にプロジェクトの `devDependencies` をインストールすることを伝える必要があります:
 
@@ -13,7 +13,7 @@ description: Heroku へデプロイするには？
 heroku config:set NPM_CONFIG_PRODUCTION=false
 ```
 
-また、アプリケーションに `0.0.0.0` ポートを Listen させ、プロダクションモードで起動します:
+また､アプリケーションにホスト `0.0.0.0` を listen させプロダクションモードで起動します:
 
 ```bash
 heroku config:set HOST=0.0.0.0
@@ -22,7 +22,7 @@ heroku config:set NODE_ENV=production
 
 下記は Heroku ダッシュボードの Settings セクションに表示されています:
 
- ![nuxt config vars Heroku](https://i.imgur.com/EEKl6aS.png)
+![nuxt config vars Heroku](https://i.imgur.com/EEKl6aS.png)
 
 それから `package.json` 内の `heroku-postbuild` スクリプトを使って、Heroku に `npm run build` を実行するよう伝えます:
 

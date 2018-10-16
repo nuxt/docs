@@ -5,7 +5,7 @@ description: Nuxt.js アプリケーションの URL を渡して window を取�
 
 # nuxt.renderAndGetWindow(url, options = {})
 
-- タイプ: `関数`
+- 型: `関数`
 - 引数: `文字列`
   1. `文字列`: レンダリングする URL
   2. *オプション*, `オブジェクト`: オプション
@@ -26,8 +26,12 @@ npm install --save-dev jsdom
 例:
 
 ```js
-const Nuxt = require('nuxt')
-const nuxt = new Nuxt()
+const { Nuxt, Builder } = require('nuxt')
+
+const config = require('./nuxt.config.js')
+config.dev = false
+
+const nuxt = new Nuxt(config)
 
 nuxt.renderAndGetWindow('http://localhost:3000')
 .then((window) => {

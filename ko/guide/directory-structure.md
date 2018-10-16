@@ -45,7 +45,7 @@ _이 디렉토리 이름은 변경할 수 없습니다._
 
 [Plugins의 동작에 대한 문서](/guide/plugins)
 
-### The Static Directory
+### Static 디렉토리
 
 `static` 디렉토리는 정적 파일들을 포함하는 디렉토리 입니다. 이 디렉토리의 파일들은 /에 연결됩니다.
 
@@ -67,7 +67,7 @@ _이 디렉토리 이름은 변경할 수 없습니다._
 
 `nuxt.config.js` 파일은 Nuxt.js의 사용자 정의 설정을 포함하는 파일 입니다.
 
-_이 디렉토리 이름은 변경할 수 없습니다._
+_이 파일의 이름은 변경할 수 없습니다._
 
 [nuxt.config.js의 동작에 대한 문서](/guide/configuration)
 
@@ -75,23 +75,15 @@ _이 디렉토리 이름은 변경할 수 없습니다._
 
 `package.json` 애플리케이션의 의존성과 스크립트를 포함하는 파일 입니다.
 
-_이 디렉토리 이름은 변경할 수 없습니다._
+_이 파일의 이름은 변경할 수 없습니다._
 
-## Aliases
+## 별칭
 
-| Alias | 디렉토리 |
+| 별칭 | 디렉토리 |
 |-----|------|
-| ~ | / |
-| ~assets | /assets |
-| ~components | /components |
-| ~middleware | /middleware |
-| ~pages | /pages |
-| ~plugins | /plugins |
-| ~static | /static |
+| `~` or `@` | [srcDir](/api/configuration-srcdir) |
+| `~~` or `@@` | [rootDir](/api/configuration-rootdir) |
 
-파일에 링크되는 Aliases:
+설정을 변경하지 않았다면, `srcDir` 은 `rootDir` 와 같습니다.
 
-| Alias | Usage | Description |
-|-------|------|--------------|
-| ~store | `const store = require('~store')` | `vuex` store 인스턴스를 불러옵니다. |
-| ~router | `const router = require('~router')`| `vue-router` 인스턴스를 불러옵니다. |
+<p class="Alert Alert--nuxt-green"><b>INFO:</b> `vue` 템플릿 내에서 `assets` 이나 `static` 디렉토리에 링크할 필요가 있다면 `~assets/your_image.png`, `~static/your_image.png` 처럼 입력해야 합니다.</p>

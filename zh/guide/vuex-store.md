@@ -19,7 +19,7 @@ Nuxt.js 支持两种使用 `store` 的方式，你可以择一使用：
 
 ### 普通方式
 
-使用普通方式的状态树，需要要添加 `store/index.js` 文件，并对外暴露一个 Vuex.Store 实例：
+使用普通方式的状态树，需要添加 `store/index.js` 文件，并对外暴露一个 Vuex.Store 实例：
 
 ```js
 import Vue from 'vue'
@@ -27,7 +27,8 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-const store = new Vuex.Store({
+const store = () => new Vuex.Store({
+
   state: {
     counter: 0
   },
@@ -58,9 +59,9 @@ export default store
 使用**状态树模块化**的方式，`store/index.js` 不需要返回 Vuex.Store 实例，而应该直接将 `state`、`mutations` 和 `actions` 暴露出来：
 
 ```js
-export const state = {
+export const state = () => ({
   counter: 0
-}
+})
 
 export const mutations = {
   increment (state) {
@@ -72,9 +73,9 @@ export const mutations = {
 其他的模块文件也需要采用类似的方式，如 `store/todos.js` 文件：
 
 ```js
-export const state = {
+export const state = () => ({
   list: []
-}
+})
 
 export const mutations = {
   add (state, text) {
@@ -83,7 +84,7 @@ export const mutations = {
       done: false
     })
   },
-  delete (state, { todo }) {
+  remove (state, { todo }) {
     state.list.splice(state.list.indexOf(todo), 1)
   },
   toggle (state, todo) {
@@ -114,7 +115,7 @@ new Vuex.Store({
             done: false
           })
         },
-        delete (state, { todo }) {
+        remove (state, { todo }) {
           state.list.splice(state.list.indexOf(todo), 1)
         },
         toggle (state, { todo }) {
@@ -165,7 +166,53 @@ export default {
 </style>
 ```
 
+> 模块方法也适用于顶级定义，而无需在`store`目录中实现子目录
+
+state 示例，您需要创建一个文件`store/state.js`并添加以下内容：
+
+```js
+export default () => ({
+  counter: 0
+})
+```
+
+并且相应的 mutations 在文件 `store/mutations.js` 中：
+
+```js
+export default {
+  increment (state) {
+    state.counter++
+  }
+}
+```
+
 <div class="Alert">你也可以在模块文件里返回 Vuex.Store 实例，但是这种情况下你需要手工设置应用的状态树。</div>
+
+### 模块文件
+
+您可以将模块文件分解为单独的文件：`state.js`,`actions.js`,`mutations.jd`和`getters.js`。如果您使用`index.js`来维护`state`,`getters`,`actions`和`mutations`，同时具有单个单独的操作文件，那么仍然可以正确识别该文件。
+
+### 插件
+
+您可以将其他插件添加到store（在模块模式下），将其放入`store/index.js`文件中：
+
+```js
+import myPlugin from 'myPlugin'
+
+export const plugins = [ myPlugin ]
+
+export const state = () => ({
+  counter: 0
+})
+
+export const mutations = {
+  increment (state) {
+    state.counter++
+  }
+}
+```
+
+有关插件的更多信息: [Vuex 文档](https://vuex.vuejs.org/en/plugins.html).
 
 ## fetch 方法
 
@@ -191,4 +238,46 @@ actions: {
 
 > 如果你使用_状态树模块化_的模式，只有主模块（即 `store/index.js`）适用设置该方法（其他模块设置了也不会被调用）。
 
+这时[context](/api/context)被赋予`nuxtServerInit`作为第二个参数，它与`asyncData`或`fetch`方法相同。
+
 `nuxtServerInit` 方法接收的上下文对象和 `fetch` 的一样，但不包括 `context.redirect()` 和 `context.error()`。
+
+> 注意：异步`nuxtServerInit`操作必须返回Promise来通知`nuxt`服务器等待它们。
+
+```js
+actions: {
+  async nuxtServerInit({ dispatch }) {
+    await dispatch('core/load')
+  }
+}
+```
+
+## Vuex 严格模式
+
+默认情况下，在开发模式下启用严格模式，在生产模式下关闭模式。要在dev中禁用严格模式，请遵循以下示例。
+
+### Module Mode
+
+`export const strict = false`
+
+### 普通方式
+
+```js
+import Vuex from 'vuex'
+
+const createStore = () => {
+  return new Vuex.Store({
+    strict: false,
+    state: () => ({
+      counter: 0
+    }),
+    mutations: {
+      increment (state) {
+        state.counter++
+      }
+    }
+  })
+}
+
+export default createStore
+```

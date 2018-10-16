@@ -23,10 +23,16 @@ module.exports = data: ->
 .red
   color: red
 </style>
+
+<style lang="scss">
+.red {
+  color: red
+}
+</style>
 ```
 
 これらのプリプロセッサを使うために Webpack のローダーをインストールする必要があります。
 
 ```bash
-npm install --save-dev pug@2.0.0-beta6 pug-loader coffee-script coffee-loader node-sass sass-loader
+npm install --save-dev pug@2.0.3 pug-plain-loader coffeescript coffee-loader node-sass sass-loader
 ```

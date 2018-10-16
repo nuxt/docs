@@ -1,28 +1,29 @@
 ---
-title: "API: nuxt.render(req, res)"
-description: Nuxt.js を独自の Node.js サーバーのミドルウェアとして使うことができます。
+title: 'API: nuxt.render(req, res)'
+description: Node.js サーバーのミドルウェアとして Nuxt.js を使うことができます。
 ---
 
 # nuxt.render(req, res)
 
-- タイプ: `関数`
+- 型: `関数`
 - 引数:
-  1. [リクエスト](https://nodejs.org/api/http.html#http_class_http_incomingmessage)
-  2. [レスポンス](https://nodejs.org/api/http.html#http_class_http_serverresponse)
+    1. [リクエスト](https://nodejs.org/api/http.html#http_class_http_incomingmessage)
+    2. [レスポンス](https://nodejs.org/api/http.html#http_class_http_serverresponse)
 - 戻り値: `プロミス`
 
-> `nuxt.render` を使うと Nuxt.js を独自の Node.js サーバーのミドルウェアとして使うことができます。
+> `nuxt.render` を使うと、Node.js サーバーのミドルウェアとして Nuxt.js を使うことができます。
 
-Nuxt.js を [express](https://github.com/expressjs/express) と一緒に使う例:
+[Express](https://github.com/expressjs/express) と一緒に使う例:
 
 ```js
-const Nuxt = require('nuxt')
+const { Nuxt, Builder } = require('nuxt')
+
 const app = require('express')()
 const isProd = (process.env.NODE_ENV === 'production')
 const port = process.env.PORT || 3000
 
 // Nuxt.js をオプションとともにインスタンス化する
-let config = require('./nuxt.config.js')
+const config = require('./nuxt.config.js')
 config.dev = !isProd
 const nuxt = new Nuxt(config)
 
@@ -31,16 +32,22 @@ app.use(nuxt.render)
 
 // ホットリローディングする開発モードのときのみビルドする
 if (config.dev) {
-  nuxt.build()
+  new Builder(nuxt).build()
+  .then(listen)
   .catch((error) => {
     console.error(error)
     process.exit(1)
   })
 }
+else {
+  listen()
+}
 
-// サーバーを Listen する
-app.listen(port, '0.0.0.0')
-console.log('Server listening on localhost:' + port)
+function listen() {
+  // サーバーを Listen する
+  app.listen(port, '0.0.0.0')
+  console.log('Server listening on `localhost:' + port + '`.')
+}
 ```
 
-<p class="Alert">ミドルウェアの最後で **nuxt.render** を呼び出すことが推奨されます。それは nuxt.render はウェブアプリケーションのレンダリングをハンドリングし、next() メソッドを呼び出さないためです。</p>
+<p class="Alert">ミドルウェアの終わりに `nuxt.render` を呼び出すことをお勧めします。`nuxt.render` は Web アプリケーションのレンダリングを処理し、`next()` を呼び出さないからです。</p>

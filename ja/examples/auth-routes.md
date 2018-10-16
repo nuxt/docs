@@ -25,15 +25,15 @@ yarn add express express-session body-parser whatwg-fetch
 それから `server.js` ファイルを作成します:
 
 ```js
-const Nuxt = require('nuxt')
+const { Nuxt, Builder } = require('nuxt')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const app = require('express')()
 
-// req.body へアクセスするために body-parser を使う
+// `req.body` へアクセスするための Body parser
 app.use(bodyParser.json())
 
-// req.session を作成します
+// `req.session` を作るためのセッション
 app.use(session({
   secret: 'super-secret-key',
   resave: false,
@@ -41,7 +41,7 @@ app.use(session({
   cookie: { maxAge: 60000 }
 }))
 
-// POST /api/login してログインし、認証されたユーザーを req.session.authUser に追加
+// POST `/api/login` でログイン、`req.session.authUser` に追加
 app.post('/api/login', function (req, res) {
   if (req.body.username === 'demo' && req.body.password === 'demo') {
     req.session.authUser = { username: 'demo' }
@@ -50,27 +50,23 @@ app.post('/api/login', function (req, res) {
   res.status(401).json({ error: 'Bad credentials' })
 })
 
-// POST /api/logout してログアウトし、ログアウトしたユーザーを req.session から削除
+// POST `/api/logout` でログアウト、`req.session` から削除
 app.post('/api/logout', function (req, res) {
   delete req.session.authUser
   res.json({ ok: true })
 })
 
-// オプションとともに Nuxt.js をインスタンス化
+// オプションと併せて Nuxt.js をインスタンス化
 const isProd = process.env.NODE_ENV === 'production'
 const nuxt = new Nuxt({ dev: !isProd })
-
-// プロダクション環境ではビルドしない
-const promise = (isProd ? Promise.resolve() : nuxt.build())
-promise.then(() => {
-  app.use(nuxt.render)
-  app.listen(3000)
-  console.log('Server is listening on http://localhost:3000')
-})
-.catch((error) => {
-  console.error(error)
-  process.exit(1)
-})
+// No build in production
+if (!isProd) {
+  const builder = new Builder(nuxt)
+  builder.build()
+}
+app.use(nuxt.render)
+app.listen(3000)
+console.log('Server is listening on http://localhost:3000')
 ```
 
 また `package.json` scripts を更新します:
@@ -99,10 +95,11 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-// window.fetch() のためのポリフィル
+// `window.fetch()` 用のポリフィル
 require('whatwg-fetch')
 
-const store = new Vuex.Store({
+const store = () => new Vuex.Store({
+
   state: {
     authUser: null
   },
@@ -116,15 +113,16 @@ const store = new Vuex.Store({
   actions: {
     // ...
   }
+
 })
 
 export default store
 ```
 
-1. `Vue` 及び `Vuex` をインポートし（これらは Nuxt.js 内でインクルードされています）、コンポーネント内で `$store` を使うために Vuex を使うことを Vue に伝えます
-2. すべてのブラウザで `fetch()` メソッドをポリフィルするために `require('whatwg-fetch')` します（詳しくは [fetch リポジトリ](https://github.com/github/fetch) 参照）
-3. `SET_USER` ミューテーションを作成します。これは認証されたユーザーを `state.authUser` にセットします
-4. Nuxt.js がストアインスタンスをメインアプリケーションに注入できるようにするため、ストアインスタンスをエクスポートします
+1. `Vue` と `Vuex`（Nuxt.js に含まれる）をインポートし、コンポーネントで `$store` を使うために Vuex を使うことを Vue に伝えます。
+2. すべてのブラウザで `fetch()` メソッドをポリフィルするために、`require('whatwg-fetch')` が必要です（[fetch リポジトリ](https://github.com/github/fetch)を参照してください）。
+3. 接続したユーザーに `state.authUser` を設定する `SET_USER` ミューテーションを作成します。
+4. メインアプリケーションにインジェクションできるように、ストアインスタンスを Nuxt.js にエクスポートします。
 
 ### nuxtServerInit() アクション
 
@@ -140,16 +138,14 @@ nuxtServerInit ({ commit }, { req }) {
 }
 ```
 
-Nuxt.js では data メソッドを非同期にするために、いくつかの異なるやり方があるので、お好きなものを選んでください:
+data メソッドを非同期にするために、Nuxt.js はいくつか異なる方法を用意しています。よく知っている方法を選んでください：
 
-1. Promise を返す。Nuxt.js はコンポーネントがレンダリングされる前に Promise が解決されるまで待ちます
-2. [async/await](https://github.com/lukehoban/ecmascript-asyncawait) を使う（[より深く理解する](https://zeit.co/blog/async-and-await)）
+1. `Promise` を返却する。Nuxt.js はコンポーネントをレンダリングする前に、プロミスが解決されるのを待ちます。
+2. [`async`/`await` プロポーサル](https://github.com/lukehoban/ecmascript-asyncawait) を使う。（[詳しくはこちらを参照してください](https://zeit.co/blog/async-and-await)）。
 
 ### login() アクション
 
 `login` アクションを追加できます。このアクションはログインするためにページコンポーネントから呼び出されます:
-
-ログインするためにページコンポーネントから呼び出される `login` アクションを追加します:
 
 ```js
 login ({ commit }, { username, password }) {

@@ -23,7 +23,7 @@ yarn add express express-session body-parser whatwg-fetch
 
 Then we create our `server.js`:
 ```js
-const Nuxt = require('nuxt')
+const { Nuxt, Builder } = require('nuxt')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const app = require('express')()
@@ -58,16 +58,13 @@ app.post('/api/logout', function (req, res) {
 const isProd = process.env.NODE_ENV === 'production'
 const nuxt = new Nuxt({ dev: !isProd })
 // No build in production
-const promise = (isProd ? Promise.resolve() : nuxt.build())
-promise.then(() => {
-  app.use(nuxt.render)
-  app.listen(3000)
-  console.log('Server is listening on http://localhost:3000')
-})
-.catch((error) => {
-  console.error(error)
-  process.exit(1)
-})
+if (!isProd) {
+  const builder = new Builder(nuxt)
+  builder.build()
+}
+app.use(nuxt.render)
+app.listen(3000)
+console.log('Server is listening on http://localhost:3000')
 ```
 
 And we update our `package.json` scripts:
@@ -97,7 +94,7 @@ Vue.use(Vuex)
 // Polyfill for window.fetch()
 require('whatwg-fetch')
 
-const store = new Vuex.Store({
+const store = () => new Vuex.Store({
 
   state: {
     authUser: null

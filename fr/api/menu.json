@@ -1,0 +1,149 @@
+[
+  {
+    "title": "Essentiel",
+    "links": [
+      { "name": "Context", "to": "/context" }
+    ]
+  },
+  {
+    "title": "Pages",
+    "links": [
+      { "name": "asyncData", "to": "/" },
+      { "name": "fetch", "to": "/pages-fetch" },
+      { "name": "head", "to": "/pages-head" },
+      { "name": "layout", "to": "/pages-layout" },
+      { "name": "middleware", "to": "/pages-middleware" },
+      { "name": "scrollToTop", "to": "/pages-scrolltotop" },
+      {
+        "name": "transition", "to": "/pages-transition",
+        "contents": [
+          { "name": "Chaine de caractères", "to": "#chaine-de-caract-res" },
+          { "name": "Objet", "to": "#objet" },
+          { "name": "Fonction", "to": "#fonction" }
+        ]
+      },
+      { "name": "validate", "to": "/pages-validate" },
+      { "name": "watchQuery", "to": "/pages-watchquery" }
+    ]
+  },
+  {
+    "title": "Composants",
+    "links": [
+      { "name": "nuxt", "to": "/components-nuxt" },
+      { "name": "nuxt-child", "to": "/components-nuxt-child" },
+      { "name": "nuxt-link", "to": "/components-nuxt-link" },
+      { "name": "no-ssr", "to": "/components-no-ssr" }
+    ]
+  },
+  {
+    "title": "Configuration",
+    "links": [
+      {
+        "name": "build", "to": "/configuration-build",
+        "contents": [
+          { "name": "analyze", "to": "#analyze" },
+          { "name": "babel", "to": "#babel" },
+          { "name": "cssSourceMap", "to": "#csssourcemap" },
+          { "name": "devMiddleware", "to": "#devmiddleware" },
+          { "name": "extend", "to": "#extend" },
+          { "name": "extractCSS", "to": "#extractcss" },
+          { "name": "filenames", "to": "#filenames" },
+          { "name": "hotMiddleware", "to": "#hotmiddleware" },
+          { "name": "plugins", "to": "#plugins" },
+          { "name": "postcss", "to": "#postcss" },
+          { "name": "publicPath", "to": "#publicpath" },
+          { "name": "ssr", "to": "#ssr" },
+          { "name": "templates", "to": "#templates" },
+          { "name": "vendor", "to": "#vendor" },
+          { "name": "watch", "to": "#watch" }
+        ]
+      },
+      { "name": "buildDir", "to": "/configuration-builddir" },
+      { "name": "css", "to": "/configuration-css" },
+      { "name": "dev", "to": "/configuration-dev" },
+      { "name": "env (En)", "to": "/configuration-env" },
+      {
+        "name": "generate", "to": "/configuration-generate",
+        "contents": [
+          { "name": "dir (En)", "to": "#dir" },
+          { "name": "interval (En)", "to": "#interval" },
+          { "name": "minify (En)", "to": "#minify" },
+          { "name": "routes (En)", "to": "#routes" }
+        ]
+      },
+      { "name": "head (En)", "to": "/configuration-head" },
+      { "name": "ignore (En)", "to": "/configuration-ignore" },
+      {
+        "name": "loading (En)", "to": "/configuration-loading",
+        "contents": [
+          { "name": "Disable the Progress Bar (En)", "to": "#disable-the-progress-bar" },
+          { "name": "Customize the Progress Bar (En)", "to": "#customize-the-progress-bar" },
+          { "name": "Use a Custom Loading Component (En)", "to": "#use-a-custom-loading-component" }
+        ]
+      },
+      { "name": "loadingIndicator (En)", "to": "/configuration-loading-indicator" },
+      { "name": "mode (En)", "to": "/configuration-mode" },
+      { "name": "modules (En)", "to": "/configuration-modules" },
+      { "name": "modulesDir (En)", "to": "/configuration-modulesdir" },
+      { "name": "plugins (En)", "to": "/configuration-plugins" },
+      {
+        "name": "render (En)", "to": "/configuration-render",
+        "contents": [
+          { "name": "bundleRenderer (En)", "to": "#bundlerenderer" },
+          { "name": "etag (En)", "to": "#etag" },
+          { "name": "gzip (En)", "to": "#gzip" },
+          { "name": "http2 (En)", "to": "#http2" },
+          { "name": "resourceHints (En)", "to": "#resourcehints" },
+          { "name": "ssr (En)", "to": "#ssr" },
+          { "name": "static (En)", "to": "#static" },
+          { "name": "csp (En)", "to": "#csp" }
+        ]
+      },
+      { "name": "rootDir (En)", "to": "/configuration-rootdir" },
+      {
+        "name": "router (En)", "to": "/configuration-router",
+        "contents": [
+          { "name": "base (En)", "to": "#base" },
+          { "name": "extendRoutes (En)", "to": "#extendroutes" },
+          { "name": "linkActiveClass (En)", "to": "#linkactiveclass" },
+          { "name": "linkExactActiveClass (En)", "to": "#linkexactactiveclass" },
+          { "name": "middleware (En)", "to": "#middleware" },
+          { "name": "mode (En)", "to": "#mode" },
+          { "name": "scrollBehavior (En)", "to": "#scrollbehavior" }
+        ]
+      },
+      { "name": "serverMiddleware (En)", "to": "/configuration-servermiddleware" },
+      { "name": "srcDir (En)", "to": "/configuration-srcdir" },
+      { "name": "transition (En)", "to": "/configuration-transition" },
+      { "name": "vue.config (En)", "to": "/configuration-vue-config" },
+      { "name": "watch (En)", "to": "/configuration-watch" },
+      {
+        "name": "watchers (En)", "to": "/configuration-watchers",
+        "contents": [
+          { "name": "chokidar (En)", "to": "#chokidar" },
+          { "name": "webpack (En)", "to": "#webpack" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Programmation",
+    "links": [
+      { "name": "Utilisation", "to": "/nuxt" },
+      { "name": "render", "to": "/nuxt-render" },
+      { "name": "renderRoute", "to": "/nuxt-render-route" },
+      { "name": "renderAndGetWindow", "to": "/nuxt-render-and-get-window" }
+    ]
+  },
+  {
+    "title": "Mécanismes",
+    "links": [
+      { "name": "Intro", "to": "/internals" },
+      { "name": "Nuxt", "to": "/internals-nuxt" },
+      { "name": "Renderer", "to": "/internals-renderer" },
+      { "name": "Module Container", "to": "/internals-module-container" },
+      { "name": "Builder", "to": "/internals-builder" },
+      { "name": "Generator", "to": "/internals-generator" }
+    ]
+  }
+]

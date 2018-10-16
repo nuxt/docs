@@ -1,5 +1,6 @@
 {
   "iso": "zh",
+  "docVersion": "2.1.0",
   "links": {
     "api": "API",
     "blog": "博客",
@@ -34,7 +35,15 @@
     "meta": {
       "title": "Nuxt.js - Vue.js 通用应用框架",
       "description": "Nuxt.js 是一个基于 Vue.js 的轻量级应用框架，可用来创建服务端渲染 (SSR) 应用，也可充当静态站点引擎生成静态站点应用，具有优雅的代码结构分层和热加载等特性。"
-    }
+    },
+    "codesandbox_title": "Play with Nuxt.js online",
+    "codesandbox_open": "Open on CodeSandBox.io",
+    "codesandbox_examples": "See more examples"
+  },
+  "sponsors": {
+    "title": "Sponsors",
+    "become": "Support us and",
+    "become_partner": "become a partner"
   },
   "footer": {
     "authors": "Chopin Brothers 出品"

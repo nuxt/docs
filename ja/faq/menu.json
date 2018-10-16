@@ -9,6 +9,7 @@
       { "name": "Webpack の設定を拡張するには？", "to": "/extend-webpack" },
       { "name": "Webpack プラグインを追加するには？", "to": "/webpack-plugins" },
       { "name": "ホストとポート番号を変更するには？", "to": "/host-port" },
+      { "name": "キャッシュコンポーネントを使うには？", "to": "/cached-components" },
       { "name": "Google アナリティクスを使うには？", "to": "/google-analytics" }
     ]
   },
@@ -25,10 +26,12 @@
     "title": "デプロイ",
     "links": [
       { "name": "Heroku へデプロイするには？", "to": "/heroku-deployment" },
+      { "name": "Netlify へデプロイするには？", "to": "/netlify-deployment" },
       { "name": "Now を使ってデプロイするには？", "to": "/now-deployment" },
       { "name": "Dokku へデプロイするには？", "to": "/dokku-deployment" },
       { "name": "Surge.sh へデプロイするには？", "to": "/surge-deployment" },
-      { "name": "GitHub Pages へデプロイするには？", "to": "/github-pages" }
+      { "name": "GitHub Pages へデプロイするには？", "to": "/github-pages" },
+      { "name": "nginx をプロキシとして使うには？", "to": "/nginx-proxy" }
     ]
   }
 ]

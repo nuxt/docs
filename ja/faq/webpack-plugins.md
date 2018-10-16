@@ -1,5 +1,5 @@
 ---
-title: Webpack プラグイン
+title: webpack プラグイン
 description: Webpack プラグインを追加するには？
 ---
 
@@ -9,7 +9,6 @@ description: Webpack プラグインを追加するには？
 
 ```js
 const webpack = require('webpack')
-
 module.exports = {
   build: {
     plugins: [

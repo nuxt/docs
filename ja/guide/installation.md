@@ -3,19 +3,19 @@ title: インストール
 description: Nuxt.js はとても簡単に始められます。シンプルなプロジェクトでは必要な依存パッケージは `nuxt` だけです。
 ---
 
-Nuxt.js はとても簡単に始められます。シンプルなプロジェクトでは必要な依存パッケージは `nuxt` だけです。
+> Nuxt.js はとても簡単に始められます。シンプルなプロジェクトでは必要な依存パッケージは `nuxt` だけです。
 
 ## Nuxt.js を使ったスターターテンプレート
 
-素早くスタートできるようにするため、Nuxt.js チームは [スターターテンプレート](https://github.com/nuxt/starter) を用意しました。
+素早くスタートできるようにするため、Nuxt.js チームは [スターターテンプレート](https://github.com/nuxt-community/starter-template) を用意しました。
 
-[ZIP をダウンロード](https://github.com/nuxt/starter/archive/source.zip) するか、vue-cli を使ってインストールしてください:
+[ZIP をダウンロード](https://github.com/nuxt-community/starter-template/archive/master.zip) するか、 Vue CLI を使ってインストールしてください:
 
 ```bash
-$ vue init nuxt/starter <project-name>
+$ vue init nuxt-community/starter-template <project-name>
 ```
 
-> もし [vue-cli](https://github.com/vuejs/vue-cli) をインストールしていなければ、`npm install -g vue-cli` でインストールしてください。
+> もし [Vue CLI](https://github.com/vuejs/vue-cli) をインストールしていなければ、`npm install -g @vue/cli @vue/cli-init` でインストールしてください。
 
 それから依存するパッケージをインストールしてください:
 

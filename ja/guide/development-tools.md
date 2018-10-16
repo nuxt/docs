@@ -7,15 +7,15 @@ description: Nuxt.js は開発がより楽しいものになるよう手助け�
 
 ## エンドツーエンドテスト
 
-[Ava](https://github.com/avajs/ava) は [jsdom](https://github.com/tmpvar/jsdom) と合わせて使うことができる、JavaScript のパワフルなテスティングフレームワークです。エンドツーエンドテストを簡単に行うためにこれらを使うことができます。
+[AVA](https://github.com/avajs/ava) は [jsdom](https://github.com/tmpvar/jsdom) と合わせて使うことができる、JavaScript のパワフルなテスティングフレームワークです。エンドツーエンドテストを簡単に行うためにこれらを使うことができます。
 
-まず ava と jsdom を開発依存パッケージに追加する必要があります:
+まず AVA と jsdom を開発依存パッケージに追加する必要があります:
 
 ```bash
 npm install --save-dev ava jsdom
 ```
 
-それから `package.json` に test というスクリプトを追加し、テストにインポートするファイルをコンバイルするために ava を設定します。
+それから `package.json` に test というスクリプトを追加し、テストにインポートするファイルをコンバイルするために AVA を設定します。
 
 ```javascript
 "scripts": {
@@ -28,7 +28,7 @@ npm install --save-dev ava jsdom
 },
 "babel": {
   "presets": [
-    "es2015"
+    "env"
   ]
 }
 ```
@@ -39,7 +39,7 @@ npm install --save-dev ava jsdom
 mkdir test
 ```
 
-`pages/index.vue` にページががあります:
+`pages/index.vue` にページがあります:
 
 ```html
 <template>
@@ -67,25 +67,24 @@ export default {
 
 ```js
 import test from 'ava'
-import Nuxt from 'nuxt'
+import { Nuxt, Builder } from 'nuxt'
 import { resolve } from 'path'
 
-// nuxt と server インスタンスを保持します
-// そうすればテスト終了時にそれらをクローズできます
+// Nuxt への参照を保持します
+// そうすればテスト終了時にサーバーをクローズできます
 let nuxt = null
-let server = null
 
-// Nuxt.js を初期化し localhost:4000 でリスニングするサーバーを作成します
+// Nuxt.js を初期化し localhost:4000 のリスニングを開始します
 test.before('Init Nuxt.js', async t => {
   const rootDir = resolve(__dirname, '..')
   let config = {}
   try { config = require(resolve(rootDir, 'nuxt.config.js')) } catch (e) {}
   config.rootDir = rootDir // project folder
   config.dev = false // production build
+  config.mode = 'universal' // Isomorphic application
   nuxt = new Nuxt(config)
-  await nuxt.build()
-  server = new nuxt.Server(nuxt)
-  server.listen(4000, 'localhost')
+  await new Builder(nuxt).build()
+  nuxt.listen(4000, 'localhost')
 })
 
 // 生成された HTML のみをテストする例
@@ -95,7 +94,7 @@ test('Route / exits and render HTML', async t => {
   t.true(html.includes('<h1 class="red">Hello world!</h1>'))
 })
 
-// DOM を経由してチェックするテストの例
+// DOM チェックを経由してテストする例
 test('Route / exits and render HTML with CSS applied', async t => {
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
@@ -105,9 +104,8 @@ test('Route / exits and render HTML with CSS applied', async t => {
   t.is(window.getComputedStyle(element).color, 'red')
 })
 
-// サーバーを閉じて nuxt にファイル更新のリスニングを中止させる
-test.after('Closing server and nuxt.js', t => {
-  server.close()
+// Nuxt サーバーをクローズする
+test.after('Closing server', t => {
   nuxt.close()
 })
 ```
@@ -120,14 +118,16 @@ npm test
 
 jsdom はブラウザを使っていないため制約がいくつかありますが、ほとんどのテストはカバーできます。もしアプリケーションをテストするためにブラウザを使いたいときは [Nightwatch.js](http://nightwatchjs.org) を調べるとよいかもしれません。
 
-## ESLint
+## ESLint と Prettier
 
-> ESLint はコードを綺麗に保てる優れたツールです。
+> [ESLint](http://eslint.org) はコードをきれいに保つ優れたツールです。
 
-とても簡単に [ESLint](http://eslint.org) を Nuxt.js と一緒に使うことができます。まず npm の依存パッケージを追加する必要があります:
+> [Prettier](prettier.io) はとても人気のあるコードフォーマッタです。
+
+Nuxt.jsを使ってとても簡単に Prettier と ESLint を追加することができます。まず、npmの依存パッケージを追加する必要があります:
 
 ```bash
-npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-html eslint-plugin-promise eslint-plugin-standard
+npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader eslint-plugin-vue eslint-plugin-prettier prettier
 ```
 
 それから `.eslintrc.js` ファイルをプロジェクトのルートディレクトに置いて ESLint を設定できます:
@@ -135,36 +135,80 @@ npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-
 ```js
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
   env: {
     browser: true,
     node: true
   },
-  extends: 'standard',
-  // *.vue ファイルを lint するために必要
-  plugins: [
-    'html'
+  parserOptions: {
+    parser: 'babel-eslint'
+  },
+  extends: [
+    "eslint:recommended",
+    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+    // より厳しいルールにするには`plugin:vue/strongly-recommended` もしくは `plugin:vue/recommended` に切り替えることを検討してください。
+    "plugin:vue/recommended",
+    "plugin:prettier/recommended"
   ],
-  // ここにカスタムルールを追加します
-  rules: {},
-  globals: {}
+  // *.vue ファイルを lint にかけるために必要
+  plugins: [
+    'vue'
+  ],
+  // ここにカスタムルールを追加します。
+  rules: {
+    "semi": [2, "never"],
+    "no-console": "off",
+    "vue/max-attributes-per-line": "off",
+    "prettier/prettier": ["error", { "semi": false }]
+  }
 }
 ```
 
-それから `lint` スクリプトを `package.json` 内に追加できます:
+そして、`lint` と `lintfix` スクリプトを `package.json` に追加することができます:
 
 ```js
 "scripts": {
-  "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+  "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
 }
 ```
 
-lint を実行できます:
+エラーを確認するために、`lint` を実行できます:
 
 ```bash
 npm run lint
 ```
 
-ESLint は `.gitignore` に定義されたファイルを無視しつつ、それ以外のすべての JavaScript と Vue ファイルを lint します。
+また、`lintfix` もまた実行可能なものの修正に使えます。
 
-<p class="Alert Alert--info">`"precommit": "npm run lint"` を package.json に追加してコードをコミットする前に自動的に lint するのはベストプラクティスのひとつです。</p>
+```bash
+npm run lintfix
+```
+
+ESLint は `.gitignore` に定義されたファイルを無視しますが、それ以外の全ての JavaScript と Vue ファイルを lint します。
+
+また、Webpack を使用してホットリロードモードで ESLint を有効にすることをお勧めします。この方法で ESLint は `npm run dev` 中に保存で実行されます。`nuxt.config.js` に以下を追加してください：
+
+```
+...
+  /*
+   ** Build configuration
+  */
+  build: {
+   /*
+    ** ここで webpack config を拡張できます
+   */
+   extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: "pre",
+          test: /\.(js|vue)$/,
+          loader: "eslint-loader",
+          exclude: /(node_modules)/
+        })
+      }
+    }
+  }
+```
+
+<p class="Alert Alert--info">package.json に `"precommit": "npm run lint"` を追加してコードをコミットする前に自動的に lint するのはベストプラクティスのひとつです。</p>

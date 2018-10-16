@@ -5,6 +5,7 @@ description: Nuxt.js では js プラグインを定義することができ、�
 
 > Nuxt.js では js プラグインを定義することができ、それはルートの Vue.js アプリケーションがインスタンス化される前に実行されます。プラグインとして自前のライブラリを指定することも、外部のモジュールを指定することもできます。
 
+
 <div class="Alert">Vue インスタンスの [ライフサイクル](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram) において、`beforeCreate` と `created` フックのみが **クライアントサイドとサーバーサイドの両方** で呼び出されることに注意してください。それ以外のすべてのフックはクライアントサイドでのみ呼び出されます。</div>
 
 ## 外部パッケージの利用
@@ -23,10 +24,8 @@ npm install --save axios
 <template>
   <h1>{{ title }}</h1>
 </template>
-
 <script>
 import axios from 'axios'
-
 export default {
   async data ({ params }) {
     let { data } = await axios.get(`https://my-api/posts/${params.id}`)
@@ -57,7 +56,6 @@ module.exports = {
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
-
 Vue.use(VueNotifications)
 ```
 
@@ -65,7 +63,7 @@ Vue.use(VueNotifications)
 
 ```js
 module.exports = {
-  plugins: ['~plugins/vue-notifications']
+  plugins: ['~/plugins/vue-notifications']
 }
 ```
 
@@ -84,24 +82,29 @@ module.exports = {
 }
 ```
 
-## Inject in $root & context
+## アプリケーションのルートや context に挿入する
 
-例えば [vue-18n](https://github.com/kazupon/vue-i18n) のように、プラグインをアプリケーションのルートに挿入して使いたい場合もあるでしょう。Nuxt.js はプラグインをルートのコンポーネントとコンテキストに追加するために `injectAs` プロパティを用意しています。
+例えば [vue-i18n](https://github.com/kazupon/vue-i18n) のように、プラグインをアプリケーションのルートに挿入して使いたい場合もあるでしょう。Nuxt.js はプラグイン内の関数を公開できるようにしており、それはルートコンポーネントとコンテキストを受け取れます。また `inject` 関数も用意しています。
 
 `plugins/i18n.js`:
 
 ```js
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-import store from '~store'
 
 Vue.use(VueI18n)
 
-const i18n = new VueI18n({
-  /* ここにオプションを書きます */
-})
+export default ({ store }, inject) => {
+  // `i18n` キーを挿入する
+  // -> app.$i18n になる
+  // -> Vue コンポーネント内では this.$i18n
+  // -> Vuex ストアやアクション、ミューテーション内で this.$i18n
+  // このようにしてミドルウェアやページの asyncData や fetch の中でプラグインを使うことができる
 
-export default i18n
+  inject('i18n', new VueI18n({
+    /* vue-i18n のオプション... */
+  }))
+}
 ```
 
 `nuxt.config.js`:
@@ -111,10 +114,7 @@ module.exports = {
   build: {
     vendor: ['vue-i18n']
   },
-  plugins: [
-    // プラグインが `i18n` として、ルートのアプリケーションとコンテキストに挿入されます 
-    { src: '~plugins/i18n.js', injectAs: 'i18n' }
-  ]
+  plugins: ['~/plugins/i18n.js']
 }
 ```
 
@@ -122,7 +122,7 @@ module.exports = {
 
 ## クライアントサイド限定のプラグイン利用
 
-プラグインのいくつかは **ブラウザでのみ** 動かしたいとします。その場合は `plugins` 内の `ssr: false` オプションを使うと、プラグインをクライアントサイドでのみ実行させるが可能です。
+プラグインのいくつかは **ブラウザでのみ** 動かしたいとします。その場合は `plugins` 内の `ssr: false` オプションを使うと、プラグインをクライアントサイドでのみ実行させることが可能です。
 
 例:
 
@@ -146,3 +146,5 @@ Vue.use(VueNotifications)
 ```
 
 逆に、サーバーサイドでのみライブラリを読み込む必要がある場合は、`process.server` 変数を使うことができます。これは Webpack が `server.bundle.js` ファイルを作成するタイミングで `true` がセットされる変数です。
+
+また、もしあなたが生成されたアプリケーション (`nuxt generate` コマンドによって) の中にいるかどうか知る必要がある場合は、生成から以降ずっと `process.static` 変数に `true` がセットされているかでチェックできます。保存前に `nuxt generate` コマンドによって、ページがサーバレンダリングされている時の状態を知るには、`process.static && process.server` を使うことができます。

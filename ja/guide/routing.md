@@ -1,6 +1,6 @@
 ---
 title: ルーティング
-description: Nuxt.js はウェブアプリケーションのルーティングを生成するためにファイルシステムを利用します。それは PHP がルーティングを生成するようにシンプルです。
+description: Nuxt.js はウェブアプリケーションのルーティングを生成するためにファイルシステムを利用します。
 ---
 
 > Nuxt.js は `pages` ディレクトリ内の Vue ファイルの木構造に沿って、自動的に [vue-router](https://github.com/vuejs/vue-router) の設定を生成します。
@@ -88,6 +88,8 @@ router: {
 
 `user-id` と名付けられたルートに `:id?` というパスがありますが、これはこの `:id` が必須ではないことを表します。もし必須にしたい場合は `users/_id` ディレクトリ内に `index.vue` ファイルを作成してください。
 
+<p class="Alert Alert--info"><b>警告</b>: `generate` コマンドでは 動的なルーティング は無視されます。:  [generate 設定 API](/api/configuration-generate#routes)</p>
+
 ### ルーティングのパラメータのバリデーション
 
 Nuxt.js では、動的なルーティングをするコンポーネント内に、パラメータをバリデーションするメソッドを定義することができます。
@@ -113,7 +115,7 @@ Nuxt.js では vue-router の子ルートを使ってルートをネストさせ
 
 ネストされたルートの親コンポーネントを定義するには、子ビューを含む **ディレクトリと同じ名前** の Vue ファイルを作成する必要があります。
 
-<p class="Alert Alert--info">親コンポーネント（.vue ファイル）内に `<nuxt-child/>` を書くことを覚えておいてください。</p>
+<p class="Alert Alert--info"><b>警告:</b> `<nuxt-child>` を親コンポーネント内 (<code>.vue</code> ファイル内) に書くことを忘れないでください。</nuxt-child></p>
 
 下記のようなファイルの木構造のとき:
 
@@ -209,23 +211,69 @@ router: {
 }
 ```
 
+### SPA フォールバック
+
+動的なルーティングに対しても SPA フォールバックを有効にすることができます。Nuxt.js は `mode: 'spa'` を使って生成された index.html ファイルと同様のファイルを出力します。多くの静的ホスティングサービスは、一致するファイルがない場合に SPA テンプレートを使用するよう設定できます。`head` 情報や HTML は含まれませんが、API からデータをロードし解決します。
+
+`nuxt.config.js` で SPA フォールバックを有効化:
+
+```js
+module.exports = {
+  generate: {
+    fallback: true, // '404.html' を使用したい場合
+    fallback: 'my-fallback/file.html' // ホスティングサービスで特定のロケーションを指定する必要がある場合
+  }
+}
+```
+
+#### Surge 向けの実装
+
+Surge は `200.html` と `404.html` の両方を[ハンドリングできます](https://surge.sh/help/adding-a-custom-404-not-found-page)。`generate.fallback` はデフォルトで `200.html` に設定されるので、変更する必要はありません。
+
+#### GitHub Pages と Netlify 向けの実装
+
+GitHub Pages と Netlify は `404.html` ファイルを自動的に認識するため、設定すべきことは`generate.fallback` を `true` にするだけです！
+
+#### Firebase ホスティング向けの実装
+
+Firebase ホスティングを使うためには、`generate.fallback` を `true` にし、以下の設定を使用します。 ([さらに詳しく](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
+
+```json
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/404.html"
+      }
+    ]
+  }
+}
+```
+
 ## トランジション
 
-Nuxt.js では [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) コンポーネントを使って、ページ間を遷移する際のトランジション/アニメーションを行うことができます。
+Nuxt.js では [<transition> コンポーネントを使って、ページ間を遷移する際のトランジション/アニメーションを行うことができます。</transition>](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components)
 
 ### グローバルな設定
 
-<p class="Alert Alert--info">Nuxt.js のデフォルトのトランジション名は `"page"` です。</p>
+<p class="Alert Alert--nuxt-green"><b>情報:</b> Nuxt.js のデフォルトのトランジション名は `"page"`です。</p>
 
 アプリケーションのすべてのページでフェードさせるトランジションを定義には、ルーティング全体に適用されている CSS ファイルが必要です。まずは `assets` ディレクトリ内にファイルを作成するところから始めます:
 
 `assets/main.css` 内にグローバルな CSS を書きます:
 
 ```css
-.page-enter-active, .page-leave-to {
+.page-enter-active, .page-leave-active {
   transition: opacity .5s;
 }
-.page-enter, .page-leave-active {
+.page-enter, .page-leave-to {
   opacity: 0;
 }
 ```
@@ -269,11 +317,11 @@ export default {
 
 ## ミドルウェア
 
-> ミドルウェアを使って、あるページまたはあるページのグループがレンダリングされる前に実行される関数を定義することができます。
+> ミドルウェアを使うと、特定のページやいくつかのページのグループがレンダリングされる前に実行されるカスタム関数を定義することができます。
 
 **ミドルウェアは `middleware/` ディレクトリに入れます。** ファイル名はミドルウェアの名前となります（`middleware/auth.js` は `auth` ミドルウェアになります）
 
-ミドルウェアは第一引数として [コンテキスト](/api#コンテキスト) を受け取ります:
+ミドルウェアは第一引数として [コンテキスト](/api#%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88) を受け取ります:
 
 ```js
 export default function (context) {
@@ -287,7 +335,7 @@ export default function (context) {
 2. マッチしたレイアウト
 3. マッチしたページ
 
-ミドルウェアは、`Promise` を返すようにするか、もしくは第二引数の `callback` を使って、非同期に実行することができます:
+ミドルウェアは非同期に実行することもできます。そのためには、単に `Promise` を返却するか、第2引数の `callback` を使用します:
 
 `middleware/stats.js`
 
@@ -315,4 +363,4 @@ module.exports = {
 
 `stats` ミドルウェアはすべてのルート変更時に呼び出されるようになります。
 
-ミドルウェアを使った実際の例を見たい場合は GitHub 上にある [example-auth0](https://github.com/nuxt/example-auth0) を見てみてください。
+ミドルウェアを使った実際の例を見たい場合は GitHub 上にある [example-auth0](https://github.com/nuxt/example-auth0) を参照してください。
