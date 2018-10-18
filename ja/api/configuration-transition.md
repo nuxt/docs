@@ -41,7 +41,7 @@ module.exports = {
 
 - 型: `文字列` または `オブジェクト`
 
-> レイアウトトランジションのデフォルト設定を指定するために使われます。設定は `layout`と同じです。
+> レイアウトトランジションのデフォルト設定を指定するために使われます。設定は `layout` と同じです。
 
 デフォルト:
 
@@ -65,7 +65,7 @@ export default {
 }
 ```
 
-例 グローバル `css`:
+例 グローバル `css` :
 
 ```css
 .layout-enter-active, .layout-leave-active {
