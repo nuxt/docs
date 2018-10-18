@@ -39,10 +39,20 @@ server {
 
 If you have a high volume website with regularly changing content, you might want to benefit from Nuxt generate capabilities and [nginx caching](https://www.nginx.com/blog/nginx-caching-guide).
 
-Below is an exampe configuration which you will most likely need to adapt to your needs.
+Below is an exampe configuration. Keep in mind that:
+- root folder should be the same as set by [configuration generate.dir](/api/configuration-generate#dir)
+- expire headers set by Nuxt are stripped (due to the cache)
+- both Nuxt as nginx can set additional headers, it's advised to choose one (if in doubt, choose nginx)
+- if your site is mostly static, increase the `proxy_cache_path inactive` and `proxy_cache_valid` numbers
+
+If you don't generate your routes but still wish to benefit from nginx cache:
+- remove the `root` entry
+- change `location @proxy {` to `location / {`
+- remove the other 2 `location` entries
+
 
 ```nginx
-proxy_cache_path  /PATH/TO/YOUR/CACHE levels=1:2 keys_zone=nuxt-cache:25m max_size=1g inactive=60m use_temp_path=off;
+proxy_cache_path  /data/nginx/cache levels=1:2 keys_zone=nuxt-cache:25m max_size=1g inactive=60m use_temp_path=off;
 
 map $sent_http_content_type $expires {
     "text/html"                 1h; # set this to your needs
@@ -60,7 +70,7 @@ server {
 
     charset utf-8;
 
-    root /var/www/YOUR_NUXT_DIST_FOLDER
+    root /var/www/NUXT_PROJECT_PATH/dist
 
     location ~* \.(?:ico|gif|jpe?g|png|woff2?|eot|otf|ttf|svg|js|css)$ {
         expires $expires;
