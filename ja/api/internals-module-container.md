@@ -5,7 +5,7 @@ description: Nuxt ModuleContainer クラス
 
 # ModuleContainer クラス
 
-- ソース: **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/module.js)**
+- ソース: **[core/module.js](https://github.com/nuxt/nuxt.js/tree/dev/packages/core/src/module.js)**
 
 すべての [モジュール](/guide/modules) は `ModuleContainer` インスタンスのコンテキスト内で呼び出されます.
 
