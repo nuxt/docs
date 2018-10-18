@@ -39,7 +39,7 @@ server {
 
 If you have a high volume website with regularly changing content, you might want to benefit from Nuxt generate capabilities and [nginx caching](https://www.nginx.com/blog/nginx-caching-guide).
 
-Below is an exampe configuration. Keep in mind that:
+Below is an example configuration. Keep in mind that:
 - root folder should be the same as set by [configuration generate.dir](/api/configuration-generate#dir)
 - expire headers set by Nuxt are stripped (due to the cache)
 - both Nuxt as nginx can set additional headers, it's advised to choose one (if in doubt, choose nginx)
