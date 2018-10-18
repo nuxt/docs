@@ -5,7 +5,7 @@ description: Kelas Generator Nuxt
 
 # Kelas Generator
 
-- Sumber: **[builder/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/generator.js)**
+- Sumber: **[builder/generator.js](https://github.com/nuxt/nuxt.js/tree/dev/packages/builder/src/generator.js)**
 
 ## Plugin yang dapat ditukar (Tapable plugins)
 

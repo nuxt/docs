@@ -5,7 +5,7 @@ description: La classe `Renderer` de Nuxt
 
 # Classe `Renderer`
 
-- Source : **[core/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/renderer.js)**
+- Source : **[core/renderer.js](https://github.com/nuxt/nuxt.js/tree/dev/packages/core/src/renderer.js)**
 
 Cette classe exporte un middleware qui gère et sert tous les rendus côté serveur et les requêtes de ressources.
 
