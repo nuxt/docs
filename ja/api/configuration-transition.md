@@ -58,7 +58,7 @@ module.exports = {
 export default {
   layoutTransition: 'layout'
   // または
-  transition: {
+  layoutTransition: {
     name: 'layout',
     mode: 'out-in'
   }
