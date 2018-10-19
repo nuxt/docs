@@ -35,3 +35,43 @@ module.exports = {
 ```
 
 `nuxt.config.js` 内の transition キーはページのトランジションのデフォルト設定を指定するために使われます。`transition` キーがオブジェクトのときに利用可能なキーについてより深く理解するには [ページのトランジションプロパティ](/api/pages-transition#オブジェクト) を参照してください。
+
+
+# layoutTransition プロパティ
+
+- 型: `文字列` または `オブジェクト`
+
+> レイアウトトランジションのデフォルト設定を指定するために使われます。設定は `layout` と同じです。
+
+デフォルト:
+
+```js
+{
+  name: 'layout',
+  mode: 'out-in'
+}
+```
+
+例 (`nuxt.config.js`):
+
+```js
+export default {
+  layoutTransition: 'layout'
+  // または
+  transition: {
+    name: 'layout',
+    mode: 'out-in'
+  }
+}
+```
+
+例 グローバル `css` :
+
+```css
+.layout-enter-active, .layout-leave-active {
+  transition: opacity .5s
+}
+.layout-enter, .layout-leave-active {
+  opacity: 0
+}
+```
