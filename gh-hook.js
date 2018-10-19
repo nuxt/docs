@@ -1,11 +1,14 @@
-const micro = require('micro')
+const { promisify } = require('util')
+const { resolve } = require('path')
 const crypto = require('crypto')
 const os = require('os')
+
+const micro = require('micro')
 const uuid = require('uuid/v4')
-const pify = require('pify')
-const rimraf = pify(require('rimraf'))
 const download = require('download')
-const { resolve } = require('path')
+const consola = require('consola')
+const rimraf = promisify(require('rimraf'))
+
 const json = micro.json
 const send = micro.send
 
@@ -16,11 +19,11 @@ module.exports = async function ({ req, res }, getFiles) {
   if (!process.env.GH_HOOK_SECRET || !req.headers['x-hub-signature']) {
     return send(res, 501)
   }
-  console.log('Received GitHub Hook', req.headers['x-github-delivery'])
+  consola.info('Received GitHub Hook', req.headers['x-github-delivery'])
   // Check if X-Hub-Signature matches our secret
-  let hmac = crypto.createHmac('sha1', process.env.GH_HOOK_SECRET)
+  const hmac = crypto.createHmac('sha1', process.env.GH_HOOK_SECRET)
   hmac.update(JSON.stringify(body))
-  let signature = 'sha1=' + hmac.digest('hex')
+  const signature = 'sha1=' + hmac.digest('hex')
   if (req.headers['x-hub-signature'] !== signature) {
     return send(res, 403, 'Bad signature')
   }
@@ -33,11 +36,11 @@ module.exports = async function ({ req, res }, getFiles) {
     return send(res, 501, 'Not push event')
   }
   let clonePath = resolve(os.tmpdir(), uuid())
-  console.log('Download repository...')
+  consola.start('Download repository...')
   await download('https://github.com/nuxt/docs/archive/master.zip', clonePath, { extract: true })
   clonePath = resolve(clonePath, 'docs-master')
   await getFiles(clonePath)
-  console.log('Docs file updated!')
+  consola.success('Docs file updated!')
   await rimraf(clonePath)
   send(res, 200, 'OK')
 }
