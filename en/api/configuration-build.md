@@ -62,7 +62,7 @@ export default {
 - Type: `Boolean`
 - Default: `false`
 
-> Enable cache of [uglifyjs-webpack-plugin ](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
+> Enable cache of [terser-webpack-plugin ](https://github.com/webpack-contrib/terser-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
 
 ## cssSourceMap
 
@@ -144,7 +144,7 @@ Using `extract-text-webpack-plugin` to extract the CSS in the main chunk into a 
 {
   app: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
   chunk: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
-  css: ({ isDev }) => isDev ? '[name].js' : '[contenthash].css',
+  css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
   img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[hash:7].[ext]',
   font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[hash:7].[ext]',
   video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[hash:7].[ext]'
@@ -179,24 +179,18 @@ See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware
 ```js
 {
   collapseBooleanAttributes: true,
-  collapseWhitespace: false,
   decodeEntities: true,
   minifyCSS: true,
   minifyJS: true,
   processConditionalComments: true,
-  removeAttributeQuotes: false,
-  removeComments: false,
   removeEmptyAttributes: true,
-  removeOptionalTags: false,
   removeRedundantAttributes: true,
-  removeScriptTypeAttributes: false,
-  removeStyleLinkTypeAttributes: false,
-  removeTagWhitespace: false,
-  sortClassName: false,
   trimCustomFragments: true,
   useShortDoctype: true
 }
 ```
+
+**Attention:** If you make changes to `html.minify`, they won't be merged with the defaults!
 
 Configuration for the [html-minifier](https://github.com/kangax/html-minifier) plugin used to minify
 HTML files created during the build process (will be applied for *all modes*).
@@ -299,33 +293,6 @@ You can set `minimizer` to a customized Array of plugins or set `minimize` to `f
 (`minimize` is being disabled for development by default)
 
 See [Webpack Optimization](https://webpack.js.org/configuration/optimization).
-
-## terser
-
-- Type: `Object` or `Boolean`
-- Default:
-
-```js
-{
-  parallel: true,
-  cache: false,
-  sourceMap: false,
-  extractComments: {
-    filename: 'LICENSES'
-  },
-  terserOptions: {
-    output: {
-      comments: /^\**!|@preserve|@license|@cc_on/
-    }
-  }
-}
-```
-
-Terser plugin options. Set to `false` to disable this plugin.
-
-`soruceMap` will be enabled when webpack `confing.devtool` matches `source-?map`
-
-See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin).
 
 ## optimizeCSS
 
@@ -527,6 +494,33 @@ export default {
 ```
 
 Templates are rendered using [`lodash.template`](https://lodash.com/docs/#template) you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
+
+## terser
+
+- Type: `Object` or `Boolean`
+- Default:
+
+```js
+{
+  parallel: true,
+  cache: false,
+  sourceMap: false,
+  extractComments: {
+    filename: 'LICENSES'
+  },
+  terserOptions: {
+    output: {
+      comments: /^\**!|@preserve|@license|@cc_on/
+    }
+  }
+}
+```
+
+Terser plugin options. Set to `false` to disable this plugin.
+
+`sourceMap` will be enabled when webpack `config.devtool` matches `source-?map`
+
+See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin).
 
 ## transpile
 

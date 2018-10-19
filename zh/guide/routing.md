@@ -117,8 +117,6 @@ export default {
 }
 ```
 
-如果validate方法未返回true或Promise解析为true或抛出Error，则Nuxt.js将在出现错误时自动加载404错误页面或500错误页面。
-
 如果校验方法返回的值不为 `true`或`Promise`中resolve 解析为`false`或抛出Error ， Nuxt.js 将自动加载显示 404 错误页面或 500 错误页面。
 
 想了解关于路由参数校验的信息，请参考 [页面校验API](/api/pages-validate)。
