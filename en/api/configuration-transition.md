@@ -56,7 +56,7 @@ Example (`nuxt.config.js`):
 export default {
   layoutTransition: 'layout'
   // or
-  transition: {
+  layoutTransition: {
     name: 'layout',
     mode: 'out-in'
   }
