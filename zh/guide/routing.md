@@ -100,7 +100,7 @@ router: {
 
 ：API Configuration generate
 
-<p class="Alert Alert--info"><b>警告：</b>`generate` 命令会忽略动态路由: [API Configuration generate](/api/configuration-generate#routes)</p>
+<p class="Alert Alert--orange"><b>警告：</b>`generate` 命令会忽略动态路由: [API Configuration generate](/api/configuration-generate#routes)</p>
 
 ### 路由参数校验
 
@@ -127,7 +127,7 @@ export default {
 
 创建内嵌子路由，你需要添加一个 Vue 文件，同时添加一个**与该文件同名**的目录用来存放子视图组件。
 
-<p class="Alert Alert--info"><b>Warning:</b> 别忘了在父组件(`.vue`文件) 内增加 `<nuxt-child/>` 用于显示子视图内容。</p>
+<p class="Alert Alert--orange"><b>Warning:</b> 别忘了在父组件(`.vue`文件) 内增加 `<nuxt-child/>` 用于显示子视图内容。</p>
 
 假设文件结构如：
 
