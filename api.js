@@ -119,7 +119,7 @@ async function getMenu (cwd) {
         let promise = readFile(resolve(cwd, path), 'utf-8')
         promise.then((fileContent) => {
           menu[key] = JSON.parse(fileContent)
-        })
+        }).catch(e => {console.log(e, path)})
         promises.push(promise)
         return
       }
