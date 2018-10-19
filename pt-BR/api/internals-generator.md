@@ -5,7 +5,7 @@ description: Nuxt Generator Class
 
 # Generator Class
 
-- Source: **[builder/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/generator.js)**
+- Source: **[builder/generator.js](https://github.com/nuxt/nuxt.js/tree/dev/packages/builder/src/generator.js)**
 
 
 ## Tapable plugins
