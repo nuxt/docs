@@ -62,7 +62,13 @@ const getReleases = async () => {
   } catch (e) {
     consola.error('Could not fetch nuxt.js release notes.')
   }
+  const getMajorVersion = r => r.name && Number(r.name.substring(1, 2))
   RELEASES.sort((a, b) => {
+    const aMajorVersion = getMajorVersion(a)
+    const bMajorVersion = getMajorVersion(b)
+    if (aMajorVersion !== bMajorVersion) {
+      return bMajorVersion - aMajorVersion
+    }
     return new Date(b.date) - new Date(a.date)
   })
   // Refresh every 15 minutes
