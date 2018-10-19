@@ -53,20 +53,19 @@ $ npm run dev
 
 The application is now running on http://localhost:3000.
 
-<p class="Alert">Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.</p>
+<p class="Alert Alert--nuxt-green">Nuxt.js will listen for file changes in its directories (for example <code>pages</code>). You don't have to restart your application after changing the code</p>
 
-To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
+To learn more about the directory structure of the project, read the [Directory Structure Documentation](/guide/directory-structure).
 
 ## Starting from scratch
 
-Creating a Nuxt.js application from scratch is also really easy, it only needs *1 file and 1 directory*. Let's create an empty directory to start working on the application:
+Creating a Nuxt.js application without scaffolding is also not complex at all. It only needs *one directory* and *two files* to get started.
+Let's create an empty directory to start working on the application:
 
 ```bash
 $ mkdir <project-name>
 $ cd <project-name>
 ```
-
-<p class="Alert Alert--nuxt-green"><b>Info:</b> replace <code>&lt;project-name&gt;</nom-du-projet></code> by the name of the project.</p>
 
 ### The package.json
 
@@ -81,19 +80,23 @@ The project needs a `package.json` file to specify how to start `nuxt`:
 }
 ```
 
-`scripts` will launch Nuxt.js via `npm run dev`.
+The `dev` script defined in `scripts` will launch Nuxt.js via `npm run dev`.
 
 ### Installing `nuxt`
 
-Once the `package.json` has been created, add `nuxt` to the project via npm:
+Once the `package.json` has been created, add `nuxt` to the project via npm or yarn:
 
 ```bash
 npm install --save nuxt
+
+# or with yarn
+yarn add nuxt
 ```
+
 
 ### The `pages` directory
 
-Nuxt.js will transform every `*.vue` file inside the `pages` directory as a route for the application.
+Nuxt.js will transform every `*.vue` file inside the `pages` directory into a route of the application.
 
 Create the `pages` directory:
 
@@ -117,6 +120,6 @@ $ npm run dev
 
 The application is now running on http://localhost:3000.
 
-<p class="Alert">Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.</p>
+<p class="Alert Alert--nuxt-green">Nuxt.js will listen for file changes in its directories (for example <code>pages</code>). You don't have to restart your application after changing the code</p>
 
-To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
+To learn more about the directory structure of the project, read the [Directory Structure Documentation](/guide/directory-structure).
