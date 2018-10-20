@@ -3,7 +3,7 @@ title: Configuration
 description: By default, Nuxt.js is configured to cover most use cases. This default configuration can be overwritten by using the `nuxt.config.js` file.
 ---
 
-> By default, Nuxt.js is configured to cover most use cases. This default configuration can be overwritten by modifying the `nuxt.config.js` file.
+> By default, Nuxt.js is configured to cover most use cases. This default configuration can be overwritten with the `nuxt.config.js` file.
 
 ### build
 
@@ -13,25 +13,25 @@ This option lets you configure various settings for the `build` step, including 
 
 ### css
 
-This option lets you define the CSS files/modules/libraries you want to set as globals (included in every page).
+This option lets you define the CSS files, modules, and libraries you want to include globally (on every page).
 
 [Documentation about `css` integration](/api/configuration-css)
 
 ### dev
 
-This option lets you define the `development` or `production` mode of Nuxt.js
+This option lets you define the `development` or `production` mode of Nuxt.js (important when you use Nuxt.js programatically)
 
 [Documentation about `dev` integration](/api/configuration-dev)
 
 ### env
 
-This option lets you define environment variables available to both the client and the server.
+This option lets you define environment variables that available to both the client and the server.
 
 [Documentation about `env` integration](/api/configuration-env)
 
 ### generate
 
-This option lets you define parameters values for every dynamic route in your application that will be transformed into HTML files by Nuxt.js.
+This option lets you set up parameter values for every dynamic route in your application that will be transformed into HTML files by Nuxt.js.
 
 [Documentation about generate integration](/api/configuration-generate)
 
@@ -43,13 +43,13 @@ This option lets you define all default meta tags for your application.
 
 ### loading
 
-This option lets you customize the loading component Nuxt.js loads by default.
+This option lets you customize the loading component Nuxt.js uses by default.
 
 [Documentation about `loading` integration](/api/configuration-loading)
 
 ### modules
 
-This option lets you add Nuxt modules to your project.
+Wit this option you can add Nuxt modules to your project.
 
 [Documentation about `modules` integration](/api/configuration-modules)
 
@@ -74,7 +74,7 @@ This option lets you define the workspace of your Nuxt.js Application.
 
 ### router
 
-This option lets you overwrite the default Nuxt.js configuration of Vue Router.
+With the `router` option you overwrite the default Nuxt.js configuration of Vue Router.
 
 [Documentation about `router` integration](/api/configuration-router)
 

@@ -25,7 +25,6 @@ The `layouts` directory includes your application layouts. Layouts are used to c
 
 _This directory cannot be renamed without extra configuration._
 
-
 ### The Middleware Directory
 
 The `middleware` directory contains your Application Middleware. Middleware lets you define custom functions that can be run before rendering either a page or a group of pages (layouts).
