@@ -49,7 +49,7 @@ This option lets you customize the loading component Nuxt.js uses by default.
 
 ### modules
 
-Wit this option you can add Nuxt modules to your project.
+With this option you can add Nuxt modules to your project.
 
 [Documentation about `modules` integration](/api/configuration-modules)
 
