@@ -3,12 +3,13 @@ title: Async Data
 description: You may want to fetch data and render it on the server-side. Nuxt.js adds an `asyncData` method to let you handle async operations before setting the component data.
 ---
 
-> You may want to fetch data and render it on the server-side.
-Nuxt.js adds an `asyncData` method to let you handle async operations before setting the component data.
+> You may want to fetch data and render it on the server-side. Nuxt.js adds an `asyncData` method to let you handle async operations before initializing the component
 
-## The asyncData Method
+## The asyncData method
 
-Sometimes you just want to fetch data and pre-render it on the server without using a store. `asyncData` is called every time before loading the component (**only for pages components**). It can be called server-side or before navigating to the corresponding route. This method receives [the context](/api/context) as the first argument, you can use it to fetch some data and Nuxt.js will merge it with the component data.
+Sometimes you just want to fetch data and pre-render it on the server without using a store. `asyncData` is called every time before loading the component (**only for pages components**). It will be called server-side and before navigating to the corresponding route on the client side.
+This method receives the [the context](/api/context) as the first argument, which can be used to retrieve data.
+Nuxt.js will automatically merge the returned object with the component data.
 
 <div class="Alert Alert--orange">
 
@@ -80,17 +81,50 @@ You can display the data inside your template like you're used to doing:
 
 To see the list of available keys in `context`, take a look at the [API Essential `context`](/api/context).
 
+### Use `req`/`res` objects
+
+When `asyncData` is called on server side, you have access to the `req` and `res` objects of the user request.
+
+```js
+export default {
+  async asyncData ({ req, res }) {
+    // Please check if if you are on the server side before
+    // using req and res
+    if (process.server) {
+     return { host: req.headers.host }
+    }
+
+    return {}
+  }
+}
+```
+
 ### Accessing dynamic route data
 
-You can use the context object injected into the `asyncData` property to access dynamic route data. For example, dynamic route params can be accessed using the name of the file or folder that configured it. So, if you define a file named `_slug.vue`, you can acccess it via `context.params.slug`.
+You can use the `context` parameter to access dynamic route data as well!
+For example, dynamic route params can be retrieved using the name of the file or folder that configured it.
+If you've define a file named `_slug.vue` in your `pages` folder, you can access the value via `context.params.slug`:
+
+```js
+export default {
+  async asyncData ({ params }) {
+    const slug = params.slug // When calling /abc the slug will be "abc"
+    return { slug }
+  }
+}
+```
+
 
 ### Listening to query changes
 
-The `asyncData` method **is not called** on query string changes by default. If you want to change this behavior, for example when building a pagination component, you can setup parameters that should be listened to through the `watchQuery` property of your page component. Learn more on the [API `watchQuery` page](/api/pages-watchquery).
+The `asyncData` method **is not called** on query string changes by default.
+If you want to change this behavior, for example when building a pagination component,
+you can set up parameters that should be listened to with the `watchQuery` property of your page component.
+Learn more on the [API `watchQuery` page](/api/pages-watchquery) page.
 
 ## Handling Errors
 
-Nuxt.js adds the `error(params)` method in the `context`, you can call it to display the error page. `params.statusCode` will be also used to render the proper status code from the server-side.
+Nuxt.js adds the `error(params)` method in the `context`, which you can call to display the error page. `params.statusCode` will be also used to render the proper status code from the server-side.
 
 Example with a `Promise`:
 
@@ -124,4 +158,4 @@ export default {
 }
 ```
 
-To customize the error page, take a look at the [Guide Views layouts](/guide/views#layouts).
+To customize the error page, take a look at the [views guide](/guide/views#layouts) .
