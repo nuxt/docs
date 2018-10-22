@@ -22,12 +22,12 @@ description: 显示当前页面
 [
   {
     path: '/parent',
-    component: '~pages/parent.vue',
+    component: '~/pages/parent.vue',
     name: 'parent',
     children: [
       {
         path: 'child',
-        component: '~pages/parent/child.vue',
+        component: '~/pages/parent/child.vue',
         name: 'parent-child'
       }
     ]
@@ -41,9 +41,11 @@ description: 显示当前页面
 <template>
   <div>
     <h1>我是父级页面</h1>
-    <nuxt-child/>
+    <nuxt-child :foobar="123" />
   </div>
 </template>
 ```
+
+> 子组件还可以接收Vue组件等属性。
 
 可以看这个实际案例：[嵌套路由示例](/examples/nested-routes)
