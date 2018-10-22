@@ -30,7 +30,11 @@ $ npm run dev
 ```
 La aplicación ahora estara ejecutandose en http://localhost:3000
 
-<p class="Alert">Nuxt.js escuchara los cambios en los archivos dentro del directorio `pages`, por lo cual no es necesario reiniciar la aplicación cada vez que cambie o agregue una nueva pagina</p>
+<p class="Alert">
+
+Nuxt.js escuchara los cambios en los archivos dentro del directorio `pages`, por lo cual no es necesario reiniciar la aplicación cada vez que cambie o agregue una nueva pagina
+
+</p>
 
 Para obtener mas información sobre la estructura de directorios del proyecto vea: [Documentación de la estructura de directorios](/guide/directory-structure).
 
@@ -86,7 +90,11 @@ $ npm run dev
 ```
 La aplicación ahora se estatara ejecutando en http://localhost:3000
 
-<p class="Alert">Nuxt.js escuchará los cambios de archivos dentro del directorio de `pages`. Por lo que no es necesario reiniciar la aplicación al agregar nuevas páginas</p>
+<p class="Alert">
+
+Nuxt.js escuchará los cambios de archivos dentro del directorio de `pages`. Por lo que no es necesario reiniciar la aplicación al agregar nuevas páginas
+
+</p>
 
 
 Para obtener más información sobre la estructura de directorios del proyecto vea: [Documentación de la estructura de directorios](/guide/directory-structure).

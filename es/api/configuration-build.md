@@ -29,7 +29,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**INFO:** You can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)</p>
+<p class="Alert Alert--teal">
+
+**INFO:** You can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)
+
+</p>
 
 ## babel
 
@@ -158,7 +162,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--orange">When the loaders are defined in the `nuxt.config.js`, the default loaders will be overwritten.</p>
+<p class="Alert Alert--orange">
+
+When the loaders are defined in the `nuxt.config.js`, the default loaders will be overwritten.
+
+</p>
 
 ## plugins
 

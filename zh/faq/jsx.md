@@ -22,6 +22,10 @@ export default {
 </script>
 ```
 
-<p class="Alert Alert--orange">这里的`h` 为 `createElement` 的简化别名，这是 Vue.js 使用 JSX 的惯例用法，且不能省略。 如果 `h` 参数被省略，应用在构建编译的时候会报错。</p>
+<p class="Alert Alert--orange">
+
+这里的`h` 为 `createElement` 的简化别名，这是 Vue.js 使用 JSX 的惯例用法，且不能省略。 如果 `h` 参数被省略，应用在构建编译的时候会报错。
+
+</p>
 
 更多关于 `JSX` 的使用信息，请移步 Vue.js 官方文档的 [JSX 章节](https://vuejs.org/v2/guide/render-function.html#JSX)

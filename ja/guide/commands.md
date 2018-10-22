@@ -36,7 +36,11 @@ nuxt generate | アプリケーションをビルドして、ルートごとに 
 
 そうすれば、`npm run <command>` 経由で Nuxt.js のコマンドを実行することができます（例: `npm run dev`）
 
-<p class="Alert Alert--nuxt-green"><b>上級者用の Tips:</b> npm コマンドへ引数を渡すためには <code>--</code> スクリプト名を付ける必要があります（例: <code>npm run dev -- --spa</code>）</p>
+<p class="Alert Alert--nuxt-green">
+
+<b>上級者用の Tips:</b> npm コマンドへ引数を渡すためには <code>--</code> スクリプト名を付ける必要があります（例: <code>npm run dev -- --spa</code>）
+
+</p>
 
 ## 開発環境
 
@@ -93,7 +97,11 @@ npm run generate
 
 プロジェクトで [動的なルーティング](/guide/routing#dynamic-routes) を使っている場合は、Nuxt.js に動的なルーティングを生成させるために [generate 設定](/api/configuration-generate) に目を通してください。
 
-<div class="Alert">`nuxt generate` でウェブアプリケーションを生成するときは、[data()](/guide/async-data#the-data-method) や [fetch()](/guide/vuex-store#the-fetch-method) に渡される [context](/api#context) は `req` 及び `res` を持たなくなります。</div>
+<div class="Alert">
+
+`nuxt generate` でウェブアプリケーションを生成するときは、[data()](/guide/async-data#the-data-method) や [fetch()](/guide/vuex-store#the-fetch-method) に渡される [context](/api#context) は `req` 及び `res` を持たなくなります。
+
+</div>
 
 ### シングルページアプリケーションデプロイ(SPA)
 
@@ -109,6 +117,14 @@ SPAのアイデアは簡単です！ `mode: 'spa'` または `--spa` フラグ�
 
 他に取り得る方法としては、`spa` モードの間、 Nuxt をフレームワークのミドルウェアとして使用することができます。 これによりサーバの負荷を軽減し、SSR が不可能なプロジェクトで Nuxt を使用することができます。
 
-<div class="Alert">ポピュラーなホストへデプロイする例は [Heroku へデプロイするには？](/faq/heroku-deployment) を参照してください。</div>
+<div class="Alert">
 
-<div class="Alert"> GitHub Pages へデプロイする方法についての詳細は [GitHub Pages へデプロイするには？](/faq/github-pages) を参照してください。</div>
+ポピュラーなホストへデプロイする例は [Heroku へデプロイするには？](/faq/heroku-deployment) を参照してください。
+
+</div>
+
+<div class="Alert">
+
+ GitHub Pages へデプロイする方法についての詳細は [GitHub Pages へデプロイするには？](/faq/github-pages) を参照してください。
+
+</div>

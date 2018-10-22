@@ -24,7 +24,11 @@ export default {
 }
 ```
 
-<p class="Alert Alert-blue">`base` がセットされているときは Nuxt.js はドキュメントのヘッダーに `<base href="{{ router.base }}"/>` を追加します。</p>
+<p class="Alert Alert-blue">
+
+`base` がセットされているときは Nuxt.js はドキュメントのヘッダーに `<base href="{{ router.base }}"/>` を追加します。
+
+</p>
 
 > このオプションは vue-router の [base](https://router.vuejs.org/ja/api/#base) に直接付与されます。
 

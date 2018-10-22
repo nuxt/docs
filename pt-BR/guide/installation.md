@@ -32,7 +32,11 @@ $ npm run dev
 
 The application is now running on http://localhost:3000.
 
-<p class="Alert">Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.</p>
+<p class="Alert">
+
+Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.
+
+</p>
 
 To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
 
@@ -45,7 +49,11 @@ $ mkdir <project-name>
 $ cd <project-name>
 ```
 
-<p class="Alert Alert--nuxt-green"><b>Info:</b> replace <code>&lt;project-name&gt;</nom-du-projet></code> by the name of the project.</p>
+<p class="Alert Alert--nuxt-green">
+
+<b>Info:</b> replace <code>&lt;project-name&gt;</nom-du-projet></code> by the name of the project.
+
+</p>
 
 ### The package.json
 
@@ -96,6 +104,10 @@ $ npm run dev
 
 The application is now running on http://localhost:3000.
 
-<p class="Alert">Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.</p>
+<p class="Alert">
+
+Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.
+
+</p>
 
 To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).

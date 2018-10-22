@@ -10,7 +10,11 @@ description: Nuxt.js 扩展了 Vue.js，增加了一个叫 `asyncData` 的方法
 `asyncData`方法会在组件（**限于页面组件**）每次加载之前被调用。它可以在服务端或路由更新之前被调用。
 在这个方法被调用的时候，第一个参数被设定为当前页面的[上下文对象](/api#上下文对象)，你可以利用 `asyncData`方法来获取数据，Nuxt.js 会将 `asyncData` 返回的数据融合组件 `data` 方法返回的数据一并返回给当前组件。
 
-<div class="Alert Alert--orange">注意：由于`asyncData`方法是在组件 **初始化** 前被调用的，所以在方法内是没有办法通过 `this` 来引用组件的实例对象。</div>
+<div class="Alert Alert--orange">
+
+注意：由于`asyncData`方法是在组件 **初始化** 前被调用的，所以在方法内是没有办法通过 `this` 来引用组件的实例对象。
+
+</div>
 
 Nuxt.js 提供了几种不同的方法来使用 `asyncData` 方法，你可以选择自己熟悉的一种来用：
 
@@ -18,7 +22,11 @@ Nuxt.js 提供了几种不同的方法来使用 `asyncData` 方法，你可以�
 2. 使用 [async 或 await](https://github.com/lukehoban/ecmascript-asyncawait) ([了解更多](https://zeit.co/blog/async-and-await))
 3. 为第二个参数指定一个回调函数. 注：该回调函数需符合通用的 NodeJs 回调函数的形式: `callback(err, data)`
 
-<div class="Alert Alert--grey">我们使用 [axios](https://github.com/mzabriskie/axios) 重构 HTTP 请求, 我们 <strong>强烈建议您</strong> 使用 [axios 模块](https://axios.nuxtjs.org/) 用于您的Nuxt项目中。</div>
+<div class="Alert Alert--grey">
+
+我们使用 [axios](https://github.com/mzabriskie/axios) 重构 HTTP 请求, 我们 <strong>强烈建议您</strong> 使用 [axios 模块](https://axios.nuxtjs.org/) 用于您的Nuxt项目中。
+
+</div>
 
 ### 返回 Promise
 ```js

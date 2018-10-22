@@ -24,4 +24,8 @@ module.exports = {
 
 想了解 `head` 属性的可用配置，可以参考 [vue-meta 配置文档](https://github.com/declandewet/vue-meta#recognized-metainfo-properties)。
 
-<p class="Alert Alert--teal"><b>提示：</b> 你也可以在页面组件中使用 `head` 配置并通过 `this` 关键字来获取组件的数据，具体请参考 [页面组件的 head 属性配置](/api/pages-head)。</p>
+<p class="Alert Alert--teal">
+
+<b>提示：</b> 你也可以在页面组件中使用 `head` 配置并通过 `this` 关键字来获取组件的数据，具体请参考 [页面组件的 head 属性配置](/api/pages-head)。
+
+</p>

@@ -5,7 +5,11 @@ description: Nuxt.js 依据页面文件的目录结构来生成应用的路由�
 
 > Nuxt.js 依据 `pages` 目录结构自动生成 [vue-router](https://github.com/vuejs/vue-router) 模块的路由配置。
 
-<div class="Alert Alert--grey">要在页面之间使用路由，我们建议使用[`<nuxt-link>`](/api/components-nuxt-link) 标签。</div>
+<div class="Alert Alert--grey">
+
+要在页面之间使用路由，我们建议使用[`<nuxt-link>`](/api/components-nuxt-link) 标签。
+
+</div>
 
 例如:
 
@@ -100,7 +104,11 @@ router: {
 
 ：API Configuration generate
 
-<p class="Alert Alert--orange"><b>警告：</b>`generate` 命令会忽略动态路由: [API Configuration generate](/api/configuration-generate#routes)</p>
+<p class="Alert Alert--orange">
+
+<b>警告：</b>`generate` 命令会忽略动态路由: [API Configuration generate](/api/configuration-generate#routes)
+
+</p>
 
 ### 路由参数校验
 
@@ -127,7 +135,11 @@ export default {
 
 创建内嵌子路由，你需要添加一个 Vue 文件，同时添加一个**与该文件同名**的目录用来存放子视图组件。
 
-<p class="Alert Alert--orange"><b>Warning:</b> 别忘了在父组件(`.vue`文件) 内增加 `<nuxt-child/>` 用于显示子视图内容。</p>
+<p class="Alert Alert--orange">
+
+<b>Warning:</b> 别忘了在父组件(`.vue`文件) 内增加 `<nuxt-child/>` 用于显示子视图内容。
+
+</p>
 
 假设文件结构如：
 
@@ -274,7 +286,11 @@ Nuxt.js 使用 Vue.js 的[&lt;transition&gt;](http://vuejs.org/v2/guide/transiti
 
 ### 全局过渡动效设置
 
-<p class="Alert Alert--nuxt-green"><b>提示 :</b>Nuxt.js 默认使用的过渡效果名称为 `page`</p>
+<p class="Alert Alert--nuxt-green">
+
+<b>提示 :</b>Nuxt.js 默认使用的过渡效果名称为 `page`
+
+</p>
 
 如果想让每一个页面的切换都有淡出 (fade) 效果，我们需要创建一个所有路由共用的 CSS 文件。所以我们可以在 `assets/` 目录下创建这个文件：
 

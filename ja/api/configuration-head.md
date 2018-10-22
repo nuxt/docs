@@ -24,4 +24,8 @@ module.exports = {
 
 `head` に設定できるオプション一覧は [vue-meta のドキュメント](https://github.com/declandewet/vue-meta#recognized-metainfo-properties) を参照してください。
 
-<p class="Alert Alert--teal"><b>情報:</b> ページのコンポーネントでも `head` を使うことができ、`this` を経由してコンポーネントのデータにアクセスできます。詳しくは [コンポーネントの head プロパティ](/api/pages-head) を参照してください。</p>
+<p class="Alert Alert--teal">
+
+<b>情報:</b> ページのコンポーネントでも `head` を使うことができ、`this` を経由してコンポーネントのデータにアクセスできます。詳しくは [コンポーネントの head プロパティ](/api/pages-head) を参照してください。
+
+</p>

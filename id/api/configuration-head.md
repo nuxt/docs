@@ -25,4 +25,8 @@ module.exports = {
 
 Untuk mengetahui daftar pilihan yang dapat Anda berikan pada `head`, lihat [dokumentasi vue-meta](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
 
-<p class="Alert Alert--teal"><b>INFO:</b> Anda juga dapat menggunakan `head` di komponen halaman dan mengakses data komponen melalui `this`, lihat [component head property](/api/pages-head).</p>
+<p class="Alert Alert--teal">
+
+<b>INFO:</b> Anda juga dapat menggunakan `head` di komponen halaman dan mengakses data komponen melalui `this`, lihat [component head property](/api/pages-head).
+
+</p>

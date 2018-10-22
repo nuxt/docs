@@ -206,4 +206,8 @@ More information about the `head` method: [API Configuration `head`](/api/config
 
 More information about the head method: [API Pages `head`](/api/pages-head).
 
-<p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the `hid` key. [Learn more](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+<p class="Alert">
+
+To avoid any duplication when used in child component, please give a unique identifier with the `hid` key. [Learn more](https://github.com/declandewet/vue-meta#lists-of-tags).
+
+</p>

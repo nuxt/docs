@@ -31,7 +31,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**Info:** anda bisa menggunakan perintah `nuxt build --analyze` atau `nuxt build -a` untuk mem'build aplikasi dan menjalankan bundle analyzer pada [http://localhost:8888](http://localhost:8888).</p>
+<p class="Alert Alert--teal">
+
+**Info:** anda bisa menggunakan perintah `nuxt build --analyze` atau `nuxt build -a` untuk mem'build aplikasi dan menjalankan bundle analyzer pada [http://localhost:8888](http://localhost:8888).
+
+</p>
 
 ## babel
 

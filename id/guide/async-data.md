@@ -11,7 +11,11 @@ description: Anda mungkin ingin mengambil data dan me-rendernya di sisi-server. 
 
 Terkadang Anda hanya ingin mengambil data dan mem-"pre-render"-nya di server tanpa menggunakan simpanan (store). `asyncData` dipanggil setiap saat sebelum memuat komponen (**hanya untuk komponen halaman**). Ini bisa disebut sisi-server atau sebelum menavigasi ke rute yang sesuai. Metode ini menerima [context](/api/context) sebagai argumen pertama, Anda dapat menggunakannya untuk mengambil beberapa data dan Nuxt.js akan menggabungkannya dengan data komponen.
 
-<div class="Alert Alert--orange">Anda **TIDAK** memiliki akses contoh komponen melalui `this` di dalam `asyncData` karena ia dipanggil **sebelum memulai** komponennya.</div>
+<div class="Alert Alert--orange">
+
+Anda **TIDAK** memiliki akses contoh komponen melalui `this` di dalam `asyncData` karena ia dipanggil **sebelum memulai** komponennya.
+
+</div>
 
 Nuxt.js menawarkan berbagai cara untuk menggunakan `asyncData`. Pilih yang paling Anda lazimi:
 

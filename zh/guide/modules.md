@@ -79,7 +79,11 @@ export default {
 
 ### 使用 async/await
 
-<p class="Alert Alert--orange">请注意，仅在Node.js > 7.2中支持使用`async` / `await`。 因此，如果您是模块开发人员，至少要警告用户使用它们时Node.js版本不能低于7.2。 对于大量异步模块或更好的传统支持，您可以使用bundler将其转换为兼容较旧的Node.js版本或Promise方法。</p>
+<p class="Alert Alert--orange">
+
+请注意，仅在Node.js > 7.2中支持使用`async` / `await`。 因此，如果您是模块开发人员，至少要警告用户使用它们时Node.js版本不能低于7.2。 对于大量异步模块或更好的传统支持，您可以使用bundler将其转换为兼容较旧的Node.js版本或Promise方法。
+
+</p>
 
 ```js
 import fse from 'fs-extra'
@@ -305,4 +309,8 @@ export default function () {
 }
 ```
 
-<p class="Alert">modules有许多钩子和可能性。请参考 [Nuxt Internals](/api/internals) 了解有关Nuxt内部API的更多信息。</p>
+<p class="Alert">
+
+modules有许多钩子和可能性。请参考 [Nuxt Internals](/api/internals) 了解有关Nuxt内部API的更多信息。
+
+</p>

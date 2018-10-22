@@ -86,4 +86,8 @@ _このファイル名は変更できません。_
 
 デフォルトでは `srcDir` は `rootDir` と同じです。
 
-<p class="Alert Alert--nuxt-green"><b>情報:</b> `vue` テンプレート内で `assets` または `static` ディレクトリへのリンクが必要なときは `~assets/your_image.png` や `~static/your_image.png` などを使ってください。</p>
+<p class="Alert Alert--nuxt-green">
+
+<b>情報:</b> `vue` テンプレート内で `assets` または `static` ディレクトリへのリンクが必要なときは `~assets/your_image.png` や `~static/your_image.png` などを使ってください。
+
+</p>

@@ -79,7 +79,11 @@ Not all modules will do everything synchronous. For example you may want to deve
 
 ### Use async/await
 
-<p class="Alert Alert--orange">Be aware that `async`/`await` is only supported in Node.js > 7.2. So if you are a module developer at least warn users about that if using them. For heavily async modules or better legacy support you can use either a bundler to transform it for older Node.js compatibility or a promise method.</p>
+<p class="Alert Alert--orange">
+
+Be aware that `async`/`await` is only supported in Node.js > 7.2. So if you are a module developer at least warn users about that if using them. For heavily async modules or better legacy support you can use either a bundler to transform it for older Node.js compatibility or a promise method.
+
+</p>
 
 ```js
 import fse from 'fs-extra'
@@ -305,4 +309,8 @@ export default function () {
 }
 ```
 
-<p class="Alert">There are many many more hooks and possibilities for modules. Please refer to [Nuxt Internals](/api/internals) to learn more about Nuxt internal API.</p>
+<p class="Alert">
+
+There are many many more hooks and possibilities for modules. Please refer to [Nuxt Internals](/api/internals) to learn more about Nuxt internal API.
+
+</p>

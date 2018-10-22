@@ -110,4 +110,8 @@ We now have a **Serverless Static Generated Web Application** :)
 
 We can go further by thinking of an e-commerce web application made with `nuxt generate` and hosted on a CDN. Everytime a product is out of stock or back in stock, we regenerate the web app. But if the user navigates through the web app in the meantime, it will be up to date thanks to the API calls made to the e-commerce API. No need to have multiple instances of a server + a cache anymore!
 
-<div class="Alert">See [How to deploy on Netlify?](/faq/netlify-deployment) for more details on how to deploy to Netlify.</div>
+<div class="Alert">
+
+See [How to deploy on Netlify?](/faq/netlify-deployment) for more details on how to deploy to Netlify.
+
+</div>

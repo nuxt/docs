@@ -16,7 +16,11 @@ npm run generate
 上述的命令会生成一个 `dist` 目录，该目录包含了待部署的所有资源文件。
 如果是项目站点，可以将 `dist` 的内容提交至项目的 `gh-pages` 分支；如果是用户（github.com/user/user.github.io）或组织（github.com/org/org.github.io）站点，需提交至对应 GitHub 项目的 `master` 分支。
 
-<p class="Alert Alert--nuxt-green"><b>提示：</b> 如果你的 GitHub Pages 使用了自定义域名，建议将 `CNAME` 放在 Nuxt.js 应用的 `static` 目录。 可以移步 [`static`](/guide/assets#静态文件) 了解更多信息。</p>
+<p class="Alert Alert--nuxt-green">
+
+<b>提示：</b> 如果你的 GitHub Pages 使用了自定义域名，建议将 `CNAME` 放在 Nuxt.js 应用的 `static` 目录。 可以移步 [`static`](/guide/assets#静态文件) 了解更多信息。
+
+</p>
 
 ## 使用命令行进行部署
 

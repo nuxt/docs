@@ -23,7 +23,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert-blue">`base`가 설정되면, nuxt.js는 문서의 헤더를 추가합니다 `<base href="{{ router.base }}"/>`.</p>
+<p class="Alert Alert-blue">
+
+`base`가 설정되면, nuxt.js는 문서의 헤더를 추가합니다 `<base href="{{ router.base }}"/>`.
+
+</p>
 
 > 이 옵션은 vue-router에 다이렉트로 제공됩니다. [Router 생성자](https://router.vuejs.org/kr/api/options.html).
 

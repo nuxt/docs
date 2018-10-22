@@ -37,4 +37,8 @@ export default {
 </script>
 ```
 
-<p class="Alert">하위 컴포넌트에서 사용할 때, 중복을 피하려면 유니크한 id인 `hid` 값을 부여해주세요. [이 곳](https://github.com/declandewet/vue-meta#lists-of-tags)에서 더 많은 정보를 확인하실 수 있습니다.</p>
+<p class="Alert">
+
+하위 컴포넌트에서 사용할 때, 중복을 피하려면 유니크한 id인 `hid` 값을 부여해주세요. [이 곳](https://github.com/declandewet/vue-meta#lists-of-tags)에서 더 많은 정보를 확인하실 수 있습니다.
+
+</p>

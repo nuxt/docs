@@ -34,7 +34,11 @@ description: Nuxt.js 提供了一系列常用的命令, 用于开发或发布部
 
 这样你可以通过 `npm run <command>` 来执行相应的命令。如: `npm run dev`。
 
-<p class="Alert Alert--nuxt-green"><b>提示:</b> 要将参数传递给npm命令，您需要一个额外的<code>--</code>脚本名称(例如：<code>npm run dev --参数 --spa</code>)</p>
+<p class="Alert Alert--nuxt-green">
+
+<b>提示:</b> 要将参数传递给npm命令，您需要一个额外的<code>--</code>脚本名称(例如：<code>npm run dev --参数 --spa</code>)
+
+</p>
 
 ## 开发模式
 
@@ -90,7 +94,11 @@ npm run generate
 
 如果你的项目需要用到[动态路由](/guide/routing#动态路由)，请移步 [generate配置API](/api/configuration-generate) 了解如何让 Nuxt.js 生成此类动态路由的静态文件。
 
-<div class="Alert">注意：使用 `nuxt generate` 静态化应用的时候, 传给 [asyncData()](/guide/async-data#asyncdata-方法) 和 [fetch()](/guide/vuex-store#fetch-方法) 方法的[上下文对象](/api#上下文对象) 不会包含 `req` 和 `res` 两个属性。</div>
+<div class="Alert">
+
+注意：使用 `nuxt generate` 静态化应用的时候, 传给 [asyncData()](/guide/async-data#asyncdata-方法) 和 [fetch()](/guide/vuex-store#fetch-方法) 方法的[上下文对象](/api#上下文对象) 不会包含 `req` 和 `res` 两个属性。
+
+</div>
 
 ### 单页面应用程序部署 (SPA)
 
@@ -106,6 +114,14 @@ SPA应用的想法很简单！ 使用时启用SPA模式 `mode: 'spa'` 或 `--spa
 
 另一种可能的部署方法是在`spa`模式下将Nuxt用作框架中的中间件。这有助于减少服务器负载，并在无法进行SSR的项目中使用Nuxt。
 
-<div class="Alert">请参考 [如何在 Heroku 上部署?](/faq/heroku-deployment) 来查看更多部署信息。</div>
+<div class="Alert">
 
-<div class="Alert">请参考 [如何在 GitHub Pages 上部署?](/faq/github-pages) 查看如何部署到GitHub页面的更多详细信息。</div>
+请参考 [如何在 Heroku 上部署?](/faq/heroku-deployment) 来查看更多部署信息。
+
+</div>
+
+<div class="Alert">
+
+请参考 [如何在 GitHub Pages 上部署?](/faq/github-pages) 查看如何部署到GitHub页面的更多详细信息。
+
+</div>

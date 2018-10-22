@@ -162,4 +162,8 @@ npm run lint
 
 ESLint 会校验应用所有的 JavaScript 和 Vue 文件，除了在 `.gitignore` 中忽略了的之外。
 
-<p class="Alert Alert--orange">有个最佳实践是在 `package.json` 中增加 `"precommit": "npm run lint"` ，这样可以实现每次提交代码之前自动进行代码检测校验。</p>
+<p class="Alert Alert--orange">
+
+有个最佳实践是在 `package.json` 中增加 `"precommit": "npm run lint"` ，这样可以实现每次提交代码之前自动进行代码检测校验。
+
+</p>

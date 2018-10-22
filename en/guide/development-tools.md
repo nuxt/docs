@@ -210,4 +210,8 @@ It is also recommended to enable ESLint hot reloading mode via webpack. This way
   }
 ```
 
-<p class="Alert Alert--orange">One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before commiting your code.</p>
+<p class="Alert Alert--orange">
+
+One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before commiting your code.
+
+</p>

@@ -54,4 +54,8 @@ module.exports = {
 
 恭喜，你的 Nuxt.js 应用成功集成了 Google 的统计分析服务。
 
-<p class="Alert Alert--nuxt-green"><b>提示：</b> 你可以用相同的方法集成别的统计分析服务。</p>
+<p class="Alert Alert--nuxt-green">
+
+<b>提示：</b> 你可以用相同的方法集成别的统计分析服务。
+
+</p>

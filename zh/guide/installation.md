@@ -53,7 +53,11 @@ $ npm run dev
 
 应用现在运行在 http://localhost:3000 上运行。
 
-<p class="Alert">注意：Nuxt.js 会监听 `pages` 目录中的文件更改，因此在添加新页面时无需重新启动应用程序。</p>
+<p class="Alert">
+
+注意：Nuxt.js 会监听 `pages` 目录中的文件更改，因此在添加新页面时无需重新启动应用程序。
+
+</p>
 
 了解模板项目的目录结构： [目录结构](/guide/directory-structure)。
 
@@ -66,7 +70,11 @@ $ mkdir <项目名>
 $ cd <项目名>
 ```
 
-<p class="Alert Alert--nuxt-green"><b>提示:</b> 将 <code>&lt;项目名&gt;</nom-du-projet></code> 替换成为你想创建的实际项目名。</p>
+<p class="Alert Alert--nuxt-green">
+
+<b>提示:</b> 将 <code>&lt;项目名&gt;</nom-du-projet></code> 替换成为你想创建的实际项目名。
+
+</p>
 
 ### 新建 package.json 文件
 
@@ -110,6 +118,10 @@ $ npm run dev
 ```
 现在我们的应用运行在 http://localhost:3000 上运行。
 
-<p class="Alert">注意：Nuxt.js 会监听 `pages` 目录中的文件更改，因此在添加新页面时无需重新启动应用程序。</p>
+<p class="Alert">
+
+注意：Nuxt.js 会监听 `pages` 目录中的文件更改，因此在添加新页面时无需重新启动应用程序。
+
+</p>
 
 了解更多关于Nuxt.js应用的目录结构： [目录结构](/guide/directory-structure)。

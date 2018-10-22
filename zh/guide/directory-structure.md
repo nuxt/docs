@@ -88,4 +88,8 @@ _该文件名为Nuxt.js保留的，不可更改。_
 
 默认情况下，`src目录`和`根目录`相同
 
-<p class="Alert Alert--nuxt-green"><b>提示:</b> 在您的 `vue` 模板中, 如果你需要引入 `assets` 或者 `static` 目录, 使用 `~/assets/your_image.png` 和 `~/static/your_image.png`方式。</p>
+<p class="Alert Alert--nuxt-green">
+
+<b>提示:</b> 在您的 `vue` 模板中, 如果你需要引入 `assets` 或者 `static` 目录, 使用 `~/assets/your_image.png` 和 `~/static/your_image.png`方式。
+
+</p>

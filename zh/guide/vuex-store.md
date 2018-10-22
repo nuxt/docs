@@ -186,7 +186,11 @@ export default {
 }
 ```
 
-<div class="Alert">你也可以在模块文件里返回 Vuex.Store 实例，但是这种情况下你需要手工设置应用的状态树。</div>
+<div class="Alert">
+
+你也可以在模块文件里返回 Vuex.Store 实例，但是这种情况下你需要手工设置应用的状态树。
+
+</div>
 
 ### 模块文件
 

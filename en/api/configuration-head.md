@@ -29,4 +29,8 @@ To know the list of options you can give to `head`, take a look at [vue-meta doc
 
 You can also use `head` in your components and access to the component data through `this` ([read more](/api/pages-head)).
 
-<p class="Alert Alert--teal"><b>Info:</b> To avoid duplicated meta tags when used in child component, set up an unique identifier with the `hid` key for your meta elements ([read more](https://github.com/declandewet/vue-meta#lists-of-tags)).</p>
+<p class="Alert Alert--teal">
+
+<b>Info:</b> To avoid duplicated meta tags when used in child component, set up an unique identifier with the `hid` key for your meta elements ([read more](https://github.com/declandewet/vue-meta#lists-of-tags)).
+
+</p>

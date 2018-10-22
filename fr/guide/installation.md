@@ -30,7 +30,11 @@ $ npm run dev
 ```
 L'application est désormais accessible à l'adresse http://localhost:3000.
 
-<p class="Alert">Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages.</p>
+<p class="Alert">
+
+Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages.
+
+</p>
 
 Pour en savoir plus sur l'organisation des répertoires dans un projet, consultez la documentation de l'[Architecture des répertoires](/guide/directory-structure).
 
@@ -43,7 +47,11 @@ $ mkdir <nom-du-projet>
 $ cd <nom-du-projet>
 ```
 
-<p class="Alert Alert--nuxt-green"><b>Info :</b> remplacez <code>&lt;nom-du-projet&gt;</nom-du-projet></code> par le nom du projet.</p>
+<p class="Alert Alert--nuxt-green">
+
+<b>Info :</b> remplacez <code>&lt;nom-du-projet&gt;</nom-du-projet></code> par le nom du projet.
+
+</p>
 
 ### Le package.json
 
@@ -95,6 +103,10 @@ $ npm run dev
 
 L'application est désormais accessible à l'adresse http://localhost:3000.
 
-<p class="Alert">Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages</p>
+<p class="Alert">
+
+Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages
+
+</p>
 
 Pour en savoir plus sur la structure des dossiers du projet, consultez la documentation de l'[Architecture des répertoires](/guide/directory-structure).

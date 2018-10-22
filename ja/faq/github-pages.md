@@ -16,7 +16,11 @@ npm run generate
 GitHub Pages のホスティングにデプロイするもの全てが入った
  `dist` フォルダが作成されます。プロジェクトリポジトリであれば `gh-pages` ブランチ、ユーザーや組織のサイトであれば `master` ブランチにデプロイしてください 。
 
-<p class="Alert Alert--nuxt-green"><b>情報:</b> GitHub Pages にカスタムドメインを利用し `CNAME` ファイルを置くのであれば、CNAME ファイルは `static` ディレクトリに置くことをお勧めします。 より詳しい情報は[こちら](/guide/assets#static)を参照してください。</p>
+<p class="Alert Alert--nuxt-green">
+
+<b>情報:</b> GitHub Pages にカスタムドメインを利用し `CNAME` ファイルを置くのであれば、CNAME ファイルは `static` ディレクトリに置くことをお勧めします。 より詳しい情報は[こちら](/guide/assets#static)を参照してください。
+
+</p>
 
 ## リポジトリに GitHub Pages をデプロイする
 

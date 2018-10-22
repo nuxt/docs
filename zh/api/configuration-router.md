@@ -23,7 +23,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert-blue">`base` 被设置后，Nuxt.js 会自动将它添加至页面中： `<base href="{{ router.base }}"/>`。</p>
+<p class="Alert Alert-blue">
+
+`base` 被设置后，Nuxt.js 会自动将它添加至页面中： `<base href="{{ router.base }}"/>`。
+
+</p>
 
 > 该配置项的值会被直接传给 vue-router 的[构造器](https://router.vuejs.org/zh-cn/api/options.html)。
 

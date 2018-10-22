@@ -37,4 +37,8 @@ export default {
 </script>
 ```
 
-<p class="Alert">子コンポーネント利用されたときにメタ情報が重複してしまうことを避けるために `hid` キーでユニーク識別子を与えてください。これについてより深く理解するには [こちら](https://github.com/declandewet/vue-meta#lists-of-tags) を参照してください。</p>
+<p class="Alert">
+
+子コンポーネント利用されたときにメタ情報が重複してしまうことを避けるために `hid` キーでユニーク識別子を与えてください。これについてより深く理解するには [こちら](https://github.com/declandewet/vue-meta#lists-of-tags) を参照してください。
+
+</p>

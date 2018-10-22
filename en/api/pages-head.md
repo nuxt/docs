@@ -38,4 +38,8 @@ export default {
 </script>
 ```
 
-<p class="Alert Alert--teal"><b>Info:</b> To avoid duplicated meta tags when used in child component, set up an unique identifier with the `hid` key for your meta elements ([read more](https://github.com/declandewet/vue-meta#lists-of-tags)).</p>
+<p class="Alert Alert--teal">
+
+<b>Info:</b> To avoid duplicated meta tags when used in child component, set up an unique identifier with the `hid` key for your meta elements ([read more](https://github.com/declandewet/vue-meta#lists-of-tags)).
+
+</p>

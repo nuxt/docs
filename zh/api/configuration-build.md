@@ -29,7 +29,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**提示：** 可通过 `nuxt build --analyze` 或 `nuxt build -a` 命令来启用该分析器进行编译构建，分析结果可在 [http://localhost:8888](http://localhost:8888) 上查看。</p>
+<p class="Alert Alert--teal">
+
+**提示：** 可通过 `nuxt build --analyze` 或 `nuxt build -a` 命令来启用该分析器进行编译构建，分析结果可在 [http://localhost:8888](http://localhost:8888) 上查看。
+
+</p>
 
 ## babel
 
@@ -472,7 +476,11 @@ Nuxt.js 使用 https://github.com/yenshih/style-resources-loader 来实现这种
 
 您需要为css预处理器指定要包含的 模式 / 路径 ： `less`, `sass`, `scss` 或 `stylus`
 
-<div class="Alert Alert--orange">您不能在此处使用**路径别名**(`~` 和 `@`)，</div>
+<div class="Alert Alert--orange">
+
+您不能在此处使用**路径别名**(`~` 和 `@`)，
+
+</div>
 
 :warning: You cannot use path aliases here (`~` and `@`)，你需要使用相对或绝对路径。
 
@@ -532,7 +540,11 @@ export default {
 
 >
 
-<div class="Alert Alert--orange">注意：此配置在Nuxt 2.0+中已被删除，请使用 [`build.loaders.vue`](#loaders) 来替代</div>
+<div class="Alert Alert--orange">
+
+注意：此配置在Nuxt 2.0+中已被删除，请使用 [`build.loaders.vue`](#loaders) 来替代
+
+</div>
 
 - 类型: `Object`
 - 默认:
@@ -554,7 +566,11 @@ export default {
 
 ## ~~vendor~~ <Badge text="废弃的" type="error"/>
 
-<div class="Alert Alert--orange">注意：在Nuxt.js 2.0+版本中，`vendor`由于Webpack 4，将废弃该API但保留使用方法作为兼容低版本处理。查看：[Nuxt.js 2.0 更新文档](https://github.com/nuxt/nuxt.js/releases/tag/v2.0.0)</div>
+<div class="Alert Alert--orange">
+
+注意：在Nuxt.js 2.0+版本中，`vendor`由于Webpack 4，将废弃该API但保留使用方法作为兼容低版本处理。查看：[Nuxt.js 2.0 更新文档](https://github.com/nuxt/nuxt.js/releases/tag/v2.0.0)
+
+</div>
 
 > Nuxt.js 允许你在自动生成的 `vendor.bundle.js` 文件中添加一些模块，以减少应用 bundle 的体积。这里说的是一些你所依赖的第三方模块 (比如 `axios`)
 

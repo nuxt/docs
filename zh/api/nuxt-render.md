@@ -42,4 +42,8 @@ app.listen(port, '0.0.0.0')
 console.log('Server listening on localhost:' + port)
 ```
 
-<p class="Alert">建议把 **nuxt.render** 放到中间件列表的最后面，因为它不会再调用 next() 方法，而是直接处理你 web 应用的页面渲染。</p>
+<p class="Alert">
+
+建议把 **nuxt.render** 放到中间件列表的最后面，因为它不会再调用 next() 方法，而是直接处理你 web 应用的页面渲染。
+
+</p>

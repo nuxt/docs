@@ -30,7 +30,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**Info :** vous pouvez utiliser la commande `nuxt build --analyze` ou `nuxt build -a` pour générer votre application et lancer l'analyse du paquetage sur [http://localhost:8888](http://localhost:8888).</p>
+<p class="Alert Alert--teal">
+
+**Info :** vous pouvez utiliser la commande `nuxt build --analyze` ou `nuxt build -a` pour générer votre application et lancer l'analyse du paquetage sur [http://localhost:8888](http://localhost:8888).
+
+</p>
 
 ## babel
 

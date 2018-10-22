@@ -90,4 +90,8 @@ module.exports = {
 }
 ```
 
-<p class="Alert">Чтобы избежать любого дублирования в дочерних компонентах, создайте уникальный идентификатор со свойством `hid`, [читать подробнее](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+<p class="Alert">
+
+Чтобы избежать любого дублирования в дочерних компонентах, создайте уникальный идентификатор со свойством `hid`, [читать подробнее](https://github.com/declandewet/vue-meta#lists-of-tags).
+
+</p>

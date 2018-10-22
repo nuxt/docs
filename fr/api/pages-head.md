@@ -37,4 +37,8 @@ export default {
 </script>
 ```
 
-<p class="Alert">Afin d'éviter les doublons quand vous utilisez un composant enfant, utilisez un identifiant unique à l'aide de la clé `hid`. En savoir [plus à ce propos](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+<p class="Alert">
+
+Afin d'éviter les doublons quand vous utilisez un composant enfant, utilisez un identifiant unique à l'aide de la clé `hid`. En savoir [plus à ce propos](https://github.com/declandewet/vue-meta#lists-of-tags).
+
+</p>

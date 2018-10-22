@@ -13,7 +13,11 @@ Sometimes you just want to fetch data and pre-render it on the server-side witho
 It can be called server-side or before navigating to the corresponding route.
 This method receives [the context](/api#context) as the first argument, you can use it to fetch some data and nuxt.js will merge it with the component data.
 
-<div class="Alert Alert--orange">You do **NOT** have access of the component instance through `this` inside `data` because it is called **before initiating** the component.</div>
+<div class="Alert Alert--orange">
+
+You do **NOT** have access of the component instance through `this` inside `data` because it is called **before initiating** the component.
+
+</div>
 
 Nuxt.js offers you different ways to use `asyncData`. Choose the one you're the most familiar with:
 

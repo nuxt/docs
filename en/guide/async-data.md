@@ -10,7 +10,11 @@ Nuxt.js adds an `asyncData` method to let you handle async operations before set
 
 Sometimes you just want to fetch data and pre-render it on the server without using a store. `asyncData` is called every time before loading the component (**only for pages components**). It can be called server-side or before navigating to the corresponding route. This method receives [the context](/api/context) as the first argument, you can use it to fetch some data and Nuxt.js will merge it with the component data.
 
-<div class="Alert Alert--orange">You do **NOT** have access of the component instance through `this` inside `asyncData` because it is called **before initiating** the component.</div>
+<div class="Alert Alert--orange">
+
+You do **NOT** have access of the component instance through `this` inside `asyncData` because it is called **before initiating** the component.
+
+</div>
 
 Nuxt.js offers you different ways to use `asyncData`. Choose the one you're the most familiar with:
 
@@ -18,7 +22,11 @@ Nuxt.js offers you different ways to use `asyncData`. Choose the one you're the 
 2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await))
 3. Define a callback as second argument. It has to be called like this: `callback(err, data)`
 
-<div class="Alert Alert--grey">We are using [axios](https://github.com/mzabriskie/axios) to make isomorphic HTTP requests, we <strong>strongly recommend</strong> to use our [axios module](https://axios.nuxtjs.org/) for your Nuxt projects.</div>
+<div class="Alert Alert--grey">
+
+We are using [axios](https://github.com/mzabriskie/axios) to make isomorphic HTTP requests, we <strong>strongly recommend</strong> to use our [axios module](https://axios.nuxtjs.org/) for your Nuxt projects.
+
+</div>
 
 ### Returning a Promise
 

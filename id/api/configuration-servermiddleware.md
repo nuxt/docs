@@ -44,7 +44,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--danger"><b>Mohon Diperhatikan! </b> Jika Anda tidak ingin middleware mendaftar ke semua rute, Anda harus menggunakan bentuk Object dengan jalur (path) tertentu, jika tidak, penanganan default nuxt tidak akan bekerja!</p>
+<p class="Alert Alert--danger">
+
+<b>Mohon Diperhatikan! </b> Jika Anda tidak ingin middleware mendaftar ke semua rute, Anda harus menggunakan bentuk Object dengan jalur (path) tertentu, jika tidak, penanganan default nuxt tidak akan bekerja!
+
+</p>
 
 ## Server Middleware Sendiri
 

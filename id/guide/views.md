@@ -207,4 +207,8 @@ Informasi lebih lanjut tentang metode `head` : <a href="/api/configuration-head"
 
 Informasi lebih lanjut tentang metode head : [Halaman API `head`](/api/pages-head).
 
-<p class="Alert">Untuk menghindari duplikasi saat menggunakannya pada child komponen, berikan pengenal unik dengan key `hid`. [Baca lebih lanjut] (https://github.com/declandewet/vue-meta#lists-of-tags) .</p>
+<p class="Alert">
+
+Untuk menghindari duplikasi saat menggunakannya pada child komponen, berikan pengenal unik dengan key `hid`. [Baca lebih lanjut] (https://github.com/declandewet/vue-meta#lists-of-tags) .
+
+</p>

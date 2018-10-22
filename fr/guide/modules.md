@@ -76,7 +76,11 @@ Tous les modules ne font pas tout de manière synchrone. Par exemple vous pouvez
 
 ### Utilisation de async / await
 
-<p class="Alert Alert--orange">Faites attention avec `async` et `await`, ils sont supportés uniquement depuis Node.js 7.2+. Donc si vous êtes un développeur de modules, n'oubliez pas d'avertir vos utilisateurs si vous les utilisez. Pour des modules asynchrones plus stables ou avec un support des versions antérieures vous pouvez utiliser un paqueteur pour les transformer en de vieille version de compatibilité Node.js ou utilisant des méthodes de promesse.</p>
+<p class="Alert Alert--orange">
+
+Faites attention avec `async` et `await`, ils sont supportés uniquement depuis Node.js 7.2+. Donc si vous êtes un développeur de modules, n'oubliez pas d'avertir vos utilisateurs si vous les utilisez. Pour des modules asynchrones plus stables ou avec un support des versions antérieures vous pouvez utiliser un paqueteur pour les transformer en de vieille version de compatibilité Node.js ou utilisant des méthodes de promesse.
+
+</p>
 
 ```js
 const fse = require('fs-extra')
@@ -302,4 +306,8 @@ module.exports = function () {
 }
 ```
 
-<p class="Alert">Il existe beaucoup d'autres points d'ancrage et de possibilités pour les modules. Consultez les [mécanismes de Nuxt](/api/internals) pour en apprendre plus à propos de l'API interne de Nuxt.</p>
+<p class="Alert">
+
+Il existe beaucoup d'autres points d'ancrage et de possibilités pour les modules. Consultez les [mécanismes de Nuxt](/api/internals) pour en apprendre plus à propos de l'API interne de Nuxt.
+
+</p>

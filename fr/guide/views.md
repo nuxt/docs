@@ -206,4 +206,8 @@ More information about the `head` method: [API Configuration `head`](/api/config
 
 Plus d'informations à propos de la méthode `head` dans [la partie Configuration de l'API sur `head`](/api/pages-head).
 
-<p class="Alert">Afin d'éviter toutes duplications lors de l'utilisation d'un composant enfant, donnez un identifiant unique à l'aide de l'attribut `hid`. Pour [en savoir plus](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+<p class="Alert">
+
+Afin d'éviter toutes duplications lors de l'utilisation d'un composant enfant, donnez un identifiant unique à l'aide de l'attribut `hid`. Pour [en savoir plus](https://github.com/declandewet/vue-meta#lists-of-tags).
+
+</p>
