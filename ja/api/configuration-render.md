@@ -1,16 +1,16 @@
 ---
-title: "API: The render Property"
-description: Nuxt.js lets you customize runtime options for rendering pages
+title: "API: render プロパティ"
+description: Nuxt.js はページレンダリングの実行時オプションをカスタマイズできます。
 ---
 
-# The render Property
+# renderプロパティ
 
-> Nuxt.js lets you customize runtime options for rendering pages
+> Nuxt.js はページレンダリングの実行時オプションをカスタマイズできます。
 
 ## bundleRenderer
-- Type: `Object`
+- 型: `オブジェクト`
 
-> Use this option to customize vue SSR bundle renderer. This option is skipped for spa mode.
+> このオプションを使用して Vue SSR のバンドルレンダラのカスタマイズします。このオプションは SPA モードではスキップされます。
 
 ```js
 export default {
@@ -18,7 +18,7 @@ export default {
     bundleRenderer: {
       directives: {
         custom1: function (el, dir) {
-          // something ...
+          // 何かの処理 ...
         }
       }
     }
@@ -26,72 +26,71 @@ export default {
 }
 ```
 
-Learn more about available options on [Vue SSR API Reference](https://ssr.vuejs.org/en/api.html#renderer-options).
-It is recommended to not use this option as Nuxt.js is already providing best SSR defaults and misconfiguration might lead to SSR problems.
+利用可能なオプションは [Vue SSR API リファレンス](https://ssr.vuejs.org/ja/api/#レンダラオプション) でより詳しく学べます。
+Nuxt.js は既に最高の SSR のデフォルト設定を提供していて、誤った設定が SSR の問題を引き起こす可能性があるため、このオプションを使用しないことをお勧めします。
 
 ## etag
-- Type: `Object`
-  - Default: `{ weak: true }`
+- 型: `オブジェクト`
+  - デフォルト: `{ weak: true }`
 
-To disable etag for pages set `etag: false`
+ページの etag を無効にするためには `etag: false` をセットしてください。
 
-See [etag](https://www.npmjs.com/package/etag) docs for possible options.
+利用可能なオプションは [etag](https://www.npmjs.com/package/etag) を参照してください。
 
 ## compressor
-- Type `Object`
-  - Default: `{ threshold: 0 }`
+- 型 `オブジェクト`
+  - デフォルト: `{ threshold: 0 }`
 
-When providing an object (or a falsy value), the [compression](https://www.npmjs.com/package/compression) middleware
-will be used (with respective options).
+オブジェクト（または偽の値）を提供する場合、[compression](https://www.npmjs.com/package/compression) ミドルウェアが利用されます（それぞれのオプションがあります）。
 
-If you want to use your own compression middleware, you can reference it
-directly (f.ex. `otherComp({ myOptions: 'example' })`).
+独自の圧縮ミドルウェアを使用したい場合は、直接参照することができます。(f.ex. `otherComp({ myOptions: 'example' })`)
 
 ## http2
-- Type `Object`
-  - Default: `{ push: false }`
+- 型 `オブジェクト`
+  - デフォルト: `{ push: false }`
 
-Activate HTTP2 push headers.
+HTTP2 プッシュヘッダーを有効にします。
 
 ## resourceHints
-- Type: `boolean`
-  - Default: `true`
+- 型: `ブーリアン`
+  - デフォルト: `true`
 
-> Adds `prefetch` and `preload` links for faster initial page load time.
+> 初期ページの読み込み時間をより早くするために、 `prefetch` と `preload` のリンクを追加しました。
 
-You may want to only disable this option if have many pages and routes.
+多くのページとルートがある場合に、このオプションのみを無効にすることができます。
 
 ## ssr
-- Type: `boolean`
-  - Default: `true` on universal mode and `false` on spa mode
+- 型: `ブーリアン`
+  - デフォルト: ユニバーサルモードでは `true` SPAモードでは `false`
 
-> Enable SSR rendering
+> SSR レンダリングを有効にする
 
-This option is automatically set based on `mode` value if not provided.
-This can be useful to dynamically enable/disable SSR on runtime after image builds. (With docker for example)
+このオプションは、提供されていなければ `mode` に基づいて自動的に設定されます。
+これは（例えば Docker で）イメージビルド後にランタイムで SSR を動的に有効/無効にするのに便利です。
 
 ## static
-- Type: `Object`
-  - Default: `{}`
+- 型: `オブジェクト`
+  - デフォルト: `{}`
 
-See [serve-static](https://www.npmjs.com/package/serve-static) docs for possible options.
+利用可能なオプションは  [serve-static](https://www.npmjs.com/package/serve-static) を参照してください。
 
 ## dist
-- Type: `Object`
-  - Default: `{ maxAge: '1y', index: false }`
+- 型: `オブジェクト`
+  - デフォルト: `{ maxAge: '1y', index: false }`
 
 The options used for serving distribution files. Only applicable in production.
+配布ファイルの配信に使用されるオプションです。本番でのみ適用されます。
 
-See [serve-static](https://www.npmjs.com/package/serve-static) docs for possible options.
+利用可能なオプションは  [serve-static](https://www.npmjs.com/package/serve-static) を参照してください。
 
 ## csp
 
-> Use this to configure to load external resources of Content-Security-Policy
+> これは Content-Security-Policy で適用された外部リソースを読み込む設定をするために使用します。
 
-- Type: `Boolean` or `Object`
-  - Default: `false`
+- 型: `ブーリアン` または `オブジェクト`
+  - デフォルト: `false`
 
-Example (`nuxt.config.js`)
+例 (`nuxt.config.js`)
 
 ```js
 export default {
@@ -100,7 +99,7 @@ export default {
   }
 }
 
-// OR
+// または
 
 export default {
   render: {
@@ -111,5 +110,4 @@ export default {
     }
   }
 }
-
 ```
