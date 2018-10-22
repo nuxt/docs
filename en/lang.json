@@ -29,7 +29,8 @@
     "please_define_title": "Please define a title in the front matter",
     "please_define_description": "Please define a description in the front matter",
     "search": "Search",
-    "version": "Version"
+    "version": "Version",
+    "vue_toronto": "Want to discover how to create a Universal Vue.js Application with Nuxt? Join our workshop the November 14, 2018 at Vue Toronto!"
   },
   "homepage": {
     "title": "Universal Vue.js Applications",
