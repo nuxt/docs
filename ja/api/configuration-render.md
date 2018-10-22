@@ -78,7 +78,6 @@ HTTP2 プッシュヘッダーを有効にします。
 - 型: `オブジェクト`
   - デフォルト: `{ maxAge: '1y', index: false }`
 
-The options used for serving distribution files. Only applicable in production.
 配布ファイルの配信に使用されるオプションです。本番でのみ適用されます。
 
 利用可能なオプションは  [serve-static](https://www.npmjs.com/package/serve-static) を参照してください。
