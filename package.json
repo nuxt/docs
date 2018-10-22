@@ -6,7 +6,7 @@
     "node": ">=8.0.0"
   },
   "scripts": {
-    "dev": "nodemon --watch *.js --exec \"node api.js\"",
+    "dev": "nodemon --watch *.js --exec 'node api.js'",
     "lint": "eslint *.js",
     "start": "node api.js",
     "deploy": "now --alias",
