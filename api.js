@@ -7,6 +7,7 @@ const marked = require('marked')
 const highlightjs = require('highlight.js')
 const fm = require('front-matter')
 const { resolve } = require('path')
+const octicon = require('octicons')
 const githubHook = require('./gh-hook')
 const readFile = pify(fs.readFile)
 const send = micro.send
@@ -28,7 +29,10 @@ renderer.heading = (text, level) => {
   } else {
     link = text.toLowerCase().replace(/[^\wА-яіІїЇєЄ\u4e00-\u9eff一-龠ぁ-ゔァ-ヴー々〆〤\u3130-\u318F\uAC00-\uD7AF]+/gi, '-')
   }
-  return '<h' + level + ' id="' + link + '">' + text + '</h' + level + '>'
+  return '<h' + level + '>' +
+    '<a id="' + link + '" class="anchor" aria-hidden="true" href="#' + link + '">' +
+      octicon.link.toSVG() +
+    '</a>' + text + '</h' + level + '>'
 }
 marked.setOptions({ renderer })
 
