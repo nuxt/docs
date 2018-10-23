@@ -1,7 +1,7 @@
 
 # CSS 配置
 
-> 在 Nuxtjs 里配置全局的 CSS 文件、模块、库 (每个页面都会被引入).
+> 在 Nuxtjs 里配置全局的 CSS 文件、模块、库。 (每个页面都会被引入)
 
 如果要使用 `sass` 就必须要安装 `node-sass`和`sass-loader` 。
 
