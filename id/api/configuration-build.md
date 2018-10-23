@@ -43,7 +43,7 @@ module.exports = {
 
     ```js
     {
-      presets: ['vue-app']
+      presets: ['@nuxtjs/babel-preset-app']
     }
     ```
 

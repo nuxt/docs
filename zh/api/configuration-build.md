@@ -40,7 +40,7 @@ module.exports = {
 默认值：
 ```js
 {
-  presets: ['vue-app']
+  presets: ['@nuxtjs/babel-preset-app']
 }
 ```
 
