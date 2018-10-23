@@ -9,7 +9,7 @@ AWS is Amazon Web Services.
 S3 is their static storage which can be configured for Static Site Hosting.
 Cloudfront is their CDN (content delivery network)
 
-Hosting a Nuxt "Universal App" on AWS w/ S3 + Cloudfront is powerful and cheap.
+Hosting a **static generated** Nuxt app on AWS w/ S3 + Cloudfront is powerful and cheap.
 
 > AWS is a death by 1000 paper cuts.  If we missed a step, please submit a PR to update this document.
 
