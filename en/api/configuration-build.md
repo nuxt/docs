@@ -88,12 +88,13 @@ The extend is called twice, one time for the server bundle, and one time for the
 1. webpack config object,
 2. object with the following keys (all boolean): `isDev`, `isClient`, `isServer`, `loaders`.
 
+
 <p class="Alert Alert--orange">
   <b>Warning:</b>
   The `isClient` and `isServer` keys in extend are separate from the keys available in [`context`](/api/context).  
-
-  They are **not** deprecated. Do not use `process.client` and `process.server` here as they are `undefined` at this point.  
+  They are **not** deprecated. Do not use `process.client` and `process.server` here as they are `undefined` at this point.
 </p>
+
 
 Example (`nuxt.config.js`):
 
