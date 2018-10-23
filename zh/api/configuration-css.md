@@ -15,7 +15,7 @@ npm install --save-dev node-sass sass-loader
 - Items: string
 
 ```
-export default {
+module.exports = {
   css: [
     // 直接加载一个 Node.js 模块。（在这里它是一个 Sass 文件）
     'bulma'
