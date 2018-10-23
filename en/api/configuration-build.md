@@ -88,6 +88,8 @@ The extend is called twice, one time for the server bundle, and one time for the
 1. webpack config object,
 2. object with the following keys (all boolean): `isDev`, `isClient`, `isServer`, `loaders`.
 
+*note: The `isClient` and `isServer` keys in extend are separate from the keys available in context. `process.client` and `process.server` are undefined at this point and cannot be used.*
+
 Example (`nuxt.config.js`):
 
 ```js
