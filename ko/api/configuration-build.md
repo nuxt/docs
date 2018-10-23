@@ -40,7 +40,7 @@ module.exports = {
 기본값:
 ```js
 {
-  presets: ['vue-app']
+  presets: ['@nuxtjs/babel-preset-app']
 }
 ```
 
