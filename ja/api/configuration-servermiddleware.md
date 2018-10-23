@@ -10,9 +10,9 @@ description: サーバーミドルウェアを定義します
 
 Nuxt は内部で [connect](https://github.com/senchalabs/connect) のインスタンスを作ります。
 それはミドルウェアをスタックに登録したり、 **外部サーバーを必要とせず** に API などのルートを増やす事を可能にしてれくます。
-connect 自体はミドルウェアであるため、登録されたミドルウェアは `nuxt start` と [express-template](https://github.com/nuxt-community/express-template) のようなプログラム的な使用法を持つミドルウェアとして使用されます。 Nuxt [モジュール](/guide/modules) もまた [this.addServerMiddleware()](/api/internals-module-container#addservermiddleware-middleware-) を使用して `serverMiddleware` を提供できます。
+connect 自体はミドルウェアで、登録されたミドルウェアは `nuxt start` と [express-template](https://github.com/nuxt-community/express-template) のようなプログラム的な使用法を持つミドルウェアとして使用されます。 Nuxt [モジュール](/guide/modules) もまた [this.addServerMiddleware()](/api/internals-module-container#addservermiddleware-middleware-) を使用して `serverMiddleware` を提供できます。
 
-## サーバミドルウェア vs ミドルウェア!
+## サーバミドルウェア vs ミドルウェア！
 クライアントサイドや SSR の Vue で各ルートの前に呼び出されている [ルーティングのミドルウェア](/guide/routing#ミドルウェア)  と混同しないでください。
 `serverMiddleware` は vue-server-renderer の **前に** サーバー側で実行され、APIリクエストの処理やアセットの処理どのサーバー固有のタスクとして使用できます。
 
@@ -40,7 +40,7 @@ module.exports = {
 ```
 
 <p class="Alert Alert--danger">
-    <b>注意点!</b>
+    <b>注意点！</b>
 
     もしミドルウェアをすべてのルートに登録したくない場合は、特定のパスでオブジェクトフォームを使用する必要があります。
     そうしないと nuxt の デフォルトハンドラは機能しません。
