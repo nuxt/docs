@@ -1,3 +1,7 @@
+---
+title: "API: CSS 配置"
+description: 在 Nuxtjs 里配置全局的 CSS 文件、模块、库。 (每个页面都会被引入)
+---
 
 # CSS 配置
 
