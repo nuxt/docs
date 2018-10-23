@@ -88,11 +88,11 @@ router: {
 
 `user-id` と名付けられたルートに `:id?` というパスがありますが、これはこの `:id` が必須ではないことを表します。もし必須にしたい場合は `users/_id` ディレクトリ内に `index.vue` ファイルを作成してください。
 
-<p class="Alert Alert--orange">
+<div class="Alert Alert--orange">
 
 <b>警告</b>: `generate` コマンドでは 動的なルーティング は無視されます。:  [generate 設定 API](/api/configuration-generate#routes)
 
-</p>
+</div>
 
 ### ルーティングのパラメータのバリデーション
 
@@ -119,11 +119,11 @@ Nuxt.js では vue-router の子ルートを使ってルートをネストさせ
 
 ネストされたルートの親コンポーネントを定義するには、子ビューを含む **ディレクトリと同じ名前** の Vue ファイルを作成する必要があります。
 
-<p class="Alert Alert--orange">
+<div class="Alert Alert--orange">
 
 <b>警告:</b> `<nuxt-child>` を親コンポーネント内 (<code>.vue</code> ファイル内) に書くことを忘れないでください。</nuxt-child>
 
-</p>
+</div>
 
 下記のようなファイルの木構造のとき:
 
@@ -271,11 +271,11 @@ Nuxt.js では [<transition> コンポーネントを使って、ページ間を
 
 ### グローバルな設定
 
-<p class="Alert Alert--nuxt-green">
+<div class="Alert Alert--nuxt-green">
 
 <b>情報:</b> Nuxt.js のデフォルトのトランジション名は `"page"`です。
 
-</p>
+</div>
 
 アプリケーションのすべてのページでフェードさせるトランジションを定義には、ルーティング全体に適用されている CSS ファイルが必要です。まずは `assets` ディレクトリ内にファイルを作成するところから始めます:
 

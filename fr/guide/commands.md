@@ -36,11 +36,11 @@ Vous devriez ajouter ces commandes au `package.json` :
 
 Ensuite, vous pouvez lancer vos commandes via `npm run <command>` (exemple : `npm run dev`).
 
-<p class="Alert Alert--nuxt-green">
+<div class="Alert Alert--nuxt-green">
 
 <b>Astuce :</b> pour passer des arguments à une commande npm, vous devez utiliser un <code>--</code> supplémentaire après le nom du script (exemple : <code>npm run dev -- --spa</code>).
 
-</p>
+</div>
 
 ## Environnement de développement
 

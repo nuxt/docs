@@ -15,11 +15,11 @@ description: Get the `window` from a given URL of a Nuxt.js Application.
 
 > Get the window from a given url of a Nuxt.js application.
 
-<p class="Alert Alert--orange">
+<div class="Alert Alert--orange">
 
 This method is made for [test purposes](/guide/development-tools#end-to-end-testing).
 
-</p>
+</div>
 
 To use this function, you have to install `jsdom`:
 

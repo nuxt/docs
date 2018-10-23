@@ -104,11 +104,11 @@ router: {
 
 ：API Configuration generate
 
-<p class="Alert Alert--orange">
+<div class="Alert Alert--orange">
 
 <b>警告：</b>`generate` 命令会忽略动态路由: [API Configuration generate](/api/configuration-generate#routes)
 
-</p>
+</div>
 
 ### 路由参数校验
 
@@ -135,11 +135,11 @@ export default {
 
 创建内嵌子路由，你需要添加一个 Vue 文件，同时添加一个**与该文件同名**的目录用来存放子视图组件。
 
-<p class="Alert Alert--orange">
+<div class="Alert Alert--orange">
 
 <b>Warning:</b> 别忘了在父组件(`.vue`文件) 内增加 `<nuxt-child/>` 用于显示子视图内容。
 
-</p>
+</div>
 
 假设文件结构如：
 
@@ -286,11 +286,11 @@ Nuxt.js 使用 Vue.js 的[&lt;transition&gt;](http://vuejs.org/v2/guide/transiti
 
 ### 全局过渡动效设置
 
-<p class="Alert Alert--nuxt-green">
+<div class="Alert Alert--nuxt-green">
 
 <b>提示 :</b>Nuxt.js 默认使用的过渡效果名称为 `page`
 
-</p>
+</div>
 
 如果想让每一个页面的切换都有淡出 (fade) 效果，我们需要创建一个所有路由共用的 CSS 文件。所以我们可以在 `assets/` 目录下创建这个文件：
 

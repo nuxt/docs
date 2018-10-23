@@ -15,11 +15,11 @@ description: Nuxt.js アプリケーションの URL を渡して window を取�
 
 > Nuxt.js アプリケーションの URL を渡して window を取得します。
 
-<p class="Alert Alert--orange">
+<div class="Alert Alert--orange">
 
 このメソッドは [テストする目的](guide/development-tools#end-to-end-testing) で使われます。
 
-</p>
+</div>
 
 この関数を使うためには `jsdom` をインストールする必要があります。:
 

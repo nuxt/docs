@@ -30,11 +30,11 @@ export default {
 }
 ```
 
-<p class="Alert Alert--teal">
+<div class="Alert Alert--teal">
 
 **情報:** `nuxt build --analyze` または `nuxt build -a` コマンドを使って、アプリケーションをビルドしてバンドルアナライザを [http://localhost:8888](http://localhost:8888) で起動できます。
 
-</p>
+</div>
 
 ## babel
 
@@ -260,7 +260,7 @@ manifest の使い方をより理解するためには [webpack documentation](h
 ### loaders.css と loaders.cssModules
 
 > 詳細は [css-loader options](https://github.com/webpack-contrib/css-loader#options) を参照してください。
-> 注意: cssModules は、[CSS Modules](https://vue-loader.vuejs.org/guide/css-modules.html#css-modules) を使うための loader オプションです。 
+> 注意: cssModules は、[CSS Modules](https://vue-loader.vuejs.org/guide/css-modules.html#css-modules) を使うための loader オプションです。
 
 ### loaders.less
 

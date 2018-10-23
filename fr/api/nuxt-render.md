@@ -50,8 +50,8 @@ function listen() {
 }
 ```
 
-<p class="Alert">
+<div class="Alert">
 
 Il est recommandé d'appeler `nuxt.render` à la fin de vos middlewares ainsi il fera le rendu de votre application web et n'appellera pas `next()`.
 
-</p>
+</div>

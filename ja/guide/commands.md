@@ -36,11 +36,11 @@ nuxt generate | アプリケーションをビルドして、ルートごとに 
 
 そうすれば、`npm run <command>` 経由で Nuxt.js のコマンドを実行することができます（例: `npm run dev`）
 
-<p class="Alert Alert--nuxt-green">
+<div class="Alert Alert--nuxt-green">
 
 <b>上級者用の Tips:</b> npm コマンドへ引数を渡すためには <code>--</code> スクリプト名を付ける必要があります（例: <code>npm run dev -- --spa</code>）
 
-</p>
+</div>
 
 ## 開発環境
 

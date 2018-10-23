@@ -203,8 +203,8 @@ head: {
 
 head メソッドに関するより多くの情報:  [`head` プロパティ](/api/pages-head)を参照してください。
 
-<p class="Alert">
+<div class="Alert">
 
 子コンポーネント使用で重複を避けるために、`hid` キーにはユニークな識別子を与えてください。[更に詳しく](https://github.com/declandewet/vue-meta#lists-of-tags)
 
-</p>
+</div>

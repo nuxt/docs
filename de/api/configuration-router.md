@@ -23,11 +23,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert-blue">
+<div class="Alert Alert-blue">
 
 When `base` is set, nuxt.js will also add in the document header `<base href="{{ router.base }}"/>`.
 
-</p>
+</div>
 
 > This option is given directly to the vue-router [base](https://router.vuejs.org/api/#base).
 

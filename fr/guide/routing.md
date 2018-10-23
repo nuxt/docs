@@ -102,11 +102,11 @@ router: {
 
 Comme vous pouvez le voir, la route nommée `users-id` contient le chemin `:id?` ce qui le rend optionnel. Si vous voulez le rendre obligatoire, créez un fichier `index.vue` dans le dossier `users/_id`.
 
-<p class="Alert Alert--orange">
+<div class="Alert Alert--orange">
 
 <b>Attention :</b> les routes dynamiques sont ignorées par la commande `generate`, consultez la configuration de l'API à propos de [La propriété `generate`](/api/configuration-generate#routes)
 
-</p>
+</div>
 
 ### Validation des paramètres de route
 
@@ -133,11 +133,11 @@ Nuxt.js vous permet de créer des routes imbriquées en utilisant les routes enf
 
 Pour définir le composant parent d'une route imbriquée, vous devez créer un fichier Vue avec le **même nom que le répertoire** qui contient les vues enfants.
 
-<p class="Alert Alert--orange">
+<div class="Alert Alert--orange">
 
 <b>Attention :</b> n'oubliez pas d'écrire `<nuxt-child/>` au sein du composant parent (fichier <code>.vue</code>).
 
-</p>
+</div>
 
 Cette arborescence :
 
@@ -285,11 +285,11 @@ Nuxt.js utilise le composant [`<transition>`](http://vuejs.org/v2/guide/transiti
 
 ### Paramètres globaux
 
-<p class="Alert Alert--nuxt-green">
+<div class="Alert Alert--nuxt-green">
 
 <b>Info :</b> dans Nuxt.js, le nom de la transition par défaut est `"page"`.
 
-</p>
+</div>
 
 Pour ajouter une transition de fondu à chaque page de votre application, nous avons besoin d'un fichier CSS qui est partagé sur toutes nos routes. Commençons par créer un fichier dans le dossier `assets`.
 

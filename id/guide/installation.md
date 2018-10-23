@@ -32,11 +32,11 @@ $ npm run dev
 
 Kini aplikasi berjalan pada http://localhost:3000.
 
-<p class="Alert">
+<div class="Alert">
 
 Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.
 
-</p>
+</div>
 
 To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
 
@@ -49,11 +49,11 @@ $ mkdir <nama-proyek>
 $ cd <nama-proyek>
 ```
 
-<p class="Alert Alert--nuxt-green">
+<div class="Alert Alert--nuxt-green">
 
 <b>Info:</b> tukar <code>&lt;nama-proyek&gt;</nom-du-projet></code> dengan nama proyek yang diinginkan.
 
-</p>
+</div>
 
 ### package.json
 
@@ -105,10 +105,10 @@ $ npm run dev
 
 Kini aplikasi berjalan pada http://localhost:3000.
 
-<p class="Alert">
+<div class="Alert">
 
 Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.
 
-</p>
+</div>
 
 Untuk mengetahui lebih lanjut tentang struktur direktori pada proyek: [Dokumentasi Struktur Direktori](/guide/directory-structure).

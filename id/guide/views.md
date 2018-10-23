@@ -48,7 +48,7 @@ Salah satu contoh jika menambahkan kelas CSS bersyarat (conditional CSS) untuk I
 
 Nuxt.js memungkinkan Anda meng-extend layout utama atau membuat layout secara kustom dengan menambahkannya ke dalam folder `layouts`.
 
-### Layout Default 
+### Layout Default
 
 Anda bisa meng-extend layout utama dengan menambahkan file `layouts/default.vue` .
 
@@ -207,8 +207,8 @@ Informasi lebih lanjut tentang metode `head` : <a href="/api/configuration-head"
 
 Informasi lebih lanjut tentang metode head : [Halaman API `head`](/api/pages-head).
 
-<p class="Alert">
+<div class="Alert">
 
 Untuk menghindari duplikasi saat menggunakannya pada child komponen, berikan pengenal unik dengan key `hid`. [Baca lebih lanjut] (https://github.com/declandewet/vue-meta#lists-of-tags) .
 
-</p>
+</div>

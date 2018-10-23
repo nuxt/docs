@@ -157,7 +157,7 @@ export default {
 | `fetch` | Used to fill the store before rendering the page. It's like the `data` method, except it doesn't set the component data. See the [API Pages `fetch` documentation](/api/pages-fetch). |
 | `head` | Set specific `<meta>` tags for the current page. See [API Pages `head` documentation](/api/pages-head). |
 | `layout` | Specify a layout defined in the `layouts` directory. See [API Pages `layout` documentation](/api/pages-layout). |
-| `loading` | If set to `false`, prevents a page from automatically calling `this.$nuxt.$loading.finish()` as you enter it and `this.$nuxt.$loading.start()` as you leave it, allowing you to **manually** control the behavior, see [example](https://nuxtjs.org/examples/custom-page-loading). Only applies if `loading` is also set in `nuxt.config.js`. See [API Configuration `loading` documentation](/api/configuration-loading). 
+| `loading` | If set to `false`, prevents a page from automatically calling `this.$nuxt.$loading.finish()` as you enter it and `this.$nuxt.$loading.start()` as you leave it, allowing you to **manually** control the behavior, see [example](https://nuxtjs.org/examples/custom-page-loading). Only applies if `loading` is also set in `nuxt.config.js`. See [API Configuration `loading` documentation](/api/configuration-loading).
 | `transition` | Set a specific transition for the page. See [API Pages `transition`](/api/pages-transition). |
 | `scrollToTop` | Boolean (default: `false`). Specify if you want the page to scroll to the top before rendering the page. It's used for [nested routes](/guide/routing#nested-routes). |
 | `validate` | Validator function for [dynamic routes](/guide/routing#dynamic-routes). |
@@ -206,8 +206,8 @@ More information about the `head` method: [API Configuration `head`](/api/config
 
 More information about the head method: [API Pages `head`](/api/pages-head).
 
-<p class="Alert">
+<div class="Alert">
 
 To avoid any duplication when used in child component, please give a unique identifier with the `hid` key. [Learn more](https://github.com/declandewet/vue-meta#lists-of-tags).
 
-</p>
+</div>

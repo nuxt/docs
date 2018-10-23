@@ -39,8 +39,8 @@ export default {
 </script>
 ```
 
-<p class="Alert">
+<div class="Alert">
 
 Untuk menghindari duplikasi saat menggunakannya pada "komponen child", berikan pengenal unik dengan key `yang tersembunyi`, [baca lebih lanjut] (https://github.com/declandewet/vue-meta#lists-of-tags).
 
-</p>
+</div>

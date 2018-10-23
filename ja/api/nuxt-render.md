@@ -50,8 +50,8 @@ function listen() {
 }
 ```
 
-<p class="Alert">
+<div class="Alert">
 
 ミドルウェアの終わりに `nuxt.render` を呼び出すことをお勧めします。`nuxt.render` は Web アプリケーションのレンダリングを処理し、`next()` を呼び出さないからです。
 
-</p>
+</div>

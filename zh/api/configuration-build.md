@@ -29,11 +29,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">
+<div class="Alert Alert--teal">
 
 **提示：** 可通过 `nuxt build --analyze` 或 `nuxt build -a` 命令来启用该分析器进行编译构建，分析结果可在 [http://localhost:8888](http://localhost:8888) 上查看。
 
-</p>
+</div>
 
 ## babel
 

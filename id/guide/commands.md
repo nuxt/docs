@@ -37,11 +37,11 @@ Anda harus memasukkan perintah ini ke dalam `package.json`:
 
 Kemudian, Anda bisa menjalankan perintah Anda melalui `npm run <command>` (contoh : `npm run dev`).
 
-<p class="Alert Alert--nuxt-green">
+<div class="Alert Alert--nuxt-green">
 
 <b>Pro tip:</b> untuk menyampaikan argumen kepada perintah NPM, Anda perlu nama script ekstra berupa <code>--</code> (contoh: <code>npm run dev -- --spa</code>).
 
-</p>
+</div>
 
 ## Lingkungan Pengembangan (Development Environment)
 

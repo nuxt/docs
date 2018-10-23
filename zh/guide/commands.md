@@ -34,11 +34,11 @@ description: Nuxt.js 提供了一系列常用的命令, 用于开发或发布部
 
 这样你可以通过 `npm run <command>` 来执行相应的命令。如: `npm run dev`。
 
-<p class="Alert Alert--nuxt-green">
+<div class="Alert Alert--nuxt-green">
 
 <b>提示:</b> 要将参数传递给npm命令，您需要一个额外的<code>--</code>脚本名称(例如：<code>npm run dev --参数 --spa</code>)
 
-</p>
+</div>
 
 ## 开发模式
 
