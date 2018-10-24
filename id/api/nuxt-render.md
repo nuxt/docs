@@ -51,4 +51,8 @@ function listen() {
 }
 ```
 
-<p class="Alert">Direkomendasikan untuk memanggil `nuxt.render` pada penghujung middleware Anda karena ia akan menangani pe-render-an pada aplikasi web Anda dan tidak akan memanggil `next()`.</p>
+<div class="Alert">
+
+Direkomendasikan untuk memanggil `nuxt.render` pada penghujung middleware Anda karena ia akan menangani pe-render-an pada aplikasi web Anda dan tidak akan memanggil `next()`.
+
+</div>

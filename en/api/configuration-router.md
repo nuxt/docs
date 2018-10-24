@@ -23,7 +23,11 @@ export default {
 }
 ```
 
-<p class="Alert Alert-blue">When `base` is set, Nuxt.js will also add in the document header `<base href="{{ router.base }}"/>`.</p>
+<div class="Alert Alert-blue">
+
+When `base` is set, Nuxt.js will also add in the document header `<base href="{{ router.base }}"/>`.
+
+</div>
 
 > This option is given directly to the vue-router [base](https://router.vuejs.org/api/#base).
 

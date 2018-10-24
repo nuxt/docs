@@ -86,4 +86,8 @@ _이 파일의 이름은 변경할 수 없습니다._
 
 설정을 변경하지 않았다면, `srcDir` 은 `rootDir` 와 같습니다.
 
-<p class="Alert Alert--nuxt-green"><b>INFO:</b> `vue` 템플릿 내에서 `assets` 이나 `static` 디렉토리에 링크할 필요가 있다면 `~assets/your_image.png`, `~static/your_image.png` 처럼 입력해야 합니다.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>INFO:</b> `vue` 템플릿 내에서 `assets` 이나 `static` 디렉토리에 링크할 필요가 있다면 `~assets/your_image.png`, `~static/your_image.png` 처럼 입력해야 합니다.
+
+</div>

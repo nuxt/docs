@@ -14,4 +14,8 @@ description: 设置 Nuxt.js 应用的根目录。
 
 该配置项一般是 [编码中使用 Nuxt.js](/api/nuxt) 时才会被用到。
 
-<p class="Alert Alert--blue">该配置项的一个限制是应用的 `node_modules` 目录必须在 `rootDir` 目录内。 应用的源码目录（`srcDir`）则无此限制，具体请查看 [`srcDir` 属性配置](/api/configuration-srcdir)。</p>
+<div class="Alert Alert--blue">
+
+该配置项的一个限制是应用的 `node_modules` 目录必须在 `rootDir` 目录内。 应用的源码目录（`srcDir`）则无此限制，具体请查看 [`srcDir` 属性配置](/api/configuration-srcdir)。
+
+</div>

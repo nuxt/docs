@@ -5,7 +5,11 @@ description: Nuxt.js vous permet de définir les plugins JavaScript à exécuter
 
 > Nuxt.js vous permet de définir les plugins JavaScript à exécuter avant d'instancier l'application Vue.js racine. Cela est particulièrement pratique quand vous utilisez vos propres bibliothèques ou modules externes.
 
-<div class="Alert">Il est important de savoir que, dans le [cycle de vie d'une instance de Vue](https://fr.vuejs.org/v2/guide/instance.html#Diagramme-du-cycle-de-vie), les hooks `beforeCreate` et `created` sont appelés **à la fois du côté client et du côté serveur**. Tous les autres *hooks* ne sont appelés que depuis le client.</div>
+<div class="Alert">
+
+Il est important de savoir que, dans le [cycle de vie d'une instance de Vue](https://fr.vuejs.org/v2/guide/instance.html#Diagramme-du-cycle-de-vie), les hooks `beforeCreate` et `created` sont appelés **à la fois du côté client et du côté serveur**. Tous les autres *hooks* ne sont appelés que depuis le client.
+
+</div>
 
 ## Modules externes
 

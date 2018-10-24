@@ -53,4 +53,8 @@ module.exports = {
 
 Voilà, Google Analytics is integrated into your nuxt.js application and will track every page view!
 
-<p class="Alert Alert--nuxt-green"><b>INFO:</b> you can use this method for any other tracking service.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>INFO:</b> you can use this method for any other tracking service.
+
+</div>

@@ -185,7 +185,11 @@ export default {
 }
 ```
 
-<div class="Alert">You can also have modules by exporting a store instance, you will have to add them manually on your store.</div>
+<div class="Alert">
+
+You can also have modules by exporting a store instance, you will have to add them manually on your store.
+
+</div>
 
 ### Module files
 

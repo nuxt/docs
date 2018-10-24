@@ -88,4 +88,8 @@ module.exports = {
 
 자! 이걸로 Google 애널리틱스는 Nuxt.js 어플리케이션에 통합되었고, 모든 페이지뷰를 트랙킹할수 있게 되었습니다!
 
-<p class="Alert Alert--nuxt-green"><b>정보:</b> 다른 트랙킹 서비스라도 동일한 방법으로 사용할 수 있습니다.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>정보:</b> 다른 트랙킹 서비스라도 동일한 방법으로 사용할 수 있습니다.
+
+</div>
