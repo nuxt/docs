@@ -18,7 +18,7 @@ Nuxt.js offers you different ways to use `asyncData`. Choose the one you're the 
 2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await))
 3. Define a callback as second argument. It has to be called like this: `callback(err, data)`
 
-<div class="Alert Alert--grey">We are using [axios](https://github.com/mzabriskie/axios) to make isomorphic HTTP requests, we <strong>strongly recommend</strong> to use our [axios module](https://axios.nuxtjs.org/) for your Nuxt projects.</div>
+<div class="Alert Alert--grey">We are using <a href="https://github.com/mzabriskie/axios">axios</a> to make isomorphic HTTP requests, we <strong>strongly recommend</strong> to use our <a href="https://axios.nuxtjs.org/">axios module</a> for your Nuxt projects.</div>
 
 ### Returning a Promise
 
