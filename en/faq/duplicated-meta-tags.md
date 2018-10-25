@@ -7,7 +7,7 @@ description: Duplicated Meta tags with Nuxt.js?
 
 This is a "feature" of [vue-meta](https://github.com/declandewet/vue-meta), please take a look at the [documentation of head elements](/guide/views#html-head).
 
-> To avoid any duplication when used in child component, please provide a unique identifier with the `hid` key, please [read more](https://github.com/declandewet/vue-meta#lists-of-tags) about it.
+<p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the <code>hid</code> key. [Learn more](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
 
 For the meta description, you need to add the unique identifier `hid` so vue-meta will know that it has to overwrite the default tag.
 

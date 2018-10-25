@@ -89,8 +89,8 @@ See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) 
 
 The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are:
 
-1. webpack config object,
-2. object with the following keys (all boolean): `isDev`, `isClient`, `isServer`, `loaders`.
+1. The Webpack config object,
+2. An object with the following keys (all boolean except `loaders`): `isDev`, `isClient`, `isServer`, `loaders`.
 
 Example (`nuxt.config.js`):
 
