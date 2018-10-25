@@ -225,7 +225,7 @@ More information about the plugins: [Vuex documentation](https://vuex.vuejs.org/
 
 ## The fetch Method
 
-> The `fetch` method is used to fill the store before rendering the page, it's like the `data` method except it doesn't set the component data.
+> The `fetch` method is used to fill the store before rendering the page (executed on server-side only on application's load, when a user opens the app in the browser), it's like the `data` method except it doesn't set the component data.
 
 More information about the fetch method: [API Pages fetch](/api/pages-fetch).
 
