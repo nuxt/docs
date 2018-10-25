@@ -165,7 +165,7 @@ async asyncData ({ params, error, payload }) {
 }
 ```
 
-## 子文件夹
+## subFolders
 
 - 类型: `Boolean`
 - 默认: `true`
@@ -195,7 +195,7 @@ async asyncData ({ params, error, payload }) {
 ```
 _注意：使用[Netlify](https://netlify.com)或使用HTML回退的任何静态托管服务器，此选项可能很有用。_
 
-## 并发
+## concurrency
 
 - 类型: `Number`
 - 默认: `500`
