@@ -121,7 +121,7 @@ module.exports = {
 ```js
 export default function (context) {
   // Tambah properti userAgent dalam konteks (tersedia dalam `data` dan `fetch`)
-  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+  context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
 

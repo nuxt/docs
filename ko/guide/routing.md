@@ -281,7 +281,7 @@ transition 속성에 대한 더 많은 정보: [API Pages 트랜지션](/api/pag
 
 ```js
 export default function (context) {
-  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+  context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
 
