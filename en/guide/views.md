@@ -54,7 +54,11 @@ Whether your want to include a sidebar or having distinct layouts for mobile and
 You can extend the main layout by adding a `layouts/default.vue` file.
 It will be used for all pages that don't have a layout specified.
 
-<p class="Alert Alert--nuxt-green"><b>Info:</b> Make sure to add the `&lt;nuxt/&gt;` component when creating a layout to actually include the page component.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>Info:</b> Make sure to add the `&lt;nuxt/&gt;` component when creating a layout to actually include the page component.
+
+</div>
 
 The default layout that comes out of the box is just three lines long and simply renders the page component:
 
@@ -103,7 +107,11 @@ Check out the [demonstration video](https://www.youtube.com/watch?v=YOKnSTp7d38)
 
 The error page is a *page component* which is always displayed when an error occurs (that does not happen while server-side rendering).
 
-<p class="Alert Alert--orange"><b>Warning:</b> Though this file is placed in the <code>layouts</code> folder, it should be treated as a <b>page</b>.</p>
+<div class="Alert Alert--orange">
+
+<b>Warning:</b> Though this file is placed in the <code>layouts</code> folder, it should be treated as a <b>page</b>.
+
+</div>
 
 As mentioned above, this layout is special, since you **should not** include `<nuxt/>` inside its template.
 You must see this layout as a component displayed when an error occurs (`404`, `500`, etc.).
@@ -186,7 +194,11 @@ Nuxt.js uses [vue-meta](https://github.com/declandewet/vue-meta) to update the `
 
 The `vue-meta` Nuxt.js uses can be found [on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/app/template/index.js#L29-L35)
 
-<p class="Alert Alert--teal"><b>Info:</b> Nuxt.js uses <code>hid</code> instead of the default <code>vmid</code> key to identify meta elements</p>
+<div class="Alert Alert--teal">
+
+<b>Info:</b> Nuxt.js uses <code>hid</code> instead of the default <code>vmid</code> key to identify meta elements
+
+</div>
 
 
 ### Default Meta Tags
