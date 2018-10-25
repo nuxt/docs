@@ -3,25 +3,25 @@ title: Plugins
 description: Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root Vue.js Application. This is especially helpful when using your own libraries or external modules.
 ---
 
-> Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root vue.js application. This is especially helpful when using your own libraries or external modules.
+> Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root Vue.js Application. This is especially helpful when using your own libraries or external modules.
 
 <div class="Alert">
 
-It is important to know that in any Vue [instance lifecycle](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram), only `beforeCreate` and `created` hooks are called **both from client-side and server-side**. All other hooks are called only from the client-side.
+It is important to know that in any Vue [instance lifecycle](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram), only `beforeCreate` and `created` hooks are called **both, from client-side and server-side**. All other hooks are called only from the client-side.
 
 </div>
 
 ## External Packages
 
-We may want to use external packages/modules in our application, one great example is [axios](https://github.com/mzabriskie/axios) for making HTTP request for both server and client.
+We may want to use external packages/modules in our application (one great example is [axios](https://github.com/mzabriskie/axios)) for making HTTP request for both server and client.
 
-We install it via npm:
+First, we should install it via npm:
 
 ```bash
 npm install --save axios
 ```
 
-Then, we can use it directly in our pages:
+Then we can use it directly in our page components:
 
 ```html
 <template>
@@ -42,9 +42,9 @@ export default {
 
 ## Vue Plugins
 
-If we want to use [vue-notifications](https://github.com/se-panfilov/vue-notifications) to display notification in our application, we need to setup the plugin before launching the app.
+If we want to use Vue plugins, like [vue-notifications](https://github.com/se-panfilov/vue-notifications) to display notification in our application, we need to setup the plugin before launching the app.
 
-File `plugins/vue-notifications.js`:
+We create the file `plugins/vue-notifications.js`:
 
 ```js
 import Vue from 'vue'
@@ -53,7 +53,7 @@ import VueNotifications from 'vue-notifications'
 Vue.use(VueNotifications)
 ```
 
-Then, we add the file inside the `plugins` key of `nuxt.config.js`:
+Then we add the file path inside the `plugins` key of our `nuxt.config.js`:
 
 ```js
 export default {
@@ -200,7 +200,8 @@ export const actions = {
 
 ## Client-side only
 
-Some plugins might work **only for the browser**, you can use the `ssr: false` option in `plugins` to run the file only on the client-side.
+Some plugins might work **only in the browser** because they lack SSR support.
+In these situations you can use the `ssr: false` option in `plugins` to add the plugin only on the client-side.
 
 Example:
 
@@ -223,6 +224,8 @@ import VueNotifications from 'vue-notifications'
 Vue.use(VueNotifications)
 ```
 
-In case you need to import some libraries only for the server, you can use the `process.server` variable set to `true` when webpack is creating the `server.bundle.js` file.
+In case you need to import some libraries in a plugin only on *server-side*, you can check if the `process.server` variable is set to `true`.
 
-Also, if you need to know if you are inside a generated app (via `nuxt generate`), you can check `process.static`, set to `true` during generation and after. To know the state when a page is being server-rendered by `nuxt generate` before being saved, you can use `process.static && process.server`.
+Also, if you need to know if you are inside a generated app (via `nuxt generate`), you can check if `process.static` is set to `true`. This is only the case during and afte the generation.
+
+You can als combine both options to hit the spot when a page is being server-rendered by `nuxt generate` before being saved (`process.static && process.server`)

@@ -33,6 +33,6 @@ If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take
 
 <div class="Alert">
 
-When generating your web application with `nuxt generate`, [the context](/api) given to [`data`](/guide/async-data#the-data-method) and [`fetch`](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.
+When generating your web application with `nuxt generate`, [the context](/api) given to [asyncData](/guide/async-data) and [`fetch`](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.
 
 </div>

@@ -7,11 +7,22 @@ description: Modules are Nuxt.js extensions which can extend its core functional
 
 ## Introduction
 
-While developing production-grade applications with Nuxt, you soon discover that the framework's core functionality is not enough. Nuxt can be extended with configuration options and plugins, but maintaining these customizations across multiple projects is tedious, repetitive and time-consuming. On the other hand, supporting every project's needs out of the box would make Nuxt very complex and hard to use.
+While developing production-grade applications with Nuxt, you'll soon discover that the framework's core
+functionality is not enough. Nuxt can be extended with configuration options and plugins,
+but maintaining these customizations across multiple projects is tedious, repetitive and time-consuming.
+On the other hand, supporting every project's needs out of the box would make Nuxt very complex and hard to use.
 
-This is why Nuxt provides a higher-order module system that makes it easy to extend the core. Modules are simply **functions** that are called sequentially when booting Nuxt. The framework waits for each module to finish before continuing. In this way, modules can customize almost any aspect of Nuxt. Thanks to Nuxt's modular design (based on webpack's [Tapable](https://github.com/webpack/tapable)), modules can easily register hooks for certain entry points like builder initialization. Modules can also override templates, configure webpack loaders, add CSS libraries, and perform any of a number of other useful tasks.
+This is one of the reasons why Nuxt provides a higher-order module system that makes it easy to extend the core.
+Modules are simply **functions** that are called sequentially when booting Nuxt.
+The framework waits for each module to finish before continuing.
+In this way, modules can customize almost any aspect of Nuxt.
+Thanks to Nuxt's modular design (based on webpack's [Tapable](https://github.com/webpack/tapable)),
+modules can easily register hooks for certain entry points like the builder initialization.
+Modules can also override templates, configure webpack loaders, add CSS libraries, and perform many other useful tasks.
 
-Best of all, Nuxt modules can be incorporated into npm packages. This makes them easy to reuse across projects and to share with the Nuxt community, helping create an ecosystem of high-quality Nuxt add-ons.
+Best of all, Nuxt modules can be incorporated into npm packages.
+This makes them easy to reuse across projects and to share with the Nuxt community,
+helping create an ecosystem of high-quality Nuxt add-ons.
 
 Modules are great if you:
 
@@ -33,7 +44,7 @@ export default function SimpleModule (moduleOptions) {
   // Write your code here
 }
 
-// REQUIRED if publishing as an npm package
+// REQUIRED if publishing the module as npm package
 // module.exports.meta = require('./package.json')
 ```
 
@@ -43,7 +54,7 @@ This is the object passed using `modules` array by user we can use it to customi
 
 **`this.options`**
 
-You can directly access to Nuxt options using this reference. This is `nuxt.config.js` with all default options assigned to and can be used for shared options between modules.
+You can directly access to Nuxt options using this reference. This is the content of the user's `nuxt.config.js` with all default options assigned to. It can be used for shared options between modules.
 
 **`this.nuxt`**
 
@@ -51,7 +62,7 @@ This is a reference to current Nuxt instance. Refer to [Nuxt class docs for avai
 
 **`this`**
 
-Context of modules. Refer to [ModuleContainer](/api/internals-module-container) class docs for available methods.
+Context of modules. Please look into the [ModuleContainer](/api/internals-module-container) class docs for available methods.
 
 **`module.exports.meta`**
 
@@ -65,13 +76,14 @@ export default {
     // Simple usage
     '~/modules/simple'
 
-    // Passing options
+    // Passing options directly
     ['~/modules/simple', { token: '123' }]
   ]
 }
 ```
 
-We then tell Nuxt to load some specific modules for a project with optional parameters as options. Please refer to [modules configuration](/api/configuration-modules) docs for more info!
+We then tell Nuxt to load some specific modules for a project with optional parameters as options.
+Please refer to [modules configuration](/api/configuration-modules) docs for more info!
 
 ## Async Modules
 
@@ -127,14 +139,15 @@ export default function asyncModule(callback) {
 
 ### Top level options
 
-Sometimes it is more convenient if we can use top level options while registering modules in `nuxt.config.js`. This allows us to combine multiple option sources.
+Sometimes it is more convenient if we can use top level options while registering modules in `nuxt.config.js`.
+This allows us to combine multiple option sources.
 
 **nuxt.config.js**
 
 ```js
 export default {
   modules: [
-    '@nuxtjs/axios'
+    ['@nuxtjs/axios', { anotherOption: true }]
   ],
 
   // axios module is aware of this by using `this.options.axios`
@@ -149,14 +162,18 @@ export default {
 
 ```js
 export default function (moduleOptions) {
+  // `options` will contain option1, option2 and anotherOption
   const options = Object.assign({}, this.options.axios, moduleOptions)
+
   // ...
 }
 ```
 
 ### Provide plugins
 
-It is common that modules provide one or more plugins when added. For example [bootstrap-vue](https://bootstrap-vue.js.org) module would require to register itself into Vue. For this we can use `this.addPlugin` helper.
+It is common that modules provide one or more plugins when added.
+For example [bootstrap-vue](https://bootstrap-vue.js.org) module would require to register itself into Vue.
+In such situations we can use the `this.addPlugin` helper.
 
 **plugin.js**
 
@@ -215,7 +232,7 @@ export default function nuxtBootstrapVue (moduleOptions) {
 
 ### Add a CSS library
 
-Consider doing a check if a CSS library exists to avoid duplicates and add **an option to disable** the CSS libray in the module. See the example shown below.
+If your module will provide a CSS library, make sure to perform a check if the user already included the library to avoid duplicates, and add **an option to disable** the CSS library in the module.
 
 **module.js**
 
@@ -229,6 +246,8 @@ export default function (moduleOptions) {
 ```
 
 ### Emit assets
+
+<!-- todo: up2date? -->
 
 We can register webpack plugins to emit assets during build.
 
@@ -253,7 +272,7 @@ export default function (moduleOptions) {
 }
 ```
 
-### Register custom loaders
+### Register custom webpack loaders
 
 We can do the same as `build.extend` in `nuxt.config.js` using `this.extendBuild`.
 
@@ -278,7 +297,9 @@ export default function (moduleOptions) {
 
 ## Run Tasks on Specific hooks
 
-Your module may need to do things only on specific conditions not just during Nuxt initialization. We can use powerful [Tapable](https://github.com/webpack/tapable) plugin system to do tasks on specific events. Nuxt will await for us if hooks return a Promise or are defined as `async`.
+Your module may need to do things only on specific conditions and not just during Nuxt initialization.
+We can use the powerful [Tapable](https://github.com/webpack/tapable) plugin system to do tasks on specific events.
+Nuxt will wait for your function if it return a Promise or is defined as `async`.
 
 ```js
 export default function () {
@@ -311,6 +332,6 @@ export default function () {
 
 <div class="Alert">
 
-There are many many more hooks and possibilities for modules. Please refer to [Nuxt Internals](/api/internals) to learn more about Nuxt internal API.
+There are way more hooks and possibilities for modules. Please read the [Nuxt Internals](/api/internals) to find out more about the nuxt-internal API.
 
 </div>
