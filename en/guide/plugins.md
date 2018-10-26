@@ -226,6 +226,6 @@ Vue.use(VueNotifications)
 
 In case you need to import some libraries in a plugin only on *server-side*, you can check if the `process.server` variable is set to `true`.
 
-Also, if you need to know if you are inside a generated app (via `nuxt generate`), you can check if `process.static` is set to `true`. This is only the case during and afte the generation.
+Also, if you need to know if you are inside a generated app (via `nuxt generate`), you can check if `process.static` is set to `true`. This is only the case during and after the generation.
 
-You can als combine both options to hit the spot when a page is being server-rendered by `nuxt generate` before being saved (`process.static && process.server`)
+You can also combine both options to hit the spot when a page is being server-rendered by `nuxt generate` before being saved (`process.static && process.server`).
