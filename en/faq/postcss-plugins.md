@@ -16,8 +16,8 @@ import postcssHexrgba from 'postcss-hexrgba',
 export default {
   build: {
     postcss: [
-      postcssNested()
-      postcssResponsiveType()
+      postcssNested(),
+      postcssResponsiveType(),
       postcssHexrgba()
     ]
   }
