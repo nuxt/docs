@@ -79,7 +79,11 @@ module.exports = {
 
 ### async/await を利用する
 
-<p class="Alert Alert--orange">`async`/`await` は Node.js 7.2 より上のバージョンでしかサポートされていないことに注意してください。そのため、あなたがモジュール開発者であれば、少なくとも `async`/`await` を使用しているかどうかをユーザーに知らせてください。大きめの非同期モジュールを作成したり、レガシーサポートを行いやすくするため、バンドラを利用して古い Node.js と互換性を持たせるよう変換するか、Promise メソッドに変換するかを選ぶことができます。</p>
+<div class="Alert Alert--orange">
+
+`async`/`await` は Node.js 7.2 より上のバージョンでしかサポートされていないことに注意してください。そのため、あなたがモジュール開発者であれば、少なくとも `async`/`await` を使用しているかどうかをユーザーに知らせてください。大きめの非同期モジュールを作成したり、レガシーサポートを行いやすくするため、バンドラを利用して古い Node.js と互換性を持たせるよう変換するか、Promise メソッドに変換するかを選ぶことができます。
+
+</div>
 
 ```js
 const fse = require('fs-extra')
@@ -265,7 +269,7 @@ module.exports = function (moduleOptions) {
 
       // 既存のローダーをカスタマイズする
       // 詳しくは Nuxt 内部のソースコードを参照:
-      // https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/webpack/base.js
+      // https://github.com/nuxt/nuxt.js/tree/dev/packages/builder/src/webpack/base.js
       const barLoader = config.module.rules.find(rule => rule.loader === 'bar-loader')
   })
 }

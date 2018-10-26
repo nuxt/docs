@@ -38,6 +38,7 @@ It will ask you some questions:
   - [Bulma](https://github.com/jgthms/bulma)
   - [Tailwind](https://github.com/tailwindcss/tailwindcss)
   - [Element UI](https://github.com/ElemeFE/element)
+  - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
 3. The Nuxt mode you want (`Universal` or `SPA`)
 4. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
@@ -52,7 +53,11 @@ $ npm run dev
 
 The application is now running on http://localhost:3000.
 
-<p class="Alert">Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.</p>
+<div class="Alert">
+
+Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.
+
+</div>
 
 To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
 
@@ -65,7 +70,11 @@ $ mkdir <project-name>
 $ cd <project-name>
 ```
 
-<p class="Alert Alert--nuxt-green"><b>Info:</b> replace <code>&lt;project-name&gt;</nom-du-projet></code> by the name of the project.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>Info:</b> replace <code>&lt;project-name&gt;</nom-du-projet></code> by the name of the project.
+
+</div>
 
 ### The package.json
 
@@ -116,6 +125,10 @@ $ npm run dev
 
 The application is now running on http://localhost:3000.
 
-<p class="Alert">Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.</p>
+<div class="Alert">
+
+Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.
+
+</div>
 
 To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).

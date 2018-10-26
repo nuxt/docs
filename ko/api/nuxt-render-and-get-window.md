@@ -15,7 +15,11 @@ description: nuxt.js 어플리케이션으로부터 주어진 url의 창을 가�
 
 > nuxt.js 어플리케이션으로부터 주어진 url의 창을 가져옵니다.
 
-<p class="Alert Alert--info">이 기능은 [test purposes](guide/development-tools#end-to-end-testing)를 위해 만들어졌습니다.</p>
+<div class="Alert Alert--orange">
+
+이 기능은 [test purposes](guide/development-tools#end-to-end-testing)를 위해 만들어졌습니다.
+
+</div>
 
 이 함수를 사용하기 위해, `jsdom`를 설치해야 합니다:
 ```bash

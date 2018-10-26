@@ -16,7 +16,7 @@ Nuxt.js presets all the configuration needed to make your development of a Vue.j
 In addition, we also provide another deployment option called: *nuxt generate*. It will build a **Static Generated** Vue.js Application.
 We believe that option could be the next big step in the development of Web Applications with microservices.
 
-Futhermore, you can also use Nuxt.js to create single page applications (`spa` mode) quickly, useful to keep Nuxt features while working on backoffice applications.
+Furthermore, you can also use Nuxt.js to create single page applications (`spa` mode) quickly, useful to keep Nuxt features while working on backoffice applications.
 
 As a framework, Nuxt.js comes with a lot of features to help you in your development between the client side and the server side such as Asynchronous Data, Middleware, Layouts, etc.
 
@@ -109,4 +109,8 @@ We now have an automated **Static Generated Web Application** :)
 
 We can go further by thinking of an e-commerce web application made with `nuxt generate` and hosted on a CDN. Every time a product is out of stock or back in stock, we regenerate the web app. But if the user navigates through the web app in the meantime, it will be up to date thanks to the API calls made to the e-commerce API. No need to have multiple instances of a server + a cache any more!
 
-<div class="Alert">See [How to deploy on Netlify?](/faq/netlify-deployment) for more details on how to deploy to Netlify.</div>
+<div class="Alert">
+
+See [How to deploy on Netlify?](/faq/netlify-deployment) for more details on how to deploy to Netlify.
+
+</div>

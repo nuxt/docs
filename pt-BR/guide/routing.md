@@ -88,7 +88,11 @@ router: {
 
 As you can see the route named `users-id` has the path `:id?` which makes it optional, if you want to make it required, create an `index.vue` file in the `users/_id` directory.
 
-<p class="Alert Alert--info"><b>Warning:</b> dynamic routes are ignored by the `generate` command: [API Configuration generate](/api/configuration-generate#routes)</p>
+<div class="Alert Alert--orange">
+
+<b>Warning:</b> dynamic routes are ignored by the `generate` command: [API Configuration generate](/api/configuration-generate#routes)
+
+</div>
 
 ### Validate Route Params
 
@@ -115,7 +119,11 @@ Nuxt.js lets you create nested route by using the children routes of vue-router.
 
 To define the parent component of a nested route, you need to create a Vue file with the **same name as the directory** which contain your children views.
 
-<p class="Alert Alert--info"><b>Warning:</b> don't forget to write `<nuxt-child/>` inside the parent component (<code>.vue</code> file).</p>
+<div class="Alert Alert--orange">
+
+<b>Warning:</b> don't forget to write `<nuxt-child/>` inside the parent component (<code>.vue</code> file).
+
+</div>
 
 This file tree:
 
@@ -217,7 +225,11 @@ Nuxt.js uses the [`<transition>`](http://vuejs.org/v2/guide/transitions.html#Tra
 
 ### Global Settings
 
-<p class="Alert Alert--nuxt-green"><b>Info :</b> Nuxt.js default transition name is `"page"`.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>Info :</b> Nuxt.js default transition name is `"page"`.
+
+</div>
 
 To add a fade transition to every page of your application, we need a CSS file that is shared across all our routes, so we start by creating a file in the `assets` folder.
 
@@ -279,7 +291,7 @@ A middleware receives [the context](/api/context) as first argument:
 
 ```js
 export default function (context) {
-  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+  context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
 

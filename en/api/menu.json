@@ -54,7 +54,6 @@
           { "name": "html.minify", "to": "#html-minify" },
           { "name": "loaders", "to": "#loaders" },
           { "name": "optimization", "to": "#optimization" },
-          { "name": "terser", "to": "#terser" },
           { "name": "optimizeCSS", "to": "#optimize-css" },
           { "name": "parallel", "to": "#parallel" },
           { "name": "plugins", "to": "#plugins" },
@@ -65,6 +64,7 @@
           { "name": "ssr", "to": "#ssr" },
           { "name": "styleResources", "to": "#styleresources" },
           { "name": "templates", "to": "#templates" },
+          { "name": "terser", "to": "#terser" },
           { "name": "transpile", "to": "#transpile" },
           { "name": "vueLoader", "to": "#vueloader" },
           { "name": "watch", "to": "#watch" }
@@ -105,13 +105,15 @@
         "name": "render",
         "to": "/configuration-render",
         "contents": [
-          { "name": "bundleRenderer", "to": "#bundleRenderer" },
+          { "name": "bundleRenderer", "to": "#bundlerenderer" },
           { "name": "etag", "to": "#etag" },
-          { "name": "gzip", "to": "#gzip" },
+          { "name": "compressor", "to": "#compressor" },
           { "name": "http2", "to": "#http2" },
-          { "name": "resourceHints", "to": "#resourceHints" },
+          { "name": "resourceHints", "to": "#resourcehints" },
           { "name": "ssr", "to": "#ssr" },
-          { "name": "static", "to": "#static" }
+          { "name": "static", "to": "#static" },
+          { "name": "dist", "to": "#dist" },
+          { "name": "csp", "to": "#csp" }
         ]
       },
       { "name": "rootDir", "to": "/configuration-rootdir" },
@@ -134,6 +136,7 @@
       { "name": "transition", "to": "/configuration-transition" },
       { "name": "vue.config", "to": "/configuration-vue-config" },
       { "name": "watch", "to": "/configuration-watch" },
+      { "name": "globalName", "to": "/configuration-global-name" },
       {
         "name": "watchers",
         "to": "/configuration-watchers",

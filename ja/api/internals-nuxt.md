@@ -5,7 +5,7 @@ description: Nuxt のコアクラス
 
 # Nuxt クラス
 
-- ソース: **[core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/nuxt.js)**
+- ソース: **[core/nuxt.js](https://github.com/nuxt/nuxt.js/tree/dev/packages/core/src/nuxt.js)**
 
 すべてのモジュールとクラスが通信できるようにするためのコアのコンテナです。すべてのモジュールは Nuxt インスタンスに `this.nuxt` を使ってアクセスできます。
 

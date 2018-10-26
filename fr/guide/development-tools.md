@@ -211,4 +211,8 @@ Il est également recommandé d'activer ESLint en mode rechargement à chaud via
   }
 ```
 
-<p class="Alert Alert--info">Une bonne pratique est également d'ajouter `"precommit": "npm run lint"` dans `package.json` afin de linter votre code automatiquement avant de l'acter.</p>
+<div class="Alert Alert--orange">
+
+Une bonne pratique est également d'ajouter `"precommit": "npm run lint"` dans `package.json` afin de linter votre code automatiquement avant de l'acter.
+
+</div>

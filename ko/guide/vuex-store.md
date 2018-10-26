@@ -161,7 +161,11 @@ export default {
 </style>
 ```
 
-<div class="Alert">각 파일에서 store 인스턴스를 export할 수 있지만, 이 경우 수동으로 store에 추가해줘야 합니다.</div>
+<div class="Alert">
+
+각 파일에서 store 인스턴스를 export할 수 있지만, 이 경우 수동으로 store에 추가해줘야 합니다.
+
+</div>
 
 ## fetch 메소드
 

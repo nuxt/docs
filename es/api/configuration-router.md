@@ -23,7 +23,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert-blue">When `base` is set, nuxt.js will also add in the document header `<base href="{{ router.base }}"/>`.</p>
+<div class="Alert Alert-blue">
+
+When `base` is set, nuxt.js will also add in the document header `<base href="{{ router.base }}"/>`.
+
+</div>
 
 > This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
 
@@ -151,7 +155,7 @@ module.exports = {
 ```js
 export default function (context) {
   // Add the userAgent property in the context (available in `data` and `fetch`)
-  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+  context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
 

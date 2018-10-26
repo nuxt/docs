@@ -18,7 +18,11 @@ description: Faire le rendu d'une route spécifique avec un contexte donné.
 
 Cette méthode devrait être utilisée en particulier pour les [tests](guide/development-tools#tests-de-bout-en-bout) aussi bien que [`nuxt.renderAndGetWindow`](/api/nuxt-render-and-get-window).
 
-<p class="Alert Alert--info">`nuxt.renderRoute` devrait être exécuté après le processus de build en mode production (`dev: false`).</p>
+<div class="Alert Alert--orange">
+
+`nuxt.renderRoute` devrait être exécuté après le processus de build en mode production (`dev: false`).
+
+</div>
 
 Exemple :
 

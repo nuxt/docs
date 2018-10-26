@@ -18,7 +18,11 @@ description: 特定のルートをレンダリングします。その際にコ�
 
 このメソッドはほとんどの場合 [nuxt.renderAndGetWindow](/api/nuxt-render-and-get-window) とともに [テストする目的](/guide/development-tools#エンドツーエンドテスト) で使われます。
 
-<p class="Alert Alert--info">`nuxt.renderRoute` はプロダクションモード（dev: false）ではビルド処理の後に実行すると良いでしょう。</p>
+<div class="Alert Alert--orange">
+
+`nuxt.renderRoute` はプロダクションモード（dev: false）ではビルド処理の後に実行すると良いでしょう。
+
+</div>
 
 例:
 

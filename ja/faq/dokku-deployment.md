@@ -27,7 +27,7 @@ dokku config:set my-nuxt-app HOST=0.0.0.0 NODE_ENV=production
 
 ![nuxt config vars Dokku](https://i.imgur.com/9FNsaoQ.png)
 
-そして、`app.json` 内のスクリプト部 `scripts.dokku.predeploy` を介して Dokk に `npm run build` を実行すること伝えます。:
+そして、`app.json` 内のスクリプト部 `scripts.dokku.predeploy` を介して Dokku に `npm run build` を実行すること伝えます。:
 
 `プロジェクトのルートディレクトリに app.json という名前のファイルを作成してください。`
 

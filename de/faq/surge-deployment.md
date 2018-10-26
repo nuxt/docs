@@ -31,4 +31,8 @@ Done :)
 
 If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take a look at the [`generate` configuration](/api/configuration-generate) to tell Nuxt.js how to generate these dynamic routes.
 
-<div class="Alert">When generating your web application with `nuxt generate`, [the context](/api) given to [`data`](/guide/async-data#the-data-method) and [`fetch`](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.</div>
+<div class="Alert">
+
+When generating your web application with `nuxt generate`, [the context](/api) given to [`data`](/guide/async-data#the-data-method) and [`fetch`](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.
+
+</div>

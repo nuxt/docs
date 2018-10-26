@@ -1,6 +1,6 @@
 {
   "iso": "en",
-  "docVersion": "2.1.0",
+  "docVersion": "2.2.0",
   "links": {
     "api": "API",
     "blog": "Blog",
@@ -16,6 +16,7 @@
     "homepage": "Home page",
     "live_demo": "Live Demo",
     "live_edit": "Live Edit",
+    "tidelift": "GET PROFESSIONAL SUPPORT FOR NUXT",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Vue Jobs"
@@ -28,7 +29,8 @@
     "please_define_title": "Please define a title in the front matter",
     "please_define_description": "Please define a description in the front matter",
     "search": "Search",
-    "version": "Version"
+    "version": "Version",
+    "vue_toronto": "Want to discover how to create a Universal Vue.js Application with Nuxt? Join our workshop the November 14, 2018 at Vue Toronto!"
   },
   "homepage": {
     "title": "Universal Vue.js Applications",

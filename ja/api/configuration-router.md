@@ -24,7 +24,11 @@ export default {
 }
 ```
 
-<p class="Alert Alert-blue">`base` がセットされているときは Nuxt.js はドキュメントのヘッダーに `<base href="{{ router.base }}"/>` を追加します。</p>
+<div class="Alert Alert-blue">
+
+`base` がセットされているときは Nuxt.js はドキュメントのヘッダーに `<base href="{{ router.base }}"/>` を追加します。
+
+</div>
 
 > このオプションは vue-router の [base](https://router.vuejs.org/ja/api/#base) に直接付与されます。
 
@@ -117,7 +121,7 @@ export default {
 ```js
 export default function (context) {
   // userAgent プロパティを context 内に追加します（context は `data` メソッドや `fetch` メソッド内で利用できます）
-  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+  context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
 
@@ -146,7 +150,7 @@ export default {
 
 - 型: `関数`
 
-`scrollBehavior` オプションを使って、ページ間のスクロール位置についての独自の振る舞いを定義できます。このメソッドはページがレンダリングされるたびに毎回呼び出されます。  
+`scrollBehavior` オプションを使って、ページ間のスクロール位置についての独自の振る舞いを定義できます。このメソッドはページがレンダリングされるたびに毎回呼び出されます。
 
 デフォルトでは scrollBehavior オプションは次のようにセットされています:
 

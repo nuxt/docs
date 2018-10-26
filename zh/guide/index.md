@@ -110,4 +110,8 @@ Nuxt.js 的官网就是一个绝佳的例子, 它静态化后托管在 [Netlify]
 
 我们进一步考虑下电商应用的场景，利用 `nuxt generate`，是不是可以将应用静态化后部署在CDN服务器，每当一个商品的库存发生变化时，就重新静态化下，更新下商品的库存。但是如果用户访问的时候恰巧更新了呢？我们可以通过调用电商的API，保证用户访问的是最新的数据。这样相对于传统的电商应用来说，这种静态化的方案可以大大节省服务器的资源。
 
-<div class="Alert">查看 [如何在Netlify上部署？](/faq/netlify-deployment) 来获取更多相关信息。</div>
+<div class="Alert">
+
+查看 [如何在Netlify上部署？](/faq/netlify-deployment) 来获取更多相关信息。
+
+</div>

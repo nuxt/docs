@@ -89,13 +89,14 @@
       {
         "name": "render (En)", "to": "/configuration-render",
         "contents": [
-          { "name": "bundleRenderer (En)", "to": "#bundleRenderer" },
+          { "name": "bundleRenderer (En)", "to": "#bundlerenderer" },
           { "name": "etag (En)", "to": "#etag" },
           { "name": "gzip (En)", "to": "#gzip" },
           { "name": "http2 (En)", "to": "#http2" },
-          { "name": "resourceHints (En)", "to": "#resourceHints" },
+          { "name": "resourceHints (En)", "to": "#resourcehints" },
           { "name": "ssr (En)", "to": "#ssr" },
-          { "name": "static (En)", "to": "#static" }
+          { "name": "static (En)", "to": "#static" },
+          { "name": "csp (En)", "to": "#csp" }
         ]
       },
       { "name": "rootDir (En)", "to": "/configuration-rootdir" },

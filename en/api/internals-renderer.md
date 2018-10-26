@@ -5,7 +5,7 @@ description: Nuxt Renderer Class
 
 # Renderer Class
 
-- Source: **[core/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/renderer.js)**
+- Source: **[core/renderer.js](https://github.com/nuxt/nuxt.js/tree/dev/packages/core/src/renderer.js)**
 
 This class is exporting a connect middleware which handles and serves all SSR and asset requests.
 

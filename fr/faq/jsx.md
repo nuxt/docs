@@ -22,6 +22,10 @@ export default {
 </script>
 ```
 
-<p class="Alert Alert--info">Créer un alias `h` pour `createElement` est une convention commune que vous rencontrerez dans l'écosystème Vue mais n'est pas nécessaire pour JSX depuis qu'il [injecte automatiquement](https://github.com/vuejs/babel-plugin-transform-vue-jsx#h-auto-injection) `const h = this.$createElement` dans toutes les méthodes et les accesseurs (ce n'est pas le cas pour les fonctions et les fonctions fléchées) déclarées avec la syntaxe ES2015 supportant JSX. Vous pouvez alors laisser tomber le paramètre `h`.</p>
+<div class="Alert Alert--orange">
+
+Créer un alias `h` pour `createElement` est une convention commune que vous rencontrerez dans l'écosystème Vue mais n'est pas nécessaire pour JSX depuis qu'il [injecte automatiquement](https://github.com/vuejs/babel-plugin-transform-vue-jsx#h-auto-injection) `const h = this.$createElement` dans toutes les méthodes et les accesseurs (ce n'est pas le cas pour les fonctions et les fonctions fléchées) déclarées avec la syntaxe ES2015 supportant JSX. Vous pouvez alors laisser tomber le paramètre `h`.
+
+</div>
 
 Vous pouvez en savoir plus dans la [section JSX](https://vuejs.org/v2/guide/render-function.html#JSX) de la documentation de Vue.js.

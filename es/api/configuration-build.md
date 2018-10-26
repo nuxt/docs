@@ -29,7 +29,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**INFO:** You can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)</p>
+<div class="Alert Alert--teal">
+
+**INFO:** You can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)
+
+</div>
 
 ## babel
 
@@ -40,7 +44,7 @@ module.exports = {
 Default:
 ```js
 {
-  presets: ['vue-app']
+  presets: ['@nuxtjs/babel-preset-app']
 }
 ```
 
@@ -64,7 +68,7 @@ module.exports = {
 The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are:
 
 1. Webpack config object
-2. Object with the folowing keys (all boolean): `isDev`, `isClient`, `isServer`
+2. Object with the folowing keys (all boolean except `loaders`): `isDev`, `isClient`, `isServer`
 
 Example (`nuxt.config.js`):
 ```js
@@ -158,7 +162,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--orange">When the loaders are defined in the `nuxt.config.js`, the default loaders will be overwritten.</p>
+<div class="Alert Alert--orange">
+
+When the loaders are defined in the `nuxt.config.js`, the default loaders will be overwritten.
+
+</div>
 
 ## plugins
 

@@ -11,7 +11,11 @@ Nuxt.js ajoute une méthode `asyncData` pour vous permettre de gérer les opéra
 Parfois vous souhaitez simplement récupérer des données et faire le rendu côté serveur sans utiliser de store.
 `asyncData` est appelé avant chaque chargement du composant (**uniquement pour les composants de pages**). On peut l'appeler côté serveur ou avant de naviguer vers la route correspondante. Cette méthode reçoit [le contexte](/api#context) comme premier argument, vous pouvez l'utiliser pour récupérer différentes données et Nuxt.js les fusionnera avec les données du composant.
 
-<div class="Alert Alert--orange">Vous **n'**avez **PAS** accès à l'instance du composant via `this` au sein de `asyncData` parce que la fonction est appelée **avant d'initier** le composant.</div>
+<div class="Alert Alert--orange">
+
+Vous **n'**avez **PAS** accès à l'instance du composant via `this` au sein de `asyncData` parce que la fonction est appelée **avant d'initier** le composant.
+
+</div>
 
 Nuxt.js vous propose différentes façons d'utiliser `asyncData`. Choisissez celle avec laquelle vous êtes le plus à l'aise :
 
@@ -19,7 +23,11 @@ Nuxt.js vous propose différentes façons d'utiliser `asyncData`. Choisissez cel
 2. En utilisant [async / await](https://github.com/lukehoban/ecmascript-asyncawait) ([en savoir plus](https://zeit.co/blog/async-and-await))
 3. En définissant une fonction de rappel comme second argument. Elle doit être appelée comme suit : `callback(err, data)`
 
-<div class="Alert Alert--grey">Nous utilisons [axios](https://github.com/mzabriskie/axios) pour faire des requêtes HTTP isomorphiques, nous recommendons <strong>fortement</strong> d'utiliser notre [module axios](https://axios.nuxtjs.org/) pour vos projets Nuxt.</div>
+<div class="Alert Alert--grey">
+
+Nous utilisons [axios](https://github.com/mzabriskie/axios) pour faire des requêtes HTTP isomorphiques, nous recommendons <strong>fortement</strong> d'utiliser notre [module axios](https://axios.nuxtjs.org/) pour vos projets Nuxt.
+
+</div>
 
 ### Retourner une promesse
 

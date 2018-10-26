@@ -76,7 +76,11 @@ Tous les modules ne font pas tout de manière synchrone. Par exemple vous pouvez
 
 ### Utilisation de async / await
 
-<p class="Alert Alert--orange">Faites attention avec `async` et `await`, ils sont supportés uniquement depuis Node.js 7.2+. Donc si vous êtes un développeur de modules, n'oubliez pas d'avertir vos utilisateurs si vous les utilisez. Pour des modules asynchrones plus stables ou avec un support des versions antérieures vous pouvez utiliser un paqueteur pour les transformer en de vieille version de compatibilité Node.js ou utilisant des méthodes de promesse.</p>
+<div class="Alert Alert--orange">
+
+Faites attention avec `async` et `await`, ils sont supportés uniquement depuis Node.js 7.2+. Donc si vous êtes un développeur de modules, n'oubliez pas d'avertir vos utilisateurs si vous les utilisez. Pour des modules asynchrones plus stables ou avec un support des versions antérieures vous pouvez utiliser un paqueteur pour les transformer en de vieille version de compatibilité Node.js ou utilisant des méthodes de promesse.
+
+</div>
 
 ```js
 const fse = require('fs-extra')
@@ -263,7 +267,7 @@ module.exports = function (moduleOptions) {
 
       // Personnalisation des loaders existants
       // Consultez le code source des mécanismes de Nuxt :
-      // https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/webpack/base.js
+      // https://github.com/nuxt/nuxt.js/tree/dev/packages/builder/src/webpack/base.js
       const barLoader = config.module.rules.find(rule => rule.loader === 'bar-loader')
   })
 }
@@ -302,4 +306,8 @@ module.exports = function () {
 }
 ```
 
-<p class="Alert">Il existe beaucoup d'autres points d'ancrage et de possibilités pour les modules. Consultez les [mécanismes de Nuxt](/api/internals) pour en apprendre plus à propos de l'API interne de Nuxt.</p>
+<div class="Alert">
+
+Il existe beaucoup d'autres points d'ancrage et de possibilités pour les modules. Consultez les [mécanismes de Nuxt](/api/internals) pour en apprendre plus à propos de l'API interne de Nuxt.
+
+</div>

@@ -30,7 +30,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**Info:** you can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888).</p>
+<div class="Alert Alert--teal">
+
+**Info:** you can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888).
+
+</div>
 
 ## babel
 
@@ -41,7 +45,7 @@ module.exports = {
 
   ```js
   {
-    presets: ['vue-app']
+    presets: ['@nuxtjs/babel-preset-app']
   }
   ```
 
@@ -79,7 +83,7 @@ See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) 
 The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are:
 
 1. webpack config object,
-2. object with the following keys (all boolean): `isDev`, `isClient`, `isServer`.
+2. object with the following keys (all boolean except `loaders`): `isDev`, `isClient`, `isServer`.
 
 Example (`nuxt.config.js`):
 

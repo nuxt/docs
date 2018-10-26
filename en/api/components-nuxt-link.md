@@ -7,7 +7,7 @@ description: Link the pages between them with nuxt-link.
 
 > This component is used to link the page components between them.
 
-At the moment, `<nuxt-link>` is the same as [`<router-link>`](https://router.vuejs.org/en/api/router-link.html), so we recommend you to see how to use it on the [Vue Router documentation](https://router.vuejs.org/en/api/router-link.html).
+At the moment, `<nuxt-link>` is the same as [`<router-link>`](https://router.vuejs.org/api/#router-link), so we recommend you to see how to use it on the [Vue Router documentation](https://router.vuejs.org/api/#router-link).
 
 Example (`pages/index.vue`):
 

@@ -22,7 +22,11 @@ export default {
 }
 ```
 
-<div class="Alert Alert--orange">注意：由于`asyncData`方法是在组件 **初始化** 前被调用的，所以在方法内是没有办法通过 `this` 来引用组件的实例对象。</div>
+<div class="Alert Alert--orange">
+
+注意：由于`asyncData`方法是在组件 **初始化** 前被调用的，所以在方法内是没有办法通过 `this` 来引用组件的实例对象。
+
+</div>
 
 ## 上下文对象
 
@@ -30,8 +34,8 @@ export default {
 
 | 属性字段 | 类型 | 可用 | 描述 |
 |-----|------|--------------|-------------|
-| `isClient` | Boolean | 客户端 & 服务端 | 是否来自客户端渲染 |
-| `isServer` | Boolean | 客户端 & 服务端 | 是否来自服务端渲染 |
+| `isClient` | Boolean | 客户端 & 服务端 | 是否来自客户端渲染（_废弃_。请使用 `process.client`）。|
+| `isServer` | Boolean | 客户端 & 服务端 | 是否来自服务端渲染（_废弃_。请使用 `process.server`）。|
 | `isDev` | Boolean | 客户端 & 服务端 | 是否是开发(dev) 模式，在生产环境的数据缓存中用到 |
 | `route` | [vue-router 路由](https://router.vuejs.org/zh-cn/api/route-object.html) | 客户端 & 服务端 | `vue-router` 路由实例。|
 | `store` | [vuex 数据流](http://vuex.vuejs.org/zh-cn/api.html#vuexstore-instance-properties) | 客户端 & 服务端 | `Vuex.Store` 实例。**只有[vuex 数据流](/guide/vuex-store)存在相关配置时可用。** |

@@ -31,7 +31,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**Info:** anda bisa menggunakan perintah `nuxt build --analyze` atau `nuxt build -a` untuk mem'build aplikasi dan menjalankan bundle analyzer pada [http://localhost:8888](http://localhost:8888).</p>
+<div class="Alert Alert--teal">
+
+**Info:** anda bisa menggunakan perintah `nuxt build --analyze` atau `nuxt build -a` untuk mem'build aplikasi dan menjalankan bundle analyzer pada [http://localhost:8888](http://localhost:8888).
+
+</div>
 
 ## babel
 
@@ -43,7 +47,7 @@ module.exports = {
 
     ```js
     {
-      presets: ['vue-app']
+      presets: ['@nuxtjs/babel-preset-app']
     }
     ```
 

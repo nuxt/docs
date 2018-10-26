@@ -1,9 +1,9 @@
 ---
 title: Vuex Store
-description: Using a store to manage the state is important for every big application, that's why Nuxt.js implements Vuex in its core.
+description: Using a store to manage the state is important for every big application. That's why Nuxt.js implements Vuex in its core.
 ---
 
-> Using a store to manage the state is important to every big application, that's why Nuxt.js implements [Vuex](https://vuex.vuejs.org/en/) in its core.
+> Using a store to manage the state is important for every big application. That's why Nuxt.js implements [Vuex](https://vuex.vuejs.org/en/) in its core.
 
 ## Activate the Store
 
@@ -12,7 +12,7 @@ Nuxt.js will look for the `store` directory, if it exists, it will:
 1. Import Vuex,
 2. Add the `store` option to the root Vue instance.
 
-Nuxt.js lets you have **2 modes of store**, choose the one you prefer:
+Nuxt.js lets you device between **2 store modes**. You can choose the one you prefer:
 
 - **Classic:** `store/index.js` returns a store instance.
 - **Modules:** every `.js` file inside the `store` directory is transformed as a [namespaced module](http://vuex.vuejs.org/en/modules.html) (`index` being the root module).
@@ -21,7 +21,7 @@ Regardless of the mode, your `state` value should **always be a `function`** to 
 
 ## Classic mode
 
-To activate the store with the classic mode, we create the `store/index.js` file which should export a method which returns a Vuex instance:
+To activate the store with the classic mode, we create the `store/index.js` file which should export a method that returns a Vuex instance:
 
 ```js
 import Vuex from 'vuex'
@@ -189,15 +189,21 @@ export default {
 }
 ```
 
-<div class="Alert">You can also have modules by exporting a store instance, you will have to add them manually on your store.</div>
+<div class="Alert">
+
+You can also have modules by exporting a store instance, you will have to add them manually on your store.
+
+</div>
 
 ### Module files
 
 You can optionally break down a module file into separate files: `state.js`, `actions.js`, `mutations.js` and `getters.js`. If you maintain an `index.js` file with state, getters and mutations while having a single separate file for actions, that will also still be properly recognized.
 
+> Note: Whilst using split-file modules, you must remember that using arrow functions, ```this``` is only lexically available. Lexical scoping simply means that the ```this``` always references the owner of the arrow function. If the arrow function is not contained then ```this``` would be undefined. The solution is to use a "normal" function which produces its own scope and thus has ```this``` available.
+
 ### Plugins
 
-You can add additional plugin to the store (in Modules Mode) putting it into the `store/index.js` file:
+You can add additional plugin to the store (in mthe odules mode) putting it into the `store/index.js` file:
 
 ```js
 import myPlugin from 'myPlugin'
@@ -219,7 +225,7 @@ More information about the plugins: [Vuex documentation](https://vuex.vuejs.org/
 
 ## The fetch Method
 
-> The `fetch` method is used to fill the store before rendering the page, it's like the `data` method except it doesn't set the component data.
+> The `fetch` method is used to fill the store before rendering the page, it's like the `asyncData` method except it doesn't set the component data.
 
 More information about the fetch method: [API Pages fetch](/api/pages-fetch).
 
@@ -243,7 +249,7 @@ actions: {
 
 The [context](/api/context) is given to `nuxtServerInit` as the 2nd argument, it is the same as `asyncData` or `fetch` method.
 
-> Note: Asynchronous `nuxtServerInit` actions must return a Promise to allow the `nuxt` server to wait on them.
+> Note: Asynchronous `nuxtServerInit` actions must return a Promise or leverage async/await to allow the `nuxt` server to wait on them.
 
 ```js
 actions: {

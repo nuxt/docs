@@ -1,14 +1,20 @@
+const { promisify } = require('util')
+const { resolve } = require('path')
 const fs = require('fs')
+
 const micro = require('micro')
 const axios = require('axios')
-const pify = require('pify')
-const glob = pify(require('glob'))
 const marked = require('marked')
 const highlightjs = require('highlight.js')
 const fm = require('front-matter')
-const { resolve } = require('path')
+const consola = require('consola')
+const octicon = require('octicons')
+
+const glob = promisify(require('glob'))
+const readFile = promisify(fs.readFile)
+
 const githubHook = require('./gh-hook')
-const readFile = pify(fs.readFile)
+
 const send = micro.send
 
 // Use highlight.js for code blocks
@@ -28,21 +34,25 @@ renderer.heading = (text, level) => {
   } else {
     link = text.toLowerCase().replace(/[^\wА-яіІїЇєЄ\u4e00-\u9eff一-龠ぁ-ゔァ-ヴー々〆〤\u3130-\u318F\uAC00-\uD7AF]+/gi, '-')
   }
-  return '<h' + level + ' id="' + link + '">' + text + '</h' + level + '>'
+  return '<h' + level + '>' +
+    '<a id="' + link + '" class="anchor" aria-hidden="true" href="#' + link + '">' +
+      octicon.link.toSVG() +
+    '</a>' + text + '</h' + level + '>'
 }
 marked.setOptions({ renderer })
 
 // Fetch releases
 let RELEASES = []
-async function getReleases () {
-  console.log('Fetching releases...')
-  let options = { url: 'https://api.github.com/repos/nuxt/nuxt.js/releases' }
+
+const getReleases = async () => {
+  consola.info('Fetching releases...')
+  const options = { url: 'https://api.github.com/repos/nuxt/nuxt.js/releases' }
   if (process.env.GITHUB_TOKEN) {
     options.headers = { 'Authorization': `token ${process.env.GITHUB_TOKEN}` }
   }
   try {
     const res = await axios(options)
-    RELEASES = res.data.filter((r) => !r.draft).map((release) => {
+    RELEASES = res.data.filter(r => !r.draft).map((release) => {
       return {
         name: release.name,
         date: release.published_at,
@@ -50,9 +60,15 @@ async function getReleases () {
       }
     })
   } catch (e) {
-    console.error('Could not fetch nuxt.js release notes.')
+    consola.error('Could not fetch nuxt.js release notes.')
   }
+  const getMajorVersion = r => r.name && Number(r.name.substring(1, 2))
   RELEASES.sort((a, b) => {
+    const aMajorVersion = getMajorVersion(a)
+    const bMajorVersion = getMajorVersion(b)
+    if (aMajorVersion !== bMajorVersion) {
+      return bMajorVersion - aMajorVersion
+    }
     return new Date(b.date) - new Date(a.date)
   })
   // Refresh every 15 minutes
@@ -61,23 +77,26 @@ async function getReleases () {
 
 // Fetch doc and menu files
 let _DOC_FILES_ = {}
-async function getFiles (cwd) {
-  console.log('Building files...')
+
+async function getFiles(cwd) {
+  consola.info('Building files...')
   cwd = cwd || process.cwd()
-  let docPaths = await glob('*/**/*.md', {
+  const docPaths = await glob('*/**/*.md', {
     cwd: cwd,
     ignore: 'node_modules/**/*',
     nodir: true
   })
-  let promises = []
-  let tmpDocFiles = {}
+
+  const promises = []
+  const tmpDocFiles = {}
   docPaths.forEach((path) => {
-    let promise = getDocFile(path, cwd)
+    const promise = getDocFile(path, cwd)
     promise.then((file) => {
       tmpDocFiles[path] = file
     })
     promises.push(promise)
   })
+
   await Promise.all(promises)
   _DOC_FILES_ = tmpDocFiles
   // Construct the doc menu
@@ -87,7 +106,7 @@ async function getFiles (cwd) {
 }
 
 // Get doc file and sent back it's attributes and html body
-async function getDocFile (path, cwd) {
+async function getDocFile(path, cwd) {
   cwd = cwd || process.cwd()
   let file = await readFile(resolve(cwd, path), 'utf-8')
   // transform markdown to html
@@ -101,25 +120,26 @@ async function getDocFile (path, cwd) {
 
 // Get menu files and create the doc menu
 let _MENU_ = {}
-async function getMenu (cwd) {
-  console.log('Building menu...')
+
+async function getMenu(cwd) {
+  consola.info('Building menu...')
   cwd = cwd || process.cwd()
-  let menuPaths = await glob('*/**/menu.json', {
+  const menuPaths = await glob('*/**/menu.json', {
     cwd: cwd,
     ignore: 'node_modules/**/*',
     nodir: true
   })
-  let tmpMenu = {}
-  let promises = []
+  const tmpMenu = {}
+  const promises = []
   menuPaths.forEach((path) => {
     let menu = tmpMenu
-    let keys = path.split('/').slice(0, -1)
+    const keys = path.split('/').slice(0, -1)
     keys.forEach((key, i) => {
       if ((i + 1) === keys.length) {
-        let promise = readFile(resolve(cwd, path), 'utf-8')
+        const promise = readFile(resolve(cwd, path), 'utf-8')
         promise.then((fileContent) => {
           menu[key] = JSON.parse(fileContent)
-        })
+        }).catch((e) => { consola.error(e, path) })
         promises.push(promise)
         return
       }
@@ -133,19 +153,20 @@ async function getMenu (cwd) {
 
 // Get lang files and create the lang object
 let _LANG_ = {}
-async function getLanguages (cwd) {
-  console.log('Building languages...')
+
+async function getLanguages(cwd) {
+  consola.info('Building languages...')
   cwd = cwd || process.cwd()
-  let langPaths = await glob('*/lang.json', {
+  const langPaths = await glob('*/lang.json', {
     cwd: cwd,
     ignore: 'node_modules/**/*',
     nodir: true
   })
-  let tmpLang = {}
-  let promises = []
+  const tmpLang = {}
+  const promises = []
   langPaths.forEach((path) => {
-    let lang = path.split('/')[0]
-    let promise = readFile(resolve(cwd, path), 'utf-8')
+    const lang = path.split('/')[0]
+    const promise = readFile(resolve(cwd, path), 'utf-8')
     promise.then((fileContent) => {
       tmpLang[lang] = JSON.parse(fileContent)
     })
@@ -156,8 +177,8 @@ async function getLanguages (cwd) {
 }
 
 // watch file changes
-function watchFiles () {
-  console.log('Watch files changes...')
+function watchFiles() {
+  consola.info('Watch files changes...')
   const options = {
     ignoreInitial: true,
     ignored: 'node_modules/**/*'
@@ -165,19 +186,19 @@ function watchFiles () {
   const chokidar = require('chokidar')
   // Doc Pages
   chokidar.watch('*/**/*.md', options)
-  .on('add', (path) => getDocFile(path))
-  .on('change', (path) => getDocFile(path))
-  .on('unlink', (path) => delete _DOC_FILES_[path])
+    .on('add', path => getDocFile(path))
+    .on('change', path => getDocFile(path))
+    .on('unlink', path => delete _DOC_FILES_[path])
   // Menu
   chokidar.watch('*/**/menu.json', options)
-  .on('add', () => getMenu())
-  .on('change', () => getMenu())
-  .on('unlink', () => getMenu())
+    .on('add', () => getMenu())
+    .on('change', () => getMenu())
+    .on('unlink', () => getMenu())
   // Lang
   chokidar.watch('*/lang.json', options)
-  .on('add', () => getLanguages())
-  .on('change', () => getLanguages())
-  .on('unlink', () => getLanguages())
+    .on('add', () => getLanguages())
+    .on('change', () => getLanguages())
+    .on('unlink', () => getLanguages())
 }
 
 // Server handle request method
@@ -187,8 +208,8 @@ const server = micro(async function (req, res) {
     try {
       return await githubHook({ req, res }, getFiles)
     } catch (e) {
-      console.error('Error!')
-      console.error(e)
+      consola.error('Error!')
+      consola.error(e)
     }
   }
   res.setHeader('Access-Control-Allow-Origin', '*')
@@ -200,23 +221,40 @@ const server = micro(async function (req, res) {
   }
   // Menu
   if (req.url.indexOf('/menu') === 0) {
-    let lang = req.url.split('/')[2]
-    let category = req.url.split('/')[3]
-    if (lang && category && _MENU_[lang] && _MENU_[lang][category]) return send(res, 200, _MENU_[lang][category])
-    if (lang && _MENU_[lang]) return send(res, 200, _MENU_[lang])
-    else if (lang) return send(res, 404, 'Language not found')
+    const lang = req.url.split('/')[2]
+    const category = req.url.split('/')[3]
+    if (lang && category && _MENU_[lang] && _MENU_[lang][category]) {
+      return send(res, 200, _MENU_[lang][category])
+    }
+
+    if (lang && _MENU_[lang]) {
+      return send(res, 200, _MENU_[lang])
+    }
+
+    if (lang) {
+      return send(res, 404, 'Language not found')
+    }
+
     return send(res, 200, _MENU_)
   }
   // Lang
   if (req.url.indexOf('/lang') === 0) {
-    let lang = req.url.split('/')[2]
-    if (lang && _LANG_[lang]) return send(res, 200, _LANG_[lang])
-    else if (lang) return send(res, 404, 'Language not found')
+    const lang = req.url.split('/')[2]
+    if (lang && _LANG_[lang]) {
+      return send(res, 200, _LANG_[lang])
+    }
+
+    if (lang) {
+      return send(res, 404, 'Language not found')
+    }
+
     return send(res, 200, _LANG_)
   }
+
   // remove first /
-  let path = req.url.slice(1) + '.md'
+  const path = req.url.slice(1) + '.md'
   // Check if path exists
+
   if (!_DOC_FILES_[path]) {
     return send(res, 404, 'File not found')
   }
@@ -225,13 +263,13 @@ const server = micro(async function (req, res) {
 })
 
 module.exports = getFiles()
-.then(() => getReleases())
-.then(() => {
-  if (process.env.NODE_ENV !== 'production') {
-    watchFiles()
-  }
-  const port = process.env.PORT || 4000
-  server.listen(port)
-  console.log(`Server listening on localhost:${port}`)
-  return server
-})
+  .then(() => getReleases())
+  .then(() => {
+    if (process.env.NODE_ENV !== 'production') {
+      watchFiles()
+    }
+    const port = process.env.PORT || 4000
+    server.listen(port)
+    consola.ready(`Server listening on localhost:${port}`)
+    return server
+  })

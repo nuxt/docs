@@ -29,7 +29,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**INFO:** You can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)</p>
+<div class="Alert Alert--teal">
+
+**INFO:** You can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)
+
+</div>
 
 ## babel
 
@@ -40,7 +44,7 @@ module.exports = {
 Default:
 ```js
 {
-  presets: ['vue-app']
+  presets: ['@nuxtjs/babel-preset-app']
 }
 ```
 
@@ -76,7 +80,7 @@ See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) 
 The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are:
 
 1. Webpack config object
-2. Object with the folowing keys (all boolean): `dev`, `isClient`, `isServer`
+2. Object with the folowing keys (all boolean except `loaders`): `dev`, `isClient`, `isServer`
 
 Example (`nuxt.config.js`):
 ```js
@@ -169,7 +173,7 @@ module.exports = {
 
 > Customize [Postcss Loader](https://github.com/postcss/postcss-loader#usage) plugins.
 
-**NOTE:** While default preset is OK and flexible enough for normal use cases, the recommended 
+**NOTE:** While default preset is OK and flexible enough for normal use cases, the recommended
 usage by [vue-loader](https://vue-loader.vuejs.org/en/options.html#postcss) is using `postcss.config.js` file in your project.
 By creating that file it will be automatically detected and this option is ignored.
 
@@ -237,7 +241,7 @@ Then, when launching `nuxt build`, upload the content of `.nuxt/dist/` directory
 
 > Creates special webpack bundle for SSR renderer.
 
-This option is automatically set based on `mode` value if not provided. 
+This option is automatically set based on `mode` value if not provided.
 
 ## templates
 - Type: `Array`
@@ -264,7 +268,7 @@ module.exports = {
 }
 ```
 
-Templates are rendered using [lodash.template](https://lodash.com/docs/#template) 
+Templates are rendered using [lodash.template](https://lodash.com/docs/#template)
 you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
 
 ## vendor

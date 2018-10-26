@@ -115,4 +115,8 @@ nuxt.js에서 가장 큰 혁신은 아마 `nuxt generate` 명령어 가 될 것�
 
 우리는 재고가 있거나 없는 경우 항상 웹앱을 `nuxt generate`로 재생성하고 CDN에 호스팅하는 방식의 e-commerce 웹 애플리케이션을 생각해볼 수 있습니다. 만약 사용자가 그동안 웹앱을 탐색한다면, e-commerce API를 호출하면 최신 정보가 제공될 것입니다. 서버의 다중 인스턴스와 캐싱을 더 이상 고민할 필요가 없습니다!
 
-<div class="Alert">깃 허브 페이지에 배포하는 방법에 대한 자세한 내용은 [How to deploy on GitHub Pages?](/faq/github-pages)를 참조하십시오.</div>
+<div class="Alert">
+
+깃 허브 페이지에 배포하는 방법에 대한 자세한 내용은 [How to deploy on GitHub Pages?](/faq/github-pages)를 참조하십시오.
+
+</div>

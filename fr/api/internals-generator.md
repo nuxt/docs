@@ -5,7 +5,7 @@ description: La classe `Generator` de Nuxt
 
 # La classe Generator
 
-- Source : **[builder/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/generator.js)**
+- Source : **[builder/generator.js](https://github.com/nuxt/nuxt.js/tree/dev/packages/builder/src/generator.js)**
 
 ## Point d'ancrage
 

@@ -29,7 +29,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**정보:** `nuxt build --analyze` 또는 `nuxt build -a` 명령어를 사용하여 당신의 어플리케이션을 빌드하거나 [http://localhost:8888](http://localhost:8888)로 시각화 하여 실행할 수 있습니다.</p>
+<div class="Alert Alert--teal">
+
+**정보:** `nuxt build --analyze` 또는 `nuxt build -a` 명령어를 사용하여 당신의 어플리케이션을 빌드하거나 [http://localhost:8888](http://localhost:8888)로 시각화 하여 실행할 수 있습니다.
+
+</div>
 
 ## babel
 
@@ -40,7 +44,7 @@ module.exports = {
 기본값:
 ```js
 {
-  presets: ['vue-app']
+  presets: ['@nuxtjs/babel-preset-app']
 }
 ```
 
@@ -159,7 +163,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--orange">`nuxt.config.js`에 loaders가 정의되어 있다면, 기본 loaders를 덮어씁니다.</p>
+<div class="Alert Alert--orange">
+
+`nuxt.config.js`에 loaders가 정의되어 있다면, 기본 loaders를 덮어씁니다.
+
+</div>
 
 ## plugins
 

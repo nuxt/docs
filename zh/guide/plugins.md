@@ -5,7 +5,11 @@ description: 你可以配置需要在 `根vue.js应用` 实例化之前需要运
 
 > 你可以配置需要在 `根vue.js应用` 实例化之前需要运行的 Javascript 插件，可以是你自己写的库或第三方模块。
 
-<div class="Alert">需要注意的是，在任何 Vue 组件的[生命周期](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram)内， 只有 `beforeCreate` 和 `created` 这两个钩子方法会在 **客户端和服务端均被调用**。其他钩子方法仅在客户端被调用。</div>
+<div class="Alert">
+
+需要注意的是，在任何 Vue 组件的[生命周期](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram)内， 只有 `beforeCreate` 和 `created` 这两个钩子方法会在 **客户端和服务端均被调用**。其他钩子方法仅在客户端被调用。
+
+</div>
 
 ## 使用第三方模块
 

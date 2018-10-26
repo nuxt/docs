@@ -9,6 +9,22 @@ description: 在页面切换的时候，Nuxt.js 使用内置的加载组件显�
 
 > 在页面切换的时候，Nuxt.js 使用内置的加载组件显示加载进度条。你可以定制它的样式，禁用或者创建自己的加载组件。
 
+在你的组件中你可以使用`this.$nuxt.$loading.start()`来启动加载条。使用`this.$nuxt.$.loading.finish()`来使加载条结束。
+
+```javascript
+export default {
+  mounted () {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 500)
+    })
+  }
+ }
+```
+
+如果要在`mounted`方法中启动它，请确保使用`this.$nextTick`来调用它，因为`$loading`可能无法立即使用。
+
 ## 禁用加载进度条
 
 - 类型： `Boolean`
@@ -32,8 +48,9 @@ module.exports = {
 | `color` | String | `'black'` | 进度条的颜色 |
 | `failedColor` | String | `'red'` | 页面加载失败时的颜色 （当 `data` 或 `fetch` 方法返回错误时）。 |
 | `height` | String | `'2px'` | 进度条的高度 (在进度条元素的 `style` 属性上体现)。 |
+| `throttle` | Number | `200` | 在ms中，在显示进度条之前等待指定的时间。用于防止条形闪烁。 |
 | `duration` | Number | `5000` | 进度条的最大显示时长，单位毫秒。Nuxt.js 假设页面在该时长内加载完毕。 |
-
+| `rtl` | Boolean | `false` | 从右到左设置进度条的方向。 |
 举个例子，一个5像素高的蓝色进度条，可以在 `nuxt.config.js` 中配置如下：
 
 ```js
