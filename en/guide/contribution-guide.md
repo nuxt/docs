@@ -79,7 +79,7 @@ While working on your PR you will likely want to check if your fixture is set up
 To do so you can use the Nuxt script itself to launch for example your fixture or an example app:
 
 ```sh
-yarn nuxt examples/hello-wrold examples/your-app
+yarn nuxt examples/your-app
 yarn nuxt test/fixtures/your-fixture-app
 ```
 
