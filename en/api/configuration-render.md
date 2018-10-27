@@ -59,8 +59,11 @@ pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
   .filter(f => f.asType === 'script' && f.file === 'runtime.js')
   .map(f => `<${publicPath}${f.file}>; rel=preload; as=${f.asType}`)
 ```
+
 You can add your own assets to the array as well.
 Using `req` and `res` you can decide what links to push based on the request headers, for example using the cookie with application version.
+
+The assets will be joined together with `, ` and passed as a single `Link` header.
 
 ## resourceHints
 - Type: `boolean`
