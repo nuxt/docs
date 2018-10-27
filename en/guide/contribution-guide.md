@@ -30,6 +30,13 @@ or [bug report](https://bug.nuxtjs.org/).
 
 > If you are adding a dependency, please use `yarn add`. The `yarn.lock` file is the source of truth for all Nuxt dependencies.
 
+### Setup
+ Before running any tests, make sure all dependencies are met and build all packages:
+ ```sh
+yarn
+yarn build
+```
+
 ### Test structure
 
 A great PR, whether it includes a bug fix or a new feature, will often include tests.
@@ -72,8 +79,8 @@ While working on your PR you will likely want to check if your fixture is set up
 To do so you can use the Nuxt script itself to launch for example your fixture or an example app:
 
 ```sh
-bin/nuxt examples/your-app
-bin/nuxt test/fixtures/your-fixture-app
+yarn nuxt examples/hello-wrold examples/your-app
+yarn nuxt test/fixtures/your-fixture-app
 ```
 
 > `npm link` could also (and does, to some extent) work for this, but it has been known to exhibit some issues. That is why we recommend calling `bin/nuxt` directly to run examples.
