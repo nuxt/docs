@@ -1,6 +1,6 @@
 {
   "iso": "ja",
-  "docVersion": "1.4.0",
+  "docVersion": "2.2.0",
   "links": {
     "api": "API",
     "blog": "ブログ",
@@ -16,6 +16,7 @@
     "homepage": "ホーム",
     "live_demo": "ライブデモ",
     "live_edit": "ライブ編集",
+    "tidelift": "GET PROFESSIONAL SUPPORT FOR NUXT",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Vue Jobs"
@@ -28,7 +29,8 @@
     "please_define_title": "Frontmatter 内の title を定義してください",
     "please_define_description": "Frontmatter 内の description を定義してください",
     "search": "検索",
-    "version": "バージョン"
+    "version": "バージョン",
+    "vue_toronto": "Want to discover how to create a Universal Vue.js Application with Nuxt? Join our workshop the November 14, 2018 at Vue Toronto!"
   },
   "homepage": {
     "title": "ユニバーサル Vue.js アプリケーション",
