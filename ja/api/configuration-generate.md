@@ -20,10 +20,10 @@ description: ユニバーサルなウェブアプリケーションから静的�
 
 ## fallback
 
-- Type: `String` or `Boolean`
-- Default: `'200.html'`
+- 型: `文字列` or `ブーリアン`
+- デフォルト: `'200.html'`
 
-The path to the SPA fallback. This file can be used when doing deploys of generated sites to static hosting. It falls back to `mode: 'spa'` when a route isn't generated.
+SPA のフォールバックとなるパス。このファイルは、 generate されたサイトを静的サイトホスティングへデプロイする時に利用します。`mode: 'spa'` においてルーティングが存在しない場合、フォールバックされます。
 
 ## interval
 
