@@ -173,7 +173,7 @@ async asyncData ({ params, error, payload }) {
 
 ## subFolders
 
-- 型: `Boolean`
+- 型: `ブーリアン`
 - デフォルト: `true`
 
 デフォルトでは、 `nuxt generate` を実行すると、全てのルーティングに合わせたディレクトリと、 `index.html` が提供されます。
@@ -204,7 +204,7 @@ _Note: このオプションは、 [Netlify](https://netlify.com) をはじめ�
 
 ## concurrency
 
-- 型: `Number`
+- 型: `数値`
 - デフォルト: `500`
 
 `generate.concurrency` では、単一のスレッドで同時に生成されるルーティングの生成の数を設定します。
