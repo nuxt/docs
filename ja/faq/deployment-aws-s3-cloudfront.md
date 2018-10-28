@@ -299,10 +299,3 @@ Configured with Cloudfront distribution
 `deploy.sh` first runs `nuxt generate`, then runs `gulp deploy` with our environment variables set.
 
 Note that the `Cloudfront invalidation created: XXXX` is the only output from the cloudfront invalidation npm package.  If you don't see that, it's not working.  
-
-
-
-
-
-
-
