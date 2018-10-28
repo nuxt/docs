@@ -48,9 +48,9 @@ export default {
 | `color` | 文字列 | `'black'` | プログレスバーの CSS カラー |
 | `failedColor` | 文字列 | `'red'` | ルートをレンダリング中にエラーが発生した場合のプログレスバーの CSS カラー（例えば `data` または `fetch` がエラーを返したとき） |
 | `height` | 文字列 | `'2px'` | プログレスバーの高さ（プログレスバーの `style` プロパティで使われます） |
-| `throttle` | Number | `200` | In ms, wait for the specified time before displaying the progress bar. Useful for preventing the bar from flashing. |
+| `throttle` | 数値 | `200` | ミリ秒単位で指定された時間待ったのちにプログレスバーを表示します。 プログレスバーの点滅を防ぐために利用します |
 | `duration` | 数値 | `5000` | プログレスバーを表示する時間の最大値をミリ秒で指定します。Nuxt.js は各ルートが 5秒以内にレンダリングされると想定しています |
-| `rtl` | Boolean | `false` | Set the direction of the progress bar from right to left. |
+| `rtl` | ブーリアン | `false` | プログレスバーの向きを右から左にします。 |
 
 例として、青いプログレスバーを 5px の高さで表示するには `nuxt.config.js` を次のように編集します:
 
