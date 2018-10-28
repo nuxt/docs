@@ -16,7 +16,7 @@
     "homepage": "ホーム",
     "live_demo": "ライブデモ",
     "live_edit": "ライブ編集",
-    "tidelift": "GET PROFESSIONAL SUPPORT FOR NUXT",
+    "tidelift": "Nuxt の専門的なサポートを得る",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Vue Jobs"
@@ -30,7 +30,7 @@
     "please_define_description": "Frontmatter 内の description を定義してください",
     "search": "検索",
     "version": "バージョン",
-    "vue_toronto": "Want to discover how to create a Universal Vue.js Application with Nuxt? Join our workshop the November 14, 2018 at Vue Toronto!"
+    "vue_toronto": "Nuxt を使ってユニバーサルな Vue.js アプリケショーションをつくる方法を知りたい人は、2018年11月14日 Vue Toronto のワークショップに参加してください！"
   },
   "homepage": {
     "title": "ユニバーサル Vue.js アプリケーション",
