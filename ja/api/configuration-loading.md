@@ -9,6 +9,22 @@ description: Nuxt.js はルートから別のルートへ遷移する間、プ�
 
 > Nuxt.js はルートから別のルートへ遷移する間、プログレスバーを表示するために自身のコンポーネントを使います。これをカスタマイズしたり、プログレスバーを使わないようにしたり、独自のコンポーネントを作成したりできます。
 
+In your component you can use `this.$nuxt.$loading.start()` to start the loading bar and `this.$nuxt.$loading.finish()` to finish it.
+
+```javascript
+export default {
+  mounted () {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 500)
+    })
+  }
+ }
+```
+
+> If you want to start it in the `mounted` method, make sure to use ` this.$nextTick`, because $loading may not be available immediately.
+
 ## プログレスバーを無効にする
 
 - 型: `ブーリアン`
@@ -16,7 +32,7 @@ description: Nuxt.js はルートから別のルートへ遷移する間、プ�
 ルートから別のルートへ遷移する間にプログレスバーを表示したくないときは `nuxt.config.js` ファイル内に単に `loading: false` と記述します:
 
 ```js
-module.exports = {
+export default {
   loading: false
 }
 ```
@@ -32,12 +48,14 @@ module.exports = {
 | `color` | 文字列 | `'black'` | プログレスバーの CSS カラー |
 | `failedColor` | 文字列 | `'red'` | ルートをレンダリング中にエラーが発生した場合のプログレスバーの CSS カラー（例えば `data` または `fetch` がエラーを返したとき） |
 | `height` | 文字列 | `'2px'` | プログレスバーの高さ（プログレスバーの `style` プロパティで使われます） |
+| `throttle` | Number | `200` | In ms, wait for the specified time before displaying the progress bar. Useful for preventing the bar from flashing. |
 | `duration` | 数値 | `5000` | プログレスバーを表示する時間の最大値をミリ秒で指定します。Nuxt.js は各ルートが 5秒以内にレンダリングされると想定しています |
+| `rtl` | Boolean | `false` | Set the direction of the progress bar from right to left. |
 
 例として、青いプログレスバーを 5px の高さで表示するには `nuxt.config.js` を次のように編集します:
 
 ```js
-module.exports = {
+export default {
   loading: {
     color: 'blue',
     height: '5px'
@@ -104,7 +122,7 @@ export default {
 それから `nuxt.config.js` を編集して、独自コンポーネントを使うことを Nuxt.js に伝えます:
 
 ```js
-module.exports = {
-  loading: '~components/loading.vue'
+export default {
+  loading: '~/components/loading.vue'
 }
 ```
