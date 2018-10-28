@@ -136,9 +136,9 @@ export default {
 }
 ```
 
-### Speeding up dynamic route generation with `payload`
+### `payload` による動的ルーティング生成の高速化
 
-In the example above, we're using the `user.id` from the server to generate the routes but tossing out the rest of the data. Typically, we need to fetch it again from inside the `/users/_id.vue`. While we can do that, we'll probably need to set the `generate.interval` to something like `100` in order not to flood the server with calls. Because this will increase the run time of the generate script, it would be preferable to pass along the entire `user` object to the context in `_id.vue`. We do that by modifying the code above to this:
+上記の例では、サーバーから `user.id` を利用してルーティングを生成しますが、必要なデータ以外を破棄しています。通常、そのような場合は `/users/_id.vue` の内部から再度データを取得する必要があります。再度取得することは可能ですが、そうした場合は `generate.interval` オプションに `100` などの値を設定して、サーバーへとコールが溢れないようにする必要があります。このような実装は生成時間の増加へとつながるため、 `user` オブジェクト自体を、 `_id.vue` のコンテキストに渡すことが望ましいでしょう。上記のコードを、以下のように変更することで、実現することができます :
 
 `nuxt.config.js`
 
@@ -162,7 +162,7 @@ export default {
 }
 ```
 
-Now we can access the `payload` from `/users/_id.vue` like so:
+このように、 `/users/_id.vue` から `payload` へとアクセスすることが可能です :
 
 ```js
 async asyncData ({ params, error, payload }) {
