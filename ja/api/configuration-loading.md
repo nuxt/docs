@@ -9,7 +9,7 @@ description: Nuxt.js はルートから別のルートへ遷移する間、プ�
 
 > Nuxt.js はルートから別のルートへ遷移する間、プログレスバーを表示するために自身のコンポーネントを使います。これをカスタマイズしたり、プログレスバーを使わないようにしたり、独自のコンポーネントを作成したりできます。
 
-In your component you can use `this.$nuxt.$loading.start()` to start the loading bar and `this.$nuxt.$loading.finish()` to finish it.
+コンポーネントにおいて、 `this.$nuxt.$loading.$start` でローディングを開始し、 `this.$nuxt.$loading.finish()` で終了することができます。
 
 ```javascript
 export default {
@@ -23,7 +23,7 @@ export default {
  }
 ```
 
-> If you want to start it in the `mounted` method, make sure to use ` this.$nextTick`, because $loading may not be available immediately.
+> `mounted` メソッドを利用したい場合、必ず ` this.$nextTick` を利用してください。 $loading がすぐに利用できるとは限らないためです。
 
 ## プログレスバーを無効にする
 
