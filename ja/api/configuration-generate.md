@@ -204,7 +204,7 @@ _Note: このオプションは、 [Netlify](https://netlify.com) をはじめ�
 
 ## concurrency
 
-- Type: `Number`
-- Default: `500`
+- 型: `Number`
+- デフォルト: `500`
 
-The generation of routes are concurrent, `generate.concurrency` specifies the amount of routes that run in one thread.
+`generate.concurrency` では、単一のスレッドで同時に生成されるルーティングの生成の数を設定します。
