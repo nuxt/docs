@@ -173,12 +173,12 @@ async asyncData ({ params, error, payload }) {
 
 ## subFolders
 
-- Type: `Boolean`
-- Default: `true`
+- 型: `Boolean`
+- デフォルト: `true`
 
-By default, running `nuxt generate` will create a directory for each route & serve an `index.html` file.
+デフォルトでは、 `nuxt generate` を実行すると、全てのルーティングに合わせたディレクトリと、 `index.html` が提供されます。
 
-Example:
+例:
 
 ```bash
 -| dist/
@@ -190,7 +190,7 @@ Example:
 -------| index.html
 ```
 
-When set to false, HTML files are generated according to the route path:
+false を設定した場合、ルーティングパスに従う形で HTML ファイルを生成します :
 
 ```bash
 -| dist/
@@ -200,7 +200,7 @@ When set to false, HTML files are generated according to the route path:
 -----| item.html
 ```
 
-_Note: this option could be useful using [Netlify](https://netlify.com) or any static hosting using HTML fallbacks._
+_Note: このオプションは、 [Netlify](https://netlify.com) をはじめとする、 HTML によるフォールバックを利用する静的サイトホスティングサイトにおいて利用されます。_
 
 ## concurrency
 
