@@ -51,6 +51,7 @@ List of properties to customize the progress bar.
 | `throttle` | Number | `200` | In ms, wait for the specified time before displaying the progress bar. Useful for preventing the bar from flashing. |
 | `duration` | Number | `5000` | In ms, the maximum duration of the progress bar, Nuxt.js assumes that the route will be rendered before 5 seconds. |
 | `continuous` | Boolean | `false` | Keep animating progress bar when loading takes longer than `duration`. |
+| `css` | Boolean | `true` | Set to false to remove default progress bar styles (and add your own). |
 | `rtl` | Boolean | `false` | Set the direction of the progress bar from right to left. |
 
 For a blue progress bar with 5px of height, we update the `nuxt.config.js` to the following:
