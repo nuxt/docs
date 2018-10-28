@@ -34,8 +34,8 @@ SPA のフォールバックとなるパス。このファイルは、 generate 
 
 ## minify
 
-- **Deprecated!**
-- Use [build.html.minify](/api/configuration-build#html-minify) instead
+- **非推奨です！**
+- 代わりに [build.html.minify](/api/configuration-build#html-minify) オプションを利用してください。
 
 ## routes
 
