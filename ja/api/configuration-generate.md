@@ -125,7 +125,7 @@ export default {
     routes: function (callback) {
       axios.get('https://my-api/users')
       .then((res) => {
-        var routes = res.data.map((user) => {
+        const routes = res.data.map((user) => {
           return '/users/' + user.id
         })
         callback(null, routes)
