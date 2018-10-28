@@ -25,7 +25,7 @@ This option lets you define the `development` or `production` mode of Nuxt.js (i
 
 ### env
 
-This option lets you define environment variables that available to both the client and the server.
+This option lets you define environment variables that is available to both the client and the server.
 
 [Documentation about `env` integration](/api/configuration-env)
 
