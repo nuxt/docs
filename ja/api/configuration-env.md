@@ -50,18 +50,23 @@ export default axios.create({
 
 ## process.env == {}
 
-Note that Nuxt uses webpack's `definePlugin` to define the environmental variable. This means that the actual `process` or `process.env` from Node.js is neither available nor defined. Each of the `env` properties defined in nuxt.config.js is individually mapped to `process.env.xxxx` and converted during compilation.
+Nuxt では webpack の `definePlugin` を用いて環境変数を定義します。
+つまり、Node.js から `process` または、`process.env` は利用可能であっても、どちらも未定義です。
+nuxt.config.js で定義された `env` プロパティは、`process.env.xxxx` によって、それぞれ個別にマップされて、コンパイル時に変換されます。
 
-Meaning, `console.log(process.env)` will output `{}` but `console.log(process.env.you_var)` will still output your value. When webpack compiles your code, it replaces all instances of `process.env.your_var` to the value you've set it to. ie: `env.test = 'testing123'`. If you use `process.env.test` in your code somewhere, it is actually translated to 'testing123'.
+つまり、`console.log（process.env）` は `{}` を出力しますが、 `console.log（process.env.you_var）` は個別に定義しマップされた値を出力します。
+コードが webpack でコンパイルされると、 `process.env.your_var` と記述されたすべての箇所が、定義した値に置き換えられます。
+すなわち、 `env.test = 'testing123'` は、
+コード中に `process.env.test` と記述してある箇所が、`testing123` へ置き換えられます。
 
-before
+ビフォー
 
-```
+```js
 if (process.env.test == 'testing123')
 ```
 
-after
+アフター
 
-```
+```js
 if ('testing123' == 'testing123')
 ```
