@@ -9,7 +9,7 @@ description: Nuxt.js はルートから別のルートへ遷移する間、プ�
 
 > Nuxt.js はルートから別のルートへ遷移する間、プログレスバーを表示するために自身のコンポーネントを使います。これをカスタマイズしたり、プログレスバーを使わないようにしたり、独自のコンポーネントを作成したりできます。
 
-コンポーネントにおいて、 `this.$nuxt.$loading.$start` でローディングを開始し、 `this.$nuxt.$loading.finish()` で終了することができます。
+コンポーネントにおいて、 `this.$nuxt.$loading.$start()` でローディングを開始し、 `this.$nuxt.$loading.finish()` で終了することができます。
 
 ```javascript
 export default {
