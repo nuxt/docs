@@ -42,9 +42,11 @@ export default axios.create({
 
 このように記述するとページ内で `import axios from '~plugins/axios'` という具合に axios をインポートできます。
 
-## Automatic injection of environment variables
+## 環境変数の自動注入
 
-If you define environment variables starting with `NUXT_ENV_` in the build phase (f.ex. `NUXT_ENV_COOL_WORD=freezing nuxt build`, they'll be automatically injected into the process environment. Be aware that they'll potentially take precedence over defined variables in your `nuxt.config.js` with the same name.
+`NUXT_ENV_` で始まる接頭辞で環境変数を定義した場合、ビルド時にプロセス環境変数へ注入されます。
+(f.ex. `NUXT_ENV_COOL_WORD=freezing nuxt build`)
+`nuxt.config.js` 内に定義された同名変数よりも潜在的に優先されるので注意してください。
 
 ## process.env == {}
 
