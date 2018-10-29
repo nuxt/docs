@@ -27,22 +27,23 @@ description: 特定のルートをレンダリングします。その際にコ�
 例:
 
 ```js
-const Nuxt = require('nuxt')
-let config = require('./nuxt.config.js')
+const { Nuxt, Builder } = require('nuxt')
+
+const config = require('./nuxt.config.js')
 config.dev = false
+
 const nuxt = new Nuxt(config)
 
-nuxt.build()
-.then(() => {
-  return nuxt.renderRoute('/')
-})
+new Builder(nuxt)
+.build()
+.then(() => nuxt.renderRoute('/'))
 .then(({ html, error, redirected }) => {
-  // html は常に文字列
+  // `html` は常に文字列になります
 
-  // エラーレイアウトが表示されるときは error は null ではありません。エラーフォーマットは下記:
+  // エラーレイアウトが表示されるときは `error` は null ではありません。エラーフォーマットは下記:
   // { statusCode: 500, message: 'エラーメッセージ' }
 
-  // data() や fetch() で redirect() が使われたときは redirected は false ではありません
+  // `asyncData()` または `fetch()` 内で `redirect()` が使われたときは `redirected` は `false` ではありません
   // { path: '/other-path', query: {}, status: 302 }
 })
 ```
