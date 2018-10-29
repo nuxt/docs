@@ -56,7 +56,7 @@ It will be used for all pages that don't have a layout specified.
 
 <div class="Alert Alert--nuxt-green">
 
-<b>Info:</b> Make sure to add the `&lt;nuxt/&gt;` component when creating a layout to actually include the page component.
+<b>Info:</b> Make sure to add the `<nuxt/>` component when creating a layout to actually include the page component.
 
 </div>
 
