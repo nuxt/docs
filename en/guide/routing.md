@@ -354,6 +354,8 @@ export default function (context) {
   context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
+The middleware will be executed either in client-side or server-side, it won't be executed twice in both sides
+> When a reload happens, the middleware will only be executed on the server-side
 
 The middleware will be executed in series in this order:
 
