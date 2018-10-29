@@ -145,7 +145,7 @@ module.exports = {
 }
 ```
 
-コンテキストへアクセスするときには、いつでも関数を使用することが出来ます (例えば、 `asyncData` や `fetch` 関数内などです) 。
+コンテキストへアクセスするときには、いつでも関数を使用することが出来ます (例えば、 `asyncData` や `fetch` 関数内などです) 。
 
 `ctx-example-component.vue`:
 
