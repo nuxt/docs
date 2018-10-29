@@ -354,8 +354,7 @@ export default function (context) {
   context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
-The middleware will be executed either in client-side or server-side, it won't be executed twice in both sides
-> When a reload happens, the middleware will only be executed on the server-side
+Middlewares will be called server-side once (on the first request to the Nuxt app or when page refreshes) and client-side when navigating to further routes. 
 
 The middleware will be executed in series in this order:
 
