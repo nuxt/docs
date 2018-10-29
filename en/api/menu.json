@@ -93,7 +93,8 @@
         "contents": [
           { "name": "Disable the Progress Bar", "to": "#disable-the-progress-bar" },
           { "name": "Customize the Progress Bar", "to": "#customize-the-progress-bar" },
-          { "name": "Use a Custom Loading Component", "to": "#use-a-custom-loading-component" }
+          { "name": "Use a Custom Loading Component", "to": "#use-a-custom-loading-component" },
+          { "name": "Internals of the Progress Bar", "to": "#internals-of-the-progress-bar" }
         ]
       },
       { "name": "loadingIndicator", "to": "/configuration-loading-indicator" },

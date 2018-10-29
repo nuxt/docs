@@ -50,6 +50,8 @@ List of properties to customize the progress bar.
 | `height` | String | `'2px'` | Height of the progress bar (used in the `style` property of the progress bar) |
 | `throttle` | Number | `200` | In ms, wait for the specified time before displaying the progress bar. Useful for preventing the bar from flashing. |
 | `duration` | Number | `5000` | In ms, the maximum duration of the progress bar, Nuxt.js assumes that the route will be rendered before 5 seconds. |
+| `continuous` | Boolean | `false` | Keep animating progress bar when loading takes longer than `duration`. |
+| `css` | Boolean | `true` | Set to false to remove default progress bar styles (and add your own). |
 | `rtl` | Boolean | `false` | Set the direction of the progress bar from right to left. |
 
 For a blue progress bar with 5px of height, we update the `nuxt.config.js` to the following:
@@ -125,3 +127,14 @@ export default {
   loading: '~/components/loading.vue'
 }
 ```
+
+## Internals of the Progress Bar
+
+Unfortunately it is not possible for the Loading component to know in advance how long e.g. loading a new page will take. Therefore it is not possible to accurately animate the progress bar to 100% of the loading time.
+
+Nuxt's loading component partially solves this by letting you set the `duration`, this should be set to a _guestimate_ of how long the loading process will take. Unless you use a custom loading component, the progress bar will always move from 0% to 100% in `duration` time (regardless of actual progression). When the loading takes longer than `duration` time, the progress bar will stay at 100% until the loading finishes.
+
+You can change the default behaviour by setting `continuous` to true, then after reaching 100% the progress bar will start shrinking back to 0% again in `duration` time. When the loading is still not finished after reaching 0% it will start growing from 0% to 100% again, this repeats until the loading finishes.
+
+_Example of a continuous progress bar:_<br/>
+<img src="/api-continuous-loading.gif" alt="continuous loading"/>
