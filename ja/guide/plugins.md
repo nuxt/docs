@@ -88,26 +88,52 @@ module.exports = {
 
 ## アプリケーションのルートや context に挿入する
 
-例えば [vue-i18n](https://github.com/kazupon/vue-i18n) のように、プラグインをアプリケーションのルートに挿入して使いたい場合もあるでしょう。Nuxt.js はプラグイン内の関数を公開できるようにしており、それはルートコンポーネントとコンテキストを受け取れます。また `inject` 関数も用意しています。
+関数や値をアプリケーション全体で利用できるようにしたい場合もあるでしょう。
+そのような変数を Vue インスタンス (クライアントサイド) やコンテキスト (サーバーサイド) 、さらに Vuex ストアへ挿入することが可能です。
+それらの関数の前には `$` を付けるのが一般的です。
 
-`plugins/i18n.js`:
+### Vue インスタンスに挿入する
+
+Vue インスタンスへのコンテンツの挿入は、通常の Vue アプリケーションと同様に動作します。
+
+`plugins/vue-inject.js`:
 
 ```js
 import Vue from 'vue'
-import VueI18n from 'vue-i18n'
 
-Vue.use(VueI18n)
+Vue.prototype.$myInjectedFunction = (string) => console.log("This is an example", string)
+```
 
-export default ({ store }, inject) => {
-  // `i18n` キーを挿入する
-  // -> app.$i18n になる
-  // -> Vue コンポーネント内では this.$i18n
-  // -> Vuex ストアやアクション、ミューテーション内で this.$i18n
-  // このようにしてミドルウェアやページの asyncData や fetch の中でプラグインを使うことができる
+`nuxt.config.js`:
 
-  inject('i18n', new VueI18n({
-    /* vue-i18n のオプション... */
-  }))
+```js
+module.exports = {
+  plugins: ['~/plugins/vue-inject.js']
+}
+```
+
+これで全ての Vue コンポーネントで関数を使用することが出来ます。
+
+`example-component.vue`:
+
+```js
+export default {
+  mounted(){
+    this.$myInjectedFunction('test')
+  }
+}
+```
+
+### コンテキストに挿入する
+
+Vue インスタンスへのコンテンツの挿入は、通常の Vue アプリケーションと同様に動作します。
+
+`plugins/ctx-inject.js`:
+
+```js
+export default ({ app }, inject) => {
+  // context.app オブジェクトへ関数を直接セットします
+  app.myInjectedFunction = (string) => console.log('Okay, another function', string)
 }
 ```
 
@@ -115,14 +141,81 @@ export default ({ store }, inject) => {
 
 ```js
 module.exports = {
-  build: {
-    vendor: ['vue-i18n']
-  },
-  plugins: ['~/plugins/i18n.js']
+  plugins: ['~/plugins/ctx-inject.js']
 }
 ```
 
-どのように使うかを見たいときは [i18n の例](/examples/i18n) を参照してください。
+コンテキストへアクセスするときには、いつでも関数を使用することが出来ます (例えば、 `asyncData` や `fetch` 関数内などです) 。
+
+`ctx-example-component.vue`:
+
+```js
+export default {
+  asyncData(context){
+    context.app.myInjectedFunction('ctx!')
+  }
+}
+```
+
+### 統合された挿入
+
+コンテキスト内で関数が必要な場合、Vue インスタンスだけでなく Vuex ストア内であっても、`inject` 関数を使用することが出来ます。この関数は、プラグインで公開された関数の第 2 引数です。
+
+Vue インスタンスへのコンテンツの挿入は、通常の Vue アプリケーションと同様に動作します。関数の先頭へ自動的に `$` が追加されます。
+
+`plugins/combined-inject.js`:
+
+```js
+export default ({ app }, inject) => {
+  inject('myInjectedFunction', (string) => console.log('That was easy!', string))
+}
+```
+
+`nuxt.config.js`:
+
+```js
+module.exports = {
+  plugins: ['~/plugins/combined-inject.js']
+}
+```
+
+Vue インスタンス内での `this` 、及びストアの `actions` / `mutations` 内での `this` を通して、コンテキストから関数を使用することが出来ます。
+
+`ctx-example-component.vue`:
+
+```js
+export default {
+  mounted(){
+      this.$myInjectedFunction('works in mounted')
+  },
+  asyncData(context){
+    context.app.$myInjectedFunction('works with context')
+  }
+}
+```
+
+`store/index.js`:
+
+```js
+export const state = () => ({
+  someValue: ''
+})
+
+export const mutations = {
+  changeSomeValue(state, newValue) {
+    this.$myInjectedFunction('accessible in mutations')
+    state.someValue = newValue
+  }
+}
+
+export const actions = {
+  setSomeValueToWhatever ({ commit }) {
+    this.$myInjectedFunction('accessible in actions')
+    const newValue = "whatever"
+    commit('changeSomeValue', newValue)
+  }
+}
+```
 
 ## クライアントサイド限定のプラグイン利用
 
