@@ -41,3 +41,25 @@ export default axios.create({
 ```
 
 このように記述するとページ内で `import axios from '~plugins/axios'` という具合に axios をインポートできます。
+
+## Automatic injection of environment variables
+
+If you define environment variables starting with `NUXT_ENV_` in the build phase (f.ex. `NUXT_ENV_COOL_WORD=freezing nuxt build`, they'll be automatically injected into the process environment. Be aware that they'll potentially take precedence over defined variables in your `nuxt.config.js` with the same name.
+
+## process.env == {}
+
+Note that Nuxt uses webpack's `definePlugin` to define the environmental variable. This means that the actual `process` or `process.env` from Node.js is neither available nor defined. Each of the `env` properties defined in nuxt.config.js is individually mapped to `process.env.xxxx` and converted during compilation.
+
+Meaning, `console.log(process.env)` will output `{}` but `console.log(process.env.you_var)` will still output your value. When webpack compiles your code, it replaces all instances of `process.env.your_var` to the value you've set it to. ie: `env.test = 'testing123'`. If you use `process.env.test` in your code somewhere, it is actually translated to 'testing123'.
+
+before
+
+```
+if (process.env.test == 'testing123')
+```
+
+after
+
+```
+if ('testing123' == 'testing123')
+```
