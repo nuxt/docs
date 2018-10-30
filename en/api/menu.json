@@ -54,7 +54,7 @@
           { "name": "html.minify", "to": "#html-minify" },
           { "name": "loaders", "to": "#loaders" },
           { "name": "optimization", "to": "#optimization" },
-          { "name": "optimizeCSS", "to": "#optimize-css" },
+          { "name": "optimizeCSS", "to": "#optimizecss" },
           { "name": "parallel", "to": "#parallel" },
           { "name": "plugins", "to": "#plugins" },
           { "name": "postcss", "to": "#postcss" },
