@@ -65,6 +65,10 @@ nuxt build
 nuxt start
 ```
 
+Nuxt.js を HTTPS モードで提供することを選択した場合、 [`https.createServer`]（https://nodejs.org/api/https.html）に渡されるオプションと同じオプションを使って` nuxt.config.js`に `server.https`を設定することもできます。 
+`nuxt.config.js`（または [CLI](https://nuxtjs.org/guide/commands#list-of-commands の ` -n`）に `server.socket` オプションを設定すると、 Unix ソケットも利用できます。
+[Unix ソケット]（https://en.wikipedia.org/wiki/Berkeley_sockets）を使用する場合は、 `host` パラメータと ` port` パラメータを設定しないでください。その場合、 `socket` パラメータは無視されます。
+
 `package.json` では下記のように記述することが推奨されています:
 
 ```json
