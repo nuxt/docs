@@ -60,7 +60,7 @@
           { "name": "postcss", "to": "#postcss" },
           { "name": "profile", "to": "#profile" },
           { "name": "publicPath", "to": "#publicpath" },
-          { "name": "splitChunks", "to": "#splitChunks" },
+          { "name": "splitChunks", "to": "#splitchunks" },
           { "name": "ssr", "to": "#ssr" },
           { "name": "styleResources", "to": "#styleresources" },
           { "name": "templates", "to": "#templates" },
