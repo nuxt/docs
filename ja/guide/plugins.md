@@ -1,9 +1,9 @@
 ---
 title: プラグイン
-description: Nuxt.js では js プラグインを定義することができ、それはルートの Vue.js アプリケーションがインスタンス化される前に実行されます。プラグインとして自前のライブラリを指定することも、外部のモジュールを指定することもできます。
+description: Nuxt.js では JavaScript プラグインを定義することができ、それはルートの Vue.js アプリケーションがインスタンス化される前に実行されます。この機能は、自前のライブラリや外部のモジュールを使用する際にとりわけ有用です。
 ---
 
-> Nuxt.js では js プラグインを定義することができ、それはルートの Vue.js アプリケーションがインスタンス化される前に実行されます。プラグインとして自前のライブラリを指定することも、外部のモジュールを指定することもできます。
+> Nuxt.js では JavaScript プラグインを定義することができ、それはルートの Vue.js アプリケーションがインスタンス化される前に実行されます。この機能は、自前のライブラリや外部のモジュールを使用する際にとりわけ有用です。
 
 
 <div class="Alert">
@@ -12,26 +12,28 @@ Vue インスタンスの [ライフサイクル](https://vuejs.org/v2/guide/ins
 
 </div>
 
-## 外部パッケージの利用
+## 外部パッケージ
 
-アプリケーションに外部パッケージ/モジュールを使いたいときがあるでしょう。例えばサーバーでもクライアントでも HTTP リクエストを送れる [axios](https://github.com/mzabriskie/axios) などが良い例です。
+アプリケーションにおいて、サーバーとクライアントの双方で HTTP リクエストを送るために、外部パッケージ/モジュールを使いたいときがあるでしょう ([axios](https://github.com/mzabriskie/axios) が素晴らしい例です) 。
 
-外部パッケージは npm でインストールします:
+まず最初に、npm でパッケージをインストールします:
 
 ```bash
 npm install --save axios
 ```
 
-そうすると次のようにページ内で直接それを使うことができます:
+そうすると次のようにページコンポーネント内で直接それを使うことができます:
 
 ```html
 <template>
   <h1>{{ title }}</h1>
 </template>
+
 <script>
 import axios from 'axios'
+
 export default {
-  async data ({ params }) {
+  async asyncData ({ params }) {
     let { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
@@ -39,62 +41,40 @@ export default {
 </script>
 ```
 
-ただしここで **ひとつ問題があり**、もし別のページでも import axios と書くと、axios は重複してバンドルファイルに含まれてしまいます。そこで `axios` をアプリケーション内で一度だけインクルードするには `nuxt.config.js` 内で `build.vendor` キーを使います:
-
-```js
-module.exports = {
-  build: {
-    vendor: ['axios']
-  }
-}
-```
-
-こうすれば、バンドルファイルが膨れ上がることなく、どの場所にも `import axios` と書くことができます。
-
 ## Vue プラグイン
 
-アプリケーション内で通知を表示するために [vue-notifications](https://github.com/se-panfilov/vue-notifications) を使いたいときには、アプリケーションを起動する前にプラグインをセットアップする必要があります。
 
-そのためには `plugins/vue-notifications.js` ファイルを次のように記述します:
+
+アプリケーション内で通知を表示する [vue-notifications](https://github.com/se-panfilov/vue-notifications) のような Vue プラグイン を使用したい場合には、アプリケーションを起動する前にプラグインをセットアップする必要があります。
+
+`plugins/vue-notifications.js` ファイルを作成します:
 
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
+
 Vue.use(VueNotifications)
 ```
 
-それから `nuxt.config.js` の `plugins` キーにファイルを記述します:
+それから `nuxt.config.js` の `plugins` キー内にファイルパスを追加します:
 
 ```js
-module.exports = {
+export default {
   plugins: ['~/plugins/vue-notifications']
 }
 ```
 
-`plugins` 設定キーについてより深く理解するには [plugins API](/api/configuration-plugins) を参照してください。
+`plugins` 設定キーについてより深く理解するには [plugins api](/api/configuration-plugins) を参照してください。
 
-さて、上の書き方では、実は `vue-notifications` は app というバンドルファイルに含まれます。しかし `vue-notifications` はライブラリなので、vendor というバンドルファイルに含めて、うまくキャッシュさせたいと考えます。
-
-そうするには `nuxt.config.js` を更新して vendor というバンドルファイルの設定の中に `vue-notifications` を入れます:
-
-```js
-module.exports = {
-  build: {
-    vendor: ['vue-notifications']
-  },
-  plugins: ['~plugins/vue-notifications']
-}
-```
-
-## アプリケーションのルートや context に挿入する
+## アプリケーションのルートや context に注入する
 
 関数や値をアプリケーション全体で利用できるようにしたい場合もあるでしょう。
-そのような変数を Vue インスタンス (クライアントサイド) やコンテキスト (サーバーサイド) 、さらに Vuex ストアへ挿入することが可能です。
+そのような変数を Vue インスタンス (クライアントサイド) やコンテキスト (サーバーサイド) 、さらに Vuex ストアへ注入することが可能です。
 それらの関数の前には `$` を付けるのが一般的です。
 
-### Vue インスタンスに挿入する
+### Vue インスタンスに注入する
 
-Vue インスタンスへのコンテンツの挿入は、通常の Vue アプリケーションと同様に動作します。
+Vue インスタンスへのコンテンツの注入は、通常の Vue アプリケーションと同様に動作します。
 
 `plugins/vue-inject.js`:
 
@@ -107,12 +87,12 @@ Vue.prototype.$myInjectedFunction = (string) => console.log("This is an example"
 `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   plugins: ['~/plugins/vue-inject.js']
 }
 ```
 
-これで全ての Vue コンポーネントで関数を使用することが出来ます。
+これで全ての Vue コンポーネントで関数を使用することができます。
 
 `example-component.vue`:
 
@@ -124,9 +104,9 @@ export default {
 }
 ```
 
-### コンテキストに挿入する
+### コンテキストに注入する
 
-Vue インスタンスへのコンテンツの挿入は、通常の Vue アプリケーションと同様に動作します。
+Vue インスタンスへのコンテンツの注入は、通常の Vue アプリケーションと同様に動作します。
 
 `plugins/ctx-inject.js`:
 
@@ -140,12 +120,12 @@ export default ({ app }, inject) => {
 `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   plugins: ['~/plugins/ctx-inject.js']
 }
 ```
 
-コンテキストへアクセスするときには、いつでも関数を使用することが出来ます (例えば、 `asyncData` や `fetch` 関数内などです) 。
+コンテキストへアクセスするときには、いつでも関数を使用することができます (例えば、 `asyncData` や `fetch` 関数内などです) 。
 
 `ctx-example-component.vue`:
 
@@ -157,11 +137,11 @@ export default {
 }
 ```
 
-### 統合された挿入
+### 統合された注入
 
-コンテキスト内で関数が必要な場合、Vue インスタンスだけでなく Vuex ストア内であっても、`inject` 関数を使用することが出来ます。この関数は、プラグインで公開された関数の第 2 引数です。
+コンテキスト内で関数が必要な場合、Vue インスタンスだけでなく Vuex ストア内であっても、`inject` 関数を使用することができます。この関数は、プラグインで公開された関数の第 2 引数です。
 
-Vue インスタンスへのコンテンツの挿入は、通常の Vue アプリケーションと同様に動作します。関数の先頭へ自動的に `$` が追加されます。
+Vue インスタンスへのコンテンツの注入は、通常の Vue アプリケーションと同様に動作します。関数の先頭へ自動的に `$` が追加されます。
 
 `plugins/combined-inject.js`:
 
@@ -174,12 +154,12 @@ export default ({ app }, inject) => {
 `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   plugins: ['~/plugins/combined-inject.js']
 }
 ```
 
-Vue インスタンス内での `this` 、及びストアの `actions` / `mutations` 内での `this` を通して、コンテキストから関数を使用することが出来ます。
+Vue インスタンス内での `this` 、及びストアの `actions` / `mutations` 内での `this` を通して、コンテキストから関数を使用することができます。
 
 `ctx-example-component.vue`:
 
@@ -217,16 +197,16 @@ export const actions = {
 }
 ```
 
-## クライアントサイド限定のプラグイン利用
+## クライアントサイドのみでの使用
 
-プラグインのいくつかは **ブラウザでのみ** 動かしたいとします。その場合は `plugins` 内の `ssr: false` オプションを使うと、プラグインをクライアントサイドでのみ実行させることが可能です。
+いくつかのプラグインは、SSR をサポートしていないために **ブラウザでのみ** 動作するかもしれません。そのような場合は、クライアントサイドのみでプラグインを使用するために、`plugins` 内の `ssr: false` オプションを使用することができます。
 
 例:
 
 `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   plugins: [
     { src: '~plugins/vue-notifications', ssr: false }
   ]
@@ -242,6 +222,8 @@ import VueNotifications from 'vue-notifications'
 Vue.use(VueNotifications)
 ```
 
-逆に、サーバーサイドでのみライブラリを読み込む必要がある場合は、`process.server` 変数を使うことができます。これは Webpack が `server.bundle.js` ファイルを作成するタイミングで `true` がセットされる変数です。
+サーバーサイドでのみライブラリを読み込む必要がある場合は、`process.server`変数に `true` がセットされているかでチェックできます。
 
-また、もしあなたが生成されたアプリケーション (`nuxt generate` コマンドによって) の中にいるかどうか知る必要がある場合は、生成から以降ずっと `process.static` 変数に `true` がセットされているかでチェックできます。保存前に `nuxt generate` コマンドによって、ページがサーバレンダリングされている時の状態を知るには、`process.static && process.server` を使うことができます。
+また、もしあなたが生成されたアプリケーション (`nuxt generate` コマンドによって) の中にいるかどうか知る必要がある場合は、`process.static` 変数に `true` がセットされているかでチェックできます。これは、アプリケーションの生成中および生成後の場合のみです。
+
+保存前に `nuxt generate` コマンドによって、ページがサーバレンダリングされている時の状態を知るには、2 つのオプションを組み合わせて使うことができます (`process.static && process.server`) 。
