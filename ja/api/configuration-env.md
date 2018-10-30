@@ -12,7 +12,7 @@ description: クライアントサイドとサーバーサイドで環境変数�
 例（`nuxt.config.js`）:
 
 ```js
-module.exports = {
+export default {
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   }
@@ -40,7 +40,7 @@ export default axios.create({
 })
 ```
 
-このように記述するとページ内で `import axios from '~plugins/axios'` という具合に axios をインポートできます。
+このように記述するとページ内で `import axios from '~/plugins/axios'` という具合に axios をインポートできます。
 
 ## 環境変数の自動注入
 
