@@ -46,7 +46,7 @@ export default axios.create({
 
 `NUXT_ENV_` で始まる接頭辞で環境変数を定義した場合、ビルド時にプロセス環境変数へ注入されます。
 (f.ex. `NUXT_ENV_COOL_WORD=freezing nuxt build`)
-`nuxt.config.js` 内に定義された同名変数よりも潜在的に優先されるので注意してください。
+`nuxt.config.js` 内に定義された同名変数よりも優先されるので注意してください。
 
 ## process.env == {}
 
