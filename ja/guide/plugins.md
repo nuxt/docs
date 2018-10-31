@@ -208,7 +208,7 @@ export const actions = {
 ```js
 export default {
   plugins: [
-    { src: '~plugins/vue-notifications', ssr: false }
+    { src: '~/plugins/vue-notifications', ssr: false }
   ]
 }
 ```
@@ -222,7 +222,7 @@ import VueNotifications from 'vue-notifications'
 Vue.use(VueNotifications)
 ```
 
-サーバーサイドでのみライブラリを読み込む必要がある場合は、`process.server`変数に `true` がセットされているかでチェックできます。
+*サーバーサイド*でのみライブラリを読み込む必要がある場合は、`process.server`変数に `true` がセットされているかでチェックできます。
 
 また、もしあなたが生成されたアプリケーション (`nuxt generate` コマンドによって) の中にいるかどうか知る必要がある場合は、`process.static` 変数に `true` がセットされているかでチェックできます。これは、アプリケーションの生成中および生成後の場合のみです。
 
