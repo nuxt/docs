@@ -106,8 +106,15 @@ export default {
   render: {
     csp: {
       hashAlgorithm: 'sha256',
-      allowedSources: undefined,
-      policies: undefined
+      policies: {
+        'script-src': [
+          'https://www.google-analytics.com',
+          'https://name.example.com'
+        ],
+        'report-uri': [
+          'https://report.example.com/report-csp-violations'
+        ]
+      }
     }
   }
 }
