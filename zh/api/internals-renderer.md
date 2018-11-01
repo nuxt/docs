@@ -5,7 +5,7 @@ description: Nuxt Renderer Class
 
 # Renderer Class
 
-- 来源: **[core/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/renderer.js)**
+- 来源: **[vue-renderer/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-renderer/src/renderer.js)**
 
 此类正在导出连接中间件，该中间件处理和服务所有SSR和资源请求。
 
