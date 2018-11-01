@@ -18,12 +18,12 @@ Nuxt.js具有完全模块化的架构，允许开发人员使用灵活的API扩�
 #### Nuxt
 
 - [`Nuxt` Class](/api/internals-nuxt)
-- 来源: [core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/nuxt.js)
+- 来源: [core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/nuxt.js)
 
 #### Renderer
 
 - [`Renderer` Class](/api/internals-renderer)
-- 来源: [core/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/renderer.js)
+- 来源: [vue-renderer/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-renderer/src/renderer.js)
 
 #### ModuleContainer
 
@@ -52,7 +52,7 @@ Nuxt.js具有完全模块化的架构，允许开发人员使用灵活的API扩�
 
 #### Options
 
-- 来源: [common/options.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/common/options.js)
+- 来源: [config/options.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/config/src/options.js)
 
 ## Packaging & Usage
 
