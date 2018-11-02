@@ -18,7 +18,7 @@ description: Vue.config のための config オブジェクト
 export default {
   vue: {
     config: {
-     productTip: true,
+     productionTip: true,
      devtools: false
     }
   }
@@ -28,7 +28,7 @@ export default {
 この設定により、次の Vue.config が生成されます。
 
 ``` js
-Vue.config.productTip // true
+Vue.config.productionTip // true
 Vue.config.devtools // false
 Vue.config.silent // !isDev [default value]
 Vue.config.performance // isDev [default value]
