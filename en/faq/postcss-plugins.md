@@ -8,18 +8,25 @@ description: How to add PostCSS plugins?
 In your `nuxt.config.js` file:
 
 ```js
-
-import postcssNested from 'postcss-nested',
-import postcssResponsiveType from 'postcss-responsive-type',
-import postcssHexrgba from 'postcss-hexrgba',
-
 export default {
   build: {
-    postcss: [
-      postcssNested(),
-      postcssResponsiveType(),
-      postcssHexrgba()
-    ]
+    postcss: {
+      // Add plugin names as key and arguments as value
+      // Install them before as dependencies with npm or yarn
+      plugins: {
+        // Disable a plugin by passing false as value 
+        'postcss-url': false,
+        'postcss-nested': {},
+        'postcss-responsive-type': {},
+        'postcss-hexrgba': {}
+      },
+      preset: {
+        // Change the postcss-preset-env settings
+        autoprefixer: {
+          grid: true
+        }
+      }
+    }
   }
 }
 ```
