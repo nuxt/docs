@@ -18,7 +18,7 @@ description: Vue.config的配置对象
 export default {
   vue: {
     config: {
-     productTip: true,
+     productionTip: true,
      devtools: false
     }
   }
@@ -28,7 +28,7 @@ export default {
 将配置以下Vue.config：
 
 ``` js
-Vue.config.productTip // true
+Vue.config.productionTip // true
 Vue.config.devtools // false
 Vue.config.silent // !isDev [default value]
 Vue.config.performance // isDev [default value]

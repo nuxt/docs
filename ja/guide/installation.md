@@ -5,26 +5,47 @@ description: Nuxt.js はとても簡単に始められます。シンプルな�
 
 > Nuxt.js はとても簡単に始められます。シンプルなプロジェクトでは必要な依存パッケージは `nuxt` だけです。
 
-## Nuxt.js を使ったスターターテンプレート
+## `create-nuxt-app` を使用する
 
-素早くスタートできるようにするため、Nuxt.js チームは [スターターテンプレート](https://github.com/nuxt-community/starter-template) を用意しました。
+素早くスタートできるようにするため、Nuxt.js チームは足場ツール  [create-nuxt-app](https://github.com/nuxt/create-nuxt-app) を作成しました。
 
-[ZIP をダウンロード](https://github.com/nuxt-community/starter-template/archive/master.zip) するか、 Vue CLI を使ってインストールしてください:
-
-```bash
-$ vue init nuxt-community/starter-template <project-name>
-```
-
-> もし [Vue CLI](https://github.com/vuejs/vue-cli) をインストールしていなければ、`npm install -g @vue/cli @vue/cli-init` でインストールしてください。
-
-それから依存するパッケージをインストールしてください:
+[npx](https://www.npmjs.com/package/npx) がインストールされていることを確認してください。（`npx` は NPM `5.2.0` からデフォルトでバンドルされています）
 
 ```bash
-$ cd <project-name>
-$ npm install
+$ npx create-nuxt-app <project-name>
 ```
 
-そしてプロジェクトを起動してください:
+もしくは [yarn](https://yarnpkg.com/ja/) を使ってください:
+
+```bash
+yarn create nuxt-app <my-project>
+```
+
+いくつか質問されます:
+
+1. サーバーサイドのフレームワークを選択します:
+  - None (Nuxt default server)
+  - [Express](https://github.com/expressjs/express)
+  - [Koa](https://github.com/koajs/koa)
+  - [Hapi](https://github.com/hapijs/hapi)
+  - [Feathers](https://github.com/feathersjs/feathers)
+  - [Micro](https://github.com/zeit/micro)
+  - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
+2. 好きな UI フレームワークを選択します:
+  - None (後からでも追加できます)
+  - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
+  - [Vuetify](https://github.com/vuetifyjs/vuetify)
+  - [Bulma](https://github.com/jgthms/bulma)
+  - [Tailwind](https://github.com/tailwindcss/tailwindcss)
+  - [Element UI](https://github.com/ElemeFE/element)
+  - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
+  - [Buefy](https://buefy.github.io)
+3. Nuxt のモードを選択します。（`Universal` または `SPA`）
+4. HTTP リクエストを簡単に行うために [axios module](https://github.com/nuxt-community/axios-module) を追加します。
+5. [EsLint](https://eslint.org/) to Lint your code on save.
+6. 保存時にコードをチェックするために [Prettier](https://prettier.io/) を追加します。
+
+回答が終わり次第、全ての依存関係がインストールされ、プロジェクトを開始する次のステップへ進めます:
 
 ```bash
 $ npm run dev
@@ -49,11 +70,15 @@ $ mkdir <project-name>
 $ cd <project-name>
 ```
 
-*メモ: `<project-name>` の箇所は置き換えてください。*
+<div class="Alert Alert--nuxt-green">
+
+<b>情報:</b> `<project-name>` の箇所はプロジェクト名に置き換えてください。
+
+</div>
 
 ### package.json
 
-`nuxt` コマンドを使うように指定する `package.json` ファイルが必要です（訳注: Nuxt.js は開発サーバーを起動する `nuxt` コマンドを用意しています）:
+`nuxt` の起動方法を指定する `package.json` ファイルが必要です:
 
 ```json
 {

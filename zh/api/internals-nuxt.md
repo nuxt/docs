@@ -5,7 +5,7 @@ description: Nuxt Core 类
 
 # Nuxt Class
 
-- 来源: **[core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/nuxt.js)**
+- 来源: **[core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/nuxt.js)**
 
 这是核心容器，允许所有模块和类相互通信。所有模块都可以使用`this.nuxt`访问Nuxt实例。
 

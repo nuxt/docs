@@ -18,7 +18,7 @@ description: A config object for Vue.config
 export default {
   vue: {
     config: {
-     productTip: true,
+     productionTip: true,
      devtools: false
     }
   }
@@ -28,7 +28,7 @@ export default {
 <p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>This configuration will lead to the following Vue.config:</p>
 
 ``` js
-Vue.config.productTip // true
+Vue.config.productionTip // true
 Vue.config.devtools // false
 Vue.config.silent // !isDev [default value]
 Vue.config.performance // isDev [default value]

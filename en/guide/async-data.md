@@ -91,7 +91,7 @@ When `asyncData` is called on server side, you have access to the `req` and `res
 ```js
 export default {
   async asyncData ({ req, res }) {
-    // Please check if if you are on the server side before
+    // Please check if you are on the server side before
     // using req and res
     if (process.server) {
      return { host: req.headers.host }
@@ -106,7 +106,7 @@ export default {
 
 You can use the `context` parameter to access dynamic route data as well!
 For example, dynamic route params can be retrieved using the name of the file or folder that configured it.
-If you've define a file named `_slug.vue` in your `pages` folder, you can access the value via `context.params.slug`:
+If you've defined a file named `_slug.vue` in your `pages` folder, you can access the value via `context.params.slug`:
 
 ```js
 export default {
