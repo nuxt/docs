@@ -71,7 +71,7 @@ export default {
 }
 ```
 
-然后，我们告诉Nuxt为项目加载一些特定模块，并将可选参数作为选项。 请参考 [莫模块配置](/api/configuration-modules) 文档来查看更多!
+然后，我们告诉Nuxt为项目加载一些特定模块，并将可选参数作为选项。 请参考 [模块配置](/api/configuration-modules) 文档来查看更多!
 
 ## 异步模块
 
