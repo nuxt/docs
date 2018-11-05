@@ -5,7 +5,7 @@ description: Nuxt.js では、アプリケーションのサーバー接続用�
 
 # server プロパティ
 
-- 型: `Object`
+- 型: `オブジェクト`
 
 > Nuxt.js では、アプリケーションのサーバー接続用の変数を `nuxt.config.js` 内に定義できます。
 
