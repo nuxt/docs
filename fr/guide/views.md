@@ -66,7 +66,7 @@ Vous pouvez personnaliser la page d'erreur en ajoutant un fichier `layouts/error
 
 Cette mise en page est spéciale car vous ne devez pas inclure `<nuxt />` dans son modèle. Vous devez voir cette mise en page en tant que composant affiché lorsqu'une erreur se produit (404, 500, etc.).
 
-Le code source de la page d'erreur par défaut est [disponible sur GitHub](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
+Le code source de la page d'erreur par défaut est [disponible sur GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
 
 Exemple d'une page d'erreur personnalisée à l'aide de `layouts/error.vue`:
 

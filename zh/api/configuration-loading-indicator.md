@@ -41,4 +41,4 @@ description: 在SPA页面加载时显示不同加载进度条！
 
 如果您需要自己的特殊加载器，`String`值或`Name`键也可以是指标源代码的`html`模板的路径！所有选项也都传递给模板。
 
-如果您需要基础配置，Nuxt的内置[源代码](https://github.com/nuxt/nuxt.js/tree/dev/lib/app/views/loading)也可用！
+如果您需要基础配置，Nuxt的内置[源代码](https://github.com/nuxt/nuxt.js/tree/dev/packages/vue-app/template/views/loading)也可用！
