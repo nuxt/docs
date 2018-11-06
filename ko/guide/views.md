@@ -65,7 +65,7 @@ Nuxt.js를 사용하면 `layouts` 폴더에 레이아웃을 추가함으로써 �
 
 이 레이아웃은 `<nuxt/>` 태그를 포함하지 않습니다. 404나 500 에러가 발생했을 때 이 레이아웃은 컴포넌트처럼 작동합니다.
 
-기본 에러 페이지 소스 코드는 [깃허브](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue)에서 확인할 수 있습니다.
+기본 에러 페이지 소스 코드는 [깃허브](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue)에서 확인할 수 있습니다.
 
 `layouts/error.vue`에서 사용자 정의 에러 페이지를 사용한 예입니다:
 ```html

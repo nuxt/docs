@@ -102,7 +102,7 @@ module.exports = {
 }
 ```
 
-Jika anda ingin melihat lebih lanjut mengenai konfigurasi default webpack, lihat [direktori webpack](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack) kami.
+Jika anda ingin melihat lebih lanjut mengenai konfigurasi default webpack, lihat [direktori webpack](https://github.com/nuxt/nuxt.js/tree/dev/packages/webpack/src/config) kami.
 
 ## extractCSS
 

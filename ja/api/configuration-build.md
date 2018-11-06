@@ -107,7 +107,7 @@ export default {
 }
 ```
 
-デフォルトの Webpack の設定についてもう少し見てみたい場合は Nuxt.js の [webpack ディレクトリ](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack) を参照してください。
+デフォルトの Webpack の設定についてもう少し見てみたい場合は Nuxt.js の [webpack ディレクトリ](https://github.com/nuxt/nuxt.js/tree/dev/packages/webpack/src/config) を参照してください。
 
 ### extend 内の loaders
 
