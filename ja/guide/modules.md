@@ -288,7 +288,7 @@ module.exports = function () {
 
   // renderer 用にフックを追加する
   this.nuxt.hook('renderer', renderer => {
-    // renderer wが作成された時に呼ばれます
+    // renderer が作成された時に呼ばれます
   })
 
   // build 用にフックを追加する
