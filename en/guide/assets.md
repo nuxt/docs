@@ -75,7 +75,7 @@ For those two loaders, the default configuration is:
 
 Which means that every file below 1 KB will be inlined as base-64 data URL.
 Otherwise, the image/font will be copied in its corresponding folder (under the `.nuxt` directory)
-with a name containing a version hashes for better caching.
+with a name containing a version hash for better caching.
 
 When launching our application with `nuxt`, our template in `pages/index.vue`:
 
@@ -109,7 +109,7 @@ All included files will be automatically served by Nuxt and are accessible throu
 
 This option is helpful for files like `robots.txt`, `sitemap.xml` or `CNAME` (which is important for GitHub Pages deployment).
 
-In your code, you can then reference these files relatively to the root (`/`):
+In your code, you can then reference these files relative to the root (`/`):
 
 ```html
 <!-- Static image from static directory -->
