@@ -44,7 +44,7 @@ module.exports = {
 기본값:
 ```js
 {
-  presets: ['@nuxtjs/babel-preset-app']
+  presets: ['@nuxt/babel-preset-app']
 }
 ```
 

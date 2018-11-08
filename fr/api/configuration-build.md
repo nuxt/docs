@@ -45,7 +45,7 @@ module.exports = {
 
   ```js
   {
-    presets: ['@nuxtjs/babel-preset-app']
+    presets: ['@nuxt/babel-preset-app']
   }
   ```
 

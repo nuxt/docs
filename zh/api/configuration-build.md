@@ -44,7 +44,7 @@ module.exports = {
 默认值：
 ```js
 {
-  presets: ['@nuxtjs/babel-preset-app']
+  presets: ['@nuxt/babel-preset-app']
 }
 ```
 
