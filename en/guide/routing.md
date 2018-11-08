@@ -233,6 +233,36 @@ router: {
 }
 ```
 
+### Unknown Dynamic Nested Routes
+
+If you do not know the depth of your URL structure, you can use `_.vue` to dynamically match nested paths.
+This will handle requests that do not match a _more specific_ request.
+
+This file tree:
+
+```bash
+pages/
+--| people/
+-----| _id.vue
+-----| index.vue
+--| _.vue
+--| index.vue
+```
+
+Will handle requests like this:
+
+Path | File
+--- | ---
+`/` | `index.vue`
+`/people` | `people/index.vue`
+`/people/123` | `people/_id.vue`
+`/about` | `_.vue`
+`/about/careers` | `_.vue`
+`/about/careers/chicago` | `_.vue`
+
+__Note:__ Handling 404 pages is now up to the logic of the `_.vue` page. [More on 404 redirecting can be found here](/guide/async-data#handling-errors).
+
+
 ### SPA fallback
 
 You can enable SPA fallbacks for dynamic routes too. Nuxt.js will output an extra file that is the same as the `index.html` that would be used in `mode: 'spa'`. Most static hosting services can be configured to use the SPA template if no file matches. It won't include the `head` info or any HTML, but it will still resolve and load the data from the API.
