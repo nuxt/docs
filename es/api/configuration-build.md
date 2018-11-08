@@ -44,7 +44,7 @@ module.exports = {
 Default:
 ```js
 {
-  presets: ['@nuxtjs/babel-preset-app']
+  presets: ['@nuxt/babel-preset-app']
 }
 ```
 
