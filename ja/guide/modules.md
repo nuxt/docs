@@ -308,5 +308,8 @@ module.exports = function () {
 }
 ```
 
-<p class="Alert">モジュールには他にも多くのフックがあり、また他にももっとできることがあります。Nuxt の内部 API については [Nuxt Internals](/api/internals) を参照してください。
-</p>
+<div class="Alert">
+
+モジュールには他にも多くのフックがあり、また他にももっとできることがあります。Nuxt の内部 API については [Nuxt Internals](/api/internals) を参照してください。
+
+</div>
