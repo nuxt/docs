@@ -24,7 +24,7 @@ If you use `url('~assets/image.png')` in your CSS, it will be *translated* into 
 <p class="Alert Alert--orange">
     <b>Warning:</b>
     Starting from Nuxt 2.0 the <code>~/</code> alias won't be resolved correctly in your CSS files.
-    You must use `~assets` (without a slash) or the `@` alias in `url` CSS references, i.e. <code>background: url("~assets/banner.svg")</code>
+    You must use <code>~assets</code> (without a slash) or the <code>@</code> alias in <code>url</code> CSS references, i.e. <code>background: url("~assets/banner.svg")</code>
 </p>
 
 
