@@ -343,9 +343,10 @@ export default {
 
 > Customize [PostCSS Loader](https://github.com/postcss/postcss-loader#usage) plugins.
 
-- Type: `Array`, `Object` (recommended), `Function` or `Boolean`
+- Type: `Array` (legacy, will override defaults), `Object` (recommended), `Function` or `Boolean`
 
-  **Note:** Nuxt.js has applied [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env). By default it enables [Stage 2 features](https://cssdb.org/) and [Autoprefixer](https://github.com/postcss/autoprefixer), you can use `build.postcss.preset` to config it.
+  **Note:** Nuxt.js has applied [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env). By default it enables [Stage 2 features](https://cssdb.org/) and [Autoprefixer](https://github.com/postcss/autoprefixer), you can use `build.postcss.preset` to configure it.
+
 - Default:
 
   ```js
@@ -358,6 +359,8 @@ export default {
     }
   }
   ```
+  
+Your custom plugin settings will be merged with the default plugins (unless you are using an `Array` instead of an `Object`).
 
 Example (`nuxt.config.js`):
 
