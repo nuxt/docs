@@ -21,11 +21,12 @@ For example, we have this file tree:
 
 If you use `url('~assets/image.png')` in your CSS, it will be *translated* into `require('~/assets/image.png')`.
 
-<p class="Alert Alert--orange">
-    <b>Warning:</b>
-    Starting from Nuxt 2.0 the <code>~/</code> alias won't be resolved correctly in your CSS files.
-    You must use `~assets` (without a slash) or the `@` alias in `url` CSS references, i.e. <code>background: url("~assets/banner.svg")</code>
-</p>
+<div class="Alert Alert--orange">
+
+**Warning:** Starting from Nuxt 2.0 the `~/` alias won't be resolved correctly in your CSS files.
+You must use `~assets` (without a slash) or the `@` alias in `url` CSS references, i.e. `background: url("~assets/banner.svg")`
+
+</div>
 
 
 Or if you reference that image in your `pages/index.vue`:
@@ -95,7 +96,7 @@ If you want to change the loader configurations, please use [build.extend](/api/
 
 <div class="Alert Alert--teal">
 
-<b>Info:</b> Including assets dynamically (<code>`~assets/${imgName}.jpg`</code>)
+**Info:** Including assets dynamically (`~assets/${imgName}.jpg`)
 
 </div>
 
