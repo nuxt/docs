@@ -203,7 +203,7 @@ You can optionally break down a module file into separate files: `state.js`, `ac
 
 ### Plugins
 
-You can add additional plugin to the store (in mthe odules mode) putting it into the `store/index.js` file:
+You can add additional plugin to the store (in the modules mode) putting it into the `store/index.js` file:
 
 ```js
 import myPlugin from 'myPlugin'
