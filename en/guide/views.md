@@ -192,7 +192,7 @@ More information about the pages properties usage: [API Pages](/api)
 
 Nuxt.js uses [vue-meta](https://github.com/declandewet/vue-meta) to update the `document head` and `meta attributes` of your application.
 
-The `vue-meta` Nuxt.js uses can be found [on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/app/template/index.js#L29-L35)
+The `vue-meta` Nuxt.js uses can be found [on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/index.js#L29-L35)
 
 <div class="Alert Alert--teal">
 
