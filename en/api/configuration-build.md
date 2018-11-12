@@ -384,10 +384,10 @@ export default {
 }
 ```
 
-If configuration is `Object`, `order` can be used for defining order of plugins:
+If the postcss configuration is an `Object`, `order` can be used for defining the plugin order:
 
-- Type: `Array` (ordered plugins names), `String` (order preset name), `Function`
-- Default: `cssnanoLast` (put `cssnanao` in last)
+- Type: `Array` (ordered plugin names), `String` (order preset name), `Function`
+- Default: `cssnanoLast` (put `cssnano` in last)
 
 Example (`nuxt.config.js`):
 
@@ -397,7 +397,7 @@ export default {
     postcss: {
       // preset name
       order: 'cssnanoLast',
-      // ordered plugins names
+      // ordered plugin names
       order: ['postcss-import', 'postcss-preset-env', 'cssnano']
       // Function to calculate plugins order
       order: (names, presets) => presets.cssnanoLast(names)
