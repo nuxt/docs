@@ -399,7 +399,7 @@ export default {
       order: 'cssnanoLast',
       // ordered plugin names
       order: ['postcss-import', 'postcss-preset-env', 'cssnano']
-      // Function to calculate plugins order
+      // Function to calculate plugin order
       order: (names, presets) => presets.cssnanoLast(names)
     }
   }
