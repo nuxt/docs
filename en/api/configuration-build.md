@@ -449,13 +449,19 @@ This option is automatically set based on `mode` value if not provided.
 - Type: `Object`
 - Default: `{}`
 
+<div class="Alert Alert--orange">
+
+**Warning:** This property is deprecated. Please use the [style-resources-modules](https://github.com/nuxt-community/style-resources-module/) instead for improved performance and better DX!
+
+</div>
+
 This is useful when you need to inject some variables and mixins in your pages without having to import them every time.
 
 Nuxt.js uses https://github.com/yenshih/style-resources-loader to achieve this behaviour.
 
 You need to specify the patterns/path you want to include for the given pre-processors: `less`, `sass`, `scss` or `stylus`
 
-:warning: You cannot use path aliases here (`~` and `@`), you need to use relative or absolute paths.
+You cannot use path aliases here (`~` and `@`), you need to use relative or absolute paths.
 
 `nuxt.config.js`:
 
