@@ -355,7 +355,8 @@ export default {
       'postcss-url': {},
       'postcss-preset-env': {},
       'cssnano': { preset: 'default' } // disabled in dev mode
-    }
+    },
+    order: 'cssnanoLast'
   }
   ```
 
@@ -378,6 +379,28 @@ export default {
           grid: true
         }
       }
+    }
+  }
+}
+```
+
+If the postcss configuration is an `Object`, `order` can be used for defining the plugin order:
+
+- Type: `Array` (ordered plugin names), `String` (order preset name), `Function`
+- Default: `cssnanoLast` (put `cssnano` in last)
+
+Example (`nuxt.config.js`):
+
+```js
+export default {
+  build: {
+    postcss: {
+      // preset name
+      order: 'cssnanoLast',
+      // ordered plugin names
+      order: ['postcss-import', 'postcss-preset-env', 'cssnano']
+      // Function to calculate plugin order
+      order: (names, presets) => presets.cssnanoLast(names)
     }
   }
 }
