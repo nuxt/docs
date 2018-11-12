@@ -127,7 +127,9 @@
           { "name": "linkExactActiveClass", "to": "#linkexactactiveclass" },
           { "name": "middleware", "to": "#middleware" },
           { "name": "mode", "to": "#mode" },
-          { "name": "scrollBehavior", "to": "#scrollbehavior" }
+          { "name": "scrollBehavior", "to": "#scrollbehavior" },
+          { "name": "parseQuery / stringifyQuery", "to": "#parsequery-stringifyquery" },
+          { "name": "fallback", "to": "#fallback" }
         ]
       },
       { "name": "server", "to": "/configuration-server" },
