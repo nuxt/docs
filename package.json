@@ -10,7 +10,7 @@
     "lint": "eslint *.js",
     "start": "node api.js",
     "deploy": "now --alias",
-    "precommit": "npm run lint"
+    "precommit": "yarn run lint"
   },
   "repository": {
     "type": "git",
