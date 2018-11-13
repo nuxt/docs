@@ -54,6 +54,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^4.7.1",
     "nodemon": "^1.11.0",
-    "textlint": "^11.0.1"
+    "textlint": "^11.0.1",
+    "textlint-rule-preset-ja-spacing": "^2.0.1"
   }
 }
