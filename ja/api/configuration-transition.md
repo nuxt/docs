@@ -65,7 +65,7 @@ export default {
 }
 ```
 
-例 グローバル `css` :
+例グローバル `css` :
 
 ```css
 .layout-enter-active, .layout-leave-active {

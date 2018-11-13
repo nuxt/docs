@@ -90,7 +90,7 @@ router: {
 
 <div class="Alert Alert--orange">
 
-<b>警告</b>: `generate` コマンドでは 動的なルーティング は無視されます。:  [generate 設定 API](/api/configuration-generate#routes)
+<b>警告</b>: `generate` コマンドでは動的なルーティングは無視されます。:  [generate 設定 API](/api/configuration-generate#routes)
 
 </div>
 
@@ -240,7 +240,7 @@ Surge は `200.html` と `404.html` の両方を[ハンドリングできます]
 
 #### GitHub Pages と Netlify 向けの実装
 
-GitHub Pages と Netlify は `404.html` ファイルを自動的に認識するため、設定すべきことは`generate.fallback` を `true` にするだけです！
+GitHub Pages と Netlify は `404.html` ファイルを自動的に認識するため、設定すべきことは `generate.fallback` を `true` にするだけです！
 
 #### Firebase ホスティング向けの実装
 
@@ -347,7 +347,7 @@ export default function (context) {
 2. マッチしたレイアウト
 3. マッチしたページ
 
-ミドルウェアは非同期に実行することもできます。そのためには、単に `Promise` を返却するか、第2引数の `callback` を使用します:
+ミドルウェアは非同期に実行することもできます。そのためには、単に `Promise` を返却するか、第 2引数の `callback` を使用します:
 
 `middleware/stats.js`
 

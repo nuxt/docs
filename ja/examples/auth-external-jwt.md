@@ -8,7 +8,7 @@ code: https://github.com/ahadyekta/nuxt-auth-external-jwt
 # ドキュメント
 
 auth-routes の例では、 api と nuxt の両方を同時に起動し、1つの Node.js サーバインスタンスを使用していました。
-しかし、時には jsonWebToken を使って外部APIを使う必要が出てきます。ここでは簡単に説明します。
+しかし、時には jsonWebToken を使って外部 API を使う必要が出てきます。ここでは簡単に説明します。
 
 ## 仕組み
 
