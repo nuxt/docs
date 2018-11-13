@@ -10,7 +10,8 @@
     "lint": "eslint *.js",
     "start": "node api.js",
     "deploy": "now --alias",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "textlint:ja": "textlint --config .textlintrc-ja ja/**/*.md"
   },
   "repository": {
     "type": "git",
