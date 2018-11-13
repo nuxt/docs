@@ -14,5 +14,12 @@
         "after": true
       }
     }
+  },
+  "filters": {
+    "whitelist": {
+      "allow": [
+        "/\\d/"
+      ]
+    }
   }
 }
