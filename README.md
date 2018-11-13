@@ -11,8 +11,8 @@
 Start a dev server on `localhost:4000`:
 
 ```bash
-npm install
-npm run dev
+yarn install
+yarn run dev
 ```
 
 Then access the docs via the website running on `http://nuxt:3000` (see instructions on [nuxtjs.org](https://github.com/nuxt/nuxtjs.org) repo).
@@ -67,8 +67,6 @@ Indonesian translation is maintained by [Nuxt.js Indonesian Community](https://g
 * Primary maintainer - [Achan](http://achan.id/)
 * Primary translator - [afrianjunior](https://github.com/afrianjunior), [fikrizufri](https://github.com/fikrizufri), [huiralb](https://github.com/huiralb), [jefrydco](https://github.com/jefrydco), [muhibbudins](https://github.com/muhibbudins), [nusendra](https://github.com/nusendra), [perjakasunda](https://github.com/perjakasunda), [tapitapeh](https://github.com/tapitapeh), [wahwahid](https://github.com/wahwahid)
 
-
-
 ### Want to help with the translation?
 
 [gl]: https://gitlocalize.com
@@ -76,4 +74,3 @@ Indonesian translation is maintained by [Nuxt.js Indonesian Community](https://g
 Much of the translation was done using a tool called [GitLocalize][gl], which is unfortunately reaching its end of service soon. Hence, we're currently exploring and open to suggestions on how to keep this process as streamlined as possible.
 
 For now, **always check the `en/` version** of a document for its latest revision before starting a translation.  
-
