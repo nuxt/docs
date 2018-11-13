@@ -347,7 +347,7 @@ export default function (context) {
 2. マッチしたレイアウト
 3. マッチしたページ
 
-ミドルウェアは非同期に実行することもできます。そのためには、単に `Promise` を返却するか、第 2引数の `callback` を使用します:
+ミドルウェアは非同期に実行することもできます。そのためには、単に `Promise` を返却するか、第2引数の `callback` を使用します:
 
 `middleware/stats.js`
 
