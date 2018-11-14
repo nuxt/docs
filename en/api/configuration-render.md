@@ -47,6 +47,14 @@ will be used (with respective options).
 If you want to use your own compression middleware, you can reference it
 directly (f.ex. `otherComp({ myOptions: 'example' })`).
 
+## fallback
+- Type `Object`
+  - Default: `{ dist: {}, static: { skipUnknown: true } }`
+
+Options for [serve-placeholder](https://github.com/nuxt/serve-placeholder) middleware(s).
+
+If you want to disable one of them or both, you can pass a falsy value.
+
 ## http2
 - Type `Object`
   - Default: `{ push: false, pushAssets: null }`
