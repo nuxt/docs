@@ -11,7 +11,7 @@ In this guide, we build the application locally and then simply upload the entir
 
 ## Getting Started
 
-Make sure you have a Google Cloud Account, a project and an empty Google App Engine app set up on https://cloud.google.com/appengine/. Furthermore, make sure to download and install the Cloud SDK (CLI) from Google as explained [here](https://cloud.google.com/sdk//) and log into your Google Cloud Account.
+Make sure you have a Google Cloud Account, a project and an empty Google App Engine app set up on [Google App Engine](https://cloud.google.com/appengine/). Furthermore, make sure to download and install the Cloud SDK (CLI) from Google as explained [here](https://cloud.google.com/sdk/) and log into your Google Cloud Account.
 
 ## Configure your application
 
