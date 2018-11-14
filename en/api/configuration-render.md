@@ -15,7 +15,7 @@ description: Nuxt.js lets you customize runtime options for rendering pages
 ```js
 export default {
   render: {
-    bundleRenderer: {
+    bundleRenderer: { 
       directives: {
         custom1: function (el, dir) {
           // something ...
@@ -51,7 +51,7 @@ directly (f.ex. `otherComp({ myOptions: 'example' })`).
 - Type `Object`
   - Default: `{ dist: {}, static: { skipUnknown: true } }`
 
-Options for [serve-placeholder](https://github.com/nuxt/serve-placeholder) middleware(s).
+Options for [serve-placeholder](https://github.com/nuxt/serve-placeholder) middleware.
 
 If you want to disable one of them or both, you can pass a falsy value.
 
