@@ -15,7 +15,7 @@ description: Nuxt.js lets you customize runtime options for rendering pages
 ```js
 export default {
   render: {
-    bundleRenderer: { 
+    bundleRenderer: {
       directives: {
         custom1: function (el, dir) {
           // something ...
