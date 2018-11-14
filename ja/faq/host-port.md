@@ -14,7 +14,7 @@ description: ホストとポート番号を変更するには？
 ```sh
 nuxt --hostname myhost --port 3333
 ```
-Or
+もしくは
 ```js
 "scripts": {
   "dev": "nuxt --hostname myhost --port 3333"
