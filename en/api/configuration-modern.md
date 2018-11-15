@@ -1,6 +1,6 @@
 ---
 title: "API: The modern Property"
-description: Build modern bundles
+description: Build and server a modern bundle
 ---
 
 # The modern Property
@@ -10,8 +10,8 @@ description: Build modern bundles
 - Type: `String` or `Boolean`
   - Default: false
   - Possible values:
-    - `'client'`: Serve modern bundle `<script type="module">` and legacy bundle `<script nomodule>` scripts, also `<link rel="modulepreload">` for modern bundle.
-    - `'server'` or `true`: Server side will check browser version and serve corresponding modern or legacy bundle.
+    - `'client'`: Serve both, the modern bundle `<script type="module">` and the legacy bundle `<script nomodule>` scripts, also provide a `<link rel="modulepreload">` for the modern bundle. Every browser that understands the `module` type will load the modern bundle while older browsers fall back to the legacy (transpiled) one.
+    - `'server'` or `true`: The Node.js server will check browser version based on the user agent and serve the corresponding modern or legacy bundle.
     - `false`: Disable modern build
 
 The two versions of bundles are:
@@ -21,4 +21,4 @@ The two versions of bundles are:
 
 **Info:** you can use the command `nuxt build --modern=[type]` or `nuxt build -m=[type]` to build modern bundles.
 
-> Please refer [Phillip Walton's excellent post](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) for more knowledge of modern build
+> Please refer [Phillip Walton's excellent post](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) for more knowledge regarding modern builds.
