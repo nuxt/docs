@@ -76,7 +76,7 @@ description: Nuxt.js ではデフォルトの設定でほとんどのユース�
 
 このオプションで、Nuxt.js のデフォルトの Vue Router 設定を上書きできます。
 
-`router` オプションに関するドキュメント](/api/configuration-router)
+[`router` オプションに関するドキュメント](/api/configuration-router)
 
 ### server
 
