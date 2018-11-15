@@ -542,6 +542,9 @@ See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/t
 
 If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Item in transpile can be string or regex object for matching dependencies file name.
 
+### Note:  
+For Windows user, the filepath will be `\\` instead of `/`. Thus, for scoped package, please use `/@scoped[/\\]package/` instead of `"@scoped/package"`.
+
 ## vueLoader
 
 > Note: This config has been removed since Nuxt 2.0, please use [`build.loaders.vue`](#loaders)instead.
