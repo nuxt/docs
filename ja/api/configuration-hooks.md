@@ -1,15 +1,15 @@
 ---
-title: "API: The hooks Property"
-description: Hooks are listeners to Nuxt events that are typically used in Nuxt modules, but are also available in `nuxt.config.js`.
+title: 'API: hooks プロパティ'
+description: フックは Nuxt モジュールで一般的に使われる Nuxt イベントのリスナーですが、 `nuxt.config.js` の中でも利用できます。
 ---
 
-# The hooks Property
+# hooks プロパティ
 
-- Type: `Object`
+- 型: `オブジェクト`
 
-> Hooks are [listeners to Nuxt events](/api/internals) that are typically used in Nuxt modules, but are also available in `nuxt.config.js`. [Learn More](/api/internals)
+> フックは Nuxt モジュールで一般的に使われる [Nuxt イベントのリスナー](/api/internals) ですが、 `nuxt.config.js` の中でも利用できます。 より詳しくは [こちら](/api/internals) を参照してください。
 
-Example (`nuxt.config.js`):
+例 (`nuxt.config.js`):
 
 ```js
 import fs from 'fs'
@@ -27,12 +27,12 @@ export default {
 }
 ```
 
-Internally, hooks follow a naming pattern using colons (e.g., `build:done`). For ease of configuration, you can structure them as an hierarchical object when using `nuxt.config.js` (as exemplifed above) to set your own hooks. See [Nuxt Internals](/api/internals) for more detailed information on how they work.
+内部的には、フックはコロン（例えば、 `build:done`）を使った命名パターンに従います。設定を簡単にするため、上記の例のように `nuxt.config.js` を使用して独自のフックを設定すると、それらを階層オブジェクトとして構造化できます。 それらの仕組みの詳細については [Nuxt Internals](/api/internals) を参照してください。
 
-## List of hooks
+## フックリスト
 
-- [Nuxt hooks](https://nuxtjs.org/api/internals-nuxt#hooks)
-- [Renderer hooks](https://nuxtjs.org/api/internals-renderer#hooks)
-- [ModulesContainer hooks](https://nuxtjs.org/api/internals-module-container#hooks)
-- [Builder hooks](https://nuxtjs.org/api/internals-builder#hooks)
-- [Generator hooks](https://nuxtjs.org/api/internals-generator#hooks)
+- [Nuxt クラス フック](https://ja.nuxtjs.org/api/internals-nuxt/#フック)
+- [Renderer クラス フック](https://ja.nuxtjs.org/api/internals-renderer/#フック)
+- [ModulesContainer クラス フック](https://ja.nuxtjs.org/api/internals-module-container/#フック)
+- [Builder クラス フック](https://ja.nuxtjs.org/api/internals-builder/#フック)
+- [Generator クラス フック](https://ja.nuxtjs.org/api/internals-generator/#フック)

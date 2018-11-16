@@ -1,6 +1,6 @@
 {
   "iso": "en",
-  "docVersion": "2.2.0",
+  "docVersion": "2.3.X",
   "links": {
     "api": "API",
     "blog": "Blog",
@@ -16,6 +16,7 @@
     "homepage": "Home page",
     "live_demo": "Live Demo",
     "live_edit": "Live Edit",
+    "tidelift_short": "GET PROFESSIONAL SUPPORT",
     "tidelift": "GET PROFESSIONAL SUPPORT FOR NUXT",
     "twitter": "Twitter",
     "vuejs": "Vue.js",

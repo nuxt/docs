@@ -12,7 +12,7 @@ Nuxt.js will look for the `store` directory, if it exists, it will:
 1. Import Vuex,
 2. Add the `store` option to the root Vue instance.
 
-Nuxt.js lets you device between **2 store modes**. You can choose the one you prefer:
+Nuxt.js lets you decide between **2 store modes**. You can choose the one you prefer:
 
 - **Classic:** `store/index.js` returns a store instance.
 - **Modules:** every `.js` file inside the `store` directory is transformed as a [namespaced module](http://vuex.vuejs.org/en/modules.html) (`index` being the root module).
@@ -203,7 +203,7 @@ You can optionally break down a module file into separate files: `state.js`, `ac
 
 ### Plugins
 
-You can add additional plugin to the store (in mthe odules mode) putting it into the `store/index.js` file:
+You can add additional plugins to the store (in the modules mode) by putting them into the `store/index.js` file:
 
 ```js
 import myPlugin from 'myPlugin'

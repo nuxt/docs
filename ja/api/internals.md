@@ -65,14 +65,11 @@ const { Nuxt, Builder, Utils } = require('nuxt')
 ## よくあるパターン
 
 すべての Nuxt クラスは `nuxt` インスタンスとオプションへの参照を持っています。
-すべてのクラスは [`tappable`](https://github.com/nuxt/tappable) を拡張したものであり、
 これにより `options` と `nuxt` にアクセスするための一貫した API を実現しています。
 
 ```js
-const Tapable = require('tappable')
-
-class SomeClass extends Tapable {
-  constructor (nuxt, builder) {
+class SomeClass {
+  constructor (nuxt) {
     super()
     this.nuxt = nuxt
     this.options = nuxt.options
@@ -87,13 +84,13 @@ class SomeClass extends Tapable {
 クラスは「プラグ可能」であるので、追加のフックを登録する場合はメインの `nuxt` コンテナにプラグインを登録します。
 
 ```js
-class FooClass extends Tapable {
-  constructor (nuxt, builder) {
+class FooClass {
+  constructor (nuxt) {
     super()
     this.nuxt = nuxt
     this.options = nuxt.options
 
-    this.nuxt.applyPluginsAsync('foo', this)
+    this.nuxt.callHook('foo', this)
   }
 }
 ```
