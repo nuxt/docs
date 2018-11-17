@@ -81,6 +81,13 @@ export default {
 
 See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) for available options.
 
+## devtools
+
+- Type: `boolean`
+- Default: `false`
+
+Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools) inspection.
+
 ## extend
 
 > Extend the webpack configuration manually for the client & server bundles.
@@ -360,7 +367,7 @@ export default {
     order: 'cssnanoLast'
   }
   ```
-  
+
 Your custom plugin settings will be merged with the default plugins (unless you are using an `Array` instead of an `Object`).
 
 Example (`nuxt.config.js`):
