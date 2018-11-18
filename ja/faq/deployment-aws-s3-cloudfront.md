@@ -47,11 +47,11 @@ Cloudfront は、AWS の CDN（コンテンツ配信ネットワーク）です�
 
 ステップ 3 では, 以下の事が可能なユーザーが必要です:
   - バケットのコンテンツを更新する
-  - cloudfront distribution でのキャッシュ無効化 (変更を素早くユーザに伝播させる)
+  - cloudfront distribution でのキャッシュ削除 (変更を素早くユーザに伝播させる)
 
 [このポリシーを使用してプログラムのユーザーを作成する](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html):
 
-> 注: 下の二つの `example.com` をあなたの S3 バケット名に置き換えてください。 このポリシーでは、指定されたバケットにプッシュすること、cloudfront distribution でのキャッシュ無効化が可能になります。
+> 注: 下の二つの `example.com` をあなたの S3 バケット名に置き換えてください。 このポリシーでは、指定されたバケットにプッシュすること、cloudfront distribution でのキャッシュ削除が可能になります。
 
 ``` json
 {
