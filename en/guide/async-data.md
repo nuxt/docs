@@ -24,7 +24,6 @@ Nuxt.js offers you different ways to use `asyncData`. Choose the one you're the 
 
 1. Returning a `Promise`. Nuxt.js will wait for the promise to be resolved before rendering the component.
 2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await))
-3. Define a callback as second argument. It has to be called like this: `callback(err, data)`
 
 <div class="Alert Alert--grey">
 
@@ -56,18 +55,6 @@ export default {
 }
 ```
 
-### Using a callback
-
-```js
-export default {
-  asyncData ({ params }, callback) {
-    axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
-  }
-}
-```
 
 ### Displaying the data
 
@@ -145,20 +132,5 @@ export default {
 }
 ```
 
-If you're using the `callback` argument, you can call it directly with the error and Nuxt.js will call the `error` method for you:
-
-```js
-export default {
-  asyncData ({ params }, callback) {
-    axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
-    .catch((e) => {
-      callback({ statusCode: 404, message: 'Post not found' })
-    })
-  }
-}
-```
 
 To customize the error page, take a look at the [views guide](/guide/views#layouts) .
