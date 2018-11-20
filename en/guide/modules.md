@@ -301,31 +301,25 @@ Your module may need to do things only on specific conditions and not just durin
 We can use the powerful [Tapable](https://github.com/webpack/tapable) plugin system to do tasks on specific events.
 Nuxt will wait for your function if it return a Promise or is defined as `async`.
 
+Here are some basic examples:
+
 ```js
 export default function () {
-  // Add hook for modules
-  this.nuxt.hook('module', moduleContainer => {
+
+  this.nuxt.hook('modules:done', moduleContainer => {
     // This will be called when all modules finished loading
   })
 
-  // Add hook for renderer
-  this.nuxt.hook('renderer', renderer => {
-    // This will be called when renderer was created
+  this.nuxt.hook('render:before', renderer => {
+    // Called after the renderer was created
   })
 
-  // Add hook for build
-  this.nuxt.hook('build', async builder => {
-    // This will be called once when builder created
-
-    // We can even register internal hooks here
-    builder.hook('compile', ({compiler}) => {
-        // This will be run just before webpack compiler starts
-    })
+  this.nuxt.hook('build:compile', async ({name, compiler }) => {
+    // Called before the compiler (default: webpack) starts
   })
 
-  // Add hook for generate
-  this.nuxt.hook('generate', async generator => {
-    // This will be called when a Nuxt generate starts
+  this.nuxt.hook('generate:before', async generator => {
+    // This will be called before Nuxt generates your pages
   })
 }
 ```
