@@ -25,6 +25,9 @@ Directory name created by `nuxt generate`.
 
 Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools) inspection.
 
+If you already activated through nuxt.config.js or otherwise, devtools enable regardless of the flag.
+
+
 ## fallback
 
 - Type: `String` or `Boolean`

@@ -88,6 +88,8 @@ See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) 
 
 Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools) inspection.
 
+If you already activated through nuxt.config.js or otherwise, devtools enable regardless of the flag.
+
 ## extend
 
 > Extend the webpack configuration manually for the client & server bundles.
