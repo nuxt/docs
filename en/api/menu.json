@@ -47,6 +47,7 @@
           { "name": "cache", "to": "#cache" },
           { "name": "cssSourceMap", "to": "#csssourcemap" },
           { "name": "devMiddleware", "to": "#devmiddleware" },
+          { "name": "devtools", "to": "#devtools" },
           { "name": "extend", "to": "#extend" },
           { "name": "extractCSS", "to": "#extractcss" },
           { "name": "filenames", "to": "#filenames" },
@@ -79,6 +80,7 @@
         "to": "/configuration-generate",
         "contents": [
           { "name": "dir", "to": "#dir" },
+          { "name": "devtools", "to": "#devtools" },
           { "name": "interval", "to": "#interval" },
           { "name": "minify", "to": "#minify" },
           { "name": "routes", "to": "#routes" }
