@@ -136,5 +136,7 @@ Nuxt's loading component partially solves this by letting you set the `duration`
 
 You can change the default behaviour by setting `continuous` to true, then after reaching 100% the progress bar will start shrinking back to 0% again in `duration` time. When the loading is still not finished after reaching 0% it will start growing from 0% to 100% again, this repeats until the loading finishes.
 
-_Example of a continuous progress bar:_<br/>
+*Example of a continuous progress bar:*
+
+
 <img src="/api-continuous-loading.gif" alt="continuous loading"/>
