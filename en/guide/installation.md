@@ -40,7 +40,7 @@ It will ask you some questions:
   - [Element UI](https://github.com/ElemeFE/element)
   - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
-3. The Nuxt mode you want (`Universal` or `SPA`)
+3. The [Nuxt mode you want (`Universal` or `SPA`)](https://nuxtjs.org/guide/release-notes#better-spa-experience)
 4. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
 5. Add [EsLint](https://eslint.org/) to Lint your code on save.
 5. Add [Prettier](https://prettier.io/) to prettify your code on save.
