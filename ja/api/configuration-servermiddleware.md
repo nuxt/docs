@@ -9,16 +9,16 @@ description: サーバーミドルウェアを定義します
     - アイテム: `文字列` or `オブジェクト` or `関数`
 
 Nuxt は内部で [connect](https://github.com/senchalabs/connect) のインスタンスを作ります。
-それはミドルウェアをスタックに登録したり、 **外部サーバーを必要とせず** に API などのルートを増やす事を可能にしてれくます。
+それはミドルウェアをスタックに登録したり、 **外部サーバーを必要とせず** に API などのルートを増やす事を可能にしてくれます。
 connect 自体はミドルウェアで、登録されたミドルウェアは `nuxt start` と [express-template](https://github.com/nuxt-community/express-template) のようなプログラム的な使用法を持つミドルウェアとして使用されます。 Nuxt [モジュール](/guide/modules) もまた [this.addServerMiddleware()](/api/internals-module-container#addservermiddleware-middleware-) を使用して `serverMiddleware` を提供できます。
 
 ## サーバミドルウェア vs ミドルウェア！
 クライアントサイドや SSR の Vue で各ルートの前に呼び出されている [ルーティングのミドルウェア](/guide/routing#ミドルウェア)  と混同しないでください。
-`serverMiddleware` は vue-server-renderer の **前に** サーバー側で実行され、APIリクエストの処理やアセットの処理どのサーバー固有のタスクとして使用できます。
+`serverMiddleware` は vue-server-renderer の **前に** サーバー側で実行され、APIリクエストの処理やアセットの処理などのサーバー固有のタスクとして使用できます。
 
 ## 使用方法
 
-もしミドルウェアが文字列の場合、 Nuxt.js は自動的に解決し、そのミドルウェアを要求します。
+もしミドルウェアが文字列の場合、 Nuxt.js は自動的にそれを解決し、そのミドルウェアを要求します。
 
 例 (`nuxt.config.js`):
 
