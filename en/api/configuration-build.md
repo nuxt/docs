@@ -145,7 +145,14 @@ export default {
 - Type: `Boolean`
 - Default: `false`
 
-Using `extract-text-webpack-plugin` to extract the CSS in the main chunk into a separate CSS file (auto injected with template), which allows the file to be individually cached. This is recommended when there is a lot of shared CSS. CSS inside async components will remain inlined as JavaScript strings and handled by vue-style-loader.
+Using [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) to extract the CSS in the main chunk into a separate CSS file (auto injected with template), which allows the file to be cached individually.
+
+<div class="Alert Alert--orange">
+
+**Warning:** You will currently lose the capability to only import critical CSS when using this options as *all* extracted CSS files will be included as stylesheets throughout the app. Also be aware that each component has it's own CSS file.
+
+</div>
+
 
 ## filenames
 
