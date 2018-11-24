@@ -19,7 +19,8 @@
       { "name": "window/document undefined?", "to": "/window-document-undefined" },
       { "name": "Why a CSS Flash appears?", "to": "/css-flash" },
       { "name": "Async data in components?", "to": "/async-data-components" },
-      { "name": "Duplicated Meta Tags?", "to": "/duplicated-meta-tags" }
+      { "name": "Duplicated Meta Tags?", "to": "/duplicated-meta-tags" },
+      { "name": "iOS and phone numbers", "to": "/ios-phone-numbers" }
     ]
   },
   {
