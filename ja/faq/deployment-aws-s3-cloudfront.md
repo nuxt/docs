@@ -3,13 +3,13 @@ title: AWS: S3 と Cloudfront によるデプロイ
 description: S3 と Cloudfront を使用した AWS での静的ホスティング
 ---
 
-# AWS S3 ,Cloudfront へデプロイするには？
+# S3 と Cloudfront を使用して AWS へデプロイするには？
 
 AWS は Amazon Web Services です。
 S3 は、静的サイトホスティング用に設定できる静的ストレージです。
 Cloudfront は、AWS の CDN（コンテンツ配信ネットワーク）です。
 
-静的に生成された Nuxt アプリケーションを、AWS の S3 及び Cloudfront 上にホスティングする方法は強力かつ安価です。 
+**静的に生成された** Nuxt アプリケーションを、S3 と Cloudfront を使用して AWS 上にホスティングする方法は強力かつ安価です。 
 
 > AWS では少額の利用料が積算して高額の請求を受けることがあります。 もし抜けているステップがあれば、ぜひこのドキュメントを更新するPRを送ってください。
 
@@ -28,10 +28,10 @@ Cloudfront は、AWS の CDN（コンテンツ配信ネットワーク）です�
   - AWS_ACCESS_KEY_ID="key" 
   - AWS_SECRET_ACCESS_KEY="secret" 
 
-## AWSのセットアップ
+## AWS のセットアップ
 
   1. S3 バケットを作成し、静的サイトホスティング用に設定する
-  2. cloudfront distributionを作成する
+  2. cloudfront distribution を作成する
   3. セキュリティアクセスを設定する
   4. プロジェクトにビルドスクリプトを設定する
   
@@ -45,7 +45,7 @@ Cloudfront は、AWS の CDN（コンテンツ配信ネットワーク）です�
 
 ### 3. セキュリティアクセスを設定する
 
-ステップ 3 では, 以下の事が可能なユーザーが必要です:
+ステップ 3 では、 以下の事が可能なユーザーが必要です:
   - バケットのコンテンツを更新する
   - cloudfront distribution でのキャッシュ削除 (変更を素早くユーザに伝播させる)
 
@@ -90,7 +90,7 @@ Cloudfront は、AWS の CDN（コンテンツ配信ネットワーク）です�
 }
 ```
 
-次に [アクセスキーとシークレットを取得します](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)。
+次に [アクセスキーとシークレットアクセスキーを取得します](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)。
 
 あなたは今このデータを持っているはずです：
   - AWS_ACCESS_KEY_ID="key" 
@@ -98,19 +98,19 @@ Cloudfront は、AWS の CDN（コンテンツ配信ネットワーク）です�
 
 ### 4. プロジェクトのビルドスクリプトをセットアップする
 
-4.1) プロジェクトとコマンドラインに Gulp を追加する
+4.1) プロジェクトとコマンドラインに Gulp を追加します。
 ``` bash
 npm install --save-dev gulp gulp-awspublish gulp-cloudfront-invalidate-aws-publish concurrent-transform
 npm install -g gulp
 ```
 
-4.2) `deploy.sh` スクリプトを作成する  [nvm (node version manager)](https://github.com/creationix/nvm) を参照して下さい。
+4.2) `deploy.sh` スクリプトを作成します。 詳細は [nvm (node version manager)](https://github.com/creationix/nvm) を参照して下さい。
 ``` bash
 #!/bin/bash
 
-# Load nvm (node version manager), install node (version in .nvmrc), and npm install packages
+# nvm (node version manager) のロード、node のインストール (バージョン指定は .nvmrc ファイルにある)、 npm パッケージのインストール
 [ -s "$HOME/.nvm/nvm.sh" ] && source "$HOME/.nvm/nvm.sh" && nvm use
-# Npm install if not already.
+# 既にインストールされていなければ、 npm をインストールする
 [ ! -d "node_modules" ] && npm install
 
 npm run generate
@@ -130,7 +130,7 @@ deploy.sh
 " >> .gitignore
 ```
 
-4.4) `gulpfile.js` をビルドスクリプトと共に作成します
+4.4) `gulpfile.js` をビルドスクリプトと共に作成します。
 
 ``` javascript
 var gulp = require('gulp');
@@ -142,36 +142,36 @@ var parallelize = require('concurrent-transform');
 
 var config = {
 
-  // Required
+  // 必須
   params: { Bucket: process.env.AWS_BUCKET_NAME },
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
 
-  // Optional
-  deleteOldVersions: false,                 // NOT FOR PRODUCTION
+  // 任意
+  deleteOldVersions: false,                 // PRODUCTION で使用しない
   distribution: process.env.AWS_CLOUDFRONT, // Cloudfront distribution ID
   region: process.env.AWS_DEFAULT_REGION,
   headers: { /*'Cache-Control': 'max-age=315360000, no-transform, public',*/ },
 
-  // Sensible Defaults - gitignore these Files and Dirs
+  // 適切なデフォルト値 - これらのファイル及びディレクトリは gitignore されている
   distDir: 'dist',
   indexRootPath: true,
   cacheFileName: '.awspublish',
   concurrentUploads: 10,
-  wait: true,  // wait for Cloudfront invalidation to complete (about 30-60 seconds)
+  wait: true,  // Cloudfront のキャッシュ削除が完了するまでの時間 (約30〜60秒)
 }
 
 gulp.task('deploy', function() {
-  // create a new publisher using S3 options
+  // S3 オプションを使用して新しい publisher を作成する
   // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property
   var publisher = awspublish.create(config, config);
 
   var g = gulp.src('./' + config.distDir + '/**');
-    // publisher will add Content-Length, Content-Type and headers specified above
-    // If not specified it will set x-amz-acl to public-read by default
+    // publisher は、上記で指定した Content-Length、Content-Type、および他のヘッダーを追加する
+    // 指定されていない場合、 x-amz-acl はデフォルトで public-read に設定される
   g = g.pipe(parallelize(publisher.publish(config.headers), config.concurrentUploads))
 
-  // Invalidate CDN
+  // CDN のキャッシュを削除する
   if (config.distribution) {
     console.log('Configured with Cloudfront distribution');
     g = g.pipe(cloudfront(config));
@@ -179,11 +179,11 @@ gulp.task('deploy', function() {
     console.log('No Cloudfront distribution configured - skipping CDN invalidation');
   }
 
-  // Delete removed files
+  // 削除したファイルを同期する
   if (config.deleteOldVersions) g = g.pipe(publisher.sync());
-  // create a cache file to speed up consecutive uploads
+  // 連続したアップロードを高速化するために、キャッシュファイルを作成する
   g = g.pipe(publisher.cache());
-  // print upload updates to console
+  // アップロードの更新をコンソールに出力する
   g = g.pipe(awspublish.reporter());
   return g;
 });
