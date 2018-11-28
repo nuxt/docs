@@ -1,93 +1,93 @@
 ---
-title: Directory Structure
-description: The default Nuxt.js application structure is intended to provide a great starting point for both large and small applications.
+title: Estrutura de diretórios
+description: A estrutura padrão do Nuxt.js tem foco em proporcionar um excelente ponto de partida tanto para grandes quanto pequenos projetos.
 ---
 
-> The default Nuxt.js application structure is intended to provide a great starting point for both small and large applications. Of course, you are free to organize your application however you like.
+> A estrutura padrão do Nuxt.js tem foco em proporcionar um excelente ponto de partida tanto para grandes quanto pequenos projetos. Mas sinta-se avontade para organizar da formar que achar melhor.
 
-## Directories
+## Diretórios
 
-### The Assets Directory
+### Diretório Assets
 
-The `assets` directory contains your un-compiled assets such as Less, Sass or JavaScript.
+O diretório `assets` contem seus assets como arquivo Less, Sass ou JavaScript.
 
-[More documentation about Assets integration](/guide/assets)
+[Mais informações sobre o diretório Assets](/guide/assets)
 
-### The Components Directory
+### Diretório Componentes
 
-The `components` directory contains your Vue.js Components. Nuxt.js doesn't supercharge the data method on these components.
+O diretório `components` contem seus componentes Vue.js. O Nuxt.js não adiciona o metódo asyncData nesses componentes.
 
-### The Layouts Directory
+### Diretório Layouts
 
-The `layouts` directory contains your Application Layouts.
+O diretório `layouts` contem os layouts da aplicação.
 
-_This directory cannot be renamed._
+_Esse diretório não pode ser renommeado_
 
-[More documentation about Layouts integration](/guide/views#layouts)
+[Mais informações sobre o diretório Layouts](/guide/views#layouts)
 
-### The Middleware Directory
+### Diretório Middleware
 
-The `middleware` directory contains your Application Middleware. Middleware lets you define custom functions that can be run before rendering either a page or a group of pages (layouts).
+O diretório `middleware` contem os middleware da aplicação. Middleware permite que você defina funções que podem ser executadas antes da renderização de uma página ou um grupo de páginas(layouts).
 
-[More documentation about Middleware integration](/guide/routing#middleware)
+[Mais informações sobre o diretório Middleware](/guide/routing#middleware)
 
-### The Pages Directory
+### Diretório Pages
 
-The `pages` directory contains your Application Views and Routes. The framework reads all the `.vue` files inside this directory and creates the application router.
+O diretório `pages` contem a parte de Views e Routes. O framework le todos os arquivos `.vue` dentro do diretório e cria a rota da aplicação apartir da estrutura definida.
 
-_This directory cannot be renamed._
+_Esse diretório não pode ser renommeado_
 
-[More documentation about Pages integration](/guide/views)
+[Mais informações sobre o diretório Pages](/guide/views)
 
-### The Plugins Directory
+### Diretório Plugins
 
-The `plugins` directory contains your Javascript plugins that you want to run before instantiating the root Vue.js Application.
+O diretório `plugins` contem os plugins JavaScript que você precisa executar antes da inicialização do root de uma aplicação Vue.js
 
-[More documentation about Plugins integration](/guide/plugins)
+[Mais informações sobre o diretório Plugins](/guide/plugins)
 
-### The Static Directory
+### Diretório Static
 
-The `static` directory contains your static files. Each file inside this directory is mapped to `/`.
+O diretório `static` contem os arquivos estáticos. Cada arquivo dentro do diretório é mapeado para `/`.
 
-**Example:** `/static/robots.txt` is mapped as `/robots.txt`
+**Exemplo:** `/static/robots.txt` é mapeado como `/robots.txt`
 
-_This directory cannot be renamed._
+_Esse diretório não pode ser renommeado_
 
-[More documentation about Static integration](/guide/assets#static)
+[Mais informações sobre o diretório Static](/guide/assets#static)
 
-### The Store Directory
+### Diretório Store
 
-The `store` directory contains your [Vuex Store](http://vuex.vuejs.org/en/) files. The Vuex Store option is implemented in the Nuxt.js framework. Creating an `index.js` file in this directory enables the option in the framework automatically.
+O diretório `store` contem seus arquivos [Vuex Store](http://vuex.vuejs.org/en/). A opção de usar Vuex como store é implementada no Nuxt.js por padrão. Criando um arquivo `index.js` dentro do diretório habilita o Vuex automáticamente.
 
-_This directory cannot be renamed._
+_Esse diretório não pode ser renommeado_
 
-[More documentation about Store integration](/guide/vuex-store)
+[Mais informações sobre o diretório Store](/guide/vuex-store)
 
-### The nuxt.config.js File
+### Arquivo nuxt.config.js
 
-The `nuxt.config.js` file contains your Nuxt.js custom configuration.
+O arquivo `nuxt.config.js` contem suas configurações customizadas para o Nuxt.js.
 
-_This file can not be renamed._
+_Esse arquivo não pode ser renommeado_
 
-[More documentation about `nuxt.config.js` integration](/guide/configuration)
+[Mais informações sobre o arquivo `nuxt.config.js`](/guide/configuration)
 
-### The package.json File
+### Arquivo package.json
 
-The `package.json` file contains your Application dependencies and scripts.
+O arquivo `package.json` contem suas dependências e scripts.
 
-_This file can not be renamed._
+_Esse arquivo não pode ser renommeado_
 
-## Aliases
+## Prefixos para os diretórios
 
-| Alias | Directory |
+| Apelido | Diretório |
 |-----|------|
 | `~` or `@` | [srcDir](/api/configuration-srcdir) |
 | `~~` or `@@` | [rootDir](/api/configuration-rootdir) |
 
-By default, `srcDir` is the same as `rootDir`.
+Por padrão, `srcDir` é o mesmo que `rootDir`.
 
 <div class="Alert Alert--nuxt-green">
 
-<b>Info:</b> Inside your `vue` templates, if you need to link to your `assets` or `static` directory, use `~/assets/your_image.png` and `~/static/your_image.png`.
+<b>Info:</b> Dentro do seus templates `vue`, se você precisar referenciar seus diretórios `assets` or `static`, use `~/assets/usa_imagem.png` e `~/static/usa_imagem.png`.
 
 </div>
