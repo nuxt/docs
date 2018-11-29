@@ -9,7 +9,7 @@ description: 在页面切换的时候，Nuxt.js 使用内置的加载组件显�
 
 > 在页面切换的时候，Nuxt.js 使用内置的加载组件显示加载进度条。你可以定制它的样式，禁用或者创建自己的加载组件。
 
-在你的组件中你可以使用`this.$nuxt.$loading.start()`来启动加载条。使用`this.$nuxt.$.loading.finish()`来使加载条结束。
+在你的组件中你可以使用`this.$nuxt.$loading.start()`来启动加载条。使用`this.$nuxt.$loading.finish()`来使加载条结束。
 
 ```javascript
 export default {
