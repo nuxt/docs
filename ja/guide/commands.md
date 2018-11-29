@@ -20,6 +20,7 @@ nuxt generate | アプリケーションをビルドして、ルートごとに 
 
 - **`--config-file` または `-c`:** `nuxt.config.js` ファイルへのパスを明記します。
 - **`--spa` または `-s`:** サーバサイドレンダリングモードを不可にすることにより、SPA でコマンドを実行します。
+- **`--unix-socket` または `-n`:** UNIX ソケットへのパスを明記します。
 
 #### package.jsonで使用する
 
@@ -66,7 +67,7 @@ nuxt start
 ```
 
 Nuxt.js を HTTPS モードで提供することを選択した場合、 [`https.createServer`](https://nodejs.org/api/https.html) に渡されるオプションと同じオプションを使って`nuxt.config.js`に `server.https`を設定することもできます。 
-`nuxt.config.js`に `server.socket` オプションを設定（または [CLI](https://ja.nuxtjs.org/guide/commands/#%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E4%B8%80%E8%A6%A7) の `-n` 引数を使用すると、 Unix ソケットも利用できます。
+`nuxt.config.js`に `server.socket` オプションを設定（または [CLI](https://ja.nuxtjs.org/guide/commands/#%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E4%B8%80%E8%A6%A7) の `-n` 引数を使用）すると、 Unix ソケットも利用できます。
 [Unix ソケット](https://en.wikipedia.org/wiki/Berkeley_sockets)を利用する場合は、 `host` パラメータと ` port` パラメータを設定しないでください。設定した場合、 `socket` パラメータは無視されます。
 
 `package.json` では下記のように記述することが推奨されています:
@@ -103,7 +104,7 @@ npm run generate
 
 <div class="Alert">
 
-`nuxt generate` でウェブアプリケーションを生成するときは、[data()](/guide/async-data#the-data-method) や [fetch()](/guide/vuex-store#the-fetch-method) に渡される [context](/api#context) は `req` 及び `res` を持たなくなります。
+`nuxt generate` でウェブアプリケーションを生成するときは、[asyncData](/guide/async-data) に渡される [context](/api/context) と [fetch](/guide/vuex-store#the-fetch-method) は `req` 及び `res` を持たなくなります。
 
 </div>
 
