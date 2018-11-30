@@ -56,12 +56,12 @@ export default {
 }
 ```
 
-さらにバリデーション関数を実行中に、想定したエラーや想定外のエラーをスローすることもできます:
+さらにバリデーション関数を実行中に、想定したエラーや想定外のエラーを投げることもできます:
 
  ```js
 export default {
   async validate ({ params, store }) {
-    // 500 internal server error とともにカスタムメッセージをスローする
+    // 500 internal server error とともにカスタムメッセージを投げる
     throw new Error('Under Construction!')
   }
 }
