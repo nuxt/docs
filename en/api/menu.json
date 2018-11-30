@@ -93,11 +93,13 @@
         "contents": [
           { "name": "Disable the Progress Bar", "to": "#disable-the-progress-bar" },
           { "name": "Customize the Progress Bar", "to": "#customize-the-progress-bar" },
-          { "name": "Use a Custom Loading Component", "to": "#use-a-custom-loading-component" }
+          { "name": "Use a Custom Loading Component", "to": "#use-a-custom-loading-component" },
+          { "name": "Internals of the Progress Bar", "to": "#internals-of-the-progress-bar" }
         ]
       },
       { "name": "loadingIndicator", "to": "/configuration-loading-indicator" },
       { "name": "mode", "to": "/configuration-mode" },
+      { "name": "modern", "to": "/configuration-modern" },
       { "name": "modules", "to": "/configuration-modules" },
       { "name": "modulesDir", "to": "/configuration-modulesdir" },
       { "name": "plugins", "to": "/configuration-plugins" },
@@ -108,6 +110,7 @@
           { "name": "bundleRenderer", "to": "#bundlerenderer" },
           { "name": "etag", "to": "#etag" },
           { "name": "compressor", "to": "#compressor" },
+          { "name": "fallback", "to": "#fallback" },
           { "name": "http2", "to": "#http2" },
           { "name": "resourceHints", "to": "#resourcehints" },
           { "name": "ssr", "to": "#ssr" },

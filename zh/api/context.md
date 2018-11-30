@@ -27,4 +27,3 @@ context 变量的可用属性一览:
 | `nuxtState`            | `Object`                                                                           | 客户端          | Nuxt 状态, 在使用 `beforeNuxtRender` 之前，用于客户端获取nuxt状态，仅在`universal`模式下可用                                                                                                                                                |
 | `beforeNuxtRender(fn)` | `Function`                                                                         | 服务端          | 使用此方法更新 `__NUXT__` 在客户端呈现的变量, `fn` 调用 (可以是异步) `{ Components, nuxtState }`, 参考 [示例](https://github.com/nuxt/nuxt.js/blob/cf6b0df45f678c5ac35535d49710c606ab34787d/test/fixtures/basic/pages/special-state.vue)    
 
-- `|```

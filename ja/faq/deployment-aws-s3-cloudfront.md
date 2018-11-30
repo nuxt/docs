@@ -1,57 +1,57 @@
 ---
-title: "AWS: S3+Cloudfront Deployment"
-description: Static Hosting on AWS with S3 and Cloudfront
+title: AWS: S3 と Cloudfront によるデプロイ
+description: S3 と Cloudfront を使用した AWS での静的ホスティング
 ---
 
-# How to Deploy on AWS w/ S3 and Cloudfront
+# S3 と Cloudfront を使用して AWS へデプロイするには？
 
-AWS is Amazon Web Services.  
-S3 is their static storage which can be configured for Static Site Hosting.
-Cloudfront is their CDN (content delivery network)
+AWS は Amazon Web Services です。
+S3 は、静的サイトホスティング用に設定できる静的ストレージです。
+Cloudfront は、AWS の CDN（コンテンツ配信ネットワーク）です。
 
-Hosting a **static generated** Nuxt app on AWS w/ S3 + Cloudfront is powerful and cheap.
+**静的に生成された** Nuxt アプリケーションを、S3 と Cloudfront を使用して AWS 上にホスティングする方法は強力かつ安価です。 
 
-> AWS is a death by 1000 paper cuts.  If we missed a step, please submit a PR to update this document.
+> AWS では少額の利用料が積算して高額の請求を受けることがあります。 もし抜けているステップがあれば、ぜひこのドキュメントを更新するPRを送ってください。
 
-## Overview
+## 概要
 
-We will use the [Gulp](https://gulpjs.com/) build system for this.  `Gulp` is a mature build system with handy utilities we can use.
+デプロイのために、 [Gulp](https://gulpjs.com/) ビルドシステムを使います。 `Gulp` は、私たちが使うことができる手軽で実用性を備えた成熟したビルドシステムです。
 
   - [gulp](https://www.npmjs.com/package/gulp)
   - [gulp-awspublish](https://www.npmjs.com/package/gulp-awspublish)
   - [gulp-cloudfront-invalidate-aws-publish](https://www.npmjs.com/package/gulp-cloudfront-invalidate-aws-publish)
   - [concurrent-transform](https://www.npmjs.com/package/concurrent-transform) (for parallel uploads)
 
-Our deploy script needs these environment variables set:
+私たちのデプロイスクリプトでは、以下の環境変数を設定する必要があります:
   - AWS_BUCKET_NAME="example.com" 
   - AWS_CLOUDFRONT="UPPERCASE"
   - AWS_ACCESS_KEY_ID="key" 
   - AWS_SECRET_ACCESS_KEY="secret" 
 
-## Setting it up
+## AWS のセットアップ
 
-  1. Make a S3 bucket and configure it for static site hosting
-  2. Create a cloudfront distribution
-  3. Configure security access
-  4. Setup build script in your project
+  1. S3 バケットを作成し、静的サイトホスティング用に設定する
+  2. cloudfront distribution を作成する
+  3. セキュリティアクセスを設定する
+  4. プロジェクトにビルドスクリプトを設定する
   
-### 1. Setup your AWS S3 bucket and 2. Setup your Cloudfront Distribution
+### 1. AWS S3 バケットの設定と 2. Cloudfront Distribution の設定
 
-For steps 1. and 2, follow this [tutorial to setup your S3 and Cloudfront](https://reidweb.com/2017/02/06/cloudfront-cdn-tutorial/)
+ステップ 1 と 2 については、この [S3 と Cloudfront をセットアップするためのチュートリアル](https://reidweb.com/2017/02/06/cloudfront-cdn-tutorial/)に従ってください。
 
-You should now have this data:
+あなたは今このデータを持っているはずです:
   - AWS_BUCKET_NAME="example.com" 
   - AWS_CLOUDFRONT="UPPERCASE"
 
-### 3. Configure security access
+### 3. セキュリティアクセスを設定する
 
-For step 3, we need to create a user that can:
-  - Update the bucket contents
-  - Invalidate the cloudfront distribution (propagates changes to users faster)
+ステップ 3 では、 以下の事が可能なユーザーが必要です:
+  - バケットのコンテンツを更新する
+  - cloudfront distribution でのキャッシュ削除 (変更を素早くユーザに伝播させる)
 
-[Create a programmatic user with this policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html):
+[このポリシーを使用してプログラムのユーザーを作成する](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html):
 
-> NOTE: replace 2x `example.com` with your S3 bucket name below.  This policy allows pushing to the specified bucket, and invalidating any cloudfront distribution.
+> 注: 下の二つの `example.com` をあなたの S3 バケット名に置き換えてください。 このポリシーでは、指定されたバケットにプッシュすること、cloudfront distribution でのキャッシュ削除が可能になります。
 
 ``` json
 {
@@ -90,34 +90,34 @@ For step 3, we need to create a user that can:
 }
 ```
 
-Then [get an access key and secret](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+次に [アクセスキーとシークレットアクセスキーを取得します](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)。
 
-You should now have this data:
+あなたは今このデータを持っているはずです：
   - AWS_ACCESS_KEY_ID="key" 
   - AWS_SECRET_ACCESS_KEY="secret" 
 
-### 4. Setup your project's build script
+### 4. プロジェクトのビルドスクリプトをセットアップする
 
-4.1) Add Gulp to your project and to your command line 
+4.1) プロジェクトとコマンドラインに Gulp を追加します。
 ``` bash
 npm install --save-dev gulp gulp-awspublish gulp-cloudfront-invalidate-aws-publish concurrent-transform
 npm install -g gulp
 ```
 
-4.2) Create a `deploy.sh` script.  See optional [nvm (node version manager)](https://github.com/creationix/nvm).
+4.2) `deploy.sh` スクリプトを作成します。 詳細は [nvm (node version manager)](https://github.com/creationix/nvm) を参照して下さい。
 ``` bash
 #!/bin/bash
 
-# Load nvm (node version manager), install node (version in .nvmrc), and npm install packages
+# nvm (node version manager) のロード、node のインストール (バージョン指定は .nvmrc ファイルにある)、 npm パッケージのインストール
 [ -s "$HOME/.nvm/nvm.sh" ] && source "$HOME/.nvm/nvm.sh" && nvm use
-# Npm install if not already.
+# 既にインストールされていなければ、 npm をインストールする
 [ ! -d "node_modules" ] && npm install
 
 npm run generate
 AWS_ACCESS_KEY_ID="key" AWS_SECRET_ACCESS_KEY="secret" AWS_BUCKET_NAME="example.com" AWS_CLOUDFRONT="UPPERCASE" gulp deploy
 ```
 
-4.3) Make `deploy.sh` runnable and don't check into git
+4.3) `deploy.sh` を実行可能にし、.gitignore に追記します。　
 ``` bash
 chmod +x deploy.sh
 echo "
@@ -130,7 +130,7 @@ deploy.sh
 " >> .gitignore
 ```
 
-4.4) Create a `gulpfile.js` with the build script
+4.4) `gulpfile.js` をビルドスクリプトと共に作成します。
 
 ``` javascript
 var gulp = require('gulp');
@@ -142,36 +142,36 @@ var parallelize = require('concurrent-transform');
 
 var config = {
 
-  // Required
+  // 必須
   params: { Bucket: process.env.AWS_BUCKET_NAME },
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
 
-  // Optional
-  deleteOldVersions: false,                 // NOT FOR PRODUCTION
+  // 任意
+  deleteOldVersions: false,                 // PRODUCTION で使用しない
   distribution: process.env.AWS_CLOUDFRONT, // Cloudfront distribution ID
   region: process.env.AWS_DEFAULT_REGION,
   headers: { /*'Cache-Control': 'max-age=315360000, no-transform, public',*/ },
 
-  // Sensible Defaults - gitignore these Files and Dirs
+  // 適切なデフォルト値 - これらのファイル及びディレクトリは gitignore されている
   distDir: 'dist',
   indexRootPath: true,
   cacheFileName: '.awspublish',
   concurrentUploads: 10,
-  wait: true,  // wait for Cloudfront invalidation to complete (about 30-60 seconds)
+  wait: true,  // Cloudfront のキャッシュ削除が完了するまでの時間 (約30〜60秒)
 }
 
 gulp.task('deploy', function() {
-  // create a new publisher using S3 options
+  // S3 オプションを使用して新しい publisher を作成する
   // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property
   var publisher = awspublish.create(config, config);
 
   var g = gulp.src('./' + config.distDir + '/**');
-    // publisher will add Content-Length, Content-Type and headers specified above
-    // If not specified it will set x-amz-acl to public-read by default
+    // publisher は、上記で指定した Content-Length、Content-Type、および他のヘッダーを追加する
+    // 指定されていない場合、 x-amz-acl はデフォルトで public-read に設定される
   g = g.pipe(parallelize(publisher.publish(config.headers), config.concurrentUploads))
 
-  // Invalidate CDN
+  // CDN のキャッシュを削除する
   if (config.distribution) {
     console.log('Configured with Cloudfront distribution');
     g = g.pipe(cloudfront(config));
@@ -179,23 +179,23 @@ gulp.task('deploy', function() {
     console.log('No Cloudfront distribution configured - skipping CDN invalidation');
   }
 
-  // Delete removed files
+  // 削除したファイルを同期する
   if (config.deleteOldVersions) g = g.pipe(publisher.sync());
-  // create a cache file to speed up consecutive uploads
+  // 連続したアップロードを高速化するために、キャッシュファイルを作成する
   g = g.pipe(publisher.cache());
-  // print upload updates to console
+  // アップロードの更新をコンソールに出力する
   g = g.pipe(awspublish.reporter());
   return g;
 });
 ```
-4.5) Deploy and debug
+4.5) デプロイとデバッグ
 
-Run it:
+実行する:
 ``` bash
 ./deploy.sh
 ```
 
-You should get an output similar to this:
+次のような出力が得られます:
 ```
 $ ./deploy.sh                                                                                                                                                          Mod master
 
@@ -296,6 +296,6 @@ Configured with Cloudfront distribution
 [21:26:09] Finished 'deploy' after 42 s
 ```
 
-`deploy.sh` first runs `nuxt generate`, then runs `gulp deploy` with our environment variables set.
+`deploy.sh` はまず `nuxt generate` を実行し、環境変数を設定して `gulp deploy` を実行します。
 
-Note that the `Cloudfront invalidation created: XXXX` is the only output from the cloudfront invalidation npm package.  If you don't see that, it's not working.  
+`Cloudfront invalidation created：XXXX` は cloudfront invalidation を行う npm パッケージからの唯一の出力です。 それが表示されない場合は、動作していません。

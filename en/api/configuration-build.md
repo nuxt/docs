@@ -45,7 +45,7 @@ export default {
 
   ```js
   {
-    presets: ['@nuxtjs/babel-preset-app']
+    presets: ['@nuxt/babel-preset-app']
   }
   ```
 
@@ -92,6 +92,16 @@ The extend is called twice, one time for the server bundle, and one time for the
 1. The Webpack config object,
 2. An object with the following keys (all boolean except `loaders`): `isDev`, `isClient`, `isServer`, `loaders`.
 
+
+<div class="Alert Alert--orange">
+  
+  **Warning:**
+  The `isClient` and `isServer` keys provided in are separate from the keys available in [`context`](/api/context).  
+  They are **not** deprecated. Do not use `process.client` and `process.server` here as they are `undefined` at this point.
+
+</div>
+
+
 Example (`nuxt.config.js`):
 
 ```js
@@ -135,7 +145,14 @@ export default {
 - Type: `Boolean`
 - Default: `false`
 
-Using `extract-text-webpack-plugin` to extract the CSS in the main chunk into a separate CSS file (auto injected with template), which allows the file to be individually cached. This is recommended when there is a lot of shared CSS. CSS inside async components will remain inlined as JavaScript strings and handled by vue-style-loader.
+Using [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) to extract the CSS in the main chunk into a separate CSS file (auto injected with template), which allows the file to be cached individually.
+
+<div class="Alert Alert--orange">
+
+**Warning:** You will currently lose the capability to only import critical CSS when using this options as *all* extracted CSS files will be included as stylesheets throughout the app. Also be aware that each component has it's own CSS file.
+
+</div>
+
 
 ## filenames
 
@@ -356,7 +373,8 @@ export default {
       'postcss-url': {},
       'postcss-preset-env': {},
       'cssnano': { preset: 'default' } // disabled in dev mode
-    }
+    },
+    order: 'cssnanoLast'
   }
   ```
   
@@ -381,6 +399,28 @@ export default {
           grid: true
         }
       }
+    }
+  }
+}
+```
+
+If the postcss configuration is an `Object`, `order` can be used for defining the plugin order:
+
+- Type: `Array` (ordered plugin names), `String` (order preset name), `Function`
+- Default: `cssnanoLast` (put `cssnano` in last)
+
+Example (`nuxt.config.js`):
+
+```js
+export default {
+  build: {
+    postcss: {
+      // preset name
+      order: 'cssnanoLast',
+      // ordered plugin names
+      order: ['postcss-import', 'postcss-preset-env', 'cssnano']
+      // Function to calculate plugin order
+      order: (names, presets) => presets.cssnanoLast(names)
     }
   }
 }

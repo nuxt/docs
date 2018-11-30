@@ -17,7 +17,7 @@ description: You may want to fetch data and render it on the server-side. Nuxt.j
 </div>
 
 
-`asyncData` is called every time before loading the **page** component and and is only available for such.
+`asyncData` is called every time before loading the **page** component and is only available for such.
 It will be called server-side once (on the first request to the Nuxt app) and client-side when navigating to further routes. 
 This method receives the [`context`](/api/context) object as the first argument, you can use it to fetch some data and return the component data.
 

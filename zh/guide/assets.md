@@ -20,7 +20,11 @@ description: 默认情况下 Nuxt 使用 vue-loader、file-loader 以及 url-loa
 
 如果我们在CSS代码中使用 `url('~assets/image.png')`, 那么编译后它将被转换成 `require('~/assets/image.png')`。
 
-> 请注意，由于css-loader升级，从Nuxt 2.0开始，你应该在CSS文件中使用`~assets`（没有斜杠），例如background:url("~assets/banner.svg")
+<div class="Alert Alert--orange">
+
+**请注意:** 从Nuxt 2.0开始，`〜/alias`将无法在**CSS文件**中正确解析。你必须在url CSS引用中使用`~assets`（没有斜杠）或`@`别名，即`background:url("~assets/banner.svg")`
+
+</div>
 
 又或者如果我们在 `pages/index.vue` 中使用以下代码引用图片资源：
 ```html
