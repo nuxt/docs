@@ -7,12 +7,28 @@ description: Nuxt.js では動的なルーティングを行うコンポーネ�
 
 > Nuxt.js では動的なルーティングを行うコンポーネント内でバリデーションメソッドを定義できます。
 
-- **型:** `関数`
+- **型:** `関数` または `非同期関数`
 
 ```js
 validate({ params, query, store }) {
   return true // params バリデーションを通過したとき
   return false // Nuxt.js がルートをレンダリングするのを中止して、エラーページを表示させる
+}
+```
+
+```js
+async validate({ params, query, store }) {
+  // await の処理
+  return true // params バリデーションを通過したとき
+  return false // Nuxt.js がルートをレンダリングするのを中止して、エラーページを表示させる
+}
+```
+
+プロミスを返すこともできます:
+
+```js
+validate({ params, query, store }) {
+  return new Promise((resolve) => setTimeout(() => resolve()))
 }
 ```
 
@@ -36,6 +52,17 @@ export default {
   validate ({ params, store }) {
     // `params.id` が存在している category の id なのか否かをチェックする
     return store.state.categories.some((category) => category.id === params.id)
+  }
+}
+```
+
+さらにバリデーション関数を実行中に、予期されたエラーや想定外のエラーをスローすることもできます:
+
+ ```js
+export default {
+  async validate ({ params, store }) {
+    // 500 内部サーバーエラーとともにカスタムメッセージをスローする
+    throw new Error('Under Construction!')
   }
 }
 ```
