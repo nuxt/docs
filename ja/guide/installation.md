@@ -32,7 +32,7 @@ yarn create nuxt-app <my-project>
   - [Micro](https://github.com/zeit/micro)
   - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
 2. 好きな UI フレームワークを選択します:
-  - None (後からでも追加できます)
+  - None (後からでも追加できます）
   - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
   - [Vuetify](https://github.com/vuetifyjs/vuetify)
   - [Bulma](https://github.com/jgthms/bulma)

@@ -124,7 +124,7 @@ npm run deploy
 
 ![Travis Builder Server Settings](/github_pages_travis_02.png)
 
-同じ画面を下にスクロールして Environment Variables (環境変数) セクションを表示させたら、`GITHUB_ACCESS_TOKEN` という名前の新しい変数を作成し、値のフィールドにさきほど生成したおいた GitHub personal access token を入力し、'Add' (追加) ボタンをクリックします。
+同じ画面を下にスクロールして Environment Variables (環境変数）セクションを表示させたら、`GITHUB_ACCESS_TOKEN` という名前の新しい変数を作成し、値のフィールドにさきほど生成したおいた GitHub personal access token を入力し、'Add' (追加）ボタンをクリックします。
 
 ![Travis Builder Server Environment Variables](/github_pages_travis_03.png)
 
@@ -178,7 +178,7 @@ git push origin
 
 もう1つのオープンソースプロジェクトのビルドサーバーである [Appveyor](https://www.appveyor.com) でデプロイするには、GitHub の認証を使用して、自分の GitHub アカウントを使って新しいアカウントを作成します。
 
-サインインしたら、'New project' (新規プロジェクト) のリンクをクリックして、表示されたリスト中のリポジトリ名の横にある 'Add' (追加) ボタンを押して、リポジトリに対してビルドサーバーを有効にします。
+サインインしたら、'New project' (新規プロジェクト）のリンクをクリックして、表示されたリスト中のリポジトリ名の横にある 'Add' (追加）ボタンを押して、リポジトリに対してビルドサーバーを有効にします。
 
 ![Appveyor Builder Server Enable](/github_pages_appveyor_01.png)
 

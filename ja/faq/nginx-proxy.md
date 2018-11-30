@@ -94,7 +94,7 @@ include forge-conf/YOUR_WEBSITE_FOLDER/after/*;
 
 # TLS で Laravel Forge を保護する
 
-Laravel Forge に `nginx.conf` の編集を許可するには、Sites -> ウェブサイトドメイン (サーバー名) をクリック 、SSL をクリックしてプロバイダの1つから証明書をインストールします。証明書を有効にすることを忘れないでください。`nginx.conf` は以下のようになります:
+Laravel Forge に `nginx.conf` の編集を許可するには、Sites -> ウェブサイトドメイン (サーバー名）をクリック 、SSL をクリックしてプロバイダの1つから証明書をインストールします。証明書を有効にすることを忘れないでください。`nginx.conf` は以下のようになります:
 
 ```nginx
 # FORGE CONFIG (消さないでください！)

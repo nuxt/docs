@@ -121,7 +121,7 @@ Nuxt.js では vue-router の子ルートを使ってルートをネストさせ
 
 <div class="Alert Alert--orange">
 
-<b>警告:</b> `<nuxt-child>` を親コンポーネント内 (<code>.vue</code> ファイル内) に書くことを忘れないでください。</nuxt-child>
+<b>警告:</b> `<nuxt-child>` を親コンポーネント内 (<code>.vue</code> ファイル内）に書くことを忘れないでください。</nuxt-child>
 
 </div>
 
