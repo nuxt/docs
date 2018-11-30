@@ -51,8 +51,8 @@ Example commands:
 
 ```
 yarn textlint:ja
-yarn textling:ja --fix --format diff --dry-run
-yarn textling:ja --fix --format diff
+yarn textlint:ja:fix --dry-run
+yarn textlint:ja:fix
 ```
 
 ### Korean

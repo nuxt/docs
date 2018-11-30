@@ -11,7 +11,8 @@
     "start": "node api.js",
     "deploy": "now --alias",
     "precommit": "npm run lint",
-    "textlint:ja": "textlint --config .textlintrc-ja ja/**/*.md"
+    "textlint:ja": "textlint --config .textlintrc-ja ja/**/*.md",
+    "textlint:ja:fix": "yarn textlint:ja --fix --format diff"
   },
   "repository": {
     "type": "git",
