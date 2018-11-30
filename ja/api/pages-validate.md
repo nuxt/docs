@@ -61,7 +61,7 @@ export default {
  ```js
 export default {
   async validate ({ params, store }) {
-    // 500 内部サーバーエラーとともにカスタムメッセージをスローする
+    // 500 internal server error とともにカスタムメッセージをスローする
     throw new Error('Under Construction!')
   }
 }
