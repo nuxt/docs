@@ -45,7 +45,7 @@ export default {
 
 
 
-アプリケーション内で通知を表示する [vue-notifications](https://github.com/se-panfilov/vue-notifications) のような Vue プラグイン を使用したい場合には、アプリケーションを起動する前にプラグインをセットアップする必要があります。
+アプリケーション内で通知を表示する [vue-notifications](https://github.com/se-panfilov/vue-notifications) のような Vue プラグインを使用したい場合には、アプリケーションを起動する前にプラグインをセットアップする必要があります。
 
 `plugins/vue-notifications.js` ファイルを作成します:
 

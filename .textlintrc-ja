@@ -1,0 +1,25 @@
+{
+  "rules": {
+    "preset-ja-spacing": {
+      "ja-nakaguro-or-halfwidth-space-between-katakana": true,
+      "ja-no-space-around-parentheses": true,
+      "ja-no-space-between-full-width": true,
+      "ja-space-between-half-and-full-width": {
+        "space": "always"
+      },
+      "ja-space-after-exclamation": false,
+      "ja-space-after-question": false,
+      "ja-space-around-code": {
+        "before": true,
+        "after": true
+      }
+    }
+  },
+  "filters": {
+    "whitelist": {
+      "allow": [
+        "/.\\d+/"
+      ]
+    }
+  }
+}

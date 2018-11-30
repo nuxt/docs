@@ -27,7 +27,7 @@ HTML テンプレートを拡張するために、プロジェクトのルート
 </html>
 ```
 
-IE用に条件付きのCSSクラスを追加する例:
+IE 用に条件付きの CSS クラスを追加する例:
 
 ```html
 <!DOCTYPE html>
@@ -156,7 +156,7 @@ export default {
 `layout` | `layouts` ディレクトリに定義されているレイアウトを指定します。 [`layout` プロパティ](/api/pages-layout)を参照してください。
 `loading` | `false` に設定すると、ページへ遷移してきた際に `this.$nuxt.$loading.finish()` が呼び出されなくなり、ページから離れる際に `this.$nuxt.$loading.start()` が呼び出されなくなります。これによりローディングの振る舞いを **手動で** 制御ができるようになります。この動作は、[example](/examples/custom-page-loading)から確認できます。`loading` は `nuxt.config.js` で設定されている場合のみ適用されます。[`loading` プロパティ](/api/configuration-loading)を参照してください。
 `transition` | ページの特定のトランジションを設定します。[`transition` プロパティ](/api/pages-transition)を参照してください。
-`scrollToTop` | Boolean型（デフォルト値：`false`）で、ページをレンダリングする前にページを一番上にスクロールするかどうかを指定します。これは[ネストされたルート](/guide/routing#nested-routes)に使用されます。
+`scrollToTop` | Boolean 型（デフォルト値：`false`）で、ページをレンダリングする前にページを一番上にスクロールするかどうかを指定します。これは[ネストされたルート](/guide/routing#nested-routes)に使用されます。
 `validate` | [動的なルーティング](/guide/routing#dynamic-routes)に対する検証関数です。
 `middleware` | このページのミドルウェアを設定します。ミドルウェアは、ページをレンダリングする前に呼び出されます。[ミドルウェアに関するドキュメント](/guide/routing#middleware)を参照してください。
 
@@ -179,7 +179,7 @@ Nuxt.js はこれらのオプションで `vue-meta` を設定します:
 
 ### デフォルトメタタグ
 
-Nuxt.jsでは、`nuxt.config.js` 内にデフォルトの `<meta>` タグを全て定義することができます。`head` プロパティを使用し、デフォルトのメタタグを定義します:
+Nuxt.js では、`nuxt.config.js` 内にデフォルトの `<meta>` タグを全て定義することができます。`head` プロパティを使用し、デフォルトのメタタグを定義します:
 
 カスタム Google フォントによるカスタム viewport の例:
 

@@ -40,7 +40,7 @@ module.exports = {
 
 こうすると、生成されたすべてのパスアセットに {`/<repository-name>/` という接頭辞が付けられるため、次に GitHub ページリポジトリにコードをデプロイした時には、サイトは正常に動作するはずです。
 
-しかし、`router.base` を`nuxt.config.js` 内でデフォルトで設定することには問題もあります。ベースパスが変更されているため、`npm run dev` が上手く動作しないのです。この問題を解決するには、次のように `router.base` に `<repository-name>` を含めるかどうかを判定する条件式を追加します。
+しかし、`router.base` を `nuxt.config.js` 内でデフォルトで設定することには問題もあります。ベースパスが変更されているため、`npm run dev` が上手く動作しないのです。この問題を解決するには、次のように `router.base` に `<repository-name>` を含めるかどうかを判定する条件式を追加します。
 
 ```js
 /* nuxt.config.js */
