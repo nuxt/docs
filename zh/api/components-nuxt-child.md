@@ -45,6 +45,22 @@ description: 显示当前页面
   </div>
 </template>
 ```
+`<nuxt-child/>` 接收 `keep-alive` 和 `keep-alive-props`:
+
+```html
+<template>
+  <div>
+    <nuxt-child keep-alive :keep-alive-props="{ exclude: ['modal'] }" />
+  </div>
+</template>
+
+<!-- 将被转换成以下形式 -->
+<div>
+  <keep-alive :exclude="['modal']">
+    <router-view />
+  </keep-alive>
+</div>
+```
 
 > 子组件还可以接收Vue组件等属性。
 

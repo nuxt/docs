@@ -89,6 +89,7 @@
       },
       { "name": "loadingIndicator", "to": "/configuration-loading-indicator" },
       { "name": "mode", "to": "/configuration-mode" },
+      { "name": "modern", "to": "/configuration-modern" },
       { "name": "modules", "to": "/configuration-modules" },
       { "name": "modulesDir", "to": "/configuration-modulesdir" },
       { "name": "plugins", "to": "/configuration-plugins" },
@@ -116,7 +117,9 @@
           { "name": "linkExactActiveClass", "to": "#linkexactactiveclass" },
           { "name": "middleware", "to": "#middleware" },
           { "name": "mode", "to": "#mode" },
-          { "name": "scrollBehavior", "to": "#scrollbehavior" }
+          { "name": "scrollBehavior", "to": "#scrollbehavior" },
+          { "name": "parseQuery / stringifyQuery", "to": "#parsequery-stringifyquery" },
+          { "name": "fallback", "to": "#fallback" }
         ]
       },
       { "name": "server", "to": "/configuration-server" },
@@ -125,6 +128,7 @@
       { "name": "transition", "to": "/configuration-transition" },
       { "name": "vue.config", "to": "/configuration-vue-config" },
       { "name": "watch", "to": "/configuration-watch" },
+      { "name": "globalName", "to": "/configuration-global-name" },
       {
         "name": "watchers",
         "to": "/configuration-watchers",
