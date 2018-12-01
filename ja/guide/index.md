@@ -29,7 +29,7 @@ Nuxt.js はリッチなウェブアプリケーションを構築するために
 - [Vue 2](https://vuejs.org/)
 - [Vue-Router](https://router.vuejs.org/ja/)
 - [Vuex](https://vuex.vuejs.org/ja/)（[ストアオプション](/guide/vuex-store)を利用している場合に限る）
-- [Vue Server Renderer](https://ssr.vuejs.org/ja/)（[`mode: 'spa'`](/api/configuration-mode) を利用している場合を除く)
+- [Vue Server Renderer](https://ssr.vuejs.org/ja/)（[`mode: 'spa'`](/api/configuration-mode) を利用している場合を除く）
 - [vue-meta](https://github.com/declandewet/vue-meta)
 
 すべて合わせてもわずか **57kB min+gzip** です。（Vuex 利用時は 60kB）
@@ -69,7 +69,7 @@ Nuxt.js をプロジェクトの UI レンダリング全体を担うフレー�
 
 コマンドについてより深く理解するには [コマンド](/guide/commands) を参照してください。
 
-既にサーバーがあるならば Nuxt.js をミドルウェアとして追加することができます。ユニバーサルなウェブアプリケーションの開発に Nuxt.js を利用する際、制限は何一つありません。 [Nuxt.js をプログラム的に使う](/api/nuxt) ガイドを参照してください。
+既にサーバーがあるならば Nuxt.js をミドルウェアとして追加することができます。ユニバーサルなウェブアプリケーションの開発に Nuxt.js を利用する際、制限は何ひとつありません。 [Nuxt.js をプログラム的に使う](/api/nuxt) ガイドを参照してください。
 
 ## 静的ファイルの生成
 
