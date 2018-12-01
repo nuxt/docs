@@ -11,7 +11,7 @@ description: 如何集成 Google 统计分析服务？
 /*
 ** 只在生成模式的客户端中使用
 */
-if (process.BROWSER_BUILD && process.env.NODE_ENV === 'production') {
+if (process.client && process.env.NODE_ENV === 'production') {
   /*
   ** Google 统计分析脚本
   */
