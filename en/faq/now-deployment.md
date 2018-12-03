@@ -5,22 +5,32 @@ description: How to deploy Nuxt.js app with Now?
 
 # How to deploy with Now?
 
-To deploy with [now.sh](https://zeit.co/now) a `package.json` like follows is recommended:
+To deploy with [ZEIT Now](https://zeit.co/now) you need to customize `package.json` add create a `now.json` config.
 
-```json
-{
-  "name": "my-app",
-  "dependencies": {
-    "nuxt": "latest"
-  },
-  "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start"
+* Add `now-build` script command to `package.json`:
+  * For SPA (without SSR):
+    ```js
+    "scripts": {
+       ...
+       "now-build": "nuxt build --spa"
+    }
+    ```
+  * For Static Generated (Pre Rendering):
+    ```js
+    "scripts": {
+       ...
+       "now-build": "nuxt generate"
+    }
+    ```
+* Create `now.json` and define `builds`
+  ```json
+  {
+    "version": 2,
+    "builds": [
+      { "src": "package.json", "use": "@now/static-build" }
+    ]
   }
-}
-```
-
-Then run `now` and enjoy!
+  ```
+* Run `now` and enjoy!
 
 Note: we recommend putting `.nuxt` in `.npmignore` or `.gitignore`.
