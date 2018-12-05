@@ -1,0 +1,30 @@
+---
+title: 如何在 Nuxt.js 中发起跨域资源请求？
+description: 如何在 Nuxt.js 中发起跨域资源请求？
+---
+
+# 如何在 Nuxt.js 中发起跨域资源请求?
+
+[用于 Nuxt.js 的 http-proxy 中间件解决方案](https://github.com/nuxt-community/proxy-module#readme)
+
+```
+npm i @nuxtjs/proxy -D
+```
+
+在 nuxt.config.js 配置文件中添加对应的模块，并设置代理
+
+```
+ modules: [
+      '@nuxtjs/axios',
+      '@nuxtjs/proxy'
+  ],
+  proxy: [
+      [
+        '/api', 
+        { 
+          target: 'http://localhost:port',
+          pathRewrite: { '^/api' : '/' }
+        }
+    ]
+  ]
+```
