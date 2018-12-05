@@ -1,9 +1,9 @@
 ---
-title: 如何在 Nuxt.js 中发起跨域资源请求？
-description: 如何在 Nuxt.js 中发起跨域资源请求？
+title: 如何发起跨域资源请求？
+description: 如何发起跨域资源请求？
 ---
 
-# 如何在 Nuxt.js 中发起跨域资源请求?
+# 如何发起跨域资源请求?
 
 [用于 Nuxt.js 的 http-proxy 中间件解决方案](https://github.com/nuxt-community/proxy-module#readme)
 
