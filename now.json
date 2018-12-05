@@ -1,5 +1,6 @@
 {
   "name": "docs-api",
+  "version": 1,
   "alias": [
     "docs.api.nuxtjs.org"
   ],
