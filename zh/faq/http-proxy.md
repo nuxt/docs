@@ -18,14 +18,12 @@ npm i @nuxtjs/proxy -D
       '@nuxtjs/axios',
       '@nuxtjs/proxy'
   ],
-  proxy: [
-      [
-        '/api': {
-          target: 'http://example.com',
-          pathRewrite: {
-            '^/api' : '/'
-            }
-          }
-    ]
-  ]
+proxy: {
+  '/api': {
+    target: 'http://example.com',
+    pathRewrite: {
+      '^/api' : '/'
+      }
+    }
+}
 ```
