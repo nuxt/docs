@@ -20,11 +20,12 @@ npm i @nuxtjs/proxy -D
   ],
   proxy: [
       [
-        '/api', 
-        { 
+        '/api': {
           target: 'http://localhost:port',
-          pathRewrite: { '^/api' : '/' }
-        }
+          pathRewrite: {
+            '^/api' : '/'
+            }
+          }
     ]
   ]
 ```
