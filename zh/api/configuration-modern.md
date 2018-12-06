@@ -5,7 +5,7 @@ description: Build and server a modern bundle
 
 # The modern Property
 
-> 此功能的想法来自 [vue-cli modern mode](https://cli.vuejs.org/guide/browser-compatibility.html#modern-mode) 
+> 此功能的想法来自 [vue-cli modern mode](https://cli.vuejs.org/guide/browser-compatibility.html#modern-mode)
 
 - 类型: `String` 或 `Boolean`
   - 默认: false
@@ -19,7 +19,7 @@ description: Build and server a modern bundle
 1. Modern bundle: 定位支持ES模块的现代浏览器
 1. Legacy bundle: 基于babel配置定位旧浏览器（默认情况下兼容IE9）。
 
-**Info:** 你可以使用命令`nuxt build/start --modern=[type]`或`nuxt build/start -m=[type]`来构建/启动现代捆绑包，这样你就可以在`package.json`脚本中指定现代命令：
+**Info:** 在package.json中，可以使用命令选项：`[--modern | -m]=[mode]` 来指定构建并启动(`build/start`) modern属性，例如：
 
 ```json
 {
@@ -29,5 +29,16 @@ description: Build and server a modern bundle
   }
 }
 ```
+
+
+- 当未指定`modern`时，在打包时Nuxt将自动检测`nuxt start`中的`modern`，自动检测模式为：
+
+| Mode          | Modern Mode   |
+| ------------- |:-------------:|
+| universal     | server        |
+| spa           | client        |
+
+- 在使用`nuxt generate`时，`modern mode`只能是`client`
+- 使用 [`build.crossorigin`](/api/configuration-build#crossorigin) 请在`<link>` 和 `<script>` 中设置 `crossorigin` 属性
 
 > 请参阅 [Phillip Walton's excellent post](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) 来了解更多关于modern builds信息.
