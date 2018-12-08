@@ -10,7 +10,7 @@ description: Build and server a modern bundle
 - 类型: `String` 或 `Boolean`
   - 默认: false
   - 可能的值:
-    - `'client'`: 同时提供现代浏览器捆绑依赖打包`<script type ="module">`和兼容性低浏览器捆绑依赖打包`<script nomodule>脚本，同时为现代捆绑打包提供`<link rel ="modulepreload">`。每个了解模块类型的浏览器都会加载现代软件包，而旧版浏览器则会回归到旧版浏览器（已编译）。
+    - `'client'`: 构建两个版本的包：同时提供面向支持现在浏览器的 ES2015+ 写法支持 `<script type ="module">` 和兼容性低的其他旧浏览器的包 `<script nomodule>` 的脚本，同时为现代浏览器打包提供 `<link rel ="modulepreload">` 。每个正确解析模块类型的现代浏览器都会加载现代浏览器软件依赖包，而旧版浏览器则会加载到指定旧版浏览器的依赖包（已编译）。
     - `'server'` or `true`: Node.js服务器将根据用户代理检查浏览器版本，并提供相应的现代浏览器或兼容性低的浏览器捆绑依赖。
     - `false`: 关闭 modern 打包
 
