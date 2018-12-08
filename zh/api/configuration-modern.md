@@ -10,7 +10,7 @@ description: Build and server a modern bundle
 - 类型: `String` 或 `Boolean`
   - 默认: false
   - 可能的值:
-    - `'client'`: 同时提供现代浏览器捆绑依赖打包`<script type ="module">`和旧捆绑依赖打包`<script nomodule>脚本，同时为现代捆绑打包提供`<link rel ="modulepreload">`。每个了解模块类型的浏览器都会加载现代软件包，而旧版浏览器则会回归到旧版浏览器（已编译）。
+    - `'client'`: 同时提供现代浏览器捆绑依赖打包`<script type ="module">`和兼容性低浏览器捆绑依赖打包`<script nomodule>脚本，同时为现代捆绑打包提供`<link rel ="modulepreload">`。每个了解模块类型的浏览器都会加载现代软件包，而旧版浏览器则会回归到旧版浏览器（已编译）。
     - `'server'` or `true`: Node.js服务器将根据用户代理检查浏览器版本，并提供相应的现代浏览器或兼容性低的浏览器捆绑依赖。
     - `false`: 关闭 modern 打包
 
@@ -38,7 +38,7 @@ description: Build and server a modern bundle
 | universal     | server        |
 | spa           | client        |
 
-- 在使用`nuxt generate`时，`modern mode`只能是`client`
-- 使用 [`build.crossorigin`](/api/configuration-build#crossorigin) 请在`<link>` 和 `<script>` 中设置 `crossorigin` 属性
+- 在使用`nuxt generate`时，`modern mode`只有`client`
+- 使用 [`build.crossorigin`](/api/configuration-build#crossorigin) 在`<link>` 和 `<script>` 中设置 `crossorigin` 属性
 
 > 请参阅 [Phillip Walton's excellent post](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) 来了解更多关于modern builds信息.
