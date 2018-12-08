@@ -17,7 +17,7 @@ Netlify ダッシュボードの *"New site from Git"* ボタンを押下しま�
 
 1. **ブランチをデプロイする：** `master` もしくはデプロイしたいブランチ
 2. **ビルドコマンド：** `npm run generate`
-3. **公開ディテクトリ：** `dist`
+3. **公開ディレクトリ：** `dist`
 
 > オプションで、*"Advanced"* ボタンを使用して ENV 変数を追加することができます。これらは代替 API 資格情報などを交換する際に役立ちます。Netlify はまた、ビルド時に Nuxt.js アプリケーションで読み取れる [デフォルトの ENV 変数](https://www.netlify.com/docs/build-settings/#build-environment-variables) を提供します。
 
