@@ -24,7 +24,7 @@ export default {
 
 <div class="Alert Alert--orange">
 
-这里的`h` 为 `createElement` 的简化别名，这是 Vue.js 使用 JSX 的惯例用法，且不能省略。 如果 `h` 参数被省略，应用在构建编译的时候会报错。
+这里的 `h` 为 `createElement` 的简化别名，你会在Vue生态系统中看到它，但它实际上是JSX的可选项，因为它会在**ES2015+语法**中 **声明的任何方法和getter（不是函数或箭头函数）** 中自动注入`const h = this.$createElement` ，所以你可以删除`(h)`参数。
 
 </div>
 
