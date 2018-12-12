@@ -1,5 +1,5 @@
 ---
-title: AWS: S3 と Cloudfront によるデプロイ
+title: AWS S3 と Cloudfront によるデプロイ
 description: S3 と Cloudfront を使用した AWS での静的ホスティング
 ---
 

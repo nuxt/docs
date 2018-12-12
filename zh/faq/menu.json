@@ -19,7 +19,7 @@
       { "name": "Window/Document 未定义？", "to": "/window-document-undefined" },
       { "name": "页面发生闪烁？", "to": "/css-flash" },
       { "name": "如何在子组件中使用异步数据？", "to": "/async-data-components" },
-      { "name": "Meta标签出现重复的现象？", "to": "/duplicated-meta-tags" }
+      { "name": "Meta标签出现重复的现象？", "to": "/duplicated-meta-tags" },
       { "name": "iOS and 手机号码", "to": "/ios-phone-numbers" }
     ]
   },
