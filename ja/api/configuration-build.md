@@ -424,7 +424,7 @@ export default {
 
 ## publicPath
 
-> CDN に `publicPath` をセットすると、Nuxt.js は dist ディレクトリ内のファイルを CDN へアップロードし最大のパフォーマンスを発揮します。
+> Nuxt.js ではパフォーマンスの最大化のため dist ディレクトリ内のファイルを CDN にアップロードすることも可能です。そのためにはまず `publicPath` に CDN を指定します。
 
 - 型: `文字列`
 - デフォルト: `'/_nuxt/'`
@@ -439,7 +439,7 @@ export default {
 }
 ```
 
-設定すると、`nuxt build` を実行したタイミングで `.nuxt/dist/client` ディレクトリの内容が CDN にアップロードされます！
+設定後、`nuxt build` を実行する際に `.nuxt/dist/client` ディレクトリの内容を CDN にアップロードしてください。
 
 ## quiet
 
