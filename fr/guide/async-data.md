@@ -6,14 +6,16 @@ description: Vous voudriez peut-être récupérer des données et faire le rendu
 > Vous voudriez peut-être récupérer des données et faire le rendu côté serveur.
 Nuxt.js ajoute une méthode `asyncData` pour vous permettre de gérer les opérations asynchrones avant de définir les données du composant.
 
-<a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote">
-  <img src="/async-data-with-nuxtjs.png" alt="AsyncData by vueschool"/>
-  <div class="Promote__Content">
-    <h4 class="Promote__Content__Title">Async Data dans Nuxt.js</h4>
-    <p class="Promote__Content__Description">Apprenez comment gérer vos données asynchrones dans Nuxt.js.</p>
-    <p class="Promote__Content__Signature">Tutoriel créé par VueSchool afin de supporter le développement de Nuxt.js.</p>
-  </div>
-</a>
+<div>
+  <a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote" data-track-click>
+    <img src="/async-data-with-nuxtjs.png" alt="AsyncData by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Async Data dans Nuxt.js</h4>
+      <p class="Promote__Content__Description">Apprenez comment gérer vos données asynchrones dans Nuxt.js.</p>
+      <p class="Promote__Content__Signature">Tutoriel créé par VueSchool afin de supporter le développement de Nuxt.js.</p>
+    </div>
+  </a>
+</div>
 
 ## La méthode asyncData
 

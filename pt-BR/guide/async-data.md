@@ -6,14 +6,16 @@ description: You may want to fetch data and render it on the server-side. Nuxt.j
 > You may want to fetch data and render it on the server-side.
 Nuxt.js adds an `asyncData` method to let you handle async operations before setting the component data.
 
-<a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote">
-  <img src="/async-data-with-nuxtjs.png" alt="AsyncData by vueschool"/>
-  <div class="Promote__Content">
-    <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
-    <p class="Promote__Content__Description">Learn how to manage asynchronous data with Nuxt.js.</p>
-    <p class="Promote__Content__Signature">Tutorial made by VueSchool to support the Nuxt.js developpement.</p>
-  </div>
-</a>
+<div>
+  <a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote" data-track-click>
+    <img src="/async-data-with-nuxtjs.png" alt="AsyncData by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
+      <p class="Promote__Content__Description">Learn how to manage asynchronous data with Nuxt.js.</p>
+      <p class="Promote__Content__Signature">Tutorial made by VueSchool to support the Nuxt.js developpement.</p>
+    </div>
+  </a>
+</div>
 
 ## The asyncData Method
 
