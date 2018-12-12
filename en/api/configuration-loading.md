@@ -75,8 +75,8 @@ You can create your own component that Nuxt.js will call instead of its default 
 
 | Method | Required | Description |
 |--------|----------|-------------|
-| `start()` | Required | Called when a route changes, this is here where you display your component. |
-| `finish()` | Required | Called when a route is loaded (and data fetched), this is here where you hide your component. |
+| `start()` | Required | Called when a route changes, this is where you display your component. |
+| `finish()` | Required | Called when a route is loaded (and data fetched), this is where you hide your component. |
 | `fail()` | *Optional* | Called when a route couldn't be loaded (failed to fetch data for example). |
 | `increase(num)` | *Optional* | Called during loading the route component, `num` is an Integer < 100. |
 

@@ -34,11 +34,11 @@ Kini aplikasi berjalan pada http://localhost:3000.
 
 <div class="Alert">
 
-Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.
+Nuxt.js akan memantau perubahan file di dalam direktori <code>pages</code>, jadi tidak perlu me-restart aplikasi saat menambahkan halaman baru.
 
 </div>
 
-To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
+Untuk mengetahui lebih banyak tentang struktur direktori sebuah proyek: [Dokumentasi Struktur Direktori](/guide/directory-structure).
 
 ## Mulai dari awal
 
@@ -57,7 +57,6 @@ $ cd <nama-proyek>
 
 ### package.json
 
-The project needs a `package.json` file to specify how to start `nuxt`:
 Proyek memerlukan file `package.json` untuk memperinci bagaimana untuk memulai `nuxt`:
 
 ```json
@@ -107,7 +106,7 @@ Kini aplikasi berjalan pada http://localhost:3000.
 
 <div class="Alert">
 
-Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.
+Nuxt.js akan memantau perubahan file di dalam direktori <code>pages</code>, jadi tidak perlu me-restart aplikasi saat menambahkan halaman baru.
 
 </div>
 

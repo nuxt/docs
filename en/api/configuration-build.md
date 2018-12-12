@@ -145,11 +145,11 @@ export default {
 - Type: `Boolean`
 - Default: `false`
 
-Using [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) to extract the CSS in the main chunk into a separate CSS file (auto injected with template), which allows the file to be cached individually.
+Using [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) under the hood, all your CSS will be extracted into separate files, usually one per component. This allows caching your CSS and Javascript separately and is worth a try in case you have a lot of global or shared CSS.
 
-<div class="Alert Alert--orange">
+<div class="Alert Alert--teal">
 
-**Warning:** You will currently lose the capability to only import critical CSS when using this options as *all* extracted CSS files will be included as stylesheets throughout the app. Also be aware that each component has it's own CSS file.
+**Note:** There was a bug prior to Vue 2.5.18 that removed critical CSS imports when using this options.
 
 </div>
 
