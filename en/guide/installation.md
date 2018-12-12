@@ -5,6 +5,17 @@ description: Nuxt.js is really easy to get started with. A simple project only n
 
 > Nuxt.js is really easy to get started with. A simple project only needs the `nuxt` dependency.
 
+<div>
+  <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/nuxt-fundamentals.png" alt="Nuxt Fundamentals by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Nuxt.js Fundamentals</h4>
+      <p class="Promote__Content__Description">Learn how to get started quickly with Nuxt.js in videos.</p>
+      <p class="Promote__Content__Signature">Tutorial made by VueSchool to support Nuxt.js developpement.</p>
+    </div>
+  </a>
+</div>
+
 ## Using `create-nuxt-app`
 
 To get started quickly, the Nuxt.js team has created scaffolding tool [create-nuxt-app](https://github.com/nuxt/create-nuxt-app).

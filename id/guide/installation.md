@@ -5,6 +5,17 @@ description: Memulai Nuxt.js itu ternyata sangat mudah. Satu proyek sederhana ha
 
 > Memulai Nuxt.js itu ternyata sangat mudah. Satu proyek sederhana hanya memerlukan dependency `nuxt`.
 
+<div>
+  <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/nuxt-fundamentals.png" alt="Nuxt Fundamentals by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Nuxt.js Fundamentals</h4>
+      <p class="Promote__Content__Description">Learn how to get started quickly with Nuxt.js in videos.</p>
+      <p class="Promote__Content__Signature">Tutorial made by VueSchool to support Nuxt.js developpement.</p>
+    </div>
+  </a>
+</div>
+
 ## Menggunakan templat awal Nuxt.js
 
 Untuk memulai dengan cepat, tim Nuxt.js telah membuat [templat awal](https://github.com/nuxt-community/starter-template).
