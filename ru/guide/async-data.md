@@ -6,7 +6,7 @@ description: Nuxt.js перехватывает метод data от vue.js, ч�
 > Nuxt.js *перегружает* метод `data` от Vue.js, чтобы позволить обрабатывать асинхронные данные прежде, чем сохранить их.
 
 <div>
-  <a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote" data-track-click>
+  <a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote" data-track-click="vue_school">
     <img src="/async-data-with-nuxtjs.png" alt="AsyncData by vueschool"/>
     <div class="Promote__Content">
       <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>

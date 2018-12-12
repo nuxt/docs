@@ -8,7 +8,7 @@ description: Anda mungkin ingin mengambil data dan me-rendernya di sisi-server. 
 > Anda mungkin ingin mengambil data dan me-rendernya di sisi-server. Nuxt.js menambahkan metode `asyncData` untuk memungkinkan Anda menangani operasi async sebelum menyetel data komponen.
 
 <div>
-  <a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote" data-track-click>
+  <a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote" data-track-click="vue_school">
     <img src="/async-data-with-nuxtjs.png" alt="AsyncData by vueschool"/>
     <div class="Promote__Content">
       <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
