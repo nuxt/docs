@@ -6,6 +6,15 @@ description: サーバーサイドでデータを取得し、それをレンダ�
 
 > サーバーサイドでデータを取得し、それをレンダリングしたいことがあるでしょう。Nuxt.js はコンポーネントのデータをセットする前に非同期の処理を行えるようにするために `asyncData` メソッドを追加しています。
 
+<a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote">
+  <img src="/async-data-with-nuxtjs.png" alt="AsyncData by vueschool"/>
+  <div class="Promote__Content">
+    <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
+    <p class="Promote__Content__Description">Learn how to manage asynchronous data with Nuxt.js.</p>
+    <p class="Promote__Content__Signature">Tutorial made by VueSchool to support the Nuxt.js developpement.</p>
+  </div>
+</a>
+
 ## asyncData メソッド
 
 場合によっては、ストアを使用せずにデータをフェッチし、サーバー上でプレレンダリングしたい場合があります。 `asyncData` はコンポーネントがローディングされる前に常に呼び出されます。（**ページコンポーネントのみ**）。 サーバーサイドや、ユーザーがページを遷移する前にも呼び出されます。 このメソッドは、第一引数として[コンテキスト](/api/context)を受け取ります。これを使用してデータを取得し、Nuxt.js はコンポーネントデータとマージすることができます。
