@@ -43,14 +43,13 @@ app.use(nuxt.render)
 if (config.dev) {
   new Builder(nuxt).build()
   .catch((error) => {
-    console.error(error)
-    process.exit(1)
+    throw error
   })
 }
 
 // Listen the server
 app.listen(port, '0.0.0.0').then(() => {
-  nuxt.showReady()
+  console.log(`Server listning on port: ${port}`)
 })
 ```
 
