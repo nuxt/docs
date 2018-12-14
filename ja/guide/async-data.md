@@ -12,7 +12,7 @@ description: サーバーサイドでデータを取得し、それをレンダ�
     <div class="Promote__Content">
       <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
       <p class="Promote__Content__Description">Learn how to manage asynchronous data with Nuxt.js.</p>
-      <p class="Promote__Content__Signature">Tutorial made by VueSchool to support Nuxt.js developpement.</p>
+      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
     </div>
   </a>
 </div>

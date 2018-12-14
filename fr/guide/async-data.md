@@ -12,7 +12,7 @@ Nuxt.js ajoute une méthode `asyncData` pour vous permettre de gérer les opéra
     <div class="Promote__Content">
       <h4 class="Promote__Content__Title">Async Data dans Nuxt.js</h4>
       <p class="Promote__Content__Description">Apprenez comment gérer vos données asynchrones dans Nuxt.js.</p>
-      <p class="Promote__Content__Signature">Tutoriel créé par VueSchool afin de supporter le développement de Nuxt.js.</p>
+      <p class="Promote__Content__Signature">Tutoriels vidéos créés par VueSchool afin de supporter le développement de Nuxt.js.</p>
     </div>
   </a>
 </div>
