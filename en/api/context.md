@@ -5,14 +5,21 @@ description: The `context` provides additional objects/params from Nuxt not trad
 
 ## Context
 
+<div class="Alert Alert--teal">
+  
+  **Note:** This is **not** the context passed into the `build.extend` function.
+
+</div>
+
+
 List of all the available keys in `context`:
 
 | Key                    | Type                                                                               | Available       | Description                                                                                                                                                                                                                                                                                 |
 |------------------------|------------------------------------------------------------------------------------|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `app`                  | Root Vue Instance                                                                  | Client & Server | The root Vue instance that includes all your plugins. For example, when using `axios`, you can get access to `$axios` through `context.app.$axios`.                                                                                                                                         |
-| `isClient`             | `Boolean`                                                                          | Client & Server | Boolean to let you know if you're actually renderer from the client-side (_deprecated._ use `process.client`).                                                                                                                                                                              |
-| `isServer`             | `Boolean`                                                                          | Client & Server | Boolean to let you know if you're actually renderer from the server-side (_deprecated._ use `process.server`).                                                                                                                                                                              |
-| `isStatic`             | `Boolean`                                                                          | Client & Server | Boolean to let you know if you're actually inside a generated app (via `nuxt generate`) (_deprecated._ use `process.static`).                                                                                                                                                                                                    |
+| `isClient`             | `Boolean`                                                                          | Client & Server | **Deprecated!** Use `process.client`. Boolean to let you know if you're actually renderer from the client-side.                                                                                                                                                                              |
+| `isServer`             | `Boolean`                                                                          | Client & Server | **Deprecated!** Use `process.server`. Boolean to let you know if you're actually renderer from the server-side.                                                                                                                                                                              |
+| `isStatic`             | `Boolean`                                                                          | Client & Server | **Deprecated!** Use `process.static`. Boolean to let you know if you're actually inside a generated app (via `nuxt generate`).                                                                                                                                                                                                    |
 | `isDev`                | `Boolean`                                                                          | Client & Server | Boolean to let you know if you're in dev mode, can be useful for caching some data in production.                                                                                                                                                                                           |
 | `isHMR`                | `Boolean`                                                                          | Client & Server | Boolean to let you know if the method/middleware is called from webpack hot module replacement (*only on client-side in dev mode*).                                                                                                                                                         |
 | `route`                | [Vue Router Route](https://router.vuejs.org/en/api/route-object.html)              | Client & Server | Vue Router route instance.                                                                                                                                                                                                                                                                  |
@@ -26,10 +33,3 @@ List of all the available keys in `context`:
 | `error`                | `Function`                                                                         | Client & Server | Use this method to show the error page: `error(params)`. The `params` should have the properties `statusCode` and `message`.                                                                                                                                                                |
 | `nuxtState`            | `Object`                                                                           | Client          | Nuxt state, useful for plugins which uses `beforeNuxtRender` to get the nuxt state on client-side before hydration. **Available only in `universal` mode**.                                                                                                                                 |
 | `beforeNuxtRender(fn)` | `Function`                                                                         | Server          | Use this method to update `__NUXT__` variable rendered on client-side, the `fn` (can be asynchronous) is called with `{ Components, nuxtState }`, see [example](https://github.com/nuxt/nuxt.js/blob/cf6b0df45f678c5ac35535d49710c606ab34787d/test/fixtures/basic/pages/special-state.vue). |
-
-
-<div class="Alert Alert--teal">
-  
-  **Note:** This is **not** the context passed into the `build.extend` function.
-
-</div>

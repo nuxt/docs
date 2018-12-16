@@ -124,7 +124,7 @@ jsdom はブラウザを使っていないため制約がいくつかありま�
 
 > [Prettier](prettier.io) はとても人気のあるコードフォーマッタです。
 
-Nuxt.jsを使ってとても簡単に Prettier と ESLint を追加することができます。まず、npmの依存パッケージを追加する必要があります:
+Nuxt.js を使ってとても簡単に Prettier と ESLint を追加することができます。まず、npm の依存パッケージを追加する必要があります:
 
 ```bash
 npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader eslint-plugin-vue eslint-plugin-prettier prettier

@@ -5,6 +5,17 @@ description: Memulai Nuxt.js itu ternyata sangat mudah. Satu proyek sederhana ha
 
 > Memulai Nuxt.js itu ternyata sangat mudah. Satu proyek sederhana hanya memerlukan dependency `nuxt`.
 
+<div>
+  <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/nuxt-fundamentals.png" alt="Nuxt Fundamentals by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Nuxt.js Fundamentals</h4>
+      <p class="Promote__Content__Description">Learn how to get started quickly with Nuxt.js in videos.</p>
+      <p class="Promote__Content__Signature">Tutorial made by VueSchool to support Nuxt.js development.</p>
+    </div>
+  </a>
+</div>
+
 ## Menggunakan templat awal Nuxt.js
 
 Untuk memulai dengan cepat, tim Nuxt.js telah membuat [templat awal](https://github.com/nuxt-community/starter-template).
@@ -34,11 +45,11 @@ Kini aplikasi berjalan pada http://localhost:3000.
 
 <div class="Alert">
 
-Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.
+Nuxt.js akan memantau perubahan file di dalam direktori <code>pages</code>, jadi tidak perlu me-restart aplikasi saat menambahkan halaman baru.
 
 </div>
 
-To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
+Untuk mengetahui lebih banyak tentang struktur direktori sebuah proyek: [Dokumentasi Struktur Direktori](/guide/directory-structure).
 
 ## Mulai dari awal
 
@@ -57,7 +68,6 @@ $ cd <nama-proyek>
 
 ### package.json
 
-The project needs a `package.json` file to specify how to start `nuxt`:
 Proyek memerlukan file `package.json` untuk memperinci bagaimana untuk memulai `nuxt`:
 
 ```json
@@ -107,7 +117,7 @@ Kini aplikasi berjalan pada http://localhost:3000.
 
 <div class="Alert">
 
-Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.
+Nuxt.js akan memantau perubahan file di dalam direktori <code>pages</code>, jadi tidak perlu me-restart aplikasi saat menambahkan halaman baru.
 
 </div>
 

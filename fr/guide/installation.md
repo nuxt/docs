@@ -5,6 +5,17 @@ description: Débuter avec Nuxt.js est vraiment facile. Un projet simple n'a bes
 
 > Débuter avec Nuxt.js est vraiment facile. Un projet simple n'a besoin que d'une dépendance à `nuxt`.
 
+<div>
+  <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/nuxt-fundamentals.png" alt="Nuxt Fundamentals by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Nuxt.js Fondamentaux</h4>
+      <p class="Promote__Content__Description">Apprennez à utiliser Nuxt.js rapidement en videos.</p>
+      <p class="Promote__Content__Signature">Tutoriel créé par VueSchool afin de supporter le développement de Nuxt.js.</p>
+    </div>
+  </a>
+</div>
+
 ## Utiliser le template de base de Nuxt.js
 
 Afin de démarrer rapidement, l'équipe Nuxt.js a créé un [template de démarrage](https://github.com/nuxt-community/starter-template).

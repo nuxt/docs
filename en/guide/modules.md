@@ -54,7 +54,7 @@ This is the object passed using `modules` array by user we can use it to customi
 
 **`this.options`**
 
-You can directly access to Nuxt options using this reference. This is the content of the user's `nuxt.config.js` with all default options assigned to. It can be used for shared options between modules.
+You can directly access Nuxt options using this reference. This is the content of the user's `nuxt.config.js` with all default options assigned to. It can be used for shared options between modules.
 
 **`this.nuxt`**
 

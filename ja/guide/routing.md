@@ -90,7 +90,7 @@ router: {
 
 <div class="Alert Alert--orange">
 
-<b>警告</b>: `generate` コマンドでは 動的なルーティング は無視されます。:  [generate 設定 API](/api/configuration-generate#routes)
+<b>警告</b>: `generate` コマンドでは動的なルーティングは無視されます。:  [generate 設定 API](/api/configuration-generate#routes)
 
 </div>
 
@@ -121,7 +121,7 @@ Nuxt.js では vue-router の子ルートを使ってルートをネストさせ
 
 <div class="Alert Alert--orange">
 
-<b>警告:</b> `<nuxt-child>` を親コンポーネント内 (<code>.vue</code> ファイル内) に書くことを忘れないでください。</nuxt-child>
+<b>警告:</b> `<nuxt-child>` を親コンポーネント内（<code>.vue</code> ファイル内）に書くことを忘れないでください。</nuxt-child>
 
 </div>
 
@@ -240,7 +240,7 @@ Surge は `200.html` と `404.html` の両方を[ハンドリングできます]
 
 #### GitHub Pages と Netlify 向けの実装
 
-GitHub Pages と Netlify は `404.html` ファイルを自動的に認識するため、設定すべきことは`generate.fallback` を `true` にするだけです！
+GitHub Pages と Netlify は `404.html` ファイルを自動的に認識するため、設定すべきことは `generate.fallback` を `true` にするだけです！
 
 #### Firebase ホスティング向けの実装
 

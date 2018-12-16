@@ -5,6 +5,17 @@ description: Nuxt.js перехватывает метод data от vue.js, ч�
 
 > Nuxt.js *перегружает* метод `data` от Vue.js, чтобы позволить обрабатывать асинхронные данные прежде, чем сохранить их.
 
+<div>
+  <a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/async-data-with-nuxtjs.png" alt="AsyncData by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
+      <p class="Promote__Content__Description">Learn how to manage asynchronous data with Nuxt.js.</p>
+      <p class="Promote__Content__Signature">Tutorial made by VueSchool to support Nuxt.js development.</p>
+    </div>
+  </a>
+</div>
+
 ## Метод `data`
 
 Метод `data` вызывается каждый раз перед загрузкой компонента (**только для компонентов страниц**). Он может быть вызван на стороне сервера или перед переходом к соответствующему маршруту. Этот метод получает [контекст](/api/pages-context) в виде первого аргумента, который вы можете использовать для выборки нужных данных, и вернуть обработанные данные.

@@ -245,7 +245,7 @@ actions: {
 
 > Vuex ストアの *モジュール* モードを使っている場合はなら、プライマリモジュール（`store/index.js`）のみ、このアクションを受け取ることができます。その他のモジュールのアクションでも使いたい場合は、プライマリモジュールからチェインする必要があります。
 
-[コンテキスト](/api/context)は、`asyncData`や `fetch` メソッドと同様に`nuxtServerInit` に第二引数として渡されます。
+[コンテキスト](/api/context)は、`asyncData`や `fetch` メソッドと同様に `nuxtServerInit` に第二引数として渡されます。
 
 > 注意: 非同期の nuxtServerInit アクションは nuxt サーバーの待機を可能にするために Promise を返さなければなりません
 

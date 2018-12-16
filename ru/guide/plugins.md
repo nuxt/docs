@@ -87,14 +87,14 @@ module.exports = {
 
 ## Только для браузеров
 
-Некоторые плагины могут работать **только в браузерах**. Вы можете использовать переменную `process.BROWSER_BUILD`, чтобы проверить, что плагин будет работать на стороне клиента.
+Некоторые плагины могут работать **только в браузерах**. Вы можете использовать переменную `process.client`, чтобы проверить, что плагин будет работать на стороне клиента.
 
 Пример:
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
 
-if (process.BROWSER_BUILD) {
+if (process.client) {
   Vue.use(VueNotifications)
 }
 ```

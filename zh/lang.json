@@ -1,6 +1,6 @@
 {
   "iso": "zh",
-  "docVersion": "2.2.0",
+  "docVersion": "2.3.x",
   "links": {
     "api": "API",
     "blog": "博客",
@@ -16,6 +16,8 @@
     "homepage": "首页",
     "live_demo": "在线示例",
     "live_edit": "在线编辑",
+    "tidelift_short": "GET PROFESSIONAL SUPPORT",
+    "tidelift": "GET PROFESSIONAL SUPPORT FOR NUXT",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "工作机会"

@@ -5,6 +5,17 @@ description: Nuxt.js はとても簡単に始められます。シンプルな�
 
 > Nuxt.js はとても簡単に始められます。シンプルなプロジェクトでは必要な依存パッケージは `nuxt` だけです。
 
+<div>
+  <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/nuxt-fundamentals.png" alt="Nuxt Fundamentals by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Nuxt.js Fundamentals</h4>
+      <p class="Promote__Content__Description">Learn how to get started quickly with Nuxt.js in videos.</p>
+      <p class="Promote__Content__Signature">Tutorial made by VueSchool to support Nuxt.js development.</p>
+    </div>
+  </a>
+</div>
+
 ## `create-nuxt-app` を使用する
 
 素早くスタートできるようにするため、Nuxt.js チームは足場ツール  [create-nuxt-app](https://github.com/nuxt/create-nuxt-app) を作成しました。
@@ -32,7 +43,7 @@ yarn create nuxt-app <my-project>
   - [Micro](https://github.com/zeit/micro)
   - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
 2. 好きな UI フレームワークを選択します:
-  - None (後からでも追加できます)
+  - None（後からでも追加できます）
   - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
   - [Vuetify](https://github.com/vuetifyjs/vuetify)
   - [Bulma](https://github.com/jgthms/bulma)

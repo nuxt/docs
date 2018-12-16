@@ -71,7 +71,7 @@ It is a convention to prefix those functions with a `$`.
 
 ### Inject into Vue instances
 
-Injecting content into Vue instances works similar to when doing this in standard Vue apps.
+Injecting context into Vue instances works similar to when doing this in standard Vue apps.
 
 `plugins/vue-inject.js`:
 
@@ -104,7 +104,7 @@ export default {
 
 ### Inject into context
 
-Injecting content into Vue instances works similar to when doing this in standard Vue apps.
+Injecting context into Vue instances works similar to when doing this in standard Vue apps.
 
 `plugins/ctx-inject.js`:
 
