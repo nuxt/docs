@@ -265,6 +265,10 @@ HTML files created during the build process (will be applied for *all modes*).
   },
   scss: {},
   stylus: {},
+  ts: {
+    transpileOnly: true,
+    appendTsSuffixTo: [/\.vue$/]
+  },
   vueStyle: {}
 }
 ```
@@ -300,6 +304,11 @@ HTML files created during the build process (will be applied for *all modes*).
 
 > See the [Node Sass documentation](https://github.com/sass/node-sass/blob/master/README.md#options) for all available Sass options.
 > Note: `loaders.sass` is for [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html)
+
+### loaders.ts
+
+> Loader for typescript file and `lang="ts"` Vue SFC.
+> More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#options).
 
 ### loaders.vueStyle
 
