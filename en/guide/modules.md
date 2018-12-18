@@ -324,6 +324,61 @@ export default function () {
 }
 ```
 
+## Module package commands
+
+**Experimental**
+
+Starting in 2.4, you can add custom nuxt commands through a Nuxt module's package. To do so, you must follow the `NuxtCommand` API when defining your command. A simple example hypothetically placed in `your-module-package/bin/command.js` looks like this:
+
+```js
+#!/usr/bin/env node -r esm
+
+import consola from 'consola'
+import { NuxtCommand, run } from '@nuxt/cli'
+
+const cmd = NuxtCommand.from({
+  name: 'command',
+  description: 'My Custom Command',
+  usage: 'command <foobar>',
+  options: {
+    foobar: {
+      alias: 'fb',
+      type: 'string',
+      description: 'Simple test string'
+    }
+  },
+  run(cmd) {
+    try {
+      const argv = cmd.getArgv()
+      consola.info(argv._)
+      process.exit(0)
+    } catch (err) {
+      consola.fatal(err)
+    }
+  }
+})
+
+run(cmd)
+```
+
+A few things of note here. First, notice how the call to `/usr/bin/env` to retrieve the Node executable passes along `-r esm`. That is meant to ensure [`esm`][esm-link] is loaded, providing ES module support in your script.
+
+Next, you'll notice how `NuxtCommand.from()` is used to specify the settings and behavior (`run()` method) of the command. Options are defined in `options`, which get parsed via [`minimist`][minimist-link]. Once arguments are parsed, `run()` is automatically called with the `NuxtCommand` instance as first parameter.
+
+In the example above, the `getArgv()` method is used to retrieve parsed command-line arguments. There are more methods in `NuxtCommand` -- documentation on them will be provided as this feature is further tested and improved.
+
+To make your command recognizable by the Nuxt CLI, list it under the `bin` section of your package.json, using the `nuxt-module-command` convention, where `module` relates to your package's name and `command` is the name you wish the command to be exposed with.
+
+```js
+{
+  "bin": {
+    "nuxt-foobar-command": "./bin/command.js"
+  }
+}
+```
+
+Once your package is installed (via NPM or Yarn), you'll be able to execute `nuxt foobar command` on the command-line.
+
 <div class="Alert">
 
 There are way more hooks and possibilities for modules. Please read the [Nuxt Internals](/api/internals) to find out more about the nuxt-internal API.
