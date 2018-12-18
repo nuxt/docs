@@ -78,7 +78,7 @@ yarn nuxt examples/your-app
 yarn nuxt test/fixtures/your-fixture-app
 ```
 
-> `npm link` もまたこれに対して（ある程度は）動きますが、いくつか問題があることが知られています。そのため、サンプルを実行するために `bin/nuxt` を直接呼ぶことをおすすめします。
+> `npm link` もまたこれに対して（ある程度は）動きますが、いくつか問題があることが知られています。そのため、サンプルを実行するために `yarn nuxt` を直接呼ぶことをおすすめします。
 
 ### Examples
 
