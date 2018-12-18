@@ -263,7 +263,7 @@ Strict mode is enabled by default on dev mode and turned off in production mode.
 
 ### Classic Mode
 
-```
+```js
 import Vuex from 'vuex'
 
 const createStore = () => {
