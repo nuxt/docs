@@ -262,6 +262,32 @@ Path | File
 
 __Note:__ Handling 404 pages is now up to the logic of the `_.vue` page. [More on 404 redirecting can be found here](/guide/async-data#handling-errors).
 
+### Named Views
+
+To render named views you can use `<nuxt name="top"/>` or `<nuxt-child name="top"/>` components in your layout/page. To specify named view of page we need extend router config in `nuxt.config.js` file:
+  
+``` js
+export default {
+  router: {
+    extendRoutes(routes, resolve) {
+      let index = routes.findIndex(route => route.name === 'main')
+      routes[index] = {
+        ...routes[index],
+        components: {
+          default: routes[index].component,
+          top: resolve(__dirname, 'components/mainTop.vue')
+        },
+        chunkNames: {
+          top: 'components/mainTop'
+        }
+      }
+    }
+  }
+}
+```
+It require to extend interested route with 2 properties `components` and `chunkNames`. Named view in this config example has name `top`.
+
+To see an example, take a look at the [named-views example](/examples/named-views).
 
 ### SPA fallback
 
