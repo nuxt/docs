@@ -93,10 +93,10 @@
         "to": "/vuex-store", "name": "Vuex Store",
         "contents": [
           { "to": "#activate-the-store", "name": "Activate the Store" },
-          { "to": "#classic-mode", "name": "Classic mode" },
           { "to": "#modules-mode", "name": "Modules mode" },
           { "to": "#the-fetch-method", "name": "The fetch Method" },
-          { "to": "#the-nuxtserverinit-action", "name": "The nuxtServerInit Action" }
+          { "to": "#the-nuxtserverinit-action", "name": "The nuxtServerInit Action" },
+          { "to": "#classic-mode", "name": "Classic mode" },
         ]
       },
       {
