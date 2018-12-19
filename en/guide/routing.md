@@ -269,15 +269,17 @@ To render named views you can use `<nuxt name="top"/>` or `<nuxt-child name="top
 ``` js
 export default {
   router: {
-    index = routes.findIndex(route => route.name === 'main')
-    routes[index] = {
-      ...routes[index],
-      components: {
-        default: routes[index].component,
-        top: resolve(__dirname, 'components/mainTop.vue')
-      },
-      chunkNames: {
-        top: 'components/mainTop'
+    extendRoutes(routes, resolve) {
+      let index = routes.findIndex(route => route.name === 'main')
+      routes[index] = {
+        ...routes[index],
+        components: {
+          default: routes[index].component,
+          top: resolve(__dirname, 'components/mainTop.vue')
+        },
+        chunkNames: {
+          top: 'components/mainTop'
+        }
       }
     }
   }
