@@ -23,7 +23,7 @@ Regardless of the mode, your `state` value should **always be a `function`** to 
 
 > Nuxt.js lets you have a `store` directory with every file corresponding to a module.
 
-To get starter, simply export the state as a function, and the mutations and actions as objects in `store/index.js`:
+To get started, simply export the state as a function, and the mutations and actions as objects in `store/index.js`:
 
 ```js
 export const state = () => ({
