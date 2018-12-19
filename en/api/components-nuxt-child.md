@@ -66,3 +66,18 @@ To display the `child.vue` component, we have to insert `<nuxt-child/>` inside `
 > Child components can also receive properties like a regular Vue component.
 
 To see an example, take a look at the [nested-routes example](/examples/nested-routes).
+
+## Named View
+
+`<nuxt-child/>` accepts `name` prop to render named-view:
+
+```html
+<template>
+  <div>
+    <nuxt-child name="top" />
+    <nuxt-child />
+  </div>
+</template>
+```
+
+To see an example, take a look at the [named-views example](/examples/named-views).

@@ -25,3 +25,9 @@ Example (`layouts/default.vue`):
 ```
 
 To see an example, take a look at the [layouts example](/examples/layouts).
+
+- name: `string`
+  - This prop will be set to `<router-view/>`, used to render named-view of page component.
+  - Default: `default`
+
+To see an example, take a look at the [named-views example](/examples/named-views).
