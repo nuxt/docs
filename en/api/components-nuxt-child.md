@@ -69,6 +69,8 @@ To see an example, take a look at the [nested-routes example](/examples/nested-r
 
 ## Named View
 
+> Introduced with Nuxt v2.4.0
+
 `<nuxt-child/>` accepts `name` prop to render named-view:
 
 ```html
