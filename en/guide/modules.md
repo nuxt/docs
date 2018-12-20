@@ -336,7 +336,7 @@ Starting in 2.4, you can add custom nuxt commands through a Nuxt module's packag
 const consola = require('consola')
 const { NuxtCommand, run } = require('@nuxt/cli')
 
-const cmd = NuxtCommand.from({
+NuxtCommand.run({
   name: 'command',
   description: 'My Custom Command',
   usage: 'command <foobar>',
@@ -351,8 +351,6 @@ const cmd = NuxtCommand.from({
     consola.info(cmd.argv)
   }
 })
-
-run(cmd)
 ```
 
 A few things of note here. First, notice the call to `/usr/bin/env` to retrieve the Node executable. Also notice that ES module syntax can't be used for commands unless you manually incorporate [`esm`][esm-link] into your code.
