@@ -37,6 +37,7 @@ When `base` is set, Nuxt.js will also add in the document header `<base href="{{
 - Default: `'-'`
 
 You may want to change route name splitter created by Nuxt.js. You can do so via the `routeNameSplitter` option.
+For example, the detail of post `pages/posts/_id.vue` the route name is `posts-id` with this option you can customize to `posts/id`
 
 Example (`nuxt.config.js`):
 ```js
