@@ -348,12 +348,7 @@ const cmd = NuxtCommand.from({
     }
   },
   run(cmd) {
-    try {
-      consola.info(cmd.argv)
-      process.exit(0)
-    } catch (err) {
-      consola.fatal(err)
-    }
+    consola.info(cmd.argv)
   }
 })
 
