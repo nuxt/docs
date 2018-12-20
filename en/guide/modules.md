@@ -331,10 +331,10 @@ export default function () {
 Starting in 2.4, you can add custom nuxt commands through a Nuxt module's package. To do so, you must follow the `NuxtCommand` API when defining your command. A simple example hypothetically placed in `your-module-package/bin/command.js` looks like this:
 
 ```js
-#!/usr/bin/env node -r esm
+#!/usr/bin/env node
 
-import consola from 'consola'
-import { NuxtCommand, run } from '@nuxt/cli'
+const consola = require('consola')
+const { NuxtCommand, run } = require('@nuxt/cli')
 
 const cmd = NuxtCommand.from({
   name: 'command',
@@ -349,8 +349,7 @@ const cmd = NuxtCommand.from({
   },
   run(cmd) {
     try {
-      const argv = cmd.getArgv()
-      consola.info(argv._)
+      consola.info(cmd.argv)
       process.exit(0)
     } catch (err) {
       consola.fatal(err)
@@ -361,23 +360,25 @@ const cmd = NuxtCommand.from({
 run(cmd)
 ```
 
-A few things of note here. First, notice how the call to `/usr/bin/env` to retrieve the Node executable passes along `-r esm`. That is meant to ensure [`esm`][esm-link] is loaded, providing ES module support in your script.
+A few things of note here. First, notice the call to `/usr/bin/env` to retrieve the Node executable. Also notice that ES module syntax can't be used for commands unless you manually incorporate [`esm`][esm-link] into your code.
+
+[esm-link]: https://github.com/standard-things/esm
 
 Next, you'll notice how `NuxtCommand.from()` is used to specify the settings and behavior (`run()` method) of the command. Options are defined in `options`, which get parsed via [`minimist`][minimist-link]. Once arguments are parsed, `run()` is automatically called with the `NuxtCommand` instance as first parameter.
 
-In the example above, the `getArgv()` method is used to retrieve parsed command-line arguments. There are more methods in `NuxtCommand` -- documentation on them will be provided as this feature is further tested and improved.
+In the example above, `cmd.argv` is used to retrieve parsed command-line arguments. There are more methods and properties in `NuxtCommand` -- documentation on them will be provided as this feature is further tested and improved.
 
-To make your command recognizable by the Nuxt CLI, list it under the `bin` section of your package.json, using the `nuxt-module-command` convention, where `module` relates to your package's name and `command` is the name you wish the command to be exposed with.
+To make your command recognizable by the Nuxt CLI, list it under the `bin` section of your package.json, using the `nuxt-module` convention, where `module` relates to your package's name. With this central binary, you can use `argv` to further parse more `subcommands` for your command if you so desire.
 
 ```js
 {
   "bin": {
-    "nuxt-foobar-command": "./bin/command.js"
+    "nuxt-foobar": "./bin/command.js"
   }
 }
 ```
 
-Once your package is installed (via NPM or Yarn), you'll be able to execute `nuxt foobar command` on the command-line.
+Once your package is installed (via NPM or Yarn), you'll be able to execute `nuxt foobar ...` on the command-line.
 
 <div class="Alert">
 
