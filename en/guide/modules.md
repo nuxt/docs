@@ -366,6 +366,8 @@ A few things of note here. First, notice the call to `/usr/bin/env` to retrieve 
 
 Next, you'll notice how `NuxtCommand.from()` is used to specify the settings and behavior (`run()` method) of the command. Options are defined in `options`, which get parsed via [`minimist`][minimist-link]. Once arguments are parsed, `run()` is automatically called with the `NuxtCommand` instance as first parameter.
 
+[minimist-link]: https://github.com/substack/minimist
+
 In the example above, `cmd.argv` is used to retrieve parsed command-line arguments. There are more methods and properties in `NuxtCommand` -- documentation on them will be provided as this feature is further tested and improved.
 
 To make your command recognizable by the Nuxt CLI, list it under the `bin` section of your package.json, using the `nuxt-module` convention, where `module` relates to your package's name. With this central binary, you can use `argv` to further parse more `subcommands` for your command if you so desire.
