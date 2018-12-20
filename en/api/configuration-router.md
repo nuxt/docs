@@ -31,6 +31,23 @@ When `base` is set, Nuxt.js will also add in the document header `<base href="{{
 
 > This option is given directly to the vue-router [base](https://router.vuejs.org/api/#base).
 
+## routeNameSplitter
+
+- Type: `String`
+- Default: `'-'`
+
+You may want to change the separator between route names that Nuxt.js uses. You can do so via the `routeNameSplitter` option in your configuration file.
+Imagine we have the page file `pages/posts/_id.vue`. Nuxt will generate the route name programatically, in this case `posts-id`. Changing the `routeNameSplitter` config to `/` the name will therefore change to `posts/id`.
+
+Example (`nuxt.config.js`):
+```js
+export default {
+  router: {
+    routeNameSplitter: '/'
+  }
+}
+```
+
 ## extendRoutes
 
 - Type: `Function`
