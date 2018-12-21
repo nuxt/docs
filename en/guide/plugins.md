@@ -229,7 +229,7 @@ Also, if you need to know if you are inside a generated app (via `nuxt generate`
 
 You can also combine both options to hit the spot when a page is being server-rendered by `nuxt generate` before being saved (`process.static && process.server`).
 
-**Note**: Since Nuxt.js 2.4, `mode` has been introduced as option of `plugins` to specify plugin type, possible value are: `client` or `server`, `ssr:false` will be adapted to `mode:'client'` and will be deprecated in next major release.
+**Note**: Since Nuxt.js 2.4, `mode` has been introduced as option of `plugins` to specify plugin type, possible value are: `client` or `server`, `ssr:false` will be adapted to `mode:'client'` and deprecated in next major release.
 
 Example:
 
