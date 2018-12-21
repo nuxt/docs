@@ -81,6 +81,35 @@ export default {
 
 Смотри [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) для доступных вариантов.
 
+## analyze
+
+> Nuxt.js использует [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) для визуализации ваших пакетов и их оптимизации.
+
+- Тип: `Boolean` или `Object`
+- По-умолчанию: `false`
+
+Все доступные опции для объекта [здесь](https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin).
+
+Пример (`nuxt.config.js`):
+
+```js
+export default {
+  build: {
+    analyze: true,
+    // или
+    analyze: {
+      analyzerMode: 'static'
+    }
+  }
+}
+```
+
+<div class="Alert Alert--teal">
+
+**Примечание:** вы можете использовать команду `nuxt build --analyze` или `nuxt build -a` для сборки своего приложения и запуска анализатора на [http://localhost:8888](http://localhost:8888).
+
+</div>
+
 ## build.vendor
 
 > Nuxt.js позволяет добавлять модули в генерируемый файл `vendor.bundle.js`, чтобы уменьшить размер финального приложения. Это действительно полезно при использовании внешних модулей (например, `axios`).
