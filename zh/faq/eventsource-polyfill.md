@@ -24,7 +24,7 @@ yarn add --dev eventsource-polyfill
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      if(ctx.idDev) {
+      if(ctx.isDev) {
         config.entry.push('eventsource-polyfill')
       }
     }
