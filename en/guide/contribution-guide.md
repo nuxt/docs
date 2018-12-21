@@ -83,7 +83,7 @@ yarn nuxt examples/your-app
 yarn nuxt test/fixtures/your-fixture-app
 ```
 
-> `npm link` could also (and does, to some extent) work for this, but it has been known to exhibit some issues. That is why we recommend calling `bin/nuxt` directly to run examples.
+> `npm link` could also (and does, to some extent) work for this, but it has been known to exhibit some issues. That is why we recommend calling `yarn nuxt` directly to run examples.
 
 ### Examples
 

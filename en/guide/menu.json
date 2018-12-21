@@ -43,6 +43,7 @@
           { "to": "#dynamic-routes", "name": "Dynamic Routes" },
           { "to": "#nested-routes", "name": "Nested Routes" },
           { "to": "#dynamic-nested-routes", "name": "Dynamic Nested Routes" },
+          { "to": "#named-views", "name": "Named Views" },
           { "to": "#transitions", "name": "Transitions" },
           { "to": "#middleware", "name": "Middleware" }
         ]
@@ -93,10 +94,10 @@
         "to": "/vuex-store", "name": "Vuex Store",
         "contents": [
           { "to": "#activate-the-store", "name": "Activate the Store" },
-          { "to": "#classic-mode", "name": "Classic mode" },
           { "to": "#modules-mode", "name": "Modules mode" },
           { "to": "#the-fetch-method", "name": "The fetch Method" },
-          { "to": "#the-nuxtserverinit-action", "name": "The nuxtServerInit Action" }
+          { "to": "#the-nuxtserverinit-action", "name": "The nuxtServerInit Action" },
+          { "to": "#classic-mode", "name": "Classic mode" }
         ]
       },
       {
