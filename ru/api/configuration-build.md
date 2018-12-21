@@ -61,6 +61,26 @@ export default {
 }
 ```
 
+## cache
+
+- Тип: `Boolean`
+- По-умолчанию: `false`
+
+> Включить кеш [terser-webpack-plugin ](https://github.com/webpack-contrib/terser-webpack-plugin#options) и [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
+
+## cssSourceMap
+
+- Тип: `boolean`
+- По-умолчанию: `true` для dev и `false` для production.
+
+> Включить поддержку CSS Source Map (исходной карты CSS)
+
+## devMiddleware
+
+- Тип: `Object`
+
+Смотри [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) для доступных вариантов.
+
 ## build.vendor
 
 > Nuxt.js позволяет добавлять модули в генерируемый файл `vendor.bundle.js`, чтобы уменьшить размер финального приложения. Это действительно полезно при использовании внешних модулей (например, `axios`).
