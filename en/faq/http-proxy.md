@@ -1,6 +1,6 @@
 ---
 title: Cross origin resource sharing
-description: How to share cross origin resource？
+description: How to share cross origin resource?
 ---
 
 # How to share cross-origin resource?
