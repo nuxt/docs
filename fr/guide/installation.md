@@ -11,7 +11,7 @@ description: Débuter avec Nuxt.js est vraiment facile. Un projet simple n'a bes
     <div class="Promote__Content">
       <h4 class="Promote__Content__Title">Nuxt.js Fondamentaux</h4>
       <p class="Promote__Content__Description">Apprennez à utiliser Nuxt.js rapidement en videos.</p>
-      <p class="Promote__Content__Signature">Tutoriel créé par VueSchool afin de supporter le développement de Nuxt.js.</p>
+      <p class="Promote__Content__Signature">Tutoriels vidéos créés par VueSchool afin de supporter le développement de Nuxt.js.</p>
     </div>
   </a>
 </div>

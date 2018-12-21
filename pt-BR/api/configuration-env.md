@@ -47,12 +47,12 @@ Note that nuxt uses webpack's `definePlugin` to define the environmental variabl
 Meaning, `console.log(process.env)` will output `{}` but `console.log(process.env.you_var)` will still output your value. When webpack compiles your code, it replaces all instances of `process.env.your_var` to the value you've set it to. ie: `env.test = 'testing123'`. If you use `process.env.test` in your code somewhere, it is actually translated to 'testing123'.
 
 before
-```
+```js
 if (process.env.test == 'testing123')
 ```
 
 after
-```
+```js
 if ('testing123' == 'testing123')
 ```
 
