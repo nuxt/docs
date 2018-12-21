@@ -36,6 +36,31 @@ export default {
 
 </div>
 
+## babel
+
+> Конфигурация Babel для JavaScript и Vue файлов.
+
+- Тип: `Object`
+- По-умолчанию:
+
+  ```js
+  {
+    presets: ['@nuxt/babel-preset-app']
+  }
+  ```
+
+Пример (`nuxt.config.js`):
+
+```js
+export default {
+  build: {
+    babel: {
+      presets: ['es2015', 'stage-0']
+    }
+  }
+}
+```
+
 ## build.vendor
 
 > Nuxt.js позволяет добавлять модули в генерируемый файл `vendor.bundle.js`, чтобы уменьшить размер финального приложения. Это действительно полезно при использовании внешних модулей (например, `axios`).
