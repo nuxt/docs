@@ -263,7 +263,7 @@ Le mode strict est activé par défaut sur le mode développement et est désact
 
 ### Classic Mode
 
-```
+```js
 import Vuex from 'vuex'
 
 const createStore = () => {

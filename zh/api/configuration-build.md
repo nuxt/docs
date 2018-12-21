@@ -472,7 +472,7 @@ export default {
 
 当您需要在页面中注入一些变量和`mixin`而不必每次都导入它们时，这非常有用。
 
-Nuxt.js 使用 https://github.com/yenshih/style-resources-loader 来实现这种行为。
+Nuxt.js 使用 https://github.com/nuxt-community/style-resources-module 来实现这种行为。
 
 您需要为css预处理器指定要包含的 模式 / 路径 ： `less`, `sass`, `scss` 或 `stylus`
 
@@ -484,24 +484,33 @@ Nuxt.js 使用 https://github.com/yenshih/style-resources-loader 来实现这种
 
 :warning: You cannot use path aliases here (`~` and `@`)，你需要使用相对或绝对路径。
 
-`nuxt.config.js`:
+安装 style-resources：
+
+```bash
+$ yarn add @nuxtjs/style-resources
+```
+
+根据需要安装：
+- SASS: `$ yarn add sass-loader node-sass`
+- LESS: `$ yarn add less-loader less`
+- Stylus: `$ yarn add stylus-loader stylus`
+
+修改 `nuxt.config.js`:
 
 ```js
-{
-  build: {
-    styleResources: {
-      scss: './assets/variables.scss',
-      less: './assets/*.less',
-      // sass: ...,
-      // scss: ...
-      options: {
-        // See https://github.com/yenshih/style-resources-loader#options
-        // Except `patterns` property
-      }
-    }
+export default {
+  modules: [
+    '@nuxtjs/style-resources',
+  ],
+  styleResources: {
+    scss: './assets/variables.scss',
+    less: './assets/**/*.less',
+    // sass: ...
   }
 }
 ```
+
+然后就可以随处直接使用定义过的变量或函数。
 
 ## templates
 

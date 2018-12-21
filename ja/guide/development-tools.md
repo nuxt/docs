@@ -188,7 +188,7 @@ ESLint は `.gitignore` に定義されたファイルを無視しますが、�
 
 また、Webpack を使用してホットリロードモードで ESLint を有効にすることをお勧めします。この方法で ESLint は `npm run dev` 中に保存で実行されます。`nuxt.config.js` に以下を追加してください：
 
-```
+```js
 ...
   /*
    ** Build configuration

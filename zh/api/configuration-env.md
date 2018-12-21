@@ -52,12 +52,12 @@ export default axios.create({
 
 编译前：
 
-```
+```js
 if (process.env.test == 'testing123')
 ```
 
 编译后：
 
-```
+```js
 if ('testing123' == 'testing123')
 ```

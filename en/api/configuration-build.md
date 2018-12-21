@@ -580,7 +580,7 @@ See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/t
 - Type: `Array<string | RegExp>`
 - Default: `[]`
 
-If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Item in transpile can be string or regex object for matching dependencies file name.
+If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Each item in transpile can be a package name, or a string or regex object matching the dependency's file name.
 
 ## vueLoader
 
