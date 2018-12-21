@@ -257,6 +257,6 @@ Example:
 export default {
   plugins: [
     { src: '~/plugins/foo.client.js' }, // only in client side
-    { src: '~/plugins/bar.server.js.js' }, // only in server side
+    { src: '~/plugins/bar.server.js' }, // only in server side
   ]
 }
