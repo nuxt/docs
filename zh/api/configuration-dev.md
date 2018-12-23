@@ -38,8 +38,7 @@ app.use(nuxt.render)
 if (config.dev) {
   new Builder(nuxt).build()
   .catch((error) => {
-    console.error(error)
-    process.exit(1)
+    throw error
   })
 }
 

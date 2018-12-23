@@ -41,8 +41,7 @@ app.use(nuxt.render)
 if (config.dev) {
   nuxt.build()
   .catch((error) => {
-    console.error(error)
-    process.exit(1)
+    throw error
   })
 }
 
