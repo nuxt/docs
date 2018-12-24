@@ -50,7 +50,7 @@ if (config.dev) {
 
 // Listen the server
 app.listen(port, '0.0.0.0').then(() => {
-  nuxt.showOpen()
+  console.log(`Server is listening on port: ${port}`)
 })
 ```
 
