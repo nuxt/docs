@@ -81,6 +81,33 @@ export default {
 
 Смотри [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) для доступных вариантов.
 
+## extend
+
+- Тип: `Function`
+
+> Позволяет вручную расширить конфигурацию webpack для клиентских и серверных пакетов.
+
+Функция вызывается дважды, один раз для серверной сборки и один раз для клиентской. Аргументы метода:
+
+1. Конфигурационный объект Webpack
+2. Объект со следующими ключами (все логические, кроме `loaders`):` isDev`, `isClient`,` isServer`
+
+Пример (`nuxt.config.js`):
+```js
+module.exports = {
+  build: {
+    extend (config, { isClient }) {
+      // Расширить конфигурацию webpack только для клиентской сборки
+      if (isClient) {
+        config.devtool = 'eval-source-map'
+      }
+    }
+  }
+}
+```
+
+Если вы хотите узнать больше о нашей конфигурации webpack по умолчанию, взгляните на наш [каталог webpack](https://github.com/nuxt/nuxt.js/tree/dev/packages/webpack/src/config).
+
 ## build.vendor
 
 > Nuxt.js позволяет добавлять модули в генерируемый файл `vendor.bundle.js`, чтобы уменьшить размер финального приложения. Это действительно полезно при использовании внешних модулей (например, `axios`).
