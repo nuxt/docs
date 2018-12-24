@@ -23,31 +23,31 @@ description: 開発モードかプロダクションモードかを指定しま�
 
 ```js
 export default {
-  dev: (process.env.NODE_ENV !== 'production')
-}
+  dev: process.env.NODE_ENV !== 'production',
+};
 ```
 
 `server.js`
 
 ```js
-const { Nuxt, Builder } = require('nuxt')
-const app = require('express')()
-const port = process.env.PORT || 3000
+const { Nuxt, Builder } = require('nuxt');
+const app = require('express')();
+const port = process.env.PORT || 3000;
 
 // Nuxt.js をオプションを使ってインスタンス化する
-let config = require('./nuxt.config.js')
-const nuxt = new Nuxt(config)
-app.use(nuxt.render)
+let config = require('./nuxt.config.js');
+const nuxt = new Nuxt(config);
+app.use(nuxt.render);
 
 // 開発モードのときのみビルドする
 if (config.dev) {
-  new Builder(nuxt).build()
+  new Builder(nuxt).build();
 }
 
 // サーバーを Listen する
 app.listen(port, '0.0.0.0').then(() => {
-  console.log(`Server listning on port: ${port}`)
-})
+  console.log(`Server listening on port: ${port}`);
+});
 ```
 
 それから `package.json` に次のように書きます:
@@ -62,4 +62,4 @@ app.listen(port, '0.0.0.0').then(() => {
 }
 ```
 
-情報: 上の例を動かすためには `npm install --save-dev cross-env` を実行する必要があります。もし Windows で開発しているの *でない* ならば、`start` スクリプトから cross-env を削除して、直接 `NODE_ENV` をセットすることもできます。
+情報: 上の例を動かすためには `npm install --save-dev cross-env` を実行する必要があります。もし Windows で開発しているの _でない_ ならば、`start` スクリプトから cross-env を削除して、直接 `NODE_ENV` をセットすることもできます。

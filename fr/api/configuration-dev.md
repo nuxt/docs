@@ -1,5 +1,5 @@
 ---
-title: "API : La propriété dev"
+title: 'API : La propriété dev'
 description: Défini le mode développement ou le mode production.
 ---
 
@@ -23,31 +23,31 @@ Exemple :
 
 ```js
 module.exports = {
-  dev: (process.env.NODE_ENV !== 'production')
-}
+  dev: process.env.NODE_ENV !== 'production',
+};
 ```
 
 `server.js`
 
 ```js
-const { Nuxt, Builder } = require('nuxt')
-const app = require('express')()
-const port = process.env.PORT || 3000
+const { Nuxt, Builder } = require('nuxt');
+const app = require('express')();
+const port = process.env.PORT || 3000;
 
 // Nous instancions Nuxt.js avec les options
-let config = require('./nuxt.config.js')
-const nuxt = new Nuxt(config)
-app.use(nuxt.render)
+let config = require('./nuxt.config.js');
+const nuxt = new Nuxt(config);
+app.use(nuxt.render);
 
 // Build seulement en mode dev
 if (config.dev) {
-  new Builder(nuxt).build()
+  new Builder(nuxt).build();
 }
 
 // Écouter le serveur
 app.listen(port, '0.0.0.0').then(() => {
-  console.log(`Server listning on port: ${port}`)
-})
+  console.log(`Server listening on port: ${port}`);
+});
 ```
 
 Puis dans votre `package.json` :

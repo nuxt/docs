@@ -23,31 +23,31 @@ Contoh:
 
 ```js
 module.exports = {
-  dev: (process.env.NODE_ENV !== 'production')
-}
+  dev: process.env.NODE_ENV !== 'production',
+};
 ```
 
 `server.js`
 
 ```js
-const { Nuxt, Builder } = require('nuxt')
-const app = require('express')()
-const port = process.env.PORT || 3000
+const { Nuxt, Builder } = require('nuxt');
+const app = require('express')();
+const port = process.env.PORT || 3000;
 
 // We instantiate Nuxt.js with the options
-let config = require('./nuxt.config.js')
-const nuxt = new Nuxt(config)
-app.use(nuxt.render)
+let config = require('./nuxt.config.js');
+const nuxt = new Nuxt(config);
+app.use(nuxt.render);
 
 // Build only in dev mode
 if (config.dev) {
-  new Builder(nuxt).build()
+  new Builder(nuxt).build();
 }
 
 // Listen the server
 app.listen(port, '0.0.0.0').then(() => {
-  console.log(`Server listning on port: ${port}`)
-})
+  console.log(`Server listening on port: ${port}`);
+});
 ```
 
 Kemudian pada `package.json`:
@@ -62,4 +62,4 @@ Kemudian pada `package.json`:
 }
 ```
 
-Catatan: Anda harus menjalankan `npm install --save-dev cross-env` pada contoh di atas supaya bisa bekerja. Jika Anda *tidak* bekerja menggunakan Windows, Anda dapat mengabaikan cross-env dil uar dari script `start` milik Anda dan mengatur `NODE_ENV` secara langsung.
+Catatan: Anda harus menjalankan `npm install --save-dev cross-env` pada contoh di atas supaya bisa bekerja. Jika Anda _tidak_ bekerja menggunakan Windows, Anda dapat mengabaikan cross-env dil uar dari script `start` milik Anda dan mengatur `NODE_ENV` secara langsung.
