@@ -34,9 +34,6 @@ app.use(nuxt.render)
 if (config.dev) {
   new Builder(nuxt).build()
   .then(listen)
-  .catch((error) => {
-    throw error
-  })
 }
 else {
   listen()

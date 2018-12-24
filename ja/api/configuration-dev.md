@@ -42,9 +42,6 @@ app.use(nuxt.render)
 // 開発モードのときのみビルドする
 if (config.dev) {
   new Builder(nuxt).build()
-  .catch((error) => {
-    throw error
-  })
 }
 
 // サーバーを Listen する

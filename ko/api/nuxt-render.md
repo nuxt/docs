@@ -31,9 +31,6 @@ app.use(nuxt.render)
 // dev 모드를 위해 핫-로딩 빌드를 합니다.
 if (config.dev) {
   nuxt.build()
-  .catch((error) => {
-    throw error
-  })
 }
 
 // 서버

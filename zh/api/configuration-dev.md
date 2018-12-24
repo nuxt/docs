@@ -37,9 +37,6 @@ app.use(nuxt.render)
 // 在开发模式下进行编译
 if (config.dev) {
   new Builder(nuxt).build()
-  .catch((error) => {
-    throw error
-  })
 }
 
 // 监听指定端口

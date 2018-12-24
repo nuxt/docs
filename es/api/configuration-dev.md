@@ -40,9 +40,6 @@ app.use(nuxt.render)
 // Build only in dev mode
 if (config.dev) {
   nuxt.build()
-  .catch((error) => {
-    throw error
-  })
 }
 
 // Listen the server

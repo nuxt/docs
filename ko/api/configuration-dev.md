@@ -39,9 +39,6 @@ app.use(nuxt.render)
 // 개발 모드에서만 사용되는 빌드입니다.
 if (config.dev) {
   nuxt.build()
-  .catch((error) => {
-    throw error
-  })
 }
 
 // Listen the server
