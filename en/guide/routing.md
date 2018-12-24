@@ -264,7 +264,7 @@ __Note:__ Handling 404 pages is now up to the logic of the `_.vue` page. [More o
 
 ### Named Views
 
-To render named views you can use `<nuxt name="top"/>` or `<nuxt-child name="top"/>` components in your layout/page. To specify named view of page we need extend router config in `nuxt.config.js` file:
+To render named views you can use `<nuxt name="top"/>` or `<nuxt-child name="top"/>` components in your layout/page. To specify named view of page we need to extend router config in `nuxt.config.js` file:
   
 ``` js
 export default {

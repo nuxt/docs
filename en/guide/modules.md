@@ -120,21 +120,6 @@ export default function asyncModule() {
 }
 ```
 
-### Use callbacks
-
-```js
-import axios from 'axios'
-
-export default function asyncModule(callback) {
-  axios.get('https://jsonplaceholder.typicode.com/users')
-    .then(res => res.data.map(user => '/users/' + user.username))
-    .then(routes => {
-      callback()
-    })
-}
-```
-
-
 ## Common Snippets
 
 ### Top level options
@@ -298,13 +283,13 @@ export default function (moduleOptions) {
 ## Run Tasks on Specific hooks
 
 Your module may need to do things only on specific conditions and not just during Nuxt initialization.
-We can use the powerful [Tapable](https://github.com/webpack/tapable) plugin system to do tasks on specific events.
+We can use the powerful [Hookable](https://github.com/nuxt/nuxt.js/blob/dev/packages/common/src/hookable.js) Nuxt.js system to do tasks on specific events.
 Nuxt will wait for your function if it return a Promise or is defined as `async`.
 
 Here are some basic examples:
 
 ```js
-export default function () {
+export default function myModule() {
 
   this.nuxt.hook('modules:done', moduleContainer => {
     // This will be called when all modules finished loading
@@ -323,6 +308,54 @@ export default function () {
   })
 }
 ```
+
+## Module package commands
+
+**Experimental**
+
+Starting in `v2.4.0`, you can add custom nuxt commands through a Nuxt module's package. To do so, you must follow the `NuxtCommand` API when defining your command. A simple example hypothetically placed in `my-module/bin/command.js` looks like this:
+
+```js
+#!/usr/bin/env node
+
+const consola = require('consola')
+const { NuxtCommand } = require('@nuxt/cli')
+
+NuxtCommand.run({
+  name: 'command',
+  description: 'My Module Command',
+  usage: 'command <foobar>',
+  options: {
+    foobar: {
+      alias: 'fb',
+      type: 'string',
+      description: 'Simple test string'
+    }
+  },
+  run(cmd) {
+    consola.info(cmd.argv)
+  }
+})
+```
+
+A few things of note here. First, notice the call to `/usr/bin/env` to retrieve the Node executable. Also notice that ES module syntax can't be used for commands unless you manually incorporate [`esm`][https://github.com/standard-things/esm] into your code.
+
+Next, you'll notice how `NuxtCommand.run()` is used to specify the settings and behavior of the command. Options are defined in `options`, which get parsed via [`minimist`][https://github.com/substack/minimist].
+Once arguments are parsed, `run()` is automatically called with the `NuxtCommand` instance as first parameter.
+
+In the example above, `cmd.argv` is used to retrieve parsed command-line arguments. There are more methods and properties in `NuxtCommand` -- documentation on them will be provided as this feature is further tested and improved.
+
+To make your command recognizable by the Nuxt CLI, list it under the `bin` section of your package.json, using the `nuxt-module` convention, where `module` relates to your package's name. With this central binary, you can use `argv` to further parse more `subcommands` for your command if you desire.
+
+```js
+{
+  "bin": {
+    "nuxt-foobar": "./bin/command.js"
+  }
+}
+```
+
+Once your package is installed (via NPM or Yarn), you'll be able to execute `nuxt foobar ...` on the command-line.
 
 <div class="Alert">
 
