@@ -42,10 +42,6 @@ app.use(nuxt.render)
 // Build seulement en mode dev
 if (config.dev) {
   new Builder(nuxt).build()
-  .catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
 }
 
 // Écouter le serveur

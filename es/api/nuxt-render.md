@@ -31,10 +31,6 @@ app.use(nuxt.render)
 // Build only in dev mode with hot-reloading
 if (config.dev) {
   nuxt.build()
-  .catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
 }
 
 // Listen the server

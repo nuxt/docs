@@ -31,10 +31,6 @@ app.use(nuxt.render)
 // 在开发模式下启用编译构建和热加载
 if (config.dev) {
   nuxt.build()
-  .catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
 }
 
 // 服务端监听
