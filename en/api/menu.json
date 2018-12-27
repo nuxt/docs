@@ -126,13 +126,14 @@
         "contents": [
           { "name": "base", "to": "#base" },
           { "name": "extendRoutes", "to": "#extendroutes" },
+          { "name": "fallback", "to": "#fallback" },
           { "name": "linkActiveClass", "to": "#linkactiveclass" },
           { "name": "linkExactActiveClass", "to": "#linkexactactiveclass" },
           { "name": "middleware", "to": "#middleware" },
           { "name": "mode", "to": "#mode" },
-          { "name": "scrollBehavior", "to": "#scrollbehavior" },
           { "name": "parseQuery / stringifyQuery", "to": "#parsequery-stringifyquery" },
-          { "name": "fallback", "to": "#fallback" }
+          { "name": "prefetchLinks", "to": "#prefetchlinks" },
+          { "name": "scrollBehavior", "to": "#scrollbehavior" }
         ]
       },
       { "name": "server", "to": "/configuration-server" },
