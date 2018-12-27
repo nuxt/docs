@@ -38,18 +38,18 @@ export default {
 
 ## babel
 
-> Customize Babel configuration for JavaScript and Vue files.
+> Customize Babel configuration for JavaScript and Vue files. `.babelrc` is ignored by default.
 
 - Type: `Object`
 - Default:
 
   ```js
   {
+    babelrc: false,
+    cacheDirectory: undefined,
     presets: ['@nuxt/babel-preset-app']
   }
   ```
-
-Example (`nuxt.config.js`):
 
 ```js
 export default {
