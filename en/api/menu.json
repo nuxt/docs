@@ -36,6 +36,12 @@
     ]
   },
   {
+    "title": "Utils",
+    "links": [
+      { "name": "$nuxt", "to": "/$nuxt" }
+    ]
+  },
+  {
     "title": "Configuration",
     "links": [
       {
