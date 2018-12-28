@@ -197,7 +197,7 @@ We recommend conditionally polyfilling this feature with a service like [Polyfil
 export default {
   head: {
     script: [
-      { src: 'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver', body: true, defer: 'defer' }
+      { src: 'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver', body: true }
     ]
   }
 }
