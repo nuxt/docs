@@ -105,6 +105,23 @@ export default {
 
 > This option is given directly to the vue-router [linkexactactiveclass](https://router.vuejs.org/api/#linkexactactiveclass).
 
+## linkPrefetchedClass
+
+- Type: `String`
+- Default: `false`
+
+Globally configure [`<nuxt-link>`](/api/components-nuxt-link) default prefetch class (feature disabled by default)
+
+Example (`nuxt.config.js`):
+
+```js
+export default {
+  router: {
+    linkPrefetchedClass: 'nuxt-link-prefetched'
+  }
+}
+```
+
 ## middleware
 
 - Type: `String` or `Array`

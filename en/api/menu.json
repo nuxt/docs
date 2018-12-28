@@ -135,6 +135,7 @@
           { "name": "fallback", "to": "#fallback" },
           { "name": "linkActiveClass", "to": "#linkactiveclass" },
           { "name": "linkExactActiveClass", "to": "#linkexactactiveclass" },
+          { "name": "linkPrefetchedClass", "to": "#linkprefetchedclass" },
           { "name": "middleware", "to": "#middleware" },
           { "name": "mode", "to": "#mode" },
           { "name": "parseQuery / stringifyQuery", "to": "#parsequery-stringifyquery" },
