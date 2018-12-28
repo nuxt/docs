@@ -73,6 +73,17 @@ export default {
 
 The schema of the route should respect the [vue-router](https://router.vuejs.org/en/) schema.
 
+## fallback
+
+- Type: `boolean`
+- Default: `false`
+
+Controls whether the router should fallback to hash mode when the browser does not support history.pushState but mode is set to history.
+
+Setting this to false essentially makes every router-link navigation a full page refresh in IE9. This is useful when the app is server-rendered and needs to work in IE9, because a hash mode URL does not work with SSR.
+
+> This option is given directly to the vue-router [fallback](https://router.vuejs.org/api/#fallback).
+
 ## linkActiveClass
 
 - Type: `String`
@@ -81,6 +92,7 @@ The schema of the route should respect the [vue-router](https://router.vuejs.org
 Globally configure [`<nuxt-link>`](/api/components-nuxt-link) default active class.
 
 Example (`nuxt.config.js`):
+
 ```js
 export default {
   router: {
@@ -99,6 +111,7 @@ export default {
 Globally configure [`<nuxt-link>`](/api/components-nuxt-link) default exact active class.
 
 Example (`nuxt.config.js`):
+
 ```js
 export default {
   router: {
@@ -108,6 +121,23 @@ export default {
 ```
 
 > This option is given directly to the vue-router [linkexactactiveclass](https://router.vuejs.org/api/#linkexactactiveclass).
+
+## linkPrefetchedClass
+
+- Type: `String`
+- Default: `false`
+
+Globally configure [`<nuxt-link>`](/api/components-nuxt-link) default prefetch class (feature disabled by default)
+
+Example (`nuxt.config.js`):
+
+```js
+export default {
+  router: {
+    linkPrefetchedClass: 'nuxt-link-prefetched'
+  }
+}
+```
 
 ## middleware
 
@@ -119,6 +149,7 @@ Set the default(s) middleware for every page of the application.
 Example:
 
 `nuxt.config.js`
+
 ```js
 export default {
   router: {
@@ -146,6 +177,7 @@ To learn more about the middleware, see the [middleware guide](/guide/routing#mi
 Configure the router mode, this is not recommended to change it due to server-side rendering.
 
 Example (`nuxt.config.js`):
+
 ```js
 export default {
   router: {
@@ -155,6 +187,55 @@ export default {
 ```
 
 > This option is given directly to the vue-router [mode](https://router.vuejs.org/api/#mode).
+
+## parseQuery / stringifyQuery
+
+- Type: `Function`
+
+Provide custom query string parse / stringify functions. Overrides the default.
+
+> This option is given directly to the vue-router [parseQuery / stringifyQuery](https://router.vuejs.org/api/#parsequery-stringifyquery).
+
+## prefetchLinks
+
+> Added with Nuxt v2.4.0
+
+- Type: `Boolean`
+- Default: `true`
+
+Configure `<nuxt-link>` to prefetch the *code-splitted* page when detected within the viewport.
+equires [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to be supported (see [CanIUse](https://caniuse.com/#feat=intersectionobserver)).
+
+We recommend conditionally polyfilling this feature with a service like [Polyfill.io](https://polyfill.io):
+
+`nuxt.config.js`
+
+```js
+export default {
+  head: {
+    script: [
+      { src: 'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver', body: true }
+    ]
+  }
+}
+```
+
+To disable the prefetching on a specific link, you can use the `no-prefetch` prop:
+
+```html
+<nuxt-link to="/about" no-prefetch>About page not pre-fetched</nuxt-link>
+```
+
+To disable the prefetching on all links, set the `prefetchLinks` to `false`:
+
+```js
+// nuxt.config.js
+export default {
+  router: {
+    prefetchLinks: false
+  }
+}
+```
 
 ## scrollBehavior
 
@@ -211,22 +292,3 @@ export default {
   }
 }
 ```
-
-## parseQuery / stringifyQuery
-
-- Type: `Function`
-
-Provide custom query string parse / stringify functions. Overrides the default.
-
-> This option is given directly to the vue-router [parseQuery / stringifyQuery](https://router.vuejs.org/api/#parsequery-stringifyquery).
-
-## fallback
-
-- Type: `boolean`
-- Default: `false`
-
-Controls whether the router should fallback to hash mode when the browser does not support history.pushState but mode is set to history.
-
-Setting this to false essentially makes every router-link navigation a full page refresh in IE9. This is useful when the app is server-rendered and needs to work in IE9, because a hash mode URL does not work with SSR.
-
-> This option is given directly to the vue-router [fallback](https://router.vuejs.org/api/#fallback).
