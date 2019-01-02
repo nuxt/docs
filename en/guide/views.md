@@ -47,7 +47,7 @@ One use case of using a custom app template is to add conditional CSS classes fo
 ## Layouts
 
 Layouts are a great help when you want to change the look and feel of your Nuxt.js app.
-Whether your want to include a sidebar or having distinct layouts for mobile and desktop
+Whether you want to include a sidebar or having distinct layouts for mobile and desktop
 
 ### Default Layout
 
