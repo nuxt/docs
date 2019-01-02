@@ -14,16 +14,19 @@ npm i @nuxtjs/proxy -D
 在 nuxt.config.js 配置文件中添加对应的模块，并设置代理
 
 ```
- modules: [
-      '@nuxtjs/axios',
-      '@nuxtjs/proxy'
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
-proxy: {
-  '/api': {
-    target: 'http://example.com',
-    pathRewrite: {
-      '^/api' : '/'
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    '/api': {
+      target: 'http://example.com',
+      pathRewrite: {
+        '^/api' : '/'
       }
     }
-}
+  }
 ```
