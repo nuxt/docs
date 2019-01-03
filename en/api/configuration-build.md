@@ -150,6 +150,7 @@ Using [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-ex
 <div class="Alert Alert--teal">
 
 **Note:** There was a bug prior to Vue 2.5.18 that removed critical CSS imports when using this options.
+**Note:** Css will be extracted only for production build, in development mode it won't happen.
 
 </div>
 
