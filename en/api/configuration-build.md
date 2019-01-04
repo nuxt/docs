@@ -204,6 +204,13 @@ export default {
 
 To understand a bit more about the use of manifests, take a look at this [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/).
 
+## friendlyErrors
+
+- Type: `Boolean`
+- Default: `true`
+
+Disables the overlay provided by [FriendlyErrorsWebpackPlugin](https://github.com/nuxt/friendly-errors-webpack-plugin)
+
 ## hotMiddleware
 
 - Type: `Object`
