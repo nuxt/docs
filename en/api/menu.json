@@ -57,6 +57,7 @@
           { "name": "extend", "to": "#extend" },
           { "name": "extractCSS", "to": "#extractcss" },
           { "name": "filenames", "to": "#filenames" },
+          { "name": "friendlyErrors", "to": "#friendlyErrors" },
           { "name": "hotMiddleware", "to": "#hotmiddleware" },
           { "name": "html.minify", "to": "#html-minify" },
           { "name": "loaders", "to": "#loaders" },
