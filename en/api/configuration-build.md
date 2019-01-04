@@ -207,9 +207,9 @@ To understand a bit more about the use of manifests, take a look at this [webpac
 ## friendlyErrors
 
 - Type: `Boolean`
-- Default: `true`
+- Default: `true` (overlay enabled)
 
-Disables the overlay provided by [FriendlyErrorsWebpackPlugin](https://github.com/nuxt/friendly-errors-webpack-plugin)
+Enables or disables the overlay provided by [FriendlyErrorsWebpackPlugin](https://github.com/nuxt/friendly-errors-webpack-plugin)
 
 ## hotMiddleware
 
