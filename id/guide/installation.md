@@ -35,26 +35,30 @@ yarn create nuxt-app <my-project>
 Kemudian akan muncul beberapa pertanyaan:
 
 1. Pilih framework untuk integrasi server-side:
-  - None (Nuxt default server)
-  - [Express](https://github.com/expressjs/express)
-  - [Koa](https://github.com/koajs/koa)
-  - [Hapi](https://github.com/hapijs/hapi)
-  - [Feathers](https://github.com/feathersjs/feathers)
-  - [Micro](https://github.com/zeit/micro)
-  - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
+
+- None (Nuxt default server)
+- [Express](https://github.com/expressjs/express)
+- [Koa](https://github.com/koajs/koa)
+- [Hapi](https://github.com/hapijs/hapi)
+- [Feathers](https://github.com/feathersjs/feathers)
+- [Micro](https://github.com/zeit/micro)
+- [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
+
 2. Pilih framework UI kesukaan anda:
-  - None (feel free to add one later)
-  - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
-  - [Vuetify](https://github.com/vuetifyjs/vuetify)
-  - [Bulma](https://github.com/jgthms/bulma)
-  - [Tailwind](https://github.com/tailwindcss/tailwindcss)
-  - [Element UI](https://github.com/ElemeFE/element)
-  - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
-  - [Buefy](https://buefy.github.io)
+
+- None (feel free to add one later)
+- [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
+- [Vuetify](https://github.com/vuetifyjs/vuetify)
+- [Bulma](https://github.com/jgthms/bulma)
+- [Tailwind](https://github.com/tailwindcss/tailwindcss)
+- [Element UI](https://github.com/ElemeFE/element)
+- [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
+- [Buefy](https://buefy.github.io)
+
 3. [Mode Nuxt yang anda inginkan (`Universal` or `SPA`)](https://nuxtjs.org/guide/release-notes#better-spa-experience)
 4. Menambah [axios module](https://github.com/nuxt-community/axios-module) untuk mempermudah melakukan HTTP request pada aplikasi anda.
 5. Menambah [EsLint](https://eslint.org/) untuk memformat coding anda dengan lint pada saat menyimpan.
-5. Menambah [Prettier](https://prettier.io/) untuk memformat coding anda dengan prettier pada saat menyimpan.
+6. Menambah [Prettier](https://prettier.io/) untuk memformat coding anda dengan prettier pada saat menyimpan.
 
 Setelah menjawab semua pertanyaan semua dependencies yang dibutuhkan akan terinstall dan langkah selanjut nya adalah menjalankan aplikasi dengan:
 
@@ -74,7 +78,7 @@ Untuk menjelajahi lebih lanjut mengenai struktur direktori pada projek : [Direct
 
 ## Memulai dari awal
 
-Membuat suatu aplikasi dengan Nuxt.js dari awal itu mudah, anda hanya membutuhkan *1 file dan 1 direktori*. Mari kita membuat direktor baru untuk memulai pengerjaan projek:
+Membuat suatu aplikasi dengan Nuxt.js dari awal itu mudah, anda hanya membutuhkan _1 file dan 1 direktori_. Mari kita membuat direktor baru untuk memulai pengerjaan projek:
 
 ```bash
 $ mkdir <project-name>
@@ -112,13 +116,14 @@ npm install --save nuxt
 
 ### Direktori `pages`
 
-Nuxt.js akan men-transformasi  setiap file `*.vue` yang berada dalam direktori `pages` sebagai route pada aplikasi anda
+Nuxt.js akan men-transformasi setiap file `*.vue` yang berada dalam direktori `pages` sebagai route pada aplikasi anda
 
 Membuat direktori `pages`:
 
 ```bash
 $ mkdir pages
 ```
+
 kemudian buat halaman pertama anda pada `pages/index.vue`:
 
 ```html
@@ -133,7 +138,7 @@ dan jalankan projek dengan:
 $ npm run dev
 ```
 
-Aplikasi sekakrang berjalan pada on http://localhost:3000.
+Aplikasi sekarang berjalan pada on http://localhost:3000.
 
 <div class="Alert">
 
