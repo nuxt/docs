@@ -96,8 +96,8 @@ extend メソッドは一度はサーバーのバンドルのため、一度は�
 <div class="Alert Alert--orange">
 
   **警告:**
-  The `isClient` and `isServer` keys provided in are separate from the keys available in [`context`](/api/context).
-  They are **not** deprecated. Do not use `process.client` and `process.server` here as they are `undefined` at this point.
+  提供される `isClient` および `isServer` は [`context`](/api/context) で利用可能なキーとは別物です。
+  これらは非推奨 **ではありません**。ここでは `process.client` および `process.server` は undefined となるため使用しないでください。
 
 </div>
 
