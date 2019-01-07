@@ -8,5 +8,8 @@
     "NODE_ENV": "production",
     "GITHUB_TOKEN": "@docs-api-github-token",
     "GH_HOOK_SECRET": "@docs-api-hook-secret"
+  },
+   "github": {
+    "silent": true
   }
 }
