@@ -404,12 +404,12 @@ export default {
 ```
 
 
-If the postcss configuration is an `Object`, `order` can be used for defining the plugin order:
+postcss の設定が `Object` 型の場合、プラグインの順番の定義に `order`を利用できます:
 
-- Type: `Array` (ordered plugin names), `String` (order preset name), `Function`
-- Default: `cssnanoLast` (put `cssnano` in last)
+- Type: `Array` (順序付けされたプラグイン名), `String` (順序付けされたプリセット名), `Function`
+- Default: `cssnanoLast` (最後に `cssnano` を配置する)
 
-Example (`nuxt.config.js`):
+例 (`nuxt.config.js`):
 
 ```js
 export default {
