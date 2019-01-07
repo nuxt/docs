@@ -95,7 +95,7 @@ extend メソッドは一度はサーバーのバンドルのため、一度は�
 
 <div class="Alert Alert--orange">
 
-  **Warning:**
+  **警告:**
   The `isClient` and `isServer` keys provided in are separate from the keys available in [`context`](/api/context).
   They are **not** deprecated. Do not use `process.client` and `process.server` here as they are `undefined` at this point.
 
@@ -150,7 +150,7 @@ Using [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-ex
 
 <div class="Alert Alert--teal">
 
-**Note:** There was a bug prior to Vue 2.5.18 that removed critical CSS imports when using this options.
+**注記:** Vue 2.5.18 以前では、このオプションを使用したときにクリティカルな CSS のインポートを削除するバグがありました。
 
 </div>
 
@@ -212,7 +212,7 @@ manifest の使い方をより理解するためには [webpack documentation](h
 }
 ```
 
-**Attention:** If you make changes to `html.minify`, they won't be merged with the defaults!
+**情報:** `html.minify`に変更を加えても、それらはデフォルトとマージされません！
 
 ビルドプロセス中に作成された HTML ファイルのミニファイに使われる [html-minifier](https://github.com/kangax/html-minifier) プラグインの設定（*全てのモード*に適用される）。
 
@@ -377,7 +377,7 @@ export default {
   }
   ```
 
-Your custom plugin settings will be merged with the default plugins (unless you are using an `Array` instead of an `Object`).
+カスタムプラグイン設定は、デフォルトのプラグイン設定とマージされます (`Object` のかわりに `Array` を使っている場合を除く).
 
 例（`nuxt.config.js`）:
 
@@ -490,7 +490,7 @@ export default {
 
 <div class="Alert Alert--orange">
 
-**Warning:** This property is deprecated. Please use the [style-resources-modules](https://github.com/nuxt-community/style-resources-module/) instead for improved performance and better DX!
+**警告** このプロパティは非推奨です。 パフォーマンスおよび開発体験の向上のために、代わりに [style-resources-modules](https://github.com/nuxt-community/style-resources-module/) を使用してください。
 
 </div>
 
