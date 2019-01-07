@@ -415,11 +415,11 @@ postcss の設定が `Object` 型の場合、プラグインの順番の定義�
 export default {
   build: {
     postcss: {
-      // preset name
+      // プリセット名
       order: 'cssnanoLast',
-      // ordered plugin names
+      // 順序付けされたプラグイン名の配列
       order: ['postcss-import', 'postcss-preset-env', 'cssnano']
-      // Function to calculate plugin order
+      // プラグインの順番を算出するための関数
       order: (names, presets) => presets.cssnanoLast(names)
     }
   }
