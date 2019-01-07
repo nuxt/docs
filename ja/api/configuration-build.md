@@ -92,6 +92,16 @@ extend メソッドは一度はサーバーのバンドルのため、一度は�
 1. Webpack 設定オブジェクト
 2. 次のキーを持つオブジェクト（すべてブーリアン）: `isDev`, `isClient`, `isServer`, `loaders`
 
+
+<div class="Alert Alert--orange">
+
+  **Warning:**
+  The `isClient` and `isServer` keys provided in are separate from the keys available in [`context`](/api/context).
+  They are **not** deprecated. Do not use `process.client` and `process.server` here as they are `undefined` at this point.
+
+</div>
+
+
 例（`nuxt.config.js`）:
 
 ```js
@@ -135,7 +145,15 @@ export default {
 - 型: `ブーリアン`
 - デフォルト: `false`
 
-`extract-text-webpack-plugin` を使ってメインチャンク内の CSS を個別の CSS ファイル（テンプレートに自動的に注入される）形式で抽出します。これにより、ファイルを個別にキャッシュさせることができます。これは共通して利用される CSS が多く存在するときに推奨されます。非同期コンポーネント内部の CSS は JavaScript の文字列としてインラインで保持され、vue-style-loader で取り扱われます。
+
+Using [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) under the hood, all your CSS will be extracted into separate files, usually one per component. This allows caching your CSS and Javascript separately and is worth a try in case you have a lot of global or shared CSS.
+
+<div class="Alert Alert--teal">
+
+**Note:** There was a bug prior to Vue 2.5.18 that removed critical CSS imports when using this options.
+
+</div>
+
 
 ## filenames
 
@@ -183,24 +201,18 @@ manifest の使い方をより理解するためには [webpack documentation](h
 ```js
 {
   collapseBooleanAttributes: true,
-  collapseWhitespace: false,
   decodeEntities: true,
   minifyCSS: true,
   minifyJS: true,
   processConditionalComments: true,
-  removeAttributeQuotes: false,
-  removeComments: false,
   removeEmptyAttributes: true,
-  removeOptionalTags: false,
   removeRedundantAttributes: true,
-  removeScriptTypeAttributes: false,
-  removeStyleLinkTypeAttributes: false,
-  removeTagWhitespace: false,
-  sortClassName: false,
   trimCustomFragments: true,
   useShortDoctype: true
 }
 ```
+
+**Attention:** If you make changes to `html.minify`, they won't be merged with the defaults!
 
 ビルドプロセス中に作成された HTML ファイルのミニファイに使われる [html-minifier](https://github.com/kangax/html-minifier) プラグインの設定（*全てのモード*に適用される）。
 
@@ -303,33 +315,6 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 [Webpack の最適化](https://webpack.js.org/configuration/optimization/)を参照してください。
 
-## terser
-
-- 型: `オブジェクト` または `ブーリアン`
-- デフォルト:
-
-```js
-{
-  parallel: true,
-  cache: false,
-  sourceMap: false,
-  extractComments: {
-    filename: 'LICENSES'
-  },
-  terserOptions: {
-    output: {
-      comments: /^\**!|@preserve|@license|@cc_on/
-    }
-  }
-}
-```
-
-Terser プラグインのオプションです。 `false` を設定するとこのプラグインは無効になります。
-
-`soruceMap` は webpack の `confing.devtool` が `source-?map` と一致した際に有効になります。
-
-[webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin) を参照してください。
-
 ## optimizeCSS
 
 - 型: `オブジェクト` または `ブーリアン`
@@ -378,6 +363,7 @@ export default {
 - 型: `配列`、`オブジェクト`（推奨）、`関数` または `ブーリアン`
 
   **注意：**  Nuxt.js は [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env) を適用しました。デフォルトでは、[Stage 2 features](https://cssdb.org/) と [Autoprefixer](https://github.com/postcss/autoprefixer) が有効になっています。`build.postcss.preset` を使うことで設定が出来ます。
+
 - デフォルト:
 
   ```js
@@ -390,6 +376,8 @@ export default {
     }
   }
   ```
+
+Your custom plugin settings will be merged with the default plugins (unless you are using an `Array` instead of an `Object`).
 
 例（`nuxt.config.js`）:
 
@@ -410,6 +398,29 @@ export default {
           grid: true
         }
       }
+    }
+  }
+}
+```
+
+
+If the postcss configuration is an `Object`, `order` can be used for defining the plugin order:
+
+- Type: `Array` (ordered plugin names), `String` (order preset name), `Function`
+- Default: `cssnanoLast` (put `cssnano` in last)
+
+Example (`nuxt.config.js`):
+
+```js
+export default {
+  build: {
+    postcss: {
+      // preset name
+      order: 'cssnanoLast',
+      // ordered plugin names
+      order: ['postcss-import', 'postcss-preset-env', 'cssnano']
+      // Function to calculate plugin order
+      order: (names, presets) => presets.cssnanoLast(names)
     }
   }
 }
@@ -477,6 +488,12 @@ export default {
 - 型: `オブジェクト`
 - デフォルト: `{}`
 
+<div class="Alert Alert--orange">
+
+**Warning:** This property is deprecated. Please use the [style-resources-modules](https://github.com/nuxt-community/style-resources-module/) instead for improved performance and better DX!
+
+</div>
+
 毎回インポートせずに変数やミックスインをページに挿入する必要がある場合に便利です。
 
 Nuxt.js はこの動作を実現するために https://github.com/yenshih/style-resources-loader を使用します。
@@ -529,6 +546,34 @@ export default {
 ```
 
 テンプレートは [`lodash.template`](https://lodash.com/docs/#template) を使ってレンダリングされます。[こちら](https://github.com/learn-co-students/javascript-lodash-templates-v-000)でより詳細な使い方を知ることができます。
+
+## terser
+
+- 型: `オブジェクト` または `ブーリアン`
+- デフォルト:
+
+```js
+{
+  parallel: true,
+  cache: false,
+  sourceMap: false,
+  extractComments: {
+    filename: 'LICENSES'
+  },
+  terserOptions: {
+    output: {
+      comments: /^\**!|@preserve|@license|@cc_on/
+    }
+  }
+}
+```
+
+Terser プラグインのオプションです。 `false` を設定するとこのプラグインは無効になります。
+
+`soruceMap` は webpack の `confing.devtool` が `source-?map` と一致した際に有効になります。
+
+[webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin) を参照してください。
+
 
 ## transpile
 
