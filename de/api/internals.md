@@ -48,7 +48,7 @@ These classes are only needed for build or dev mode.
 
 #### Utils
 
-- Source: [common/utils.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/common/src/utils.js)
+- Source: [utils/src](https://github.com/nuxt/nuxt.js/blob/dev/packages/utils/src)
 
 #### Options
 
