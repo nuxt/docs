@@ -7,7 +7,7 @@ description: Bagian View (Tampilan) menggambarkan semua yang Anda perlukan untuk
 
 > Bagian View (Tampilan) menggambarkan semua yang Anda perlukan untuk mengonfigurasi data dan tampilan untuk rute tertentu pada Aplikasi Nuxt.js Anda (Dokumen, Layout, Halaman, dan HTML Head).
 
-![nuxt-views-schema](/nuxt-views-schema.png)
+![nuxt-views-schema](/nuxt-views-schema.svg)
 
 ## Dokumen
 

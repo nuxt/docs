@@ -55,7 +55,7 @@ Nuxt.js はリッチなウェブアプリケーションを構築するために
 
 下の図は、サーバーサイドで処理が実行されたときや、ユーザーが `<nuxt-link>` を通して遷移したときに Nuxt.js によって何が呼び出されるかを表しています:
 
-![nuxt-schema](/nuxt-schema.png)
+![nuxt-schema](/nuxt-schema.svg)
 
 ## サーバーサイドレンダリング（ユニバーサル SSR）
 

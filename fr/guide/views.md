@@ -5,7 +5,7 @@ description: La section des vues décrit tout ce dont vous avez besoin pour conf
 
 > La section des vues décrit tout ce dont vous avez besoin pour configurer les données et les vues pour une route spécifique dans votre application Nuxt.js (document, mises en page, pages et entête HTML).
 
-![nuxt-views-schema](/nuxt-views-schema.png)
+![nuxt-views-schema](/nuxt-views-schema.svg)
 
 ## Document
 
