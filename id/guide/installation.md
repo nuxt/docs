@@ -60,7 +60,7 @@ Kemudian akan muncul beberapa pertanyaan:
 5. Menambah [EsLint](https://eslint.org/) untuk memformat coding anda dengan lint pada saat menyimpan.
 6. Menambah [Prettier](https://prettier.io/) untuk memformat coding anda dengan prettier pada saat menyimpan.
 
-Setelah menjawab semua pertanyaan semua dependencies yang dibutuhkan akan terinstall dan langkah selanjut nya adalah menjalankan aplikasi dengan:
+Setelah menjawab semua pertanyaan, semua dependencies yang dibutuhkan akan terinstall dan langkah selanjut nya adalah menjalankan aplikasi dengan:
 
 ```bash
 $ npm run dev
@@ -74,14 +74,14 @@ Nuxt.js akan memantau perubahan pada file anda yang berada dalam direktori <code
 
 </div>
 
-Untuk menjelajahi lebih lanjut mengenai struktur direktori pada projek : [Directory Structure Documentation](/guide/directory-structure).
+Untuk menemukan lebih lanjut mengenai struktur direktori pada projek : [Directory Structure Documentation](/guide/directory-structure).
 
 ## Memulai dari awal
 
 Membuat suatu aplikasi dengan Nuxt.js dari awal itu mudah, anda hanya membutuhkan _1 file dan 1 direktori_. Mari kita membuat direktor baru untuk memulai pengerjaan projek:
 
 ```bash
-$ mkdir <project-name>
+$ mkdir <nama-project>
 $ cd <project-name>
 ```
 
@@ -93,7 +93,7 @@ $ cd <project-name>
 
 ### The package.json
 
-Projek anda membutuhkan file `package.json` untuk menjelaskan bagaimana menjalankan `nuxt`:
+Projek anda membutuhkan file `package.json` untuk menemukan bagaimana menjalankan `nuxt`:
 
 ```json
 {
@@ -146,4 +146,4 @@ Nuxt.js akan memantau perubahan pada file anda yang berada dalam direktori <code
 
 </div>
 
-Untuk menjelajahi lebih lanjut mengenai struktur direktori pada projek : [Directory Structure Documentation](/guide/directory-structure).
+Untuk menemukan lebih lanjut mengenai struktur direktori pada projek : [Directory Structure Documentation](/guide/directory-structure).
