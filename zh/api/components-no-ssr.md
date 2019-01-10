@@ -43,6 +43,4 @@ description: Skip component rendering on server side(rendering), and display pla
 </template>
 ```
 
-> 请注意，`<no-ssr />`最多只能包含一个 子组件 / 元素。
-
 这个组件是克隆至 [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr). 感谢 [@egoist](https://github.com/egoist)!
