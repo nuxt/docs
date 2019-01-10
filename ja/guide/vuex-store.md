@@ -106,8 +106,8 @@ new Vuex.Store({
     }
   },
   modules: {
-    namespaced: true,
     todos: {
+      namespaced: true,
       state: () => ({
         list: []
       }),
