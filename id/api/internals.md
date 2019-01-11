@@ -48,7 +48,7 @@ Kelas-kelas ini hanya dibutuhkan ketika mode build atau dev.
 
 #### Utils
 
-- Sumber: [common/utils.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/common/src/utils.js)
+- Sumber: [utils/src](https://github.com/nuxt/nuxt.js/blob/dev/packages/utils/src)
 
 #### Options
 

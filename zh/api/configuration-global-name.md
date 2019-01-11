@@ -7,7 +7,7 @@ description: Nuxt.js允许您自定义主HTML模板中使用的全局ID以及主
 
 > Nuxt.js允许您自定义主HTML模板中使用的全局ID以及主Vue实例名称和其他选项。
 
-- 类型: `Object`
+- 类型: `String`
 - 默认: `nuxt`
 
 例子:
