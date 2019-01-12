@@ -247,6 +247,14 @@ HTML files created during the build process (will be applied for *all modes*).
   },
   scss: {},
   stylus: {},
+  ts: {
+    transpileOnly: true,
+    appendTsSuffixTo: [/\.vue$/]
+  },
+  tsx: {
+    transpileOnly: true,
+    appendTsxSuffixTo: [/\.vue$/]
+  },
   vueStyle: {}
 }
 ```
@@ -282,6 +290,10 @@ HTML files created during the build process (will be applied for *all modes*).
 
 > See the [Node Sass documentation](https://github.com/sass/node-sass/blob/master/README.md#options) for all available Sass options.
 > Note: `loaders.sass` is for [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html)
+
+### loaders.ts and loaders.tsx
+
+> More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#loader-options).
 
 ### loaders.vueStyle
 
@@ -581,6 +593,17 @@ See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/t
 - Default: `[]`
 
 If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Each item in transpile can be a package name, or a string or regex object matching the dependency's file name.
+
+## useForkTsChecker
+
+> Enables TypeScript type checking on a separate process.
+
+- Type: `Object` or `Boolean`
+- Default: `false`. But `true` for TypeScript projects using `nuxt-ts` (see [TypeScript Support](/guide/typescript))
+
+ForkTsChecker plugin options. Set to `false` to disable this plugin.
+
+See [Realytics/fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin).
 
 ## vueLoader
 
