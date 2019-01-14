@@ -77,6 +77,17 @@ The big innovation of Nuxt.js comes with the `nuxt generate` command.
 
 When building your application, it will generate the HTML for every one of your routes and store it in a file.
 
+<div>
+  <a href="https://vueschool.io/courses/static-site-generation-with-nuxtjs?friend=nuxt" target="_blank" class="Promote">
+    <img src="/static-site-generation-with-nuxtjs.png" alt="Static Site Generation with Nuxt.js by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Static Site Generation with Nuxt.js</h4>
+      <p class="Promote__Content__Description">Learn how to generate static websites (pre rendering) to improve both performance and SEO while eliminating hosting costs.</p>
+      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+    </div>
+  </a>
+</div>
+
 For example, the following file structure:
 
 ```bash
