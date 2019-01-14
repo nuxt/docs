@@ -36,6 +36,12 @@
     ]
   },
   {
+    "title": "Utils",
+    "links": [
+      { "name": "$nuxt", "to": "/$nuxt" }
+    ]
+  },
+  {
     "title": "Configuration",
     "links": [
       {
@@ -47,9 +53,11 @@
           { "name": "cache", "to": "#cache" },
           { "name": "cssSourceMap", "to": "#csssourcemap" },
           { "name": "devMiddleware", "to": "#devmiddleware" },
+          { "name": "devtools", "to": "#devtools" },
           { "name": "extend", "to": "#extend" },
           { "name": "extractCSS", "to": "#extractcss" },
           { "name": "filenames", "to": "#filenames" },
+          { "name": "friendlyErrors", "to": "#friendlyErrors" },
           { "name": "hotMiddleware", "to": "#hotmiddleware" },
           { "name": "html.minify", "to": "#html-minify" },
           { "name": "loaders", "to": "#loaders" },
@@ -79,6 +87,7 @@
         "to": "/configuration-generate",
         "contents": [
           { "name": "dir", "to": "#dir" },
+          { "name": "devtools", "to": "#devtools" },
           { "name": "interval", "to": "#interval" },
           { "name": "minify", "to": "#minify" },
           { "name": "routes", "to": "#routes" }
@@ -126,13 +135,15 @@
         "contents": [
           { "name": "base", "to": "#base" },
           { "name": "extendRoutes", "to": "#extendroutes" },
+          { "name": "fallback", "to": "#fallback" },
           { "name": "linkActiveClass", "to": "#linkactiveclass" },
           { "name": "linkExactActiveClass", "to": "#linkexactactiveclass" },
+          { "name": "linkPrefetchedClass", "to": "#linkprefetchedclass" },
           { "name": "middleware", "to": "#middleware" },
           { "name": "mode", "to": "#mode" },
-          { "name": "scrollBehavior", "to": "#scrollbehavior" },
           { "name": "parseQuery / stringifyQuery", "to": "#parsequery-stringifyquery" },
-          { "name": "fallback", "to": "#fallback" }
+          { "name": "prefetchLinks", "to": "#prefetchlinks" },
+          { "name": "scrollBehavior", "to": "#scrollbehavior" }
         ]
       },
       { "name": "server", "to": "/configuration-server" },

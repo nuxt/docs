@@ -66,6 +66,15 @@ module.exports = {
 
 > 启用 [uglifyjs-webpack-plugin ](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) 和 [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) 的缓存
 
+## crossorigin
+
+- 类型: `String`
+- 默认: `undefined`
+
+在生成的HTML中的`<link rel ="stylesheet">`和`<script>`标签上配置`crossorigin`属性。
+
+请查看 [CORS settings attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) 了解更多可用选项。
+
 ## cssSourceMap
 
 - 类型: `boolean`
