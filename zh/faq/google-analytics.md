@@ -9,7 +9,7 @@ description: 如何集成 Google 统计分析服务？
 
 ```js
 /*
-** 只在生成模式的客户端中使用
+** 只在生产模式的客户端中使用
 */
 if (process.client && process.env.NODE_ENV === 'production') {
   /*
