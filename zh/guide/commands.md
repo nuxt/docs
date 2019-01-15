@@ -19,7 +19,7 @@ description: Nuxt.js 提供了一系列常用的命令, 用于开发或发布部
 | 命令 | 描述 |
 |---------|-------------|
 | NODE_ENV=development nodemon server/index.js | 启动一个热加载的自定义 Web 服务器（开发模式）。
-| NODE_ENV=production node server/index.js | 以生成模式启动一个自定义 Web 服务器 (需要先执行 `nuxt build`)。 |
+| NODE_ENV=production node server/index.js | 以生产模式启动一个自定义 Web 服务器 (需要先执行 `nuxt build`)。 |
 
 #### 参数
 
