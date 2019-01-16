@@ -79,7 +79,7 @@ The assets will be joined together with `, ` and passed as a single `Link` heade
 
 > Adds `prefetch` and `preload` links for faster initial page load time.
 
-You may want to only disable this option if have many pages and routes.
+You may want to only disable this option if you have many pages and routes.
 
 ## ssr
 - Type: `boolean`
