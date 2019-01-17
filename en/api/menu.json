@@ -12,6 +12,7 @@
       { "name": "fetch", "to": "/pages-fetch" },
       { "name": "head", "to": "/pages-head" },
       { "name": "layout", "to": "/pages-layout" },
+      { "name": "loading", "to": "/pages-loading" },
       { "name": "middleware", "to": "/pages-middleware" },
       { "name": "scrollToTop", "to": "/pages-scrolltotop" },
       {
