@@ -90,6 +90,12 @@ This option lets you define the source directory of your Nuxt.js Application.
 
 [Documentation about `srcDir` integration](/api/configuration-srcdir)
 
+### dir
+
+This option lets you define the custom directories for your Nuxt.js application
+
+[Documentation about `dir` integration](/api/configuration-dir)
+
 ### transition
 
 This option lets you define the default properties of the page transitions.
