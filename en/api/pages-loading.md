@@ -1,11 +1,11 @@
 ---
 title: "API: The loading Property"
-description: The `loading` property lets you tell Nuxt.js to disable the default loading progress bar on a specific page.
+description: The `loading` property gives you the option to disable the default loading progress bar on a specific page.
 ---
 
 # The loading Property
 
-> The loading property lets you tell Nuxt.js to disable the default loading progress bar on a specific page.
+> The loading property gives you the option to disable the default loading progress bar on a specific page.
 
 - **Type:** `Boolean` (default: `true`)
 
