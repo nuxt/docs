@@ -25,7 +25,7 @@ This option lets you define the `development` or `production` mode of Nuxt.js (i
 
 ### env
 
-This option lets you define environment variables that is available to both the client and the server.
+This option lets you define environment variables that are available to both client and server.
 
 [Documentation about `env` integration](/api/configuration-env)
 
@@ -43,13 +43,13 @@ This option lets you define all default meta tags for your application.
 
 ### loading
 
-This option lets you customize the loading component Nuxt.js uses by default.
+This option lets you customize the loading component that Nuxt.js uses by default.
 
 [Documentation about `loading` integration](/api/configuration-loading)
 
 ### modules
 
-With this option you can add Nuxt modules to your project.
+With this option you can add Nuxt.js modules to your project.
 
 [Documentation about `modules` integration](/api/configuration-modules)
 
@@ -62,13 +62,13 @@ This option lets you define the node_modules folder of your Nuxt.js Application.
 
 ### plugins
 
-This option lets you define JavaScript plugins to be run before instantiating the root Vue.js Application.
+This option lets you define JavaScript plugins that should be run before instantiating the root Vue.js application.
 
 [Documentation about `plugins` integration](/api/configuration-plugins)
 
 ### rootDir
 
-This option lets you define the workspace of your Nuxt.js Application.
+This option lets you define the workspace of your Nuxt.js application.
 
 [Documentation about `rootDir` integration](/api/configuration-rootdir)
 
@@ -80,19 +80,19 @@ With the `router` option you overwrite the default Nuxt.js configuration of Vue 
 
 ### server
 
-This option lets you configure the connection variables for the server instance of your Nuxt.js Application.
+This option lets you configure the connection variables for the server instance of your Nuxt.js application.
 
 [Documentation about `server` integration](/api/configuration-server)
 
 ### srcDir
 
-This option lets you define the source directory of your Nuxt.js Application.
+This option lets you define the source directory of your Nuxt.js application.
 
 [Documentation about `srcDir` integration](/api/configuration-srcdir)
 
 ### dir
 
-This option lets you define the custom directories for your Nuxt.js application
+This option lets you define the custom directories of your Nuxt.js application.
 
 [Documentation about `dir` integration](/api/configuration-dir)
 
