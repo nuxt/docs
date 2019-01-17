@@ -54,7 +54,7 @@ Sous le capot, nous utilisons [webpack](https://github.com/webpack/webpack) avec
 
 Ce schéma (en anglais) montre ce qui est invoqué par Nuxt.js quand le serveur est appelé ou quand l'utilisateur navigue dans l'application à l'aide de `<nuxt-link>` :
 
-![nuxt-schema](/nuxt-schema.png)
+![nuxt-schema](/nuxt-schema.svg)
 
 ## Rendu côté serveur (SSR universel)
 

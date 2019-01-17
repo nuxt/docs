@@ -48,7 +48,7 @@ Nuxt.js には開発者が Nuxt Core の好きな部分を柔軟な API を使�
 
 #### Utils
 
-- ソース: [common/utils.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/common/src/utils.js)
+- ソース: [utils/src](https://github.com/nuxt/nuxt.js/blob/dev/packages/utils/src)
 
 #### Options
 

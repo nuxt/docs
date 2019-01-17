@@ -5,7 +5,7 @@ description: 视图章节的内容阐述了如何在 Nuxt.js 应用中为指定�
 
 > 本章节的内容阐述了如何在 Nuxt.js 应用中为指定的路由配置数据和视图，包括应用模板、页面、布局和HTML头部等内容。
 
-![nuxt-views-schema](/nuxt-views-schema.png)
+![nuxt-views-schema](/nuxt-views-schema.svg)
 
 ## 模板
 

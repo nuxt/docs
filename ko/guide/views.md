@@ -5,7 +5,7 @@ description: Views 절에서는 Nuxt.js 어플리케이션의 특정 라우트�
 
 > Views 절에서는 Nuxt.js 어플리케이션의 특정 라우트를 위해 데이터와 뷰를 설정하는 모든 것을 설명합니다. (Document, Layouts, Pages 와 HTML Head)
 
-![nuxt-views-schema](/nuxt-views-schema.png)
+![nuxt-views-schema](/nuxt-views-schema.svg)
 
 ## 도큐먼트
 

@@ -58,7 +58,7 @@ Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능
 
 아래의 구조는 `<nuxt-link>`를 서버가 호출하거나 이를 통해 사용자가 이동한 경우, nuxt.js가 어떻게 동작하는지를 보여줍니다:
 
-![nuxt-schema](/nuxt-schema.png)
+![nuxt-schema](/nuxt-schema.svg)
 
 ## 서버 렌더링 (범용 SSR)
 

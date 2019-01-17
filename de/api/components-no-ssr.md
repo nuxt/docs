@@ -43,6 +43,4 @@ description: Skip component rendering on server side(rendering), and display pla
 </template>
 ```
 
-> Note that `<no-ssr />` can only contain at most ONE child component/element.
-
 This component is a clone of [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr). Thanks [@egoist](https://github.com/egoist)!

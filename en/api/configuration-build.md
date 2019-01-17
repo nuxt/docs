@@ -112,9 +112,9 @@ The extend is called twice, one time for the server bundle, and one time for the
 
 
 <div class="Alert Alert--orange">
-  
+
   **Warning:**
-  The `isClient` and `isServer` keys provided in are separate from the keys available in [`context`](/api/context).  
+  The `isClient` and `isServer` keys provided in are separate from the keys available in [`context`](/api/context).
   They are **not** deprecated. Do not use `process.client` and `process.server` here as they are `undefined` at this point.
 
 </div>
@@ -163,7 +163,7 @@ export default {
 - Type: `Boolean`
 - Default: `false`
 
-Using [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) under the hood, all your CSS will be extracted into separate files, usually one per component. This allows caching your CSS and Javascript separately and is worth a try in case you have a lot of global or shared CSS.
+Using [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) under the hood, all your CSS will be extracted into separate files, usually one per component. This allows caching your CSS and JavaScript separately and is worth a try in case you have a lot of global or shared CSS.
 
 <div class="Alert Alert--teal">
 
@@ -276,6 +276,10 @@ HTML files created during the build process (will be applied for *all modes*).
     transpileOnly: true,
     appendTsSuffixTo: [/\.vue$/]
   },
+  tsx: {
+    transpileOnly: true,
+    appendTsxSuffixTo: [/\.vue$/]
+  },
   vueStyle: {}
 }
 ```
@@ -315,6 +319,10 @@ HTML files created during the build process (will be applied for *all modes*).
 ### loaders.ts
 
 > Loader for typescript file and `lang="ts"` Vue SFC.
+> More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#loader-options).
+
+### loaders.tsx
+
 > More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#options).
 
 ### loaders.vueStyle
@@ -615,6 +623,17 @@ See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/t
 - Default: `[]`
 
 If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Each item in transpile can be a package name, or a string or regex object matching the dependency's file name.
+
+## useForkTsChecker
+
+> Enables TypeScript type checking on a separate process.
+
+- Type: `Object` or `Boolean`
+- Default: `false`. But `true` for TypeScript projects using `nuxt-ts` (see [TypeScript Support](/guide/typescript))
+
+ForkTsChecker plugin options. Set to `false` to disable this plugin.
+
+See [Realytics/fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin).
 
 ## vueLoader
 

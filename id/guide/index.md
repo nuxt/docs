@@ -55,7 +55,7 @@ Under the hood we use [webpack](https://github.com/webpack/webpack) with [vue-lo
 
 This schema shows what is called by Nuxt.js when the server is called or when the user navigate through the app via `<nuxt-link>`:
 
-![nuxt-schema](/nuxt-schema.png)
+![nuxt-schema](/nuxt-schema.svg)
 
 ## Server Rendered (Universal SSR)
 

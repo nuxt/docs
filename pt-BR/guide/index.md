@@ -56,7 +56,7 @@ Por debaixo dos panos nós usamos [webpack](https://github.com/webpack/webpack) 
 
 Este fluxo mostra todo o processo que o Nuxt.js faz quando o server é chamado ou quando o usuário navega através do aplicativo usando `<nuxt-link>`:
 
-![nuxt-schema](/nuxt-schema.png)
+![nuxt-schema](/nuxt-schema.svg)
 
 ## Server Rendered (Universal SSR)
 

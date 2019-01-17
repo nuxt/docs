@@ -31,6 +31,7 @@ The two versions of bundles are:
   }
 }
 ```
+**Note about *nuxt generate*:** The `modern` property also works with the `nuxt generate` command, but in this case only the `client` option is honored and will be selected automatically when launching the `nuxt generate --modern` command without providing any values.
 
 - Nuxt will automatically detect `modern` build in `nuxt start` when `modern` is not specified, auto-detected mode is:
 

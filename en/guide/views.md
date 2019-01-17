@@ -5,7 +5,7 @@ description: The Views section describes all you need to configure data and view
 
 > The Views section describes all you need to configure data and views for a specific route in your Nuxt.js Application (App Template, Layouts, Pages and HTML Head).
 
-![nuxt-views-schema](/nuxt-views-schema.png)
+![nuxt-views-schema](/nuxt-views-schema.svg)
 
 ## App Template
 
@@ -47,7 +47,7 @@ One use case of using a custom app template is to add conditional CSS classes fo
 ## Layouts
 
 Layouts are a great help when you want to change the look and feel of your Nuxt.js app.
-Whether your want to include a sidebar or having distinct layouts for mobile and desktop
+Whether you want to include a sidebar or having distinct layouts for mobile and desktop
 
 ### Default Layout
 

@@ -48,7 +48,7 @@ Nuxt.js具有完全模块化的架构，允许开发人员使用灵活的API扩�
 
 #### Utils
 
-- 来源: [common/utils.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/common/src/utils.js)
+- 来源: [utils/src](https://github.com/nuxt/nuxt.js/blob/dev/packages/utils/src)
 
 #### Options
 

@@ -14,6 +14,10 @@ description: The router property lets you customize Nuxt.js router.
 
 The base URL of the app. For example, if the entire single page application is served under `/app/`, then base should use the value `'/app/'`.
 
+This can be useful if you need to serve Nuxt as a different context root, from within a bigger Web site. Notice that you may, or may not set up a Front Proxy Web Server.
+
+If you want to have a redirect to `router.base`, you can do so [using a Hook, see *Redirect to router.base when not on root*](/api/configuration-hooks#redirect-to-router-base-when-not-on-root).
+
 Example (`nuxt.config.js`):
 ```js
 export default {
