@@ -34,7 +34,7 @@ Nuxt Generate -> Local folder -> AWS S3 Bucket -> AWS Cloudfront CDN -> Browser
 ```
 
 First, we'll generate the site with `nuxt generate`.
-Then, we'll use [Gulp](https://gulpjs.com/) to publish the files to a S3 bucket and invalidate a CouldFront CDN.
+Then, we'll use [Gulp](https://gulpjs.com/) to publish the files to a S3 bucket and invalidate a CloudFront CDN.
 
   - [gulp](https://www.npmjs.com/package/gulp)
   - [gulp-awspublish](https://www.npmjs.com/package/gulp-awspublish)
@@ -57,14 +57,14 @@ gulpfile.js     -  `gulp deploy` code to push files to S3 and invalidate CloudFr
 ## Setting it up
 
   1. Make a S3 bucket and configure it for static site hosting
-  2. Create a cloudfront distribution
+  2. Create a CloudFront distribution
   3. Configure security access
   4. Setup build script in your project
   
 ### 1. AWS: Setup your S3 bucket
-### 2. AWS: Setup your Cloudfront Distribution
+### 2. AWS: Setup your CloudFront Distribution
 
-For steps 1. and 2, follow this [tutorial to setup your S3 and Cloudfront](https://reidweb.com/2017/02/06/cloudfront-cdn-tutorial/)
+For steps 1. and 2, follow this [tutorial to setup your S3 and CloudFront](https://reidweb.com/2017/02/06/cloudfront-cdn-tutorial/)
 
 You should now have this data:
   - AWS_BUCKET_NAME="example.com" 
@@ -74,11 +74,11 @@ You should now have this data:
 
 For step 3, we need to create a user that can:
   - Update the bucket contents
-  - Invalidate the cloudfront distribution (propagates changes to users faster)
+  - Invalidate the CloudFront distribution (propagates changes to users faster)
 
 [Create a programmatic user with this policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html):
 
-> NOTE: replace 2x `example.com` with your S3 bucket name below.  This policy allows pushing to the specified bucket, and invalidating any cloudfront distribution.
+> NOTE: replace 2x `example.com` with your S3 bucket name below.  This policy allows pushing to the specified bucket, and invalidating any CloudFront distribution.
 
 ``` json
 {
@@ -181,7 +181,7 @@ var config = {
 
   // Optional
   deleteOldVersions: false,                 // NOT FOR PRODUCTION
-  distribution: process.env.AWS_CLOUDFRONT, // Cloudfront distribution ID
+  distribution: process.env.AWS_CLOUDFRONT, // CloudFront distribution ID
   region: process.env.AWS_DEFAULT_REGION,
   headers: { /*'Cache-Control': 'max-age=315360000, no-transform, public',*/ },
 
@@ -190,7 +190,7 @@ var config = {
   indexRootPath: true,
   cacheFileName: '.awspublish',
   concurrentUploads: 10,
-  wait: true,  // wait for Cloudfront invalidation to complete (about 30-60 seconds)
+  wait: true,  // wait for CloudFront invalidation to complete (about 30-60 seconds)
 }
 
 gulp.task('deploy', function() {
@@ -205,10 +205,10 @@ gulp.task('deploy', function() {
 
   // Invalidate CDN
   if (config.distribution) {
-    console.log('Configured with Cloudfront distribution');
+    console.log('Configured with CloudFront distribution');
     g = g.pipe(cloudfront(config));
   } else {
-    console.log('No Cloudfront distribution configured - skipping CDN invalidation');
+    console.log('No CloudFront distribution configured - skipping CDN invalidation');
   }
 
   // Delete removed files
@@ -291,7 +291,7 @@ server-bundle.json  306 kB          [emitted]
   nuxt:generate Generate done +0ms
 [21:25:27] Using gulpfile ~/scm/example.com/www/gulpfile.js
 [21:25:27] Starting 'deploy'...
-Configured with Cloudfront distribution
+Configured with CloudFront distribution
 [21:25:27] [cache]  README.md
 [21:25:27] [cache]  android-chrome-192x192.png
 [21:25:27] [cache]  android-chrome-512x512.png
@@ -324,8 +324,8 @@ Configured with Cloudfront distribution
 [21:25:38] [update] how/index.html
 [21:25:43] [create] videos/flag.webm
 [21:25:43] [update] index.html
-[21:25:43] Cloudfront invalidation created: I16NXXXXX4JDOA
+[21:25:43] CloudFront invalidation created: I16NXXXXX4JDOA
 [21:26:09] Finished 'deploy' after 42 s
 ```
 
-Note that the `Cloudfront invalidation created: XXXX` is the only output from the cloudfront invalidation npm package.  If you don't see that, it's not working.  
+Note that the `ClouFront invalidation created: XXXX` is the only output from the CloudFront invalidation npm package.  If you don't see that, it's not working.  
