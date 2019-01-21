@@ -54,11 +54,11 @@ export default {
 - Type: `Object` or `Boolean`
 - Default: `false`
 
-Enabled `server.timing` option (disabled by default) adds a middleware to measure SSR generate time and add it to headers ('Server-Timing')
+Enabling the `server.timing` option adds a middleware to measure the time elapsed during server-side rendering and adds it to the headers as 'Server-Timing'
 
 ### Example using timing configuration
 
-`server.timing` can be an object for providing options. Currently supported one is total.
+`server.timing` can be an object for providing options. Currently, only `total` is supported (which directly tracks the whole time spent on server-side rendering)
 
 ```js
 export default {
@@ -72,7 +72,7 @@ export default {
 
 ### Using timing api
 
-`timing` api is also injected into `response` in server side when `server.time` is enabled.
+The `timing` api is also injected into the `response` on server-side when `server.time` is enabled.
 
 #### Syntax
 
@@ -93,10 +93,10 @@ export default function (req, res, next) {
 }
 ```
 
-Then `server-timing` head will be included in response herder like:
+Then `server-timing` head will be included in response header like:
 
 ```bash
 Server-Timing: midd;desc="Middleware timing description";dur=2.4
 ```
 
-Please refer [Server-Timing MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing) for more details.
+Please refer to [Server-Timing MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing) for more details.
