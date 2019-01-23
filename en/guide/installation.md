@@ -51,10 +51,14 @@ It will ask you some questions:
   - [Element UI](https://github.com/ElemeFE/element)
   - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
-3. The [Nuxt mode you want (`Universal` or `SPA`)](https://nuxtjs.org/guide/release-notes#better-spa-experience)
-4. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
-5. Add [EsLint](https://eslint.org/) to Lint your code on save.
-5. Add [Prettier](https://prettier.io/) to prettify your code on save.
+3. Choose your favorite testing framework:
+  - None (feel free to add one later)
+  - [Jest](https://github.com/facebook/jest)
+  - [AVA](https://github.com/avajs/ava)
+4. The [Nuxt mode you want (`Universal` or `SPA`)](https://nuxtjs.org/guide/release-notes#better-spa-experience)
+5. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
+6. Add [EsLint](https://eslint.org/) to Lint your code on save.
+7. Add [Prettier](https://prettier.io/) to prettify your code on save.
 
 When answered, it will install all the dependencies so the next step is to launch the project with:
 
