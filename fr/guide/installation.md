@@ -7,7 +7,7 @@ description: Débuter avec Nuxt.js est vraiment facile. Un projet simple n'a bes
 
 <div>
   <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
-    <img src="/nuxt-fundamentals.png" alt="Nuxt Fundamentals by vueschool"/>
+    <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Nuxt Fundamentals by vueschool"/>
     <div class="Promote__Content">
       <h4 class="Promote__Content__Title">Nuxt.js Fondamentaux</h4>
       <p class="Promote__Content__Description">Apprennez à utiliser Nuxt.js rapidement en videos.</p>
