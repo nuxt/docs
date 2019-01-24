@@ -140,7 +140,7 @@ export default {
 - 类型: `Boolean`
 - 默认: `false`
 
-使用`extract-text-webpack-plugin`将主块中的 CSS 提取到一个单独的 CSS 文件中（自动注入模板），该文件允许单独缓存文件。当有很多共用 CSS 时建议使用此方法，异步组件中的 CSS 将保持内联为JavaScript字符串并由vue-style-loader处理。
+使用[`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin)将主块中的 CSS 提取到一个单独的 CSS 文件中（自动注入模板），该文件允许单独缓存文件。当有很多共用 CSS 时建议使用此方法，异步组件中的 CSS 将保持内联为JavaScript字符串并由vue-style-loader处理。
 
 ## filenames
 
