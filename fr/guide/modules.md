@@ -17,7 +17,7 @@ Un autre point à propos des modules est qu'ils peuvent être refactorisés et p
 - vous êtes une **société** qui accorde de l'importance à la **qualité** et la **réutilisabilité** de ses projets,
 - Vous êtes un membre super enthousiaste de la communauté *Open Source* et que vous souhaitez *partager* avec la communauté d'une façon simple.
 - Vous êtes un développeur occupé et vous n'aimez pas vous encombrer avec des détails comme le paramétrage de chaque nouvelle bibliothèque ou intégration (quelqu'un l'aura surement déjà fait pour vous, ou vous pourriez demander à quelqu'un de la communauté de le faire).
-- Vous êtes fatigué de l'utilisation des API bas niveau et de leur changement continu et vous souhaiter **simplement des choses fonctionnelles**.
+- Vous êtes fatigué de l'utilisation des API bas niveau et de leur changement continu et vous souhaitez **simplement des choses fonctionnelles**.
 
 ## Écrire un module basique
 
