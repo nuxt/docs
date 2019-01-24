@@ -8,7 +8,7 @@ description: Define the modules directory for your Nuxt.js application
 - Type: `Array`
 - Default: `['node_modules']`
 
-> Used to set the modules directories for path resolving, for example: webpack resolveLoading, nodeExternal and postcss. Configuration path is relative to [options.rootDir](/api/configuration-rootdir) (default: `process.cwd()`).
+> Used to set the modules directories for path resolving, for example: Webpack's `resolveLoading`, `nodeExternals` and `postcss`. Configuration path is relative to [options.rootDir](/api/configuration-rootdir) (default: `process.cwd()`).
 
 Example (`nuxt.config.js`):
 
