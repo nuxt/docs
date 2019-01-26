@@ -11,7 +11,7 @@ description: You may want to fetch data and render it on the server-side. Nuxt.j
     <div class="Promote__Content">
       <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
       <p class="Promote__Content__Description">Learn how to manage asynchronous data with Nuxt.js.</p>
-      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js development.</p>
     </div>
   </a>
 </div>
