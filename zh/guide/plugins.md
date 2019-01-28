@@ -3,7 +3,7 @@ title: 插件
 description: 你可以配置需要在 `根vue.js应用` 实例化之前需要运行的 Javascript 插件，可以是你自己写的库或第三方模块。
 ---
 
-> Nuxt.js允许您在实例化Vue.js应用程序之前运行js插件。这在您需要使用自己的库或第三方模块时特别有用。
+> Nuxt.js允许您在运行Vue.js应用程序之前执行js插件。这在您需要使用自己的库或第三方模块时特别有用。
 
 <div class="Alert">
 
