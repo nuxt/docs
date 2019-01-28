@@ -18,6 +18,16 @@ When launching `nuxt generate` or calling `nuxt.generate()`, Nuxt.js will use th
 
 Directory name created by `nuxt generate`.
 
+## devtools
+
+- Type: `boolean`
+- Default: `false`
+
+Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools) inspection.
+
+If you already activated through nuxt.config.js or otherwise, devtools enable regardless of the flag.
+
+
 ## fallback
 
 - Type: `String` or `Boolean`

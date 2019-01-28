@@ -7,7 +7,7 @@ description: Nuxt.js 扩展了 Vue.js，增加了一个叫 `asyncData` 的方法
 
 <div>
   <a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote">
-    <img src="/async-data-with-nuxtjs.png" alt="AsyncData by vueschool"/>
+    <img src="/async-data-with-nuxtjs.png" srcset="/async-data-with-nuxtjs-2x.png 2x" alt="AsyncData by vueschool"/>
     <div class="Promote__Content">
       <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
       <p class="Promote__Content__Description">Learn how to manage asynchronous data with Nuxt.js.</p>

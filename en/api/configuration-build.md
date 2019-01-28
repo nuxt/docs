@@ -38,18 +38,18 @@ export default {
 
 ## babel
 
-> Customize Babel configuration for JavaScript and Vue files.
+> Customize Babel configuration for JavaScript and Vue files. `.babelrc` is ignored by default.
 
 - Type: `Object`
 - Default:
 
   ```js
   {
+    babelrc: false,
+    cacheDirectory: undefined,
     presets: ['@nuxt/babel-preset-app']
   }
   ```
-
-Example (`nuxt.config.js`):
 
 ```js
 export default {
@@ -68,6 +68,15 @@ export default {
 
 > Enable cache of [terser-webpack-plugin ](https://github.com/webpack-contrib/terser-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
 
+## crossorigin
+
+- Type: `String`
+- Default: `undefined`
+
+  Configure the `crossorigin` attribute on `<link rel="stylesheet">` and `<script>` tags in generated HTML.
+
+  More Info: [CORS settings attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes)
+
 ## cssSourceMap
 
 - Type: `boolean`
@@ -80,6 +89,15 @@ export default {
 - Type: `Object`
 
 See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) for available options.
+
+## devtools
+
+- Type: `boolean`
+- Default: `false`
+
+Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools) inspection.
+
+If you already activated through nuxt.config.js or otherwise, devtools enable regardless of the flag.
 
 ## extend
 
@@ -186,6 +204,13 @@ export default {
 
 To understand a bit more about the use of manifests, take a look at this [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/).
 
+## friendlyErrors
+
+- Type: `Boolean`
+- Default: `true` (Overlay enabled)
+
+Enables or disables the overlay provided by [FriendlyErrorsWebpackPlugin](https://github.com/nuxt/friendly-errors-webpack-plugin)
+
 ## hotMiddleware
 
 - Type: `Object`
@@ -247,6 +272,14 @@ HTML files created during the build process (will be applied for *all modes*).
   },
   scss: {},
   stylus: {},
+  ts: {
+    transpileOnly: true,
+    appendTsSuffixTo: [/\.vue$/]
+  },
+  tsx: {
+    transpileOnly: true,
+    appendTsxSuffixTo: [/\.vue$/]
+  },
   vueStyle: {}
 }
 ```
@@ -282,6 +315,15 @@ HTML files created during the build process (will be applied for *all modes*).
 
 > See the [Node Sass documentation](https://github.com/sass/node-sass/blob/master/README.md#options) for all available Sass options.
 > Note: `loaders.sass` is for [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html)
+
+### loaders.ts
+
+> Loader for typescript file and `lang="ts"` Vue SFC.
+> More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#loader-options).
+
+### loaders.tsx
+
+> More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#options).
 
 ### loaders.vueStyle
 
@@ -581,6 +623,17 @@ See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/t
 - Default: `[]`
 
 If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Each item in transpile can be a package name, or a string or regex object matching the dependency's file name.
+
+## useForkTsChecker
+
+> Enables TypeScript type checking on a separate process.
+
+- Type: `Object` or `Boolean`
+- Default: `false`. But `true` for TypeScript projects using `nuxt-ts` (see [TypeScript Support](/guide/typescript))
+
+ForkTsChecker plugin options. Set to `false` to disable this plugin.
+
+See [Realytics/fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin).
 
 ## vueLoader
 

@@ -7,7 +7,7 @@ description: Nuxt.js는 시작하기 정말 쉽습니다. 간단한 프로젝트
 
 <div>
   <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
-    <img src="/nuxt-fundamentals.png" alt="Nuxt Fundamentals by vueschool"/>
+    <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Nuxt Fundamentals by vueschool"/>
     <div class="Promote__Content">
       <h4 class="Promote__Content__Title">Nuxt.js Fundamentals</h4>
       <p class="Promote__Content__Description">Learn how to get started quickly with Nuxt.js in videos.</p>
