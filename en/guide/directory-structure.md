@@ -67,7 +67,7 @@ _This directory cannot be renamed without extra configuration._
 
 The `nuxt.config.js` file contains your Nuxt.js custom configuration.
 
-_This file can not be renamed without extra configuration._
+_This file cannot be renamed without extra configuration._
 
 [More documentation about `nuxt.config.js` integration](/guide/configuration)
 

@@ -101,6 +101,10 @@
         ]
       },
       {
+        "to": "/typescript", "name": "TypeScript Support",
+        "contents": []
+      },
+      {
         "to": "/commands", "name": "Commands and Deployment",
         "contents": [
           { "to": "#list-of-commands", "name": "List of Commands" },

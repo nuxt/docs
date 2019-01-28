@@ -66,6 +66,15 @@ module.exports = {
 
 > 启用 [uglifyjs-webpack-plugin ](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) 和 [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) 的缓存
 
+## crossorigin
+
+- 类型: `String`
+- 默认: `undefined`
+
+在生成的HTML中的`<link rel ="stylesheet">`和`<script>`标签上配置`crossorigin`属性。
+
+请查看 [CORS settings attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) 了解更多可用选项。
+
 ## cssSourceMap
 
 - 类型: `boolean`
@@ -131,7 +140,7 @@ export default {
 - 类型: `Boolean`
 - 默认: `false`
 
-使用`extract-text-webpack-plugin`将主块中的 CSS 提取到一个单独的 CSS 文件中（自动注入模板），该文件允许单独缓存文件。当有很多共用 CSS 时建议使用此方法，异步组件中的 CSS 将保持内联为JavaScript字符串并由vue-style-loader处理。
+使用[`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin)将主块中的 CSS 提取到一个单独的 CSS 文件中（自动注入模板），该文件允许单独缓存文件。当有很多共用 CSS 时建议使用此方法，异步组件中的 CSS 将保持内联为JavaScript字符串并由vue-style-loader处理。
 
 ## filenames
 

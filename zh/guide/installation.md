@@ -7,7 +7,7 @@ description: "Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt`
 
 <div>
   <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
-    <img src="/nuxt-fundamentals.png" alt="Nuxt Fundamentals by vueschool"/>
+    <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Nuxt Fundamentals by vueschool"/>
     <div class="Promote__Content">
       <h4 class="Promote__Content__Title">Nuxt.js Fundamentals</h4>
       <p class="Promote__Content__Description">Learn how to get started quickly with Nuxt.js in videos.</p>

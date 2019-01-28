@@ -6,7 +6,7 @@ description: 아마 여러분은 서버에서 데이터를 가져오고 렌더�
 > 아마 여러분은 서버에서 데이터를 가져오고 렌더링하고 싶은 적이 있을텐데요. Nuxt.js에서는 컴포넌트의 데이터를 셋팅하기 전에 비동기 작업을 처리할 수 있게 하는 `asyncData`를 지원합니다.
 
 <a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote">
-  <img src="/async-data-with-nuxtjs.png" alt="AsyncData by vueschool"/>
+  <img src="/async-data-with-nuxtjs.png" srcset="/async-data-with-nuxtjs-2x.png 2x" alt="AsyncData by vueschool"/>
   <div class="Promote__Content">
     <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
     <p class="Promote__Content__Description">Learn how to manage asynchronous data with Nuxt.js.</p>

@@ -19,7 +19,9 @@ The two versions of bundles are:
 1. Modern bundle: targeting modern browsers that support ES modules
 1. Legacy bundle: targeting older browsers based on babel config (IE9 compatible by default).
 
-**Info:** you can use commands `nuxt build/start --modern=[type]` or `nuxt build/start -m=[type]` to build/start modern bundles, so you can specify modern commands inside the `package.json` scripts:
+**Info:**
+
+- Use command option `[--modern | -m]=[mode]` to build/start modern bundles, for example: in `package.json`:
 
 ```json
 {
@@ -30,5 +32,15 @@ The two versions of bundles are:
 }
 ```
 **Note about *nuxt generate*:** The `modern` property also works with the `nuxt generate` command, but in this case only the `client` option is honored and will be selected automatically when launching the `nuxt generate --modern` command without providing any values.
+
+- Nuxt will automatically detect `modern` build in `nuxt start` when `modern` is not specified, auto-detected mode is:
+
+| Mode          | Modern Mode   |
+| ------------- |:-------------:|
+| universal     | server        |
+| spa           | client        |
+
+- Modern mode for `nuxt generate` can only be `client`
+- Use [`build.crossorigin`](/api/configuration-build#crossorigin) to set `crossorigin` attribute in `<link>` and `<script>`
 
 > Please refer [Phillip Walton's excellent post](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) for more knowledge regarding modern builds.
