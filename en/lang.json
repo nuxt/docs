@@ -34,10 +34,10 @@
     "version": "Version"
   },
   "homepage": {
-    "title": "Universal Vue.js Applications",
+    "title": "The Vue.js Framework",
     "meta": {
-      "title": "Nuxt.js - Universal Vue.js Applications",
-      "description": "Nuxt.js is a minimal framework for creating Vue.js applications with server side rendering, code-splitting, hot-reloading, static generation and more!"
+      "title": "Nuxt.js - The Vue.js Framework",
+      "description": "Nuxt.js presets all the configuration needed to make your development of a Vue.js application enjoyable. Nuxt.js can produce Universal, Single Page and Static Generated Applications."
     },
     "codesandbox_title": "Play with Nuxt.js online",
     "codesandbox_open": "Open on CodeSandBox.io",
