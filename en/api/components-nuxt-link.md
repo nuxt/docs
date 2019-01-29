@@ -35,4 +35,4 @@ To disable the prefetching of the linked page, you can use the `no-prefetch` pro
 
 You can configure globally this behaviour with [router.prefetchLinks](/api/configuration-router#prefetchlinks).
 
-The `prefetched-class` prop is also available to customize the class added when the code splitted page has been prefetched. Make sure to set up this functionnaly globally with [router.linkPrefetchedClass](/api/configuration-router#linkprefetchedclass).
+The `prefetched-class` prop is also available to customize the class added when the code splitted page has been prefetched. Make sure to set up this functionality globally with [router.linkPrefetchedClass](/api/configuration-router#linkprefetchedclass).
