@@ -261,3 +261,4 @@ export default {
     '~/plugins/baz.js' // both client & server
   ]
 }
+```
