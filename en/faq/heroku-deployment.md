@@ -49,7 +49,7 @@ Finally, we can push the app on Heroku with:
 git push heroku master
 ```
 
-To deploy a non-master brach to Heroku use:
+To deploy a non-master branch to Heroku use:
 ```bash
 git push heroku develop:master
 ```
