@@ -83,7 +83,7 @@ When building your application, it will generate the HTML for every one of your 
     <div class="Promote__Content">
       <h4 class="Promote__Content__Title">Static Site Generation with Nuxt.js</h4>
       <p class="Promote__Content__Description">Learn how to generate static websites (pre rendering) to improve both performance and SEO while eliminating hosting costs.</p>
-      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js development.</p>
     </div>
   </a>
 </div>
