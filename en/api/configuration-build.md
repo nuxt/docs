@@ -84,14 +84,14 @@ export default {
 }
 ```
 
-**Note**: the presets in configured in `build.babel.presets` will apply to both client and server build, the target will be set by Nuxt according to the building (client/server), if you want to set different config, please use presets as a function:
+**Note**: the presets in configured in `build.babel.presets` will be applied to both client and server build, the target will be set by Nuxt according to the building (client/server), if you want to set different config, please use presets as a function:
 
 ```js
 export default {
   build: {
     babel: {
       presets({ isServer }) {
-        const targets = isServer ? { node: 'current' } : { ie: 9 }
+        const targets = isServer ? { node: '10' } : { ie: '11' }
         return [
           [ require.resolve('@nuxt/babel-preset-app'), { targets } ]
         ]
