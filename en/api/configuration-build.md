@@ -50,7 +50,30 @@ export default {
     presets: ['@nuxt/babel-preset-app']
   }
   ```
+  
 
+The default targets of [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) are `ie: '9'` in the `client` build, and `node: 'current'` in the `server` build.
+
+**Note**: The presets configured in `build.babel.presets` will be applied to both, the client and the server build. The target will be set by Nuxt accordingly (client/server). If you want configure the preset differently for the client or the server build, please use `presets` as a function:
+
+```js
+export default {
+  build: {
+    babel: {
+      presets({ isServer }) {
+        const targets = isServer ? { node: '10' } : { ie: '11' }
+        return [
+          [ require.resolve('@nuxt/babel-preset-app'), { targets } ]
+        ]
+      }
+    }
+  }
+}
+```
+
+We **highly recommend** to use the default preset. However, you can change the preset if you have to. 
+
+*Example* for custom presets:
 ```js
 export default {
   build: {
@@ -66,7 +89,7 @@ export default {
 - Type: `Boolean`
 - Default: `false`
 
-> Enable cache of [terser-webpack-plugin ](https://github.com/webpack-contrib/terser-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
+> Enable cache of [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
 
 ## crossorigin
 
