@@ -52,7 +52,7 @@ export default {
   ```
   
 
-The default targets of [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) are `ie: '9'` in the `client` build, and `node: 'current'` on the `server` build.
+The default targets of [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) are `ie: '9'` in the `client` build, and `node: 'current'` in the `server` build.
 
 **Note**: The presets configured in `build.babel.presets` will be applied to both, the client and the server build. The target will be set by Nuxt accordingly (client/server). If you want configure the preset differently for the client or the server build, please use `presets` as a function:
 
