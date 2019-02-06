@@ -235,6 +235,14 @@ To understand a bit more about the use of manifests, take a look at this [webpac
 
 Enables or disables the overlay provided by [FriendlyErrorsWebpackPlugin](https://github.com/nuxt/friendly-errors-webpack-plugin)
 
+## hardSource
+
+- Type: `Boolean`
+- Default: `false`
+- ⚠️ Experimental
+
+Enables the [HardSourceWebpackPlugin](https://github.com/mzgoddard/hard-source-webpack-plugin) for improved caching
+
 ## hotMiddleware
 
 - Type: `Object`
