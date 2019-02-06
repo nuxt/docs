@@ -88,6 +88,7 @@ export default {
 
 - Type: `Boolean`
 - Default: `false`
+- ⚠️ Experimental
 
 > Enable cache of [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
 
@@ -395,6 +396,7 @@ See [NMFR/optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-c
 
 - Type: `Boolean`
 - Default: `false`
+- ⚠️ Experimental
 
 > Enable [thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) in webpack building
 
