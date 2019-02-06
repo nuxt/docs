@@ -73,11 +73,16 @@ Allows easily extending routes by chaining [options.build.extendRoutes](/api/con
 
 ### addModule (moduleOpts, requireOnce)
 
-Registers module. `moduleOpts` can be string or `[src, options]`. If `requireOnce` is `true` and resolved module exports `meta` prevents registering same module twice.
+*Async function*
+
+Registers a module. `moduleOpts` can be a string or an array (`[src, options]`). 
+If `requireOnce` is `true` and the resolved module exports `meta`, it prevents registering same module twice.
 
 ### requireModule (moduleOpts)
 
-Is shortcut to `addModule(moduleOpts, true)`
+*Async function*
+
+Is a shortcut for `addModule(moduleOpts, true)`
 
 ## Hooks
 
