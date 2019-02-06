@@ -96,6 +96,20 @@ This can be useful to dynamically enable/disable SSR on runtime after image buil
 
 See [serve-static](https://www.npmjs.com/package/serve-static) docs for possible options.
 
+Additional to them, we introduced a `prefix` option which defaults to `true`.
+It will add the router base to your static assets.
+
+**Example:**
+
+* Assets: `favicon.ico`
+* Router base: `/t`
+* With `prefix: true` (default): `/t/favicon.ico`
+* With `prefix: false`: `/favicon.ico`
+
+**Caveats:**
+
+Some URL rewrites might respect the prefix.
+
 ## dist
 - Type: `Object`
   - Default: `{ maxAge: '1y', index: false }`
