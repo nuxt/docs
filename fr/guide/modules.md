@@ -275,7 +275,7 @@ module.exports = function (moduleOptions) {
 
 ## Lancer des tâches sur des points d'ancrage spécifiques
 
-Votre module peut avoir besoin de choses seulement sous certaines conditions et pas seulement lors de l'initialisation de Nuxt. Nous utilisons le puissant système de plugin [Tapable](https://github.com/webpack/tapable) pour réaliser des tâches sur des évènements spécifiques. Nuxt va les attendre si les points d'ancrage retournent une promesse ou sont définis comme `async`.
+Votre module peut avoir besoin de choses seulement sous certaines conditions et pas seulement lors de l'initialisation de Nuxt. Nous pouvons utiliser le puissant système [Hookable] (https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js) pour effectuer des tâches sur des événements spécifiques. Nuxt va les attendre si les points d'ancrage retournent une promesse ou sont définis comme `async`.
 
 ```js
 module.exports = function () {
