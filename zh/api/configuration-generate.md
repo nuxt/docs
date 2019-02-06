@@ -165,7 +165,7 @@ async asyncData ({ params, error, payload }) {
 }
 ```
 
-## 子文件夹
+## subFolders
 
 - 类型: `Boolean`
 - 默认: `true`
