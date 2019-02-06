@@ -278,7 +278,7 @@ module.exports = function (moduleOptions) {
 
 ## Run Tasks on Specific hooks
 
-Your module may need to do things only on specific conditions not just during Nuxt initialization. We can use the powerful [Hookable](https://github.com/nuxt/nuxt.js/blob/dev/packages/common/src/hookable.js) Nuxt.js system to do tasks on specific events. Nuxt will await for us if hooks return a Promise or are defined as `async`.
+Your module may need to do things only on specific conditions not just during Nuxt initialization. We can use the powerful [Hookable](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js) Nuxt.js system to do tasks on specific events. Nuxt will await for us if hooks return a Promise or are defined as `async`.
 
 ```js
 module.exports = function () {
