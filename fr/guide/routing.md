@@ -233,6 +233,35 @@ router: {
 }
 ```
 
+### Routes dynamiques imbriquées inconnues
+
+Si vous ne connaissez pas la profondeur de votre structure d'URL, vous pouvez utiliser `_.vue` pour
+correspondre dynamiquement aux chemins imbriqués.
+
+Cet arbre de fichiers:
+
+```bash
+pages/
+--| people/
+-----| _id.vue
+-----| index.vue
+--| _.vue
+--| index.vue
+```
+
+Va gérer des requêtes comme ceci :
+
+Chemin | Fichier
+--- | ---
+`/` | `index.vue`
+`/people` | `people/index.vue`
+`/people/123` | `people/_id.vue`
+`/about` | `_.vue`
+`/about/careers` | `_.vue`
+`/about/careers/chicago` | `_.vue`
+
+__Note:__ La gestion des pages 404 relève maintenant de la logique de la page `_.vue`. [Plus d'informations sur la redirection des 404 peut être trouvé ici](/guide/async-data#handling-errors).
+
 ### Alternative pour application monopage
 
 Vous pouvez activer l'alternative pour application monopage pour les routes dynamiques aussi. Nuxt.js va générer un fichier supplémentaire identique à `index.html` qui pourra être utilisé en `mode: 'spa'`. La plupart des services d'hébergement peuvent être configurés pour utiliser le template d'application monopage si aucun fichier ne concorde. Les informations de `head` ou HTML ne seront pas inclus mais les données seront toujours résolues et chargées depuis l'API.
