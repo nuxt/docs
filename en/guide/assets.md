@@ -53,7 +53,7 @@ The benefits of these loaders are:
 For those two loaders, the default configuration is:
 
 ```js
-// https://github.com/nuxt/nuxt.js/blob/dev/packages/builder/src/webpack/base.js#L204-L229
+// https://github.com/nuxt/nuxt.js/blob/dev/packages/webpack/src/config/base.js#L297-L316
 [
   {
     test: /\.(png|jpe?g|gif|svg|webp)$/,
