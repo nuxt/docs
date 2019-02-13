@@ -277,7 +277,7 @@ module.exports = function (moduleOptions) {
 
 ## 特定のフックでタスクを実行する
 
-単に Nuxt の初期化処理時だけではなく、特定の条件下でのみ、モジュールにある処理を実行させたいこともあるでしょう。強力な[Hookable]（https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js）Nuxt.jsシステムを使用して特定のイベントでタスクを実行できます。フックが Promise を返すか `async` として定義されている場合は Nuxt は待機します。
+単に Nuxt の初期化処理時だけではなく、特定の条件下でのみ、モジュールにある処理を実行させたいこともあるでしょう。強力な[Hookable](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js)Nuxt.jsシステムを使用して特定のイベントでタスクを実行できます。フックが Promise を返すか `async` として定義されている場合は Nuxt は待機します。
 
 ```js
 module.exports = function () {
