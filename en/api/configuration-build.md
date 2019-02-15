@@ -566,7 +566,7 @@ This option is automatically set based on `mode` value if not provided.
 
 <div class="Alert Alert--orange">
 
-**Warning:** This property is deprecated. Please use the [style-resources-modules](https://github.com/nuxt-community/style-resources-module/) instead for improved performance and better DX!
+**Warning:** This property is deprecated. Please use the [style-resources-module](https://github.com/nuxt-community/style-resources-module/) instead for improved performance and better DX!
 
 </div>
 
