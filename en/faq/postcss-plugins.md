@@ -5,6 +5,19 @@ description: How to add PostCSS plugins?
 
 # How to add PostCSS plugins?
 
+### Default way
+Use postcss.config.js
+
+```
+const join = require('path').join
+const tailwindJS = join(__dirname, 'tailwind.js')
+
+module.exports = {
+  plugins: [require('tailwindcss')(tailwindJS), require('autoprefixer')]
+}
+```
+
+### Modern way
 Delete postcss.config.js in project directory (if you have it), than in your `nuxt.config.js` file:
 
 ```js
