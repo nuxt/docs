@@ -5,8 +5,8 @@ description: How to add PostCSS plugins?
 
 # How to add PostCSS plugins?
 
-### Default way
-Use postcss.config.js
+### Default Method
+Use postcss.config.js, for example:
 
 ```
 const join = require('path').join
@@ -17,8 +17,8 @@ module.exports = {
 }
 ```
 
-### Modern way
-Delete postcss.config.js in project directory (if you have it), than in your `nuxt.config.js` file:
+### Modern Method
+Delete the `postcss.config.js` in your project directory (if existent). Then, in your `nuxt.config.js` file add the following:
 
 ```js
 export default {
