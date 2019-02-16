@@ -6,7 +6,7 @@ description: How to add PostCSS plugins?
 # How to add PostCSS plugins?
 
 ### Default Method
-Use postcss.config.js, for example:
+Use `postcss.config.js`, for example:
 
 ```
 const join = require('path').join
