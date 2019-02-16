@@ -208,7 +208,7 @@ Provide custom query string parse / stringify functions. Overrides the default.
 - Default: `true`
 
 Configure `<nuxt-link>` to prefetch the *code-splitted* page when detected within the viewport.
-equires [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to be supported (see [CanIUse](https://caniuse.com/#feat=intersectionobserver)).
+Requires [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to be supported (see [CanIUse](https://caniuse.com/#feat=intersectionobserver)).
 
 We recommend conditionally polyfilling this feature with a service like [Polyfill.io](https://polyfill.io):
 
