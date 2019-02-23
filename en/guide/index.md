@@ -11,7 +11,7 @@ Its main scope is **UI rendering** while abstracting away the client/server dist
 
 Our goal is to create a framework flexible enough that you can use it as a main project base or in addition to your current project based on Node.js.
 
-Nuxt.js presets all the configuration needed to make your development of a Vue.js Application **Server Rendered** more enjoyable.
+Nuxt.js presets all the configuration needed to make your development of a **Server Rendered** Vue.js Application more enjoyable.
 
 In addition, we also provide another deployment option called: *nuxt generate*. It will build a **Static Generated** Vue.js Application.
 We believe that option could be the next big step in the development of Web Applications with microservices.
