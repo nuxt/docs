@@ -17,9 +17,8 @@ Nuxt [Modules](/guide/modules) can also provide `serverMiddleware`
 using [this.addServerMiddleware()](/api/internals-module-container#addservermiddleware-middleware-)
 
 ## serverMiddleware vs middleware!
-Don't confuse it with [routes middleware](/guide/routing#middleware) which are being called before each route by Vue in Client Side or SSR.
-`serverMiddleware` are just running in server side **before** vue-server-renderer and can be used for server specific tasks
-like handling API requests or serving assets.
+Don't confuse it with [routes middleware](/guide/routing#middleware) which are called before each route by Vue in Client Side or SSR.
+Middleware listed in the `serverMiddleware` property runs server-side **before** vue-server-renderer and can be used for server specific tasks like handling API requests or serving assets.
 
 ## Usage
 
@@ -52,7 +51,7 @@ export default {
 
 ## Custom Server Middleware
 
-It is also possible writing custom middleware. For more information See [Connect Docs](https://github.com/senchalabs/connect#appusefn).
+It is also possible to write custom middleware. For more information See [Connect Docs](https://github.com/senchalabs/connect#appusefn).
 
 Middleware (`api/logger.js`):
 
