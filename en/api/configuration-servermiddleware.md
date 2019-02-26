@@ -8,9 +8,8 @@ description: Define server-side middleware.
 - Type: `Array`
     - Items: `String` or `Object` or `Function`
 
-Nuxt internally creates a [connect](https://github.com/senchalabs/connect) instance,
-so we can register our middleware to its stack and having chance
-to provide more routes like API **without need to an external server**.
+Nuxt internally creates a [connect](https://github.com/senchalabs/connect) instance that we can add our own custom middleware to. This allows us to register additional routes (typically `/api` routes) **without need for an external server**.
+
 Because connect itself is a middleware, registered middleware will work with both `nuxt start`
 and also when used as a middleware with programmatic usages like [express-template](https://github.com/nuxt-community/express-template).
 Nuxt [Modules](/guide/modules) can also provide `serverMiddleware`
