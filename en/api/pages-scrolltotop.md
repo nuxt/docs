@@ -25,4 +25,4 @@ export default {
 
 Conversely, you can manually set `scrollToTop` to `false` on parent routes as well.
 
-If you want to overwrite the default scroll behavior of Nuxt.js, take a look at the [scrollBehavior option](/api/configuration-router#scrollBehavior).
+If you want to overwrite the default scroll behavior of Nuxt.js, take a look at the [scrollBehavior option](/api/configuration-router#scrollbehavior).
