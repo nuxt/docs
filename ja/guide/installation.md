@@ -57,7 +57,7 @@ yarn create nuxt-app <my-project>
   - [AVA](https://github.com/avajs/ava)
 4. [Nuxtのモードを選択します。(`Universal` または `SPA`)](https://nuxtjs.org/guide/release-notes#better-spa-experience)
 5. HTTP リクエストを簡単に行うために [axios module](https://github.com/nuxt-community/axios-module) を追加します。
-6. Add [EsLint](https://eslint.org/) to Lint your code on save.
+6. 保存時にコードをチェックするために [EsLint](https://eslint.org/) を追加します。
 7. Add [Prettier](https://prettier.io/) to prettify your code on save.
 
 回答が終わり次第、全ての依存関係がインストールされ、プロジェクトを開始する次のステップへ進めます:
