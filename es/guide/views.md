@@ -5,7 +5,7 @@ description: The Views section describes all you need to configure data and view
 
 > The Views section describes all you need to configure data and views for a specific route in your Nuxt.js application. (Document, Layouts, Pages and HTML Head)
 
-![nuxt-views-schema](/nuxt-views-schema.png)
+![nuxt-views-schema](/nuxt-views-schema.svg)
 
 ## Document
 
@@ -61,11 +61,11 @@ The default layout source code is:
 
 ### Error Page
 
-You can customize the error page by adding a `layouts/error.vue` file.
+You can customize the error page by adding a `layouts/error.vue` file or configuring `ErrorPage` in `nuxt.config.js`.
 
 This layout is special since you should not include `<nuxt/>` inside its template. You must see this layout as a component displayed when an error occurs (404, 500, etc).
 
-The default error page source code is [available on GitHub](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
+The default error page source code is [available on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
 
 Example of a custom error page in `layouts/error.vue`:
 ```html
@@ -83,6 +83,14 @@ export default {
   layout: 'blog' // you can set a custom layout for the error page
 }
 </script>
+```
+
+Example of configuring a custom error page in `nuxt.config.js`:
+
+```js
+module.exports = {
+  ErrorPage: '~/components/custom-error.vue',
+}
 ```
 
 ### Custom Layout
@@ -200,4 +208,8 @@ More information about the head method: [API Configuration head](/api/configurat
 
 More information about the head method: [API Pages head](/api/pages-head)
 
-<p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+<div class="Alert">
+
+To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://github.com/declandewet/vue-meta#lists-of-tags).
+
+</div>

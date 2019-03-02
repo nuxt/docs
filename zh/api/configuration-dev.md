@@ -25,7 +25,7 @@ module.exports = {
 
 在 `server.js` 中：
 ```js
-const Nuxt = require('nuxt')
+const {Nuxt, Builder} = require('nuxt')
 const app = require('express')()
 const port = process.env.PORT || 3000
 
@@ -36,11 +36,7 @@ app.use(nuxt.render)
 
 // 在开发模式下进行编译
 if (config.dev) {
-  nuxt.build()
-  .catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
+  new Builder(nuxt).build()
 }
 
 // 监听指定端口

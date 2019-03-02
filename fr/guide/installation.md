@@ -5,6 +5,17 @@ description: Débuter avec Nuxt.js est vraiment facile. Un projet simple n'a bes
 
 > Débuter avec Nuxt.js est vraiment facile. Un projet simple n'a besoin que d'une dépendance à `nuxt`.
 
+<div>
+  <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Nuxt Fundamentals by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Nuxt.js Fondamentaux</h4>
+      <p class="Promote__Content__Description">Apprennez à utiliser Nuxt.js rapidement en videos.</p>
+      <p class="Promote__Content__Signature">Tutoriels vidéos créés par VueSchool afin de supporter le développement de Nuxt.js.</p>
+    </div>
+  </a>
+</div>
+
 ## Utiliser le template de base de Nuxt.js
 
 Afin de démarrer rapidement, l'équipe Nuxt.js a créé un [template de démarrage](https://github.com/nuxt-community/starter-template).
@@ -15,7 +26,7 @@ Afin de démarrer rapidement, l'équipe Nuxt.js a créé un [template de démarr
 $ vue init nuxt-community/starter-template <project-name>
 ```
 
-> Si [vue-cli](https://github.com/vuejs/vue-cli) n'est pas installée, merci de l'installer via `npm install -g vue-cli`
+> Si [Vue CLI](https://github.com/vuejs/vue-cli) n'est pas installée, merci de l'installer via `npm install -g @vue/cli @vue/cli-init`
 
 puis installez les dépendances :
 
@@ -30,7 +41,11 @@ $ npm run dev
 ```
 L'application est désormais accessible à l'adresse http://localhost:3000.
 
-<p class="Alert">Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages.</p>
+<div class="Alert">
+
+Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages.
+
+</div>
 
 Pour en savoir plus sur l'organisation des répertoires dans un projet, consultez la documentation de l'[Architecture des répertoires](/guide/directory-structure).
 
@@ -43,7 +58,11 @@ $ mkdir <nom-du-projet>
 $ cd <nom-du-projet>
 ```
 
-<p class="Alert Alert--nuxt-green"><b>Info :</b> remplacez <code>&lt;nom-du-projet&gt;</nom-du-projet></code> par le nom du projet.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>Info :</b> remplacez <code>&lt;nom-du-projet&gt;</nom-du-projet></code> par le nom du projet.
+
+</div>
 
 ### Le package.json
 
@@ -95,6 +114,10 @@ $ npm run dev
 
 L'application est désormais accessible à l'adresse http://localhost:3000.
 
-<p class="Alert">Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages</p>
+<div class="Alert">
+
+Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages
+
+</div>
 
 Pour en savoir plus sur la structure des dossiers du projet, consultez la documentation de l'[Architecture des répertoires](/guide/directory-structure).

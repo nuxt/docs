@@ -5,7 +5,7 @@ description: La classe `ModuleContainer` de Nuxt
 
 # Classe ModuleContainer
 
-- Source : **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/module.js)**
+- Source : **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/module.js)**
 
 Tous les [modules](/guide/modules) seront appelés dans le contexte de l'instance de `ModuleContainer`.
 
@@ -75,3 +75,12 @@ Enregistre le module. `moduleOpts` peut être une chaine de caractères ou `[src
 ### requireModule (moduleOpts)
 
 C'est un alias raccourci de `addModule(moduleOpts, true)`
+
+## Points d'ancrage
+
+We can register hooks on certain life cycle events.
+
+Points d'ancrage          | Arguments                  | Quand
+--------------------------|----------------------------|-------------------------------------------------------------------------------------------------------
+ `modules:before`         | (moduleContainer, options) | Appelé avant la création de la classe ModuleContainer, utile pour surcharger les méthodess et options.
+ `modules:done`           | (moduleContainer)          | Appelé quand tous les modules ont été chargés.

@@ -22,7 +22,8 @@
           { "name": "関数", "to": "#関数" }
         ]
       },
-      { "name": "validate", "to": "/pages-validate" }
+      { "name": "validate", "to": "/pages-validate" },
+      { "name": "watchQuery", "to": "/pages-watchquery" }
     ]
   },
   {
@@ -58,6 +59,7 @@
           { "name": "watch", "to": "#watch" }
         ]
       },
+      { "name": "buildDir", "to": "/configuration-builddir" },
       { "name": "css", "to": "/configuration-css" },
       { "name": "dev", "to": "/configuration-dev" },
       { "name": "env", "to": "/configuration-env" },
@@ -72,6 +74,8 @@
         ]
       },
       { "name": "head", "to": "/configuration-head" },
+      { "name": "hooks", "to": "/configuration-hooks" },
+      { "name": "ignore", "to": "/configuration-ignore" },
       {
         "name": "loading",
         "to": "/configuration-loading",
@@ -84,16 +88,17 @@
       { "name": "loadingIndicator", "to": "/configuration-loading-indicator" },
       { "name": "mode", "to": "/configuration-mode" },
       { "name": "modules", "to": "/configuration-modules" },
+      { "name": "modulesDir", "to": "/configuration-modulesdir" },
       { "name": "plugins", "to": "/configuration-plugins" },
       {
         "name": "render",
         "to": "/configuration-render",
         "contents": [
-          { "name": "bundleRenderer", "to": "#bundleRenderer" },
+          { "name": "bundleRenderer", "to": "#bundlerenderer" },
           { "name": "etag", "to": "#etag" },
           { "name": "gzip", "to": "#gzip" },
           { "name": "http2", "to": "#http2" },
-          { "name": "resourceHints", "to": "#resourceHints" },
+          { "name": "resourceHints", "to": "#resourcehints" },
           { "name": "ssr", "to": "#ssr" },
           { "name": "static", "to": "#static" }
         ]
@@ -112,9 +117,13 @@
           { "name": "scrollBehavior", "to": "#scrollbehavior" }
         ]
       },
+      { "name": "server", "to": "/configuration-server" },
       { "name": "serverMiddleware", "to": "/configuration-servermiddleware" },
       { "name": "srcDir", "to": "/configuration-srcdir" },
       { "name": "transition", "to": "/configuration-transition" },
+      { "name": "vue.config", "to": "/configuration-vue-config" },
+      { "name": "watch", "to": "/configuration-watch" },
+      { "name": "globalName", "to": "/configuration-global-name" },
       {
         "name": "watchers",
         "to": "/configuration-watchers",

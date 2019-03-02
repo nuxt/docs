@@ -1,6 +1,6 @@
 {
   "iso": "ja",
-  "docVersion": "1.4.0",
+  "docVersion": "2.2.0",
   "links": {
     "api": "API",
     "blog": "ブログ",
@@ -16,6 +16,9 @@
     "homepage": "ホーム",
     "live_demo": "ライブデモ",
     "live_edit": "ライブ編集",
+    "tidelift_short": "GET PROFESSIONAL SUPPORT",
+    "official_support": "GET OFFICIAL SUPPORT ⛑",
+    "tidelift": "Nuxt の専門的なサポートを得る",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Vue Jobs"
@@ -28,14 +31,23 @@
     "please_define_title": "Frontmatter 内の title を定義してください",
     "please_define_description": "Frontmatter 内の description を定義してください",
     "search": "検索",
-    "version": "バージョン"
+    "version": "バージョン",
+    "vue_toronto": "Nuxt を使ってユニバーサルな Vue.js アプリケショーションをつくる方法を知りたい人は、2018年11月14日 Vue Toronto のワークショップに参加してください！"
   },
   "homepage": {
     "title": "ユニバーサル Vue.js アプリケーション",
     "meta": {
       "title": "Nuxt.js - ユニバーサル Vue.js アプリケーション",
       "description": "Nuxt.js はサーバーサイドレンダリングやコード分割、ホットリローディング、静的ファイル生成などを備えた Vue.js アプリケーションを構築するためのミニマルなフレームワークです！"
-    }
+    },
+    "codesandbox_title": "Play with Nuxt.js online",
+    "codesandbox_open": "Open on CodeSandBox.io",
+    "codesandbox_examples": "See more examples"
+  },
+  "sponsors": {
+    "title": "Sponsors",
+    "become": "Support us and",
+    "become_partner": "become a partner"
   },
   "footer": {
     "authors": "Made by Chopin Brothers"

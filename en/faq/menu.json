@@ -10,7 +10,8 @@
       { "name": "How to add webpack plugins?", "to": "/webpack-plugins" },
       { "name": "How to edit HOST and PORT?", "to": "/host-port" },
       { "name": "How to use cached components?", "to": "/cached-components" },
-      { "name": "How to use Google Analytics?", "to": "/google-analytics" }
+      { "name": "How to use Google Analytics?", "to": "/google-analytics" },
+      { "name": "How to share cross origin resource?", "to": "/http-proxy"}
     ]
   },
   {
@@ -19,18 +20,21 @@
       { "name": "window/document undefined?", "to": "/window-document-undefined" },
       { "name": "Why a CSS Flash appears?", "to": "/css-flash" },
       { "name": "Async data in components?", "to": "/async-data-components" },
-      { "name": "Duplicated Meta Tags?", "to": "/duplicated-meta-tags" }
+      { "name": "Duplicated Meta Tags?", "to": "/duplicated-meta-tags" },
+      { "name": "iOS and phone numbers", "to": "/ios-phone-numbers" }
     ]
   },
   {
     "title": "Deployment",
     "links": [
-      { "name": "How to deploy on Heroku?", "to": "/heroku-deployment" },
-      { "name": "How to deploy with Netlify?", "to": "/netlify-deployment" },
-      { "name": "How to deploy with Now?", "to": "/now-deployment" },
-      { "name": "How to deploy on Dokku?", "to": "/dokku-deployment" },
-      { "name": "How to deploy with Surge?", "to": "/surge-deployment" },
-      { "name": "How to deploy on GitHub?", "to": "/github-pages" },
+      { "name": "Deploy on AWS w/ S3 and Cloudfront", "to": "/deployment-aws-s3-cloudfront" },
+      { "name": "Deploy on Dokku", "to": "/dokku-deployment" },
+      { "name": "Deploy on GitHub", "to": "/github-pages" },
+      { "name": "Deploy on Google App Engine", "to": "/appengine-deployment" },
+      { "name": "Deploy on Heroku", "to": "/heroku-deployment" },
+      { "name": "Deploy on Netlify", "to": "/netlify-deployment" },
+      { "name": "Deploy on Now", "to": "/now-deployment" },
+      { "name": "Deploy on Surge", "to": "/surge-deployment" },
       { "name": "Using nginx as a proxy", "to": "/nginx-proxy" }
     ]
   }

@@ -34,10 +34,6 @@ app.use(nuxt.render)
 if (config.dev) {
   new Builder(nuxt).build()
   .then(listen)
-  .catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
 }
 else {
   listen()
@@ -50,4 +46,8 @@ function listen() {
 }
 ```
 
-<p class="Alert">Il est recommandé d'appeler `nuxt.render` à la fin de vos middlewares ainsi il fera le rendu de votre application web et n'appellera pas `next()`.</p>
+<div class="Alert">
+
+Il est recommandé d'appeler `nuxt.render` à la fin de vos middlewares ainsi il fera le rendu de votre application web et n'appellera pas `next()`.
+
+</div>

@@ -15,7 +15,7 @@ description: 如何在 Nuxt.js 中使用预处理器？
 </template>
 
 <script lang="coffee">
-module.exports = data: ->
+export default data: ->
   { name: 'World' }
 </script>
 
@@ -23,14 +23,16 @@ module.exports = data: ->
 .red
   color: red
 </style>
+
+<style lang="scss">
+.red {
+  color: red
+}
+</style>
 ```
 
 记得安装这些预处理器对应的 npm 依赖包和 Webpack 加载器:
 
 ```bash
-npm install --save-dev pug@2.0.0-beta6 pug-loader coffeescript coffee-loader node-sass sass-loader
+npm install --save-dev pug@2.0.3 pug-plain-loader coffeescript coffee-loader node-sass sass-loader
 ```
-
-同时在配置webpack的扩展
-const vueLoader = webpackConfig.module.rules.find((rule) => rule.loader === 'vue-loader')
-vueLoader.options.loaders.sass = 'vue-style-loader!css-loader!sass-loader'

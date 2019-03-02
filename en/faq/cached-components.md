@@ -33,7 +33,7 @@ See [component-level caching](http://ssr.vuejs.org/en/caching.html#component-lev
 
 ## Don't forget, that
 
-- Cache-able component **must define a unique `name` option**.
-- You should ***NOT*** cache components, that
-  - has child components that may rely on global state.
-  - has child components that produces side effects on the render `context`.
+- Cache-able components **must define a unique `name` option**.
+- You should **_NOT_** cache components, that
+  - have child components that may rely on global state.
+  - have child components that produce side effects on the render `context`.

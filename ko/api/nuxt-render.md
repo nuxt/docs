@@ -31,10 +31,6 @@ app.use(nuxt.render)
 // dev 모드를 위해 핫-로딩 빌드를 합니다.
 if (config.dev) {
   nuxt.build()
-  .catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
 }
 
 // 서버
@@ -42,4 +38,8 @@ app.listen(port, '0.0.0.0')
 console.log('Server listening on localhost:' + port)
 ```
 
-<p class="Alert">**nuxt.render** 는 사용자의 웹 어플리케이션을 랜더링하고, next()는 호출하지 않기 때문에 미들웨어가 끝나는 시점에 호출하는 것을 권장합니다.</p>
+<div class="Alert">
+
+**nuxt.render** 는 사용자의 웹 어플리케이션을 랜더링하고, next()는 호출하지 않기 때문에 미들웨어가 끝나는 시점에 호출하는 것을 권장합니다.
+
+</div>

@@ -1,7 +1,10 @@
 module.exports = {
-  'extends': 'standard',
-  'plugins': [
-    'standard',
-    'promise'
+  root: true,
+  parserOptions: {
+    parser: 'babel-eslint',
+    sourceType: 'module'
+  },
+  extends: [
+    '@nuxtjs'
   ]
 }

@@ -7,7 +7,7 @@ description: Nuxt.js では nuxt.config.js 内にアプリケーションのデ�
 
 > Nuxt.js では `nuxt.config.js` 内にアプリケーションのデフォルトのメタ情報を定義できます。それには `head` プロパティを使います:
 
-- タイプ: `オブジェクト`
+- 型: `オブジェクト`
 
 ```js
 module.exports = {
@@ -24,4 +24,8 @@ module.exports = {
 
 `head` に設定できるオプション一覧は [vue-meta のドキュメント](https://github.com/declandewet/vue-meta#recognized-metainfo-properties) を参照してください。
 
-<p class="Alert Alert--teal"><b>情報:</b> ページのコンポーネントでも `head` を使うことができ、`this` を経由してコンポーネントのデータにアクセスできます。詳しくは [コンポーネントの head プロパティ](/api/pages-head) を参照してください。</p>
+<div class="Alert Alert--teal">
+
+<b>情報:</b> ページのコンポーネントでも `head` を使うことができ、`this` を経由してコンポーネントのデータにアクセスできます。詳しくは [コンポーネントの head プロパティ](/api/pages-head) を参照してください。
+
+</div>

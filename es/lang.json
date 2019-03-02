@@ -1,5 +1,6 @@
 {
   "iso": "es",
+  "docVersion": "2.3.X",
   "links": {
     "api": "API",
     "blog": "Blog",
@@ -15,6 +16,9 @@
     "homepage": "Pagina principal",
     "live_demo": "Demo en vivo",
     "live_edit": "Editar en vivo",
+    "tidelift_short": "GET PROFESSIONAL SUPPORT",
+    "official_support": "GET OFFICIAL SUPPORT ⛑",
+    "tidelift": "GET PROFESSIONAL SUPPORT FOR NUXT",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Trabajos en Vue.js"
@@ -34,7 +38,15 @@
     "meta": {
       "title": "Nuxt.js - Aplicaciones VueJs universales",
       "description": "Nuxt es un framework minimalista para crear aplicaciones Vue.js que se renderizables del lado del servidor, division de codigo, recarga en caliente, generacion estatica y mucho mas!"
-    }
+    },
+    "codesandbox_title": "Play with Nuxt.js online",
+    "codesandbox_open": "Open on CodeSandBox.io",
+    "codesandbox_examples": "See more examples"
+  },
+  "sponsors": {
+    "title": "Sponsors",
+    "become": "Support us and",
+    "become_partner": "become a partner"
   },
   "footer": {
     "authors": "Made by Chopin Brothers"

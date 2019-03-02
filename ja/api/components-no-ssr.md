@@ -8,16 +8,36 @@ description: サーバーサイドレンダリングでのコンポーネント�
 > このコンポーネントは意図的にサーバーサイドレンダリングの対象からコンポーネントを除外するために使われます。
 
 **Props**:
-
 - placeholder: `文字列`
-  - このプロパティは `div` タグ内のコンテンツに利用され、サーバーサイドレンダリングの時のみテキストとして表示されます。
+  - `<no-ssr>`がクライアント側にマウントされるまで、テキストをプレスホルダとして使用します。
 
 ```html
 <template>
   <div>
-    <ssrfrendly-component />
+    <sidebar />
+    <no-ssr placeholder="Loading...">
+      <!-- このコンポーネントはクライアントサイドでのみレンダリングされます -->
+      <comments />
+    </no-ssr>
+  </div>
+</template>
+```
+
+**Slots**:
+
+- placeholder:
+  - `<no-ssr>`がクライアント側にマウントされるまで、スロットをプレスホルダとして使用します。
+ 
+ ```html
+<template>
+  <div>
+    <sidebar />
     <no-ssr>
-      <not-ssrfrendly />
+      <!-- このコンポーネントはクライアントサイドでのみレンダリングされます -->
+      <comments />
+  
+      <!-- loading indicator -->
+      <comments-placeholder slot="placeholder" />
     </no-ssr>
   </div>
 </template>

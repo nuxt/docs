@@ -88,7 +88,11 @@ router: {
 
 `user-id` と名付けられたルートに `:id?` というパスがありますが、これはこの `:id` が必須ではないことを表します。もし必須にしたい場合は `users/_id` ディレクトリ内に `index.vue` ファイルを作成してください。
 
-<p class="Alert Alert--info"><b>警告</b>: `generate` コマンドでは 動的なルーティング は無視されます。:  [generate 設定 API](/api/configuration-generate#routes)</p>
+<div class="Alert Alert--orange">
+
+<b>警告</b>: `generate` コマンドでは動的なルーティングは無視されます。:  [generate 設定 API](/api/configuration-generate#routes)
+
+</div>
 
 ### ルーティングのパラメータのバリデーション
 
@@ -105,7 +109,7 @@ export default {
 }
 ```
 
-もしバリデーションのメソッドが `true` を返さなかった場合は、Nuxt.js は自動的に 404 エラーページをロードします。
+もしバリデーションのメソッドが `true` または `true` に解決する `Promise` を返さない、またはエラーをスローした場合は、Nuxt.js は自動的に 404 エラーページあるいはエラーの場合 500 エラーページをロードします。
 
 バリデーションのメソッドについてより深く理解したい場合は [ページバリデーションの API](/api/pages-validate) を参照してください。
 
@@ -115,7 +119,11 @@ Nuxt.js では vue-router の子ルートを使ってルートをネストさせ
 
 ネストされたルートの親コンポーネントを定義するには、子ビューを含む **ディレクトリと同じ名前** の Vue ファイルを作成する必要があります。
 
-<p class="Alert Alert--info"><b>警告:</b> `<nuxt-child>` を親コンポーネント内 (<code>.vue</code> ファイル内) に書くことを忘れないでください。</nuxt-child></p>
+<div class="Alert Alert--orange">
+
+<b>警告:</b> `<nuxt-child>` を親コンポーネント内（<code>.vue</code> ファイル内）に書くことを忘れないでください。</nuxt-child>
+
+</div>
 
 下記のようなファイルの木構造のとき:
 
@@ -232,7 +240,7 @@ Surge は `200.html` と `404.html` の両方を[ハンドリングできます]
 
 #### GitHub Pages と Netlify 向けの実装
 
-GitHub Pages と Netlify は `404.html` ファイルを自動的に認識するため、設定すべきことは`generate.fallback` を `true` にするだけです！
+GitHub Pages と Netlify は `404.html` ファイルを自動的に認識するため、設定すべきことは `generate.fallback` を `true` にするだけです！
 
 #### Firebase ホスティング向けの実装
 
@@ -263,9 +271,13 @@ Nuxt.js では [<transition> コンポーネントを使って、ページ間を
 
 ### グローバルな設定
 
-<p class="Alert Alert--nuxt-green"><b>情報:</b> Nuxt.js のデフォルトのトランジション名は `"page"`です。</p>
+<div class="Alert Alert--nuxt-green">
 
-アプリケーションのすべてのページでフェードさせるトランジションを定義には、ルーティング全体に適用されている CSS ファイルが必要です。まずは `assets` ディレクトリ内にファイルを作成するところから始めます:
+<b>情報:</b> Nuxt.js のデフォルトのトランジション名は `"page"`です。
+
+</div>
+
+アプリケーションのすべてのページでフェードさせるトランジションを定義するには、ルーティング全体に適用されている CSS ファイルが必要です。まずは `assets` ディレクトリ内にファイルを作成するところから始めます:
 
 `assets/main.css` 内にグローバルな CSS を書きます:
 
@@ -325,7 +337,7 @@ export default {
 
 ```js
 export default function (context) {
-  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+  context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
 
@@ -357,7 +369,7 @@ export default function ({ route }) {
 module.exports = {
   router: {
     middleware: 'stats'
-  }  
+  }
 }
 ```
 

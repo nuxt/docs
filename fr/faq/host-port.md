@@ -1,48 +1,64 @@
 ---
-title: HOST et PORT
+title: Host et Port
 description: Comment changer le HOST et le PORT avec Nuxt.js ?
 ---
 
-# Comment changer le HOST et le PORT ?
+# Comment changer le host et le port ?
 
-Vous pouvez configurer le PORT de trois façons :
+Vous pouvez configurer les variables de connexion de plusieurs façon différentes, listé de la plus basse à la plus haute priorité :
 
-1. Via une variable d'environnement
+## Via la configuration `nuxt` dans le `package.json` :
 
-  ```js
-  "scripts": {
-    "dev": "HOST=0.0.0.0 PORT=3333 nuxt"
+Inside your `package.json`:
+
+```json
+"config": {
+  "nuxt": {
+    "host": "0.0.0.0",
+    "port": "3333"
   }
-  ```
+},
+"scripts": {
+  "dev": "nuxt"
+}
+```
 
-2. Ajoutez un meilleur support de développement qui fonctionne sur toutes les plateformes.
+## Avec les variables `HOST` et `PORT` de `env`
 
-  **Note** : pour un meilleur développement qui fonctionne sur toutes les plateformes vous pouvez utiliser le package [cross-env](https://www.npmjs.com/package/cross-env).
+```js
+"scripts": {
+  "dev": "HOST=0.0.0.0 PORT=3333 nuxt"
+}
+```
 
-  Installation :
+**Note** : pour un meilleur développement qui fonctionne sur toutes les plateformes vous pouvez utiliser le package [cross-env](https://www.npmjs.com/package/cross-env).
 
-  ```bash
-  npm install --save-dev cross-env
-  ```
+Installation :
 
-  ```js
-  "scripts": {
-    "dev": "cross-env HOST=0.0.0.0 PORT=3333 nuxt"
-  }
-  ```
+```bash
+npm install --save-dev cross-env
+```
 
-3. Via la configuration `nuxt` dans `package.json` :
+```js
+"scripts": {
+  "dev": "cross-env HOST=0.0.0.0 PORT=3333 nuxt"
+}
+```
 
-  Dans votre `package.json` :
+## Avec les variables `NUXT_HOST` et `NUXT_PORT` de `env`
 
-  ```js
-  "config": {
-    "nuxt": {
-      "host": "0.0.0.0",
-      "port": "3333"
-    }
-  },
-  "scripts": {
-    "dev": "nuxt"
-  }
-  ```
+Similaire à `HOST` et `PORT` mais plus spécifique dans le cas ou vous avez besoin d'autres choses.
+
+```js
+"scripts": {
+  "dev": "NUXT_HOST=0.0.0.0 NUXT_PORT=3333 nuxt"
+}
+```
+
+## Comme arguments directs
+
+```js
+"scripts": {
+  "dev": "nuxt --hostname myhost --port 3333"
+}
+```

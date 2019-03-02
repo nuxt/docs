@@ -58,7 +58,7 @@ Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능
 
 아래의 구조는 `<nuxt-link>`를 서버가 호출하거나 이를 통해 사용자가 이동한 경우, nuxt.js가 어떻게 동작하는지를 보여줍니다:
 
-![nuxt-schema](/nuxt-schema.png)
+![nuxt-schema](/nuxt-schema.svg)
 
 ## 서버 렌더링 (범용 SSR)
 
@@ -82,11 +82,10 @@ nuxt.js에서 가장 큰 혁신은 아마 `nuxt generate` 명령어 가 될 것�
 
 예를 들어 다음과 같은 파일 구조가 있습니다:
 
-```bash
--| dist/
-----| about/
-------| index.html
-----| index.html
+```
+-| pages/
+----| about.vue
+----| index.vue
 ```
 
 아래와 같이 생성됩니다:
@@ -116,4 +115,8 @@ nuxt.js에서 가장 큰 혁신은 아마 `nuxt generate` 명령어 가 될 것�
 
 우리는 재고가 있거나 없는 경우 항상 웹앱을 `nuxt generate`로 재생성하고 CDN에 호스팅하는 방식의 e-commerce 웹 애플리케이션을 생각해볼 수 있습니다. 만약 사용자가 그동안 웹앱을 탐색한다면, e-commerce API를 호출하면 최신 정보가 제공될 것입니다. 서버의 다중 인스턴스와 캐싱을 더 이상 고민할 필요가 없습니다!
 
-<div class="Alert">깃 허브 페이지에 배포하는 방법에 대한 자세한 내용은 [How to deploy on GitHub Pages?](/faq/github-pages)를 참조하십시오.</div>
+<div class="Alert">
+
+깃 허브 페이지에 배포하는 방법에 대한 자세한 내용은 [How to deploy on GitHub Pages?](/faq/github-pages)를 참조하십시오.
+
+</div>

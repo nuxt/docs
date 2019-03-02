@@ -39,3 +39,25 @@ export default axios.create({
 ```
 
 然后在页面中，我们可以使用 `import axios from '~plugins/axios'` 引入 `axios` 模块。
+
+## 自动注入环境变量
+
+如果在构建阶段定义以`NUXT_ENV_`开头的环境变量，例如：`NUXT_ENV_COOL_WORD=freezing nuxt build`，它们将自动注入环境变量中。请注意，它们可能优先于`nuxt.config.js`中具有相同名称的已定义变量。
+
+## process.env == {}
+
+请注意，Nuxt使用webpack的definePlugin来定义环境变量。这意味着Node.js中的`process`或`process.env`既不可用也不能定义。nuxt.config.js中定义的每个env属性都单独映射到`process.env.xxxx`并在编译期间进行转换编译。
+
+意思是，`console.log(process.env)`将输出`{}`，但`console.log(process.env.you_var)`仍将输出您的值。它将`process.env.your_var`的所有实例替换为您将其设置为的值。即：`env.test ='testing123'`。如果你在代码中的某个地方使用`process.env.test`，它实际上被翻译成'testing123'。
+
+编译前：
+
+```js
+if (process.env.test == 'testing123')
+```
+
+编译后：
+
+```js
+if ('testing123' == 'testing123')
+```

@@ -18,6 +18,16 @@ When launching `nuxt generate` or calling `nuxt.generate()`, Nuxt.js will use th
 
 Directory name created by `nuxt generate`.
 
+## devtools
+
+- Type: `boolean`
+- Default: `false`
+
+Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools) inspection.
+
+If you already activated through nuxt.config.js or otherwise, devtools enable regardless of the flag.
+
+
 ## fallback
 
 - Type: `String` or `Boolean`
@@ -30,37 +40,12 @@ The path to the SPA fallback. This file can be used when doing deploys of genera
 - Type: `Number`
 - Default: `0`
 
-Interval between 2 render to avoid flooding the API calls made to a potential API from the web application.
+Interval between two render cycles to avoid flooding a potential API with API calls from the web application.
 
 ## minify
 
-- Type: `Object`
-- Default:
-
-```js
-minify: {
-  collapseBooleanAttributes: true,
-  collapseWhitespace: false,
-  decodeEntities: true,
-  minifyCSS: true,
-  minifyJS: true,
-  processConditionalComments: true,
-  removeAttributeQuotes: false,
-  removeComments: false,
-  removeEmptyAttributes: true,
-  removeOptionalTags: true,
-  removeRedundantAttributes: true,
-  removeScriptTypeAttributes: false,
-  removeStyleLinkTypeAttributes: false,
-  removeTagWhitespace: false,
-  sortAttributes: true,
-  sortClassName: false,
-  trimCustomFragments: true,
-  useShortDoctype: true
-}
-```
-
-You can change the default configuration of [html-minifier](https://github.com/kangax/html-minifier) used by Nuxt.js to minify HTML files created during generate process.
+- **Deprecated!**
+- Use [build.html.minify](/api/configuration-build#html-minify) instead
 
 ## routes
 
@@ -84,7 +69,7 @@ If you want Nuxt.js to generate routes with dynamic params, you need to set an a
 We add routes for `/users/:id` in `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   generate: {
     routes: [
       '/users/1',
@@ -122,9 +107,9 @@ Great, but what if we have **dynamic params**?
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
-module.exports = {
+export default {
   generate: {
     routes: function () {
       return axios.get('https://my-api/users')
@@ -143,14 +128,14 @@ module.exports = {
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
-module.exports = {
+export default {
   generate: {
     routes: function (callback) {
       axios.get('https://my-api/users')
       .then((res) => {
-        var routes = res.data.map((user) => {
+        const routes = res.data.map((user) => {
           return '/users/' + user.id
         })
         callback(null, routes)
@@ -163,14 +148,14 @@ module.exports = {
 
 ### Speeding up dynamic route generation with `payload`
 
-In the example above, we're using the `user.id` from the server to generate the routes but tossing out the rest of the data. Typically, we need to fetch it again from inside the `/users/_id.vue`. While we can do that, we'll probably need to set the `generate.interval` to something like `100` in order not to flood the server with calls. Because this will increase the run time of the generate script, it would be preferable to pass along the entire `user` object to the context in `_id.vue`. We do that with by modifying the code above to this:
+In the example above, we're using the `user.id` from the server to generate the routes but tossing out the rest of the data. Typically, we need to fetch it again from inside the `/users/_id.vue`. While we can do that, we'll probably need to set the `generate.interval` to something like `100` in order not to flood the server with calls. Because this will increase the run time of the generate script, it would be preferable to pass along the entire `user` object to the context in `_id.vue`. We do that by modifying the code above to this:
 
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
-module.exports = {
+export default {
   generate: {
     routes: function () {
       return axios.get('https://my-api/users')
@@ -226,3 +211,10 @@ When set to false, HTML files are generated according to the route path:
 ```
 
 _Note: this option could be useful using [Netlify](https://netlify.com) or any static hosting using HTML fallbacks._
+
+## concurrency
+
+- Type: `Number`
+- Default: `500`
+
+The generation of routes are concurrent, `generate.concurrency` specifies the amount of routes that run in one thread.

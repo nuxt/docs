@@ -1,11 +1,11 @@
 ---
 title: "API: The router Property"
-description: The router property lets you customize nuxt.js router.
+description: The router property lets you customize Nuxt.js router.
 ---
 
 # The router Property (En)
 
-> The router property lets you customize nuxt.js router ([vue-router](https://router.vuejs.org/en/)).
+> The router property lets you customize Nuxt.js router ([vue-router](https://router.vuejs.org/en/)).
 
 ## base
 
@@ -23,15 +23,19 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert-blue">When `base` is set, nuxt.js will also add in the document header `<base href="{{ router.base }}"/>`.</p>
+<div class="Alert Alert-blue">
 
-> This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
+When `base` is set, Nuxt.js will also add in the document header `<base href="{{ router.base }}"/>`.
+
+</div>
+
+> This option is given directly to the vue-router [base](https://router.vuejs.org/api/#base).
 
 ## extendRoutes
 
 - Type: `Function`
 
-You may want to extend the routes created by nuxt.js. You can do it via the `extendRoutes` option.
+You may want to extend the routes created by Nuxt.js. You can do so via the `extendRoutes` option.
 
 Example of adding a custom route:
 
@@ -68,7 +72,7 @@ module.exports = {
 }
 ```
 
-> This option is given directly to the [vue-router Router constructor](https://router.vuejs.org/en/api/options.html).
+> This option is given directly to the vue-router [linkactiveclass](https://router.vuejs.org/api/#linkactiveclass).
 
 ## linkExactActiveClass
 
@@ -86,14 +90,14 @@ module.exports = {
 }
 ```
 
-> This option is given directly to the [vue-router Router constructor](https://router.vuejs.org/en/api/options.html).
+> This option is given directly to the vue-router [linkexactactiveclass](https://router.vuejs.org/api/#linkexactactiveclass).
 
 ## middleware
 
 - Type: `String` or `Array`
   - Items: `String`
 
-Set the default(s) middleware for every pages of the application.
+Set the default(s) middleware for every page of the application.
 
 Example:
 
@@ -101,7 +105,7 @@ Example:
 ```js
 module.exports = {
   router: {
-    // Run the middleware/user-agent.js on every pages
+    // Run the middleware/user-agent.js on every page
     middleware: 'user-agent'
   }
 }
@@ -110,8 +114,8 @@ module.exports = {
 `middleware/user-agent.js`
 ```js
 export default function (context) {
-  // Add the userAgent property in the context (available in `data` and `fetch`)
-  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+  // Add the userAgent property in the context (available in `asyncData` and `fetch`)
+  context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
 
@@ -133,7 +137,7 @@ module.exports = {
 }
 ```
 
-> This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
+> This option is given directly to the vue-router [mode](https://router.vuejs.org/api/#mode).
 
 ## scrollBehavior
 
@@ -191,4 +195,21 @@ module.exports = {
 }
 ```
 
-> This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
+## parseQuery / stringifyQuery
+
+- Type: `Function`
+
+Provide custom query string parse / stringify functions. Overrides the default.
+
+> This option is given directly to the vue-router [parseQuery / stringifyQuery](https://router.vuejs.org/api/#parsequery-stringifyquery).
+
+## fallback
+
+- Type: `boolean`
+- Default: `false`
+
+Controls whether the router should fallback to hash mode when the browser does not support history.pushState but mode is set to history.
+
+Setting this to false essentially makes every router-link navigation a full page refresh in IE9. This is useful when the app is server-rendered and needs to work in IE9, because a hash mode URL does not work with SSR.
+
+> This option is given directly to the vue-router [fallback](https://router.vuejs.org/api/#fallback).

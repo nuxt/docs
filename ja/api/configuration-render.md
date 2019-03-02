@@ -1,24 +1,24 @@
 ---
-title: "API: The render Property"
-description: Nuxt.js lets you customize runtime options for rendering pages
+title: "API: render プロパティ"
+description: Nuxt.js はページレンダリングの実行時オプションをカスタマイズできます。
 ---
 
-# The render Property
+# renderプロパティ
 
-> Nuxt.js lets you customize runtime options for rendering pages
+> Nuxt.js はページレンダリングの実行時オプションをカスタマイズできます。
 
 ## bundleRenderer
-- Type: `object`
+- 型: `オブジェクト`
 
-> Use this option to customize vue SSR bundle renderer. This option is skipped for spa mode.
+> このオプションを使用して Vue SSR のバンドルレンダラのカスタマイズします。このオプションは SPA モードではスキップされます。
 
 ```js
-module.exports = {
+export default {
   render: {
     bundleRenderer: {
       directives: {
         custom1: function (el, dir) {
-          // something ...
+          // 何かの処理 ...
         }
       }
     }
@@ -26,46 +26,87 @@ module.exports = {
 }
 ```
 
-Learn more about available options on [Vue SSR API Reference](https://ssr.vuejs.org/en/api.html#renderer-options).
-It is recommended to not use this option as Nuxt.js is already providing best SSR defaults and misconfiguration might lead to SSR problems.
+利用可能なオプションは [Vue SSR API リファレンス](https://ssr.vuejs.org/ja/api/#レンダラオプション) でより詳しく学べます。
+Nuxt.js は既に最高の SSR のデフォルト設定を提供していて、誤った設定が SSR の問題を引き起こす可能性があるため、このオプションを使用しないことをお勧めします。
 
 ## etag
-- Type: `object`
-  - Default: `{ weak: true }`
+- 型: `オブジェクト`
+  - デフォルト: `{ weak: true }`
 
-See [etag](https://www.npmjs.com/package/etag) docs for possible options.
+ページの etag を無効にするためには `etag: false` をセットしてください。
 
-### gzip
-- Type `object`
-  - Default: `{ threshold: 0 }`
+利用可能なオプションは [etag](https://www.npmjs.com/package/etag) を参照してください。
 
-See [compression](https://www.npmjs.com/package/compression) docs for possible options.
+## compressor
+- 型 `オブジェクト`
+  - デフォルト: `{ threshold: 0 }`
 
-### http2
-- Type `object`
-  - Default: `{ push: false }`
+オブジェクト（または偽の値）を提供する場合、[compression](https://www.npmjs.com/package/compression) ミドルウェアが利用されます（それぞれのオプションがあります）。
 
-Activate HTTP2 push headers.
+独自の圧縮ミドルウェアを使用したい場合は、直接参照することができます。(f.ex. `otherComp({ myOptions: 'example' })`)
+
+## http2
+- 型 `オブジェクト`
+  - デフォルト: `{ push: false }`
+
+HTTP2 プッシュヘッダーを有効にします。
 
 ## resourceHints
-- Type: `boolean`
-  - Default: `true`
+- 型: `ブーリアン`
+  - デフォルト: `true`
 
-> Adds `prefetch` and `preload` links for faster initial page load time.
+> 初期ページの読み込み時間をより早くするために、 `prefetch` と `preload` のリンクを追加しました。
 
-You may want to only disable this option if have many pages and routes. 
+多くのページとルートがある場合に、このオプションのみを無効にすることができます。
 
 ## ssr
-- Type: `boolean`
-  - Default: `true` on universal mode and `false` on spa mode
+- 型: `ブーリアン`
+  - デフォルト: ユニバーサルモードでは `true` SPA モードでは `false`
 
-> Enable SSR rendering
+> SSR レンダリングを有効にする
 
-This option is automatically set based on `mode` value if not provided. 
-This can be useful to dynamically enable/disable SSR on runtime after image builds. (With docker for example)
+このオプションは、提供されていなければ `mode` に基づいて自動的に設定されます。
+これは（例えば Docker で）イメージビルド後にランタイムで SSR を動的に有効/無効にするのに便利です。
 
 ## static
-- Type: `object`
-  - Default: `{}`
+- 型: `オブジェクト`
+  - デフォルト: `{}`
 
-See [serve-static](https://www.npmjs.com/package/serve-static) docs for possible options.
+利用可能なオプションは  [serve-static](https://www.npmjs.com/package/serve-static) を参照してください。
+
+## dist
+- 型: `オブジェクト`
+  - デフォルト: `{ maxAge: '1y', index: false }`
+
+配布ファイルの配信に使用されるオプションです。本番でのみ適用されます。
+
+利用可能なオプションは  [serve-static](https://www.npmjs.com/package/serve-static) を参照してください。
+
+## csp
+
+> これは Content-Security-Policy で適用された外部リソースを読み込む設定をするために使用します。
+
+- 型: `ブーリアン` または `オブジェクト`
+  - デフォルト: `false`
+
+例 (`nuxt.config.js`)
+
+```js
+export default {
+  render: {
+    csp: true
+  }
+}
+
+// または
+
+export default {
+  render: {
+    csp: {
+      hashAlgorithm: 'sha256',
+      allowedSources: undefined,
+      policies: undefined
+    }
+  }
+}
+```

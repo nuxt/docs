@@ -185,7 +185,15 @@ export default {
 }
 ```
 
-<div class="Alert">Vous pouvez également avoir des modules en exportant une instance de store vous devrez les ajouter manuellement sur votre store.</div>
+<div class="Alert">
+
+Vous pouvez également avoir des modules en exportant une instance de store vous devrez les ajouter manuellement sur votre store.
+
+</div>
+
+### Fichiers de module
+
+Vous pouvez optionnellement scinder un fichier de module en plusieurs fichiers séparés : `state.js`, `actions.js`, `mutations.js` et `getters.js`. Si vous maintenez un fichier `index.js` avec un état, des accesseurs et des mutations alors que les actions sont dans un fichier séparé, cela va également être proprement interprété.
 
 ### Plugins
 
@@ -245,7 +253,7 @@ actions: {
 }
 ```
 
-## Mode stric de Vuex
+## Mode strict de Vuex
 
 Le mode strict est activé par défaut sur le mode développement et est désactivé par défaut sur le mode production. Désactivez le mode strict en développement en procédent comme ci-après.
 
@@ -255,7 +263,7 @@ Le mode strict est activé par défaut sur le mode développement et est désact
 
 ### Classic Mode
 
-```
+```js
 import Vuex from 'vuex'
 
 const createStore = () => {

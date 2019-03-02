@@ -36,7 +36,11 @@ Vous devriez ajouter ces commandes au `package.json` :
 
 Ensuite, vous pouvez lancer vos commandes via `npm run <command>` (exemple : `npm run dev`).
 
-<p class="Alert Alert--nuxt-green"><b>Astuce :</b> pour passer des arguments à une commande npm, vous devez utiliser un <code>--</code> supplémentaire après le nom du script (exemple : <code>npm run dev -- --spa</code>).</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>Astuce :</b> pour passer des arguments à une commande npm, vous devez utiliser un <code>--</code> supplémentaire après le nom du script (exemple : <code>npm run dev -- --spa</code>).
+
+</div>
 
 ## Environnement de développement
 
@@ -93,7 +97,11 @@ Il créera un dossier `dist` avec tout à l'intérieur prêt à être déployé 
 
 Si vous avez un projet avec des [routes dynamiques](/guide/routing#dynamic-routes), regardez la [configuration de la commande generate](/api/configuration-generate) afin de dire à Nuxt.js comment générer ces routes dynamiques.
 
-<div class="Alert">Lors de la génération de votre application web avec `nuxt generate`, [le contexte](/api/context) donné à [data()](/guide/async-data#la-m-thode-data) et [fetch()](/guide/vuex-store#la-m-thode-fetch) n'aura pas de `req` et `res`.</div>
+<div class="Alert">
+
+Lors de la génération de votre application web avec `nuxt generate`, [le contexte](/api/context) donné à [data()](/guide/async-data#la-m-thode-data) et [fetch()](/guide/vuex-store#la-m-thode-fetch) n'aura pas de `req` et `res`.
+
+</div>
 
 ### Déploiement pour une application monopage (SPA)
 
@@ -109,6 +117,14 @@ Donc pour un déploiement en mode SPA, vous devez :
 
 Une autre possibilité de déploiement est que nous pouvons utiliser Nuxt comme un middleware dans des frameworks si le mode est `spa`. Ceci aide à réduire le temps de chargement et à utiliser Nuxt dans des projets ou le SSR n'est pas possible.
 
-<div class="Alert">Consultez [Comment déployer sur Heroku ?](/faq/heroku-deployment) pour un exemple de déploiement sur des hébergements populaires.</div>
+<div class="Alert">
 
-<div class="Alert">Counsultez [Comment déployez sur GitHub Pages ?](/faq/github-pages) pour plus d'informations sur un hébergement GitHub Pages.</div>
+Consultez [Comment déployer sur Heroku ?](/faq/heroku-deployment) pour un exemple de déploiement sur des hébergements populaires.
+
+</div>
+
+<div class="Alert">
+
+Counsultez [Comment déployez sur GitHub Pages ?](/faq/github-pages) pour plus d'informations sur un hébergement GitHub Pages.
+
+</div>

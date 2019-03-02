@@ -81,6 +81,7 @@ test.before('Init Nuxt.js', async t => {
   try { config = require(resolve(rootDir, 'nuxt.config.js')) } catch (e) {}
   config.rootDir = rootDir // project folder
   config.dev = false // production build
+  config.mode = 'universal' // Isomorphic application
   nuxt = new Nuxt(config)
   await new Builder(nuxt).build()
   nuxt.listen(4000, 'localhost')
@@ -121,7 +122,7 @@ jsdom has some limitations because it does not use a browser. However, it will c
 
 > [ESLint](http://eslint.org) is a great tool to keep your code clean.
 
-> [Prettier](prettier.io) is a very popular code formatter.
+> [Prettier](https://prettier.io) is a very popular code formatter.
 
 You can add ESLint with Prettier pretty easily with Nuxt.js, first, you need to add the npm dependencies:
 
@@ -131,7 +132,7 @@ npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader 
 
 Then, you can configure ESLint via a `.eslintrc.js` file in your root project directory:
 ```js
-module.exports = {
+export default {
   root: true,
   env: {
     browser: true,
@@ -186,7 +187,7 @@ ESLint will lint all of your JavaScript and Vue files while ignoring your ignore
 
 It is also recommended to enable ESLint hot reloading mode via webpack. This way ESLint will run on save during `npm run dev`. Just add the following to your `nuxt.config.js`:
 
-```
+```js
 ...
   /*
    ** Build configuration
@@ -209,4 +210,8 @@ It is also recommended to enable ESLint hot reloading mode via webpack. This way
   }
 ```
 
-<p class="Alert Alert--info">One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before commiting your code.</p>
+<div class="Alert Alert--orange">
+
+One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before commiting your code.
+
+</div>

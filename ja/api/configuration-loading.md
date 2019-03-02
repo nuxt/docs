@@ -5,39 +5,57 @@ description: Nuxt.js はルートから別のルートへ遷移する間、プ�
 
 # loading プロパティ
 
-- タイプ: `ブーリアン` または `オブジェクト` または `文字列`
+- 型: `ブーリアン` または `オブジェクト` または `文字列`
 
 > Nuxt.js はルートから別のルートへ遷移する間、プログレスバーを表示するために自身のコンポーネントを使います。これをカスタマイズしたり、プログレスバーを使わないようにしたり、独自のコンポーネントを作成したりできます。
 
+コンポーネントにおいて、 `this.$nuxt.$loading.start()` でローディングを開始し、 `this.$nuxt.$loading.finish()` で終了することができます。
+
+```javascript
+export default {
+  mounted () {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 500)
+    })
+  }
+ }
+```
+
+> `mounted` メソッドを利用したい場合、必ず ` this.$nextTick` を利用してください。 $loading がすぐに利用できるとは限らないためです。
+
 ## プログレスバーを無効にする
 
-- タイプ: `ブーリアン`
+- 型: `ブーリアン`
 
 ルートから別のルートへ遷移する間にプログレスバーを表示したくないときは `nuxt.config.js` ファイル内に単に `loading: false` と記述します:
 
 ```js
-module.exports = {
+export default {
   loading: false
 }
 ```
 
 ## プログレスバーをカスタマイズする
 
-- タイプ: `オブジェクト`
+- 型: `オブジェクト`
 
 プログレスバーをカスタマイズするために使えるプロパティ一覧。
 
-| キー | タイプ | デフォルト | 説明 |
+| キー | 型 | デフォルト | 説明 |
 |-----|------|---------|-------------|
 | `color` | 文字列 | `'black'` | プログレスバーの CSS カラー |
 | `failedColor` | 文字列 | `'red'` | ルートをレンダリング中にエラーが発生した場合のプログレスバーの CSS カラー（例えば `data` または `fetch` がエラーを返したとき） |
 | `height` | 文字列 | `'2px'` | プログレスバーの高さ（プログレスバーの `style` プロパティで使われます） |
+| `throttle` | 数値 | `200` | ミリ秒単位で指定された時間待ったのちにプログレスバーを表示します。 プログレスバーの点滅を防ぐために利用します |
 | `duration` | 数値 | `5000` | プログレスバーを表示する時間の最大値をミリ秒で指定します。Nuxt.js は各ルートが 5秒以内にレンダリングされると想定しています |
+| `rtl` | ブーリアン | `false` | プログレスバーの向きを右から左にします。 |
 
 例として、青いプログレスバーを 5px の高さで表示するには `nuxt.config.js` を次のように編集します:
 
 ```js
-module.exports = {
+export default {
   loading: {
     color: 'blue',
     height: '5px'
@@ -47,7 +65,7 @@ module.exports = {
 
 ## 独自のコンポーネントを使う
 
-- タイプ: `文字列`
+- 型: `文字列`
 
 Nuxt.js がデフォルトのコンポーネントの代わりに呼び出す、独自のコンポーネントを作成できます。そのためには `loading` オプション内に独自コンポーネントのパスを指定する必要があります。そうすれば独自コンポーネントは Nuxt.js により直接呼び出されます。
 
@@ -104,7 +122,7 @@ export default {
 それから `nuxt.config.js` を編集して、独自コンポーネントを使うことを Nuxt.js に伝えます:
 
 ```js
-module.exports = {
-  loading: '~components/loading.vue'
+export default {
+  loading: '~/components/loading.vue'
 }
 ```

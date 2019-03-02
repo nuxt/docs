@@ -11,7 +11,7 @@ description: Nuxt.js utilise vue-meta pour mettre à jour les entêtes et les at
 
 Utilisez la méthode `head` pour définir les balises d'entête HTML de la page courante.
 
-Les données de votre composant sont disponibles avec `with` au sein de la méthode `head`, vous pouvez définir des balises meta personnalisées avec les données de page.
+Les données de votre composant sont disponibles avec `this` au sein de la méthode `head`, vous pouvez définir des balises meta personnalisées avec les données de page.
 
 ```html
 <template>
@@ -37,4 +37,8 @@ export default {
 </script>
 ```
 
-<p class="Alert">Afin d'éviter les doublons quand vous utilisez un composant enfant, utilisez un identifiant unique à l'aide de la clé `hid`. En savoir [plus à ce propos](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+<div class="Alert">
+
+Afin d'éviter les doublons quand vous utilisez un composant enfant, utilisez un identifiant unique à l'aide de la clé `hid`. En savoir [plus à ce propos](https://github.com/declandewet/vue-meta#lists-of-tags).
+
+</div>

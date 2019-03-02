@@ -15,7 +15,11 @@ npm run generate
 
 Cette commande crée un répertoire `dist` contenant l'intégralité de l'application prête à être déployée sur GitHub Pages. Cela sur la branche `gh-pages` pour un dépôt de projet OU sur la branche `master` pour le site d'un utilisateur ou d'une organisation.
 
-<p class="Alert Alert--nuxt-green"><b>Info :</b> si vous utilisez un nom de domaine personnalisé pour GitHub Pages à l'aide d'un fichier `CNAME`, il est recommandé de placer ce fichier dans le répertoire `static`. [Plus d'informations](/guide/assets#static) à ce propos.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>Info :</b> si vous utilisez un nom de domaine personnalisé pour GitHub Pages à l'aide d'un fichier `CNAME`, il est recommandé de placer ce fichier dans le répertoire `static`. [Plus d'informations](/guide/assets#static) à ce propos.
+
+</div>
 
 ## Déploiement d'un dépôt sur GitHub Pages
 
