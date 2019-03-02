@@ -51,10 +51,14 @@ yarn create nuxt-app <my-project>
   - [Element UI](https://github.com/ElemeFE/element)
   - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
-3. Nuxt のモードを選択します。（`Universal` または `SPA`）
-4. HTTP リクエストを簡単に行うために [axios module](https://github.com/nuxt-community/axios-module) を追加します。
-5. [EsLint](https://eslint.org/) to Lint your code on save.
-6. 保存時にコードをチェックするために [Prettier](https://prettier.io/) を追加します。
+3. 好きなテスティングフレームワークを選択します:
+  - None (後からでも追加できます)
+  - [Jest](https://github.com/facebook/jest)
+  - [AVA](https://github.com/avajs/ava)
+4. [Nuxtのモードを選択します。(`Universal` または `SPA`)](https://nuxtjs.org/guide/release-notes#better-spa-experience)
+5. HTTP リクエストを簡単に行うために [axios module](https://github.com/nuxt-community/axios-module) を追加します。
+6. 保存時にコードをチェックするために [EsLint](https://eslint.org/) を追加します。
+7. 保存時にコードを整形するために [Prettier](https://prettier.io/) を追加します。
 
 回答が終わり次第、全ての依存関係がインストールされ、プロジェクトを開始する次のステップへ進めます:
 
