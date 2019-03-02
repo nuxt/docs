@@ -51,8 +51,8 @@ yarn create nuxt-app <my-project>
   - [Element UI](https://github.com/ElemeFE/element)
   - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
-3. Choose your favorite testing framework:
-  - None (feel free to add one later)
+3. 好きなテスティングフレームワークを選択します:
+  - None (後からでも追加できます)
   - [Jest](https://github.com/facebook/jest)
   - [AVA](https://github.com/avajs/ava)
 4. The [Nuxt mode you want (`Universal` or `SPA`)](https://nuxtjs.org/guide/release-notes#better-spa-experience)
