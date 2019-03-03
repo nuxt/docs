@@ -7,26 +7,27 @@ description: Now を使ってデプロイするには？
 
 ## Now V2
 
-**Note:** You cannot deploy a server-side-rendered Nuxt app with Now V2 right now. Please use Now V1 for such apps.
+**Note:** サーバーサイドレンダリングされた Nuxt アプリは、Now v2 ではデプロイできません。そのような場合は、Now v1 を使ってください。
 
-To deploy with [ZEIT Now](https://zeit.co/now) you need to customize `package.json` add create a `now.json` config.
+[ZEIT Now](https://zeit.co/now) を使ってデプロイするには、`package.json` のカスタマイズと、`now.json`の設定ファイルを作成します。
 
-* Add `now-build` script command to `package.json`:
-  * For SPA (without SSR):
+* `package.json` に `now-build` script コマンドを追加して下さい。:
+  * SPA (without SSR) の場合:
     ```js
     "scripts": {
        ...
        "now-build": "nuxt build --spa"
     }
     ```
-  * For Static Generated (Pre Rendering):
+  * Static Generated (Pre Rendering)の場合:
     ```js
     "scripts": {
        ...
        "now-build": "nuxt generate"
     }
     ```
-* Create `now.json` and define `builds`
+* `now.json` を作成し、`builds` を定義してください。:
+
   ```json
   {
     "version": 2,
@@ -35,7 +36,9 @@ To deploy with [ZEIT Now](https://zeit.co/now) you need to customize `package.js
     ]
   }
   ```
-* Run `now` and enjoy!
+* これで `now` を実行できます！エンジョイ！
+
+## Now V1 (レガシー)
 
 [now.sh](https://zeit.co/now) を使ってデプロイするには `package.json` を次のように記述することが推奨されます:
 
