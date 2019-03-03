@@ -105,7 +105,7 @@ export default {
 </script>
 ```
 
-Затем добавтье CSS-стили для указанной анимации перехода в файл `assets/main.css`:
+Затем добавьте CSS-стили для указанной анимации перехода в файл `assets/main.css`:
 ```css
 .bounce-enter-active {
   animation: bounce-in .8s;
