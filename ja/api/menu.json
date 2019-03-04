@@ -37,12 +37,6 @@
     ]
   },
   {
-    "title": "Utils",
-    "links": [
-      { "name": "$nuxt", "to": "/$nuxt" }
-    ]
-  },
-  {
     "title": "設定",
     "links": [
       {
