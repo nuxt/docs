@@ -36,3 +36,117 @@ export default {
 - [ModulesContainer クラス フック](https://ja.nuxtjs.org/api/internals-module-container/#フック)
 - [Builder クラス フック](https://ja.nuxtjs.org/api/internals-builder/#フック)
 - [Generator クラス フック](https://ja.nuxtjs.org/api/internals-generator/#フック)
+
+## 例
+
+### root でない場合は router.base にリダイレクトさせる
+
+ページを `/` の代わりに `/portal` として提供したいとしましょう。
+
+これはおそらくエッジケースで、 _nuxt.config.js_ における`router.base` のポイントは Web サーバーがドメインルート以外の場所で Nuxt を提供する時のためのものです。
+
+しかし、ローカル開発中に _localhost_ を押すと、router.base が / でない場合は 404 が返されてしまいます。
+これを防ぐために、フックを設定することができます。
+
+リダイレクトは、プロダクション用の Web サイトでは最適なユースケースではないかもしれませんが、これはフックを活用するのに役立ちます。
+
+まずはじめに、 [`router.base` を変更できます](/api/configuration-router#base)
+`nuxt.config.js` を更新してみましょう:
+
+```js
+// nuxt.config.js
+import hooks from './hooks'
+export default {
+  router: {
+    base: '/portal'
+  }
+  hooks: hooks(this)
+}
+```
+
+それから、いくつかのファイルを作成します。
+
+1. `hooks/index.js` フックモジュール
+
+   ```js
+   // file: hooks/index.js
+   import render from './render'
+
+   export default nuxtConfig => ({
+     render: render(nuxtConfig)
+   })
+   ```
+
+1. `hooks/render.js` レンダーフック
+
+   ```js
+   // file: hooks/render.js
+   import redirectRootToPortal from './route-redirect-portal'
+
+   export default nuxtConfig => {
+     const router = Reflect.has(nuxtConfig, 'router') ? nuxtConfig.router : {}
+     const base = Reflect.has(router, 'base') ? router.base : '/portal'
+
+     return {
+       /**
+        * 'render:setupMiddleware'
+        * {@link node_modules/nuxt/lib/core/renderer.js}
+        */
+       setupMiddleware(app) {
+         app.use('/', redirectRootToPortal(base))
+       }
+     }
+   }
+   ```
+
+1. `hooks/route-redirect-portal.js` ミドルウェア自体
+
+   ```js
+   // file: hooks/route-redirect-portal.js
+
+   /**
+    * /portalから / へリダイレクトするための Nuxt ミドルウェアフック（または nuxt.config.js の router.base で設定したもの）
+    *
+    * connect と同じバージョンであるべきです
+    * {@link node_modules/connect/package.json}
+    */
+   import parseurl from 'parseurl'
+
+   /**
+    * 目的の Web アプリケーションコンテキストルートへのリダイレクト処理をするためのミドルウェアを接続する。
+    *
+    * Nuxt のドキュメントにはフックの使い方の説明が欠けていることに注意してください。
+    * これは説明に役立つルーターのサンプルです。
+    *
+    * インスピレーションのための素晴らしい実装を見てみましょう:
+    * - https://github.com/nuxt/nuxt.js/blob/dev/examples/with-cookies/plugins/cookies.js
+    * - https://github.com/yyx990803/launch-editor/blob/master/packages/launch-editor-middleware/index.js
+    *
+    * [http_class_http_clientrequest]: https://nodejs.org/api/http.html#http_class_http_clientrequest
+    * [http_class_http_serverresponse]: https://nodejs.org/api/http.html#http_class_http_serverresponse
+    *
+    * @param {http.ClientRequest} req Node.js internal client request object [http_class_http_clientrequest]
+    * @param {http.ServerResponse} res Node.js internal response [http_class_http_serverresponse]
+    * @param {Function} next middleware callback
+    */
+   export default desiredContextRoot =>
+     function projectHooksRouteRedirectPortal(req, res, next) {
+       const desiredContextRootRegExp = new RegExp(`^${desiredContextRoot}`)
+       const _parsedUrl = Reflect.has(req, '_parsedUrl') ? req._parsedUrl : null
+       const url = _parsedUrl !== null ? _parsedUrl : parseurl(req)
+       const startsWithDesired = desiredContextRootRegExp.test(url.pathname)
+       const isNotProperContextRoot = desiredContextRoot !== url.pathname
+       if (isNotProperContextRoot && startsWithDesired === false) {
+         const pathname = url.pathname === null ? '' : url.pathname
+         const search = url.search === null ? '' : url.search
+         const Location = desiredContextRoot + pathname + search
+         res.writeHead(302, {
+           Location
+         })
+         res.end()
+       }
+       next()
+     }
+   ```
+
+そして、開発中の同僚が誤って `/` を入力し、開発している Web サービスにアクセスしようとしたときはいつでも、Nuxt は自動的に `/portal` にリダイレクトします。
