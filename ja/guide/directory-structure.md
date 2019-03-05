@@ -9,21 +9,21 @@ description: デフォルトの Nuxt.js アプリケーションの構造は、�
 
 ### assets ディレクトリ
 
-`assets` ディレクトリには LESS や SASS、JavaScript のようなコンパイルされていないファイルを入れます。
+The `assets` directory contains your un-compiled assets such as Stylus or Sass files, images, or fonts.
 
 アセットの取り扱いについてより深く理解するには [アセットに関するドキュメント](/guide/assets) を参照してください。
 
 ### components ディレクトリ
 
-`components` ディレクトリには Vue.js のコンポーネントファイルを入れます。Nuxt.js は `components` ディレクトリ内のコンポーネントの data メソッドについては手を加えません（訳注: 一方、Nuxt.js は `pages` ディレクトリ内のコンポーネントの data メソッドには非同期データを扱えるよう手を加えます）
+`components` ディレクトリには Vue.js のコンポーネントファイルを入れます。You can't use either `asyncData` or `fetch` in these components.
 
 ### layouts ディレクトリ
 
-`layouts` ディレクトリにはアプリケーションのレイアウトファイルを入れます。
-
-_このディレクトリ名は変更できません。_
+The `layouts` directory includes your application layouts. Layouts are used to change the look and feel of your page (for example by including a sidebar).
 
 レイアウトの取り扱いついてより深く理解するには [レイアウトに関するドキュメント](/guide/views#レイアウト) を参照してください。
+
+_This directory cannot be renamed without extra configuration._
 
 ### middleware ディレクトリ
 
@@ -35,31 +35,31 @@ _このディレクトリ名は変更できません。_
 
 `pages` ディレクトリにはアプリケーションのビュー及びルーティングファイルを入れます。Nuxt.js フレームワークはこのディレクトリ内のすべての `*.vue` ファイルを読み込み、アプリケーションのルーターを作成します。
 
-_このディレクトリ名は変更できません。_
+_This directory cannot be renamed without extra configuration._
 
 ページの取り扱いについてより深く理解するには [ページに関するドキュメント](/guide/views) を参照してください。
 
 ### plugins ディレクトリ
 
-`plugins` ディレクトリには、ルートの Vue.js アプリケーションをインスタンス化する前に実行したい JavaScript プラグインを入れます。
+`plugins` ディレクトリには、ルートの Vue.js アプリケーションをインスタンス化する前に実行したい JavaScript プラグインを入れます。 This is the place to register components globally and to inject functions or constants.
 
 プラグインについてより深く理解するには [プラグインに関するドキュメント](/guide/plugins) を参照してください。
 
 ### static ディレクトリ
 
-`static` ディレクトリには静的ファイルを入れます。このディレクトリ内のファイルはいずれも `/` に配置されます。
+The `static` directory is directly mapped to the server root (`/static/robots.txt` is accessible under `http://localhost:3000/robots.txt`) and contains files that likely won't be changed (i.e. the favicon)
 
 **例:** /static/robots.txt は /robots.txt に配置されます。
 
-_このディレクトリ名は変更できません。_
+_This directory cannot be renamed without extra configuration._
 
 静的ファイルの取り扱いについてより深く理解するには [静的ファイルに関するドキュメント](/guide/assets#webpack-で扱わない静的ファイル) を参照してください。
 
 ### store ディレクトリ
 
-`store` ディレクトリには [Vuex ストア](http://vuex.vuejs.org) のファイルを入れます。Vuex ストアは Nuxt.js フレームワークではオプションとして実装されています。このディレクトリ内に `index.js` ファイルを作成すると、Nuxt.js フレームワーク内でこのオプションが自動的に有効になります。
+`store` ディレクトリには [Vuex ストア](http://vuex.vuejs.org) のファイルを入れます。The Vuex Store comes with Nuxt.js out of the box but is disabled by default. Creating an `index.js` file in this directory enables the store.
 
-_このディレクトリ名は変更できません。_
+_This directory cannot be renamed without extra configuration._
 
 ストアの取り扱いについてより深く理解するには [ストアに関するドキュメント](/guide/vuex-store) を参照してください。
 
@@ -67,7 +67,7 @@ _このディレクトリ名は変更できません。_
 
 `nuxt.config.js` ファイルには Nuxt.js のカスタム設定を記述します。
 
-_このファイル名は変更できません。_
+_This directory cannot be renamed without extra configuration._
 
 nuxt.config.js についてより深く理解するには [nuxt.config.js に関するドキュメント](/guide/configuration) を参照してください。
 
