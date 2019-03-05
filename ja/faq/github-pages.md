@@ -31,7 +31,7 @@ GitHub Pages のホスティングにデプロイするもの全てが入った
 この問題を解決するためには、`nuxt.config.js` に [router base](https://nuxtjs.org/api/configuration-router/#base) の設定を追加する必要があります:
 
 ```js
-module.exports = {
+export default {
   router: {
     base: '/<repository-name>/'
   }
@@ -51,7 +51,7 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   }
 } : {}
 
-module.exports = {
+export default {
   ...routerBase
 }
 ```
