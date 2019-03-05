@@ -50,7 +50,9 @@ We create the file `plugins/vue-notifications.js`:
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
 
-Vue.use(VueNotifications)
+export default () => {
+  Vue.use(VueNotifications)
+}
 ```
 
 Then we add the file path inside the `plugins` key of our `nuxt.config.js`:
@@ -60,6 +62,8 @@ export default {
   plugins: ['~/plugins/vue-notifications']
 }
 ```
+
+This will also allow you to access any variables the plugin injects, such as `this.$myPlugin`
 
 To learn more about the `plugins` configuration key, check out the [plugins api](/api/configuration-plugins).
 
