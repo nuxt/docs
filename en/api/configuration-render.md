@@ -153,4 +153,37 @@ export default {
   }
 }
 
+// OR 
+/*
+  The following example allows Google Analytics, LogRocket.io, and Sentry.io
+  for logging and analytic tracking.
+
+  Review to this blog on Sentry.io
+  https://blog.sentry.io/2018/09/04/how-sentry-captures-csp-violations
+
+  To learn what tracking link you should use.
+*/
+const PRIMARY_HOSTS = `loc.example-website.com`
+export default {
+  csp: {
+    reportOnly: true,
+    hashAlgorithm: 'sha256',
+    policies: {
+      'default-src': ["'self'"],
+      'img-src': ['https:', '*.google-analytics.com'],
+      'worker-src': ["'self'", `blob:`, PRIMARY_HOSTS, '*.logrocket.io'],
+      'style-src': ["'self'", "'unsafe-inline'", PRIMARY_HOSTS],
+      'script-src': ["'self'", "'unsafe-inline'", PRIMARY_HOSTS, 'sentry.io', '*.sentry-cdn.com', '*.google-analytics.com', '*.logrocket.io'],
+      'connect-src': [PRIMARY_HOSTS, 'sentry.io', '*.google-analytics.com'],
+      'form-action': ["'self'"],
+      'frame-ancestors': ["'none'"],
+      'object-src': ["'none'"],
+      'base-uri': [PRIMARY_HOSTS],
+      'report-uri': [
+        `https://sentry.io/api/<project>/security/?sentry_key=<key>`
+      ]
+    }
+  }
+}
+
 ```
