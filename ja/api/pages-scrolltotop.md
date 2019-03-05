@@ -9,7 +9,7 @@ description: scrollToTop プロパティで、ページをレンダリングす�
 
 - **型:** `ブーリアン`（デフォルト: `false`）
 
-別のページへ遷移する際にトップまでスクロールしますが、子ルートがあるときはスクロール位置をキープする、というのが Nuxt.js のデフォルトの挙動です。子ルートをレンダリングするときにトップまでスクロールさせたいときは `scrollToTop` to `true` と設定してください:
+別のページへ遷移する際にトップまでスクロールしますが、子ルートがあるときはスクロール位置をキープする、というのが Nuxt.js のデフォルトの挙動です。子ルートをレンダリングするときにトップまでスクロールさせたいときは `scrollToTop` を `true` と設定してください:
 
 ```html
 <template>
@@ -23,6 +23,7 @@ export default {
 </script>
 ```
 
-Conversely, you can manually set `scrollToTop` to `false` on parent routes as well.
+
+親ルートでも `scrollToTop` を `false` に設定することができます。
 
 スクロールについて Nuxt.js のデフォルトの挙動を上書きしたいときは [scrollBehavior オプション](/api/configuration-router#scrollBehavior) を参照してください。
