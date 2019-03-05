@@ -29,7 +29,7 @@ export default {
     return {
       title: this.title,
       meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        // `hid` は一意の識別子として使用されます。 `vmid` は動作しないので使わないでください。
         { hid: 'description', name: 'description', 
         content: 'My custom description' }
       ]
@@ -41,8 +41,6 @@ export default {
 
 <div class="Alert Alert--teal">
 
-<b>Info:</b> To avoid duplicated meta tags when used in child component, set up an unique identifier with the `hid` key for your meta elements ([read more](https://github.com/declandewet/vue-meta#lists-of-tags)).
-
-子コンポーネント利用されたときにメタ情報が重複してしまうことを避けるために `hid` キーでユニーク識別子を与えてください。これについてより深く理解するには [こちら](https://github.com/declandewet/vue-meta#lists-of-tags) を参照してください。
+<b>情報:</b> 子コンポーネント利用されたときにメタ情報が重複してしまうことを避けるために `hid` キーを使ってユニーク識別子を meta 要素に設定してください。 詳しくは ([こちら](https://github.com/declandewet/vue-meta#lists-of-tags))を参照してください。
 
 </div>
