@@ -43,14 +43,14 @@ export default {
 
 ページを `/` の代わりに `/portal` として提供したいとしましょう。
 
-これはおそらくエッジケースで、 _nuxt.config.js_ における`router.base` のポイントは Web サーバーがドメインルート以外の場所で Nuxt を提供する時のためのものです。
+これはおそらくエッジケースで、 _nuxt.config.js_ における `router.base` のポイントは Web サーバーがドメインルート以外の場所で Nuxt を提供する時のためのものです。
 
-しかし、ローカル開発中に _localhost_ を押すと、router.base が / でない場合は 404 が返されてしまいます。
-これを防ぐために、フックを設定することができます。
+しかし、ローカル開発中に _localhost_ にアクセスすると、router.base が / でない場合は 404 が返されてしまいます。
+フックを設定することでこれを防ぐことができます。
 
 リダイレクトは、プロダクション用の Web サイトでは最適なユースケースではないかもしれませんが、これはフックを活用するのに役立ちます。
 
-まずはじめに、 [`router.base` を変更できます](/api/configuration-router#base)
+まずはじめに、 [`router.base` を変更できます](/api/configuration-router#base)  
 `nuxt.config.js` を更新してみましょう:
 
 ```js
@@ -64,7 +64,7 @@ export default {
 }
 ```
 
-それから、いくつかのファイルを作成します。
+それから、いくつかファイルを作成します。
 
 1. `hooks/index.js` フックモジュール
 
@@ -113,21 +113,21 @@ export default {
    import parseurl from 'parseurl'
 
    /**
-    * 目的の Web アプリケーションコンテキストルートへのリダイレクト処理をするためのミドルウェアを接続する。
+    * 目的の Web アプリケーションコンテキストルートへのリダイレクト処理をするためのミドルウェアに接続する。
     *
     * Nuxt のドキュメントにはフックの使い方の説明が欠けていることに注意してください。
-    * これは説明に役立つルーターのサンプルです。
+    * 下記は補足説明として役立つルーターのサンプルです。
     *
     * インスピレーションのための素晴らしい実装を見てみましょう:
     * - https://github.com/nuxt/nuxt.js/blob/dev/examples/with-cookies/plugins/cookies.js
     * - https://github.com/yyx990803/launch-editor/blob/master/packages/launch-editor-middleware/index.js
     *
-    * [http_class_http_clientrequest]: https://nodejs.org/api/http.html#http_class_http_clientrequest
-    * [http_class_http_serverresponse]: https://nodejs.org/api/http.html#http_class_http_serverresponse
+    * [httpクラス httpクライアントリクエスト]: https://nodejs.org/api/http.html#http_class_http_clientrequest
+    * [httpクラス httpサーバーレスポンス]: https://nodejs.org/api/http.html#http_class_http_serverresponse
     *
-    * @param {http.ClientRequest} req Node.js internal client request object [http_class_http_clientrequest]
-    * @param {http.ServerResponse} res Node.js internal response [http_class_http_serverresponse]
-    * @param {Function} next middleware callback
+    * @param {http.ClientRequest} req Node.jsの内部的なクライアントリクエストオブジェクト [httpクラス httpクライアントリクエスト]
+    * @param {http.ServerResponse} res Node.jsの内部的なレスポンス [httpクラス httpサーバーレスポンス]
+    * @param {Function} next ミドルウェアのコールバック
     */
    export default desiredContextRoot =>
      function projectHooksRouteRedirectPortal(req, res, next) {
@@ -149,4 +149,4 @@ export default {
      }
    ```
 
-そして、開発中の同僚が誤って `/` を入力し、開発している Web サービスにアクセスしようとしたときはいつでも、Nuxt は自動的に `/portal` にリダイレクトします。
+これで、開発中の Web サービスに同僚が誤って `/` にアクセスしようとしても、Nuxt は自動的に `/portal` にリダイレクトするでしょう。
