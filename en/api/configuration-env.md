@@ -21,12 +21,12 @@ export default {
 
 This lets you create a `baseUrl` property that will be equal to the `BASE_URL` environment variable if defined, otherwise, equal to `'http://localhost:3000'`.
 
-Then, I can access my `baseUrl` variable with 2 ways:
+Then, I can access my `baseUrl` variable in 2 ways:
 
 1. Via `process.env.baseUrl`.
 2. Via `context.env.baseUrl`, see [context API](/api/context).
 
-You can use the `env` property for giving public token for example.
+You can use the `env` property for giving a public token for example.
 
 For the example above, we can use it to configure [axios](https://github.com/mzabriskie/axios).
 
@@ -54,12 +54,12 @@ Meaning, `console.log(process.env)` will output `{}` but `console.log(process.en
 
 before
 
-```
+```js
 if (process.env.test == 'testing123')
 ```
 
 after
 
-```
+```js
 if ('testing123' == 'testing123')
 ```

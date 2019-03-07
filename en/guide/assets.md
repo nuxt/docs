@@ -21,11 +21,12 @@ For example, we have this file tree:
 
 If you use `url('~assets/image.png')` in your CSS, it will be *translated* into `require('~/assets/image.png')`.
 
-<p class="Alert Alert--orange">
-    <b>Warning:</b>
-    Starting from Nuxt 2.0 the <code>~/</code> alias won't be resolved correctly in your CSS files.
-    You must use `~assets` (without a slash) or the `@` alias in `url` CSS references, i.e. <code>background: url("~assets/banner.svg")</code>
-</p>
+<div class="Alert Alert--orange">
+
+**Warning:** Starting from Nuxt 2.0 the `~/` alias won't be resolved correctly in your CSS files.
+You must use `~assets` (without a slash) or the `@` alias in `url` CSS references, i.e. `background: url("~assets/banner.svg")`
+
+</div>
 
 
 Or if you reference that image in your `pages/index.vue`:
@@ -52,7 +53,7 @@ The benefits of these loaders are:
 For those two loaders, the default configuration is:
 
 ```js
-// https://github.com/nuxt/nuxt.js/blob/dev/packages/builder/src/webpack/base.js#L204-L229
+// https://github.com/nuxt/nuxt.js/blob/dev/packages/webpack/src/config/base.js#L297-L316
 [
   {
     test: /\.(png|jpe?g|gif|svg|webp)$/,
@@ -75,7 +76,7 @@ For those two loaders, the default configuration is:
 
 Which means that every file below 1 KB will be inlined as base-64 data URL.
 Otherwise, the image/font will be copied in its corresponding folder (under the `.nuxt` directory)
-with a name containing a version hashes for better caching.
+with a name containing a version hash for better caching.
 
 When launching our application with `nuxt`, our template in `pages/index.vue`:
 
@@ -93,13 +94,6 @@ Will be transformed into:
 
 If you want to change the loader configurations, please use [build.extend](/api/configuration-build#extend).
 
-<div class="Alert Alert--teal">
-
-<b>Info:</b> Including assets dynamically (<code>`~assets/${imgName}.jpg`</code>)
-
-</div>
-
-<!-- TODO: Dynamic assets -->
 
 ## Static
 
@@ -109,7 +103,7 @@ All included files will be automatically served by Nuxt and are accessible throu
 
 This option is helpful for files like `robots.txt`, `sitemap.xml` or `CNAME` (which is important for GitHub Pages deployment).
 
-In your code, you can then reference these files relatively to the root (`/`):
+In your code, you can then reference these files relative to the root (`/`):
 
 ```html
 <!-- Static image from static directory -->

@@ -5,9 +5,9 @@ description: Nuxt Generator クラス
 
 # Generator クラス
 
-- ソース: **[builder/generator.js](https://github.com/nuxt/nuxt.js/tree/dev/packages/builder/src/generator.js)**
+- ソース: **[generator/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/generator/src/generator.js)**
 
-## Hooks
+## フック
 
 特定のライフサイクルイベントでのフックを登録できます。
 

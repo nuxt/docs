@@ -43,6 +43,4 @@ description: サーバーサイドレンダリングでのコンポーネント�
 </template>
 ```
 
-> `<no-ssr />` は子コンポーネント/要素を1つのみ含むことができます。
-
-このコンポーネントは [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr) の clone したものです。[@egoist](https://github.com/egoist) に感謝します！
+このコンポーネントは [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr) を clone したものです。[@egoist](https://github.com/egoist) に感謝します！

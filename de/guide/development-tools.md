@@ -186,7 +186,7 @@ ESLint will lint all of your JavaScript and Vue files while ignoring your ignore
 
 It is also recommended to enable ESLint hot reloading mode via webpack. This way ESLint will run on save during `npm run dev`. Just add the following to your `nuxt.config.js`:
 
-```
+```js
 ...
   /*
    ** Build configuration

@@ -38,19 +38,42 @@ export default {
 
 ## babel
 
-> Customize Babel configuration for JavaScript and Vue files.
+> Customize Babel configuration for JavaScript and Vue files. `.babelrc` is ignored by default.
 
 - Type: `Object`
 - Default:
 
   ```js
   {
-    presets: ['@nuxtjs/babel-preset-app']
+    babelrc: false,
+    cacheDirectory: undefined,
+    presets: ['@nuxt/babel-preset-app']
   }
   ```
+  
 
-Example (`nuxt.config.js`):
+The default targets of [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) are `ie: '9'` in the `client` build, and `node: 'current'` in the `server` build.
 
+**Note**: The presets configured in `build.babel.presets` will be applied to both, the client and the server build. The target will be set by Nuxt accordingly (client/server). If you want configure the preset differently for the client or the server build, please use `presets` as a function:
+
+```js
+export default {
+  build: {
+    babel: {
+      presets({ isServer }) {
+        const targets = isServer ? { node: '10' } : { ie: '11' }
+        return [
+          [ require.resolve('@nuxt/babel-preset-app'), { targets } ]
+        ]
+      }
+    }
+  }
+}
+```
+
+We **highly recommend** to use the default preset. However, you can change the preset if you have to. 
+
+*Example* for custom presets:
 ```js
 export default {
   build: {
@@ -65,8 +88,18 @@ export default {
 
 - Type: `Boolean`
 - Default: `false`
+- ⚠️ Experimental
 
-> Enable cache of [terser-webpack-plugin ](https://github.com/webpack-contrib/terser-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
+> Enable cache of [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
+
+## crossorigin
+
+- Type: `String`
+- Default: `undefined`
+
+  Configure the `crossorigin` attribute on `<link rel="stylesheet">` and `<script>` tags in generated HTML.
+
+  More Info: [CORS settings attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes)
 
 ## cssSourceMap
 
@@ -81,6 +114,15 @@ export default {
 
 See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) for available options.
 
+## devtools
+
+- Type: `boolean`
+- Default: `false`
+
+Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools) inspection.
+
+If you already activated through nuxt.config.js or otherwise, devtools enable regardless of the flag.
+
 ## extend
 
 > Extend the webpack configuration manually for the client & server bundles.
@@ -91,6 +133,16 @@ The extend is called twice, one time for the server bundle, and one time for the
 
 1. The Webpack config object,
 2. An object with the following keys (all boolean except `loaders`): `isDev`, `isClient`, `isServer`, `loaders`.
+
+
+<div class="Alert Alert--orange">
+
+  **Warning:**
+  The `isClient` and `isServer` keys provided in are separate from the keys available in [`context`](/api/context).
+  They are **not** deprecated. Do not use `process.client` and `process.server` here as they are `undefined` at this point.
+
+</div>
+
 
 Example (`nuxt.config.js`):
 
@@ -107,7 +159,7 @@ export default {
 }
 ```
 
-If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack).
+If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/dev/packages/webpack/src/config).
 
 ### loaders in extend
 
@@ -135,7 +187,14 @@ export default {
 - Type: `Boolean`
 - Default: `false`
 
-Using `extract-text-webpack-plugin` to extract the CSS in the main chunk into a separate CSS file (auto injected with template), which allows the file to be individually cached. This is recommended when there is a lot of shared CSS. CSS inside async components will remain inlined as JavaScript strings and handled by vue-style-loader.
+Using [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) under the hood, all your CSS will be extracted into separate files, usually one per component. This allows caching your CSS and JavaScript separately and is worth a try in case you have a lot of global or shared CSS.
+
+<div class="Alert Alert--teal">
+
+**Note:** There was a bug prior to Vue 2.5.18 that removed critical CSS imports when using this options.
+
+</div>
+
 
 ## filenames
 
@@ -168,6 +227,21 @@ export default {
 ```
 
 To understand a bit more about the use of manifests, take a look at this [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/).
+
+## friendlyErrors
+
+- Type: `Boolean`
+- Default: `true` (Overlay enabled)
+
+Enables or disables the overlay provided by [FriendlyErrorsWebpackPlugin](https://github.com/nuxt/friendly-errors-webpack-plugin)
+
+## hardSource
+
+- Type: `Boolean`
+- Default: `false`
+- ⚠️ Experimental
+
+Enables the [HardSourceWebpackPlugin](https://github.com/mzgoddard/hard-source-webpack-plugin) for improved caching
 
 ## hotMiddleware
 
@@ -230,6 +304,14 @@ HTML files created during the build process (will be applied for *all modes*).
   },
   scss: {},
   stylus: {},
+  ts: {
+    transpileOnly: true,
+    appendTsSuffixTo: [/\.vue$/]
+  },
+  tsx: {
+    transpileOnly: true,
+    appendTsxSuffixTo: [/\.vue$/]
+  },
   vueStyle: {}
 }
 ```
@@ -265,6 +347,15 @@ HTML files created during the build process (will be applied for *all modes*).
 
 > See the [Node Sass documentation](https://github.com/sass/node-sass/blob/master/README.md#options) for all available Sass options.
 > Note: `loaders.sass` is for [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html)
+
+### loaders.ts
+
+> Loader for typescript file and `lang="ts"` Vue SFC.
+> More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#loader-options).
+
+### loaders.tsx
+
+> More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#options).
 
 ### loaders.vueStyle
 
@@ -313,6 +404,7 @@ See [NMFR/optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-c
 
 - Type: `Boolean`
 - Default: `false`
+- ⚠️ Experimental
 
 > Enable [thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) in webpack building
 
@@ -343,9 +435,10 @@ export default {
 
 > Customize [PostCSS Loader](https://github.com/postcss/postcss-loader#usage) plugins.
 
-- Type: `Array`, `Object` (recommended), `Function` or `Boolean`
+- Type: `Array` (legacy, will override defaults), `Object` (recommended), `Function` or `Boolean`
 
-  **Note:** Nuxt.js has applied [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env). By default it enables [Stage 2 features](https://cssdb.org/) and [Autoprefixer](https://github.com/postcss/autoprefixer), you can use `build.postcss.preset` to config it.
+  **Note:** Nuxt.js has applied [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env). By default it enables [Stage 2 features](https://cssdb.org/) and [Autoprefixer](https://github.com/postcss/autoprefixer), you can use `build.postcss.preset` to configure it.
+
 - Default:
 
   ```js
@@ -355,9 +448,12 @@ export default {
       'postcss-url': {},
       'postcss-preset-env': {},
       'cssnano': { preset: 'default' } // disabled in dev mode
-    }
+    },
+    order: 'cssnanoLast'
   }
   ```
+
+Your custom plugin settings will be merged with the default plugins (unless you are using an `Array` instead of an `Object`).
 
 Example (`nuxt.config.js`):
 
@@ -378,6 +474,28 @@ export default {
           grid: true
         }
       }
+    }
+  }
+}
+```
+
+If the postcss configuration is an `Object`, `order` can be used for defining the plugin order:
+
+- Type: `Array` (ordered plugin names), `String` (order preset name), `Function`
+- Default: `cssnanoLast` (put `cssnano` in last)
+
+Example (`nuxt.config.js`):
+
+```js
+export default {
+  build: {
+    postcss: {
+      // preset name
+      order: 'cssnanoLast',
+      // ordered plugin names
+      order: ['postcss-import', 'postcss-preset-env', 'cssnano']
+      // Function to calculate plugin order
+      order: (names, presets) => presets.cssnanoLast(names)
     }
   }
 }
@@ -446,13 +564,19 @@ This option is automatically set based on `mode` value if not provided.
 - Type: `Object`
 - Default: `{}`
 
+<div class="Alert Alert--orange">
+
+**Warning:** This property is deprecated. Please use the [style-resources-module](https://github.com/nuxt-community/style-resources-module/) instead for improved performance and better DX!
+
+</div>
+
 This is useful when you need to inject some variables and mixins in your pages without having to import them every time.
 
 Nuxt.js uses https://github.com/yenshih/style-resources-loader to achieve this behaviour.
 
 You need to specify the patterns/path you want to include for the given pre-processors: `less`, `sass`, `scss` or `stylus`
 
-:warning: You cannot use path aliases here (`~` and `@`), you need to use relative or absolute paths.
+You cannot use path aliases here (`~` and `@`), you need to use relative or absolute paths.
 
 `nuxt.config.js`:
 
@@ -531,7 +655,18 @@ See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/t
 - Type: `Array<string | RegExp>`
 - Default: `[]`
 
-If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Item in transpile can be string or regex object for matching dependencies file name.
+If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Each item in transpile can be a package name, or a string or regex object matching the dependency's file name.
+
+## useForkTsChecker
+
+> Enables TypeScript type checking on a separate process.
+
+- Type: `Object` or `Boolean`
+- Default: `false`. But `true` for TypeScript projects using `nuxt-ts` (see [TypeScript Support](/guide/typescript))
+
+ForkTsChecker plugin options. Set to `false` to disable this plugin.
+
+See [Realytics/fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin).
 
 ## vueLoader
 

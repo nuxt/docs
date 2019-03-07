@@ -7,7 +7,7 @@ description: Bagian View (Tampilan) menggambarkan semua yang Anda perlukan untuk
 
 > Bagian View (Tampilan) menggambarkan semua yang Anda perlukan untuk mengonfigurasi data dan tampilan untuk rute tertentu pada Aplikasi Nuxt.js Anda (Dokumen, Layout, Halaman, dan HTML Head).
 
-![nuxt-views-schema](/nuxt-views-schema.png)
+![nuxt-views-schema](/nuxt-views-schema.svg)
 
 ## Dokumen
 
@@ -68,7 +68,7 @@ Anda dapat mengkustomisasi halaman kesalahan ini dengan cara menambahkan file `l
 
 Layout ini spesial, karena Anda *tidak* harus menyertakan `<nuxt/>` pada templatnya. Anda harus memahami layout ini sebagai komponen yang ditampilkan ketika terjadi kesalahan (error) (`404`, `500`, dan sebagainya.).
 
-Kode sumber halaman kesalahan yang default [tersedia di GitHub](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
+Kode sumber halaman kesalahan yang default [tersedia di GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
 
 Contoh kustomisasi halaman kesalahan pada file `layouts/error.vue`:
 

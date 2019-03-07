@@ -5,6 +5,17 @@ description: Начать работу с Nuxt.js действительно о�
 
 > Начать работу с Nuxt.js действительно очень легко. Простой проект требует лишь указания зависимости `nuxt` в package.json.
 
+<div>
+  <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Nuxt Fundamentals by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Nuxt.js Fundamentals</h4>
+      <p class="Promote__Content__Description">Learn how to get started quickly with Nuxt.js in videos.</p>
+      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+    </div>
+  </a>
+</div>
+
 ## Использование стартового шаблона Nuxt.js
 
 Для быстрого запуска приложения команда Nuxt.js создала [стартовый шаблон](https://github.com/nuxt-community/starter-template).

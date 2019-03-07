@@ -11,8 +11,15 @@ description: Nuxt.js 提供了一系列常用的命令, 用于开发或发布部
 |---------|-------------|
 | nuxt | 启动一个热加载的Web服务器（开发模式） [localhost:3000](http://localhost:3000)。 |
 | nuxt build | 利用webpack编译应用，压缩JS和CSS资源（发布用）。 |
-| nuxt start | 以生成模式启动一个Web服务器 (`nuxt build` 会先被执行)。 |
+| nuxt start | 以生产模式启动一个Web服务器 (`nuxt build` 会先被执行)。 |
 | nuxt generate | 编译应用，并依据路由配置生成对应的HTML文件 (用于静态站点的部署)。 |
+
+如果使用了 Koa/Express 等 Node.js Web 开发框架，并使用了 Nuxt 作为中间件，可以自定义 Web 服务器的启动入口：
+
+| 命令 | 描述 |
+|---------|-------------|
+| NODE_ENV=development nodemon server/index.js | 启动一个热加载的自定义 Web 服务器（开发模式）。
+| NODE_ENV=production node server/index.js | 以生产模式启动一个自定义 Web 服务器 (需要先执行 `nuxt build`)。 |
 
 #### 参数
 

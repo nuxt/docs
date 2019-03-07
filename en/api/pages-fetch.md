@@ -13,6 +13,14 @@ The `fetch` method, *if set*, is called every time before loading the component 
 
 The `fetch` method receives [the `context`](/api/context) object as the first argument, we can use it to fetch some data and fill the store. To make the `fetch` method asynchronous, **return a Promise**, Nuxt.js will wait for the promise to be resolved before rendering the component.
 
+
+<div class="Alert Alert--orange">
+
+**Warning**: You **don't** have access of the component instance through `this` inside `fetch` because it is called **before initiating** the component.
+
+</div>
+
+
 Example of `pages/index.vue`:
 
 ```html

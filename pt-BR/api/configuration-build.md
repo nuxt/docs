@@ -44,7 +44,7 @@ module.exports = {
 Default:
 ```js
 {
-  presets: ['@nuxtjs/babel-preset-app']
+  presets: ['@nuxt/babel-preset-app']
 }
 ```
 
@@ -96,7 +96,7 @@ module.exports = {
 }
 ```
 
-If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/webpack).
+If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/dev/packages/webpack/src/config).
 
 ## extractCSS
 
@@ -105,7 +105,7 @@ If you want to see more about our default webpack configuration, take a look at 
 
 > Enables Common CSS Extraction using vue SSR [guidelines](https://ssr.vuejs.org/en/css.html).
 
-Using extract-text-webpack-plugin to extract the CSS in the main chunk into a separate CSS file (auto injected with template),
+Using [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin) to extract the CSS in the main chunk into a separate CSS file (auto injected with template),
 which allows the file to be individually cached. This is recommended when there is a lot of shared CSS.
 CSS inside async components will remain inlined as JavaScript strings and handled by vue-style-loader.
 

@@ -5,7 +5,7 @@ description: Nuxt Renderer Class
 
 # Renderer Class
 
-- Source: **[core/renderer.js](https://github.com/nuxt/nuxt.js/tree/dev/packages/core/src/renderer.js)**
+- Source: **[vue-renderer/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-renderer/src/renderer.js)**
 
 This class is exporting a connect middleware which handles and serves all SSR and asset requests.
 
@@ -22,4 +22,4 @@ Hook                      | Arguments                | When
  `render:done`            |  (renderer)              | SSR Middleware and all resources are ready (Renderer ready)
  `render:routeContext`    |  (context.nuxt)          | *Every time a route is server-rendered and before `render:route` hook*. Called before serializing Nuxt context into `window.__NUXT__`, useful to add some data that you can fetch on client-side.
  `render:route`           |  (url, result, context)  | *Every time a route is server-rendered*. Called before sending back the request to the browser.
- `render:routeDone`       |  (url, result, context)  | *Every time a route is server-rendered*. Called aftet the response has been sent to the browser. 
+ `render:routeDone`       |  (url, result, context)  | *Every time a route is server-rendered*. Called after the response has been sent to the browser. 

@@ -233,6 +233,62 @@ router: {
 }
 ```
 
+### Unknown Dynamic Nested Routes
+
+If you do not know the depth of your URL structure, you can use `_.vue` to dynamically match nested paths.
+This will handle requests that do not match a _more specific_ request.
+
+This file tree:
+
+```bash
+pages/
+--| people/
+-----| _id.vue
+-----| index.vue
+--| _.vue
+--| index.vue
+```
+
+Will handle requests like this:
+
+Path | File
+--- | ---
+`/` | `index.vue`
+`/people` | `people/index.vue`
+`/people/123` | `people/_id.vue`
+`/about` | `_.vue`
+`/about/careers` | `_.vue`
+`/about/careers/chicago` | `_.vue`
+
+__Note:__ Handling 404 pages is now up to the logic of the `_.vue` page. [More on 404 redirecting can be found here](/guide/async-data#handling-errors).
+
+### Named Views
+
+To render named views you can use `<nuxt name="top"/>` or `<nuxt-child name="top"/>` components in your layout/page. To specify named view of page we need to extend router config in `nuxt.config.js` file:
+  
+``` js
+export default {
+  router: {
+    extendRoutes(routes, resolve) {
+      let index = routes.findIndex(route => route.name === 'main')
+      routes[index] = {
+        ...routes[index],
+        components: {
+          default: routes[index].component,
+          top: resolve(__dirname, 'components/mainTop.vue')
+        },
+        chunkNames: {
+          top: 'components/mainTop'
+        }
+      }
+    }
+  }
+}
+```
+It require to extend interested route with 2 properties `components` and `chunkNames`. Named view in this config example has name `top`.
+
+To see an example, take a look at the [named-views example](/examples/named-views).
+
 ### SPA fallback
 
 You can enable SPA fallbacks for dynamic routes too. Nuxt.js will output an extra file that is the same as the `index.html` that would be used in `mode: 'spa'`. Most static hosting services can be configured to use the SPA template if no file matches. It won't include the `head` info or any HTML, but it will still resolve and load the data from the API.
@@ -354,11 +410,11 @@ export default function (context) {
   context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
-Middlewares will be called server-side once (on the first request to the Nuxt app or when page refreshes) and client-side when navigating to further routes. 
+In universal mode, middlewares will be called server-side once (on the first request to the Nuxt app or when page refreshes) and client-side when navigating to further routes.  In SPA mode, middlewares will be called client-side on the first request and when navigating to further routes. 
 
 The middleware will be executed in series in this order:
 
-1. `nuxt.config.js`
+1. `nuxt.config.js` (in the order within the file)
 2. Matched layouts
 3. Matched pages
 
@@ -388,7 +444,7 @@ export default {
 }
 ```
 
-Now the `stats` middleware will be called for every route changes.
+Now the `stats` middleware will be called for every route change.
 
 You can add your middleware to a specific layout or page as well:
 

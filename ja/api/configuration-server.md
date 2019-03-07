@@ -1,28 +1,28 @@
 ---
-title: "API: The server Property"
-description: Nuxt.js let you define the server connection variables for your application inside `nuxt.config.js`.
+title: "API: server プロパティ"
+description: Nuxt.js では、アプリケーションのサーバー接続用の変数を `nuxt.config.js` 内に定義できます。
 ---
 
-# The server Property
+# server プロパティ
 
-- Type: `Object`
+- 型: `オブジェクト`
 
-> Nuxt.js let you define the server connection variables for your application inside `nuxt.config.js`.
+> Nuxt.js では、アプリケーションのサーバー接続用の変数を `nuxt.config.js` 内に定義できます。
 
-## Basic example (`nuxt.config.js`):
+## 基本的な例 (`nuxt.config.js`):
 
 ```js
 export default {
   server: {
-    port: 8000, // default: 3000
-    host: '0.0.0.0', // default: localhost,
+    port: 8000, // デフォルト: 3000
+    host: '0.0.0.0', // デフォルト: localhost,
   }
 }
 ```
 
-This lets you specify the [host and port](/faq/host-port) for your Nuxt.js server instance.
+こうすることで、Nuxt.js サーバーインスタンスの [ホストとポート](/faq/host-port) を指定できます。
 
-## Example using HTTPS configuration
+## HTTPS 設定を用いた例
 
 ```js
 import path from 'path'
@@ -38,7 +38,7 @@ export default {
 }
 ```
 
-## Example using sockets configuration
+## ソケット設定を用いた例
 
 ```js
 export default {

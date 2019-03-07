@@ -5,7 +5,7 @@ description: Nuxt `Builder` Class
 
 # Builder Class
 
-- 来源: **[builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)**
+- 来源: **[builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/builder/src/builder.js)**
 
 ## Hooks
 

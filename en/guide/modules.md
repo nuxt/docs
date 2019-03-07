@@ -54,7 +54,7 @@ This is the object passed using `modules` array by user we can use it to customi
 
 **`this.options`**
 
-You can directly access to Nuxt options using this reference. This is the content of the user's `nuxt.config.js` with all default options assigned to. It can be used for shared options between modules.
+You can directly access Nuxt options using this reference. This is the content of the user's `nuxt.config.js` with all default options assigned to. It can be used for shared options between modules.
 
 **`this.nuxt`**
 
@@ -119,21 +119,6 @@ export default function asyncModule() {
     })
 }
 ```
-
-### Use callbacks
-
-```js
-import axios from 'axios'
-
-export default function asyncModule(callback) {
-  axios.get('https://jsonplaceholder.typicode.com/users')
-    .then(res => res.data.map(user => '/users/' + user.username))
-    .then(routes => {
-      callback()
-    })
-}
-```
-
 
 ## Common Snippets
 
@@ -298,37 +283,79 @@ export default function (moduleOptions) {
 ## Run Tasks on Specific hooks
 
 Your module may need to do things only on specific conditions and not just during Nuxt initialization.
-We can use the powerful [Tapable](https://github.com/webpack/tapable) plugin system to do tasks on specific events.
+We can use the powerful [Hookable](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js) Nuxt.js system to do tasks on specific events.
 Nuxt will wait for your function if it return a Promise or is defined as `async`.
 
+Here are some basic examples:
+
 ```js
-export default function () {
-  // Add hook for modules
-  this.nuxt.hook('module', moduleContainer => {
+export default function myModule() {
+
+  this.nuxt.hook('modules:done', moduleContainer => {
     // This will be called when all modules finished loading
   })
 
-  // Add hook for renderer
-  this.nuxt.hook('renderer', renderer => {
-    // This will be called when renderer was created
+  this.nuxt.hook('render:before', renderer => {
+    // Called after the renderer was created
   })
 
-  // Add hook for build
-  this.nuxt.hook('build', async builder => {
-    // This will be called once when builder created
-
-    // We can even register internal hooks here
-    builder.hook('compile', ({compiler}) => {
-        // This will be run just before webpack compiler starts
-    })
+  this.nuxt.hook('build:compile', async ({name, compiler }) => {
+    // Called before the compiler (default: webpack) starts
   })
 
-  // Add hook for generate
-  this.nuxt.hook('generate', async generator => {
-    // This will be called when a Nuxt generate starts
+  this.nuxt.hook('generate:before', async generator => {
+    // This will be called before Nuxt generates your pages
   })
 }
 ```
+
+## Module package commands
+
+**Experimental**
+
+Starting in `v2.4.0`, you can add custom nuxt commands through a Nuxt module's package. To do so, you must follow the `NuxtCommand` API when defining your command. A simple example hypothetically placed in `my-module/bin/command.js` looks like this:
+
+```js
+#!/usr/bin/env node
+
+const consola = require('consola')
+const { NuxtCommand } = require('@nuxt/cli')
+
+NuxtCommand.run({
+  name: 'command',
+  description: 'My Module Command',
+  usage: 'command <foobar>',
+  options: {
+    foobar: {
+      alias: 'fb',
+      type: 'string',
+      description: 'Simple test string'
+    }
+  },
+  run(cmd) {
+    consola.info(cmd.argv)
+  }
+})
+```
+
+A few things of note here. First, notice the call to `/usr/bin/env` to retrieve the Node executable. Also notice that ES module syntax can't be used for commands unless you manually incorporate [`esm`](https://github.com/standard-things/esm) into your code.
+
+Next, you'll notice how `NuxtCommand.run()` is used to specify the settings and behavior of the command. Options are defined in `options`, which get parsed via [`minimist`](https://github.com/substack/minimist).
+Once arguments are parsed, `run()` is automatically called with the `NuxtCommand` instance as first parameter.
+
+In the example above, `cmd.argv` is used to retrieve parsed command-line arguments. There are more methods and properties in `NuxtCommand` -- documentation on them will be provided as this feature is further tested and improved.
+
+To make your command recognizable by the Nuxt CLI, list it under the `bin` section of your package.json, using the `nuxt-module` convention, where `module` relates to your package's name. With this central binary, you can use `argv` to further parse more `subcommands` for your command if you desire.
+
+```js
+{
+  "bin": {
+    "nuxt-foobar": "./bin/command.js"
+  }
+}
+```
+
+Once your package is installed (via NPM or Yarn), you'll be able to execute `nuxt foobar ...` on the command-line.
 
 <div class="Alert">
 

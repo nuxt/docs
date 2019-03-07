@@ -45,7 +45,7 @@ export default {
 
   ```js
   {
-    presets: ['@nuxtjs/babel-preset-app']
+    presets: ['@nuxt/babel-preset-app']
   }
   ```
 
@@ -90,7 +90,17 @@ export default {
 extend メソッドは一度はサーバーのバンドルのため、一度はクライアントのバンドルのため、つまり二度呼び出されます。メソッドの引数は次のとおり:
 
 1. Webpack 設定オブジェクト
-2. 次のキーを持つオブジェクト（すべてブーリアン）: `isDev`, `isClient`, `isServer`, `loaders`
+2. 次のキーを持つオブジェクト（`loaders` を除きすべてブーリアン）: `isDev`, `isClient`, `isServer`, `loaders`
+
+
+<div class="Alert Alert--orange">
+
+  **警告:**
+  提供される `isClient` および `isServer` は [`context`](/api/context) で利用可能なキーとは別物です。
+  これらは非推奨 **ではありません**。ここでは `process.client` および `process.server` は undefined となるため使用しないでください。
+
+</div>
+
 
 例（`nuxt.config.js`）:
 
@@ -107,7 +117,7 @@ export default {
 }
 ```
 
-デフォルトの Webpack の設定についてもう少し見てみたい場合は Nuxt.js の [webpack ディレクトリ](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack) を参照してください。
+デフォルトの Webpack の設定についてもう少し見てみたい場合は Nuxt.js の [webpack ディレクトリ](https://github.com/nuxt/nuxt.js/tree/dev/packages/webpack/src/config) を参照してください。
 
 ### extend 内の loaders
 
@@ -135,7 +145,15 @@ export default {
 - 型: `ブーリアン`
 - デフォルト: `false`
 
-`extract-text-webpack-plugin` を使ってメインチャンク内の CSS を個別の CSS ファイル（テンプレートに自動的に注入される）形式で抽出します。これにより、ファイルを個別にキャッシュさせることができます。これは共通して利用される CSS が多く存在するときに推奨されます。非同期コンポーネント内部の CSS は JavaScript の文字列としてインラインで保持され、vue-style-loader で取り扱われます。
+
+内部で [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) が使われ、全ての CSS は別々のファイルに、通常はコンポーネントごとに一つ抽出されます。これは CSS と JavaScript を別々にキャッシュすることを可能にし、多くのグローバルまたは共通 CSS が存在する場合には試してみる価値があります。
+
+<div class="Alert Alert--teal">
+
+**注記:** Vue 2.5.18 以前では、このオプションを使用したときにクリティカルな CSS のインポートを削除するバグがありました。
+
+</div>
+
 
 ## filenames
 
@@ -183,24 +201,18 @@ manifest の使い方をより理解するためには [webpack documentation](h
 ```js
 {
   collapseBooleanAttributes: true,
-  collapseWhitespace: false,
   decodeEntities: true,
   minifyCSS: true,
   minifyJS: true,
   processConditionalComments: true,
-  removeAttributeQuotes: false,
-  removeComments: false,
   removeEmptyAttributes: true,
-  removeOptionalTags: false,
   removeRedundantAttributes: true,
-  removeScriptTypeAttributes: false,
-  removeStyleLinkTypeAttributes: false,
-  removeTagWhitespace: false,
-  sortClassName: false,
   trimCustomFragments: true,
   useShortDoctype: true
 }
 ```
+
+**情報:** `html.minify`に変更を加えても、それらはデフォルトとマージされません！
 
 ビルドプロセス中に作成された HTML ファイルのミニファイに使われる [html-minifier](https://github.com/kangax/html-minifier) プラグインの設定（*全てのモード*に適用される）。
 
@@ -303,33 +315,6 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 [Webpack の最適化](https://webpack.js.org/configuration/optimization/)を参照してください。
 
-## terser
-
-- 型: `オブジェクト` または `ブーリアン`
-- デフォルト:
-
-```js
-{
-  parallel: true,
-  cache: false,
-  sourceMap: false,
-  extractComments: {
-    filename: 'LICENSES'
-  },
-  terserOptions: {
-    output: {
-      comments: /^\**!|@preserve|@license|@cc_on/
-    }
-  }
-}
-```
-
-Terser プラグインのオプションです。 `false` を設定するとこのプラグインは無効になります。
-
-`soruceMap` は webpack の `confing.devtool` が `source-?map` と一致した際に有効になります。
-
-[webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin) を参照してください。
-
 ## optimizeCSS
 
 - 型: `オブジェクト` または `ブーリアン`
@@ -378,6 +363,7 @@ export default {
 - 型: `配列`、`オブジェクト`（推奨）、`関数` または `ブーリアン`
 
   **注意：**  Nuxt.js は [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env) を適用しました。デフォルトでは、[Stage 2 features](https://cssdb.org/) と [Autoprefixer](https://github.com/postcss/autoprefixer) が有効になっています。`build.postcss.preset` を使うことで設定が出来ます。
+
 - デフォルト:
 
   ```js
@@ -390,6 +376,8 @@ export default {
     }
   }
   ```
+
+カスタムプラグイン設定は、デフォルトのプラグイン設定とマージされます (`Object` のかわりに `Array` を使っている場合を除く).
 
 例（`nuxt.config.js`）:
 
@@ -415,6 +403,29 @@ export default {
 }
 ```
 
+
+postcss の設定が `Object` 型の場合、プラグインの順番の定義に `order`を利用できます:
+
+- Type: `Array` (順序付けされたプラグイン名), `String` (順序付けされたプリセット名), `Function`
+- Default: `cssnanoLast` (最後に `cssnano` を配置する)
+
+例 (`nuxt.config.js`):
+
+```js
+export default {
+  build: {
+    postcss: {
+      // プリセット名
+      order: 'cssnanoLast',
+      // 順序付けされたプラグイン名の配列
+      order: ['postcss-import', 'postcss-preset-env', 'cssnano']
+      // プラグインの順番を算出するための関数
+      order: (names, presets) => presets.cssnanoLast(names)
+    }
+  }
+}
+```
+
 ## profile
 
 - 型: `ブーリアン`
@@ -424,7 +435,7 @@ export default {
 
 ## publicPath
 
-> CDN に `publicPath` をセットすると、Nuxt.js は dist ディレクトリ内のファイルを CDN へアップロードし最大のパフォーマンスを発揮します。
+> Nuxt.js ではパフォーマンスの最大化のため dist ディレクトリ内のファイルを CDN にアップロードすることも可能です。そのためにはまず `publicPath` に CDN を指定します。
 
 - 型: `文字列`
 - デフォルト: `'/_nuxt/'`
@@ -439,7 +450,7 @@ export default {
 }
 ```
 
-設定すると、`nuxt build` を実行したタイミングで `.nuxt/dist/client` ディレクトリの内容が CDN にアップロードされます！
+設定後、`nuxt build` を実行する際に `.nuxt/dist/client` ディレクトリの内容を CDN にアップロードしてください。
 
 ## quiet
 
@@ -476,6 +487,12 @@ export default {
 
 - 型: `オブジェクト`
 - デフォルト: `{}`
+
+<div class="Alert Alert--orange">
+
+**警告** このプロパティは非推奨です。 パフォーマンスおよび開発体験の向上のために、代わりに [style-resources-modules](https://github.com/nuxt-community/style-resources-module/) を使用してください。
+
+</div>
 
 毎回インポートせずに変数やミックスインをページに挿入する必要がある場合に便利です。
 
@@ -529,6 +546,34 @@ export default {
 ```
 
 テンプレートは [`lodash.template`](https://lodash.com/docs/#template) を使ってレンダリングされます。[こちら](https://github.com/learn-co-students/javascript-lodash-templates-v-000)でより詳細な使い方を知ることができます。
+
+## terser
+
+- 型: `オブジェクト` または `ブーリアン`
+- デフォルト:
+
+```js
+{
+  parallel: true,
+  cache: false,
+  sourceMap: false,
+  extractComments: {
+    filename: 'LICENSES'
+  },
+  terserOptions: {
+    output: {
+      comments: /^\**!|@preserve|@license|@cc_on/
+    }
+  }
+}
+```
+
+Terser プラグインのオプションです。 `false` を設定するとこのプラグインは無効になります。
+
+`soruceMap` は webpack の `confing.devtool` が `source-?map` と一致した際に有効になります。
+
+[webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin) を参照してください。
+
 
 ## transpile
 

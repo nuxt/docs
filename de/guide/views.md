@@ -5,7 +5,7 @@ description: The Views section describes all you need to configure data and view
 
 > The Views section describes all you need to configure data and views for a specific route in your Nuxt.js Application (Document, Layouts, Pages and HTML Head).
 
-![nuxt-views-schema](/nuxt-views-schema.png)
+![nuxt-views-schema](/nuxt-views-schema.svg)
 
 ## Document
 
@@ -66,7 +66,7 @@ You can customize the error page by adding a `layouts/error.vue` file.
 
 This layout is special, since you should _not_ include `<nuxt/>` inside its template. You must see this layout as a component displayed when an error occurs (`404`, `500`, etc.).
 
-The default error page source code is [available on GitHub](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
+The default error page source code is [available on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
 
 Example of a custom error page in `layouts/error.vue`:
 

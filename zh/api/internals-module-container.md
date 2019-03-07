@@ -5,7 +5,7 @@ description: Nuxt ModuleContainer Class
 
 # ModuleContainer Class
 
-- 来源: **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/module.js)**
+- 来源: **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/module.js)**
 
 所有[模块](/guide/modules)都将在`ModuleContainer`实例的`context`调用。
 

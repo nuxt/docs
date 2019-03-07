@@ -5,26 +5,62 @@ description: Nuxt.js はとても簡単に始められます。シンプルな�
 
 > Nuxt.js はとても簡単に始められます。シンプルなプロジェクトでは必要な依存パッケージは `nuxt` だけです。
 
-## Nuxt.js を使ったスターターテンプレート
+<div>
+  <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Nuxt Fundamentals by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Nuxt.js Fundamentals</h4>
+      <p class="Promote__Content__Description">Learn how to get started quickly with Nuxt.js in videos.</p>
+      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+    </div>
+  </a>
+</div>
 
-素早くスタートできるようにするため、Nuxt.js チームは [スターターテンプレート](https://github.com/nuxt-community/starter-template) を用意しました。
+## `create-nuxt-app` を使用する
 
-[ZIP をダウンロード](https://github.com/nuxt-community/starter-template/archive/master.zip) するか、 Vue CLI を使ってインストールしてください:
+素早くスタートできるようにするため、Nuxt.js チームは足場ツール  [create-nuxt-app](https://github.com/nuxt/create-nuxt-app) を作成しました。
+
+[npx](https://www.npmjs.com/package/npx) がインストールされていることを確認してください。（`npx` は NPM `5.2.0` からデフォルトでバンドルされています）
 
 ```bash
-$ vue init nuxt-community/starter-template <project-name>
+$ npx create-nuxt-app <project-name>
 ```
 
-> もし [Vue CLI](https://github.com/vuejs/vue-cli) をインストールしていなければ、`npm install -g @vue/cli @vue/cli-init` でインストールしてください。
-
-それから依存するパッケージをインストールしてください:
+もしくは [yarn](https://yarnpkg.com/ja/) を使ってください:
 
 ```bash
-$ cd <project-name>
-$ npm install
+yarn create nuxt-app <my-project>
 ```
 
-そしてプロジェクトを起動してください:
+いくつか質問されます:
+
+1. サーバーサイドのフレームワークを選択します:
+  - None (Nuxt default server)
+  - [Express](https://github.com/expressjs/express)
+  - [Koa](https://github.com/koajs/koa)
+  - [Hapi](https://github.com/hapijs/hapi)
+  - [Feathers](https://github.com/feathersjs/feathers)
+  - [Micro](https://github.com/zeit/micro)
+  - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
+2. 好きな UI フレームワークを選択します:
+  - None（後からでも追加できます）
+  - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
+  - [Vuetify](https://github.com/vuetifyjs/vuetify)
+  - [Bulma](https://github.com/jgthms/bulma)
+  - [Tailwind](https://github.com/tailwindcss/tailwindcss)
+  - [Element UI](https://github.com/ElemeFE/element)
+  - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
+  - [Buefy](https://buefy.github.io)
+3. 好きなテスティングフレームワークを選択します:
+  - None (後からでも追加できます)
+  - [Jest](https://github.com/facebook/jest)
+  - [AVA](https://github.com/avajs/ava)
+4. [Nuxtのモードを選択します。(`Universal` または `SPA`)](https://nuxtjs.org/guide/release-notes#better-spa-experience)
+5. HTTP リクエストを簡単に行うために [axios module](https://github.com/nuxt-community/axios-module) を追加します。
+6. 保存時にコードをチェックするために [EsLint](https://eslint.org/) を追加します。
+7. 保存時にコードを整形するために [Prettier](https://prettier.io/) を追加します。
+
+回答が終わり次第、全ての依存関係がインストールされ、プロジェクトを開始する次のステップへ進めます:
 
 ```bash
 $ npm run dev
@@ -49,11 +85,15 @@ $ mkdir <project-name>
 $ cd <project-name>
 ```
 
-*メモ: `<project-name>` の箇所は置き換えてください。*
+<div class="Alert Alert--nuxt-green">
+
+<b>情報:</b> `<project-name>` の箇所はプロジェクト名に置き換えてください。
+
+</div>
 
 ### package.json
 
-`nuxt` コマンドを使うように指定する `package.json` ファイルが必要です（訳注: Nuxt.js は開発サーバーを起動する `nuxt` コマンドを用意しています）:
+`nuxt` の起動方法を指定する `package.json` ファイルが必要です:
 
 ```json
 {

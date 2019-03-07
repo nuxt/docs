@@ -5,7 +5,7 @@ description: Nuxt Generator Class
 
 # Generator Class
 
-- 来源: **[builder/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/generator.js)**
+- 来源: **[generator/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/generator/src/generator.js)**
 
 ## Hooks
 

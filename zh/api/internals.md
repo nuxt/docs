@@ -18,17 +18,17 @@ Nuxt.js具有完全模块化的架构，允许开发人员使用灵活的API扩�
 #### Nuxt
 
 - [`Nuxt` Class](/api/internals-nuxt)
-- 来源: [core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/nuxt.js)
+- 来源: [core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/nuxt.js)
 
 #### Renderer
 
 - [`Renderer` Class](/api/internals-renderer)
-- 来源: [core/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/renderer.js)
+- 来源: [vue-renderer/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-renderer/src/renderer.js)
 
 #### ModuleContainer
 
 - [`ModuleContainer` Class](/api/internals-module-container)
-- 来源: [core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/module.js)
+- 来源: [core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/module.js)
 
 ### Build
 
@@ -37,22 +37,22 @@ Nuxt.js具有完全模块化的架构，允许开发人员使用灵活的API扩�
 #### Builder
 
 - [`Builder` Class](/api/internals-builder)
-- 来源: [builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)
+- 来源: [builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/builder/src/builder.js)
 
 #### Generator
 
 - [`Generator` Class](/api/internals-generator)
-- 来源: [generator/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/generator.js)
+- 来源: [generator/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/generator/src/generator.js)
 
 ### Common
 
 #### Utils
 
-- 来源: [common/utils.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/common/utils.js)
+- 来源: [utils/src](https://github.com/nuxt/nuxt.js/blob/dev/packages/utils/src)
 
 #### Options
 
-- 来源: [common/options.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/common/options.js)
+- 来源: [config/options.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/config/src/options.js)
 
 ## Packaging & Usage
 

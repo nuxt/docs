@@ -188,7 +188,7 @@ ESLint va linter tous vos fichiers JavaScript et Vue sauf ceux ignorés par `.gi
 
 Il est également recommandé d'activer ESLint en mode rechargement à chaud via webpack. De cette manière ESLint va s'exécuter au moment de la sauvegarde pendant le `npm run dev`. Ajoutez simplement le code suivant à votre `nuxt.config.js` :
 
-```
+```js
 ...
   /*
    ** Configuration de build

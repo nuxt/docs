@@ -46,6 +46,23 @@ description: 現在のページを表示します。
 </template>
 ```
 
+`<nuxt-child/>` は `keep-alive` と `keep-alive-props` を受け入れます:
+
+```html
+<template>
+  <div>
+    <nuxt-child keep-alive :keep-alive-props="{ exclude: ['modal'] }" />
+  </div>
+</template>
+
+<!-- このように変換されます -->
+<div>
+  <keep-alive :exclude="['modal']">
+    <router-view />
+  </keep-alive>
+</div>
+```
+
 > 子コンポーネントは、通常の Vue コンポーネントのようなプロパティも受け取ることができます。
 
 実際の例を見たいときは [ネストされたルートの例](/examples/nested-routes) を参照してください。

@@ -9,7 +9,9 @@
       { "name": "如何扩展 webpack 配置？", "to": "/extend-webpack" },
       { "name": "如何添加 webpack 插件？", "to": "/webpack-plugins" },
       { "name": "如何编辑主机和端口号？", "to": "/host-port" },
-      { "name": "如何使用Google统计分析服务？", "to": "/google-analytics" }
+      { "name": "如何使用 cached 组件？", "to": "/cached-components" },
+      { "name": "如何使用Google统计分析服务？", "to": "/google-analytics" },
+      { "name": "如何发起跨域资源请求？", "to": "/http-proxy"}
     ]
   },
   {
@@ -18,16 +20,22 @@
       { "name": "Window/Document 未定义？", "to": "/window-document-undefined" },
       { "name": "页面发生闪烁？", "to": "/css-flash" },
       { "name": "如何在子组件中使用异步数据？", "to": "/async-data-components" },
-      { "name": "Meta标签出现重复的现象？", "to": "/duplicated-meta-tags" }
+      { "name": "Meta标签出现重复的现象？", "to": "/duplicated-meta-tags" },
+      { "name": "iOS and 手机号码", "to": "/ios-phone-numbers" }
     ]
   },
   {
     "title": "部署",
     "links": [
+      { "name": "如何部署至 AWS w/ S3 和 Cloudfront", "to": "/deployment-aws-s3-cloudfront" },
+      { "name": "如何部署至 Dokku", "to": "/dokku-deployment" },
+      { "name": "如何部署至 GitHub Pages？", "to": "/github-pages" },
+      { "name": "在Google App Engine上部署", "to": "/appengine-deployment" },
       { "name": "如何在 Heroku 上部署？", "to": "/heroku-deployment" },
+      { "name": "在Netlify上部署", "to": "/netlify-deployment" },
       { "name": "如何使用 Now.sh 部署？", "to": "/now-deployment" },
       { "name": "如何使用 Surge.sh 部署？", "to": "/surge-deployment" },
-      { "name": "如何部署至 GitHub Pages？", "to": "/github-pages" }
+      { "name": "使用nginx作为代理", "to": "/nginx-proxy" }
     ]
   }
 ]

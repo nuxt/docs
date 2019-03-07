@@ -17,7 +17,7 @@ Un autre point à propos des modules est qu'ils peuvent être refactorisés et p
 - vous êtes une **société** qui accorde de l'importance à la **qualité** et la **réutilisabilité** de ses projets,
 - Vous êtes un membre super enthousiaste de la communauté *Open Source* et que vous souhaitez *partager* avec la communauté d'une façon simple.
 - Vous êtes un développeur occupé et vous n'aimez pas vous encombrer avec des détails comme le paramétrage de chaque nouvelle bibliothèque ou intégration (quelqu'un l'aura surement déjà fait pour vous, ou vous pourriez demander à quelqu'un de la communauté de le faire).
-- Vous êtes fatigué de l'utilisation des API bas niveau et de leur changement continu et vous souhaiter **simplement des choses fonctionnelles**.
+- Vous êtes fatigué de l'utilisation des API bas niveau et de leur changement continu et vous souhaitez **simplement des choses fonctionnelles**.
 
 ## Écrire un module basique
 
@@ -275,7 +275,7 @@ module.exports = function (moduleOptions) {
 
 ## Lancer des tâches sur des points d'ancrage spécifiques
 
-Votre module peut avoir besoin de choses seulement sous certaines conditions et pas seulement lors de l'initialisation de Nuxt. Nous utilisons le puissant système de plugin [Tapable](https://github.com/webpack/tapable) pour réaliser des tâches sur des évènements spécifiques. Nuxt va les attendre si les points d'ancrage retournent une promesse ou sont définis comme `async`.
+Votre module peut avoir besoin de choses seulement sous certaines conditions et pas seulement lors de l'initialisation de Nuxt. Nous pouvons utiliser le puissant système [Hookable] (https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js) pour effectuer des tâches sur des événements spécifiques. Nuxt va les attendre si les points d'ancrage retournent une promesse ou sont définis comme `async`.
 
 ```js
 module.exports = function () {

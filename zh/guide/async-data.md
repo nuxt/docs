@@ -5,6 +5,17 @@ description: Nuxt.js 扩展了 Vue.js，增加了一个叫 `asyncData` 的方法
 
 > Nuxt.js 扩展了 Vue.js，增加了一个叫 `asyncData` 的方法，使得我们可以在设置组件的数据之前能异步获取或处理数据。
 
+<div>
+  <a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/async-data-with-nuxtjs.png" srcset="/async-data-with-nuxtjs-2x.png 2x" alt="AsyncData by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
+      <p class="Promote__Content__Description">Learn how to manage asynchronous data with Nuxt.js.</p>
+      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+    </div>
+  </a>
+</div>
+
 ## asyncData 方法
 
 `asyncData`方法会在组件（**限于页面组件**）每次加载之前被调用。它可以在服务端或路由更新之前被调用。
@@ -88,9 +99,36 @@ export default {
 
 可通过 [API `context`](/api/context) 来了解该对象的所有属性和方法。
 
+### 使用 `req`/`res`(`request`/`response`) 对象
+
+在服务器端调用`asyncData`时，您可以访问用户请求的`req`和`res`对象。
+
+```js
+export default {
+  async asyncData ({ req, res }) {
+    // 请检查您是否在服务器端
+    // 使用 req 和 res
+    if (process.server) {
+     return { host: req.headers.host }
+    }
+
+    return {}
+  }
+}
+```
+
 ### 访问动态路由数据
 
 您可以使用`注入`asyncData属性的`context`对象来访问动态路由数据。例如，可以使用配置它的文件或文件夹的名称访问动态路径参数。所以，如果你定义一个名为`_slug.vue`的文件，您可以通过`context.params.slug`来访问它。
+
+```js
+export default {
+  async asyncData ({ params }) {
+    const slug = params.slug // When calling /abc the slug will be "abc"
+    return { slug }
+  }
+}
+```
 
 ### 监听 query 参数改变
 

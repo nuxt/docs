@@ -71,7 +71,7 @@ It is a convention to prefix those functions with a `$`.
 
 ### Inject into Vue instances
 
-Injecting content into Vue instances works similar to when doing this in standard Vue apps.
+Injecting context into Vue instances works similar to when doing this in standard Vue apps.
 
 `plugins/vue-inject.js`:
 
@@ -104,7 +104,7 @@ export default {
 
 ### Inject into context
 
-Injecting content into Vue instances works similar to when doing this in standard Vue apps.
+Injecting context into Vue instances works similar to when doing this in standard Vue apps.
 
 `plugins/ctx-inject.js`:
 
@@ -197,7 +197,6 @@ export const actions = {
 ```
 
 
-
 ## Client-side only
 
 Some plugins might work **only in the browser** because they lack SSR support.
@@ -229,3 +228,37 @@ In case you need to import some libraries in a plugin only on *server-side*, you
 Also, if you need to know if you are inside a generated app (via `nuxt generate`), you can check if `process.static` is set to `true`. This is only the case during and after the generation.
 
 You can also combine both options to hit the spot when a page is being server-rendered by `nuxt generate` before being saved (`process.static && process.server`).
+
+**Note**: Since Nuxt.js 2.4, `mode` has been introduced as option of `plugins` to specify plugin type, possible value are: `client` or `server`. `ssr: false` will be adapted to `mode: 'client'` and deprecated in next major release.
+
+Example:
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: [
+    { src: '~/plugins/both-sides.js' },
+    { src: '~/plugins/client-only.js', mode: 'client' },
+    { src: '~/plugins/server-only.js', mode: 'server' }
+  ]
+}
+```
+
+### Name conventional plugin
+
+If plugin is assumed to be run only in client or server side, `.client.js` or `.server.js` can be applied as extension of plugin file, the file will be automatically included in corresponding side.
+
+Example:
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: [
+    '~/plugins/foo.client.js', // only in client side
+    '~/plugins/bar.server.js', // only in server side
+    '~/plugins/baz.js' // both client & server
+  ]
+}
+```

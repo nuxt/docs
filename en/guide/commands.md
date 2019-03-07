@@ -20,6 +20,7 @@ You can use `--help` with any command to get detailed usage. Common arguments ar
 
 - **`--config-file` or `-c`:** specify the path to `nuxt.config.js` file.
 - **`--spa` or `-s`:** Runs command in SPA mode and disables server side rendering.
+- **`--unix-socket` or `-n`:** specify the path to a UNIX socket.
 
 #### Using in package.json
 

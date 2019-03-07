@@ -5,7 +5,7 @@ description: 视图章节的内容阐述了如何在 Nuxt.js 应用中为指定�
 
 > 本章节的内容阐述了如何在 Nuxt.js 应用中为指定的路由配置数据和视图，包括应用模板、页面、布局和HTML头部等内容。
 
-![nuxt-views-schema](/nuxt-views-schema.png)
+![nuxt-views-schema](/nuxt-views-schema.svg)
 
 ## 模板
 
@@ -65,7 +65,7 @@ Nuxt.js 允许你扩展默认的布局，或在 `layout` 目录下创建自定�
 
 这个布局文件不需要包含 `<nuxt/>` 标签。你可以把这个布局文件当成是显示应用错误（404，500等）的组件。
 
-默认的错误页面源码在 [这里](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
+默认的错误页面源码在 [这里](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
 
 举一个个性化错误页面的例子 `layouts/error.vue`:
 ```html

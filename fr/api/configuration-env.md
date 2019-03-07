@@ -50,12 +50,12 @@ Cela signifie que `console.log(process.env)` affichera `{}` mais `console.log(pr
 
 avant
 
-```
+```js
 if (process.env.test == 'testing123')
 ```
 
 après
 
-```
+```js
 if ('testing123' == 'testing123')
 ```

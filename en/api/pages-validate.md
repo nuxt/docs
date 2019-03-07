@@ -56,7 +56,7 @@ export default {
 }
 ```
 
-You can also throw expected or unexpected errors during validate function executation:
+You can also throw expected or unexpected errors during validate function execution:
 
 ```js
 export default {

@@ -20,7 +20,7 @@ description: 使用指定的上下文对象渲染指定的路由路径。
 
 <div class="Alert Alert--orange">
 
-`nuxt.renderRoute` 需在生成模式（dev: false）的编译过程之后才可调用。
+`nuxt.renderRoute` 需在生产模式（dev: false）的编译过程之后才可调用。
 
 </div>
 

@@ -18,17 +18,17 @@ Nuxt.js には開発者が Nuxt Core の好きな部分を柔軟な API を使�
 #### Nuxt
 
 - [`Nuxt` クラス](/api/internals-nuxt)
-- ソース: [core/nuxt.js](https://github.com/nuxt/nuxt.js/tree/dev/packages/core/src/nuxt.js)
+- ソース: [core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/nuxt.js)
 
 #### Renderer
 
 - [`Renderer` クラス](/api/internals-renderer)
-- ソース: [core/renderer.js](https://github.com/nuxt/nuxt.js/tree/dev/packages/core/src/renderer.js)
+- ソース: [vue-renderer/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-renderer/src/renderer.js)
 
 #### ModuleContainer
 
 - [`ModuleContainer` クラス](/api/internals-module-container)
-- ソース: [core/module.js](https://github.com/nuxt/nuxt.js/tree/dev/packages/core/src/module.js)
+- ソース: [core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/module.js)
 
 ### ビルド
 
@@ -37,22 +37,22 @@ Nuxt.js には開発者が Nuxt Core の好きな部分を柔軟な API を使�
 #### Builder
 
 - [`Builder` クラス](/api/internals-builder)
-- ソース: [builder/builder.js](https://github.com/nuxt/nuxt.js/tree/dev/packages/builder/src/builder.js)
+- ソース: [builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/builder/src/builder.js)
 
 #### Generator
 
 - [`Generator` クラス](/api/internals-generator)
-- ソース: [generator/generator.js](https://github.com/nuxt/nuxt.js/tree/dev/packages/builder/src/generator.js)
+- ソース: [generator/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/generator/src/generator.js)
 
 ### 共通
 
 #### Utils
 
-- ソース: [common/utils.js](https://github.com/nuxt/nuxt.js/tree/dev/packages/common/src/utils.js)
+- ソース: [utils/src](https://github.com/nuxt/nuxt.js/blob/dev/packages/utils/src)
 
 #### Options
 
-- ソース: [common/options.js](https://github.com/nuxt/nuxt.js/tree/dev/packages/common/src/options.js)
+- ソース: [config/options.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/config/src/options.js)
 
 ## パッケージの使い方
 
@@ -65,14 +65,11 @@ const { Nuxt, Builder, Utils } = require('nuxt')
 ## よくあるパターン
 
 すべての Nuxt クラスは `nuxt` インスタンスとオプションへの参照を持っています。
-すべてのクラスは [`tappable`](https://github.com/nuxt/tappable) を拡張したものであり、
 これにより `options` と `nuxt` にアクセスするための一貫した API を実現しています。
 
 ```js
-const Tapable = require('tappable')
-
-class SomeClass extends Tapable {
-  constructor (nuxt, builder) {
+class SomeClass {
+  constructor (nuxt) {
     super()
     this.nuxt = nuxt
     this.options = nuxt.options
@@ -87,13 +84,13 @@ class SomeClass extends Tapable {
 クラスは「プラグ可能」であるので、追加のフックを登録する場合はメインの `nuxt` コンテナにプラグインを登録します。
 
 ```js
-class FooClass extends Tapable {
-  constructor (nuxt, builder) {
+class FooClass {
+  constructor (nuxt) {
     super()
     this.nuxt = nuxt
     this.options = nuxt.options
 
-    this.nuxt.applyPluginsAsync('foo', this)
+    this.nuxt.callHook('foo', this)
   }
 }
 ```

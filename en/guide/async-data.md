@@ -5,6 +5,17 @@ description: You may want to fetch data and render it on the server-side. Nuxt.j
 
 > You may want to fetch data and render it on the server-side. Nuxt.js adds an `asyncData` method to let you handle async operations before initializing the component
 
+<div>
+  <a href="https://vueschool.io/courses/async-data-with-nuxtjs?friend=nuxt" target="_blank" class="Promote">
+    <img src="/async-data-with-nuxtjs.png" srcset="/async-data-with-nuxtjs-2x.png 2x" alt="AsyncData by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
+      <p class="Promote__Content__Description">Learn how to manage asynchronous data with Nuxt.js.</p>
+      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js development.</p>
+    </div>
+  </a>
+</div>
+
 ## The asyncData method
 
 Sometimes you just want to fetch data and pre-render it on the server without using a store. 
@@ -23,8 +34,7 @@ You do **NOT** have access of the component instance through `this` inside `asyn
 Nuxt.js offers you different ways to use `asyncData`. Choose the one you're the most familiar with:
 
 1. Returning a `Promise`. Nuxt.js will wait for the promise to be resolved before rendering the component.
-2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await))
-3. Define a callback as second argument. It has to be called like this: `callback(err, data)`
+2. Using the [async/await](https://javascript.info/async-await) ([learn more about it](https://zeit.co/blog/async-and-await))
 
 <div class="Alert Alert--grey">
 
@@ -56,18 +66,6 @@ export default {
 }
 ```
 
-### Using a callback
-
-```js
-export default {
-  asyncData ({ params }, callback) {
-    axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
-  }
-}
-```
 
 ### Displaying the data
 
@@ -91,7 +89,7 @@ When `asyncData` is called on server side, you have access to the `req` and `res
 ```js
 export default {
   async asyncData ({ req, res }) {
-    // Please check if if you are on the server side before
+    // Please check if you are on the server side before
     // using req and res
     if (process.server) {
      return { host: req.headers.host }
@@ -106,7 +104,7 @@ export default {
 
 You can use the `context` parameter to access dynamic route data as well!
 For example, dynamic route params can be retrieved using the name of the file or folder that configured it.
-If you've define a file named `_slug.vue` in your `pages` folder, you can access the value via `context.params.slug`:
+If you've defined a file named `_slug.vue` in your `pages` folder, you can access the value via `context.params.slug`:
 
 ```js
 export default {
@@ -145,20 +143,5 @@ export default {
 }
 ```
 
-If you're using the `callback` argument, you can call it directly with the error and Nuxt.js will call the `error` method for you:
-
-```js
-export default {
-  asyncData ({ params }, callback) {
-    axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
-    .catch((e) => {
-      callback({ statusCode: 404, message: 'Post not found' })
-    })
-  }
-}
-```
 
 To customize the error page, take a look at the [views guide](/guide/views#layouts) .

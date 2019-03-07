@@ -47,11 +47,31 @@ will be used (with respective options).
 If you want to use your own compression middleware, you can reference it
 directly (f.ex. `otherComp({ myOptions: 'example' })`).
 
+## fallback
+- Type `Object`
+  - Default: `{ dist: {}, static: { skipUnknown: true } }`
+
+Options for [serve-placeholder](https://github.com/nuxt/serve-placeholder) middleware.
+
+If you want to disable one of them or both, you can pass a falsy value.
+
 ## http2
 - Type `Object`
-  - Default: `{ push: false }`
+  - Default: `{ push: false, pushAssets: null }`
 
 Activate HTTP2 push headers.
+
+You can control what links to push using `pushAssets` function. Eg.:
+```js
+pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
+  .filter(f => f.asType === 'script' && f.file === 'runtime.js')
+  .map(f => `<${publicPath}${f.file}>; rel=preload; as=${f.asType}`)
+```
+
+You can add your own assets to the array as well.
+Using `req` and `res` you can decide what links to push based on the request headers, for example using the cookie with application version.
+
+The assets will be joined together with `, ` and passed as a single `Link` header.
 
 ## resourceHints
 - Type: `boolean`
@@ -59,7 +79,7 @@ Activate HTTP2 push headers.
 
 > Adds `prefetch` and `preload` links for faster initial page load time.
 
-You may want to only disable this option if have many pages and routes.
+You may want to only disable this option if you have many pages and routes.
 
 ## ssr
 - Type: `boolean`
@@ -75,6 +95,20 @@ This can be useful to dynamically enable/disable SSR on runtime after image buil
   - Default: `{}`
 
 See [serve-static](https://www.npmjs.com/package/serve-static) docs for possible options.
+
+Additional to them, we introduced a `prefix` option which defaults to `true`.
+It will add the router base to your static assets.
+
+**Example:**
+
+* Assets: `favicon.ico`
+* Router base: `/t`
+* With `prefix: true` (default): `/t/favicon.ico`
+* With `prefix: false`: `/favicon.ico`
+
+**Caveats:**
+
+Some URL rewrites might respect the prefix.
 
 ## dist
 - Type: `Object`
@@ -106,8 +140,15 @@ export default {
   render: {
     csp: {
       hashAlgorithm: 'sha256',
-      allowedSources: undefined,
-      policies: undefined
+      policies: {
+        'script-src': [
+          'https://www.google-analytics.com',
+          'https://name.example.com'
+        ],
+        'report-uri': [
+          'https://report.example.com/report-csp-violations'
+        ]
+      }
     }
   }
 }

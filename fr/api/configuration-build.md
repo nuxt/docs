@@ -45,7 +45,7 @@ module.exports = {
 
   ```js
   {
-    presets: ['@nuxtjs/babel-preset-app']
+    presets: ['@nuxt/babel-preset-app']
   }
   ```
 
@@ -100,7 +100,7 @@ module.exports = {
 }
 ```
 
-Si vous voulez en savoir plus à propos de notre configuration webpack par défaut, consultez [le répertoire webpack](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack).
+Si vous voulez en savoir plus à propos de notre configuration webpack par défaut, consultez [le répertoire webpack](https://github.com/nuxt/nuxt.js/tree/dev/packages/webpack/src/config).
 
 ## extractCSS
 
@@ -109,7 +109,7 @@ Si vous voulez en savoir plus à propos de notre configuration webpack par défa
 - Type : `Boolean`
 - Par défaut : `false`
 
-Utiliser `extract-text-webpack-plugin` pour extraire le CSS du fragment principal dans un fichier CSS séparé (injection automatique avec template), permet au fichier d'être mis en cache de manière individuel. Cela est recommandé quand il y a beaucoup de fichiers CSS partagés. Les fichiers CSS à l'intérieur des composants asynchrones vont rester en place en tant que chaines de caractères JavaScript et prise en charge par `vue-style-loader`.
+Utiliser [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin) pour extraire le CSS du fragment principal dans un fichier CSS séparé (injection automatique avec template), permet au fichier d'être mis en cache de manière individuel. Cela est recommandé quand il y a beaucoup de fichiers CSS partagés. Les fichiers CSS à l'intérieur des composants asynchrones vont rester en place en tant que chaines de caractères JavaScript et prise en charge par `vue-style-loader`.
 
 ## filenames
 

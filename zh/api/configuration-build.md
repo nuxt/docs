@@ -44,7 +44,7 @@ module.exports = {
 默认值：
 ```js
 {
-  presets: ['@nuxtjs/babel-preset-app']
+  presets: ['@nuxt/babel-preset-app']
 }
 ```
 
@@ -65,6 +65,15 @@ module.exports = {
 - 默认: `false`
 
 > 启用 [uglifyjs-webpack-plugin ](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) 和 [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) 的缓存
+
+## crossorigin
+
+- 类型: `String`
+- 默认: `undefined`
+
+在生成的HTML中的`<link rel ="stylesheet">`和`<script>`标签上配置`crossorigin`属性。
+
+请查看 [CORS settings attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) 了解更多可用选项。
 
 ## cssSourceMap
 
@@ -103,7 +112,7 @@ module.exports = {
 }
 ```
 
-如果你想了解更多关于webpack的配置，可以移步 Nuxt.js 源码的 [webpack 目录](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack)。
+如果你想了解更多关于webpack的配置，可以移步 Nuxt.js 源码的 [webpack 目录](https://github.com/nuxt/nuxt.js/tree/dev/packages/webpack/src/config)。
 
 ### loaders in extend
 
@@ -131,7 +140,7 @@ export default {
 - 类型: `Boolean`
 - 默认: `false`
 
-使用`extract-text-webpack-plugin`将主块中的 CSS 提取到一个单独的 CSS 文件中（自动注入模板），该文件允许单独缓存文件。当有很多共用 CSS 时建议使用此方法，异步组件中的 CSS 将保持内联为JavaScript字符串并由vue-style-loader处理。
+使用[`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin)将主块中的 CSS 提取到一个单独的 CSS 文件中（自动注入模板），该文件允许单独缓存文件。当有很多共用 CSS 时建议使用此方法，异步组件中的 CSS 将保持内联为JavaScript字符串并由vue-style-loader处理。
 
 ## filenames
 
@@ -144,7 +153,7 @@ export default {
 {
   app: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
   chunk: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
-  css: ({ isDev }) => isDev ? '[name].js' : '[contenthash].css',
+  css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
   img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[hash:7].[ext]',
   font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[hash:7].[ext]',
   video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[hash:7].[ext]'
@@ -472,7 +481,7 @@ export default {
 
 当您需要在页面中注入一些变量和`mixin`而不必每次都导入它们时，这非常有用。
 
-Nuxt.js 使用 https://github.com/yenshih/style-resources-loader 来实现这种行为。
+Nuxt.js 使用 https://github.com/nuxt-community/style-resources-module 来实现这种行为。
 
 您需要为css预处理器指定要包含的 模式 / 路径 ： `less`, `sass`, `scss` 或 `stylus`
 
@@ -484,24 +493,33 @@ Nuxt.js 使用 https://github.com/yenshih/style-resources-loader 来实现这种
 
 :warning: You cannot use path aliases here (`~` and `@`)，你需要使用相对或绝对路径。
 
-`nuxt.config.js`:
+安装 style-resources：
+
+```bash
+$ yarn add @nuxtjs/style-resources
+```
+
+根据需要安装：
+- SASS: `$ yarn add sass-loader node-sass`
+- LESS: `$ yarn add less-loader less`
+- Stylus: `$ yarn add stylus-loader stylus`
+
+修改 `nuxt.config.js`:
 
 ```js
-{
-  build: {
-    styleResources: {
-      scss: './assets/variables.scss',
-      less: './assets/*.less',
-      // sass: ...,
-      // scss: ...
-      options: {
-        // See https://github.com/yenshih/style-resources-loader#options
-        // Except `patterns` property
-      }
-    }
+export default {
+  modules: [
+    '@nuxtjs/style-resources',
+  ],
+  styleResources: {
+    scss: './assets/variables.scss',
+    less: './assets/**/*.less',
+    // sass: ...
   }
 }
 ```
+
+然后就可以随处直接使用定义过的变量或函数。
 
 ## templates
 

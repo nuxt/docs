@@ -43,6 +43,18 @@ Japanese translation is maintained by [Vue.js Japan User Group](https://github.c
 * Primary maintainer - [INOUE Takuya(@inouetakuya)](http://blog.inouetakuya.info/), [HANATANI Takuma(@potato4d)](https://github.com/potato4d), [numa(@aytdm)](https://github.com/aytdm)
 * Primary translator - [INOUE Takuya(@inouetakuya)](https://github.com/inouetakuya), [HANATANI Takuma(@potato4d)](https://github.com/potato4d), [numa(@aytdm)](https://github.com/aytdm)
 
+#### textlint
+
+Japanese translation use [textlint](https://github.com/textlint/textlint).
+
+Example commands:
+
+```bash
+yarn textlint:ja
+yarn textlint:ja:fix --dry-run
+yarn textlint:ja:fix
+```
+
 ### Korean
 
 Korean translation is maintained by Taewoong La.

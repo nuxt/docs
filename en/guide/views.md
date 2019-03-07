@@ -5,7 +5,7 @@ description: The Views section describes all you need to configure data and view
 
 > The Views section describes all you need to configure data and views for a specific route in your Nuxt.js Application (App Template, Layouts, Pages and HTML Head).
 
-![nuxt-views-schema](/nuxt-views-schema.png)
+![nuxt-views-schema](/nuxt-views-schema.svg)
 
 ## App Template
 
@@ -47,7 +47,7 @@ One use case of using a custom app template is to add conditional CSS classes fo
 ## Layouts
 
 Layouts are a great help when you want to change the look and feel of your Nuxt.js app.
-Whether your want to include a sidebar or having distinct layouts for mobile and desktop
+Whether you want to include a sidebar or having distinct layouts for mobile and desktop
 
 ### Default Layout
 
@@ -56,7 +56,7 @@ It will be used for all pages that don't have a layout specified.
 
 <div class="Alert Alert--nuxt-green">
 
-<b>Info:</b> Make sure to add the `&lt;nuxt/&gt;` component when creating a layout to actually include the page component.
+<b>Info:</b> Make sure to add the `<nuxt/>` component when creating a layout to actually include the page component.
 
 </div>
 
@@ -117,7 +117,7 @@ As mentioned above, this layout is special, since you **should not** include `<n
 You must see this layout as a component displayed when an error occurs (`404`, `500`, etc.).
 Similar to other page components, you can set a custom layout for the error page as well in the usual way.
 
-The default error page source code is [available on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/app/template/components/nuxt-error.vue).
+The default error page source code is [available on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
 
 You can customize the error page by adding a `layouts/error.vue` file:
 
@@ -192,7 +192,7 @@ More information about the pages properties usage: [API Pages](/api)
 
 Nuxt.js uses [vue-meta](https://github.com/declandewet/vue-meta) to update the `document head` and `meta attributes` of your application.
 
-The `vue-meta` Nuxt.js uses can be found [on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/app/template/index.js#L29-L35)
+The `vue-meta` Nuxt.js uses can be found [on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/index.js#L29-L35)
 
 <div class="Alert Alert--teal">
 

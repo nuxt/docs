@@ -10,7 +10,8 @@
       { "name": "Webpack プラグインを追加するには？", "to": "/webpack-plugins" },
       { "name": "ホストとポート番号を変更するには？", "to": "/host-port" },
       { "name": "キャッシュコンポーネントを使うには？", "to": "/cached-components" },
-      { "name": "Google アナリティクスを使うには？", "to": "/google-analytics" }
+      { "name": "Google アナリティクスを使うには？", "to": "/google-analytics" },
+      { "name": "How to share cross origin resource?", "to": "/http-proxy"}
     ]
   },
   {
@@ -19,7 +20,8 @@
       { "name": "window または document が undefined のときは？", "to": "/window-document-undefined" },
       { "name": "なぜ CSS Flash が見えるのか？", "to": "/css-flash" },
       { "name": "コンポーネント内で非同期データを扱うには？", "to": "/async-data-components" },
-      { "name": "メタタグが重複したときは？", "to": "/duplicated-meta-tags" }
+      { "name": "メタタグが重複したときは？", "to": "/duplicated-meta-tags" },
+      { "name": "iOS and phone numbers", "to": "/ios-phone-numbers" }
     ]
   },
   {
@@ -28,6 +30,7 @@
       { "name": "AWS の S3 と Cloudfront へデプロイするには？", "to": "/deployment-aws-s3-cloudfront" },
       { "name": "Dokku へデプロイするには？", "to": "/dokku-deployment" },
       { "name": "GitHub Pages へデプロイするには？", "to": "/github-pages" },
+      { "name": "Deploy on Google App Engine", "to": "/appengine-deployment" },
       { "name": "Heroku へデプロイするには？", "to": "/heroku-deployment" },
       { "name": "Netlify へデプロイするには？", "to": "/netlify-deployment" },
       { "name": "Now を使ってデプロイするには？", "to": "/now-deployment" },
