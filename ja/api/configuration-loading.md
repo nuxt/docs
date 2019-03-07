@@ -43,14 +43,16 @@ export default {
 
 プログレスバーをカスタマイズするために使えるプロパティ一覧。
 
-| キー | 型 | デフォルト | 説明 |
-|-----|------|---------|-------------|
-| `color` | 文字列 | `'black'` | プログレスバーの CSS カラー |
-| `failedColor` | 文字列 | `'red'` | ルートをレンダリング中にエラーが発生した場合のプログレスバーの CSS カラー（例えば `data` または `fetch` がエラーを返したとき） |
-| `height` | 文字列 | `'2px'` | プログレスバーの高さ（プログレスバーの `style` プロパティで使われます） |
-| `throttle` | 数値 | `200` | ミリ秒単位で指定された時間待ったのちにプログレスバーを表示します。 プログレスバーの点滅を防ぐために利用します |
-| `duration` | 数値 | `5000` | プログレスバーを表示する時間の最大値をミリ秒で指定します。Nuxt.js は各ルートが 5秒以内にレンダリングされると想定しています |
-| `rtl` | ブーリアン | `false` | プログレスバーの向きを右から左にします。 |
+| キー          | 型         | デフォルト | 説明                                                                                                                           |
+| ------------- | ---------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `color`       | 文字列     | `'black'`  | プログレスバーの CSS カラー                                                                                                    |
+| `failedColor` | 文字列     | `'red'`    | ルートをレンダリング中にエラーが発生した場合のプログレスバーの CSS カラー（例えば `data` または `fetch` がエラーを返したとき） |
+| `height`      | 文字列     | `'2px'`    | プログレスバーの高さ（プログレスバーの `style` プロパティで使われます）                                                        |
+| `throttle`    | 数値       | `200`      | ミリ秒単位で指定された時間待ったのちにプログレスバーを表示します。 プログレスバーの点滅を防ぐために利用します                  |
+| `duration`    | 数値       | `5000`     | プログレスバーを表示する時間の最大値をミリ秒で指定します。Nuxt.js は各ルートが 5秒以内にレンダリングされると想定しています     |
+| `continuous`  | ブーリアン | `false`    | ローディングが `duration` で指定した時間より長くかかる場合は、プログレスバーのアニメーションを続けさせます。                   |
+| `css`         | ブーリアン | `true`     | デフォルトのプログレスバーのスタイルを削除（そして、独自に追加）する場合には false に設定します。                              |
+| `rtl`         | ブーリアン | `false`    | プログレスバーの向きを右から左にします。                                                                                       |
 
 例として、青いプログレスバーを 5px の高さで表示するには `nuxt.config.js` を次のように編集します:
 
@@ -71,12 +73,12 @@ Nuxt.js がデフォルトのコンポーネントの代わりに呼び出す、
 
 **独自コンポーネントはいくつかのメソッドを備えている必要があります:**
 
-| メソッド | 必須か否か | 説明 |
-|--------|----------|-------------|
-| `start()` | 必須 | ルートが変更されたときに呼び出されます。このときに独自コンポーネントの表示が開始されます |
-| `finish()` | 必須 | ルートがロード（及びデータ取得）されたときに呼び出されます。このときに独自コンポーネントが表示が終了します |
-| `fail()` | *必須でない* | ルートがロードできなかったときに呼び出されます（例えばデータの取得に失敗したなど） |
-| `increase(num)` | *必須でない* | ルートのコンポーネントがロードされている間に呼び出されます。`num` は 100 未満の整数です |
+| メソッド        | 必須か否か   | 説明                                                                                                       |
+| --------------- | ------------ | ---------------------------------------------------------------------------------------------------------- |
+| `start()`       | 必須         | ルートが変更されたときに呼び出されます。このときに独自コンポーネントの表示が開始されます                   |
+| `finish()`      | 必須         | ルートがロード（及びデータ取得）されたときに呼び出されます。このときに独自コンポーネントが表示が終了します |
+| `fail()`        | *必須でない* | ルートがロードできなかったときに呼び出されます（例えばデータの取得に失敗したなど）                         |
+| `increase(num)` | *必須でない* | ルートのコンポーネントがロードされている間に呼び出されます。`num` は 100 未満の整数です                    |
 
 `components/loading.vue` に独自コンポーネントを作ることができます:
 
@@ -127,15 +129,15 @@ export default {
 }
 ```
 
-## Internals of the Progress Bar
+## プログレスバーの内部
 
-Unfortunately it is not possible for the Loading component to know in advance how long e.g. loading a new page will take. Therefore it is not possible to accurately animate the progress bar to 100% of the loading time.
+残念ながら、事前にローディングコンポーネントがどのくらいの長さが必要になるのか知ることはできません。例えば、新しいページをロードするのにかかる時間であったり。したがって、プログレスバーをロード時間の100％きっちりにアニメーションをさせることはできません。
 
-Nuxt's loading component partially solves this by letting you set the `duration`, this should be set to a _guestimate_ of how long the loading process will take. Unless you use a custom loading component, the progress bar will always move from 0% to 100% in `duration` time (regardless of actual progression). When the loading takes longer than `duration` time, the progress bar will stay at 100% until the loading finishes.
+Nuxt のローディングコンポーネントは部分的に `duration` を設定させることでこれを解決します、この値はローディングプロセスにかかる時間の推定値として設定されるべきです。独自のカスタムローディングコンポーネントを使用しない限り、プログレスバーは `duration` 時間内で常に0％から100％まで移動します（実際の進行にかかわらず）。ローディングが `duration` で設定された時間より長くかかる場合は、プログレスバーはローディングが完了するまで100％の位置に留まります。
 
-You can change the default behaviour by setting `continuous` to true, then after reaching 100% the progress bar will start shrinking back to 0% again in `duration` time. When the loading is still not finished after reaching 0% it will start growing from 0% to 100% again, this repeats until the loading finishes.
+`continuous` を true に設定することでこのデフォルトの振る舞いを変更することができます、そして100％に達した後にプログレスバーは再び `duration` で設定した時間で0％に縮小し始めます。0％に達してもまだローディングが完了していない場合は、再び0％から100％に向けて増え始めます。ローディングが完了するまでこれを繰り返します。
 
-*Example of a continuous progress bar:*
+*continuous を設定したプログレスバーの例:*
 
 
 <img src="/api-continuous-loading.gif" alt="continuous loading"/>
