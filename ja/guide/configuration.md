@@ -90,6 +90,13 @@ description: Nuxt.js ではデフォルトの設定でほとんどのユース�
 
 [`srcDir` オプションに関するドキュメント](/api/configuration-srcdir)
 
+### dir
+
+このオプションで、Nuxt.js アプリケーションのカスタムディレクトリを指定できます。
+This option lets you define the custom directories of your Nuxt.js application.
+
+[`dir` オプションに関するドキュメント](/api/configuration-dir)
+
 ### transition
 
 このオプションで、ページトランジションのデフォルトプロパティを指定できます。
