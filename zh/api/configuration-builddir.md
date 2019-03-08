@@ -1,9 +1,9 @@
 ---
-title: "API: The buildDir Property"
-description: Define the dist directory for your Nuxt.js application
+title: "API: buildDir 属性"
+description: 为Nuxt.js应用程序定义 dist 目录
 ---
 
-# The buildDir Property
+# buildDir 属性
 
 - 类型: `String`
 - 默认: `.nuxt`

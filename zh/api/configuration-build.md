@@ -37,20 +37,42 @@ module.exports = {
 
 ## babel
 
-- 类型： `Object`
-
 > 为 JS 和 Vue 文件设定自定义的 babel 配置。
 
-默认值：
+- 类型: `Object`
+- 默认:
+
 ```js
 {
+  babelrc: false,
+  cacheDirectory: undefined,
   presets: ['@nuxt/babel-preset-app']
 }
 ```
+默认为 [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) 在`client`构建中是`ie：'9'`，在`server`构建中是`node:'current'`。
 
-例如 (`nuxt.config.js`)：
+**注意**: `build.babel.presets` 中配置的预设将应用于客户端和服务器构建。目标将由Nuxt相应地设置（客户端/服务器）。如果要为客户端或服务器版本配置不同的预设，请使用`presets`作为函数：
+
 ```js
-module.exports = {
+export default {
+  build: {
+    babel: {
+      presets({ isServer }) {
+        const targets = isServer ? { node: '10' } : { ie: '11' }
+        return [
+          [ require.resolve('@nuxt/babel-preset-app'), { targets } ]
+        ]
+      }
+    }
+  }
+}
+```
+
+我们**强烈建议**使用默认预设。但是,如果必须，您可以更改预设。
+
+*Example* for custom presets:
+```js
+export default {
   build: {
     babel: {
       presets: ['es2015', 'stage-0']
@@ -63,16 +85,16 @@ module.exports = {
 
 - 类型: `Boolean`
 - 默认: `false`
+- ⚠️ 实验性的
 
-> 启用 [uglifyjs-webpack-plugin ](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) 和 [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) 的缓存
+> 启用缓存 [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin#options) 和 [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
 
 ## crossorigin
 
 - 类型: `String`
 - 默认: `undefined`
 
-在生成的HTML中的`<link rel ="stylesheet">`和`<script>`标签上配置`crossorigin`属性。
-
+在生成的HTML中的 `<link rel="stylesheet">` 和 `<script>` 标记上配置 `crossorigin` 属性。
 请查看 [CORS settings attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) 了解更多可用选项。
 
 ## cssSourceMap
@@ -88,6 +110,15 @@ module.exports = {
 
 请查看 [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) 了解更多可用选项。
 
+## devtools
+
+- 类型: `boolean`
+- 默认: `false`
+
+配置是否允许 [vue-devtools](https://github.com/vuejs/vue-devtools) 调试。
+
+如果您已经通过 nuxt.config.js 或其他方式激活，则无论标志为 true 或 false，devtools都会启用。
+
 ## extend
 
 - 类型： `Function`
@@ -96,8 +127,16 @@ module.exports = {
 
 该扩展方法会被调用两次，一次在服务端打包构建的时候，另外一次是在客户端打包构建的时候。该方法的参数如下：
 1. Webpack 配置对象
-2. 构建环境对象，包括这些属性（全部为布尔类型）： `isDev`， `isClient`， `isServer`
+2. 构建环境对象，包括这些属性(全部为布尔类型):`isDev`，`isClient`，`isServer`
 
+<div class="Alert Alert--orange">
+
+  **警告:**
+  The `isClient` and `isServer` keys provided in are separate from the keys available in [`context`](/api/context).
+  提供的`isClient`和`isServer`键与[`context`](/api/context)中可用的键分开。
+  它们**不被弃用**。这里不要使用`process.client`和`process.server`，因为它们是`'undefined'`。
+
+</div>
 例如 (`nuxt.config.js`)：
 ```js
 module.exports = {
@@ -178,6 +217,27 @@ export default {
 - 类型: `Object`
 
 请查看 [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) 了解更多可用选项。
+
+## friendlyErrors
+
+- 类型: `Boolean`
+- 默认: `true` (启用叠加)
+
+启用或禁用由提供的叠加 [FriendlyErrorsWebpackPlugin](https://github.com/nuxt/friendly-errors-webpack-plugin)
+
+## hardSource
+
+- 类型: `Boolean`
+- 默认: `false`
+- ⚠️ 实验性的
+
+开启 [HardSourceWebpackPlugin](https://github.com/mzgoddard/hard-source-webpack-plugin)
+
+## hotMiddleware
+
+- 类型: `Object`
+
+请查看 [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) 来了解更多配置
 
 ## html.minify
 
