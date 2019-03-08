@@ -22,7 +22,7 @@ description: 默认情况下 Nuxt 使用 vue-loader、file-loader 以及 url-loa
 
 <div class="Alert Alert--orange">
 
-**请注意:** 从Nuxt 2.0开始，`〜/alias`将无法在**CSS文件**中正确解析。你必须在url CSS引用中使用`~assets`（没有斜杠）或`@`别名，即`background:url("~assets/banner.svg")`
+**请注意:** 从Nuxt 2.0开始，`~/alias`将无法在**CSS文件**中正确解析。你必须在url CSS引用中使用`~assets`（没有斜杠）或`@`别名，即`background:url("~assets/banner.svg")`
 
 </div>
 

@@ -50,7 +50,11 @@ Nuxt.js 允许你扩展默认的布局，或在 `layout` 目录下创建自定�
 
 可通过添加 `layouts/default.vue` 文件来扩展应用的默认布局。
 
-*别忘了在布局文件中添加 `<nuxt/>` 组件用于显示页面的主体内容。*
+<div class="Alert Alert--nuxt-green">
+
+<b>提示:</b> 别忘了在布局文件中添加 `<nuxt/>` 组件用于显示页面的主体内容。
+
+</div>
 
 默认布局的源码如下：
 ```html
@@ -58,10 +62,48 @@ Nuxt.js 允许你扩展默认的布局，或在 `layout` 目录下创建自定�
   <nuxt/>
 </template>
 ```
+### 自定义布局
+
+`layouts` 目录中的每个文件 (*顶级*) 都将创建一个可通过页面组件中的 `layout` 属性访问的自定义布局。
+
+假设我们要创建一个 *博客布局* 并将其保存到`layouts/blog.vue`:
+
+```html
+<template>
+  <div>
+    <div>我的博客导航栏在这里</div>
+    <nuxt/>
+  </div>
+</template>
+```
+
+然后我们必须告诉页面 (即`pages/posts.vue`) 使用您的自定义布局：
+
+```html
+<template>
+<!-- Your template -->
+</template>
+<script>
+export default {
+  layout: 'blog'
+  // page component definitions
+}
+</script>
+```
+
+更多有关 `layout` 属性信息: [API 页面 `布局`](/api/pages-layout)
+
+点击查看 [演示视频](https://www.youtube.com/watch?v=YOKnSTp7d38) 了解自定义布局的实际效果。
 
 ### 错误页面
 
 > 你可以通过编辑 `layouts/error.vue` 文件来定制化错误页面.
+
+<div class="Alert Alert--orange">
+
+<b>警告:</b> 虽然此文件放在 <code>layouts</code> 文件夹中, 但应该将它看作是一个 <b>页面(page)</b>.
+
+</div>
 
 这个布局文件不需要包含 `<nuxt/>` 标签。你可以把这个布局文件当成是显示应用错误（404，500等）的组件。
 
@@ -84,35 +126,6 @@ export default {
 }
 </script>
 ```
-
-### 个性化布局
-
-> `layouts` *根*目录下的所有文件都属于个性化布局文件，可以在页面组件中利用 `layout` 属性来引用。
-
-*请确保在布局文件里面增加 `<nuxt/>` 组件用于显示页面非布局内容。*
-
-举个例子 `layouts/blog.vue`:
-```html
-<template>
-  <div>
-    <div>这里是博客导航</div>
-    <nuxt/>
-  </div>
-</template>
-```
-
-在 `pages/posts.vue` 里， 可以指定页面组件使用 blog 布局。
-```html
-<script>
-export default {
-  layout: 'blog'
-}
-</script>
-```
-
-更多关于页面布局配置项的信息，请参考[页面布局配置API](/api/pages-layout)。
-
-看下 [示例视频](https://www.youtube.com/watch?v=YOKnSTp7d38) 立刻体验下。
 
 ## 页面
 
@@ -181,6 +194,12 @@ Nuxt.js 使用以下参数配置 `vue-meta`:
 
 Nuxt.js 允许你在 `nuxt.config.js` 里定义应用所需的所有默认 meta 标签，在 `head` 字段里配置就可以了：
 
+<div class="Alert Alert--teal">
+
+<b>注意:</b> Nuxt.js 使用 <code>hid</code> 而不是默认值 <code>vmid</code> 识别元素`key`
+
+</div>
+
 一个使用自定义 `viewport` 和 `谷歌字体` 的配置示例：
 ```js
 head: {
@@ -202,8 +221,8 @@ head: {
 
 关于个性化特定页面的 Meta 标签，请参考 [页面头部配置API](/api/pages-head)。
 
-<div class="Alert">
+<div class="Alert Alert--teal">
 
-注意：为了避免子组件中的meta标签不能正确覆盖父组件中相同的标签而产生重复的现象，建议利用 `hid` 键为meta标签配一个唯一的标识编号。请阅读[关于 `vue-meta` 的更多信息](https://github.com/declandewet/vue-meta#lists-of-tags)。
+<b>注意:</b> 为了避免子组件中的meta标签不能正确覆盖父组件中相同的标签而产生重复的现象，建议利用 `hid` 键为meta标签配一个唯一的标识编号。请阅读[关于 `vue-meta` 的更多信息](https://github.com/declandewet/vue-meta#lists-of-tags)。
 
 </div>

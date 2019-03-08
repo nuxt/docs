@@ -210,6 +210,39 @@ import VueNotifications from 'vue-notifications'
 
 Vue.use(VueNotifications)
 ```
-
-您可以通过检测`process.server`这个变量来控制插件中的某些脚本库只在服务端使用。当值为true表示是当前执行环境为服务器中。
+您可以通过检测`process.server`这个变量来控制插件中的某些脚本库只在服务端使用。当值为 `true` 表示是当前执行环境为服务器中。
 此外，可以通过检查`process.static`是否为`true`来判断应用是否通过`nuxt generator`生成。您也可以组合`process.server`和`process.static`这两个选项，确定当前状态为服务器端渲染且使用`nuxt generate`命令运行。
+
+**注意：**由于`Nuxt.js 2.4`，模式已被引入作为插件的选项来**指定插件类型**，可能的值是：`client` 或 `server`, `ssr:false` 在下一个主要版本中弃用,将过渡为 `mode: 'client'`。
+
+例子:
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: [
+    { src: '~/plugins/both-sides.js' },
+    { src: '~/plugins/client-only.js', mode: 'client' },
+    { src: '~/plugins/server-only.js', mode: 'server' }
+  ]
+}
+```
+
+### 传统命名插件
+
+如果假设插件仅在 *客户端* 或 *服务器端* 运行，则 `.client.js` 或 `.server.js`可以作为插件文件的扩展名应用，该文件将自动包含在相应客户端或者服务端上。
+
+例子:
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: [
+    '~/plugins/foo.client.js', // only in client side
+    '~/plugins/bar.server.js', // only in server side
+    '~/plugins/baz.js' // both client & server
+  ]
+}
+```
