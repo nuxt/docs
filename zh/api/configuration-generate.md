@@ -18,6 +18,15 @@ description: 配置 Nuxt.js 应用生成静态站点的具体方式。
 
 `nuxt generate` 生成的目录名称。
 
+## devtools
+
+- 类型: `boolean`
+- 默认: `false`
+
+配置是否允许 [vue-devtools](https://github.com/vuejs/vue-devtools) 调试。
+
+如果您已经通过 nuxt.config.js 或其他方式激活，则无论标志为 `true` 或者 `false`，devtools都会启用。
+
 ## fallback
 
 - 类型: `String` 或 `Boolean`

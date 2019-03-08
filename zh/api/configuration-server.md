@@ -47,3 +47,55 @@ export default {
   }
 }
 ```
+
+## timing
+
+- 类型: `Object` or `Boolean`
+- 默认: `false`
+
+启用`server.timing`选项会添加一个中间件来测量服务器端渲染过程中经过的时间，并将其作为'Server-Timing'添加到标头中
+
+### 使用时序配置的示例
+
+`server.timing`可以是提供选项的对象。目前，支持`total`(直接跟踪服务器端渲染所花费的全部时间)
+
+```js
+export default {
+  server: {
+    timing: {
+      total: true
+    }
+  }
+}
+```
+
+### 使用 timing api
+
+当启用`server.time`时，`timing` api也被注入服务器端的`response`。
+
+#### Syntax
+
+```js
+res.timing.start(name, description)
+res.timing.end(name)
+```
+
+#### 在 servermiddleware 中使用计时的示例
+
+```js
+export default function (req, res, next) {
+  res.timing.start('midd', 'Middleware timing description')
+  // server side operation..
+  // ...
+  res.timing.end('midd')
+  next()
+}
+```
+
+然后`server-timing`头将包含在响应头中，如：
+
+```bash
+Server-Timing: midd;desc="Middleware timing description";dur=2.4
+```
+
+请参阅 [Server-Timing MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing) 来获取更多详细信息。

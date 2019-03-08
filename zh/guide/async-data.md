@@ -31,7 +31,6 @@ Nuxt.js 提供了几种不同的方法来使用 `asyncData` 方法，你可以�
 
 1. 返回一个 `Promise`, nuxt.js会等待该`Promise`被解析之后才会设置组件的数据，从而渲染组件.
 2. 使用 [async 或 await](https://github.com/lukehoban/ecmascript-asyncawait) ([了解更多](https://zeit.co/blog/async-and-await))
-3. 为第二个参数指定一个回调函数. 注：该回调函数需符合通用的 NodeJs 回调函数的形式: `callback(err, data)`
 
 <div class="Alert Alert--grey">
 
