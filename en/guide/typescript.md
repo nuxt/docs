@@ -59,3 +59,50 @@ const config: NuxtConfiguration {
 
 export default config
 ```
+
+
+
+## Linting with ESLint
+
+If you're using ESLint to lint your project, here is how you can make ESLint lint your TypeScript files. 
+
+<div class="Alert Alert--teal">
+
+**IMPORTANT:** We're assuming you have already setup [nuxt/eslint-config](https://github.com/nuxt/eslint-config) within your project.
+
+</div>
+
+First, you need to install the [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) plugin :
+
+```sh
+npm install -D @typescript-eslint/eslint-plugin
+# OR
+yarn add -D @typescript-eslint/eslint-plugin
+```
+
+Then, edit your ESLint configuration (`.eslintrc.js`) by adding the `@typescript-eslint` plugin and making `@typescript-eslint/parser` the default parser.  
+
+A minimal configuration should look like this :
+
+```js
+module.exports = {
+  plugins: ['@typescript-eslint'],
+  parserOptions: {
+    parser: '@typescript-eslint/parser'
+  },
+  extends: [
+    '@nuxtjs'
+  ]
+}
+
+```
+
+Finally, add or edit the `lint` script of your `package.json` :
+
+```json
+"lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore ."
+```
+
+> `--ignore-path` option is useful to prevent ESLint linting files/folders like `node_modules`, `.nuxt` or whatever you don't want it to lint.
+
+You can now lint your TypeScript files by running `npm run lint` (or `yarn lint`).
