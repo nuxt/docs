@@ -132,9 +132,8 @@ export default {
 <div class="Alert Alert--orange">
 
   **警告:**
-  The `isClient` and `isServer` keys provided in are separate from the keys available in [`context`](/api/context).
-  提供的`isClient`和`isServer`键与[`context`](/api/context)中可用的键分开。
-  它们**不被弃用**。这里不要使用`process.client`和`process.server`，因为它们是`'undefined'`。
+  提供的`isClient`和`isServer`键与[`context`](/api/context)中可用的键分开，
+  它们是**长期支持**的。这里不要使用`process.client`和`process.server`，因为它们是`'undefined'`。
 
 </div>
 例如 (`nuxt.config.js`)：
@@ -223,7 +222,7 @@ export default {
 - 类型: `Boolean`
 - 默认: `true` (启用叠加)
 
-启用或禁用由提供的叠加 [FriendlyErrorsWebpackPlugin](https://github.com/nuxt/friendly-errors-webpack-plugin)
+[友好的错误 Webpack 插件](https://github.com/nuxt/friendly-errors-webpack-plugin)
 
 ## hardSource
 

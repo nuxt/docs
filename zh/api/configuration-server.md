@@ -57,7 +57,7 @@ export default {
 
 ### 使用时序配置的示例
 
-`server.timing`可以是提供选项的对象。目前，仅支持`total`(直接跟踪服务器端渲染所花费的全部时间)
+`server.timing`可以是提供选项的对象。目前，支持`total`(直接跟踪服务器端渲染所花费的全部时间)
 
 ```js
 export default {

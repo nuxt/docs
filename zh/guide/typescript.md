@@ -11,6 +11,6 @@ title: 支持 TypeScript
 > - 支持TS编译 (`nuxt.config.ts`, `modules`, `serverMiddlewares`)
 > - 支持TSX
 
-## 遇到 `nuxt-ts` ，`nuxt`的兄弟 TypeScript
+## 遇到 `nuxt-ts`: TypeScript Nuxt
 
-开始使用最小的 [Nuxt TypeScript 例子](/examples/typescript).
+开始使用 [TypeScript Nuxt](/examples/typescript).

@@ -145,5 +145,4 @@ export default {
      }
    ```
 
-Then, whenever a colleague in development accidentally hits  to reach the development web development service, Nuxt will automatically redirect to
 然后，每当开发中的同事到达开发Web开发服务`/`时，发生了意外情况，Nuxt将自动重定向到`/portal`
