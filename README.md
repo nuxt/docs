@@ -32,7 +32,7 @@ Russian translation is maintained by Translation Gang.
 Chinese translation is maintained by AOTU Labs from China, Shenzhen.
 
 * Translation Repo - [/o2team/i18n-cn-nuxtjs-docs](https://github.com/o2team/i18n-cn-nuxtjs-docs)
-* Primary maintainer - [AOTU Labs](https://aotu.io) [Brian Lee](https://github.com/warriorBrian)
+* Primary maintainer - [AOTU Labs](https://aotu.io), [Brian Lee](https://github.com/warriorBrian)
 * Primary translator - [Levin Wong](http://faso.me), [Edward Chu](https://github.com/chuyik)
 
 ### Japanese
