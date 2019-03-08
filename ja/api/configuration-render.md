@@ -45,11 +45,31 @@ Nuxt.js は既に最高の SSR のデフォルト設定を提供していて、�
 
 独自の圧縮ミドルウェアを使用したい場合は、直接参照することができます。(f.ex. `otherComp({ myOptions: 'example' })`)
 
+## fallback
+- 型 `オブジェクト`
+  - デフォルト: `{ dist: {}, static: { skipUnknown: true } }`
+
+[serve-placeholder](https://github.com/nuxt/serve-placeholder) ミドルウェアのオプションです.
+
+ もしこれらのうち一つか両方を無効にする場合は、偽となる値を渡すことができます。
+
 ## http2
 - 型 `オブジェクト`
-  - デフォルト: `{ push: false }`
+  - デフォルト: `{ push: false, pushAssets: null }`
 
 HTTP2 プッシュヘッダーを有効にします。
+
+`pushAssets` 関数でプッシュされるリンクをコントロールすることができます。 例えば:
+```js
+pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
+  .filter(f => f.asType === 'script' && f.file === 'runtime.js')
+  .map(f => `<${publicPath}${f.file}>; rel=preload; as=${f.asType}`)
+```
+
+ 配列と同様に自分のアセットを追加することができます。
+`req` と `res` を使うことで、例えばアプリケーションバージョンを持ったクッキーを使うといったように、リクエストヘッダを元にどのリンクをプッシュするか決めることができます。
+
+ それらのアセットは `, ` を区切り文字として合成され、一つの `Link` ヘッダに渡されます。
 
 ## resourceHints
 - 型: `ブーリアン`
@@ -104,8 +124,15 @@ export default {
   render: {
     csp: {
       hashAlgorithm: 'sha256',
-      allowedSources: undefined,
-      policies: undefined
+      policies: {
+        'script-src': [
+          'https://www.google-analytics.com',
+          'https://name.example.com'
+        ],
+        'report-uri': [
+          'https://report.example.com/report-csp-violations'
+        ]
+      }
     }
   }
 }
