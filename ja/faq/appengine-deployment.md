@@ -5,7 +5,7 @@ description: Nuxt.js を Google App Engine へデプロイするには？
 
 # Google App Engine へデプロイするには？
 
-[Google App Engine](https://cloud.google.com/appengine/) にデプロイは Google のクラウドサービスでユニバーサル Nuxt アプリケーションをホストするための迅速で簡単なソリューションです。
+[Google App Engine](https://cloud.google.com/appengine/) へのデプロイは Google のクラウドサービスでユニバーサル Nuxt アプリケーションをホストするための迅速で簡単なソリューションです。
 
 このガイドでは、アプリケーションをローカルに構築してから、プロジェクトフォルダ全体を Google App Engine にアップロードするだけです。アップロード後、Google App Engine は自動的に package.json の start`スクリプトを起動し、あなたのアプリはすぐに利用可能となります。
 
