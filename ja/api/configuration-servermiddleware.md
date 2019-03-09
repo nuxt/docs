@@ -24,9 +24,9 @@ connect 自体はミドルウェアで、登録されたミドルウェアは `n
 例 (`nuxt.config.js`):
 
 ```js
-const serveStatic = require('serve-static')
+import serveStatic from 'serve-static'
 
-module.exports = {
+export default {
   serverMiddleware: [
       // redirect-ssl npm パッケージを登録します
       'redirect-ssl',
@@ -53,10 +53,9 @@ module.exports = {
 ミドルウェア (`api/logger.js`):
 
 ```js
-module.exports = function (req, res, next) {
+export default function (req, res, next) {
     // req は Node.js の HTTPリクエストオブジェクトです
     console.log(req.path)
-
 
     // res は Node.js の HTTPレスポンスオブジェクトです
 
