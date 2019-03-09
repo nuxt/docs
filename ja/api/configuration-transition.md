@@ -21,7 +21,7 @@ description: ページのトランジションのデフォルト設定を指定�
 例（`nuxt.config.js`）:
 
 ```js
-module.exports = {
+export default {
   transition: 'page'
   // または
   transition: {
