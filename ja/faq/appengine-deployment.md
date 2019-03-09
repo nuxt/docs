@@ -11,7 +11,7 @@ description: Nuxt.js を Google App Engine へデプロイするには？
 
 ## はじめに
 
-[Google App Engine](https://cloud.google.com/appengine/) に Google クラウドアカウント、プロジェクト、空の Google App Engine アプリが設定されていることを確認してください。さらに、[こちら](https://cloud.google.com/sdk/) の説明に従って Google から Cloud SDK(CLI) をダウンロードしてインストールし、Google クラウドアカウントにログインしてください。
+[Google App Engine](https://cloud.google.com/appengine/) に Google クラウドアカウント、プロジェクト、空の Google App Engine アプリケーションが設定されていることを確認してください。さらに、[こちら](https://cloud.google.com/sdk/) の説明に従って Google から Cloud SDK(CLI) をダウンロードしてインストールし、Google クラウドアカウントにログインしてください。
 
 ## アプリケーションの設定
 
