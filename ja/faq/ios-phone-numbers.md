@@ -1,11 +1,11 @@
 ---
-title: iOS and phone numbers
-description: Safari on iOS changes phone numbers to links which can cause a render mismatch
+title: iOS と電話番号
+description: iOS の Safari は電話番号をリンクに変更するため、レンダリングが一致しなくなる可能性があります
 ---
 
-# iOS and phone numbers
+# iOS と電話番号
 
-If you include telephone numbers in your Nuxt page, make sure to directly wrap them into a link:
+Nuxt ページに電話番号を含める場合は、それらを直接リンクにラップしてください。
 
 ```html
 <!-- Example phone number: +7 (982) 536-50-77 -->
@@ -16,6 +16,6 @@ If you include telephone numbers in your Nuxt page, make sure to directly wrap t
 
 ```
 
-Otherwise, some mobile Safari versions will automatically transform these numbers into links. Sounds good and 
-helpful at first glance but this will trigger a `NodeMismatch` warning as the SSR content doesn't match the website 
-content anymore. This can make your app unusable on these Safari versions.
+そうしないと、いくつかのモバイル Safari バージョンでは自動的にこれらの数字をリンクに変換します。
+一見すると良さそうに思えますが、SSR のコンテンツが Web サイトのコンテンツと一致しなくなってしまい `NodeMismatch` 警告を引き起こします。
+これが原因で、これらの Safari バージョンではアプリケーションが使用できなくなる可能性があります。
