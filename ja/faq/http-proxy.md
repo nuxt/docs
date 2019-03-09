@@ -11,7 +11,7 @@ description: クロスオリジンリソースを共有するには？
 npm i @nuxtjs/proxy -D
 ```
 
-nuxt.config.js で以下のように記述。
+nuxt.config.js は以下のように記述します。
 
 ```
  modules: [
