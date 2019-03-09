@@ -1,17 +1,17 @@
 ---
-title: "API: The loading Property"
-description: The `loading` property gives you the option to disable the default loading progress bar on a specific page.
+title: "API: loading プロパティ"
+description: `loading` プロパティは特定のページに対してデフォルトの loading プログレスバーを無効にするオプションを提供します。
 ---
 
-# The loading Property
+# loading プロパティ
 
-> The loading property gives you the option to disable the default loading progress bar on a specific page.
+> loading プロパティは特定のページに対してデフォルトの loading プログレスバーを無効にするオプションを提供します。
 
-- **Type:** `Boolean` (default: `true`)
+- **型:** `boolean` (デフォルト: `true`)
 
-By default, Nuxt.js uses its own component to show a progress bar between the routes.
+デフォルトでは、 Nuxt.js はルート間の遷移の際に自身で持っているコンポーネントでプログレスバーを表示します。
 
-You can disable or customize it globally through the [Configuration's loading option](/api/configuration-loading), but also disable it for specific pages by setting the `loading` property to `false` :
+[設定の loading オプション](/api/configuration-loading) からグローバルで無効にしたりカスタマイズすることもできますし、特定のページの `loading` プロパティを `false` に設定することで無効にすることもできます:
 
 ```html
 <template>
@@ -25,4 +25,4 @@ export default {
 </script>
 ```
 
-You can find an official example using this property [here](/examples/custom-page-loading).
+[こちら](/examples/custom-page-loading) から公式のプロパティ利用例を探すことができます。
