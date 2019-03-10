@@ -59,7 +59,7 @@ generate コマンドでは [動的なルーティング](/guide/routing#動的�
 `nuxt.config.js` 内に `/users/:id` のルーティングを追加します:
 
 ```js
-module.exports = {
+export default {
   generate: {
     routes: [
       '/users/1',
