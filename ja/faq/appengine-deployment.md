@@ -45,7 +45,7 @@ env_variables:
 
 さあ、あなたのアプリケーションを `npm run build` でビルドしてください。
 
-これで、アプリケーションは Google App Engine にアップロードする準備が整いました。では、次のコマンドを実行してください:
+これで、アプリケーションを Google App Engine にアップロードする準備が整いました。では、次のコマンドを実行してください:
 
 ```
 gcloud app deploy app.yaml --project <project-id>
