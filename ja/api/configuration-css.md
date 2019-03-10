@@ -19,9 +19,9 @@ npm install --save-dev node-sass sass-loader
 `nuxt.config.js` 内で CSS リソースを追加するには:
 
 ```js
-module.exports = {
+export default {
   css: [
-    // node モジュールを直接ロードする (ここでは SASS ファイル)
+    // Node.js モジュールを直接ロードする (ここでは SASS ファイル)
     'bulma',
     // プロジェクト内の CSS ファイル
     '@/assets/css/main.css',
