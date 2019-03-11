@@ -1,5 +1,5 @@
 ---
-title: "API: The ignore Property"
+title: "API: ignore 属性"
 description: 为Nuxt.js应用程序自定义忽略文件
 ---
 
@@ -15,6 +15,6 @@ description: 为Nuxt.js应用程序自定义忽略文件
 # ignore 属性
 
 - 类型: `Array`
-- 默认: `['**/*.test.*']`
+- 默认: `['**/*.test.*', '**/*.spec.*']`
 
 > 比`ignorePrefix`更简单：在构建中将忽略匹配在`ignore`内指定的`ignore`模式的所有文件。
