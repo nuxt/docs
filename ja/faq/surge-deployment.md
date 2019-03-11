@@ -33,6 +33,6 @@ surge dist/
 
 <div class="Alert">
 
-`nuxt generate` でウェブアプリケーションを生成時、[`data`](/guide/async-data#the-data-method) と [`fetch`](/guide/vuex-store#the-fetch-method) に渡される[コンテキスト](/api)は `req` 及び `res` をもちません。
+`nuxt generate` でウェブアプリケーションを生成時、[asyncData](/guide/async-data#the-data-method) と [`fetch`](/guide/vuex-store#the-fetch-method) に渡される[コンテキスト](/api)は `req` 及び `res` をもちません。
 
 </div>
