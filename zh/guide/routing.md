@@ -235,6 +235,58 @@ router: {
 }
 ```
 
+### 未知嵌套深度的动态嵌套路由
+
+如果您不知道URL结构的深度，您可以使用`_.vue`动态匹配嵌套路径。这将处理与*更具体*请求不匹配的情况。
+
+文件结构:
+
+```bash
+pages/
+--| people/
+-----| _id.vue
+-----| index.vue
+--| _.vue
+--| index.vue
+```
+
+将处理这样的请求：
+
+Path | File
+--- | ---
+`/` | `index.vue`
+`/people` | `people/index.vue`
+`/people/123` | `people/_id.vue`
+`/about` | `_.vue`
+`/about/careers` | `_.vue`
+`/about/careers/chicago` | `_.vue`
+
+__Note:__ 处理404页面，现在符合`_.vue`页面的逻辑。 [有关404重定向的更多信息，请点击此处](/guide/async-data#handling-errors).
+
+### 命名视图
+
+要渲染命名视图，您可以在`布局(layout) / 页面(page)`中使用 `<nuxt name="top"/>` 或 `<nuxt-child name="top"/>` 组件。要指定页面的**命名视图**，我们需要在`nuxt.config.js`文件中扩展路由器配置：
+``` js
+export default {
+  router: {
+    extendRoutes(routes, resolve) {
+      let index = routes.findIndex(route => route.name === 'main')
+      routes[index] = {
+        ...routes[index],
+        components: {
+          default: routes[index].component,
+          top: resolve(__dirname, 'components/mainTop.vue')
+        },
+        chunkNames: {
+          top: 'components/mainTop'
+        }
+      }
+    }
+  }
+}
+```
+它需要使用**两个属性** `components` 和 `chunkNames` 扩展路由。此配置示例中的命名视图名称为 `top` 。看一个例子:[命名视图 例子](/examples/named-views)。
+
 ### SPA fallback
 
 您也可以为动态路由启用`SPA fallback`。在使用`mode:'spa'`模式下，Nuxt.js将输出一个与`index.html`相同的额外文件。如果没有文件匹配，大多数静态托管服务可以配置为使用SPA模板。生成文件不包含头信息或任何HTML，但它仍将解析并加载API中的数据。

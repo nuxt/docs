@@ -13,7 +13,7 @@ description: dist ディレクトリを定義します。
 例（`nuxt.config.js`）:
 
 ```js
-module.exports = {
+export default {
   buildDir: 'nuxt-dist'
 }
 ```

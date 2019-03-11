@@ -134,7 +134,7 @@ export default function asyncModule(callback) {
 ```js
 export default {
   modules: [
-    '@nuxtjs/axios'
+    ['@nuxtjs/axios', { anotherOption: true }]
   ],
 
   // axios module is aware of this by using `this.options.axios`

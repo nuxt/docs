@@ -32,7 +32,7 @@ Russian translation is maintained by Translation Gang.
 Chinese translation is maintained by AOTU Labs from China, Shenzhen.
 
 * Translation Repo - [/o2team/i18n-cn-nuxtjs-docs](https://github.com/o2team/i18n-cn-nuxtjs-docs)
-* Primary maintainer - [AOTU Labs](https://aotu.io)
+* Primary maintainer - [AOTU Labs](https://aotu.io), [Brian Lee](https://github.com/warriorBrian)
 * Primary translator - [Levin Wong](http://faso.me), [Edward Chu](https://github.com/chuyik)
 
 ### Japanese
@@ -87,5 +87,4 @@ Indonesian translation is maintained by [Nuxt.js Indonesian Community](https://g
 
 Much of the translation was done using a tool called [GitLocalize][gl], which is unfortunately reaching its end of service soon. Hence, we're currently exploring and open to suggestions on how to keep this process as streamlined as possible.
 
-For now, **always check the `en/` version** of a document for its latest revision before starting a translation.  
-
+For now, **always check the `en/` version** of a document for its latest revision before starting a translation.

@@ -98,6 +98,10 @@
         ]
       },
       {
+        "to": "/typescript", "name": "支持 TypeScript",
+        "contents": []
+      },
+      {
         "to": "/commands", "name": "命令和部署",
         "contents": [
           { "to": "#命令列表", "name": "命令列表" },

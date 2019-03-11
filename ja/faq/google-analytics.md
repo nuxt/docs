@@ -48,7 +48,7 @@ export default ({ app }) => {
 `nuxt.config.js`
 
 ```js
-module.exports = {
+export default {
   plugins: [
     { src: '~plugins/ga.js', ssr: false }
   ]
