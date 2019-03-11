@@ -42,8 +42,6 @@ This file will be automatically updated with defaults value the first time you'r
 
 ## From JavaScript to TypeScript
 
-
-
 ### Configuration file
 
 To be able to use TypeScript in your configuration file, all you need is to rename `nuxt.config.js` in `nuxt.config.ts`.
@@ -60,7 +58,73 @@ const config: NuxtConfiguration {
 export default config
 ```
 
+### Components
 
+For components, we highly advice to use [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator) which depends on [vue-class-component](https://github.com/vuejs/vue-class-component).
+
+Here is a basic example mixing a `page` and a reusable `component` to display data fetched with Nuxt `asyncData`.
+
+```ts
+/* models/Post.ts */
+export default Post {
+  id: number
+  title: string
+  description: string
+}
+```
+
+```html
+<!-- components/PostPreview.vue -->
+<template>
+  <div>
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.description }}</p>
+  </div>
+</template>
+
+<script lang="ts">
+import axios from 'axios'
+import { Component, Vue, Prop } from 'vue-property-decorator'
+import Post from '~/models/Post'
+
+@Component
+export default class PostPreview extends Vue {
+  @Prop({ type: Object, required: true }) post!: Post
+}
+</script>
+```
+
+```html
+<!-- pages/feed.vue -->
+<template>
+  <div>
+    <PostPreview v-for="post in posts" :key="post.id" :post="post" />
+  </div>
+</template>
+
+<script lang="ts">
+import axios from 'axios'
+import { Component, Vue, Prop } from 'vue-property-decorator'
+import Post from '~/models/Post'
+
+@Component({
+  components: {
+    PostPreview: () => import('~/components/PostPreview.vue')
+  },
+  async asyncData () {
+    let { data } = await axios.get(`https://my-api/posts`)
+    return { 
+      posts: data
+    }
+  }
+})
+export default class FeedPage extends Vue {
+  posts: Post[] = []
+}
+</script>
+```
+
+You can use exact same logic for `layouts`.
 
 ## Linting with ESLint
 
@@ -68,7 +132,7 @@ If you're using ESLint to lint your project, here is how you can make ESLint lin
 
 <div class="Alert Alert--teal">
 
-**IMPORTANT:** We're assuming you have already setup [nuxt/eslint-config](https://github.com/nuxt/eslint-config) within your project.
+**IMPORTANT:** We're assuming you have already set up [nuxt/eslint-config](https://github.com/nuxt/eslint-config) within your project.
 
 </div>
 
