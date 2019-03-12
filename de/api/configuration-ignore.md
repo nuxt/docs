@@ -5,7 +5,8 @@ description: Define the ignore files for your Nuxt.js application
 
 # .nuxtignore
 
-You can use `.nuxtignore` to let Nuxt.js building phase ignore `layout`, `page`, `store` and `middleware` files in your project’s root directory (`rootDir`). The `.nuxtignore` file is file wih same specification like `.gitignore` and `.eslintignore` in which each line is a glob pattern indicating which files should be ignores.
+You can use a `.nuxtignore` file to let Nuxt.js ignore `layout`, `page`, `store` and `middleware` files in your project’s root directory (`rootDir`) during the build phase.
+The `.nuxtignore` file is subject to the same specification as `.gitignore` and `.eslintignore` files, in which each line is a glob pattern indicating which files should be ignored.
 
 For example:
 
