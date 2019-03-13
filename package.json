@@ -55,8 +55,8 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^4.7.1",
-    "nodemon": "^1.11.0",
-    "textlint": "^11.0.1",
+    "nodemon": "^1.18.10",
+    "textlint": "^11.2.3",
     "textlint-filter-rule-whitelist": "^2.0.0",
     "textlint-rule-preset-ja-spacing": "^2.0.1",
     "textlint-rule-preset-jtf-style": "^2.3.1"
