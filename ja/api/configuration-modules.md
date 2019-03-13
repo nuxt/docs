@@ -12,7 +12,7 @@ description: モジュールは、Nuxt.js のコア機能を拡張し、無限�
 例 (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   modules: [
     // パッケージの名前を使用する
     '@nuxtjs/axios',
