@@ -5,7 +5,7 @@ description: ignore 対象とするファイルを定義します
 
 # ignorePrefix プロパティ
 
-- 型: `文字列`
+- 型: `String`
 - デフォルト: `'-'`
 
 > pages/ layout/ middleware/ store/ ディレクトリに含まれるファイルの中で、ファイル名が `ignorePrefix` プロパティで指定された接頭辞から始まる場合にはビルド時に無視されます。
@@ -14,7 +14,7 @@ description: ignore 対象とするファイルを定義します
 
 # ignore プロパティ
 
-- 型: `配列`
+- 型: `Array`
 - デフォルト: `['**/*.test.*',  '**/*.spec.*']`
 
 > `ignorePrefix` よりもカスタマイズしやすいです: `ignore` プロパティに指定した glob パターンと一致する全てのファイルがビルド時に無視されます
