@@ -175,9 +175,14 @@ var parallelize = require('concurrent-transform');
 var config = {
 
   // Required
-  params: { Bucket: process.env.AWS_BUCKET_NAME },
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  params: { 
+    Bucket: process.env.AWS_BUCKET_NAME
+  },
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    signatureVersion: 'v3'
+  },
 
   // Optional
   deleteOldVersions: false,                 // NOT FOR PRODUCTION
@@ -196,7 +201,7 @@ var config = {
 gulp.task('deploy', function() {
   // create a new publisher using S3 options
   // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property
-  var publisher = awspublish.create(config, config);
+  var publisher = awspublish.create(config);
 
   var g = gulp.src('./' + config.distDir + '/**');
     // publisher will add Content-Length, Content-Type and headers specified above
