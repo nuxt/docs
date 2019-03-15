@@ -5,12 +5,12 @@ description: Nuxt.js アプリケーションの URL を渡して window を取�
 
 # nuxt.renderAndGetWindow(url, options = {})
 
-- 型: `関数`
-- 引数: `文字列`
-  1. `文字列`: レンダリングする URL
-  2. *オプション*, `オブジェクト`: オプション
-    - virtualConsole: `ブーリアン`（デフォルト: `true`）
-- 戻り値: `プロミス`
+- 型: `Function`
+- 引数: `String`
+  1. `String`: レンダリングする URL
+  2. *オプション*, `Object`: オプション
+    - virtualConsole: `Boolean`（デフォルト: `true`）
+- 戻り値: `Promise`
   - 戻り値: `window`
 
 > Nuxt.js アプリケーションの URL を渡して window を取得します。
