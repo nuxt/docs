@@ -35,7 +35,7 @@ description: "`context`は、従来 Vue コンポーネントが使用できな�
 `query` | `Object` | クライアント及びサーバー | `route.query` のエイリアス
 `req` | [`http.Request`](https://nodejs.org/api/http.html#http_class_http_incomingmessage) | サーバー | Node.js サーバーからのリクエスト。Nuxt がミドルウェアとして使用されている場合、使用しているフレームワークによってリクエストオブジェクトが異なることがあります。<br>**`nuxt generate` からは使用できません**。
 `res` | [`http.Response`](https://nodejs.org/api/http.html#http_class_http_serverresponse) | サーバー | Node.js サーバーからのレスポンス。 Nuxt がミドルウェアとして使用されている場合、使用しているフレームワークに応じてレスポンスオブジェクトが異なることがあります。<br>**`nuxt generate` からは使用できません**。
-`redirect` | `関数` | クライアント及びサーバー | このメソッドを使用するとユーザーを別のルートにリダイレクトさせます。ステータスコードはサーバーサイドで使用され、デフォルトは `302` です。`redirect([status,] path [, query])`
-`error` | `関数` | クライアント及びサーバー | このメソッドを使用するとエラーページ:`error(params)`を表示します。`params` は `statusCode` と `message` の 2つのプロパティを持つ必要があります。
+`redirect` | `Function` | クライアント及びサーバー | このメソッドを使用するとユーザーを別のルートにリダイレクトさせます。ステータスコードはサーバーサイドで使用され、デフォルトは `302` です。`redirect([status,] path [, query])`
+`error` | `Function` | クライアント及びサーバー | このメソッドを使用するとエラーページ:`error(params)`を表示します。`params` は `statusCode` と `message` の 2つのプロパティを持つ必要があります。
 `nuxtState` | `Object` | クライアント | Nuxt の状態は、`beforeNuxtRender` を使ってクライアントサイドの nuxt の状態を取得するプラグインに便利です。**`universal` モードでのみ使用できます**。
-`beforeNuxtRender(fn)` | `関数` | サーバー | このメソッドを使用するとクライアントサイドでレンダリングされた `__NUXT__` 変数がアップデートされます。`fn`（非同期にすることができます）は `{ Components, nuxtState }` と共に呼ばれます。詳細は[例](https://github.com/nuxt/nuxt.js/blob/cf6b0df45f678c5ac35535d49710c606ab34787d/test/fixtures/basic/pages/special-state.vue)を参照してください。
+`beforeNuxtRender(fn)` | `Function` | サーバー | このメソッドを使用するとクライアントサイドでレンダリングされた `__NUXT__` 変数がアップデートされます。`fn`（非同期にすることができます）は `{ Components, nuxtState }` と共に呼ばれます。詳細は[例](https://github.com/nuxt/nuxt.js/blob/cf6b0df45f678c5ac35535d49710c606ab34787d/test/fixtures/basic/pages/special-state.vue)を参照してください。
