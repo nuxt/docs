@@ -5,8 +5,8 @@ description: サーバーミドルウェアを定義します
 
 # serverMiddleware プロパティ
 
-- 型: `配列`
-    - アイテム: `文字列` or `オブジェクト` or `関数`
+- 型: `Array`
+    - 要素: `String` or `Object` or `Function`
 
 Nuxt は内部で [connect](https://github.com/senchalabs/connect) のインスタンスを作ります。
 それはミドルウェアをスタックに登録したり、 **外部サーバーを必要とせず** に API などのルートを増やす事を可能にしてくれます。

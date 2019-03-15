@@ -11,7 +11,7 @@ description: Nuxt.js ではウェブアプリケーションを自由にビル�
 
 > Nuxt.js では [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) を使ってバンドルファイルと最適化の仕方を視覚化できます。
 
-- 型: `ブーリアン` または `オブジェクト`
+- 型: `Boolean` または `Object`
 - デフォルト: `false`
 
 オブジェクトの場合は、利用できるプロパティは [こちら](https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin) を参照してください。
@@ -40,7 +40,7 @@ export default {
 
 > JavaScript や Vue ファイルのために Babel の設定をカスタマイズします。
 
-- 型: `オブジェクト`
+- 型: `Object`
 - デフォルト:
 
   ```js
@@ -63,21 +63,21 @@ export default {
 
 ## cache
 
-- 型: `ブーリアン`
+- 型: `Boolean`
 - デフォルト: `false`
 
 > [uglifyjs-webpack-plugin](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) と [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) でキャッシュを有効化します。
 
 ## cssSourceMap
 
-- 型: `ブーリアン`
+- 型: `boolean`
 - デフォルト: 開発モードでは `true` でプロダクションモードでは `false`
 
 > CSS ソースマップのサポートを有効にします。
 
 ## devMiddleware
 
-- 型: `オブジェクト`
+- 型: `Object`
 
 利用できるオプションは [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) を参照してください。
 
@@ -85,7 +85,7 @@ export default {
 
 > クライアント及びサーバーのバンドルについて Webpack の設定を手動で拡張します。
 
-- 型: `関数`
+- 型: `Function`
 
 extend メソッドは一度はサーバーのバンドルのため、一度はクライアントのバンドルのため、つまり二度呼び出されます。メソッドの引数は次のとおり:
 
@@ -142,7 +142,7 @@ export default {
 
 > Vue のサーバーサイドレンダリング [ガイドライン](https://ssr.vuejs.org/ja/guide/css.html)を利用して、共通の CSS を抽出できるようにします。
 
-- 型: `ブーリアン`
+- 型: `Boolean`
 - デフォルト: `false`
 
 
@@ -159,7 +159,7 @@ export default {
 
 > バンドルのファイル名をカスタマイズします。
 
-- 型: `オブジェクト`
+- 型: `Object`
 - デフォルト:
 
 ```js
@@ -189,13 +189,13 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 ## hotMiddleware
 
-- 型: `オブジェクト`
+- 型: `Object`
 
 利用できるオプションは [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) を参照してください。
 
 ## html.minify
 
-- 型: `オブジェクト`
+- 型: `Object`
 - デフォルト:
 
 ```js
@@ -220,7 +220,7 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 > webpack loaders を統合した Nuxt.js のカスタマイズオプション
 
-- 型: `オブジェクト`
+- 型: `Object`
 - デフォルト:
 
 ```js
@@ -289,7 +289,7 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 ## optimization
 
-- 型: `オブジェクト`
+- 型: `Object`
 - デフォルト:
 
   ```js
@@ -317,7 +317,7 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 ## optimizeCSS
 
-- 型: `オブジェクト` または `ブーリアン`
+- 型: `Object` または `Boolean`
 - デフォルト:
   - `false`
   - extractCSS が有効の場合は `{}`
@@ -328,7 +328,7 @@ OptimizeCSSAssets プラグインのオプションです。.
 
 ## parallel
 
-- 型: `ブーリアン`
+- 型: `Boolean`
 - デフォルト: `false`
 
 webpack のビルドで[thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) を有効にします。
@@ -337,7 +337,7 @@ webpack のビルドで[thread-loader](https://github.com/webpack-contrib/thread
 
 > Webpack のプラグインを追加します。
 
-- 型: `配列`
+- 型: `Array`
 - デフォルト: `[]`
 
 例（`nuxt.config.js`）:
@@ -360,7 +360,7 @@ export default {
 
 > [PostCSS Loader](https://github.com/postcss/postcss-loader#usage) プラグインをカスタマイズします。
 
-- 型: `配列`、`オブジェクト`（推奨）、`関数` または `ブーリアン`
+- 型: `Array`、`Object`（推奨）、`Function` または `Boolean`
 
   **注意：**  Nuxt.js は [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env) を適用しました。デフォルトでは、[Stage 2 features](https://cssdb.org/) と [Autoprefixer](https://github.com/postcss/autoprefixer) が有効になっています。`build.postcss.preset` を使うことで設定が出来ます。
 
@@ -406,8 +406,8 @@ export default {
 
 postcss の設定が `Object` 型の場合、プラグインの順番の定義に `order`を利用できます:
 
-- Type: `Array` (順序付けされたプラグイン名), `String` (順序付けされたプリセット名), `Function`
-- Default: `cssnanoLast` (最後に `cssnano` を配置する)
+- 型: `Array` (順序付けされたプラグイン名), `String` (順序付けされたプリセット名), `Function`
+- デフォルト: `cssnanoLast` (最後に `cssnano` を配置する)
 
 例 (`nuxt.config.js`):
 
@@ -428,7 +428,7 @@ export default {
 
 ## profile
 
-- 型: `ブーリアン`
+- 型: `Boolean`
 - デフォルト: コマンドライン引数 `--profile` で有効にします。
 
 [WebpackBar](https://github.com/nuxt/webpackbar#profile) の profiler で有効にします。
@@ -437,7 +437,7 @@ export default {
 
 > Nuxt.js ではパフォーマンスの最大化のため dist ディレクトリ内のファイルを CDN にアップロードすることも可能です。そのためにはまず `publicPath` に CDN を指定します。
 
-- 型: `文字列`
+- 型: `String`
 - デフォルト: `'/_nuxt/'`
 
 例（`nuxt.config.js`）:
@@ -456,12 +456,12 @@ export default {
 
 > ビルド出力ログの大半を抑制します
 
-- 型: `ブーリアン`
+- 型: `Boolean`
 - デフォルト: [std-env](https://github.com/blindmedia/std-env) によって `CI` または `test` 環境で検出された際に有効になります
 
 ## splitChunks
 
-- 型: `オブジェクト`
+- 型: `Object`
 - デフォルト:
 
   ```js
@@ -478,14 +478,14 @@ export default {
 
 > SSR レンダラー用の webpack バンドルを作成します。
 
-- 型: `ブーリアン`
+- 型: `Boolean`
 - ユニバーサルモードでのデフォルト値は `true`、spa モードでのデフォルト値は `false` です。
 
 このオプションは、提供されていない場合は `mode` 値に基づいて自動的に設定されます。
 
 ## styleResources
 
-- 型: `オブジェクト`
+- 型: `Object`
 - デフォルト: `{}`
 
 <div class="Alert Alert--orange">
@@ -525,7 +525,7 @@ Nuxt.js はこの動作を実現するために https://github.com/yenshih/style
 
 > Nuxt.js では、設定に基づいてレンダリングされる独自のテンプレートを提供できます。この機能は[モジュール](/guide/modules)を使用する場合にとりわけ便利です。
 
-- 型: `配列`
+- 型: `Array`
 
 例 (`nuxt.config.js`):
 
@@ -549,7 +549,7 @@ export default {
 
 ## terser
 
-- 型: `オブジェクト` または `ブーリアン`
+- 型: `Object` または `Boolean`
 - デフォルト:
 
 ```js
@@ -577,7 +577,7 @@ Terser プラグインのオプションです。 `false` を設定するとこ�
 
 ## transpile
 
-- 型: `配列<string | RegExp>`
+- 型: `Array<string | RegExp>`
 - デフォルト: `[]`
 
 特定の依存関係を Babel で変換したい場合、`build.transpile` を追加することができます。transpile の項目は、マッチする依存ファイル名の文字列または正規表現オブジェクトになります。
@@ -586,7 +586,7 @@ Terser プラグインのオプションです。 `false` を設定するとこ�
 
 > 注意: この設定は Nuxt 2.0 から削除されました。[`build.loaders.vue`](#loaders) を変わりに使用してください。
 
-- 型: `オブジェクト`
+- 型: `Object`
 - デフォルト
 
   ```js
@@ -607,7 +607,7 @@ Terser プラグインのオプションです。 `false` を設定するとこ�
 
 > 監視や変更後に再生成を行うカスタムファイルを提供することができます。この機能は[モジュール](/guide/modules)を使用する場合にとりわけ便利です。
 
-- 型: `配列<String>`
+- 型: `Array<String>`
 
 ```js
 export default {
