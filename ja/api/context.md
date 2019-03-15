@@ -7,7 +7,7 @@ description: "`context`は、従来 Vue コンポーネントが使用できな�
 
 # コンテキスト
 
-> `context` は Nuxt から Vue コンポーネントへ追加のオブジェクト/パラメータを提供します。 `context` は ` asyncData`、`fetch` 、` plugins`、 `middleware`、 `modules` そして `nuxtServerInit` のような特別な nuxt ライフサイクル内で利用可能です。
+> `context` は Nuxt から Vue コンポーネントへ追加のオブジェクト/パラメータを提供します。`context` は `asyncData`、`fetch`、`plugins`、`middleware`、`modules` そして `nuxtServerInit` のような特別な nuxt ライフサイクル内で利用可能です。
 
 ## 利用可能なキー
 
