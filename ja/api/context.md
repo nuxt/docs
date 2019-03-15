@@ -13,7 +13,7 @@ description: "`context`は、従来 Vue コンポーネントが使用できな�
 
 <div class="Alert Alert--teal">
 
-  **注記:** このコンテキストは、 `build.extend` 関数に渡されるコンテキスト **ではありません**
+  **注意:** このコンテキストは、`build.extend` 関数に渡されるコンテキスト **ではありません**
 
 </div>
 
