@@ -24,6 +24,6 @@ export default {
 ```
 
 
-親ルートでも `scrollToTop` を `false` に設定することができます。
+逆に、親ルートでは `scrollToTop` を手動で `false` に設定することができます。
 
 スクロールについて Nuxt.js のデフォルトの挙動を上書きしたいときは [scrollBehavior オプション](/api/configuration-router#scrollBehavior) を参照してください。
