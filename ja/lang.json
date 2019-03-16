@@ -1,6 +1,6 @@
 {
   "iso": "ja",
-  "docVersion": "2.2.0",
+  "docVersion": "2.3.X",
   "links": {
     "api": "API",
     "blog": "ブログ",
@@ -16,8 +16,8 @@
     "homepage": "ホーム",
     "live_demo": "ライブデモ",
     "live_edit": "ライブ編集",
-    "tidelift_short": "GET PROFESSIONAL SUPPORT",
-    "official_support": "GET OFFICIAL SUPPORT ⛑",
+    "tidelift_short": "専門的なサポートを得る",
+    "official_support": "公式サポートを得る ⛑",
     "tidelift": "Nuxt の専門的なサポートを得る",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
@@ -40,14 +40,14 @@
       "title": "Nuxt.js - ユニバーサル Vue.js アプリケーション",
       "description": "Nuxt.js はサーバーサイドレンダリングやコード分割、ホットリローディング、静的ファイル生成などを備えた Vue.js アプリケーションを構築するためのミニマルなフレームワークです！"
     },
-    "codesandbox_title": "Play with Nuxt.js online",
-    "codesandbox_open": "Open on CodeSandBox.io",
-    "codesandbox_examples": "See more examples"
+    "codesandbox_title": "Nuxt.js をオンラインで試す",
+    "codesandbox_open": "CodeSandBox.io で開く",
+    "codesandbox_examples": "他のサンプルを見る"
   },
   "sponsors": {
-    "title": "Sponsors",
-    "become": "Support us and",
-    "become_partner": "become a partner"
+    "title": "スポンサー",
+    "become": "私たちをサポートし、",
+    "become_partner": "パートナーになってください"
   },
   "footer": {
     "authors": "Made by Chopin Brothers"
