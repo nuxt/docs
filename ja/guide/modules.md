@@ -9,7 +9,7 @@ description: モジュールは、Nuxt.js のコア機能を拡張し、無限�
 
 Nuxt を使ってプロダクションレベルのアプリケーションを開発していると、Nuxt のコア機能が十分ではないことにすぐに気が付くでしょう。Nuxt はオプション設定やプラグインにより拡張できますが、複数のプロジェクトにわたってそれらのカスタマイズをメンテナンスしていくことは、退屈で、繰り返される、時間を浪費する作業です。しかし一方であらゆるプロジェクトのニーズを盛り込んでしまうと、Nuxt がとても複雑になり使いづらいものになってしまうでしょう。
 
-これが Nuxt が、コア機能を簡単に拡張できるようにするために、より高度なモジュールシステムを導入する理由でした。モジュールは、Nuxt 起動時に順番に呼び出される、シンプルな**関数**です。フレームワークは Nuxt が処理を続けるよりも前に、各モジュールが処理を完了するまで待機します。このようにして、モジュールは Nuxt のほとんどすべての項目をカスタマイズできます。Webpack の [Tapable](https://github.com/webpack/tapable) に基づいた Nuxt のモジュール設計のおかげで、モジュールは例えばビルドの初期化のような特定のエントリーポイントに、フックを簡単に登録できるのです。
+これが Nuxt が、コア機能を簡単に拡張できるようにするために、より高度なモジュールシステムを導入する理由のひとつです。モジュールは、Nuxt 起動時に順番に呼び出される、シンプルな**関数**です。フレームワークは Nuxt が処理を続けるよりも前に、各モジュールが処理を完了するまで待機します。このようにして、モジュールは Nuxt のほとんどすべての項目をカスタマイズできます。Webpack の [Tapable](https://github.com/webpack/tapable) に基づいた Nuxt のモジュール設計のおかげで、モジュールは例えばビルドの初期化のような特定のエントリーポイントに、フックを簡単に登録できるのです。また、モジュールはテンプレートの上書き、webpack のローダーの設定、CSS ライブラリの追加、その他多くの便利なタスクを実行することができます。
 
 素晴らしいことに Nuxt モジュールは npm パッケージと統合できます。したがって複数のプロジェクト間で再利用したり、Nuxt コミュニティでシェアすることが容易にできます。そして高品質の Nuxt アドオンのエコシステムをつくっていくことに繋がるでしょう。
 
@@ -29,11 +29,11 @@ Nuxt を使ってプロダクションレベルのアプリケーションを開
 **modules/simple.js**
 
 ```js
-module.exports = function SimpleModule (moduleOptions) {
+export default function SimpleModule (moduleOptions) {
   // ここにあなたのコードを書く
 }
 
-// npm パッケージとして公開するのであれば必須
+// モジュールを npm パッケージとして公開するのであれば必須
 // module.exports.meta = require('./package.json')
 ```
 
@@ -43,7 +43,7 @@ module.exports = function SimpleModule (moduleOptions) {
 
 **`this.options`**
 
-この参照を利用して Nuxt options へ直接アクセスすることができます。これは `nuxt.config.js` であり、すべてのデフォルトのオプションがアサインされています。モジュール間で共有されるオプションとして利用できます。
+この参照を利用して Nuxt options へ直接アクセスすることができます。これはすべてのデフォルトのオプションがアサインされた、ユーザーの `nuxt.config.js` の内容です。モジュール間で共有されるオプションとして利用できます。
 
 **`this.nuxt`**
 
@@ -60,12 +60,12 @@ module.exports = function SimpleModule (moduleOptions) {
 **nuxt.config.js**
 
 ```js
-module.exports = {
+export default {
   modules: [
     // シンプルな使い方
     '~/modules/simple'
 
-    // オプションを渡す
+    // 直接オプションを渡す
     ['~/modules/simple', { token: '123' }]
   ]
 }
@@ -86,9 +86,9 @@ module.exports = {
 </div>
 
 ```js
-const fse = require('fs-extra')
+import fse from 'fs-extra'
 
-module.exports = async function asyncModule() {
+export default async function asyncModule() {
   // `async`/`await` を使って非同期処理ができる
   let pages = await fse.readJson('./pages.json')
 }
@@ -97,27 +97,13 @@ module.exports = async function asyncModule() {
 ### Promise を返す
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
-module.exports = function asyncModule() {
+export default function asyncModule() {
   return axios.get('https://jsonplaceholder.typicode.com/users')
     .then(res => res.data.map(user => '/users/' + user.username))
     .then(routes => {
       // Nuxt のルートを拡張して何かの処理を行う
-    })
-}
-```
-
-### コールバックを利用する
-
-```js
-const axios = require('axios')
-
-module.exports = function asyncModule(callback) {
-  axios.get('https://jsonplaceholder.typicode.com/users')
-    .then(res => res.data.map(user => '/users/' + user.username))
-    .then(routes => {
-      callback()
     })
 }
 ```
@@ -131,9 +117,9 @@ module.exports = function asyncModule(callback) {
 **nuxt.config.js**
 
 ```js
-module.exports = {
+export default {
   modules: [
-    '@nuxtjs/axios'
+    ['@nuxtjs/axios', { anotherOption: true }]
   ],
 
   // axios モジュールは下記のオプションを `this.options.axios` で利用できることを知っている
@@ -147,8 +133,10 @@ module.exports = {
 **module.js**
 
 ```js
-module.exports = function (moduleOptions) {
+export default function (moduleOptions) {
+  // `options` は option1, option2 そして anotherOption を含む
   const options = Object.assign({}, this.options.axios, moduleOptions)
+
   // ...
 }
 ```
@@ -169,9 +157,9 @@ Vue.use(BootstrapVue)
 **module.js**
 
 ```js
-const path = require('path')
+import path from 'path'
 
-module.exports = function nuxtBootstrapVue (moduleOptions) {
+export default function nuxtBootstrapVue (moduleOptions) {
   // `plugin.js` テンプレートを登録する
   this.addPlugin(path.resolve(__dirname, 'plugin.js'))
 }
@@ -195,9 +183,9 @@ ga('create', '<%= options.ua %>', 'auto')
 **module.js**
 
 ```js
-const path = require('path')
+import path from 'path'
 
-module.exports = function nuxtBootstrapVue (moduleOptions) {
+export default function nuxtBootstrapVue (moduleOptions) {
   // `plugin.js` テンプレートを登録する
   this.addPlugin({
     src: path.resolve(__dirname, 'plugin.js'),
@@ -214,12 +202,12 @@ module.exports = function nuxtBootstrapVue (moduleOptions) {
 
 ### CSS ライブラリを追加する
 
-重複を回避するために CSS ライブラリが存在しているかの確認や、モジュール内の CSS ライブラリの**無効化オプション**の追加を検討してください。以下の例を参照してください。
+モジュールが CSS ライブラリを提供する際、重複を回避するために CSS ライブラリが存在しているかの確認や、モジュール内の CSS ライブラリの**無効化オプション**の追加を検討してください。
 
 **module.js**
 
 ```js
-module.exports = function (moduleOptions) {
+export default function (moduleOptions) {
   if (moduleOptions.fontAwesome !== false) {
     // Font Awesome を追加する
     this.options.css.push('font-awesome/css/font-awesome.css')
@@ -234,7 +222,7 @@ module.exports = function (moduleOptions) {
 **module.js**
 
 ```js
-module.exports = function (moduleOptions) {
+export default function (moduleOptions) {
   const info = 'Built by awesome module - 1.3 alpha on ' + Date.now()
 
   this.options.build.plugins.push({
@@ -252,14 +240,14 @@ module.exports = function (moduleOptions) {
 }
 ```
 
-### カスタムローダーを登録する
+### webpack のカスタムローダーを登録する
 
 `nuxt.config.js` 内の `build.extend` と同じように `this.extendBuild` を使うことができます。
 
 **module.js**
 
 ```js
-module.exports = function (moduleOptions) {
+export default function (moduleOptions) {
     this.extendBuild((config, { isClient, isServer }) => {
       // `.foo` ローダー
       config.module.rules.push({
@@ -277,36 +265,77 @@ module.exports = function (moduleOptions) {
 
 ## 特定のフックでタスクを実行する
 
-単に Nuxt の初期化処理時だけではなく、特定の条件下でのみ、モジュールにある処理を実行させたいこともあるでしょう。強力な[Hookable](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js)Nuxt.jsシステムを使用して特定のイベントでタスクを実行できます。フックが Promise を返すか `async` として定義されている場合は Nuxt は待機します。
+単に Nuxt の初期化処理時だけではなく、特定の条件下でのみ、モジュールにある処理を実行させたいこともあるでしょう。強力な [Hookable](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js) Nuxt.js システムを使用して特定のイベントでタスクを実行できます。タスクが Promise を返すか `async` として定義されている場合は Nuxt はその関数を待機します。
+
+以下が基本的な例です。
 
 ```js
-module.exports = function () {
-  // modules 用にフックを追加する
-  this.nuxt.hook('module', moduleContainer => {
+export default function myModule() {
+
+  this.nuxt.hook('modules:done', moduleContainer => {
     // 全てのモジュールのロードが完了したときに呼ばれます
   })
 
-  // renderer 用にフックを追加する
-  this.nuxt.hook('renderer', renderer => {
-    // renderer が作成された時に呼ばれます
+  this.nuxt.hook('render:before', renderer => {
+    // renderer が作成された後に呼ばれます
   })
 
-  // build 用にフックを追加する
-  this.nuxt.hook('build', async builder => {
-    // builder が作成された時に一度だけ呼ばれます
-
-    // 内部用のフックはここに登録できます
-    builder.hook('compile', ({compiler}) => {
-        // webpack のコンパイラが処理を開始する前に実行されます
-    })
+  this.nuxt.hook('build:compile', async ({name, compiler }) => {
+    // コンパイラ (デフォルト: webpack) が始まる前に呼ばれます
   })
 
-  // generate 用にフックを追加する
-  this.nuxt.hook('generate', async generator => {
-    // This will be called when a Nuxt generate starts
+  this.nuxt.hook('generate:before', async generator => {
+    // Nuxt が pages を generate する前に呼ばれます
   })
 }
 ```
+
+## モジュールパッケージコマンド
+
+**実験的**
+
+`v2.4.0`からは、Nuxt モジュールのパッケージを通してカスタムの nuxt コマンドを追加することができます。そのためには、コマンドを定義するときに `NuxtCommand` API に従ってください。仮想的に `my-module/bin/command.js` に置かれたシンプルな例は次のようになります。
+
+```js
+#!/usr/bin/env node
+
+const consola = require('consola')
+const { NuxtCommand } = require('@nuxt/cli')
+
+NuxtCommand.run({
+  name: 'command',
+  description: 'My Module Command',
+  usage: 'command <foobar>',
+  options: {
+    foobar: {
+      alias: 'fb',
+      type: 'string',
+      description: 'Simple test string'
+    }
+  },
+  run(cmd) {
+    consola.info(cmd.argv)
+  }
+})
+```
+
+ここで注意すべきことがいくつかあります。まず、Node 実行ファイルを取得するための `/usr/bin/env` の呼び出しを忘れないでください。 また、ES モジュールの構文は、[`esm`](https://github.com/standard-things/esm) をコードに手動で組み込んでいない限り、コマンドには使用できません。
+
+次に、`NuxtCommand.run()` がコマンドの設定と振る舞いを指定するためにどのように使われるかに気づくでしょう。オプションは `options` で定義され [`minimist`](https://github.com/substack/minimist) によってパースされます。引数がパースされると、`NuxtCommand` インスタンスを最初のパラメータとして `run()` が自動的に呼び出されます。
+
+上の例では、`cmd.argv` はパースされたコマンドライン引数を取得するために使われています。`NuxtCommand` には更に多くのメソッドとプロパティがあります -- これらのドキュメントはこの機能がさらにテストされ改善されていくにつれて提供されるでしょう。
+
+コマンドを Nuxt CLI で認識できるようにするには、それを package.json の `bin` セクションの下に、`nuxt-module` 規約を使って記述してください。この `module` はパッケージの名前に関係します。この中心的なバイナリを使って、さらに `subcommands` をパースするために `argv` を使うこともできます。
+
+```js
+{
+  "bin": {
+    "nuxt-foobar": "./bin/command.js"
+  }
+}
+```
+
+(NPM か Yarn　によって)パッケージがインストールされると、コマンドラインで `nuxt foobar ...` を実行できるようになります。
 
 <div class="Alert">
 
