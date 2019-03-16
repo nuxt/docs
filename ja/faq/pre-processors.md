@@ -15,7 +15,7 @@ description: Nuxt.js でプリプロセッサを使うには？
 </template>
 
 <script lang="coffee">
-module.exports = data: ->
+export default data: ->
   { name: 'World' }
 </script>
 
