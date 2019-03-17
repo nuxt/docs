@@ -5,11 +5,19 @@ description: Nuxt.js はウェブアプリケーションのルーティング�
 
 > Nuxt.js は `pages` ディレクトリ内の Vue ファイルの木構造に沿って、自動的に [vue-router](https://github.com/vuejs/vue-router) の設定を生成します。
 
-<div class="Alert Alert--grey">↲
-↲
+<div class="Alert Alert--grey">
+
 ページ間を遷移するためには [`<nuxt-link>`](/api/components-nuxt-link) コンポーネントの使用を推奨します。
-↲
-</div>↲
+
+</div>
+
+例:
+
+```html
+<template>
+  <nuxt-link to="/">Home page</nuxt-link>
+</template>
+```
 
 ## ルーティングの基礎
 
@@ -227,8 +235,8 @@ router: {
 
 ### 未知の動的でネストされたルート
 
-もし URL 構造の深さが不明な場合は、 `_.vue` ファイルを動的でネストされたパスに使用できます。
-これは _より詳細な_ リクエストにマッチしなかったリクエストをハンドリングします。
+もし URL 構造の深さが不明な場合は、ネストされたパスに動的にマッチさせる `_.vue` ファイルを使用することができます。
+これは_より詳細な_リクエストにマッチしなかったリクエストをハンドリングします。
 
 下記のようなファイルの木構造のとき:
 
@@ -252,15 +260,13 @@ Path | File
 `/about/careers` | `_.vue`
 `/about/careers/chicago` | `_.vue`
 
-__注意:__ 404 ページのハンドリングは `_.vue` ページのロジックに依存します。 [404 リダイレクトについての詳細はこちら](/guide/async-data#handling-errors)
+__注意:__ 404 ページのハンドリングは `_.vue` ページのロジックに依存します。[404 リダイレクトについての詳細はこちら](/guide/async-data#handling-errors)を参照してください。
 
 ### 名前付きビュー
 
-名前付きビューをレンダリングするために `<nuxt name="top">` または `<nuxt-child name="top"/>` コンポーネントを layout/page 内で使用できます。
+名前付きビューをレンダリングするために `<nuxt name="top"/>` または `<nuxt-child name="top"/>` コンポーネントを layout/page 内で使用できます。
 名前付きビューを特定するには `nuxt.config.js` ファイルのルータ設定の拡張が必要です。
 
-To specify named view of page we need to extend router config in `nuxt.config.js` file:
-  
 ``` js
 export default {
   router: {
@@ -310,7 +316,7 @@ GitHub Pages と Netlify は `404.html` ファイルを自動的に認識する�
 
 #### Firebase ホスティング向けの実装
 
-Firebase ホスティング上でフォールバックを使用するためには、 `generate.fallback` を `true` にし、以下の設定を使用します。 ([さらに詳しく](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
+Firebase ホスティング上でフォールバックを使用するためには、`generate.fallback` を `true` にし、以下の設定を使用します。 ([さらに詳しく](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
 
 ```json
 {
@@ -429,7 +435,7 @@ export default function ({ route }) {
 }
 ```
 
-そして `nuxt.config.js` で `middleware` キーを使います:
+そして `nuxt.config.js` で `router.middleware` キーを使います:
 
 `nuxt.config.js`
 
@@ -443,7 +449,7 @@ export default {
 
 これで `stats` ミドルウェアはすべてのルート変更時に呼び出されるようになります。
 
-同様に、特定のレイアウトもしくはページ内にもミドルウェアを追加できます:
+同様に、特定のレイアウトもしくはページ内にもミドルウェアを追加することができます:
 
 
 `pages/index.vue` または `layouts/default.vue`
