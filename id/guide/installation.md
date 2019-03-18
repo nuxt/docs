@@ -29,7 +29,7 @@ $ npx create-nuxt-app <project-name>
 atau dengan [yarn](https://yarnpkg.com/en/):
 
 ```bash
-yarn create nuxt-app <my-project>
+$ yarn create nuxt-app <my-project>
 ```
 
 Kemudian akan muncul beberapa pertanyaan:
@@ -109,7 +109,7 @@ Projek anda membutuhkan file `package.json` untuk menemukan bagaimana menjalanka
 Setelah file `package.json` dibuat, tambahkan `nuxt` pada projek anda dengan npm:
 
 ```bash
-npm install --save nuxt
+$ npm install --save nuxt
 ```
 
 ### Direktori `pages`
