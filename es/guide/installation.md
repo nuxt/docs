@@ -77,7 +77,7 @@ El proyecto necesita un archivo llamado `package.json` para especificar como ini
 
 Una vez que se ha creado el `package.json`, agregue nuxt al proyecto a través de npm:
 ```bash
-npm install --save nuxt
+$ npm install --save nuxt
 ```
 
 ### El directorio `pages`

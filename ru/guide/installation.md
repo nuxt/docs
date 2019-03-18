@@ -78,7 +78,7 @@ $ cd <project-name>
 
 После создания `package.json` добавьте `nuxt` в свой проект через npm:
 ```bash
-npm install --save nuxt
+$ npm install --save nuxt
 ```
 
 ### Папка `pages`

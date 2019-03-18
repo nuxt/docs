@@ -86,7 +86,7 @@ $ cd <project-name>
 처음 `package.json`가 만들어지면, `nuxt`를 npm을 사용해 프로젝트에 추가합니다:
 
 ```bash
-npm install --save nuxt
+$ npm install --save nuxt
 ```
 
 ### `pages` 폴더
