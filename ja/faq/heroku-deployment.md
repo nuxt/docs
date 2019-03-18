@@ -35,7 +35,7 @@ heroku config:set NODE_ENV=production
 }
 ```
 
-Heroku はアプリの dyno によって実行されるコマンドを指定する [Procfile](https://devcenter.heroku.com/articles/procfile) (ファイル拡張子を付けずにファイル名を `Procfile` という名前にします) を使用します。Procfile を起動するのはとてもシンプルで、以下の行を含める必要があります:
+Heroku はアプリの dyno によって実行されるコマンドを指定する [Procfile](https://devcenter.heroku.com/articles/procfile) (ファイル拡張子を付けずにファイル名を `Procfile` という名前にします）を使用します。Procfile を起動するのはとてもシンプルで、以下の行を含める必要があります:
 
 ```
 web: npm run start

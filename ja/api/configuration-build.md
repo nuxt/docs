@@ -146,7 +146,7 @@ export default {
 - デフォルト: `false`
 
 
-内部で [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) が使われ、全ての CSS は別々のファイルに、通常はコンポーネントごとに一つ抽出されます。これは CSS と JavaScript を別々にキャッシュすることを可能にし、多くのグローバルまたは共通 CSS が存在する場合には試してみる価値があります。
+内部で [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) が使われ、全ての CSS は別々のファイルに、通常はコンポーネントごとに1つ抽出されます。これは CSS と JavaScript を別々にキャッシュすることを可能にし、多くのグローバルまたは共通 CSS が存在する場合には試してみる価値があります。
 
 <div class="Alert Alert--teal">
 
@@ -377,7 +377,7 @@ export default {
   }
   ```
 
-カスタムプラグイン設定は、デフォルトのプラグイン設定とマージされます (`Object` のかわりに `Array` を使っている場合を除く).
+カスタムプラグイン設定は、デフォルトのプラグイン設定とマージされます (`Object` のかわりに `Array` を使っている場合を除く）.
 
 例（`nuxt.config.js`）:
 
@@ -406,8 +406,8 @@ export default {
 
 postcss の設定が `Object` 型の場合、プラグインの順番の定義に `order`を利用できます:
 
-- 型: `Array` (順序付けされたプラグイン名), `String` (順序付けされたプリセット名), `Function`
-- デフォルト: `cssnanoLast` (最後に `cssnano` を配置する)
+- 型: `Array` (順序付けされたプラグイン名）, `String` (順序付けされたプリセット名）, `Function`
+- デフォルト: `cssnanoLast` (最後に `cssnano` を配置する）
 
 例 (`nuxt.config.js`):
 

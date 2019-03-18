@@ -51,7 +51,7 @@ env_variables:
 gcloud app deploy app.yaml --project <project-id>
 ```
 
-ほら！ Nuxt.js アプリケーションが Google App Engine 上にホストされました！
+ほら！　Nuxt.js アプリケーションが Google App Engine 上にホストされました！
 
 ## 詳細
 
