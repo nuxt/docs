@@ -377,7 +377,7 @@ export default {
   }
   ```
 
-カスタムプラグイン設定は、デフォルトのプラグイン設定とマージされます (`Object` のかわりに `Array` を使っている場合を除く）.
+カスタムプラグイン設定は、デフォルトのプラグイン設定とマージされます (`Object` のかわりに `Array` を使っている場合を除く）。
 
 例（`nuxt.config.js`）:
 
@@ -429,7 +429,7 @@ export default {
 ## profile
 
 - 型: `Boolean`
-- デフォルト: コマンドライン引数 `--profile` で有効にします。
+- デフォルト: コマンドライン引数 `--profile` で有効にします
 
 [WebpackBar](https://github.com/nuxt/webpackbar#profile) の profiler で有効にします。
 
@@ -479,7 +479,7 @@ export default {
 > SSR レンダラー用の webpack バンドルを作成します。
 
 - 型: `Boolean`
-- ユニバーサルモードでのデフォルト値は `true`、spa モードでのデフォルト値は `false` です。
+- ユニバーサルモードでのデフォルト値は `true`、spa モードでのデフォルト値は `false` です
 
 このオプションは、提供されていない場合は `mode` 値に基づいて自動的に設定されます。
 
