@@ -12,7 +12,7 @@ liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 
 ## 公式の `auth-module`
 
-OAuth2などの複雑な認証フローを実装したい場合は、公式の `auth-module` を使用することをお勧めします。
+OAuth2 などの複雑な認証フローを実装したい場合は、公式の `auth-module` を使用することをお勧めします。
 
 
 ## express とセッションを使う
