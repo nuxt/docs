@@ -28,8 +28,8 @@ description: "`context`は、従来 Vue コンポーネントが使用できな�
 `isDev` | `Boolean` | クライアント及びサーバー | 開発モードであるかどうかを知らせます。このキーはプロダクションの一部のデータをキャッシュさせるのに便利です。
 `isHMR` | `Boolean` | クライアント及びサーバー | メソッド/ミドルウェアが webpack の hot module replacement（*開発モードでのクライアントサイドに限る*）から呼び出されたかどうかを知らせます。
 `route` | [Vue Router Route](https://router.vuejs.org/en/api/route-object.html) | クライアント及びサーバー | Vue Router のルートインスタンス
-`from` | [Vue Router Route](https://router.vuejs.org/en/api/route-object.html) | クライアント | ナビゲーションされる前の現在のルートインスタンス
-`store` | [Vuex ストア](https://vuex.vuejs.org/en/api.html#vuexstore-instance-properties) | クライアント及びサーバー | Vuex ストアのルート。**[vuex ストア](/guide/vuex-store)を設定している場合にのみ使用可能**。
+`from` | [Vue Router Route](https://router.vuejs.org/en/api/route-object.html) | クライアント | ナビゲーションされる前の現在のルート
+`store` | [Vuex ストア](https://vuex.vuejs.org/en/api.html#vuexstore-instance-properties) | クライアント及びサーバー | Vuex ストアのインスタンス。**[vuex ストア](/guide/vuex-store)を設定している場合にのみ使用可能**。
 `env` | `Object` | クライアント及びサーバー | `nuxt.config.js` で設定された環境変数。[env api](/api/configuration-env) を参照してください。
 `params` | `Object` | クライアント及びサーバー | `route.params` のエイリアス
 `query` | `Object` | クライアント及びサーバー | `route.query` のエイリアス
