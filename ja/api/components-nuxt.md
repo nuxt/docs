@@ -9,7 +9,7 @@ description: レイアウト内でページコンポーネントを表示しま�
 
 **Props**:
 
-- nuxt 子キー：`文字列`
+- nuxt 子キー：`string`
   - この prop は `<router-view/>` に設定され、動的なページと異なるルートの中で遷移させるのに便利です。
   - デフォルト: `$route.fullPath`
 

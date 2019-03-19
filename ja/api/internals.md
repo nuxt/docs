@@ -59,7 +59,7 @@ Nuxt.js には開発者が Nuxt Core の好きな部分を柔軟な API を使�
 Nuxt はすべてのクラスをデフォルトでエクスポートします。これらを得るには:
 
 ```js
-const { Nuxt, Builder, Utils } = require('nuxt')
+import { Nuxt, Builder, Utils } from 'nuxt'
 ```
 
 ## よくあるパターン

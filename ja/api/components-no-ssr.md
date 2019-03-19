@@ -8,7 +8,7 @@ description: サーバーサイドレンダリングでのコンポーネント�
 > このコンポーネントは意図的にサーバーサイドレンダリングの対象からコンポーネントを除外するために使われます。
 
 **Props**:
-- placeholder: `文字列`
+- placeholder: `String`
   - `<no-ssr>`がクライアント側にマウントされるまで、テキストをプレスホルダとして使用します。
 
 ```html
@@ -27,7 +27,7 @@ description: サーバーサイドレンダリングでのコンポーネント�
 
 - placeholder:
   - `<no-ssr>`がクライアント側にマウントされるまで、スロットをプレスホルダとして使用します。
- 
+
  ```html
 <template>
   <div>
@@ -35,7 +35,7 @@ description: サーバーサイドレンダリングでのコンポーネント�
     <no-ssr>
       <!-- このコンポーネントはクライアントサイドでのみレンダリングされます -->
       <comments />
-  
+
       <!-- loading indicator -->
       <comments-placeholder slot="placeholder" />
     </no-ssr>

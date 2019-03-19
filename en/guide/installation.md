@@ -29,7 +29,7 @@ $ npx create-nuxt-app <project-name>
 Or with [yarn](https://yarnpkg.com/en/):
 
 ```bash
-yarn create nuxt-app <my-project>
+$ yarn create nuxt-app <my-project>
 ```
 
 It will ask you some questions:
@@ -111,7 +111,7 @@ The project needs a `package.json` file to specify how to start `nuxt`:
 Once the `package.json` has been created, add `nuxt` to the project via npm:
 
 ```bash
-npm install --save nuxt
+$ npm install --save nuxt
 ```
 
 ### The `pages` directory

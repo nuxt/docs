@@ -5,7 +5,7 @@ description: ページのトランジションのデフォルト設定を指定�
 
 # transition プロパティ
 
-- 型: `文字列` または `オブジェクト`
+- 型: `String` または `Object`
 
 > ページのトランジションのデフォルト設定を指定するために使われます。
 
@@ -21,7 +21,7 @@ description: ページのトランジションのデフォルト設定を指定�
 例（`nuxt.config.js`）:
 
 ```js
-module.exports = {
+export default {
   transition: 'page'
   // または
   transition: {
@@ -39,7 +39,7 @@ module.exports = {
 
 # layoutTransition プロパティ
 
-- 型: `文字列` または `オブジェクト`
+- 型: `String` または `Object`
 
 > レイアウトトランジションのデフォルト設定を指定するために使われます。設定は `layout` と同じです。
 

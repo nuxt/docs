@@ -29,7 +29,7 @@ $ npx create-nuxt-app <project-name>
 もしくは [yarn](https://yarnpkg.com/ja/) を使ってください:
 
 ```bash
-yarn create nuxt-app <my-project>
+$ yarn create nuxt-app <my-project>
 ```
 
 いくつか質問されます:
@@ -111,7 +111,7 @@ $ cd <project-name>
 `package.json` を作成したら `nuxt` を npm でプロジェクトに追加しましょう:
 
 ```bash
-npm install --save nuxt
+$ npm install --save nuxt
 ```
 
 ### `pages` ディレクトリ

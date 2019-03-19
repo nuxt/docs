@@ -5,7 +5,7 @@ description: dist ディレクトリを定義します。
 
 # buildDir プロパティ
 
-- 型: `文字列`
+- 型: `String`
 - デフォルト: `.nuxt`
 
 > dist ディレクトリを定義します。

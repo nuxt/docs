@@ -1,16 +1,16 @@
 ---
-title: "API: The globalName Property"
-description: Nuxt.js lets you customize the global ID used in the main HTML template as well as the main Vue instance name and other options.
+title: "API: globalName プロパティ"
+description: Nuxt.js はメインの Vue インスタンスとその他のオプションだけでなく、メインの HTML テンプレート上でもグローバル ID をカスタマイズできます。
 ---
 
-# The globalName Property
+# globalName プロパティ
 
-> Nuxt.js lets you customize the global ID used in the main HTML template as well as the main Vue instance name and other options.
+> Nuxt.js はメインの Vue インスタンスとその他のオプションだけでなく、メインの HTML テンプレート上でもグローバル ID をカスタマイズできます。
 
-- Type: `String`
-- Default: `nuxt`
+- 型: `String`
+- デフォルト: `nuxt`
 
-Example:
+例:
 
 `nuxt.config.js`
 
@@ -20,14 +20,14 @@ Example:
 }
 ```
 
-It needs to be a valid JavaScript identifier.
+有効な JavaScript 識別子である必要があります。
 
-## The globals property
+## globals プロパティ
 
-> Customizes specific global names which are based on `globalName` by default.
+> デフォルトで `globalName` に基づく、特定のグローバル名をカスタマイズします。
 
-- Type: `Object`
-- Default:
+- 型: `Object`
+- デフォルト:
 
 ```js
 {

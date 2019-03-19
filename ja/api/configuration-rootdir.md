@@ -5,7 +5,7 @@ description: Nuxt.js アプリケーションのワークスペースを指定�
 
 # rootDir プロパティ
 
-- 型: `文字列`
+- 型: `String`
 - デフォルト: `process.cwd()`
 
 > Nuxt.js アプリケーションのワークスペースを指定します。

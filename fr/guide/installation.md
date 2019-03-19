@@ -85,7 +85,7 @@ Le projet a besoin d'un fichier `package.json` avec un script permettant de lanc
 Une fois que le `package.json` est créé, ajoutez `nuxt` au projet via npm :
 
 ```bash
-npm install --save nuxt
+$ npm install --save nuxt
 ```
 
 ### Le dossier `pages`

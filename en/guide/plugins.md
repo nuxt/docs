@@ -63,6 +63,19 @@ export default {
 
 To learn more about the `plugins` configuration key, check out the [plugins api](/api/configuration-plugins).
 
+### ES6 plugins
+
+If the plugin is located in `node_modules` and exports an ES6 module, you may need to add it to the `transpile` build option:
+
+```js
+module.exports = {
+  build: {
+    transpile: ['vue-notifications']
+  }
+}
+```
+You can refer to the [configuration build](/api/configuration-build/#transpile) docs for more build options.
+
 ## Inject in $root & context
 
 Sometimes you want to make functions or values available across the app.
