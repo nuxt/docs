@@ -335,7 +335,7 @@ NuxtCommand.run({
 }
 ```
 
-(NPM か Yarn　によって)パッケージがインストールされると、コマンドラインで `nuxt foobar ...` を実行できるようになります。
+(NPM か Yarn　によって）パッケージがインストールされると、コマンドラインで `nuxt foobar ...` を実行できるようになります。
 
 <div class="Alert">
 

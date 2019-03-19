@@ -49,9 +49,9 @@ Object（または偽の値）を提供する場合、[compression](https://www.
 - 型 `Object`
   - デフォルト: `{ dist: {}, static: { skipUnknown: true } }`
 
-[serve-placeholder](https://github.com/nuxt/serve-placeholder) ミドルウェアのオプションです.
+[serve-placeholder](https://github.com/nuxt/serve-placeholder) ミドルウェアのオプションです。
 
-もしこれらのうち一つか両方を無効にする場合は、偽となる値を渡すことができます。
+もしこれらのうち1つか両方を無効にする場合は、偽となる値を渡すことができます。
 
 ## http2
 - 型 `Object`
@@ -69,7 +69,7 @@ pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
 配列と同様に自分のアセットを追加することができます。
 `req` と `res` を使うことで、例えばアプリケーションバージョンを持ったクッキーを使うといったように、リクエストヘッダを元にどのリンクをプッシュするか決めることができます。
 
-それらのアセットは `,` を区切り文字として合成され、一つの `Link` ヘッダに渡されます。
+それらのアセットは `,` を区切り文字として合成され、1つの `Link` ヘッダに渡されます。
 
 ## resourceHints
 - 型: `Boolean`

@@ -47,7 +47,7 @@ _このディレクトリは特別な設定なしでは名前を変更できま�
 
 ### static ディレクトリ
 
-`static` ディレクトリは直接サーバのルートに配置され（ `/static/robots.txt` は `http://localhost:3000/robots.txt` でアクセス可能です）、変更されない可能性の高いファイルが含まれています（例えば、faviconなど）。
+`static` ディレクトリは直接サーバのルートに配置され（`/static/robots.txt` は `http://localhost:3000/robots.txt` でアクセス可能です）、変更されない可能性の高いファイルが含まれています（例えば、favicon など）。
 
 **例:** /static/robots.txt は /robots.txt に配置されます。
 
