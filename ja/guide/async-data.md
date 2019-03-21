@@ -36,7 +36,7 @@ Nuxt.js では asyncData メソッドを使うために、いくつかの異な�
 
 <div class="Alert Alert--grey">
 
-私たちは isomorphic な HTTPリクエストを作るために [axios](https://github.com/mzabriskie/axios) を使っています。私たちはあなたの Nuxt プロジェクトに、私たちの [axios module](https://axios.nuxtjs.org/) を使うことを<strong>強くオススメ</strong>します。
+私たちは isomorphic な HTTP リクエストを作るために [axios](https://github.com/mzabriskie/axios) を使っています。私たちはあなたの Nuxt プロジェクトに、私たちの [axios module](https://axios.nuxtjs.org/) を使うことを<strong>強くオススメ</strong>します。
 
 </div>
 
