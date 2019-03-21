@@ -657,16 +657,35 @@ See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/t
 
 If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Each item in transpile can be a package name, or a string or regex object matching the dependency's file name.
 
-## useForkTsChecker
+## typescript
+
+> Customize Nuxt.js TypeScript support.
+
+<div class="Alert Alert--blue">
+
+**Important**: This property will be ignored if [`TypeScript Support`](/guide/typescript) hasn't be set up in your project.
+
+</div>
+
+- Type: `Object`
+- Default:
+
+  ```js
+  {
+    typeCheck: true
+  }
+  ```
+
+### typescript.typeCheck
 
 > Enables TypeScript type checking on a separate process.
 
-- Type: `Object` or `Boolean`
-- Default: `false`. But `true` for TypeScript projects using `nuxt-ts` (see [TypeScript Support](/guide/typescript))
+- Type: `Boolean` or `Object`
+- Default: `true`
 
-ForkTsChecker plugin options. Set to `false` to disable this plugin.
+When enabled, Nuxt.js uses [fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) to provide type checking.
 
-See [Realytics/fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin).
+You can use an `Object` to override plugin options or set it to `false` to disable it.
 
 ## vueLoader
 
