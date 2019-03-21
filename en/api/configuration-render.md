@@ -108,7 +108,7 @@ It will add the router base to your static assets.
 
 **Caveats:**
 
-Some URL rewrites might respect the prefix.
+Some URL rewrites might not respect the prefix.
 
 ## dist
 - Type: `Object`
