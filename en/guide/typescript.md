@@ -51,7 +51,7 @@ Nuxt.js also brings type definitions which provides autocompletion and type chec
 ```ts
 import NuxtConfiguration from '@nuxt/config'
 
-const config: NuxtConfiguration {
+const config: NuxtConfiguration = {
   // Type or Press `Ctrl + Space` for autocompletion
 }
 
