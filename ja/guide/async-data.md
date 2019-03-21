@@ -7,7 +7,8 @@ description: サーバーサイドでデータを取得し、それをレンダ�
 > サーバーサイドでデータを取得し、それをレンダリングしたいことがあるでしょう。Nuxt.js はコンポーネントを初期化する前に非同期の処理を行えるようにするために `asyncData` メソッドを追加しています。
 
 <div>
-  <a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote">
+   <a href="https://vueschool.io/courses/async-data-with-nuxtjs?friend=nuxt" target="_blank" class="Promote">
+   <img src="/async-data-with-nuxtjs.png" srcset="/async-data-with-nuxtjs-2x.png 2x" alt="AsyncData by vueschool"/>
     <img src="/async-data-with-nuxtjs.png" srcset="/async-data-with-nuxtjs-2x.png 2x" alt="AsyncData by vueschool"/>
     <div class="Promote__Content">
       <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
