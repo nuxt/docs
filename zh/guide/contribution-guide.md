@@ -7,9 +7,9 @@ description: 欢迎为 Nuxt.js 做出开源贡献！
 
 ## 提交问题
 
-我们使用[CMTY](https://cmty.nuxtjs.org/)使贡献者和维护者更容易的提交问题的详细报告。
+我们使用[CMTY](https://cmty.nuxtjs.org/)使贡献者和维护者更容易的提交问题和新功能改进。
 
-请确保包含一个复制代码仓库或[CodeSandBox](https://template.nuxtjs.org/)，以便可以更好地再现错误，我们开始修复它的速度越快！
+请确保包含一个克隆仓库或[CodeSandBox](https://template.nuxtjs.org/)，以便可以更好地再现错误，我们开始修复它的速度越快！
 
 ## Pull Requests
 
