@@ -43,6 +43,7 @@
           { "to": "#動的なルーティング", "name": "動的なルーティング" },
           { "to": "#ネストされたルート", "name": "ネストされたルート" },
           { "to": "#動的でネストされたルート", "name": "動的でネストされたルート" },
+          { "to": "#named-views", "name": "Named Views" },
           { "to": "#トランジション", "name": "トランジション" },
           { "to": "#ミドルウェア", "name": "ミドルウェア" }
         ]
@@ -93,15 +94,14 @@
         "to": "/vuex-store", "name": "Vuex ストア",
         "contents": [
           { "to": "#ストアを有効にする", "name": "ストアを有効にする" },
-          { "to": "#クラシックモード", "name": "クラシックモード" },
           { "to": "#モジュールモード", "name": "モジュールモード" },
           { "to": "#fetch-メソッド", "name": "fetch メソッド" },
           { "to": "#nuxtserverinit-アクション", "name": "nuxtServerInit アクション" },
-          { "to": "#Vuex-Strict-モード", "name": "Vuex Strict モード" }
+          { "to": "#クラシックモード", "name": "クラシックモード" }
         ]
       },
       {
-        "to": "/commands", "name": "コマンド",
+        "to": "/commands", "name": "コマンドとデプロイ",
         "contents": [
           { "to": "#コマンド一覧", "name": "コマンド一覧" },
           { "to": "#開発環境", "name": "開発環境" },
