@@ -77,6 +77,17 @@ Nuxt.js をプロジェクトの UI レンダリング全体を担うフレー�
 
 アプリケーションをビルドする際、ルートやストアにあるファイル全てに対し HTML を生成します。
 
+<div>
+  <a href="https://vueschool.io/courses/static-site-generation-with-nuxtjs?friend=nuxt" target="_blank" class="Promote">
+    <img src="/static-site-generation-with-nuxtjs.png" alt="Static Site Generation with Nuxt.js by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Nuxt.js による静的サイト生成</h4>
+      <p class="Promote__Content__Description">ホスティングコストを削減しながら、パフォーマンスと SEO の両方を向上させるために静的サイトを生成する方法（プリレンダリング）を学びます。</p>
+      <p class="Promote__Content__Signature">ビデオコースは Nuxt.js での開発をサポートするために VueSchool によって作られました｡</p>
+    </div>
+  </a>
+</div>
+
 例えば、以下のファイル構成だった場合:
 
 ```bash
