@@ -19,7 +19,7 @@ description: モダンバンドルをビルドして配信する
 1. モダンバンドル: ES modules をサポートするモダンブラウザを対象にしています。
 2. レガシーバンドル: babel config (デフォルトでは IE9 互換) をベースにした古いブラウザを対象にしています。
 
-**情報:** `nuxt build/start --modern=[type]` か `nuxt build/start -m=[type]` のコマンドを利用することでモダンバンドルで ビルド/スタート し、 `package.json` の scripts の中ではこのように modern コマンドを指定することができます:
+**情報:** `nuxt build/start --modern=[type]` か `nuxt build/start -m=[type]` のコマンドを利用することでモダンバンドルでビルド/スタートし、`package.json` の scripts の中ではこのように modern コマンドを指定することができます:
 
 ```json
 {
