@@ -41,7 +41,7 @@ Nuxt.js は既に最高の SSR のデフォルト設定を提供していて、�
 - 型 `Object`
   - デフォルト: `{ threshold: 0 }`
 
-Object（または偽の値）を提供する場合、[compression](https://www.npmjs.com/package/compression) ミドルウェアが利用されます（それぞれのオプションがあります）。
+Object を設定する場合、[compression](https://www.npmjs.com/package/compression) がミドルウェアとして利用され、そのオプションとして参照されます。
 
 独自の圧縮ミドルウェアを使用したい場合は、直接参照することができます。(f.ex. `otherComp({ myOptions: 'example' })`)
 
