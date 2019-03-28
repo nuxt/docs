@@ -15,6 +15,8 @@ const readFile = promisify(fs.readFile)
 
 const githubHook = require('./gh-hook')
 
+const defaultLang = 'en'
+
 const send = micro.send
 
 // Use highlight.js for code blocks
@@ -40,6 +42,12 @@ renderer.heading = (text, level) => {
     '</a>' + text + '</h' + level + '>'
 }
 marked.setOptions({ renderer })
+
+// Partial renderer for homepage object
+const partialRenderer = new marked.Renderer()
+partialRenderer.paragraph = (text) => {
+  return text + '<br>'
+}
 
 // Fetch releases
 let RELEASES = []
@@ -103,17 +111,19 @@ async function getFiles(cwd) {
   await getMenu(cwd)
   // Construct the lang object
   await getLanguages(cwd)
+  // Construct the homepage object
+  await getHomepage(cwd)
 }
 
 // Get doc file and sent back it's attributes and html body
-async function getDocFile(path, cwd) {
+async function getDocFile(path, cwd, parseOptions) {
   cwd = cwd || process.cwd()
   let file = await readFile(resolve(cwd, path), 'utf-8')
   // transform markdown to html
   file = fm(file)
   _DOC_FILES_[path] = {
     attrs: file.attributes,
-    body: marked(file.body)
+    body: marked(file.body, parseOptions)
   }
   return _DOC_FILES_[path]
 }
@@ -176,6 +186,54 @@ async function getLanguages(cwd) {
   _LANG_ = tmpLang
 }
 
+// Get homepage files and create the homepage object
+let _HOMEPAGE_ = {}
+
+async function getHomepage(cwd) {
+  consola.info('Building homepage object...')
+  cwd = cwd || process.cwd()
+  const homepagePaths = await glob('*/homepage/*.md', {
+    cwd: cwd,
+    ignore: 'node_modules/**/*',
+    nodir: true
+  })
+  const tmpHomepage = {}
+  const promises = []
+  homepagePaths.forEach((path) => {
+    const lang = path.split('/')[0]
+    const homepage = path.split('/')[1]
+    const part = path.split('/')[2].replace(/.md$/, '')
+    const parseOptions = {
+      renderer: partialRenderer
+    }
+    const promise = getDocFile(path, cwd, parseOptions)
+    promise.then((file) => {
+      if (!tmpHomepage[lang]) {
+        tmpHomepage[lang] = {}
+      }
+      tmpHomepage[lang][part] = file
+    })
+    promises.push(promise)
+  })
+  await Promise.all(promises)
+
+  // Copy fallback resource from defaultLang: en
+  // Target check uses _LANG_, */lang.json
+  Object.keys(_LANG_).map((lang) => {
+    Object.keys(tmpHomepage[defaultLang]).map((part) => {
+      if (!tmpHomepage[lang]) {
+        tmpHomepage[lang] = {}
+      }
+      if (!tmpHomepage[lang][part]) {
+        tmpHomepage[lang][part] = tmpHomepage[defaultLang][part]
+        tmpHomepage[lang][part]['attrs']['fallback'] = true
+      }
+    })
+  })
+
+  _HOMEPAGE_ = tmpHomepage
+}
+
 // watch file changes
 function watchFiles() {
   consola.info('Watch files changes...')
@@ -199,6 +257,11 @@ function watchFiles() {
     .on('add', () => getLanguages())
     .on('change', () => getLanguages())
     .on('unlink', () => getLanguages())
+  // Homepage
+  chokidar.watch('*/homepage/*.md', options)
+    .on('add', () => getHomepage())
+    .on('change', () => getHomepage())
+    .on('unlink', () => getHomepage())
 }
 
 // Server handle request method
@@ -249,6 +312,19 @@ const server = micro(async function (req, res) {
     }
 
     return send(res, 200, _LANG_)
+  }
+  // Homepgae
+  if (req.url.indexOf('/homepage') === 0) {
+    const lang = req.url.split('/')[2]
+    if (lang && _HOMEPAGE_[lang]) {
+      return send(res, 200, _HOMEPAGE_[lang])
+    }
+
+    if (lang) {
+      return send(res, 404, 'Language not found')
+    }
+
+    return send(res, 200, _HOMEPAGE_)
   }
 
   // remove first /
