@@ -1,15 +1,15 @@
 ---
-title: "AWS S3 と Cloudfront によるデプロイ"
-description: "S3 と Cloudfront を使用した AWS での静的ホスティング"
+title: "AWS S3 と CloudFront によるデプロイ"
+description: "S3 と CloudFront を使用した AWS での静的ホスティング"
 ---
 
-# S3 と Cloudfront を使用して AWS へデプロイするには？
+# S3 と CloudFront を使用して AWS へデプロイするには？
 
 AWS は Amazon Web Services です。
 S3 は、静的サイトホスティング用に設定できる静的ストレージです。
-Cloudfront は、AWS の CDN（コンテンツ配信ネットワーク）です。
+CloudFront は、AWS の CDN（コンテンツ配信ネットワーク）です。
 
-**静的に生成された** Nuxt アプリケーションを、S3 と Cloudfront を使用して AWS 上にホスティングする方法は強力かつ安価です。 
+**静的に生成された** Nuxt アプリケーションを、S3 と CloudFront を使用して AWS 上にホスティングする方法は強力かつ安価です。
 
 > AWS では少額の利用料が積算して高額の請求を受けることがあります。 もし抜けているステップがあれば、ぜひこのドキュメントを更新するPRを送ってください。
 
@@ -31,13 +31,13 @@ Cloudfront は、AWS の CDN（コンテンツ配信ネットワーク）です�
 ## AWS のセットアップ
 
   1. S3 バケットを作成し、静的サイトホスティング用に設定する
-  2. cloudfront distribution を作成する
+  2. CloudFront distribution を作成する
   3. セキュリティアクセスを設定する
   4. プロジェクトにビルドスクリプトを設定する
   
-### 1. AWS S3 バケットの設定と 2. Cloudfront Distribution の設定
+### 1. AWS S3 バケットの設定と 2. CloudFront Distribution の設定
 
-ステップ 1 と 2 については、この [S3 と Cloudfront をセットアップするためのチュートリアル](https://reidweb.com/2017/02/06/cloudfront-cdn-tutorial/)に従ってください。
+ステップ 1 と 2 については、この [S3 と CloudFront をセットアップするためのチュートリアル](https://reidweb.com/2017/02/06/cloudfront-cdn-tutorial/)に従ってください。
 
 あなたは今このデータを持っているはずです:
   - AWS_BUCKET_NAME="example.com" 
@@ -47,11 +47,11 @@ Cloudfront は、AWS の CDN（コンテンツ配信ネットワーク）です�
 
 ステップ 3 では、 以下の事が可能なユーザーが必要です:
   - バケットのコンテンツを更新する
-  - cloudfront distribution でのキャッシュ削除（変更を素早くユーザに伝播させる）
+  - CloudFront distribution でのキャッシュ削除（変更を素早くユーザに伝播させる）
 
 [このポリシーを使用してプログラムのユーザーを作成する](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html):
 
-> 注: 下の二つの `example.com` をあなたの S3 バケット名に置き換えてください。 このポリシーでは、指定されたバケットにプッシュすること、cloudfront distribution でのキャッシュ削除が可能になります。
+> 注: 下の二つの `example.com` をあなたの S3 バケット名に置き換えてください。 このポリシーでは、指定されたバケットにプッシュすること、CloudFront distribution でのキャッシュ削除が可能になります。
 
 ``` json
 {
@@ -149,7 +149,7 @@ var config = {
 
   // 任意
   deleteOldVersions: false,                 // PRODUCTION で使用しない
-  distribution: process.env.AWS_CLOUDFRONT, // Cloudfront distribution ID
+  distribution: process.env.AWS_CLOUDFRONT, // CloudFront distribution ID
   region: process.env.AWS_DEFAULT_REGION,
   headers: { /*'Cache-Control': 'max-age=315360000, no-transform, public',*/ },
 
@@ -158,7 +158,7 @@ var config = {
   indexRootPath: true,
   cacheFileName: '.awspublish',
   concurrentUploads: 10,
-  wait: true,  // Cloudfront のキャッシュ削除が完了するまでの時間 (約30〜60秒)
+  wait: true,  // CloudFront のキャッシュ削除が完了するまでの時間 (約30〜60秒)
 }
 
 gulp.task('deploy', function() {
@@ -173,10 +173,10 @@ gulp.task('deploy', function() {
 
   // CDN のキャッシュを削除する
   if (config.distribution) {
-    console.log('Configured with Cloudfront distribution');
+    console.log('Configured with CloudFront distribution');
     g = g.pipe(cloudfront(config));
   } else {
-    console.log('No Cloudfront distribution configured - skipping CDN invalidation');
+    console.log('No CloudFront distribution configured - skipping CDN invalidation');
   }
 
   // 削除したファイルを同期する
@@ -259,7 +259,7 @@ server-bundle.json  306 kB          [emitted]
   nuxt:generate Generate done +0ms
 [21:25:27] Using gulpfile ~/scm/example.com/www/gulpfile.js
 [21:25:27] Starting 'deploy'...
-Configured with Cloudfront distribution
+Configured with CloudFront distribution
 [21:25:27] [cache]  README.md
 [21:25:27] [cache]  android-chrome-192x192.png
 [21:25:27] [cache]  android-chrome-512x512.png
@@ -292,10 +292,10 @@ Configured with Cloudfront distribution
 [21:25:38] [update] how/index.html
 [21:25:43] [create] videos/flag.webm
 [21:25:43] [update] index.html
-[21:25:43] Cloudfront invalidation created: I16NXXXXX4JDOA
+[21:25:43] CloudFront invalidation created: I16NXXXXX4JDOA
 [21:26:09] Finished 'deploy' after 42 s
 ```
 
 `deploy.sh` はまず `nuxt generate` を実行し、環境変数を設定して `gulp deploy` を実行します。
 
-`Cloudfront invalidation created：XXXX` は cloudfront invalidation を行う npm パッケージからの唯一の出力です。 それが表示されない場合は、動作していません。
+`CloudFront invalidation created：XXXX` は CloudFront invalidation を行う npm パッケージからの唯一の出力です。 それが表示されない場合は、動作していません。
