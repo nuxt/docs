@@ -11,49 +11,52 @@ CloudFront は、AWS の CDN（コンテンツ配信ネットワーク）です�
 
 **静的に生成された** Nuxt アプリケーションを、S3 と CloudFront を使用して AWS 上にホスティングする方法は強力かつ安価です。
 
-> AWS では少額の利用料が積算して高額の請求を受けることがあります。 もし抜けているステップがあれば、ぜひこのドキュメントを更新するPRを送ってください。
+> AWS では少額の利用料が積算して高額の請求を受けることがあります。もし抜けているステップがあれば、ぜひこのドキュメントを更新する PR を送ってください。
 
 ## 概要
 
-デプロイのために、 [Gulp](https://gulpjs.com/) ビルドシステムを使います。 `Gulp` は、私たちが使うことができる手軽で実用性を備えた成熟したビルドシステムです。
+デプロイのために、[Gulp](https://gulpjs.com/) ビルドシステムを使います。 `Gulp` は、私たちが使うことができる手軽で実用性を備えた成熟したビルドシステムです。
 
-  - [gulp](https://www.npmjs.com/package/gulp)
-  - [gulp-awspublish](https://www.npmjs.com/package/gulp-awspublish)
-  - [gulp-cloudfront-invalidate-aws-publish](https://www.npmjs.com/package/gulp-cloudfront-invalidate-aws-publish)
-  - [concurrent-transform](https://www.npmjs.com/package/concurrent-transform) (for parallel uploads)
+- [gulp](https://www.npmjs.com/package/gulp)
+- [gulp-awspublish](https://www.npmjs.com/package/gulp-awspublish)
+- [gulp-cloudfront-invalidate-aws-publish](https://www.npmjs.com/package/gulp-cloudfront-invalidate-aws-publish)
+- [concurrent-transform](https://www.npmjs.com/package/concurrent-transform) (for parallel uploads)
 
 私たちのデプロイスクリプトでは、以下の環境変数を設定する必要があります:
-  - AWS_BUCKET_NAME="example.com" 
-  - AWS_CLOUDFRONT="UPPERCASE"
-  - AWS_ACCESS_KEY_ID="key" 
-  - AWS_SECRET_ACCESS_KEY="secret" 
+
+- AWS_BUCKET_NAME="example.com"
+- AWS_CLOUDFRONT="UPPERCASE"
+- AWS_ACCESS_KEY_ID="key"
+- AWS_SECRET_ACCESS_KEY="secret"
 
 ## AWS のセットアップ
 
-  1. S3 バケットを作成し、静的サイトホスティング用に設定する
-  2. CloudFront distribution を作成する
-  3. セキュリティアクセスを設定する
-  4. プロジェクトにビルドスクリプトを設定する
+1. S3 バケットを作成し、静的サイトホスティング用に設定する
+2. CloudFront distribution を作成する
+3. セキュリティアクセスを設定する
+4. プロジェクトにビルドスクリプトを設定する
   
 ### 1. AWS S3 バケットの設定と 2. CloudFront Distribution の設定
 
 ステップ 1 と 2 については、この [S3 と CloudFront をセットアップするためのチュートリアル](https://reidweb.com/2017/02/06/cloudfront-cdn-tutorial/)に従ってください。
 
 あなたは今このデータを持っているはずです:
-  - AWS_BUCKET_NAME="example.com" 
-  - AWS_CLOUDFRONT="UPPERCASE"
+
+- AWS_BUCKET_NAME="example.com"
+- AWS_CLOUDFRONT="UPPERCASE"
 
 ### 3. セキュリティアクセスを設定する
 
 ステップ 3 では、 以下の事が可能なユーザーが必要です:
-  - バケットのコンテンツを更新する
-  - CloudFront distribution でのキャッシュ削除（変更を素早くユーザに伝播させる）
+
+- バケットのコンテンツを更新する
+- CloudFront distribution でのキャッシュ削除（変更を素早くユーザに伝播させる）
 
 [このポリシーを使用してプログラムのユーザーを作成する](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html):
 
-> 注: 下の二つの `example.com` をあなたの S3 バケット名に置き換えてください。 このポリシーでは、指定されたバケットにプッシュすること、CloudFront distribution でのキャッシュ削除が可能になります。
+> 注: 下の二つの `example.com` をあなたの S3 バケット名に置き換えてください。このポリシーでは、指定されたバケットにプッシュすること、CloudFront distribution でのキャッシュ削除が可能になります。
 
-``` json
+```json
 {
     "Version": "2012-10-17",
     "Statement": [ {
@@ -90,25 +93,28 @@ CloudFront は、AWS の CDN（コンテンツ配信ネットワーク）です�
 }
 ```
 
-次に [アクセスキーとシークレットアクセスキーを取得します](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)。
+次に[アクセスキーとシークレットアクセスキーを取得します](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)。
 
-あなたは今このデータを持っているはずです：
-  - AWS_ACCESS_KEY_ID="key" 
-  - AWS_SECRET_ACCESS_KEY="secret" 
+あなたは今このデータを持っているはずです:
+
+- AWS_ACCESS_KEY_ID="key"
+- AWS_SECRET_ACCESS_KEY="secret"
 
 ### 4. プロジェクトのビルドスクリプトをセットアップする
 
 4.1) プロジェクトとコマンドラインに Gulp を追加します。
-``` bash
+
+```bash
 npm install --save-dev gulp gulp-awspublish gulp-cloudfront-invalidate-aws-publish concurrent-transform
 npm install -g gulp
 ```
 
 4.2) `deploy.sh` スクリプトを作成します。 詳細は [nvm (node version manager)](https://github.com/creationix/nvm) を参照して下さい。
-``` bash
+
+```bash
 #!/bin/bash
 
-# nvm (node version manager) のロード、node のインストール (バージョン指定は .nvmrc ファイルにある)、 npm パッケージのインストール
+# nvm (node version manager) のロード、node のインストール（バージョン指定は .nvmrc ファイルにある）、 npm パッケージのインストール
 [ -s "$HOME/.nvm/nvm.sh" ] && source "$HOME/.nvm/nvm.sh" && nvm use
 # 既にインストールされていなければ、 npm をインストールする
 [ ! -d "node_modules" ] && npm install
@@ -117,8 +123,9 @@ npm run generate
 AWS_ACCESS_KEY_ID="key" AWS_SECRET_ACCESS_KEY="secret" AWS_BUCKET_NAME="example.com" AWS_CLOUDFRONT="UPPERCASE" gulp deploy
 ```
 
-4.3) `deploy.sh` を実行可能にし、.gitignore に追記します。　
-``` bash
+4.3) `deploy.sh` を実行可能にし、.gitignore に追記します。
+
+```bash
 chmod +x deploy.sh
 echo "
 # Don't commit build files
@@ -132,7 +139,7 @@ deploy.sh
 
 4.4) `gulpfile.js` をビルドスクリプトと共に作成します。
 
-``` javascript
+```javascript
 var gulp = require('gulp');
 var awspublish = require('gulp-awspublish');
 var cloudfront = require('gulp-cloudfront-invalidate-aws-publish');
@@ -158,7 +165,7 @@ var config = {
   indexRootPath: true,
   cacheFileName: '.awspublish',
   concurrentUploads: 10,
-  wait: true,  // CloudFront のキャッシュ削除が完了するまでの時間 (約30〜60秒)
+  wait: true,  // CloudFront のキャッシュ削除が完了するまでの時間（約30〜60秒）
 }
 
 gulp.task('deploy', function() {
@@ -168,7 +175,7 @@ gulp.task('deploy', function() {
 
   var g = gulp.src('./' + config.distDir + '/**');
     // publisher は、上記で指定した Content-Length、Content-Type、および他のヘッダーを追加する
-    // 指定されていない場合、 x-amz-acl はデフォルトで public-read に設定される
+    // 指定されていない場合、x-amz-acl はデフォルトで public-read に設定される
   g = g.pipe(parallelize(publisher.publish(config.headers), config.concurrentUploads))
 
   // CDN のキャッシュを削除する
@@ -188,15 +195,18 @@ gulp.task('deploy', function() {
   return g;
 });
 ```
+
 4.5) デプロイとデバッグ
 
 実行する:
-``` bash
+
+```bash
 ./deploy.sh
 ```
 
 次のような出力が得られます:
-```
+
+```bash
 $ ./deploy.sh                                                                                                                                                          Mod master
 
 Found '/home/michael/scm/example.com/www/.nvmrc' with version <8>
@@ -211,7 +221,7 @@ Now using node v8.11.2 (npm v5.6.0)
   nuxt:build Generating files... +36ms
   nuxt:build Generating routes... +10ms
   nuxt:build Building files... +24ms
-  ████████████████████ 100% 
+  ████████████████████ 100%
 
 Build completed in 7.009s
 
