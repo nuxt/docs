@@ -37,7 +37,6 @@ config.dev = false
 
 const nuxt = new Nuxt(config)
 
-
 nuxt.ready()
 .then(() => {
   return nuxt.renderAndGetWindow('http://localhost:3000')
