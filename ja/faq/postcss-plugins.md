@@ -5,7 +5,8 @@ description: PostCSS プラグインを追加するには？
 
 # PostCSS プラグインを追加するには？
 
-`nuxt.config.js` ファイル内に次のように記述します:
+### 推奨する方法
+あなたのプロジェクトディレクトリに `postcss.config.js` が存在する場合は、リネームか削除をします。 それから、 `nuxt.config.js` ファイル内に次のように記述します:
 
 ```js
 export default {
@@ -28,5 +29,17 @@ export default {
       }
     }
   }
+}
+```
+
+### 従来の方法
+`postcss.config.js` を使用します。例:
+
+```
+const join = require('path').join
+const tailwindJS = join(__dirname, 'tailwind.js')
+
+module.exports = {
+  plugins: [require('tailwindcss')(tailwindJS), require('autoprefixer')]
 }
 ```
