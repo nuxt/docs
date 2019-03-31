@@ -148,7 +148,7 @@ npm run generate
 gulp deploy
 ```
 
-4.2) `deploy.sh` を実行可能にし、.gitignore に追記します。（ `deploy.sh` にはシークレットアクセスキーがあるため）
+4.2) `deploy.sh` を実行可能にし、.gitignore に追記します。（`deploy.sh` にはシークレットアクセスキーがあるため）
 
 ```bash
 chmod +x deploy.sh
