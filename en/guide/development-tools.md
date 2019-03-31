@@ -83,6 +83,7 @@ test.before('Init Nuxt.js', async t => {
   config.dev = false // production build
   config.mode = 'universal' // Isomorphic application
   nuxt = new Nuxt(config)
+  await nuxt.ready()
   await new Builder(nuxt).build()
   nuxt.listen(4000, 'localhost')
 })
