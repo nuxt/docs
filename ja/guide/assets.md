@@ -3,12 +3,12 @@ title: アセット
 description: デフォルトでは、Nuxt は vue-loader、file-loader、url-loader webpack ローダーを使用して、強力なアセットを提供します。静的アセットには静的ディレクトリを使用することもできます。
 ---
 
-> By default, Nuxt uses vue-loader, file-loader and url-loader webpack loaders for strong assets serving. You can also use the `static` directory for static assets.
+> デフォルトでは、Nuxt は vue-loader、file-loader、url-loader webpack ローダーを使用して、強力なアセットを提供します。 静的アセットには `静的` ディレクトリを使用することもできます。
 
 ## Webpack
 
-[vue-loader](http://vue-loader.vuejs.org/) automatically processes your style and template files with `css-loader` and the Vue template compiler out of the box.
-In this compilation process, all asset URLs such as `<img src="...">`, `background: url(...)` and CSS `@import` are resolved as module dependencies.
+[vue-loader](http://vue-loader.vuejs.org/) は `css-loader` と `vue-template-compiler` を用いて、スタイルやテンプレートファイルを自動的に処理します。
+このコンパイル処理の中で、 `<img src="...">` や `background: url(...)` や CSS `@import` などのすべてのアセット URL はモジュールの依存関係として解決されます。
 
 例えば、次のようなファイル構成があるとします:
 
@@ -19,17 +19,16 @@ In this compilation process, all asset URLs such as `<img src="...">`, `backgrou
 ----| index.vue
 ```
 
-If you use `url('~assets/image.png')` in your CSS, it will be *translated* into `require('~/assets/image.png')`.
+CSS で `url('~assets/image.png')` と書いた場合、それは `require('~/assets/image.png')` に変換されます。
 
 <div class="Alert Alert--orange">
 
-**Warning:** Starting from Nuxt 2.0 the `~/` alias won't be resolved correctly in your CSS files.
-You must use `~assets` (without a slash) or the `@` alias in `url` CSS references, i.e. `background: url("~assets/banner.svg")`
-
+**Warning:** Nuxt 2.0からは `~/` エイリアスはCSSファイルで正しく解決されないでしょう。
+CSSの参照には、`~assets` (スラッシュなし)か、`@` のエイリアスを使わなければなりません。 例：`background: url("~assets/banner.svg")`
 </div>
 
 
-Or if you reference that image in your `pages/index.vue`:
+`pages/index.vue`で画像を参照するなら:
 
 ```html
 <template>
@@ -45,12 +44,12 @@ createElement('img', { attrs: { src: require('~/assets/image.png') }})
 
 `.png` は JavaScript ファイルではないため、Nuxt.js は [file-loader](https://github.com/webpack/file-loader) と [url-loader](https://github.com/webpack/url-loader) を使ってそれらを処理できるよう webpack を設定します。
 
-The benefits of these loaders are:
+これらのローダーを利用する利点:
 
-- `file-loader` lets you designate where to copy and place the asset file, and how to name it using version hashes for better caching. In production, you will benefit from long-term caching by default!
-- `url-loader` allows you to conditionally inline a file as base-64 data URL if they are smaller than a given threshold. This can reduce a number of HTTP requests for trivial files. If the file is larger than the threshold, it automatically falls back to file-loader.
+- `file-loader` は、アセットファイルをコピー・配置する場所と、キャッシュ改善のためにバージョンハッシュを用いてファイル名を指定することができます。本番環境では、デフォルトで長期キャッシングの恩恵を受けるでしょう。
+- `url-loader` は、指定した閾値よりも小さい場合に、Base64 データ URL として条件付きでファイルに埋め込むことができます。これにより、小さなファイル取得のための HTTP リクエスト数を減らすことができます。もし閾値よりも大きい場合は、file-loader に自動的にフォールバックします。
 
-For those two loaders, the default configuration is:
+これら2つのローダーのデフォルトの設定は次の通りです。:
 
 ```js
 // https://github.com/nuxt/nuxt.js/blob/dev/packages/webpack/src/config/base.js#L297-L316
@@ -74,9 +73,9 @@ For those two loaders, the default configuration is:
 ]
 ```
 
-Which means that every file below 1 KB will be inlined as base-64 data URL.
-Otherwise, the image/font will be copied in its corresponding folder (under the `.nuxt` directory)
-with a name containing a version hash for better caching.
+つまり、1 KB 未満のすべてのファイルは Base64 データ URL としてインライン化されます。
+それ以外の場合、画像/フォントは、対応するフォルダ（ `.nuxt` ディレクトリの下）にコピーされ、
+より良いキャッシュのためにバージョンハッシュを含む名前が付けられます。
 
 アプリケーションを `nuxt` コマンドで起動するとき、`pages/index.vue` 内のテンプレートは下記のようになっており:
 
@@ -86,24 +85,23 @@ with a name containing a version hash for better caching.
 </template>
 ```
 
-Will be transformed into:
+そこから次のように生成されます:
 
 ```html
 <img src="/_nuxt/img/image.0c61159.png">
 ```
 
-If you want to change the loader configurations, please use [build.extend](/api/configuration-build#extend).
-
+ローダーの設定を変更したい場合は、[build.extend](/api/configuration-build#extend)を使用してください。
 
 ## Static
 
-If you don't want to use Webpack assets from the `assets` directory, you can create and use the `static` directory (in your project root folder).
+`assets` ディレクトリで webpack したくないアセットがある場合は、プロジェクトのルートディレクトリに `static` ディレクトリ(プロジェクトのルートフォルダに)を作成して利用することができます。
 
-All included files will be automatically served by Nuxt and are accessible through your project root URL. (`static/favicon.ico` will be available at `localhost:3000/favicon.ico`)
+これらのファイルは Nuxt によって自動的に提供され、プロジェクトのルート URL からアクセスできます。( `static/favicon.ico` は `localhost:3000/favicon.ico` で利用することができます。)
 
 このオプションは `robots.txt` や `sitemap.xml`、`CNAME`（GitHub Pages などで使う）などのファイルの扱いに役立ちます。
 
-In your code, you can then reference these files relative to the root (`/`):
+あなたのコードでは、それらのファイルを `/` を基準に参照することができます。:
 
 ```html
 <!-- 静的ディレクトリにある静的イメージ  -->
