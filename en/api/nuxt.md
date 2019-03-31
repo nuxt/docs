@@ -27,12 +27,15 @@ const config = require('./nuxt.config.js')
 // Create a new Nuxt instance
 const nuxt = new Nuxt(config)
 
-// Enable live build & reloading on dev
-if (nuxt.options.dev) {
-  new Builder(nuxt).build()
-}
+nuxt.ready()
+.then(() => {
+  // Enable live build & reloading on dev
+  if (nuxt.options.dev) {
+    new Builder(nuxt).build()
+  }
 
-// We can use `nuxt.render(req, res)` or `nuxt.renderRoute(route, context)`
+  // We can use `nuxt.render(req, res)` or `nuxt.renderRoute(route, context)`
+})
 ```
 
 You can take a look at the [nuxt-express](https://github.com/nuxt/express) and [adonuxt](https://github.com/nuxt/adonuxt) starters to get started quickly.
