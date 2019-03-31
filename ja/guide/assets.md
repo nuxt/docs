@@ -104,7 +104,7 @@ createElement('img', { attrs: { src: require('~/assets/image.png') }})
 あなたのコードでは、それらのファイルを `/` を基準に参照することができます。:
 
 ```html
-<!-- 静的ディレクトリにある静的イメージ  -->
+<!-- static ディレクトリにある静的イメージ  -->
 <img src="/my-image.png"/>
 
 <!-- assets ディレクトリにある webpack されたイメージ -->
