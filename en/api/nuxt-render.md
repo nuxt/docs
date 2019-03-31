@@ -27,17 +27,21 @@ const config = require('./nuxt.config.js')
 config.dev = !isProd
 const nuxt = new Nuxt(config)
 
-// Render every route with Nuxt.js
-app.use(nuxt.render)
+// Await for initialize Nuxt
+nuxt.ready()
+.then(() => {
+  // Render every route with Nuxt.js
+  app.use(nuxt.render)
 
-// Build only in dev mode with hot-reloading
-if (config.dev) {
-  new Builder(nuxt).build()
-  .then(listen)
-}
-else {
-  listen()
-}
+  // Build only in dev mode with hot-reloading
+  if (config.dev) {
+    new Builder(nuxt).build()
+    .then(listen)
+  }
+  else {
+    listen()
+  }
+})
 
 function listen() {
   // Listen the server
