@@ -13,7 +13,7 @@ description: あなたの Nuxt アプリケーションためのモジュール�
 例 (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   modulesDir: ['../../node_modules']
 }
 ```
