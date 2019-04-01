@@ -24,7 +24,7 @@ description: カスタムディレクトリを定義します。
 例（`nuxt.config.js`）:
 
 ```js
-module.exports = {
+export default {
   dir: {
     assets: 'custom-assets',
     layouts: 'custom-layouts',
