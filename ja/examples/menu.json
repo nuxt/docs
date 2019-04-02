@@ -40,7 +40,7 @@
         "to": "/middleware"
       },
       {
-        "name": "Named Views",
+        "name": "名前付きビュー",
         "to": "/named-views"
       },
       {
