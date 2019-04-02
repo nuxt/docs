@@ -26,6 +26,7 @@ const config = require('./nuxt.config.js')
 
 // Create a new Nuxt instance
 const nuxt = new Nuxt(config)
+await nuxt.ready()
 
 // Enable live build & reloading on dev
 if (nuxt.options.dev) {
