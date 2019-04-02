@@ -16,6 +16,7 @@
       { "name": "布 局", "to": "/layouts" },
       { "name": "中间件", "to": "/middleware" },
       { "name": "插 件", "to": "/plugins" },
+      { "name": "Named Views", "to": "/named-views" },
       { "name": "嵌套路由", "to": "/nested-routes" },
       { "name": "路由过渡动效", "to": "/routes-transitions" }
     ]

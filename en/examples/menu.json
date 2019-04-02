@@ -40,6 +40,10 @@
         "to": "/middleware"
       },
       {
+        "name": "Named Views",
+        "to": "/named-views"
+      },
+      {
         "name": "Nested Routes",
         "to": "/nested-routes"
       },

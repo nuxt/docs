@@ -11,7 +11,7 @@ description: Netlify へデプロイするには？
 
 ## はじめに
 
-Netlify ダッシュボードの *"New site from Git"* ボタンを押下します。レポジトリホストで認証を行い、デプロイするレポジトリを選択、続行します。ステップ 3 : *"ビルドオプションとデプロイ！"*に進んでください。
+Netlify ダッシュボードの _"New site from Git"_ ボタンを押下します。レポジトリホストで認証を行い、デプロイするレポジトリを選択、続行します。ステップ 3 : _"ビルドオプションとデプロイ！"_ に進んでください。
 
 ## 操作：
 
@@ -19,8 +19,8 @@ Netlify ダッシュボードの *"New site from Git"* ボタンを押下しま�
 2. **ビルドコマンド：** `npm run generate`
 3. **公開ディレクトリ：** `dist`
 
-> オプションで、*"Advanced"* ボタンを使用して ENV 変数を追加することができます。これらは代替 API 資格情報などを交換する際に役立ちます。Netlify はまた、ビルド時に Nuxt.js アプリケーションで読み取れる [デフォルトの ENV 変数](https://www.netlify.com/docs/build-settings/#build-environment-variables) を提供します。
+> オプションで、_"Advanced"_ ボタンを使用して ENV 変数を追加することができます。これらは代替 API 資格情報などを交換する際に役立ちます。Netlify はまた、ビルド時に Nuxt.js アプリケーションで読み取れる [デフォルトの ENV 変数](https://www.netlify.com/docs/build-settings/#build-environment-variables) を提供します。
 
-*"Deploy site"* をクリックすると、すぐにデプロイが開始されます。Netlify サイトにランダムな値の URL が割り当てられ、`nuxt generate` コマンドを使用してデプロイされます。
+_"Deploy site"_ をクリックすると、すぐにデプロイが開始されます。Netlify サイトにランダムな値の URL が割り当てられ、`nuxt generate` コマンドを使用してデプロイされます。
 
 やりました！これで Nuxt.js アプリケーションは Netlify でホストされるようになりました！
