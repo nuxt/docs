@@ -60,9 +60,10 @@ It will ask you some questions:
 6. Add [EsLint](https://eslint.org/) to Lint your code on save.
 7. Add [Prettier](https://prettier.io/) to prettify your code on save.
 
-When answered, it will install all the dependencies so the next step is to launch the project with:
+When answered, it will install all the dependencies so the next step is to navigate to the project folder and launch it with:
 
 ```bash
+$ cd <project-name>
 $ npm run dev
 ```
 

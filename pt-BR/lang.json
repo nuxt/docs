@@ -39,9 +39,21 @@
       "title": "Nuxt.js - Aplicações Vue.js universais",
       "description": "Nuxt.js é um framework minimalista para aplicações Vue.js com recursos\ncomo SSR(Server Side Rendering ), code-splitting, hot-reloading, gerador de\narquivos estáticos e muito mais!"
     },
+    "welcome": {
+      "app_types_prefix": "For ",
+      "app_types": ["Universal Applications", "Static Generated Applications", "Single Page Applications", "Desktop Applications", "Mobile Applications", "Progressive Web Apps"],
+      "app_types_suffix": "."
+    },
     "codesandbox_title": "Experimente o Nuxt.js online",
     "codesandbox_open": "Abrir no CodeSandBox.io",
-    "codesandbox_examples": "Veja mais exemplos"
+    "codesandbox_examples": "Veja mais exemplos",
+    "backer_partners": "Partners",
+    "backer_become_a_partner": "Become A Partner",
+    "backer_sponsors": "Sponsors",
+    "backer_become_a_sponsor": "Become A Sponsor",
+    "backer_backers": "Backers",
+    "backer_become_a_backer": "Become A Backer",
+    "backer_foundations": "Foundations"
   },
   "sponsors": {
     "title": "Patrocinadores",

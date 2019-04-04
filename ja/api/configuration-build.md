@@ -66,7 +66,7 @@ export default {
 - 型: `Boolean`
 - デフォルト: `false`
 
-> [uglifyjs-webpack-plugin](https://github.com/webpack-contrib/uglifyjs-webpack-plugin#options) と [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) でキャッシュを有効化します。
+> [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin#options) と [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) でキャッシュを有効化します。
 
 ## cssSourceMap
 
@@ -166,7 +166,7 @@ export default {
 {
   app: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
   chunk: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
-  css: ({ isDev }) => isDev ? '[name].js' : '[contenthash].css',
+  css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
   img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[hash:7].[ext]',
   font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[hash:7].[ext]',
   video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[hash:7].[ext]'
@@ -322,7 +322,7 @@ manifest の使い方をより理解するためには [webpack documentation](h
   - `false`
   - extractCSS が有効の場合は `{}`
 
-OptimizeCSSAssets プラグインのオプションです。.
+OptimizeCSSAssets プラグインのオプションです。
 
 [NMFR/optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin) を参照してください。
 
@@ -373,7 +373,8 @@ export default {
       'postcss-url': {},
       'postcss-preset-env': {},
       'cssnano': { preset: 'default' } // 開発モードでは無効化されています
-    }
+    },
+    order: 'cssnanoLast'
   }
   ```
 

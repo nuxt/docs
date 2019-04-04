@@ -40,6 +40,10 @@
         "to": "/middleware"
       },
       {
+        "name": "名前付きビュー",
+        "to": "/named-views"
+      },
+      {
         "name": "ネストされたルート",
         "to": "/nested-routes"
       },

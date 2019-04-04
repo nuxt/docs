@@ -66,3 +66,20 @@ description: 現在のページを表示します。
 > 子コンポーネントは、通常の Vue コンポーネントのようなプロパティも受け取ることができます。
 
 実際の例を見たいときは [ネストされたルートの例](/examples/nested-routes) を参照してください。
+
+## 名前付きビュー
+
+> Nuxt v2.4.0 で導入されました
+
+`<nuxt-child/>` は名前付きビューを描画するために `name` プロパティを受け入れます:
+
+```html
+<template>
+  <div>
+    <nuxt-child name="top" />
+    <nuxt-child />
+  </div>
+</template>
+```
+
+実際の例を見たいときは [名前付きビューの例](/examples/named-views) を参照してください。
