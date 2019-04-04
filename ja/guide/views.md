@@ -9,14 +9,11 @@ description: Views セクションでは、Nuxt.js アプリケーション（�
 
 ## アプリテンプレート
 
-> You can customize the HTML app template used by Nuxt.js to include scripts or conditional CSS classes.
-> Nuxt.js でメインドキュメントをカスタマイズできます。
+> スクリプトまたは条件付きの CSS クラスを含めるために Nuxt.js で使われる HTML アプリテンプレートをカスタマイズできます。
 
-To change the template, create an `app.html` file in the root folder of your project.
-HTML テンプレートを拡張するために、プロジェクトのルートディレクトリに `app.html` を作成します。
+テンプレートを変更するために、プロジェクトのルートフォルダに `app.html` ファイルを作成します。
 
-The default template used by Nuxt.js is:
-デフォルトのテンプレート:
+Nuxt.js 使われるデフォルトのテンプレート:
 
 ```html
 <!DOCTYPE html>
@@ -30,8 +27,7 @@ The default template used by Nuxt.js is:
 </html>
 ```
 
-One use case of using a custom app template is to add conditional CSS classes for IE:
-IE 用に条件付きの CSS クラスを追加する例:
+カスタムアプリテンプレートを使用して、IE 用に条件付きのCSSクラスを追加するユースケースのひとつ:
 
 ```html
 <!DOCTYPE html>
@@ -50,9 +46,8 @@ IE 用に条件付きの CSS クラスを追加する例:
 
 ## レイアウト
 
-Layouts are a great help when you want to change the look and feel of your Nuxt.js app.
-Whether you want to include a sidebar or having distinct layouts for mobile and desktop
-Nuxt.js では、メインレイアウトを拡張したり、`layouts` ディレクトリにレイアウトを追加することでカスタムレイアウトを作成したりすることができます。
+Nuxt.js アプリの外観を変更したい場合、レイアウトは非常に役立ちます。
+サイドバーを含めるか、モバイルとデスクトップ用に異なるレイアウトを使用するかです。
 
 ### デフォルトレイアウト
 
