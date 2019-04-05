@@ -139,7 +139,7 @@ export AWS_SECRET_ACCESS_KEY="secret"
 export AWS_BUCKET_NAME="example.com"
 export AWS_CLOUDFRONT="UPPERCASE"
 
-# nvm（node version manager）、node（.nvmrc 内のバージョン）をインストールし、npm パッケージをインストールします。
+# nvm（node version manager）を読み込み、node（.nvmrc 内のバージョン）をインストールし、npm パッケージをインストールします。
 [ -s "$HOME/.nvm/nvm.sh" ] && source "$HOME/.nvm/nvm.sh" && nvm use
 # まだインストールされていない場合は npm をインストールする
 [ ! -d "node_modules" ] && npm install
