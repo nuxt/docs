@@ -29,7 +29,7 @@ $ npx create-nuxt-app <project-name>
 Or with [yarn](https://yarnpkg.com/en/):
 
 ```bash
-yarn create nuxt-app <my-project>
+$ yarn create nuxt-app <my-project>
 ```
 
 It will ask you some questions:
@@ -60,9 +60,10 @@ It will ask you some questions:
 6. Add [EsLint](https://eslint.org/) to Lint your code on save.
 7. Add [Prettier](https://prettier.io/) to prettify your code on save.
 
-When answered, it will install all the dependencies so the next step is to launch the project with:
+When answered, it will install all the dependencies so the next step is to navigate to the project folder and launch it with:
 
 ```bash
+$ cd <project-name>
 $ npm run dev
 ```
 
@@ -111,7 +112,7 @@ The project needs a `package.json` file to specify how to start `nuxt`:
 Once the `package.json` has been created, add `nuxt` to the project via npm:
 
 ```bash
-npm install --save nuxt
+$ npm install --save nuxt
 ```
 
 ### The `pages` directory

@@ -215,7 +215,7 @@ export const mutations = {
 }
 ```
 
-Pour plus d'informations à propos des plugins, consultez la [documentation Vuex](https://vuex.vuejs.org/fr/plugins.html).
+Pour plus d'informations à propos des plugins, consultez la [documentation Vuex](https://vuex.vuejs.org/fr/guide/plugins.html).
 
 ## La méthode fetch
 

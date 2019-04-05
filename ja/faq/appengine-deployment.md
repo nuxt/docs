@@ -1,21 +1,21 @@
 ---
-title: Google App Engine Deployment
-description: How to deploy Nuxt.js on Google App Engine?
+title: Google App Engine へのデプロイ
+description: Nuxt.js を Google App Engine へデプロイするには？
 ---
 
-# How to deploy on Google App Engine?
+# Google App Engine へデプロイするには？
 
-Deploying to [Google App Engine](https://cloud.google.com/appengine/) is a fast and easy solution for hosting your universal Nuxt application on Google's Cloud Services.
+[Google App Engine](https://cloud.google.com/appengine/) へのデプロイは Google のクラウドサービスでユニバーサル Nuxt アプリケーションをホストするための迅速で簡単なソリューションです。
 
-In this guide, we build the application locally and then simply upload the entire project folder to Google App Engine. After the upload, Google App Engine will automatically start the `start` script in our package.json and your app will be available immediately.
+このガイドでは、アプリケーションをローカルに構築してから、プロジェクトフォルダ全体を Google App Engine にアップロードするまでを行います。アップロード後、Google App Engine は自動的に package.json の `start` スクリプトを起動するので、あなたのアプリケーションはすぐに利用可能となります。
 
-## Getting Started
+## はじめに
 
-Make sure you have a Google Cloud Account, a project and an empty Google App Engine app set up on [Google App Engine](https://cloud.google.com/appengine/). Furthermore, make sure to download and install the Cloud SDK (CLI) from Google as explained [here](https://cloud.google.com/sdk/) and log into your Google Cloud Account.
+[Google App Engine](https://cloud.google.com/appengine/) に Google クラウドアカウント、プロジェクト、空の Google App Engine アプリケーションが設定されていることを確認してください。さらに、[こちら](https://cloud.google.com/sdk/) の説明に従って Google から Cloud SDK(CLI) をダウンロードしてインストールし、Google クラウドアカウントにログインしてください。
 
-## Configure your application
+## アプリケーションの設定
 
-All you need to add to your universal Nuxt app for deploying it to the App Engine is a file called `app.yaml`. Create a new file with that name in your root project directory and add the following content:
+ユニバーサル Nuxt アプリケーションを App Engine にデプロイするために追加する必要があるのは、`app.yaml` というファイルだけです。ルートプロジェクトディレクトリにその名前の新しいファイルを作成し、次の内容を追加します:
 
 ```yaml
 runtime: nodejs10
@@ -41,19 +41,19 @@ env_variables:
   NODE_ENV: 'production'
 ```
 
-## Build and deploy the app
+## ビルドとデプロイ
 
-Now build your app with `npm run build`.
+さあ、あなたのアプリケーションを `npm run build` でビルドしてください。
 
-At this point, your app is ready to be uploaded to Google App Engine. Now just run the following command:
+これで、アプリケーションを Google App Engine にアップロードする準備が整いました。では、次のコマンドを実行してください:
 
 ```
 gcloud app deploy app.yaml --project <project-id>
 ```
 
-Voilà! Your Nuxt.js application is now hosted on Google App Engine!
+ほら！　Nuxt.js アプリケーションが Google App Engine 上にホストされました！
 
-## Further Information
+## 詳細
 
-- The `instance_class` attribute in your app.yaml file sets the class of your app instance. Instance F2 is not completely free, but has the minimum memory needed to run a Nuxt application.
-- Make sure to put the project-id and not the project-name in the deploy command. These are two different things - but easy to mix up.
+- app.yaml ファイルの `instance_class` 属性はアプリケーションのインスタンスクラスを設定します。F2 インスタンスは完全に無料ではありませんが、Nuxt アプリケーションを実行するために必要な最小限のメモリを有しています。
+- deploy コマンドには、必ず project-name ではなく project-id を入れてください。これら 2 つは異なるものです - しかし混同しやすいです。

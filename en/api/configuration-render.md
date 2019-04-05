@@ -41,7 +41,7 @@ See [etag](https://www.npmjs.com/package/etag) docs for possible options.
 - Type `Object`
   - Default: `{ threshold: 0 }`
 
-When providing an object (or a falsy value), the [compression](https://www.npmjs.com/package/compression) middleware
+When providing an object, the [compression](https://www.npmjs.com/package/compression) middleware
 will be used (with respective options).
 
 If you want to use your own compression middleware, you can reference it
@@ -108,7 +108,7 @@ It will add the router base to your static assets.
 
 **Caveats:**
 
-Some URL rewrites might respect the prefix.
+Some URL rewrites might not respect the prefix.
 
 ## dist
 - Type: `Object`

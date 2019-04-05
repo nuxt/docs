@@ -5,20 +5,20 @@ description: Nuxt.js の plugins オプションで Vue.js プラグインを使
 
 # plugins プロパティ
 
-- 型: `配列`
-  - 要素: `文字列` または `オブジェクト`
+- 型: `Array`
+  - 要素: `String` または `Object`
 
 オブジェクトの場合にはプロパティは次のとおり:
 
-- src: `文字列`（ファイルパス）
-- ssr: `ブーリアン`（デフォルトは `true`）*false のときは、クライアントサイドでのみファイルがインクルードされます*
+- src: `String`（ファイルパス）
+- ssr: `Boolean`（デフォルトは `true`）*false のときは、クライアントサイドでのみファイルがインクルードされます*
 
 > plugins プロパティを使うと Vue.js プラグインをメインアプリケーションに簡単に追加できます。
 
 例（`nuxt.config.js`）:
 
 ```js
-module.exports = {
+export default {
   plugins: ['~/plugins/vue-notifications']
 }
 ```

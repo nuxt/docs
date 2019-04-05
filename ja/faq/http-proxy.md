@@ -1,17 +1,17 @@
 ---
-title: Cross origin resource sharing
-description: How to share cross origin resource?
+title: クロスオリジンリソース共有
+description: クロスオリジンリソースを共有するには？
 ---
 
-# How to share cross-origin resource?
+# クロスオリジンリソースを共有するには？
 
-[The solution of cross origin resource sharing in Nuxt.js ](https://github.com/nuxt-community/proxy-module#readme)
+[Nuxt.js においてのクロスオリジンリソース共有の解決策](https://github.com/nuxt-community/proxy-module#readme)
 
 ```
 npm i @nuxtjs/proxy -D
 ```
 
-In nuxt.config.js 
+nuxt.config.js は以下のように記述します。
 
 ```
  modules: [

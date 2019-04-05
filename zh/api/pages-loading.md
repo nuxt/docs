@@ -1,6 +1,6 @@
 ---
 title: "API: loading 属性"
-description: `loading` 属性为您提供了禁用特定页面上的默认加载进度条的选项。
+description: "`loading` 属性为您提供了禁用特定页面上的默认加载进度条的选项。"
 ---
 
 # loading 属性

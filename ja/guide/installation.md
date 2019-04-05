@@ -29,7 +29,7 @@ $ npx create-nuxt-app <project-name>
 もしくは [yarn](https://yarnpkg.com/ja/) を使ってください:
 
 ```bash
-yarn create nuxt-app <my-project>
+$ yarn create nuxt-app <my-project>
 ```
 
 いくつか質問されます:
@@ -52,7 +52,7 @@ yarn create nuxt-app <my-project>
   - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
 3. 好きなテスティングフレームワークを選択します:
-  - None (後からでも追加できます)
+  - None (後からでも追加できます）
   - [Jest](https://github.com/facebook/jest)
   - [AVA](https://github.com/avajs/ava)
 4. [Nuxtのモードを選択します。(`Universal` または `SPA`)](https://nuxtjs.org/guide/release-notes#better-spa-experience)
@@ -111,7 +111,7 @@ $ cd <project-name>
 `package.json` を作成したら `nuxt` を npm でプロジェクトに追加しましょう:
 
 ```bash
-npm install --save nuxt
+$ npm install --save nuxt
 ```
 
 ### `pages` ディレクトリ

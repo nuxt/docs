@@ -5,7 +5,7 @@ description: フックは Nuxt モジュールで一般的に使われる Nuxt �
 
 # hooks プロパティ
 
-- 型: `オブジェクト`
+- 型: `Object`
 
 > フックは Nuxt モジュールで一般的に使われる [Nuxt イベントのリスナー](/api/internals) ですが、 `nuxt.config.js` の中でも利用できます。 より詳しくは [こちら](/api/internals) を参照してください。
 
@@ -50,7 +50,7 @@ export default {
 
 リダイレクトは、プロダクション用の Web サイトでは最適なユースケースではないかもしれませんが、これはフックを活用するのに役立ちます。
 
-まずはじめに、 [`router.base` を変更できます](/api/configuration-router#base)  
+まずはじめに、 [`router.base` を変更できます](/api/configuration-router#base)
 `nuxt.config.js` を更新してみましょう:
 
 ```js

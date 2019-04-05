@@ -37,6 +37,6 @@ export default {
 
 <div class="Alert Alert--orange">
 
-<b>Warning:</b> You **don't** have access of the component instance through `this` inside `asyncData` because it is called **before initiating** the component.
+<b>Warning:</b> You **don't** have access to the component instance through `this` inside `asyncData` because it is called **before initiating** the component.
 
 </div>

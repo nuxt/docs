@@ -5,7 +5,7 @@ description: ユニバーサルなウェブアプリケーションから静的�
 
 # generate プロパティ
 
-- 型: `オブジェクト`
+- 型: `Object`
 
 > ユニバーサルなウェブアプリケーションから静的なウェブアプリケーションの生成について設定します。
 
@@ -13,21 +13,21 @@ description: ユニバーサルなウェブアプリケーションから静的�
 
 ## dir
 
-- 型: `文字列`
+- 型: `String`
 - デフォルト: `'dist'`
 
 `nuxt generate` で作成されるディレクトリ名です。
 
 ## fallback
 
-- 型: `文字列` or `ブーリアン`
+- 型: `String` or `Boolean`
 - デフォルト: `'200.html'`
 
 SPA のフォールバックとなるパス。このファイルは、 generate されたサイトを静的サイトホスティングへデプロイする時に利用します。`mode: 'spa'` においてルーティングが存在しない場合、フォールバックされます。
 
 ## interval
 
-- 型: `数値`
+- 型: `Number`
 - デフォルト: `0`
 
 2つのレンダーの間でのインターバルで、ウェブアプリケーションからの潜在的な API に対して溢れでないようにするためのものです。
@@ -35,11 +35,11 @@ SPA のフォールバックとなるパス。このファイルは、 generate 
 ## minify
 
 - **非推奨です！**
-- 代わりに [build.html.minify](/api/configuration-build#html-minify) オプションを利用してください。
+- 代わりに [build.html.minify](/api/configuration-build#html-minify) オプションを利用してください
 
 ## routes
 
-- 型: `配列`
+- 型: `Array`
 
 generate コマンドでは [動的なルーティング](/guide/routing#動的なルーティング) は無視されます。
 
@@ -173,7 +173,7 @@ async asyncData ({ params, error, payload }) {
 
 ## subFolders
 
-- 型: `ブーリアン`
+- 型: `Boolean`
 - デフォルト: `true`
 
 デフォルトでは、 `nuxt generate` を実行すると、全てのルーティングに合わせたディレクトリと、 `index.html` が提供されます。
@@ -204,7 +204,7 @@ _Note: このオプションは、 [Netlify](https://netlify.com) をはじめ�
 
 ## concurrency
 
-- 型: `数値`
+- 型: `Number`
 - デフォルト: `500`
 
 `generate.concurrency` では、単一のスレッドで同時に生成されるルーティングの生成の数を設定します。

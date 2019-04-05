@@ -1,25 +1,25 @@
 ---
-title: "API: The modern Property"
-description: Build and server a modern bundle
+title: "API: modern プロパティ"
+description: モダンバンドルをビルドして配信する
 ---
 
-# The modern Property
+# modern プロパティ
 
-> This feature is inspired by [vue-cli modern mode](https://cli.vuejs.org/guide/browser-compatibility.html#modern-mode) 
+> この機能は [vue-cli modern モード](https://cli.vuejs.org/guide/browser-compatibility.html#modern-mode) にインスパイアされています
 
-- Type: `String` or `Boolean`
-  - Default: false
-  - Possible values:
-    - `'client'`: Serve both, the modern bundle `<script type="module">` and the legacy bundle `<script nomodule>` scripts, also provide a `<link rel="modulepreload">` for the modern bundle. Every browser that understands the `module` type will load the modern bundle while older browsers fall back to the legacy (transpiled) one.
-    - `'server'` or `true`: The Node.js server will check browser version based on the user agent and serve the corresponding modern or legacy bundle.
-    - `false`: Disable modern build
+- 型: `String` または `Boolean`
+  - デフォルト: false
+  - 受け取ることができる値:
+    - `'client'`: モダンバンドルの `<script type="module">` とレガシーバンドルの `<script nomodule>` のスクリプトを両方配信し、 また `<link rel="modulepreload">` をモダンバンドルのために提供します。 古いブラウザがレガシー (トランスパイルされた) なバンドルにフォールバックしている間に、 `module` タイプを理解するすべてのブラウザはモダンバンドルを読み込むでしょう。
+    - `'server'` または `true`: Node.js サーバがユーザエージェントをベースにブラウザのバージョンをチェックして、対応したモダンかレガシーどちらかのバンドルを配信するでしょう。
+    - `false`: モダンビルドを無効化します。
 
-The two versions of bundles are:
+2つのバージョンのバンドルについて:
 
-1. Modern bundle: targeting modern browsers that support ES modules
-1. Legacy bundle: targeting older browsers based on babel config (IE9 compatible by default).
+1. モダンバンドル: ES modules をサポートするモダンブラウザを対象にしています。
+2. レガシーバンドル: babel config (デフォルトでは IE9 互換) をベースにした古いブラウザを対象にしています。
 
-**Info:** you can use commands `nuxt build/start --modern=[type]` or `nuxt build/start -m=[type]` to build/start modern bundles, so you can specify modern commands inside the `package.json` scripts:
+**情報:** `nuxt build/start --modern=[type]` か `nuxt build/start -m=[type]` のコマンドを利用することでモダンバンドルでビルド/スタートし、`package.json` の scripts の中ではこのように modern コマンドを指定することができます:
 
 ```json
 {
@@ -29,6 +29,6 @@ The two versions of bundles are:
   }
 }
 ```
-**Note about *nuxt generate*:** The `modern` property also works with the `nuxt generate` command, but in this case only the `client` option is honored and will be selected automatically when launching the `nuxt generate --modern` command without providing any values.
+***nuxt generate* に関する注記:** `modern` プロパティは `nuxt generate` コマンドでも動作しますが、このケースでは `client` オプションだけが優先されて `nuxt generate --modern` コマンドを値無しで起動した時に自動で選択されるでしょう。
 
-> Please refer [Phillip Walton's excellent post](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) for more knowledge regarding modern builds.
+> モダンビルドについてもっと詳しくは [Phillip Walton's excellent post](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) を参照してください。

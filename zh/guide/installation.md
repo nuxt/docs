@@ -104,7 +104,7 @@ $ cd <项目名>
 
 一旦 `package.json` 创建好， 可以通过以下npm命令将 `nuxt` 安装至项目中：
 ```bash
-npm install --save nuxt
+$ npm install --save nuxt
 ```
 
 ### pages 目录

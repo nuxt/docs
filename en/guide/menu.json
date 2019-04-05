@@ -68,7 +68,7 @@
       {
         "to": "/assets", "name": "Assets",
         "contents": [
-          { "to": "#webpacked", "name": "Webpacked" },
+          { "to": "#webpack", "name": "Webpack" },
           { "to": "#static", "name": "Static" }
         ]
       },

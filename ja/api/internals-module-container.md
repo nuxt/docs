@@ -42,7 +42,7 @@ this.plugin('ready', async moduleContainer => {
 
 ### addTemplate (template)
 
-- **テンプレート**: `文字列` または `オブジェクト`
+- **テンプレート**: `String` または `Object`
     - `src`
     - `options`
     - `fileName`

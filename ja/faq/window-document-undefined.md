@@ -14,11 +14,3 @@ if (process.client) {
   require('external_library')
 }
 ```
-
-`nuxt.config.js` ファイル内で当該ライブラリを [vendor バンドル](/api/configuration-build#vendor) に加えておくのを忘れないでください。
-
-```js
-  build: {
-    vendor: ['external_library']
-  }
-```

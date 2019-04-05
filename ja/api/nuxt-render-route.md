@@ -5,14 +5,14 @@ description: 特定のルートをレンダリングします。その際にコ�
 
 # nuxt.renderRoute(route, context = {})
 
-- 型: `関数`
+- 型: `Function`
 - 引数:
-  1. `文字列`、レンダリングするルート
-  2. *オプション*、`オブジェクト`、付与するコンテキスト、利用できるキー: `req` 及び `res`
-- 戻り値: `プロミス`
-  - `html`: `文字列`
-  - `error`: `null` または `オブジェクト`
-  - `redirected`: `false` または `オブジェクト`
+  1. `String`、レンダリングするルート
+  2. *オプション*、`Object`、付与するコンテキスト、利用できるキー: `req` 及び `res`
+- 戻り値: `Promise`
+  - `html`: `String`
+  - `error`: `null` または `Object`
+  - `redirected`: `false` または `Object`
 
 > 特定のルートをレンダリングします。その際にコンテキストを渡すことができます。
 

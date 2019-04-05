@@ -5,14 +5,14 @@ description: watchers プロパティで監視設定を上書きできます。
 
 # watchers プロパティ
 
-- 型: `オブジェクト`
+- 型: `Object`
 - デフォルト: `{}`
 
 > nuxt.config.js 内の watchers プロパティで監視設定を上書きできます。
 
 ## chokidar
 
-- 型: `オブジェクト`
+- 型: `Object`
 - デフォルト: `{}`
 
 chokidar オプションについてより深く理解するには [chokidar API](https://github.com/paulmillr/chokidar#api) を参照してください。
