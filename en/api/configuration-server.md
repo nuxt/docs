@@ -26,8 +26,8 @@ This lets you specify the [host and port](/faq/host-port) for your Nuxt.js serve
 ## Example using HTTPS configuration
 
 ```js
-import path from 'path'
-import fs from 'fs'
+const path = require('path')
+const fs = require('fs')
 
 export default {
   server: {
