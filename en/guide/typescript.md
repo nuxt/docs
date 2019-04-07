@@ -22,7 +22,7 @@ yarn add -D @nuxt/typescript
 
 <div class="Alert Alert--gray">
 
-`@nuxt/typescript` ships typescript related dependencies and extends Nuxt core to enable runtime TypeScript support. 
+`@nuxt/typescript` ships typescript related dependencies and extends Nuxt core to enable runtime TypeScript support.
 
 </div>
 
@@ -113,7 +113,7 @@ import Post from '~/models/Post'
   },
   async asyncData () {
     let { data } = await axios.get(`https://my-api/posts`)
-    return { 
+    return {
       posts: data
     }
   }
@@ -128,7 +128,7 @@ You can use exact same logic for `layouts`.
 
 ## Linting with ESLint
 
-If you're using ESLint to lint your project, here is how you can make ESLint lint your TypeScript files. 
+If you're using ESLint to lint your project, here is how you can make ESLint lint your TypeScript files.
 
 <div class="Alert Alert--teal">
 
@@ -144,7 +144,7 @@ npm install -D @typescript-eslint/eslint-plugin
 yarn add -D @typescript-eslint/eslint-plugin
 ```
 
-Then, edit your ESLint configuration (`.eslintrc.js`) by adding the `@typescript-eslint` plugin and making `@typescript-eslint/parser` the default parser.  
+Then, edit your ESLint configuration (`.eslintrc.js`) by adding the `@typescript-eslint` plugin and making `@typescript-eslint/parser` the default parser.
 
 A minimal configuration should look like this :
 
@@ -156,7 +156,10 @@ module.exports = {
   },
   extends: [
     '@nuxtjs'
-  ]
+  ],
+  rules: {
+    '@typescript-eslint/no-unused-vars': 'error'
+  }
 }
 
 ```
