@@ -14,6 +14,11 @@
     "textlint:ja": "textlint --config ja/.textlintrc ja/**/*.md",
     "textlint:ja:fix": "yarn textlint:ja --fix --format diff"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "linters": {
       "ja/**/*.md": [
@@ -63,6 +68,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^4.7.1",
+    "husky": "^1.3.1",
     "lint-staged": "^8.1.5",
     "nodemon": "^1.18.10",
     "textlint": "^11.2.3",
