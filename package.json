@@ -14,6 +14,14 @@
     "textlint:ja": "textlint --config .textlintrc-ja ja/**/*.md",
     "textlint:ja:fix": "yarn textlint:ja --fix --format diff"
   },
+  "lint-staged": {
+    "linters": {
+      "ja/**/*.md": [
+        "textlint --config .textlintrc-ja --fix --format diff",
+        "git add"
+      ]
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nuxt/docs.git"
@@ -55,6 +63,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^4.7.1",
+    "lint-staged": "^8.1.5",
     "nodemon": "^1.18.10",
     "textlint": "^11.2.3",
     "textlint-filter-rule-whitelist": "^2.0.0",
