@@ -11,13 +11,13 @@
     "start": "node api.js",
     "deploy": "now --alias",
     "precommit": "npm run lint",
-    "textlint:ja": "textlint --config .textlintrc-ja ja/**/*.md",
+    "textlint:ja": "textlint --config ja/.textlintrc ja/**/*.md",
     "textlint:ja:fix": "yarn textlint:ja --fix --format diff"
   },
   "lint-staged": {
     "linters": {
       "ja/**/*.md": [
-        "textlint --config .textlintrc-ja --fix --format diff",
+        "textlint --config ja/.textlintrc --fix --format diff",
         "git add"
       ]
     }
