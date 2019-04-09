@@ -70,7 +70,7 @@ Nuxt.js アプリの外観を変更したい場合、レイアウトは非常に
 
 ### カスタムレイアウト
 
-`layouts` ディレクトリのすべてのファイル（*トップレベル*）は、ページコンポーネントの ` layout` プロパティでアクセス可能なカスタムレイアウトを作成します。
+`layouts` ディレクトリのすべてのファイル（*第一階層*）は、ページコンポーネントの ` layout` プロパティでアクセス可能なカスタムレイアウトを作成します。
 
 ブログのレイアウトを作成して、それを `layouts/blog.vue` に書くとき例：
 
@@ -113,13 +113,13 @@ export default {
 
 </div>
 
-As mentioned above, this layout is special, since you **should not** include `<nuxt/>` inside its template.
-You must see this layout as a component displayed when an error occurs (`404`, `500`, etc.).
-Similar to other page components, you can set a custom layout for the error page as well in the usual way.
+上記のように、このレイアウトは特別です。テンプレートの中に `<nuxt/>` を含める**べきではない**からです。
+このレイアウトは、`404` や `500` などのエラーが発生した際に表示されるコンポーネントとしてみる必要があります。
+他のページコンポーネントと同様に、エラーページのカスタムレイアウトも通常の方法で設定できます。
 
-The default error page source code is [available on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
+デフォルトのエラーページのソースコードは、[GitHubから入手できます]。(https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
 
-You can customize the error page by adding a `layouts/error.vue` file:
+`layouts/error.vue` ファイルを追加することでエラーページをカスタマイズすることができます。:
 
 ```html
 <template>
