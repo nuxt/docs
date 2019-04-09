@@ -83,16 +83,15 @@ Let's say we want to create a blog layout and save it to `layouts/blog.vue`:
 
 ```html
 <template>
-  <div class="container">
-    <h1 v-if="error.statusCode === 404">ページが見つかりません</h1>
-    <h1 v-else>エラーが発生しました</h1>
-    <nuxt-link to="/">ホーム</nuxt-link>
+  <div>
+    <div>My blog navigation bar here</div>
+    <nuxt/>
   </div>
 </template>
 <script>
 export default {
-  props: ['error'],
-  layout: 'blog' // エラーページ用のカスタムレイアウトを指定できます
+  layout: 'blog'
+  // ページコンポーネントの定義
 }
 </script>
 ```
