@@ -140,8 +140,7 @@ export default {
 
 ## ページ
 
-すべてのページコンポーネントは Vue コンポーネントですが、Nuxt.js はユニバーサルアプリケーション開発を可能な限り容易にするために特別なキーを追加しています。
-Every Page component is a Vue component but Nuxt.js adds special attributes and functions to make the development of your universal application as easy as possible.
+すべてのページコンポーネントは Vue コンポーネントですが、Nuxt.js にユニバーサルアプリケーション開発を可能な限り用意にするための特別な属性と機能が追加されています。
 
 ```html
 <template>
@@ -151,8 +150,8 @@ Every Page component is a Vue component but Nuxt.js adds special attributes and 
 export default {
   asyncData (context) {
     // コンポーネントをロードする前に毎回呼び出されます
-    // as the name said, it can be async
-    // Also, the returned object will be merged with your data object
+    // 名前の通り非同期にすることができます
+    // また、返されたオブジェクトはデータオブジェクトとマージされます
     return { name: 'World' }
   },
   fetch () {
