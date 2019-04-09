@@ -97,20 +97,21 @@ export default {
 </script>
 ```
 
-### カスタムレイアウト
-More information about the `layout` property: [API Pages `layout`](/api/pages-layout)
+`layout` プロパティについての詳細： [API Pages `layout`](/api/pages-layout)
 
-Check out the [demonstration video](https://www.youtube.com/watch?v=YOKnSTp7d38) to see custom layouts in action.
+[デモ動画](https://www.youtube.com/watch?v=YOKnSTp7d38)で、カスタムレイアウトの動作する様子を確認して見てください。
 
 <!-- TODO: Scoped styles best practice -->
 
-### Error Page
+### エラーページ
 
-The error page is a *page component* which is always displayed when an error occurs (that does not happen while server-side rendering).
+エラーページは *ページコンポーネント* で、エラーが発生したときに常に表示されます（サーバーサイドレンダリング中には発生しません）。
 
 <div class="Alert Alert--orange">
 
-<b>Warning:</b> Though this file is placed in the <code>layouts</code> folder, it should be treated as a <b>page</b>.
+<b>警告:</b> このファイルは <code>layouts</code> フォルダに配置されていますが、 <b>ページ</b>として扱う必要があります。
+
+</div>
 
 `layouts` ディレクトリの *第一階層* のファイルで、ページコンポーネント内の `layout` プロパティで指定できるカスタムレイアウトを作成できます。
 
