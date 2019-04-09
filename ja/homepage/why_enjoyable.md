@@ -1,6 +1,6 @@
 ---
-title: Enjoyable
+title: 楽しみ
 ---
-Our main focus is the Developer Experience. We love Nuxt.js and continuously improve the framework so you love it too! 💚
+私たちのメインフォーカスは開発者体験です。私たちは Nuxt.js が好きで、継続的にフレームワークの改善をしているため、あなたも好きになることでしょう！ 💚
 
-Expect appealing solutions, descriptive error messages, powerful defaults and a detailed documentation. If questions or problems come up, our helpful community will help you out.
+魅力的な解決策や、説明的なエラーメッセージ、強力なデフォルト設定、詳細なドキュメントが待っています。もし質問や問題が発生した場合、私たちの有用なコミュニティが助けてくれるでしょう。
