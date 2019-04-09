@@ -70,7 +70,7 @@ Nuxt.js アプリの外観を変更したい場合、レイアウトは非常に
 
 ### カスタムレイアウト
 
-`layouts` ディレクトリのすべてのファイル（*第一階層*）は、ページコンポーネントの ` layout` プロパティでアクセス可能なカスタムレイアウトを作成します。
+`layouts` ディレクトリのすべてのファイル（*第一階層*）は、ページコンポーネントの `layout` プロパティでアクセス可能なカスタムレイアウトを作成します。
 
 ブログのレイアウトを作成して、それを `layouts/blog.vue` に書くとき例：
 
@@ -97,7 +97,7 @@ export default {
 </script>
 ```
 
-`layout` プロパティについての詳細： [API Pages `layout`](/api/pages-layout)
+`layout` プロパティについての詳細： [`layout` プロパティ](/api/pages-layout)
 
 [デモ動画](https://www.youtube.com/watch?v=YOKnSTp7d38)で、カスタムレイアウトの動作する様子を確認して見てください。
 
@@ -109,7 +109,7 @@ export default {
 
 <div class="Alert Alert--orange">
 
-<b>警告:</b> このファイルは <code>layouts</code> フォルダに配置されていますが、 <b>ページ</b>として扱う必要があります。
+<b>警告:</b> このファイルは <code>layouts</code> フォルダに配置されていますが、<b>ページ</b>として扱う必要があります。
 
 </div>
 
@@ -173,32 +173,29 @@ export default {
 
 | 属性 | 説明 | ドキュメント
 |---|---| --- |
-| `asyncData` | 最も重要なキーです。非同期であり、コンテキストを引数として受け取ります。 | [ガイド: Async data](/guide/async-data) |
-| `fetch` | ページをレンダリングする前にストアを満たすために使用されます。`data` メソッドに似ていますが、コンポーネントデータは設定しません。 | [API: ページ `fetch`](/api/pages-fetch) |
-| `head` | 現在のページに対して特定の `<meta>` タグを設定します。 | [API: ページ `head`](/api/pages-head) |
-| `layout` | `layouts` ディレクトリに定義されているレイアウトを指定します。 | [API: ページ `layout`](/api/pages-layout) |
-| `loading` | `false` に設定すると、ページへ遷移してきた際に `this.$nuxt.$loading.finish()` が呼び出されなくなり、ページから離れる際に `this.$nuxt.$loading.start()` が呼び出されなくなります。これによりローディングの振る舞いを **手動で** 制御ができるようになります。この動作は、[example](/examples/custom-page-loading)から確認できます。`loading` は `nuxt.config.js` で設定されている場合のみ適用されます。 | [API: 設定 `loading`](/api/configuration-loading) |
-| `transition` | ページの特定のトランジションを設定します。 | [API: ページ `transition`](/api/pages-transition) |
-| `scrollToTop` | Boolean 型（デフォルト値：`false`）で、ページをレンダリングする前にページを一番上にスクロールするかどうかを指定します。これは[ネストされたルート](/guide/routing#nested-routes)に使用されます。| [API: ページ `scrollToTop`](/api/pages-scrolltotop#the-scrolltotop-property) |
-| `validate` | [動的なルーティング](/guide/routing#dynamic-routes)に対する検証関数です。 | [API: ページ `validate`](/api/pages-validate#the-validate-method) |
-| `middleware` | このページのミドルウェアを設定します。ミドルウェアは、ページをレンダリングする前に呼び出されます。| [ガイド: middleware](/guide/routing#middleware) |
+| `asyncData` | 最も重要なキーです。非同期であり、コンテキストを引数として受け取ります。 | [非同期なデータ](/guide/async-data) |
+| `fetch` | ページをレンダリングする前にストアを満たすために使用されます。`data` メソッドに似ていますが、コンポーネントデータは設定しません。 | [`fetch` プロパティ](/api/pages-fetch) |
+| `head` | 現在のページに対して特定の `<meta>` タグを設定します。 | [`head` プロパティ](/api/pages-head) |
+| `layout` | `layouts` ディレクトリに定義されているレイアウトを指定します。 | [`layout` プロパティ](/api/pages-layout) |
+| `loading` | `false` に設定すると、ページへ遷移してきた際に `this.$nuxt.$loading.finish()` が呼び出されなくなり、ページから離れる際に `this.$nuxt.$loading.start()` が呼び出されなくなります。これによりローディングの振る舞いを **手動で** 制御ができるようになります。この動作は、[example](/examples/custom-page-loading)から確認できます。`loading` は `nuxt.config.js` で設定されている場合のみ適用されます。 | [`loading` プロパティ](/api/configuration-loading) |
+| `transition` | ページの特定のトランジションを設定します。 | [`transition` プロパティ](/api/pages-transition) |
+| `scrollToTop` | Boolean 型（デフォルト値：`false`）で、ページをレンダリングする前にページを一番上にスクロールするかどうかを指定します。これは[ネストされたルート](/guide/routing#nested-routes)に使用されます。| [`scrollToTop` プロパティ](/api/pages-scrolltotop#the-scrolltotop-property) |
+| `validate` | [動的なルーティング](/guide/routing#dynamic-routes)に対する検証関数です。 | [`validate` プロパティ](/api/pages-validate#the-validate-method) |
+| `middleware` | このページのミドルウェアを設定します。ミドルウェアは、ページをレンダリングする前に呼び出されます。| [ミドルウェア](/guide/routing#middleware) |
 
 ページプロパティの使用についてより多くの情報: [ページに関するドキュメント](/api)をご覧ください。
 
 ## HTML ヘッド
 
-Nuxt.js は `headers` とアプリケーションの `html attributes` を更新するために [vue-meta](https://github.com/declandewet/vue-meta) を使用しています。
+Nuxt.js は、`document head` とアプリケーションの `meta attributes` を更新するために [vue-meta](https://github.com/declandewet/vue-meta) を使用しています。
 
-Nuxt.js はこれらのオプションで `vue-meta` を設定します:
+Nuxt.js が使っている `vue-meta` は、[GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/index.js#L29-L35) で参照できます。
 
-```js
-{
-  keyName: 'head', // vue-meta がメタ情報を探すためのコンポーネントオプション名
-  attribute: 'data-n-head', // vue-méta がそれをオブザーブするタグに追加する属性名
-  ssrAttribute: 'data-n-head-ssr', // メタ情報がすでにサーバで描画されていることを vue-meta に知らせる属性名
-  tagIDKeyName: 'hid' // タグを上書きするか追加するかを決定するために vue-meta が使用するプロパティ名
-}
-```
+<div class="Alert Alert--teal">
+
+<b>情報:</b> Nuxt.js は、デフォルトの <code>vmid</code> キーの代わりに <code>hid</code> を使ってメタ要素を識別します。
+
+</div>
 
 ### デフォルトメタタグ
 
@@ -220,14 +217,8 @@ head: {
 
 `head` で利用できるオプションの詳細については、[メタ情報プロパティの認識](https://github.com/declandewet/vue-meta#recognized-metainfo-properties)を参照してください。
 
-`head` メソッドに関するより多くの情報:  <a href="/api/configuration-head" data-md-type="link">`head` プロパティ</a>を参照してください。
+`head` メソッドに関するより多くの情報は、[`head` プロパティ](/api/configuration-head)を参照してください。
 
 ### ページに対するカスタムメタタグ
 
-head メソッドに関するより多くの情報:  [`head` プロパティ](/api/pages-head)を参照してください。
-
-<div class="Alert">
-
-子コンポーネント使用で重複を避けるために、`hid` キーにはユニークな識別子を与えてください。[更に詳しく](https://github.com/declandewet/vue-meta#lists-of-tags)
-
-</div>
+head メソッドに関するより多くの情報: [`head` プロパティ](/api/pages-head)を参照してください。
