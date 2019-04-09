@@ -171,17 +171,17 @@ export default {
 </style>
 ```
 
-属性 | 説明
---- | ---
-`asyncData` | 最も重要なキーです。非同期であり、コンテキストを引数として受け取ります。どのように動作するかは、[async data](/guide/async-data) を参照してください。
-`fetch` | ページをレンダリングする前にストアを満たすために使用されます。`data` メソッドに似ていますが、コンポーネントデータは設定しません。[`fetch` メソッド](/api/pages-fetch)を参照してください。
-`head` | 現在のページに対して特定の `<meta>` タグを設定します。[`head` メソッド](/api/pages-head)を参照してください。
-`layout` | `layouts` ディレクトリに定義されているレイアウトを指定します。 [`layout` プロパティ](/api/pages-layout)を参照してください。
-`loading` | `false` に設定すると、ページへ遷移してきた際に `this.$nuxt.$loading.finish()` が呼び出されなくなり、ページから離れる際に `this.$nuxt.$loading.start()` が呼び出されなくなります。これによりローディングの振る舞いを **手動で** 制御ができるようになります。この動作は、[example](/examples/custom-page-loading)から確認できます。`loading` は `nuxt.config.js` で設定されている場合のみ適用されます。[`loading` プロパティ](/api/configuration-loading)を参照してください。
-`transition` | ページの特定のトランジションを設定します。[`transition` プロパティ](/api/pages-transition)を参照してください。
-`scrollToTop` | Boolean 型（デフォルト値：`false`）で、ページをレンダリングする前にページを一番上にスクロールするかどうかを指定します。これは[ネストされたルート](/guide/routing#nested-routes)に使用されます。
-`validate` | [動的なルーティング](/guide/routing#dynamic-routes)に対する検証関数です。
-`middleware` | このページのミドルウェアを設定します。ミドルウェアは、ページをレンダリングする前に呼び出されます。[ミドルウェアに関するドキュメント](/guide/routing#middleware)を参照してください。
+| 属性 | 説明 | ドキュメント
+|---|---| --- |
+| `asyncData` | 最も重要なキーです。非同期であり、コンテキストを引数として受け取ります。 | [ガイド: Async data](/guide/async-data) |
+| `fetch` | ページをレンダリングする前にストアを満たすために使用されます。`data` メソッドに似ていますが、コンポーネントデータは設定しません。 | [API: ページ `fetch`](/api/pages-fetch) |
+| `head` | 現在のページに対して特定の `<meta>` タグを設定します。 | [API: ページ `head`](/api/pages-head) |
+| `layout` | `layouts` ディレクトリに定義されているレイアウトを指定します。 | [API: ページ `layout`](/api/pages-layout) |
+| `loading` | `false` に設定すると、ページへ遷移してきた際に `this.$nuxt.$loading.finish()` が呼び出されなくなり、ページから離れる際に `this.$nuxt.$loading.start()` が呼び出されなくなります。これによりローディングの振る舞いを **手動で** 制御ができるようになります。この動作は、[example](/examples/custom-page-loading)から確認できます。`loading` は `nuxt.config.js` で設定されている場合のみ適用されます。 | [API: 設定 `loading`](/api/configuration-loading) |
+| `transition` | ページの特定のトランジションを設定します。 | [API: ページ `transition`](/api/pages-transition) |
+| `scrollToTop` | Boolean 型（デフォルト値：`false`）で、ページをレンダリングする前にページを一番上にスクロールするかどうかを指定します。これは[ネストされたルート](/guide/routing#nested-routes)に使用されます。| [API: ページ `scrollToTop`](/api/pages-scrolltotop#the-scrolltotop-property) |
+| `validate` | [動的なルーティング](/guide/routing#dynamic-routes)に対する検証関数です。 | [API: ページ `validate`](/api/pages-validate#the-validate-method) |
+| `middleware` | このページのミドルウェアを設定します。ミドルウェアは、ページをレンダリングする前に呼び出されます。| [ガイド: middleware](/guide/routing#middleware) |
 
 ページプロパティの使用についてより多くの情報: [ページに関するドキュメント](/api)をご覧ください。
 
