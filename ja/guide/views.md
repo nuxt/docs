@@ -138,13 +138,10 @@ export default {
 </script>
 ```
 
-`layout` プロパティについてより多くの情報: <a href="/api/pages-layout" data-md-type="link">`layout` プロパティ</a>を参照してください。
-
-また、動作する様子を [デモ動画](https://www.youtube.com/watch?v=YOKnSTp7d38) で確認してみてください。
-
 ## ページ
 
 すべてのページコンポーネントは Vue コンポーネントですが、Nuxt.js はユニバーサルアプリケーション開発を可能な限り容易にするために特別なキーを追加しています。
+Every Page component is a Vue component but Nuxt.js adds special attributes and functions to make the development of your universal application as easy as possible.
 
 ```html
 <template>
@@ -154,6 +151,8 @@ export default {
 export default {
   asyncData (context) {
     // コンポーネントをロードする前に毎回呼び出されます
+    // as the name said, it can be async
+    // Also, the returned object will be merged with your data object
     return { name: 'World' }
   },
   fetch () {
