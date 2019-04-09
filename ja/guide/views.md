@@ -77,9 +77,17 @@ Nuxt.js アプリの外観を変更したい場合、レイアウトは非常に
 ```html
 <template>
   <div>
-    <div>My blog navigation bar here</div>
+    <div>ブログのナビゲーションバーをここに設置します</div>
     <nuxt/>
   </div>
+</template>
+```
+
+それからページ (例えば `pages/posts.vue` ) で、カスタムレイアウトを使うことを伝えます:
+
+```html
+<template>
+<!-- テンプレート -->
 </template>
 <script>
 export default {
