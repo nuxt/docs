@@ -13,30 +13,36 @@ title: TypeScript Support
 
 ## Get started
 
-To be able to use TypeScript in your project, you will need to install `@nuxt/typescript`
+To be able to use TypeScript in your project, you will need to install `@nuxt/typescript` as `devDependency` and `ts-node` as `dependency` :
 ```sh
-npm install -D @nuxt/typescript
+npm i -D @nuxt/typescript
+npm i ts-node
 # OR
 yarn add -D @nuxt/typescript
+yarn add ts-node
 ```
 
 <div class="Alert Alert--gray">
 
-`@nuxt/typescript` ships typescript related dependencies and extends Nuxt core to enable runtime TypeScript support. 
+`@nuxt/typescript` ships typescript related dependencies needed to compile TypeScript files & check types in a separate process.  
 
 </div>
 
-You'll also need to create a minimal `tsconfig.json` file :
+<div class="Alert Alert--gray">
+
+`ts-node` extends Nuxt core to enable runtime TypeScript support for `nuxt.config.ts` & `serverMiddlewares`.
+
+</div>
+
+You'll also need to create an empty `tsconfig.json` file in your root project folder, through either code editor or command line :
 
 ```sh
-echo "{}" > tsconfig.json
+touch tsconfig.json
 ```
 
 <div class="Alert Alert--gray">
 
-**INFO:** The presence of the `tsconfig.json` in your project lets Nuxt.js know you're running a TypeScript project.
-
-This file will be automatically updated with defaults value the first time you're running `nuxt` command.
+**INFO:** The `tsconfig.json` file will be automatically updated with defaults value the first time you're running `nuxt` command.
 
 </div>
 
