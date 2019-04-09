@@ -102,7 +102,11 @@
       },
       {
         "to": "/typescript", "name": "TypeScript Support",
-        "contents": []
+        "contents": [
+          { "to": "#get-started", "name": "Get started" },
+          { "to": "#from-javascript-to-typescript", "name": "From JavaScript to TypeScript" },
+          { "to": "#linting-with-eslint", "name": "Linting with ESLint" }
+        ]
       },
       {
         "to": "/commands", "name": "Commands and Deployment",
