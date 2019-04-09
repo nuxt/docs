@@ -52,17 +52,15 @@ Nuxt.js アプリの外観を変更したい場合、レイアウトは非常に
 ### デフォルトレイアウト
 
 `layouts/default.vue` ファイルを追加することでメインレイアウトを拡張できます。
-It will be used for all pages that don't have a layout specified.
+メインレイアウトは、レイアウト指定がされていないすべてのページに使用されます。
 
 <div class="Alert Alert--nuxt-green">
 
-<b>Info:</b> Make sure to add the `<nuxt/>` component when creating a layout to actually include the page component.
-*ページコンポーネントを表示するレイアウトを作成するときは、必ず `<nuxt/>` コンポーネントを入れておくことを覚えておいてください。*
+<b>情報:</b> 実際にページコンポーネントが含まれるようにレイアウトを作成するときは、必ず `<nuxt/>` コンポーネントを入れておくことを覚えておいてください。
 
 </div>
 
-The default layout that comes out of the box is just three lines long and simply renders the page component:
-デフォルトのレイアウトのソースコードは下記のようになっています:
+次にあるデフォルトのレイアウトはたった3行で、単純にページコンポーネントをレンダリングします:
 
 ```html
 <template>
