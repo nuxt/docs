@@ -1,4 +1,4 @@
 ---
-title: The <span class="nWelcome_Content_Title_Primary">Vue.js</span> Framework
+title: <span class="nWelcome_Content_Title_Primary">Vue.js</span> フレームワーク
 ---
-Nuxt.js presets all the configuration needed to make your development of a Vue.js application enjoyable.
+Nuxt.js は Vue.js アプリケーションの開発を楽しくするための必要なすべての設定が揃っています。
