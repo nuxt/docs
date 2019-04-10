@@ -1,4 +1,4 @@
 ---
-title: Support the Team
+title: チームを支援する
 ---
-Nuxt.js is an MIT licensed open source project and completely free to use. However, the amount of effort needed to maintain and develop new features for the project is not sustainable without proper financial backing. Your donations directly support office hours, continued enhancements, and most importantly, great documentation and learning material.
+Nuxt.js は MIT ライセンスのオープンソースプロジェクトで、完全無料で使用できます。ただし、プロジェクトの新しい機能を維持および開発するために必要な作業は、適切な資金援助なしには持続できません。あなたの寄付は営業時間、継続的な機能強化、そして最も重要なことに、素晴らしいドキュメントと学習教材を直接サポートします。
