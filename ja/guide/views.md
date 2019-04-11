@@ -117,7 +117,7 @@ export default {
 このレイアウトは、`404` や `500` などのエラーが発生した際に表示されるコンポーネントとしてみる必要があります。
 他のページコンポーネントと同様に、エラーページのカスタムレイアウトも通常の方法で設定できます。
 
-デフォルトのエラーページのソースコードは、[GitHubから入手できます]。(https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
+デフォルトのエラーページのソースコードは、[GitHubから入手できます](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue)。
 
 `layouts/error.vue` ファイルを追加することでエラーページをカスタマイズすることができます。:
 
@@ -174,14 +174,14 @@ export default {
 | 属性 | 説明 | ドキュメント
 |---|---| --- |
 | `asyncData` | 最も重要なキーです。非同期であり、コンテキストを引数として受け取ります。 | [非同期なデータ](/guide/async-data) |
-| `fetch` | ページをレンダリングする前にストアを満たすために使用されます。`data` メソッドに似ていますが、コンポーネントデータは設定しません。 | [`fetch` プロパティ](/api/pages-fetch) |
-| `head` | 現在のページに対して特定の `<meta>` タグを設定します。 | [`head` プロパティ](/api/pages-head) |
+| `fetch` | ページをレンダリングする前にストアを満たすために使用されます。`data` メソッドに似ていますが、コンポーネントデータは設定しません。 | [`fetch` メソッド](/api/pages-fetch) |
+| `head` | 現在のページに対して特定の `<meta>` タグを設定します。 | [`head` メソッド](/api/pages-head) |
 | `layout` | `layouts` ディレクトリに定義されているレイアウトを指定します。 | [`layout` プロパティ](/api/pages-layout) |
 | `loading` | `false` に設定すると、ページへ遷移してきた際に `this.$nuxt.$loading.finish()` が呼び出されなくなり、ページから離れる際に `this.$nuxt.$loading.start()` が呼び出されなくなります。これによりローディングの振る舞いを **手動で** 制御ができるようになります。この動作は、[example](/examples/custom-page-loading)から確認できます。`loading` は `nuxt.config.js` で設定されている場合のみ適用されます。 | [`loading` プロパティ](/api/configuration-loading) |
 | `transition` | ページの特定のトランジションを設定します。 | [`transition` プロパティ](/api/pages-transition) |
 | `scrollToTop` | Boolean 型（デフォルト値：`false`）で、ページをレンダリングする前にページを一番上にスクロールするかどうかを指定します。これは[ネストされたルート](/guide/routing#nested-routes)に使用されます。| [`scrollToTop` プロパティ](/api/pages-scrolltotop#the-scrolltotop-property) |
-| `validate` | [動的なルーティング](/guide/routing#dynamic-routes)に対する検証関数です。 | [`validate` プロパティ](/api/pages-validate#the-validate-method) |
-| `middleware` | このページのミドルウェアを設定します。ミドルウェアは、ページをレンダリングする前に呼び出されます。| [ミドルウェア](/guide/routing#middleware) |
+| `validate` | [動的なルーティング](/guide/routing#dynamic-routes)に対する検証関数です。 | [`validate` メソッド](/api/pages-validate#the-validate-method) |
+| `middleware` | このページのミドルウェアを設定します。ミドルウェアは、ページをレンダリングする前に呼び出されます。| [ミドルウェア](/guide/routing/#ミドルウェア) |
 
 ページプロパティの使用についてより多くの情報: [ページに関するドキュメント](/api)をご覧ください。
 
@@ -221,4 +221,4 @@ head: {
 
 ### ページに対するカスタムメタタグ
 
-head メソッドに関するより多くの情報: [`head` プロパティ](/api/pages-head)を参照してください。
+head メソッドに関するより多くの情報: [`head` メソッド](/api/pages-head)を参照してください。
