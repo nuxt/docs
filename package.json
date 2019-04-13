@@ -11,7 +11,7 @@
     "start": "node api.js",
     "deploy": "now --alias",
     "textlint:ja": "textlint --config ja/.textlintrc ja/**/*.md",
-    "textlint:ja:fix": "yarn textlint:ja --fix --format diff"
+     "textlint:ja:fix": "textlint --config ja/.textlintrc --fix --format diff ja/**/*.md""
   },
   "husky": {
     "hooks": {
