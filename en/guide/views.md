@@ -18,7 +18,7 @@ The default template used by Nuxt.js is:
 ```html
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -33,7 +33,7 @@ One use case of using a custom app template is to add conditional CSS classes fo
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -142,6 +142,14 @@ export default {
 ## Pages
 
 Every Page component is a Vue component but Nuxt.js adds special attributes and functions to make the development of your universal application as easy as possible.
+
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-page-components?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Watch a free lesson about <strong>Nuxt.js Page Components</strong> on Vue School 
+    </p>
+  </a>
+</div>
 
 ```html
 <template>

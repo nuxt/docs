@@ -18,7 +18,7 @@ Le modèle par défaut est le suivant :
 ```html
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -33,7 +33,7 @@ Un exemple pour ajouter des classes CSS conditionnelles pour IE :
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="fr-FR" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>

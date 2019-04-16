@@ -211,12 +211,6 @@ export default {
 ```
 要更多了解使用，可以移步[webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/)
 
-## hotMiddleware
-
-- 类型: `Object`
-
-请查看 [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) 了解更多可用选项。
-
 ## friendlyErrors
 
 - 类型: `Boolean`
@@ -236,7 +230,7 @@ export default {
 
 - 类型: `Object`
 
-请查看 [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) 来了解更多配置
+请查看 [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) 了解更多可用选项。
 
 ## html.minify
 

@@ -7,6 +7,14 @@ description: How to deploy Nuxt.js on Heroku?
 
 We recommend you read the [Heroku documentation for Node.js](https://devcenter.heroku.com/articles/nodejs-support).
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/how-to-deploy-nuxtjs-to-heroku?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Watch a free lesson on <strong>How to deploy Nuxt.js to Heroku</strong> on Vue School 
+    </p>
+  </a>
+</div>
+
 First, we need to tell Heroku to install the `devDependencies` of the project (to be able to launch `npm run build`):
 
 ```bash
