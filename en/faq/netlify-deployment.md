@@ -9,6 +9,14 @@ Deploying to [Netlify](https://www.netlify.com) is a low friction option for get
 
 The core of the process leverages the `nuxt generate` command during deployment to build a static version of your Nuxt.js app into a `dist` directory. The contents of this directory are then deployed to a production URL.
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/how-to-deploy-nuxtjs-to-netlify?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Watch a free lesson on <strong>How to deploy Nuxt.js to Netlify</strong> on Vue School 
+    </p>
+  </a>
+</div>
+
 ## Getting Started
 
 Press the _"New site from Git"_ button on the Netlify dashboard. Authenticate with your repository host, select a repository to deploy, and continue. You should land on step 3: _"Build options, and deploy!"_

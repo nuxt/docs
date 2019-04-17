@@ -5,6 +5,14 @@ description: The default Nuxt.js application structure is intended to provide a 
 
 > The default Nuxt.js application structure is intended to provide a great starting point for both small and large applications. Of course, you are free to organize your application however you like.
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/guided-nuxtjs-project-tour?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Watch a free lesson about <strong>the Nuxt.js directory structure</strong> on Vue School 
+    </p>
+  </a>
+</div>
+
 ## Directories
 
 ### The Assets Directory

@@ -50,9 +50,9 @@ Japanese translation use [textlint](https://github.com/textlint/textlint).
 Example commands:
 
 ```bash
-yarn textlint:ja
-yarn textlint:ja:fix --dry-run
-yarn textlint:ja:fix
+npm run textlint:ja
+npm run textlint:ja:fix --dry-run
+npm run textlint:ja:fix
 ```
 
 ### Korean

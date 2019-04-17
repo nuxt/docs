@@ -201,7 +201,6 @@ async function getHomepage(cwd) {
   const promises = []
   homepagePaths.forEach((path) => {
     const lang = path.split('/')[0]
-    const homepage = path.split('/')[1]
     const part = path.split('/')[2].replace(/.md$/, '')
     const parseOptions = {
       renderer: partialRenderer
@@ -226,7 +225,7 @@ async function getHomepage(cwd) {
       }
       if (!tmpHomepage[lang][part]) {
         tmpHomepage[lang][part] = tmpHomepage[defaultLang][part]
-        tmpHomepage[lang][part]['attrs']['fallback'] = true
+        tmpHomepage[lang][part].attrs.fallback = true
       }
     })
   })
