@@ -33,6 +33,16 @@ Modules are great if you:
 - Are often up against short deadlines and don't have time to dig into the details of every new library or integration.
 - Are tired of dealing with breaking changes to low-level interfaces, and need things that **just work™**.
 
+## List of Nuxt.js modules
+
+The Nuxt.js team offers **official** modules:
+- [@nuxt/http](https://http.nuxtjs.org): Light and universal way to make HTTP requests, based on [ky-universal](https://github.com/sindresorhus/ky-universal)
+- [@nuxtjs/axios](https://axios.nuxtjs.org): Secure and Easy Axios integration with Nuxt.js to make HTTP requests
+- [@nuxtjs/pwa](https://pwa.nuxtjs.org): Supercharge Nuxt with a heavily tested, updated and stable PWA solution
+- [@nuxtjs/auth](https://auth.nuxtjs.org): Authentication module for Nuxt.js, offering different schemes and strategies
+
+A list of Nuxt.js modules made by the community is available on https://github.com/topics/nuxt-module
+
 ## Write a basic Module
 
 As already mentioned modules are just simple functions. They can be packaged as npm modules or directly included in project source code.
