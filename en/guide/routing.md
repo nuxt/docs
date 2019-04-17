@@ -59,6 +59,14 @@ router: {
 
 To define a dynamic route with a parameter, you need to define a .vue file OR a directory **prefixed by an underscore**.
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-dynamic-routes?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Watch a free lesson about <strong>dynamic routes</strong> on Vue School 
+    </p>
+  </a>
+</div>
+
 This file tree:
 
 ```bash
