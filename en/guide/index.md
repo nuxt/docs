@@ -107,7 +107,7 @@ Will generate:
 
 With this, you can host your generated web application on any static hosting!
 
-The best example is this website. It is generated and hosted on [Netlify](https://www.netlify.com), see our [source code](https://github.com/nuxt/nuxtjs.org).
+The best example is this website. It is generated and hosted on [Netlify](https://www.netlify.com), see our [source code](https://github.com/nuxt/nuxtjs.org) or [How to deploy Nuxt.js to Netlify](https://vueschool.io/lessons/how-to-deploy-nuxtjs-to-netlify?friend=nuxt) from Vue School.
 
 We don't want to manually generate the application every time we update the [docs repository](https://github.com/nuxt/docs), it triggers a hook to Netlify which:
 
