@@ -85,6 +85,7 @@
         "to": "/modules", "name": "Modules",
         "contents": [
           { "to": "#introduction", "name": "Introduction" },
+          { "to": "#list-of-nuxtjs-modules", "name": "List of Nuxt.js modules" },
           { "to": "#write-a-basic-module", "name": "Write a basic Module" },
           { "to": "#async-modules", "name": "Async Modules" },
           { "to": "#common-snippets", "name": "Common Snippets" },
