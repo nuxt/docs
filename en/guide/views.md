@@ -143,6 +143,14 @@ export default {
 
 Every Page component is a Vue component but Nuxt.js adds special attributes and functions to make the development of your universal application as easy as possible.
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-page-components?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Watch a free lesson about <strong>Nuxt.js Page Components</strong> on Vue School 
+    </p>
+  </a>
+</div>
+
 ```html
 <template>
   <h1 class="red">Hello {{ name }}!</h1>

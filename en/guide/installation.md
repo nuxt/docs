@@ -55,7 +55,7 @@ It will ask you some questions:
   - None (feel free to add one later)
   - [Jest](https://github.com/facebook/jest)
   - [AVA](https://github.com/avajs/ava)
-4. The [Nuxt mode you want (`Universal` or `SPA`)](https://nuxtjs.org/guide/release-notes#better-spa-experience)
+4. The [Nuxt mode you want (`Universal` or `SPA`)](https://nuxtjs.org/guide#single-page-applications-spa-)
 5. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
 6. Add [EsLint](https://eslint.org/) to Lint your code on save.
 7. Add [Prettier](https://prettier.io/) to prettify your code on save.
