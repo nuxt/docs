@@ -89,7 +89,6 @@ export default interface Post {
 </template>
 
 <script lang="ts">
-import axios from 'axios'
 import { Component, Vue, Prop } from 'vue-property-decorator'
 import Post from '~/models/Post'
 
@@ -110,7 +109,7 @@ export default class PostPreview extends Vue {
 
 <script lang="ts">
 import axios from 'axios'
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import Post from '~/models/Post'
 
 @Component({
