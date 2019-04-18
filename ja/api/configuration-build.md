@@ -583,6 +583,36 @@ Terser プラグインのオプションです。 `false` を設定するとこ�
 
 特定の依存関係を Babel で変換したい場合、`build.transpile` を追加することができます。transpile の項目は、マッチする依存ファイル名の文字列または正規表現オブジェクトになります。
 
+## typescript
+
+> Customize Nuxt.js TypeScript support.
+
+<div class="Alert Alert--blue">
+
+**Important**: This property will be ignored if [`TypeScript Support`](/guide/typescript) hasn't be set up in your project.
+
+</div>
+
+- Type: `Object`
+- Default:
+
+  ```js
+  {
+    typeCheck: true
+  }
+  ```
+
+### typescript.typeCheck
+
+> Enables TypeScript type checking on a separate process.
+
+- Type: `Boolean` or `Object`
+- Default: `true`
+
+When enabled, Nuxt.js uses [fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) to provide type checking.
+
+You can use an `Object` to override plugin options or set it to `false` to disable it.
+
 ## vueLoader
 
 > 注意: この設定は Nuxt 2.0 から削除されました。[`build.loaders.vue`](#loaders) を変わりに使用してください。
