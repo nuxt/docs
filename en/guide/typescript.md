@@ -72,7 +72,7 @@ Here is a basic example mixing a `page` and a reusable `component` to display da
 
 ```ts
 /* models/Post.ts */
-export default Post {
+export default interface Post {
   id: number
   title: string
   description: string
