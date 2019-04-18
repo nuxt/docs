@@ -405,7 +405,7 @@ export default {
 
 **ミドルウェアは `middleware/` ディレクトリに入れます。** ファイル名はミドルウェアの名前となります（`middleware/auth.js` は `auth` ミドルウェアになります）
 
-ミドルウェアは第一引数として [コンテキスト](/api#%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88) を受け取ります:
+ミドルウェアは第一引数として [コンテキスト](/api/context) を受け取ります:
 
 ```js
 export default function (context) {
