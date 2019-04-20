@@ -40,20 +40,20 @@
       "description": "Nuxt.js はサーバーサイドレンダリングやコード分割、ホットリローディング、静的ファイル生成などを備えた Vue.js アプリケーションを構築するためのミニマルなフレームワークです！"
     },
     "welcome": {
-      "app_types_prefix": "For ",
-      "app_types": ["Universal Applications", "Static Generated Applications", "Single Page Applications", "Desktop Applications", "Mobile Applications", "Progressive Web Apps"],
-      "app_types_suffix": "."
+      "app_types_prefix": "",
+      "app_types": ["ユニバーサルアプリケーション", "静的に生成されたアプリケーション", "シングルページアプリケーション", "デスクトップアプリケーション", "モバイルアプリケーション", "プログレッシブウェブアプリケーション"],
+      "app_types_suffix": "のために"
     },
     "codesandbox_title": "Nuxt.js をオンラインで試す",
     "codesandbox_open": "CodeSandBox.io で開く",
     "codesandbox_examples": "他のサンプルを見る",
-    "backer_partners": "Partners",
-    "backer_become_a_partner": "Become A Partner",
-    "backer_sponsors": "Sponsors",
-    "backer_become_a_sponsor": "Become A Sponsor",
-    "backer_backers": "Backers",
-    "backer_become_a_backer": "Become A Backer",
-    "backer_foundations": "Foundations"
+    "backer_partners": "パートナー",
+    "backer_become_a_partner": "パートナーになる",
+    "backer_sponsors": "スポンサー",
+    "backer_become_a_sponsor": "スポンサーになる",
+    "backer_backers": "後援者",
+    "backer_become_a_backer": "後援者になる",
+    "backer_foundations": "財団"
   },
   "sponsors": {
     "title": "スポンサー",
