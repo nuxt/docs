@@ -101,6 +101,10 @@
         ]
       },
       {
+        "to": "/typescript", "name": "TypeScript Support",
+        "contents": []
+      },
+      {
         "to": "/commands", "name": "コマンドとデプロイ",
         "contents": [
           { "to": "#コマンド一覧", "name": "コマンド一覧" },
