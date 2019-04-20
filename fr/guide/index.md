@@ -42,7 +42,7 @@ Sous le capot, nous utilisons [webpack](https://github.com/webpack/webpack) avec
 - Rendu coté serveur (ou « SSR » pour « Server-Side Rendering »)
 - Routage puissant à l'aide de données asynchrones
 - Génération de fichiers statiques
-- Transpilation ES6/ES7
+- Transpilation ES2015+
 - Empaquetage et minification de vos fichiers JS et CSS
 - Gestion des éléments de balise d'en-tête `<head>` HTML (`<title>`, `<meta>`, etc.)
 - Rechargement à chaud pendant le développement
