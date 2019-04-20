@@ -43,7 +43,7 @@ Under the hood we use [webpack](https://github.com/webpack/webpack) with [vue-lo
 - Server-Side Rendering
 - Powerful Routing System with Asynchronous Data
 - Static File Serving
-- ES6/ES7 Transpilation
+- ES2015+ Transpilation
 - Bundling and minifying of your JS & CSS
 - Managing `<head>` element (`<title>`, `<meta>`, etc.)
 - Hot module replacement in Development

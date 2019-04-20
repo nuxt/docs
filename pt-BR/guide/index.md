@@ -44,7 +44,7 @@ Por debaixo dos panos nós usamos [webpack](https://github.com/webpack/webpack) 
 - Server-Side Rendering
 - Sistema de rotas robusto com Asynchronous Data
 - Servidor de arquivos estáticos
-- Transpilação para ES6/ES7
+- Transpilação para ES2015+
 - Gera o build e minifica seus arquivos JS & CSS
 - Gerencie a tag `<head>` (`<title>`, `<meta>`, etc.)
 - Hot module replacement em desenvolvimento

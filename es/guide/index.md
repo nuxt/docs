@@ -43,7 +43,7 @@ Debajo del capo, usamos [Webpack](https://github.com/webpack/webpack) con [vue-l
 - Renderizado del lado del Servidor
 - Potente sistema de enrutamiento con datos asincronos.
 - Servidor de archivos estaticos
-- Transpilación de ES6/ES7
+- Transpilación de ES2015+
 - Agrupamiento y minificación de su JS y CSS
 - Gestion de elementos en el HEAD
 - Recarga en caliente en desarrollo
