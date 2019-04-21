@@ -32,7 +32,10 @@ export default {
 }
 ```
 
-### Traditional Method
+### Legacy Method
+
+** Attention: This is deprecated **
+
 Use `postcss.config.js`, for example:
 
 ```
