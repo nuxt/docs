@@ -98,5 +98,5 @@ Nuxt 服务器启动的时候，该目录下的文件会映射至应用的根路
 <img src="/my-image.png"/>
 
 <!-- 引用 assets 目录下经过 webpack 构建处理后的图片 -->
-<img src="/assets/my-image-2.png"/>
+<img src="~/assets/my-image-2.png"/>
 ```
