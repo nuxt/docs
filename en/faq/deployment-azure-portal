@@ -1,6 +1,6 @@
 #How to deploy on Azure Portal
 
-If you are using Azure DevOps and let the build pipeline do it's work you and want to store artefacts. All the files that 
+If you are using Azure DevOps and let the build pipeline do its work you and want to store artifacts. Files
 start with a `.` you have to explicitly copy them to the artifact folder. Then you can create a Artifact Archive and 
 download it after in your Release Deployment. 
 
