@@ -10,46 +10,12 @@ description: L'utilisation d'un store pour gérer l'état est important pour tou
 Nuxt.js recherchera le répertoire `store`. S'il existe, il :
 
 1. importera Vuex,
-2. ajoutera le module `vuex` dans le paquetage vendors,
-3. ajoutera l'option `store` à l'instance racine de Vue.
+2. ajoutera l'option `store` à l'instance racine de Vue.
 
 Nuxt.js vous laisse le choix entre **2 modes de store**, choisissez celui qui vous convient le mieux :
 
-- **Classique :** `store/index.js` retourne une instance de store.
 - **Modules :** chaque fichier `.js` dans le répertoire `store` est transformé en tant que [module avec son propre espace de nom](http://vuex.vuejs.org/fr/modules.html) (`index` étant le module racine)
-
-## Mode classique
-
-Pour activer le store avec le mode classique, nous créons `store/index.js` qui devrait exporter une méthode qui renvoie une instance Vuex :
-
-```js
-import Vuex from 'vuex'
-
-const createStore = () => {
-  return new Vuex.Store({
-    state: {
-      counter: 0
-    },
-    mutations: {
-      increment (state) {
-        state.counter++
-      }
-    }
-  })
-}
-
-export default createStore
-```
-
-> Pas besoin d'installer `vuex`, celui-ci étant livré avec Nuxt.js.
-
-Nous pouvons alors utiliser `this.$store` dans nos composants :
-
-```html
-<template>
-  <button @click="$store.commit('increment')">{{ $store.state.counter }}</button>
-</template>
-```
+- **Classique (déprécié):** `store/index.js` retourne une instance de store.
 
 ## Mode modules
 
@@ -281,4 +247,39 @@ const createStore = () => {
 }
 
 export default createStore
+```
+
+## Mode classique
+
+> Cette fonctionnalité est dépréciée et sera supprimée dans Nuxt 3.
+
+Pour activer le store avec le mode classique, nous créons `store/index.js` qui devrait exporter une méthode qui renvoie une instance Vuex :
+
+```js
+import Vuex from 'vuex'
+
+const createStore = () => {
+  return new Vuex.Store({
+    state: {
+      counter: 0
+    },
+    mutations: {
+      increment (state) {
+        state.counter++
+      }
+    }
+  })
+}
+
+export default createStore
+```
+
+> Pas besoin d'installer `vuex`, celui-ci étant livré avec Nuxt.js.
+
+Nous pouvons alors utiliser `this.$store` dans nos composants :
+
+```html
+<template>
+  <button @click="$store.commit('increment')">{{ $store.state.counter }}</button>
+</template>
 ```
