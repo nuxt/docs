@@ -46,10 +46,10 @@ Then, we tell Heroku to launch `npm run build` via the `heroku-postbuild` script
 Heroku uses a [Procfile](https://devcenter.heroku.com/articles/procfile) (name the file `Procfile` with no file extension) that specifies the commands that are executed by the apps dynos. To start the Procfile will be very simple, and needs to contain the following line:
 
 ```
-web: npm run start
+web: nuxt start
 ```
 
-This will instruct run the `npm run start` command and tell heroku to direct external HTTP traffic to it. 
+This will instruct run the `nuxt start` command and tell heroku to direct external HTTP traffic to it. 
 
 Finally, we can push the app on Heroku with:
 
