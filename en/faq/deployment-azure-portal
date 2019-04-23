@@ -5,7 +5,7 @@ which are prefixed with a `.` must be moved to the artifact folder explicitly. T
 download it afterwards in your Release Deployment. 
 
 ## Running the webserver
-For Azure Portal you will need a web.config file. If not supplied it will create one itself. This one won't work for Nuxt though.
+For Azure Portal you will need a `web.config` file. If not supplied, it will create one itself. This one **won't work for Nuxt** though.
 Add a web.config file to your repository. For the latest version of `Nuxt` the server of nuxt is located at `server/index.js`. 
 In the web.config you don't specify the exact path `server/index.js` but just `server`. See the example web.config below. If you don't do
 this the logs will tell you that Vue cannot find any routes.
