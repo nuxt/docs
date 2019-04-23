@@ -1,7 +1,7 @@
 #How to deploy on Azure Portal
 
 If you are using Azure DevOps and let the build pipeline do its work you and want to store artifacts. Files
-start with a `.` you have to explicitly copy them to the artifact folder. Then you can create a Artifact Archive and 
+which are prefixed with a `.` must be moved to the artifact folder explicitly. Then you can create an Artifact Archive and 
 download it after in your Release Deployment. 
 
 ## Running the webserver
