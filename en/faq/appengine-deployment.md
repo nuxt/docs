@@ -48,7 +48,7 @@ Now build your app with `npm run build`.
 At this point, your app is ready to be uploaded to Google App Engine. Now just run the following command:
 
 ```
-gcloud app deploy app.yaml --project <project-id>
+gcloud app deploy app.yaml
 ```
 
 Voilà! Your Nuxt.js application is now hosted on Google App Engine!
