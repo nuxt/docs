@@ -204,7 +204,8 @@ Finally, update our `package.json` "scripts" section
 /* package.json */
 ...
   "scripts": {
-    "dev": "cross-env nodemon server/index.ts"
+    "dev": "cross-env nodemon server/index.ts",
+    "start": "cross-env NODE_ENV=production ts-node --project 'server/tsconfig.json' server/index.ts"
   },
 ...
 ```
