@@ -24,7 +24,7 @@
     "vue_jobs": "Vue Jobs"
   },
   "text": {
-    "an_error_occured": "Um erro ocorreu",
+    "an_error_occurred": "Um erro ocorreu",
     "api_page_not_found": "Página da API não encontrada",
     "example_file": "Arquivos de exemplo",
     "please_wait": "Por favor aguarde...",
