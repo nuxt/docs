@@ -131,6 +131,132 @@ export default class FeedPage extends Vue {
 
 You can use exact same logic for `layouts`.
 
+### Server Configuration with Express
+
+To use TypeScript in your server file you will need to update the following:
+
+> - Rename server/index.js to server/index.ts
+> - Replace all `require` statements with `import` statements inside the server/index.ts file
+> - Remove the ".js" file extension from the `nuxt.config.js` import 
+
+Here is an example
+
+```ts
+/* server/index.ts */
+import express from 'express'
+import consola from 'consola'
+import { Nuxt, Builder } from 'nuxt'
+const app = express()
+
+// Import and Set Nuxt.js options
+import config from '../nuxt.config'
+config.dev = !(process.env.NODE_ENV === 'production')
+
+async function start() {
+  // Init Nuxt.js
+  const nuxt = new Nuxt(config)
+
+  const { host, port } = nuxt.options.server
+
+  // Build only in dev mode
+  if (config.dev) {
+    const builder = new Builder(nuxt)
+    await builder.build()
+  } else {
+    await nuxt.ready()
+  }
+
+  // Give nuxt middleware to express
+  app.use(nuxt.render)
+
+  // Listen the server
+  app.listen(port, host)
+  consola.ready({
+    message: `Server listening on http://${host}:${port}`,
+    badge: true
+  })
+}
+start()
+```
+
+Next we should add a `nodemon.json` configuration file to our project root:
+
+```json
+/* nodemon.json */
+{
+  "restartable": "rs",
+  "ignore": [".git", "node_modules/**/node_modules"],
+  "verbose": false,
+  "execMap": {
+    "ts": "node --require ts-node/register"
+  },
+  "watch": ["server/index.ts"],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "ts"
+}
+```
+
+Finally, update our `package.json` "scripts" section
+
+```json
+/* package.json */
+...
+  "scripts": {
+    "dev": "cross-env nodemon server/index.ts"
+  },
+...
+```
+
+<div class="Alert Alert--gray">
+
+`node` only supports the "commonjs" module option in the tsconfig.json file.
+
+</div>
+
+If you are NOT using the "commonjs" module option inside your default tsconfig.json file you have two options:
+> - Change the module option to `"module": "commonjs"`
+OR
+> - Add or `touch` an new tsconfig in the server directory e.g., `server/tsconfig.json`
+> - Tell our `nodemon.json` file to use our new `server/tsconfig.json` instead of the default `tsconfig.json` file 
+
+```json
+/* server/tsconfig.json */
+/* this is a basic tsconfig.json file. You can add to/remove and modify everything except the module option */
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "noEmit": true,
+
+    "strict": true,
+
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "esModuleInterop": true
+  }
+}
+```
+
+```json
+/* nodemon.json */
+{
+...
+  "env": {
+    "NODE_ENV": "development"
+    "TS_NODE_PROJECT": "server/tsconfig.json"
+  },
+...
+}
+```
+
+    
+
+
 ## Linting with ESLint
 
 If you're using ESLint to lint your project, here is how you can make ESLint lint your TypeScript files.
