@@ -205,7 +205,7 @@ Finally, update our `package.json` "scripts" section
 ...
   "scripts": {
     "dev": "cross-env nodemon server/index.ts",
-    "start": "cross-env NODE_ENV=production ts-node --project 'server/tsconfig.json' server/index.ts"
+    "start": "cross-env NODE_ENV=production ts-node server/index.ts"
   },
 ...
 ```
@@ -220,7 +220,8 @@ If you are NOT using the "commonjs" module option inside your default tsconfig.j
 > - Change the module option to `"module": "commonjs"`
 OR
 > - Add or `touch` an new tsconfig in the server directory e.g., `server/tsconfig.json`
-> - Tell our `nodemon.json` file to use our new `server/tsconfig.json` instead of the default `tsconfig.json` file 
+> - Tell our `nodemon.json` file to use our new `server/tsconfig.json` instead of the default `tsconfig.json` file
+> - Update our `start` script in the `package.json` file
 
 ```json
 /* server/tsconfig.json */
@@ -254,7 +255,15 @@ OR
 ...
 }
 ```
-
+```json
+/* package.json */
+...
+  "scripts": {
+    ...
+    "start": "cross-env NODE_ENV=production ts-node --project 'server/tsconfig.json' server/index.ts"
+  },
+...
+```
     
 
 
