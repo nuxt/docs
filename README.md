@@ -37,6 +37,8 @@ Chinese translation is maintained by AOTU Labs from China, Shenzhen.
 
 ### Japanese
 
+**Please read** [the Japanese translation guide](https://github.com/vuejs-jp/ja.docs.nuxtjs/wiki).
+
 Japanese translation is maintained by [Vue.js Japan User Group](https://github.com/vuejs-jp/home).
 
 * Translation Repo - [https://github.com/vuejs-jp/ja.docs.nuxtjs](https://github.com/vuejs-jp/ja.docs.nuxtjs)
