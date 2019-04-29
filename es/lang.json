@@ -24,7 +24,7 @@
     "vue_jobs": "Trabajos en Vue.js"
   },
   "text": {
-    "an_error_occured": "Ha ocurrido un error",
+    "an_error_occurred": "Ha ocurrido un error",
     "api_page_not_found": "La pagina de la API no se encuentra",
     "example_file": "Archivos de ejemplo",
     "please_wait": "Por favor espere...",
