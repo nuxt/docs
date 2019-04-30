@@ -6,7 +6,7 @@
 
 This repository contains only the Markdown files for [nuxtjs.org](https://nuxtjs.org) website.
 
-For developping in local, see instructions on [nuxtjs.org](https://github.com/nuxt/nuxtjs.org) repo.
+For developping in local, see instructions on [nuxt/nuxtjs.org](https://github.com/nuxt/nuxtjs.org) repo.
 
 ## On Translations
 
