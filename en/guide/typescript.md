@@ -1,5 +1,6 @@
 ---
 title: TypeScript Support
+description: Nuxt.js is shipped with @nuxtjs/typescript module with built-in TypeScript support.
 ---
 
 > A static type system can help prevent many potential runtime errors, especially as applications grow.
