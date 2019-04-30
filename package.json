@@ -2,9 +2,6 @@
   "name": "nuxt-docs",
   "version": "1.0.0",
   "description": "Nuxt.js documentation files",
-  "engines": {
-    "node": ">=8.0.0"
-  },
   "scripts": {
     "textlint:ja": "textlint --config ja/.textlintrc ja/**/*.md",
     "textlint:ja:fix": "textlint --config ja/.textlintrc --fix --format diff ja/**/*.md"
@@ -36,7 +33,7 @@
     "vue",
     "micro"
   ],
-  "author": "Chopin brothers (@Atinux & @alexchopin)",
+  "author": "Nuxt.js team and contributors",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/nuxt/docs/issues"
