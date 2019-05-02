@@ -29,7 +29,7 @@ $ npx create-nuxt-app <project-name>
 Or with [yarn](https://yarnpkg.com/en/):
 
 ```bash
-$ yarn create nuxt-app <my-project>
+$ yarn create nuxt-app <project-name>
 ```
 
 It will ask you some questions:
