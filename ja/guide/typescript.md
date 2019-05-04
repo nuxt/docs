@@ -4,7 +4,7 @@ title: TypeScript サポート
 
 > 静的型付けは、とりわけアプリケーションが大きく成長したするにつれて、多くの潜在的なランタイムエラーを防ぐのに役立ちます。
 >
-> それこそが Nuxt ブランドの新しい `@nuxt/typescript` パッケージをビルトインで TypeScript ツールをサポートする:
+> それこそが Nuxt の新しい `@nuxt/typescript` パッケージがビルトインで TypeScript ツールをサポートする理由です:
 > - Nuxt 公式の型定義
 > - IDE でのオートコンプリート
 > - すべてを TypeScript で記述できること（`layouts`, `pages`, `components`, `plugins`, `store`）
