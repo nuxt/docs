@@ -36,7 +36,7 @@ echo "{}" > tsconfig.json
 
 <div class="Alert Alert--gray">
 
-**情報:** プロジェクト内に `tsconfig.json` があると、Nuxt.jsh は TypeScript プロジェクトを実行していることを認識することができます。
+**情報:** プロジェクト内に `tsconfig.json` があると、Nuxt.js は TypeScript プロジェクトを実行していることを認識することができます。
 
 このファイルは `nuxt` コマンドを初回実行時に自動的にデフォルト値で更新されます。
 
