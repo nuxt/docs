@@ -227,3 +227,37 @@ Vue.use(VueNotifications)
 また、もしあなたが生成されたアプリケーション（`nuxt generate` コマンドによって）の中にいるかどうか知る必要がある場合は、`process.static` 変数に `true` がセットされているかでチェックできます。これは、アプリケーションの生成中および生成後の場合のみです。
 
 保存前に `nuxt generate` コマンドによって、ページがサーバレンダリングされている時の状態を知るには、2 つのオプションを組み合わせて使うことができます (`process.static && process.server`) 。
+
+**情報**: Nuxt.js 2.4 以降、プラグインタイプを指定するための `plugins` のオプションとして `mode` が導入されました。指定可能な値は `client` または `server` です。 `ssr：false` は `mode: 'client'` に適応され、次のメジャーリリースでは非推奨になります。
+
+例:
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: [
+    { src: '~/plugins/both-sides.js' },
+    { src: '~/plugins/client-only.js', mode: 'client' },
+    { src: '~/plugins/server-only.js', mode: 'server' }
+  ]
+}
+```
+
+### プラグイン名の規約
+
+プラグインがクライアント側またはサーバー側でのみ実行されると想定される場合、 `.client.js` または `.server.js` をプラグインファイルの拡張子として適用することができ、ファイルは自動的に対応する側に含まれます。
+
+例:
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: [
+    '~/plugins/foo.client.js', // クライアントサイド限定
+    '~/plugins/bar.server.js', // サーバーサイド限定
+    '~/plugins/baz.js' // クライアントサイドとサーバーサイド両方
+  ]
+}
+```
