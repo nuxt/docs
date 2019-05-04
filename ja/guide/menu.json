@@ -104,7 +104,11 @@
       },
       {
         "to": "/typescript", "name": "TypeScript Support",
-        "contents": []
+        "contents": [
+          { "to": "#はじめる", "name": "はじめる" },
+          { "to": "#JavaScript-から-TypeScript-へ", "name": "JavaScript から TypeScript へ" },
+          { "to": "#ESLint-を使った-Linting", "name": "ESLint を使った Linting" }
+        ]
       },
       {
         "to": "/commands", "name": "コマンドとデプロイ",

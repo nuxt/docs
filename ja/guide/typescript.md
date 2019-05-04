@@ -1,32 +1,34 @@
 ---
-title: TypeScript Support
+title: TypeScript サポート
 ---
 
-> A static type system can help prevent many potential runtime errors, especially as applications grow.
+> 静的型付けは、とりわけアプリケーションが大きく成長したするにつれて、多くの潜在的なランタイムエラーを防ぐのに役立ちます。
 >
-> That's why Nuxt's brand new `@nuxt/typescript` package ships built-in TypeScript tooling support :
-> - Nuxt official type definitions
-> - Autocompletion in IDE
-> - Write everything in TypeScript fashion (`layouts`, `pages`, `components`, `plugins`, `store`)
-> - Runtime TS support (`nuxt.config.ts`, `modules`, `serverMiddlewares`)
-> - TSX Support
+> それこそが Nuxt の新しい `@nuxt/typescript` パッケージがビルトインで TypeScript ツールをサポートする理由です:
+> - Nuxt 公式の型定義
+> - IDE でのオートコンプリート
+> - すべてを TypeScript で記述できること（`layouts`, `pages`, `components`, `plugins`, `store`）
+> - ランタイム TS サポート（`nuxt.config.ts`, `modules`, `serverMiddlewares`）
+> - TSX サポート
 
-## Get started
+## はじめる
 
-To be able to use TypeScript in your project, you will need to install `@nuxt/typescript`
+プロジェクトで TypeScript を利用するためには `@nuxt/typescript` をインストールする必要があります。
+
 ```sh
 npm install -D @nuxt/typescript
-# OR
+
+# または
 yarn add -D @nuxt/typescript
 ```
 
 <div class="Alert Alert--gray">
 
-`@nuxt/typescript` ships typescript related dependencies and extends Nuxt core to enable runtime TypeScript support. 
+`@nuxt/typescript` は TypeScript に関連した依存関係を結び付け、Nuxt のコアを TypeScript サポートを実行できるよう拡張します。
 
 </div>
 
-You'll also need to create a minimal `tsconfig.json` file :
+また、ミニマムな `tsconfig.json` ファイルを作成する必要があります:
 
 ```sh
 echo "{}" > tsconfig.json
@@ -34,35 +36,35 @@ echo "{}" > tsconfig.json
 
 <div class="Alert Alert--gray">
 
-**INFO:** The presence of the `tsconfig.json` in your project lets Nuxt.js know you're running a TypeScript project.
+**情報:** プロジェクト内に `tsconfig.json` があると、Nuxt.js は TypeScript プロジェクトを実行していることを認識することができます。
 
-This file will be automatically updated with defaults value the first time you're running `nuxt` command.
+このファイルは `nuxt` コマンドを初回実行時に自動的にデフォルト値で更新されます。
 
 </div>
 
-## From JavaScript to TypeScript
+## JavaScript から TypeScript へ
 
-### Configuration file
+### 設定ファイル
 
-To be able to use TypeScript in your configuration file, all you need is to rename `nuxt.config.js` in `nuxt.config.ts`.
+設定ファイル内で TypeScript と使えるようにするために必要なことは `nuxt.config.js` ファイルを `nuxt.config.ts` へリネームするだけです。
 
-Nuxt.js also brings type definitions which provides autocompletion and type checking :
+Nuxt.js はオートコンプリートと型チェックを行うための型定義を提供します:
 
 ```ts
 import NuxtConfiguration from '@nuxt/config'
 
 const config: NuxtConfiguration = {
-  // Type or Press `Ctrl + Space` for autocompletion
+  // タイプするか `Ctrl + Space` を押すとオートコンプリートできます
 }
 
 export default config
 ```
 
-### Components
+### コンポーネント
 
-For components, we highly advice to use [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator) which depends on [vue-class-component](https://github.com/vuejs/vue-class-component).
+コンポーネントのために [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator) を利用することを強くお薦めします。なおこれは [vue-class-component](https://github.com/vuejs/vue-class-component) に依存しています。
 
-Here is a basic example mixing a `page` and a reusable `component` to display data fetched with Nuxt `asyncData`.
+下記は Nuxt の `asyncData` で取得したデータを表示するための、再利用可能な `component` と `page` を組み合わせた基本的な例です。
 
 ```ts
 /* models/Post.ts */
@@ -123,29 +125,30 @@ export default class FeedPage extends Vue {
 </script>
 ```
 
-You can use exact same logic for `layouts`.
+同様のロジックを `layouts` でも使うことができます。
 
-## Linting with ESLint
+## ESLint を使った Linting
 
-If you're using ESLint to lint your project, here is how you can make ESLint lint your TypeScript files. 
+
+プロジェクトを Lint するために ESLint を使っているのであれば、下記のように ESLint で TypeScript ファイルを Lint できます。 
 
 <div class="Alert Alert--teal">
 
-**IMPORTANT:** We're assuming you have already set up [nuxt/eslint-config](https://github.com/nuxt/eslint-config) within your project.
+**重要:** 既に [nuxt/eslint-config](https://github.com/nuxt/eslint-config) を設定しているという想定です。
 
 </div>
 
-First, you need to install the [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) plugin :
+まず、[typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) プラグインをインストールする必要があります。
 
 ```sh
 npm install -D @typescript-eslint/eslint-plugin
-# OR
+# または
 yarn add -D @typescript-eslint/eslint-plugin
 ```
 
-Then, edit your ESLint configuration (`.eslintrc.js`) by adding the `@typescript-eslint` plugin and making `@typescript-eslint/parser` the default parser.  
+それから ESLint の設定（`.eslintrc.js`）において、`@typescript-eslint` プラグインを追加し、`@typescript-eslint/parser` をデフォルトパーサーに指定するよう編集します。
 
-A minimal configuration should look like this :
+最小限の設定は下記のようになります:
 
 ```js
 module.exports = {
@@ -160,12 +163,12 @@ module.exports = {
 
 ```
 
-Finally, add or edit the `lint` script of your `package.json` :
+最後に `package.json` 内に `lint` スクリプトを追加または編集します。
 
 ```json
 "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore ."
 ```
 
-> `--ignore-path` option is useful to prevent ESLint linting files/folders like `node_modules`, `.nuxt` or whatever you don't want it to lint.
+> `--ignore-path` オプションを使って、`node_modules` や `.nuxt` あるいは Lint したくないどんなファイルもしくはディレクトリも ESLint の Lint 対象から除外できます。
 
-You can now lint your TypeScript files by running `npm run lint` (or `yarn lint`).
+これで `npm run lint`（または `yarn lint`）を実行することで TypeScript を Lint できるようになりました。
