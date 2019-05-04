@@ -64,7 +64,6 @@ export default config
 
 
 
-For components, we highly advice to use  which depends on 
 
 コンポーネントのために [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator) を利用することを強くお薦めします。なおこれは [vue-class-component](https://github.com/vuejs/vue-class-component) に依存しています。
 
