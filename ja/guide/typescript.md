@@ -135,7 +135,6 @@ export default class FeedPage extends Vue {
 
 ## ESLint を使った Linting
 
-If you're using ESLint to lint your project, here is how you can make ESLint lint your TypeScript files. 
 
 プロジェクトを Lint するために ESLint を使っているのであれば、下記のように ESLint で TypeScript ファイルを Lint できます。 
 
