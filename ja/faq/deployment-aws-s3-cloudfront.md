@@ -182,9 +182,14 @@ var parallelize = require('concurrent-transform');
 var config = {
 
   // 必須
-  params: { Bucket: process.env.AWS_BUCKET_NAME },
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  params: { 
+    Bucket: process.env.AWS_BUCKET_NAME
+  },
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    signatureVersion: 'v3'
+  },
 
   // 任意
   deleteOldVersions: false,                 // PRODUCTION で使用しない
@@ -203,7 +208,7 @@ var config = {
 gulp.task('deploy', function() {
   // S3 オプションを使用して新しい publisher を作成する
   // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property
-  var publisher = awspublish.create(config, config);
+  var publisher = awspublish.create(config);
 
   var g = gulp.src('./' + config.distDir + '/**');
     // publisher は、上記で指定した Content-Length、Content-Type、および他のヘッダーを追加する
