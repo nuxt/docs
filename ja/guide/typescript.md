@@ -62,9 +62,6 @@ export default config
 
 ### コンポーネント
 
-
-
-
 コンポーネントのために [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator) を利用することを強くお薦めします。なおこれは [vue-class-component](https://github.com/vuejs/vue-class-component) に依存しています。
 
 下記は Nuxt の `asyncData` で取得したデータを表示するための、再利用可能な `component` と `page` を組み合わせた基本的な例です。
@@ -138,7 +135,7 @@ export default class FeedPage extends Vue {
 
 <div class="Alert Alert--teal">
 
-**重要:** 既に [nuxt/eslint-config](https://github.com/nuxt/eslint-config) を設定していると想定です。
+**重要:** 既に [nuxt/eslint-config](https://github.com/nuxt/eslint-config) を設定しているという想定です。
 
 </div>
 
