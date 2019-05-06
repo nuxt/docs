@@ -80,6 +80,18 @@
         ]
       },
       {
+        "to": "/modules", "name": "Modules",
+        "contents": [
+          { "to": "#introduction", "name": "Introduction" },
+          { "to": "#list-of-nuxt-js-modules", "name": "List of Nuxt.js modules" },
+          { "to": "#write-a-basic-module", "name": "Write a basic Module" },
+          { "to": "#async-modules", "name": "Async Modules" },
+          { "to": "#common-snippets", "name": "Common Snippets" },
+          { "to": "#run-tasks-on-specific-hooks", "name": "Run Tasks on Specific hooks" },
+          { "to": "#module-package-commands", "name": "Module package commands" }
+        ]
+      },
+      {
         "to": "/vuex-store", "name": "Vuex Store",
         "contents": [
           { "to": "#store-활성화하기", "name": "Store 활성화하기" },
