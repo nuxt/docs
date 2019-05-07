@@ -40,7 +40,7 @@ export default {
 
 > Customize Babel configuration for JavaScript and Vue files. `.babelrc` is ignored by default.
 
-- Type: `Object`
+- Type: `Object` See `babel-loader` [options](https://github.com/babel/babel-loader#options) and `babel` [options](https://babeljs.io/docs/en/options)
 - Default:
 
   ```js
@@ -50,52 +50,53 @@ export default {
     presets: ['@nuxt/babel-preset-app']
   }
   ```
-  
 
 The default targets of [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) are `ie: '9'` in the `client` build, and `node: 'current'` in the `server` build.
 
+### presets
+
+- Type: `Object`
+- Argument:
+  1. `Object`: { isServer: true | false }
+  2. `Array`:
+      - preset name `@nuxt/babel-preset-app`
+      - [`options`](https://github.com/nuxt/nuxt.js/tree/dev/packages/babel-preset-app#options) of `@nuxt/babel-preset-app`
+
 **Note**: The presets configured in `build.babel.presets` will be applied to both, the client and the server build. The target will be set by Nuxt accordingly (client/server). If you want configure the preset differently for the client or the server build, please use `presets` as a function:
+
+> We **highly recommend** to use the default preset instead of below customization
 
 ```js
 export default {
   build: {
     babel: {
-      presets({ isServer }) {
-        const targets = isServer ? { node: '10' } : { ie: '11' }
-        return [
-          [ require.resolve('@nuxt/babel-preset-app'), { targets } ]
-        ]
+      presets({ isServer }, [ preset, options ]) {
+        // change options directly
+        options.targets = isServer ? ... :  ...
+        options.corejs = ...
+        // return nothing
       }
     }
   }
 }
 ```
 
-We **highly recommend** to use the default preset. However, you can change the preset if you have to. 
-
-*Example* for custom presets:
-```js
-export default {
-  build: {
-    babel: {
-      presets: ['es2015', 'stage-0']
-    }
-  }
-}
-```
-
-> Default targets of [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) is : `ie: '9'` in `client` building, `node: 'current'` in `server` side.
-
-**Note**: the presets in configured in `build.babel.presets` will be applied to both client and server build, the target will be set by Nuxt according to the building (client/server), if you want to set different config, please use presets as a function:
+Or override default value by returning whole presets list:
 
 ```js
 export default {
   build: {
     babel: {
-      presets({ isServer }) {
-        const targets = isServer ? { node: '10' } : { ie: '11' }
+      presets({ isServer }, [ preset, options ]) {
         return [
-          [ require.resolve('@nuxt/babel-preset-app'), { targets } ]
+          [
+            preset, {
+              buildTarget: isServer ? 'server' : 'client',
+              ...options
+          }],
+          [
+            // Other presets
+          ]
         ]
       }
     }
