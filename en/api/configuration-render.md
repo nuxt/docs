@@ -47,6 +47,8 @@ will be used (with respective options).
 If you want to use your own compression middleware, you can reference it
 directly (f.ex. `otherComp({ myOptions: 'example' })`).
 
+To disable compression, pass in a falsy value.
+
 ## fallback
 - Type `Object`
   - Default: `{ dist: {}, static: { skipUnknown: true } }`
