@@ -19,8 +19,8 @@ Additional to them, we introduced a `prefix` option which defaults to `true`. It
 
 **Example:**
 
-* Server middlware path: `/admin`
-* Router base: `/api`
+* Server middlware path: `/api`
+* Router base: `/admin`
 * With `prefix: true` (default): `/admin/api`
 * With `prefix: false`: `/api`
 
