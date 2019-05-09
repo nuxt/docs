@@ -87,7 +87,9 @@
           { "to": "#はじめに", "name": "はじめに" },
           { "to": "#基本的なモジュールを書く", "name": "基本的なモジュールを書く" },
           { "to": "#非同期モジュール", "name": "非同期モジュール" },
-          { "to": "#共通のスニペット", "name": "共通のスニペット" }
+          { "to": "#共通のスニペット", "name": "共通のスニペット" },
+          { "to": "#特定のフックでタスクを実行する", "name": "特定のフックでタスクを実行する" },
+          { "to": "#モジュールパッケージコマンド", "name": "モジュールパッケージコマンド" }
         ]
       },
       {
@@ -102,7 +104,11 @@
       },
       {
         "to": "/typescript", "name": "TypeScript Support",
-        "contents": []
+        "contents": [
+          { "to": "#はじめる", "name": "はじめる" },
+          { "to": "#JavaScript-から-TypeScript-へ", "name": "JavaScript から TypeScript へ" },
+          { "to": "#ESLint-を使った-Linting", "name": "ESLint を使った Linting" }
+        ]
       },
       {
         "to": "/commands", "name": "コマンドとデプロイ",

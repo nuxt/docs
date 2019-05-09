@@ -133,7 +133,7 @@ npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader 
 それから `.eslintrc.js` ファイルをプロジェクトのルートディレクトに置いて ESLint を設定できます:
 
 ```js
-export default {
+module.exports = {
   root: true,
   env: {
     browser: true,

@@ -24,7 +24,7 @@
     "vue_jobs": "Vue Jobs"
   },
   "text": {
-    "an_error_occured": "Une erreur s'est produite",
+    "an_error_occurred": "Une erreur s'est produite",
     "api_page_not_found": "La page API est introuvable",
     "example_file": "Fichiers d'exemples",
     "please_wait": "Patientez...",

@@ -4,18 +4,9 @@
 
 ## Developing
 
-:warning: You must at least use `node >= 8.0.0` (supports async/await) to start the server.
+This repository contains only the Markdown files for [nuxtjs.org](https://nuxtjs.org) website.
 
-:warning: You must also have the main [nuxtjs.org](https://github.com/nuxt/nuxtjs.org) website repo up and running on localhost to be able to run the docs...
-
-Start a dev server on `localhost:4000`:
-
-```bash
-npm install
-npm run dev
-```
-
-Then access the docs via the website running on `http://nuxt:3000` (see instructions on [nuxtjs.org](https://github.com/nuxt/nuxtjs.org) repo).
+For developping in local, see instructions on [nuxt/nuxtjs.org](https://github.com/nuxt/nuxtjs.org) repo.
 
 ## On Translations
 
@@ -36,6 +27,8 @@ Chinese translation is maintained by AOTU Labs from China, Shenzhen.
 * Primary translator - [Levin Wong](http://faso.me), [Edward Chu](https://github.com/chuyik)
 
 ### Japanese
+
+**Please read** [the Japanese translation guide](https://github.com/vuejs-jp/ja.docs.nuxtjs/wiki).
 
 Japanese translation is maintained by [Vue.js Japan User Group](https://github.com/vuejs-jp/home).
 
@@ -78,7 +71,6 @@ Indonesian translation is maintained by [Nuxt.js Indonesian Community](https://g
 * Translation Repo - [https://gitlocalize.com/repo/100/id](https://gitlocalize.com/repo/100/id)
 * Primary maintainer - [Achan](http://achan.id/)
 * Primary translator - [afrianjunior](https://github.com/afrianjunior), [fikrizufri](https://github.com/fikrizufri), [huiralb](https://github.com/huiralb), [jefrydco](https://github.com/jefrydco), [muhibbudins](https://github.com/muhibbudins), [nusendra](https://github.com/nusendra), [perjakasunda](https://github.com/perjakasunda), [tapitapeh](https://github.com/tapitapeh), [wahwahid](https://github.com/wahwahid)
-
 
 
 ### Want to help with the translation?

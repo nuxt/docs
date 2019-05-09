@@ -23,8 +23,8 @@ CSS で `url('~assets/image.png')` と書いた場合、それは `require('~/as
 
 <div class="Alert Alert--orange">
 
-**Warning:** Nuxt 2.0からは `~/` エイリアスはCSSファイルで正しく解決されないでしょう。
-CSSの参照には、`~assets` (スラッシュなし)か、`@` のエイリアスを使わなければなりません。 例：`background: url("~assets/banner.svg")`
+**Warning:** Nuxt 2.0からは `~/` エイリアスは CSS ファイルで正しく解決されないでしょう。
+CSS の参照には、`~assets`（スラッシュなし）か、`@` のエイリアスを使わなければなりません。 例：`background: url("~assets/banner.svg")`
 </div>
 
 
@@ -74,7 +74,7 @@ createElement('img', { attrs: { src: require('~/assets/image.png') }})
 ```
 
 つまり、1 KB 未満のすべてのファイルは Base64 データ URL としてインライン化されます。
-それ以外の場合、画像/フォントは、対応するフォルダ（ `.nuxt` ディレクトリの下）にコピーされ、
+それ以外の場合、画像/フォントは、対応するフォルダ（`.nuxt` ディレクトリの下）にコピーされ、
 より良いキャッシュのためにバージョンハッシュを含む名前が付けられます。
 
 アプリケーションを `nuxt` コマンドで起動するとき、`pages/index.vue` 内のテンプレートは下記のようになっており:
@@ -95,9 +95,9 @@ createElement('img', { attrs: { src: require('~/assets/image.png') }})
 
 ## Static
 
-`assets` ディレクトリで webpack したくないアセットがある場合は、プロジェクトのルートディレクトリに `static` ディレクトリ(プロジェクトのルートフォルダに)を作成して利用することができます。
+`assets` ディレクトリで webpack したくないアセットがある場合は、プロジェクトのルートディレクトリに `static` ディレクトリ（プロジェクトのルートフォルダに）を作成して利用することができます。
 
-これらのファイルは Nuxt によって自動的に提供され、プロジェクトのルート URL からアクセスできます。( `static/favicon.ico` は `localhost:3000/favicon.ico` で利用することができます。)
+これらのファイルは Nuxt によって自動的に提供され、プロジェクトのルート URL からアクセスできます。（`static/favicon.ico` は `localhost:3000/favicon.ico` で利用することができます）
 
 このオプションは `robots.txt` や `sitemap.xml`、`CNAME`（GitHub Pages などで使う）などのファイルの扱いに役立ちます。
 

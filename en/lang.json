@@ -1,6 +1,6 @@
 {
   "iso": "en",
-  "docVersion": "2.5.X",
+  "docVersion": "2.6.X",
   "links": {
     "api": "API",
     "blog": "Blog",
@@ -24,7 +24,7 @@
     "vue_jobs": "Vue Jobs"
   },
   "text": {
-    "an_error_occured": "An error occurred",
+    "an_error_occurred": "An error occurred",
     "api_page_not_found": "API page not found",
     "example_file": "Example Files",
     "please_wait": "Please wait...",
