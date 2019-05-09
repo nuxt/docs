@@ -29,6 +29,7 @@ Nuxt.js 集成了以下组件/框架，用于开发完整而强大的 Web 应用
 - [Vue 2](https://github.com/vuejs/vue)
 - [Vue-Router](https://github.com/vuejs/vue-router)
 - [Vuex](https://github.com/vuejs/vuex) (当配置了 [Vuex 状态树配置项](/guide/vuex-store) 时才会引入)
+- [Vue 服务器端渲染](https://ssr.vuejs.org/en/) (排除使用 [`mode: 'spa'`](/api/configuration-mode))
 - [Vue-Meta](https://github.com/declandewet/vue-meta)
 
 压缩并 gzip 后，总代码大小为：**57kb** （如果使用了 Vuex 特性的话为 60kb）。
@@ -56,13 +57,11 @@ Nuxt.js 集成了以下组件/框架，用于开发完整而强大的 Web 应用
 
 ![nuxt-schema](/nuxt-schema.svg)
 
-## 服务端渲染
+## 服务端渲染(通过SSR)
 
-你可以使用 Nuxt.js 作为你项目的UI渲染框架。
+您可以使用**Nuxt.js**作为框架来处理项目的所有UI呈现。
 
-当运行 `nuxt` 命令时，会启动一个支持 `热加载` 和 `服务端渲染`（基于Vue.js的 `vue-server-renderer` 模块）的开发服务器。
-
-可以查看 Nuxt.js 提供的各种 [命令](/guide/commands) 以了解更多的信息。
+启动时`nuxt`，它将启动具有热更新加载的开发服务器，并且[Vue 服务器端渲染](https://ssr.vuejs.org/en/)配置为自动为服务器呈现应用程序。
 
 ### 单页应用程序 (SPA)
 
@@ -78,6 +77,17 @@ Nuxt.js 集成了以下组件/框架，用于开发完整而强大的 Web 应用
 支持 Vue.js 应用的静态化算是 Nuxt.js 的一个创新点，通过 `nuxt generate` 命令实现。
 
 该命令依据应用的路由配置将每一个路由静态化成为对应的 HTML 文件。
+
+<div>
+  <a href="https://vueschool.io/courses/static-site-generation-with-nuxtjs?friend=nuxt" target="_blank" class="Promote">
+    <img src="/static-site-generation-with-nuxtjs.png" alt="Static Site Generation with Nuxt.js by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">使用Nuxt.js生成静态站点</h4>
+      <p class="Promote__Content__Description">了解如何生成静态站点(预渲染)用来提高性能和搜索引擎优化(SEO)，同时减少站点托管成本。</p>
+      <p class="Promote__Content__Signature">由VueSchool制作视频课程，用于支持Nuxt.js开发</p>
+    </div>
+  </a>
+</div>
 
 例如，以下文件结构：
 
