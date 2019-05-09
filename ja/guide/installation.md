@@ -29,7 +29,7 @@ $ npx create-nuxt-app <project-name>
 もしくは [yarn](https://yarnpkg.com/ja/) を使ってください:
 
 ```bash
-$ yarn create nuxt-app <my-project>
+$ yarn create nuxt-app <project-name>
 ```
 
 いくつか質問されます:
