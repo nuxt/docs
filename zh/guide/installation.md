@@ -9,9 +9,9 @@ description: "Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt`
   <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
     <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Nuxt Fundamentals by vueschool"/>
     <div class="Promote__Content">
-      <h4 class="Promote__Content__Title">Nuxt.js Fundamentals</h4>
-      <p class="Promote__Content__Description">Learn how to get started quickly with Nuxt.js in videos.</p>
-      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+      <h4 class="Promote__Content__Title">Nuxt.js 基础知识</h4>
+      <p class="Promote__Content__Description">了解如何在视频中快速使用Nuxt.js</p>
+      <p class="Promote__Content__Signature">由VueSchool制作视频课程，用于支持Nuxt.js开发</p>
     </div>
   </a>
 </div>
@@ -59,6 +59,7 @@ $ yarn create nuxt-app <项目名>
 当运行完时，它将安装所有依赖项，因此下一步是启动项目:
 
 ```bash
+$ cd <project-name>
 $ npm run dev
 ```
 

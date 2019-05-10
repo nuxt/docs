@@ -131,6 +131,14 @@ export default {
 
 页面组件实际上是 Vue 组件，只不过 Nuxt.js 为这些组件添加了一些特殊的配置项（对应 Nuxt.js 提供的功能特性）以便你能快速开发通用应用。
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-page-components?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      观看Vue School出品的 <strong>Nuxt.js 页面组件</strong> 的免费课程 
+    </p>
+  </a>
+</div>
+
 ```html
 <template>
   <h1 class="red">Hello {{ name }}!</h1>

@@ -61,6 +61,18 @@ module.exports = {
 
 想了解更多关于 `plugins` 的配置，请参考 [插件 API 文档](/api/configuration-plugins)。
 
+### ES6 插件
+
+如果插件位于`node_modules`并导出模块，需要将其添加到`transpile`构建选项：
+
+```js
+module.exports = {
+  build: {
+    transpile: ['vue-notifications']
+  }
+}
+```
+您可以参考 [构建配置](/api/configuration-build/#transpile) 文档来获取更多构建选项。
 
 ## 注入 $root 和 context
 

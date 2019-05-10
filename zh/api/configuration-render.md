@@ -44,6 +44,14 @@ export default {
 
 如果您想使用自己的压缩中间件，可以直接引用它(例如： `otherComp({ myOptions: 'example' })`)。
 
+## fallback
+- 类型 `Object`
+  - 默认: `{ dist: {}, static: { skipUnknown: true } }`
+
+中间件配置选项[serve-placeholder](https://github.com/nuxt/serve-placeholder)。
+
+如果要禁用其中一个或两者，则可以传递`false`。
+
 ### http2
 - 类型 `Object`
   - 默认: `{ push: false }`

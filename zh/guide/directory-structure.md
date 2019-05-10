@@ -5,6 +5,14 @@ description: Nuxt.js 的应用目录架构提供了良好的代码分层结构�
 
 > Nuxt.js 的应用目录架构提供了良好的代码分层结构，适用于开发或大或小的应用。 当然，你也可以根据自己的偏好组织应用代码。
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/guided-nuxtjs-project-tour?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      观看有关Vue School上 <strong>Nuxt.js目录结构</strong> 的免费课程 
+    </p>
+  </a>
+</div>
+
 ## 目录
 
 ### 资源目录

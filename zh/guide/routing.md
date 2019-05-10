@@ -59,6 +59,14 @@ router: {
 
 在 Nuxt.js 里面定义带参数的动态路由，需要创建对应的**以下划线作为前缀**的 Vue 文件 或 目录。
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-dynamic-routes?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      观看Vue School出品的 <strong>动态路由</strong> 免费课程
+    </p>
+  </a>
+</div>
+
 以下目录结构：
 
 ```bash

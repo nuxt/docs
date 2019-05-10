@@ -31,6 +31,22 @@ module.exports = {
 
 > 该配置项的值会被直接传给 vue-router 的[构造器](https://router.vuejs.org/zh-cn/api/options.html)。
 
+## routeNameSplitter
+
+- 类型: `String`
+- 默认: `'-'`
+
+您可能希望更改Nuxt.js使用的路由名称之间的分隔符。您可以通过配置文件中的`routeNameSplitter`选项执行此操作。想象一下，我们有页面文件`pages/posts/_id.vue`。Nuxt将以编程方式生成路由名称，在本例中为`posts-id`。因此，将`routeNameSplitter`配置修改为`/`，这样路由名称生成为`posts/id`。
+
+例如 (`nuxt.config.js`):
+```js
+export default {
+  router: {
+    routeNameSplitter: '/'
+  }
+}
+```
+
 ## extendRoutes
 
 - 类型: `Function`
@@ -91,6 +107,23 @@ export default {
 ```
 
 > 此选项直接提供给vue-router [linkexactactiveclass](https://router.vuejs.org/api/#linkexactactiveclass).
+
+## linkPrefetchedClass
+
+- 类型: `String`
+- 默认: `false`
+
+全局配置[`<nuxt-link>`](/api/components-nuxt-link)默认值(默认情况下禁用功能)
+
+例子 (`nuxt.config.js`):
+
+```js
+export default {
+  router: {
+    linkPrefetchedClass: 'nuxt-link-prefetched'
+  }
+}
+```
 
 ## middleware
 
@@ -193,6 +226,46 @@ module.exports = {
 提供自定义查询字符串解析/字符串化功能。覆盖默认值。
 
 > 此选项直接提供在vue-router [parseQuery / stringifyQuery](https://router.vuejs.org/api/#parsequery-stringifyquery).
+
+## prefetchLinks
+
+> Nuxt v2.4.0 添加
+
+- 类型: `Boolean`
+- 默认: `true`
+
+在视图中检测到时，配置`<nuxt-link>`用来预获取*代码分割*页面。需要支持[IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)(参阅 [CanIUse](https://caniuse.com/#feat=intersectionobserver))。
+
+我们建议使用[Polyfill.io](https://polyfill.io)等服务有条件地填充此功能：
+
+`nuxt.config.js`
+
+```js
+export default {
+  head: {
+    script: [
+      { src: 'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver', body: true }
+    ]
+  }
+}
+```
+
+要禁用特定链接上的预取，可以使用`no-prefetch` 属性：
+
+```html
+<nuxt-link to="/about" no-prefetch>About page not pre-fetched</nuxt-link>
+```
+
+要全局禁用所有链接上的预取，请将`prefetchLinks`设置为`false`：
+
+```js
+// nuxt.config.js
+export default {
+  router: {
+    prefetchLinks: false
+  }
+}
+```
 
 ## fallback
 
