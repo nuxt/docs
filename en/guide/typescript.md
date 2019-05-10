@@ -51,7 +51,7 @@ touch tsconfig.json
 
 ### Configuration file
 
-To be able to use TypeScript in your configuration file, all you need is to rename `nuxt.config.js` in `nuxt.config.ts`.
+To be able to use TypeScript in your configuration file, all you need is to rename `nuxt.config.js` to `nuxt.config.ts`.
 
 Nuxt.js also brings type definitions which provides autocompletion and type checking :
 
