@@ -167,7 +167,7 @@ Pour plus d'informations à propos de l'utilisation des attributs de pages, cons
 
 ## Entête HTML
 
-Nuxt.js utilise [vue-meta](https://github.com/declandewet/vue-meta) pour mettre à jour les `headers` et les `html attributes` de votre application.
+Nuxt.js utilise [vue-meta](https://github.com/nuxt/vue-meta) pour mettre à jour les `headers` et les `html attributes` de votre application.
 
 Nuxt.js configure `vue-meta` avec les options suivantes :
 
@@ -198,7 +198,7 @@ head: {
 }
 ```
 
-Pour connaitre la liste des options que vous pouvez donner à `head`, jeter un œil à la [documentation vue-meta](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
+Pour connaitre la liste des options que vous pouvez donner à `head`, jeter un œil à la [documentation vue-meta](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
 More information about the `head` method: [API Configuration `head`](/api/configuration-head).
 
@@ -208,6 +208,6 @@ Plus d'informations à propos de la méthode `head` dans [la partie Configuratio
 
 <div class="Alert">
 
-Afin d'éviter toutes duplications lors de l'utilisation d'un composant enfant, donnez un identifiant unique à l'aide de l'attribut `hid`. Pour [en savoir plus](https://github.com/declandewet/vue-meta#lists-of-tags).
+Afin d'éviter toutes duplications lors de l'utilisation d'un composant enfant, donnez un identifiant unique à l'aide de l'attribut `hid`. Pour [en savoir plus](https://vue-meta.nuxtjs.org/api/#tagidkeyname).
 
 </div>

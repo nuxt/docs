@@ -186,7 +186,7 @@ Nuxt.js 为页面提供的特殊配置项：
 
 ## HTML 头部
 
-Nuxt.js 使用了 [`vue-meta`](https://github.com/declandewet/vue-meta) 更新应用的 `头部标签(Head)` and `html 属性`。
+Nuxt.js 使用了 [`vue-meta`](https://github.com/nuxt/vue-meta) 更新应用的 `头部标签(Head)` and `html 属性`。
 
 Nuxt.js 使用以下参数配置 `vue-meta`:
 ```js
@@ -221,7 +221,7 @@ head: {
 }
 ```
 
-想了解 `head` 变量的所有可选项的话，请查阅 [`vue-meta` 使用文档](https://github.com/declandewet/vue-meta#recognized-metainfo-properties)。
+想了解 `head` 变量的所有可选项的话，请查阅 [`vue-meta` 使用文档](https://vue-meta.nuxtjs.org/api/#metainfo-properties)。
 
 关于 Nuxt.js 应用 HTML 头部配置的更多信息，请参考 [HTML 头部配置 API](/api/configuration-head)。
 
@@ -231,6 +231,6 @@ head: {
 
 <div class="Alert Alert--teal">
 
-<b>注意:</b> 为了避免子组件中的meta标签不能正确覆盖父组件中相同的标签而产生重复的现象，建议利用 `hid` 键为meta标签配一个唯一的标识编号。请阅读[关于 `vue-meta` 的更多信息](https://github.com/declandewet/vue-meta#lists-of-tags)。
+<b>注意:</b> 为了避免子组件中的meta标签不能正确覆盖父组件中相同的标签而产生重复的现象，建议利用 `hid` 键为meta标签配一个唯一的标识编号。请阅读[关于 `vue-meta` 的更多信息](https://vue-meta.nuxtjs.org/api/#tagidkeyname)。
 
 </div>

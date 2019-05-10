@@ -28,7 +28,7 @@ Nuxt.js использует следующие элементы для созд
 - [Vue 2](https://github.com/vuejs/vue)
 - [Vue-Router](https://github.com/vuejs/vue-router)
 - [Vuex](https://github.com/vuejs/vuex) (только при использовании [опции store](/guide/vuex-store))
-- [Vue-Meta](https://github.com/declandewet/vue-meta)
+- [Vue-Meta](https://github.com/nuxt/vue-meta)
 
 Общий размер составляет всего лишь **28kb min+gzip** (31kb при использовании vuex).
 

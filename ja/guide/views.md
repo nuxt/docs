@@ -187,7 +187,7 @@ export default {
 
 ## HTML ヘッド
 
-Nuxt.js は、`document head` とアプリケーションの `meta attributes` を更新するために [vue-meta](https://github.com/declandewet/vue-meta) を使用しています。
+Nuxt.js は、`document head` とアプリケーションの `meta attributes` を更新するために [vue-meta](https://github.com/nuxt/vue-meta) を使用しています。
 
 Nuxt.js が使っている `vue-meta` は、[GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/index.js#L29-L35) で参照できます。
 
@@ -215,7 +215,7 @@ head: {
 }
 ```
 
-`head` で利用できるオプションの詳細については、[メタ情報プロパティの認識](https://github.com/declandewet/vue-meta#recognized-metainfo-properties)を参照してください。
+`head` で利用できるオプションの詳細については、[メタ情報プロパティの認識](https://vue-meta.nuxtjs.org/api/#metainfo-properties)を参照してください。
 
 `head` メソッドに関するより多くの情報は、[`head` プロパティ](/api/configuration-head)を参照してください。
 
