@@ -55,7 +55,7 @@ The default targets of [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/
 
 ### presets
 
-- Type: `Object`
+- Type: `Function`
 - Argument:
   1. `Object`: { isServer: true | false }
   2. `Array`:
