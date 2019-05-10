@@ -12,7 +12,7 @@
       { "name": "キャッシュコンポーネントを使うには？", "to": "/cached-components" },
       { "name": "Google アナリティクスを使うには？", "to": "/google-analytics" },
       { "name": "クロスオリジンリソースを共有するには？", "to": "/http-proxy"},
-      { "name": "オーディオファイルをロード出来るように Webpack の設定を拡張するには？", "to": "/webpack-audio-files" }
+      { "name": "オーディオファイルをロードするように Webpack の設定を拡張するには？", "to": "/webpack-audio-files" }
     ]
   },
   {
