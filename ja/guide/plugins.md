@@ -66,9 +66,9 @@ export default {
 
 `plugins` 設定キーについてより深く理解するには [plugins api](/api/configuration-plugins) を参照してください。
 
-### ES6 plugins
+### ES6 プラグイン
 
-If the plugin is located in `node_modules` and exports an ES6 module, you may need to add it to the `transpile` build option:
+プラグインが `node_modules` にあり、ES6 モジュールをエクスポートしている場合、それを ` transpile` ビルドオプションに追加する必要があるかもしれません：
 
 ```js
 module.exports = {
@@ -77,7 +77,7 @@ module.exports = {
   }
 }
 ```
-You can refer to the [configuration build](/api/configuration-build/#transpile) docs for more build options.
+その他のビルドオプションについては [configuration build](/api/configuration-build/#transpile) のドキュメントを参照することができます。
 
 ## アプリケーションのルートや context に注入する
 
