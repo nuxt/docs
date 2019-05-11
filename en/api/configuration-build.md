@@ -692,7 +692,8 @@ If you want to transpile specific dependencies with Babel, you can add them in `
 
   ```js
   {
-    typeCheck: true
+    typeCheck: true,
+    ignoreNotFoundWarnings: false
   }
   ```
 
@@ -706,6 +707,19 @@ If you want to transpile specific dependencies with Babel, you can add them in `
 When enabled, Nuxt.js uses [fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) to provide type checking.
 
 You can use an `Object` to override plugin options or set it to `false` to disable it.
+
+### typescript.ignoreNotFoundWarnings
+
+> Enables suppress not found typescript warnings.
+
+- Type: `Boolean`
+- Default: `false`
+
+When enabled, you can suppress `export ... was not found ...` warnings.
+
+See also about background information [https://github.com/TypeStrong/ts-loader/issues/653](https://github.com/TypeStrong/ts-loader/issues/653)
+
+**Warning:** This property might suppress the warnings you want to see. Be careful with how you configure it.
 
 ## vueLoader
 

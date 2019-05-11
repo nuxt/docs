@@ -598,7 +598,8 @@ Terser プラグインのオプションです。 `false` を設定するとこ�
 
   ```js
   {
-    typeCheck: true
+    typeCheck: true,
+    ignoreNotFoundWarnings: false
   }
   ```
 
@@ -612,6 +613,20 @@ Terser プラグインのオプションです。 `false` を設定するとこ�
 When enabled, Nuxt.js uses [fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) to provide type checking.
 
 You can use an `Object` to override plugin options or set it to `false` to disable it.
+
+### typescript.ignoreNotFoundWarnings
+
+> typescript の not foundの warning を抑制します。
+
+- 型: `Boolean`
+- デフォルト: `false`
+
+有効にすると、`export ... was not found ...` の warning を抑制することが出来ます。
+
+背景についてはこちらも参照してください。 [https://github.com/TypeStrong/ts-loader/issues/653](https://github.com/TypeStrong/ts-loader/issues/653)
+
+**警告:** このプロパティは本来見たい warning も抑制する可能性があります。設定には注意してください。
+
 
 ## vueLoader
 
