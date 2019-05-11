@@ -45,6 +45,8 @@ Object を設定する場合、[compression](https://www.npmjs.com/package/compr
 
 独自の圧縮ミドルウェアを使用したい場合は、直接参照することができます。(f.ex. `otherComp({ myOptions: 'example' })`)
 
+圧縮を無効にするには、`compressor: false` を使います。
+
 ## fallback
 - 型 `Object`
   - デフォルト: `{ dist: {}, static: { skipUnknown: true } }`
@@ -94,6 +96,20 @@ pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
 
 利用可能なオプションは  [serve-static](https://www.npmjs.com/package/serve-static) を参照してください。
 
+それらに加えて、デフォルトで `true` になる `prefix` オプションを導入しました。
+静的なアセットに router base を追加します。
+
+**例:**
+
+* アセット: `favicon.ico`
+* Router base: `/t`
+* `prefix: true`（デフォルト）: `/t/favicon.ico`
+* `prefix: false`: `/favicon.ico`
+
+**Caveats:**
+
+一部 URL の書き換えでは、プレフィックスが守られないかもしれません。
+
 ## dist
 - 型: `Object`
   - デフォルト: `{ maxAge: '1y', index: false }`
@@ -136,4 +152,38 @@ export default {
     }
   }
 }
+
+// または
+/*
+  次の例では、Google Analytics、LogRocket.io、および Sentry.io で
+  ロギング、トラッキングの分析を行えます。
+
+  Sentry.io のブログで確認する
+  https://blog.sentry.io/2018/09/04/how-sentry-captures-csp-violations
+
+  Tどのトラッキングリンクを使うべきかを学ぶこと。
+*/
+const PRIMARY_HOSTS = `loc.example-website.com`
+export default {
+  csp: {
+    reportOnly: true,
+    hashAlgorithm: 'sha256',
+    policies: {
+      'default-src': ["'self'"],
+      'img-src': ['https:', '*.google-analytics.com'],
+      'worker-src': ["'self'", `blob:`, PRIMARY_HOSTS, '*.logrocket.io'],
+      'style-src': ["'self'", "'unsafe-inline'", PRIMARY_HOSTS],
+      'script-src': ["'self'", "'unsafe-inline'", PRIMARY_HOSTS, 'sentry.io', '*.sentry-cdn.com', '*.google-analytics.com', '*.logrocket.io'],
+      'connect-src': [PRIMARY_HOSTS, 'sentry.io', '*.google-analytics.com'],
+      'form-action': ["'self'"],
+      'frame-ancestors': ["'none'"],
+      'object-src': ["'none'"],
+      'base-uri': [PRIMARY_HOSTS],
+      'report-uri': [
+        `https://sentry.io/api/<project>/security/?sentry_key=<key>`
+      ]
+    }
+  }
+}
+
 ```
