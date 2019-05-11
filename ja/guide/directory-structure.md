@@ -8,7 +8,7 @@ description: デフォルトの Nuxt.js アプリケーションの構造は、�
 <div class="Promo__Video">
   <a href="https://vueschool.io/lessons/guided-nuxtjs-project-tour?friend=nuxt" target="_blank">
     <p class="Promo__Video__Icon">
-      Watch a free lesson about <strong>the Nuxt.js directory structure</strong> on Vue School 
+      Vue School で <strong>Nuxt.js のディレクトリ構造</strong>についての無料レッスンをみる
     </p>
   </a>
 </div>
@@ -41,7 +41,7 @@ _このディレクトリは特別な設定なしでは名前を変更できま�
 
 ### pages ディレクトリ
 
-`pages` ディレクトリにはアプリケーションのビュー及びルーティングファイルを入れます。Nuxt.js フレームワークはこのディレクトリ内のすべての `*.vue` ファイルを読み込み、アプリケーションのルーターを作成します。
+`pages` ディレクトリにはアプリケーションのビュー及びルーティングファイルを入れます。Nuxt.js フレームワークはこのディレクトリ内のすべての `.vue` ファイルを読み込み、アプリケーションのルーターを作成します。
 
 _このディレクトリは特別な設定なしでは名前を変更できません。_
 
@@ -57,7 +57,7 @@ _このディレクトリは特別な設定なしでは名前を変更できま�
 
 `static` ディレクトリは直接サーバのルートに配置され（`/static/robots.txt` は `http://localhost:3000/robots.txt` でアクセス可能です）、変更されない可能性の高いファイルが含まれています（例えば、favicon など）。
 
-**例:** /static/robots.txt は /robots.txt に配置されます。
+**例:** `/static/robots.txt` は `/robots.txt` に配置されます。
 
 _このディレクトリは特別な設定なしでは名前を変更できません。_
 
@@ -77,7 +77,7 @@ _このディレクトリは特別な設定なしでは名前を変更できま�
 
 _このディレクトリは特別な設定なしでは名前を変更できません。_
 
-nuxt.config.js についてより深く理解するには [nuxt.config.js に関するドキュメント](/guide/configuration) を参照してください。
+`nuxt.config.js` についてより深く理解するには [nuxt.config.js に関するドキュメント](/guide/configuration) を参照してください。
 
 ### package.json ファイル
 

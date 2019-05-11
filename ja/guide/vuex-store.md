@@ -8,7 +8,7 @@ description: 状態を管理してくれる Vuex ストアは、あらゆる大�
 <div class="Promo__Video">
   <a href="https://vueschool.io/lessons/utilising-the-vuex-store-nuxtjs?friend=nuxt" target="_blank">
     <p class="Promo__Video__Icon">
-      Watch a free lesson about <strong>Nuxt.js and Vuex</strong> on Vue School 
+      Vue School で <strong>Nuxt.js と Vuex</strong> についての無料レッスンをみる
     </p>
   </a>
 </div>

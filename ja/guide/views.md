@@ -145,7 +145,7 @@ export default {
 <div class="Promo__Video">
   <a href="https://vueschool.io/lessons/nuxtjs-page-components?friend=nuxt" target="_blank">
     <p class="Promo__Video__Icon">
-      Watch a free lesson about <strong>Nuxt.js Page Components</strong> on Vue School 
+      Vue School で <strong>Nuxt.js ページコンポーネント</strong>についての無料レッスンをみる
     </p>
   </a>
 </div>
@@ -172,6 +172,7 @@ export default {
   ...
 }
 </script>
+
 <style>
 .red {
   color: red;
