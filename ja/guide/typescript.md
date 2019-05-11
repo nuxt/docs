@@ -1,5 +1,6 @@
 ---
 title: TypeScript サポート
+description: "Nuxt.js は TypeScript がビルドインされた `@nuxt/typescript` モジュールをリリースしました。"
 ---
 
 > 静的型付けは、とりわけアプリケーションが大きく成長したするにつれて、多くの潜在的なランタイムエラーを防ぐのに役立ちます。
@@ -14,31 +15,35 @@ title: TypeScript サポート
 ## はじめる
 
 プロジェクトで TypeScript を利用するためには `@nuxt/typescript` をインストールする必要があります。
-
 ```sh
-npm install -D @nuxt/typescript
-
+npm i -D @nuxt/typescript
+npm i ts-node
 # または
 yarn add -D @nuxt/typescript
+yarn add ts-node
 ```
 
 <div class="Alert Alert--gray">
 
-`@nuxt/typescript` は TypeScript に関連した依存関係を結び付け、Nuxt のコアを TypeScript サポートを実行できるよう拡張します。
+`@nuxt/typescript` は TypeScript ファイルのコンパイルと型チェックを別のプロセスで行うのに必要な TypeScript 関連の依存関係を持っています。
 
 </div>
 
-また、ミニマムな `tsconfig.json` ファイルを作成する必要があります:
+<div class="Alert Alert--gray">
+
+`ts-node` は `nuxt.config.ts` と `serverMiddlewares` をサポートする TypeScript ランタイムを有効化するため Nuxt のコアを拡張します。
+
+</div>
+
+また、コードエディタかコマンドラインを使って、プロジェクトのルートフォルダに空の `tsconfig.json` ファイルを作成する必要があります:
 
 ```sh
-echo "{}" > tsconfig.json
+touch tsconfig.json
 ```
 
 <div class="Alert Alert--gray">
 
-**情報:** プロジェクト内に `tsconfig.json` があると、Nuxt.js は TypeScript プロジェクトを実行していることを認識することができます。
-
-このファイルは `nuxt` コマンドを初回実行時に自動的にデフォルト値で更新されます。
+**情報:** `tsconfig.json` は `nuxt` コマンドを初回実行時に自動的にデフォルト値で更新されます。
 
 </div>
 
@@ -114,7 +119,7 @@ import Post from '~/models/Post'
   },
   async asyncData () {
     let { data } = await axios.get(`https://my-api/posts`)
-    return { 
+    return {
       posts: data
     }
   }
@@ -128,7 +133,6 @@ export default class FeedPage extends Vue {
 同様のロジックを `layouts` でも使うことができます。
 
 ## ESLint を使った Linting
-
 
 プロジェクトを Lint するために ESLint を使っているのであれば、下記のように ESLint で TypeScript ファイルを Lint できます。 
 
@@ -158,7 +162,10 @@ module.exports = {
   },
   extends: [
     '@nuxtjs'
-  ]
+  ],
+  rules: {
+    '@typescript-eslint/no-unused-vars': 'error'
+  }
 }
 
 ```
