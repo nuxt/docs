@@ -59,6 +59,14 @@ router: {
 
 パラメータを使って動的なルーティングを定義するには .vue ファイル名またはディレクトリ名に **アンダースコアのプレフィックス** を付ける必要があります。
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-dynamic-routes?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Watch a free lesson about <strong>dynamic routes</strong> on Vue School 
+    </p>
+  </a>
+</div>
+
 下記のような木構造のとき:
 
 ```bash

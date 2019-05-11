@@ -9,6 +9,14 @@ description: Netlify へデプロイするには？
 
 このプロセスの中核は、デプロイ中に Nuxt.js アプリケーションの静的なバージョンを `dist` ディレクトリ内にビルドする `nuxt generate` コマンドです。 このディレクトリの内容は、プロダクション URL にデプロイされます。
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/how-to-deploy-nuxtjs-to-netlify?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Watch a free lesson on <strong>How to deploy Nuxt.js to Netlify</strong> on Vue School 
+    </p>
+  </a>
+</div>
+
 ## はじめに
 
 Netlify ダッシュボードの _"New site from Git"_ ボタンを押下します。レポジトリホストで認証を行い、デプロイするレポジトリを選択、続行します。ステップ 3 : _"ビルドオプションとデプロイ！"_ に進んでください。

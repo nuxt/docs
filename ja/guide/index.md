@@ -108,6 +108,7 @@ Nuxt.js をプロジェクトの UI レンダリング全体を担うフレー�
 この方法により、生成されたウェブアプリケーションをどの静的ウェブサイトホスティングにもホストできます！
 
 最も良い例はこのウェブサイト自体です。このサイトは [Netlify](https://www.netlify.com) で生成されホストされています。[ソースコード](https://github.com/nuxt/nuxtjs.org)を参照してください。
+or [How to deploy Nuxt.js to Netlify](https://vueschool.io/lessons/how-to-deploy-nuxtjs-to-netlify?friend=nuxt) from Vue School.
 
 [docs repository](https://github.com/nuxt/docs) をアップデートするたびに手動でアプリケーションを生成したくないので、Netlify のフックへのトリガーにします：
 

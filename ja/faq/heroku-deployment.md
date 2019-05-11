@@ -7,6 +7,13 @@ description: Heroku へデプロイするには？
 
 [Node.js 向けの Heroku のドキュメント ](https://devcenter.heroku.com/articles/nodejs-support)を読むことをお勧めします。
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/how-to-deploy-nuxtjs-to-heroku?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Watch a free lesson on <strong>How to deploy Nuxt.js to Heroku</strong> on Vue School 
+    </p>
+  </a>
+</div>
 まず `npm run build` を実行できるようにするために、Heroku にプロジェクトの `devDependencies` をインストールすることを伝える必要があります:
 
 ```bash

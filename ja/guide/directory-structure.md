@@ -5,6 +5,14 @@ description: デフォルトの Nuxt.js アプリケーションの構造は、�
 
 > デフォルトの Nuxt.js アプリケーションの構造は、小規模のアプリケーションと大規模のアプリケーションのどちらにも適しています。もちろん、好きなように構成することもできます。
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/guided-nuxtjs-project-tour?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Watch a free lesson about <strong>the Nuxt.js directory structure</strong> on Vue School 
+    </p>
+  </a>
+</div>
+
 ## ディレクトリ
 
 ### assets ディレクトリ
