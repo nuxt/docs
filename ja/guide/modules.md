@@ -22,16 +22,16 @@ Nuxt を使ってプロダクションレベルのアプリケーションを開
 - いつもタイトな締切に追われており、いろいろな新しいライブラリや統合の詳細を深く調べる時間がない。
 - 低レベルのインターフェースの破壊的な変更への対応にうんざりしていて、**とにかく動くもの**を必要としている。
 
-## List of Nuxt.js modules
+## Nuxt.js 公式モジュール一覧
 
-The Nuxt.js team offers **official** modules:
+Nuxt.js チームが提供している **公式** モジュール:
 
-- [@nuxt/http](https://http.nuxtjs.org): Light and universal way to make HTTP requests, based on [ky-universal](https://github.com/sindresorhus/ky-universal)
-- [@nuxtjs/axios](https://axios.nuxtjs.org): Secure and Easy Axios integration with Nuxt.js to make HTTP requests
-- [@nuxtjs/pwa](https://pwa.nuxtjs.org): Supercharge Nuxt with a heavily tested, updated and stable PWA solution
-- [@nuxtjs/auth](https://auth.nuxtjs.org): Authentication module for Nuxt.js, offering different schemes and strategies
+- [@nuxt/http](https://http.nuxtjs.org): [ky-universal](https://github.com/sindresorhus/ky-universal) をベースにしており、軽量でユニバーサルな HTTP リクエストを送ります
+- [@nuxtjs/axios](https://axios.nuxtjs.org): セキュアかつ簡単に Axios と Nuxt.js とを統合し、HTTP リクエストを送ります
+- [@nuxtjs/pwa](https://pwa.nuxtjs.org): 十分にテストされアップデートされた安定した PWA ソリューションを Nuxt に提供します
+- [@nuxtjs/auth](https://auth.nuxtjs.org): Nuxt.js のための認証モジュールです。さまざまなスキームやストラテジーを提供します
 
-A list of Nuxt.js modules made by the community is available on https://github.com/topics/nuxt-module
+コミュニティによって作成されたモジュール一覧は https://github.com/topics/nuxt-module で確認できます。
 
 ## 基本的なモジュールを書く
 
