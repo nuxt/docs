@@ -161,7 +161,7 @@ export default {
   Sentry.io のブログで確認する
   https://blog.sentry.io/2018/09/04/how-sentry-captures-csp-violations
 
-  Tどのトラッキングリンクを使うべきかを学ぶこと。
+  どのトラッキングリンクを使うべきかを学ぶこと。
 */
 const PRIMARY_HOSTS = `loc.example-website.com`
 export default {
