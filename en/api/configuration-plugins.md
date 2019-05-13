@@ -1,6 +1,6 @@
 ---
-title: "API: The plugins Property"
-description: Use vue.js plugins with the plugins option of Nuxt.js.
+title: 'API: The plugins Property'
+description: 'Use vue.js plugins with the plugins option of Nuxt.js.'
 ---
 
 # The plugins Property
@@ -15,22 +15,31 @@ If the item is an object, the properties are:
 
 > The plugins property lets you add vue.js plugins easily to your main application.
 
-Example (`nuxt.config.js`):
+
+UI framework example (`nuxt.config.js`):
+
 ```js
 export default {
-  plugins: ['~/plugins/vue-notifications']
+  plugins: ['@/plugins/ant-design-vue']
 }
 ```
 
-Then, we need to create a file in `plugins/vue-notifications.js`:
+This refers to a file in `plugins/ant-design-vue.js`:
+
 ```js
 import Vue from 'vue'
-import VueNotifications from 'vue-notifications'
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css' // Per Ant Design's docs
 
-Vue.use(VueNotifications)
+Vue.use(Antd)
 ```
 
+Note that the css was [imported as per Ant Design Documentation](https://vue.ant.design/docs/vue/getting-started/#3.-Use-antd's-Components "External tip relevant to building plugins")
+
+
 All the paths defined in the `plugins` property will be **imported** before initializing the main application.
+
+## When do I use plugins?
 
 Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to `plugins` in `nuxt.config.js`.
 
