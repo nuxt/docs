@@ -30,7 +30,7 @@ Nuxt.js はリッチなウェブアプリケーションを構築するために
 - [Vue Router](https://router.vuejs.org/ja/)
 - [Vuex](https://vuex.vuejs.org/ja/)（[ストアオプション](/guide/vuex-store)を利用している場合に限る）
 - [Vue Server Renderer](https://ssr.vuejs.org/ja/)（[`mode: 'spa'`](/api/configuration-mode) を利用している場合を除く）
-- [vue-meta](https://github.com/declandewet/vue-meta)
+- [vue-meta](https://github.com/nuxt/vue-meta)
 
 すべて合わせてもわずか **57kB min+gzip** です。（Vuex 利用時は 60kB）
 

@@ -163,7 +163,7 @@ export default {
 
 ## HTML Head
 
-Nuxt.js는 `headers` 와 `html attributes` 를 갱신하기 위해서 [vue-meta](https://github.com/declandewet/vue-meta)를 사용합니다.
+Nuxt.js는 `headers` 와 `html attributes` 를 갱신하기 위해서 [vue-meta](https://github.com/nuxt/vue-meta)를 사용합니다.
 
 Nuxt.js는 `vue-meta`를 아래의 옵션으로 구성합니다:
 ```js
@@ -192,7 +192,7 @@ head: {
 }
 ```
 
-`head`에 전달 가능한 옵션 목록을 알기 위해서는 [vue-meta 문서](https://github.com/declandewet/vue-meta#recognized-metainfo-properties)를 확인합니다.
+`head`에 전달 가능한 옵션 목록을 알기 위해서는 [vue-meta 문서](https://vue-meta.nuxtjs.org/api/#metainfo-properties)를 확인합니다.
 
 head 메소드에 대한 더 많은 정보: [API head 구성](/api/configuration-head)
 
@@ -200,4 +200,4 @@ head 메소드에 대한 더 많은 정보: [API head 구성](/api/configuration
 
 head 메소드에 대한 더 많은 정보: [API 페이지 head](/api/pages-head)
 
-<p class="Alert">자식 컴포넌트를 사용할 때 중복을 피하고 싶다면 `hid` 키와 함께 유일한 식별자를 사용하세요. 자세한 내용은 [이곳](https://github.com/declandewet/vue-meta#lists-of-tags)에서 확인합니다.
+<p class="Alert">자식 컴포넌트를 사용할 때 중복을 피하고 싶다면 `hid` 키와 함께 유일한 식별자를 사용하세요. 자세한 내용은 [이곳](https://vue-meta.nuxtjs.org/api/#tagidkeyname)에서 확인합니다.

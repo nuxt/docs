@@ -30,7 +30,7 @@ Nuxt.js 集成了以下组件/框架，用于开发完整而强大的 Web 应用
 - [Vue-Router](https://github.com/vuejs/vue-router)
 - [Vuex](https://github.com/vuejs/vuex) (当配置了 [Vuex 状态树配置项](/guide/vuex-store) 时才会引入)
 - [Vue 服务器端渲染](https://ssr.vuejs.org/en/) (排除使用 [`mode: 'spa'`](/api/configuration-mode))
-- [Vue-Meta](https://github.com/declandewet/vue-meta)
+- [Vue-Meta](https://github.com/nuxt/vue-meta)
 
 压缩并 gzip 后，总代码大小为：**57kb** （如果使用了 Vuex 特性的话为 60kb）。
 

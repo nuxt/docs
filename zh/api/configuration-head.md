@@ -22,7 +22,7 @@ module.exports = {
 }
 ```
 
-想了解 `head` 属性的可用配置，可以参考 [vue-meta 配置文档](https://github.com/declandewet/vue-meta#recognized-metainfo-properties)。
+想了解 `head` 属性的可用配置，可以参考 [vue-meta 配置文档](https://vue-meta.nuxtjs.org/api/#metainfo-properties)。
 
 <div class="Alert Alert--teal">
 
