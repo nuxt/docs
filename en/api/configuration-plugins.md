@@ -16,22 +16,9 @@ If the item is an object, the properties are:
 
 > The plugins property lets you add vue.js plugins easily to your main application.
 
-Example (`nuxt.config.js`):
-```js
-export default {
-  plugins: ['~/plugins/vue-notifications']
-}
-```
 
-Then, we need to create a file in `plugins/vue-notifications.js`:
-```js
-import Vue from 'vue'
-import VueNotifications from 'vue-notifications'
+UI framework example (`nuxt.config.js`):
 
-Vue.use(VueNotifications)
-```
-
-UI Framework Example (`nuxt.config.js`):
 ```js
 export default {
   plugins: ['@/plugins/ant-design-vue']
@@ -39,16 +26,15 @@ export default {
 ```
 
 This refers to a file in `plugins/ant-design-vue.js`:
+
 ```js
 import Vue from 'vue'
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css' // Per Ant Design's docs
 
-export default () => {
-    Vue.use(Antd)
-}
-
+Vue.use(Antd)
 ```
+
 Note that the css was [imported as per Ant Design Documentation](https://vue.ant.design/docs/vue/getting-started/#3.-Use-antd's-Components "External tip relevant to building plugins")
 
 
