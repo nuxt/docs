@@ -1,7 +1,6 @@
 ---
 title: 'API: The plugins Property'
-description: Use vue.js plugins with the plugins option of Nuxt.js.
-published: true
+description: 'Use vue.js plugins with the plugins option of Nuxt.js.'
 ---
 
 # The plugins Property
