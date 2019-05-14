@@ -5,6 +5,18 @@ description: 'Use vue.js plugins with the plugins option of Nuxt.js.'
 
 # The plugins Property
 
+**Note**: Since Nuxt.js 2.4, `mode` has been introduced as option of `plugins` to specify plugin type, possible value are: `client` or `server`. `ssr: false` will be adapted to `mode: 'client'` and deprecated in next major release.
+
+- Type: `Array`
+  - Items: `String` or `Object`
+
+If the item is an object, the properties are:
+
+  - src: `String` (path of the file)
+  - mode: `String` (can be `client` or `server`) *If defined, the file will be included only on the respective (client or server) side.*
+
+**Note**: Old version
+
 - Type: `Array`
   - Items: `String` or `Object`
 
@@ -15,6 +27,17 @@ If the item is an object, the properties are:
 
 > The plugins property lets you add vue.js plugins easily to your main application.
 
+Example (`nuxt.config.js`):
+
+```js
+export default {
+  plugins: [
+    { src: '~/plugins/both-sides.js' },
+    { src: '~/plugins/client-only.js', mode: 'client' },
+    { src: '~/plugins/server-only.js', mode: 'server' }
+  ]
+}
+```
 
 UI framework example (`nuxt.config.js`):
 
