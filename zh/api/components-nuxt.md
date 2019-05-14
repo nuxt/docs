@@ -10,7 +10,7 @@ description: 该组件用于在布局中显示页面组件（即非布局内容�
 **Props**:
 - nuxtChildKey: `string`
   - 此prop将设置为`<router-view />`，可用于在动态页面和不同路径内进行转换。
-  - 默认: `$route.fullPath`
+  - 默认: `$route.path`
 
 例如 (`layouts/default.vue`)：
 
