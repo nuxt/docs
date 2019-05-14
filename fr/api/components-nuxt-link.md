@@ -7,7 +7,7 @@ description: Lie les pages entre elles avec `<nuxt-link>`.
 
 > Ce composant est utilisé pour lier les composants de page entre eux.
 
-Actuellement, `<nuxt-link>` est identique à [`<router-link>`](https://router.vuejs.org/fr/api/router-link.html). Nous vous recommandons d'apprendre à l'utiliser avec la [documentation de Vue Router](https://router.vuejs.org/fr/api/router-link.html).
+Actuellement, `<nuxt-link>` est identique à [`<router-link>`](https://router.vuejs.org/fr/api/#router-link). Nous vous recommandons d'apprendre à l'utiliser avec la [documentation de Vue Router](https://router.vuejs.org/fr/api/#router-link).
 
 Exemple (`pages/index.vue`) :
 
