@@ -20,7 +20,7 @@ export default {
 }
 ```
 
-こうすることで、Nuxt.js サーバーインスタンスの [ホストとポート](/faq/host-port) を指定できます。
+こうすることで、Nuxt.js サーバーインスタンスの [ホストとポート](/faq/host-port) を指定できます。
 
 ## HTTPS 設定を用いた例
 
