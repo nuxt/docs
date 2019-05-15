@@ -38,18 +38,41 @@ export default {
 
 ## babel
 
-> JavaScript や Vue ファイルのために Babel の設定をカスタマイズします。
+> JavaScript や Vue ファイルのために Babel の設定をカスタマイズします。 `.babelrc` はデフォルトで無視されます。
 
 - 型: `Object`
 - デフォルト:
 
   ```js
   {
+    babelrc: false,
+    cacheDirectory: undefined,
     presets: ['@nuxt/babel-preset-app']
   }
   ```
 
-例（`nuxt.config.js`）:
+[@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) のデフォルトターゲットは `client` ビルドでは `ie: '9'`、`server` ビルドでは `node: 'current'` になります。
+
+**メモ**: `build.babel.presets` のプリセットの設定はクライアントビルド、サーバービルド両方に適用されます。ターゲットは（クライアント/サーバー）それぞれに応じて Nuxt によって設定されます。クライアントビルドとサーバービルドで異なるプリセットの設定をしたい場合は、関数として `presets` を使用してください。
+
+```js
+export default {
+  build: {
+    babel: {
+      presets({ isServer }) {
+        const targets = isServer ? { node: '10' } : { ie: '11' }
+        return [
+          [ require.resolve('@nuxt/babel-preset-app'), { targets } ]
+        ]
+      }
+    }
+  }
+}
+```
+
+デフォルトのプリセットを使用することを **強くお勧めします** 。しかし、必要であればプリセットを変更することが出来ます。
+
+カスタムプリセットの *例* :
 
 ```js
 export default {
@@ -65,8 +88,18 @@ export default {
 
 - 型: `Boolean`
 - デフォルト: `false`
+- ⚠️ 実験用
 
 > [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin#options) と [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) でキャッシュを有効化します。
+
+## crossorigin
+
+- 型: `String`
+- デフォルト: `undefined`
+
+生成された HTML の `<link rel="stylesheet">` タグと `<script>` タグの `crossorigin` 属性を設定します。
+
+詳細: [CORS settings attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes)
 
 ## cssSourceMap
 
@@ -80,6 +113,15 @@ export default {
 - 型: `Object`
 
 利用できるオプションは [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) を参照してください。
+
+## devtools
+
+- 型: `boolean`
+- デフォルト: `false`
+
+[vue-devtools](https://github.com/vuejs/vue-devtools) を許可するかどうかを設定します。
+
+既に nuxt.config.js などで有効化している場合は、このフラグに関係なく devtools が有効になります。
 
 ## extend
 
@@ -187,6 +229,21 @@ export default {
 
 manifest の使い方をより理解するためには [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/) を参照してください。
 
+## friendlyErrors
+
+- 型: `Boolean`
+- デフォルト: `true` (上書きが有効）
+
+[FriendlyErrorsWebpackPlugin](https://github.com/nuxt/friendly-errors-webpack-plugin)によって提供される上書きを有効にするか無効にするかを設定します。
+
+## hardSource
+
+- 型: `Boolean`
+- デフォルト: `false`
+- ⚠️ 実験用
+
+キャッシュを改善するために [HardSourceWebpackPlugin](https://github.com/mzgoddard/hard-source-webpack-plugin) を有効にします。
+
 ## hotMiddleware
 
 - 型: `Object`
@@ -283,6 +340,15 @@ manifest の使い方をより理解するためには [webpack documentation](h
 > 利用可能な全てのオプションについては [Node Sass documentation](https://github.com/sass/node-sass/blob/master/README.md#options) を参照してください。
 > 注意: `loaders.sass` は [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html) 用です。
 
+### loaders.ts
+
+> typescript ファイルと Vue SFC の `lang="ts"` 用のローダーです。
+> 詳細は [ts-loader options](https://github.com/TypeStrong/ts-loader#loader-options) を参照してください。
+
+### loaders.tsx
+
+> 詳細は [ts-loader options](https://github.com/TypeStrong/ts-loader#options) を参照してください。
+
 ### loaders.vueStyle
 
 > 詳細は [vue-style-loader options](https://github.com/vuejs/vue-style-loader#options) を参照してください。
@@ -330,6 +396,7 @@ OptimizeCSSAssets プラグインのオプションです。
 
 - 型: `Boolean`
 - デフォルト: `false`
+- ⚠️ 実験用
 
 webpack のビルドで[thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) を有効にします。
 
