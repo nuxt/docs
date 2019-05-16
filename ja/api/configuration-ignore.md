@@ -5,27 +5,27 @@ description: ignore 対象とするファイルを定義します
 
 # .nuxtignore
 
-`.nuxtignore` ファイルを使用することで、ビルド時にプロジェクトルート (`rootDir`) にある `layout`, `page`, `store` そして `middleware` 内のファイルを Nuxt.js に無視させることが出来ます。
+`.nuxtignore` ファイルを使用することで、ビルド時にプロジェクトルート (`rootDir`) にある `layout`, `page`, `store` そして `middleware` のファイルを Nuxt.js に無視させることが出来ます。
 
 例:
 
 ```
-# layout の foo.vue を無視する
+# foo.vue レイアウトを無視する
 layouts/foo.vue
-# layout の末尾が -ignore.vue のファイルを無視する
+# ファイル名の末尾が -ignore.vue のレイアウトファイルを無視する
 layouts/*-ignore.vue
 
-# page の bar.vue を無視する
+# bar.vue ページを無視する
 pages/bar.vue
-# ignore フォルダにある page を無視する
-page/ignore/*.vue
+# ignore フォルダにあるページを無視する
+pages/ignore/*.vue
 
-# store の baz.js を無視する
+# baz.js ストアを無視する
 store/baz.js
-# store の *.test.* にマッチするファイルを無視する
+# *.test.* にマッチするストアファイルを無視する
 store/ignore/*.test.*
 
-# middleware の foo フォルダにある foo/bar.js 以外のファイルを無視する
+# foo フォルダにある foo/bar.js 以外のミドルウェアファイルを無視する
 middleware/foo/*.js
 !middleware/foo/bar.js
 ```
