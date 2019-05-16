@@ -88,7 +88,7 @@ export default {
 
 - 型: `Boolean`
 - デフォルト: `false`
-- ⚠️ 実験用
+- ⚠️ 実験的機能です
 
 > [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin#options) と [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) でキャッシュを有効化します。
 
@@ -240,7 +240,7 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 - 型: `Boolean`
 - デフォルト: `false`
-- ⚠️ 実験用
+- ⚠️ 実験的機能です
 
 キャッシュを改善するために [HardSourceWebpackPlugin](https://github.com/mzgoddard/hard-source-webpack-plugin) を有効にします。
 
@@ -396,7 +396,7 @@ OptimizeCSSAssets プラグインのオプションです。
 
 - 型: `Boolean`
 - デフォルト: `false`
-- ⚠️ 実験用
+- ⚠️ 実験的機能です
 
 webpack のビルドで[thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) を有効にします。
 
@@ -652,16 +652,16 @@ Terser プラグインのオプションです。 `false` を設定するとこ�
 
 ## typescript
 
-> Customize Nuxt.js TypeScript support.
+> Nuxt.js の TypeScript のサポートをカスタマイズします。
 
 <div class="Alert Alert--blue">
 
-**Important**: This property will be ignored if [`TypeScript Support`](/guide/typescript) hasn't be set up in your project.
+**重要**: プロジェクト内で [`TypeScript Support`](/guide/typescript) が設定されていない場合、このプロパティは無視されます。
 
 </div>
 
-- Type: `Object`
-- Default:
+- 型: `Object`
+- デフォルト:
 
   ```js
   {
@@ -672,14 +672,14 @@ Terser プラグインのオプションです。 `false` を設定するとこ�
 
 ### typescript.typeCheck
 
-> Enables TypeScript type checking on a separate process.
+> TypeScript の型チェックを別プロセスで実行することを有効にします。
 
-- Type: `Boolean` or `Object`
-- Default: `true`
+- 型: `Boolean` または `Object`
+- デフォルト: `true`
 
-When enabled, Nuxt.js uses [fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) to provide type checking.
+もし有効の場合、Nuxt.js は [fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) を使って型チェックを行います。
 
-You can use an `Object` to override plugin options or set it to `false` to disable it.
+`Object` を使用してプラグインのオプションを上書きすることができます。または `false` に設定することで無効にすることも出来ます。
 
 ### typescript.ignoreNotFoundWarnings
 
