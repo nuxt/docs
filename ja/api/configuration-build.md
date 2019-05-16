@@ -40,7 +40,7 @@ export default {
 
 > JavaScript や Vue ファイルのために Babel の設定をカスタマイズします。 `.babelrc` はデフォルトで無視されます。
 
-- 型: `Object`
+- 型: `Object` `babel-loader` の [options](https://github.com/babel/babel-loader#options) と `babel` の [options](https://babeljs.io/docs/en/options) を参照してください
 - デフォルト:
 
   ```js
@@ -53,32 +53,52 @@ export default {
 
 [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) のデフォルトターゲットは `client` ビルドでは `ie: '9'`、`server` ビルドでは `node: 'current'` になります。
 
+### presets
+
+- 型: `Function`
+- 引数:
+  1. `Object`: { isServer: true | false }
+  2. `Array`:
+      - プリセット名 `@nuxt/babel-preset-app`
+      - `@nuxt/babel-preset-app` の [`options`](https://github.com/nuxt/nuxt.js/tree/dev/packages/babel-preset-app#options)
+
 **メモ**: `build.babel.presets` のプリセットの設定はクライアントビルド、サーバービルド両方に適用されます。ターゲットは（クライアント/サーバー）それぞれに応じて Nuxt によって設定されます。クライアントビルドとサーバービルドで異なるプリセットの設定をしたい場合は、関数として `presets` を使用してください。
+
+> 以下のカスタマイズの代わりにデフォルトのプリセットを使用することを **強くお勧めします**
 
 ```js
 export default {
   build: {
     babel: {
-      presets({ isServer }) {
-        const targets = isServer ? { node: '10' } : { ie: '11' }
-        return [
-          [ require.resolve('@nuxt/babel-preset-app'), { targets } ]
-        ]
+      presets({ isServer }, [ preset, options ]) {
+        // 直接オプションを変更する
+        options.targets = isServer ? ... :  ...
+        options.corejs = ...
+        // 何も返さない
       }
     }
   }
 }
 ```
 
-デフォルトのプリセットを使用することを **強くお勧めします** 。しかし、必要であればプリセットを変更することが出来ます。
-
-カスタムプリセットの *例* :
+もしくは、プリセットのリスト全体を返すことによってデフォルトの値を上書きします:
 
 ```js
 export default {
   build: {
     babel: {
-      presets: ['es2015', 'stage-0']
+      presets({ isServer }, [ preset, options ]) {
+        return [
+          [
+            preset, {
+              buildTarget: isServer ? 'server' : 'client',
+              ...options
+          }],
+          [
+            // 他のプリセット
+          ]
+        ]
+      }
     }
   }
 }
