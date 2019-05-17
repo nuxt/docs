@@ -207,7 +207,7 @@ export default {
 - Type: `Boolean`
 - Default: `false`
 
-Using [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) under the hood, all your CSS will be extracted into separate files, usually one per component. This allows caching your CSS and JavaScript separately and is worth a try in case you have a lot of global or shared CSS.
+Using [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin/) under the hood, all your CSS will be extracted into separate files, usually one per component. This allows caching your CSS and JavaScript separately and is worth a try in case you have a lot of global or shared CSS.
 
 <div class="Alert Alert--teal">
 
