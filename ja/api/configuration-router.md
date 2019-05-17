@@ -211,7 +211,7 @@ export default {
 - デフォルト: `true`
 
 viewport（ブラウザの表示領域）内にリンクが表示されたとき *コード分割された* ページを先読みする `<nuxt-link>` の設定をします。
-[IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) がサポートされている必要があります ([CanIUse](https://caniuse.com/#feat=intersectionobserver)を御覧ください）。
+[IntersectionObserver](https://developer.mozilla.org/ja/docs/Web/API/Intersection_Observer_API) がサポートされている必要があります ([CanIUse](https://caniuse.com/#feat=intersectionobserver)を御覧ください）。
 
 この機能を [Polyfill.io](https://polyfill.io) のようなサービスで条件付きで埋め込むことをお勧めします:
 
