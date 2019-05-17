@@ -50,7 +50,7 @@ export default {
 
 ## timing
 
-- 型: `Object` or `Boolean`
+- 型: `Object` または `Boolean`
 - デフォルト: `false`
 
 `server.timing` オプションを有効にすると、サーバーサイドレンダリングの経過時間を測定するためのミドルウェアが追加され、'Server-Timing' としてヘッダーに追加されます。
