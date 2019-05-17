@@ -119,7 +119,7 @@ export default {
 
 生成された HTML の `<link rel="stylesheet">` タグと `<script>` タグの `crossorigin` 属性を設定します。
 
-詳細: [CORS settings attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes)
+詳細: [CORS settings attributes](https://developer.mozilla.org/ja/docs/Web/HTML/CORS_settings_attributes)
 
 ## cssSourceMap
 
