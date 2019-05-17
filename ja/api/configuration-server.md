@@ -98,4 +98,4 @@ export default function (req, res, next) {
 Server-Timing: midd;desc="Middleware timing description";dur=2.4
 ```
 
-詳細は [Server-Timing MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing) を参照してください。
+詳細は [Server-Timing MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Server-Timing) を参照してください。
