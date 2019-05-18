@@ -49,10 +49,6 @@ description: レイアウト内でページコンポーネントを表示しま�
   }
   ```
 
-3. 各ページコンポーネントの `watchQuery` オプション: `boolean` or `string[]`
-
-  [watchQuery](/api/pages-watchquery) に設定されたクエリはキーを生成するとき考慮されます。 `watchQuery` が `true` の場合は `fullPath` が使われます。
-
 - name：`string` (_Nuxt v2.4.0で導入されました_)
   - この prop は `<router-view/>` に設定され、ページコンポーネントの名前付きビューをレンダリングするのに利用されます。
   - デフォルト: `default`
