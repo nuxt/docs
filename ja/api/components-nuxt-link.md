@@ -3,7 +3,7 @@ title: "API: <nuxt-link> コンポーネント"
 description: ページ間を nuxt-link を使ってリンクさせます。
 ---
 
-# <nuxt-link> コンポーネント
+# &lt;nuxt-link&gt; コンポーネント
 
 > このコンポーネントは、ページコンポーネント間のナビゲーションを提供し、賢い prefetching（先読み）でパフォーマンスを高めるのに使用します。
 

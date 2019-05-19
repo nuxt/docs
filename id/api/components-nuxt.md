@@ -3,7 +3,7 @@ title: 'API: '
 description: Menampilkan komponen halaman di dalam layout
 ---
 
-# Komponen <nuxt>
+# Komponen &lt;nuxt&gt;
 
 > Komponen ini hanya digunakan di dalam [layouts](/guide/views#layouts) untuk menampilkan komponen halaman.
 

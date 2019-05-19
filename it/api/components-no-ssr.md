@@ -4,7 +4,7 @@ description: Come saltare il rendering lato server e mostrare un testo in sostit
   (placeholder).
 ---
 
-# Il Componente <no-ssr>
+# Il Componente &lt;no-ssr&gt;
 
 > Questo componente può essere usato per evitare il rendering lato server.
 
