@@ -361,7 +361,7 @@ HTML files created during the build process (will be applied for *all modes*).
 
 ### loaders.less
 
-> You can pass any Less specific options to the `less-loader via` via `loaders.less`. See the [Less documentation](http://lesscss.org/usage/#command-line-usage-options) for all available options in dash-case.
+> You can pass any Less specific options to the `less-loader` via `loaders.less`. See the [Less documentation](http://lesscss.org/usage/#command-line-usage-options) for all available options in dash-case.
 
 ### loaders.sass and loaders.scss
 
