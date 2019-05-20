@@ -66,6 +66,19 @@ export default {
 
 `plugins` 設定キーについてより深く理解するには [plugins api](/api/configuration-plugins) を参照してください。
 
+### ES6 プラグイン
+
+プラグインが `node_modules` にあり、ES6 モジュールをエクスポートしている場合、それを ` transpile` ビルドオプションに追加する必要があるかもしれません：
+
+```js
+module.exports = {
+  build: {
+    transpile: ['vue-notifications']
+  }
+}
+```
+その他のビルドオプションについては [configuration build](/api/configuration-build/#transpile) のドキュメントを参照することができます。
+
 ## アプリケーションのルートや context に注入する
 
 関数や値をアプリケーション全体で利用できるようにしたい場合もあるでしょう。
@@ -166,7 +179,7 @@ export default {
 ```js
 export default {
   mounted(){
-      this.$myInjectedFunction('works in mounted')
+    this.$myInjectedFunction('works in mounted')
   },
   asyncData(context){
     context.app.$myInjectedFunction('works with context')
@@ -195,6 +208,7 @@ export const actions = {
     commit('changeSomeValue', newValue)
   }
 }
+
 ```
 
 ## クライアントサイド限定のプラグイン利用
