@@ -142,6 +142,14 @@ export default {
 
 すべてのページコンポーネントは Vue コンポーネントですが、Nuxt.js にユニバーサルアプリケーション開発を可能な限り容易にするための特別な属性と機能が追加されています。
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-page-components?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Vue School で <strong>Nuxt.js ページコンポーネント</strong>についての無料レッスンをみる
+    </p>
+  </a>
+</div>
+
 ```html
 <template>
   <h1 class="red">Hello {{ name }}!</h1>
@@ -164,6 +172,7 @@ export default {
   ...
 }
 </script>
+
 <style>
 .red {
   color: red;

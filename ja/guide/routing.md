@@ -1,6 +1,6 @@
 ---
 title: ルーティング
-description: Nuxt.js はウェブアプリケーションのルーティングを生成するためにファイルシステムを利用します。
+description: "Nuxt.js はウェブアプリケーションのルーティングを生成するためにファイルシステムを利用します。"
 ---
 
 > Nuxt.js は `pages` ディレクトリ内の Vue ファイルの木構造に沿って、自動的に [vue-router](https://github.com/vuejs/vue-router) の設定を生成します。
@@ -59,6 +59,14 @@ router: {
 
 パラメータを使って動的なルーティングを定義するには .vue ファイル名またはディレクトリ名に **アンダースコアのプレフィックス** を付ける必要があります。
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-dynamic-routes?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+     Vue School で<strong>動的なルーティング</strong>についての無料レッスンをみる
+    </p>
+  </a>
+</div>
+
 下記のような木構造のとき:
 
 ```bash
@@ -100,11 +108,11 @@ router: {
 }
 ```
 
-`user-id` と名付けられたルートに `:id?` というパスがありますが、これはこの `:id` が必須ではないことを表します。もし必須にしたい場合は、代わりに `users/_id` ディレクトリ内に `index.vue` ファイルを作成してください。
+`users-id` と名付けられたルートに `:id?` というパスがありますが、これはこの `:id` が必須ではないことを表します。もし必須にしたい場合は、代わりに `users/_id` ディレクトリ内に `index.vue` ファイルを作成してください。
 
 <div class="Alert Alert--orange">
 
-<b>警告</b>: `generate` コマンドでは動的なルーティングは無視されます。:  [generate 設定 API](/api/configuration-generate#routes)
+**警告**: `generate` コマンドで動的なルーティングは無視されます。:  [generate 設定 API](/api/configuration-generate#routes)
 
 </div>
 
@@ -135,7 +143,7 @@ Nuxt.js では vue-router の子ルートを使ってルートをネストさせ
 
 <div class="Alert Alert--orange">
 
-<b>警告:</b> `<nuxt-child>` を親コンポーネント内（<code>.vue</code> ファイル内）に書くことを忘れないでください。</nuxt-child>
+<b>警告:</b> `<nuxt-child/>` を親コンポーネント内（<code>.vue</code> ファイル内）に書くことを忘れないでください。
 
 </div>
 
