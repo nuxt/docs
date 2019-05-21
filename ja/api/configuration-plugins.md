@@ -12,7 +12,7 @@ description: Nuxt.js の plugins オプションで Vue.js プラグインを使
 
 オブジェクトの場合にはプロパティは次のとおり:
 
-  - src: `String` (ファイルのパス）
+  - src: `String` (ファイルパス）
   - mode: `String` (`client` もしくは `server` になります）*定義された場合, ファイルはそれぞれの（クライアントまたはサーバー）側にのみ含まれます。*
 
 **情報**: 古いバージョン
@@ -57,7 +57,7 @@ import 'ant-design-vue/dist/antd.css' // Ant Designのドキュメントに従�
 Vue.use(Antd)
 ```
 
-[css は Ant Design のドキュメントに従ってインポートされています](https://vue.ant.design/docs/vue/getting-started/#3.-Use-antd's-Components "プラグインを構築するためのヒント")。
+css は [Ant Design のドキュメントに従ってインポートされています](https://vue.ant.design/docs/vue/getting-started/#3.-Use-antd's-Components "プラグインを構築するためのヒント")。
 
 `plugins` プロパティで設定されたパスはすべて、メインアプリケーションが初期化される前に **インポート** されます。
 
