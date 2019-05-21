@@ -37,4 +37,4 @@ export default function ({ store, redirect }) {
 }
 ```
 
-ミドルウェアについてより深く理解するには [ミドルウェアのガイド](/guide/routing#ミドルウェア) を参照してください。
+ミドルウェアについてより深く理解するには [ミドルウェアのガイド](/guide/routing/#ミドルウェア) を参照してください。
