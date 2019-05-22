@@ -208,7 +208,7 @@ export default {
 - デフォルト: `false`
 
 
-内部で [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) が使われ、全ての CSS は別々のファイルに、通常はコンポーネントごとに1つ抽出されます。これは CSS と JavaScript を別々にキャッシュすることを可能にし、多くのグローバルまたは共通 CSS が存在する場合には試してみる価値があります。
+内部で [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin/) が使われ、全ての CSS は別々のファイルに、通常はコンポーネントごとに1つ抽出されます。これは CSS と JavaScript を別々にキャッシュすることを可能にし、多くのグローバルまたは共通 CSS が存在する場合には試してみる価値があります。
 
 <div class="Alert Alert--teal">
 
