@@ -353,7 +353,7 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 ### loaders.less
 
-> Less specific オプションは、`loaders.less` を介して `less-loader に渡すことができます。dash-case で利用可能な全てのオプションについては [Less documentation](http://lesscss.org/usage/#command-line-usage-options) を参照してください。
+> Less specific オプションは、`loaders.less` を介して `less-loader` に渡すことができます。dash-case で利用可能な全てのオプションについては [Less documentation](http://lesscss.org/usage/#command-line-usage-options) を参照してください。
 
 ### loaders.sass と loaders.scss
 
