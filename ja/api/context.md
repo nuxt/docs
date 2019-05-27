@@ -21,7 +21,7 @@ description: "`context`は、従来 Vue コンポーネントが使用できな�
 
 キー | 型 | 使用可能な環境 | 説明
 --- | --- | --- | ---
-`app` | ルートの Vue インスタンス | クライアント及びサーバー | すべてのプラグインを含むルートの Vue インスタンス。 たとえば、`axios` を使用する場合、`context.app.$axios` から `$axios` にアクセスすることができます。
+`app` | `NuxtAppOptions` | クライアント及びサーバー | すべてのプラグインを含むルートの Vue インスタンス。 たとえば、`axios` を使用する場合、`context.app.$axios` から `$axios` にアクセスすることができます。
 `isClient` | `Boolean` | クライアント及びサーバー | *廃止予定*。`process.client` を使用してください。クライアントサイドからレンダリングしているかどうかを知らせます。
 `isServer` | `Boolean` | クライアント及びサーバー | *廃止予定*。`process.server` を使用してください。サーバーサイドからレンダリングしているかどうかを知らせます。
 `isStatic` | `Boolean` | クライアント及びサーバー | *廃止予定*。`process.static` を使用してください。`nuxt generate` 経由で生成された静的アプリ内か否かを知らせます。
