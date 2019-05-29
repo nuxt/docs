@@ -63,6 +63,7 @@
           { "name": "hardSource", "to": "#hardsource" },
           { "name": "hotMiddleware", "to": "#hotmiddleware" },
           { "name": "html.minify", "to": "#html-minify" },
+          { "name": "indicator", "to": "#indicator" },
           { "name": "loaders", "to": "#loaders" },
           { "name": "optimization", "to": "#optimization" },
           { "name": "optimizeCSS", "to": "#optimizecss" },
