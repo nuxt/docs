@@ -126,6 +126,7 @@
           { "name": "compressor", "to": "#compressor" },
           { "name": "fallback", "to": "#fallback" },
           { "name": "http2", "to": "#http2" },
+          { "name": "injectScripts", "to": "#injectscripts" },
           { "name": "resourceHints", "to": "#resourcehints" },
           { "name": "ssr", "to": "#ssr" },
           { "name": "static", "to": "#static" },

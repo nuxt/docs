@@ -75,7 +75,15 @@ Using `req` and `res` you can decide what links to push based on the request hea
 
 The assets will be joined together with `, ` and passed as a single `Link` header.
 
+## injectScripts
+
+- Type: `Boolean`
+  - Default: `true`
+
+> Adds the `<script>` for Nuxt bundles, set it to `false` to render pure HTML without JS (available with `2.8.0+`)
+
 ## resourceHints
+
 - Type: `boolean`
   - Default: `true`
 
