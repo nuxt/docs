@@ -129,6 +129,7 @@
           { "name": "injectScripts", "to": "#injectscripts" },
           { "name": "resourceHints", "to": "#resourcehints" },
           { "name": "ssr", "to": "#ssr" },
+          { "name": "ssrLog", "to": "#ssrlog" },
           { "name": "static", "to": "#static" },
           { "name": "dist", "to": "#dist" },
           { "name": "csp", "to": "#csp" }
