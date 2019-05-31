@@ -8,6 +8,7 @@ description: Nuxt.js lets you customize runtime options for rendering pages
 > Nuxt.js lets you customize runtime options for rendering pages
 
 ## bundleRenderer
+
 - Type: `Object`
 
 > Use this option to customize vue SSR bundle renderer. This option is skipped for spa mode.
@@ -30,6 +31,7 @@ Learn more about available options on [Vue SSR API Reference](https://ssr.vuejs.
 It is recommended to not use this option as Nuxt.js is already providing best SSR defaults and misconfiguration might lead to SSR problems.
 
 ## etag
+
 - Type: `Object`
   - Default: `{ weak: true }`
 
@@ -38,6 +40,7 @@ To disable etag for pages set `etag: false`
 See [etag](https://www.npmjs.com/package/etag) docs for possible options.
 
 ## compressor
+
 - Type `Object`
   - Default: `{ threshold: 0 }`
 
@@ -50,20 +53,24 @@ directly (f.ex. `otherComp({ myOptions: 'example' })`).
 To disable compression, use `compressor: false`.
 
 ## fallback
+
 - Type `Object`
   - Default: `{ dist: {}, static: { skipUnknown: true } }`
 
-Options for [serve-placeholder](https://github.com/nuxt/serve-placeholder) middleware.
+> Options for [serve-placeholder](https://github.com/nuxt/serve-placeholder) middleware.
 
 If you want to disable one of them or both, you can pass a falsy value.
 
 ## http2
+
 - Type `Object`
   - Default: `{ push: false, pushAssets: null }`
 
-Activate HTTP2 push headers.
+> Activate HTTP2 push headers.
 
-You can control what links to push using `pushAssets` function. Eg.:
+You can control what links to push using `pushAssets` function.
+
+Example:
 ```js
 pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
   .filter(f => f.asType === 'script' && f.file === 'runtime.js')
@@ -75,8 +82,16 @@ Using `req` and `res` you can decide what links to push based on the request hea
 
 The assets will be joined together with `, ` and passed as a single `Link` header.
 
+## injectScripts
+
+- Type: `Boolean`
+  - Default: `true`
+
+> Adds the `<script>` for Nuxt bundles, set it to `false` to render pure HTML without JS (available with `2.8.0+`)
+
 ## resourceHints
-- Type: `boolean`
+
+- Type: `Boolean`
   - Default: `true`
 
 > Adds `prefetch` and `preload` links for faster initial page load time.
@@ -84,17 +99,30 @@ The assets will be joined together with `, ` and passed as a single `Link` heade
 You may want to only disable this option if you have many pages and routes.
 
 ## ssr
-- Type: `boolean`
+
+- Type: `Boolean`
   - Default: `true` on universal mode and `false` on spa mode
 
 > Enable SSR rendering
 
 This option is automatically set based on `mode` value if not provided.
-This can be useful to dynamically enable/disable SSR on runtime after image builds. (With docker for example)
+This can be useful to dynamically enable/disable SSR on runtime after image builds (with docker for example).
+
+## ssrLog
+
+- Type: `Boolean` | `String`
+  - Default: `true` in dev mode and `false` in production
+
+> Forward server-side logs to the browser for better debugging (only available in development)
+
+To collapse the logs, use `'collapsed'` value.
 
 ## static
+
 - Type: `Object`
   - Default: `{}`
+
+> Configure the `static/` directory behaviour
 
 See [serve-static](https://www.npmjs.com/package/serve-static) docs for possible options.
 
@@ -113,19 +141,20 @@ It will add the router base to your static assets.
 Some URL rewrites might not respect the prefix.
 
 ## dist
+
 - Type: `Object`
   - Default: `{ maxAge: '1y', index: false }`
 
-The options used for serving distribution files. Only applicable in production.
+> Options used for serving distribution files. Only applicable in production.
 
 See [serve-static](https://www.npmjs.com/package/serve-static) docs for possible options.
 
 ## csp
 
-> Use this to configure to load external resources of Content-Security-Policy
-
 - Type: `Boolean` or `Object`
   - Default: `false`
+
+> Use this to configure to load external resources of Content-Security-Policy
 
 Example (`nuxt.config.js`)
 

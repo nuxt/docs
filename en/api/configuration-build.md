@@ -293,6 +293,14 @@ See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware
 Configuration for the [html-minifier](https://github.com/kangax/html-minifier) plugin used to minify
 HTML files created during the build process (will be applied for *all modes*).
 
+## indicator
+
+> Display build indicator for hot module replacement in development (available in `v2.8.0+`)
+- Type: `Boolean`
+- Default: `true`
+
+![nuxt-build-indicator](https://user-images.githubusercontent.com/5158436/58500509-93ba0f80-8197-11e9-8524-e115c6d32571.gif)
+
 ## loaders
 
 > Customize options of Nuxt.js integrated webpack loaders.
