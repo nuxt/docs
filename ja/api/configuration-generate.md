@@ -18,6 +18,16 @@ description: ユニバーサルなウェブアプリケーションから静的�
 
 `nuxt generate` で作成されるディレクトリ名です。
 
+## devtools
+
+- 型: `Boolean`
+- デフォルト: `false`
+
+[vue-devtools](https://github.com/vuejs/vue-devtools) よる検査を許可するかどうかを設定します。
+
+もし既に `nuxt.config.js` か何かで有効にしている場合は、このフラグに関係なく `devtools` が有効になります。
+
+
 ## fallback
 
 - 型: `String` or `Boolean`
