@@ -474,10 +474,13 @@ export default {
     plugins: {
       'postcss-import': {},
       'postcss-url': {},
-      'postcss-preset-env': {},
+      'postcss-preset-env': this.preset,
       'cssnano': { preset: 'default' } // disabled in dev mode
     },
-    order: 'cssnanoLast'
+    order: 'cssnanoLast',
+    preset: {
+      stage: 2
+    }
   }
   ```
 
