@@ -477,7 +477,7 @@ export default {
       'postcss-preset-env': this.preset,
       'cssnano': { preset: 'default' } // disabled in dev mode
     },
-    order: 'cssnanoLast',
+    order: 'presetEnvAndCssnanoLast',
     preset: {
       stage: 2
     }
