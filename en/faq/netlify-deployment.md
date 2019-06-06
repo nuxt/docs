@@ -23,9 +23,22 @@ Press the _"New site from Git"_ button on the Netlify dashboard. Authenticate wi
 
 ## Configure:
 
+### For a statically generated site
+
 1. __Branch to deploy:__ `master`, or which-ever branch you prefer
 1. __Build command:__ `npm run generate`
 1. __Publish directory:__ `dist`
+
+### For site generated in SPA mode
+
+1. __Branch to deploy:__ `master`, or which-ever branch you prefer
+1. __Build command:__ `npm run build`
+1. __Publish directory:__ `dist`
+
+For a single page app there is a problem with refresh as by default on netlify the site redirects to *"404 not found"* this can be [prevented](https://www.netlify.com/docs/redirects/#rewrites-and-proxying) by configuring redirects. There is a module for that [nuxt-netlify](https://www.bazzite.com/docs/nuxt-netlify) which helps to configure both headers and redirects of the SPA .
+
+> For simple reference on netlify redirects read blog [post](https://www.netlify.com/blog/2019/01/16/redirect-rules-for-all-how-to-configure-redirects-for-your-static-site) by Divya Sasidharan
+
 
 > Optionally, you can add additional ENV variables via the _"Advanced"_ button. These can be helpful for swapping in alternative API credentials and so on. Netlify also provides a [default ENV variables](https://www.netlify.com/docs/build-settings/#build-environment-variables) which can be read by your Nuxt.js application at build time.
 
