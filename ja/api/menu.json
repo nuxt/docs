@@ -53,6 +53,7 @@
           { "name": "analyze", "to": "#analyze" },
           { "name": "babel", "to": "#babel" },
           { "name": "cache", "to": "#cache" },
+          { "name": "crossorigin", "to": "#crossorigin" },
           { "name": "cssSourceMap", "to": "#csssourcemap" },
           { "name": "devMiddleware", "to": "#devmiddleware" },
           { "name": "devtools", "to": "#devtools" },
@@ -71,6 +72,7 @@
           { "name": "postcss", "to": "#postcss" },
           { "name": "profile", "to": "#profile" },
           { "name": "publicPath", "to": "#publicpath" },
+          { "name": "quiet", "to": "#quiet" },
           { "name": "splitChunks", "to": "#splitchunks" },
           { "name": "ssr", "to": "#ssr" },
           { "name": "styleResources", "to": "#styleresources" },
@@ -92,9 +94,12 @@
         "contents": [
           { "name": "dir", "to": "#dir" },
           { "name": "devtools", "to": "#devtools" },
+          { "name": "fallback", "to": "#fallback" },
           { "name": "interval", "to": "#interval" },
           { "name": "minify", "to": "#minify" },
-          { "name": "routes", "to": "#routes" }
+          { "name": "routes", "to": "#routes" },
+          { "name": "subFolders", "to": "#subfolders" },
+          { "name": "concurrency", "to": "#concurrency" }
         ]
       },
       { "name": "head", "to": "/configuration-head" },
@@ -138,6 +143,7 @@
         "to": "/configuration-router",
         "contents": [
           { "name": "base", "to": "#base" },
+          { "name": "routeNameSplitter", "to": "#routenamesplitter" },
           { "name": "extendRoutes", "to": "#extendroutes" },
           { "name": "fallback", "to": "#fallback" },
           { "name": "linkActiveClass", "to": "#linkactiveclass" },
