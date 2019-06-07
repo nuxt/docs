@@ -67,7 +67,7 @@ export default config
 
 ### 组件
 
-在组件中，我们强烈建议使用依赖于[vue-property-decorator](https://github.com/kaorun343/vue-property-decorator)的[vue-class-component](https://github.com/vuejs/vue-class-component)。
+在组件中，我们强烈建议使用依赖于[vue-class-component](https://github.com/vuejs/vue-class-component)的[vue-property-decorator](https://github.com/kaorun343/vue-property-decorator)。
 
 以下是可复用组件用来显示使用Nuxt中 `asyncData`获取的数据展示在页面中的基本示例。
 
