@@ -293,6 +293,15 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 ビルドプロセス中に作成された HTML ファイルのミニファイに使われる [html-minifier](https://github.com/kangax/html-minifier) プラグインの設定（*全てのモード*に適用される）。
 
+## indicator
+
+> 開発モードでホットリローディングのビルドインジケーターを表示します(`v2.8.0+` から利用可能)
+
+- 型: `Boolean`
+- デフォルト: `true`
+
+ ![nuxt-build-indicator](https://user-images.githubusercontent.com/5158436/58500509-93ba0f80-8197-11e9-8524-e115c6d32571.gif)
+
 ## loaders
 
 > webpack loaders を統合した Nuxt.js のカスタマイズオプション
