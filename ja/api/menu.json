@@ -64,6 +64,7 @@
           { "name": "hardSource", "to": "#hardsource" },
           { "name": "hotMiddleware", "to": "#hotmiddleware" },
           { "name": "html.minify", "to": "#html-minify" },
+          { "name": "indicator", "to": "#indicator" },
           { "name": "loaders", "to": "#loaders" },
           { "name": "optimization", "to": "#optimization" },
           { "name": "optimizeCSS", "to": "#optimizecss" },
@@ -130,8 +131,10 @@
           { "name": "compressor", "to": "#compressor" },
           { "name": "fallback", "to": "#fallback" },
           { "name": "http2", "to": "#http2" },
+          { "name": "injectScripts", "to": "#injectscripts" },
           { "name": "resourceHints", "to": "#resourcehints" },
           { "name": "ssr", "to": "#ssr" },
+          { "name": "ssrLog", "to": "#ssrlog" },
           { "name": "static", "to": "#static" },
           { "name": "dist", "to": "#dist" },
           { "name": "csp", "to": "#csp" }
