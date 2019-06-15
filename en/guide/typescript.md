@@ -147,12 +147,12 @@ If you're using ESLint to lint your project, here is how you can make ESLint lin
 
 </div>
 
-First, you need to install the [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) plugin:
+First, you need to install @typescript-eslint/eslint-plugin and @typescript-eslint/parser ([GitHub monorepo for typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)):
 
 ```sh
-npm i -D @typescript-eslint/eslint-plugin
+npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 # OR
-yarn add -D @typescript-eslint/eslint-plugin
+yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
 Then, edit your ESLint configuration `.eslintrc.js` by adding the `@typescript-eslint` plugin and making `@typescript-eslint/parser` the default parser.
