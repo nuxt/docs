@@ -467,10 +467,13 @@ export default {
     plugins: {
       'postcss-import': {},
       'postcss-url': {},
-      'postcss-preset-env': {},
+      'postcss-preset-env': this.preset,
       'cssnano': { preset: 'default' } // 開発モードでは無効化されています
     },
-    order: 'cssnanoLast'
+    order: 'presetEnvAndCssnanoLast',
+    preset: {
+      stage: 2
+    }
   }
   ```
 
