@@ -70,7 +70,7 @@ export default config
 
 コンポーネントのために [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator) を利用することを強くお薦めします。なおこれは [vue-class-component](https://github.com/vuejs/vue-class-component) に依存しています。
 
-下記は Nuxt の [`asyncData`](https://nuxtjs.org/guide/async-data) メソッドで取得したデータを表示するための、再利用可能な `component` と `page` を組み合わせた基本的な例です。
+下記は Nuxt の [`asyncData`](https://ja.nuxtjs.org/guide/async-data) メソッドで取得したデータを表示するための、再利用可能な `component` と `page` を組み合わせた基本的な例です。
 
 ```ts
 /* models/Post.ts */
