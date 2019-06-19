@@ -90,7 +90,7 @@ You can also define methods in the `pageTransition`, these are for the [JavaScri
 
 ### Transition Mode
 
-**Default transition mode for pages differs from the default mode in VueJS**. The `pageTransition` mode is by default set to `out-in`. If you want to run leaving and entering transitions simultaneously, you have to set the mode to empty string `mode:""`. 
+**The default transition mode for pages differs from the default mode in Vue.js**. The `pageTransition` mode is by default set to `out-in`. If you want to run leaving and entering transitions simultaneously, you have to set the mode to the empty string `mode: ''`. 
 
 ```js
 export default {
