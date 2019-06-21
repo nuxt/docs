@@ -41,6 +41,13 @@ env_variables:
   NODE_ENV: 'production'
 ```
 
+or for flexible enviroment the minimal configuration is:
+
+```yaml
+runtime: nodejs
+env: flex
+```
+
 ## Build and deploy the app
 
 Now build your app with `npm run build`.
