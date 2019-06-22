@@ -5,7 +5,9 @@ description: Comment déployer une application Nuxt.js sur Netlify ?
 
 # How to deploy on Netlify?
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Deploying to [Netlify](https://www.netlify.com) is a low friction option for getting a __statically generated__ Nuxt.js site online quickly.</p>
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>
+
+Deploying to [Netlify](https://www.netlify.com) is a low friction option for getting a __statically generated__ Nuxt.js site online quickly.
 
 The core of the process leverages the `nuxt generate` command during deployment to build a static version of your Nuxt.js app into a `dist` directory. The contents of this directory are then deployed to a production URL.
 
