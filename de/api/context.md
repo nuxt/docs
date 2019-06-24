@@ -1,6 +1,6 @@
 ---
 title: "API: The Context"
-description: The `context` provides additional objects/params from Nuxt not traditionally available to Vue components. The `context` is available in special nuxt lifecycle areas like `asyncData`, `plugins`, 'middlewares', 'modules', and 'store/nuxtServerInit`.
+description: The `context` provides additional objects/params from Nuxt not traditionally available to Vue components. The `context` is available in special nuxt lifecycle areas like `asyncData`, `plugins`, `middlewares`, `modules`, and `store/nuxtServerInit`.
 ---
 
 ## Context
