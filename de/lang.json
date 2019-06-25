@@ -1,74 +1,74 @@
 {
-  "iso": "en",
+  "iso": "de",
   "docVersion": "1.4.0",
   "links": {
     "api": "API",
     "blog": "Blog",
     "chat": "Chat",
-    "documentation": "Documentation",
-    "download": "Download",
-    "examples": "Examples",
+    "documentation": "Dokumentation",
+    "download": "Herunterladen",
+    "examples": "Beispiele",
     "ecosystem": "Ecosystem",
     "faq": "FAQ",
-    "get_started": "get started",
+    "get_started": "Starte jetzt",
     "github": "GitHub",
     "guide": "Guide",
-    "homepage": "Home page",
+    "homepage": "Homepage",
     "live_demo": "Live Demo",
-    "live_edit": "Live Edit",
-    "tidelift_short": "GET PROFESSIONAL SUPPORT",
-    "official_support": "GET OFFICIAL SUPPORT ⛑",
-    "tidelift": "GET PROFESSIONAL SUPPORT FOR NUXT",
+    "live_edit": "Live Editieren",
+    "tidelift_short": "BEKOMME PROFESSIONELE HILFE",
+    "official_support": "BEKOMME OFFIZIELLE HILFE ⛑",
+    "tidelift": "BEKOMME PROFESSIONELE HILFE FÜR NUXT",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Vue Jobs"
   },
   "text": {
-    "an_error_occurred": "An error occurred",
-    "api_page_not_found": "API page not found",
-    "example_file": "Example Files",
-    "please_wait": "Please wait...",
-    "please_define_title": "Please define a title in the front matter",
-    "please_define_description": "Please define a description in the front matter",
-    "search": "Search",
+    "an_error_occurred": "Ein Fehler ist aufgetreten",
+    "api_page_not_found": "API Seitenicht gefunden",
+    "example_file": "Beispiel Files",
+    "please_wait": "Bitte warten...",
+    "please_define_title": "Bitte geben Sie einen Titel an",
+    "please_define_description": "Bitte geben Sie einen Beschreibung an",
+    "search": "Suche",
     "version": "Version"
   },
   "homepage": {
     "title": "Universal Vue.js Applications",
     "meta": {
       "title": "Nuxt.js - Universal Vue.js Applications",
-      "description": "Nuxt.js is a minimal framework for creating Vue.js applications with server side rendering, code-splitting, hot-reloading, static generation and more!"
+      "description": "Nuxt.js ist ein kleines Framework zum erstellen von Vue.js Applikationen mit Server Side Rendering, Code-Splitting, Hot-Reloading, Static Generation und vielem mehr!"
     },
     "welcome": {
-      "app_types_prefix": "For ",
+      "app_types_prefix": "Für ",
       "app_types": ["Universal Applications", "Static Generated Applications", "Single Page Applications", "Desktop Applications", "Mobile Applications", "Progressive Web Apps"],
       "app_types_suffix": "."
     },
-    "codesandbox_title": "Play with Nuxt.js online",
-    "codesandbox_open": "Open on CodeSandBox.io",
-    "codesandbox_examples": "See more examples",
-    "backer_partners": "Partners",
-    "backer_become_a_partner": "Become A Partner",
-    "backer_sponsors": "Sponsors",
-    "backer_become_a_sponsor": "Become A Sponsor",
-    "backer_backers": "Backers",
-    "backer_become_a_backer": "Become A Backer",
+    "codesandbox_title": "Spiele mit Nuxt.js Online",
+    "codesandbox_open": "Öffnen mit CodeSandBox.io",
+    "codesandbox_examples": "Hier gibt es mehr Beispiele",
+    "backer_partners": "Partner",
+    "backer_become_a_partner": "Werde Partner",
+    "backer_sponsors": "Sponsoren",
+    "backer_become_a_sponsor": "Werde Sponsor",
+    "backer_backers": "Unterstützer",
+    "backer_become_a_backer": "Werde Unterstützer",
     "backer_foundations": "Foundations"
   },
   "sponsors": {
-    "title": "Sponsors",
-    "become": "Support us and",
-    "become_partner": "become a partner"
+    "title": "Sponsoren",
+    "become": "Unterstütze uns und",
+    "become_partner": "werde Partner"
   },
   "footer": {
-    "authors": "Made by Chopin Brothers"
+    "authors": "Erschaffen von den Chopin Brüdern"
   },
   "guide": {
     "release_notes": "Release Notes",
-    "contribute": "Caught a mistake or want to contribute to the documentation?",
-    "edit_on_github": "Edit this page on GitHub!"
+    "contribute": "Du hast einen Fehler gefunden oder möchtest an der Dokumenation mitarbeiten?",
+    "edit_on_github": "Bearbeite die Seite auf GitHub!"
   },
   "examples": {
-    "source_code": "Source Code"
+    "source_code": "Quell Code"
   }
 }
