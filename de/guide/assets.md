@@ -21,6 +21,8 @@ Als Beispiel haben wir diese Ordnerstruktur:
 
 Wenn Sie in Ihrem CSS `url('~/assets/image.png')` nutzen, wird dieses als `require('~/assets/image.png')` übersetzt.
 
+Warnung: Beginnend mit Nuxt 2.0 wird der ~/ Alias nicht mehr richtig in ihren CSS Files aufgelöst. Sie müssen ~assets (ohne Slash) oder das @ Alias in URL CSS Referenzen nutzen. Z.B. background: url("~assets/banner.svg")
+
 Oder Sie nutzen in `pages/index.vue`:
 
 ```html
