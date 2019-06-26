@@ -22,13 +22,8 @@ Then add a test script to our `package.json` and configure AVA to compile files 
   "test": "ava",
 },
 "ava": {
-  "require": [
-    "babel-register"
-  ]
-},
-"babel": {
-  "presets": [
-    "env"
+  "files": [
+    "test/**/*"
   ]
 }
 ```
