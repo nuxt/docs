@@ -1,8 +1,6 @@
 ---
 title: 'API: コンテキスト'
-description: "`context`は、従来 Vue コンポーネントが使用できないオブジェクト/パラメータを Nuxt から追加で提供します。`context`は`
-  asyncData`、 `plugins`、 'middlewares'、 'modules' や 'store / nuxtServerInit` といった
-  nuxt の特別なライフサイクル内で使用できます。"
+description: "`context` は、従来 Vue コンポーネントが使用できないオブジェクト/パラメータを Nuxt から追加で提供します。`context` は `asyncData`、`plugins`、`middlewares`、`modules` や `store / nuxtServerInit` といった nuxt の特別なライフサイクル内で使用できます。"
 ---
 
 # コンテキスト
