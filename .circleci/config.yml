@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  textlint:
     docker:
       - image: circleci/node:lts
 
@@ -12,11 +12,15 @@ jobs:
 
     steps:
       - checkout
-      - run: >
-          yarn global add
-          textlint
-          @textlint-rule/textlint-rule-no-invalid-control-character
-          textlint-filter-rule-whitelist
-          textlint-rule-preset-ja-spacing
-          textlint-rule-preset-jtf-style
-      - run: yarn textlint:ja
+      - run:
+          name: install
+          command: >
+            yarn global add
+            textlint
+            @textlint-rule/textlint-rule-no-invalid-control-character
+            textlint-filter-rule-whitelist
+            textlint-rule-preset-ja-spacing
+            textlint-rule-preset-jtf-style
+      - run:
+          name: lint
+          command: yarn textlint:ja
