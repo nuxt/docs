@@ -2,6 +2,9 @@
   "name": "nuxt-docs",
   "version": "1.0.0",
   "description": "Nuxt.js documentation files",
+  "scripts": {
+    "textlint": "textlint"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nuxt/docs.git"

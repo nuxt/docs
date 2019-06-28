@@ -24,7 +24,7 @@ jobs:
             textlint-rule-common-misspellings
       - run:
           name: lint-en
-          command: textlint --config en/.textlintrc.json en/**/*.md
+          command: yarn textlint --config en/.textlintrc.json en/**/*.md
       - run:
           name: lint-ja
-          command: textlint --config ja/.textlintrc.json ja/**/*.md
+          command: yarn textlint --config ja/.textlintrc.json ja/**/*.md
