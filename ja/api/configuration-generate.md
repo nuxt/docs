@@ -229,7 +229,7 @@ export default {
 -----| item.html
 ```
 
-_Note: このオプションは、[Netlify](https://netlify.com) をはじめとする、 HTML によるフォールバックを利用する静的サイトホスティングサイトにおいて利用されます。_
+_情報: このオプションは、[Netlify](https://netlify.com) をはじめとする、 HTML によるフォールバックを利用する静的サイトホスティングサイトにおいて利用されます。_
 
 ## concurrency
 
