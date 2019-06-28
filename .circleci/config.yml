@@ -21,6 +21,10 @@ jobs:
             textlint-filter-rule-whitelist
             textlint-rule-preset-ja-spacing
             textlint-rule-preset-jtf-style
+            textlint-rule-common-misspellings
       - run:
-          name: lint
-          command: yarn textlint:ja
+          name: lint-en
+          command: textlint --config en/.textlintrc.json en/**/*.md
+      - run:
+          name: lint-ja
+          command: textlint --config ja/.textlintrc.json ja/**/*.md

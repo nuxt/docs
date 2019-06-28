@@ -2,10 +2,6 @@
   "name": "nuxt-docs",
   "version": "1.0.0",
   "description": "Nuxt.js documentation files",
-  "scripts": {
-    "textlint:ja": "textlint --config ja/.textlintrc ja/**/*.md",
-    "textlint:ja:fix": "textlint --config ja/.textlintrc --fix --format diff ja/**/*.md"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nuxt/docs.git"
