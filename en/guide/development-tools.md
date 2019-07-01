@@ -22,13 +22,8 @@ Then add a test script to our `package.json` and configure AVA to compile files 
   "test": "ava",
 },
 "ava": {
-  "require": [
-    "babel-register"
-  ]
-},
-"babel": {
-  "presets": [
-    "env"
+  "files": [
+    "test/**/*"
   ]
 }
 ```
@@ -212,6 +207,6 @@ It is also recommended to enable ESLint hot reloading mode via webpack. This way
 
 <div class="Alert Alert--orange">
 
-One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before commiting your code.
+One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before committing your code.
 
 </div>

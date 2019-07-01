@@ -1,6 +1,6 @@
 ---
 title: "API : le contexte"
-description: L'objet `context` fournit des objets et paramètres additionnels en provenance de Nuxt qui ne sont pas traditionnellement disponibles dans les composants Vue. Le `context` est disponible dans des aires de cycle de vie spécifique à Nuxt. On y retrouve, par exemple, `asyncData`, `plugins`, 'middlewares', 'modules', et 'store/nuxtServerInit`.
+description: L'objet `context` fournit des objets et paramètres additionnels en provenance de Nuxt qui ne sont pas traditionnellement disponibles dans les composants Vue. Le `context` est disponible dans des aires de cycle de vie spécifique à Nuxt. On y retrouve, par exemple, `asyncData`, `plugins`, `middlewares`, `modules`, et `store/nuxtServerInit`.
 ---
 
 ## Contexte

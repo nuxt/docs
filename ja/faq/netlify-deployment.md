@@ -23,9 +23,24 @@ Netlify ダッシュボードの _"New site from Git"_ ボタンを押下しま�
 
 ## 操作：
 
+### 静的に生成されたサイトの場合
+
 1. __ブランチをデプロイする：__ `master` もしくはデプロイしたいブランチ
 2. __ビルドコマンド：__ `npm run generate`
 3. __公開ディレクトリ：__ `dist`
+
+
+### SPA モードで生成されたサイトの場合
+
+1. __ブランチをデプロイする:__ `master` もしくはデプロイしたいブランチ
+2. __ビルドコマンド:__ `npm run build`
+3. __公開ディレクトリ:__ `dist`
+
+
+シングルページアプリケーションの場合、Netlify は再読み込み時にデフォルトで *"404 not found"* にリダイレクトしますが、[リダイレクト設定](https://www.netlify.com/docs/redirects/#rewrites-and-proxying) を行う事で防げます。 また、シングルページアプリケーションのヘッダーとリダイレクト両方の設定をサポートする [nuxt-netlify](https://www.bazzite.com/docs/nuxt-netlify) モジュールを利用する事もできます。
+
+> Divya Sasidharan が、Netlify のリダイレクトに関するリファレンスを [blog](https://www.netlify.com/blog/2019/01/16/redirect-rules-for-all-how-to-configure-redirects-for-your-static-site) に公開しているので参考にしてください。
+
 
 > オプションで、_"Advanced"_ ボタンを使用して ENV 変数を追加することができます。これらは代替 API 資格情報などを交換する際に役立ちます。Netlify はまた、ビルド時に Nuxt.js アプリケーションで読み取れる [デフォルトの ENV 変数](https://www.netlify.com/docs/build-settings/#build-environment-variables) を提供します。
 
