@@ -20,5 +20,6 @@ Point d'ancrage           | Arguments                | Quand
  `render:errorMiddleware` | (app) *connect instance* | Appelez votre propre middleware avant d'utiliser ceux de Nuxt. Voir le [module Sentry](https://github.com/nuxt-community/sentry-module/blob/master/lib/module.js#L122) pour plus d'informations.
  `render:resourcesLoaded` | (resources)              | Appelez après les ressources pour le renderer (client manifest, server bundle, etc).
  `render:done`            | (renderer)               | Middleware de rendu côté serveur et toutes les ressources prêtes (`Renderer` prèt).
- `render:context`         | (context.nuxt)           | *Chaque fois qu'une route est rendu côté serveur et avant le point d'ancrage `render:route`*. Appelé avant la sérialisation du contexte Nuxt dans `window.__NUXT__`, utile pour ajouter diverses données que vous souhaitez récupérer côté client.
- `render:route`           | (url, result, context)   | *Chaque fois qu'une route est rendu côté serveur*. Appelé avant.
+ `render:routeContext`    | (context.nuxt)           | *Chaque fois qu'une route est rendue côté serveur et avant le point d'ancrage `render:route`*. Appelé avant la sérialisation du contexte Nuxt dans `window.__NUXT__`, utile pour ajouter diverses données que vous souhaitez récupérer côté client.
+ `render:route`           |  (url, result, context)  | *Chaque fois qu'une route est rendu côté serveur*. Appelé avant de renvoyer la requête au navigateur.
+ `render:routeDone`       |  (url, result, context)  | *Chaque fois qu'une route est rendu côté serveur*. Appelé après l'envoi de la requête au navigateur.

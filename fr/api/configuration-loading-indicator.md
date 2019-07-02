@@ -1,18 +1,17 @@
 ---
-title: "API: The loading indicator Property"
+title: "API: The loading indicator Property (EN)"
 description: Show fancy loading indicator while SPA page is loading!
 ---
 
-# The loadingIndicator Property (En)
+# The loadingIndicator Property (EN)
 
 > Show fancy loading indicator while SPA page is loading!
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>When running Nuxt.js in SPA mode, there is no content from the server side on the first page load. So, instead of showing a blank page while the page loads, we may show a spinner.</p>
+When running Nuxt.js in SPA mode, there is no content from the server side on the first page load. So, instead of showing a blank page while the page loads, we may show a spinner.
 
-This property can have 3 different types: `string` or `false` or `object`.
-If a string value is provided it is converted to object style.
+This property can have 3 different types: `string` or `false` or `object`. If a string value is provided it is converted to object style.
 
-Default value is: 
+Default value is:
 ```js
 {
   name: 'circle',
@@ -23,8 +22,7 @@ Default value is:
 
 ## Built-in indicators
 
-These indicators are ported from awesome [Spinkit](http://tobiasahlin.com/spinkit) project.
-You can use its demo page to preview spinners.
+These indicators are ported from awesome [Spinkit](http://tobiasahlin.com/spinkit) project. You can use its demo page to preview spinners.
 
 - circle
 - cube-grid
@@ -42,7 +40,8 @@ Built-in indicators support `color` and `background` options.
 
 ## Custom indicators
 
-If you need your own special indicator, a String value or Name key can also be a path to an html template of indicator source code!
-All of the options are passed to the template, too.
+If you need your own special indicator, a String value or Name key can also be a path to an html template of indicator source code! All of the options are passed to the template, too.
 
 Nuxt's built-in [source code](https://github.com/nuxt/nuxt.js/tree/dev/packages/vue-app/template/views/loading) is also available if you need a base!
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>
