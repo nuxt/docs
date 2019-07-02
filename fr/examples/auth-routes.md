@@ -1,5 +1,5 @@
 ---
-title: Authentification de routes
+title: Authentification de routes (EN)
 description: Exemple d'authentification de routes avec Nuxt.js
 github: auth-routes
 livedemo: https://nuxt-auth-routes.gomix.me
@@ -9,6 +9,14 @@ liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 # Documentation
 
 > Nuxt.js peut être utilisé pour créer facilement des routes authentifiées.
+
+## Module officiel `auth-module` (EN)
+
+If you want to implement complex authentication flows, for example OAuth2, we suggest using the official [`auth-module`](https://github.com/nuxt-community/auth-module)
+
+## Avec Express et Sessions
+
+Si vous souhaitez implémenter un flux d'authentification complexe, par exemple OAuth2, nous suggérons d'utiliser le module officiel [`auth-module`](https://github.com/nuxt-community/auth-module)
 
 ## Utilisation de Express et des sessions
 
@@ -35,7 +43,7 @@ app.use(bodyParser.json())
 
 // Mise en place de sessions pour y accéder via `req.session`
 app.use(session({
-  secret: 'super-secret-key',
+  secret: 'cle-super-secrete',
   resave: false,
   saveUninitialized: false,
   cookie: { maxAge: 60000 }
@@ -47,7 +55,7 @@ app.post('/api/login', function (req, res) {
     req.session.authUser = { username: 'demo' }
     return res.json({ username: 'demo' })
   }
-  res.status(401).json({ error: 'Bad credentials' })
+  res.status(401).json({ error: 'Mauvaise authentification' })
 })
 
 // Accès à `/api/logout` en POST pour déconnecter l'utilisateur et le retirer de `req.session`
@@ -66,7 +74,7 @@ if (!isProd) {
 }
 app.use(nuxt.render)
 app.listen(3000)
-console.log('Server is listening on http://localhost:3000')
+console.log('Le serveur écoute sur http://localhost:3000')
 ```
 
 Et nous modifions nos scripts dans `package.json` :
@@ -100,9 +108,9 @@ require('whatwg-fetch')
 
 const store = new Vuex.Store({
 
-  state: {
+  state: () => ({
     authUser: null
-  },
+  }),
 
   mutations: {
     SET_USER: function (state, user) {
@@ -163,7 +171,7 @@ login ({ commit }, { username, password }) {
   })
   .then((res) => {
     if (res.status === 401) {
-      throw new Error('Bad credentials')
+      throw new Error('Mauvaise authentification')
     } else {
       return res.json()
     }
@@ -218,3 +226,5 @@ export default {
 ```
 
 Nous pouvons voir dans la méthode `fetch` que nous appelons `redirect('/')` lorsque notre utilisateur n'est pas connecté.
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

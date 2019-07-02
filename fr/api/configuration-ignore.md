@@ -3,6 +3,36 @@ title: "API: The ignore Property (EN)"
 description: Define the ignore files for your Nuxt.js application
 ---
 
+# .nuxtignore
+
+You can use a `.nuxtignore` file to let Nuxt.js ignore `layout`, `page`, `store` and `middleware` files in your project’s root directory (`rootDir`) during the build phase.
+The `.nuxtignore` file is subject to the same specification as `.gitignore` and `.eslintignore` files, in which each line is a glob pattern indicating which files should be ignored.
+
+For example:
+
+```
+# ignore layout foo.vue
+layouts/foo.vue
+# ignore layout files whose name ends with -ignore.vue
+layouts/*-ignore.vue
+
+# ignore page bar.vue
+pages/bar.vue
+# ignore page inside ignore folder
+pages/ignore/*.vue
+
+# ignore store baz.js
+store/baz.js
+# ignore store files match *.test.*
+store/ignore/*.test.*
+
+# ignore middleware files under foo folder except foo/bar.js
+middleware/foo/*.js
+!middleware/foo/bar.js
+```
+
+> More details about the spec are in [gitignore doc](https://git-scm.com/docs/gitignore)
+
 # The ignorePrefix Property
 
 - Type: `String`
@@ -10,7 +40,9 @@ description: Define the ignore files for your Nuxt.js application
 
 > Any file in pages/ layout/ middleware/ or store/ will be ignored during building if its filename starts with the prefix specified by `ignorePrefix`.
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>By default all files which start with `-` will be ignored, such as `store/-foo.js` and `pages/-bar.vue`. This allows for co-locating tests, utilities, and components with their callers without themselves being converted into routes, stores, etc.</p>
+By default all files which start with `-` will be ignored, such as `store/-foo.js` and `pages/-bar.vue`. This allows for co-locating tests, utilities, and components with their callers without themselves being converted into routes, stores, etc.</p>
+
+**Note:** This option will be deprecated in Nuxt.js 3. We recommend using a `.nuxtignore` file instead.
 
 # The ignore Property
 
@@ -19,3 +51,6 @@ description: Define the ignore files for your Nuxt.js application
 
 > More customizable than `ignorePrefix`: all files matching glob patterns specified inside `ignore` will be ignored in building.
 
+**Note:** This option will be deprecated in Nuxt.js 3. We recommend using a `.nuxtignore` file instead.
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>
