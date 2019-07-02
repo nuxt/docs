@@ -25,4 +25,8 @@ export default {
 }
 ```
 
-<div class="Alert Alert--orange">`asyncData` 내부에서 `this`를 통해 컴포넌트 인스턴스에 접근하지 **못합니다**. 컴포넌트를 초기화하기 전에 호출되기 때문 입니다.</div>
+<div class="Alert Alert--orange">
+
+`asyncData` 내부에서 `this`를 통해 컴포넌트 인스턴스에 접근하지 **못합니다**. 컴포넌트를 초기화하기 전에 호출되기 때문 입니다.
+
+</div>

@@ -5,7 +5,11 @@ description: Nuxt.js utilise le système de fichiers pour générer les routes d
 
 > Nuxt.js génère automatiquement la configuration pour [vue-router](https://github.com/vuejs/vue-router) en fonction de votre arborescence de fichiers Vue se trouvant au sein du répertoire `pages`.
 
-<div class="Alert Alert--grey">Pour naviguer entre les pages, nous recommandons l'utilisation du composant [`<nuxt-link>`](/api/components-nuxt-link).</div>
+<div class="Alert Alert--grey">
+
+Pour naviguer entre les pages, nous recommandons l'utilisation du composant [`<nuxt-link>`](/api/components-nuxt-link).
+
+</div>
 
 Par exemple :
 
@@ -98,7 +102,11 @@ router: {
 
 Comme vous pouvez le voir, la route nommée `users-id` contient le chemin `:id?` ce qui le rend optionnel. Si vous voulez le rendre obligatoire, créez un fichier `index.vue` dans le dossier `users/_id`.
 
-<p class="Alert Alert--info"><b>Attention :</b> les routes dynamiques sont ignorées par la commande `generate`, consultez la configuration de l'API à propos de [La propriété `generate`](/api/configuration-generate#routes)</p>
+<div class="Alert Alert--orange">
+
+<b>Attention :</b> les routes dynamiques sont ignorées par la commande `generate`, consultez la configuration de l'API à propos de [La propriété `generate`](/api/configuration-generate#routes)
+
+</div>
 
 ### Validation des paramètres de route
 
@@ -125,7 +133,11 @@ Nuxt.js vous permet de créer des routes imbriquées en utilisant les routes enf
 
 Pour définir le composant parent d'une route imbriquée, vous devez créer un fichier Vue avec le **même nom que le répertoire** qui contient les vues enfants.
 
-<p class="Alert Alert--info"><b>Attention :</b> n'oubliez pas d'écrire `<nuxt-child/>` au sein du composant parent (fichier <code>.vue</code>).</p>
+<div class="Alert Alert--orange">
+
+<b>Attention :</b> n'oubliez pas d'écrire `<nuxt-child/>` au sein du composant parent (fichier <code>.vue</code>).
+
+</div>
 
 Cette arborescence :
 
@@ -221,6 +233,35 @@ router: {
 }
 ```
 
+### Routes dynamiques imbriquées inconnues
+
+Si vous ne connaissez pas la profondeur de votre structure d'URL, vous pouvez utiliser `_.vue` pour
+correspondre dynamiquement aux chemins imbriqués.
+
+Cet arbre de fichiers:
+
+```bash
+pages/
+--| people/
+-----| _id.vue
+-----| index.vue
+--| _.vue
+--| index.vue
+```
+
+Va gérer des requêtes comme ceci :
+
+Chemin | Fichier
+--- | ---
+`/` | `index.vue`
+`/people` | `people/index.vue`
+`/people/123` | `people/_id.vue`
+`/about` | `_.vue`
+`/about/careers` | `_.vue`
+`/about/careers/chicago` | `_.vue`
+
+__Note:__ La gestion des pages 404 relève maintenant de la logique de la page `_.vue`. [Plus d'informations sur la redirection des 404 peut être trouvé ici](/guide/async-data#handling-errors).
+
 ### Alternative pour application monopage
 
 Vous pouvez activer l'alternative pour application monopage pour les routes dynamiques aussi. Nuxt.js va générer un fichier supplémentaire identique à `index.html` qui pourra être utilisé en `mode: 'spa'`. La plupart des services d'hébergement peuvent être configurés pour utiliser le template d'application monopage si aucun fichier ne concorde. Les informations de `head` ou HTML ne seront pas inclus mais les données seront toujours résolues et chargées depuis l'API.
@@ -273,7 +314,11 @@ Nuxt.js utilise le composant [`<transition>`](http://vuejs.org/v2/guide/transiti
 
 ### Paramètres globaux
 
-<p class="Alert Alert--nuxt-green"><b>Info :</b> dans Nuxt.js, le nom de la transition par défaut est `"page"`.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>Info :</b> dans Nuxt.js, le nom de la transition par défaut est `"page"`.
+
+</div>
 
 Pour ajouter une transition de fondu à chaque page de votre application, nous avons besoin d'un fichier CSS qui est partagé sur toutes nos routes. Commençons par créer un fichier dans le dossier `assets`.
 
@@ -335,7 +380,7 @@ Un middleware reçoit [le contexte](/api#context) comme premier argument :
 
 ```js
 export default function (context) {
-  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+  context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
 

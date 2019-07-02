@@ -5,7 +5,7 @@ description: Nuxt.js uses vue-meta to update the `headers` and `html attributes`
 
 # The head Method
 
-> Nuxt.js uses [vue-meta](https://github.com/declandewet/vue-meta) to update the `headers` and `html attributes` of your application.
+> Nuxt.js uses [vue-meta](https://github.com/nuxt/vue-meta) to update the `headers` and `html attributes` of your application.
 
 - **Type:** `Object` or `Function`
 
@@ -37,4 +37,8 @@ export default {
 </script>
 ```
 
-<p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+<div class="Alert">
+
+To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://vue-meta.nuxtjs.org/api/#tagidkeyname).
+
+</div>

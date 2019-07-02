@@ -5,7 +5,7 @@ description: Nuxt.js アプリケーションのワークスペースを指定�
 
 # rootDir プロパティ
 
-- 型: `文字列`
+- 型: `String`
 - デフォルト: `process.cwd()`
 
 > Nuxt.js アプリケーションのワークスペースを指定します。
@@ -14,4 +14,8 @@ description: Nuxt.js アプリケーションのワークスペースを指定�
 
 このプロパティは [Nuxt.js をプログラムで使う](/api/nuxt) ときに用いると良いです。
 
-<p class="Alert Alert--blue">このオプションは `node_modules` ディレクトリが `rootDir` フォルダ内にあることを求めるという側面もあります。もしアプリケーションのパスを node_modules なしで設定したいときは [`srcDir` オプション](/api/configuration-srcdir) を使ってください。</p>
+<div class="Alert Alert--blue">
+
+このオプションは `node_modules` ディレクトリが `rootDir` フォルダ内にあることを求めるという側面もあります。もしアプリケーションのパスを node_modules なしで設定したいときは [`srcDir` オプション](/api/configuration-srcdir) を使ってください。
+
+</div>

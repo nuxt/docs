@@ -23,7 +23,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert-blue">`base`가 설정되면, nuxt.js는 문서의 헤더를 추가합니다 `<base href="{{ router.base }}"/>`.</p>
+<div class="Alert Alert-blue">
+
+`base`가 설정되면, nuxt.js는 문서의 헤더를 추가합니다 `<base href="{{ router.base }}"/>`.
+
+</div>
 
 > 이 옵션은 vue-router에 다이렉트로 제공됩니다. [Router 생성자](https://router.vuejs.org/kr/api/options.html).
 
@@ -133,7 +137,7 @@ module.exports = {
 ```js
 export default function (context) {
   // 컨텍스트에 userAgent 프로퍼티를 추가합니다. (`data`와 `fetch`에서 사용 가능)
-  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+  context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
 

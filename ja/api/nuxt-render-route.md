@@ -5,40 +5,45 @@ description: 特定のルートをレンダリングします。その際にコ�
 
 # nuxt.renderRoute(route, context = {})
 
-- 型: `関数`
+- 型: `Function`
 - 引数:
-  1. `文字列`, レンダリングするルート
-  2. *オプション*, `オブジェクト`, 付与するコンテキスト, 利用できるキー: `req` 及び `res`
-- 戻り値: `プロミス`
-  - `html`: `文字列`
-  - `error`: `null` または `オブジェクト`
-  - `redirected`: `false` または `オブジェクト`
+  1. `String`、レンダリングするルート
+  2. *オプション*、`Object`、付与するコンテキスト、利用できるキー: `req` 及び `res`
+- 戻り値: `Promise`
+  - `html`: `String`
+  - `error`: `null` または `Object`
+  - `redirected`: `false` または `Object`
 
 > 特定のルートをレンダリングします。その際にコンテキストを渡すことができます。
 
 このメソッドはほとんどの場合 [nuxt.renderAndGetWindow](/api/nuxt-render-and-get-window) とともに [テストする目的](/guide/development-tools#エンドツーエンドテスト) で使われます。
 
-<p class="Alert Alert--info">`nuxt.renderRoute` はプロダクションモード（dev: false）ではビルド処理の後に実行すると良いでしょう。</p>
+<div class="Alert Alert--orange">
+
+`nuxt.renderRoute` はプロダクションモード（dev: false）ではビルド処理の後に実行すると良いでしょう。
+
+</div>
 
 例:
 
 ```js
-const Nuxt = require('nuxt')
-let config = require('./nuxt.config.js')
+const { Nuxt, Builder } = require('nuxt')
+
+const config = require('./nuxt.config.js')
 config.dev = false
+
 const nuxt = new Nuxt(config)
 
-nuxt.build()
-.then(() => {
-  return nuxt.renderRoute('/')
-})
+new Builder(nuxt)
+.build()
+.then(() => nuxt.renderRoute('/'))
 .then(({ html, error, redirected }) => {
-  // html は常に文字列
+  // `html` は常に文字列になります
 
-  // エラーレイアウトが表示されるときは error は null ではありません。エラーフォーマットは下記:
+  // エラーレイアウトが表示されるときは `error` は null ではありません。エラーフォーマットは下記:
   // { statusCode: 500, message: 'エラーメッセージ' }
 
-  // data() や fetch() で redirect() が使われたときは redirected は false ではありません
+  // `asyncData()` または `fetch()` 内で `redirect()` が使われたときは `redirected` は `false` ではありません
   // { path: '/other-path', query: {}, status: 302 }
 })
 ```

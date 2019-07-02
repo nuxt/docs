@@ -10,6 +10,11 @@ liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 
 > Nuxt.js を使うと認証が必要なルートを簡単に作成できます。
 
+## 公式の `auth-module`
+
+OAuth2 などの複雑な認証フローを実装したい場合は、公式の `auth-module` を使用することをお勧めします。
+
+
 ## express とセッションを使う
 
 アプリケーションにセッション機能を追加するために `express` と `express-session` を使います。そのために Nuxt.js をプログラムで使う必要があります。
@@ -100,9 +105,9 @@ require('whatwg-fetch')
 
 const store = () => new Vuex.Store({
 
-  state: {
+  state: () => ({
     authUser: null
-  },
+  }),
 
   mutations: {
     SET_USER: function (state, user) {

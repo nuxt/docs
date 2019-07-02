@@ -17,7 +17,7 @@ Un autre point à propos des modules est qu'ils peuvent être refactorisés et p
 - vous êtes une **société** qui accorde de l'importance à la **qualité** et la **réutilisabilité** de ses projets,
 - Vous êtes un membre super enthousiaste de la communauté *Open Source* et que vous souhaitez *partager* avec la communauté d'une façon simple.
 - Vous êtes un développeur occupé et vous n'aimez pas vous encombrer avec des détails comme le paramétrage de chaque nouvelle bibliothèque ou intégration (quelqu'un l'aura surement déjà fait pour vous, ou vous pourriez demander à quelqu'un de la communauté de le faire).
-- Vous êtes fatigué de l'utilisation des API bas niveau et de leur changement continu et vous souhaiter **simplement des choses fonctionnelles**.
+- Vous êtes fatigué de l'utilisation des API bas niveau et de leur changement continu et vous souhaitez **simplement des choses fonctionnelles**.
 
 ## Écrire un module basique
 
@@ -76,7 +76,11 @@ Tous les modules ne font pas tout de manière synchrone. Par exemple vous pouvez
 
 ### Utilisation de async / await
 
-<p class="Alert Alert--orange">Faites attention avec `async` et `await`, ils sont supportés uniquement depuis Node.js 7.2+. Donc si vous êtes un développeur de modules, n'oubliez pas d'avertir vos utilisateurs si vous les utilisez. Pour des modules asynchrones plus stables ou avec un support des versions antérieures vous pouvez utiliser un paqueteur pour les transformer en de vieille version de compatibilité Node.js ou utilisant des méthodes de promesse.</p>
+<div class="Alert Alert--orange">
+
+Faites attention avec `async` et `await`, ils sont supportés uniquement depuis Node.js 7.2+. Donc si vous êtes un développeur de modules, n'oubliez pas d'avertir vos utilisateurs si vous les utilisez. Pour des modules asynchrones plus stables ou avec un support des versions antérieures vous pouvez utiliser un paqueteur pour les transformer en de vieille version de compatibilité Node.js ou utilisant des méthodes de promesse.
+
+</div>
 
 ```js
 const fse = require('fs-extra')
@@ -263,7 +267,7 @@ module.exports = function (moduleOptions) {
 
       // Personnalisation des loaders existants
       // Consultez le code source des mécanismes de Nuxt :
-      // https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/webpack/base.js
+      // https://github.com/nuxt/nuxt.js/tree/dev/packages/builder/src/webpack/base.js
       const barLoader = config.module.rules.find(rule => rule.loader === 'bar-loader')
   })
 }
@@ -271,7 +275,7 @@ module.exports = function (moduleOptions) {
 
 ## Lancer des tâches sur des points d'ancrage spécifiques
 
-Votre module peut avoir besoin de choses seulement sous certaines conditions et pas seulement lors de l'initialisation de Nuxt. Nous utilisons le puissant système de plugin [Tapable](https://github.com/webpack/tapable) pour réaliser des tâches sur des évènements spécifiques. Nuxt va les attendre si les points d'ancrage retournent une promesse ou sont définis comme `async`.
+Votre module peut avoir besoin de choses seulement sous certaines conditions et pas seulement lors de l'initialisation de Nuxt. Nous pouvons utiliser le puissant système [Hookable] (https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js) pour effectuer des tâches sur des événements spécifiques. Nuxt va les attendre si les points d'ancrage retournent une promesse ou sont définis comme `async`.
 
 ```js
 module.exports = function () {
@@ -302,4 +306,8 @@ module.exports = function () {
 }
 ```
 
-<p class="Alert">Il existe beaucoup d'autres points d'ancrage et de possibilités pour les modules. Consultez les [mécanismes de Nuxt](/api/internals) pour en apprendre plus à propos de l'API interne de Nuxt.</p>
+<div class="Alert">
+
+Il existe beaucoup d'autres points d'ancrage et de possibilités pour les modules. Consultez les [mécanismes de Nuxt](/api/internals) pour en apprendre plus à propos de l'API interne de Nuxt.
+
+</div>

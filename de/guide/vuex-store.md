@@ -185,7 +185,11 @@ export default {
 }
 ```
 
-<div class="Alert">You can also have modules by exporting a store instance, you will have to add them manually on your store.</div>
+<div class="Alert">
+
+You can also have modules by exporting a store instance, you will have to add them manually on your store.
+
+</div>
 
 ### Module files
 
@@ -259,7 +263,7 @@ Strict mode is enabled by default on dev mode and turned off in production mode.
 
 ### Classic Mode
 
-```
+```js
 import Vuex from 'vuex'
 
 const createStore = () => {

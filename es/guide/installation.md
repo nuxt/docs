@@ -5,17 +5,28 @@ description: Con `nuxt` es realmente facil empezar. Un proyecto simple solo nece
 
 > Con `nuxt` es realmente facil empezar. Un proyecto simple solo necesita la dependencia `nuxt`.
 
+<div>
+  <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Nuxt Fundamentals by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Nuxt.js Fundamentals</h4>
+      <p class="Promote__Content__Description">Learn how to get started quickly with Nuxt.js in videos.</p>
+      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+    </div>
+  </a>
+</div>
+
 ## Utilizar la plantilla de inicio de nuxt.js
 
 Para comenzar rapidamente, el equipo de Nuxt.js a creado una [plantilla de inicio](https://github.com/nuxt-community/starter-template).
 
-Descargue el  [.zip con la plantilla de inicio](https://github.com/nuxt-community/starter-template/archive/master.zip) o instalela con with vue-cli:
+Descargue el  [.zip con la plantilla de inicio](https://github.com/nuxt-community/starter-template/archive/master.zip) o instalela con with Vue CLI:
 
 ```bash
 $ vue init nuxt-community/starter-template <project-name>
 ```
 
-> Si [vue-cli](https://github.com/vuejs/vue-cli) no se encuentra instalado, por favor instalelo con el comando `npm install -g vue-cli` 
+> Si [Vue CLI](https://github.com/vuejs/vue-cli) no se encuentra instalado, por favor instalelo con el comando `npm install -g @vue/cli @vue/cli-init`
 
 luego instale las dependencias:
 
@@ -28,9 +39,13 @@ y lance el proyecto con:
 ```bash
 $ npm run dev
 ```
-La aplicación ahora estara ejecutandose en http://localhost:3000 
+La aplicación ahora estara ejecutandose en http://localhost:3000
 
-<p class="Alert">Nuxt.js escuchara los cambios en los archivos dentro del directorio `pages`, por lo cual no es necesario reiniciar la aplicación cada vez que cambie o agregue una nueva pagina</p>
+<div class="Alert">
+
+Nuxt.js escuchara los cambios en los archivos dentro del directorio `pages`, por lo cual no es necesario reiniciar la aplicación cada vez que cambie o agregue una nueva pagina
+
+</div>
 
 Para obtener mas información sobre la estructura de directorios del proyecto vea: [Documentación de la estructura de directorios](/guide/directory-structure).
 
@@ -62,7 +77,7 @@ El proyecto necesita un archivo llamado `package.json` para especificar como ini
 
 Una vez que se ha creado el `package.json`, agregue nuxt al proyecto a través de npm:
 ```bash
-npm install --save nuxt
+$ npm install --save nuxt
 ```
 
 ### El directorio `pages`
@@ -86,7 +101,11 @@ $ npm run dev
 ```
 La aplicación ahora se estatara ejecutando en http://localhost:3000
 
-<p class="Alert">Nuxt.js escuchará los cambios de archivos dentro del directorio de `pages`. Por lo que no es necesario reiniciar la aplicación al agregar nuevas páginas</p>
+<div class="Alert">
+
+Nuxt.js escuchará los cambios de archivos dentro del directorio de `pages`. Por lo que no es necesario reiniciar la aplicación al agregar nuevas páginas
+
+</div>
 
 
 Para obtener más información sobre la estructura de directorios del proyecto vea: [Documentación de la estructura de directorios](/guide/directory-structure).

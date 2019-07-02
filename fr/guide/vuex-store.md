@@ -10,46 +10,12 @@ description: L'utilisation d'un store pour gérer l'état est important pour tou
 Nuxt.js recherchera le répertoire `store`. S'il existe, il :
 
 1. importera Vuex,
-2. ajoutera le module `vuex` dans le paquetage vendors,
-3. ajoutera l'option `store` à l'instance racine de Vue.
+2. ajoutera l'option `store` à l'instance racine de Vue.
 
 Nuxt.js vous laisse le choix entre **2 modes de store**, choisissez celui qui vous convient le mieux :
 
-- **Classique :** `store/index.js` retourne une instance de store.
 - **Modules :** chaque fichier `.js` dans le répertoire `store` est transformé en tant que [module avec son propre espace de nom](http://vuex.vuejs.org/fr/modules.html) (`index` étant le module racine)
-
-## Mode classique
-
-Pour activer le store avec le mode classique, nous créons `store/index.js` qui devrait exporter une méthode qui renvoie une instance Vuex :
-
-```js
-import Vuex from 'vuex'
-
-const createStore = () => {
-  return new Vuex.Store({
-    state: {
-      counter: 0
-    },
-    mutations: {
-      increment (state) {
-        state.counter++
-      }
-    }
-  })
-}
-
-export default createStore
-```
-
-> Pas besoin d'installer `vuex`, celui-ci étant livré avec Nuxt.js.
-
-Nous pouvons alors utiliser `this.$store` dans nos composants :
-
-```html
-<template>
-  <button @click="$store.commit('increment')">{{ $store.state.counter }}</button>
-</template>
-```
+- **Classique (déprécié):** `store/index.js` retourne une instance de store.
 
 ## Mode modules
 
@@ -185,7 +151,15 @@ export default {
 }
 ```
 
-<div class="Alert">Vous pouvez également avoir des modules en exportant une instance de store vous devrez les ajouter manuellement sur votre store.</div>
+<div class="Alert">
+
+Vous pouvez également avoir des modules en exportant une instance de store vous devrez les ajouter manuellement sur votre store.
+
+</div>
+
+### Fichiers de module
+
+Vous pouvez optionnellement scinder un fichier de module en plusieurs fichiers séparés : `state.js`, `actions.js`, `mutations.js` et `getters.js`. Si vous maintenez un fichier `index.js` avec un état, des accesseurs et des mutations alors que les actions sont dans un fichier séparé, cela va également être proprement interprété.
 
 ### Fichiers de module
 
@@ -211,7 +185,7 @@ export const mutations = {
 }
 ```
 
-Pour plus d'informations à propos des plugins, consultez la [documentation Vuex](https://vuex.vuejs.org/fr/plugins.html).
+Pour plus d'informations à propos des plugins, consultez la [documentation Vuex](https://vuex.vuejs.org/fr/guide/plugins.html).
 
 ## La méthode fetch
 
@@ -249,7 +223,7 @@ actions: {
 }
 ```
 
-## Mode stric de Vuex
+## Mode strict de Vuex
 
 Le mode strict est activé par défaut sur le mode développement et est désactivé par défaut sur le mode production. Désactivez le mode strict en développement en procédent comme ci-après.
 
@@ -259,7 +233,7 @@ Le mode strict est activé par défaut sur le mode développement et est désact
 
 ### Classic Mode
 
-```
+```js
 import Vuex from 'vuex'
 
 const createStore = () => {
@@ -277,4 +251,39 @@ const createStore = () => {
 }
 
 export default createStore
+```
+
+## Mode classique
+
+> Cette fonctionnalité est dépréciée et sera supprimée dans Nuxt 3.
+
+Pour activer le store avec le mode classique, nous créons `store/index.js` qui devrait exporter une méthode qui renvoie une instance Vuex :
+
+```js
+import Vuex from 'vuex'
+
+const createStore = () => {
+  return new Vuex.Store({
+    state: {
+      counter: 0
+    },
+    mutations: {
+      increment (state) {
+        state.counter++
+      }
+    }
+  })
+}
+
+export default createStore
+```
+
+> Pas besoin d'installer `vuex`, celui-ci étant livré avec Nuxt.js.
+
+Nous pouvons alors utiliser `this.$store` dans nos composants :
+
+```html
+<template>
+  <button @click="$store.commit('increment')">{{ $store.state.counter }}</button>
+</template>
 ```

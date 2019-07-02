@@ -5,7 +5,7 @@ description: La classe `Builder` de Nuxt
 
 # Classe Builder
 
-- Source : **[builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)**
+- Source : **[builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/builder/src/builder.js)**
 
 ## Points d'ancrage
 

@@ -5,7 +5,7 @@ description: Views 절에서는 Nuxt.js 어플리케이션의 특정 라우트�
 
 > Views 절에서는 Nuxt.js 어플리케이션의 특정 라우트를 위해 데이터와 뷰를 설정하는 모든 것을 설명합니다. (Document, Layouts, Pages 와 HTML Head)
 
-![nuxt-views-schema](/nuxt-views-schema.png)
+![nuxt-views-schema](/nuxt-views-schema.svg)
 
 ## 도큐먼트
 
@@ -18,7 +18,7 @@ html 템플릿을 확장하기 위해서 당신의 프로젝트에 `app.html` �
 ```html
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -33,7 +33,7 @@ html 템플릿을 확장하기 위해서 당신의 프로젝트에 `app.html` �
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -65,7 +65,7 @@ Nuxt.js를 사용하면 `layouts` 폴더에 레이아웃을 추가함으로써 �
 
 이 레이아웃은 `<nuxt/>` 태그를 포함하지 않습니다. 404나 500 에러가 발생했을 때 이 레이아웃은 컴포넌트처럼 작동합니다.
 
-기본 에러 페이지 소스 코드는 [깃허브](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue)에서 확인할 수 있습니다.
+기본 에러 페이지 소스 코드는 [깃허브](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue)에서 확인할 수 있습니다.
 
 `layouts/error.vue`에서 사용자 정의 에러 페이지를 사용한 예입니다:
 ```html
@@ -163,7 +163,7 @@ export default {
 
 ## HTML Head
 
-Nuxt.js는 `headers` 와 `html attributes` 를 갱신하기 위해서 [vue-meta](https://github.com/declandewet/vue-meta)를 사용합니다.
+Nuxt.js는 `headers` 와 `html attributes` 를 갱신하기 위해서 [vue-meta](https://github.com/nuxt/vue-meta)를 사용합니다.
 
 Nuxt.js는 `vue-meta`를 아래의 옵션으로 구성합니다:
 ```js
@@ -192,7 +192,7 @@ head: {
 }
 ```
 
-`head`에 전달 가능한 옵션 목록을 알기 위해서는 [vue-meta 문서](https://github.com/declandewet/vue-meta#recognized-metainfo-properties)를 확인합니다.
+`head`에 전달 가능한 옵션 목록을 알기 위해서는 [vue-meta 문서](https://vue-meta.nuxtjs.org/api/#metainfo-properties)를 확인합니다.
 
 head 메소드에 대한 더 많은 정보: [API head 구성](/api/configuration-head)
 
@@ -200,4 +200,4 @@ head 메소드에 대한 더 많은 정보: [API head 구성](/api/configuration
 
 head 메소드에 대한 더 많은 정보: [API 페이지 head](/api/pages-head)
 
-<p class="Alert">자식 컴포넌트를 사용할 때 중복을 피하고 싶다면 `hid` 키와 함께 유일한 식별자를 사용하세요. 자세한 내용은 [이곳](https://github.com/declandewet/vue-meta#lists-of-tags)에서 확인합니다.
+<p class="Alert">자식 컴포넌트를 사용할 때 중복을 피하고 싶다면 `hid` 키와 함께 유일한 식별자를 사용하세요. 자세한 내용은 [이곳](https://vue-meta.nuxtjs.org/api/#tagidkeyname)에서 확인합니다.

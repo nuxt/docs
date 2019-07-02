@@ -113,7 +113,11 @@ Nuxt.js를 사용하면 vue-router의 자식 라우트를 사용함으로써 중
 
 중첩 라우트의 부모 컴포넌트를 정의하기 위해서는 자식 뷰를 포함하고 있는 **폴더와 같은 이름** 으로 Vue 파일을 생성해야 합니다.
 
-<p class="Alert Alert--info">부모 컴포넌트(.vue file)에 `<nuxt-child/>` 태그를 사용해야함을 잊지마세요!</p>
+<div class="Alert Alert--orange">
+
+부모 컴포넌트(.vue file)에 `<nuxt-child/>` 태그를 사용해야함을 잊지마세요!
+
+</div>
 
 아래의 폴더 구조는:
 
@@ -215,7 +219,11 @@ Nuxt.js는 경로 전환 과정에서 [&lt;transition&gt;](http://vuejs.org/v2/g
 
 ### 전역 설정
 
-<p class="Alert Alert--info">Nuxt.js의 기본 트랜지션 이름은 `"page"` 입니다.</p>
+<div class="Alert Alert--orange">
+
+Nuxt.js의 기본 트랜지션 이름은 `"page"` 입니다.
+
+</div>
 
 모든 페이지에 페이드 애니메이션을 추가하기 위해서는 모든 라우트에 사용될 CSS 파일을 작성해야 합니다. 따라서 `assets` 폴더에 CSS 파일을 만드는 것부터 시작하겠습니다.
 
@@ -273,7 +281,7 @@ transition 속성에 대한 더 많은 정보: [API Pages 트랜지션](/api/pag
 
 ```js
 export default function (context) {
-  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+  context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
 
@@ -302,7 +310,7 @@ export default function ({ route }) {
 module.exports = {
   router: {
     middleware: 'stats'
-  }  
+  }
 }
 ```
 

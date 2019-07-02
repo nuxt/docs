@@ -6,7 +6,7 @@ github: head-elements
 
 ## Documentation
 
-Nuxt.js uses [`vue-meta`](https://github.com/declandewet/vue-meta) to update the `headers` and `html attributes` of your applications.
+Nuxt.js uses [`vue-meta`](https://github.com/nuxt/vue-meta) to update the `headers` and `html attributes` of your applications.
 
 Nuxt.js configures `vue-meta` with these options:
 ```js
@@ -39,7 +39,7 @@ export default {
 
 ### Meta tags and more
 
-To know the list of options you can give to `head`, take a look at [`vue-meta` documentation](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
+To know the list of options you can give to `head`, take a look at [`vue-meta` documentation](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
 ### Using `data` values inside `head`
 

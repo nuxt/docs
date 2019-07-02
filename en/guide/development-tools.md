@@ -22,13 +22,8 @@ Then add a test script to our `package.json` and configure AVA to compile files 
   "test": "ava",
 },
 "ava": {
-  "require": [
-    "babel-register"
-  ]
-},
-"babel": {
-  "presets": [
-    "env"
+  "files": [
+    "test/**/*"
   ]
 }
 ```
@@ -95,7 +90,7 @@ test('Route / exits and render HTML', async t => {
 })
 
 // Example of testing via DOM checking
-test('Route / exits and render HTML with CSS applied', async t => {
+test('Route / exists and renders HTML with CSS applied', async t => {
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
   t.not(element, null)
@@ -187,7 +182,7 @@ ESLint will lint all of your JavaScript and Vue files while ignoring your ignore
 
 It is also recommended to enable ESLint hot reloading mode via webpack. This way ESLint will run on save during `npm run dev`. Just add the following to your `nuxt.config.js`:
 
-```
+```js
 ...
   /*
    ** Build configuration
@@ -210,4 +205,8 @@ It is also recommended to enable ESLint hot reloading mode via webpack. This way
   }
 ```
 
-<p class="Alert Alert--info">One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before commiting your code.</p>
+<div class="Alert Alert--orange">
+
+One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before committing your code.
+
+</div>

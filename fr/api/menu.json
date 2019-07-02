@@ -84,17 +84,19 @@
       { "name": "loadingIndicator (En)", "to": "/configuration-loading-indicator" },
       { "name": "mode (En)", "to": "/configuration-mode" },
       { "name": "modules (En)", "to": "/configuration-modules" },
+      { "name": "modulesDir (En)", "to": "/configuration-modulesdir" },
       { "name": "plugins (En)", "to": "/configuration-plugins" },
       {
         "name": "render (En)", "to": "/configuration-render",
         "contents": [
-          { "name": "bundleRenderer (En)", "to": "#bundleRenderer" },
+          { "name": "bundleRenderer (En)", "to": "#bundlerenderer" },
           { "name": "etag (En)", "to": "#etag" },
           { "name": "gzip (En)", "to": "#gzip" },
           { "name": "http2 (En)", "to": "#http2" },
-          { "name": "resourceHints (En)", "to": "#resourceHints" },
+          { "name": "resourceHints (En)", "to": "#resourcehints" },
           { "name": "ssr (En)", "to": "#ssr" },
-          { "name": "static (En)", "to": "#static" }
+          { "name": "static (En)", "to": "#static" },
+          { "name": "csp (En)", "to": "#csp" }
         ]
       },
       { "name": "rootDir (En)", "to": "/configuration-rootdir" },
@@ -113,6 +115,7 @@
       { "name": "serverMiddleware (En)", "to": "/configuration-servermiddleware" },
       { "name": "srcDir (En)", "to": "/configuration-srcdir" },
       { "name": "transition (En)", "to": "/configuration-transition" },
+      { "name": "vue.config (En)", "to": "/configuration-vue-config" },
       { "name": "watch (En)", "to": "/configuration-watch" },
       {
         "name": "watchers (En)", "to": "/configuration-watchers",

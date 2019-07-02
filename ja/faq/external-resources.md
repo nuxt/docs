@@ -10,7 +10,7 @@ description: Nuxt.js で外部リソースを使うには？
 `nuxt.config.js` ファイル内でリソースをインクルードします:
 
 ```js
-module.exports = {
+export default {
   head: {
     script: [
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
@@ -41,7 +41,7 @@ export default {
       link: [
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
       ]
-    } 
+    }
   }
 }
 </script>

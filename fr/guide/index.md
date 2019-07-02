@@ -29,7 +29,7 @@ Nuxt.js inclut les éléments suivants afin de créer une expérience de dévelo
 - [Vue 2](https://fr.vuejs.org/)
 - [Vue Router](https://router.vuejs.org/fr/)
 - [Vuex](https://ssr.vuejs.org/fr/) (inclut uniquement quand l'[option `store`](/guide/vuex-store) est activée)
-- [vue-meta](https://github.com/declandewet/vue-meta)
+- [vue-meta](https://github.com/nuxt/vue-meta)
 
 Un total de seulement **57ko min+gzip** (53ko avec Vuex).
 
@@ -42,7 +42,7 @@ Sous le capot, nous utilisons [webpack](https://github.com/webpack/webpack) avec
 - Rendu coté serveur (ou « SSR » pour « Server-Side Rendering »)
 - Routage puissant à l'aide de données asynchrones
 - Génération de fichiers statiques
-- Transpilation ES6/ES7
+- Transpilation ES2015+
 - Empaquetage et minification de vos fichiers JS et CSS
 - Gestion des éléments de balise d'en-tête `<head>` HTML (`<title>`, `<meta>`, etc.)
 - Rechargement à chaud pendant le développement
@@ -54,7 +54,7 @@ Sous le capot, nous utilisons [webpack](https://github.com/webpack/webpack) avec
 
 Ce schéma (en anglais) montre ce qui est invoqué par Nuxt.js quand le serveur est appelé ou quand l'utilisateur navigue dans l'application à l'aide de `<nuxt-link>` :
 
-![nuxt-schema](/nuxt-schema.png)
+![nuxt-schema](/nuxt-schema.svg)
 
 ## Rendu côté serveur (SSR universel)
 
@@ -111,4 +111,8 @@ Et nous voilà avec une **application web générée sans fichiers statiques ser
 
 Nous pouvons aller plus loin en imaginant une application d'e-commerce créée avec `nuxt generate` et hébergée sur un CDN. Chaque fois qu'un produit est en rupture de stock ou de nouveau en stock nous régénérons l'application. Mais si l'utilisateur navigue sur l'application en même temps, il verra les informations à jour grâce aux appels d'API effectués sur l'API de l'e-commerce. Pas besoin d'avoir plusieurs instances d'un serveur d'un cache !
 
-<div class="Alert">Vous pouvez consulter [Comment déployer sur GitHub Pages ?](/faq/github-pages) pour plus d'informations sur un hébergement GitHub Pages.</div>
+<div class="Alert">
+
+Vous pouvez consulter [Comment déployer sur GitHub Pages ?](/faq/github-pages) pour plus d'informations sur un hébergement GitHub Pages.
+
+</div>

@@ -3,7 +3,7 @@ title: HTML мета-теги
 description: Nuxt.js использует vue-meta для обновления заголовков и html-атрибутов приложения.
 ---
 
-Nuxt.js использует [vue-meta](https://github.com/declandewet/vue-meta) заголовков и html-атрибутов приложения.
+Nuxt.js использует [vue-meta](https://github.com/nuxt/vue-meta) заголовков и html-атрибутов приложения.
 
 Nuxt.js конфигурирует `vue-meta` с такими опциями:
 ```js
@@ -37,7 +37,7 @@ export default {
 
 ## Мета-теги
 
-Для просмотра полного списка параметров для `head`, пожалуйста, прочитайте [документацию по vue-meta](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
+Для просмотра полного списка параметров для `head`, пожалуйста, прочитайте [документацию по vue-meta](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
 К примеру, установим свой viewport и шрифт Google:
 ```js
@@ -90,4 +90,8 @@ module.exports = {
 }
 ```
 
-<p class="Alert">Чтобы избежать любого дублирования в дочерних компонентах, создайте уникальный идентификатор со свойством `hid`, [читать подробнее](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+<div class="Alert">
+
+Чтобы избежать любого дублирования в дочерних компонентах, создайте уникальный идентификатор со свойством `hid`, [читать подробнее](https://vue-meta.nuxtjs.org/api/#tagidkeyname).
+
+</div>

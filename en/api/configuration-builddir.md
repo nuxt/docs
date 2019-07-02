@@ -13,7 +13,7 @@ description: Define the dist directory for your Nuxt.js application
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   buildDir: 'nuxt-dist'
 }
 ```

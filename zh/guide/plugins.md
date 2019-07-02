@@ -3,9 +3,13 @@ title: 插件
 description: 你可以配置需要在 `根vue.js应用` 实例化之前需要运行的 Javascript 插件，可以是你自己写的库或第三方模块。
 ---
 
-> 你可以配置需要在 `根vue.js应用` 实例化之前需要运行的 Javascript 插件，可以是你自己写的库或第三方模块。
+> Nuxt.js允许您在运行Vue.js应用程序之前执行js插件。这在您需要使用自己的库或第三方模块时特别有用。
 
-<div class="Alert">需要注意的是，在任何 Vue 组件的[生命周期](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram)内， 只有 `beforeCreate` 和 `created` 这两个钩子方法会在 **客户端和服务端均被调用**。其他钩子方法仅在客户端被调用。</div>
+<div class="Alert">
+
+需要注意的是，在任何 Vue 组件的[生命周期](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram)内， 只有 `beforeCreate` 和 `created` 这两个方法会在 **客户端和服务端**被调用。其他生命周期函数仅在客户端被调用。
+
+</div>
 
 ## 使用第三方模块
 
@@ -17,7 +21,7 @@ description: 你可以配置需要在 `根vue.js应用` 实例化之前需要运
 npm install --save axios
 ```
 
-然后在页面内可以这样使用：
+然后，在页面内这样使用：
 
 ```html
 <template>
@@ -35,18 +39,6 @@ export default {
 }
 </script>
 ```
-
-有一个**值得注意的问题**是，如果我们在另外一个页面内也引用了 `axios`，那么在应用打包发布的时候 `axios` 会被打包两次，而实际上我们只需要打包一次。这个问题可以通过在 `nuxt.config.js` 里面配置 `build.vendor` 来解决：
-
-```js
-module.exports = {
-  build: {
-    vendor: ['axios']
-  }
-}
-```
-
-经过上面的配置后，我们可以在任何页面里面引入 `axios` 而不用担心它会被重复打包。
 
 ## 使用 Vue 插件
 
@@ -67,23 +59,150 @@ module.exports = {
 }
 ```
 
-想了解更多关于 `plugins` 的配置方法，请参考 [插件 API 文档](/api/configuration-plugins)。
+想了解更多关于 `plugins` 的配置，请参考 [插件 API 文档](/api/configuration-plugins)。
 
-实际上， `vue-notifications` 会被打包至应用的脚本代码里， 但是它属于第三方库，我们理应将它打包至库文件里以获得更好的缓存效果。（译者注：应用代码比库文件修改频繁，应尽量将第三方库打包至单独的文件中去）。
+### ES6 插件
 
-我们可以更新 `nuxt.config.js` 文件，在 `vendor` 构建配置项里添加 `vue-notifications`：
+如果插件位于`node_modules`并导出模块，需要将其添加到`transpile`构建选项：
+
 ```js
 module.exports = {
   build: {
-    vendor: ['~/plugins/vue-notifications']
-  },
-  plugins: ['~/plugins/vue-notifications']
+    transpile: ['vue-notifications']
+  }
+}
+```
+您可以参考 [构建配置](/api/configuration-build/#transpile) 文档来获取更多构建选项。
+
+## 注入 $root 和 context
+
+有时您希望在整个应用程序中使用某个函数或属性值，此时，你需要将它们注入到Vue实例（客户端），context（服务器端）甚至 store(Vuex)。按照惯例，新增的属性或方法名使用`$`作为前缀。
+
+### 注入 Vue 实例
+
+将内容注入Vue实例，避免重复引入，在Vue原型上挂载注入一个函数，所有组件内都可以访问(**不包含服务器端**)。
+
+`plugins/vue-inject.js`:
+
+```js
+import Vue from 'vue'
+
+Vue.prototype.$myInjectedFunction = (string) => console.log("This is an example", string)
+```
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: ['~/plugins/vue-inject.js']
 }
 ```
 
-## 只在浏览器里使用的插件
+这样，您就可以在所有Vue组件中使用该函数。
 
-有些插件可能只是在浏览器里使用，所以你可以用 `ssr: false` 变量来配置插件只从客户端还是服务端运行。
+`example-component.vue`:
+
+```js
+export default {
+  mounted(){
+    this.$myInjectedFunction('test')
+  }
+}
+```
+
+### 注入 context
+
+context注入方式和在其它vue应用程序中注入类似。
+
+`plugins/ctx-inject.js`:
+
+```js
+export default ({ app }, inject) => {
+  // Set the function directly on the context.app object
+  app.myInjectedFunction = (string) => console.log('Okay, another function', string)
+}
+```
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: ['~/plugins/ctx-inject.js']
+}
+```
+
+现在，只要您获得context，你就可以使用该函数（例如在`asyncData`和`fetch`中）。
+`ctx-example-component.vue`:
+
+```js
+export default {
+  asyncData(context){
+    context.app.myInjectedFunction('ctx!')
+  }
+}
+```
+
+### 同时注入
+
+如果您需要同时在`context`，`Vue`实例，甚至`Vuex`中同时注入，您可以使用`inject`方法,它是plugin导出函数的第二个参数。
+将内容注入Vue实例的方式与在Vue应用程序中进行注入类似。系统会自动将`$`添加到方法名的前面。
+
+`plugins/combined-inject.js`:
+
+```js
+export default ({ app }, inject) => {
+  inject('myInjectedFunction', (string) => console.log('That was easy!', string))
+}
+```
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: ['~/plugins/combined-inject.js']
+}
+```
+
+现在您就可以在`context`，或者`Vue`实例中的`this`，或者`Vuex`的`actions/mutations`方法中的`this`来调用`myInjectedFunction`方法。
+`ctx-example-component.vue`:
+
+```js
+export default {
+  mounted(){
+    this.$myInjectedFunction('works in mounted')
+  },
+  asyncData(context){
+    context.app.$myInjectedFunction('works with context')
+  }
+}
+```
+
+`store/index.js`:
+
+```js
+export const state = () => ({
+  someValue: ''
+})
+
+export const mutations = {
+  changeSomeValue(state, newValue) {
+    this.$myInjectedFunction('accessible in mutations')
+    state.someValue = newValue
+  }
+}
+
+export const actions = {
+  setSomeValueToWhatever ({ commit }) {
+    this.$myInjectedFunction('accessible in actions')
+    const newValue = "whatever"
+    commit('changeSomeValue', newValue)
+  }
+}
+```
+
+## 只在客户端使用的插件
+
+不支持ssr的系统，插件只在浏览器里使用，这种情况下下，你可以用 `ssr: false` ，使得插件只会在客户端运行。
 
 举个例子：
 
@@ -103,5 +222,39 @@ import VueNotifications from 'vue-notifications'
 
 Vue.use(VueNotifications)
 ```
+您可以通过检测`process.server`这个变量来控制插件中的某些脚本库只在服务端使用。当值为 `true` 表示是当前执行环境为服务器中。
+此外，可以通过检查`process.static`是否为`true`来判断应用是否通过`nuxt generator`生成。您也可以组合`process.server`和`process.static`这两个选项，确定当前状态为服务器端渲染且使用`nuxt generate`命令运行。
 
-同样地，如果有些脚本库你只想在服务端使用，在 Webpack 打包 `server.bundle.js` 文件的时候会将 `process.server` 变量设置成 `true`。
+**注意：**由于`Nuxt.js 2.4`，模式已被引入作为插件的选项来**指定插件类型**，可能的值是：`client` 或 `server`, `ssr:false` 在下一个主要版本中弃用,将过渡为 `mode: 'client'`。
+
+例子:
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: [
+    { src: '~/plugins/both-sides.js' },
+    { src: '~/plugins/client-only.js', mode: 'client' },
+    { src: '~/plugins/server-only.js', mode: 'server' }
+  ]
+}
+```
+
+### 传统命名插件
+
+如果假设插件仅在 *客户端* 或 *服务器端* 运行，则 `.client.js` 或 `.server.js`可以作为插件文件的扩展名应用，该文件将自动包含在相应客户端或者服务端上。
+
+例子:
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: [
+    '~/plugins/foo.client.js', // only in client side
+    '~/plugins/bar.server.js', // only in server side
+    '~/plugins/baz.js' // both client & server
+  ]
+}
+```

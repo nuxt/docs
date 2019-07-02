@@ -5,7 +5,7 @@ description: La classe `ModuleContainer` de Nuxt
 
 # Classe ModuleContainer
 
-- Source : **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/module.js)**
+- Source : **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/module.js)**
 
 Tous les [modules](/guide/modules) seront appelés dans le contexte de l'instance de `ModuleContainer`.
 

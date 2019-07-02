@@ -24,4 +24,8 @@ export default {
 }
 ```
 
-<div class="Alert Alert--orange">Vous **N**'avez **PAS** accès à l'instance du composant via `this` au sein de `asyncData` parce que la fonction est appelée **avant d'initialiser** le composant.</div>
+<div class="Alert Alert--orange">
+
+Vous **N**'avez **PAS** accès à l'instance du composant via `this` au sein de `asyncData` parce que la fonction est appelée **avant d'initialiser** le composant.
+
+</div>

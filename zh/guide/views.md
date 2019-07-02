@@ -5,6 +5,8 @@ description: 视图章节的内容阐述了如何在 Nuxt.js 应用中为指定�
 
 > 本章节的内容阐述了如何在 Nuxt.js 应用中为指定的路由配置数据和视图，包括应用模板、页面、布局和HTML头部等内容。
 
+![nuxt-views-schema](/nuxt-views-schema.svg)
+
 ## 模板
 
 > 你可以定制化 Nuxt.js 默认的应用模板。
@@ -16,7 +18,7 @@ description: 视图章节的内容阐述了如何在 Nuxt.js 应用中为指定�
 ```html
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -31,7 +33,7 @@ description: 视图章节的内容阐述了如何在 Nuxt.js 应用中为指定�
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -48,7 +50,11 @@ Nuxt.js 允许你扩展默认的布局，或在 `layout` 目录下创建自定�
 
 可通过添加 `layouts/default.vue` 文件来扩展应用的默认布局。
 
-*别忘了在布局文件中添加 `<nuxt/>` 组件用于显示页面的主体内容。*
+<div class="Alert Alert--nuxt-green">
+
+<b>提示:</b> 别忘了在布局文件中添加 `<nuxt/>` 组件用于显示页面的主体内容。
+
+</div>
 
 默认布局的源码如下：
 ```html
@@ -56,14 +62,52 @@ Nuxt.js 允许你扩展默认的布局，或在 `layout` 目录下创建自定�
   <nuxt/>
 </template>
 ```
+### 自定义布局
+
+`layouts` 目录中的每个文件 (*顶级*) 都将创建一个可通过页面组件中的 `layout` 属性访问的自定义布局。
+
+假设我们要创建一个 *博客布局* 并将其保存到`layouts/blog.vue`:
+
+```html
+<template>
+  <div>
+    <div>我的博客导航栏在这里</div>
+    <nuxt/>
+  </div>
+</template>
+```
+
+然后我们必须告诉页面 (即`pages/posts.vue`) 使用您的自定义布局：
+
+```html
+<template>
+<!-- Your template -->
+</template>
+<script>
+export default {
+  layout: 'blog'
+  // page component definitions
+}
+</script>
+```
+
+更多有关 `layout` 属性信息: [API 页面 `布局`](/api/pages-layout)
+
+点击查看 [演示视频](https://www.youtube.com/watch?v=YOKnSTp7d38) 了解自定义布局的实际效果。
 
 ### 错误页面
 
 > 你可以通过编辑 `layouts/error.vue` 文件来定制化错误页面.
 
+<div class="Alert Alert--orange">
+
+<b>警告:</b> 虽然此文件放在 <code>layouts</code> 文件夹中, 但应该将它看作是一个 <b>页面(page)</b>.
+
+</div>
+
 这个布局文件不需要包含 `<nuxt/>` 标签。你可以把这个布局文件当成是显示应用错误（404，500等）的组件。
 
-默认的错误页面源码在 [这里](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
+默认的错误页面源码在 [这里](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
 
 举一个个性化错误页面的例子 `layouts/error.vue`:
 ```html
@@ -83,38 +127,17 @@ export default {
 </script>
 ```
 
-### 个性化布局
-
-> `layouts` *根*目录下的所有文件都属于个性化布局文件，可以在页面组件中利用 `layout` 属性来引用。
-
-*请确保在布局文件里面增加 `<nuxt/>` 组件用于显示页面非布局内容。*
-
-举个例子 `layouts/blog.vue`:
-```html
-<template>
-  <div>
-    <div>这里是博客导航</div>
-    <nuxt/>
-  </div>
-</template>
-```
-
-在 `pages/posts.vue` 里， 可以指定页面组件使用 blog 布局。
-```html
-<script>
-export default {
-  layout: 'blog'
-}
-</script>
-```
-
-更多关于页面布局配置项的信息，请参考[页面布局配置API](/api/pages-layout)。
-
-看下 [示例视频](https://www.youtube.com/watch?v=YOKnSTp7d38) 立刻体验下。
-
 ## 页面
 
 页面组件实际上是 Vue 组件，只不过 Nuxt.js 为这些组件添加了一些特殊的配置项（对应 Nuxt.js 提供的功能特性）以便你能快速开发通用应用。
+
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-page-components?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      观看Vue School出品的 <strong>Nuxt.js 页面组件</strong> 的免费课程 
+    </p>
+  </a>
+</div>
 
 ```html
 <template>
@@ -153,6 +176,7 @@ Nuxt.js 为页面提供的特殊配置项：
 | fetch | 与 `asyncData` 方法类似，用于在渲染页面之前获取数据填充应用的状态树（store）。不同的是 `fetch` 方法不会设置组件的数据。详情请参考 [关于fetch方法的文档](/api/pages-fetch)。 |
 | head | 配置当前页面的 Meta 标签, 详情参考 [页面头部配置API](/api/pages-head)。 |
 | layout | 指定当前页面使用的布局（`layouts` 根目录下的布局文件）。详情请参考 [关于 布局 的文档](/api/pages-layout)。 |
+| loading | 如果设置为`false`，则阻止页面自动调用`this.$nuxt.$loading.finish()`和`this.$nuxt.$loading.start()`,您可以手动控制它,请看[例子](https://nuxtjs.org/examples/custom-page-loading),仅适用于在nuxt.config.js中设置`loading`的情况下。请参考[API配置 `loading` 文档](/api/configuration-loading)。
 | transition | 指定页面切换的过渡动效, 详情请参考 [页面过渡动效](/api/pages-transition)。 |
 | scrollToTop | 布尔值，默认: `false`。 用于判定渲染页面前是否需要将当前页面滚动至顶部。这个配置用于 [嵌套路由](/guide/routing#嵌套路由)的应用场景。 |
 | validate | 校验方法用于校验 [动态路由](/guide/routing#动态路由)的参数。 |
@@ -162,7 +186,7 @@ Nuxt.js 为页面提供的特殊配置项：
 
 ## HTML 头部
 
-Nuxt.js 使用了 [`vue-meta`](https://github.com/declandewet/vue-meta) 更新应用的 `头部标签(Head)` and `html 属性`。
+Nuxt.js 使用了 [`vue-meta`](https://github.com/nuxt/vue-meta) 更新应用的 `头部标签(Head)` and `html 属性`。
 
 Nuxt.js 使用以下参数配置 `vue-meta`:
 ```js
@@ -178,6 +202,12 @@ Nuxt.js 使用以下参数配置 `vue-meta`:
 
 Nuxt.js 允许你在 `nuxt.config.js` 里定义应用所需的所有默认 meta 标签，在 `head` 字段里配置就可以了：
 
+<div class="Alert Alert--teal">
+
+<b>注意:</b> Nuxt.js 使用 <code>hid</code> 而不是默认值 <code>vmid</code> 识别元素`key`
+
+</div>
+
 一个使用自定义 `viewport` 和 `谷歌字体` 的配置示例：
 ```js
 head: {
@@ -191,7 +221,7 @@ head: {
 }
 ```
 
-想了解 `head` 变量的所有可选项的话，请查阅 [`vue-meta` 使用文档](https://github.com/declandewet/vue-meta#recognized-metainfo-properties)。
+想了解 `head` 变量的所有可选项的话，请查阅 [`vue-meta` 使用文档](https://vue-meta.nuxtjs.org/api/#metainfo-properties)。
 
 关于 Nuxt.js 应用 HTML 头部配置的更多信息，请参考 [HTML 头部配置 API](/api/configuration-head)。
 
@@ -199,4 +229,8 @@ head: {
 
 关于个性化特定页面的 Meta 标签，请参考 [页面头部配置API](/api/pages-head)。
 
-<p class="Alert">注意：为了避免子组件中的meta标签不能正确覆盖父组件中相同的标签而产生重复的现象，建议利用 `hid` 键为meta标签配一个唯一的标识编号。请阅读[关于 `vue-meta` 的更多信息](https://github.com/declandewet/vue-meta#lists-of-tags)。</p>
+<div class="Alert Alert--teal">
+
+<b>注意:</b> 为了避免子组件中的meta标签不能正确覆盖父组件中相同的标签而产生重复的现象，建议利用 `hid` 键为meta标签配一个唯一的标识编号。请阅读[关于 `vue-meta` 的更多信息](https://vue-meta.nuxtjs.org/api/#tagidkeyname)。
+
+</div>

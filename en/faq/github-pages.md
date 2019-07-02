@@ -15,7 +15,11 @@ npm run generate
 
 It will create a `dist` folder with everything inside ready to be deployed on GitHub Pages hosting. Branch `gh-pages` for project repository OR branch `master` for user or organization site
 
-<p class="Alert Alert--nuxt-green"><b>Info:</b> If you use a custom domain for your GitHub Pages and put `CNAME` file, it is recommended that CNAME file is put in the `static` directory. [More documentation](/guide/assets#static) about it.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>Info:</b> If you use a custom domain for your GitHub Pages and put `CNAME` file, it is recommended that CNAME file is put in the `static` directory. [More documentation](/guide/assets#static) about it.
+
+</div>
 
 ## Deploying to GitHub Pages for repository
 
@@ -26,7 +30,7 @@ If you deployed `dist` folder without adding [router base](https://nuxtjs.org/ap
 To fix the issue we need to add [router base](https://nuxtjs.org/api/configuration-router/#base) configuration in `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   router: {
     base: '/<repository-name>/'
   }
@@ -46,7 +50,7 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   }
 } : {}
 
-module.exports = {
+export default {
   ...routerBase
 }
 ```

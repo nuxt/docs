@@ -1,23 +1,38 @@
 ---
-title: 'API: '
+title: "API: <nuxt-link> コンポーネント"
 description: ページ間を nuxt-link を使ってリンクさせます。
 ---
 
-# <nuxt-link> コンポーネント
+# &lt;nuxt-link&gt; コンポーネント
 
-> ページ間を nuxt-link を使ってリンクさせます。
+> このコンポーネントは、ページコンポーネント間のナビゲーションを提供し、賢い prefetching（先読み）でパフォーマンスを高めるのに使用します。
 
-現時点では、`<nuxt-link>` は [`<router-link>`](https://router.vuejs.org/en/api/router-link.html) と同じです。そのため、[Vue Router のドキュメント](https://router.vuejs.org/en/api/router-link.html) でこのコンポーネントの使い方を確認することをお勧めします。
+`<nuxt-link>` は Nuxt の重要な要素です。あなたのアプリケーションを**遷移するのに使われるべきコンポーネント**で、従来の Vue アプリケーションにおける `<router-link>` と似ています。実際に、`<nuxt-link>` は [`<router-link>`](https://router.vuejs.org/api/#router-link) を拡張しています。つまり、同じプロパティを取り、同じように使うことができるということです。詳しくは、[Vue Router のドキュメント](https://router.vuejs.org/api/#router-link) を参照してください。
 
 例（`pages/index.vue`）:
 
 ```html
 <template>
   <div>
-    <h1>ホーム</h1>
-    <nuxt-link to="/about">このサイトについて</nuxt-link>
+    <h1>ホームページ</h1>
+    <nuxt-link to="/about">このサイトについて（Nuxt アプリケーション内部リンク）</nuxt-link>
+    <a href="https://nuxtjs.org">別のページへの外部リンク</a>
   </div>
 </template>
 ```
 
-将来的には、バックグラウンドでプリフェッチするような Nuxt.js アプリケーションの応答性を改善するような機能を `<nuxt-link>` コンポーネントに追加する予定です。
+**エイリアス:** `<n-link>`, `<NuxtLink>`, `<NLink>`
+
+> この機能は Nuxt.js v2.4.0 で追加されました
+
+Nuxt.js アプリケーションの応答性を高めるため、viewport（ブラウザの表示領域）内にリンクが表示されたとき、Nuxt.js は*コード分割された*ページを自動的に先読みします。この機能は Google Chrome Labs の [quicklink.js](https://github.com/GoogleChromeLabs/quicklink) にインスパイアされています。
+
+リンク先ページの先読みを無効化するために、`no-prefetch` プロパティを使うことができます:
+
+```html
+<n-link to="/about" no-prefetch>（先読みしない）このサイトについて</n-link>
+```
+
+[router.prefetchLinks](/api/configuration-router#prefetchlinks) を使って、この挙動をグローバルに設定することができます。
+
+また、コード分割されたページの先読みが完了したとき付与される class をカスタマイズするため、 `prefetched-class` プロパティを使用することもできます。この機能は [router.linkPrefetchedClass](/api/configuration-router#linkprefetchedclass) でグローバルに設定できることを必ず確認してください。

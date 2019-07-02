@@ -24,7 +24,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert-blue">Ketika `base` di-set, Nuxt.js juga akan menambahkan dalam header dokumen `<base href="%7B%7B%20router.base%20%7D%7D">`.</p>
+<div class="Alert Alert-blue">Ketika `base` di-set, Nuxt.js juga akan menambahkan dalam header dokumen `<base href="%7B%7B%20router.base%20%7D%7D">
+
+`.
+
+</div>
 
 > Pilihan ini diberikan langsung ke vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
 
@@ -117,7 +121,7 @@ module.exports = {
 ```js
 export default function (context) {
   // Tambah properti userAgent dalam konteks (tersedia dalam `data` dan `fetch`)
-  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+  context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
 

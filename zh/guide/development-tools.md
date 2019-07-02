@@ -128,38 +128,87 @@ npm install --save-dev babel-eslint eslint eslint-config-standard eslint-plugin-
 ```
 
 然后, 在项目根目录下创建 `.eslintrc.js` 文件用于配置 ESLint：
+
 ```js
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
   env: {
     browser: true,
     node: true
   },
-  extends: 'standard',
+  parserOptions: {
+    parser: 'babel-eslint'
+  },
+  extends: [
+    "eslint:recommended",
+    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+    "plugin:vue/recommended",
+    "plugin:prettier/recommended"
+  ],
   // 校验 .vue 文件
   plugins: [
-    'html'
+    'vue'
   ],
   // 自定义规则
-  rules: {},
-  globals: {}
+  rules: {
+    "semi": [2, "never"],
+    "no-console": "off",
+    "vue/max-attributes-per-line": "off",
+    "prettier/prettier": ["error", { "semi": false }]
+  }
 }
 ```
 
-最后，我们在 `package.json` 文件中添加一个 `lint` 脚本命令：
+最后，我们在 `package.json` 文件中添加一个 `lint`和 `lintfix`脚本命令：
 
 ```js
 "scripts": {
-  "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+  "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
 }
 ```
 
-通过以上配置，可使用以下命令对项目的代码进行 ESLint 校验：
+你现在可以启动`lint`来检查错误：
+
 ```bash
 npm run lint
 ```
 
-ESLint 会校验应用所有的 JavaScript 和 Vue 文件，除了在 `.gitignore` 中忽略了的之外。
+或者 `lintfix` 还可以修复那些可修复的
 
-<p class="Alert Alert--info">有个最佳实践是在 `package.json` 中增加 `"precommit": "npm run lint"` ，这样可以实现每次提交代码之前自动进行代码检测校验。</p>
+```bash
+npm run lintfix
+```
+
+ESLint将忽略所有JavaScript和Vue文件，同时忽略`.gitignore`中定义的被忽略文件。
+
+还建议通过webpack启用ESLint热更新模式。这样ESLint将在`npm run dev`时保存。只需将以下内容添加到您的`nuxt.config.js`：
+
+```js
+...
+  /*
+   ** Build configuration
+  */
+  build: {
+   /*
+    ** 您可以在这里扩展webpack配置
+   */
+   extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: "pre",
+          test: /\.(js|vue)$/,
+          loader: "eslint-loader",
+          exclude: /(node_modules)/
+        })
+      }
+    }
+  }
+```
+<div class="Alert Alert--orange">
+
+有个最佳实践是在 `package.json` 中增加 `"precommit": "npm run lint"` ，这样可以实现每次提交代码之前自动进行代码检测校验。
+
+</div>

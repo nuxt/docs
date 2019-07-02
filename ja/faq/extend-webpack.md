@@ -8,7 +8,7 @@ description: Webpack の設定を拡張するには？
 `nuxt.config.js` 内の `extend` オプションで Webpack の設定を拡張できます:
 
 ```js
-module.exports = {
+export default {
   build: {
      extend (config, { isDev, isClient }) {
        // ...

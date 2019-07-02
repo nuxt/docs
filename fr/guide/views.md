@@ -5,7 +5,7 @@ description: La section des vues décrit tout ce dont vous avez besoin pour conf
 
 > La section des vues décrit tout ce dont vous avez besoin pour configurer les données et les vues pour une route spécifique dans votre application Nuxt.js (document, mises en page, pages et entête HTML).
 
-![nuxt-views-schema](/nuxt-views-schema.png)
+![nuxt-views-schema](/nuxt-views-schema.svg)
 
 ## Document
 
@@ -18,7 +18,7 @@ Le modèle par défaut est le suivant :
 ```html
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -33,7 +33,7 @@ Un exemple pour ajouter des classes CSS conditionnelles pour IE :
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="fr-FR" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -66,7 +66,7 @@ Vous pouvez personnaliser la page d'erreur en ajoutant un fichier `layouts/error
 
 Cette mise en page est spéciale car vous ne devez pas inclure `<nuxt />` dans son modèle. Vous devez voir cette mise en page en tant que composant affiché lorsqu'une erreur se produit (404, 500, etc.).
 
-Le code source de la page d'erreur par défaut est [disponible sur GitHub](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
+Le code source de la page d'erreur par défaut est [disponible sur GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
 
 Exemple d'une page d'erreur personnalisée à l'aide de `layouts/error.vue`:
 
@@ -167,7 +167,7 @@ Pour plus d'informations à propos de l'utilisation des attributs de pages, cons
 
 ## Entête HTML
 
-Nuxt.js utilise [vue-meta](https://github.com/declandewet/vue-meta) pour mettre à jour les `headers` et les `html attributes` de votre application.
+Nuxt.js utilise [vue-meta](https://github.com/nuxt/vue-meta) pour mettre à jour les `headers` et les `html attributes` de votre application.
 
 Nuxt.js configure `vue-meta` avec les options suivantes :
 
@@ -198,7 +198,7 @@ head: {
 }
 ```
 
-Pour connaitre la liste des options que vous pouvez donner à `head`, jeter un œil à la [documentation vue-meta](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
+Pour connaitre la liste des options que vous pouvez donner à `head`, jeter un œil à la [documentation vue-meta](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
 More information about the `head` method: [API Configuration `head`](/api/configuration-head).
 
@@ -206,4 +206,8 @@ More information about the `head` method: [API Configuration `head`](/api/config
 
 Plus d'informations à propos de la méthode `head` dans [la partie Configuration de l'API sur `head`](/api/pages-head).
 
-<p class="Alert">Afin d'éviter toutes duplications lors de l'utilisation d'un composant enfant, donnez un identifiant unique à l'aide de l'attribut `hid`. Pour [en savoir plus](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+<div class="Alert">
+
+Afin d'éviter toutes duplications lors de l'utilisation d'un composant enfant, donnez un identifiant unique à l'aide de l'attribut `hid`. Pour [en savoir plus](https://vue-meta.nuxtjs.org/api/#tagidkeyname).
+
+</div>

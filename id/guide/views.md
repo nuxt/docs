@@ -7,7 +7,7 @@ description: Bagian View (Tampilan) menggambarkan semua yang Anda perlukan untuk
 
 > Bagian View (Tampilan) menggambarkan semua yang Anda perlukan untuk mengonfigurasi data dan tampilan untuk rute tertentu pada Aplikasi Nuxt.js Anda (Dokumen, Layout, Halaman, dan HTML Head).
 
-![nuxt-views-schema](/nuxt-views-schema.png)
+![nuxt-views-schema](/nuxt-views-schema.svg)
 
 ## Dokumen
 
@@ -20,7 +20,7 @@ Templat default-nya adalah:
 ```html
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -35,7 +35,7 @@ Salah satu contoh jika menambahkan kelas CSS bersyarat (conditional CSS) untuk I
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -48,7 +48,7 @@ Salah satu contoh jika menambahkan kelas CSS bersyarat (conditional CSS) untuk I
 
 Nuxt.js memungkinkan Anda meng-extend layout utama atau membuat layout secara kustom dengan menambahkannya ke dalam folder `layouts`.
 
-### Layout Default 
+### Layout Default
 
 Anda bisa meng-extend layout utama dengan menambahkan file `layouts/default.vue` .
 
@@ -68,7 +68,7 @@ Anda dapat mengkustomisasi halaman kesalahan ini dengan cara menambahkan file `l
 
 Layout ini spesial, karena Anda *tidak* harus menyertakan `<nuxt/>` pada templatnya. Anda harus memahami layout ini sebagai komponen yang ditampilkan ketika terjadi kesalahan (error) (`404`, `500`, dan sebagainya.).
 
-Kode sumber halaman kesalahan yang default [tersedia di GitHub](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
+Kode sumber halaman kesalahan yang default [tersedia di GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
 
 Contoh kustomisasi halaman kesalahan pada file `layouts/error.vue`:
 
@@ -168,7 +168,7 @@ Informasi lebih lanjut tentang penggunaan properti halaman: [Halaman API](/api)
 
 ## HTML Head
 
-Nuxt.js menggunakan [vue-meta](https://github.com/declandewet/vue-meta) untuk memperbarui `headers` dan `atribut-atribut html` pada aplikasi Anda.
+Nuxt.js menggunakan [vue-meta](https://github.com/nuxt/vue-meta) untuk memperbarui `headers` dan `atribut-atribut html` pada aplikasi Anda.
 
 Nuxt.js mengonfigurasi `vue-meta` dengan opsi ini:
 
@@ -199,7 +199,7 @@ head: {
 }
 ```
 
-Untuk mengetahui daftar pilihan yang dapat Anda berikan pada metode `head`, lihat [dokumentasi vue-meta ](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
+Untuk mengetahui daftar pilihan yang dapat Anda berikan pada metode `head`, lihat [dokumentasi vue-meta ](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
 Informasi lebih lanjut tentang metode `head` : <a href="/api/configuration-head" data-md-type="link">Konfigurasi API `head`</a>.
 
@@ -207,4 +207,8 @@ Informasi lebih lanjut tentang metode `head` : <a href="/api/configuration-head"
 
 Informasi lebih lanjut tentang metode head : [Halaman API `head`](/api/pages-head).
 
-<p class="Alert">Untuk menghindari duplikasi saat menggunakannya pada child komponen, berikan pengenal unik dengan key `hid`. [Baca lebih lanjut] (https://github.com/declandewet/vue-meta#lists-of-tags) .</p>
+<div class="Alert">
+
+Untuk menghindari duplikasi saat menggunakannya pada child komponen, berikan pengenal unik dengan key `hid`. [Baca lebih lanjut] (https://vue-meta.nuxtjs.org/api/#tagidkeyname) .
+
+</div>

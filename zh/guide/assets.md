@@ -18,19 +18,25 @@ description: 默认情况下 Nuxt 使用 vue-loader、file-loader 以及 url-loa
 ----| index.vue
 ```
 
-如果我们在CSS代码中使用 `url('~assets/image.png')`, 那么编译后它将被转换成 `require('~assets/image.png')`。
+如果我们在CSS代码中使用 `url('~assets/image.png')`, 那么编译后它将被转换成 `require('~/assets/image.png')`。
+
+<div class="Alert Alert--orange">
+
+**请注意:** 从Nuxt 2.0开始，`~/alias`将无法在**CSS文件**中正确解析。你必须在url CSS引用中使用`~assets`（没有斜杠）或`@`别名，即`background:url("~assets/banner.svg")`
+
+</div>
 
 又或者如果我们在 `pages/index.vue` 中使用以下代码引用图片资源：
 ```html
 <template>
-  <img src="~assets/image.png">
+  <img src="~/assets/image.png">
 </template>
 ```
 
 那么编译后会被转换成：
 
 ```js
-createElement('img', { attrs: { src: require('~assets/image.png') }})
+createElement('img', { attrs: { src: require('~/assets/image.png') }})
 ```
 
 `.png` 并非 JavaScript 文件, 因此 Nuxt.js 通过配置Webpack使用[file-loader](https://github.com/webpack/file-loader) 和 [url-loader](https://github.com/webpack/url-loader) 这两个加载器来处理此类引用。
@@ -68,7 +74,7 @@ createElement('img', { attrs: { src: require('~assets/image.png') }})
 
 ```html
 <template>
-  <img src="~assets/image.png">
+  <img src="~/assets/image.png">
 </template>
 ```
 
@@ -77,7 +83,7 @@ createElement('img', { attrs: { src: require('~assets/image.png') }})
 <img src="/_nuxt/img/image.0c61159.png">
 ```
 
-如果你想更新这些加载器的配置或者禁用他们，请参考[loaders 配置](/api/configuration-build)。
+如果你想更新这些加载器的配置或者禁用他们，请参考[build.extend](/api/configuration-build#extend)。
 
 ## 静态文件
 
@@ -92,5 +98,5 @@ Nuxt 服务器启动的时候，该目录下的文件会映射至应用的根路
 <img src="/my-image.png"/>
 
 <!-- 引用 assets 目录下经过 webpack 构建处理后的图片 -->
-<img src="/assets/my-image-2.png"/>
+<img src="~/assets/my-image-2.png"/>
 ```

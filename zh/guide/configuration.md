@@ -11,12 +11,6 @@ Nuxt.js 允许你在自动生成的 `vendor.bundle.js` 文件中添加一些模�
 
 [关于 build 配置项的详细文档](/api/configuration-build)
 
-### cache
-
-该配置项让你开启组件缓存策略以提升渲染性能。
-
-[关于 cache 配置项的详细文档](/api/configuration-cache)
-
 ### css
 
 该配置项用于定义应用的全局（所有页面均需引用的）样式文件、模块或第三方库。
@@ -53,6 +47,18 @@ Nuxt.js 允许你在自动生成的 `vendor.bundle.js` 文件中添加一些模�
 
 [关于 loading 配置项的详细文档](/api/configuration-loading)
 
+### modules
+
+该配置项允许您将Nuxt模块添加到项目中。
+
+[关于 `modules` 配置项的详细文档](/api/configuration-modules)
+
+### modulesDir
+
+该配置项允许您定义`Nuxt.js`应用程序的`node_modules`文件夹。
+
+[关于 `modulesDir` 配置项的详细文档](/api/configuration-modulesdir)
+
 ### plugins
 
 该配置项用于配置那些需要在 `根vue.js应用` 实例化之前需要运行的 Javascript 插件。
@@ -70,6 +76,13 @@ Nuxt.js 允许你在自动生成的 `vendor.bundle.js` 文件中添加一些模�
 该配置项可用于覆盖 Nuxt.js 默认的 `vue-router` 配置。
 
 [关于 router 配置项的详细文档](/api/configuration-router)
+
+### server
+
+此选项允许您配置Nuxt.js应用程序的服务器实例变量。
+
+[关于 server 配置项的详细文档](/api/configuration-server)
+
 
 ### srcDir
 

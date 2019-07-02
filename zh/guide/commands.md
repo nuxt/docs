@@ -11,8 +11,23 @@ description: Nuxt.js 提供了一系列常用的命令, 用于开发或发布部
 |---------|-------------|
 | nuxt | 启动一个热加载的Web服务器（开发模式） [localhost:3000](http://localhost:3000)。 |
 | nuxt build | 利用webpack编译应用，压缩JS和CSS资源（发布用）。 |
-| nuxt start | 以生成模式启动一个Web服务器 (`nuxt build` 会先被执行)。 |
+| nuxt start | 以生产模式启动一个Web服务器 (`nuxt build` 会先被执行)。 |
 | nuxt generate | 编译应用，并依据路由配置生成对应的HTML文件 (用于静态站点的部署)。 |
+
+如果使用了 Koa/Express 等 Node.js Web 开发框架，并使用了 Nuxt 作为中间件，可以自定义 Web 服务器的启动入口：
+
+| 命令 | 描述 |
+|---------|-------------|
+| NODE_ENV=development nodemon server/index.js | 启动一个热加载的自定义 Web 服务器（开发模式）。
+| NODE_ENV=production node server/index.js | 以生产模式启动一个自定义 Web 服务器 (需要先执行 `nuxt build`)。 |
+
+#### 参数
+
+您可以使用 `--help` 命令来获取详细用法。常见的命令有：
+
+- **`--config-file` 或 `-c`:** 指定 `nuxt.config.js` 的文件路径。
+- **`--spa` 或 `-s`:** 禁用服务器端渲染，使用SPA模式
+- **`--unix-socket` 或 `-n`:** 指定UNIX Socket的路径。
 
 你可以将这些命令添加至 `package.json`：
 
@@ -26,6 +41,12 @@ description: Nuxt.js 提供了一系列常用的命令, 用于开发或发布部
 ```
 
 这样你可以通过 `npm run <command>` 来执行相应的命令。如: `npm run dev`。
+
+<div class="Alert Alert--nuxt-green">
+
+<b>提示:</b> 要将参数传递给npm命令，您需要一个额外的<code>--</code>脚本名称(例如：<code>npm run dev --参数 --spa</code>)
+
+</div>
 
 ## 开发模式
 
@@ -79,6 +100,36 @@ npm run generate
 
 这个命令会创建一个 `dist` 文件夹，所有静态化后的资源文件均在其中。
 
-如果你的项目需要用到[动态路由](/guide/routing#动态路由)，请移步 [generate配置API](/api/configuration-generate) 了解如何让 Nuxt.js 生成此类动态路由的静态文件。 
+如果你的项目需要用到[动态路由](/guide/routing#动态路由)，请移步 [generate配置API](/api/configuration-generate) 了解如何让 Nuxt.js 生成此类动态路由的静态文件。
 
-<div class="Alert">注意：使用 `nuxt generate` 静态化应用的时候, 传给 [asyncData()](/guide/async-data#asyncdata-方法) 和 [fetch()](/guide/vuex-store#fetch-方法) 方法的[上下文对象](/api#上下文对象) 不会包含 `req` 和 `res` 两个属性。</div>
+<div class="Alert">
+
+注意：使用 `nuxt generate` 静态化应用的时候, 传给 [asyncData()](/guide/async-data#asyncdata-方法) 和 [fetch()](/guide/vuex-store#fetch-方法) 方法的[上下文对象](/api#上下文对象) 不会包含 `req` 和 `res` 两个属性。
+
+</div>
+
+### 单页面应用程序部署 (SPA)
+
+`nuxt generate` 在 build/generate 时间内仍然需要SSR引擎，同时具有预渲染所有页面的优势，并具有较高的SEO优化和页面加载能力。 内容在构建时生成。例如，我们不能将它用于内容依赖于用户身份验证或实时API的应用程序（至少对于第一次加载）。
+
+SPA应用的想法很简单！ 使用时启用SPA模式 `mode: 'spa'` 或 `--spa`，并且我们运行打包，生成在导报后自动启动，生成包含常见的meta和资源链接，但不包含页面内容。
+
+因此，对于SPA部署，您必须执行以下操作：
+
+ - 将`nuxt.config.js`中的`mode`更改为`spa`。
+ - 运行 `npm run build`.
+ - 自动生成`dist/`文件夹，部署到您的服务器，如Surge，GitHub Pages或nginx。
+
+另一种可能的部署方法是在`spa`模式下将Nuxt用作框架中的中间件。这有助于减少服务器负载，并在无法进行SSR的项目中使用Nuxt。
+
+<div class="Alert">
+
+请参考 [如何在 Heroku 上部署?](/faq/heroku-deployment) 来查看更多部署信息。
+
+</div>
+
+<div class="Alert">
+
+请参考 [如何在 GitHub Pages 上部署?](/faq/github-pages) 查看如何部署到GitHub页面的更多详细信息。
+
+</div>

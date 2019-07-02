@@ -5,11 +5,11 @@ description: Nuxt.js はアプリケーションの headers 及び html attribut
 
 # head メソッド
 
-> Nuxt.js はアプリケーションの `headers` 及び `html attributes` を更新するために [vue-meta](https://github.com/declandewet/vue-meta) を使います。
+> Nuxt.js はアプリケーションの `headers` 及び `html attributes` を更新するために [vue-meta](https://github.com/nuxt/vue-meta) を使います。
 
-- **型:** `オブジェクト` または `関数`
+- **型:** `Object` または `Function`
 
-現在のページの HTML の head タグを設定するために `head` メソッド使います。
+現在のページの HTML の head タグを設定するために `head` メソッドを使います。
 
 コンポーネントのデータは `head` メソッド内で `this` を使って利用できます。ページのデータを使って独自のメタタグを設定することもできます。
 
@@ -29,6 +29,7 @@ export default {
     return {
       title: this.title,
       meta: [
+        // `hid` は一意の識別子として使用されます。 `vmid` は動作しないので使わないでください。
         { hid: 'description', name: 'description', content: 'My custom description' }
       ]
     }
@@ -37,4 +38,8 @@ export default {
 </script>
 ```
 
-<p class="Alert">子コンポーネント利用されたときにメタ情報が重複してしまうことを避けるために `hid` キーでユニーク識別子を与えてください。これについてより深く理解するには [こちら](https://github.com/declandewet/vue-meta#lists-of-tags) を参照してください。</p>
+<div class="Alert Alert--teal">
+
+<b>情報:</b> 子コンポーネント利用されたときにメタ情報が重複してしまうことを避けるために `hid` キーを使ってユニーク識別子を meta 要素に設定してください。 詳しくは [こちら](https://vue-meta.nuxtjs.org/api/#tagidkeyname) を参照してください。
+
+</div>

@@ -48,7 +48,7 @@
         "contents": [
           {
             "name": "Папки",
-            "to": "#каталоги"
+            "to": "#папки"
           },
           {
             "name": "Псевдонимы",
@@ -93,11 +93,11 @@
         "contents": [
           {
             "name": "Структура папок",
-            "to": "#структура-директорий"
+            "to": "#структура-папок"
           },
           {
             "name": "Валидация параметров маршрутов",
-            "to": "#валидация-параметров-пути"
+            "to": "#валидация-параметров-в-маршруте"
           }
         ]
       },
@@ -107,11 +107,11 @@
         "contents": [
           {
             "name": "Структура папок",
-            "to": "#структура-директорий"
+            "to": "#структура-папок"
           },
           {
             "name": "Динамические вложенные маршруты",
-            "to": "#динамические-вложенные-пути"
+            "to": "#динамические-вложенные-маршруты"
           }
         ]
       },
@@ -210,7 +210,7 @@
         "contents": [
           {
             "name": "Заголовок (title)",
-            "to": "#заголовок-title-"
+            "to": "#заголовок-code-title-code-"
           },
           {
             "name": "Мета-теги",
@@ -218,11 +218,11 @@
           },
           {
             "name": "Использование данных страницы",
-            "to": "#используя-code-data-code-компонента"
+            "to": "#использование-данных-страницы"
           },
           {
-            "name": "Meta-значения по-умолчанию",
-            "to": "#meta-базовые-значения"
+            "name": "Базовые значения заголовков",
+            "to": "#базовые-значения-заголовков"
           }
         ]
       }
@@ -241,7 +241,7 @@
           },
           {
             "name": "Контекст (context)",
-            "to": "#контекст"
+            "to": "#аргумент-code-context-code-"
           },
           {
             "name": "Обработка ошибок",
@@ -304,6 +304,18 @@
             "name": "Только для браузеров",
             "to": "#только-для-браузеров"
           }
+        ]
+      },
+      {
+        "to": "/modules", "name": "Modules",
+        "contents": [
+          { "to": "#introduction", "name": "Introduction" },
+          { "to": "#list-of-nuxt-js-modules", "name": "List of Nuxt.js modules" },
+          { "to": "#write-a-basic-module", "name": "Write a basic Module" },
+          { "to": "#async-modules", "name": "Async Modules" },
+          { "to": "#common-snippets", "name": "Common Snippets" },
+          { "to": "#run-tasks-on-specific-hooks", "name": "Run Tasks on Specific hooks" },
+          { "to": "#module-package-commands", "name": "Module package commands" }
         ]
       }
     ]

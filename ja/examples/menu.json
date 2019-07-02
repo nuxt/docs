@@ -3,7 +3,7 @@
     "title": "基本的な使い方",
     "links": [
       {
-        "name": "Hello world",
+        "name": "Hello World",
         "to": ""
       },
       {
@@ -38,6 +38,10 @@
       {
         "name": "ミドルウェア",
         "to": "/middleware"
+      },
+      {
+        "name": "名前付きビュー",
+        "to": "/named-views"
       },
       {
         "name": "ネストされたルート",
@@ -79,6 +83,19 @@
       {
         "name": "テスト",
         "to": "/testing"
+      }
+    ]
+  },
+  {
+    "title": "TypeScript",
+    "links": [
+      {
+        "name": "Hello World",
+        "to": "/typescript"
+      },
+      {
+        "name": "Vuex Store",
+        "to": "/typescript-vuex"
       }
     ]
   }

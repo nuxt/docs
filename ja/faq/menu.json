@@ -10,7 +10,9 @@
       { "name": "Webpack プラグインを追加するには？", "to": "/webpack-plugins" },
       { "name": "ホストとポート番号を変更するには？", "to": "/host-port" },
       { "name": "キャッシュコンポーネントを使うには？", "to": "/cached-components" },
-      { "name": "Google アナリティクスを使うには？", "to": "/google-analytics" }
+      { "name": "Google アナリティクスを使うには？", "to": "/google-analytics" },
+      { "name": "クロスオリジンリソースを共有するには？", "to": "/http-proxy"},
+      { "name": "オーディオファイルをロードするように Webpack の設定を拡張するには？", "to": "/webpack-audio-files" }
     ]
   },
   {
@@ -19,18 +21,21 @@
       { "name": "window または document が undefined のときは？", "to": "/window-document-undefined" },
       { "name": "なぜ CSS Flash が見えるのか？", "to": "/css-flash" },
       { "name": "コンポーネント内で非同期データを扱うには？", "to": "/async-data-components" },
-      { "name": "メタタグが重複したときは？", "to": "/duplicated-meta-tags" }
+      { "name": "メタタグが重複したときは？", "to": "/duplicated-meta-tags" },
+      { "name": "iOS と電話番号", "to": "/ios-phone-numbers" }
     ]
   },
   {
     "title": "デプロイ",
     "links": [
+      { "name": "AWS の S3 と Cloudfront へデプロイするには？", "to": "/deployment-aws-s3-cloudfront" },
+      { "name": "Dokku へデプロイするには？", "to": "/dokku-deployment" },
+      { "name": "GitHub Pages へデプロイするには？", "to": "/github-pages" },
+      { "name": "Google App Engine へデプロイするには？", "to": "/appengine-deployment" },
       { "name": "Heroku へデプロイするには？", "to": "/heroku-deployment" },
       { "name": "Netlify へデプロイするには？", "to": "/netlify-deployment" },
       { "name": "Now を使ってデプロイするには？", "to": "/now-deployment" },
-      { "name": "Dokku へデプロイするには？", "to": "/dokku-deployment" },
       { "name": "Surge.sh へデプロイするには？", "to": "/surge-deployment" },
-      { "name": "GitHub Pages へデプロイするには？", "to": "/github-pages" },
       { "name": "nginx をプロキシとして使うには？", "to": "/nginx-proxy" }
     ]
   }

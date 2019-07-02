@@ -86,4 +86,8 @@ _Ce fichier ne peut pas être renommé._
 
 Par défaut, `srcDir` est le même répertoire que `rootDir`.
 
-<p class="Alert Alert--nuxt-green"><b>Info :</b> à l'intérieur de vos templates `vue`, si vous avez besoin de faire référence à vos répertoires `assets` ou `static`, utilisez par ex. `~/assets/votre_image.png` et `~/static/votre_image.png`.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>Info :</b> à l'intérieur de vos templates `vue`, si vous avez besoin de faire référence à vos répertoires `assets` ou `static`, utilisez par ex. `~/assets/votre_image.png` et `~/static/votre_image.png`.
+
+</div>
