@@ -29,7 +29,7 @@ O diretório `middleware` contém o sua aplicação Middleware. O middleware per
 
 [Mais documentação sobre integração de middleware](/guide/routing#middleware)
 
-### Diratório de paginas
+### Diretório de paginas
 
 O diretório `paginas` contém seus modos de exibição de aplicativo e rotas. O framework lê todos os arquivos `.vue` dentro deste diretório e cria o roteador do aplicativo.
 
@@ -37,56 +37,56 @@ _Esse diretório não pode ser renomeado._
 
 [Mais documentação sobre integração de paginas](/guide/views)
 
+### Diretório de plugins
 
-### The Plugins Directory
+O diretório `plugins` contém seus plugins Javascript que você deseja executar antes de instanciar o aplicativo root Vue.js.
 
-The `plugins` directory contains your Javascript plugins that you want to run before instantiating the root Vue.js Application.
+[Mais documentação sobre integração de Plugins ](/guide/plugins)
 
-[More documentation about Plugins integration](/guide/plugins)
 
-### The Static Directory
+### Diretório Estático
 
-The `static` directory contains your static files. Each file inside this directory is mapped to `/`.
+O diretório `estatico` contém seus arquivos estáticos. Cada arquivo dentro deste diretório é mapeado para `/`.
 
-**Example:** `/static/robots.txt` is mapped as `/robots.txt`
+**Example:** `/estatico/robots.txt` is mapeado como `/robots.txt`
 
-_This directory cannot be renamed._
+_Esse diretório não pode ser renomeado._
 
-[More documentation about Static integration](/guide/assets#static)
+[Mais documentação sobre integração de Static](/guide/assets#static)
 
-### The Store Directory
+### Diretório Store
 
-The `store` directory contains your [Vuex Store](http://vuex.vuejs.org/en/) files. The Vuex Store option is implemented in the Nuxt.js framework. Creating an `index.js` file in this directory enables the option in the framework automatically.
+O diretório `store` contém seu arquivos [Vuex Store](http://vuex.vuejs.org/en/). A opção Vuex Store é implementada no framework Nuxt.js. Criar um arquivo `index.js` neste diretório habilita a opção na estrutura automaticamente.
 
-_This directory cannot be renamed._
+_Esse diretório não pode ser renomeado._
 
-[More documentation about Store integration](/guide/vuex-store)
+[Mais documentação sobre integração de Store](/guide/vuex-store)
 
-### The nuxt.config.js File
+### O arquivo nuxt.config.js
 
-The `nuxt.config.js` file contains your Nuxt.js custom configuration.
+O arquivo `nuxt.config.js` contém sua configuração customizada do Nuxt.js.
 
-_This file can not be renamed._
+_Esse arquivo não pode ser renomeado._
 
-[More documentation about `nuxt.config.js` integration](/guide/configuration)
+[Mais documentação sobre integração de`nuxt.config.js`](/guide/configuration)
 
-### The package.json File
+### O arquivo package.json 
 
-The `package.json` file contains your Application dependencies and scripts.
+O arquivo `package.json` contém suas dependências e scripts da aplicação.
 
-_This file can not be renamed._
+_Esse arquivo não pode ser renomeado._
 
 ## Aliases
 
-| Alias | Directory |
+| Alias | Diretório |
 |-----|------|
 | `~` or `@` | [srcDir](/api/configuration-srcdir) |
 | `~~` or `@@` | [rootDir](/api/configuration-rootdir) |
 
-By default, `srcDir` is the same as `rootDir`.
+Por padrão, `srcDir` é o mesmo que` rootDir`.
 
 <div class="Alert Alert--nuxt-green">
 
-<b>Info:</b> Inside your `vue` templates, if you need to link to your `assets` or `static` directory, use `~/assets/your_image.png` and `~/static/your_image.png`.
+Dentro dos seus templates `vue`, se você precisa fazer link ao diretório` assets` ou `static`, usado ` ~ assets / your_image.png` e `~ / static / your_image.png`.
 
 </div>
