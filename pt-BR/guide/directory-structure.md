@@ -1,43 +1,42 @@
 ---
-title: Directory Structure
-description: The default Nuxt.js application structure is intended to provide a great starting point for both large and small applications.
+Titulo: Estrutura de diretórios
+Descrição: A estrutura de aplicação padrão do Nuxt.js destina-se a fornecer um ótimo ponto de partida para aplicativos grandes e pequenos.
 ---
 
-> The default Nuxt.js application structure is intended to provide a great starting point for both small and large applications. Of course, you are free to organize your application however you like.
+> A estrutura de aplicação padrão do Nuxt.js destina-se a fornecer um excelente ponto de partida para aplicativos pequenos e grandes. Claro, você é livre para organizar seu aplicativo da maneira que quiser.
 
-## Directories
 
-### The Assets Directory
+## Diretórios
 
-The `assets` directory contains your un-compiled assets such as Less, Sass or JavaScript.
+### Diretórios assets
+O diretório `assets` contém seus recursos não compilados, como Less, Sass ou JavaScript.
 
-[More documentation about Assets integration](/guide/assets)
+[Mais documentação sobre integração de assets](/guide/assets)
 
-### The Components Directory
+### Diretório de Componentes
+O diretório `componentes` contém seus componentes Vue.js. O Nuxt.js não sobrecarrega o método de dados nesses componentes.
 
-The `components` directory contains your Vue.js Components. Nuxt.js doesn't supercharge the data method on these components.
+### Diretório de Layouts
+O diretório `layouts` contém seus layouts de aplicativos.
 
-### The Layouts Directory
+_Esse diretório não pode ser renomeado._
 
-The `layouts` directory contains your Application Layouts.
+[Mais documentação sobre integração de layouts](/guide/views#layouts)
 
-_This directory cannot be renamed._
 
-[More documentation about Layouts integration](/guide/views#layouts)
+### Diretório de Middleware
+O diretório `middleware` contém o sua aplicação Middleware. O middleware permite definir funções personalizadas que podem ser executadas antes de renderizar uma página ou um grupo de páginas (layouts).
 
-### The Middleware Directory
+[Mais documentação sobre integração de middleware](/guide/routing#middleware)
 
-The `middleware` directory contains your Application Middleware. Middleware lets you define custom functions that can be run before rendering either a page or a group of pages (layouts).
+### Diratório de paginas
 
-[More documentation about Middleware integration](/guide/routing#middleware)
+O diretório `paginas` contém seus modos de exibição de aplicativo e rotas. O framework lê todos os arquivos `.vue` dentro deste diretório e cria o roteador do aplicativo.
 
-### The Pages Directory
+_Esse diretório não pode ser renomeado._
 
-The `pages` directory contains your Application Views and Routes. The framework reads all the `.vue` files inside this directory and creates the application router.
+[Mais documentação sobre integração de paginas](/guide/views)
 
-_This directory cannot be renamed._
-
-[More documentation about Pages integration](/guide/views)
 
 ### The Plugins Directory
 
