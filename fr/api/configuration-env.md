@@ -1,5 +1,5 @@
 ---
-title: "API : La propriété env"
+title: "API : La propriété env (EN)"
 description: Partager les variables d'environnement entre client et serveur.
 ---
 
@@ -12,7 +12,7 @@ description: Partager les variables d'environnement entre client et serveur.
 Exemple (`nuxt.config.js`) :
 
 ```js
-module.exports = {
+export default {
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   }
@@ -42,6 +42,10 @@ export default axios.create({
 
 Puis, dans vos pages, vous pouvez importer axios ainsi : `import axios from '~/plugins/axios'`
 
+## Automatic injection of environment variables (EN)
+
+If you define environment variables starting with `NUXT_ENV_` in the build phase (f.ex. `NUXT_ENV_COOL_WORD=freezing nuxt build`, they'll be automatically injected into the process environment. Be aware that they'll potentially take precedence over defined variables in your `nuxt.config.js` with the same name.
+
 ## process.env == {}
 
 Notez que Nuxt utilise le `definePlugin` de webpack pour définir une variable d'environnement. Cela signifie que l'actuel `process` ou `process.env` de Node.js n'est ni accessible ni défini. Chacune des propriétés de `env` définie dans nuxt.config.js est individuellement associée à `process.env.xxxx` et convertie pendant la compilation.
@@ -59,3 +63,5 @@ après
 ```js
 if ('testing123' == 'testing123')
 ```
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

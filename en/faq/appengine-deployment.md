@@ -41,7 +41,7 @@ env_variables:
   NODE_ENV: 'production'
 ```
 
-or for flexible enviroment the minimal configuration is:
+or for flexible environment the minimal configuration is:
 
 ```yaml
 runtime: nodejs
