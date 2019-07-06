@@ -32,7 +32,7 @@ yarn add ts-node
 
 <div class="Alert Alert--gray">
 
-*情報:** `ts-node` は `nuxt.config.ts` と `serverMiddlewares` をサポートする TypeScript ランタイムを有効化するため `@nuxt/core` を拡張します。
+**情報:** `ts-node` は `nuxt.config.ts` と `serverMiddlewares` をサポートする TypeScript ランタイムを有効化するため `@nuxt/core` を拡張します。
 
 </div>
 

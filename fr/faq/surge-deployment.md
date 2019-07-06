@@ -29,10 +29,10 @@ surge dist/
 
 Tadaaa :)
 
-Si vous avez un projet avec des [routes dynamiques](/guide/routing#routes-dynamiques), consultez la [configuration de `generate`](/api/configuration-generate) afin d'expliquer à Nuxt.js comment les générer.
+Si vous avez un projet avec des [routes dynamiques](/guide/routing#routes-dynamiques), consultez la [configuration de `generate`](/api/configuration-generate) afin d'expliquer à Nuxt.js comment générer ces routes dynamiques.
 
 <div class="Alert">
 
-Quand vous générez votre application web via `nuxt generate`, [le contexte](/api) passé à [`data`](/guide/async-data#la-m-thode-data) et [`fetch`](/guide/vuex-store#la-m-thode-fetch) ne disposent pas de `req` ni de `res`.
+Quand vous générez votre application web via `nuxt generate`, [le contexte](/api) passé à [`asyncData`](/guide/async-data) et [`fetch`](/guide/vuex-store#la-m-thode-fetch) ne disposent pas de `req` ni de `res`.
 
 </div>

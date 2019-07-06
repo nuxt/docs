@@ -1,9 +1,9 @@
 ---
-title: "API: The mode Property"
+title: "API: The mode Property (EN)"
 description: Change default nuxt mode
 ---
 
-# The mode Property (En)
+# The mode Property (EN)
 - Type: `string`
   - Default: `universal`
   - Possible values:
