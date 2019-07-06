@@ -22,13 +22,8 @@ Puis ajouter un script de test à notre `package.json` et configurer AVA pour co
   "test": "ava",
 },
 "ava": {
-  "require": [
-    "babel-register"
-  ]
-},
-"babel": {
-  "presets": [
-    "env"
+  "files": [
+    "test/**/*"
   ]
 }
 ```
@@ -131,7 +126,6 @@ npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader 
 ```
 
 Puis, configurez ESLint via un fichier `.eslintrc.js` à la racine de votre projet :
-
 ```js
 module.exports = {
   root: true,

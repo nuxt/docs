@@ -1,22 +1,22 @@
 ---
 title: Introduction
-description: "Le 25 octobre 2016, l'équipe derrière zeit.co, annonçait Next.js, un framework pour les applications React rendues côté serveur. Quelques heures après l'annonce, l'idée de créer un équivalent pour les applications Vue.js était évidente : Nuxt.js était né."
+description: "Nuxt.js est un framework pour créer des applications Vue, vous pouvez choisir entre application Universelle, Générée Statiquement ou Monopage."
 ---
 
-> Le 25 octobre 2016, l'équipe derrière [zeit.co](https://zeit.co/), annonçait [Next.js](https://zeit.co/blog/next), un framework pour les applications React rendues côté serveur. Quelques heures après l'annonce, l'idée de créer un équivalent pour les applications [Vue.js](https://fr.vuejs.org) était évidente : **Nuxt.js** était né.
+> Nuxt.js est un framework pour créer des applications Vue, vous pouvez choisir entre application Universelle, Générée Statiquement ou Monopage.
 
 ## Nuxt.js, qu’est-ce que c’est ?
 
-Nuxt.js est un framework pour créer des applications Vue.js universelles.
-
-Son principal but est de **faire le rendu d'interface utilisateur (« UI »)** en faisant abstraction de la distribution entre le client et le serveur.
+Son principal objectif est **rendu de l'Interface Utilisateur** tout en faisant abstraction de la distribution client/serveur.
 
 Notre but est de créer un framework suffisamment flexible afin que vous puissiez l'utiliser comme base dans un projet principal ou en tant que supplément pour votre projet actuel basé sur Node.js.
 
-Nuxt.js prédéfinit toute la configuration nécessaire pour faire de votre développement d'application Vue.js rendue côté serveur quelque chose d'agréable.
+Nuxt.js fournit toute la configuration nécessaire pour rendre vos développement de **rendu côté serveur** avec des applications Vue.js agréable.
 
-En outre, nous fournissons également une autre option de déploiement appelée : *nuxt generate*. Elle permet de construire une application Vue.js **générée statiquement**.
-Nous croyons que cette option pourrait être la prochaine étape importante dans le développement d'applications web avec des microservices.
+De plus, nous fournissons également une option de déploiement appelée *nuxt generate*. Elle va créer une application Vue.js avec **génération statique**.
+Nous pensons que cette options peut-être la prochaine grosse étape dans le développement de vos applications web avec microservices.
+
+Bien entendu, vous pouvez également utiliser Nuxt.js pour créer des applications monopages rapidement (mode `spa`), ce qui est utile pour conserver les fonctionnalités de Nuxt quand vous travailler sur la partie backoffice de vos apllications.
 
 En tant que framework, Nuxt.js est doté de nombreuses fonctionnalités pour vous aider dans votre développement entre côté client et serveur tels que les données asynchrones, les *middlewares*, les *layouts*, etc.
 
@@ -29,9 +29,10 @@ Nuxt.js inclut les éléments suivants afin de créer une expérience de dévelo
 - [Vue 2](https://fr.vuejs.org/)
 - [Vue Router](https://router.vuejs.org/fr/)
 - [Vuex](https://ssr.vuejs.org/fr/) (inclut uniquement quand l'[option `store`](/guide/vuex-store) est activée)
+- [Vue Server Renderer](https://ssr.vuejs.org/fr/) (exclut quand le [`mode: 'spa'`](/api/configuration-mode) est utilisé)
 - [vue-meta](https://github.com/nuxt/vue-meta)
 
-Un total de seulement **57ko min+gzip** (53ko avec Vuex).
+Un total de seulement **57ko min+gzip** (60ko avec Vuex).
 
 Sous le capot, nous utilisons [webpack](https://github.com/webpack/webpack) avec [vue-loader](https://github.com/vuejs/vue-loader) et [babel-loader](https://github.com/babel/babel-loader) pour empaqueter (« bundle »), scinder (« code-split ») et minifier votre code.
 
@@ -41,8 +42,8 @@ Sous le capot, nous utilisons [webpack](https://github.com/webpack/webpack) avec
 - Scission de code automatique
 - Rendu coté serveur (ou « SSR » pour « Server-Side Rendering »)
 - Routage puissant à l'aide de données asynchrones
-- Génération de fichiers statiques
-- Transpilation ES2015+
+- Serveur de fichiers statiques
+- Transpilation [ES2015+](https://babeljs.io/docs/en/learn/)
 - Empaquetage et minification de vos fichiers JS et CSS
 - Gestion des éléments de balise d'en-tête `<head>` HTML (`<title>`, `<meta>`, etc.)
 - Rechargement à chaud pendant le développement
@@ -76,6 +77,17 @@ La grande innovation de Nuxt.js est sa commande `nuxt generate`.
 
 Lors de la création de votre application, il génèrera le code HTML de chacune de vos routes pour le stocker dans un fichier.
 
+<div>
+  <a href="https://vueschool.io/courses/static-site-generation-with-nuxtjs?friend=nuxt" target="_blank" class="Promote">
+    <img src="/static-site-generation-with-nuxtjs.png" alt="Génération de site statique avec Nuxt.js par vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Génération de site statique avec Nuxt.js</h4>
+      <p class="Promote__Content__Description">Apprendre comment générer des sites web statiques (pré-rendus) pour améliorer les performances et le SEO tout en éliminant les coûts d'hébergement.</p>
+      <p class="Promote__Content__Signature">Cours en vidéo réalisés par VueSchool pour aider au développement de Nuxt.js.</p>
+    </div>
+  </a>
+</div>
+
 Par exemple, la structure de fichier suivante :
 
 ```bash
@@ -95,24 +107,21 @@ générera :
 
 De cette façon, vous pouvez héberger votre application web sur n'importe quel hébergement statique !
 
-Le meilleur exemple est ce site web. Il est généré et hébergé sur le système d'hébergement de page de GitHub :
+Le meilleur exemple est ce site web. Il est généré et hébergé sur [Netlify](https://www.netlify.com), consultez notre [code source](https://github.com/nuxt/nuxtjs.org) ou [Comment déployer Nuxt.js sur Netlify](https://vueschool.io/lessons/how-to-deploy-nuxtjs-to-netlify?friend=nuxt) sur Vue School.
 
-- [Code source](https://github.com/nuxt/nuxtjs.org) (en anglais)
-- [Code généré](https://github.com/nuxt/nuxtjs.org/tree/gh-pages) (en anglais)
-
-Nous ne voulons pas générer manuellement l'application à chaque fois que nous mettons à jour la [documentation](https://github.com/nuxt/docs), du coup chaque modification réalisée invoque une fonction AWS Lambda qui :
+Nous ne voulons pas générer manuellement l'application à chaque fois que nous mettons à jour la [documentation](https://github.com/nuxt/docs), il déclenche un point d'ancrage pour Netlify qui :
 
 1. Clone le [dépôt nuxtjs.org](https://github.com/nuxt/nuxtjs.org)
 2. Installe les dépendances via `npm install`
-3. Lance `nuxt generate`
-4. Déploie le dossier `dist` sur la branche `gh-pages`
+3. Lance `npm run generate`
+4. Sert le dossier `dist`
 
-Et nous voilà avec une **application web générée sans fichiers statiques serveurs** :)
+Et nous voilà avec une **application web générée statique** :)
 
 Nous pouvons aller plus loin en imaginant une application d'e-commerce créée avec `nuxt generate` et hébergée sur un CDN. Chaque fois qu'un produit est en rupture de stock ou de nouveau en stock nous régénérons l'application. Mais si l'utilisateur navigue sur l'application en même temps, il verra les informations à jour grâce aux appels d'API effectués sur l'API de l'e-commerce. Pas besoin d'avoir plusieurs instances d'un serveur d'un cache !
 
 <div class="Alert">
 
-Vous pouvez consulter [Comment déployer sur GitHub Pages ?](/faq/github-pages) pour plus d'informations sur un hébergement GitHub Pages.
+Vous pouvez consulter [Comment déployer sur Netlify ?](/faq/netlify-deployment) pour plus d'informations sur un hébergement sur Netlify.
 
 </div>

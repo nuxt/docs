@@ -15,7 +15,7 @@ Il est important de savoir que, dans le [cycle de vie d'une instance de Vue](htt
 
 Nous souhaitons utiliser des packages / modules externes dans notre application, un excellent exemple est [axios](https://github.com/mzabriskie/axios) pour les requêtes HTTP depuis le serveur et le client.
 
-Nous l'installons via npm :
+Tout d'abord, nous l'installons via npm :
 
 ```bash
 npm install --save axios
@@ -25,32 +25,20 @@ Puis nous pouvons l'utiliser directement dans nos pages :
 
 ```html
 <template>
-  <h1>{{ title }}</h1>
+  <h1>{{ titre }}</h1>
 </template>
 
 <script>
 import axios from 'axios'
 
 export default {
-  async data ({ params }) {
+  async asyncData ({ params }) {
     let { data } = await axios.get(`https://my-api/posts/${params.id}`)
-    return { title: data.title }
+    return { titre: data.titre }
   }
 }
 </script>
 ```
-
-Mais il y a **un problème**, si nous importons axios dans une autre page, il sera à nouveau inclus dans le paquetage de la page. Nous voulons inclure `axios` une seule fois dans notre application, pour cela, nous utilisons la clé `build.vendor` dans notre `nuxt.config.js` :
-
-```js
-module.exports = {
-  build: {
-    vendor: ['axios']
-  }
-}
-```
-
-Je peux ensuite importer `axios` partout sans avoir à m'inquiéter de l'importer plusieurs fois et de rendre le paquetage plus lourd.
 
 ## Plugins Vue
 
@@ -68,85 +56,222 @@ Vue.use(VueNotifications)
 Puis nous ajoutons le fichier dans l'attribut `plugins` de `nuxt.config.js` :
 
 ```js
-module.exports = {
-  plugins: ['~plugins/vue-notifications']
+export default {
+  plugins: ['~/plugins/vue-notifications']
 }
 ```
 
 Pour en savoir plus sur l'attribut `plugins`, consultez [La propriété `plugins`](/api/configuration-plugins) de l'API.
 
-Actuellement, `vue-notifications` sera inclus dans le paquetage de l'application. Mais comme il s'agit d'une bibliothèque, nous voulons l'inclure dans le paquetage `vendor` pour une meilleure mise en cache.
+### ES6 plugins (EN)
 
-Nous pouvons mettre à jour `nuxt.config.js` pour ajouter `vue-notifications` dans le bundle `vendor` :
+If the plugin is located in `node_modules` and exports an ES6 module, you may need to add it to the `transpile` build option:
 
 ```js
 module.exports = {
   build: {
-    vendor: ['vue-notifications']
-  },
-  plugins: ['~/plugins/vue-notifications']
+    transpile: ['vue-notifications']
+  }
 }
 ```
+You can refer to the [configuration build](/api/configuration-build/#transpile) docs for more build options.
 
-## Injection dans $root et context
+## Injection dans $root et le contexte
 
-Plusieurs plugins ont besoin d'être injectés à la racine de l'application pour être utilisés, comme [vue-18n](https://github.com/kazupon/vue-i18n). Avec Nuxt.js, vous pouvez utilisez `app` qui est disponible dans le `context` quand vous exportez une méthode :
+Parfois vous souhaitez rendre des fonctions ou des valeurs disponibles à travers votre application.
+Vous pouvez injecter ces variables dans les instances Vue (côté client), le contexte (côté serveur) et même dans le magasin Vuex.
+C'est une convention de préfixer ces fonctions avec un `$`.
 
-`plugins/i18n.js`:
+### Injection dans les instances Vue
+
+L'injection de contenu dans les instances Vue fonctionne de la même façon que vous pourriez le faire dans une application Vue standard.
+
+`plugins/injection-vue.js`:
 
 ```js
 import Vue from 'vue'
-import VueI18n from 'vue-i18n'
 
-Vue.use(VueI18n)
+Vue.prototype.$maFonctionInjectee = (chaine) => console.log("Ceci est un example", chaine)
+```
 
-export default ({ app }) => {
-  // Mettre l'instance `i18n` dans `app`
-  // De cette manière nous pouvons l'utiliser comme middleware et `asyncData` / `fetch` pour les pages
-  app.i18n = new VueI18n({
-    /* `VueI18n` options... */
-  })
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: ['~/plugins/injection-vue.js']
+}
+```
+
+Vous pouvez maintenant utiliser cette fonction dans tous vos composants Vue.
+
+`composant-exemple.vue`:
+
+```js
+export default {
+  mounted(){
+    this.$maFonctionInjectee('test')
+  }
+}
+```
+
+
+### Injection dans le contexte
+
+L'injection de contenu dans les instances Vue fonctionne de la même façon que vous pourriez le faire dans une application Vue standard.
+
+`plugins/injection-contexte.js`:
+
+```js
+export default ({ app }, inject) => {
+  // Défini la fonction directement dans l'objet context.app
+  app.maFonctionInjectee = (chaine) => console.log('Ok, une autre fonction', chaine)
 }
 ```
 
 `nuxt.config.js`:
 
 ```js
-module.exports = {
-  build: {
-    vendor: ['vue-i18n']
-  },
-  plugins: ['~/plugins/i18n.js']
+export default {
+  plugins: ['~/plugins/injection-contexte.js']
 }
 ```
 
-Pour voir comment utiliser ce plugin, consultez cet [exemple i18n](/examples/i18n).
+La fonction est maintenant disponible partout où vous aurez accès au `context` (par exemple dans `asyncData` et `fetch`).
+
+`composant-exemple-contexte.vue`:
+
+```js
+export default {
+  asyncData(context){
+    context.app.maFonctionInjectee('Contexte !')
+  }
+}
+```
+
+### Injection combinée
+
+Si vous avez besoin de la fonction dans le `context`, les instances Vue et peut-être aussi dans le magasin Vuex, vous pouvez utiliser la fonction `inject`, qui est le second paramètre de la fonction exportée des plugins.
+
+L'injection de contenu dans les instances Vue fonctionne de la même façon que vous pourriez le faire dans une application Vue standard. le `$` sera automatiquement ajouté au début de la fonction.
+
+`plugins/injection-combinee.js`:
+
+```js
+export default ({ app }, inject) => {
+  inject('maFonctionInjectee', (chaine) => console.log('C'est simple !', chaine))
+}
+```
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: ['~/plugins/injection-combinee.js']
+}
+```
+
+Maintenant la fonction peut être utilisé depuis `context`, via `this` dans les instances Vue et via `this` dans le magasin `actions`/`mutations`.
+
+`composant-exemple-contexte.vue`:
+
+```js
+export default {
+  mounted(){
+    this.$maFonctionInjectee('fonctionne dans mounted()')
+  },
+  asyncData(context){
+    context.app.$maFonctionInjectee('fonctionne avec le contexte')
+  }
+}
+```
+
+`store/index.js`:
+
+```js
+export const state = () => ({
+  uneValeur: ''
+})
+
+export const mutations = {
+  changeUneValeur(state, nouvelleValeur) {
+    this.$maFonctionInjectee('accessible dans les mutations')
+    state.uneValeur = nouvelleValeur
+  }
+}
+
+export const actions = {
+  setUneValeurAvecQuelquechose ({ commit }) {
+    this.$maFonctionInjectee('accessible dans les actions')
+    const nouvelleValeur = "quelquechose"
+    commit('changeUneValeur', nouvelleValeur)
+  }
+}
+
+```
+
 
 ## Côté client uniquement
 
-Certains plugins fonctionnent **uniquement dans un navigateur**. Vous pouvez utiliser l'option `ssr: false` dans `plugins` pour exécuter le fichier uniquement côté client.
+Certains plugins fonctionnent **uniquement dans un navigateur** due à un manque de support SSR.
+Vous pouvez utiliser l'option `ssr: false` dans `plugins` pour exécuter le fichier uniquement côté client.
 
 Exemple :
 
 `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   plugins: [
-    { src: '~/plugins/vue-notifications', ssr: false }
+    { src: '~/plugins/notifications-vue', ssr: false }
   ]
 }
 ```
 
-`plugins/vue-notifications.js`:
+`plugins/notifications-vue.js`:
 
 ```js
 import Vue from 'vue'
-import VueNotifications from 'vue-notifications'
+import NotificationsVue from 'notifications-vue'
 
-Vue.use(VueNotifications)
+Vue.use(NotificationsVue)
 ```
 
-Dans le cas où vous devez importer certaines bibliothèques uniquement pour le serveur, vous pouvez utiliser la variable `process.server` définie sur `true` lorsque le serveur web crée le fichier `server.bundle.js`.
+Dans le cas où vous devez importer certaines bibliothèques uniquement *côté serveur*, vous pouvez vérifier si la variable `process.server` est définie à `true`.
 
-Si vous avez besoin également de savoir si vous êtes dans une application générée (via `nuxt generate`), vous pouvez vérifier la propriété `process.static` mise à `true` pendant la génération et après. Pour connaitre dans quel état est une page qui est en train d'être rendue par `nuxt generate` avant d'être sauvée, vous pouvez utilisez `process.static && process.server`.
+Si vous avez besoin également de savoir si vous êtes dans une application générée (via `nuxt generate`), vous pouvez vérifier la propriété `process.static` est à `true`. C'est le cas seulement pendant la génération et après.
+
+Vous pouvez aussi combiner les deux options pour connaitre si une page qui est en train d'être rendue par le serveur avec `nuxt generate` avant d'être sauvée (`process.static && process.server`).
+
+**Note**: Depuis Nuxt.js 2.4+, `mode` a été introduit comme option de `plugins` pour spécifier le type de plugin, les valeurs possibles sont : `client` ou `server`. `ssr: false` sera adapté pour `mode: 'client'` et déprécié dans le futur livrable majeur.
+
+Exemple:
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: [
+    { src: '~/plugins/both-sides.js' },
+    { src: '~/plugins/client-only.js', mode: 'client' },
+    { src: '~/plugins/server-only.js', mode: 'server' }
+  ]
+}
+```
+
+### Name conventional plugin (EN)
+
+If plugin is assumed to be run only in client or server side, `.client.js` or `.server.js` can be applied as extension of plugin file, the file will be automatically included in corresponding side.
+
+Example:
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: [
+    '~/plugins/foo.client.js', // only in client side
+    '~/plugins/bar.server.js', // only in server side
+    '~/plugins/baz.js' // both client & server
+  ]
+}
+```
