@@ -5,6 +5,17 @@ description: Nuxt.js is really easy to get started with. A simple project only n
 
 > Nuxt.js is really easy to get started with. A simple project only needs the `nuxt` dependency.
 
+<div>
+  <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Nuxt Fundamentals by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Nuxt.js Fundamentals</h4>
+      <p class="Promote__Content__Description">Learn how to get started quickly with Nuxt.js in videos.</p>
+      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+    </div>
+  </a>
+</div>
+
 ## Using Nuxt.js starter template
 
 To get started quickly, the Nuxt.js team has created a [starter template](https://github.com/nuxt-community/starter-template).
@@ -32,7 +43,11 @@ $ npm run dev
 
 The application is now running on http://localhost:3000.
 
-<p class="Alert">Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.</p>
+<div class="Alert">
+
+Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.
+
+</div>
 
 To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
 
@@ -45,7 +60,11 @@ $ mkdir <project-name>
 $ cd <project-name>
 ```
 
-<p class="Alert Alert--nuxt-green"><b>Info:</b> replace <code>&lt;project-name&gt;</nom-du-projet></code> by the name of the project.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>Info:</b> replace <code>&lt;project-name&gt;</nom-du-projet></code> by the name of the project.
+
+</div>
 
 ### The package.json
 
@@ -67,7 +86,7 @@ The project needs a `package.json` file to specify how to start `nuxt`:
 Once the `package.json` has been created, add `nuxt` to the project via npm:
 
 ```bash
-npm install --save nuxt
+$ npm install --save nuxt
 ```
 
 ### The `pages` directory
@@ -96,6 +115,10 @@ $ npm run dev
 
 The application is now running on http://localhost:3000.
 
-<p class="Alert">Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.</p>
+<div class="Alert">
+
+Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.
+
+</div>
 
 To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).

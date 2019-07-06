@@ -185,4 +185,8 @@ npm run lintfix
 
 ESLint akan membungkus setiap file JavaScript dan Vue Anda sambil mengabaikan file yang Anda abaikan yang didefinisikan di  `.gitignore` anda.
 
-<p class="Alert Alert--info">Salah satu praktik terbaik adalah menambahkan juga `"precommit": "npm run lint"` di package.json Anda untuk memeriksa kode Anda secara otomatis sebelum menyerahkan (commit) kode Anda.</p>
+<div class="Alert Alert--orange">
+
+Salah satu praktik terbaik adalah menambahkan juga `"precommit": "npm run lint"` di package.json Anda untuk memeriksa kode Anda secara otomatis sebelum menyerahkan (commit) kode Anda.
+
+</div>

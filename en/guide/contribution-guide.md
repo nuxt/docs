@@ -8,9 +8,9 @@ description: Any contribution to Nuxt.js is more than welcome!
 ## Reporting Issues
 
 A great way to contribute to the project is to send a detailed report when you encounter an issue.
-To make things easier for contributors and maintainers, we use [CMTY](https://cmty.app/nuxt/issues/new?repo=nuxt.js).
+To make things easier for contributors and maintainers, we use [CMTY](https://cmty.nuxtjs.org/).
 
-Please make sure to include a reproduction repository or [CodeSandBox](https://codesandbox.io/s/github/nuxt/codesandbox-nuxt/tree/master/)
+Please make sure to include a reproduction repository or [CodeSandBox](https://template.nuxtjs.org/)
 so that bugs can be reproduced without great efforts. The better a bug can be reproduced, the faster we can start fixing it!
 
 ## Pull Requests
@@ -18,17 +18,24 @@ so that bugs can be reproduced without great efforts. The better a bug can be re
 We'd love to see your pull requests, even if it's just to fix a typo!
 
 However, any significant improvement should be associated to an existing
-[feature request](https://cmty.app/nuxt/issues/feature-request?repo=nuxt.js)
-or [bug report](https://cmty.app/nuxt/issues/bug-report?repo=nuxt.js).
+[feature request](https://feature.nuxtjs.org/)
+or [bug report](https://bug.nuxtjs.org/).
 
 ### Getting started
 
-1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device.
+1. [Fork](https://help.github.com/articles/fork-a-repo/) the [Nuxt repository](https://github.com/nuxt/nuxt.js) to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device.
 2. Run `npm install` or `yarn install` to install the dependencies.
 
 > _Note that both **npm** and **yarn** have been seen to miss installing dependencies. To remedy that, you can either delete the `node_modules` folder in your example app and install again or do a local install of the missing dependencies._
 
 > If you are adding a dependency, please use `yarn add`. The `yarn.lock` file is the source of truth for all Nuxt dependencies.
+
+### Setup
+ Before running any tests, make sure all dependencies are met and build all packages:
+ ```sh
+yarn
+yarn build
+```
 
 ### Test structure
 
@@ -72,11 +79,11 @@ While working on your PR you will likely want to check if your fixture is set up
 To do so you can use the Nuxt script itself to launch for example your fixture or an example app:
 
 ```sh
-bin/nuxt examples/your-app
-bin/nuxt test/fixtures/your-fixture-app
+yarn nuxt examples/your-app
+yarn nuxt test/fixtures/your-fixture-app
 ```
 
-> `npm link` could also (and does, to some extent) work for this, but it has been known to exhibit some issues. That is why we recommend calling `bin/nuxt` directly to run examples.
+> `npm link` could also (and does, to some extent) work for this, but it has been known to exhibit some issues. That is why we recommend calling `yarn nuxt` directly to run examples.
 
 ### Examples
 

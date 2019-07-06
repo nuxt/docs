@@ -5,7 +5,7 @@ description: 開発モードかプロダクションモードかを指定しま�
 
 # dev プロパティ
 
-- 型: `ブーリアン`
+- 型: `Boolean`
 - デフォルト: `true`
 
 > 開発モードかプロダクションモードかを指定します。
@@ -42,15 +42,11 @@ app.use(nuxt.render)
 // 開発モードのときのみビルドする
 if (config.dev) {
   new Builder(nuxt).build()
-  .catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
 }
 
 // サーバーを Listen する
 app.listen(port, '0.0.0.0').then(() => {
-  nuxt.showOpen()
+  console.log(`Server is listening on port: ${port}`)
 })
 ```
 

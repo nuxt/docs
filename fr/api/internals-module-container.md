@@ -5,7 +5,7 @@ description: La classe `ModuleContainer` de Nuxt
 
 # Classe ModuleContainer
 
-- Source : **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/module.js)**
+- Source : **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/module.js)**
 
 Tous les [modules](/guide/modules) seront appelés dans le contexte de l'instance de `ModuleContainer`.
 
@@ -34,6 +34,8 @@ Plugin  | Arguments       | Quand
 ## Méthodes
 
 ### addVendor (vendor)
+
+**Obsolète car `vendor` n'est plus utilisé**
 
 Ajoute à `options.build.vendor` et applique un filtre unique.
 
@@ -70,9 +72,14 @@ Permet d'étendre facilement les routes en chainant la fonction [options.build.e
 
 ### addModule (moduleOpts, requireOnce)
 
-Enregistre le module. `moduleOpts` peut être une chaine de caractères ou `[src, options]`. Si `requireOnce` est `true`, les modules résolus `meta` préviennent l'enregistrement du même module plus d'une fois.
+*Async function*
+
+Enregistre le module. `moduleOpts` peut être une chaine de caractères ou `[src, options]`.
+Si `requireOnce` est `true`, les modules résolus `meta` préviennent l'enregistrement du même module plus d'une fois.
 
 ### requireModule (moduleOpts)
+
+*Async function*
 
 C'est un alias raccourci de `addModule(moduleOpts, true)`
 
@@ -82,5 +89,5 @@ We can register hooks on certain life cycle events.
 
 Points d'ancrage          | Arguments                  | Quand
 --------------------------|----------------------------|-------------------------------------------------------------------------------------------------------
- `modules:before`         | (moduleContainer, options) | Appelé avant la création de la classe ModuleContainer, utile pour surcharger les méthodess et options.
+ `modules:before`         | (moduleContainer, options) | Appelé avant la création de la classe ModuleContainer, utile pour surcharger les méthodes et options.
  `modules:done`           | (moduleContainer)          | Appelé quand tous les modules ont été chargés.

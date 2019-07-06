@@ -84,4 +84,8 @@ surge dist/
 
 Если у вас есть проект с [динамическими маршрутами](/guide/dynamic-routes), взгляните на [генерацию конфигурации](/api/configuration-generate), чтобы указать Nuxt.js, как генерировать эти динамические маршруты.
 
-<div class="Alert">В случае генерации веб-приложения через `nuxt generate`, [контекст](/api/pages-context), определённый для [data()](/guide/async-data#the-data-method) и [fetch()](/guide/vuex-store#the-fetch-method), не будет содержать `req` и `res`.</div>
+<div class="Alert">
+
+В случае генерации веб-приложения через `nuxt generate`, [контекст](/api/pages-context), определённый для [data()](/guide/async-data#the-data-method) и [fetch()](/guide/vuex-store#the-fetch-method), не будет содержать `req` и `res`.
+
+</div>

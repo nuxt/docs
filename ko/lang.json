@@ -16,6 +16,9 @@
     "homepage": "홈페이지",
     "live_demo": "라이브 데모",
     "live_edit": "라이브 수정",
+    "tidelift_short": "GET PROFESSIONAL SUPPORT",
+    "official_support": "GET OFFICIAL SUPPORT ⛑",
+    "tidelift": "GET PROFESSIONAL SUPPORT FOR NUXT",
     "twitter": "트위터",
     "vuejs": "Vue.js",
     "vue_jobs": "Vue 구인/구직"
@@ -36,14 +39,26 @@
       "title": "Nuxt.js - 범용 Vue.js 어플리케이션",
       "description": "Nuxt.js은 서버 사이드 렌더링, 코드 분리, 핫 리로딩, 정적 생성기 등과 함께 Vue.js 어플리케이션을 만들기 위한 최소한의 프레임워크입니다!"
     },
-    "codesandbox_title": "Play with Nuxt.js online",
-    "codesandbox_open": "Open on CodeSandBox.io",
-    "codesandbox_examples": "See more examples"
+    "welcome": {
+      "app_types_prefix": "For ",
+      "app_types": ["Universal Applications", "Static Generated Applications", "Single Page Applications", "Desktop Applications", "Mobile Applications", "Progressive Web Apps"],
+      "app_types_suffix": "."
+    },
+    "codesandbox_title": "온라인에서 Nuxt.js 체험하기",
+    "codesandbox_open": "CodeSandBox.io에서 열기",
+    "codesandbox_examples": "예제 더 보기",
+    "backer_partners": "Partners",
+    "backer_become_a_partner": "Become A Partner",
+    "backer_sponsors": "Sponsors",
+    "backer_become_a_sponsor": "Become A Sponsor",
+    "backer_backers": "Backers",
+    "backer_become_a_backer": "Become A Backer",
+    "backer_foundations": "Foundations"
   },
   "sponsors": {
-    "title": "Sponsors",
-    "become": "Support us and",
-    "become_partner": "become a partner"
+    "title": "후원해 주신 분들",
+    "become": "저희를 지원해 주시고",
+    "become_partner": "파트너가 되어주세요"
   },
   "footer": {
     "authors": "Made by Chopin Brothers"

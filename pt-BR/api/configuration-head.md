@@ -22,6 +22,10 @@ module.exports = {
 }
 ```
 
-To know the list of options you can give to `head`, take a look at [vue-meta documentation](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
+To know the list of options you can give to `head`, take a look at [vue-meta documentation](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
-<p class="Alert Alert--teal"><b>INFO:</b> You can also use `head` in the page components and access to the component data through `this`, see [component head property](/api/pages-head).</p>
+<div class="Alert Alert--teal">
+
+<b>INFO:</b> You can also use `head` in the page components and access to the component data through `this`, see [component head property](/api/pages-head).
+
+</div>

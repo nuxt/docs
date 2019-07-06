@@ -5,6 +5,14 @@ description: Nuxt.js 的应用目录架构提供了良好的代码分层结构�
 
 > Nuxt.js 的应用目录架构提供了良好的代码分层结构，适用于开发或大或小的应用。 当然，你也可以根据自己的偏好组织应用代码。
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/guided-nuxtjs-project-tour?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      观看有关Vue School上 <strong>Nuxt.js目录结构</strong> 的免费课程 
+    </p>
+  </a>
+</div>
+
 ## 目录
 
 ### 资源目录
@@ -21,7 +29,7 @@ description: Nuxt.js 的应用目录架构提供了良好的代码分层结构�
 
 布局目录 `layouts` 用于组织应用的布局组件。
 
-_该目录名为Nuxt.js保留的，不可更改。_
+_若无额外配置，则该目录不能被重命名。。_
 
 [关于布局的更多信息](/guide/views#布局)
 
@@ -35,7 +43,7 @@ _该目录名为Nuxt.js保留的，不可更改。_
 
 页面目录 `pages` 用于组织应用的路由及视图。Nuxt.js 框架读取该目录下所有的 `.vue` 文件并自动生成对应的路由配置。
 
-_该目录名为Nuxt.js保留的，不可更改。_
+_若无额外配置，则该目录不能被重命名。。_
 
 [关于页面的更多信息](/guide/views)
 
@@ -52,7 +60,7 @@ _该目录名为Nuxt.js保留的，不可更改。_
 
 **举个例子:** `/static/robots.txt` 映射至 `/robots.txt`
 
-_该目录名为Nuxt.js保留，不可更改。_
+_若无额外配置，则该目录不能被重命名。。_
 
 [关于静态文件的更多信息](/guide/assets#静态文件)
 
@@ -69,7 +77,7 @@ _该目录名为Nuxt.js保留，不可更改。_
 
 `nuxt.config.js` 文件用于组织Nuxt.js 应用的个性化配置，以便覆盖默认配置。
 
-_该文件名为Nuxt.js保留的，不可更改。_
+_若无额外配置，则该目录不能被重命名。。_
 
 [关于 nuxt.config.js 的更多信息](/guide/configuration)
 
@@ -77,7 +85,7 @@ _该文件名为Nuxt.js保留的，不可更改。_
 
 `package.json` 文件用于描述应用的依赖关系和对外暴露的脚本接口。
 
-_该文件名为Nuxt.js保留的，不可更改。_
+_若无额外配置，则该目录不能被重命名。。_
 
 ## 别名
 
@@ -88,4 +96,8 @@ _该文件名为Nuxt.js保留的，不可更改。_
 
 默认情况下，`src目录`和`根目录`相同
 
-<p class="Alert Alert--nuxt-green"><b>提示:</b> 在您的 `vue` 模板中, 如果你需要引入 `assets` 或者 `static` 目录, 使用 `~/assets/your_image.png` 和 `~/static/your_image.png`方式。</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>提示:</b> 在您的 `vue` 模板中, 如果你需要引入 `assets` 或者 `static` 目录, 使用 `~/assets/your_image.png` 和 `~/static/your_image.png`方式。
+
+</div>

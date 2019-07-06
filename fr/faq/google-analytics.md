@@ -48,7 +48,7 @@ Puis nous expliquons à Nuxt.js d'importer le plugin dans notre application prin
 `nuxt.config.js`
 
 ```js
-module.exports = {
+export default {
   plugins: [
     { src: '~plugins/ga.js', ssr: false }
   ]
@@ -57,4 +57,8 @@ module.exports = {
 
 Voilà, Google Analytics est intégré dans notre application Nuxt.js et suivra chaque page vue !
 
-<p class="Alert Alert--nuxt-green"><b>Info :</b> cette méthode est valable pour n'importe quel autre service de suivi.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>Info :</b> cette méthode est valable pour n'importe quel autre service de suivi.
+
+</div>

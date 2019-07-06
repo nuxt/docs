@@ -187,7 +187,7 @@ ESLint 는 `.gitignore`에 정의된 파일들을 무시하면서 모든 JavaScr
 
 또한 webpack을 통해 핫 리로드 모드에서 ESLink를 활성화하는 것이 좋습니다. 이렇게 하면 ESLint는 `npm run dev` 실행 동안 저장시 실행 됩니다. `nuxt.config.js`에 다음을 추가하십시오.:
 
-```
+```js
 ...
   /*
    ** Build configuration
@@ -210,4 +210,8 @@ ESLint 는 `.gitignore`에 정의된 파일들을 무시하면서 모든 JavaScr
   }
 ```
 
-<p class="Alert Alert--info">하나의 모범 사례는 package.json에 `"precommit": "npm run lint"`를 추가하여 코드를 커밋하기 전에 코드를 자동으로 lint 하는 것 입니다.</p>
+<div class="Alert Alert--orange">
+
+하나의 모범 사례는 package.json에 `"precommit": "npm run lint"`를 추가하여 코드를 커밋하기 전에 코드를 자동으로 lint 하는 것 입니다.
+
+</div>

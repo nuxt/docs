@@ -33,7 +33,7 @@ Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능
 - [Vue Router](https://router.vuejs.org/en/)
 - [Vuex](https://vuex.vuejs.org/en/) ([store 옵션](/guide/vuex-store)을 사용하는 경우에만 포함)
 - [Vue Server Renderer](https://ssr.vuejs.org/en/) ([`mode: 'spa'`](/api/configuration-mode)를 사용하는 경우에는 제외)
-- [vue-meta](https://github.com/declandewet/vue-meta)
+- [vue-meta](https://github.com/nuxt/vue-meta)
 
 총 용량이 **57kB min+gzip** 밖에 되지 않습니다. (53kB  Vuex 포함).
 
@@ -46,7 +46,7 @@ Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능
 - 서버 사이드 렌더링
 - 비동기 데이터 기반의 강력한 라우팅 시스템
 - 정적 파일 전송
-- ES6/ES7 지원
+- ES2015+ 지원
 - JS & CSS 코드 번들링 및 압축
 - `<head>` 요소 관리 (`<title>`, `<meta>`, 기타.)
 - 개발 중 Hot module 대체
@@ -58,7 +58,7 @@ Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능
 
 아래의 구조는 `<nuxt-link>`를 서버가 호출하거나 이를 통해 사용자가 이동한 경우, nuxt.js가 어떻게 동작하는지를 보여줍니다:
 
-![nuxt-schema](/nuxt-schema.png)
+![nuxt-schema](/nuxt-schema.svg)
 
 ## 서버 렌더링 (범용 SSR)
 
@@ -115,4 +115,8 @@ nuxt.js에서 가장 큰 혁신은 아마 `nuxt generate` 명령어 가 될 것�
 
 우리는 재고가 있거나 없는 경우 항상 웹앱을 `nuxt generate`로 재생성하고 CDN에 호스팅하는 방식의 e-commerce 웹 애플리케이션을 생각해볼 수 있습니다. 만약 사용자가 그동안 웹앱을 탐색한다면, e-commerce API를 호출하면 최신 정보가 제공될 것입니다. 서버의 다중 인스턴스와 캐싱을 더 이상 고민할 필요가 없습니다!
 
-<div class="Alert">깃 허브 페이지에 배포하는 방법에 대한 자세한 내용은 [How to deploy on GitHub Pages?](/faq/github-pages)를 참조하십시오.</div>
+<div class="Alert">
+
+깃 허브 페이지에 배포하는 방법에 대한 자세한 내용은 [How to deploy on GitHub Pages?](/faq/github-pages)를 참조하십시오.
+
+</div>

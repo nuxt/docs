@@ -15,7 +15,11 @@ description: Mendapatkan `window` dari URL tertentu dari Aplikasi Nuxt.js.
 
 > Mendapatkan `window` dari URL tertentu dari Aplikasi Nuxt.js.
 
-<p class="Alert Alert--info">Metode ini dibuat untuk [tujuan pengujian](/guide/development-tools#end-to-end-testing).</p>
+<div class="Alert Alert--orange">
+
+Metode ini dibuat untuk [tujuan pengujian](/guide/development-tools#end-to-end-testing).
+
+</div>
 
 Untuk menggunakan fungsi ini, Anda harus menginstal `jsdom`:
 

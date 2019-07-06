@@ -9,6 +9,22 @@ description: 在页面切换的时候，Nuxt.js 使用内置的加载组件显�
 
 > 在页面切换的时候，Nuxt.js 使用内置的加载组件显示加载进度条。你可以定制它的样式，禁用或者创建自己的加载组件。
 
+在你的组件中你可以使用`this.$nuxt.$loading.start()`来启动加载条。使用`this.$nuxt.$loading.finish()`来使加载条结束。
+
+```javascript
+export default {
+  mounted () {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 500)
+    })
+  }
+ }
+```
+
+如果要在`mounted`方法中启动它，请确保使用`this.$nextTick`来调用它，因为`$loading`可能无法立即使用。
+
 ## 禁用加载进度条
 
 - 类型： `Boolean`
@@ -32,7 +48,12 @@ module.exports = {
 | `color` | String | `'black'` | 进度条的颜色 |
 | `failedColor` | String | `'red'` | 页面加载失败时的颜色 （当 `data` 或 `fetch` 方法返回错误时）。 |
 | `height` | String | `'2px'` | 进度条的高度 (在进度条元素的 `style` 属性上体现)。 |
+| `throttle` | Number | `200` | 在ms中，在显示进度条之前等待指定的时间。用于防止条形闪烁。 |
 | `duration` | Number | `5000` | 进度条的最大显示时长，单位毫秒。Nuxt.js 假设页面在该时长内加载完毕。 |
+| `continuous` | Boolean | `false` | 当加载时间超过`duration`时，保持动画进度条。 |
+| `css` | Boolean | `true` | 设置为false以删除默认进度条样式（并添加自己的样式）。 |
+| `rtl` | Boolean | `false` | 从右到左设置进度条的方向。 |
+
 
 举个例子，一个5像素高的蓝色进度条，可以在 `nuxt.config.js` 中配置如下：
 
@@ -108,3 +129,16 @@ module.exports = {
   loading: '~components/loading.vue'
 }
 ```
+
+## 进度条时长说明
+
+Loading组件不可能事先知道多长时间。加载新页面将需要。因此，无法将进度条准确地设置为100%的加载时间。
+
+Nuxt的加载组件通过让你设置 `duration` 来部分解决这个问题，这应该设置为 _guestimate_ 加载过程需要多长时间。 除非您使用自定义加载组件，否则进度条将始终在 `duration` 时间内从0%移至100%（无论实际进度如何）。 当加载时间超过 `duration` 时，进度条将保持100%直到加载完成。
+
+您可以通过将`continuous`设置为true来更改默认行为，然后在达到100%后，进度条将在`duration`时间内再次收缩回0%。当达到0%后仍未完成加载时，它将再次从0%开始增长到100%，这将重复直到加载完成。
+
+*持续进度条的示例：*
+
+
+<img src="/api-continuous-loading.gif" alt="continuous loading"/>

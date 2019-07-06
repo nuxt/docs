@@ -9,13 +9,32 @@ AWS is Amazon Web Services.
 S3 is their static storage which can be configured for Static Site Hosting.
 Cloudfront is their CDN (content delivery network)
 
-Hosting a Nuxt "Universal App" on AWS w/ S3 + Cloudfront is powerful and cheap.
+Hosting a **static generated** Nuxt app on AWS w/ S3 + Cloudfront is powerful and cheap.
 
 > AWS is a death by 1000 paper cuts.  If we missed a step, please submit a PR to update this document.
 
 ## Overview
 
-We will use the [Gulp](https://gulpjs.com/) build system for this.  `Gulp` is a mature build system with handy utilities we can use.
+We'll host super cheap with some AWS services.  Briefly:
+
+ - S3 
+   - cloud data "bucket" for our website files
+   - can be configured to host static websites
+ - CloudFront 
+   - a CDN (content delivery network)
+   - offers free HTTPS certs
+   - Makes your site load faster
+
+We'll push the site like this:
+
+```
+Nuxt Generate -> Local folder -> AWS S3 Bucket -> AWS Cloudfront CDN -> Browser
+  [      nuxt generate       ]    [         gulp deploy          ]
+  [                         deploy.sh                            ]
+```
+
+First, we'll generate the site with `nuxt generate`.
+Then, we'll use [Gulp](https://gulpjs.com/) to publish the files to a S3 bucket and invalidate a CloudFront CDN.
 
   - [gulp](https://www.npmjs.com/package/gulp)
   - [gulp-awspublish](https://www.npmjs.com/package/gulp-awspublish)
@@ -28,30 +47,38 @@ Our deploy script needs these environment variables set:
   - AWS_ACCESS_KEY_ID="key" 
   - AWS_SECRET_ACCESS_KEY="secret" 
 
+We'll have these files: 
+
+```
+deploy.sh       -  run `nuxt generate` and `gulp deploy`
+gulpfile.js     -  `gulp deploy` code to push files to S3 and invalidate CloudFront
+```
+
 ## Setting it up
 
   1. Make a S3 bucket and configure it for static site hosting
-  2. Create a cloudfront distribution
+  2. Create a CloudFront distribution
   3. Configure security access
   4. Setup build script in your project
   
-### 1. Setup your AWS S3 bucket and 2. Setup your Cloudfront Distribution
+### 1. AWS: Setup your S3 bucket
+### 2. AWS: Setup your CloudFront Distribution
 
-For steps 1. and 2, follow this [tutorial to setup your S3 and Cloudfront](https://reidweb.com/2017/02/06/cloudfront-cdn-tutorial/)
+For steps 1. and 2, follow this [tutorial to setup your S3 and CloudFront](https://reidweb.com/2017/02/06/cloudfront-cdn-tutorial/)
 
 You should now have this data:
   - AWS_BUCKET_NAME="example.com" 
   - AWS_CLOUDFRONT="UPPERCASE"
 
-### 3. Configure security access
+### 3. AWS: Configure security access
 
 For step 3, we need to create a user that can:
   - Update the bucket contents
-  - Invalidate the cloudfront distribution (propagates changes to users faster)
+  - Invalidate the CloudFront distribution (propagates changes to users faster)
 
 [Create a programmatic user with this policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html):
 
-> NOTE: replace 2x `example.com` with your S3 bucket name below.  This policy allows pushing to the specified bucket, and invalidating any cloudfront distribution.
+> NOTE: replace 2x `example.com` with your S3 bucket name below.  This policy allows pushing to the specified bucket, and invalidating any CloudFront distribution.
 
 ``` json
 {
@@ -96,17 +123,16 @@ You should now have this data:
   - AWS_ACCESS_KEY_ID="key" 
   - AWS_SECRET_ACCESS_KEY="secret" 
 
-### 4. Setup your project's build script
+### 4. Laptop: Setup your project's build script
 
-4.1) Add Gulp to your project and to your command line 
-``` bash
-npm install --save-dev gulp gulp-awspublish gulp-cloudfront-invalidate-aws-publish concurrent-transform
-npm install -g gulp
-```
-
-4.2) Create a `deploy.sh` script.  See optional [nvm (node version manager)](https://github.com/creationix/nvm).
+4.1) Create a `deploy.sh` script.  See optional [nvm (node version manager)](https://github.com/creationix/nvm).
 ``` bash
 #!/bin/bash
+
+export AWS_ACCESS_KEY_ID="key" 
+export AWS_SECRET_ACCESS_KEY="secret" 
+export AWS_BUCKET_NAME="example.com" 
+export AWS_CLOUDFRONT="UPPERCASE"
 
 # Load nvm (node version manager), install node (version in .nvmrc), and npm install packages
 [ -s "$HOME/.nvm/nvm.sh" ] && source "$HOME/.nvm/nvm.sh" && nvm use
@@ -114,10 +140,10 @@ npm install -g gulp
 [ ! -d "node_modules" ] && npm install
 
 npm run generate
-AWS_ACCESS_KEY_ID="key" AWS_SECRET_ACCESS_KEY="secret" AWS_BUCKET_NAME="example.com" AWS_CLOUDFRONT="UPPERCASE" gulp deploy
+gulp deploy
 ```
 
-4.3) Make `deploy.sh` runnable and don't check into git
+4.2) Make `deploy.sh` runnable and DON'T CHECK INTO GIT (deploy.sh has secrets in it)
 ``` bash
 chmod +x deploy.sh
 echo "
@@ -128,6 +154,12 @@ dist
 .awspublish
 deploy.sh
 " >> .gitignore
+```
+
+4.3) Add Gulp to your project and to your command line 
+``` bash
+npm install --save-dev gulp gulp-awspublish gulp-cloudfront-invalidate-aws-publish concurrent-transform
+npm install -g gulp
 ```
 
 4.4) Create a `gulpfile.js` with the build script
@@ -143,13 +175,18 @@ var parallelize = require('concurrent-transform');
 var config = {
 
   // Required
-  params: { Bucket: process.env.AWS_BUCKET_NAME },
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  params: { 
+    Bucket: process.env.AWS_BUCKET_NAME
+  },
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    signatureVersion: 'v3'
+  },
 
   // Optional
   deleteOldVersions: false,                 // NOT FOR PRODUCTION
-  distribution: process.env.AWS_CLOUDFRONT, // Cloudfront distribution ID
+  distribution: process.env.AWS_CLOUDFRONT, // CloudFront distribution ID
   region: process.env.AWS_DEFAULT_REGION,
   headers: { /*'Cache-Control': 'max-age=315360000, no-transform, public',*/ },
 
@@ -158,13 +195,13 @@ var config = {
   indexRootPath: true,
   cacheFileName: '.awspublish',
   concurrentUploads: 10,
-  wait: true,  // wait for Cloudfront invalidation to complete (about 30-60 seconds)
+  wait: true,  // wait for CloudFront invalidation to complete (about 30-60 seconds)
 }
 
 gulp.task('deploy', function() {
   // create a new publisher using S3 options
   // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property
-  var publisher = awspublish.create(config, config);
+  var publisher = awspublish.create(config);
 
   var g = gulp.src('./' + config.distDir + '/**');
     // publisher will add Content-Length, Content-Type and headers specified above
@@ -173,10 +210,10 @@ gulp.task('deploy', function() {
 
   // Invalidate CDN
   if (config.distribution) {
-    console.log('Configured with Cloudfront distribution');
+    console.log('Configured with CloudFront distribution');
     g = g.pipe(cloudfront(config));
   } else {
-    console.log('No Cloudfront distribution configured - skipping CDN invalidation');
+    console.log('No CloudFront distribution configured - skipping CDN invalidation');
   }
 
   // Delete removed files
@@ -196,8 +233,8 @@ Run it:
 ```
 
 You should get an output similar to this:
-```
-$ ./deploy.sh                                                                                                                                                          Mod master
+``` bash
+$ ./deploy.sh                                                                                                                 
 
 Found '/home/michael/scm/example.com/www/.nvmrc' with version <8>
 Now using node v8.11.2 (npm v5.6.0)
@@ -259,7 +296,7 @@ server-bundle.json  306 kB          [emitted]
   nuxt:generate Generate done +0ms
 [21:25:27] Using gulpfile ~/scm/example.com/www/gulpfile.js
 [21:25:27] Starting 'deploy'...
-Configured with Cloudfront distribution
+Configured with CloudFront distribution
 [21:25:27] [cache]  README.md
 [21:25:27] [cache]  android-chrome-192x192.png
 [21:25:27] [cache]  android-chrome-512x512.png
@@ -292,17 +329,8 @@ Configured with Cloudfront distribution
 [21:25:38] [update] how/index.html
 [21:25:43] [create] videos/flag.webm
 [21:25:43] [update] index.html
-[21:25:43] Cloudfront invalidation created: I16NXXXXX4JDOA
+[21:25:43] CloudFront invalidation created: I16NXXXXX4JDOA
 [21:26:09] Finished 'deploy' after 42 s
 ```
 
-`deploy.sh` first runs `nuxt generate`, then runs `gulp deploy` with our environment variables set.
-
-Note that the `Cloudfront invalidation created: XXXX` is the only output from the cloudfront invalidation npm package.  If you don't see that, it's not working.  
-
-
-
-
-
-
-
+Note that the `CloudFront invalidation created: XXXX` is the only output from the CloudFront invalidation npm package.  If you don't see that, it's not working.  

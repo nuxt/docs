@@ -43,6 +43,4 @@ description: Passe le rendu de composant du côté serveur et affiche un texte �
 </template>
 ```
 
-> Notez que `<no-ssr />` ne peut contenir qu'UN élément / composant enfant.
-
 Ce composant est un clone de [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr). Merci [@egoist](https://github.com/egoist) !

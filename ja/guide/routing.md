@@ -1,9 +1,23 @@
 ---
 title: ルーティング
-description: Nuxt.js はウェブアプリケーションのルーティングを生成するためにファイルシステムを利用します。
+description: "Nuxt.js はウェブアプリケーションのルーティングを生成するためにファイルシステムを利用します。"
 ---
 
 > Nuxt.js は `pages` ディレクトリ内の Vue ファイルの木構造に沿って、自動的に [vue-router](https://github.com/vuejs/vue-router) の設定を生成します。
+
+<div class="Alert Alert--grey">
+
+ページ間を遷移するためには [`<nuxt-link>`](/api/components-nuxt-link) コンポーネントの使用を推奨します。
+
+</div>
+
+例:
+
+```html
+<template>
+  <nuxt-link to="/">Home page</nuxt-link>
+</template>
+```
 
 ## ルーティングの基礎
 
@@ -44,6 +58,14 @@ router: {
 ## 動的なルーティング
 
 パラメータを使って動的なルーティングを定義するには .vue ファイル名またはディレクトリ名に **アンダースコアのプレフィックス** を付ける必要があります。
+
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-dynamic-routes?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+     Vue School で<strong>動的なルーティング</strong>についての無料レッスンをみる
+    </p>
+  </a>
+</div>
 
 下記のような木構造のとき:
 
@@ -86,9 +108,13 @@ router: {
 }
 ```
 
-`user-id` と名付けられたルートに `:id?` というパスがありますが、これはこの `:id` が必須ではないことを表します。もし必須にしたい場合は `users/_id` ディレクトリ内に `index.vue` ファイルを作成してください。
+`users-id` と名付けられたルートに `:id?` というパスがありますが、これはこの `:id` が必須ではないことを表します。もし必須にしたい場合は、代わりに `users/_id` ディレクトリ内に `index.vue` ファイルを作成してください。
 
-<p class="Alert Alert--info"><b>警告</b>: `generate` コマンドでは 動的なルーティング は無視されます。:  [generate 設定 API](/api/configuration-generate#routes)</p>
+<div class="Alert Alert--orange">
+
+**警告**: `generate` コマンドで動的なルーティングは無視されます。:  [generate 設定 API](/api/configuration-generate#routes)
+
+</div>
 
 ### ルーティングのパラメータのバリデーション
 
@@ -105,7 +131,7 @@ export default {
 }
 ```
 
-もしバリデーションのメソッドが `true` を返さなかった場合は、Nuxt.js は自動的に 404 エラーページをロードします。
+もしバリデーションのメソッドが `true` または `true` に解決する `Promise` を返さない、またはエラーをスローした場合は、Nuxt.js は自動的に 404 エラーページあるいはエラーの場合 500 エラーページをロードします。
 
 バリデーションのメソッドについてより深く理解したい場合は [ページバリデーションの API](/api/pages-validate) を参照してください。
 
@@ -115,7 +141,11 @@ Nuxt.js では vue-router の子ルートを使ってルートをネストさせ
 
 ネストされたルートの親コンポーネントを定義するには、子ビューを含む **ディレクトリと同じ名前** の Vue ファイルを作成する必要があります。
 
-<p class="Alert Alert--info"><b>警告:</b> `<nuxt-child>` を親コンポーネント内 (<code>.vue</code> ファイル内) に書くことを忘れないでください。</nuxt-child></p>
+<div class="Alert Alert--orange">
+
+<b>警告:</b> `<nuxt-child/>` を親コンポーネント内（<code>.vue</code> ファイル内）に書くことを忘れないでください。
+
+</div>
 
 下記のようなファイルの木構造のとき:
 
@@ -211,6 +241,64 @@ router: {
 }
 ```
 
+### 未知の動的でネストされたルート
+
+もし URL 構造の深さが不明な場合は、ネストされたパスに動的にマッチさせる `_.vue` ファイルを使用することができます。
+これは_より詳細な_リクエストにマッチしなかったリクエストをハンドリングします。
+
+下記のようなファイルの木構造のとき:
+
+```bash
+pages/
+--| people/
+-----| _id.vue
+-----| index.vue
+--| _.vue
+--| index.vue
+```
+
+次のようにリクエストをハンドリングします:
+
+Path | File
+--- | ---
+`/` | `index.vue`
+`/people` | `people/index.vue`
+`/people/123` | `people/_id.vue`
+`/about` | `_.vue`
+`/about/careers` | `_.vue`
+`/about/careers/chicago` | `_.vue`
+
+__注意:__ 404 ページのハンドリングは `_.vue` ページのロジックに依存します。[404 リダイレクトについての詳細はこちら](/guide/async-data#handling-errors)を参照してください。
+
+### 名前付きビュー
+
+名前付きビューをレンダリングするために `<nuxt name="top"/>` または `<nuxt-child name="top"/>` コンポーネントを layout/page 内で使用できます。
+名前付きビューを特定するには `nuxt.config.js` ファイルのルータ設定の拡張が必要です。
+
+``` js
+export default {
+  router: {
+    extendRoutes(routes, resolve) {
+      let index = routes.findIndex(route => route.name === 'main')
+      routes[index] = {
+        ...routes[index],
+        components: {
+          default: routes[index].component,
+          top: resolve(__dirname, 'components/mainTop.vue')
+        },
+        chunkNames: {
+          top: 'components/mainTop'
+        }
+      }
+    }
+  }
+}
+```
+
+これには関連する2つのプロパティ `components` と `chunkNames` を拡張する必要があります。上記の設定例の名前付きビューは `top` という名前を持っています。
+
+名前付きビューの例が見たい場合は [名前付きビューの例](/examples/named-views) を参照してください。
+
 ### SPA フォールバック
 
 動的なルーティングに対しても SPA フォールバックを有効にすることができます。Nuxt.js は `mode: 'spa'` を使って生成された index.html ファイルと同様のファイルを出力します。多くの静的ホスティングサービスは、一致するファイルがない場合に SPA テンプレートを使用するよう設定できます。`head` 情報や HTML は含まれませんが、API からデータをロードし解決します。
@@ -218,9 +306,9 @@ router: {
 `nuxt.config.js` で SPA フォールバックを有効化:
 
 ```js
-module.exports = {
+export default {
   generate: {
-    fallback: true, // '404.html' を使用したい場合
+    fallback: true, // デフォルトの '200.html' の代わりに '404.html' を使用したい場合
     fallback: 'my-fallback/file.html' // ホスティングサービスで特定のロケーションを指定する必要がある場合
   }
 }
@@ -232,11 +320,11 @@ Surge は `200.html` と `404.html` の両方を[ハンドリングできます]
 
 #### GitHub Pages と Netlify 向けの実装
 
-GitHub Pages と Netlify は `404.html` ファイルを自動的に認識するため、設定すべきことは`generate.fallback` を `true` にするだけです！
+GitHub Pages と Netlify は `404.html` ファイルを自動的に認識するため、設定すべきことは `generate.fallback` を `true` にするだけです！
 
 #### Firebase ホスティング向けの実装
 
-Firebase ホスティングを使うためには、`generate.fallback` を `true` にし、以下の設定を使用します。 ([さらに詳しく](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
+Firebase ホスティング上でフォールバックを使用するためには、`generate.fallback` を `true` にし、以下の設定を使用します。 ([さらに詳しく](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
 
 ```json
 {
@@ -263,9 +351,13 @@ Nuxt.js では [<transition> コンポーネントを使って、ページ間を
 
 ### グローバルな設定
 
-<p class="Alert Alert--nuxt-green"><b>情報:</b> Nuxt.js のデフォルトのトランジション名は `"page"`です。</p>
+<div class="Alert Alert--nuxt-green">
 
-アプリケーションのすべてのページでフェードさせるトランジションを定義には、ルーティング全体に適用されている CSS ファイルが必要です。まずは `assets` ディレクトリ内にファイルを作成するところから始めます:
+<b>情報:</b> Nuxt.js のデフォルトのトランジション名は `"page"`です。
+
+</div>
+
+アプリケーションのすべてのページでフェードさせるトランジションを定義するには、ルーティング全体に適用されている CSS ファイルが必要です。まずは `assets` ディレクトリ内にファイルを作成するところから始めます:
 
 `assets/main.css` 内にグローバルな CSS を書きます:
 
@@ -278,12 +370,12 @@ Nuxt.js では [<transition> コンポーネントを使って、ページ間を
 }
 ```
 
-`nuxt.config.js` ファイルに CSS ファイルのパスを指定します:
+`nuxt.config.js` ファイルの `css` 配列に CSS ファイルのパスを追加します:
 
 ```js
-module.exports = {
+export default {
   css: [
-    'assets/main.css'
+    '~/assets/main.css'
   ]
 }
 ```
@@ -321,17 +413,19 @@ export default {
 
 **ミドルウェアは `middleware/` ディレクトリに入れます。** ファイル名はミドルウェアの名前となります（`middleware/auth.js` は `auth` ミドルウェアになります）
 
-ミドルウェアは第一引数として [コンテキスト](/api#%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88) を受け取ります:
+ミドルウェアは第一引数として [コンテキスト](/api/context) を受け取ります:
 
 ```js
 export default function (context) {
-  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+  context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
 
+ユニバーサルモードの場合、ミドルウェアはサーバサイドでは一度だけ呼び出され（Nuxt アプリケーションへの最初のリクエスト時、またはページの再読込み時）クライアントサイドでは他のルートへ移動したときに呼び出されます。SPA モードの場合、ミドルウェアはクライアントサイドで最初のリクエスト時と他のルートへ移動したときに呼び出されます。
+
 ミドルウェアは下記の順に実行されます:
 
-1. `nuxt.config.js`
+1. `nuxt.config.js`（ファイル内の順）
 2. マッチしたレイアウト
 3. マッチしたページ
 
@@ -349,18 +443,29 @@ export default function ({ route }) {
 }
 ```
 
-そして `nuxt.config.js` やレイアウトもしくはページ内で `middleware` キーを使います:
+そして `nuxt.config.js` で `router.middleware` キーを使います:
 
 `nuxt.config.js`
 
 ```js
-module.exports = {
+export default {
   router: {
     middleware: 'stats'
-  }  
+  }
 }
 ```
 
-`stats` ミドルウェアはすべてのルート変更時に呼び出されるようになります。
+これで `stats` ミドルウェアはすべてのルート変更時に呼び出されるようになります。
+
+同様に、特定のレイアウトもしくはページ内にもミドルウェアを追加することができます:
+
+
+`pages/index.vue` または `layouts/default.vue`
+
+```js
+export default {
+  middleware: 'stats'
+}
+```
 
 ミドルウェアを使った実際の例を見たい場合は GitHub 上にある [example-auth0](https://github.com/nuxt/example-auth0) を参照してください。

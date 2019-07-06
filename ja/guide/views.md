@@ -3,22 +3,22 @@ title: ビュー
 description: Views セクションでは、Nuxt.js アプリケーション（ドキュメント、レイアウト、ページ、およびHTMLヘッド）内の特定のルートのデータとビューを設定するために必要なことを全て説明しています。
 ---
 
-> Views セクションでは、Nuxt.js アプリケーション（ドキュメント、レイアウト、ページ、およびHTMLヘッド）内の特定のルートのデータとビューを設定するために必要なことを全て説明しています。
+> Views セクションでは、Nuxt.js アプリケーション（アプリテンプレート、レイアウト、ページ、およびHTMLヘッド）内の特定のルートのデータとビューを設定するために必要なことを全て説明しています。
 
-![nuxt-views-schema](/nuxt-views-schema.png)
+![nuxt-views-schema](/nuxt-views-schema.svg)
 
-## ドキュメント
+## アプリテンプレート
 
-> Nuxt.js でメインドキュメントをカスタマイズできます。
+> スクリプトまたは条件付きの CSS クラスを含めるために Nuxt.js で使われる HTML アプリテンプレートをカスタマイズできます。
 
-HTML テンプレートを拡張するために、プロジェクトのルートディレクトリに `app.html` を作成します。
+テンプレートを変更するために、プロジェクトのルートフォルダに `app.html` ファイルを作成します。
 
-デフォルトのテンプレート:
+Nuxt.js 使われるデフォルトのテンプレート:
 
 ```html
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -27,13 +27,13 @@ HTML テンプレートを拡張するために、プロジェクトのルート
 </html>
 ```
 
-IE用に条件付きのCSSクラスを追加する例:
+カスタムアプリテンプレートを使用して、IE 用に条件付きの CSS クラスを追加するユースケースのひとつ:
 
 ```html
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -42,17 +42,25 @@ IE用に条件付きのCSSクラスを追加する例:
 </html>
 ```
 
+<!-- TODO: Load polyfills here? -->
+
 ## レイアウト
 
-Nuxt.js では、メインレイアウトを拡張したり、`layouts` ディレクトリにレイアウトを追加することでカスタムレイアウトを作成したりすることができます。
+Nuxt.js アプリの外観を変更したい場合、レイアウトは非常に役立ちます。
+サイドバーを含めるか、モバイルとデスクトップ用に異なるレイアウトを使用するかです。
 
 ### デフォルトレイアウト
 
 `layouts/default.vue` ファイルを追加することでメインレイアウトを拡張できます。
+メインレイアウトは、レイアウト指定がされていないすべてのページに使用されます。
 
-*ページコンポーネントを表示するレイアウトを作成するときは、必ず `<nuxt/>` コンポーネントを入れておくことを覚えておいてください。*
+<div class="Alert Alert--nuxt-green">
 
-デフォルトのレイアウトのソースコードは下記のようになっています:
+<b>情報:</b> 実際にページコンポーネントが含まれるようにレイアウトを作成するときは、必ず `<nuxt/>` コンポーネントを入れておくことを覚えておいてください。
+
+</div>
+
+次にあるデフォルトのレイアウトはたった3行で、単純にページコンポーネントをレンダリングします:
 
 ```html
 <template>
@@ -60,39 +68,11 @@ Nuxt.js では、メインレイアウトを拡張したり、`layouts` ディ�
 </template>
 ```
 
-### エラーページ
-
-`layouts/error.vue` ファイルを追加することでエラーページをカスタマイズできます。
-
-このレイアウトは、テンプレート内に `<nuxt/>` を含めては*ならない*という点で特殊です。このレイアウトは、`404` や `500` などのエラーが発生した際に表示されるコンポーネントとしてみる必要があります。
-
-デフォルトのエラーページのソースコードは [GitHub](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue) で確認できます。
-
-`layouts/error.vue` にカスタムエラーページを書くときの例:
-
-```html
-<template>
-  <div class="container">
-    <h1 v-if="error.statusCode === 404">ページが見つかりません</h1>
-    <h1 v-else>エラーが発生しました</h1>
-    <nuxt-link to="/">ホーム</nuxt-link>
-  </div>
-</template>
-<script>
-export default {
-  props: ['error'],
-  layout: 'blog' // エラーページ用のカスタムレイアウトを指定できます
-}
-</script>
-```
-
 ### カスタムレイアウト
 
-`layouts` ディレクトリの *第一階層* のファイルで、ページコンポーネント内の `layout` プロパティで指定できるカスタムレイアウトを作成できます。
+`layouts` ディレクトリのすべてのファイル（*第一階層*）は、ページコンポーネントの `layout` プロパティでアクセス可能なカスタムレイアウトを作成します。
 
-*ページコンポーネントを表示するレイアウトを作成するときは、必ず `<nuxt/>` コンポーネントを入れておくことを覚えておいてください。*
-
-`layouts/blog.vue` の例:
+ブログのレイアウトを作成して、それを `layouts/blog.vue` に書くとき例：
 
 ```html
 <template>
@@ -103,23 +83,72 @@ export default {
 </template>
 ```
 
-それから `pages/posts.vue` ファイル内で、カスタムレイアウトを使うことを Nuxt.js に伝えます:
+それからページ (例えば `pages/posts.vue` ) で、カスタムレイアウトを使うことを伝えます:
 
 ```html
+<template>
+<!-- テンプレート -->
+</template>
 <script>
 export default {
   layout: 'blog'
+  // ページコンポーネントの定義
 }
 </script>
 ```
 
-`layout` プロパティについてより多くの情報: <a href="/api/pages-layout" data-md-type="link">`layout` プロパティ</a>を参照してください。
+`layout` プロパティについての詳細： [`layout` プロパティ](/api/pages-layout)
 
-また、動作する様子を [デモ動画](https://www.youtube.com/watch?v=YOKnSTp7d38) で確認してみてください。
+[デモ動画](https://www.youtube.com/watch?v=YOKnSTp7d38)で、カスタムレイアウトの動作する様子を確認して見てください。
+
+<!-- TODO: Scoped styles best practice -->
+
+### エラーページ
+
+エラーページは *ページコンポーネント* で、エラーが発生したときに常に表示されます（サーバーサイドレンダリング中には発生しません）。
+
+<div class="Alert Alert--orange">
+
+<b>警告:</b> このファイルは <code>layouts</code> フォルダに配置されていますが、<b>ページ</b>として扱う必要があります。
+
+</div>
+
+上記のように、このレイアウトは特別です。テンプレートの中に `<nuxt/>` を含める**べきではない**からです。
+このレイアウトは、`404` や `500` などのエラーが発生した際に表示されるコンポーネントとしてみる必要があります。
+他のページコンポーネントと同様に、エラーページのカスタムレイアウトも通常の方法で設定できます。
+
+デフォルトのエラーページのソースコードは、[GitHubから入手できます](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue)。
+
+`layouts/error.vue` ファイルを追加することでエラーページをカスタマイズすることができます。:
+
+```html
+<template>
+ <div class="container">
+    <h1 v-if="error.statusCode === 404">ページが見つかりません</h1>
+    <h1 v-else>エラーが発生しました</h1>
+    <nuxt-link to="/">ホーム</nuxt-link>
+  </div>
+</template>
+
+<script>
+export default {
+  props: ['error'],
+  layout: 'blog' // エラーページ用のカスタムレイアウトを指定できます
+}
+</script>
+```
 
 ## ページ
 
-すべてのページコンポーネントは Vue コンポーネントですが、Nuxt.js はユニバーサルアプリケーション開発を可能な限り容易にするために特別なキーを追加しています。
+すべてのページコンポーネントは Vue コンポーネントですが、Nuxt.js にユニバーサルアプリケーション開発を可能な限り容易にするための特別な属性と機能が追加されています。
+
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-page-components?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Vue School で <strong>Nuxt.js ページコンポーネント</strong>についての無料レッスンをみる
+    </p>
+  </a>
+</div>
 
 ```html
 <template>
@@ -129,6 +158,8 @@ export default {
 export default {
   asyncData (context) {
     // コンポーネントをロードする前に毎回呼び出されます
+    // 名前の通り非同期にすることができます
+    // また、返されたオブジェクトはデータオブジェクトとマージされます
     return { name: 'World' }
   },
   fetch () {
@@ -141,6 +172,7 @@ export default {
   ...
 }
 </script>
+
 <style>
 .red {
   color: red;
@@ -148,38 +180,35 @@ export default {
 </style>
 ```
 
-属性 | 説明
---- | ---
-`asyncData` | 最も重要なキーです。非同期であり、コンテキストを引数として受け取ります。どのように動作するかは、[async data](/guide/async-data) を参照してください。
-`fetch` | ページをレンダリングする前にストアを満たすために使用されます。`data` メソッドに似ていますが、コンポーネントデータは設定しません。[`fetch` メソッド](/api/pages-fetch)を参照してください。
-`head` | 現在のページに対して特定の `<meta>` タグを設定します。[`head` メソッド](/api/pages-head)を参照してください。
-`layout` | `layouts` ディレクトリに定義されているレイアウトを指定します。 [`layout` プロパティ](/api/pages-layout)を参照してください。
-`loading` | `false` に設定すると、ページへ遷移してきた際に `this.$nuxt.$loading.finish()` が呼び出されなくなり、ページから離れる際に `this.$nuxt.$loading.start()` が呼び出されなくなります。これによりローディングの振る舞いを **手動で** 制御ができるようになります。この動作は、[example](/examples/custom-page-loading)から確認できます。`loading` は `nuxt.config.js` で設定されている場合のみ適用されます。[`loading` プロパティ](/api/configuration-loading)を参照してください。
-`transition` | ページの特定のトランジションを設定します。[`transition` プロパティ](/api/pages-transition)を参照してください。
-`scrollToTop` | Boolean型（デフォルト値：`false`）で、ページをレンダリングする前にページを一番上にスクロールするかどうかを指定します。これは[ネストされたルート](/guide/routing#nested-routes)に使用されます。
-`validate` | [動的なルーティング](/guide/routing#dynamic-routes)に対する検証関数です。
-`middleware` | このページのミドルウェアを設定します。ミドルウェアは、ページをレンダリングする前に呼び出されます。[ミドルウェアに関するドキュメント](/guide/routing#middleware)を参照してください。
+| 属性 | 説明 | ドキュメント
+|---|---| --- |
+| `asyncData` | 最も重要なキーです。非同期であり、コンテキストを引数として受け取ります。 | [非同期なデータ](/guide/async-data) |
+| `fetch` | ページをレンダリングする前にストアを満たすために使用されます。`data` メソッドに似ていますが、コンポーネントデータは設定しません。 | [`fetch` メソッド](/api/pages-fetch) |
+| `head` | 現在のページに対して特定の `<meta>` タグを設定します。 | [`head` メソッド](/api/pages-head) |
+| `layout` | `layouts` ディレクトリに定義されているレイアウトを指定します。 | [`layout` プロパティ](/api/pages-layout) |
+| `loading` | `false` に設定すると、ページへ遷移してきた際に `this.$nuxt.$loading.finish()` が呼び出されなくなり、ページから離れる際に `this.$nuxt.$loading.start()` が呼び出されなくなります。これによりローディングの振る舞いを **手動で** 制御ができるようになります。この動作は、[example](/examples/custom-page-loading)から確認できます。`loading` は `nuxt.config.js` で設定されている場合のみ適用されます。 | [`loading` プロパティ](/api/configuration-loading) |
+| `transition` | ページの特定のトランジションを設定します。 | [`transition` プロパティ](/api/pages-transition) |
+| `scrollToTop` | Boolean 型（デフォルト値：`false`）で、ページをレンダリングする前にページを一番上にスクロールするかどうかを指定します。これは[ネストされたルート](/guide/routing#nested-routes)に使用されます。| [`scrollToTop` プロパティ](/api/pages-scrolltotop#the-scrolltotop-property) |
+| `validate` | [動的なルーティング](/guide/routing#dynamic-routes)に対する検証関数です。 | [`validate` メソッド](/api/pages-validate#the-validate-method) |
+| `middleware` | このページのミドルウェアを設定します。ミドルウェアは、ページをレンダリングする前に呼び出されます。| [ミドルウェア](/guide/routing/#ミドルウェア) |
 
 ページプロパティの使用についてより多くの情報: [ページに関するドキュメント](/api)をご覧ください。
 
 ## HTML ヘッド
 
-Nuxt.js は `headers` とアプリケーションの `html attributes` を更新するために [vue-meta](https://github.com/declandewet/vue-meta) を使用しています。
+Nuxt.js は、`document head` とアプリケーションの `meta attributes` を更新するために [vue-meta](https://github.com/nuxt/vue-meta) を使用しています。
 
-Nuxt.js はこれらのオプションで `vue-meta` を設定します:
+Nuxt.js が使っている `vue-meta` は、[GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/index.js#L29-L35) で参照できます。
 
-```js
-{
-  keyName: 'head', // vue-meta がメタ情報を探すためのコンポーネントオプション名
-  attribute: 'data-n-head', // vue-méta がそれをオブザーブするタグに追加する属性名
-  ssrAttribute: 'data-n-head-ssr', // メタ情報がすでにサーバで描画されていることを vue-meta に知らせる属性名
-  tagIDKeyName: 'hid' // タグを上書きするか追加するかを決定するために vue-meta が使用するプロパティ名
-}
-```
+<div class="Alert Alert--teal">
+
+<b>情報:</b> Nuxt.js は、デフォルトの <code>vmid</code> キーの代わりに <code>hid</code> を使ってメタ要素を識別します。
+
+</div>
 
 ### デフォルトメタタグ
 
-Nuxt.jsでは、`nuxt.config.js` 内にデフォルトの `<meta>` タグを全て定義することができます。`head` プロパティを使用し、デフォルトのメタタグを定義します:
+Nuxt.js では、`nuxt.config.js` 内にデフォルトの `<meta>` タグを全て定義することができます。`head` プロパティを使用し、デフォルトのメタタグを定義します:
 
 カスタム Google フォントによるカスタム viewport の例:
 
@@ -195,12 +224,10 @@ head: {
 }
 ```
 
-`head` で利用できるオプションの詳細については、[メタ情報プロパティの認識](https://github.com/declandewet/vue-meta#recognized-metainfo-properties)を参照してください。
+`head` で利用できるオプションの詳細については、[メタ情報プロパティの認識](https://vue-meta.nuxtjs.org/api/#metainfo-properties)を参照してください。
 
-`head` メソッドに関するより多くの情報:  <a href="/api/configuration-head" data-md-type="link">`head` プロパティ</a>を参照してください。
+`head` メソッドに関するより多くの情報は、[`head` プロパティ](/api/configuration-head)を参照してください。
 
 ### ページに対するカスタムメタタグ
 
-head メソッドに関するより多くの情報:  [`head` プロパティ](/api/pages-head)を参照してください。
-
-<p class="Alert">子コンポーネント使用で重複を避けるために、`hid` キーにはユニークな識別子を与えてください。[更に詳しく](https://github.com/declandewet/vue-meta#lists-of-tags)</p>
+head メソッドに関するより多くの情報: [`head` メソッド](/api/pages-head)を参照してください。

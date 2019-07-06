@@ -5,7 +5,7 @@ description: Kelas Renderer Nuxt
 
 # Kelas Renderer
 
-- Sumber: **[core/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/renderer.js)**
+- Sumber: **[vue-renderer/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-renderer/src/renderer.js)**
 
 Kelas ini mengekspor middleware koneksi yang menangani dan menyajikan semua permintaan SSR dan aset.
 

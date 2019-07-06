@@ -1,6 +1,6 @@
 {
   "iso": "ja",
-  "docVersion": "1.4.0",
+  "docVersion": "2.8.X",
   "links": {
     "api": "API",
     "blog": "ブログ",
@@ -16,6 +16,9 @@
     "homepage": "ホーム",
     "live_demo": "ライブデモ",
     "live_edit": "ライブ編集",
+    "tidelift_short": "専門的なサポートを得る",
+    "official_support": "公式サポートを得る ⛑",
+    "tidelift": "Nuxt の専門的なサポートを得る",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Vue Jobs"
@@ -36,14 +39,26 @@
       "title": "Nuxt.js - ユニバーサル Vue.js アプリケーション",
       "description": "Nuxt.js はサーバーサイドレンダリングやコード分割、ホットリローディング、静的ファイル生成などを備えた Vue.js アプリケーションを構築するためのミニマルなフレームワークです！"
     },
-    "codesandbox_title": "Play with Nuxt.js online",
-    "codesandbox_open": "Open on CodeSandBox.io",
-    "codesandbox_examples": "See more examples"
+    "welcome": {
+      "app_types_prefix": "",
+      "app_types": ["ユニバーサルアプリケーション", "静的に生成されたアプリケーション", "シングルページアプリケーション", "デスクトップアプリケーション", "モバイルアプリケーション", "プログレッシブウェブアプリケーション"],
+      "app_types_suffix": "のために"
+    },
+    "codesandbox_title": "Nuxt.js をオンラインで試す",
+    "codesandbox_open": "CodeSandBox.io で開く",
+    "codesandbox_examples": "他のサンプルを見る",
+    "backer_partners": "パートナー",
+    "backer_become_a_partner": "パートナーになる",
+    "backer_sponsors": "スポンサー",
+    "backer_become_a_sponsor": "スポンサーになる",
+    "backer_backers": "後援者",
+    "backer_become_a_backer": "後援者になる",
+    "backer_foundations": "財団"
   },
   "sponsors": {
-    "title": "Sponsors",
-    "become": "Support us and",
-    "become_partner": "become a partner"
+    "title": "スポンサー",
+    "become": "私たちをサポートし、",
+    "become_partner": "パートナーになってください"
   },
   "footer": {
     "authors": "Made by Chopin Brothers"

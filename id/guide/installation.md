@@ -1,56 +1,97 @@
 ---
 title: Instalasi
-description: Memulai Nuxt.js itu ternyata sangat mudah. Satu proyek sederhana hanya memerlukan dependency `nuxt`
+description: Untuk memulai dengan Nuxt.js itu sangat mudah. suatu projek yang sederhana hanya memerlukan 'nuxt' dependency.
 ---
 
-> Memulai Nuxt.js itu ternyata sangat mudah. Satu proyek sederhana hanya memerlukan dependency `nuxt`.
+> Untuk memulai dengan Nuxt.js itu sangat mudah. suatu projek yang sederhana hanya memerlukan 'nuxt' dependency.
 
-## Menggunakan templat awal Nuxt.js
+<div>
+  <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Nuxt Fundamentals by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Nuxt.js Fundamentals</h4>
+      <p class="Promote__Content__Description">Learn how to get started quickly with Nuxt.js in videos.</p>
+      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+    </div>
+  </a>
+</div>
 
-Untuk memulai dengan cepat, tim Nuxt.js telah membuat [templat awal](https://github.com/nuxt-community/starter-template).
+## Menggunakan `create-nuxt-app`
 
-[Unduh .zip](https://github.com/nuxt-community/starter-template/archive/master.zip) templat awal atau instal dengan vue-cli:
+Untuk memulai sebuah projek dengan cepat, tim Nuxt.js telah membuat suatu scaffolding tool [create-nuxt-app](https://github.com/nuxt/create-nuxt-app).
+
+Pastikan anda sudah menginstall [npx](https://www.npmjs.com/package/npx) (`npx` sudah terisntall secara default pada NPM `5.2.0`)
 
 ```bash
-$ vue init nuxt-community/starter-template <nama-proyek>
+$ npx create-nuxt-app <project-name>
 ```
 
-> Jika [Vue CLI](https://github.com/vuejs/vue-cli) tidak terinstal, silakan instal dengan `npm install -g @vue/cli @vue/cli-init`
-
-lalu instal the dependencies:
+atau dengan [yarn](https://yarnpkg.com/en/):
 
 ```bash
-$ cd <nama-proyek>
-$ npm install
+$ yarn create nuxt-app <my-project>
 ```
 
-dan jalankan proyek dengan:
+Kemudian akan muncul beberapa pertanyaan:
+
+1. Pilih framework untuk integrasi server-side:
+  - None (Nuxt default server)
+  - [Express](https://github.com/expressjs/express)
+  - [Koa](https://github.com/koajs/koa)
+  - [Hapi](https://github.com/hapijs/hapi)
+  - [Feathers](https://github.com/feathersjs/feathers)
+  - [Micro](https://github.com/zeit/micro)
+  - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
+
+2. Pilih framework UI kesukaan anda:
+  - None (feel free to add one later)
+  - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
+  - [Vuetify](https://github.com/vuetifyjs/vuetify)
+  - [Bulma](https://github.com/jgthms/bulma)
+  - [Tailwind](https://github.com/tailwindcss/tailwindcss)
+  - [Element UI](https://github.com/ElemeFE/element)
+  - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
+  - [Buefy](https://buefy.github.io)
+
+3. [Mode Nuxt yang anda inginkan (`Universal` or `SPA`)](https://nuxtjs.org/guide/release-notes#better-spa-experience)
+4. Menambah [axios module](https://github.com/nuxt-community/axios-module) untuk mempermudah melakukan HTTP request pada aplikasi anda.
+5. Menambah [EsLint](https://eslint.org/) untuk memformat coding anda dengan lint pada saat menyimpan.
+6. Menambah [Prettier](https://prettier.io/) untuk memformat coding anda dengan prettier pada saat menyimpan.
+
+Setelah menjawab semua pertanyaan, semua dependencies yang dibutuhkan akan terinstall dan langkah selanjut nya adalah menjalankan aplikasi dengan:
 
 ```bash
 $ npm run dev
 ```
 
-Kini aplikasi berjalan pada http://localhost:3000.
+Aplikasi sekarang berjalan pada http://localhost:3000.
 
-<p class="Alert">Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.</p>
+<div class="Alert">
 
-To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
+Nuxt.js akan memantau perubahan pada file anda yang berada dalam direktori <code>pages</code>, jadi anda tidak perlu menjalankan ulang aplikasi anda ketika menambahkan halaman baru.
 
-## Mulai dari awal
+</div>
 
-Membuat aplikasi Nuxt.js dari awal juga sangat mudah, hanya memerlukan *1 file dan 1 direktori*. Mari kita buat satu direktori kosong untuk mulai membuat aplikasinya:
+Untuk menemukan lebih lanjut mengenai struktur direktori pada projek : [Directory Structure Documentation](/guide/directory-structure).
+
+## Memulai dari awal
+
+Membuat suatu aplikasi dengan Nuxt.js dari awal itu mudah, anda hanya membutuhkan _1 file dan 1 direktori_. Mari kita membuat direktor baru untuk memulai pengerjaan projek:
 
 ```bash
-$ mkdir <nama-proyek>
-$ cd <nama-proyek>
+$ mkdir <nama-project>
+$ cd <project-name>
 ```
 
-<p class="Alert Alert--nuxt-green"><b>Info:</b> tukar <code>&lt;nama-proyek&gt;</nom-du-projet></code> dengan nama proyek yang diinginkan.</p>
+<div class="Alert Alert--nuxt-green">
 
-### package.json
+<b>Info:</b> ganti <code>&lt;project-name&gt;</nom-du-projet></code> dengan nama project anda.
 
-The project needs a `package.json` file to specify how to start `nuxt`:
-Proyek memerlukan file `package.json` untuk memperinci bagaimana untuk memulai `nuxt`:
+</div>
+
+### The package.json
+
+Projek anda membutuhkan file `package.json` untuk menemukan bagaimana menjalankan `nuxt`:
 
 ```json
 {
@@ -61,27 +102,27 @@ Proyek memerlukan file `package.json` untuk memperinci bagaimana untuk memulai `
 }
 ```
 
-`scripts` akan menjalankan Nuxt.js melalui `npm run dev`.
+`scripts` akan menjalankan Nuxt.js dengan `npm run dev`.
 
-### Memasang `nuxt`
+### Instalasi `nuxt`
 
-Setelah `package.json` selesai dibuat, tambahkan `nuxt` ke dalam proyek melalui npm:
+Setelah file `package.json` dibuat, tambahkan `nuxt` pada projek anda dengan npm:
 
 ```bash
-npm install --save nuxt
+$ npm install --save nuxt
 ```
 
 ### Direktori `pages`
 
-Nuxt.js akan mengubah setiap file `*.vue` di dalam direktori `pages` sebagai rute untuk aplikasi.
+Nuxt.js akan men-transformasi setiap file `*.vue` yang berada dalam direktori `pages` sebagai route pada aplikasi anda
 
-Buat direktori `pages`:
+Membuat direktori `pages`:
 
 ```bash
 $ mkdir pages
 ```
 
-lalu buat halaman pertama dalam `pages/index.vue`:
+kemudian buat halaman pertama anda pada `pages/index.vue`:
 
 ```html
 <template>
@@ -89,14 +130,18 @@ lalu buat halaman pertama dalam `pages/index.vue`:
 </template>
 ```
 
-dan jalankan proyek dengan:
+dan jalankan projek dengan:
 
 ```bash
 $ npm run dev
 ```
 
-Kini aplikasi berjalan pada http://localhost:3000.
+Aplikasi sekarang berjalan pada on http://localhost:3000.
 
-<p class="Alert">Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.</p>
+<div class="Alert">
 
-Untuk mengetahui lebih lanjut tentang struktur direktori pada proyek: [Dokumentasi Struktur Direktori](/guide/directory-structure).
+Nuxt.js akan memantau perubahan pada file anda yang berada dalam direktori <code>pages</code>, jadi anda tidak perlu menjalankan ulang aplikasi anda ketika menambahkan halaman baru.
+
+</div>
+
+Untuk menemukan lebih lanjut mengenai struktur direktori pada projek : [Directory Structure Documentation](/guide/directory-structure).

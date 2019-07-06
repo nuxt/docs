@@ -166,7 +166,11 @@ export default {
 </style>
 ```
 
-<div class="Alert">Anda juga dapat memiliki modul-modul dengan cara mengekspor instansi store, Anda harus menambahkannya secara manual pada store Anda.</div>
+<div class="Alert">
+
+Anda juga dapat memiliki modul-modul dengan cara mengekspor instansi store, Anda harus menambahkannya secara manual pada store Anda.
+
+</div>
 
 ### Plugins
 

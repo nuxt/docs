@@ -13,9 +13,9 @@ description: あなたの Nuxt アプリケーションためのモジュール�
 例 (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   modulesDir: ['../../node_modules']
 }
 ```
 
-もしあなたのプロジェクトが Yarn の ワークスペーススタイル の mono リポジトリで構成されているなら、このフィールドの設定が必要になるでしょう。
+もしあなたのプロジェクトが Yarn のワークスペーススタイルの mono リポジトリで構成されているなら、このフィールドの設定が必要になるでしょう。

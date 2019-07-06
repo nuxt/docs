@@ -46,4 +46,4 @@ Built-in indicators support `color` and `background` options.
 If you need your own special indicator, a String value or Name key can also be a path to an html template of indicator source code!
 All of the options are passed to the template too.
 
-Nuxt Built-ins [source code](https://github.com/nuxt/nuxt.js/tree/dev/lib/app/views/loading) is also available if you need a base!
+Nuxt Built-ins [source code](https://github.com/nuxt/nuxt.js/tree/dev/packages/vue-app/template/views/loading) is also available if you need a base!

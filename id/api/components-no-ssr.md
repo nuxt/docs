@@ -4,7 +4,7 @@ description: Melewati render komponen pada server side (rendering), dan menampil
   "placeholder text".
 ---
 
-# Komponen <no-ssr>
+# Komponen &lt;no-ssr&gt;
 
 > Komponen ini digunakan untuk menghapus komponen dari subjek server side rendering.
 

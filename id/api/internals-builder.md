@@ -5,7 +5,7 @@ description: Kelas `Builder` Nuxt
 
 # Kelas Builder
 
-- Sumber: **[builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)**
+- Sumber: **[builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/builder/src/builder.js)**
 
 ## Plugin yang dapat ditukar (Tapable plugins)
 

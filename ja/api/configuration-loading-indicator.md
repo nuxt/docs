@@ -45,4 +45,4 @@ Spinkit のデモページを見ることで、スピナーを試してみるこ
 もし独自の特別なインジケータを必要とする場合は、 String 値もしくは Name キーにインジケータのソースコードを HTML テンプレートへのパスとして設定することができます！
 その際、全てのオプションもテンプレートへと渡されます。
 
-ベースが必要な場合は、 Nuxt の組み込み[ソースコード]((https://github.com/nuxt/nuxt.js/tree/dev/lib/app/views/loading)をベースとして使用できます。
+ベースが必要な場合は、 Nuxt の組み込み[ソースコード](https://github.com/nuxt/nuxt.js/tree/dev/packages/vue-app/template/views/loading)をベースとして使用できます。

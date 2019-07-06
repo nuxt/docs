@@ -16,6 +16,9 @@
     "homepage": "Главная",
     "live_demo": "Живое демо",
     "live_edit": "Живое редактирование",
+    "tidelift_short": "GET PROFESSIONAL SUPPORT",
+    "official_support": "GET OFFICIAL SUPPORT ⛑",
+    "tidelift": "GET PROFESSIONAL SUPPORT FOR NUXT",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Vue Jobs"
@@ -36,9 +39,21 @@
         "title": "Nuxt.js — Универсальные приложения на Vue.js",
         "description": "Nuxt.js — это минималистичный фреймворк для создания приложений на Vue.js с серверным рендерингом, разделением кода, горячей заменой модулей, статической генерацией и другими крутыми штуками!"
     },
+    "welcome": {
+      "app_types_prefix": "For ",
+      "app_types": ["Universal Applications", "Static Generated Applications", "Single Page Applications", "Desktop Applications", "Mobile Applications", "Progressive Web Apps"],
+      "app_types_suffix": "."
+    },
     "codesandbox_title": "Play with Nuxt.js online",
     "codesandbox_open": "Open on CodeSandBox.io",
-    "codesandbox_examples": "See more examples"
+    "codesandbox_examples": "See more examples",
+    "backer_partners": "Partners",
+    "backer_become_a_partner": "Become A Partner",
+    "backer_sponsors": "Sponsors",
+    "backer_become_a_sponsor": "Become A Sponsor",
+    "backer_backers": "Backers",
+    "backer_become_a_backer": "Become A Backer",
+    "backer_foundations": "Foundations"
   },
   "sponsors": {
     "title": "Sponsors",

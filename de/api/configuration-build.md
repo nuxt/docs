@@ -30,7 +30,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**Info:** you can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888).</p>
+<div class="Alert Alert--teal">
+
+**Info:** you can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888).
+
+</div>
 
 ## babel
 
@@ -41,7 +45,7 @@ module.exports = {
 
   ```js
   {
-    presets: ['vue-app']
+    presets: ['@nuxt/babel-preset-app']
   }
   ```
 
@@ -79,7 +83,7 @@ See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) 
 The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are:
 
 1. webpack config object,
-2. object with the following keys (all boolean): `isDev`, `isClient`, `isServer`.
+2. object with the following keys (all boolean except `loaders`): `isDev`, `isClient`, `isServer`.
 
 Example (`nuxt.config.js`):
 
@@ -96,7 +100,7 @@ module.exports = {
 }
 ```
 
-If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack).
+If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/dev/packages/webpack/src/config).
 
 ## extractCSS
 
@@ -105,7 +109,7 @@ If you want to see more about our default webpack configuration, take a look at 
 - Type: `Boolean`
 - Default: `false`
 
-Using `extract-text-webpack-plugin` to extract the CSS in the main chunk into a separate CSS file (auto injected with template), which allows the file to be individually cached. This is recommended when there is a lot of shared CSS. CSS inside async components will remain inlined as JavaScript strings and handled by vue-style-loader.
+Using [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin) to extract the CSS in the main chunk into a separate CSS file (auto injected with template), which allows the file to be individually cached. This is recommended when there is a lot of shared CSS. CSS inside async components will remain inlined as JavaScript strings and handled by vue-style-loader.
 
 ## filenames
 

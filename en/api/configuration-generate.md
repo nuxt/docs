@@ -11,12 +11,31 @@ description: Configure the generation of your universal web application to a sta
 
 When launching `nuxt generate` or calling `nuxt.generate()`, Nuxt.js will use the configuration defined in the `generate` property.
 
+nuxt.config.js 
+```js
+export default {
+  generate: {
+    ...
+  }
+}
+```
+
 ## dir
 
 - Type: `String`
 - Default: `'dist'`
 
 Directory name created by `nuxt generate`.
+
+## devtools
+
+- Type: `boolean`
+- Default: `false`
+
+Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools) inspection.
+
+If you already activated through nuxt.config.js or otherwise, devtools enable regardless of the flag.
+
 
 ## fallback
 
@@ -192,6 +211,15 @@ Example:
 
 When set to false, HTML files are generated according to the route path:
 
+nuxt.config.js 
+```js
+export default {
+  generate: {
+    subFolders: false
+  }
+}
+```
+
 ```bash
 -| dist/
 ---| index.html
@@ -199,6 +227,7 @@ When set to false, HTML files are generated according to the route path:
 ---| products/
 -----| item.html
 ```
+
 
 _Note: this option could be useful using [Netlify](https://netlify.com) or any static hosting using HTML fallbacks._
 

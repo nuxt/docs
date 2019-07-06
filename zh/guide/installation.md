@@ -5,6 +5,17 @@ description: "Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt`
 
 > Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt` 添加为依赖组件即可。
 
+<div>
+  <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Nuxt Fundamentals by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Nuxt.js 基础知识</h4>
+      <p class="Promote__Content__Description">了解如何在视频中快速使用Nuxt.js</p>
+      <p class="Promote__Content__Signature">由VueSchool制作视频课程，用于支持Nuxt.js开发</p>
+    </div>
+  </a>
+</div>
+
 ## 运行 create-nuxt-app
 
 为了快速入门，Nuxt.js团队创建了脚手架工具 [create-nuxt-app](https://github.com/nuxt/create-nuxt-app)。
@@ -38,6 +49,7 @@ $ yarn create nuxt-app <项目名>
   - [Bulma](https://github.com/jgthms/bulma)
   - [Tailwind](https://github.com/tailwindcss/tailwindcss)
   - [Element UI](https://github.com/ElemeFE/element)
+  - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
 3. 选择你想要的Nuxt模式 (`Universal` or `SPA`)
 4. 添加 [axios module](https://github.com/nuxt-community/axios-module) 以轻松地将HTTP请求发送到您的应用程序中。
@@ -47,12 +59,17 @@ $ yarn create nuxt-app <项目名>
 当运行完时，它将安装所有依赖项，因此下一步是启动项目:
 
 ```bash
+$ cd <project-name>
 $ npm run dev
 ```
 
 应用现在运行在 http://localhost:3000 上运行。
 
-<p class="Alert">注意：Nuxt.js 会监听 `pages` 目录中的文件更改，因此在添加新页面时无需重新启动应用程序。</p>
+<div class="Alert">
+
+注意：Nuxt.js 会监听 `pages` 目录中的文件更改，因此在添加新页面时无需重新启动应用程序。
+
+</div>
 
 了解模板项目的目录结构： [目录结构](/guide/directory-structure)。
 
@@ -65,7 +82,11 @@ $ mkdir <项目名>
 $ cd <项目名>
 ```
 
-<p class="Alert Alert--nuxt-green"><b>提示:</b> 将 <code>&lt;项目名&gt;</nom-du-projet></code> 替换成为你想创建的实际项目名。</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>提示:</b> 将 <code>&lt;项目名&gt;</nom-du-projet></code> 替换成为你想创建的实际项目名。
+
+</div>
 
 ### 新建 package.json 文件
 
@@ -84,7 +105,7 @@ $ cd <项目名>
 
 一旦 `package.json` 创建好， 可以通过以下npm命令将 `nuxt` 安装至项目中：
 ```bash
-npm install --save nuxt
+$ npm install --save nuxt
 ```
 
 ### pages 目录
@@ -109,6 +130,10 @@ $ npm run dev
 ```
 现在我们的应用运行在 http://localhost:3000 上运行。
 
-<p class="Alert">注意：Nuxt.js 会监听 `pages` 目录中的文件更改，因此在添加新页面时无需重新启动应用程序。</p>
+<div class="Alert">
+
+注意：Nuxt.js 会监听 `pages` 目录中的文件更改，因此在添加新页面时无需重新启动应用程序。
+
+</div>
 
 了解更多关于Nuxt.js应用的目录结构： [目录结构](/guide/directory-structure)。

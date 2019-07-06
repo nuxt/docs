@@ -40,6 +40,10 @@
         "to": "/middleware"
       },
       {
+        "name": "Named Views",
+        "to": "/named-views"
+      },
+      {
         "name": "Nested Routes",
         "to": "/nested-routes"
       },
@@ -79,6 +83,19 @@
       {
         "name": "Testing",
         "to": "/testing"
+      }
+    ]
+  },
+  {
+    "title": "TypeScript",
+    "links": [
+      {
+        "name": "Hello World",
+        "to": "/typescript"
+      },
+      {
+        "name": "Vuex Store",
+        "to": "/typescript-vuex"
       }
     ]
   }

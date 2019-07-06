@@ -1,33 +1,39 @@
 ---
 title: プラグイン
-description: Nuxt.js では js プラグインを定義することができ、それはルートの Vue.js アプリケーションがインスタンス化される前に実行されます。プラグインとして自前のライブラリを指定することも、外部のモジュールを指定することもできます。
+description: Nuxt.js では JavaScript プラグインを定義することができ、それはルートの Vue.js アプリケーションがインスタンス化される前に実行されます。この機能は、自前のライブラリや外部のモジュールを使用する際にとりわけ有用です。
 ---
 
-> Nuxt.js では js プラグインを定義することができ、それはルートの Vue.js アプリケーションがインスタンス化される前に実行されます。プラグインとして自前のライブラリを指定することも、外部のモジュールを指定することもできます。
+> Nuxt.js では JavaScript プラグインを定義することができ、それはルートの Vue.js アプリケーションがインスタンス化される前に実行されます。この機能は、自前のライブラリや外部のモジュールを使用する際にとりわけ有用です。
 
 
-<div class="Alert">Vue インスタンスの [ライフサイクル](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram) において、`beforeCreate` と `created` フックのみが **クライアントサイドとサーバーサイドの両方** で呼び出されることに注意してください。それ以外のすべてのフックはクライアントサイドでのみ呼び出されます。</div>
+<div class="Alert">
 
-## 外部パッケージの利用
+Vue インスタンスの [ライフサイクル](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram) において、`beforeCreate` と `created` フックのみが **クライアントサイドとサーバーサイドの両方** で呼び出されることに注意してください。それ以外のすべてのフックはクライアントサイドでのみ呼び出されます。
 
-アプリケーションに外部パッケージ/モジュールを使いたいときがあるでしょう。例えばサーバーでもクライアントでも HTTP リクエストを送れる [axios](https://github.com/mzabriskie/axios) などが良い例です。
+</div>
 
-外部パッケージは npm でインストールします:
+## 外部パッケージ
+
+アプリケーションにおいて、サーバーとクライアントの双方で HTTP リクエストを送るために、外部パッケージ/モジュールを使いたいときがあるでしょう（[axios](https://github.com/mzabriskie/axios) が素晴らしい例です）。
+
+まず最初に、npm でパッケージをインストールします:
 
 ```bash
 npm install --save axios
 ```
 
-そうすると次のようにページ内で直接それを使うことができます:
+そうすると次のようにページコンポーネント内で直接それを使うことができます:
 
 ```html
 <template>
   <h1>{{ title }}</h1>
 </template>
+
 <script>
 import axios from 'axios'
+
 export default {
-  async data ({ params }) {
+  async asyncData ({ params }) {
     let { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
@@ -35,103 +41,188 @@ export default {
 </script>
 ```
 
-ただしここで **ひとつ問題があり**、もし別のページでも import axios と書くと、axios は重複してバンドルファイルに含まれてしまいます。そこで `axios` をアプリケーション内で一度だけインクルードするには `nuxt.config.js` 内で `build.vendor` キーを使います:
-
-```js
-module.exports = {
-  build: {
-    vendor: ['axios']
-  }
-}
-```
-
-こうすれば、バンドルファイルが膨れ上がることなく、どの場所にも `import axios` と書くことができます。
-
 ## Vue プラグイン
 
-アプリケーション内で通知を表示するために [vue-notifications](https://github.com/se-panfilov/vue-notifications) を使いたいときには、アプリケーションを起動する前にプラグインをセットアップする必要があります。
 
-そのためには `plugins/vue-notifications.js` ファイルを次のように記述します:
+
+アプリケーション内で通知を表示する [vue-notifications](https://github.com/se-panfilov/vue-notifications) のような Vue プラグインを使用したい場合には、アプリケーションを起動する前にプラグインをセットアップする必要があります。
+
+`plugins/vue-notifications.js` ファイルを作成します:
 
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
+
 Vue.use(VueNotifications)
 ```
 
-それから `nuxt.config.js` の `plugins` キーにファイルを記述します:
+それから `nuxt.config.js` の `plugins` キー内にファイルパスを追加します:
 
 ```js
-module.exports = {
+export default {
   plugins: ['~/plugins/vue-notifications']
 }
 ```
 
-`plugins` 設定キーについてより深く理解するには [plugins API](/api/configuration-plugins) を参照してください。
+`plugins` 設定キーについてより深く理解するには [plugins api](/api/configuration-plugins) を参照してください。
 
-さて、上の書き方では、実は `vue-notifications` は app というバンドルファイルに含まれます。しかし `vue-notifications` はライブラリなので、vendor というバンドルファイルに含めて、うまくキャッシュさせたいと考えます。
+### ES6 プラグイン
 
-そうするには `nuxt.config.js` を更新して vendor というバンドルファイルの設定の中に `vue-notifications` を入れます:
+プラグインが `node_modules` にあり、ES6 モジュールをエクスポートしている場合、それを ` transpile` ビルドオプションに追加する必要があるかもしれません：
 
 ```js
 module.exports = {
   build: {
-    vendor: ['vue-notifications']
-  },
-  plugins: ['~plugins/vue-notifications']
+    transpile: ['vue-notifications']
+  }
 }
 ```
+その他のビルドオプションについては [configuration build](/api/configuration-build/#transpile) のドキュメントを参照することができます。
 
-## アプリケーションのルートや context に挿入する
+## アプリケーションのルートや context に注入する
 
-例えば [vue-i18n](https://github.com/kazupon/vue-i18n) のように、プラグインをアプリケーションのルートに挿入して使いたい場合もあるでしょう。Nuxt.js はプラグイン内の関数を公開できるようにしており、それはルートコンポーネントとコンテキストを受け取れます。また `inject` 関数も用意しています。
+関数や値をアプリケーション全体で利用できるようにしたい場合もあるでしょう。
+そのような変数を Vue インスタンス（クライアントサイド）やコンテキスト（サーバーサイド）、さらに Vuex ストアへ注入することが可能です。
+それらの関数の前には `$` を付けるのが一般的です。
 
-`plugins/i18n.js`:
+### Vue インスタンスに注入する
+
+Vue インスタンスへのコンテキストの注入は、通常の Vue アプリケーションと同様に動作します。
+
+`plugins/vue-inject.js`:
 
 ```js
 import Vue from 'vue'
-import VueI18n from 'vue-i18n'
 
-Vue.use(VueI18n)
+Vue.prototype.$myInjectedFunction = (string) => console.log("This is an example", string)
+```
 
-export default ({ store }, inject) => {
-  // `i18n` キーを挿入する
-  // -> app.$i18n になる
-  // -> Vue コンポーネント内では this.$i18n
-  // -> Vuex ストアやアクション、ミューテーション内で this.$i18n
-  // このようにしてミドルウェアやページの asyncData や fetch の中でプラグインを使うことができる
+`nuxt.config.js`:
 
-  inject('i18n', new VueI18n({
-    /* vue-i18n のオプション... */
-  }))
+```js
+export default {
+  plugins: ['~/plugins/vue-inject.js']
+}
+```
+
+これで全ての Vue コンポーネントで関数を使用することができます。
+
+`example-component.vue`:
+
+```js
+export default {
+  mounted(){
+    this.$myInjectedFunction('test')
+  }
+}
+```
+
+### コンテキストに注入する
+
+Vue インスタンスへのコンテキストの注入は、通常の Vue アプリケーションと同様に動作します。
+
+`plugins/ctx-inject.js`:
+
+```js
+export default ({ app }, inject) => {
+  // context.app オブジェクトへ関数を直接セットします
+  app.myInjectedFunction = (string) => console.log('Okay, another function', string)
 }
 ```
 
 `nuxt.config.js`:
 
 ```js
-module.exports = {
-  build: {
-    vendor: ['vue-i18n']
-  },
-  plugins: ['~/plugins/i18n.js']
+export default {
+  plugins: ['~/plugins/ctx-inject.js']
 }
 ```
 
-どのように使うかを見たいときは [i18n の例](/examples/i18n) を参照してください。
+`context` へアクセス可能なときには、いつでも関数を使用することができます（例えば、`asyncData` や `fetch` 関数内などです）。
+
+`ctx-example-component.vue`:
+
+```js
+export default {
+  asyncData(context){
+    context.app.myInjectedFunction('ctx!')
+  }
+}
+```
+
+### 統合された注入
+
+`context` 内や Vue インスタンスだけでなく Vuex ストア内でも関数が必要な場合 `inject` 関数を使用することができます。この関数は、プラグインとして公開する関数の第 2 引数です。
+
+Vue インスタンスへのコンテンツの注入は、通常の Vue アプリケーションと同様に動作します。関数の先頭へ自動的に `$` が追加されます。
+
+`plugins/combined-inject.js`:
+
+```js
+export default ({ app }, inject) => {
+  inject('myInjectedFunction', (string) => console.log('That was easy!', string))
+}
+```
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: ['~/plugins/combined-inject.js']
+}
+```
+
+これで `context` 、Vue インスタンス内での `this` 、及びストアの `actions` / `mutations` 内での `this` を通して、関数を使用することができます。
+
+`ctx-example-component.vue`:
+
+```js
+export default {
+  mounted(){
+    this.$myInjectedFunction('works in mounted')
+  },
+  asyncData(context){
+    context.app.$myInjectedFunction('works with context')
+  }
+}
+```
+
+`store/index.js`:
+
+```js
+export const state = () => ({
+  someValue: ''
+})
+
+export const mutations = {
+  changeSomeValue(state, newValue) {
+    this.$myInjectedFunction('accessible in mutations')
+    state.someValue = newValue
+  }
+}
+
+export const actions = {
+  setSomeValueToWhatever ({ commit }) {
+    this.$myInjectedFunction('accessible in actions')
+    const newValue = "whatever"
+    commit('changeSomeValue', newValue)
+  }
+}
+
+```
 
 ## クライアントサイド限定のプラグイン利用
 
-プラグインのいくつかは **ブラウザでのみ** 動かしたいとします。その場合は `plugins` 内の `ssr: false` オプションを使うと、プラグインをクライアントサイドでのみ実行させることが可能です。
+いくつかのプラグインは、SSR をサポートしていないために **ブラウザでのみ** 動作するかもしれません。そのような場合は、クライアントサイドのみでプラグインを使用するために、`plugins` 内の `ssr: false` オプションを使用することができます。
 
 例:
 
 `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   plugins: [
-    { src: '~plugins/vue-notifications', ssr: false }
+    { src: '~/plugins/vue-notifications', ssr: false }
   ]
 }
 ```
@@ -145,6 +236,42 @@ import VueNotifications from 'vue-notifications'
 Vue.use(VueNotifications)
 ```
 
-逆に、サーバーサイドでのみライブラリを読み込む必要がある場合は、`process.server` 変数を使うことができます。これは Webpack が `server.bundle.js` ファイルを作成するタイミングで `true` がセットされる変数です。
+*サーバーサイド*でのみライブラリを読み込む必要がある場合は、`process.server`変数に `true` がセットされているかでチェックできます。
 
-また、もしあなたが生成されたアプリケーション (`nuxt generate` コマンドによって) の中にいるかどうか知る必要がある場合は、生成から以降ずっと `process.static` 変数に `true` がセットされているかでチェックできます。保存前に `nuxt generate` コマンドによって、ページがサーバレンダリングされている時の状態を知るには、`process.static && process.server` を使うことができます。
+また、もしあなたが生成されたアプリケーション（`nuxt generate` コマンドによって）の中にいるかどうか知る必要がある場合は、`process.static` 変数に `true` がセットされているかでチェックできます。これは、アプリケーションの生成中および生成後の場合のみです。
+
+保存前に `nuxt generate` コマンドによって、ページがサーバレンダリングされている時の状態を知るには、2 つのオプションを組み合わせて使うことができます (`process.static && process.server`) 。
+
+**情報**: Nuxt.js 2.4 以降、プラグインタイプを指定するための `plugins` のオプションとして `mode` が導入されました。指定可能な値は `client` または `server` です。 `ssr：false` は `mode: 'client'` に適応され、次のメジャーリリースでは非推奨になります。
+
+例:
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: [
+    { src: '~/plugins/both-sides.js' },
+    { src: '~/plugins/client-only.js', mode: 'client' },
+    { src: '~/plugins/server-only.js', mode: 'server' }
+  ]
+}
+```
+
+### プラグイン名の規約
+
+プラグインがクライアント側またはサーバー側でのみ実行されると想定される場合、 `.client.js` または `.server.js` をプラグインファイルの拡張として適用することができ、ファイルは自動的に対応する側に含まれます。
+
+例:
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: [
+    '~/plugins/foo.client.js', // クライアントサイド限定
+    '~/plugins/bar.server.js', // サーバーサイド限定
+    '~/plugins/baz.js' // クライアントサイドとサーバーサイド両方
+  ]
+}
+```

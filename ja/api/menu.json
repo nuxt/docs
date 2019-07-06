@@ -11,7 +11,9 @@
       { "name": "asyncData", "to": "/" },
       { "name": "fetch", "to": "/pages-fetch" },
       { "name": "head", "to": "/pages-head" },
+      { "name": "key", "to": "/pages-key" },
       { "name": "layout", "to": "/pages-layout" },
+      { "name": "loading", "to": "/pages-loading" },
       { "name": "middleware", "to": "/pages-middleware" },
       { "name": "scrollToTop", "to": "/pages-scrolltotop" },
       {
@@ -36,6 +38,12 @@
     ]
   },
   {
+    "title": "ユーティリティ",
+    "links": [
+      { "name": "$nuxt", "to": "/$nuxt" }
+    ]
+  },
+  {
     "title": "設定",
     "links": [
       {
@@ -44,18 +52,36 @@
         "contents": [
           { "name": "analyze", "to": "#analyze" },
           { "name": "babel", "to": "#babel" },
+          { "name": "cache", "to": "#cache" },
+          { "name": "crossorigin", "to": "#crossorigin" },
           { "name": "cssSourceMap", "to": "#csssourcemap" },
           { "name": "devMiddleware", "to": "#devmiddleware" },
+          { "name": "devtools", "to": "#devtools" },
           { "name": "extend", "to": "#extend" },
           { "name": "extractCSS", "to": "#extractcss" },
           { "name": "filenames", "to": "#filenames" },
+          { "name": "friendlyErrors", "to": "#friendlyerrors" },
+          { "name": "hardSource", "to": "#hardsource" },
           { "name": "hotMiddleware", "to": "#hotmiddleware" },
+          { "name": "html.minify", "to": "#html-minify" },
+          { "name": "indicator", "to": "#indicator" },
+          { "name": "loaders", "to": "#loaders" },
+          { "name": "optimization", "to": "#optimization" },
+          { "name": "optimizeCSS", "to": "#optimizecss" },
+          { "name": "parallel", "to": "#parallel" },
           { "name": "plugins", "to": "#plugins" },
           { "name": "postcss", "to": "#postcss" },
+          { "name": "profile", "to": "#profile" },
           { "name": "publicPath", "to": "#publicpath" },
+          { "name": "quiet", "to": "#quiet" },
+          { "name": "splitChunks", "to": "#splitchunks" },
           { "name": "ssr", "to": "#ssr" },
+          { "name": "styleResources", "to": "#styleresources" },
           { "name": "templates", "to": "#templates" },
-          { "name": "vendor", "to": "#vendor" },
+          { "name": "terser", "to": "#terser" },
+          { "name": "transpile", "to": "#transpile" },
+          { "name": "typescript", "to": "#typescript" },
+          { "name": "vueLoader", "to": "#vueloader" },
           { "name": "watch", "to": "#watch" }
         ]
       },
@@ -68,12 +94,17 @@
         "to": "/configuration-generate",
         "contents": [
           { "name": "dir", "to": "#dir" },
+          { "name": "devtools", "to": "#devtools" },
+          { "name": "fallback", "to": "#fallback" },
           { "name": "interval", "to": "#interval" },
           { "name": "minify", "to": "#minify" },
-          { "name": "routes", "to": "#routes" }
+          { "name": "routes", "to": "#routes" },
+          { "name": "subFolders", "to": "#subfolders" },
+          { "name": "concurrency", "to": "#concurrency" }
         ]
       },
       { "name": "head", "to": "/configuration-head" },
+      { "name": "hooks", "to": "/configuration-hooks" },
       { "name": "ignore", "to": "/configuration-ignore" },
       {
         "name": "loading",
@@ -81,11 +112,13 @@
         "contents": [
           { "name": "プログレスバーを無効にする", "to": "#プログレスバーを無効にする" },
           { "name": "プログレスバーをカスタマイズする", "to": "#プログレスバーをカスタマイズする" },
-          { "name": "独自のコンポーネントを使う", "to": "#独自のコンポーネントを使う" }
+          { "name": "独自のコンポーネントを使う", "to": "#独自のコンポーネントを使う" },
+          { "name": "プログレスバーの内部", "to": "#プログレスバーの内部" }
         ]
       },
       { "name": "loadingIndicator", "to": "/configuration-loading-indicator" },
       { "name": "mode", "to": "/configuration-mode" },
+      { "name": "modern", "to": "/configuration-modern" },
       { "name": "modules", "to": "/configuration-modules" },
       { "name": "modulesDir", "to": "/configuration-modulesdir" },
       { "name": "plugins", "to": "/configuration-plugins" },
@@ -93,13 +126,18 @@
         "name": "render",
         "to": "/configuration-render",
         "contents": [
-          { "name": "bundleRenderer", "to": "#bundleRenderer" },
+          { "name": "bundleRenderer", "to": "#bundlerenderer" },
           { "name": "etag", "to": "#etag" },
-          { "name": "gzip", "to": "#gzip" },
+          { "name": "compressor", "to": "#compressor" },
+          { "name": "fallback", "to": "#fallback" },
           { "name": "http2", "to": "#http2" },
-          { "name": "resourceHints", "to": "#resourceHints" },
+          { "name": "injectScripts", "to": "#injectscripts" },
+          { "name": "resourceHints", "to": "#resourcehints" },
           { "name": "ssr", "to": "#ssr" },
-          { "name": "static", "to": "#static" }
+          { "name": "ssrLog", "to": "#ssrlog" },
+          { "name": "static", "to": "#static" },
+          { "name": "dist", "to": "#dist" },
+          { "name": "csp", "to": "#csp" }
         ]
       },
       { "name": "rootDir", "to": "/configuration-rootdir" },
@@ -108,19 +146,27 @@
         "to": "/configuration-router",
         "contents": [
           { "name": "base", "to": "#base" },
+          { "name": "routeNameSplitter", "to": "#routenamesplitter" },
           { "name": "extendRoutes", "to": "#extendroutes" },
+          { "name": "fallback", "to": "#fallback" },
           { "name": "linkActiveClass", "to": "#linkactiveclass" },
           { "name": "linkExactActiveClass", "to": "#linkexactactiveclass" },
+          { "name": "linkPrefetchedClass", "to": "#linkprefetchedclass" },
           { "name": "middleware", "to": "#middleware" },
           { "name": "mode", "to": "#mode" },
+          { "name": "parseQuery / stringifyQuery", "to": "#parsequery-stringifyquery" },
+          { "name": "prefetchLinks", "to": "#prefetchlinks" },
           { "name": "scrollBehavior", "to": "#scrollbehavior" }
         ]
       },
+      { "name": "server", "to": "/configuration-server" },
       { "name": "serverMiddleware", "to": "/configuration-servermiddleware" },
       { "name": "srcDir", "to": "/configuration-srcdir" },
+      { "name": "dir", "to": "/configuration-dir" },
       { "name": "transition", "to": "/configuration-transition" },
       { "name": "vue.config", "to": "/configuration-vue-config" },
       { "name": "watch", "to": "/configuration-watch" },
+      { "name": "globalName", "to": "/configuration-global-name" },
       {
         "name": "watchers",
         "to": "/configuration-watchers",

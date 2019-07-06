@@ -14,4 +14,8 @@ This property is overwritten by [nuxt commands](/guide/commands) and set to the 
 
 This property should be used when using [nuxt.js programmatically](/api/nuxt).
 
-<p class="Alert Alert--blue">The downside of this option is that your `node_modules` directory should be inside the `rootDir` folder. If you want to set the path of the application without the node_modules, use the [`srcDir` option](/api/configuration-srcdir).</p>
+<div class="Alert Alert--blue">
+
+The downside of this option is that your `node_modules` directory should be inside the `rootDir` folder. If you want to set the path of the application without the node_modules, use the [`srcDir` option](/api/configuration-srcdir).
+
+</div>

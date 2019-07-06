@@ -23,27 +23,54 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert-blue">`base` 被设置后，Nuxt.js 会自动将它添加至页面中： `<base href="{{ router.base }}"/>`。</p>
+<div class="Alert Alert-blue">
+
+`base` 被设置后，Nuxt.js 会自动将它添加至页面中： `<base href="{{ router.base }}"/>`。
+
+</div>
 
 > 该配置项的值会被直接传给 vue-router 的[构造器](https://router.vuejs.org/zh-cn/api/options.html)。
 
-## mode
+## routeNameSplitter
 
-- 类型：`String`
-- 默认值：`'history'`
+- 类型: `String`
+- 默认: `'-'`
 
-配置路由的模式，鉴于服务端渲染的特性，不建议修改该配置。
+您可能希望更改Nuxt.js使用的路由名称之间的分隔符。您可以通过配置文件中的`routeNameSplitter`选项执行此操作。想象一下，我们有页面文件`pages/posts/_id.vue`。Nuxt将以编程方式生成路由名称，在本例中为`posts-id`。因此，将`routeNameSplitter`配置修改为`/`，这样路由名称生成为`posts/id`。
 
-示例 (`nuxt.config.js`):
+例如 (`nuxt.config.js`):
 ```js
-module.exports = {
+export default {
   router: {
-    mode: 'hash'
+    routeNameSplitter: '/'
   }
 }
 ```
 
-> 该配置项的值会被直接传给 vue-router 的[构造器](https://router.vuejs.org/zh-cn/api/options.html)。
+## extendRoutes
+
+- 类型: `Function`
+
+您可能希望扩展`Nuxt.js`创建的路由。您可以通过`extendRoutes`选项执行此操作。
+
+例如添加自定义路由:
+
+`nuxt.config.js`
+```js
+export default {
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, 'pages/404.vue')
+      })
+    }
+  }
+}
+```
+
+路由的模式应该遵循[vue-router](https://router.vuejs.org/en/)模式。
 
 ## linkActiveClass
 
@@ -57,6 +84,88 @@ module.exports = {
 module.exports = {
   router: {
     linkActiveClass: 'active-link'
+  }
+}
+```
+
+> 该配置项的值会被直接传给 vue-router 的[构造器](https://router.vuejs.org/zh-cn/api/options.html)。
+
+## linkExactActiveClass
+
+- 类型: `String`
+- 默认: `'nuxt-link-exact-active'`
+
+全局配置 [`<nuxt-link>`](/api/components-nuxt-link) 默认的active class。
+
+例如 (`nuxt.config.js`):
+```js
+export default {
+  router: {
+    linkExactActiveClass: 'exact-active-link'
+  }
+}
+```
+
+> 此选项直接提供给vue-router [linkexactactiveclass](https://router.vuejs.org/api/#linkexactactiveclass).
+
+## linkPrefetchedClass
+
+- 类型: `String`
+- 默认: `false`
+
+全局配置[`<nuxt-link>`](/api/components-nuxt-link)默认值(默认情况下禁用功能)
+
+例子 (`nuxt.config.js`):
+
+```js
+export default {
+  router: {
+    linkPrefetchedClass: 'nuxt-link-prefetched'
+  }
+}
+```
+
+## middleware
+
+- 类型： `String` 或 `Array`
+  - 数值元素类型: `String`
+
+为应用的每个页面设置默认的中间件。
+
+例如：
+
+`nuxt.config.js`
+```js
+module.exports = {
+  router: {
+    // 在每页渲染前运行 middleware/user-agent.js 中间件的逻辑
+    middleware: 'user-agent'
+  }
+}
+```
+
+`middleware/user-agent.js`
+```js
+export default function (context) {
+  // 给上下文对象增加 userAgent 属性（增加的属性可在 `asyncData` 和 `fetch` 方法中获取）
+  context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
+}
+```
+
+了解更多关于中间件的信息，请参考 [中间件指引文档](/guide/routing#中间件)。
+
+## mode
+
+- 类型：`String`
+- 默认值：`'history'`
+
+配置路由的模式，鉴于服务端渲染的特性，不建议修改该配置。
+
+示例 (`nuxt.config.js`):
+```js
+module.exports = {
+  router: {
+    mode: 'hash'
   }
 }
 ```
@@ -110,58 +219,61 @@ module.exports = {
 
 > 该配置项的值会被直接传给 vue-router 的[构造器](https://router.vuejs.org/zh-cn/api/options.html)。
 
-## middleware
+## parseQuery / stringifyQuery
 
-- 类型： `String` 或 `Array`
-  - 数值元素类型: `String`
+- 类型: `Function`
 
-为应用的每个页面设置默认的中间件。
+提供自定义查询字符串解析/字符串化功能。覆盖默认值。
 
-例如：
+> 此选项直接提供在vue-router [parseQuery / stringifyQuery](https://router.vuejs.org/api/#parsequery-stringifyquery).
+
+## prefetchLinks
+
+> Nuxt v2.4.0 添加
+
+- 类型: `Boolean`
+- 默认: `true`
+
+在视图中检测到时，配置`<nuxt-link>`用来预获取*代码分割*页面。需要支持[IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)(参阅 [CanIUse](https://caniuse.com/#feat=intersectionobserver))。
+
+我们建议使用[Polyfill.io](https://polyfill.io)等服务有条件地填充此功能：
 
 `nuxt.config.js`
+
 ```js
-module.exports = {
-  router: {
-    // 在每页渲染前运行 middleware/user-agent.js 中间件的逻辑
-    middleware: 'user-agent'
+export default {
+  head: {
+    script: [
+      { src: 'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver', body: true }
+    ]
   }
 }
 ```
 
-`middleware/user-agent.js`
-```js
-export default function (context) {
-  // 给上下文对象增加 userAgent 属性（增加的属性可在 `asyncData` 和 `fetch` 方法中获取）
-  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
-}
+要禁用特定链接上的预取，可以使用`no-prefetch` 属性：
+
+```html
+<nuxt-link to="/about" no-prefetch>About page not pre-fetched</nuxt-link>
 ```
 
-了解更多关于中间件的信息，请参考 [中间件指引文档](/guide/routing#中间件)。
+要全局禁用所有链接上的预取，请将`prefetchLinks`设置为`false`：
 
-## extendRoutes
-
-- 类型： `Function`
-
-你可以通过 `extendRoutes` 配置项来扩展 Nuxt.js 生成的路由配置。
-
-举个例子，我们添加一个自定义的路由配置：
-
-`nuxt.config.js`：
 ```js
-const resolve = require('path').resolve
-
-module.exports = {
+// nuxt.config.js
+export default {
   router: {
-    extendRoutes (routes) {
-      routes.push({
-        name: 'custom',
-        path: '*',
-        component: resolve(__dirname, 'pages/404.vue')
-      })
-    }
+    prefetchLinks: false
   }
 }
 ```
 
-上述例子中路由配置对象的键请参考 [vue-router](https://router.vuejs.org/zh-cn/) 文档中的说明。
+## fallback
+
+- 类型: `boolean`
+- 默认: `false`
+
+当浏览器不支持history.pushState但模式设置为history时，控制路由器是否应回退。
+
+将此设置为`false`实质上会使每个路由器链接导航在IE9中刷新整页。当应用程序是服务器呈现并且需要在IE9中工作时，这很有用，因为**hash模式**URL不适用于SSR。
+
+> 此选项直接提供在vue-router [fallback](https://router.vuejs.org/api/#fallback).

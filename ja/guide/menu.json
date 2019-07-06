@@ -9,7 +9,7 @@
           { "to": "#どのように動作するか-", "name": "どのように動作するか？" },
           { "to": "#主な機能", "name": "主な機能" },
           { "to": "#図解", "name": "図解" },
-          { "to": "#サーバーサイドレンダリング", "name": "サーバーサイドレンダリング" },
+          { "to": "#サーバーサイドレンダリング-ユニバーサル-ssr-", "name": "サーバーサイドレンダリング（ユニバーサル SSR）" },
           { "to": "#シングルページアプリケーション-spa-", "name": "シングルページアプリケーション（SPA）" },
           { "to": "#静的ファイルの生成", "name": "静的ファイルの生成" }
         ]
@@ -43,6 +43,7 @@
           { "to": "#動的なルーティング", "name": "動的なルーティング" },
           { "to": "#ネストされたルート", "name": "ネストされたルート" },
           { "to": "#動的でネストされたルート", "name": "動的でネストされたルート" },
+          { "to": "#名前付きビュー", "name": "名前付きビュー" },
           { "to": "#トランジション", "name": "トランジション" },
           { "to": "#ミドルウェア", "name": "ミドルウェア" }
         ]
@@ -76,7 +77,7 @@
         "contents": [
           { "to": "#外部パッケージの利用", "name": "外部パッケージの利用" },
           { "to": "#vue-プラグイン", "name": "Vue プラグイン" },
-          { "to": "#inject-in-root-amp-context", "name": "Inject in $root & context" },
+          { "to": "#アプリケーションのルートや-context-に注入する", "name": "アプリケーションのルートや context に注入する" },
           { "to": "#クライアントサイド限定のプラグイン利用", "name": "クライアントサイド限定のプラグイン利用" }
         ]
       },
@@ -84,23 +85,34 @@
         "to": "/modules", "name": "モジュール",
         "contents": [
           { "to": "#はじめに", "name": "はじめに" },
+          { "to": "#nuxt-js-公式モジュール一覧", "name": "Nuxt.js 公式モジュール一覧" },
           { "to": "#基本的なモジュールを書く", "name": "基本的なモジュールを書く" },
           { "to": "#非同期モジュール", "name": "非同期モジュール" },
-          { "to": "#共通のスニペット", "name": "共通のスニペット" }
+          { "to": "#共通のスニペット", "name": "共通のスニペット" },
+          { "to": "#特定のフックでタスクを実行する", "name": "特定のフックでタスクを実行する" },
+          { "to": "#モジュールパッケージコマンド", "name": "モジュールパッケージコマンド" }
         ]
       },
       {
         "to": "/vuex-store", "name": "Vuex ストア",
         "contents": [
           { "to": "#ストアを有効にする", "name": "ストアを有効にする" },
-          { "to": "#クラシックモード", "name": "クラシックモード" },
           { "to": "#モジュールモード", "name": "モジュールモード" },
           { "to": "#fetch-メソッド", "name": "fetch メソッド" },
-          { "to": "#nuxtserverinit-アクション", "name": "nuxtServerInit アクション" }
+          { "to": "#nuxtserverinit-アクション", "name": "nuxtServerInit アクション" },
+          { "to": "#クラシックモード", "name": "クラシックモード" }
         ]
       },
       {
-        "to": "/commands", "name": "コマンド",
+        "to": "/typescript", "name": "TypeScript Support",
+        "contents": [
+          { "to": "#はじめる", "name": "はじめる" },
+          { "to": "#JavaScript-から-TypeScript-へ", "name": "JavaScript から TypeScript へ" },
+          { "to": "#ESLint-を使った-Linting", "name": "ESLint を使った Linting" }
+        ]
+      },
+      {
+        "to": "/commands", "name": "コマンドとデプロイ",
         "contents": [
           { "to": "#コマンド一覧", "name": "コマンド一覧" },
           { "to": "#開発環境", "name": "開発環境" },
@@ -111,7 +123,7 @@
         "to": "/development-tools", "name": "開発ツール",
         "contents": [
           { "to": "#エンドツーエンドテスト", "name": "エンドツーエンドテスト" },
-          { "to": "#eslint", "name": "ESLint" }
+          { "to": "#eslint-と-prettier", "name": "ESLint と Prettier" }
         ]
       }
     ]

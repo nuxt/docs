@@ -9,7 +9,7 @@ description: 模块是Nuxt.js扩展，可以扩展其核心功能并添加无限
 
 在使用Nuxt开发应用程序时，您很快就会发现框架的核心功能还不够。 Nuxt可以使用配置选项和插件进行扩展，但是在多个项目中维护这些自定义是繁琐、重复和耗时的。 另一方面，开箱即用支持每个项目的需求将使Nuxt非常复杂且难以使用。
 
-这就是Nuxt提供更高阶**模块系统**的原因，可以轻松扩展核心。 模块只是在引导Nuxt时按顺序调用的**函数**。 框架在加载之前等待每个模块完成。 如此，模块几乎可以自定义Nuxt的任何地方。 感谢Nuxt的模块化设计 (基于 webpack [Tapable](https://github.com/webpack/tapable)), 模块可以轻松地为某些入口点注册钩子，例如构建器初始化。模块还可以覆盖模板，配置`webpack`加载器，添加`CS`S库以及执行许多其他有用的任务。
+这就是Nuxt提供更高阶**模块系统**的原因，可以轻松扩展核心。 模块只是在引导Nuxt时按顺序调用的**函数**。 框架在加载之前等待每个模块完成。 如此，模块几乎可以自定义Nuxt的任何地方。 我们可以使用功能强大的 [Hookable](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js) Nuxt.js系统来完成特定事件的任务。
 
 最重要的是, Nuxt模块可以合并到npm包中。 这使得它们易于跨项目开发重用并与Nuxt社区共享, 我们可以创建一个高质量的Nuxt附加组件生态系统。
 
@@ -21,6 +21,16 @@ description: 模块是Nuxt.js扩展，可以扩展其核心功能并添加无限
 - 是一家重视**质量**和**可重用性**的**企业**公司的成员。
 - 通常是在短期限内完成，没有时间深入了解每个新库或集成的细节。
 - 厌倦了处理对低级接口的重大改变，并且需要能够正常工作的东西。
+
+## Nuxt.js 模块列表
+
+Nuxt.js 团队提供 **官方** 模块:
+- [@nuxt/http](https://http.nuxtjs.org): 基于[ky-universal](https://github.com/sindresorhus/ky-universal)的轻量级和通用的HTTP请求
+- [@nuxtjs/axios](https://axios.nuxtjs.org): 安全和使用简单Axios与Nuxt.js集成用来请求HTTP
+- [@nuxtjs/pwa](https://pwa.nuxtjs.org): 使用经过严格测试，更新且稳定的PWA解决方案来增强Nuxt
+- [@nuxtjs/auth](https://auth.nuxtjs.org): Nuxt.js的身份验证模块，提供不同的方案和验证策略
+
+Nuxt.js社区制作的模块列表可在 https://github.com/topics/nuxt-module 中查询
 
 ## 基本模块
 
@@ -71,7 +81,7 @@ export default {
 }
 ```
 
-然后，我们告诉Nuxt为项目加载一些特定模块，并将可选参数作为选项。 请参考 [莫模块配置](/api/configuration-modules) 文档来查看更多!
+然后，我们告诉Nuxt为项目加载一些特定模块，并将可选参数作为选项。 请参考 [模块配置](/api/configuration-modules) 文档来查看更多!
 
 ## 异步模块
 
@@ -79,7 +89,11 @@ export default {
 
 ### 使用 async/await
 
-<p class="Alert Alert--orange">请注意，仅在Node.js > 7.2中支持使用`async` / `await`。 因此，如果您是模块开发人员，至少要警告用户使用它们时Node.js版本不能低于7.2。 对于大量异步模块或更好的传统支持，您可以使用bundler将其转换为兼容较旧的Node.js版本或Promise方法。</p>
+<div class="Alert Alert--orange">
+
+请注意，仅在Node.js > 7.2中支持使用`async` / `await`。 因此，如果您是模块开发人员，至少要警告用户使用它们时Node.js版本不能低于7.2。 对于大量异步模块或更好的传统支持，您可以使用bundler将其转换为兼容较旧的Node.js版本或Promise方法。
+
+</div>
 
 ```js
 import fse from 'fs-extra'
@@ -130,7 +144,7 @@ export default function asyncModule(callback) {
 ```js
 export default {
   modules: [
-    '@nuxtjs/axios'
+    ['@nuxtjs/axios', { anotherOption: true }]
   ],
 
   // axios module is aware of this by using `this.options.axios`
@@ -266,7 +280,7 @@ export default function (moduleOptions) {
 
       // Customize existing loaders
       // Refer to source code for Nuxt internals:
-      // https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/webpack/base.js
+      // https://github.com/nuxt/nuxt.js/tree/dev/packages/builder/src/webpack/base.js
       const barLoader = config.module.rules.find(rule => rule.loader === 'bar-loader')
   })
 }
@@ -305,4 +319,55 @@ export default function () {
 }
 ```
 
-<p class="Alert">modules有许多钩子和可能性。请参考 [Nuxt Internals](/api/internals) 了解有关Nuxt内部API的更多信息。</p>
+## Module package commands
+
+**实验性的**
+
+从`v2.4.0` 开始，您可以通过Nuxt模块的包(package)添加自定义nuxt命令。为此，您必须`NuxtCommand`在定义命令时遵循API规则。假设放置的一个简单示例`my-module/bin/command.js`如下所示：
+
+```js
+#!/usr/bin/env node
+
+const consola = require('consola')
+const { NuxtCommand } = require('@nuxt/cli')
+
+NuxtCommand.run({
+  name: 'command',
+  description: 'My Module Command',
+  usage: 'command <foobar>',
+  options: {
+    foobar: {
+      alias: 'fb',
+      type: 'string',
+      description: 'Simple test string'
+    }
+  },
+  run(cmd) {
+    consola.info(cmd.argv)
+  }
+})
+```
+
+这里有一些值得注意的事情。首先，注意调用`/usr/bin/env`来检索Node可执行文件。另请注意，ES模块语法不能用于命令，除非您手动合并[`esm`](https://github.com/standard-things/esm)到代码中。
+
+接下来，您将注意到如何使用`NuxtCommand.run()`指定命令的设置和行为。定义选项`options`，通过解析[`minimist`](https://github.com/substack/minimist)。解析参数后，`run()``将使用`NuxtCommand`实例作为第一个参数自动调用。
+
+在上面的示例中，`cmd.argv`用于检索解析的命令行参数。有更多的方法和属性`NuxtCommand` --将提供有关它们的文档，因为此功能将进一步测试和改进。
+
+要使您的命令可以通过Nuxt CLI识别`bin`，请使用`nuxt-module`约定将其列在`package.json`的部分下，该约定module与您的包名称相关。使用此二进制文件，您可以根据`argv`需要进一步解析更多`subcommands`命令。
+
+```js
+{
+  "bin": {
+    "nuxt-foobar": "./bin/command.js"
+  }
+}
+```
+
+一旦安装了软件包(通过NPM或Yarn)，您就可以`nuxt foobar ...`在命令行上执行。
+
+<div class="Alert">
+
+modules有许多钩子和可能性。请参考 [Nuxt Internals](/api/internals) 了解有关Nuxt内部API的更多信息。
+
+</div>

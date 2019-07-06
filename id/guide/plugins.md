@@ -7,7 +7,11 @@ description: Nuxt.js memungkinkan Anda menentukan plugin JavaScript yang akan di
 
 > Nuxt.js memungkinkan Anda menentukan plugin JavaScript yang akan dijalankan sebelum menginstal Aplikasi root Vue.js. Hal ini sangat membantu saat menggunakan pustaka (library) atau modul eksternal Anda sendiri.
 
-<div class="Alert">Penting untuk diketahui bahwa dalam Vue [instance lifecycle] (https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram), hanya kait (hook) `beforeCreate` dan` created` yang dipanggil **keduanya dari sisi-klien dan sisi-server**. Semua kait (hook) lainnya hanya dipanggil dari sisi-klien.</div>
+<div class="Alert">
+
+Penting untuk diketahui bahwa dalam Vue [instance lifecycle] (https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram), hanya kait (hook) `beforeCreate` dan` created` yang dipanggil **keduanya dari sisi-klien dan sisi-server**. Semua kait (hook) lainnya hanya dipanggil dari sisi-klien.
+
+</div>
 
 ## Paket Eksternal
 

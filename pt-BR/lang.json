@@ -1,59 +1,74 @@
 {
-  "iso": "en",
-  "docVersion": "1.0.0-rc11",
+  "iso": "pt-BR",
+  "docVersion": "2.1.0",
   "links": {
     "api": "API",
     "blog": "Blog",
     "chat": "Chat",
-    "documentation": "Documentation",
-    "download": "Download",
-    "examples": "Examples",
-    "ecosystem": "Ecosystem",
+    "documentation": "Documentação",
+    "download": "Baixar",
+    "examples": "Exemplos",
+    "ecosystem": "Ecossistema",
     "faq": "FAQ",
-    "get_started": "get started",
+    "get_started": "Começar",
     "github": "GitHub",
-    "guide": "Guide",
-    "homepage": "Home page",
+    "guide": "Guia",
+    "homepage": "Página inicial",
     "live_demo": "Live Demo",
     "live_edit": "Live Edit",
+    "tidelift_short": "GET PROFESSIONAL SUPPORT",
+    "official_support": "GET OFFICIAL SUPPORT ⛑",
+    "tidelift": "GET PROFESSIONAL SUPPORT FOR NUXT",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Vue Jobs"
   },
   "text": {
-    "an_error_occured": "An error occurred",
-    "api_page_not_found": "API page not found",
-    "example_file": "Example Files",
-    "please_wait": "Please wait...",
-    "please_define_title": "Please define a title in the front matter",
-    "please_define_description": "Please define a description in the front matter",
-    "search": "Search",
-    "version": "Version"
+    "an_error_occurred": "Um erro ocorreu",
+    "api_page_not_found": "Página da API não encontrada",
+    "example_file": "Arquivos de exemplo",
+    "please_wait": "Por favor aguarde...",
+    "please_define_title": "Por favor defina um título a seguir",
+    "please_define_description": "Por favor defina uma descrição a seguir",
+    "search": "Pesquisar",
+    "version": "Versão"
   },
   "homepage": {
-    "title": "Universal Vue.js Applications",
+    "title": "Aplicações Vue.js universais",
     "meta": {
-      "title": "Nuxt.js - Universal Vue.js Applications",
-      "description": "Nuxt.js is a minimal framework for creating Vue.js applications with server side rendering, code-splitting, hot-reloading, static generation and more!"
+      "title": "Nuxt.js - Aplicações Vue.js universais",
+      "description": "Nuxt.js é um framework minimalista para aplicações Vue.js com recursos\ncomo SSR(Server Side Rendering ), code-splitting, hot-reloading, gerador de\narquivos estáticos e muito mais!"
     },
-    "codesandbox_title": "Play with Nuxt.js online",
-    "codesandbox_open": "Open on CodeSandBox.io",
-    "codesandbox_examples": "See more examples"
+    "welcome": {
+      "app_types_prefix": "For ",
+      "app_types": ["Universal Applications", "Static Generated Applications", "Single Page Applications", "Desktop Applications", "Mobile Applications", "Progressive Web Apps"],
+      "app_types_suffix": "."
+    },
+    "codesandbox_title": "Experimente o Nuxt.js online",
+    "codesandbox_open": "Abrir no CodeSandBox.io",
+    "codesandbox_examples": "Veja mais exemplos",
+    "backer_partners": "Partners",
+    "backer_become_a_partner": "Become A Partner",
+    "backer_sponsors": "Sponsors",
+    "backer_become_a_sponsor": "Become A Sponsor",
+    "backer_backers": "Backers",
+    "backer_become_a_backer": "Become A Backer",
+    "backer_foundations": "Foundations"
   },
   "sponsors": {
-    "title": "Sponsors",
-    "become": "Support us and",
-    "become_partner": "become a partner"
+    "title": "Patrocinadores",
+    "become": "Apoie-nos e",
+    "become_partner": "torne-se um parceiro"
   },
   "footer": {
-    "authors": "Made by Chopin Brothers"
+    "authors": "Criado pelos irmãos Chopin"
   },
   "guide": {
-    "release_notes": "Release Notes",
-    "contribute": "Caught a mistake or want to contribute to the documentation?",
-    "edit_on_github": "Edit this page on GitHub!"
+    "release_notes": "Notas de lançamento",
+    "contribute": "Achou algum erro ou quer contribuir para documentação?",
+    "edit_on_github": "Altere esta página no GitHub!"
   },
   "examples": {
-    "source_code": "Source Code"
+    "source_code": "Código-fonte"
   }
 }

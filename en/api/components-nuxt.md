@@ -7,11 +7,6 @@ description: Display the page components inside a layout.
 
 > This component is used only in [layouts](/guide/views#layouts) to display the page components.
 
-**Props**:
-- nuxtChildKey: `string`
-  - This prop will be set to `<router-view/>`, useful to make transitions inside a dynamic page and different route.
-  - Default: `$route.fullPath`
-
 Example (`layouts/default.vue`):
 
 ```html
@@ -25,3 +20,37 @@ Example (`layouts/default.vue`):
 ```
 
 To see an example, take a look at the [layouts example](/examples/layouts).
+
+**Props**:
+
+- nuxtChildKey: `string`
+  - This prop will be set to `<router-view/>`, useful to make transitions inside a dynamic page and different route.
+  - Default: `$route.path`
+
+There are 3 ways to handle internal `key` prop of `<router-view/>`.
+
+1. `nuxtChildKey` prop
+
+  ```html
+  <template>
+     <div>
+       <nuxt :nuxt-child-key="someKey"/>
+     </div>
+  </template>
+  ```
+
+2. `key` option in page components: `string` or `function`
+
+  ```js
+  export default {
+     key(route) {
+       return route.fullPath
+     }
+  }
+  ```
+
+- name: `string` (_introduced with Nuxt v2.4.0_)
+  - This prop will be set to `<router-view/>`, used to render named-view of page component.
+  - Default: `default`
+
+To see an example, take a look at the [named-views example](/examples/named-views).

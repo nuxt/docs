@@ -95,7 +95,7 @@ test('Route / exits and render HTML', async t => {
 })
 
 // DOM チェックを経由してテストする例
-test('Route / exits and render HTML with CSS applied', async t => {
+test('Route / exists and renders HTML with CSS applied', async t => {
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
   t.not(element, null)
@@ -124,7 +124,7 @@ jsdom はブラウザを使っていないため制約がいくつかありま�
 
 > [Prettier](prettier.io) はとても人気のあるコードフォーマッタです。
 
-Nuxt.jsを使ってとても簡単に Prettier と ESLint を追加することができます。まず、npmの依存パッケージを追加する必要があります:
+Nuxt.js を使ってとても簡単に Prettier と ESLint を追加することができます。まず、npm の依存パッケージを追加する必要があります:
 
 ```bash
 npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader eslint-plugin-vue eslint-plugin-prettier prettier
@@ -188,7 +188,7 @@ ESLint は `.gitignore` に定義されたファイルを無視しますが、�
 
 また、Webpack を使用してホットリロードモードで ESLint を有効にすることをお勧めします。この方法で ESLint は `npm run dev` 中に保存で実行されます。`nuxt.config.js` に以下を追加してください：
 
-```
+```js
 ...
   /*
    ** Build configuration
@@ -211,4 +211,8 @@ ESLint は `.gitignore` に定義されたファイルを無視しますが、�
   }
 ```
 
-<p class="Alert Alert--info">package.json に `"precommit": "npm run lint"` を追加してコードをコミットする前に自動的に lint するのはベストプラクティスのひとつです。</p>
+<div class="Alert Alert--orange">
+
+package.json に `"precommit": "npm run lint"` を追加してコードをコミットする前に自動的に lint するのはベストプラクティスのひとつです。
+
+</div>

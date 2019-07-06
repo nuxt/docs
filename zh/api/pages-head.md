@@ -5,7 +5,7 @@ description: Nuxt.js 使用了 vue-meta 更新应用的头部标签和html属性
 
 # head 方法
 
-> Nuxt.js 使用了 [`vue-meta`](https://github.com/declandewet/vue-meta) 更新应用的 `头部标签(Head)` 和 `html 属性`。
+> Nuxt.js 使用了 [`vue-meta`](https://github.com/nuxt/vue-meta) 更新应用的 `头部标签(Head)` 和 `html 属性`。
 
 - **类型：** `Object` 或 `Function`
 
@@ -37,4 +37,8 @@ export default {
 </script>
 ```
 
-<p class="Alert">注意：为了避免子组件中的meta标签不能正确覆盖父组件中相同的标签而产生重复的现象，建议利用 `hid` 键为meta标签配一个唯一的标识编号。请阅读[关于 `vue-meta` 的更多信息](https://github.com/declandewet/vue-meta#lists-of-tags)。</p>
+<div class="Alert Alert--teal">
+
+注意：为了避免子组件中的meta标签不能正确覆盖父组件中相同的标签而产生重复的现象，建议利用 `hid` 键为meta标签配一个唯一的标识编号。请阅读[关于 `vue-meta` 的更多信息](https://vue-meta.nuxtjs.org/api/#tagidkeyname)。
+
+</div>

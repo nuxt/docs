@@ -5,11 +5,11 @@ description: Node.js サーバーのミドルウェアとして Nuxt.js を使�
 
 # nuxt.render(req, res)
 
-- 型: `関数`
+- 型: `Function`
 - 引数:
     1. [リクエスト](https://nodejs.org/api/http.html#http_class_http_incomingmessage)
     2. [レスポンス](https://nodejs.org/api/http.html#http_class_http_serverresponse)
-- 戻り値: `プロミス`
+- 戻り値: `Promise`
 
 > `nuxt.render` を使うと、Node.js サーバーのミドルウェアとして Nuxt.js を使うことができます。
 
@@ -34,10 +34,6 @@ app.use(nuxt.render)
 if (config.dev) {
   new Builder(nuxt).build()
   .then(listen)
-  .catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
 }
 else {
   listen()
@@ -50,4 +46,8 @@ function listen() {
 }
 ```
 
-<p class="Alert">ミドルウェアの終わりに `nuxt.render` を呼び出すことをお勧めします。`nuxt.render` は Web アプリケーションのレンダリングを処理し、`next()` を呼び出さないからです。</p>
+<div class="Alert">
+
+ミドルウェアの終わりに `nuxt.render` を呼び出すことをお勧めします。`nuxt.render` は Web アプリケーションのレンダリングを処理し、`next()` を呼び出さないからです。
+
+</div>

@@ -13,15 +13,15 @@ description: Nuxt.js ではグローバルに適用したい（すべてのペ�
 npm install --save-dev node-sass sass-loader
 ```
 
-- 型: `配列`
-- 要素: `文字列`
+- 型: `Array`
+  - 要素: `String`
 
 `nuxt.config.js` 内で CSS リソースを追加するには:
 
 ```js
-module.exports = {
+export default {
   css: [
-    // node モジュールを直接ロードする (ここでは SASS ファイル)
+    // Node.js モジュールを直接ロードする (ここでは SASS ファイル)
     'bulma',
     // プロジェクト内の CSS ファイル
     '@/assets/css/main.css',

@@ -5,59 +5,60 @@ description: ユニバーサルなウェブアプリケーションから静的�
 
 # generate プロパティ
 
-- 型: `オブジェクト`
+- 型: `Object`
 
 > ユニバーサルなウェブアプリケーションから静的なウェブアプリケーションの生成について設定します。
 
 `nuxt generate` コマンドを実行するか `nuxt.generate()` を呼び出したとき、Nuxt.js は `generate` プロパティで定義された設定を使います。
 
+`nuxt.config.js` 
+
+```js
+export default {
+  generate: {
+    ...
+  }
+}
+```
+
 ## dir
 
-- 型: `文字列`
+- 型: `String`
 - デフォルト: `'dist'`
 
 `nuxt generate` で作成されるディレクトリ名です。
 
+## devtools
+
+- 型: `Boolean`
+- デフォルト: `false`
+
+[vue-devtools](https://github.com/vuejs/vue-devtools) よる検査を許可するかどうかを設定します。
+
+もし既に `nuxt.config.js` か何かで有効にしている場合は、このフラグに関係なく `devtools` が有効になります。
+
+## fallback
+
+- 型: `String` or `Boolean`
+- デフォルト: `'200.html'`
+
+SPA のフォールバックとなるパス。このファイルは、 generate されたサイトを静的サイトホスティングへデプロイする時に利用します。`mode: 'spa'` においてルーティングが存在しない場合、フォールバックされます。
+
 ## interval
 
-- 型: `数値`
+- 型: `Number`
 - デフォルト: `0`
 
-２つのレンダーの間でのインターバルで、ウェブアプリケーションからの潜在的な API に対して溢れでないようにするためのものです。
+2つのレンダーの間でのインターバルで、ウェブアプリケーションからの潜在的な API に対して溢れでないようにするためのものです。
 
 ## minify
 
-- 型: '文字列'
-- デフォルト:
-
-```js
-minify: {
-  collapseBooleanAttributes: true,
-  collapseWhitespace: false,
-  decodeEntities: true,
-  minifyCSS: true,
-  minifyJS: true,
-  processConditionalComments: true,
-  removeAttributeQuotes: false,
-  removeComments: false,
-  removeEmptyAttributes: true,
-  removeOptionalTags: true,
-  removeRedundantAttributes: true,
-  removeScriptTypeAttributes: false,
-  removeStyleLinkTypeAttributes: false,
-  removeTagWhitespace: false,
-  sortAttributes: true,
-  sortClassName: false,
-  trimCustomFragments: true,
-  useShortDoctype: true
-}
-```
-
-generate 処理で生成される HTML ファイルをミニファイするために Nuxt.js で使われている [html-minifier](https://github.com/kangax/html-minifier) のデフォルト設定を変更することができます。
+- **非推奨です！**
+- 代わりに [build.html.minify](/api/configuration-build#html-minify) オプションを利用してください
 
 ## routes
 
-- 型: `配列`
+- 型: `Array`
 
 generate コマンドでは [動的なルーティング](/guide/routing#動的なルーティング) は無視されます。
 
@@ -77,7 +78,7 @@ generate コマンドでは [動的なルーティング](/guide/routing#動的�
 `nuxt.config.js` 内に `/users/:id` のルーティングを追加します:
 
 ```js
-module.exports = {
+export default {
   generate: {
     routes: [
       '/users/1',
@@ -115,9 +116,9 @@ nuxt:generate HTML Files generated in 7.6s +6ms
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
-module.exports = {
+export default {
   generate: {
     routes: function () {
       return axios.get('https://my-api/users')
@@ -125,7 +126,7 @@ module.exports = {
         return res.data.map((user) => {
           return '/users/' + user.id
         })
-      })      
+      })
     }
   }
 }
@@ -136,14 +137,14 @@ module.exports = {
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
-module.exports = {
+export default {
   generate: {
     routes: function (callback) {
       axios.get('https://my-api/users')
       .then((res) => {
-        var routes = res.data.map((user) => {
+        const routes = res.data.map((user) => {
           return '/users/' + user.id
         })
         callback(null, routes)
@@ -153,3 +154,86 @@ module.exports = {
   }
 }
 ```
+
+### `payload` による動的ルーティング生成の高速化
+
+上記の例では、サーバーから `user.id` を利用してルーティングを生成しますが、必要なデータ以外を破棄しています。通常、そのような場合は `/users/_id.vue` の内部から再度データを取得する必要があります。再度取得することは可能ですが、そうした場合は `generate.interval` オプションに `100` などの値を設定して、サーバーへとコールが溢れないようにする必要があります。このような実装は生成時間の増加へとつながるため、 `user` オブジェクト自体を、 `_id.vue` のコンテキストに渡すことが望ましいでしょう。上記のコードを、以下のように変更することで、実現することができます :
+
+`nuxt.config.js`
+
+```js
+import axios from 'axios'
+
+export default {
+  generate: {
+    routes: function () {
+      return axios.get('https://my-api/users')
+      .then((res) => {
+        return res.data.map((user) => {
+          return {
+            route: '/users/' + user.id,
+            payload: user
+          }
+        })
+      })
+    }
+  }
+}
+```
+
+このように、 `/users/_id.vue` から `payload` へとアクセスすることが可能です :
+
+```js
+async asyncData ({ params, error, payload }) {
+  if (payload) return { user: payload }
+  else return { user: await backend.fetchUser(params.id) }
+}
+```
+
+## subFolders
+
+- 型: `Boolean`
+- デフォルト: `true`
+
+デフォルトでは、 `nuxt generate` を実行すると、全てのルーティングに合わせたディレクトリと、 `index.html` が提供されます。
+
+例:
+
+```bash
+-| dist/
+---| index.html
+---| about/
+-----| index.html
+---| products/
+-----| item/
+-------| index.html
+```
+
+false を設定した場合、ルーティングパスに従う形で HTML ファイルを生成します:
+
+`nuxt.config.js` 
+
+```js
+export default {
+  generate: {
+    subFolders: false
+  }
+}
+```
+
+```bash
+-| dist/
+---| index.html
+---| about.html
+---| products/
+-----| item.html
+```
+
+_情報: このオプションは、[Netlify](https://netlify.com) をはじめとする、 HTML によるフォールバックを利用する静的サイトホスティングサイトにおいて利用されます。_
+
+## concurrency
+
+- 型: `Number`
+- デフォルト: `500`
+
+`generate.concurrency` では、単一のスレッドで同時に生成されるルーティングの生成の数を設定します。

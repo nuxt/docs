@@ -16,27 +16,31 @@ npm run generate
 GitHub Pages のホスティングにデプロイするもの全てが入った
  `dist` フォルダが作成されます。プロジェクトリポジトリであれば `gh-pages` ブランチ、ユーザーや組織のサイトであれば `master` ブランチにデプロイしてください 。
 
-<p class="Alert Alert--nuxt-green"><b>情報:</b> GitHub Pages にカスタムドメインを利用し `CNAME` ファイルを置くのであれば、CNAME ファイルは `static` ディレクトリに置くことをお勧めします。 より詳しい情報は[こちら](/guide/assets#static)を参照してください。</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>情報:</b> GitHub Pages にカスタムドメインを利用し `CNAME` ファイルを置くのであれば、CNAME ファイルは `static` ディレクトリに置くことをお勧めします。 より詳しい情報は[こちら](/guide/assets#static)を参照してください。
+
+</div>
 
 ## リポジトリに GitHub Pages をデプロイする
 
-ある特定のリポジトリに GitHub Pages を作成しており、カスタムドメインをお持ちでない場合、ページの URL はこの形式になります:  `https://<username>.github.io/<repository-name>`。
+ある特定のリポジトリに GitHub Pages を作成しており、カスタムドメインをお持ちでない場合、ページの URL はこの形式になります: `https://<username>.github.io/<repository-name>`。
 
 もし、[router プロパティの base](https://nuxtjs.org/api/configuration-router/#base) を追加せずに `dist` フォルダをデプロイし、デプロイしたサイトにアクセスした場合、アセットが見つからないため、サイトが機能していないことが分かるはずです。 これは、ウェブサイトのルートが `/` となることを想定したためです。しかし実際には、GitHub Pages にデプロイした場合、`/<repository-name>` となります。
 
 この問題を解決するためには、`nuxt.config.js` に [router base](https://nuxtjs.org/api/configuration-router/#base) の設定を追加する必要があります:
 
 ```js
-module.exports = {
+export default {
   router: {
     base: '/<repository-name>/'
   }
 }
 ```
 
-こうすると、生成されたすべてのパスアセットに {`/<repository-name>/` という接頭辞が付けられるため、次に GitHub ページリポジトリにコードをデプロイした時には、サイトは正常に動作するはずです。
+こうすると、生成されたすべてのパスアセットに `/<repository-name>/` という接頭辞が付けられるため、次に GitHub ページリポジトリにコードをデプロイした時には、サイトは正常に動作するはずです。
 
-しかし、`router.base` を`nuxt.config.js` 内でデフォルトで設定することには問題もあります。ベースパスが変更されているため、`npm run dev` が上手く動作しないのです。この問題を解決するには、次のように `router.base` に `<repository-name>` を含めるかどうかを判定する条件式を追加します。
+しかし、`router.base` を `nuxt.config.js` 内でデフォルトで設定することには問題もあります。ベースパスが変更されているため、`npm run dev` が上手く動作しないのです。この問題を解決するには、次のように `router.base` に `<repository-name>` を含めるかどうかを判定する条件式を追加します。
 
 ```js
 /* nuxt.config.js */
@@ -47,7 +51,7 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   }
 } : {}
 
-module.exports = {
+export default {
   ...routerBase
 }
 ```
@@ -120,7 +124,7 @@ npm run deploy
 
 ![Travis Builder Server Settings](/github_pages_travis_02.png)
 
-同じ画面を下にスクロールして Environment Variables (環境変数) セクションを表示させたら、`GITHUB_ACCESS_TOKEN` という名前の新しい変数を作成し、値のフィールドにさきほど生成したおいた GitHub personal access token を入力し、'Add' (追加) ボタンをクリックします。
+同じ画面を下にスクロールして Environment Variables（環境変数）セクションを表示させたら、`GITHUB_ACCESS_TOKEN` という名前の新しい変数を作成し、値のフィールドにさきほど生成したおいた GitHub personal access token を入力し、'Add'（追加）ボタンをクリックします。
 
 ![Travis Builder Server Environment Variables](/github_pages_travis_03.png)
 
@@ -174,7 +178,7 @@ git push origin
 
 もう1つのオープンソースプロジェクトのビルドサーバーである [Appveyor](https://www.appveyor.com) でデプロイするには、GitHub の認証を使用して、自分の GitHub アカウントを使って新しいアカウントを作成します。
 
-サインインしたら、'New project' (新規プロジェクト) のリンクをクリックして、表示されたリスト中のリポジトリ名の横にある 'Add' (追加) ボタンを押して、リポジトリに対してビルドサーバーを有効にします。
+サインインしたら、'New project'（新規プロジェクト）のリンクをクリックして、表示されたリスト中のリポジトリ名の横にある 'Add'（追加）ボタンを押して、リポジトリに対してビルドサーバーを有効にします。
 
 ![Appveyor Builder Server Enable](/github_pages_appveyor_01.png)
 

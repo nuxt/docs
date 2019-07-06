@@ -22,12 +22,12 @@ description: 显示当前页面
 [
   {
     path: '/parent',
-    component: '~pages/parent.vue',
+    component: '~/pages/parent.vue',
     name: 'parent',
     children: [
       {
         path: 'child',
-        component: '~pages/parent/child.vue',
+        component: '~/pages/parent/child.vue',
         name: 'parent-child'
       }
     ]
@@ -41,9 +41,44 @@ description: 显示当前页面
 <template>
   <div>
     <h1>我是父级页面</h1>
-    <nuxt-child/>
+    <nuxt-child :foobar="123" />
+  </div>
+</template>
+```
+`<nuxt-child/>` 接收 `keep-alive` 和 `keep-alive-props`:
+
+```html
+<template>
+  <div>
+    <nuxt-child keep-alive :keep-alive-props="{ exclude: ['modal'] }" />
+  </div>
+</template>
+
+<!-- 将被转换成以下形式 -->
+<div>
+  <keep-alive :exclude="['modal']">
+    <router-view />
+  </keep-alive>
+</div>
+```
+
+> 子组件还可以接收Vue组件等属性。
+
+可以看这个实际案例：[嵌套路由示例](/examples/nested-routes)
+
+## 命名视图
+
+> Nuxt v2.4.0 新增
+
+`<nuxt-child/>`接受`name` prop 来呈现渲染命名视图：
+
+```html
+<template>
+  <div>
+    <nuxt-child name="top" />
+    <nuxt-child />
   </div>
 </template>
 ```
 
-可以看这个实际案例：[嵌套路由示例](/examples/nested-routes)
+查看更多例子，请点击 [named-views 例子](/examples/named-views).

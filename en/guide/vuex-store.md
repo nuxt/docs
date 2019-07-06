@@ -1,9 +1,17 @@
 ---
 title: Vuex Store
-description: Using a store to manage the state is important for every big application, that's why Nuxt.js implements Vuex in its core.
+description: Using a store to manage the state is important for every big application. That's why Nuxt.js implements Vuex in its core.
 ---
 
-> Using a store to manage the state is important to every big application, that's why Nuxt.js implements [Vuex](https://vuex.vuejs.org/en/) in its core.
+> Using a store to manage the state is important for every big application. That's why Nuxt.js implements [Vuex](https://vuex.vuejs.org/en/) in its core.
+
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/utilising-the-vuex-store-nuxtjs?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Watch a free lesson about <strong>Nuxt.js and Vuex</strong> on Vue School 
+    </p>
+  </a>
+</div>
 
 ## Activate the Store
 
@@ -12,51 +20,18 @@ Nuxt.js will look for the `store` directory, if it exists, it will:
 1. Import Vuex,
 2. Add the `store` option to the root Vue instance.
 
-Nuxt.js lets you have **2 modes of store**, choose the one you prefer:
+Nuxt.js lets you decide between **2 store modes**. You can choose the one you prefer:
 
-- **Classic:** `store/index.js` returns a store instance.
 - **Modules:** every `.js` file inside the `store` directory is transformed as a [namespaced module](http://vuex.vuejs.org/en/modules.html) (`index` being the root module).
+- **Classic (__deprecated__):** `store/index.js` returns a method to create a store instance.
 
 Regardless of the mode, your `state` value should **always be a `function`** to avoid unwanted *shared* state on the server side.
-
-## Classic mode
-
-To activate the store with the classic mode, we create the `store/index.js` file which should export a method which returns a Vuex instance:
-
-```js
-import Vuex from 'vuex'
-
-const createStore = () => {
-  return new Vuex.Store({
-    state: () => ({
-      counter: 0
-    }),
-    mutations: {
-      increment (state) {
-        state.counter++
-      }
-    }
-  })
-}
-
-export default createStore
-```
-
-> We don't need to install `vuex` since it's shipped with Nuxt.js.
-
-We can now use `this.$store` inside our components:
-
-```html
-<template>
-  <button @click="$store.commit('increment')">{{ $store.state.counter }}</button>
-</template>
-```
 
 ## Modules mode
 
 > Nuxt.js lets you have a `store` directory with every file corresponding to a module.
 
-If you want this option, export the state as a function, and the mutations and actions as objects in `store/index.js` instead of a store instance:
+To get started, simply export the state as a function, and the mutations and actions as objects in `store/index.js`:
 
 ```js
 export const state = () => ({
@@ -93,7 +68,7 @@ export const mutations = {
 }
 ```
 
-The store will be as such:
+The store will be created as such:
 
 ```js
 new Vuex.Store({
@@ -106,8 +81,8 @@ new Vuex.Store({
     }
   },
   modules: {
-    namespaced: true,
     todos: {
+      namespaced: true,
       state: () => ({
         list: []
       }),
@@ -148,7 +123,9 @@ import { mapMutations } from 'vuex'
 
 export default {
   computed: {
-    todos () { return this.$store.state.todos.list }
+    todos () {
+      return this.$store.state.todos.list
+    }
   },
   methods: {
     addTodo (e) {
@@ -171,7 +148,7 @@ export default {
 
 > The module method also works for top-level definitions without implementing a sub-directory in the `store` directory
 
-Example for state; you create a file `store/state.js` and add the following
+Example for state: you create a file `store/state.js` and add the following
 
 ```js
 export default () => ({
@@ -189,15 +166,15 @@ export default {
 }
 ```
 
-<div class="Alert">You can also have modules by exporting a store instance, you will have to add them manually on your store.</div>
-
 ### Module files
 
 You can optionally break down a module file into separate files: `state.js`, `actions.js`, `mutations.js` and `getters.js`. If you maintain an `index.js` file with state, getters and mutations while having a single separate file for actions, that will also still be properly recognized.
 
+> Note: Whilst using split-file modules, you must remember that using arrow functions, ```this``` is only lexically available. Lexical scoping simply means that the ```this``` always references the owner of the arrow function. If the arrow function is not contained then ```this``` would be undefined. The solution is to use a "normal" function which produces its own scope and thus has ```this``` available.
+
 ### Plugins
 
-You can add additional plugin to the store (in Modules Mode) putting it into the `store/index.js` file:
+You can add additional plugins to the store (in the modules mode) by putting them into the `store/index.js` file:
 
 ```js
 import myPlugin from 'myPlugin'
@@ -219,7 +196,7 @@ More information about the plugins: [Vuex documentation](https://vuex.vuejs.org/
 
 ## The fetch Method
 
-> The `fetch` method is used to fill the store before rendering the page, it's like the `data` method except it doesn't set the component data.
+> The `fetch` method is used to fill the store before rendering the page, it's like the `asyncData` method except it doesn't set the component data.
 
 More information about the fetch method: [API Pages fetch](/api/pages-fetch).
 
@@ -243,7 +220,7 @@ actions: {
 
 The [context](/api/context) is given to `nuxtServerInit` as the 2nd argument, it is the same as `asyncData` or `fetch` method.
 
-> Note: Asynchronous `nuxtServerInit` actions must return a Promise to allow the `nuxt` server to wait on them.
+> Note: Asynchronous `nuxtServerInit` actions must return a Promise or leverage async/await to allow the `nuxt` server to wait on them.
 
 ```js
 actions: {
@@ -255,20 +232,21 @@ actions: {
 
 ## Vuex Strict Mode
 
-Strict mode is enabled by default on dev mode and turned off in production mode. To disable strict mode in dev, follow the below example.
-
-### Module Mode
+Strict mode is enabled by default on dev mode and turned off in production mode. To disable strict mode in dev, follow the below example in `store/index.js`:
 
 `export const strict = false`
 
-### Classic Mode
+## Classic mode
 
-```
+> This feature is deprecated and will be removed in Nuxt 3.
+
+To activate the store with the classic mode, we create the `store/index.js` file which should export a method that returns a Vuex instance:
+
+```js
 import Vuex from 'vuex'
 
 const createStore = () => {
   return new Vuex.Store({
-    strict: false,
     state: () => ({
       counter: 0
     }),
@@ -281,4 +259,14 @@ const createStore = () => {
 }
 
 export default createStore
+```
+
+> We don't need to install `vuex` since it's shipped with Nuxt.js.
+
+We can now use `this.$store` inside our components:
+
+```html
+<template>
+  <button @click="$store.commit('increment')">{{ $store.state.counter }}</button>
+</template>
 ```

@@ -5,7 +5,7 @@ description: Nuxt.js utilise vue-meta pour mettre à jour les entêtes et les at
 
 # La méthode head
 
-> Nuxt.js utilise [vue-meta](https://github.com/declandewet/vue-meta) pour mettre à jour les entêtes et les attributs HTML de votre application.
+> Nuxt.js utilise [vue-meta](https://github.com/nuxt/vue-meta) pour mettre à jour les entêtes et les attributs HTML de votre application.
 
 - **Type :** `Object` ou `Function`
 
@@ -29,6 +29,7 @@ export default {
     return {
       title: this.title,
       meta: [
+        // hid est utiliser comme identifiant unique. N'utilisez pas `vmid` car ça ne fonctionnera pas
         { hid: 'description', name: 'description', content: 'Ma description personnalisée' }
       ]
     }
@@ -37,4 +38,8 @@ export default {
 </script>
 ```
 
-<p class="Alert">Afin d'éviter les doublons quand vous utilisez un composant enfant, utilisez un identifiant unique à l'aide de la clé `hid`. En savoir [plus à ce propos](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+<div class="Alert Alert--teal">
+
+<b>Info :</b> Afin d'éviter les doublons quand vous utilisez un composant enfant, utilisez un identifiant unique à l'aide de la clé `hid`. En savoir [plus à ce propos](https://vue-meta.nuxtjs.org/api/#tagidkeyname).
+
+</div>

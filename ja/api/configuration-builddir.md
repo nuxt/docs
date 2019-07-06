@@ -5,7 +5,7 @@ description: dist ディレクトリを定義します。
 
 # buildDir プロパティ
 
-- 型: `文字列`
+- 型: `String`
 - デフォルト: `.nuxt`
 
 > dist ディレクトリを定義します。
@@ -13,7 +13,7 @@ description: dist ディレクトリを定義します。
 例（`nuxt.config.js`）:
 
 ```js
-module.exports = {
+export default {
   buildDir: 'nuxt-dist'
 }
 ```

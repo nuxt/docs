@@ -36,7 +36,11 @@ You should put these commands in the `package.json`:
 
 Then, you can launch your commands via `npm run <command>` (example: `npm run dev`).
 
-<p class="Alert Alert--nuxt-green"><b>Pro tip:</b> to pass arguments to npm commands, you need an extra <code>--</code> script name (example: <code>npm run dev -- --spa</code>).</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>Pro tip:</b> to pass arguments to npm commands, you need an extra <code>--</code> script name (example: <code>npm run dev -- --spa</code>).
+
+</div>
 
 ## Development Environment
 
@@ -93,7 +97,11 @@ It will create a `dist` folder with everything inside ready to be deployed on a 
 
 If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take a look at the [generate configuration](/api/configuration-generate) to tell Nuxt.js how to generate these dynamic routes.
 
-<div class="Alert">When generating your web application with `nuxt generate`, [the context](/api/context) given to [data()](/guide/async-data#the-data-method) and [fetch()](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.</div>
+<div class="Alert">
+
+When generating your web application with `nuxt generate`, [the context](/api/context) given to [data()](/guide/async-data#the-data-method) and [fetch()](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.
+
+</div>
 
 ### Single Page Application Deployment (SPA)
 
@@ -109,4 +117,8 @@ So, for an SPA deployment, you must do the following:
 
 Another possible deployment method is to use Nuxt as a middleware in frameworks while in `spa` mode. This helps reduce server load and uses Nuxt in projects where SSR is not possible.
 
-<div class="Alert">See [How to deploy on Heroku?](/faq/heroku-deployment) for examples of deployment to popular hosts.</div>
+<div class="Alert">
+
+See [How to deploy on Heroku?](/faq/heroku-deployment) for examples of deployment to popular hosts.
+
+</div>

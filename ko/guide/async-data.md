@@ -5,6 +5,15 @@ description: 아마 여러분은 서버에서 데이터를 가져오고 렌더�
 
 > 아마 여러분은 서버에서 데이터를 가져오고 렌더링하고 싶은 적이 있을텐데요. Nuxt.js에서는 컴포넌트의 데이터를 셋팅하기 전에 비동기 작업을 처리할 수 있게 하는 `asyncData`를 지원합니다.
 
+<a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote">
+  <img src="/async-data-with-nuxtjs.png" srcset="/async-data-with-nuxtjs-2x.png 2x" alt="AsyncData by vueschool"/>
+  <div class="Promote__Content">
+    <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
+    <p class="Promote__Content__Description">Learn how to manage asynchronous data with Nuxt.js.</p>
+    <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+  </div>
+</a>
+
 ## asyncData 메소드
 
 여러분은 가끔씩 store를 사용하지 않고 서버사이드에서 데이터를 가져오고 렌더링하고 싶을 때가 있을겁니다.
@@ -12,7 +21,11 @@ description: 아마 여러분은 서버에서 데이터를 가져오고 렌더�
 이는 서버사이드에서 호출되거나 페이지를 이동할 때 발생하는데요.
 asyncData 메소드는 첫 인자로 [context](/api#context)를 받아옵니다. 따라서 여러분은 이를 통해 데이터를 가져와서 사용할 수 있게되며, nuxt.js가 컴포넌트 데이터와 자동으로 머지합니다.
 
-<div class="Alert Alert--orange">절대로 `asyncData` 안에서 컴포넌트를 참조하기 위해 `this`를 **사용하지 마세요. 컴포넌트가 생성되기 전에** 호출되기 때문에 엑세스할 수 없습니다.</div>
+<div class="Alert Alert--orange">
+
+절대로 `asyncData` 안에서 컴포넌트를 참조하기 위해 `this`를 **사용하지 마세요. 컴포넌트가 생성되기 전에** 호출되기 때문에 엑세스할 수 없습니다.
+
+</div>
 
 `asyncData`에는 몇 가지 사용 방법이 있습니다. 아래 중에서 원하는 것을 골라 사용해보세요:
 

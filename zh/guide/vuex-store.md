@@ -5,6 +5,14 @@ description: 对于每个大项目来说，使用状态树 (store) 管理状态 
 
 > 对于每个大项目来说，使用状态树 (store) 管理状态 (state) 十分有必要。这就是为什么 Nuxt.js 内核实现了 [Vuex](https://github.com/vuejs/vuex)。
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/utilising-the-vuex-store-nuxtjs?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+    在Vue School 上观看关于<strong>Nuxt.js 和 Vuex</strong> 的免费课程
+    </p>
+  </a>
+</div>
+
 ## 使用状态树
 
 Nuxt.js 会尝试找到应用根目录下的 `store` 目录，如果该目录存在，它将做以下的事情：
@@ -14,49 +22,18 @@ Nuxt.js 会尝试找到应用根目录下的 `store` 目录，如果该目录存
 3. 设置 `Vue` 根实例的 `store` 配置项
 
 Nuxt.js 支持两种使用 `store` 的方式，你可以择一使用：
-- **普通方式：** `store/index.js` 返回一个 Vuex.Store 实例
+
 - **模块方式：** `store` 目录下的每个 `.js` 文件会被转换成为状态树[指定命名的子模块](http://vuex.vuejs.org/en/modules.html) （当然，`index` 是根模块）
+
+- **Classic(不建议使用)：** `store/index.js`返回创建Vuex.Store实例的方法。
+
+无论使用那种模式，您的`state`的值应该**始终是**`function`，为了避免返回引用类型，会导致多个实例相互影响。
 
 ### 普通方式
 
-使用普通方式的状态树，需要添加 `store/index.js` 文件，并对外暴露一个 Vuex.Store 实例：
+> Nuxt.js允许您拥有一个 `store` 目录，其中包含与模块对应的每个文件。
 
-```js
-import Vue from 'vue'
-import Vuex from 'vuex'
-
-Vue.use(Vuex)
-
-const store = () => new Vuex.Store({
-
-  state: {
-    counter: 0
-  },
-  mutations: {
-    increment (state) {
-      state.counter++
-    }
-  }
-})
-
-export default store
-```
-
-> Nuxt.js 内置引用了 `vuex` 模块，所以不需要额外安装。
-
-现在我们可以在组件里面通过 `this.$store` 来使用状态树：
-
-```html
-<template>
-  <button @click="$store.commit('increment')">{{ $store.state.counter }}</button>
-</template>
-```
-
-### 模块方式
-
-> 状态树还可以拆分成为模块，`store` 目录下的每个 `.js` 文件会被转换成为状态树[指定命名的子模块](http://vuex.vuejs.org/en/modules.html)
-
-使用**状态树模块化**的方式，`store/index.js` 不需要返回 Vuex.Store 实例，而应该直接将 `state`、`mutations` 和 `actions` 暴露出来：
+首先，只需将状态导出为 *函数*，将变量和操作作为 `store/index.js` 中的对象导出：
 
 ```js
 export const state = () => ({
@@ -70,7 +47,7 @@ export const mutations = {
 }
 ```
 
-其他的模块文件也需要采用类似的方式，如 `store/todos.js` 文件：
+然后，您可以拥有 `store/todos.js` 文件：
 
 ```js
 export const state = () => ({
@@ -93,11 +70,13 @@ export const mutations = {
 }
 ```
 
-最终的状态树大概如下：
+Vuex将如下创建：
 
 ```js
 new Vuex.Store({
-  state: { counter: 0 },
+  state: () => ({
+    counter: 0
+  }),
   mutations: {
     increment (state) {
       state.counter++
@@ -105,9 +84,10 @@ new Vuex.Store({
   },
   modules: {
     todos: {
-      state: {
+      namespaced: true,
+      state: () => ({
         list: []
-      },
+      }),
       mutations: {
         add (state, { text }) {
           state.list.push({
@@ -127,7 +107,7 @@ new Vuex.Store({
 })
 ```
 
-在页面组件 `pages/todos.vue`， 可以像下面这样使用 `todos` 模块：
+在您的 `pages/todos.vue` 中，使用 `todos` 模块：
 
 ```html
 <template>
@@ -145,7 +125,9 @@ import { mapMutations } from 'vuex'
 
 export default {
   computed: {
-    todos () { return this.$store.state.todos.list }
+    todos () {
+      return this.$store.state.todos.list
+    }
   },
   methods: {
     addTodo (e) {
@@ -166,9 +148,9 @@ export default {
 </style>
 ```
 
-> 模块方法也适用于顶级定义，而无需在`store`目录中实现子目录
+> 模块方法也适用于顶级定义，而无需在 `store` 目录中实现子目录
 
-state 示例，您需要创建一个文件`store/state.js`并添加以下内容：
+示例：您创建文件 `store/state.js` 并添加以下内容
 
 ```js
 export default () => ({
@@ -176,7 +158,7 @@ export default () => ({
 })
 ```
 
-并且相应的 mutations 在文件 `store/mutations.js` 中：
+相应的可以在文件夹中添加 `store/mutations.js`
 
 ```js
 export default {
@@ -186,11 +168,12 @@ export default {
 }
 ```
 
-<div class="Alert">你也可以在模块文件里返回 Vuex.Store 实例，但是这种情况下你需要手工设置应用的状态树。</div>
-
 ### 模块文件
 
-您可以将模块文件分解为单独的文件：`state.js`,`actions.js`,`mutations.jd`和`getters.js`。如果您使用`inxt.js`来维护`state`,`getters`,`actions`和`mutations`，同时具有单个单独的操作文件，那么仍然可以正确识别该文件。
+您可以将模块文件分解为单独的文件：`state.js`,`actions.js`,`mutations.js`和`getters.js`。如果您使用`index.js`来维护`state`,`getters`,`actions`和`mutations`，同时具有单个单独的操作文件，那么仍然可以正确识别该文件。
+
+
+> 注意：在使用拆分文件模块时，必须记住使用**箭头函数功能**， `this` 在词法上可用。词法范围`this`意味着它总是指向引用**箭头函数**的所有者。如果未包含**箭头函数**，那么`this`将是未定义的(`undefined`)。解决方案是使用 "normal" 功能，该功能会将`this`指向自己的作用域，因此可以使用。
 
 ### 插件
 
@@ -260,7 +243,11 @@ actions: {
 
 `export const strict = false`
 
-### 普通方式
+### 经典模式
+
+> 此功能已经弃用，将在Nuxt 3中删除。
+
+要使用经典模式创建Vuex，我们应该创建`store/index.js`到处返回Vuex实例的方法的文件：
 
 ```js
 import Vuex from 'vuex'
@@ -280,4 +267,14 @@ const createStore = () => {
 }
 
 export default createStore
+```
+
+> 我们不需要安装，因为Vuex由Nuxt.js提供。
+
+我们现在可以在我们的组件中使用`this.$store`：
+
+```html
+<template>
+  <button @click="$store.commit('increment')">{{ $store.state.counter }}</button>
+</template>
 ```

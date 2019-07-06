@@ -9,9 +9,9 @@ description: 如何集成 Google 统计分析服务？
 
 ```js
 /*
-** 只在生成模式的客户端中使用
+** 只在生产模式的客户端中使用
 */
-if (process.BROWSER_BUILD && process.env.NODE_ENV === 'production') {
+if (process.client && process.env.NODE_ENV === 'production') {
   /*
   ** Google 统计分析脚本
   */
@@ -54,4 +54,8 @@ module.exports = {
 
 恭喜，你的 Nuxt.js 应用成功集成了 Google 的统计分析服务。
 
-<p class="Alert Alert--nuxt-green"><b>提示：</b> 你可以用相同的方法集成别的统计分析服务。</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>提示：</b> 你可以用相同的方法集成别的统计分析服务。
+
+</div>

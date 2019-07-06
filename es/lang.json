@@ -1,5 +1,6 @@
 {
   "iso": "es",
+  "docVersion": "2.3.X",
   "links": {
     "api": "API",
     "blog": "Blog",
@@ -15,12 +16,15 @@
     "homepage": "Pagina principal",
     "live_demo": "Demo en vivo",
     "live_edit": "Editar en vivo",
+    "tidelift_short": "GET PROFESSIONAL SUPPORT",
+    "official_support": "GET OFFICIAL SUPPORT ⛑",
+    "tidelift": "GET PROFESSIONAL SUPPORT FOR NUXT",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Trabajos en Vue.js"
   },
   "text": {
-    "an_error_occured": "Ha ocurrido un error",
+    "an_error_occurred": "Ha ocurrido un error",
     "api_page_not_found": "La pagina de la API no se encuentra",
     "example_file": "Archivos de ejemplo",
     "please_wait": "Por favor espere...",
@@ -35,9 +39,21 @@
       "title": "Nuxt.js - Aplicaciones VueJs universales",
       "description": "Nuxt es un framework minimalista para crear aplicaciones Vue.js que se renderizables del lado del servidor, division de codigo, recarga en caliente, generacion estatica y mucho mas!"
     },
+    "welcome": {
+      "app_types_prefix": "For ",
+      "app_types": ["Universal Applications", "Static Generated Applications", "Single Page Applications", "Desktop Applications", "Mobile Applications", "Progressive Web Apps"],
+      "app_types_suffix": "."
+    },
     "codesandbox_title": "Play with Nuxt.js online",
     "codesandbox_open": "Open on CodeSandBox.io",
-    "codesandbox_examples": "See more examples"
+    "codesandbox_examples": "See more examples",
+    "backer_partners": "Partners",
+    "backer_become_a_partner": "Become A Partner",
+    "backer_sponsors": "Sponsors",
+    "backer_become_a_sponsor": "Become A Sponsor",
+    "backer_backers": "Backers",
+    "backer_become_a_backer": "Become A Backer",
+    "backer_foundations": "Foundations"
   },
   "sponsors": {
     "title": "Sponsors",
