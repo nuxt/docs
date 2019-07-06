@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "common-misspellings": true
+  },
+  "filters": {
+    "whitelist": {
+      "allow": [
+        "/.?\\d+/"
+      ]
+    }
+  }
+}
