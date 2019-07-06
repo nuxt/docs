@@ -2,8 +2,8 @@
 title: 'API: Konteks (Context)'
 description: Konteks (`context`) menyediakan objek/parameter tambahan dari Nuxt yang
   tidak tersedia secara tradisional untuk komponen Vue. Konteks (`context`) tersedia
-  dalam area siklus (lifecycle) spesial nuxt  seperti `asyncData`, `plugins`, 'middlewares',
-  'modules', dan 'store/nuxtServerInit`.
+  dalam area siklus (lifecycle) spesial nuxt  seperti `asyncData`, `plugins`, `middlewares`,
+  `modules`, dan `store/nuxtServerInit`.
 ---
 
 ## Konteks (Context)

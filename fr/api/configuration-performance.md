@@ -1,5 +1,5 @@
 ---
-title: "API: The performance Property"
+title: "API: The performance Property (EN)"
 description: Configure nuxt.js performance options
 ---
 
@@ -18,7 +18,7 @@ description: Configure nuxt.js performance options
 }
 ```
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>In production, nuxt.js will gzip all your assets by using the [compression](https://github.com/expressjs/compression) module.</p>
+In production, nuxt.js will gzip all your assets by using the [compression](https://github.com/expressjs/compression) module.
 
 If you are using a service like [CloudFare](https://www.cloudflare.com/) which already gzip every response, you can disable this feature in your `nuxt.config.js`:
 ```js
@@ -52,3 +52,5 @@ module.exports = {
   }
 }
 ```
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

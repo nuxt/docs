@@ -33,20 +33,8 @@ Chinese translation is maintained by AOTU Labs from China, Shenzhen.
 Japanese translation is maintained by [Vue.js Japan User Group](https://github.com/vuejs-jp/home).
 
 * Translation Repo - [https://github.com/vuejs-jp/ja.docs.nuxtjs](https://github.com/vuejs-jp/ja.docs.nuxtjs)
-* Primary maintainer - [INOUE Takuya(@inouetakuya)](http://blog.inouetakuya.info/), [HANATANI Takuma(@potato4d)](https://github.com/potato4d), [numa(@aytdm)](https://github.com/aytdm)
-* Primary translator - [INOUE Takuya(@inouetakuya)](https://github.com/inouetakuya), [HANATANI Takuma(@potato4d)](https://github.com/potato4d), [numa(@aytdm)](https://github.com/aytdm)
-
-#### textlint
-
-Japanese translation use [textlint](https://github.com/textlint/textlint).
-
-Example commands:
-
-```bash
-npm run textlint:ja
-npm run textlint:ja:fix --dry-run
-npm run textlint:ja:fix
-```
+* Primary maintainer - [INOUE Takuya(@inouetakuya)](http://blog.inouetakuya.info/), [numa(@aytdm)](https://github.com/aytdm)
+* Primary translator - [INOUE Takuya(@inouetakuya)](https://github.com/inouetakuya), [numa(@aytdm)](https://github.com/aytdm)
 
 ### Korean
 

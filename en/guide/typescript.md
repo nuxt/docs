@@ -5,7 +5,7 @@ description: Nuxt.js is shipped with @nuxtjs/typescript module with built-in Typ
 
 > A static type system can help prevent many potential runtime errors, especially as applications grow.
 >
-> That's why Nuxt's brand new `@nuxt/typescript` package ships built-in TypeScript tooling support :
+> That's why Nuxt's brand new `@nuxt/typescript` package ships built-in TypeScript tooling support:
 > - Nuxt official type definitions
 > - Autocompletion in IDE
 > - Write everything in TypeScript fashion (`layouts`, `pages`, `components`, `plugins`, `store`)
@@ -14,7 +14,8 @@ description: Nuxt.js is shipped with @nuxtjs/typescript module with built-in Typ
 
 ## Get started
 
-To be able to use TypeScript in your project, you will need to install `@nuxt/typescript` as `devDependency` and `ts-node` as `dependency` :
+To use TypeScript in your project, install `@nuxt/typescript` in `devDependencies` and `ts-node` in `dependencies`:
+
 ```sh
 npm i -D @nuxt/typescript
 npm i ts-node
@@ -25,17 +26,17 @@ yarn add ts-node
 
 <div class="Alert Alert--gray">
 
-`@nuxt/typescript` ships typescript related dependencies needed to compile TypeScript files & check types in a separate process.
+**INFO:** `@nuxt/typescript` ships typescript-related dependencies needed to compile TypeScript files & check types in a separate process.
 
 </div>
 
 <div class="Alert Alert--gray">
 
-`ts-node` extends Nuxt core to enable runtime TypeScript support for `nuxt.config.ts` & `serverMiddlewares`.
+**INFO:** `ts-node` extends `@nuxt/core` to enable runtime TypeScript support for `nuxt.config.ts` & `serverMiddlewares`.
 
 </div>
 
-You'll also need to create an empty `tsconfig.json` file in your root project folder, through either code editor or command line :
+You'll also need to create an empty `tsconfig.json` file in your root project folder, through either a code editor or command line:
 
 ```sh
 touch tsconfig.json
@@ -43,7 +44,7 @@ touch tsconfig.json
 
 <div class="Alert Alert--gray">
 
-**INFO:** The `tsconfig.json` file will be automatically updated with defaults value the first time you're running `nuxt` command.
+**INFO:** The `tsconfig.json` file will automatically update with default values the first time you run the `nuxt` command.
 
 </div>
 
@@ -51,9 +52,9 @@ touch tsconfig.json
 
 ### Configuration file
 
-To be able to use TypeScript in your configuration file, all you need is to rename `nuxt.config.js` to `nuxt.config.ts`.
+To use TypeScript in your configuration file, all you need to do is rename `nuxt.config.js` in your root project folder to `nuxt.config.ts`.
 
-Nuxt.js also brings type definitions which provides autocompletion and type checking :
+Nuxt.js also brings type definitions which provides autocompletion and type checking:
 
 ```ts
 import NuxtConfiguration from '@nuxt/config'
@@ -67,12 +68,13 @@ export default config
 
 ### Components
 
-For components, we highly advice to use [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator) which depends on [vue-class-component](https://github.com/vuejs/vue-class-component).
+For components, we highly advise you to use [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator) which depends on [vue-class-component](https://github.com/vuejs/vue-class-component).
 
-Here is a basic example mixing a `page` and a reusable `component` to display data fetched with Nuxt `asyncData`.
+Here is a basic example of mixing a `page` with a reusable `component` to display data fetched with Nuxt's [`asyncData`](https://nuxtjs.org/guide/async-data) method.
 
 ```ts
 /* models/Post.ts */
+
 export default interface Post {
   id: number
   title: string
@@ -82,6 +84,7 @@ export default interface Post {
 
 ```html
 <!-- components/PostPreview.vue -->
+
 <template>
   <div>
     <h2>{{ post.title }}</h2>
@@ -102,6 +105,7 @@ export default class PostPreview extends Vue {
 
 ```html
 <!-- pages/feed.vue -->
+
 <template>
   <div>
     <PostPreview v-for="post in posts" :key="post.id" :post="post" />
@@ -124,13 +128,14 @@ import Post from '~/models/Post'
     }
   }
 })
+
 export default class FeedPage extends Vue {
   posts: Post[] = []
 }
 </script>
 ```
 
-You can use exact same logic for `layouts`.
+You can use the exact same logic for `layouts`.
 
 ## Linting with ESLint
 
@@ -142,17 +147,17 @@ If you're using ESLint to lint your project, here is how you can make ESLint lin
 
 </div>
 
-First, you need to install the [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) plugin :
+First, you need to install @typescript-eslint/eslint-plugin and @typescript-eslint/parser ([GitHub monorepo for typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)):
 
 ```sh
-npm install -D @typescript-eslint/eslint-plugin
+npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 # OR
-yarn add -D @typescript-eslint/eslint-plugin
+yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
-Then, edit your ESLint configuration (`.eslintrc.js`) by adding the `@typescript-eslint` plugin and making `@typescript-eslint/parser` the default parser.
+Then, edit your ESLint configuration `.eslintrc.js` by adding the `@typescript-eslint` plugin and making `@typescript-eslint/parser` the default parser.
 
-A minimal configuration should look like this :
+A minimal configuration should look like this:
 
 ```js
 module.exports = {
@@ -167,15 +172,18 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'error'
   }
 }
-
 ```
 
-Finally, add or edit the `lint` script of your `package.json` :
+Finally, add or edit the `lint` script of your `package.json`:
 
 ```json
 "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore ."
 ```
 
-> `--ignore-path` option is useful to prevent ESLint linting files/folders like `node_modules`, `.nuxt` or whatever you don't want it to lint.
+<div class="Alert Alert--gray">
+
+**INFO:** The `--ignore-path` option is useful in preventing ESLint from linting files/folders like `node_modules`, `.nuxt` or any others you don't want to lint.
+
+</div>
 
 You can now lint your TypeScript files by running `npm run lint` (or `yarn lint`).

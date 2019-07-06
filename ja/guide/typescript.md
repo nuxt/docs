@@ -14,7 +14,8 @@ description: "Nuxt.js は TypeScript がビルドインされた `@nuxt/typescri
 
 ## はじめる
 
-プロジェクトで TypeScript を利用するためには `@nuxt/typescript` をインストールする必要があります。
+プロジェクトで TypeScript を利用するためには `@nuxt/typescript` を `devDependencies` に、`ts-node` を `dependencies` にインストールする必要があります。
+
 ```sh
 npm i -D @nuxt/typescript
 npm i ts-node
@@ -25,13 +26,13 @@ yarn add ts-node
 
 <div class="Alert Alert--gray">
 
-`@nuxt/typescript` は TypeScript ファイルのコンパイルと型チェックを別のプロセスで行うのに必要な TypeScript 関連の依存関係を持っています。
+**情報:** `@nuxt/typescript` は TypeScript ファイルのコンパイルと型チェックを別のプロセスで行うのに必要な TypeScript 関連の依存関係を持っています。
 
 </div>
 
 <div class="Alert Alert--gray">
 
-`ts-node` は `nuxt.config.ts` と `serverMiddlewares` をサポートする TypeScript ランタイムを有効化するため Nuxt のコアを拡張します。
+**情報:** `ts-node` は `nuxt.config.ts` と `serverMiddlewares` をサポートする TypeScript ランタイムを有効化するため `@nuxt/core` を拡張します。
 
 </div>
 
@@ -51,7 +52,7 @@ touch tsconfig.json
 
 ### 設定ファイル
 
-設定ファイル内で TypeScript と使えるようにするために必要なことは `nuxt.config.js` ファイルを `nuxt.config.ts` へリネームするだけです。
+設定ファイル内で TypeScript と使えるようにするために必要なことは、プロジェクトのルートフォルダにある `nuxt.config.js` ファイルを `nuxt.config.ts` へリネームするだけです。
 
 Nuxt.js はオートコンプリートと型チェックを行うための型定義を提供します:
 
@@ -69,10 +70,11 @@ export default config
 
 コンポーネントのために [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator) を利用することを強くお薦めします。なおこれは [vue-class-component](https://github.com/vuejs/vue-class-component) に依存しています。
 
-下記は Nuxt の `asyncData` で取得したデータを表示するための、再利用可能な `component` と `page` を組み合わせた基本的な例です。
+下記は Nuxt の [`asyncData`](https://ja.nuxtjs.org/guide/async-data) メソッドで取得したデータを表示するための、再利用可能な `component` と `page` を組み合わせた基本的な例です。
 
 ```ts
 /* models/Post.ts */
+
 export default interface Post {
   id: number
   title: string
@@ -82,6 +84,7 @@ export default interface Post {
 
 ```html
 <!-- components/PostPreview.vue -->
+
 <template>
   <div>
     <h2>{{ post.title }}</h2>
@@ -102,6 +105,7 @@ export default class PostPreview extends Vue {
 
 ```html
 <!-- pages/feed.vue -->
+
 <template>
   <div>
     <PostPreview v-for="post in posts" :key="post.id" :post="post" />
@@ -124,6 +128,7 @@ import Post from '~/models/Post'
     }
   }
 })
+
 export default class FeedPage extends Vue {
   posts: Post[] = []
 }
@@ -142,12 +147,12 @@ export default class FeedPage extends Vue {
 
 </div>
 
-まず、[typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) プラグインをインストールする必要があります。
+まず、@typescript-eslint/eslint-plugin と @typescript-eslint/parser ([typescript-eslint 用の GitHub モノリポジトリ](https://github.com/typescript-eslint/typescript-eslint)) をインストールする必要があります。
 
 ```sh
-npm install -D @typescript-eslint/eslint-plugin
+npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 # または
-yarn add -D @typescript-eslint/eslint-plugin
+yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
 それから ESLint の設定（`.eslintrc.js`）において、`@typescript-eslint` プラグインを追加し、`@typescript-eslint/parser` をデフォルトパーサーに指定するよう編集します。
@@ -176,6 +181,10 @@ module.exports = {
 "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore ."
 ```
 
-> `--ignore-path` オプションを使って、`node_modules` や `.nuxt` あるいは Lint したくないどんなファイルもしくはディレクトリも ESLint の Lint 対象から除外できます。
+<div class="Alert Alert--gray">
 
-これで `npm run lint`（または `yarn lint`）を実行することで TypeScript を Lint できるようになりました。
+**情報:** `--ignore-path` オプションを使って、`node_modules` や `.nuxt` あるいは Lint したくないどんなファイルもしくはディレクトリも ESLint の Lint 対象から除外できます。
+
+</div>
+
+これで `npm run lint`（または `yarn lint`）を実行することで TypeScript ファイルを Lint できるようになりました。

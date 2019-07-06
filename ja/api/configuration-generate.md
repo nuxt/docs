@@ -11,12 +11,31 @@ description: ユニバーサルなウェブアプリケーションから静的�
 
 `nuxt generate` コマンドを実行するか `nuxt.generate()` を呼び出したとき、Nuxt.js は `generate` プロパティで定義された設定を使います。
 
+`nuxt.config.js` 
+
+```js
+export default {
+  generate: {
+    ...
+  }
+}
+```
+
 ## dir
 
 - 型: `String`
 - デフォルト: `'dist'`
 
 `nuxt generate` で作成されるディレクトリ名です。
+
+## devtools
+
+- 型: `Boolean`
+- デフォルト: `false`
+
+[vue-devtools](https://github.com/vuejs/vue-devtools) よる検査を許可するかどうかを設定します。
+
+もし既に `nuxt.config.js` か何かで有効にしている場合は、このフラグに関係なく `devtools` が有効になります。
 
 ## fallback
 
@@ -190,7 +209,17 @@ async asyncData ({ params, error, payload }) {
 -------| index.html
 ```
 
-false を設定した場合、ルーティングパスに従う形で HTML ファイルを生成します :
+false を設定した場合、ルーティングパスに従う形で HTML ファイルを生成します:
+
+`nuxt.config.js` 
+
+```js
+export default {
+  generate: {
+    subFolders: false
+  }
+}
+```
 
 ```bash
 -| dist/
@@ -200,7 +229,7 @@ false を設定した場合、ルーティングパスに従う形で HTML フ�
 -----| item.html
 ```
 
-_Note: このオプションは、 [Netlify](https://netlify.com) をはじめとする、 HTML によるフォールバックを利用する静的サイトホスティングサイトにおいて利用されます。_
+_情報: このオプションは、[Netlify](https://netlify.com) をはじめとする、 HTML によるフォールバックを利用する静的サイトホスティングサイトにおいて利用されます。_
 
 ## concurrency
 
