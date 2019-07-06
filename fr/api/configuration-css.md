@@ -19,7 +19,7 @@ npm install --save-dev node-sass sass-loader
 Dans `nuxt.config.js`, ajouter les ressources CSS :
 
 ```js
-module.exports = {
+export default {
   css: [
     // Charge un module Node.js directement (ici un fichier Sass)
     'bulma',

@@ -1,9 +1,17 @@
 ---
 title: Store Vuex
-description: L'utilisation d'un store pour gérer l'état est important pour toutes les applications de taille importante, c'est pourquoi Vuex est implémenté au cœur de Nuxt.js.
+description: L'utilisation d'un store pour gérer l'état est important pour toutes les applications de taille importante. C'est pourquoi Vuex est implémenté au cœur de Nuxt.js.
 ---
 
-> L'utilisation d'un store pour gérer l'état est important pour toutes les applications de taille importante, c'est pourquoi [Vuex](https://vuex.vuejs.org/fr/) est implémenté au cœur de Nuxt.js.
+> L'utilisation d'un store pour gérer l'état est important pour toutes les applications de taille importante. C'est pourquoi [Vuex](https://vuex.vuejs.org/fr/) est implémenté au cœur de Nuxt.js.
+
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/utilising-the-vuex-store-nuxtjs?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Visionner un cours gratuit sur <strong>Nuxt.js et Vuex</strong> sur Vue School (EN)
+    </p>
+  </a>
+</div>
 
 ## Activer le store
 
@@ -14,8 +22,10 @@ Nuxt.js recherchera le répertoire `store`. S'il existe, il :
 
 Nuxt.js vous laisse le choix entre **2 modes de store**, choisissez celui qui vous convient le mieux :
 
-- **Modules :** chaque fichier `.js` dans le répertoire `store` est transformé en tant que [module avec son propre espace de nom](http://vuex.vuejs.org/fr/modules.html) (`index` étant le module racine)
-- **Classique (déprécié):** `store/index.js` retourne une instance de store.
+- **Modules :** chaque fichier `.js` dans le répertoire `store` est transformé en tant que [module avec son propre espace de nom](http://vuex.vuejs.org/fr/modules.html) (`index` étant le module racine).
+- **Classique (__deprécié__):** `store/index.js` retourne une méthode pour créer une instance de store.
+
+Quelque soit le mode utilisé, votre valeur `state` devrait **toujours être une `function`** afin d'éviter tout état *partagé* non désiré du côté serveur.
 
 ## Mode modules
 
@@ -35,7 +45,7 @@ export const mutations = {
 }
 ```
 
-Puis, vous pouvez avoir `store/todos.js` :
+Puis, vous pouvez avoir un fichier `store/todos.js` :
 
 ```js
 export const state = () => ({
@@ -62,7 +72,9 @@ Le store sera comme suit :
 
 ```js
 new Vuex.Store({
-  state: { counter: 0 },
+  state: () => ({
+    counter: 0
+  }),
   mutations: {
     increment (state) {
       state.counter++
@@ -70,9 +82,10 @@ new Vuex.Store({
   },
   modules: {
     todos: {
-      state: {
+      namespaced: true,
+      state: () => ({
         list: []
-      },
+      }),
       mutations: {
         add (state, { text }) {
           state.list.push({
@@ -110,7 +123,9 @@ import { mapMutations } from 'vuex'
 
 export default {
   computed: {
-    todos () { return this.$store.state.todos.list }
+    todos () {
+      return this.$store.state.todos.list
+    }
   },
   methods: {
     addTodo (e) {
@@ -136,9 +151,9 @@ export default {
 Exemple pour l'état ; créer un fichier `store/state.js` et ajouter ceci
 
 ```js
-export default {
+export default () => ({
   counter: 0
-}
+})
 ```
 
 Et les mutations correspondantes peuvent être dans le fichier `store/mutations.js`
@@ -153,13 +168,17 @@ export default {
 
 <div class="Alert">
 
-Vous pouvez également avoir des modules en exportant une instance de store vous devrez les ajouter manuellement sur votre store.
+Vous pouvez également avoir des modules en exportant une instance de store, vous devrez alors les ajouter manuellement sur votre store.
 
 </div>
 
 ### Fichiers de module
 
 Vous pouvez optionnellement scinder un fichier de module en plusieurs fichiers séparés : `state.js`, `actions.js`, `mutations.js` et `getters.js`. Si vous maintenez un fichier `index.js` avec un état, des accesseurs et des mutations alors que les actions sont dans un fichier séparé, cela va également être proprement interprété.
+
+> Note : lorsque vous utilisez des modules en fichiers séparés, vous devez vous rappeler que d'utiliser des fonctions fléchées , ```this``` n'est disponible que de façon lexicale. La portée lexicale signifie simplement que le ```this``` fait toujours référence au propriétaire de la fonction fléchée. Si la fonction fléchée n'est pas contenue, alors ```this``` sera non défini. La solution est d'utiliser une fonction "normale" qui produira sa propre portée et qui dispose donc de ```this```.
+
+> Note: Whilst using split-file modules, you must remember that using arrow functions, ```this``` is only lexically available. Lexical scoping simply means that the ```this``` always references the owner of the arrow function. If the arrow function is not contained then ```this``` would be undefined. The solution is to use a "normal" function which produces its own scope and thus has ```this``` available.
 
 ### Plugins
 
@@ -181,11 +200,11 @@ export const mutations = {
 }
 ```
 
-Pour plus d'informations à propos des plugins, consultez la [documentation Vuex](https://vuex.vuejs.org/fr/guide/plugins.html).
+Pour plus d'informations à propos des plugins, consultez la [documentation Vuex](https://vuex.vuejs.org/fr/plugins.html).
 
 ## La méthode fetch
 
-> La méthode `fetch` est utilisée pour remplir le store avant de faire le rendu de la page, c'est comme la méthode `data` sauf qu'elle ne définit pas les données du composant.
+> La méthode `fetch` est utilisée pour remplir le store avant de faire le rendu de la page, c'est comme la méthode `asyncData` sauf qu'elle ne définit pas les données du composant.
 
 Plus d'informations à propos de la méthode `fetch` dans [la partie Pages de l'API pour `fetch`](/api/pages-fetch).
 
@@ -219,39 +238,15 @@ actions: {
 }
 ```
 
-## Mode strict de Vuex
+## Mode stric de Vuex
 
-Le mode strict est activé par défaut sur le mode développement et est désactivé par défaut sur le mode production. Désactivez le mode strict en développement en procédent comme ci-après.
-
-### Module Mode
+Le mode strict est activé par défaut sur le mode développement et est désactivé par défaut sur le mode production. Désactivez le mode strict en développement en procédent comme ci-après dans `store/index.js`:
 
 `export const strict = false`
 
-### Classic Mode
-
-```js
-import Vuex from 'vuex'
-
-const createStore = () => {
-  return new Vuex.Store({
-    strict: false,
-    state: {
-      counter: 0
-    },
-    mutations: {
-      increment (state) {
-        state.counter++
-      }
-    }
-  })
-}
-
-export default createStore
-```
-
 ## Mode classique
 
-> Cette fonctionnalité est dépréciée et sera supprimée dans Nuxt 3.
+> Cette fonctionnalité sera dépréciée et retirée dans Nuxt 3.
 
 Pour activer le store avec le mode classique, nous créons `store/index.js` qui devrait exporter une méthode qui renvoie une instance Vuex :
 
@@ -260,9 +255,9 @@ import Vuex from 'vuex'
 
 const createStore = () => {
   return new Vuex.Store({
-    state: {
+    state: () => ({
       counter: 0
-    },
+    }),
     mutations: {
       increment (state) {
         state.counter++

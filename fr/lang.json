@@ -1,6 +1,6 @@
 {
   "iso": "fr",
-  "docVersion": "1.4.0",
+  "docVersion": "2.8.X",
   "links": {
     "api": "API",
     "blog": "Blog",
@@ -16,49 +16,50 @@
     "homepage": "Accueil",
     "live_demo": "Voir en ligne",
     "live_edit": "Éditer en ligne",
-    "tidelift_short": "SUPPORT ENTREPRISE",
-    "official_support": "GET OFFICIAL SUPPORT ⛑",
-    "tidelift": "SUPPORT ENTREPRISE POUR NUXT",
+    "tidelift_short": "OBTENIR UN SUPPORT PROFESSIONNEL",
+    "official_support": "OBTENIR UN SUPPORT OFFICIEL ⛑",
+    "tidelift": "OBTENIR UN SUPPORT PROFESSIONNEL POUR NUXT",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Vue Jobs"
   },
   "text": {
-    "an_error_occurred": "Une erreur s'est produite",
+    "an_error_occured": "Une erreur s'est produite",
     "api_page_not_found": "La page API est introuvable",
     "example_file": "Fichiers d'exemples",
     "please_wait": "Patientez...",
     "please_define_title": "Merci de définir un titre",
     "please_define_description": "Merci de définir une description",
     "search": "Rechercher",
-    "version": "Version"
+    "version": "Version",
+    "vue_toronto": "Vous souhaitez découvrir comment créer une application Vue.js universelle avec Nuxt ? Rejoignez notre atelier le 14 novembre 2018 à Vue Toronto !"
   },
   "homepage": {
-    "title": "Applications Vue.js universelles",
+    "title": "Le Framework Vue.js",
     "meta": {
-      "title": "Nuxt.js - Applications Vue.js universelles",
-      "description": "Nuxt.js est un framework minimal pour créer des applications Vue.js avec du rendu côté serveur, de la scission de code, du rechargement à chaud, de la génération de sites statiques et plus encore !"
+      "title": "Nuxt.js - Le Framework Vue.js",
+      "description": "Nuxt.js fournit toutes les configurations nécessaires pour rendre vos développements d'application Vue.js agréable. Nuxt.js peut créer des Applications Universelles, Monopages ou Statiques Générées."
     },
     "welcome": {
-      "app_types_prefix": "For ",
-      "app_types": ["Universal Applications", "Static Generated Applications", "Single Page Applications", "Desktop Applications", "Mobile Applications", "Progressive Web Apps"],
+      "app_types_prefix": "Pour ",
+      "app_types": ["Applications Universelles", "Applications Statiques Générées", "Applications Monopages", "Applications de Bureau", "Applications Mobiles", "Applications Web Progressives"],
       "app_types_suffix": "."
     },
-    "codesandbox_title": "Play with Nuxt.js online",
-    "codesandbox_open": "Open on CodeSandBox.io",
-    "codesandbox_examples": "See more examples",
-    "backer_partners": "Partners",
-    "backer_become_a_partner": "Become A Partner",
+    "codesandbox_title": "Jouez en ligne avec Nuxt.js",
+    "codesandbox_open": "Ouivrir dans CodeSandBox.io",
+    "codesandbox_examples": "Voir plus d'exemples",
+    "backer_partners": "Partenaires",
+    "backer_become_a_partner": "Devenir un partner",
     "backer_sponsors": "Sponsors",
-    "backer_become_a_sponsor": "Become A Sponsor",
-    "backer_backers": "Backers",
-    "backer_become_a_backer": "Become A Backer",
-    "backer_foundations": "Foundations"
+    "backer_become_a_sponsor": "Devenir un sponsor",
+    "backer_backers": "Supporter",
+    "backer_become_a_backer": "Devenir un supporteur",
+    "backer_foundations": "Fondations"
   },
   "sponsors": {
     "title": "Sponsors",
-    "become": "Support us and",
-    "become_partner": "become a partner"
+    "become": "Nous soutenir et",
+    "become_partner": "devenir un partenaire"
   },
   "footer": {
     "authors": "Réalisé par les frères Chopin"

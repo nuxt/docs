@@ -43,7 +43,7 @@ new Builder(nuxt)
   // `error` sera non `null` quand le layout d'erreur est affiché, le format d'erreur est :
   // { statusCode: 500, message: 'Mon message d\'erreur' }
 
-  // `redirected` n'est pas `false` quand `redirect()` est utilisé dans `data()` ou `fetch()`
+  // `redirected` n'est pas `false` quand `redirect()` est utilisé dans `asyncData()` ou `fetch()`
   // { path: '/other-path', query: {}, status: 302 }
 })
 ```
