@@ -10,14 +10,11 @@
           { "to": "#fonctionnalit-s", "name": "Fonctionnalités" },
           { "to": "#sch-ma", "name": "Schéma" },
           { "to": "#rendu-c-t-serveur-ssr-universel-", "name": "Rendu côté serveur" },
+          { "to": "#single-page-applications-spa-", "name": "Application monopage" },
           { "to": "#g-n-ration-statique-pr-rendu-", "name": "Génération statique" }
         ]
       },
-      { "to": "/contribution-guide", "name": "Guide de contribution",
-        "contents": [
-          { "to": "#rapports-de-probl-me", "name": "Rapports de problème" },
-          { "to": "#propositions-de-fusion", "name": "Propositions de fusion" }
-        ] },
+      { "to": "/contribution-guide", "name": "Guide de contribution" },
       { "to": "/release-notes", "name": "Notes de versions" }
     ]
   },
@@ -38,10 +35,7 @@
           { "to": "#alias", "name": "Alias" }
         ]
       },
-      { "to": "/configuration", "name": "Configuration",
-        "contents": [
-          { "to": "#options", "name": "Options" }
-        ] },
+      { "to": "/configuration", "name": "Configuration" },
       {
         "to": "/routing", "name": "Routage",
         "contents": [
@@ -49,6 +43,7 @@
           { "to": "#routes-dynamiques", "name": "Routes dynamiques" },
           { "to": "#routes-imbriqu-es", "name": "Routes imbriquées" },
           { "to": "#routes-dynamiques-imbriqu-es", "name": "Routes dynamiques imbriquées" },
+          { "to": "#named-views", "name": "Named Views (EN)" },
           { "to": "#transitions", "name": "Transitions" },
           { "to": "#middleware", "name": "Middleware" }
         ]
@@ -87,22 +82,33 @@
         ]
       },
       {
-        "to": "/modules", "name": "Modules",
+        "to": "/modules", "name": "Modules (EN)",
         "contents": [
           { "to": "#introduction", "name": "Introduction" },
-          { "to": "#write-a-basic-module", "name": "Write a basic Module" },
-          { "to": "#async-modules", "name": "Async Modules" },
-          { "to": "#common-snippets", "name": "Common Snippets" }
+          { "to": "#list-des-modules-nuxt-js", "name": "Liste des modules Nuxt.js" },
+          { "to": "#-crire-un-module-basique", "name": "Écrire un module basique" },
+          { "to": "#modules-asynchrones", "name": "Modules asynchrones" },
+          { "to": "#exemples-courants", "name": "Exemples courants" },
+          { "to": "#lancer-des-t-ches-sur-des-points-d-39-ancrage-sp-cifiques", "name": "Lancer des tâches sur des points d'ancrage spécifiques" },
+          { "to": "#module-package-commands", "name": "Module package commands (EN)" }
         ]
       },
       {
         "to": "/vuex-store", "name": "Store Vuex",
         "contents": [
           { "to": "#activer-le-store", "name": "Activer le store" },
-          { "to": "#mode-classique", "name": "Mode classique" },
           { "to": "#mode-modules", "name": "Mode modules" },
           { "to": "#la-m-thode-fetch", "name": "La méthode fetch" },
-          { "to": "#l-39-action-nuxtserverinit", "name": "L'action nuxtServerInit" }
+          { "to": "#l-39-action-nuxtserverinit", "name": "L'action nuxtServerInit" },
+          { "to": "#mode-classique", "name": "Mode classique" }
+        ]
+      },
+      {
+        "to": "/typescript", "name": "TypeScript Support (EN)",
+        "contents": [
+          { "to": "#get-started", "name": "Get started (EN)" },
+          { "to": "#from-javascript-to-typescript", "name": "From JavaScript to TypeScript (EN)" },
+          { "to": "#linting-with-eslint", "name": "Linting with ESLint (EN)" }
         ]
       },
       {
