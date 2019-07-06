@@ -1,9 +1,9 @@
 ---
-title: window / document undefined
-description: window / document undefined avec Nuxt.js ?
+title: window ou document non défini
+description: window ou document non défini avec Nuxt.js ?
 ---
 
-# window / document undefined ?
+# window ou document non défini ?
 
 Cette erreur est due au rendu côté serveur. Si vous devez spécifier que vous souhaitez importer une ressource uniquement côté client, vous devez utiliser la variable `process.client`.
 
@@ -15,10 +15,4 @@ if (process.client) {
 }
 ```
 
-N'oubliez pas d'ajouter la librairie dans votre [paquetage vendor](/api/configuration-build#build-vendor) dans `nuxt.config.js` :
-
-```js
-  build: {
-    vendor: ['external_library']
-  }
-```
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>
