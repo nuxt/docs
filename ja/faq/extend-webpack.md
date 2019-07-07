@@ -20,7 +20,7 @@ export default {
             loader: 'file-loader',
           }
         )
-        // isDev が true の場合、開発モードに設定します
+        // isDev が true の場合、webpack を開発モードに設定します
         if (isDev) config.mode = 'development'
      }
   }
