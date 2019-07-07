@@ -1,15 +1,15 @@
 ---
-title: "API: The transition Property"
+title: "API: The transition Property (EN)"
 description: Set the default properties of the page transitions.
 ---
 
-# The transition Property (En)
+# The transition Property (EN)
 
 - Type: `String` or `Object`
 
 > Used to set the default properties of the page transitions.
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Default:</p>
+Default:
 ```js
 {
   name: 'page',
@@ -20,7 +20,7 @@ description: Set the default properties of the page transitions.
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   transition: 'page'
   // or
   transition: {
@@ -53,7 +53,7 @@ Default:
 Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   layoutTransition: 'layout'
   // or
   layoutTransition: {
@@ -73,3 +73,5 @@ Example global `css`:
   opacity: 0
 }
 ```
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

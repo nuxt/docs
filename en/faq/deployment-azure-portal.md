@@ -15,7 +15,7 @@ Add a web.config file to your repository. For the latest version of `Nuxt` the s
 In the web.config you don't specify the exact path `server/index.js` but just `server`. See the example web.config below. If you don't do
 this the logs will tell you that Vue cannot find any routes.
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      This configuration file is required if iisnode is used to run node processes behind

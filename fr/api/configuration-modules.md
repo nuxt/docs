@@ -1,18 +1,18 @@
 ---
-title: "API: The modules Property"
+title: "API: The modules Property (EN)"
 description: Modules are Nuxt.js extensions which can extend its core functionality and add endless integrations.
 ---
 
-# The modules Property (En)
+# The modules Property (EN)
 
 - Type: `Array`
 
 > Modules are Nuxt.js extensions which can extend it's core functionality and add endless integrations.  [Learn More](/guide/modules)
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Example (`nuxt.config.js`):</p>
+Example (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   modules: [
     // Using package name
     '@nuxtjs/axios',
@@ -38,3 +38,5 @@ Note that they are required at runtime so should be already transpiled if depend
 
 Please see [Modules Guide](/guide/modules) for more detailed information on how they work or if interested developing your own module.
 Also we have provided an official [Modules](https://github.com/nuxt-community/awesome-nuxt#modules) Section listing dozens of production ready modules made by Nuxt Community.
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

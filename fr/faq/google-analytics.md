@@ -48,7 +48,7 @@ Puis nous expliquons à Nuxt.js d'importer le plugin dans notre application prin
 `nuxt.config.js`
 
 ```js
-module.exports = {
+export default {
   plugins: [
     { src: '~plugins/ga.js', ssr: false }
   ]

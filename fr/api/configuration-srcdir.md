@@ -1,9 +1,9 @@
 ---
-title: "API: The srcDir Property"
+title: "API: The srcDir Property (EN)"
 description: Define the source directory of your Nuxt.js application
 ---
 
-# The srcDir Property (En)
+# The srcDir Property (EN)
 
 - Type: `String`
 - Default: [rootDir value](/api/configuration-rootdir)
@@ -13,7 +13,7 @@ description: Define the source directory of your Nuxt.js application
 <p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Example (`nuxt.config.js`):</p>
 
 ```js
-module.exports = {
+export default {
   srcDir: 'client/'
 }
 ```
@@ -30,3 +30,5 @@ Then, your application structure can be:
 ```
 
 This option is useful to have a custom server and using Nuxt.js, so all npm dependencies can be regrouped in one `package.json`.
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>
