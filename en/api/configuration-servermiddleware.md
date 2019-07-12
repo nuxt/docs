@@ -84,3 +84,8 @@ serverMiddleware: [
     '~/api/logger'
 ]
 ```
+
+## Deploying Server Middleware
+
+When deploying server middleware it is a requirement that the middleware is also copied over during the build proces. It should reside in the `dist/server` directory.
+
