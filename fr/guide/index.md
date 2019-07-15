@@ -65,7 +65,7 @@ En utilisant la commande `nuxt`, Nuxt démarrera un serveur de développement av
 
 ### Application monopage
 
-Si pour une quelconque raison vous préférez ne pas utiliser le rendu côté serveur ou que vous avez besoin d'un hébergement statique pour votre application, vous pouvez simplement utiliser le mode application monopage (ou « SPA » pour « Simple Page Application ») en utilisant la commande `nuxt --spa`. Combiné avec la fonctionnalité de *génération*, vous avez la une puissante application monopage qui ne nécessite aucunement de Node.js ou d'un serveur spécial pour fonctionner.
+Si pour une quelconque raison vous préférez ne pas utiliser le rendu côté serveur ou que vous avez besoin d'un hébergement statique pour votre application, vous pouvez simplement utiliser le mode application monopage (ou « SPA » pour « Simple Page Application ») en utilisant la commande `nuxt --spa`. Combiné avec la fonctionnalité de *génération*, vous avez la une puissante application monopage qui ne nécessite aucunement Node.js ou un serveur spécial pour fonctionner.
 
 Jetez un œil à [la liste des commandes](/guide/commands) pour en savoir plus.
 
