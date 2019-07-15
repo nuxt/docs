@@ -237,3 +237,37 @@ _Note: this option could be useful using [Netlify](https://netlify.com) or any s
 - Default: `500`
 
 The generation of routes are concurrent, `generate.concurrency` specifies the amount of routes that run in one thread.
+
+## exclude
+
+- Type: `Array`
+
+It accepts an array of regular expressions and will prevent generation of routes matching them. The routes will still be accessible when `generate.fallback` is used.
+
+By default, running `nuxt generate` will create a file for each route.
+
+```bash
+-| dist/
+---| index.html
+---| ignore/
+-----| about.html
+-----| item.html
+```
+
+When adding a regular expression which matches all routes with "ignore", it will prevent the generation of these routes.
+
+nuxt.config.js 
+```js
+export default {
+  generate: {
+    exclude: [
+      /^(?=.*\bignore\b).*$/,
+    ],
+  }
+}
+```
+
+```bash
+-| dist/
+---| index.html
+```
