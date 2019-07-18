@@ -22,10 +22,6 @@ All you have to do is to setup a `now.json` file:
       "use": "@nuxtjs/now-builder",
       "config": {}
     }
-  ],
-  "routes": [
-    { "src": "/_nuxt/.+", "headers": { "Cache-Control": "max-age=31557600" } },
-    { "src": "/(.*)", "dest": "/" }
   ]
 }
 ```
