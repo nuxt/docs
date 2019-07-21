@@ -180,27 +180,51 @@ module.exports = {
 
 `scrollBehavior` 的默认配置为：
 ```js
-const scrollBehavior = (to, from, savedPosition) => {
-  // savedPosition 只有在 popstate 导航（如按浏览器的返回按钮）时可以获取。
-  if (savedPosition) {
-    return savedPosition
-  } else {
-    let position = {}
-    // 目标页面子组件少于两个
-    if (to.matched.length < 2) {
-      // 滚动至页面顶部
-      position = { x: 0, y: 0 }
-    }
-    else if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
-      // 如果目标页面子组件中存在配置了scrollToTop为true
-      position = { x: 0, y: 0 }
-    }
-    // 如果目标页面的url有锚点,  则滚动至锚点所在的位置
-    if (to.hash) {
-      position = { selector: to.hash }
-    }
-    return position
+const scrollBehavior = function (to, from, savedPosition) {
+  // if the returned position is falsy or an empty object,
+  // will retain current scroll position.
+  let position = false
+
+  // if no children detected and scrollToTop is not explicitly disabled
+  if (
+    to.matched.length < 2 &&
+    to.matched.every(r => r.components.default.options.scrollToTop !== false)
+  ) {
+    // scroll to the top of the page
+    position = { x: 0, y: 0 }
+  } else if (to.matched.some(r => r.components.default.options.scrollToTop)) {
+    // if one of the children has scrollToTop option set to true
+    position = { x: 0, y: 0 }
   }
+
+  // savedPosition is only available for popstate navigations (back button)
+  if (savedPosition) {
+    position = savedPosition
+  }
+
+  return new Promise((resolve) => {
+    // wait for the out transition to complete (if necessary)
+    window.$nuxt.$once('triggerScroll', () => {
+      // coords will be used if no selector is provided,
+      // or if the selector didn't match any element.
+      if (to.hash) {
+        let hash = to.hash
+        // CSS.escape() is not supported with IE and Edge.
+        if (typeof window.CSS !== 'undefined' && typeof window.CSS.escape !== 'undefined') {
+          hash = '#' + window.CSS.escape(hash.substr(1))
+        }
+        try {
+          if (document.querySelector(hash)) {
+            // scroll to anchor by returning the selector
+            position = { selector: hash }
+          }
+        } catch (e) {
+          console.warn('Failed to save scroll position. Please add CSS.escape() polyfill (https://github.com/mathiasbynens/CSS.escape).')
+        }
+      }
+      resolve(position)
+    })
+  })
 }
 ```
 
