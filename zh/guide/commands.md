@@ -27,6 +27,7 @@ description: Nuxt.js 提供了一系列常用的命令, 用于开发或发布部
 
 - **`--config-file` 或 `-c`:** 指定 `nuxt.config.js` 的文件路径。
 - **`--spa` 或 `-s`:** 禁用服务器端渲染，使用SPA模式
+- **`--unix-socket` 或 `-n`:** 指定UNIX Socket的路径。
 
 你可以将这些命令添加至 `package.json`：
 

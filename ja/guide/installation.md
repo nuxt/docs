@@ -9,9 +9,9 @@ description: Nuxt.js はとても簡単に始められます。シンプルな�
   <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
     <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Nuxt Fundamentals by vueschool"/>
     <div class="Promote__Content">
-      <h4 class="Promote__Content__Title">Nuxt.js Fundamentals</h4>
-      <p class="Promote__Content__Description">Learn how to get started quickly with Nuxt.js in videos.</p>
-      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+      <h4 class="Promote__Content__Title">Nuxt.js の基礎</h4>
+      <p class="Promote__Content__Description">ビデオで Nuxt.js をすぐに使い始める方法を学ぶ。</p>
+      <p class="Promote__Content__Signature">Nuxt.js の開発をサポートするために、VueSchool がビデオコースを作りました。</p>
     </div>
   </a>
 </div>
@@ -29,7 +29,7 @@ $ npx create-nuxt-app <project-name>
 もしくは [yarn](https://yarnpkg.com/ja/) を使ってください:
 
 ```bash
-$ yarn create nuxt-app <my-project>
+$ yarn create nuxt-app <project-name>
 ```
 
 いくつか質問されます:
@@ -55,7 +55,7 @@ $ yarn create nuxt-app <my-project>
   - None (後からでも追加できます）
   - [Jest](https://github.com/facebook/jest)
   - [AVA](https://github.com/avajs/ava)
-4. [Nuxtのモードを選択します。(`Universal` または `SPA`)](https://nuxtjs.org/guide/release-notes#better-spa-experience)
+4. [Nuxt のモードを選択します。(`Universal` または `SPA`)](https://ja.nuxtjs.org/guide#%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%9A%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-spa-)
 5. HTTP リクエストを簡単に行うために [axios module](https://github.com/nuxt-community/axios-module) を追加します。
 6. 保存時にコードをチェックするために [EsLint](https://eslint.org/) を追加します。
 7. 保存時にコードを整形するために [Prettier](https://prettier.io/) を追加します。

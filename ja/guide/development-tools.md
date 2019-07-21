@@ -22,13 +22,8 @@ npm install --save-dev ava jsdom
   "test": "ava",
 },
 "ava": {
-  "require": [
-    "babel-register"
-  ]
-},
-"babel": {
-  "presets": [
-    "env"
+  "files": [
+    "test/**/*"
   ]
 }
 ```
@@ -95,7 +90,7 @@ test('Route / exits and render HTML', async t => {
 })
 
 // DOM チェックを経由してテストする例
-test('Route / exits and render HTML with CSS applied', async t => {
+test('Route / exists and renders HTML with CSS applied', async t => {
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
   t.not(element, null)
@@ -133,7 +128,7 @@ npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader 
 それから `.eslintrc.js` ファイルをプロジェクトのルートディレクトに置いて ESLint を設定できます:
 
 ```js
-export default {
+module.exports = {
   root: true,
   env: {
     browser: true,

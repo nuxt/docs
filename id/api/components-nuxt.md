@@ -3,7 +3,7 @@ title: 'API: '
 description: Menampilkan komponen halaman di dalam layout
 ---
 
-# Komponen <nuxt>
+# Komponen &lt;nuxt&gt;
 
 > Komponen ini hanya digunakan di dalam [layouts](/guide/views#layouts) untuk menampilkan komponen halaman.
 
@@ -11,7 +11,7 @@ description: Menampilkan komponen halaman di dalam layout
 
 - nuxtChildKey: `string`
     - Prop ini di-set ke `<router-view/>`, berguna untuk membuat transisi di dalam halaman yang dinamis dan rute yang berbeda.
-    - Default: `$route.fullPath`
+    - Default: `$route.path`
 
 Contoh (`layouts/default.vue`):
 

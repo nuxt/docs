@@ -16,11 +16,12 @@ export default {
   server: {
     port: 8000, // デフォルト: 3000
     host: '0.0.0.0', // デフォルト: localhost,
+    timing: false
   }
 }
 ```
 
-こうすることで、Nuxt.js サーバーインスタンスの [ホストとポート](/faq/host-port) を指定できます。
+こうすることで、Nuxt.js サーバーインスタンスの [ホストとポート](/faq/host-port) を指定できます。
 
 ## HTTPS 設定を用いた例
 
@@ -47,3 +48,55 @@ export default {
   }
 }
 ```
+
+## timing
+
+- 型: `Object` または `Boolean`
+- デフォルト: `false`
+
+`server.timing` オプションを有効にすると、サーバーサイドレンダリングの経過時間を測定するためのミドルウェアが追加され、'Server-Timing' としてヘッダーに追加されます。
+
+### timing 設定を用いた例
+
+`server.timing` はオプションを提供するためのオブジェクトです。現在、`total` のみがサポートされています。（これはサーバーサイドレンダリングで費やした全ての時間を直接追跡します）
+
+```js
+export default {
+  server: {
+    timing: {
+      total: true
+    }
+  }
+}
+```
+
+### timing api を使う
+
+`timing` api は `server.time` が有効のとき、サーバーサイドの `response` にも注入されます。
+
+#### 構文
+
+```js
+res.timing.start(name, description)
+res.timing.end(name)
+```
+
+#### サーバーミドルウェアでの timing の使用例
+
+```js
+export default function (req, res, next) {
+  res.timing.start('midd', 'Middleware timing description')
+  // サーバーサイドの処理..
+  // ...
+  res.timing.end('midd')
+  next()
+}
+```
+
+そして `server-timing` ヘッドは以下のようにレスポンスヘッダーに含まれます。
+
+```bash
+Server-Timing: midd;desc="Middleware timing description";dur=2.4
+```
+
+詳細は [Server-Timing MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Server-Timing) を参照してください。

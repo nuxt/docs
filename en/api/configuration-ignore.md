@@ -19,7 +19,7 @@ layouts/*-ignore.vue
 # ignore page bar.vue
 pages/bar.vue
 # ignore page inside ignore folder
-layouts/ignore/*.vue
+pages/ignore/*.vue
 
 # ignore store baz.js
 store/baz.js

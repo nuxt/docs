@@ -11,6 +11,7 @@
       { "name": "asyncData", "to": "/" },
       { "name": "fetch", "to": "/pages-fetch" },
       { "name": "head", "to": "/pages-head" },
+      { "name": "key", "to": "/pages-key" },
       { "name": "layout", "to": "/pages-layout" },
       { "name": "loading", "to": "/pages-loading" },
       { "name": "middleware", "to": "/pages-middleware" },
@@ -52,6 +53,7 @@
           { "name": "analyze", "to": "#analyze" },
           { "name": "babel", "to": "#babel" },
           { "name": "cache", "to": "#cache" },
+          { "name": "crossorigin", "to": "#crossorigin" },
           { "name": "cssSourceMap", "to": "#csssourcemap" },
           { "name": "devMiddleware", "to": "#devmiddleware" },
           { "name": "devtools", "to": "#devtools" },
@@ -62,6 +64,7 @@
           { "name": "hardSource", "to": "#hardsource" },
           { "name": "hotMiddleware", "to": "#hotmiddleware" },
           { "name": "html.minify", "to": "#html-minify" },
+          { "name": "indicator", "to": "#indicator" },
           { "name": "loaders", "to": "#loaders" },
           { "name": "optimization", "to": "#optimization" },
           { "name": "optimizeCSS", "to": "#optimizecss" },
@@ -70,6 +73,7 @@
           { "name": "postcss", "to": "#postcss" },
           { "name": "profile", "to": "#profile" },
           { "name": "publicPath", "to": "#publicpath" },
+          { "name": "quiet", "to": "#quiet" },
           { "name": "splitChunks", "to": "#splitchunks" },
           { "name": "ssr", "to": "#ssr" },
           { "name": "styleResources", "to": "#styleresources" },
@@ -89,11 +93,15 @@
         "name": "generate",
         "to": "/configuration-generate",
         "contents": [
+          { "name": "concurrency", "to": "#concurrency" },
           { "name": "dir", "to": "#dir" },
           { "name": "devtools", "to": "#devtools" },
+          { "name": "exclude", "to": "#exclude" },
+          { "name": "fallback", "to": "#fallback" },
           { "name": "interval", "to": "#interval" },
           { "name": "minify", "to": "#minify" },
-          { "name": "routes", "to": "#routes" }
+          { "name": "routes", "to": "#routes" },
+          { "name": "subFolders", "to": "#subfolders" }
         ]
       },
       { "name": "head", "to": "/configuration-head" },
@@ -124,8 +132,10 @@
           { "name": "compressor", "to": "#compressor" },
           { "name": "fallback", "to": "#fallback" },
           { "name": "http2", "to": "#http2" },
+          { "name": "injectScripts", "to": "#injectscripts" },
           { "name": "resourceHints", "to": "#resourcehints" },
           { "name": "ssr", "to": "#ssr" },
+          { "name": "ssrLog", "to": "#ssrlog" },
           { "name": "static", "to": "#static" },
           { "name": "dist", "to": "#dist" },
           { "name": "csp", "to": "#csp" }
@@ -137,6 +147,7 @@
         "to": "/configuration-router",
         "contents": [
           { "name": "base", "to": "#base" },
+          { "name": "routeNameSplitter", "to": "#routenamesplitter" },
           { "name": "extendRoutes", "to": "#extendroutes" },
           { "name": "fallback", "to": "#fallback" },
           { "name": "linkActiveClass", "to": "#linkactiveclass" },

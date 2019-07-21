@@ -22,6 +22,17 @@ Nuxt を使ってプロダクションレベルのアプリケーションを開
 - いつもタイトな締切に追われており、いろいろな新しいライブラリや統合の詳細を深く調べる時間がない。
 - 低レベルのインターフェースの破壊的な変更への対応にうんざりしていて、**とにかく動くもの**を必要としている。
 
+## Nuxt.js 公式モジュール一覧
+
+Nuxt.js チームが提供している **公式** モジュール:
+
+- [@nuxt/http](https://http.nuxtjs.org): [ky-universal](https://github.com/sindresorhus/ky-universal) をベースにしており、軽量でユニバーサルな HTTP リクエストを送ります
+- [@nuxtjs/axios](https://axios.nuxtjs.org): セキュアかつ簡単に Axios と Nuxt.js とを統合し、HTTP リクエストを送ります
+- [@nuxtjs/pwa](https://pwa.nuxtjs.org): 十分にテストされアップデートされた安定した PWA ソリューションを Nuxt に提供します
+- [@nuxtjs/auth](https://auth.nuxtjs.org): Nuxt.js のための認証モジュールです。さまざまなスキームやストラテジーを提供します
+
+コミュニティによって作成されたモジュール一覧は https://github.com/topics/nuxt-module で確認できます。
+
 ## 基本的なモジュールを書く
 
 既に言及されているように、モジュールはただの関数です。npm モジュールとしてパッケージングしたり、あるいはプロジェクトのソースコードに直接インクルードすることができます。

@@ -29,7 +29,7 @@ $ npx create-nuxt-app <project-name>
 Or with [yarn](https://yarnpkg.com/en/):
 
 ```bash
-$ yarn create nuxt-app <my-project>
+$ yarn create nuxt-app <project-name>
 ```
 
 It will ask you some questions:
@@ -41,6 +41,7 @@ It will ask you some questions:
   - [Hapi](https://github.com/hapijs/hapi)
   - [Feathers](https://github.com/feathersjs/feathers)
   - [Micro](https://github.com/zeit/micro)
+  - [Fastify](https://github.com/fastify/fastify)
   - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
 2. Choose your favorite UI framework:
   - None (feel free to add one later)
@@ -51,6 +52,8 @@ It will ask you some questions:
   - [Element UI](https://github.com/ElemeFE/element)
   - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
+  - [iView](https://www.iviewui.com/)
+  - [Tachyons](https://tachyons.io)
 3. Choose your favorite testing framework:
   - None (feel free to add one later)
   - [Jest](https://github.com/facebook/jest)

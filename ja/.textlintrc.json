@@ -20,7 +20,8 @@
         "before": true,
         "after": true
       }
-    }
+    },
+    "@textlint-rule/no-invalid-control-character": true
   },
   "filters": {
     "whitelist": {

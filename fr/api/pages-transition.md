@@ -1,34 +1,34 @@
 ---
-title: "API : la propriété transition"
+title: "API : la propriété pageTransition (EN)"
 description: Nuxt.js utilise le composant de `<transition>` afin de créer des transitions / animations époustouflantes entre vos pages.
 ---
 
-# La propriété transition
+# La propriété pageTransition (EN)
 
-> Nuxt.js utilise le composant [`<transition>`](https://fr.vuejs.org/v2/guide/transitions.html#Transition-d’elements-composants-simples) afin de créer des transitions / animations époustouflantes entre vos pages.
+> Nuxt.js v2.7+ introduit `pageTransition` en lieu et place de `transition` pour améliorer le nommage avec les transitions de mise en page. Avec Nuxt 3, `transition` sera dérpécié.
 
 - **Type :** `String` ou `Object` ou `Function`
 
-Pour définir une transition personnalisée pour une route spécifique, ajoutez la propriété `transition` au composant de page.
+Pour définir une transition personnalisée pour une route spécifique, ajoutez la propriété `pageTransition` au composant de page.
 
 ```js
 export default {
   // Peut-être une chaine de caractères
-  transition: ''
+  pageTransition: ''
   // Ou un objet
-  transition: {}
-  // ou une fonction
-  transition (to, from) {}
+  pageTransition: {}
+  // Ou une fonction
+  pageTransition (to, from) {}
 }
 ```
 
 ## Chaine de caractères
 
-Si la propriété `transition` est définie en tant que chaine de caractère, elle sera utilisée comme `transition.name`.
+Si la propriété `pageTransition` est définie en tant que chaine de caractère, elle sera utilisée comme `transition.name`.
 
 ```js
 export default {
-  transition: 'test'
+  pageTransition: 'test'
 }
 ```
 
@@ -40,11 +40,11 @@ Nuxt.js utilisera ces paramètres pour définir le composant comme suit :
 
 ## Objet
 
-Si la propriété `transition` est un objet :
+Si la propriété `pageTransition` est un objet :
 
 ```js
 export default {
-  transition: {
+  pageTransition: {
     name: 'test',
     mode: 'out-in'
   }
@@ -57,7 +57,7 @@ Nuxt.js utilisera ces paramètres pour définir le composant comme suit :
 <transition name="test" mode="out-in">
 ```
 
-L'objet `transition` peut avoir les propriétés suivantes :
+L'objet `pageTransition` peut avoir les propriétés suivantes :
 
 | Propriété          | type      | défaut     | définition                                                                                                                                                                                                                                         |
 |--------------------|-----------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -73,7 +73,7 @@ L'objet `transition` peut avoir les propriétés suivantes :
 | `leaveToClass`     | `String`  | aucune     | L'état final de la transition. Voir la [documentation Vue.js](https://fr.vuejs.org/v2/guide/transitions.html#Classes-de-transition-personnalisees).                                                                                                |
 | `leaveActiveClass` | `String`  | aucune     | La classe appliquée pendant l'intégralité de la transition. Voir la [documentation Vue.js](https://fr.vuejs.org/v2/guide/transitions.html#Classes-de-transition-personnalisees).                                                                   |
 
-Vous pouvez également définir des méthodes dans l'objet `transition` afin de pouvoir utiliser des [points d'ancrage JavaScript](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks) :
+Vous pouvez également définir des méthodes dans l'objet `pageTransition` afin de pouvoir utiliser des [points d'ancrage JavaScript](https://fr.vuejs.org/v2/guide/transitions.html#JavaScript-Hooks) :
 
 - `beforeEnter(el)`
 - `enter(el, done)`
@@ -86,13 +86,26 @@ Vous pouvez également définir des méthodes dans l'objet `transition` afin de 
 
 *Note : c'est une bonne pratique que de définir explicitement `css: false` pour les transitions uniquement JavaScript afin que Vue passe la détection CSS. Cela prévient également les potentielles interférences entre les déclarations CSS.*
 
-## Fonction
+### Transition Mode (EN)
 
-Si la propriété `transition` est une fonction :
+**The default transition mode for pages differs from the default mode in Vue.js**. The `pageTransition` mode is by default set to `out-in`. If you want to run leaving and entering transitions simultaneously, you have to set the mode to the empty string `mode: ''`. 
 
 ```js
 export default {
-  transition (to, from) {
+  pageTransition: {
+    name: 'test',
+    mode: ''
+  }
+}
+```
+
+## Fonction
+
+Si la propriété `pageTransition` est une fonction :
+
+```js
+export default {
+  pageTransition (to, from) {
     if (!from) return 'slide-left'
     return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
   }
@@ -104,3 +117,5 @@ Transitions appliquées à la navigation :
 - `/` vers `/posts` => `slide-left`,
 - `/posts` vers `/posts?page=3` => `slide-left`,
 - `/posts?page=3` vers `/posts?page=2` => `slide-right`.
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

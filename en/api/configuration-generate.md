@@ -11,6 +11,23 @@ description: Configure the generation of your universal web application to a sta
 
 When launching `nuxt generate` or calling `nuxt.generate()`, Nuxt.js will use the configuration defined in the `generate` property.
 
+nuxt.config.js 
+```js
+export default {
+  generate: {
+    ...
+  }
+}
+```
+
+## concurrency
+
+- Type: `Number`
+- Default: `500`
+
+The generation of routes are concurrent, `generate.concurrency` specifies the amount of routes that run in one thread.
+
+
 ## dir
 
 - Type: `String`
@@ -27,6 +44,39 @@ Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools)
 
 If you already activated through nuxt.config.js or otherwise, devtools enable regardless of the flag.
 
+## exclude
+
+- Type: `Array`
+
+It accepts an array of regular expressions and will prevent generation of routes matching them. The routes will still be accessible when `generate.fallback` is used.
+
+By default, running `nuxt generate` will create a file for each route.
+
+```bash
+-| dist/
+---| index.html
+---| ignore/
+-----| about.html
+-----| item.html
+```
+
+When adding a regular expression which matches all routes with "ignore", it will prevent the generation of these routes.
+
+nuxt.config.js 
+```js
+export default {
+  generate: {
+    exclude: [
+      /^(?=.*\bignore\b).*$/,
+    ],
+  }
+}
+```
+
+```bash
+-| dist/
+---| index.html
+```
 
 ## fallback
 
@@ -202,6 +252,15 @@ Example:
 
 When set to false, HTML files are generated according to the route path:
 
+nuxt.config.js 
+```js
+export default {
+  generate: {
+    subFolders: false
+  }
+}
+```
+
 ```bash
 -| dist/
 ---| index.html
@@ -210,11 +269,5 @@ When set to false, HTML files are generated according to the route path:
 -----| item.html
 ```
 
+
 _Note: this option could be useful using [Netlify](https://netlify.com) or any static hosting using HTML fallbacks._
-
-## concurrency
-
-- Type: `Number`
-- Default: `500`
-
-The generation of routes are concurrent, `generate.concurrency` specifies the amount of routes that run in one thread.

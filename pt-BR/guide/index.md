@@ -31,7 +31,7 @@ Nuxt.js incluí o seguintes itens para criar um desenvolvimento de aplicações 
 - [Vue Router](https://router.vuejs.org/en/)
 - [Vuex](https://vuex.vuejs.org/en/) (incluído apenas quando a [opção de store](/guide/vuex-store) é usada)
 - [Vue Server Renderer](https://ssr.vuejs.org/en/) (excluído quando [`mode: 'spa'`](/api/configuration-mode))
-- [vue-meta](https://github.com/declandewet/vue-meta)
+- [vue-meta](https://github.com/nuxt/vue-meta)
 
 Um total de apenas **57kB min+gzip** (60kB com Vuex).
 

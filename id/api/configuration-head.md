@@ -23,7 +23,7 @@ module.exports = {
 }
 ```
 
-Untuk mengetahui daftar pilihan yang dapat Anda berikan pada `head`, lihat [dokumentasi vue-meta](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
+Untuk mengetahui daftar pilihan yang dapat Anda berikan pada `head`, lihat [dokumentasi vue-meta](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
 <div class="Alert Alert--teal">
 

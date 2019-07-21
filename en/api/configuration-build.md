@@ -40,7 +40,7 @@ export default {
 
 > Customize Babel configuration for JavaScript and Vue files. `.babelrc` is ignored by default.
 
-- Type: `Object`
+- Type: `Object` See `babel-loader` [options](https://github.com/babel/babel-loader#options) and `babel` [options](https://babeljs.io/docs/en/options)
 - Default:
 
   ```js
@@ -50,52 +50,53 @@ export default {
     presets: ['@nuxt/babel-preset-app']
   }
   ```
-  
 
 The default targets of [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) are `ie: '9'` in the `client` build, and `node: 'current'` in the `server` build.
 
+### presets
+
+- Type: `Function`
+- Argument:
+  1. `Object`: { isServer: true | false }
+  2. `Array`:
+      - preset name `@nuxt/babel-preset-app`
+      - [`options`](https://github.com/nuxt/nuxt.js/tree/dev/packages/babel-preset-app#options) of `@nuxt/babel-preset-app`
+
 **Note**: The presets configured in `build.babel.presets` will be applied to both, the client and the server build. The target will be set by Nuxt accordingly (client/server). If you want configure the preset differently for the client or the server build, please use `presets` as a function:
+
+> We **highly recommend** to use the default preset instead of below customization
 
 ```js
 export default {
   build: {
     babel: {
-      presets({ isServer }) {
-        const targets = isServer ? { node: '10' } : { ie: '11' }
-        return [
-          [ require.resolve('@nuxt/babel-preset-app'), { targets } ]
-        ]
+      presets({ isServer }, [ preset, options ]) {
+        // change options directly
+        options.targets = isServer ? ... :  ...
+        options.corejs = ...
+        // return nothing
       }
     }
   }
 }
 ```
 
-We **highly recommend** to use the default preset. However, you can change the preset if you have to. 
-
-*Example* for custom presets:
-```js
-export default {
-  build: {
-    babel: {
-      presets: ['es2015', 'stage-0']
-    }
-  }
-}
-```
-
-> Default targets of [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) is : `ie: '9'` in `client` building, `node: 'current'` in `server` side.
-
-**Note**: the presets in configured in `build.babel.presets` will be applied to both client and server build, the target will be set by Nuxt according to the building (client/server), if you want to set different config, please use presets as a function:
+Or override default value by returning whole presets list:
 
 ```js
 export default {
   build: {
     babel: {
-      presets({ isServer }) {
-        const targets = isServer ? { node: '10' } : { ie: '11' }
+      presets({ isServer }, [ preset, options ]) {
         return [
-          [ require.resolve('@nuxt/babel-preset-app'), { targets } ]
+          [
+            preset, {
+              buildTarget: isServer ? 'server' : 'client',
+              ...options
+          }],
+          [
+            // Other presets
+          ]
         ]
       }
     }
@@ -206,7 +207,7 @@ export default {
 - Type: `Boolean`
 - Default: `false`
 
-Using [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) under the hood, all your CSS will be extracted into separate files, usually one per component. This allows caching your CSS and JavaScript separately and is worth a try in case you have a lot of global or shared CSS.
+Using [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin/) under the hood, all your CSS will be extracted into separate files, usually one per component. This allows caching your CSS and JavaScript separately and is worth a try in case you have a lot of global or shared CSS.
 
 <div class="Alert Alert--teal">
 
@@ -245,7 +246,7 @@ export default {
 }
 ```
 
-To understand a bit more about the use of manifests, take a look at this [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/).
+To understand a bit more about the use of manifests, take a look at this [webpack documentation](https://webpack.js.org/guides/code-splitting/).
 
 ## friendlyErrors
 
@@ -291,6 +292,14 @@ See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware
 
 Configuration for the [html-minifier](https://github.com/kangax/html-minifier) plugin used to minify
 HTML files created during the build process (will be applied for *all modes*).
+
+## indicator
+
+> Display build indicator for hot module replacement in development (available in `v2.8.0+`)
+- Type: `Boolean`
+- Default: `true`
+
+![nuxt-build-indicator](https://user-images.githubusercontent.com/5158436/58500509-93ba0f80-8197-11e9-8524-e115c6d32571.gif)
 
 ## loaders
 
@@ -360,7 +369,7 @@ HTML files created during the build process (will be applied for *all modes*).
 
 ### loaders.less
 
-> You can pass any Less specific options to the `less-loader via` via `loaders.less`. See the [Less documentation](http://lesscss.org/usage/#command-line-usage-options) for all available options in dash-case.
+> You can pass any Less specific options to the `less-loader` via `loaders.less`. See the [Less documentation](http://lesscss.org/usage/#command-line-usage-options) for all available options in dash-case.
 
 ### loaders.sass and loaders.scss
 
@@ -465,10 +474,13 @@ export default {
     plugins: {
       'postcss-import': {},
       'postcss-url': {},
-      'postcss-preset-env': {},
+      'postcss-preset-env': this.preset,
       'cssnano': { preset: 'default' } // disabled in dev mode
     },
-    order: 'cssnanoLast'
+    order: 'presetEnvAndCssnanoLast',
+    preset: {
+      stage: 2
+    }
   }
   ```
 
@@ -691,7 +703,8 @@ If you want to transpile specific dependencies with Babel, you can add them in `
 
   ```js
   {
-    typeCheck: true
+    typeCheck: true,
+    ignoreNotFoundWarnings: false
   }
   ```
 
@@ -705,6 +718,19 @@ If you want to transpile specific dependencies with Babel, you can add them in `
 When enabled, Nuxt.js uses [fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) to provide type checking.
 
 You can use an `Object` to override plugin options or set it to `false` to disable it.
+
+### typescript.ignoreNotFoundWarnings
+
+> Enables suppress not found typescript warnings.
+
+- Type: `Boolean`
+- Default: `false`
+
+When enabled, you can suppress `export ... was not found ...` warnings.
+
+See also about background information [https://github.com/TypeStrong/ts-loader/issues/653](https://github.com/TypeStrong/ts-loader/issues/653)
+
+**Warning:** This property might suppress the warnings you want to see. Be careful with how you configure it.
 
 ## vueLoader
 

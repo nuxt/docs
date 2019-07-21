@@ -36,6 +36,23 @@ export default {
 
 > このオプションは vue-router の [base](https://router.vuejs.org/ja/api/#base) に直接付与されます。
 
+## routeNameSplitter
+
+- 型: `String`
+- デフォルト: `'-'`
+
+Nuxt.js が使うルート名の区切り文字を変更したい場合があるでしょう。設定ファイル内の `routeNameSplitter` オプションを使用して変更することが可能です。
+`pages/posts/_id.vue` というページファイルがあるとします。Nuxt はプログラムに従ってルート名を生成します。この場合は `posts-id` です。`routeNameSplitter` の設定を `/` に変更することによって `posts/id` へ変更されます。
+
+例 (`nuxt.config.js`):
+```js
+export default {
+  router: {
+    routeNameSplitter: '/'
+  }
+}
+```
+
 ## extendRoutes
 
 - 型: `Function`
@@ -61,6 +78,17 @@ export default {
 ```
 
 ルートのスキーマは [vue-router](https://router.vuejs.org/en/) のスキーマを尊重すべきです。
+
+## fallback
+
+- 型: `Boolean`
+- デフォルト: `false`
+
+history.pushState がサポートされていないブラウザにおいて、モードが history に設定されているとき、ルーターを hash モードにフォールバックするかどうか制御します。
+
+これを false に設定すると、本質的に全ての router-link ナビゲーションが IE9 においてフルページリフレッシュになります。これは、アプリケーションがサーバサイドレンダリングされ、 IE9 で動作する必要がある場合に便利です。なぜなら、サーバーサイドレンダリングではハッシュモードの URL が機能しないためです。
+
+> このオプションは vue-router の [fallback](https://router.vuejs.org/ja/api/#fallback) に直接付与されます。
 
 ## linkActiveClass
 
@@ -99,6 +127,23 @@ export default {
 ```
 
 > このオプションは [linkexactactiveclass](https://router.vuejs.org/ja/api/#linkexactactiveclass) に直接付与されます.
+
+## linkPrefetchedClass
+
+- 型: `String`
+- デフォルト: `false`
+
+[`<nuxt-link>`](/api/components-nuxt-link) の prefetch クラスをグローバルに設定する（デフォルトでは無効の機能）
+
+例 (`nuxt.config.js`):
+
+```js
+export default {
+  router: {
+    linkPrefetchedClass: 'nuxt-link-prefetched'
+  }
+}
+```
 
 ## middleware
 
@@ -150,6 +195,55 @@ export default {
 
 > このオプションは直接 vue-router の [mode](https://router.vuejs.org/ja/api/#mode) に渡されます。
 
+## parseQuery / stringifyQuery
+
+- 型: `Function`
+
+カスタムクエリ構文解析関数 / 文字列化関数を提供します。デフォルトを上書きします。
+
+> このオプションは vue-router の [parseQuery / stringifyQuery](https://router.vuejs.org/ja/api/#parsequery-stringifyquery) に直接付与されます。
+
+## prefetchLinks
+
+> この機能は Nuxt.js v2.4.0 で追加されました
+
+- 型: `Boolean`
+- デフォルト: `true`
+
+viewport（ブラウザの表示領域）内にリンクが表示されたとき *コード分割された* ページを先読みする `<nuxt-link>` の設定をします。
+[IntersectionObserver](https://developer.mozilla.org/ja/docs/Web/API/Intersection_Observer_API) がサポートされている必要があります ([CanIUse](https://caniuse.com/#feat=intersectionobserver)を御覧ください）。
+
+この機能を [Polyfill.io](https://polyfill.io) のようなサービスで条件付きで埋め込むことをお勧めします:
+
+`nuxt.config.js`
+
+```js
+export default {
+  head: {
+    script: [
+      { src: 'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver', body: true }
+    ]
+  }
+}
+```
+
+特定のリンクで先読みを無効にしたい場合は、`no-prefetch` 属性を使用します:
+
+```html
+<nuxt-link to="/about" no-prefetch>About page not pre-fetched</nuxt-link>
+```
+
+全てのリンクで先読みを無効にしたい場合は、`prefetchLinks` を `false` に設定してください:
+
+```js
+// nuxt.config.js
+export default {
+  router: {
+    prefetchLinks: false
+  }
+}
+```
+
 ## scrollBehavior
 
 - 型: `Function`
@@ -160,32 +254,46 @@ export default {
 
 ```js
 const scrollBehavior = function (to, from, savedPosition) {
-  // 返された位置が偽または空のオブジェクトだったときは、
-  // 現在のスクロール位置を保持する
+  // if the returned position is falsy or an empty object,
+  // will retain current scroll position.
   let position = false
 
-  // 子パスが見つからないとき
-  if (to.matched.length < 2) {
-    // ページのトップへスクロールする
+  // if no children detected and scrollToTop is not explicitly disabled
+  if (
+    to.matched.length < 2 &&
+    to.matched.every(r => r.components.default.options.scrollToTop !== false)
+  ) {
+    // scroll to the top of the page
     position = { x: 0, y: 0 }
-  } else if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
-    // 子パスのひとつが scrollToTop オプションが true にセットされているとき
+  } else if (to.matched.some(r => r.components.default.options.scrollToTop)) {
+    // if one of the children has scrollToTop option set to true
     position = { x: 0, y: 0 }
   }
 
-  // savedPosition は popState ナビゲーションでのみ利用できます（戻るボタン）
+  // savedPosition is only available for popstate navigations (back button)
   if (savedPosition) {
     position = savedPosition
   }
 
-  return new Promise(resolve => {
-    //（必要であれば）out トランジションが完了するのを待つ
+  return new Promise((resolve) => {
+    // wait for the out transition to complete (if necessary)
     window.$nuxt.$once('triggerScroll', () => {
-      // セレクタが渡されなかったとき、
-      // または、セレクタがどの要素にもマッチしなかったときは、座標が用いられる
-      if (to.hash && document.querySelector(to.hash)) {
-        // セレクタを返すことでアンカーまでスクロールする
-        position = { selector: to.hash }
+      // coords will be used if no selector is provided,
+      // or if the selector didn't match any element.
+      if (to.hash) {
+        let hash = to.hash
+        // CSS.escape() is not supported with IE and Edge.
+        if (typeof window.CSS !== 'undefined' && typeof window.CSS.escape !== 'undefined') {
+          hash = '#' + window.CSS.escape(hash.substr(1))
+        }
+        try {
+          if (document.querySelector(hash)) {
+            // scroll to anchor by returning the selector
+            position = { selector: hash }
+          }
+        } catch (e) {
+          console.warn('Failed to save scroll position. Please add CSS.escape() polyfill (https://github.com/mathiasbynens/CSS.escape).')
+        }
       }
       resolve(position)
     })
@@ -206,22 +314,3 @@ export default {
   }
 }
 ```
-
-## parseQuery / stringifyQuery
-
-- 型: `Function`
-
-カスタムクエリ構文解析関数 / 文字列化関数を提供します。デフォルトを上書きします。
-
-> このオプションは vue-router の [parseQuery / stringifyQuery](https://router.vuejs.org/ja/api/#parsequery-stringifyquery) に直接付与されます。
-
-## fallback
-
-- 型: `Boolean`
-- デフォルト: `false`
-
-history.pushState がサポートされていないブラウザにおいて、モードが history に設定されているとき、ルーターを hash モードにフォールバックするかどうか制御します。
-
-これを false に設定すると、本質的に全ての router-link ナビゲーションが IE9 においてフルページリフレッシュになります。これは、アプリケーションがサーバサイドレンダリングされ、 IE9 で動作する必要がある場合に便利です。なぜなら、サーバーサイドレンダリングではハッシュモードの URL が機能しないためです。
-
-> このオプションは vue-router の [fallback](https://router.vuejs.org/ja/api/#fallback) に直接付与されます。

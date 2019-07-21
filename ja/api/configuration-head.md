@@ -25,7 +25,7 @@ export default {
 }
 ```
 
-`head` に設定できるオプション一覧は [vue-meta のドキュメント](https://github.com/declandewet/vue-meta#recognized-metainfo-properties) を参照してください。
+`head` に設定できるオプション一覧は [vue-meta のドキュメント](https://vue-meta.nuxtjs.org/api/#metainfo-properties) を参照してください。
 
 ページのコンポーネントでも `head` を使うことができ、`this` を経由してコンポーネントのデータにアクセスできます。詳しくは [コンポーネントの head プロパティ](/api/pages-head) を参照してください。
 

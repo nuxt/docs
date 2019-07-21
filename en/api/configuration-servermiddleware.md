@@ -15,9 +15,19 @@ and also when used as a middleware with programmatic usages like [express-templa
 Nuxt [Modules](/guide/modules) can also provide `serverMiddleware`
 using [this.addServerMiddleware()](/api/internals-module-container#addservermiddleware-middleware-)
 
+Additional to them, we introduced a `prefix` option which defaults to `true`. It will add the router base to your server middlewares.
+
+**Example:**
+
+* Server middleware path: `/api`
+* Router base: `/admin`
+* With `prefix: true` (default): `/admin/api`
+* With `prefix: false`: `/api`
+
 ## serverMiddleware vs middleware!
+
 Don't confuse it with [routes middleware](/guide/routing#middleware) which are called before each route by Vue in Client Side or SSR.
-Middleware listed in the `serverMiddleware` property runs server-side **before** vue-server-renderer and can be used for server specific tasks like handling API requests or serving assets.
+Middleware listed in the `serverMiddleware` property runs server-side **before** `vue-server-renderer` and can be used for server specific tasks like handling API requests or serving assets.
 
 ## Usage
 

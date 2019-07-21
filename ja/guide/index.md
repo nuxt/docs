@@ -27,10 +27,10 @@ Nuxt.js は**サーバーサイドレンダリング**をもっと楽しめる�
 Nuxt.js はリッチなウェブアプリケーションを構築するために下記のものを含んでいます:
 
 - [Vue 2](https://vuejs.org/)
-- [Vue-Router](https://router.vuejs.org/ja/)
+- [Vue Router](https://router.vuejs.org/ja/)
 - [Vuex](https://vuex.vuejs.org/ja/)（[ストアオプション](/guide/vuex-store)を利用している場合に限る）
 - [Vue Server Renderer](https://ssr.vuejs.org/ja/)（[`mode: 'spa'`](/api/configuration-mode) を利用している場合を除く）
-- [vue-meta](https://github.com/declandewet/vue-meta)
+- [vue-meta](https://github.com/nuxt/vue-meta)
 
 すべて合わせてもわずか **57kB min+gzip** です。（Vuex 利用時は 60kB）
 
@@ -43,7 +43,7 @@ Nuxt.js はリッチなウェブアプリケーションを構築するために
 - サーバーサイドレンダリング
 - 非同期データをハンドリングするパワフルなルーティング
 - 静的ファイルの配信
-- ES2015+ のトランスパイレーション
+- [ES2015+](https://babeljs.io/docs/en/learn/) のトランスパイレーション
 - JS と CSS のバンドル及びミニファイ化
 - `<head>` 要素（`<title>`、`<meta>` など）の管理
 - 開発モードにおけるホットリローディング
@@ -107,7 +107,7 @@ Nuxt.js をプロジェクトの UI レンダリング全体を担うフレー�
 
 この方法により、生成されたウェブアプリケーションをどの静的ウェブサイトホスティングにもホストできます！
 
-最も良い例はこのウェブサイト自体です。このサイトは [Netlify](https://www.netlify.com) で生成されホストされています。[ソースコード](https://github.com/nuxt/nuxtjs.org)を参照してください。
+最も良い例はこのウェブサイト自体です。このサイトは [Netlify](https://www.netlify.com) で生成されホストされています。[ソースコード](https://github.com/nuxt/nuxtjs.org)もしくは Vue School の [Nuxt.js を Netlify にデプロイする方法](https://vueschool.io/lessons/how-to-deploy-nuxtjs-to-netlify?friend=nuxt)を参照してください。
 
 [docs repository](https://github.com/nuxt/docs) をアップデートするたびに手動でアプリケーションを生成したくないので、Netlify のフックへのトリガーにします：
 

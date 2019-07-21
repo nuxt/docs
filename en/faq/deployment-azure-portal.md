@@ -1,4 +1,9 @@
-#How to deploy on Azure Portal
+---
+title: Azure Portal Deployment
+description: How to deploy a Nuxt.js application on Azure Portal?
+---
+
+# How to deploy on Azure Portal
 
 If you are using Azure DevOps and let the build pipeline do its work you and want to store artifacts. Files
 which are prefixed with a `.` must be moved to the artifact folder explicitly. Then you can create an Artifact Archive and 
@@ -10,7 +15,7 @@ Add a web.config file to your repository. For the latest version of `Nuxt` the s
 In the web.config you don't specify the exact path `server/index.js` but just `server`. See the example web.config below. If you don't do
 this the logs will tell you that Vue cannot find any routes.
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      This configuration file is required if iisnode is used to run node processes behind

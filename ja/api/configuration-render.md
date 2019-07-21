@@ -8,6 +8,7 @@ description: Nuxt.js はページレンダリングの実行時オプション�
 > Nuxt.js はページレンダリングの実行時オプションをカスタマイズできます。
 
 ## bundleRenderer
+
 - 型: `Object`
 
 > このオプションを使用して Vue SSR のバンドルレンダラのカスタマイズします。このオプションは SPA モードではスキップされます。
@@ -30,6 +31,7 @@ export default {
 Nuxt.js は既に最高の SSR のデフォルト設定を提供していて、誤った設定が SSR の問題を引き起こす可能性があるため、このオプションを使用しないことをお勧めします。
 
 ## etag
+
 - 型: `Object`
   - デフォルト: `{ weak: true }`
 
@@ -38,6 +40,7 @@ Nuxt.js は既に最高の SSR のデフォルト設定を提供していて、�
 利用可能なオプションは [etag](https://www.npmjs.com/package/etag) を参照してください。
 
 ## compressor
+
 - 型 `Object`
   - デフォルト: `{ threshold: 0 }`
 
@@ -45,21 +48,28 @@ Object を設定する場合、[compression](https://www.npmjs.com/package/compr
 
 独自の圧縮ミドルウェアを使用したい場合は、直接参照することができます。(f.ex. `otherComp({ myOptions: 'example' })`)
 
+圧縮を無効にするには、`compressor: false` を使います。
+
 ## fallback
+
 - 型 `Object`
   - デフォルト: `{ dist: {}, static: { skipUnknown: true } }`
 
-[serve-placeholder](https://github.com/nuxt/serve-placeholder) ミドルウェアのオプションです。
+> [serve-placeholder](https://github.com/nuxt/serve-placeholder) ミドルウェアのオプションです。
 
 もしこれらのうち1つか両方を無効にする場合は、偽となる値を渡すことができます。
 
 ## http2
+
 - 型 `Object`
   - デフォルト: `{ push: false, pushAssets: null }`
 
-HTTP2 プッシュヘッダーを有効にします。
+> HTTP2 プッシュヘッダーを有効にします。
 
-`pushAssets` 関数でプッシュされるリンクをコントロールすることができます。 例えば:
+`pushAssets` 関数でプッシュされるリンクをコントロールすることができます。
+
+**例:**
+
 ```js
 pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
   .filter(f => f.asType === 'script' && f.file === 'runtime.js')
@@ -71,7 +81,15 @@ pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
 
 それらのアセットは `,` を区切り文字として合成され、1つの `Link` ヘッダに渡されます。
 
+## injectScripts
+
+- 型: `Boolean`
+ - デフォルト: `true`
+
+> Nuxtのバンドルに `<script>` を追加します。JSを除く純粋なHTMLを表示する場合は `false` に設定してください。(`v2.8.0+` から利用可能)
+
 ## resourceHints
+
 - 型: `Boolean`
   - デフォルト: `true`
 
@@ -80,6 +98,7 @@ pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
 多くのページとルートがある場合に、このオプションのみを無効にすることができます。
 
 ## ssr
+
 - 型: `Boolean`
   - デフォルト: ユニバーサルモードでは `true` SPA モードでは `false`
 
@@ -88,26 +107,53 @@ pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
 このオプションは、提供されていなければ `mode` に基づいて自動的に設定されます。
 これは（例えば Docker で）イメージビルド後にランタイムで SSR を動的に有効/無効にするのに便利です。
 
+## ssrLog
+
+- 型: `Boolean` | `String`
+ - デフォルト: `true` in dev mode and `false` in production
+
+> デバックしやすいように、サーバーサイドのログをブラウザに転送します（開発モードのみ利用可能）
+
+ログを折り畳むには、`'collapsed'` を設定します。
+
 ## static
+
 - 型: `Object`
   - デフォルト: `{}`
 
+> `static/` ディレクトリの振る舞いを設定します
+
 利用可能なオプションは  [serve-static](https://www.npmjs.com/package/serve-static) を参照してください。
 
+それらに加えて、デフォルトで `true` になる `prefix` オプションを導入しました。
+静的なアセットに router base を追加します。
+
+**例:**
+
+* アセット: `favicon.ico`
+* Router base: `/t`
+* `prefix: true`（デフォルト）: `/t/favicon.ico`
+* `prefix: false`: `/favicon.ico`
+
+**Caveats:**
+
+一部 URL の書き換えでは、プレフィックスが守られないかもしれません。
+
 ## dist
+
 - 型: `Object`
   - デフォルト: `{ maxAge: '1y', index: false }`
 
-配布ファイルの配信に使用されるオプションです。本番でのみ適用されます。
+> 配布ファイルの配信に使用されるオプションです。本番でのみ適用されます。
 
 利用可能なオプションは  [serve-static](https://www.npmjs.com/package/serve-static) を参照してください。
 
 ## csp
 
-> これは Content-Security-Policy で適用された外部リソースを読み込む設定をするために使用します。
-
 - 型: `Boolean` または `Object`
   - デフォルト: `false`
+
+> これは Content-Security-Policy で適用された外部リソースを読み込む設定をするために使用します。
 
 例 (`nuxt.config.js`)
 
@@ -136,4 +182,38 @@ export default {
     }
   }
 }
+
+// または
+/*
+  次の例では、Google Analytics、LogRocket.io、および Sentry.io で
+  ロギング、トラッキングの分析を行えます。
+
+  Sentry.io のブログで確認する
+  https://blog.sentry.io/2018/09/04/how-sentry-captures-csp-violations
+
+  どのトラッキングリンクを使うべきかを学ぶこと。
+*/
+const PRIMARY_HOSTS = `loc.example-website.com`
+export default {
+  csp: {
+    reportOnly: true,
+    hashAlgorithm: 'sha256',
+    policies: {
+      'default-src': ["'self'"],
+      'img-src': ['https:', '*.google-analytics.com'],
+      'worker-src': ["'self'", `blob:`, PRIMARY_HOSTS, '*.logrocket.io'],
+      'style-src': ["'self'", "'unsafe-inline'", PRIMARY_HOSTS],
+      'script-src': ["'self'", "'unsafe-inline'", PRIMARY_HOSTS, 'sentry.io', '*.sentry-cdn.com', '*.google-analytics.com', '*.logrocket.io'],
+      'connect-src': [PRIMARY_HOSTS, 'sentry.io', '*.google-analytics.com'],
+      'form-action': ["'self'"],
+      'frame-ancestors': ["'none'"],
+      'object-src': ["'none'"],
+      'base-uri': [PRIMARY_HOSTS],
+      'report-uri': [
+        `https://sentry.io/api/<project>/security/?sentry_key=<key>`
+      ]
+    }
+  }
+}
+
 ```

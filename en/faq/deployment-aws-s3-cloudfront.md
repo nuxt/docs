@@ -333,4 +333,4 @@ Configured with CloudFront distribution
 [21:26:09] Finished 'deploy' after 42 s
 ```
 
-Note that the `ClouFront invalidation created: XXXX` is the only output from the CloudFront invalidation npm package.  If you don't see that, it's not working.  
+Note that the `CloudFront invalidation created: XXXX` is the only output from the CloudFront invalidation npm package.  If you don't see that, it's not working.  

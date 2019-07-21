@@ -136,7 +136,9 @@ export default {
   它们是**长期支持**的。这里不要使用`process.client`和`process.server`，因为它们是`'undefined'`。
 
 </div>
+
 例如 (`nuxt.config.js`)：
+
 ```js
 module.exports = {
   build: {

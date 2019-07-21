@@ -27,7 +27,7 @@ Nuxt.js 使われるデフォルトのテンプレート:
 </html>
 ```
 
-カスタムアプリテンプレートを使用して、IE 用に条件付きのCSSクラスを追加するユースケースのひとつ:
+カスタムアプリテンプレートを使用して、IE 用に条件付きの CSS クラスを追加するユースケースのひとつ:
 
 ```html
 <!DOCTYPE html>
@@ -142,6 +142,14 @@ export default {
 
 すべてのページコンポーネントは Vue コンポーネントですが、Nuxt.js にユニバーサルアプリケーション開発を可能な限り容易にするための特別な属性と機能が追加されています。
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-page-components?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Vue School で <strong>Nuxt.js ページコンポーネント</strong>についての無料レッスンをみる
+    </p>
+  </a>
+</div>
+
 ```html
 <template>
   <h1 class="red">Hello {{ name }}!</h1>
@@ -164,6 +172,7 @@ export default {
   ...
 }
 </script>
+
 <style>
 .red {
   color: red;
@@ -187,7 +196,7 @@ export default {
 
 ## HTML ヘッド
 
-Nuxt.js は、`document head` とアプリケーションの `meta attributes` を更新するために [vue-meta](https://github.com/declandewet/vue-meta) を使用しています。
+Nuxt.js は、`document head` とアプリケーションの `meta attributes` を更新するために [vue-meta](https://github.com/nuxt/vue-meta) を使用しています。
 
 Nuxt.js が使っている `vue-meta` は、[GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/index.js#L29-L35) で参照できます。
 
@@ -215,7 +224,7 @@ head: {
 }
 ```
 
-`head` で利用できるオプションの詳細については、[メタ情報プロパティの認識](https://github.com/declandewet/vue-meta#recognized-metainfo-properties)を参照してください。
+`head` で利用できるオプションの詳細については、[メタ情報プロパティの認識](https://vue-meta.nuxtjs.org/api/#metainfo-properties)を参照してください。
 
 `head` メソッドに関するより多くの情報は、[`head` プロパティ](/api/configuration-head)を参照してください。
 

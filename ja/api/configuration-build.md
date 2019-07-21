@@ -38,24 +38,67 @@ export default {
 
 ## babel
 
-> JavaScript や Vue ファイルのために Babel の設定をカスタマイズします。
+> JavaScript や Vue ファイルのために Babel の設定をカスタマイズします。 `.babelrc` はデフォルトで無視されます。
 
-- 型: `Object`
+- 型: `Object` `babel-loader` の [options](https://github.com/babel/babel-loader#options) と `babel` の [options](https://babeljs.io/docs/en/options) を参照してください
 - デフォルト:
 
   ```js
   {
+    babelrc: false,
+    cacheDirectory: undefined,
     presets: ['@nuxt/babel-preset-app']
   }
   ```
 
-例（`nuxt.config.js`）:
+[@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) のデフォルトターゲットは `client` ビルドでは `ie: '9'`、`server` ビルドでは `node: 'current'` になります。
+
+### presets
+
+- 型: `Function`
+- 引数:
+  1. `Object`: { isServer: true | false }
+  2. `Array`:
+      - プリセット名 `@nuxt/babel-preset-app`
+      - `@nuxt/babel-preset-app` の [`options`](https://github.com/nuxt/nuxt.js/tree/dev/packages/babel-preset-app#options)
+
+**メモ**: `build.babel.presets` のプリセットの設定はクライアントビルド、サーバービルド両方に適用されます。ターゲットは（クライアント/サーバー）それぞれに応じて Nuxt によって設定されます。クライアントビルドとサーバービルドで異なるプリセットの設定をしたい場合は、関数として `presets` を使用してください。
+
+> 以下のカスタマイズの代わりにデフォルトのプリセットを使用することを **強くお勧めします**
 
 ```js
 export default {
   build: {
     babel: {
-      presets: ['es2015', 'stage-0']
+      presets({ isServer }, [ preset, options ]) {
+        // 直接オプションを変更する
+        options.targets = isServer ? ... :  ...
+        options.corejs = ...
+        // 何も返さない
+      }
+    }
+  }
+}
+```
+
+もしくは、プリセットのリスト全体を返すことによってデフォルトの値を上書きします:
+
+```js
+export default {
+  build: {
+    babel: {
+      presets({ isServer }, [ preset, options ]) {
+        return [
+          [
+            preset, {
+              buildTarget: isServer ? 'server' : 'client',
+              ...options
+          }],
+          [
+            // 他のプリセット
+          ]
+        ]
+      }
     }
   }
 }
@@ -65,8 +108,18 @@ export default {
 
 - 型: `Boolean`
 - デフォルト: `false`
+- ⚠️ 実験的機能です
 
 > [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin#options) と [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) でキャッシュを有効化します。
+
+## crossorigin
+
+- 型: `String`
+- デフォルト: `undefined`
+
+生成された HTML の `<link rel="stylesheet">` タグと `<script>` タグの `crossorigin` 属性を設定します。
+
+詳細: [CORS settings attributes](https://developer.mozilla.org/ja/docs/Web/HTML/CORS_settings_attributes)
 
 ## cssSourceMap
 
@@ -80,6 +133,15 @@ export default {
 - 型: `Object`
 
 利用できるオプションは [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) を参照してください。
+
+## devtools
+
+- 型: `boolean`
+- デフォルト: `false`
+
+[vue-devtools](https://github.com/vuejs/vue-devtools) を許可するかどうかを設定します。
+
+既に nuxt.config.js などで有効化している場合は、このフラグに関係なく devtools が有効になります。
 
 ## extend
 
@@ -146,7 +208,7 @@ export default {
 - デフォルト: `false`
 
 
-内部で [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) が使われ、全ての CSS は別々のファイルに、通常はコンポーネントごとに1つ抽出されます。これは CSS と JavaScript を別々にキャッシュすることを可能にし、多くのグローバルまたは共通 CSS が存在する場合には試してみる価値があります。
+内部で [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin/) が使われ、全ての CSS は別々のファイルに、通常はコンポーネントごとに1つ抽出されます。これは CSS と JavaScript を別々にキャッシュすることを可能にし、多くのグローバルまたは共通 CSS が存在する場合には試してみる価値があります。
 
 <div class="Alert Alert--teal">
 
@@ -187,6 +249,21 @@ export default {
 
 manifest の使い方をより理解するためには [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/) を参照してください。
 
+## friendlyErrors
+
+- 型: `Boolean`
+- デフォルト: `true` (上書きが有効）
+
+[FriendlyErrorsWebpackPlugin](https://github.com/nuxt/friendly-errors-webpack-plugin)によって提供される上書きを有効にするか無効にするかを設定します。
+
+## hardSource
+
+- 型: `Boolean`
+- デフォルト: `false`
+- ⚠️ 実験的機能です
+
+キャッシュを改善するために [HardSourceWebpackPlugin](https://github.com/mzgoddard/hard-source-webpack-plugin) を有効にします。
+
 ## hotMiddleware
 
 - 型: `Object`
@@ -215,6 +292,15 @@ manifest の使い方をより理解するためには [webpack documentation](h
 **情報:** `html.minify`に変更を加えても、それらはデフォルトとマージされません！
 
 ビルドプロセス中に作成された HTML ファイルのミニファイに使われる [html-minifier](https://github.com/kangax/html-minifier) プラグインの設定（*全てのモード*に適用される）。
+
+## indicator
+
+> 開発モードでホットリローディングのビルドインジケーターを表示します(`v2.8.0+` から利用可能)
+
+- 型: `Boolean`
+- デフォルト: `true`
+
+ ![nuxt-build-indicator](https://user-images.githubusercontent.com/5158436/58500509-93ba0f80-8197-11e9-8524-e115c6d32571.gif)
 
 ## loaders
 
@@ -276,12 +362,21 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 ### loaders.less
 
-> Less specific オプションは、`loaders.less` を介して `less-loader に渡すことができます。dash-case で利用可能な全てのオプションについては [Less documentation](http://lesscss.org/usage/#command-line-usage-options) を参照してください。
+> Less specific オプションは、`loaders.less` を介して `less-loader` に渡すことができます。dash-case で利用可能な全てのオプションについては [Less documentation](http://lesscss.org/usage/#command-line-usage-options) を参照してください。
 
 ### loaders.sass と loaders.scss
 
 > 利用可能な全てのオプションについては [Node Sass documentation](https://github.com/sass/node-sass/blob/master/README.md#options) を参照してください。
 > 注意: `loaders.sass` は [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html) 用です。
+
+### loaders.ts
+
+> typescript ファイルと Vue SFC の `lang="ts"` 用のローダーです。
+> 詳細は [ts-loader options](https://github.com/TypeStrong/ts-loader#loader-options) を参照してください。
+
+### loaders.tsx
+
+> 詳細は [ts-loader options](https://github.com/TypeStrong/ts-loader#options) を参照してください。
 
 ### loaders.vueStyle
 
@@ -330,6 +425,7 @@ OptimizeCSSAssets プラグインのオプションです。
 
 - 型: `Boolean`
 - デフォルト: `false`
+- ⚠️ 実験的機能です
 
 webpack のビルドで[thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) を有効にします。
 
@@ -362,7 +458,7 @@ export default {
 
 - 型: `Array`、`Object`（推奨）、`Function` または `Boolean`
 
-  **注意：**  Nuxt.js は [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env) を適用しました。デフォルトでは、[Stage 2 features](https://cssdb.org/) と [Autoprefixer](https://github.com/postcss/autoprefixer) が有効になっています。`build.postcss.preset` を使うことで設定が出来ます。
+  **注意：**  Nuxt.js は [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env) を適用しました。デフォルトでは、[Stage 2 features](https://cssdb.org/) と [Autoprefixer](https://github.com/postcss/autoprefixer) が有効になっています。`build.postcss.preset` を使うことで設定が出来ます
 
 - デフォルト:
 
@@ -371,10 +467,13 @@ export default {
     plugins: {
       'postcss-import': {},
       'postcss-url': {},
-      'postcss-preset-env': {},
+      'postcss-preset-env': this.preset,
       'cssnano': { preset: 'default' } // 開発モードでは無効化されています
     },
-    order: 'cssnanoLast'
+    order: 'presetEnvAndCssnanoLast',
+    preset: {
+      stage: 2
+    }
   }
   ```
 
@@ -585,33 +684,48 @@ Terser プラグインのオプションです。 `false` を設定するとこ�
 
 ## typescript
 
-> Customize Nuxt.js TypeScript support.
+> Nuxt.js の TypeScript のサポートをカスタマイズします。
 
 <div class="Alert Alert--blue">
 
-**Important**: This property will be ignored if [`TypeScript Support`](/guide/typescript) hasn't be set up in your project.
+**重要**: プロジェクト内で [`TypeScript Support`](/guide/typescript) が設定されていない場合、このプロパティは無視されます。
 
 </div>
 
-- Type: `Object`
-- Default:
+- 型: `Object`
+- デフォルト:
 
   ```js
   {
-    typeCheck: true
+    typeCheck: true,
+    ignoreNotFoundWarnings: false
   }
   ```
 
 ### typescript.typeCheck
 
-> Enables TypeScript type checking on a separate process.
+> TypeScript の型チェックを別プロセスで実行することを有効にします。
 
-- Type: `Boolean` or `Object`
-- Default: `true`
+- 型: `Boolean` または `Object`
+- デフォルト: `true`
 
-When enabled, Nuxt.js uses [fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) to provide type checking.
+もし有効の場合、Nuxt.js は [fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) を使って型チェックを行います。
 
-You can use an `Object` to override plugin options or set it to `false` to disable it.
+`Object` を使用してプラグインのオプションを上書きすることができます。または `false` に設定することで無効にすることも出来ます。
+
+### typescript.ignoreNotFoundWarnings
+
+> typescript の not foundの warning を抑制します。
+
+- 型: `Boolean`
+- デフォルト: `false`
+
+有効にすると、`export ... was not found ...` の warning を抑制することが出来ます。
+
+背景についてはこちらも参照してください。 [https://github.com/TypeStrong/ts-loader/issues/653](https://github.com/TypeStrong/ts-loader/issues/653)
+
+**警告:** このプロパティは本来見たい warning も抑制する可能性があります。設定には注意してください。
+
 
 ## vueLoader
 
