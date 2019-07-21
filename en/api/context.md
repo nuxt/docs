@@ -5,7 +5,7 @@ description: The `context` provides additional objects/params from Nuxt not trad
 
 # The Context
 
-> The `context` provides additional objects/params from Nuxt to Vue components. The `context` is available in special nuxt lifecycle areas like `asyncData`, `fetch`, `plugins`, 'middleware', 'modules', and 'nuxtServerInit`.
+> The `context` provides additional objects/params from Nuxt to Vue components. The `context` is available in special nuxt lifecycle areas like `asyncData`, `fetch`, `plugins`, `middleware`, `modules`, and `nuxtServerInit`.
 
 ## Available keys
 

@@ -213,7 +213,7 @@ export const actions = {
 ## Client-side only
 
 Some plugins might work **only in the browser** because they lack SSR support.
-In these situations you can use the `ssr: false` option in `plugins` to add the plugin only on the client-side.
+In these situations you can use the `mode`: `client` option in `plugins` to add the plugin only on the client-side.
 
 Example:
 
@@ -222,7 +222,7 @@ Example:
 ```js
 export default {
   plugins: [
-    { src: '~/plugins/vue-notifications', ssr: false }
+    { src: '~/plugins/vue-notifications', mode: 'client' }
   ]
 }
 ```
