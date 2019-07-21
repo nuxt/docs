@@ -22,13 +22,8 @@ npm install --save-dev ava jsdom
   "test": "ava",
 },
 "ava": {
-  "require": [
-    "babel-register"
-  ]
-},
-"babel": {
-  "presets": [
-    "env"
+  "files": [
+    "test/**/*"
   ]
 }
 ```
