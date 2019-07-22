@@ -16,7 +16,7 @@ Nuxt.js fournit toute la configuration nécessaire pour rendre vos développemen
 De plus, nous fournissons également une option de déploiement appelée *nuxt generate*. Elle va créer une application Vue.js avec **génération statique**.
 Nous pensons que cette options peut-être la prochaine grosse étape dans le développement de vos applications web avec microservices.
 
-Bien entendu, vous pouvez également utiliser Nuxt.js pour créer des applications monopages rapidement (mode `spa`), ce qui est utile pour conserver les fonctionnalités de Nuxt quand vous travailler sur la partie backoffice de vos apllications.
+Bien entendu, vous pouvez également utiliser Nuxt.js pour créer des applications monopages rapidement (mode `spa`), ce qui est utile pour conserver les fonctionnalités de Nuxt quand vous travailler sur la partie backoffice de vos applications.
 
 En tant que framework, Nuxt.js est doté de nombreuses fonctionnalités pour vous aider dans votre développement entre côté client et serveur tels que les données asynchrones, les *middlewares*, les *layouts*, etc.
 

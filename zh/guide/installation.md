@@ -41,6 +41,7 @@ $ yarn create nuxt-app <项目名>
   - [Hapi](https://github.com/hapijs/hapi)
   - [Feathers](https://github.com/feathersjs/feathers)
   - [Micro](https://github.com/zeit/micro)
+  - [Fastify](https://github.com/fastify/fastify)
   - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
 2. 选择您喜欢的UI框架:
   - None (无)
@@ -51,6 +52,8 @@ $ yarn create nuxt-app <项目名>
   - [Element UI](https://github.com/ElemeFE/element)
   - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
+  - [iView](https://www.iviewui.com/)
+  - [Tachyons](https://tachyons.io)
 3. 选择你想要的Nuxt模式 (`Universal` or `SPA`)
 4. 添加 [axios module](https://github.com/nuxt-community/axios-module) 以轻松地将HTTP请求发送到您的应用程序中。
 5. 添加 [EsLint](https://eslint.org/) 以在保存时代码规范和错误检查您的代码。
