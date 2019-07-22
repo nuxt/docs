@@ -41,6 +41,7 @@ $ yarn create nuxt-app <project-name>
   - [Hapi](https://github.com/hapijs/hapi)
   - [Feathers](https://github.com/feathersjs/feathers)
   - [Micro](https://github.com/zeit/micro)
+  - [Fastify](https://github.com/fastify/fastify)
   - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
 2. 好きな UI フレームワークを選択します:
   - None（後からでも追加できます）
@@ -51,6 +52,8 @@ $ yarn create nuxt-app <project-name>
   - [Element UI](https://github.com/ElemeFE/element)
   - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
+  - [iView](https://www.iviewui.com/)
+  - [Tachyons](https://tachyons.io)
 3. 好きなテスティングフレームワークを選択します:
   - None (後からでも追加できます）
   - [Jest](https://github.com/facebook/jest)

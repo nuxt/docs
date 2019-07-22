@@ -15,7 +15,8 @@
         ]
       },
       { "to": "/contribution-guide", "name": "Contribution Guide" },
-      { "to": "/release-notes", "name": "Release Notes" }
+      { "to": "/release-notes", "name": "Release Notes" },
+      { "to": "/upgrading", "name": "Upgrading" }
     ]
   },
   {
