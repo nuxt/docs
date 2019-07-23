@@ -444,6 +444,16 @@ module.exports = {
 }
 ```
 
-`stats` 中间件将在每个路由改变时被调用。
+现在，`stats` 中间件将在每个路由改变时被调用。
+
+您也可以将 middleware 添加到指定的布局或者页面:
+
+`pages/index.vue` 或者 `layouts/default.vue`
+
+```js
+export default {
+  middleware: 'stats'
+}
+```
 
 如果你想看到一个使用中间件的真实例子，请参阅在 GitHub 上的[example-auth0](https://github.com/nuxt/example-auth0)。
