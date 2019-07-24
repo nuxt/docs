@@ -683,10 +683,22 @@ See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/t
 
 ## transpile
 
-- Type: `Array<string | RegExp>`
+- Type: `Array<String | RegExp | Function>`
 - Default: `[]`
 
-If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Each item in transpile can be a package name, or a string or regex object matching the dependency's file name.
+If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Each item in transpile can be a package name, a string or regex object matching the dependency's file name.
+
+Starting with `v2.9.0`, you can also use a function to conditionnaly transpile, the function will receive a object (`{ isDev, isServer, isClient, isModern, isLegacy }`):
+
+```js
+{
+  build: {
+    transpile: [
+      ({ isLegacy }) => isLegacy ? 'ky' : null
+    ]
+  }
+}
+```
 
 ## typescript
 
