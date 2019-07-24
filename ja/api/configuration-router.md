@@ -254,45 +254,45 @@ export default {
 
 ```js
 const scrollBehavior = function (to, from, savedPosition) {
-  // if the returned position is falsy or an empty object,
-  // will retain current scroll position.
+  // 返された位置が falsy な値や空のオブジェクトだったときは、
+  // 現在のスクロール位置を保持します
   let position = false
 
-  // if no children detected and scrollToTop is not explicitly disabled
+  // 子のオブジェクトが検出されず、scrollToTop が明示的に無効になっていない場合
   if (
     to.matched.length < 2 &&
     to.matched.every(r => r.components.default.options.scrollToTop !== false)
   ) {
-    // scroll to the top of the page
+    // ページのトップへスクロールします
     position = { x: 0, y: 0 }
   } else if (to.matched.some(r => r.components.default.options.scrollToTop)) {
-    // if one of the children has scrollToTop option set to true
+    // 子のオブジェクトの1つが scrollToTop オプションを true に設定している場合
     position = { x: 0, y: 0 }
   }
 
-  // savedPosition is only available for popstate navigations (back button)
+  // savedPosition は popState ナビゲーションでのみ利用できます（戻るボタン）
   if (savedPosition) {
     position = savedPosition
   }
 
   return new Promise((resolve) => {
-    // wait for the out transition to complete (if necessary)
+    // （必要であれば）out トランジションが完了するのを待ちます
     window.$nuxt.$once('triggerScroll', () => {
-      // coords will be used if no selector is provided,
-      // or if the selector didn't match any element.
+      // セレクタが提供されていない場合またはセレクタがどの要素とも一致しなかった場合は
+      // 座標が使用されます
       if (to.hash) {
         let hash = to.hash
-        // CSS.escape() is not supported with IE and Edge.
+        // CSS.escape() は IE および Edge ではサポートされていません
         if (typeof window.CSS !== 'undefined' && typeof window.CSS.escape !== 'undefined') {
           hash = '#' + window.CSS.escape(hash.substr(1))
         }
         try {
           if (document.querySelector(hash)) {
-            // scroll to anchor by returning the selector
+            // セレクタを返すことでアンカーまでスクロールします
             position = { selector: hash }
           }
         } catch (e) {
-          console.warn('Failed to save scroll position. Please add CSS.escape() polyfill (https://github.com/mathiasbynens/CSS.escape).')
+          console.warn('スクロール位置を保存できませんでした。 CSS.escape() polyfill (https://github.com/mathiasbynens/CSS.escape) を追加してください。')
         }
       }
       resolve(position)
