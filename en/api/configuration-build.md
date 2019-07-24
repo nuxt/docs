@@ -694,7 +694,7 @@ Starting with `v2.9.0`, you can also use a function to conditionnaly transpile, 
 {
   build: {
     transpile: [
-      ({ isLegacy }) => isLegacy ? 'ky' : null
+      ({ isLegacy }) => isLegacy && 'ky'
     ]
   }
 }
