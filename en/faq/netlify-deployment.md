@@ -33,7 +33,7 @@ Press the _"New site from Git"_ button on the Netlify dashboard. Authenticate wi
 
 1. __Branch to deploy:__ `master`, or which-ever branch you prefer
 1. __Build command:__ `npm run build`
-1. __Publish directory:__ `dist`
+1. __Publish directory:__ `.nuxt/dist`
 
 For a single page app there is a problem with refresh as by default on netlify the site redirects to *"404 not found"* this can be [prevented](https://www.netlify.com/docs/redirects/#rewrites-and-proxying) by configuring redirects. There is a module for that [nuxt-netlify](https://www.bazzite.com/docs/nuxt-netlify) which helps to configure both headers and redirects of the SPA .
 
