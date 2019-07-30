@@ -1,9 +1,9 @@
 ---
-title: "API: The transition Property"
-description: Set the default properties of the page transitions.
+title: "API: The pageTransition and layoutTransition Properties"
+description: Set the default properties of the page and layout transitions.
 ---
 
-# The transition Property
+# The pageTransition Property
 
 - Type: `String` or `Object`
 
@@ -21,9 +21,9 @@ Example (`nuxt.config.js`):
 
 ```js
 export default {
-  transition: 'page'
+  pageTransition: 'page'
   // or
-  transition: {
+  pageTransition: {
     name: 'page',
     mode: 'out-in',
     beforeEnter (el) {
