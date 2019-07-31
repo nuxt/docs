@@ -91,10 +91,10 @@ _该文件不能被重命名。_
 
 | 别名 | 目录 |
 |-----|------|
-| `~` 或 `@` | [src目录](/api/configuration-srcdir) |
-| `~~` 或 `@@` | [根目录](/api/configuration-rootdir) |
+| `~` 或 `@` | [srcDir](/api/configuration-srcdir) |
+| `~~` 或 `@@` | [rootDir](/api/configuration-rootdir) |
 
-默认情况下，`src目录`和`根目录`相同
+默认情况下，`srcDir` 和 `rootDir` 相同。
 
 <div class="Alert Alert--nuxt-green">
 
