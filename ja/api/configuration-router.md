@@ -254,16 +254,19 @@ export default {
 
 ```js
 const scrollBehavior = function (to, from, savedPosition) {
-  // 返された位置が偽または空のオブジェクトだったときは、
-  // 現在のスクロール位置を保持する
+  // 返された位置が falsy な値や空のオブジェクトだったときは、
+  // 現在のスクロール位置を保持します
   let position = false
 
-  // 子パスが見つからないとき
-  if (to.matched.length < 2) {
-    // ページのトップへスクロールする
+  // 子のオブジェクトが検出されず、scrollToTop が明示的に無効になっていない場合
+  if (
+    to.matched.length < 2 &&
+    to.matched.every(r => r.components.default.options.scrollToTop !== false)
+  ) {
+    // ページのトップへスクロールします
     position = { x: 0, y: 0 }
-  } else if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
-    // 子パスのひとつが scrollToTop オプションが true にセットされているとき
+  } else if (to.matched.some(r => r.components.default.options.scrollToTop)) {
+    // 子のオブジェクトの1つが scrollToTop オプションを true に設定している場合
     position = { x: 0, y: 0 }
   }
 
@@ -272,14 +275,25 @@ const scrollBehavior = function (to, from, savedPosition) {
     position = savedPosition
   }
 
-  return new Promise(resolve => {
-    //（必要であれば）out トランジションが完了するのを待つ
+  return new Promise((resolve) => {
+    // （必要であれば）out トランジションが完了するのを待ちます
     window.$nuxt.$once('triggerScroll', () => {
-      // セレクタが渡されなかったとき、
-      // または、セレクタがどの要素にもマッチしなかったときは、座標が用いられる
-      if (to.hash && document.querySelector(to.hash)) {
-        // セレクタを返すことでアンカーまでスクロールする
-        position = { selector: to.hash }
+      // セレクタが提供されていない場合またはセレクタがどの要素とも一致しなかった場合は
+      // 座標が使用されます
+      if (to.hash) {
+        let hash = to.hash
+        // CSS.escape() は IE および Edge ではサポートされていません
+        if (typeof window.CSS !== 'undefined' && typeof window.CSS.escape !== 'undefined') {
+          hash = '#' + window.CSS.escape(hash.substr(1))
+        }
+        try {
+          if (document.querySelector(hash)) {
+            // セレクタを返すことでアンカーまでスクロールします
+            position = { selector: hash }
+          }
+        } catch (e) {
+          console.warn('スクロール位置を保存できませんでした。 CSS.escape() polyfill (https://github.com/mathiasbynens/CSS.escape) を追加してください。')
+        }
       }
       resolve(position)
     })
