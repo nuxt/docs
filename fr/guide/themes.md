@@ -1,5 +1,5 @@
 ---
-title: Nuxt.js Themes
+title: Nuxt.js Themes (EN)
 description: Nuxt.js themes made by the community.
 ---
 
@@ -15,3 +15,5 @@ description: Nuxt.js themes made by the community.
     </div>
   </a>
 </div>
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

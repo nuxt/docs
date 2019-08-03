@@ -1,5 +1,5 @@
 ---
-title: "API : La propriété generate"
+title: "API : La propriété generate (EN)"
 description: Configure la génération de votre application web universelle vers une application web statique.
 ---
 
@@ -20,13 +20,12 @@ export default {
 }
 ```
 
-## concurrency
+## concurrence
 
 - Type: `Number`
 - Default: `500`
 
-The generation of routes are concurrent, `generate.concurrency` specifies the amount of routes that run in one thread.
-
+La génération de routes est concurrente, `generate.concurrency` spécifie le nombre de routes qui peuvent être exécuté par un thread.
 
 ## dir
 
@@ -44,7 +43,7 @@ Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools)
 
 If you already activated through nuxt.config.js or otherwise, devtools enable regardless of the flag.
 
-## exclude
+## exclude (EN)
 
 - Type: `Array`
 
@@ -78,7 +77,7 @@ export default {
 ---| index.html
 ```
 
-## fallback
+## fallback (EN)
 
 - Type: `String` or `Boolean`
 - Default: `'200.html'`

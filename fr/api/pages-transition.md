@@ -7,24 +7,24 @@ description: Nuxt.js utilise le composant de `<transition>` afin de créer des t
 
 > Nuxt.js uses the `<transition>` component to let you create amazing transitions/animations between your pages.
 
-- **Type:** `String` or `Object` or `Function`
+- **Type :** `String` ou `Object` ou `Function`
 
-To define a custom transition for a specific route, simply add the `transition` key to the page component.
+Pour définir une transition personnalisée pour une route spécifique, ajoutez la propriété `transition` au composant de page.
 
 ```js
 export default {
-  // Can be a String
+  // Peut-être une chaine de caractères
   transition: ''
-  // Or an Object
+  // Ou un objet
   transition: {}
-  // or a Function
+  // Ou une fonction
   transition (to, from) {}
 }
 ```
 
 ## Chaine de caractères
 
-If the `transition` key is set as a string, it will be used as the `transition.name`.
+Si la propriété `transition` est définie en tant que chaine de caractère, elle sera utilisée comme `transition.name`.
 
 ```js
 export default {
@@ -40,7 +40,7 @@ Nuxt.js utilisera ces paramètres pour définir le composant comme suit :
 
 ## Objet
 
-If the `transition` key is set as an object:
+Si la propriété `transition` est un objet
 
 ```js
 export default {
@@ -57,7 +57,7 @@ Nuxt.js utilisera ces paramètres pour définir le composant comme suit :
 <transition name="test" mode="out-in">
 ```
 
-The `transition` object can have the following properties:
+L'objet `transition` peut avoir les propriétés suivantes :
 
 | Propriété          | type      | défaut     | définition                                                                                                                                                                                                                                         |
 |--------------------|-----------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -101,7 +101,7 @@ export default {
 
 ## Fonction
 
-If the `transition` key is set as a function:
+Si la propriété `transition` est une fonction :
 
 ```js
 export default {

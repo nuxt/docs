@@ -89,7 +89,7 @@
       { "name": "dev", "to": "/configuration-dev" },
       { "name": "env (EN)", "to": "/configuration-env" },
       {
-        "name": "generate", "to": "/configuration-generate",
+        "name": "generate (EN)", "to": "/configuration-generate",
         "contents": [
           { "name": "concurrency", "to": "#concurrency" },
           { "name": "dir", "to": "#dir" },
