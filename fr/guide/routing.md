@@ -306,13 +306,8 @@ Nous pouvons activer cela dans notre fichier `nuxt.config.js` :
 ``` js
 export default {
   generate: {
-<<<<<<< HEAD
-    fallback: true, // si vous souhaitez utiliser un fichier '404.html'
+    fallback: true, // si vous souhaitez utiliser un fichier '404.html' à la place du fichier '200.html' par défaut.
     fallback: 'my-fallback/file.html' // si votre hébergement nécessite une localisation personnalisée
-=======
-    fallback: true, // if you want to use '404.html' instead of the default '200.html'
-    fallback: 'my-fallback/file.html' // if your hosting needs a custom location
->>>>>>> upstream/master
   }
 }
 ```

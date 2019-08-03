@@ -23,13 +23,13 @@ Afin de démarrer rapidement, l'équipe Nuxt.js a créé un outil de démarrage 
 Assurez-vous que [npx](https://www.npmjs.com/package/npx) est installé (`npx` est livré par défaut depuis NPM `5.2.0`)
 
 ```bash
-$ npx create-nuxt-app <project-name>
+$ npx create-nuxt-app <nom-du-projet>
 ```
 
 ou avec [yarn](https://yarnpkg.com/en/):
 
 ```bash
-$ yarn create nuxt-app <project-name>
+$ yarn create nuxt-app <nom-du-projet>
 ```
 
 Il vous sera posé quelques questions :
@@ -41,6 +41,7 @@ Il vous sera posé quelques questions :
   - [Hapi](https://github.com/hapijs/hapi)
   - [Feathers](https://github.com/feathersjs/feathers)
   - [Micro](https://github.com/zeit/micro)
+  - [Fastify](https://github.com/fastify/fastify)
   - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
 2. Choisir votre interface utilisateur préférée :
   - Aucune (lançant la possibilité d'en ajouter une plus tard)
@@ -53,6 +54,8 @@ Il vous sera posé quelques questions :
   - [Buefy](https://buefy.github.io)
 3. Choisissez votre framework de test préféré :
   - Aucun (sentez-vous libre d'en ajouter un plus tard)
+  - [iView](https://www.iviewui.com/)
+  - [Tachyons](https://tachyons.io)
   - [Jest](https://github.com/facebook/jest)
   - [AVA](https://github.com/avajs/ava)
 4. Le [mode Nuxt désiré (`Universel` ou `SPA`)](https://nuxtjs.org/guide#single-page-applications-spa-)

@@ -16,6 +16,7 @@
       },
       { "to": "/contribution-guide", "name": "Guide de contribution" },
       { "to": "/release-notes", "name": "Notes de versions" }
+      { "to": "/upgrading", "name": "Upgrading (EN)" }
     ]
   },
   {
@@ -125,6 +126,14 @@
           { "to": "#tests-de-bout-en-bout", "name": "Tests de bout en bout" },
           { "to": "#eslint-et-prettier", "name": "ESLint et Prettier" }
         ]
+      }
+    ]
+  },
+  {
+    "title": "Resources",
+    "links": [
+      {
+        "to": "/themes", "name": "Themes (new)"
       }
     ]
   }

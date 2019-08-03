@@ -5,41 +5,32 @@ description: Comment déployer une application Nuxt.js avec Now ?
 
 # Comment déployer avec Now ?
 
-## Now V2 (EN)
+![nuxt-now-builder](https://user-images.githubusercontent.com/904724/61308402-7a752d00-a7f0-11e9-9502-23731ccd00fd.png)
 
-**Note:** You cannot deploy a server-side-rendered Nuxt app with Now V2 right now. Please use Now V1 for such apps.
+## Now V2
 
-Pour déployer avec [ZEIT Now](https://zeit.co/now), il faut un fichier `package.json` ainsi qu'un fichier de configuration `now.json` :
+Pour déployer avec [Now V2](https://zeit.co/now), l'équipe Nuxt.js et ses contributeurs on travailler sur le package officiel [@nuxtjs/now-builder](https://github.com/nuxt/now-builder).
 
-* Add `now-build` script command to `package.json`:
-  * For SPA (without SSR):
-    ```js
-    "scripts": {
-       ...
-       "now-build": "nuxt build --spa"
+Tout ce que vous avez à faire est de définir un fichier `now.json` :
+
+```json
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "nuxt.config.js",
+      "use": "@nuxtjs/now-builder",
+      "config": {}
     }
-    ```
-  * For Static Generated (Pre Rendering):
-    ```js
-    "scripts": {
-       ...
-       "now-build": "nuxt generate"
-    }
-    ```
-* Create `now.json` and define `builds`
-  ```json
-  {
-    "version": 2,
-    "builds": [
-      { "src": "package.json", "use": "@now/static-build" }
-    ]
-  }
-  ```
-* Run `now` and enjoy!
+  ]
+}
+```
+
+Vous pouvez en apprendre plus et voir des exemples sur https://github.com/nuxt/now-builder
 
 ## Now V1 (legacy)
 
-Pour déployer avec [now.sh](https://zeit.co/now), un fichier `package.json` comme suit est recommandé :
+Pour déployer avec [Now V1](https://zeit.co/now), un fichier `package.json` comme suit est recommandé :
 
 ```json
 {

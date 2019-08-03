@@ -43,7 +43,7 @@ Ce sera compilé en :
 createElement('img', { attrs: { src: require('~/assets/image.png') }})
 ```
 
-Puisque que les fichiers `.png` ne sont pas des fichiers JavaScript, Nuxt.js configure webpack pour utiliser [file-loader](https://github.com/webpack/file-loader) et [url-loader](https://github.com/webpack/url-loader) afin de pouvoir s'en charger à votre place.
+Puisque les fichiers `.png` ne sont pas des fichiers JavaScript, Nuxt.js configure webpack pour utiliser [file-loader](https://github.com/webpack/file-loader) et [url-loader](https://github.com/webpack/url-loader) afin de pouvoir s'en charger.
 
 Les avantages de ces chargeurs sont :
 

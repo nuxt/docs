@@ -15,7 +15,8 @@
         ]
       },
       { "to": "/contribution-guide", "name": "Contribution Guide" },
-      { "to": "/release-notes", "name": "Release Notes" }
+      { "to": "/release-notes", "name": "Release Notes" },
+      { "to": "/upgrading", "name": "Upgrading" }
     ]
   },
   {
@@ -125,6 +126,14 @@
           { "to": "#end-to-end-testing", "name": "End-to-End Testing" },
           { "to": "#eslint-and-prettier", "name": "ESLint and Prettier" }
         ]
+      }
+    ]
+  },
+  {
+    "title": "Resources",
+    "links": [
+      {
+        "to": "/themes", "name": "Themes (new)"
       }
     ]
   }

@@ -91,14 +91,15 @@
       {
         "name": "generate", "to": "/configuration-generate",
         "contents": [
+          { "name": "concurrency", "to": "#concurrency" },
           { "name": "dir", "to": "#dir" },
           { "name": "devtools", "to": "#devtools" },
+          { "name": "exclude", "to": "#exclude" },
           { "name": "fallback", "to": "#fallback" },
           { "name": "interval", "to": "#interval" },
           { "name": "minify", "to": "#minify" },
           { "name": "routes", "to": "#routes" },
-          { "name": "subFolders", "to": "#subfolders" },
-          { "name": "concurrency", "to": "#concurrency" }
+          { "name": "subFolders", "to": "#subfolders" }
         ]
       },
       { "name": "head (EN)", "to": "/configuration-head" },

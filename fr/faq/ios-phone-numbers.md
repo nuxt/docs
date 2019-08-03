@@ -5,7 +5,17 @@ description: Safari sur iOS change les numéros de téléphone en liens qui peuv
 
 # iOS et numéros de téléphone
 
-Si vous incluez des numéros de téléphone dans votre page Nuxt, assurez-vous de les remplacer directement par un lien :
+Plusieurs version mobile de Safari vont automatiquement transformer les numéros de téléphone en lien. Cela va lever un avertissement `NodeMismatch` cal le contenu SSR ne concorde plus avec le contenu du site. Cela peut rendre vos applications non utilisables sur ces versions de Safari.
+
+Quand vous incluez des numéros de téléphones dans vos pages Nuxt, vous avez deux options.
+
+## Utiliser une balise meta pour stopper la transformation
+
+```html
+<meta name="format-detection" content="telephone=no">
+```
+
+## Placer vos numéros de téléphone dans des liens
 
 ```html
 <!-- Exemple de numéro de téléphone : +7 (982) 536-50-77 -->
@@ -15,7 +25,3 @@ Si vous incluez des numéros de téléphone dans votre page Nuxt, assurez-vous d
 </template>
 
 ```
-
-Sinon, certaines versions de Safari pour téléphone mobile transformeront automatiquement ces numéros en liens. Ce serait intéressant et
-utile à première vue, mais déclenchera un avertissement `NodeMismatch` car le contenu SSR ne correspond plus au contenu
-du site web. Cela peut rendre votre application inutilisable sur ces versions de Safari.

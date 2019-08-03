@@ -20,6 +20,14 @@ export default {
 }
 ```
 
+## concurrency
+
+- Type: `Number`
+- Default: `500`
+
+The generation of routes are concurrent, `generate.concurrency` specifies the amount of routes that run in one thread.
+
+
 ## dir
 
 - Type : `String`
@@ -36,6 +44,39 @@ Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools)
 
 If you already activated through nuxt.config.js or otherwise, devtools enable regardless of the flag.
 
+## exclude
+
+- Type: `Array`
+
+It accepts an array of regular expressions and will prevent generation of routes matching them. The routes will still be accessible when `generate.fallback` is used.
+
+By default, running `nuxt generate` will create a file for each route.
+
+```bash
+-| dist/
+---| index.html
+---| ignore/
+-----| about.html
+-----| item.html
+```
+
+When adding a regular expression which matches all routes with "ignore", it will prevent the generation of these routes.
+
+nuxt.config.js 
+```js
+export default {
+  generate: {
+    exclude: [
+      /^(?=.*\bignore\b).*$/,
+    ],
+  }
+}
+```
+
+```bash
+-| dist/
+---| index.html
+```
 
 ## fallback
 
@@ -229,10 +270,3 @@ export default {
 ```
 
 _Note : cette option peut être utile en utilisant [Netlify](https://netlify.com) ou n'importe quel hébergement utilisant des alternatives HTML._
-
-## concurrence
-
-- Type: `Number`
-- Default: `500`
-
-La génération de routes est concurrente, `generate.concurrency` spécifie le nombre de routes qui peuvent être exécuté par un thread.

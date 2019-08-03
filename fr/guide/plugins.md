@@ -213,7 +213,7 @@ export const actions = {
 ## Côté client uniquement
 
 Certains plugins fonctionnent **uniquement dans un navigateur** due à un manque de support SSR.
-Vous pouvez utiliser l'option `ssr: false` dans `plugins` pour exécuter le fichier uniquement côté client.
+Dans ce cas vous pouvez utiliser l'option `mode`: `client` dans `plugins` pour exécuter le fichier uniquement côté client.
 
 Exemple :
 
@@ -222,7 +222,7 @@ Exemple :
 ```js
 export default {
   plugins: [
-    { src: '~/plugins/notifications-vue', ssr: false }
+    { src: '~/plugins/vue-notifications', mode: 'client' }
   ]
 }
 ```

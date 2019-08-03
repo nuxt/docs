@@ -7,9 +7,11 @@ description: Nuxt.js uses its own component to show a progress bar between the r
 
 - Type: `Boolean` or `Object` or `String`
 
-> Nuxt.js uses its own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
+> Out of the box, Nuxt.js gives you its own loading progress bar component that's shown between routes. You can customize it, disable it or create your own component.
 
-In your component you can use `this.$nuxt.$loading.start()` to start the loading bar and `this.$nuxt.$loading.finish()` to finish it.
+The loading bar can also be programmatically started in your components by calling `this.$nuxt.$loading.start()` to start the loading bar and `this.$nuxt.$loading.finish()` to finish it.
+
+During your page's component's mounting process, the `$loading` property may not be immediately available to access. To work around this, if you want to start the loader in the `mounted` method, make sure to wrap your `$loading` method calls inside ` this.$nextTick` as shown below.
 
 ```javascript
 export default {
@@ -23,8 +25,6 @@ export default {
  }
 ```
 
-> If you want to start it in the `mounted` method, make sure to use ` this.$nextTick`, because $loading may not be available immediately.
-
 ## Disable the Progress Bar
 
 - Type: `Boolean`
@@ -37,9 +37,22 @@ export default {
 }
 ```
 
-## Customize the Progress Bar
+## Customizing the Progress Bar
 
 - Type: `Object`
+
+Among other properties, the color, size, duration and direction of the progress bar can be customized to suit your application's needs. This is done by updating the `loading` property of the `nuxt.config.js` with the corresponding properties.
+
+For example, to set a blue progress bar with a height of 5px, we update the `nuxt.config.js` to the following:
+
+```js
+export default {
+  loading: {
+    color: 'blue',
+    height: '5px'
+  }
+}
+```
 
 List of properties to customize the progress bar.
 
@@ -54,22 +67,26 @@ List of properties to customize the progress bar.
 | `css` | Boolean | `true` | Set to false to remove default progress bar styles (and add your own). |
 | `rtl` | Boolean | `false` | Set the direction of the progress bar from right to left. |
 
-For a blue progress bar with 5px of height, we update the `nuxt.config.js` to the following:
 
-```js
-export default {
-  loading: {
-    color: 'blue',
-    height: '5px'
-  }
-}
-```
+## Internals of the Progress Bar
 
-## Use a Custom Loading Component
+Unfortunately, it is not possible for the Loading component to know in advance how long loading a new page will take. Therefore, it is not possible to accurately animate the progress bar to 100% of the loading time.
+
+Nuxt's loading component partially solves this by letting you set the `duration`, this should be set to a _guestimate_ of how long the loading process will take. Unless you use a custom loading component, the progress bar will always move from 0% to 100% in `duration` time (regardless of actual progression). When the loading takes longer than `duration` time, the progress bar will stay at 100% until the loading finishes.
+
+You can change the default behaviour by setting `continuous` to true, then after reaching 100% the progress bar will start shrinking back to 0% again in `duration` time. When the loading is still not finished after reaching 0% it will start growing from 0% to 100% again, this repeats until the loading finishes.
+
+*Example of a continuous progress bar:*
+
+
+<img src="/api-continuous-loading.gif" alt="continuous loading"/>
+
+
+## Using a Custom Loading Component
 
 - Type: `String`
 
-You can create your own component that Nuxt.js will call instead of its default component. To do so, you need to give a path to your component in the `loading` option. Then, your component will be called directly by Nuxt.js.
+You can also create your own component that Nuxt.js will call instead of its default loading progress bar component. To do so, you need to give a path to your component in the `loading` option. Then, your component will be called directly by Nuxt.js.
 
 **Your component has to expose some of these methods:**
 
