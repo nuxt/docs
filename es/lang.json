@@ -1,6 +1,6 @@
 {
   "iso": "es",
-  "docVersion": "2.3.X",
+  "docVersion": "2.8.X",
   "links": {
     "api": "API",
     "blog": "Blog",
@@ -12,13 +12,13 @@
     "faq": "FAQ",
     "get_started": "Comenzando",
     "github": "GitHub",
-    "guide": "Guia",
+    "guide": "Guía",
     "homepage": "Pagina principal",
     "live_demo": "Demo en vivo",
     "live_edit": "Editar en vivo",
-    "tidelift_short": "GET PROFESSIONAL SUPPORT",
-    "official_support": "GET OFFICIAL SUPPORT ⛑",
-    "tidelift": "GET PROFESSIONAL SUPPORT FOR NUXT",
+    "tidelift_short": "OBTEN SOPORTE PROFESIONAL",
+    "official_support": "OBTEN SOPORTE PROFESIONAL ⛑",
+    "tidelift": "OBTEN SOPORTE PROFESIONAL PARA NUXT",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Trabajos en Vue.js"
@@ -44,28 +44,28 @@
       "app_types": ["Universal Applications", "Static Generated Applications", "Single Page Applications", "Desktop Applications", "Mobile Applications", "Progressive Web Apps"],
       "app_types_suffix": "."
     },
-    "codesandbox_title": "Play with Nuxt.js online",
-    "codesandbox_open": "Open on CodeSandBox.io",
-    "codesandbox_examples": "See more examples",
+    "codesandbox_title": "Prueba con Nuxt.js online",
+    "codesandbox_open": "Abrir en CodeSandBox.io",
+    "codesandbox_examples": "Ver más ejemplos",
     "backer_partners": "Partners",
-    "backer_become_a_partner": "Become A Partner",
+    "backer_become_a_partner": "Conviértete en Partner",
     "backer_sponsors": "Sponsors",
-    "backer_become_a_sponsor": "Become A Sponsor",
+    "backer_become_a_sponsor": "Conviértete en Sponsor",
     "backer_backers": "Backers",
-    "backer_become_a_backer": "Become A Backer",
+    "backer_become_a_backer": "Conviértete en Backer",
     "backer_foundations": "Foundations"
   },
   "sponsors": {
     "title": "Sponsors",
-    "become": "Support us and",
-    "become_partner": "become a partner"
+    "become": "Ayudanos y",
+    "become_partner": "conviertete en partner"
   },
   "footer": {
-    "authors": "Made by Chopin Brothers"
+    "authors": "Creado por Chopin Brothers"
   },
   "guide": {
     "release_notes": "Notas de la version",
-    "contribute": "Ha atrapado algun error o desea contribuir en la documentación?",
+    "contribute": "Ha encontrado algun error o desea contribuir en la documentación?",
     "edit_on_github": "Edite esta pagina en GitHub"
   },
   "examples": {
