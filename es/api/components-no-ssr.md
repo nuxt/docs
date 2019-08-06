@@ -1,9 +1,9 @@
 ---
-title: "API: The <no-ssr> Component"
-description: Skip component rendering on server side(rendering), and display placeholder text.
+title: "API: El componente <no-ssr>"
+description: Salta el renderizado en el lado del servidor(renderizado), y muesta un texto alternativo.
 ---
 
-# The &lt;no-ssr&gt; Component
+# El componente &lt;no-ssr&gt;
 
 > This component is used to purposely remove the component from the subject of server side rendering.
 

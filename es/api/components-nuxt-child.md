@@ -1,13 +1,13 @@
 ---
-title: "API: The <nuxt-child> Component"
-description: Display the current page.
+title: "API: El Componente <nuxt-child>"
+description: Muestra la pagina principal.
 ---
 
-# The &lt;nuxt-child&gt; Component
+# El Componente &lt;nuxt-child&gt;
 
-> This component is used for displaying the children components in a [nested route](/guide/routing#nested-routes).
+> Este componente se utiliza para mostrar los componentes hijos en una [ruta anidada](/guide/routing#nested-routes).
 
-Example:
+Ejemplo:
 
 ```bash
 -| pages/
@@ -16,7 +16,7 @@ Example:
 ---| parent.vue
 ```
 
-This file tree will generate these routes:
+Este árbol de archivos generará estas rutas:
 
 ```js
 [
@@ -35,7 +35,7 @@ This file tree will generate these routes:
 ]
 ```
 
-To display the `child.vue` component, we have to insert `<nuxt-child/>` inside `pages/parent.vue`:
+Para mostrar el componente `child.vue`, debemos insertar`<nuxt-child/>` dentro de`pages/parent.vue`:
 
 ```html
 <template>
@@ -46,7 +46,7 @@ To display the `child.vue` component, we have to insert `<nuxt-child/>` inside `
 </template>
 ```
 
-`<nuxt-child/>` accepts `keep-alive` and `keep-alive-props`:
+`<nuxt-child/>` acepta `keep-alive` y `keep-alive-props`:
 
 ```html
 <template>
@@ -63,15 +63,15 @@ To display the `child.vue` component, we have to insert `<nuxt-child/>` inside `
 </div>
 ```
 
-> Child components can also receive properties like a regular Vue component.
+> Los componentes hijos también pueden recibir propiedades como un componente Vue normal.
 
-To see an example, take a look at the [nested-routes example](/examples/nested-routes).
+Para ver un ejemplo, eche un vistazo el [ejemplo de rutas anidadas](/examples/nested-routes).
 
 ## Named View
 
-> Introduced with Nuxt v2.4.0
+> Introducido del Nuxt v2.4.0
 
-`<nuxt-child/>` accepts `name` prop to render named-view:
+`<nuxt-child/>` acepta prop `name` para renderizar el named-view:
 
 ```html
 <template>
@@ -82,4 +82,4 @@ To see an example, take a look at the [nested-routes example](/examples/nested-r
 </template>
 ```
 
-To see an example, take a look at the [named-views example](/examples/named-views).
+Para ver un ejemplo, eche un vistazo el [named-views example](/examples/named-views).

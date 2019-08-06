@@ -1,25 +1,25 @@
 ---
-title: "$nuxt: The NuxtJS helper"
-description: $nuxt is an helper focused to improve the user experience of your users.
+title: "$nuxt: La variable NuxtJS"
+description: $nuxt es una variable enfocado a mejorar la experiencia de usuario para tus usuarios.
 ---
 
-`$nuxt`is an helper focused to improve the user experience of your users.
+`$nuxt` es un variable enfocado en mejorar la experiencia de usuario para tus usuarios.
 
 - `isOffline`
-  - Type: `Boolean`
-  - Description: `true` when the user internet connection becomes offline
+  - Tipo: `Boolean`
+  - Descripcion: `true` cuando el internet del usuario esta desconectado
 - `isOnline`
-  - Type: `Boolean`
-  - Description: Opposite of `isOffline`
+  - Tipo: `Boolean`
+  - Descripcion: Opuesto de `isOffline`
 
-Example:
+Ejemplo:
 
 `layouts/default.vue`:
 
 ```html
 <template>
   <div>
-    <div v-if="$nuxt.isOffline">You are offline</div>
+    <div v-if="$nuxt.isOffline">Usted esta desconectado</div>
     <nuxt/>
   </div>
 </template>
