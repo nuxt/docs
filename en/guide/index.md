@@ -63,7 +63,7 @@ You can use Nuxt.js as a framework to handle all the UI rendering of your projec
 
 When launching `nuxt`, it will start a development server with hot-reloading and [Vue Server Renderer](https://ssr.vuejs.org/en/) configured to automatically server-render your application.
 
-### Single Page Applications (SPA)
+## Single Page Applications (SPA)
 
 If, for any reason, you prefer not to use server side rendering or need static hosting for your applications, you can simply use SPA mode using `nuxt --spa`. In combination with the *generate* feature, it gives you a powerful SPA deployment mechanism without the need to use a Node.js runtime or any special server handling.
 
