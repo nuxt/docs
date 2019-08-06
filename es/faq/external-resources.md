@@ -10,13 +10,13 @@ description: How to use external resources with Nuxt.js?
 Include your resources in the `nuxt.config.js` file:
 
 ```js
-module.exports = {
+export default {
   head: {
     script: [
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
     ],
     link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap' }
     ]
   }
 }
@@ -24,7 +24,7 @@ module.exports = {
 
 ## Local Settings
 
-Include your resources in your .vue file inside the pages directory:
+Include your resources in your `.vue` file inside the `pages/` directory:
 
 ```html
 <template>
@@ -33,14 +33,22 @@ Include your resources in your .vue file inside the pages directory:
 
 <script>
 export default {
-  head: {
-    script: [
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
-    ],
-    link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
-    ]
+  head () {
+    return {
+      script: [
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
+      ],
+      link: [
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap' }
+      ]
+    }
   }
 }
 </script>
+
+<style scoped>
+h1 {
+  font-family: Roboto, sans-serif;
+}
+</style>
 ```

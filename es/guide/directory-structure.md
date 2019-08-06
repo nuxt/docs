@@ -1,98 +1,101 @@
 ---
-title: Estructura de Directorios
-description: La estructura de aplicaciones predeterminada de Nuxt.js tiene como objetivo proporcionar un gran punto de partida para aplicaciones pequeñas y grandes. Por supuesto, eres libre de organizar tu aplicación como quieras.
+title: Directory Structure
+description: The default Nuxt.js application structure is intended to provide a great starting point for both large and small applications.
 ---
 
-> La estructura de aplicaciones predeterminada de Nuxt.js tiene como objetivo proporcionar un gran punto de partida para aplicaciones pequeñas y grandes. Por supuesto, eres libre de organizar tu aplicación como quieras.
+> The default Nuxt.js application structure is intended to provide a great starting point for both small and large applications. Of course, you are free to organize your application however you like.
 
-## Directorios
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/guided-nuxtjs-project-tour?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Watch a free lesson about <strong>the Nuxt.js directory structure</strong> on Vue School 
+    </p>
+  </a>
+</div>
 
-### El directorio de Assets
+## Directories
 
-El directorio de `assets` contiene sus archivos no compilados como LESS, SASS o JavaScript.
+### The Assets Directory
 
-[Mas documentación acerca de la integracios de Assets](/guide/assets)
+The `assets` directory contains your un-compiled assets such as Stylus or Sass files, images, or fonts.
 
-### El directorio Components
+[More documentation about Assets integration](/guide/assets)
 
-El directorio `components` contiene sus componentes Vue.js. Nuxt.js no sobrecarga el metodo data en estos componentes.
+### The Components Directory
 
-### El directorio Layouts
+The `components` directory contains your Vue.js Components. You can't use either `asyncData` or `fetch` in these components.
 
-El directorio `Layouts` contiene los diseños de su Layout.
+### The Layouts Directory
 
-_Este directorio no puede ser renombrado_
+The `layouts` directory includes your application layouts. Layouts are used to change the look and feel of your page (for example by including a sidebar).
 
-[Mas documentación acerca de la integración de layouts](/guide/views#layouts)
+[More documentation about Layouts integration](/guide/views#layouts)
 
-### El directorio Middleware
+_This directory cannot be renamed without extra configuration._
 
-El directorio `Middleware` contiene los middlewares de su aplicación. Los Middlewares le permite definir una función personalizada que se ejecutara antes de representar una página o un grupo de páginas (layouts).
+### The Middleware Directory
 
-[Mas documentación acerca de la integración de Middlewares](/guide/routing#middleware)
+The `middleware` directory contains your Application Middleware. Middleware lets you define custom functions that can be run before rendering either a page or a group of pages (layouts).
 
-### El directorio Pages
+[More documentation about Middleware integration](/guide/routing#middleware)
 
-El directorio `pages` contiene las Vistas y Rutas de su aplicación. El framework lee todos sus archivos .vue dentro de este directorio y crea el enrutador de su aplicación.
+### The Pages Directory
 
-_Este directorio no puede ser renombrado_
+The `pages` directory contains your Application Views and Routes. The framework reads all the `.vue` files inside this directory and creates the application router.
 
-[Mas documentación acerca de la integración de paginas](/guide/views)
+_This directory cannot be renamed without extra configuration._
 
-### El directorio Plugins
+[More documentation about Pages integration](/guide/views)
 
-El directorio `plugins` contiene los plugins de javascript que desea ejecutar antes de instanciar la aplicación vue principal.
+### The Plugins Directory
 
-[Mas documentación acerca de la integración de plugins](/guide/plugins)
+The `plugins` directory contains your Javascript plugins that you want to run before instantiating the root Vue.js Application. This is the place to register components globally and to inject functions or constants.
 
-### El directorio Static
+[More documentation about Plugins integration](/guide/plugins)
 
-El directorio `static` contiene sus archivos estaticos. Cada archivo dentro de este directorio es mapeado a /.
-The `static` directory contains your static files. Each file inside this directory is mapped to /.
+### The Static Directory
 
-**Ejemplo:** /static/robots.txt is mapped as /robots.txt
+The `static` directory is directly mapped to the server root (`/static/robots.txt` is accessible under `http://localhost:3000/robots.txt`) and contains files that likely won't be changed (i.e. the favicon)
 
-_Este directorio no puede ser renombrado_
+**Example:** `/static/robots.txt` is mapped as `/robots.txt`
 
-[Mas documentacion acerca de la integración de archivos estaticos](/guide/assets#static)
+_This directory cannot be renamed without extra configuration._
 
-### El directorio Store
+[More documentation about Static integration](/guide/assets#static)
 
-El directorio `store` contiene los archivos store de [Vuex](http://vuex.vuejs.org). La opción de Vuex Store es implementada en el framework Nuxt.js. Creando un archivo llamado `index.js` en este directorio se activa la opcion en el framework automaticamente.
+### The Store Directory
 
-_Este directorio no puede ser renombrado_
+The `store` directory contains your [Vuex Store](http://vuex.vuejs.org/en/) files. The Vuex Store comes with Nuxt.js out of the box but is disabled by default. Creating an `index.js` file in this directory enables the store.
 
-[Mas documentación acerca de la integracion del Store](/guide/vuex-store)
+_This directory cannot be renamed without extra configuration._
 
-### El archivo de configuración nuxt.config.js
+[More documentation about Store integration](/guide/vuex-store)
 
-El archivo `nuxt.config.js` contiene su configuración personalizada de Nuxt.js
+### The nuxt.config.js File
 
-_Este archivo no puede ser renombrado_
+The `nuxt.config.js` file contains your Nuxt.js custom configuration.
 
-[Mas documentación acerca de la integracion de nuxt.config.js](/guide/configuration)
+_This file cannot be renamed without extra configuration._
 
-### El archivo package.json
+[More documentation about `nuxt.config.js` integration](/guide/configuration)
 
-El archivo `package.json` contiene las dependencias de su aplicación y los scripts.
+### The package.json File
 
-_Este archivo no puede ser renombrado_
+The `package.json` file contains your Application dependencies and scripts.
 
-## Alias
+_This file can not be renamed._
 
-| Alias       | Directorio  |
-|-------------|-------------|
-| ~           | /           |
-| ~assets     | /assets     |
-| ~components | /components |
-| ~middleware | /middleware |
-| ~pages      | /pages      |
-| ~plugins    | /plugins    |
-| ~static     | /static     |
+## Aliases
 
-Alias que enlazan a los archivos:
+| Alias | Directory |
+|-----|------|
+| `~` or `@` | [srcDir](/api/configuration-srcdir) |
+| `~~` or `@@` | [rootDir](/api/configuration-rootdir) |
 
-| Alias   | Uso                                 | Descripción                      |
-|---------|-------------------------------------|-----------------------------------|
-| ~store  | `const store = require('~store')`   | Importa la instancia `Vuex` de Store.|
-| ~router | `const router = require('~router')` | Importa la instancia de `vue-router`.|
+By default, `srcDir` is the same as `rootDir`.
+
+<div class="Alert Alert--nuxt-green">
+
+<b>Info:</b> Inside your `vue` templates, if you need to link to your `assets` or `static` directory, use `~/assets/your_image.png` and `~/static/your_image.png`.
+
+</div>

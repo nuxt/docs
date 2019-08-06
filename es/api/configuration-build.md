@@ -1,22 +1,22 @@
 ---
-title: "API: La Propiedad build"
-description: Nuxt.js le permite personalizar la configuración de webpack para crear su aplicación web como desee.
+title: "API: The build Property"
+description: Nuxt.js lets you customize the webpack configuration for building your web application as you want.
 ---
 
-# La Propiedad build
+# The build Property
 
-> Nuxt.js le permite personalizar la configuración de webpack para crear su aplicación web como desee.
+> Nuxt.js lets you customize the webpack configuration for building your web application as you want.
 
 ## analyze
 
-> Nuxt.js usa [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) para permitirle visualizar sus paquetes y cómo optimizarlos.
+> Nuxt.js use [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) to let you visualize your bundles and how to optimize them.
 
-- Tipo: `Boolean` o `Object`
-- Defecto: `false`
+- Type: `Boolean` or `Object`
+- Default: `false`
 
-Si es un objeto, vea las propiedades disponibles [aqui](https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin).
+If an object, see available properties [here](https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin).
 
-Ejemplo (`nuxt.config.js`):
+Example (`nuxt.config.js`):
 
 ```js
 export default {
@@ -32,16 +32,16 @@ export default {
 
 <div class="Alert Alert--teal">
 
-**Info:** usted puede usar el comando `nuxt build --analyze` or `nuxt build -a` para construir tu aplicacion y lanzar el bundle analyzer en [http://localhost:8888](http://localhost:8888).
+**Info:** you can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888).
 
 </div>
 
 ## babel
 
-> Personalice la configuración de Babel para archivos JavaScript y Vue. `.babelrc` se ignora por defecto.
+> Customize Babel configuration for JavaScript and Vue files. `.babelrc` is ignored by default.
 
-- Tipo: `Object` Vea `babel-loader` [options](https://github.com/babel/babel-loader#options) y `babel` [options](https://babeljs.io/docs/en/options)
-- Defecto:
+- Type: `Object` See `babel-loader` [options](https://github.com/babel/babel-loader#options) and `babel` [options](https://babeljs.io/docs/en/options)
+- Default:
 
   ```js
   {
@@ -51,20 +51,20 @@ export default {
   }
   ```
 
-El targets por defecto es [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) son `ie: '9'` en la construccion del `cliente` , y `node: 'current'` en la construccion del `servidor`.
+The default targets of [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) are `ie: '9'` in the `client` build, and `node: 'current'` in the `server` build.
 
 ### presets
 
-- Tipo: `Function`
-- Argumento:
+- Type: `Function`
+- Argument:
   1. `Object`: { isServer: true | false }
   2. `Array`:
-      - nombre del preset `@nuxt/babel-preset-app`
-      - [`options`](https://github.com/nuxt/nuxt.js/tree/dev/packages/babel-preset-app#options) de `@nuxt/babel-preset-app`
+      - preset name `@nuxt/babel-preset-app`
+      - [`options`](https://github.com/nuxt/nuxt.js/tree/dev/packages/babel-preset-app#options) of `@nuxt/babel-preset-app`
 
-**Note**: El presets configurado en `build.babel.presets` va ser aplicado para ambos, la construccion del cliente y del servidor. El target va ser asignado acorde a Nuxt (client/server). Si tu quieres configurar el preset diferente para la construccion del servidor y del cliente, por favor use `presets` como una funcion:
+**Note**: The presets configured in `build.babel.presets` will be applied to both, the client and the server build. The target will be set by Nuxt accordingly (client/server). If you want configure the preset differently for the client or the server build, please use `presets` as a function:
 
-> Nosotros **recomendamos altamente** usar el preset por defecto en vez de uno personalizado.
+> We **highly recommend** to use the default preset instead of below customization
 
 ```js
 export default {
@@ -81,7 +81,7 @@ export default {
 }
 ```
 
-O reemplazar el valor por defecto devolviendo toda la lista de presets:
+Or override default value by returning whole presets list:
 
 ```js
 export default {
@@ -106,65 +106,65 @@ export default {
 
 ## cache
 
-- Tipo: `Boolean`
-- Defecto: `false`
+- Type: `Boolean`
+- Default: `false`
 - ⚠️ Experimental
 
-> Activa el cache de [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin#options) y [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
+> Enable cache of [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
 
 ## crossorigin
 
-- Tipo: `String`
-- Defecto: `undefined`
+- Type: `String`
+- Default: `undefined`
 
-  Configura el atributo `crossorigin` en los tags `<link rel="stylesheet">` y `<script>` en el HTML generado.
+  Configure the `crossorigin` attribute on `<link rel="stylesheet">` and `<script>` tags in generated HTML.
 
-  Más informacion: [Configuracion de atributos CORS](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes)
+  More Info: [CORS settings attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes)
 
 ## cssSourceMap
 
-- Tipo: `boolean`
-- Defecto: `true` para dev y `false` para produccion.
+- Type: `boolean`
+- Default: `true` for dev and `false` for production.
 
-> Activa el soporte de CSS Source Map
+> Enables CSS Source Map support
 
 ## devMiddleware
 
-- Tipo: `Object`
+- Type: `Object`
 
-Vea [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) para las opciones disponibles.
+See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) for available options.
 
 ## devtools
 
-- Tipo: `boolean`
-- Defecto: `false`
+- Type: `boolean`
+- Default: `false`
 
-Configure si desea permitir la inspeccion con [vue-devtools](https://github.com/vuejs/vue-devtools).
+Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools) inspection.
 
-Si ya se activó a través de nuxt.config.js o de otro modo, devtools se activará independientemente de la variable.
+If you already activated through nuxt.config.js or otherwise, devtools enable regardless of the flag.
 
 ## extend
 
-> Extienda la configuración del paquete web manualmente para los paquetes de cliente y servidor.
+> Extend the webpack configuration manually for the client & server bundles.
 
-- Tipo: `Function`
+- Type: `Function`
 
-La extensión se llama dos veces, una vez para el paquete del servidor y una vez para el paquete del cliente. Los argumentos del método son:
+The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are:
 
-1. El objecto de configuracion de Webpack,
-2. Un objecto que sigue las claves (todos son booleanos excepto `loaders`): `isDev`, `isClient`, `isServer`, `loaders`.
+1. The Webpack config object,
+2. An object with the following keys (all boolean except `loaders`): `isDev`, `isClient`, `isServer`, `loaders`.
 
 
 <div class="Alert Alert--orange">
 
-  **Advertencia:**
-  Las claves `isClient` y `isServer` proporcionadas en son independientes de las claves disponibles en [`context`](/api/context).
-  **No** son obsoletos. No utilice `process.client` y` process.server` aquí ya que están `undefined` en este momento.
-  
+  **Warning:**
+  The `isClient` and `isServer` keys provided in are separate from the keys available in [`context`](/api/context).
+  They are **not** deprecated. Do not use `process.client` and `process.server` here as they are `undefined` at this point.
+
 </div>
 
 
-Ejemplo (`nuxt.config.js`):
+Example (`nuxt.config.js`):
 
 ```js
 export default {
@@ -179,13 +179,13 @@ export default {
 }
 ```
 
-Si desea ver más sobre nuestra configuración predeterminada de webpack, eche un vistazo a nuestro [directorio de webpack](https://github.com/nuxt/nuxt.js/tree/dev/packages/webpack/src/config).
+If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/dev/packages/webpack/src/config).
 
-### loaders en extend
+### loaders in extend
 
-`loaders` tienen la misma estructura de objetio como [build.loaders](#loaders), asi que usted puede cambiar la opcion de los loaders adentro de `extend`.
+`loaders` has the same object structure as [build.loaders](#loaders), so you can change the options of loaders inside `extend`.
 
-Ejemplo (`nuxt.config.js`):
+Example (`nuxt.config.js`):
 
 ```js
 export default {
@@ -202,26 +202,26 @@ export default {
 
 ## extractCSS
 
-> Activa el Common CSS Extraction usando Vue Server Renderer [guidelines](https://ssr.vuejs.org/en/css.html).
+> Enables Common CSS Extraction using Vue Server Renderer [guidelines](https://ssr.vuejs.org/en/css.html).
 
-- Tipo: `Boolean`
-- Defecto: `false`
+- Type: `Boolean`
+- Default: `false`
 
-Usando [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin/) bajo la capa, todos tus CSS van a ser extraido en archivos separados, usualmente uno por cada componente. Esto permite el cacheo de tus CSS y JavaScript separadamente y vale la pena intentarlo en caso tenga mucho CSS global o compartido.
+Using [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin/) under the hood, all your CSS will be extracted into separate files, usually one per component. This allows caching your CSS and JavaScript separately and is worth a try in case you have a lot of global or shared CSS.
 
 <div class="Alert Alert--teal">
 
-**Nota:** Aqui habia un error prioritario para Vue 2.5.18 que eliminaba la importacion del CSS critico cuando usabas estas opciones.
+**Note:** There was a bug prior to Vue 2.5.18 that removed critical CSS imports when using this options.
 
 </div>
 
 
 ## filenames
 
-> Customiza los nombres de los bundle.
+> Customize bundle filenames.
 
-- Tipo: `Object`
-- Defecto:
+- Type: `Object`
+- Default:
 
 ```js
 {
@@ -234,7 +234,7 @@ Usando [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extr
 }
 ```
 
-Por ejemplo hacemos un ligero cambio a los nombres de los chunks a ids numericos (`nuxt.config.js`):
+This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
 
 ```js
 export default {
@@ -246,33 +246,33 @@ export default {
 }
 ```
 
-Para entender un poco más sobre el uso de manifests, eche un vistazo a esto [documentacion de webpack](https://webpack.js.org/guides/code-splitting/).
+To understand a bit more about the use of manifests, take a look at this [webpack documentation](https://webpack.js.org/guides/code-splitting/).
 
 ## friendlyErrors
 
-- Tipo: `Boolean`
-- Defecto: `true` (Overlay activada)
+- Type: `Boolean`
+- Default: `true` (Overlay enabled)
 
-Habilita o deshabilita el overlay proporcionado por [FriendlyErrorsWebpackPlugin](https://github.com/nuxt/friendly-errors-webpack-plugin)
+Enables or disables the overlay provided by [FriendlyErrorsWebpackPlugin](https://github.com/nuxt/friendly-errors-webpack-plugin)
 
 ## hardSource
 
-- Tipo: `Boolean`
-- Defecto: `false`
+- Type: `Boolean`
+- Default: `false`
 - ⚠️ Experimental
 
-Activa el [HardSourceWebpackPlugin](https://github.com/mzgoddard/hard-source-webpack-plugin) para mejorar el cacheo
+Enables the [HardSourceWebpackPlugin](https://github.com/mzgoddard/hard-source-webpack-plugin) for improved caching
 
 ## hotMiddleware
 
-- Tipo: `Object`
+- Type: `Object`
 
-Vea [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) para las opciones disponibles.
+See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for available options.
 
 ## html.minify
 
-- Tipo: `Object`
-- Defecto:
+- Type: `Object`
+- Default:
 
 ```js
 {
@@ -288,26 +288,25 @@ Vea [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware
 }
 ```
 
-**Atencion:** Si usted hacer cambio a `html.minify`, esto no va ser fusionado con los valores predeterminados!
+**Attention:** If you make changes to `html.minify`, they won't be merged with the defaults!
 
-Configuracion para el plugin [html-minifier](https://github.com/kangax/html-minifier) usado para minificar
-Los archivos HTML creados durante el proceso de creacion (van a ser aplicados para *todos los modos*).
+Configuration for the [html-minifier](https://github.com/kangax/html-minifier) plugin used to minify
+HTML files created during the build process (will be applied for *all modes*).
 
 ## indicator
 
-> Muestra un indicador de creacion para el hot module replacement en desarrollo (disponible en `v2.8.0+`)
-
-- Tipo: `Boolean`
-- Defecto: `true`
+> Display build indicator for hot module replacement in development (available in `v2.8.0+`)
+- Type: `Boolean`
+- Default: `true`
 
 ![nuxt-build-indicator](https://user-images.githubusercontent.com/5158436/58500509-93ba0f80-8197-11e9-8524-e115c6d32571.gif)
 
 ## loaders
 
-> Customiza la opcion de los loaders de Webpack integrado en Nuxt.js
+> Customize options of Nuxt.js integrated webpack loaders.
 
-- Tipo: `Object`
-- Defecto:
+- Type: `Object`
+- Default:
 
 ```js
 {
@@ -345,55 +344,55 @@ Los archivos HTML creados durante el proceso de creacion (van a ser aplicados pa
 }
 ```
 
-> Nota: Además de especificar las configuraciones en `nuxt.config.js`, también puede ser modificado por [build.extend](#extend)
+> Note: In addition to specifying the configurations in `nuxt.config.js`, it can also be modified by [build.extend](#extend)
 
 ### loaders.file
 
-> Más detalles en [opciones de file-loader](https://github.com/webpack-contrib/file-loader#options).
+> More details are in [file-loader options](https://github.com/webpack-contrib/file-loader#options).
 
 ### loaders.fontUrl and loaders.imgUrl
 
-> Más detalles en [opciones de url-loader](https://github.com/webpack-contrib/url-loader#options).
+> More details are in [url-loader options](https://github.com/webpack-contrib/url-loader#options).
 
 ### loaders.pugPlain
 
->  Más detalles en [pug-plain-loader](https://github.com/yyx990803/pug-plain-loader) or [opciones de Pug compiler](https://pugjs.org/api/reference.html#options).
+> More details are in [pug-plain-loader](https://github.com/yyx990803/pug-plain-loader) or [Pug compiler options](https://pugjs.org/api/reference.html#options).
 
 ### loaders.vue
 
-> Más detalles en [opciones de vue-loader](https://vue-loader.vuejs.org/options.html).
+> More details are in [vue-loader options](https://vue-loader.vuejs.org/options.html).
 
-### loaders.css y loaders.cssModules
+### loaders.css and loaders.cssModules
 
-> Más detalles en [opciones de css-loader](https://github.com/webpack-contrib/css-loader#options).
-> Nota: cssModules es la opcion del loader para el uso de [CSS Modules](https://vue-loader.vuejs.org/guide/css-modules.html#css-modules)
+> More details are in [css-loader options](https://github.com/webpack-contrib/css-loader#options).
+> Note: cssModules is loader options for usage of [CSS Modules](https://vue-loader.vuejs.org/guide/css-modules.html#css-modules)
 
 ### loaders.less
 
-> Puede pasar cualquier opción específica a `less-loader` via `loaders.less`. Vea [documentacion de Less](http://lesscss.org/usage/#command-line-usage-options) para toda las opciones disponible en dash-case.
+> You can pass any Less specific options to the `less-loader` via `loaders.less`. See the [Less documentation](http://lesscss.org/usage/#command-line-usage-options) for all available options in dash-case.
 
 ### loaders.sass and loaders.scss
 
-> Vea la [documentacion de Node Sass](https://github.com/sass/node-sass/blob/master/README.md#options) para todas las opciones disponible de Sass.
-> Nota: `loaders.sass` es para [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html)
+> See the [Node Sass documentation](https://github.com/sass/node-sass/blob/master/README.md#options) for all available Sass options.
+> Note: `loaders.sass` is for [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html)
 
 ### loaders.ts
 
-> Loader para archivos typescript y `lang="ts"` Vue SFC.
-> Más detalles en [opciones de ts-loader](https://github.com/TypeStrong/ts-loader#loader-options).
+> Loader for typescript file and `lang="ts"` Vue SFC.
+> More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#loader-options).
 
 ### loaders.tsx
 
-> Más detalles en [opciones de ts-loader](https://github.com/TypeStrong/ts-loader#options).
+> More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#options).
 
 ### loaders.vueStyle
 
-> Más detalles en [opciones de vue-style-loader](https://github.com/vuejs/vue-style-loader#options).
+> More details are in [vue-style-loader options](https://github.com/vuejs/vue-style-loader#options).
 
 ## optimization
 
-- Tipo: `Object`
-- Defecto:
+- Type: `Object`
+- Default:
 
   ```js
   {
@@ -411,7 +410,7 @@ Los archivos HTML creados durante el proceso de creacion (van a ser aplicados pa
   }
   ```
 
-El valor por defecto de `splitChunks.name` es `true` in `dev` or `analyze` mode.
+The default value of `splitChunks.name` is `true` in `dev` or `analyze` mode.
 
 You can set `minimizer` to a customized Array of plugins or set `minimize` to `false` to disable all minimizers.
 (`minimize` is being disabled for development by default)

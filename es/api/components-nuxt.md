@@ -1,13 +1,13 @@
 ---
-title: "API: El Componente <nuxt>"
-description: Muestra el componente de la pagina adentro del layout.
+title: "API: The <nuxt> Component"
+description: Display the page components inside a layout.
 ---
 
-# El Componente &lt;nuxt&gt;
+# The &lt;nuxt&gt; Component
 
-> Este componente es solo usado en [layouts](/guide/views#layouts) para mostrar el componente de la pagina.
+> This component is used only in [layouts](/guide/views#layouts) to display the page components.
 
-Ejemplo (`layouts/default.vue`):
+Example (`layouts/default.vue`):
 
 ```html
 <template>
@@ -19,15 +19,15 @@ Ejemplo (`layouts/default.vue`):
 </template>
 ```
 
-Para ver un ejemplo, dale una mirada al [ejemplo de layouts](/examples/layouts).
+To see an example, take a look at the [layouts example](/examples/layouts).
 
 **Props**:
 
 - nuxtChildKey: `string`
-  - Este prop va ser asignado al `<router-view/>`, util para crear transiciones adentro de las paginas dinamicas y diferentes rutas.
-  - Defecto: `$route.path`
+  - This prop will be set to `<router-view/>`, useful to make transitions inside a dynamic page and different route.
+  - Default: `$route.path`
 
-Existen 3 maneras de manejar el prop interno `key` del `<router-view/>`.
+There are 3 ways to handle internal `key` prop of `<router-view/>`.
 
 1. `nuxtChildKey` prop
 
@@ -39,7 +39,7 @@ Existen 3 maneras de manejar el prop interno `key` del `<router-view/>`.
   </template>
   ```
 
-2. la opcion `key` en los componentes de la pagina: `string` o `function`
+2. `key` option in page components: `string` or `function`
 
   ```js
   export default {
@@ -49,8 +49,8 @@ Existen 3 maneras de manejar el prop interno `key` del `<router-view/>`.
   }
   ```
 
-- nombre: `string` (_introducido en Nuxt v2.4.0_)
-  - Este prop va ser asignado a `<router-view/>`, usado para renderizado del componente de la pagina con named-view.
-  - Defecto: `default`
+- name: `string` (_introduced with Nuxt v2.4.0_)
+  - This prop will be set to `<router-view/>`, used to render named-view of page component.
+  - Default: `default`
 
-Para ver un ejemplo, dale una mirada al [ejemplo de named-views](/examples/named-views).
+To see an example, take a look at the [named-views example](/examples/named-views).

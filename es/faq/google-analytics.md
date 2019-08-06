@@ -5,15 +5,18 @@ description: How to use Google Analytics?
 
 # How to use Google Analytics?
 
-To use [Google Analytics](https://analytics.google.com/analytics/web/) with your nuxt.js application, we recommend to create a file `plugins/ga.js`:
+First, please check the [official Google Analytics module](https://github.com/nuxt-community/analytics-module) for Nuxt.js.
+
+Otherwise, to use [Google Analytics](https://www.google.com/analytics/) with your Nuxt.js application, we recommend you create a file `plugins/ga.js`:
 
 ```js
 /* eslint-disable */
-import router from '~router'
-/*
-** Only run on client-side and only in production mode
-*/
-if (process.env.NODE_ENV === 'production') {
+
+export default ({ app }) => {
+  /*
+  ** Only run on client-side and only in production mode
+  */
+  if (process.env.NODE_ENV !== 'production') return
   /*
   ** Include Google Analytics Script
   */
@@ -28,9 +31,9 @@ if (process.env.NODE_ENV === 'production') {
   /*
   ** Every time the route changes (fired on initialization too)
   */
-  router.afterEach((to, from) => {
+  app.router.afterEach((to, from) => {
     /*
-    ** We tell Google Analytic to add a page view
+    ** We tell Google Analytics to add a `pageview`
     */
     ga('set', 'page', to.fullPath)
     ga('send', 'pageview')
@@ -40,21 +43,22 @@ if (process.env.NODE_ENV === 'production') {
 
 > Replace `UA-XXXXXXXX-X` by your Google Analytics tracking ID.
 
-Then, we tell nuxt.js to import it in our main application:
+Then, we tell Nuxt.js to import it in our main application:
 
 `nuxt.config.js`
+
 ```js
-module.exports = {
+export default {
   plugins: [
     { src: '~plugins/ga.js', ssr: false }
   ]
 }
 ```
 
-Voilà, Google Analytics is integrated into your nuxt.js application and will track every page view!
+Voilà, Google Analytics is integrated into your Nuxt.js application and will track every page view!
 
 <div class="Alert Alert--nuxt-green">
 
-<b>INFO:</b> you can use this method for any other tracking service.
+<b>Info:</b> you can use this method for any other tracking service.
 
 </div>

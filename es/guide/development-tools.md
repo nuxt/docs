@@ -7,37 +7,35 @@ description: Nuxt.js helps you to make your web development enjoyable.
 
 ## End-to-End Testing
 
-[Ava](https://github.com/avajs/ava) is a powerful JavaScript testing framework, mixed with [jsdom](https://github.com/tmpvar/jsdom), we can use them to do end-to-end testing easily.
+[AVA](https://github.com/avajs/ava) is a powerful JavaScript testing framework, mixed with [jsdom](https://github.com/tmpvar/jsdom), we can use them to do end-to-end testing easily.
 
-First, we need to add ava and jsdom as development dependencies:
+First, we need to add AVA and jsdom as development dependencies:
+
 ```bash
 npm install --save-dev ava jsdom
 ```
 
-And add a test script to our `package.json` and configure ava to compile files that we import into our tests.
+Then add a test script to our `package.json` and configure AVA to compile files that we import into our tests.
 
 ```javascript
 "scripts": {
   "test": "ava",
 },
 "ava": {
-  "require": [
-    "babel-register"
-  ]
-},
-"babel": {
-  "presets": [
-    "es2015"
+  "files": [
+    "test/**/*"
   ]
 }
 ```
 
 We are going to write our tests in the `test` folder:
+
 ```bash
 mkdir test
 ```
 
-Let's says we have a page in `pages/index.vue`:
+Let's say we have a page in `pages/index.vue`:
+
 ```html
 <template>
   <h1 class="red">Hello {{ name }}!</h1>
@@ -58,7 +56,7 @@ export default {
 </style>
 ```
 
-When we launch our app with `npm run dev` and open [http://localhost:3000](http://localhost:3000), we can see our red `Hello world!` title.
+When we launch our app with `npm run dev` and open http://localhost:3000, we can see our red `Hello world!` title.
 
 We add our test file `test/index.test.js`:
 
@@ -67,17 +65,18 @@ import test from 'ava'
 import { Nuxt, Builder } from 'nuxt'
 import { resolve } from 'path'
 
-// We keep the nuxt and server instance
-// So we can close them at the end of the test
+// We keep a reference to Nuxt so we can close
+// the server at the end of the test
 let nuxt = null
 
-// Init Nuxt.js and create a server listening on localhost:4000
+// Init Nuxt.js and start listening on localhost:4000
 test.before('Init Nuxt.js', async t => {
   const rootDir = resolve(__dirname, '..')
   let config = {}
   try { config = require(resolve(rootDir, 'nuxt.config.js')) } catch (e) {}
   config.rootDir = rootDir // project folder
   config.dev = false // production build
+  config.mode = 'universal' // Isomorphic application
   nuxt = new Nuxt(config)
   await new Builder(nuxt).build()
   nuxt.listen(4000, 'localhost')
@@ -90,8 +89,8 @@ test('Route / exits and render HTML', async t => {
   t.true(html.includes('<h1 class="red">Hello world!</h1>'))
 })
 
-// Example of testing via dom checking
-test('Route / exits and render HTML with CSS applied', async t => {
+// Example of testing via DOM checking
+test('Route / exists and renders HTML with CSS applied', async t => {
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
   t.not(element, null)
@@ -100,26 +99,27 @@ test('Route / exits and render HTML with CSS applied', async t => {
   t.is(window.getComputedStyle(element).color, 'red')
 })
 
-// Close server and ask nuxt to stop listening to file changes
-test.after('Closing server and nuxt.js', t => {
+// Close the Nuxt server
+test.after('Closing server', t => {
   nuxt.close()
 })
 ```
 
 We can now launch our tests:
+
 ```bash
 npm test
 ```
 
 jsdom has some limitations because it does not use a browser. However, it will cover most of our tests. If you want to use a browser to test your application, you might want to check out [Nightwatch.js](http://nightwatchjs.org).
 
-## ESLint && Prettier
+## ESLint and Prettier
 
-> [ESLint](http://eslint.org) is a great tool to keep your code clean
+> [ESLint](http://eslint.org) is a great tool to keep your code clean.
 
-> [Prettier](prettier.io) is a very popular code formatter
+> [Prettier](https://prettier.io) is a very popular code formatter.
 
-You can add ESLint with Prettier pretty easily with nuxt.js, first, you need to add the npm dependencies:
+You can add ESLint with Prettier pretty easily with Nuxt.js, first, you need to add the npm dependencies:
 
 ```bash
 npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader eslint-plugin-vue eslint-plugin-prettier prettier
@@ -157,7 +157,7 @@ module.exports = {
 }
 ```
 
-Then, you can add a `lint` and`lintfix` scripts in your `package.json`:
+Then, you can add `lint` and `lintfix` scripts to your `package.json`:
 
 ```js
 "scripts": {
@@ -166,19 +166,47 @@ Then, you can add a `lint` and`lintfix` scripts in your `package.json`:
 }
 ```
 
-You can now launch `lint` to just check for errors:
+You can now launch `lint` to check for errors:
+
 ```bash
 npm run lint
 ```
+
 or `lintfix` to also fix those which are doable
+
 ```bash
 npm run lintfix
 ```
 
-ESLint will lint every of your JavaScript and Vue files while ignoring your ignored files defined in your `.gitignore`.
+ESLint will lint all of your JavaScript and Vue files while ignoring your ignored files defined in your `.gitignore`.
+
+It is also recommended to enable ESLint hot reloading mode via webpack. This way ESLint will run on save during `npm run dev`. Just add the following to your `nuxt.config.js`:
+
+```js
+...
+  /*
+   ** Build configuration
+  */
+  build: {
+   /*
+    ** You can extend webpack config here
+   */
+   extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: "pre",
+          test: /\.(js|vue)$/,
+          loader: "eslint-loader",
+          exclude: /(node_modules)/
+        })
+      }
+    }
+  }
+```
 
 <div class="Alert Alert--orange">
 
-One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before commiting your code.
+One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before committing your code.
 
 </div>

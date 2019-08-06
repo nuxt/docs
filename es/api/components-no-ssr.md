@@ -1,22 +1,22 @@
 ---
-title: "API: El componente <no-ssr>"
-description: Salta el renderizado en el lado del servidor(renderizado), y muesta un texto alternativo.
+title: "API: The <no-ssr> Component"
+description: Skip component rendering on server side(rendering), and display placeholder text.
 ---
 
-# El componente &lt;no-ssr&gt;
+# The &lt;no-ssr&gt; Component
 
-> Este componente es usuario con el proposito de remover el componente del renderizado del lado del servidor.
+> This component is used to purposely remove the component from the subject of server side rendering.
 
 **Props**:
 - placeholder: `string`
-  - Usa un texto como auxiliar hasta que `<no-ssr />` este montado del lado del cliente.
+  - Use a text as placeholder until `<no-ssr />` is mounted on client-side.
 
 ```html
 <template>
   <div>
     <sidebar />
     <no-ssr placeholder="Loading...">
-      <!-- este componente solo estara renderizado del lado del cliente -->
+      <!-- this component will only be rendered on client-side -->
       <comments />
     </no-ssr>
   </div>
@@ -26,21 +26,21 @@ description: Salta el renderizado en el lado del servidor(renderizado), y muesta
 **Slots**:
 
 - placeholder:
-  - Usa un slot como texto auxiliar hasta que `<no-ssr />` este montado del lado del cliente.
+  - Use a slot as placeholder until `<no-ssr />` is mounted on client-side.
  
  ```html
 <template>
   <div>
     <sidebar />
     <no-ssr>
-      <!-- este componente solo estara renderizado del lado del cliente -->
+      <!-- this component will only be rendered on client-side -->
       <comments />
   
-      <!-- indicador de cargado -->
+      <!-- loading indicator -->
       <comments-placeholder slot="placeholder" />
     </no-ssr>
   </div>
 </template>
 ```
 
-Este componente es un clon de [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr). Gracias a [@egoist](https://github.com/egoist)!
+This component is a clone of [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr). Thanks [@egoist](https://github.com/egoist)!

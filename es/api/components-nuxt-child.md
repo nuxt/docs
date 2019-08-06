@@ -1,13 +1,13 @@
 ---
-title: "API: El Componente <nuxt-child>"
-description: Muestra la pagina principal.
+title: "API: The <nuxt-child> Component"
+description: Display the current page.
 ---
 
-# El Componente &lt;nuxt-child&gt;
+# The &lt;nuxt-child&gt; Component
 
-> Este componente se utiliza para mostrar los componentes hijos en una [ruta anidada](/guide/routing#nested-routes).
+> This component is used for displaying the children components in a [nested route](/guide/routing#nested-routes).
 
-Ejemplo:
+Example:
 
 ```bash
 -| pages/
@@ -16,7 +16,7 @@ Ejemplo:
 ---| parent.vue
 ```
 
-Este árbol de archivos generará estas rutas:
+This file tree will generate these routes:
 
 ```js
 [
@@ -35,7 +35,7 @@ Este árbol de archivos generará estas rutas:
 ]
 ```
 
-Para mostrar el componente `child.vue`, debemos insertar`<nuxt-child/>` dentro de`pages/parent.vue`:
+To display the `child.vue` component, we have to insert `<nuxt-child/>` inside `pages/parent.vue`:
 
 ```html
 <template>
@@ -46,7 +46,7 @@ Para mostrar el componente `child.vue`, debemos insertar`<nuxt-child/>` dentro d
 </template>
 ```
 
-`<nuxt-child/>` acepta `keep-alive` y `keep-alive-props`:
+`<nuxt-child/>` accepts `keep-alive` and `keep-alive-props`:
 
 ```html
 <template>
@@ -63,15 +63,15 @@ Para mostrar el componente `child.vue`, debemos insertar`<nuxt-child/>` dentro d
 </div>
 ```
 
-> Los componentes hijos también pueden recibir propiedades como un componente Vue normal.
+> Child components can also receive properties like a regular Vue component.
 
-Para ver un ejemplo, eche un vistazo el [ejemplo de rutas anidadas](/examples/nested-routes).
+To see an example, take a look at the [nested-routes example](/examples/nested-routes).
 
 ## Named View
 
-> Introducido del Nuxt v2.4.0
+> Introduced with Nuxt v2.4.0
 
-`<nuxt-child/>` acepta prop `name` para renderizar el named-view:
+`<nuxt-child/>` accepts `name` prop to render named-view:
 
 ```html
 <template>
@@ -82,4 +82,4 @@ Para ver un ejemplo, eche un vistazo el [ejemplo de rutas anidadas](/examples/ne
 </template>
 ```
 
-Para ver un ejemplo, eche un vistazo el [named-views example](/examples/named-views).
+To see an example, take a look at the [named-views example](/examples/named-views).
