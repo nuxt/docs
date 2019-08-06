@@ -1,6 +1,6 @@
 ---
 title: "API: The head Method"
-description: Nuxt.js uses vue-meta to update the `headers` and `html attributes` of your application.
+description: Nuxt.js uses vue-meta to update the headers and HTML attributes of your application.
 ---
 
 # The head Method
@@ -29,6 +29,7 @@ export default {
     return {
       title: this.title,
       meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         { hid: 'description', name: 'description', content: 'My custom description' }
       ]
     }
@@ -37,8 +38,8 @@ export default {
 </script>
 ```
 
-<div class="Alert">
+<div class="Alert Alert--teal">
 
-To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://vue-meta.nuxtjs.org/api/#tagidkeyname).
+<b>Info:</b> To avoid duplicated meta tags when used in child component, set up an unique identifier with the `hid` key for your meta elements ([read more](https://vue-meta.nuxtjs.org/api/#tagidkeyname)).
 
 </div>

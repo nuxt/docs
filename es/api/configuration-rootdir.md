@@ -1,6 +1,6 @@
 ---
 title: "API: The rootDir Property"
-description: Define the workspace of nuxt.js application
+description: Define the workspace of Nuxt.js application
 ---
 
 # The rootDir Property
@@ -8,11 +8,11 @@ description: Define the workspace of nuxt.js application
 - Type: `String`
 - Default: `process.cwd()`
 
-> Define the workspace of your nuxt.js application.
+> Define the workspace of your Nuxt.js application.
 
 This property is overwritten by [nuxt commands](/guide/commands) and set to the argument of the command (example: `nuxt my-app/` will set the `rootDir` to `my-app/` with its absolute path).
 
-This property should be used when using [nuxt.js programmatically](/api/nuxt).
+This property should be used when using [Nuxt.js programmatically](/api/nuxt).
 
 <div class="Alert Alert--blue">
 

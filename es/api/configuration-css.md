@@ -1,32 +1,34 @@
 ---
 title: "API: The css Property"
-description: Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every pages).
+description: Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every page).
 ---
 
 # The css Property
 
-> Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every pages).
+> Nuxt.js lets you define the CSS files/modules/libraries you want to set globally (included in every page).
+
+In case you want to use ```sass``` make sure that you have installed ```node-sass``` and ```sass-loader``` packages. If you didn't  just
+
+```sh
+npm install --save-dev node-sass sass-loader
+```
 
 - Type: `Array`
- - Items: `String` or `Object`
-
-If the item is an object, the properties are:
-- src: `String` (path of the file)
-- lang: `String` ([pre-processor used](/faq/pre-processors))
+ - Items: `string`
 
 In `nuxt.config.js`, add the CSS resources:
 
 ```js
-module.exports = {
+export default {
   css: [
-    // Load a node.js module
-    'hover.css/css/hover-min.css',
-    // node.js module but we specify the pre-processor
-    { src: 'bulma', lang: 'sass' },
-    // Css file in the project
-    '~assets/css/main.css',
-    // Sass file in the project
-    { src: '~assets/css/main.scss', lang: 'scss' } // scss instead of sass
+    // Load a Node.js module directly (here it's a Sass file)
+    'bulma',
+    // CSS file in the project
+    '@/assets/css/main.css',
+    // SCSS file in the project
+    '@/assets/css/main.scss'
   ]
 }
 ```
+
+Nuxt.js will automatically guess the file type by its extension and use the appropriate pre-processor loader for webpack. You will still need to install the required loader if you need to use them.

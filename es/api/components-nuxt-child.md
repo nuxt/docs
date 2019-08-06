@@ -1,13 +1,13 @@
 ---
-title: "API: The <nuxt-child> Component"
-description: Display the current page
+title: "API: El Componente <nuxt-child>"
+description: Muestra la pagina principal.
 ---
 
-# The &lt;nuxt-child&gt; Component
+# El Componente &lt;nuxt-child&gt;
 
-> This component is used for displaying the children components in a [nested route](/guide/routing#nested-routes).
+> Este componente se utiliza para mostrar los componentes hijos en una [ruta anidada](/guide/routing#nested-routes).
 
-Example:
+Ejemplo:
 
 ```bash
 -| pages/
@@ -16,17 +16,18 @@ Example:
 ---| parent.vue
 ```
 
-This file tree will generate these routes:
+Este árbol de archivos generará estas rutas:
+
 ```js
 [
   {
     path: '/parent',
-    component: '~pages/parent.vue',
+    component: '~/pages/parent.vue',
     name: 'parent',
     children: [
       {
         path: 'child',
-        component: '~pages/parent/child.vue',
+        component: '~/pages/parent/child.vue',
         name: 'parent-child'
       }
     ]
@@ -34,15 +35,51 @@ This file tree will generate these routes:
 ]
 ```
 
-To display the `child.vue` component, I have to insert `<nuxt-child/>` inside `pages/parent.vue`:
+Para mostrar el componente `child.vue`, debemos insertar`<nuxt-child/>` dentro de`pages/parent.vue`:
 
 ```html
 <template>
   <div>
     <h1>I am the parent view</h1>
-    <nuxt-child/>
+    <nuxt-child :foobar="123" />
   </div>
 </template>
 ```
 
-To see an example, take a look at the [nested-routes example](/examples/nested-routes).
+`<nuxt-child/>` acepta `keep-alive` y `keep-alive-props`:
+
+```html
+<template>
+  <div>
+    <nuxt-child keep-alive :keep-alive-props="{ exclude: ['modal'] }" />
+  </div>
+</template>
+
+<!-- will be converted into something like this -->
+<div>
+  <keep-alive :exclude="['modal']">
+    <router-view />
+  </keep-alive>
+</div>
+```
+
+> Los componentes hijos también pueden recibir propiedades como un componente Vue normal.
+
+Para ver un ejemplo, eche un vistazo el [ejemplo de rutas anidadas](/examples/nested-routes).
+
+## Named View
+
+> Introducido del Nuxt v2.4.0
+
+`<nuxt-child/>` acepta prop `name` para renderizar el named-view:
+
+```html
+<template>
+  <div>
+    <nuxt-child name="top" />
+    <nuxt-child />
+  </div>
+</template>
+```
+
+Para ver un ejemplo, eche un vistazo el [named-views example](/examples/named-views).
