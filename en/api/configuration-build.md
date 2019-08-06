@@ -32,7 +32,7 @@ export default {
 
 <div class="Alert Alert--teal">
 
-**Info:** you can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888).
+**Info:** you can use the command `yarn nuxt build --analyze` or `yarn nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888). If you are not using `yarn` you can run the command with `npx`.
 
 </div>
 
