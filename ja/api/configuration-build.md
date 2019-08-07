@@ -32,7 +32,7 @@ export default {
 
 <div class="Alert Alert--teal">
 
-**情報:** `nuxt build --analyze` または `nuxt build -a` コマンドを使って、アプリケーションをビルドしてバンドルアナライザを [http://localhost:8888](http://localhost:8888) で起動できます。
+**情報:** `yarn nuxt build --analyze` または `yarn nuxt build -a` コマンドを使って、アプリケーションをビルドしてバンドルアナライザを [http://localhost:8888](http://localhost:8888) で起動できます。`yarn` を使っていない場合は、コマンドに `npx` を付けて実行できます。
 
 </div>
 
