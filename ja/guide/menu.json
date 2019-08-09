@@ -15,7 +15,8 @@
         ]
       },
       { "to": "/contribution-guide", "name": "貢献ガイド" },
-      { "to": "/release-notes", "name": "リリースノート" }
+      { "to": "/release-notes", "name": "リリースノート" },
+      { "to": "/upgrading", "name": "アップグレード" }
     ]
   },
   {
