@@ -80,7 +80,6 @@
           { "name": "templates", "to": "#templates" },
           { "name": "terser", "to": "#terser" },
           { "name": "transpile", "to": "#transpile" },
-          { "name": "typescript", "to": "#typescript" },
           { "name": "vueLoader", "to": "#vueloader" },
           { "name": "watch", "to": "#watch" }
         ]

@@ -376,15 +376,6 @@ HTML files created during the build process (will be applied for *all modes*).
 > See the [Node Sass documentation](https://github.com/sass/node-sass/blob/master/README.md#options) for all available Sass options.
 > Note: `loaders.sass` is for [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html)
 
-### loaders.ts
-
-> Loader for typescript file and `lang="ts"` Vue SFC.
-> More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#loader-options).
-
-### loaders.tsx
-
-> More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#options).
-
 ### loaders.vueStyle
 
 > More details are in [vue-style-loader options](https://github.com/vuejs/vue-style-loader#options).
@@ -699,50 +690,6 @@ Starting with `v2.9.0`, you can also use a function to conditionnaly transpile, 
   }
 }
 ```
-
-## typescript
-
-> Customize Nuxt.js TypeScript support.
-
-<div class="Alert Alert--blue">
-
-**Important**: This property will be ignored if [`TypeScript Support`](/guide/typescript) hasn't be set up in your project.
-
-</div>
-
-- Type: `Object`
-- Default:
-
-  ```js
-  {
-    typeCheck: true,
-    ignoreNotFoundWarnings: false
-  }
-  ```
-
-### typescript.typeCheck
-
-> Enables TypeScript type checking on a separate process.
-
-- Type: `Boolean` or `Object`
-- Default: `true`
-
-When enabled, Nuxt.js uses [fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) to provide type checking.
-
-You can use an `Object` to override plugin options or set it to `false` to disable it.
-
-### typescript.ignoreNotFoundWarnings
-
-> Enables suppress not found typescript warnings.
-
-- Type: `Boolean`
-- Default: `false`
-
-When enabled, you can suppress `export ... was not found ...` warnings.
-
-See also about background information [https://github.com/TypeStrong/ts-loader/issues/653](https://github.com/TypeStrong/ts-loader/issues/653)
-
-**Warning:** This property might suppress the warnings you want to see. Be careful with how you configure it.
 
 ## vueLoader
 
