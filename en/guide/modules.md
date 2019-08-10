@@ -109,6 +109,8 @@ You module is a `buildModule` unless:
 - It is affecting vue-renderer behaviour or using a hook from `server:` or `vue-renderer:` namespace
 - Anything else that is outside of webpack scope (Hint: plugins and templates are compiled and are in webpack scope)
 
+**NOTE:** If you are going to offer using `buildModules` please mention that this feature is only available for Nuxt 2.9+. Older users should upgrade Nuxt or using `modules` section.
+
 ### Use async/await
 
 <div class="Alert Alert--orange">
