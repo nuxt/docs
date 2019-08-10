@@ -38,3 +38,12 @@ Note that they are required at runtime so should be already transpiled if depend
 
 Please see [Modules Guide](/guide/modules) for more detailed information on how they work or if interested developing your own module.
 Also we have provided an official [Modules](https://github.com/nuxt-community/awesome-nuxt#modules) Section listing dozens of production ready modules made by Nuxt Community.
+
+## `buildModules` (2.9+)
+
+Some modules are only required during development and build time. Using `buildModules` helps making production startup faster and also significantly decreasing `node_modules` size for production deployments. Please refer to each module docs to see if it is recommended to use `modules` or `buildModules`.
+
+The usage difference is:
+
+- Instead of adding to `modules` inside `nuxt.config.js`, use `buildModules`
+- Instead of adding to `dependencies` inside `package.json`, use `devDependencies` (`yarn add --dev` or `npm install --save-dev`)
