@@ -41,7 +41,7 @@ Also we have provided an official [Modules](https://github.com/nuxt-community/aw
 
 ## `buildModules` (2.9+)
 
-Some modules are only required during development and build time. Using `buildModules` helps making production startup faster and also significantly decreasing `node_modules` size for production deployments. Please refer to each module docs to see if it is recommended to use `modules` or `buildModules`.
+Some modules are only required during development and build time. Using `buildModules` helps to make production startup faster and also significantly decreasing `node_modules` size for production deployments. Please refer to each module docs to see if it is recommended to use `modules` or `buildModules`.
 
 The usage difference is:
 
