@@ -101,7 +101,7 @@ Not all modules will do everything synchronous. For example you may want to deve
 
 ## Build Only Modules
 
-Most modules are only required during development and build time. Using `buildModules` helps making production startup faster and also significantly decreasing `node_modules` size for production deployments. If you are a module author, It is highly recommended to suggest users installing your package as a `devDependency` and use `buildModules` instead of `modules` for `nuxt.config.js`.
+Usually, modules are only required during development and build time. Using `buildModules` helps making production startup faster and also significantly decreasing `node_modules` size for production deployments. If you are a module author, It is highly recommended to suggest users installing your package as a `devDependency` and use `buildModules` instead of `modules` for `nuxt.config.js`.
 
 You module is a `buildModule` unless:
 - It is providing a serverMiddleware
