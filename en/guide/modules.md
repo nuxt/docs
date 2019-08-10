@@ -111,7 +111,7 @@ You module is a `buildModule` unless:
 
 <div class="Alert Alert--orange">
 
-<b>NOTE:</b> If you are going to offer using <code>buildModules</code> please mention that this feature is only available for Nuxt <b>2.9+</b>. Older users should upgrade Nuxt or use <code>modules</code> section.
+<b>NOTE:</b> If you are going to offer using <code>buildModules</code> please mention that this feature is only available since Nuxt <b>v2.9</b>. Older users should upgrade Nuxt or use the <code>modules</code> section.
 
 </div>
 
