@@ -43,7 +43,7 @@ Also we have provided an official [Modules](https://github.com/nuxt-community/aw
 
 <div class="Alert Alert--info">
 
-This feature is available from Nuxt >= 2.9
+This feature is available since Nuxt v2.9
 
 </div>
 
