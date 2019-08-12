@@ -11,7 +11,7 @@ Accordingly, you should make sure that the following options are unchecked / dis
 
 1. Speed > Optimization > Auto Minify: **Uncheck** JavaScript, CSS and HTML
 2. Speed > **Disable** "Rocket Loader™"
-3. Scrape Shield > **Disable / turn off** "Email Address Obfuscation"
-4. Scrape Shield > **Disable / turn off** "Server-side Excludes"
+3. Scrape Shield > **Disable** "Email Address Obfuscation"
+4. Scrape Shield > **Disable** "Server-side Excludes"
 
 With these settings, you can be sure that Cloudflare won't inject scripts into your Nuxt application that may cause unwanted side effects.
