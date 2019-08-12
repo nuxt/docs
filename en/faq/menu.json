@@ -23,7 +23,7 @@
       { "name": "Async data in components?", "to": "/async-data-components" },
       { "name": "Duplicated Meta Tags?", "to": "/duplicated-meta-tags" },
       { "name": "iOS and phone numbers", "to": "/ios-phone-numbers" },
-      { "name": "What should be considered when using Cloudflare?", "to": "/cloudflare" }
+      { "name": "Cloudflare", "to": "/cloudflare" }
     ]
   },
   {
