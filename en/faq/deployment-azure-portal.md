@@ -26,7 +26,7 @@ this the logs will tell you that Vue cannot find any routes.
 
 <configuration>
   <system.webServer>
-    <!-- Visit http://blogs.msdn.com/b/windowsazure/archive/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites.aspx for more information on WebSocket support -->
+    <!-- Visit https://azure.microsoft.com/en-us/blog/introduction-to-websockets-on-windows-azure-web-sites/ for more information on WebSocket support -->
     <webSocket enabled="false" />
     <handlers>
       <!-- Indicates that the server.js file is a node.js site to be handled by the iisnode module -->
