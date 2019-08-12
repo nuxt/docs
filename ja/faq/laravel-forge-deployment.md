@@ -11,7 +11,7 @@ Nuxt アプリケーションを Laravel Forge にデプロイする説明をす
 
 * 選択したクラウドサービスプロバイダーを使用して Forge でサーバーにデプロイします。このサーバーは Node v8以降で実行する必要があります（アップグレードについては後述します）。
 * GitHub アカウントと Forge を紐づけます。
-* masterブランチの下の GitHub リポジトリにリンクされた Nuxt アプリケーションを作成します。このリポジトリを `nuxt-forge-client`とします。
+* master ブランチの下の GitHub リポジトリにリンクされた Nuxt アプリケーションを作成します。このリポジトリを `nuxt-forge-client`とします。
 * セットアップするドメインを `nuxt-forge.com` とします。このページで参照しているドメイン名をすべて自身のドメインに置き換えてください。また、ドメインが Forge でプロビジョニングされたサーバーの IP を指していることを確認してください。
 
 Forge で Node のバージョンをアップグレードするには:
@@ -25,7 +25,7 @@ Forge で Node のバージョンをアップグレードするには:
 * Aliases: ` `（空白にしてください）
 * Project type: `Static HTML`
 * Web Directory: `/`
-* `Allow Wildcard Sub-Domains` チェックボックスのチェックを外した状態にしてください。
+* `Allow Wildcard Sub-Domains` チェックボックスのチェックを外した状態にしてください
 
 **注意:** Forge のプロジェクトタイプは Nuxt のプロジェクトタイプにリンクされていません。この設定を使用すると、Nuxt.js で SPA およびユニバーサルアプリケーションを使用することができます。
 
@@ -33,10 +33,10 @@ Forge で Node のバージョンをアップグレードするには:
 
 サーバー下で作成したサイトを選択し、メニューの Apps 下で Github リポジトリを新しいサイトに紐づけます:
 * Provider: `Github`
-* Repository: `sbkl/nuxt-forge-client` (sbkl は Github での私のユーザーネームで、nuxt-forge-client は Github のリポジトリ名です)
+* Repository: `sbkl/nuxt-forge-client`（sbkl は Github での私のユーザーネームで、nuxt-forge-client は Github のリポジトリ名です）
 * Branch: `master`
-* このアプリケーションでは PHP を使用していないため、`Install Composer dependencies` のチェックを外します。
-* `Install Repository` をクリックします。
+* このアプリケーションでは PHP を使用していないため、`Install Composer dependencies` のチェックを外します
+* `Install Repository` をクリックします
 
 ## 4- SSL
 
