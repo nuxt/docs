@@ -1,6 +1,6 @@
 ---
 title: Using Nuxt with Cloudflare
-description: What needs to be considered when using Nuxt with Cloudflare?
+description: What needs to be considered when using Nuxt with Cloudflare
 ---
 
 # What needs to be considered when using Nuxt with Cloudflare?
