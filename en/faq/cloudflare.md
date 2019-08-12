@@ -10,7 +10,7 @@ In most cases, Nuxt can work with third party content that is not generated or c
 Accordingly, you should make sure that the following options are unchecked / disabled in Cloudflare. Otherwise, unnecessary re-rendering or hydration errors could impact your production application.
 
 1. Speed > Optimization > Auto Minify: **Uncheck** JavaScript, CSS and HTML
-2. Speed > **Disable / turn off** "Rocket Loader™"
+2. Speed > **Disable** "Rocket Loader™"
 3. Scrape Shield > **Disable / turn off** "Email Address Obfuscation"
 4. Scrape Shield > **Disable / turn off** "Server-side Excludes"
 
