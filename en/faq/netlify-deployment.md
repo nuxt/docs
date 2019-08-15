@@ -37,6 +37,13 @@ Press the _"New site from Git"_ button on the Netlify dashboard. Authenticate wi
 
 For a single page app there is a problem with refresh as by default on netlify the site redirects to *"404 not found"* this can be [prevented](https://www.netlify.com/docs/redirects/#rewrites-and-proxying) by configuring redirects. There is a module for that [nuxt-netlify](https://www.bazzite.com/docs/nuxt-netlify) which helps to configure both headers and redirects of the SPA .
 
+Alternativaly you can create a `_redirects` file (no file extension just _redirects) in the `static` folder with the following rules:
+
+```js
+/*    /index.html   200
+/*    /index.html   404
+```
+
 > For simple reference on netlify redirects read blog [post](https://www.netlify.com/blog/2019/01/16/redirect-rules-for-all-how-to-configure-redirects-for-your-static-site) by Divya Sasidharan
 
 
