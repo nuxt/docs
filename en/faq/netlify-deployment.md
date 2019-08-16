@@ -37,7 +37,7 @@ Press the _"New site from Git"_ button on the Netlify dashboard. Authenticate wi
 
 For a single page app there is a problem with refresh as by default on netlify the site redirects to *"404 not found"*. For any pages that are not generated they will fallback to SPA mode and then if you refresh or share that link you will get Netlify's 404 page.
 
-The easiest way to fix this is by adding a generate property in your `nuxt.config` and setting `fallback: true`. Then it will fallback to the 200.html when in SPA mode.
+The easiest way to fix this is by adding a [generate property](https://nuxtjs.org/api/configuration-generate#fallback) in your `nuxt.config` and setting `fallback: true`. Then it will fallback to the 200.html when in SPA mode.
 
 ```js
 export default {
@@ -47,7 +47,7 @@ export default {
 }
 ```
 
-If however you want to automatically apply headers and redirects of the SPA then there is a module for that:
+If however you want to automatically apply headers and redirects of the SPA then there is a module for that, this is especially useful for when you have custom headers/redirects (in a _headers or_redirects file):
 
 [netlify-files-module](https://github.com/nuxt-community/netlify-files-module)
 
