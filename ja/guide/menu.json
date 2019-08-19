@@ -15,7 +15,8 @@
         ]
       },
       { "to": "/contribution-guide", "name": "貢献ガイド" },
-      { "to": "/release-notes", "name": "リリースノート" }
+      { "to": "/release-notes", "name": "リリースノート" },
+      { "to": "/upgrading", "name": "アップグレード" }
     ]
   },
   {
@@ -125,6 +126,14 @@
           { "to": "#エンドツーエンドテスト", "name": "エンドツーエンドテスト" },
           { "to": "#eslint-と-prettier", "name": "ESLint と Prettier" }
         ]
+      }
+    ]
+  },
+  {
+    "title": "リソース",
+    "links": [
+      {
+        "to": "/themes", "name": "テーマ (new)"
       }
     ]
   }

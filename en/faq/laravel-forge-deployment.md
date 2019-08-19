@@ -127,19 +127,18 @@ server {
         deny all;
     }
 }
-
-Once done, click the `Save` button.
-
-Once complete, you should see the following message:
-```
-nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-nginx: configuration file /etc/nginx/nginx.conf test is successful
-```
-Click `OK`.
-
 # FORGE CONFIG (DO NOT REMOVE!)
 include forge-conf/nuxt-forge.com/after/*;
 ```
+Once done, click the `Save` button.
+
+Once complete, you should see the following message:
+
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+Click `OK`.
+
 ## 8- Time to deploy
 
 The configuration is now ready to deploy your app for the first time.

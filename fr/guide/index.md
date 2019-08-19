@@ -28,8 +28,8 @@ Nuxt.js inclut les éléments suivants afin de créer une expérience de dévelo
 
 - [Vue 2](https://fr.vuejs.org/)
 - [Vue Router](https://router.vuejs.org/fr/)
-- [Vuex](https://ssr.vuejs.org/fr/) (inclut uniquement quand l'[option `store`](/guide/vuex-store) est activée)
-- [Vue Server Renderer](https://ssr.vuejs.org/fr/) (exclut quand le [`mode: 'spa'`](/api/configuration-mode) est utilisé)
+- [Vuex](https://vuex.vuejs.org/fr/) (inclut uniquement quand l'[option `store`](/guide/vuex-store) est activée)
+- [Vue Server Renderer](https://ssr.vuejs.org/) (exclut quand le [`mode: 'spa'`](/api/configuration-mode) est utilisé)
 - [vue-meta](https://github.com/nuxt/vue-meta)
 
 Un total de seulement **57ko min+gzip** (60ko avec Vuex).

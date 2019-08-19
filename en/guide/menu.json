@@ -124,5 +124,13 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Resources",
+    "links": [
+      {
+        "to": "/themes", "name": "Themes (new)"
+      }
+    ]
   }
 ]
