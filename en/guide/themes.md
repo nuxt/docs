@@ -17,6 +17,17 @@ description: Nuxt.js themes made by the community.
 </div>
 <br>
 <div>
+  <a href="https://www.creative-tim.com/product/nuxt-now-ui-kit-pro?partner=120213" rel="nofollow" class="Promote">
+    <img src="/themes/nuxt-now-ui-kit.jpg" srcset="/themes/nuxt-now-ui-kit-2x.jpg 2x" alt="Nuxt Now UI Kit - Premium Bootstrap Nuxt.js UI Kit">
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Nuxt Now UI Kit</h4>
+      <p class="Promote__Content__Description">Premium Bootstrap Nuxt.js UI Kit</p>
+      <p class="Promote__Content__Price">89$</p>
+    </div>
+  </a>
+</div>
+<br>
+<div>
   <a href="https://1.envato.market/scutum-nuxt" rel="nofollow" class="Promote">
     <img src="/themes/nuxt-scutum-dashboard.jpg" srcset="/themes/nuxt-scutum-dashboard-2x.jpg 2x" alt="Nuxt Scutum Dashboard - Professional Material Design UIkit Admin Template">
     <div class="Promote__Content">
