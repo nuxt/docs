@@ -29,7 +29,7 @@ Nuxt.js использует следующие элементы для созд
 - [Vue 2](https://vuejs.org/)
 - [Vue Router](https://router.vuejs.org/en/)
 - [Vuex](https://vuex.vuejs.org/ru/) (только при использовании [опции store](/guide/vuex-store))
-- [Vue Server Renderer](https://ssr.vuejs.org/ru/) (только при использовании [`mode: 'spa'`](/api/configuration-mode))
+- [Vue Server Renderer](https://ssr.vuejs.org/ru/) (не используется при [`mode: 'spa'`](/api/configuration-mode))
 - [Vue-Meta](https://github.com/nuxt/vue-meta)
 
 Общий размер составляет всего лишь **57kb min+gzip** (60kb при использовании Vuex).
