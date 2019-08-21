@@ -3,7 +3,6 @@ title: "API: The mode Property"
 description: Change default nuxt mode
 ---
 
-# The mode Property
 - Type: `string`
   - Default: `universal`
   - Possible values:

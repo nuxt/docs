@@ -3,8 +3,6 @@ title: "API: The dir Property"
 description: Define the custom directories for your Nuxt.js application
 ---
 
-# The dir Property
-
 - Type: `Object`
 - Default:
 

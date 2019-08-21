@@ -3,8 +3,6 @@ title: "API: The head Property"
 description: Nuxt.js let you define all default meta for your application inside nuxt.config.js.
 ---
 
-# The head Property
-
 > Nuxt.js let you define all default meta for your application inside `nuxt.config.js`, use the same `head` property
 
 - Type: `Object`

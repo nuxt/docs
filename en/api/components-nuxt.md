@@ -3,8 +3,6 @@ title: "API: The <nuxt> Component"
 description: Display the page components inside a layout.
 ---
 
-# The &lt;nuxt&gt; Component
-
 > This component is used only in [layouts](/guide/views#layouts) to display the page components.
 
 Example (`layouts/default.vue`):

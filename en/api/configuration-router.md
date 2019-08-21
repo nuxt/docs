@@ -3,8 +3,6 @@ title: "API: The router Property"
 description: The router property lets you customize Nuxt.js router.
 ---
 
-# The router Property
-
 > The router property lets you customize Nuxt.js router ([vue-router](https://router.vuejs.org/en/)).
 
 ## base

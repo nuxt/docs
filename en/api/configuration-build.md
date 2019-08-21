@@ -3,8 +3,6 @@ title: "API: The build Property"
 description: Nuxt.js lets you customize the webpack configuration for building your web application as you want.
 ---
 
-# The build Property
-
 > Nuxt.js lets you customize the webpack configuration for building your web application as you want.
 
 ## analyze

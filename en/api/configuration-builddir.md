@@ -3,8 +3,6 @@ title: "API: The buildDir Property"
 description: Define the dist directory for your Nuxt.js application
 ---
 
-# The buildDir Property
-
 - Type: `String`
 - Default: `.nuxt`
 

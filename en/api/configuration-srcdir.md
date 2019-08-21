@@ -3,8 +3,6 @@ title: "API: The srcDir Property"
 description: Define the source directory of your Nuxt.js application
 ---
 
-# The srcDir Property
-
 - Type: `String`
 - Default: [rootDir value](/api/configuration-rootdir)
 

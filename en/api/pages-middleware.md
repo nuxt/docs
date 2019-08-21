@@ -3,8 +3,6 @@ title: "API: The middleware Property"
 description: Set the middleware for a specific page of the application.
 ---
 
-# The middleware Property
-
 - Type: `String` or `Array` or `Function`
   - Items: `String` or `Function`
 

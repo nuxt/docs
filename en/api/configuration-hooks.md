@@ -3,8 +3,6 @@ title: "API: The hooks Property"
 description: Hooks are listeners to Nuxt events that are typically used in Nuxt modules, but are also available in `nuxt.config.js`.
 ---
 
-# The hooks Property
-
 - Type: `Object`
 
 > Hooks are [listeners to Nuxt events](/api/internals) that are typically used in Nuxt modules, but are also available in `nuxt.config.js`. [Learn More](/api/internals)

@@ -3,8 +3,6 @@ title: "API: The render Property"
 description: Nuxt.js lets you customize runtime options for rendering pages
 ---
 
-# The render Property
-
 > Nuxt.js lets you customize runtime options for rendering pages
 
 ## bundleRenderer

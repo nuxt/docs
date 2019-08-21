@@ -3,8 +3,6 @@ title: 'API: The plugins Property'
 description: 'Use vue.js plugins with the plugins option of Nuxt.js.'
 ---
 
-# The plugins Property
-
 **Note**: Since Nuxt.js 2.4, `mode` has been introduced as option of `plugins` to specify plugin type, possible value are: `client` or `server`. `ssr: false` will be adapted to `mode: 'client'` and deprecated in next major release.
 
 - Type: `Array`

@@ -3,10 +3,7 @@ title: "API: The <client-only> Component"
 description: Render a component only on client-side, and display a placeholder text on server-side.
 ---
 
-# The &lt;client-only&gt; Component
-
 > This component is used to purposely render a component only on client-side.
-
 
 <div class="Alert Alert--orange">
 

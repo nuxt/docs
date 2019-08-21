@@ -3,8 +3,6 @@ title: "API: nuxt.renderAndGetWindow(url, options)"
 description: Get the `window` from a given URL of a Nuxt.js Application.
 ---
 
-# nuxt.renderAndGetWindow(url, options = {})
-
 - Type: `Function`
 - Argument: `String`
   1. `String`: URL to render

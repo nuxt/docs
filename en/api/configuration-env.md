@@ -3,8 +3,6 @@ title: "API: The env Property"
 description: Share environment variables between client and server.
 ---
 
-# The env Property
-
 - Type: `Object`
 
 > Nuxt.js lets you create environment variables that will be shared for the client and server-side.
