@@ -88,6 +88,7 @@
           { "to": "#introduction", "name": "Introduction" },
           { "to": "#list-of-nuxt-js-modules", "name": "List of Nuxt.js modules" },
           { "to": "#write-a-basic-module", "name": "Write a basic Module" },
+          { "to": "#build-only-modules", "name": "Build-only Modules" },
           { "to": "#async-modules", "name": "Async Modules" },
           { "to": "#common-snippets", "name": "Common Snippets" },
           { "to": "#run-tasks-on-specific-hooks", "name": "Run Tasks on Specific hooks" },
@@ -105,12 +106,7 @@
         ]
       },
       {
-        "to": "/typescript", "name": "TypeScript Support",
-        "contents": [
-          { "to": "#get-started", "name": "Get started" },
-          { "to": "#from-javascript-to-typescript", "name": "From JavaScript to TypeScript" },
-          { "to": "#linting-with-eslint", "name": "Linting with ESLint" }
-        ]
+        "to": "/typescript", "name": "TypeScript Support"
       },
       {
         "to": "/commands", "name": "Commands and Deployment",
