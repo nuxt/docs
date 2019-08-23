@@ -92,7 +92,7 @@ export default {
 ```
 
 The path to the fallback HTML file. It should be set as the error page, so that also unknown routes are rendered via Nuxt.
-If set to `true`, it will render as `404.html`.
+If unset or set to a falsy value, the filename of the fallback HTML file will be `200.html`. If set to `true`, the file will be rendered as `404.html`. In all other cases the filename you provided will be used.
 
 *Note: Multiple services (e.g. Netlify) detect a `404.html` automatically.*
 
