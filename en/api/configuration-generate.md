@@ -81,7 +81,7 @@ export default {
 ## fallback
 
 - Type: `String` or `Boolean`
-- Default: `'200.html'`
+- Default: `200.html`
 
 ```js
 export default {
@@ -91,9 +91,11 @@ export default {
 }
 ```
 
-The path to the SPA fallback. This file can be used when doing deploys of generated sites to static hosting. It falls back to `mode: 'spa'` when a route isn't generated.
+The path to the fallback HTML file. It should be set as the error page, so that also unknown routes are rendered via Nuxt.
+If set to `true`, it will render as `404.html`.
 
-_Note: this option could be useful using [Netlify](https://netlify.com) or any static hosting using HTML fallbacks._
+*Note: Multiple services (e.g. Netlify) detect a `404.html` automatically.*
+
 
 ## interval
 
