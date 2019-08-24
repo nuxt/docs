@@ -81,7 +81,7 @@ export default {
 ## fallback
 
 - Type: `String` or `Boolean`
-- Default: `'200.html'`
+- Default: `200.html` if left unset or false and `404.html` if set to true
 
 ```js
 export default {
@@ -91,9 +91,30 @@ export default {
 }
 ```
 
-The path to the SPA fallback. This file can be used when doing deploys of generated sites to static hosting. It falls back to `mode: 'spa'` when a route isn't generated.
+The path to the fallback HTML file. It should be set as the error page, so that also unknown routes are rendered via Nuxt.
+If unset or set to a falsy value, the name of the fallback HTML file will be `200.html`. If set to `true`, the filename will be `404.html`. If you provide a string as a value, it will be used instead.
 
-_Note: this option could be useful using [Netlify](https://netlify.com) or any static hosting using HTML fallbacks._
+If running a SPA with all pages not generated then it is best to fallback to 200.html, as it's the only file necessary as no other routes are generated.
+
+```js
+fallback: false
+```
+
+If working with statically generated pages then it is best to fallback to 404.html for error pages and for those covered by [excludes](https://nuxtjs.org/api/configuration-generate#exclude) (the files that you do not want generated as static pages).
+
+```js
+fallback: true
+```
+
+However, Nuxt allows you to configure any page you like so if you don't want to use the 200.html or 404.html you can add a string and then you just have to make sure you redirect to that page instead. This is of course not necessary and is best to redirect to 200.html/404.html
+
+```js
+fallback: 'fallbackPage.html' 
+```
+
+ *Note: Multiple services (e.g. Netlify) detect a `404.html` automatically.*
+ 
+ *Note: If running on apache you will need to create a .htaccess file with a redirect of 404 to 404.html.*
 
 ## interval
 
