@@ -18,7 +18,7 @@ export default {
 }
 ```
 
-If you want to setup watch for specific query strings, set `watchQuery: []`.
+If you want to setup watch for specific query strings, use an array with the strings to watch as value, for example:
 
 ```js
 // Enable for route includes `page` query string
