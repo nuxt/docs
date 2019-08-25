@@ -253,7 +253,7 @@ Starting from v2.9.0, you can use a file to overwrite the router scrollBehavior,
 
 </div>
 
-You can see Nuxt default `router.scrollBehavior.js` file here: [packages/vue-app/template/router.scrollBehavior.js](https://github.com/nuxt/nuxt.js/blob/feat/dev/packages/vue-app/template/router.scrollBehavior.js).
+You can see Nuxt default `router.scrollBehavior.js` file here: [packages/vue-app/template/router.scrollBehavior.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/router.scrollBehavior.js).
 
 Example of forcing the scroll position to the top for every routes:
 
