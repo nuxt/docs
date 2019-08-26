@@ -99,6 +99,22 @@ Please refer to [modules configuration](/api/configuration-modules) docs for mor
 
 Not all modules will do everything synchronous. For example you may want to develop a module which needs fetching some API or doing async IO. For this, Nuxt supports async modules which can return a Promise or call a callback.
 
+## Build-only Modules
+
+Usually, modules are only required during development and build time. Using `buildModules` helps to make production startup faster and also significantly decreasing `node_modules` size for production deployments. If you are a module author, It is highly recommended to suggest users installing your package as a `devDependency` and use `buildModules` instead of `modules` for `nuxt.config.js`.
+
+You module is a `buildModule` unless:
+- It is providing a serverMiddleware
+- It has to register a Node.js runtime hook (Like sentry)
+- It is affecting vue-renderer behavior or using a hook from `server:` or `vue-renderer:` namespace
+- Anything else that is outside of webpack scope (Hint: plugins and templates are compiled and are in webpack scope)
+
+<div class="Alert Alert--orange">
+
+<b>NOTE:</b> If you are going to offer using <code>buildModules</code> please mention that this feature is only available since Nuxt <b>v2.9</b>. Older users should upgrade Nuxt or use the <code>modules</code> section.
+
+</div>
+
 ### Use async/await
 
 ```js
