@@ -51,4 +51,4 @@ description: Render a component only on client-side, and display a placeholder t
 </template>
 ```
 
-This component is a imported from [egoist/vue-client-only](https://github.com/egoist/vue-client-only). Thanks [@egoist](https://github.com/egoist)!
+This component is imported from [egoist/vue-client-only](https://github.com/egoist/vue-client-only). Thanks [@egoist](https://github.com/egoist)!
