@@ -77,6 +77,32 @@ export default {
 
 The schema of the route should respect the [vue-router](https://router.vuejs.org/en/) schema.
 
+<div class="Alert Alert--orange">
+
+<b>Warning:</b> when adding routes that use [Named Views](/guide/routing#named-views), don't forget to add the corresponding `chunkNames` of named `components`.
+
+</div>
+
+`nuxt.config.js`
+```js
+export default {
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        path: '/users/:id',
+        components: {
+          default: resolve(__dirname, 'pages/users'), // or routes[index].component
+          modal: resolve(__dirname, 'components/modal.vue')
+        },
+        chunkNames: {
+          modal: 'components/modal'
+        }
+      })
+    }
+  }
+}
+```
+
 ## fallback
 
 - Type: `boolean`
