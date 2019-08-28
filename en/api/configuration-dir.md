@@ -11,6 +11,7 @@ description: Define the custom directories for your Nuxt.js application
 ```js
 {
   assets: 'assets',
+  app: 'app',
   layouts: 'layouts',
   middleware: 'middleware',
   pages: 'pages',
@@ -27,6 +28,7 @@ Example (`nuxt.config.js`):
 export default {
   dir: {
     assets: 'custom-assets',
+    app: 'custom-app',
     layouts: 'custom-layouts',
     middleware: 'custom-middleware',
     pages: 'custom-pages',

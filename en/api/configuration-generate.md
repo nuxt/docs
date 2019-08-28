@@ -83,7 +83,17 @@ export default {
 - Type: `String` or `Boolean`
 - Default: `'200.html'`
 
+```js
+export default {
+  generate: {
+    fallback: true
+  }
+}
+```
+
 The path to the SPA fallback. This file can be used when doing deploys of generated sites to static hosting. It falls back to `mode: 'spa'` when a route isn't generated.
+
+_Note: this option could be useful using [Netlify](https://netlify.com) or any static hosting using HTML fallbacks._
 
 ## interval
 
@@ -270,4 +280,4 @@ export default {
 ```
 
 
-_Note: this option could be useful using [Netlify](https://netlify.com) or any static hosting using HTML fallbacks._
+

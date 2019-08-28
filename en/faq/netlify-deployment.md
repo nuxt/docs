@@ -35,7 +35,23 @@ Press the _"New site from Git"_ button on the Netlify dashboard. Authenticate wi
 1. __Build command:__ `npm run build`
 1. __Publish directory:__ `dist`
 
-For a single page app there is a problem with refresh as by default on netlify the site redirects to *"404 not found"* this can be [prevented](https://www.netlify.com/docs/redirects/#rewrites-and-proxying) by configuring redirects. There is a module for that [nuxt-netlify](https://www.bazzite.com/docs/nuxt-netlify) which helps to configure both headers and redirects of the SPA .
+For a single page app there is a problem with refresh as by default on netlify the site redirects to *"404 not found"*. For any pages that are not generated they will fallback to SPA mode and then if you refresh or share that link you will get Netlify's 404 page.
+
+The easiest way to fix this is by adding a [generate property](https://nuxtjs.org/api/configuration-generate#fallback) in your `nuxt.config` and setting `fallback: true`. Then it will fallback to the 200.html when in SPA mode.
+
+```js
+export default {
+  generate: {
+    fallback: false
+  }
+}
+```
+
+If however you want to automatically apply headers and redirects of the SPA then there is a module for that, this is especially useful for when you have custom headers/redirects (in a _headers or_redirects file):
+
+[netlify-files-module](https://github.com/nuxt-community/netlify-files-module)
+
+> For more information on Netlify redirects see the [Netlify docs](https://www.netlify.com/docs/redirects/#rewrites-and-proxying). 
 
 > For simple reference on netlify redirects read blog [post](https://www.netlify.com/blog/2019/01/16/redirect-rules-for-all-how-to-configure-redirects-for-your-static-site) by Divya Sasidharan
 

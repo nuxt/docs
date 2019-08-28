@@ -1,27 +1,27 @@
 ---
 title: アップグレード
-description: Upgrading Nuxt.js is quick, but more involved than updating your package.json
+description: "Nuxt.js のアップグレードは即座にできますが、package.json をアップグレードするよりも複雑です。"
 ---
 
-> Upgrading Nuxt.js is quick, but more involved than updating your package.json
+> Nuxt.js のアップグレードは即座にできますが、package.json をアップグレードするよりも複雑です。
 
-## Getting Started
+## はじめる
 
-1. Check the [release notes](/guide/release-notes) for the version you wish to upgrade to to see if there are any additional instructions for that particular release.
-2. Update the version specified for the `nuxt` package in your `package.json` file.
+1. アップグレードしたいバージョンの[リリースノート](/guide/release-notes)を確認し、その特定のリリースに関する追加の手順があるかどうかを確認します。
+2. `package.json` ファイルの `nuxt` パッケージに指定されたバージョンを更新します。
 
-After this step instructions vary depending upon whether you are using Yarn or NPM. _[Yarn](https://yarnpkg.com/en/docs/usage) is the preferred package manager for working with Nuxt as it is the development tool which tests have been written against._
+このステップの後、Yarn または NPM のどちらを使用しているかによって手順が異なります。_[Yarn](https://yarnpkg.com/ja/docs/usage) はテストが書かれている開発ツールなので、Nuxt を扱う上で推奨するパッケージマネージャーです。_
 
 ## Yarn
 
-3. remove `yarn.lock` file
-4. remove `node_modules` directory
-5. Run the `yarn` command
-6. After installation has completed and you have run your tests consider upgrading other dependencies as well. The `yarn outdated` command can be used.
+3. `yarn.lock` ファイルを削除します
+4. `node_modules` ディレクトリを削除します
+5. `yarn` コマンドを実行します
+6. インストールが完了し、テストを実行した後は、他の依存関係のアップグレードも検討してください。`yarn outdated` コマンドが使用できます。
 
 ## NPM
 
-3. remove `package-lock.json` file
-4. remove `node_modules` directory
-5. Run the `npm install` command
-6. After installation has completed and you have run your tests consider upgrading other dependencies as well. The `npm outdated` command can be used.
+3. `package-lock.json` ファイルを削除します
+4. `node_modules` ディレクトリを削除します
+5. `npm install` コマンドを実行します
+6. インストールが完了し、テストを実行した後は、他の依存関係のアップグレードも検討してください。`npm outdated` コマンドが使用できます。
