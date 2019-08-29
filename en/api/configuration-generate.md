@@ -112,10 +112,8 @@ However, Nuxt allows you to configure any page you like so if you don't want to 
 fallback: 'fallbackPage.html' 
 ```
 
- *Note: Multiple services (e.g. Netlify) detect a `404.html` automatically.*
+ *Note: Multiple services (e.g. Netlify) detect a `404.html` automatically. For those that don't you will need to manually create a redirect file that redirects `404` to `404.html` * 
  
- *Note: If running on apache you will need to create a .htaccess file with a redirect of 404 to 404.html.*
-
 ## interval
 
 - Type: `Number`
