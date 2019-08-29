@@ -132,7 +132,7 @@ Interval between two render cycles to avoid flooding a potential API with API ca
 
 - Type: `Array`
 
-[Dynamic routes](/guide/routing#dynamic-routes) are ignored by the `generate` command (npm run generate). Nuxt does not know what these routes will be so it can't generate them.
+[Dynamic routes](/guide/routing#dynamic-routes) are ignored by the `generate` command (yarn generate). Nuxt does not know what these routes will be so it can't generate them.
 
 Example:
 
