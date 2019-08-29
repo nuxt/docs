@@ -81,7 +81,7 @@ export default {
 ## fallback
 
 - Type: `String` or `Boolean`
-- Default: `200.html` if left unset or false and `404.html` if set to true
+- Default: `200.html`
 
 ```js
 export default {
