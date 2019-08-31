@@ -64,7 +64,7 @@ export default {
 ```js
 export default function (req, res, next) {
     // req は Node.js の HTTPリクエストオブジェクトです
-    console.log(req.path)
+    console.log(req.url)
 
     // res は Node.js の HTTPレスポンスオブジェクトです
 
