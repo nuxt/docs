@@ -47,7 +47,7 @@ export default {
 }
 ```
 
-ただし、SPA のヘッダーとリダイレクトを自動的に適用する場合は、そのためのモジュールが用意されています。これはカスタムヘッダー/リダイレクト（ _headers または _redirects ファイル）がある場合に特に便利です：
+ただし、SPA のヘッダーとリダイレクトを自動的に適用する場合は、そのためのモジュールが用意されています。これはカスタムヘッダー/リダイレクト（_headers または _redirects ファイル）がある場合に特に便利です：
 
 [netlify-files-module](https://github.com/nuxt-community/netlify-files-module)
 
