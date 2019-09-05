@@ -429,4 +429,18 @@ If you want to transpile specific dependencies with Babel, you can add them in `
   }
   ```
 
+## followSymlinks
+
+> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example. 
+
+- Type: `Boolean`
+
+```js
+export default {
+  build: {
+    followSymlinks: false
+  }
+}
+```
+
 > Specify the [Vue Loader Options](https://vue-loader.vuejs.org/options.html).
