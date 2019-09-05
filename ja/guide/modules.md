@@ -88,13 +88,23 @@ export default {
 
 すべてのモジュールが同期的に処理を行うわけではありません。例えばどこかの API からフェッチしたり IO を非同期的に扱うモジュールを開発したい場合もあるでしょう。このような場合のために Nuxt は Promise を返したりコールバックを呼び出す非同期モジュールをサポートしています。
 
-### async/await を利用する
+## ビルド専用モジュール
+
+通常、モジュールは開発時とビルド時のみ必要です。`buildModules` を使用すると、本番環境の起動を高速化し、本番環境のデプロイで `node_modules` のサイズを大幅に削減することができます。あなたがモジュールの作成者である場合、パッケージを `devDependency` としてインストールし、`nuxt.config.js` の `modules` ではなく `buildModules` を使用することをお勧めします。
+
+次の場合を除き、モジュールは `buildModule` です：
+- serverMiddleware を提供している
+- Node.js ランタイムフックを登録する必要がある（sentry のように）
+- vue-renderer の動作に影響を与えているか、`server:` または `vue-renderer:` ネームスペースのフックを使用している
+- webpack スコープ外にあるその他のもの（ヒント：プラグインとテンプレートはコンパイルされ、webpack スコープ内にあります）
 
 <div class="Alert Alert--orange">
 
-`async`/`await` は Node.js 7.2 より上のバージョンでしかサポートされていないことに注意してください。そのため、あなたがモジュール開発者であれば、少なくとも `async`/`await` を使用しているかどうかをユーザーに知らせてください。大きめの非同期モジュールを作成したり、レガシーサポートを行いやすくするため、バンドラを利用して古い Node.js と互換性を持たせるよう変換するか、Promise メソッドに変換するかを選ぶことができます。
+<b>注意：</b> <code>buildModules</code> を使用する場合、この機能は Nuxt <b>v2.9</b> 以降でのみ使用することが可能です。 古いユーザーは Nuxt をアップグレードするか、<code>modules</code> セクションを使用する必要があります。
 
 </div>
+
+### async/await を利用する
 
 ```js
 import fse from 'fs-extra'
