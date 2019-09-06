@@ -157,7 +157,6 @@ pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
 
 NOTE: `script-src` ポリシーに `'unsafe-inline'` が含まれている場合、CSP のハッシュは追加されません。これは、ハッシュが存在する場合、ブラウザが `'unsafe-inline'` を無視するためです。CSPv1 の後方互換性のために `'unsafe-inline'` とハッシュの両方の定義が必要な場合は、オプションの `unsafeInlineCompatiblity` を`true` に設定します。
 
-
 例 (`nuxt.config.js`)
 
 ```js
