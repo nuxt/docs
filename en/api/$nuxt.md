@@ -1,13 +1,13 @@
 ---
 title: "$nuxt: The NuxtJS helper"
-description: $nuxt is an helper focused to improve the user experience of your users.
+description: $nuxt is a helper designed to improve user experience.
 ---
 
-`$nuxt`is an helper focused to improve the user experience of your users.
+`$nuxt` is a helper designed to improve user experience.
 
 - `isOffline`
   - Type: `Boolean`
-  - Description: `true` when the user internet connection becomes offline
+  - Description: `true` when the user's internet connection becomes offline
 - `isOnline`
   - Type: `Boolean`
   - Description: Opposite of `isOffline`

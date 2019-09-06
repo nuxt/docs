@@ -11,6 +11,7 @@ description: カスタムディレクトリを定義します。
 ```js
 {
   assets: 'assets',
+  app: 'app',
   layouts: 'layouts',
   middleware: 'middleware',
   pages: 'pages',
@@ -27,6 +28,7 @@ description: カスタムディレクトリを定義します。
 export default {
   dir: {
     assets: 'custom-assets',
+    app: 'custom-app',
     layouts: 'custom-layouts',
     middleware: 'custom-middleware',
     pages: 'custom-pages',
