@@ -95,10 +95,6 @@ export default {
 We then tell Nuxt to load some specific modules for a project with optional parameters as options.
 Please refer to [modules configuration](/api/configuration-modules) docs for more info!
 
-## Async Modules
-
-Not all modules will do everything synchronous. For example you may want to develop a module which needs fetching some API or doing async IO. For this, Nuxt supports async modules which can return a Promise or call a callback.
-
 ## Build-only Modules
 
 Usually, modules are only required during development and build time. Using `buildModules` helps to make production startup faster and also significantly decreasing `node_modules` size for production deployments. If you are a module author, It is highly recommended to suggest users installing your package as a `devDependency` and use `buildModules` instead of `modules` for `nuxt.config.js`.
@@ -114,6 +110,10 @@ Your module is a `buildModule` unless:
 <b>NOTE:</b> If you are going to offer using <code>buildModules</code> please mention that this feature is only available since Nuxt <b>v2.9</b>. Older users should upgrade Nuxt or use the <code>modules</code> section.
 
 </div>
+
+## Async Modules
+
+Not all modules will do everything synchronous. For example you may want to develop a module which needs fetching some API or doing async IO. For this, Nuxt supports async modules which can return a Promise or call a callback.
 
 ### Use async/await
 
