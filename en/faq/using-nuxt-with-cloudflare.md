@@ -3,8 +3,6 @@ title: Using Nuxt with Cloudflare
 description: What needs to be considered when using Nuxt with Cloudflare
 ---
 
-# What needs to be considered when using Nuxt with Cloudflare?
-
 In most cases, Nuxt can work with third party content that is not generated or created by Nuxt itself. But sometimes such content can cause problems, especially Cloudflare's "Minification and Security Options".
 
 Accordingly, you should make sure that the following options are unchecked / disabled in Cloudflare. Otherwise, unnecessary re-rendering or hydration errors could impact your production application.

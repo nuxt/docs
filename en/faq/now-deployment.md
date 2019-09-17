@@ -1,9 +1,7 @@
 ---
-title: Now Deployment
+title: How to deploy with Now?
 description: How to deploy Nuxt.js app with Now?
 ---
-
-# How to deploy with Now?
 
 ![nuxt-now-builder](https://user-images.githubusercontent.com/904724/61308402-7a752d00-a7f0-11e9-9502-23731ccd00fd.png)
 
