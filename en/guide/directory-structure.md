@@ -55,7 +55,7 @@ The `plugins` directory contains your Javascript plugins that you want to run be
 
 ### The Static Directory
 
-The `static` directory is directly mapped to the server root (`/static/robots.txt` is accessible under `http://localhost:3000/robots.txt`) and contains files that likely won't be changed (i.e. the favicon)
+The `static` directory is directly mapped to the server root (`/static/robots.txt` is accessible under `http://localhost:3000/robots.txt`) and contains files that likely won't be changed (e.g. the favicon)
 
 **Example:** `/static/robots.txt` is mapped as `/robots.txt`
 
