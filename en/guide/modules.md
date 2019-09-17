@@ -117,12 +117,6 @@ You module is a `buildModule` unless:
 
 ### Use async/await
 
-<div class="Alert Alert--orange">
-
-Be aware that `async`/`await` is only supported in Node.js > 7.2. So if you are a module developer at least warn users about that if using them. For heavily async modules or better legacy support you can use either a bundler to transform it for older Node.js compatibility or a promise method.
-
-</div>
-
 ```js
 import fse from 'fs-extra'
 
