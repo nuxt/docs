@@ -103,7 +103,7 @@ Not all modules will do everything synchronous. For example you may want to deve
 
 Usually, modules are only required during development and build time. Using `buildModules` helps to make production startup faster and also significantly decreasing `node_modules` size for production deployments. If you are a module author, It is highly recommended to suggest users installing your package as a `devDependency` and use `buildModules` instead of `modules` for `nuxt.config.js`.
 
-You module is a `buildModule` unless:
+Your module is a `buildModule` unless:
 - It is providing a serverMiddleware
 - It has to register a Node.js runtime hook (Like sentry)
 - It is affecting vue-renderer behavior or using a hook from `server:` or `vue-renderer:` namespace
