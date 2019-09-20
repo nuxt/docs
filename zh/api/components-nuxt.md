@@ -58,3 +58,17 @@ export default {
   - 默认: `default`
 
 查看例子请点击： [命名视图例子](/examples/named-views).
+- keep-alive: `boolean`
+  - 添加该属性可以缓存页面组件
+  - 默认值: true
+
+- keep-alive-props: `any`
+  - 可以设置对应的原生keep-alive组件的属性，包括include,exclude,max
+  示例：
+  {
+    include: ['ComponentName'],
+    exlcude: ['ComponentName'],
+    max: 3
+  }
+  
+
