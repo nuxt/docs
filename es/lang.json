@@ -1,6 +1,6 @@
 {
-  "iso": "es",
-  "docVersion": "2.3.X",
+  "iso": "en",
+  "docVersion": "2.9.X",
   "links": {
     "api": "API",
     "blog": "Blog",
@@ -10,22 +10,22 @@
     "examples": "Ejemplos",
     "ecosystem": "Ecosistema",
     "faq": "FAQ",
-    "get_started": "Comenzando",
+    "get_started": "¡Comienza Ahora!",
     "github": "GitHub",
     "guide": "Guia",
     "homepage": "Pagina principal",
     "live_demo": "Demo en vivo",
     "live_edit": "Editar en vivo",
-    "tidelift_short": "GET PROFESSIONAL SUPPORT",
-    "official_support": "GET OFFICIAL SUPPORT ⛑",
-    "tidelift": "GET PROFESSIONAL SUPPORT FOR NUXT",
+    "tidelift_short": "OBTEN SOPORTE PROFESIONAL",
+    "official_support": "OBTEN SOPORTE OFICIAL ⛑",
+    "tidelift": "OBTEN SOPORTE PROFESIONAL PARA NUXT",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "Trabajos en Vue.js"
   },
   "text": {
     "an_error_occurred": "Ha ocurrido un error",
-    "api_page_not_found": "La pagina de la API no se encuentra",
+    "api_page_not_found": "La pagina de la API no se ha encontrado",
     "example_file": "Archivos de ejemplo",
     "please_wait": "Por favor espere...",
     "please_define_title": "Por favor defina un titulo en la pagina delantera",
@@ -34,41 +34,41 @@
     "version": "Version"
   },
   "homepage": {
-    "title": "Aplicaciónes VueJs universales",
+    "title": "El Framework de Vue.js",
     "meta": {
-      "title": "Nuxt.js - Aplicaciones VueJs universales",
-      "description": "Nuxt es un framework minimalista para crear aplicaciones Vue.js que se renderizables del lado del servidor, division de codigo, recarga en caliente, generacion estatica y mucho mas!"
+      "title": "Nuxt.js - El Framework de Vue.js",
+      "description": "Nuxt.js preestablece toda la configuración necesaria para hacer tu desarrollo de una aplicación de Vue.js disfrutable. Nuxt.js puede producir aplicaciones Universales, de Página única y Estáticas Generadas."
     },
     "welcome": {
-      "app_types_prefix": "For ",
-      "app_types": ["Universal Applications", "Static Generated Applications", "Single Page Applications", "Desktop Applications", "Mobile Applications", "Progressive Web Apps"],
+      "app_types_prefix": "Para ",
+      "app_types": ["Aplicaciones Universales", "Aplicaciones Estáticas Generadas", "Aplicaciones de una Página (SPA)", "Aplicaciones de Escritorio", "Aplicaciones Móviles", "Aplicaciones Web Progresivas (PWA)"],
       "app_types_suffix": "."
     },
-    "codesandbox_title": "Play with Nuxt.js online",
-    "codesandbox_open": "Open on CodeSandBox.io",
-    "codesandbox_examples": "See more examples",
-    "backer_partners": "Partners",
-    "backer_become_a_partner": "Become A Partner",
-    "backer_sponsors": "Sponsors",
-    "backer_become_a_sponsor": "Become A Sponsor",
+    "codesandbox_title": "Juega con Nuxt.js en línea",
+    "codesandbox_open": "Abrir en CodeSandBox.io",
+    "codesandbox_examples": "Ver mas ejemplos",
+    "backer_partners": "Socios",
+    "backer_become_a_partner": "Conviértete en un Socio",
+    "backer_sponsors": "Patrocinadores",
+    "backer_become_a_sponsor": "Conviértete en un Patrocinador",
     "backer_backers": "Nuxters",
-    "backer_become_a_backer": "Become A Nuxter",
-    "backer_foundations": "Foundations"
+    "backer_become_a_backer": "Conviértete en Nuxter",
+    "backer_foundations": "Fundaciones"
   },
   "sponsors": {
-    "title": "Sponsors",
-    "become": "Support us and",
-    "become_partner": "become a partner"
+    "title": "Patrocinadores",
+    "become": "Apoyanos y",
+    "become_partner": "conviértete en socio"
   },
   "footer": {
-    "authors": "Made by Chopin Brothers"
+    "authors": "Hecho por los Hermanos Chopin"
   },
   "guide": {
-    "release_notes": "Notas de la version",
-    "contribute": "Ha atrapado algun error o desea contribuir en la documentación?",
-    "edit_on_github": "Edite esta pagina en GitHub"
+    "release_notes": "Notas de Lanzamiento",
+    "contribute": "¿Encontrontráste un error o quisieras contribuir a la documentación?",
+    "edit_on_github": "¡Edita esta página en GitHub!"
   },
   "examples": {
-    "source_code": "Codigo Fuente"
+    "source_code": "Código Fuente"
   }
 }
