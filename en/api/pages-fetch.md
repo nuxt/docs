@@ -31,7 +31,7 @@ Example of `pages/index.vue`:
 <script>
 export default {
   fetch ({ store, params }) {
-    return axios.get('http://my-api/stars')
+    return $axios.$get('http://my-api/stars')
     .then((res) => {
       store.commit('setStars', res.data)
     })
@@ -50,7 +50,7 @@ You can also use `async`/`await` to make your code cleaner:
 <script>
 export default {
   async fetch ({ store, params }) {
-    let { data } = await axios.get('http://my-api/stars')
+    let { data } = await $axios.$get('http://my-api/stars')
     store.commit('setStars', data)
   }
 }
@@ -77,7 +77,7 @@ export default {
 // ...
 export const actions = {
   async GET_STARS ({ commit }) {
-    const { data } = await axios.get('http://my-api/stars')
+    const { data } = await $axios.$get('http://my-api/stars')
     commit('SET_STARS', data)
   }
 }
