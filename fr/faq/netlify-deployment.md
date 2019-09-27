@@ -3,8 +3,6 @@ title: Déploiement sur Netlify
 description: Comment déployer une application Nuxt.js sur Netlify ?
 ---
 
-# Comment déployer une application Nuxt.js sur Netlify ?
-
 Déployer sur [Netlify](https://www.netlify.com) est une option sans friction pour obtenir en ligne rapidement un site Nuxt.js __généré statiquement__.
 
 Le coeur du processus tire parti de la commande `nuxt generate` lors du déploiement pour créer une version statique de votre application Nuxt.js dans le répertoire `dist`. Le contenu de ce répertoire peut ensuite être déployé sur une URL de production.
