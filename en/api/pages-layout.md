@@ -3,8 +3,6 @@ title: "API: The layout Property"
 description: Every file (first level) in the `layouts` directory will create a custom layout accessible with the layout property in the page component.
 ---
 
-# The layout Property
-
 > Every file (first level) in the layouts directory will create a custom layout accessible with the layout property in the page component.
 
 - **Type:** `String` or `Function` (default: `'default'`)

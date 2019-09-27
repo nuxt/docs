@@ -1,11 +1,9 @@
 ---
-title: "AWS: S3+Cloudfront Deployment"
+title: "How to Deploy on AWS w/ S3 and Cloudfront?"
 description: Static Hosting on AWS with S3 and Cloudfront
 ---
 
-# How to Deploy on AWS w/ S3 and Cloudfront
-
-AWS is Amazon Web Services.  
+AWS stands for Amazon Web Services.  
 S3 is their static storage which can be configured for Static Site Hosting.
 Cloudfront is their CDN (content delivery network)
 
