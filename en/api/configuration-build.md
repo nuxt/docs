@@ -330,14 +330,6 @@ HTML files created during the build process (will be applied for *all modes*).
   },
   scss: {},
   stylus: {},
-  ts: {
-    transpileOnly: true,
-    appendTsSuffixTo: [/\.vue$/]
-  },
-  tsx: {
-    transpileOnly: true,
-    appendTsxSuffixTo: [/\.vue$/]
-  },
   vueStyle: {}
 }
 ```

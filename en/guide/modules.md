@@ -103,7 +103,7 @@ Not all modules will do everything synchronous. For example you may want to deve
 
 Usually, modules are only required during development and build time. Using `buildModules` helps to make production startup faster and also significantly decreasing `node_modules` size for production deployments. If you are a module author, It is highly recommended to suggest users installing your package as a `devDependency` and use `buildModules` instead of `modules` for `nuxt.config.js`.
 
-You module is a `buildModule` unless:
+Your module is a `buildModule` unless:
 - It is providing a serverMiddleware
 - It has to register a Node.js runtime hook (Like sentry)
 - It is affecting vue-renderer behavior or using a hook from `server:` or `vue-renderer:` namespace
@@ -116,12 +116,6 @@ You module is a `buildModule` unless:
 </div>
 
 ### Use async/await
-
-<div class="Alert Alert--orange">
-
-Be aware that `async`/`await` is only supported in Node.js > 7.2. So if you are a module developer at least warn users about that if using them. For heavily async modules or better legacy support you can use either a bundler to transform it for older Node.js compatibility or a promise method.
-
-</div>
 
 ```js
 import fse from 'fs-extra'

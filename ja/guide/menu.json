@@ -88,6 +88,7 @@
           { "to": "#はじめに", "name": "はじめに" },
           { "to": "#nuxt-js-公式モジュール一覧", "name": "Nuxt.js 公式モジュール一覧" },
           { "to": "#基本的なモジュールを書く", "name": "基本的なモジュールを書く" },
+          { "to": "#ビルド専用モジュール", "name": "ビルド専用モジュール" },
           { "to": "#非同期モジュール", "name": "非同期モジュール" },
           { "to": "#共通のスニペット", "name": "共通のスニペット" },
           { "to": "#特定のフックでタスクを実行する", "name": "特定のフックでタスクを実行する" },
@@ -105,12 +106,7 @@
         ]
       },
       {
-        "to": "/typescript", "name": "TypeScript Support",
-        "contents": [
-          { "to": "#はじめる", "name": "はじめる" },
-          { "to": "#JavaScript-から-TypeScript-へ", "name": "JavaScript から TypeScript へ" },
-          { "to": "#ESLint-を使った-Linting", "name": "ESLint を使った Linting" }
-        ]
+        "to": "/typescript", "name": "TypeScript サポート"
       },
       {
         "to": "/commands", "name": "コマンドとデプロイ",

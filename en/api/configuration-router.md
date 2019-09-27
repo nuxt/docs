@@ -75,6 +75,32 @@ export default {
 
 The schema of the route should respect the [vue-router](https://router.vuejs.org/en/) schema.
 
+<div class="Alert Alert--orange">
+
+<b>Warning:</b> when adding routes that use [Named Views](/guide/routing#named-views), don't forget to add the corresponding `chunkNames` of named `components`.
+
+</div>
+
+`nuxt.config.js`
+```js
+export default {
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        path: '/users/:id',
+        components: {
+          default: resolve(__dirname, 'pages/users'), // or routes[index].component
+          modal: resolve(__dirname, 'components/modal.vue')
+        },
+        chunkNames: {
+          modal: 'components/modal'
+        }
+      })
+    }
+  }
+}
+```
+
 ## fallback
 
 - Type: `boolean`
@@ -251,7 +277,7 @@ Starting from v2.9.0, you can use a file to overwrite the router scrollBehavior,
 
 </div>
 
-You can see Nuxt default `router.scrollBehavior.js` file here: [packages/vue-app/template/router.scrollBehavior.js](https://github.com/nuxt/nuxt.js/blob/feat/dev/packages/vue-app/template/router.scrollBehavior.js).
+You can see Nuxt default `router.scrollBehavior.js` file here: [packages/vue-app/template/router.scrollBehavior.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/router.scrollBehavior.js).
 
 Example of forcing the scroll position to the top for every routes:
 

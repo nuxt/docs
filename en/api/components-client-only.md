@@ -23,7 +23,7 @@ description: Render a component only on client-side, and display a placeholder t
     <client-only placeholder="Loading...">
       <!-- this component will only be rendered on client-side -->
       <comments />
-    </client-side>
+    </client-only>
   </div>
 </template>
 ```
@@ -48,4 +48,4 @@ description: Render a component only on client-side, and display a placeholder t
 </template>
 ```
 
-This component is a imported from [egoist/vue-client-only](https://github.com/egoist/vue-client-only). Thanks [@egoist](https://github.com/egoist)!
+This component is imported from [egoist/vue-client-only](https://github.com/egoist/vue-client-only). Thanks [@egoist](https://github.com/egoist)!

@@ -9,17 +9,17 @@ of the `build` property is a method that accepts two arguments. The first argume
 ```js
 export default {
   build: {
-     extend (config, { isDev, isClient }) {
-       // ..
-       config.module.rules.push(
-          {
-            test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-            loader: 'file-loader',
-          }
-        )
-        // Sets webpack's mode to development if `isDev` is true.
-        if (isDev) config.mode = 'development'
-     }
+    extend (config, { isDev, isClient }) {
+      // ..
+      config.module.rules.push(
+        {
+          test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+          loader: 'file-loader',
+        }
+      )
+      // Sets webpack's mode to development if `isDev` is true.
+      if (isDev) config.mode = 'development'
+    }
   }
 }
 ```

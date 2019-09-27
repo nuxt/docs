@@ -84,7 +84,18 @@ export default {
 - 型: `String` または `Boolean`
 - デフォルト: `'200.html'`
 
+```js
+export default {
+  generate: {
+    fallback: true
+  }
+}
+```
+
 SPA のフォールバックとなるパス。このファイルは、 generate されたサイトを静的サイトホスティングへデプロイする時に利用します。`mode: 'spa'` においてルーティングが存在しない場合、フォールバックされます。
+
+_情報：このオプションは [Netlify](https://netlify.com) や HTML フォールバックを使用している静的ホスティングで使用すると便利です。_
+
 
 ## interval
 
@@ -270,5 +281,3 @@ export default {
 ---| products/
 -----| item.html
 ```
-
-_情報: このオプションは、[Netlify](https://netlify.com) をはじめとする、 HTML によるフォールバックを利用する静的サイトホスティングサイトにおいて利用されます。_

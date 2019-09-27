@@ -238,7 +238,7 @@ actions: {
 }
 ```
 
-## Mode stric de Vuex
+## Mode strict de Vuex
 
 Le mode strict est activé par défaut sur le mode développement et est désactivé par défaut sur le mode production. Désactivez le mode strict en développement en procédent comme ci-après dans `store/index.js`:
 
