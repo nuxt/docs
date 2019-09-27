@@ -1,9 +1,7 @@
 ---
-title: Azure Portal Deployment
+title: How to deploy on Azure Portal?
 description: How to deploy a Nuxt.js application on Azure Portal?
 ---
-
-# How to deploy on Azure Portal
 
 If you are using Azure DevOps and let the build pipeline do its work you and want to store artifacts. Files
 which are prefixed with a `.` must be moved to the artifact folder explicitly. Then you can create an Artifact Archive and 

@@ -1,11 +1,11 @@
 ---
-title: "API: The pageTransition and layoutTransition Properties"
+title: "API: transition Properties"
 description: Set the default properties of the page and layout transitions.
 ---
 
-> Nuxt v2.7.0 introduces key "pageTransition" in favor of the "transition" key to consolidate the naming with layout transition keys.
+## The pageTransition Property
 
-# The pageTransition Property
+> Nuxt v2.7.0 introduces key "pageTransition" in favor of the "transition" key to consolidate the naming with layout transition keys.
 
 - Type: `String` or `Object`
 
@@ -37,7 +37,7 @@ export default {
 
 The transition key in `nuxt.config.js` is used to set the default properties for the page transitions. To learn more about the available keys when the `transition` key is an object, see the [pages transition property](/api/pages-transition#object).
 
-# The layoutTransition Property
+## The layoutTransition Property
 
 - Type: `String` or `Object`
 

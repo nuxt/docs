@@ -3,8 +3,6 @@ title: "API : la méthode validate (EN)"
 description: Nuxt.js vous permet de définir une méthode de validation dans votre composant de route dynamique.
 ---
 
-# La méthode validate (EN)
-
 > Nuxt.js vous permet de définir une méthode de validation dans votre composant de route dynamique.
 
 - **Type:** `Function` ou `Async Function`
@@ -56,16 +54,13 @@ export default {
 }
 ```
 
-You can also throw expected or unexpected errors during validate function execution (EN):
+Vous pouvez aussi émettre une erreur dans la fonction directement pour afficher la page d'erreur :
 
 ```js
 export default {
   async validate ({ params, store }) {
-    // Throws a 500 internal server error with custom message
-    throw new Error('Under Construction!')
+    // Émet une erreur 500 (internal server error) avec un message
+    throw new Error('En construction!')
   }
 }
 ```
-
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>
-

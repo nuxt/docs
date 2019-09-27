@@ -1,9 +1,7 @@
 ---
-title: nginx proxy
+title: Utiliser nginx comme proxy inverse
 description: Comment utiliser nginx en tant que proxy inverse ?
 ---
-
-# Utiliser nginx comme proxy inverse
 
 ```nginx
 map $sent_http_content_type $expires {
