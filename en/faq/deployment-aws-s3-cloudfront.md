@@ -59,10 +59,9 @@ gulpfile.js     -  `gulp deploy` code to push files to S3 and invalidate CloudFr
   3. Configure security access
   4. Setup build script in your project
   
-### 1. AWS: Setup your S3 bucket
-### 2. AWS: Setup your CloudFront Distribution
+### 1. AWS: Setup your S3 bucket and CloudFront Distribution
 
-For steps 1. and 2, follow this [tutorial to setup your S3 and CloudFront](https://reidweb.com/2017/02/06/cloudfront-cdn-tutorial/)
+Please follow this [tutorial to setup your S3 and CloudFront](https://reidweb.com/2017/02/06/cloudfront-cdn-tutorial/)
 
 You should now have this data:
   - AWS_BUCKET_NAME="example.com" 
