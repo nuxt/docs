@@ -332,14 +332,6 @@ manifest の使い方をより理解するためには [webpack のドキュメ�
   },
   scss: {},
   stylus: {},
-  ts: {
-    transpileOnly: true,
-    appendTsSuffixTo: [/\.vue$/]
-  },
-  tsx: {
-    transpileOnly: true,
-    appendTsxSuffixTo: [/\.vue$/]
-  },
   vueStyle: {}
 }
 ```
