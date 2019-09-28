@@ -1,11 +1,9 @@
 ---
-title: "AWS: S3+Cloudfront Deployment"
+title: "How to Deploy on AWS w/ S3 and Cloudfront?"
 description: Static Hosting on AWS with S3 and Cloudfront
 ---
 
-# How to Deploy on AWS w/ S3 and Cloudfront
-
-AWS is Amazon Web Services.  
+AWS stands for Amazon Web Services.  
 S3 is their static storage which can be configured for Static Site Hosting.
 Cloudfront is their CDN (content delivery network)
 
@@ -61,16 +59,15 @@ gulpfile.js     -  `gulp deploy` code to push files to S3 and invalidate CloudFr
   3. Configure security access
   4. Setup build script in your project
   
-### 1. AWS: Setup your S3 bucket
-### 2. AWS: Setup your CloudFront Distribution
+### AWS: Setup your S3 bucket and CloudFront Distribution
 
-For steps 1. and 2, follow this [tutorial to setup your S3 and CloudFront](https://reidweb.com/2017/02/06/cloudfront-cdn-tutorial/)
+Please follow this [tutorial to setup your S3 and CloudFront](https://reidweb.com/2017/02/06/cloudfront-cdn-tutorial/) for step one and two.
 
 You should now have this data:
   - AWS_BUCKET_NAME="example.com" 
   - AWS_CLOUDFRONT="UPPERCASE"
 
-### 3. AWS: Configure security access
+### AWS: Configure security access
 
 For step 3, we need to create a user that can:
   - Update the bucket contents
@@ -123,7 +120,7 @@ You should now have this data:
   - AWS_ACCESS_KEY_ID="key" 
   - AWS_SECRET_ACCESS_KEY="secret" 
 
-### 4. Laptop: Setup your project's build script
+### Laptop: Setup your project's build script
 
 4.1) Create a `deploy.sh` script.  See optional [nvm (node version manager)](https://github.com/creationix/nvm).
 ``` bash

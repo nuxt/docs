@@ -3,19 +3,15 @@ title: "API: The asyncData Method"
 description: You may want to fetch data and render it on the server-side. Nuxt.js adds an `asyncData` method that lets you handle async operations before setting the component data.
 ---
 
-# The asyncData Method
-
 > You may want to fetch data and render it on the server-side. Nuxt.js adds an `asyncData` method that lets you handle async operations before setting the component data.
 
 - **Type:** `Function`
-
 
 <div class="Alert Alert--nuxt-green">
 
 <b>Info:</b> Please visit the [async data guide](/guide/async-data) as well!
 
 </div>
-
 
 `asyncData` is called every time before loading the **page** component and is only available for such.
 It will be called server-side once (on the first request to the Nuxt app) and client-side when navigating to further routes. 

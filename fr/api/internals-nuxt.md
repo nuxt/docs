@@ -3,8 +3,6 @@ title: "API : la classe Nuxt"
 description: La classe cœur Nuxt
 ---
 
-# La classe Nuxt
-
 - Source : **[core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/nuxt.js)**
 
 C'est le conteneur cœur qui permet à tous les modules et classes de communiquer les uns avec les autres. Tous les modules ont accès à l'instance de Nuxt en utilisant `this.nuxt`.

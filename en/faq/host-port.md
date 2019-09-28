@@ -1,9 +1,7 @@
 ---
-title: Host and Port
+title: How to edit host and port?
 description: How to edit host and port with Nuxt.js?
 ---
-
-# How to edit host and port?
 
 By default, Nuxt development server host is `localhost` (only accessible from within the host machine).
 

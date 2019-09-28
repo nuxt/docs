@@ -1,13 +1,11 @@
 ---
-title: External resources
+title: How to use external resources?
 description: How to use external resources with Nuxt.js?
 ---
 
-# How to use external resources?
-
 ## Global Settings
 
-Include your resources in the `nuxt.config.js` file:
+Include your resources in `nuxt.config.js`:
 
 ```js
 export default {

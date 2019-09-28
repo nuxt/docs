@@ -3,8 +3,6 @@ title: Laravel Forge deployment
 description: How to deploy Nuxt.js app with Laravel Forge?
 ---
 
-# Laravel Forge deployment
-
 ## 1- Pre-requisits
 
 Before starting to describe the process of deploying a Nuxt app with Laravel Forge, I will assume that you have already:

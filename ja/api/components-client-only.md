@@ -26,7 +26,7 @@ description: コンポーネントをクライアント側でのみレンダリ�
     <client-only placeholder="Loading...">
       <!-- このコンポーネントは、クライアント側でレンダリングするためだけに使用されます -->
       <comments />
-    </client-side>
+    </client-only>
   </div>
 </template>
 ```
