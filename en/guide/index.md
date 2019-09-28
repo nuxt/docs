@@ -38,7 +38,7 @@ Nuxt.js includes the following to create a rich web application development:
 - [Vue Router](https://router.vuejs.org/en/)
 - [Vuex](https://vuex.vuejs.org/en/) (included only when using the [store option](/guide/vuex-store))
 - [Vue Server Renderer](https://ssr.vuejs.org/en/) (excluded when using [`mode: 'spa'`](/api/configuration-mode))
-- [Vue Mmeta](https://github.com/nuxt/vue-meta)
+- [Vue Meta](https://github.com/nuxt/vue-meta)
 
 A total of only **57kB min+gzip** (60kB with Vuex).
 
