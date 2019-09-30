@@ -1,9 +1,7 @@
 ---
 title: CSS Flash
-description: Pourquoi un flash CSS apparait avec Nuxt.js ?
+description: Pourquoi un flash CSS apparait avec NuxtJS ?
 ---
-
-# Pourquoi un flash CSS apparait ?
 
 ![cssflash](/flash_css.gif)
 

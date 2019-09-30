@@ -1,11 +1,10 @@
 ---
-title: PostCSS plugins
-description: How to add PostCSS plugins?
+title: How to add PostCSS plugins?
+description: How to add PostCSS plugins in NuxtJS?
 ---
 
-# How to add PostCSS plugins?
-
 ### Recommended Method
+
 If present, rename or delete the `postcss.config.js` in your project directory. Then, in your `nuxt.config.js` file add the following:
 
 ```js
@@ -34,11 +33,11 @@ export default {
 
 ### Legacy Method
 
-** Attention: This is deprecated **
+**⚠️ Warning: This is deprecated.**
 
 Use `postcss.config.js`, for example:
 
-```
+```js
 const join = require('path').join
 const tailwindJS = join(__dirname, 'tailwind.js')
 

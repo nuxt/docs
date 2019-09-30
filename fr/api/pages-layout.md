@@ -3,8 +3,6 @@ title: "API : la propriété layout"
 description: Chaque fichier (premier niveau) dans le répertoire `layouts` créera un layout personnalisé accessible avec la propriété layout dans le composant page.
 ---
 
-# La propriété layout
-
 > Chaque fichier (premier niveau) dans le répertoire `layouts` créera une mise en page personnalisée accessible avec la propriété `layout` dans le composant de page.
 
 - **Type :** `String` ou `Function` (par défaut : `'default'`)

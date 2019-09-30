@@ -3,8 +3,6 @@ title: "API: The watchers Property"
 description: The watchers property lets you overwrite watchers configuration.
 ---
 
-# The watchers Property
-
 - Type: `Object`
 - Default: `{}`
 
