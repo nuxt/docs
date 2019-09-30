@@ -11,7 +11,8 @@ description: The Views section describes all you need to configure data and view
 
 > You can customize the HTML app template used by Nuxt.js to include scripts or conditional CSS classes.
 
-To change the template, create an `app.html` file in the root folder of your project.
+To change the template, create an `app.html` file, in the src folder of your project. (which is the project's root directory by default).
+
 
 The default template used by Nuxt.js is:
 

@@ -2,7 +2,15 @@
   {
     "title": "Essential",
     "links": [
-      { "name": "Context", "to": "/context" }
+      {
+        "name": "Context",
+        "to": "/context",
+        "contents": [
+          { "name": "Universal keys", "to": "#universal-keys" },
+          { "name": "Server-Side Keys", "to": "#server-side-keys" },
+          { "name": "Client-Side keys", "to": "#client-side-keys" }
+        ]
+      }
     ]
   },
   {

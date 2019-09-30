@@ -3,8 +3,6 @@ title: "API : la classe Renderer"
 description: La classe `Renderer` de Nuxt
 ---
 
-# Classe `Renderer`
-
 - Source : **[vue-renderer/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-renderer/src/renderer.js)**
 
 Cette classe exporte un middleware qui gère et sert tous les rendus côté serveur et les requêtes de ressources.
