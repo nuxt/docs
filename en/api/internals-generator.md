@@ -3,8 +3,6 @@ title: "API: The Generator Class"
 description: Nuxt Generator Class
 ---
 
-# Generator Class
-
 - Source: **[generator/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/generator/src/generator.js)**
 
 ## Hooks

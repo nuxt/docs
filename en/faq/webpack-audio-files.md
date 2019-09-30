@@ -1,9 +1,7 @@
 ---
-title: Loading audio files from assets directory
+title: How to extend Webpack to load audio files?
 description: How to extend Webpack config to load audio files?
 ---
-
-#  How to extend Webpack config to load audio files?
 
 Audio files should be processed by `file-loader`. This loader is already included in the default Webpack configuration, but it is not set up to handle audio files. You need to extend its default configuration in `nuxt.config.js`:
 

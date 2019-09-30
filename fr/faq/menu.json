@@ -5,7 +5,7 @@
       { "name": "Comment utiliser des ressources externes ?", "to": "" },
       { "name": "Comment utiliser des préprocesseurs ?", "to": "/pre-processors" },
       { "name": "Comment utiliser JSX ?", "to": "/jsx" },
-      { "name": "Comment utiliser des plugins PostCSS ?", "to": "/postcss-plugins" },
+      { "name": "Comment utiliser des plugins PostCSS ? (EN)", "to": "/postcss-plugins" },
       { "name": "Comment étendre la configuration de webpack ?", "to": "/extend-webpack" },
       { "name": "Comment ajouter des plugins webpack ?", "to": "/webpack-plugins" },
       { "name": "Comment changer le HOST et le PORT ?", "to": "/host-port" },
