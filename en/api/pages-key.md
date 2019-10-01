@@ -3,8 +3,6 @@ title: "API: The key Property"
 description: Set the `key` property of internal `<router-view>` component
 ---
 
-# The key Property
-
 > Set the `key` property of internal `<router-view>` component
 - **Type:** `String` or `Function`
 

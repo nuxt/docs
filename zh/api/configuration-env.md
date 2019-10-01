@@ -38,7 +38,7 @@ export default axios.create({
 })
 ```
 
-然后在页面中，我们可以使用 `import axios from '~plugins/axios'` 引入 `axios` 模块。
+然后在页面中，我们可以使用 `import axios from '~/plugins/axios'` 引入 `axios` 模块。
 
 ## 自动注入环境变量
 

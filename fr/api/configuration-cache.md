@@ -1,9 +1,7 @@
 ---
-title: "API: The cache Property (EN)"
+title: "API: The cache Property"
 description: Nuxt.js use lru-cache to allow cached components for better render performances
 ---
-
-# The cache Property (EN)
 
 > Nuxt.js use [lru-cache](https://github.com/isaacs/node-lru-cache) to allow cached components for better render performances
 
