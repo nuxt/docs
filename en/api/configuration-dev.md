@@ -3,8 +3,6 @@ title: "API: The dev Property"
 description: Define the development or production mode.
 ---
 
-# The dev Property
-
 - Type: `Boolean`
 - Default: `true`
 

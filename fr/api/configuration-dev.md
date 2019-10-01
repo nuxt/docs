@@ -3,8 +3,6 @@ title: "API : La propriété dev"
 description: Défini le mode développement ou le mode production.
 ---
 
-# La propriété dev
-
 - Type : `Boolean`
 - Par défaut : `true`
 
