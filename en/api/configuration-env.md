@@ -61,3 +61,7 @@ after
 ```js
 if ('testing123' == 'testing123')
 ```
+
+## serverMiddleware
+
+As [serverMiddleware](/api/configuration-servermiddleware) is decoupled from the main Nuxt build, `env` variables defined in `nuxt.config.js` are not available there.
