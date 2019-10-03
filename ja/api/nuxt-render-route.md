@@ -3,8 +3,6 @@ title: "API: nuxt.renderRoute(route, context)"
 description: 特定のルートをレンダリングします。その際にコンテキストを渡すことができます。
 ---
 
-# nuxt.renderRoute(route, context = {})
-
 - 型: `Function`
 - 引数:
   1. `String`、レンダリングするルート

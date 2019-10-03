@@ -3,10 +3,7 @@ title: "API: The Builder クラス"
 description: Nuxt `Builder` クラス
 ---
 
-# Builder クラス
-
 - ソース: **[builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/builder/src/builder.js)**
-
 
 ## フック
 
