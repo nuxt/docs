@@ -1,9 +1,7 @@
 ---
-title: Surge へデプロイ
+title: Surge へデプロイするには？
 description: Surge へデプロイするには?
 ---
-
-# Surge へデプロイするには？
 
 Nuxt.js を使うと、例えば [Surge](https://surge.sh/) のような静的ホスティングサービスにウェブアプリケーションをホストすることができます。
 

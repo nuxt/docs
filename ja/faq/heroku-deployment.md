@@ -1,9 +1,7 @@
 ---
-title: Heroku へデプロイ
+title: Heroku へデプロイするには？
 description: Heroku へデプロイするには？
 ---
-
-# Heroku へデプロイするには？
 
 [Node.js 向けの Heroku のドキュメント ](https://devcenter.heroku.com/articles/nodejs-support)を読むことをお勧めします。
 
