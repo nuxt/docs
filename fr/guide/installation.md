@@ -41,6 +41,7 @@ Il vous sera posé quelques questions :
   - [Hapi](https://github.com/hapijs/hapi)
   - [Feathers](https://github.com/feathersjs/feathers)
   - [Micro](https://github.com/zeit/micro)
+  - [Fastify](https://github.com/fastify/fastify)
   - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
 2. Choisir votre interface utilisateur préférée :
   - Aucune (lançant la possibilité d'en ajouter une plus tard)
@@ -51,6 +52,8 @@ Il vous sera posé quelques questions :
   - [Element UI](https://github.com/ElemeFE/element)
   - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
+  - [iView](https://www.iviewui.com/)
+  - [Tachyons](https://tachyons.io)
 3. Choisissez votre framework de test préféré :
   - Aucun (sentez-vous libre d'en ajouter un plus tard)
   - [Jest](https://github.com/facebook/jest)

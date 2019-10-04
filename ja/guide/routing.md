@@ -244,7 +244,7 @@ router: {
 ### 未知の動的でネストされたルート
 
 もし URL 構造の深さが不明な場合は、ネストされたパスに動的にマッチさせる `_.vue` ファイルを使用することができます。
-これは_より詳細な_リクエストにマッチしなかったリクエストをハンドリングします。
+これは _より詳細な_ リクエストにマッチしなかったリクエストをハンドリングします。
 
 下記のようなファイルの木構造のとき:
 
@@ -324,30 +324,11 @@ GitHub Pages と Netlify は `404.html` ファイルを自動的に認識する�
 
 #### Firebase ホスティング向けの実装
 
-Firebase ホスティング上でフォールバックを使用するためには、`generate.fallback` を `true` にし、以下の設定を使用します。 ([さらに詳しく](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
-
-```json
-{
-  "hosting": {
-    "public": "dist",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/404.html"
-      }
-    ]
-  }
-}
-```
+Firebase ホスティングは `404.html` ファイルを自動的に[処理できる](https://firebase.google.com/docs/hosting/full-config#404)ため、`generate.fallback` を `true` に設定すると、404 のデフォルトレスポンスコードと一緒にエラーページがレンダリングされます。
 
 ## トランジション
 
-Nuxt.js では [<transition> コンポーネントを使って、ページ間を遷移する際のトランジション/アニメーションを行うことができます。</transition>](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components)
+Nuxt.js では [`<transition>`](https://jp.vuejs.org/v2/guide/transitions.html#%E5%8D%98%E4%B8%80%E8%A6%81%E7%B4%A0-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%B7%E3%83%A7%E3%83%B3) コンポーネントを使って、ページ間を遷移する際のトランジション/アニメーションを行うことができます。
 
 ### グローバルな設定
 

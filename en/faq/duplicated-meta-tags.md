@@ -1,9 +1,7 @@
 ---
-title: Duplicated Meta tags
+title: Duplicated Meta tags?
 description: Duplicated Meta tags with Nuxt.js?
 ---
-
-# Duplicated Meta tags?
 
 This is a "feature" of [vue-meta](https://github.com/nuxt/vue-meta), please take a look at the [documentation of head elements](/guide/views#html-head).
 

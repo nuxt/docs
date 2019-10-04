@@ -23,7 +23,7 @@ Dans votre CSS, si vous utilisez `url('~assets/image.png')`, cela sera *transfor
 
 <div class="Alert Alert--orange">
 
-**Attention:** À partir de Nuxt 2.0 l'alias `~/` n'est plus résoud correctement dans vos fichiers CSS.
+**Attention:** À partir de Nuxt 2.0 l'alias `~/` n'est plus résolu correctement dans vos fichiers CSS.
 Vous devez utiliser `~assets` (sans le slash) ou l'alias `@` dans la référence CSS `url`, par exemple `background: url("~assets/banner.svg")`
 
 </div>

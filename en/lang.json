@@ -1,6 +1,6 @@
 {
   "iso": "en",
-  "docVersion": "2.8.X",
+  "docVersion": "2.10.X",
   "links": {
     "api": "API",
     "blog": "Blog",
@@ -30,7 +30,7 @@
     "please_wait": "Please wait...",
     "please_define_title": "Please define a title in the front matter",
     "please_define_description": "Please define a description in the front matter",
-    "search": "Search",
+    "search": "Search (\"/\" to focus)",
     "version": "Version"
   },
   "homepage": {
@@ -51,8 +51,8 @@
     "backer_become_a_partner": "Become A Partner",
     "backer_sponsors": "Sponsors",
     "backer_become_a_sponsor": "Become A Sponsor",
-    "backer_backers": "Backers",
-    "backer_become_a_backer": "Become A Backer",
+    "backer_backers": "Nuxters",
+    "backer_become_a_backer": "Become A Nuxter",
     "backer_foundations": "Foundations"
   },
   "sponsors": {

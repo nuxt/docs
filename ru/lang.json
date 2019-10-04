@@ -1,6 +1,6 @@
 {
   "iso": "ru",
-  "docVersion": "0.10.7",
+  "docVersion": "2.8.X",
   "links": {
     "api": "API",
     "blog": "Блог",
@@ -9,7 +9,7 @@
     "download": "Скачать",
     "examples": "Примеры",
     "ecosystem": "Экосистема",
-    "faq": "ЧАВО",
+    "faq": "FAQ",
     "get_started": "начало работы",
     "github": "GitHub",
     "guide": "Руководство",
@@ -51,8 +51,8 @@
     "backer_become_a_partner": "Become A Partner",
     "backer_sponsors": "Sponsors",
     "backer_become_a_sponsor": "Become A Sponsor",
-    "backer_backers": "Backers",
-    "backer_become_a_backer": "Become A Backer",
+    "backer_backers": "Nuxters",
+    "backer_become_a_backer": "Become A Nuxter",
     "backer_foundations": "Foundations"
   },
   "sponsors": {

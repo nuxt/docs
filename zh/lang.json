@@ -1,6 +1,6 @@
 {
   "iso": "zh",
-  "docVersion": "2.6.x",
+  "docVersion": "2.8.x",
   "links": {
     "api": "API",
     "blog": "博客",
@@ -51,8 +51,8 @@
     "backer_become_a_partner": "Become A Partner",
     "backer_sponsors": "Sponsors",
     "backer_become_a_sponsor": "Become A Sponsor",
-    "backer_backers": "Backers",
-    "backer_become_a_backer": "Become A Backer",
+    "backer_backers": "Nuxters",
+    "backer_become_a_backer": "Become A Nuxter",
     "backer_foundations": "Foundations"
   },
   "sponsors": {

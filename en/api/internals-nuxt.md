@@ -3,11 +3,9 @@ title: "API: The Nuxt Class"
 description: Nuxt Core Class
 ---
 
-# Nuxt Class
-
 - Source: **[core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/nuxt.js)**
 
-This is the core container which allows all modules and classes communicate with each other. All modules has access to Nuxt instance using `this.nuxt`.
+This is the core container which allows all modules and classes communicate with each other. All modules have access to Nuxt instance using `this.nuxt`.
 
 ## Hooks
 

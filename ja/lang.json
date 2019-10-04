@@ -1,6 +1,6 @@
 {
   "iso": "ja",
-  "docVersion": "2.8.X",
+  "docVersion": "2.9.X",
   "links": {
     "api": "API",
     "blog": "ブログ",
@@ -51,8 +51,8 @@
     "backer_become_a_partner": "パートナーになる",
     "backer_sponsors": "スポンサー",
     "backer_become_a_sponsor": "スポンサーになる",
-    "backer_backers": "後援者",
-    "backer_become_a_backer": "後援者になる",
+    "backer_backers": "Nuxters",
+    "backer_become_a_backer": "Nuxter になる",
     "backer_foundations": "財団"
   },
   "sponsors": {

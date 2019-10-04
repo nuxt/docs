@@ -22,13 +22,8 @@ npm install --save-dev ava jsdom
   "test": "ava",
 },
 "ava": {
-  "require": [
-    "babel-register"
-  ]
-},
-"babel": {
-  "presets": [
-    "env"
+  "files": [
+    "test/**/*"
   ]
 }
 ```
@@ -70,10 +65,6 @@ import test from 'ava'
 import { Nuxt, Builder } from 'nuxt'
 import { resolve } from 'path'
 
-// Nuxt への参照を保持します
-// そうすればテスト終了時にサーバーをクローズできます
-let nuxt = null
-
 // Nuxt.js を初期化し localhost:4000 のリスニングを開始します
 test.before('Init Nuxt.js', async t => {
   const rootDir = resolve(__dirname, '..')
@@ -82,13 +73,15 @@ test.before('Init Nuxt.js', async t => {
   config.rootDir = rootDir // project folder
   config.dev = false // production build
   config.mode = 'universal' // Isomorphic application
-  nuxt = new Nuxt(config)
+  const nuxt = new Nuxt(config)
+  t.context.nuxt = nuxt // Nuxt への参照を保持することでテスト終了時にサーバーをクローズすることができます
   await new Builder(nuxt).build()
   nuxt.listen(4000, 'localhost')
 })
 
 // 生成された HTML のみをテストする例
 test('Route / exits and render HTML', async t => {
+  const { nuxt } = t.context
   let context = {}
   const { html } = await nuxt.renderRoute('/', context)
   t.true(html.includes('<h1 class="red">Hello world!</h1>'))
@@ -96,6 +89,7 @@ test('Route / exits and render HTML', async t => {
 
 // DOM チェックを経由してテストする例
 test('Route / exists and renders HTML with CSS applied', async t => {
+  const { nuxt } = t.context
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
   t.not(element, null)
@@ -106,6 +100,7 @@ test('Route / exists and renders HTML with CSS applied', async t => {
 
 // Nuxt サーバーをクローズする
 test.after('Closing server', t => {
+  const { nuxt } = t.context
   nuxt.close()
 })
 ```

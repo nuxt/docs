@@ -21,6 +21,14 @@ export default {
 }
 ```
 
+## concurrency
+
+- 型: `Number`
+- デフォルト: `500`
+
+`generate.concurrency` では、単一のスレッドで同時に生成されるルーティングの生成の数を設定します。
+
+
 ## dir
 
 - 型: `String`
@@ -37,12 +45,57 @@ export default {
 
 もし既に `nuxt.config.js` か何かで有効にしている場合は、このフラグに関係なく `devtools` が有効になります。
 
+## exclude
+
+- 型: `Array`
+
+
+配列の正規表現を指定することができ、指定した正規表現に一致するルートの生成を防ぎます。`generate.fallback` が使用されている場合、ルートは引き続きアクセスすることができます。
+
+デフォルトでは、`nuxt generate` を実行するとそれぞれのルートに対してファイルが作成されます。
+
+```bash
+-| dist/
+---| index.html
+---| ignore/
+-----| about.html
+-----| item.html
+```
+
+「ignore」をもつすべてのルートに一致する正規表現を追加すると、これらのルートの生成が防止されます。
+nuxt.config.js 
+```js
+export default {
+  generate: {
+    exclude: [
+      /^(?=.*\bignore\b).*$/,
+    ],
+  }
+}
+```
+
+```bash
+-| dist/
+---| index.html
+```
+
 ## fallback
 
-- 型: `String` or `Boolean`
+- 型: `String` または `Boolean`
 - デフォルト: `'200.html'`
 
+```js
+export default {
+  generate: {
+    fallback: true
+  }
+}
+```
+
 SPA のフォールバックとなるパス。このファイルは、 generate されたサイトを静的サイトホスティングへデプロイする時に利用します。`mode: 'spa'` においてルーティングが存在しない場合、フォールバックされます。
+
+_情報：このオプションは [Netlify](https://netlify.com) や HTML フォールバックを使用している静的ホスティングで使用すると便利です。_
+
 
 ## interval
 
@@ -228,12 +281,3 @@ export default {
 ---| products/
 -----| item.html
 ```
-
-_情報: このオプションは、[Netlify](https://netlify.com) をはじめとする、 HTML によるフォールバックを利用する静的サイトホスティングサイトにおいて利用されます。_
-
-## concurrency
-
-- 型: `Number`
-- デフォルト: `500`
-
-`generate.concurrency` では、単一のスレッドで同時に生成されるルーティングの生成の数を設定します。

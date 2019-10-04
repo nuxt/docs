@@ -1,9 +1,11 @@
 ---
-title: "API: transition プロパティ"
+title: "API: pageTransition と layoutTransition プロパティ"
 description: ページのトランジションのデフォルト設定を指定します。
 ---
 
-# transition プロパティ
+> Nuxt v2.7.0 では "transition" キーに代わり "pageTransition" が導入され、layout transition キーの命名が統合されています。
+
+# pageTransition プロパティ
 
 - 型: `String` または `Object`
 
@@ -22,9 +24,9 @@ description: ページのトランジションのデフォルト設定を指定�
 
 ```js
 export default {
-  transition: 'page'
+  pageTransition: 'page'
   // または
-  transition: {
+  pageTransition: {
     name: 'page',
     mode: 'out-in',
     beforeEnter (el) {
@@ -65,7 +67,7 @@ export default {
 }
 ```
 
-例グローバル `css` :
+グローバル `css` の例:
 
 ```css
 .layout-enter-active, .layout-leave-active {

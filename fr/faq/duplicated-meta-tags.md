@@ -3,8 +3,6 @@ title: Balises meta dupliquées
 description: Balises meta dupliquées avec Nuxt.js ?
 ---
 
-# Balises meta dupliquées ?
-
 Il s'agit d'une « fonctionnalité » de [vue-meta](https://github.com/nuxt/vue-meta), merci de lire la [documentation des éléments d'entête](/guide/views#html-head).
 
 <div class="Alert">

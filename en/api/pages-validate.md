@@ -3,8 +3,6 @@ title: "API: The validate Method"
 description: Nuxt.js lets you define a validator method inside your dynamic route component.
 ---
 
-# The validate Method
-
 > Nuxt.js lets you define a validator method inside your dynamic route component.
 
 - **Type:** `Function` or `Async Function`

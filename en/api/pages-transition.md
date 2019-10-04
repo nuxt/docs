@@ -1,36 +1,32 @@
 ---
-title: "API: The pageTransition Property"
+title: "API: The page `transition` Property"
 description: Nuxt.js uses the `<transition>` component to let you create amazing transitions/animations between your pages.
 ---
 
-# The pageTransition Property
-
 > Nuxt.js uses the [`<transition>`](https://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your pages.
-
-> Nuxt v2.7.0 introduces key "pageTransition" in favor of the "transition" key to consolidate the naming with layout transition keys. From the Nuxt v3.0.0 will be the "transition" key deprecated.
 
 - **Type:** `String` or `Object` or `Function`
 
-To define a custom transition for a specific route, simply add the `pageTransition` key to the page component.
+To define a custom transition for a specific route, simply add the `transition` key to the page component.
 
 ```js
 export default {
   // Can be a String
-  pageTransition: ''
+  transition: ''
   // Or an Object
-  pageTransition: {}
+  transition: {}
   // or a Function
-  pageTransition (to, from) {}
+  transition (to, from) {}
 }
 ```
 
 ## String
 
-If the `pageTransition` key is set as a string, it will be used as the `transition.name`.
+If the `transition` key is set as a string, it will be used as the `transition.name`.
 
 ```js
 export default {
-  pageTransition: 'test'
+  transition: 'test'
 }
 ```
 
@@ -42,11 +38,11 @@ Nuxt.js will use these settings to set the component as follows:
 
 ## Object
 
-If the `pageTransition` key is set as an object:
+If the `transition` key is set as an object:
 
 ```js
 export default {
-  pageTransition: {
+  transition: {
     name: 'test',
     mode: 'out-in'
   }
@@ -59,7 +55,7 @@ Nuxt.js will use these settings to set the component as follows:
 <transition name="test" mode="out-in">
 ```
 
-The `pageTransition` object can have the following properties:
+The `transition` object can have the following properties:
 
 | key                | Type      | Default    | definition                                                                                                                                                                                                                 |
 |--------------------|-----------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -90,11 +86,11 @@ You can also define methods in the `pageTransition`, these are for the [JavaScri
 
 ### Transition Mode
 
-**The default transition mode for pages differs from the default mode in Vue.js**. The `pageTransition` mode is by default set to `out-in`. If you want to run leaving and entering transitions simultaneously, you have to set the mode to the empty string `mode: ''`. 
+**The default transition mode for pages differs from the default mode in Vue.js**. The `transition` mode is by default set to `out-in`. If you want to run leaving and entering transitions simultaneously, you have to set the mode to the empty string `mode: ''`. 
 
 ```js
 export default {
-  pageTransition: {
+  transition: {
     name: 'test',
     mode: ''
   }
@@ -103,11 +99,11 @@ export default {
 
 ## Function
 
-If the `pageTransition` key is set as a function:
+If the `transition` key is set as a function:
 
 ```js
 export default {
-  pageTransition (to, from) {
+  transition (to, from) {
     if (!from) return 'slide-left'
     return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
   }

@@ -3,8 +3,6 @@ title: "API: nuxt.render(req, res)"
 description: You can use Nuxt.js as a middleware for your Node.js server.
 ---
 
-# nuxt.render(req, res)
-
 - Type: `Function`
 - Arguments:
   1. [Request](https://nodejs.org/api/http.html#http_class_http_incomingmessage)

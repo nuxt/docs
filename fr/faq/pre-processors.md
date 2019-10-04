@@ -1,9 +1,7 @@
 ---
-title: Préprocesseurs
+title: Comment utiliser des préprocesseurs?
 description: Comment utiliser des préprocesseurs avec Nuxt.js ?
 ---
-
-# Comment utiliser des préprocesseurs?
 
 Grâce à [Vue Loader](http://vue-loader.vuejs.org/fr/configurations/pre-processors.html), vous pouvez utiliser n'importe quel préprocesseur pour vos `<template>`, `<script>` ou `<style>` : il suffit d'utiliser l'attribut `lang`.
 

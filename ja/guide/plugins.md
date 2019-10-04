@@ -213,7 +213,7 @@ export const actions = {
 
 ## クライアントサイド限定のプラグイン利用
 
-いくつかのプラグインは、SSR をサポートしていないために **ブラウザでのみ** 動作するかもしれません。そのような場合は、クライアントサイドのみでプラグインを使用するために、`plugins` 内の `ssr: false` オプションを使用することができます。
+いくつかのプラグインは、SSR をサポートしていないために **ブラウザでのみ** 動作するかもしれません。そのような場合は、クライアントサイドのみでプラグインを使用するために、`plugins` 内の `mode`: `client` オプションを使用することができます。
 
 例:
 
@@ -222,7 +222,7 @@ export const actions = {
 ```js
 export default {
   plugins: [
-    { src: '~/plugins/vue-notifications', ssr: false }
+    { src: '~/plugins/vue-notifications', mode: 'client' }
   ]
 }
 ```

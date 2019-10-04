@@ -41,6 +41,13 @@ env_variables:
   NODE_ENV: 'production'
 ```
 
+また、フレキシブル環境の最小構成の設定ファイルは以下です:
+
+```yaml
+runtime: nodejs
+env: flex
+```
+
 ## ビルドとデプロイ
 
 さあ、あなたのアプリケーションを `npm run build` でビルドしてください。

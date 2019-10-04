@@ -1,9 +1,9 @@
 ---
 title: 目录结构
-description: Nuxt.js 的应用目录架构提供了良好的代码分层结构，适用于开发或大或小的应用。
+description: Nuxt.js 的默认应用目录架构提供了良好的代码分层结构，适用于开发或大或小的应用。
 ---
 
-> Nuxt.js 的应用目录架构提供了良好的代码分层结构，适用于开发或大或小的应用。 当然，你也可以根据自己的偏好组织应用代码。
+> Nuxt.js 的默认应用目录架构提供了良好的代码分层结构，适用于开发或大或小的应用。 当然，你也可以根据自己的偏好组织应用代码。
 
 <div class="Promo__Video">
   <a href="https://vueschool.io/lessons/guided-nuxtjs-project-tour?friend=nuxt" target="_blank">
@@ -29,7 +29,7 @@ description: Nuxt.js 的应用目录架构提供了良好的代码分层结构�
 
 布局目录 `layouts` 用于组织应用的布局组件。
 
-_若无额外配置，则该目录不能被重命名。。_
+_若无额外配置，该目录不能被重命名。_
 
 [关于布局的更多信息](/guide/views#布局)
 
@@ -43,7 +43,7 @@ _若无额外配置，则该目录不能被重命名。。_
 
 页面目录 `pages` 用于组织应用的路由及视图。Nuxt.js 框架读取该目录下所有的 `.vue` 文件并自动生成对应的路由配置。
 
-_若无额外配置，则该目录不能被重命名。。_
+_若无额外配置，该目录不能被重命名。_
 
 [关于页面的更多信息](/guide/views)
 
@@ -60,7 +60,7 @@ _若无额外配置，则该目录不能被重命名。。_
 
 **举个例子:** `/static/robots.txt` 映射至 `/robots.txt`
 
-_若无额外配置，则该目录不能被重命名。。_
+_若无额外配置，该目录不能被重命名。_
 
 [关于静态文件的更多信息](/guide/assets#静态文件)
 
@@ -69,7 +69,7 @@ _若无额外配置，则该目录不能被重命名。。_
 `store` 目录用于组织应用的 [Vuex 状态树](http://vuex.vuejs.org) 文件。
 Nuxt.js 框架集成了 [Vuex 状态树](http://vuex.vuejs.org) 的相关功能配置，在 `store` 目录下创建一个 `index.js` 文件可激活这些配置。
 
-_该目录名为Nuxt.js保留，不可更改。_
+_若无额外配置，该目录不能被重命名。_
 
 [关于 store 的更多信息](/guide/vuex-store)
 
@@ -77,7 +77,7 @@ _该目录名为Nuxt.js保留，不可更改。_
 
 `nuxt.config.js` 文件用于组织Nuxt.js 应用的个性化配置，以便覆盖默认配置。
 
-_若无额外配置，则该目录不能被重命名。。_
+_若无额外配置，该文件不能被重命名。_
 
 [关于 nuxt.config.js 的更多信息](/guide/configuration)
 
@@ -85,16 +85,16 @@ _若无额外配置，则该目录不能被重命名。。_
 
 `package.json` 文件用于描述应用的依赖关系和对外暴露的脚本接口。
 
-_若无额外配置，则该目录不能被重命名。。_
+_该文件不能被重命名。_
 
 ## 别名
 
 | 别名 | 目录 |
 |-----|------|
-| `~` 或 `@` | [src目录](/api/configuration-srcdir) |
-| `~~` 或 `@@` | [根目录](/api/configuration-rootdir) |
+| `~` 或 `@` | [srcDir](/api/configuration-srcdir) |
+| `~~` 或 `@@` | [rootDir](/api/configuration-rootdir) |
 
-默认情况下，`src目录`和`根目录`相同
+默认情况下，`srcDir` 和 `rootDir` 相同。
 
 <div class="Alert Alert--nuxt-green">
 

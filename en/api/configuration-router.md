@@ -3,8 +3,6 @@ title: "API: The router Property"
 description: The router property lets you customize Nuxt.js router.
 ---
 
-# The router Property
-
 > The router property lets you customize Nuxt.js router ([vue-router](https://router.vuejs.org/en/)).
 
 ## base
@@ -76,6 +74,32 @@ export default {
 ```
 
 The schema of the route should respect the [vue-router](https://router.vuejs.org/en/) schema.
+
+<div class="Alert Alert--orange">
+
+<b>Warning:</b> when adding routes that use [Named Views](/guide/routing#named-views), don't forget to add the corresponding `chunkNames` of named `components`.
+
+</div>
+
+`nuxt.config.js`
+```js
+export default {
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        path: '/users/:id',
+        components: {
+          default: resolve(__dirname, 'pages/users'), // or routes[index].component
+          modal: resolve(__dirname, 'components/modal.vue')
+        },
+        chunkNames: {
+          modal: 'components/modal'
+        }
+      })
+    }
+  }
+}
+```
 
 ## fallback
 
@@ -245,54 +269,21 @@ export default {
 
 - Type: `Function`
 
-The `scrollBehavior` option lets you define a custom behavior for the scroll position between the routes. This method is called every time a page is rendered.
+The `scrollBehavior` option lets you define a custom behavior for the scroll position between the routes. This method is called every time a page is rendered. To learn more about it, see [vue-router scrollBehavior documentation](https://router.vuejs.org/guide/advanced/scroll-behavior.html).
 
-By default, the scrollBehavior option is set to:
+<div class="Alert Alert-blue">
 
-```js
-const scrollBehavior = function (to, from, savedPosition) {
-  // if the returned position is falsy or an empty object,
-  // will retain current scroll position.
-  let position = false
+Starting from v2.9.0, you can use a file to overwrite the router scrollBehavior, this file should be placed in `~/app/router.scrollBehavior.js`.
 
-  // if no children detected
-  if (to.matched.length < 2) {
-    // scroll to the top of the page
-    position = { x: 0, y: 0 }
-  } else if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
-    // if one of the children has scrollToTop option set to true
-    position = { x: 0, y: 0 }
-  }
+</div>
 
-  // savedPosition is only available for popstate navigations (back button)
-  if (savedPosition) {
-    position = savedPosition
-  }
-
-  return new Promise(resolve => {
-    // wait for the out transition to complete (if necessary)
-    window.$nuxt.$once('triggerScroll', () => {
-      // coords will be used if no selector is provided,
-      // or if the selector didn't match any element.
-      if (to.hash && document.querySelector(to.hash)) {
-        // scroll to anchor by returning the selector
-        position = { selector: to.hash }
-      }
-      resolve(position)
-    })
-  })
-}
-```
+You can see Nuxt default `router.scrollBehavior.js` file here: [packages/vue-app/template/router.scrollBehavior.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/router.scrollBehavior.js).
 
 Example of forcing the scroll position to the top for every routes:
 
-`nuxt.config.js`
+`app/router.scrollBehavior.js`
 ```js
-export default {
-  router: {
-    scrollBehavior: function (to, from, savedPosition) {
-      return { x: 0, y: 0 }
-    }
-  }
+export default function (to, from, savedPosition) {
+  return { x: 0, y: 0 }
 }
 ```

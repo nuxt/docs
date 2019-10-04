@@ -3,8 +3,6 @@ title: "API: The env Property"
 description: Share environment variables between client and server.
 ---
 
-# The env Property
-
 - Type: `Object`
 
 > Nuxt.js lets you create environment variables that will be shared for the client and server-side.
@@ -63,3 +61,7 @@ after
 ```js
 if ('testing123' == 'testing123')
 ```
+
+## serverMiddleware
+
+As [serverMiddleware](/api/configuration-servermiddleware) is decoupled from the main Nuxt build, `env` variables defined in `nuxt.config.js` are not available there.

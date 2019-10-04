@@ -200,4 +200,8 @@ head 메소드에 대한 더 많은 정보: [API head 구성](/api/configuration
 
 head 메소드에 대한 더 많은 정보: [API 페이지 head](/api/pages-head)
 
-<p class="Alert">자식 컴포넌트를 사용할 때 중복을 피하고 싶다면 `hid` 키와 함께 유일한 식별자를 사용하세요. 자세한 내용은 [이곳](https://vue-meta.nuxtjs.org/api/#tagidkeyname)에서 확인합니다.
+<div class="Alert">
+  
+자식 컴포넌트를 사용할 때 중복을 피하고 싶다면 `hid` 키와 함께 유일한 식별자를 사용하세요. 자세한 내용은 [이곳](https://vue-meta.nuxtjs.org/api/#tagidkeyname)에서 확인합니다.
+
+</div>

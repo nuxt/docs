@@ -41,6 +41,7 @@ It will ask you some questions:
   - [Hapi](https://github.com/hapijs/hapi)
   - [Feathers](https://github.com/feathersjs/feathers)
   - [Micro](https://github.com/zeit/micro)
+  - [Fastify](https://github.com/fastify/fastify)
   - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
 2. Choose your favorite UI framework:
   - None (feel free to add one later)
@@ -51,6 +52,8 @@ It will ask you some questions:
   - [Element UI](https://github.com/ElemeFE/element)
   - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
+  - [iView](https://www.iviewui.com/)
+  - [Tachyons](https://tachyons.io)
 3. Choose your favorite testing framework:
   - None (feel free to add one later)
   - [Jest](https://github.com/facebook/jest)
@@ -79,7 +82,7 @@ To discover more about the directory structure of the project: [Directory Struct
 
 ## Starting from scratch
 
-Creating a Nuxt.js application from scratch is also really easy, it only needs *1 file and 1 directory*. Let's create an empty directory to start working on the application:
+Creating a Nuxt.js project from scratch is easy, only *1 file and 1 directory* are required. Create an empty directory to start:
 
 ```bash
 $ mkdir <project-name>
@@ -88,13 +91,13 @@ $ cd <project-name>
 
 <div class="Alert Alert--nuxt-green">
 
-<b>Info:</b> replace <code>&lt;project-name&gt;</nom-du-projet></code> by the name of the project.
+<b>Info:</b> replace <code>&lt;project-name&gt;</nom-du-projet></code> with a name for the project.
 
 </div>
 
 ### The package.json
 
-The project needs a `package.json` file to specify how to start `nuxt`:
+Every project needs a `package.json` file to start `nuxt`. Copy this json into your package.json and save before running npm install (below):
 
 ```json
 {
@@ -109,7 +112,7 @@ The project needs a `package.json` file to specify how to start `nuxt`:
 
 ### Installing `nuxt`
 
-Once the `package.json` has been created, add `nuxt` to the project via npm:
+With the `package.json` created, add `nuxt` to the project via npm:
 
 ```bash
 $ npm install --save nuxt
@@ -117,7 +120,7 @@ $ npm install --save nuxt
 
 ### The `pages` directory
 
-Nuxt.js will transform every `*.vue` file inside the `pages` directory as a route for the application.
+Nuxt.js transforms every `*.vue` file inside a `pages` directory as a route for the application.
 
 Create the `pages` directory:
 
