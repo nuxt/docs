@@ -10,6 +10,10 @@ liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 
 > Nuxt.js can be used to create authenticated routes easily.
 
+## Official `auth-module`
+
+If you want to implement complex authentication flows, for example OAuth2, we suggest using the official [`auth-module`](https://github.com/nuxt-community/auth-module)
+
 ## Using Express and Sessions
 
 To add the sessions feature in our application, we will use `express` and `express-session`, for this, we need to use Nuxt.js programmatically.
@@ -100,9 +104,9 @@ require('whatwg-fetch')
 
 const store = () => new Vuex.Store({
 
-  state: {
+  state: () => ({
     authUser: null
-  },
+  }),
 
   mutations: {
     SET_USER: function (state, user) {

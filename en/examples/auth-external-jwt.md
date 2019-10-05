@@ -9,6 +9,10 @@ code: https://github.com/ahadyekta/nuxt-auth-external-jwt
 
 In auth-routes example both api and nuxt start together and use one Node.js server instance. However, sometimes we should work with external api with jsonWebToken. In this example it will be explained in a simple way.
 
+## Official `auth-module`
+
+If you want to implement complex authentication flows, for example OAuth2, we suggest using the official [`auth-module`](https://github.com/nuxt-community/auth-module)
+
 ## Structure
 
 Since Nuxt.js provides both server and client rendering and the cookie of browser is different from cookie of the Node.js server, we should push token data to some storage that can be accessible in both sides.
@@ -33,17 +37,17 @@ npm install cookieparser --save
 Then inside page directory make a `login.vue` file, and inside the script section, add:
 
 ```js
-import Cookie from 'js-cookie'
+const Cookie = process.client ? require('js-cookie') : undefined
 
 export default {
   middleware: 'notAuthenticated',
   methods: {
-    postLogin () {
-      setTimeout(() => {
+    postLogin() {
+      setTimeout(() => { // we simulate the async request with timeout.
         const auth = {
           accessToken: 'someStringGotFromApiServiceWithAjax'
         }
-        this.$store.commit('update', auth) // mutating to store for client rendering
+        this.$store.commit('setAuth', auth) // mutating to store for client rendering
         Cookie.set('auth', auth) // saving token in cookie for server rendering
         this.$router.push('/')
       }, 1000)
@@ -61,26 +65,30 @@ After that make `index.js` in `store` directory like below :
 ```javascript
 import Vuex from 'vuex'
 
-var cookieparser = require('cookieparser')
+const cookieparser = process.server ? require('cookieparser') : undefined
 
 const createStore = () => {
   return new Vuex.Store({
-    state: {
+    state: () => ({
       auth: null
-    },
+    }),
     mutations: {
-      update (state, data) {
-        state.auth = data
+      setAuth(state, auth) {
+        state.auth = auth
       }
     },
     actions: {
-      nuxtServerInit ({ commit }, { req }) {
-        let accessToken = null
+      nuxtServerInit({ commit }, { req }) {
+        let auth = null
         if (req.headers.cookie) {
-          var parsed = cookieparser.parse(req.headers.cookie)
-          accessToken = JSON.parse(parsed.auth)
+          const parsed = cookieparser.parse(req.headers.cookie)
+          try {
+            auth = JSON.parse(parsed.auth)
+          } catch (err) {
+            // No valid cookie found
+          }
         }
-        commit('update', accessToken)
+        commit('setAuth', auth)
       }
     }
   })
@@ -116,3 +124,23 @@ export default function ({ store, redirect }) {
 ```
 
 > Note: use `authenticated` middleware for pages which need authentication and use `notAuthenticated` middleware inside the login/register and similar pages.
+
+## Logging out the User
+Finally to allow the user to logout of the system, we can remove the cookie: 
+
+```javascript
+const Cookie = process.client ? require('js-cookie') : undefined
+
+export default {
+  methods: {
+    logout() {
+      // Code will also be required to invalidate the JWT Cookie on external API
+      Cookie.remove('auth')
+      this.$store.commit('setAuth', null)
+    }
+  }
+}
+```
+
+> Note: refer to the method using @click="logout"
+

@@ -44,7 +44,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--danger"><b>Mohon Diperhatikan! </b> Jika Anda tidak ingin middleware mendaftar ke semua rute, Anda harus menggunakan bentuk Object dengan jalur (path) tertentu, jika tidak, penanganan default nuxt tidak akan bekerja!</p>
+<div class="Alert Alert--danger">
+
+<b>Mohon Diperhatikan! </b> Jika Anda tidak ingin middleware mendaftar ke semua rute, Anda harus menggunakan bentuk Object dengan jalur (path) tertentu, jika tidak, penanganan default nuxt tidak akan bekerja!
+
+</div>
 
 ## Server Middleware Sendiri
 
@@ -56,7 +60,7 @@ Middleware (`api/logger.js`):
 module.exports = function (req, res, next) {
     // req adalah obyek permintaan (request) http Node.js
     console.log(req.path)
-    
+
     // res adalah obyek respon (response) http Node.js
 
     // next adalah sebuah function untuk memanggil middleware selanjutnya

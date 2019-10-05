@@ -3,8 +3,6 @@ title: "API: The dev Property"
 description: Define the development or production mode.
 ---
 
-# The dev Property
-
 - Type: `Boolean`
 - Default: `true`
 
@@ -22,7 +20,7 @@ Example:
 `nuxt.config.js`
 
 ```js
-module.exports = {
+export default {
   dev: (process.env.NODE_ENV !== 'production')
 }
 ```
@@ -42,15 +40,11 @@ app.use(nuxt.render)
 // Build only in dev mode
 if (config.dev) {
   new Builder(nuxt).build()
-  .catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
 }
 
 // Listen the server
 app.listen(port, '0.0.0.0').then(() => {
-  nuxt.showOpen()
+  console.log(`Server is listening on port: ${port}`)
 })
 ```
 

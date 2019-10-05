@@ -10,13 +10,13 @@ description: Nuxt.js で外部リソースを使うには？
 `nuxt.config.js` ファイル内でリソースをインクルードします:
 
 ```js
-module.exports = {
+export default {
   head: {
     script: [
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
     ],
     link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap' }
     ]
   }
 }
@@ -30,18 +30,22 @@ module.exports = {
 <template>
   <h1>About page with jQuery and Roboto font</h1>
 </template>
+
 <script>
 export default {
-  head: {
-    script: [
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
-    ],
-    link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
-    ]
+  head () {
+    return {
+      script: [
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
+      ],
+      link: [
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap' }
+      ]
+    }
   }
 }
 </script>
+
 <style scoped>
 h1 {
   font-family: Roboto, sans-serif;

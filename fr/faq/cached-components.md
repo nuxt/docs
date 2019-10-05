@@ -1,9 +1,7 @@
 ---
 title: Mettre en cache les composants
-description: Comment mettre en cache des composants ?
+description: Comment mettre en cache des composants avec NuxtJS ?
 ---
-
-# Comment mettre en cache des composants Vue ?
 
 > Bien que le rendu côté serveur de Vue soit rapide, il ne rivalise pas avec les performances d'un template basé sur une chaine de caractère pure, et ceux, à cause du cout de création des instances de composant et des nœuds du DOM virtuel. Dans le cas où les performances du rendu côté serveur est critique, mettre en place une bonne stratégie de mise en cache peut grandement améliorer le temps de réponse et réduire la charge serveur.
 
@@ -30,6 +28,8 @@ Vous pouvez utiliser le module [Component Cache](https://github.com/nuxt-communi
 ```
 
 Voir [la mise en cache au niveau composant](http://ssr.vuejs.org/en/caching.html#mise-en-cache-au-niveau-du-composant) pour plus d'informations.
+
+## N'oubliez pas
 
 - Les composants à mettre en cache **doivent définir une option `name` unique**.
 - Vous **NE** devez ***PAS*** mettre en cache un composant si

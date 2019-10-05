@@ -3,8 +3,6 @@ title: "API : la propriété middleware"
 description: Définit le middleware pour une page spécifique de l'application.
 ---
 
-# La propriété middleware
-
 - Type : `String` ou `Array`
   - Type des éléments : `String`
 

@@ -86,4 +86,8 @@ npm run generate
 이 명령어는 정적 호스팅 서비스에 배포될 모든 파일들이 담긴 `dist` 폴더를 생성할 것입니다.
 
 만약 당신에게 동적 라우팅이 사용되는 프로젝트가 있다면, nuxt.js에서 동적 라우팅을 생성하기 위해 [generate 설정](/api/configuration-generate)을 살펴보아야 합니다.
-<div class="Alert">`nuxt generate` 를 통해 당신의 웹 어플리케이션을 생성할 때、 [data()](/guide/async-data#the-data-method) 와 [fetch()](/guide/vuex-store#the-fetch-method)에 전달되는 [context](/api#context)에는 `req`와 `res`가 포함되지 않습니다.</div>
+<div class="Alert">
+
+`nuxt generate` 를 통해 당신의 웹 어플리케이션을 생성할 때、 [data()](/guide/async-data#the-data-method) 와 [fetch()](/guide/vuex-store#the-fetch-method)에 전달되는 [context](/api#context)에는 `req`와 `res`가 포함되지 않습니다.
+
+</div>

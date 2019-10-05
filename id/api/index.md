@@ -26,4 +26,8 @@ export default {
 }
 ```
 
-<div class="Alert Alert--orange">Anda **TIDAK** memiliki akses instansi komponen menggunakan `this` di dalam `asyncData` karena dia dipanggil **sebelum memulai (initiating)** komponennya.</div>
+<div class="Alert Alert--orange">
+
+Anda **TIDAK** memiliki akses instansi komponen menggunakan `this` di dalam `asyncData` karena dia dipanggil **sebelum memulai (initiating)** komponennya.
+
+</div>

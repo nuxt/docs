@@ -3,7 +3,7 @@ title: 'API: '
 description: Menghubungkan antar halaman menggunakan nuxt-link.
 ---
 
-# Komponen <nuxt-link>
+# Komponen &lt;nuxt-link&gt;
 
 > Komponen ini digunakan sebagai penghubung antar halaman.
 

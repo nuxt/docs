@@ -3,8 +3,6 @@ title: "API: nuxt.renderRoute(route, context)"
 description: Render a specific route with a given context.
 ---
 
-# nuxt.renderRoute(route, context = {})
-
 - Type: `Function`
 - Arguments:
   1. `String` : route to render
@@ -18,7 +16,11 @@ description: Render a specific route with a given context.
 
 This method should be used mostly for [test purposes](/guide/development-tools#end-to-end-testing) as well with [`nuxt.renderAndGetWindow`](/api/nuxt-render-and-get-window).
 
-<p class="Alert Alert--info">`nuxt.renderRoute` should be executed after the build process in production mode (`dev: false`).</p>
+<div class="Alert Alert--orange">
+
+`nuxt.renderRoute` should be executed after the build process in production mode (`dev: false`).
+
+</div>
 
 Example:
 
@@ -39,7 +41,7 @@ new Builder(nuxt)
   // `error` not null when the error layout is displayed, the error format is:
   // { statusCode: 500, message: 'My error message' }
 
-  // `redirected` is not `false` when `redirect()` has been used in `data()` or `fetch()`
+  // `redirected` is not `false` when `redirect()` has been used in `asyncData()` or `fetch()`
   // { path: '/other-path', query: {}, status: 302 }
 })
 ```

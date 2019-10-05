@@ -117,7 +117,7 @@ jsdom has some limitations because it does not use a browser. However, it will c
 
 > [ESLint](http://eslint.org) is a great tool to keep your code clean
 
-> [Prettier](prettier.io) is a very popular code formatter 
+> [Prettier](prettier.io) is a very popular code formatter
 
 You can add ESLint with Prettier pretty easily with nuxt.js, first, you need to add the npm dependencies:
 
@@ -177,4 +177,8 @@ npm run lintfix
 
 ESLint will lint every of your JavaScript and Vue files while ignoring your ignored files defined in your `.gitignore`.
 
-<p class="Alert Alert--info">One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before commiting your code.</p>
+<div class="Alert Alert--orange">
+
+One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before commiting your code.
+
+</div>

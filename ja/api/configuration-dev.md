@@ -1,28 +1,28 @@
 ---
-title: "API: dev プロパティ"
+title: 'API: dev プロパティ'
 description: 開発モードかプロダクションモードかを指定します。
 ---
 
 # dev プロパティ
 
-- タイプ: `ブーリアン`
+- 型: `Boolean`
 - デフォルト: `true`
 
-> Nuxt.js の開発モードなのかプロダクションモードなのかを指定します。
+> 開発モードかプロダクションモードかを指定します。
 
 このプロパティは [nuxt コマンド](/guide/commands) によって上書きされます:
 
 - `nuxt` コマンドを使うときは `dev` は強制的に `true` になります
 - `nuxt build`、`nuxt start`、`nuxt generate` コマンドを使うときは `dev` は強制的に `false` になります
 
-このプロパティは [Nuxt.js をプログラムで使う](/api/nuxt) ときに合わせて使うと良いです:
+このプロパティは [Nuxt.js をプログラムで使う](/api/nuxt) ときに設定します:
 
 例:
 
 `nuxt.config.js`
 
 ```js
-module.exports = {
+export default {
   dev: (process.env.NODE_ENV !== 'production')
 }
 ```
@@ -30,7 +30,7 @@ module.exports = {
 `server.js`
 
 ```js
-const Nuxt = require('nuxt')
+const { Nuxt, Builder } = require('nuxt')
 const app = require('express')()
 const port = process.env.PORT || 3000
 
@@ -41,16 +41,13 @@ app.use(nuxt.render)
 
 // 開発モードのときのみビルドする
 if (config.dev) {
-  nuxt.build()
-  .catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
+  new Builder(nuxt).build()
 }
 
 // サーバーを Listen する
-app.listen(port, '0.0.0.0')
-console.log('Server listening on localhost:' + port)
+app.listen(port, '0.0.0.0').then(() => {
+  console.log(`Server is listening on port: ${port}`)
+})
 ```
 
 それから `package.json` に次のように書きます:

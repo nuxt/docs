@@ -22,13 +22,8 @@ Then add a test script to our `package.json` and configure AVA to compile files 
   "test": "ava",
 },
 "ava": {
-  "require": [
-    "babel-register"
-  ]
-},
-"babel": {
-  "presets": [
-    "env"
+  "files": [
+    "test/**/*"
   ]
 }
 ```
@@ -70,10 +65,6 @@ import test from 'ava'
 import { Nuxt, Builder } from 'nuxt'
 import { resolve } from 'path'
 
-// We keep a reference to Nuxt so we can close
-// the server at the end of the test
-let nuxt = null
-
 // Init Nuxt.js and start listening on localhost:4000
 test.before('Init Nuxt.js', async t => {
   const rootDir = resolve(__dirname, '..')
@@ -81,20 +72,24 @@ test.before('Init Nuxt.js', async t => {
   try { config = require(resolve(rootDir, 'nuxt.config.js')) } catch (e) {}
   config.rootDir = rootDir // project folder
   config.dev = false // production build
-  nuxt = new Nuxt(config)
+  config.mode = 'universal' // Isomorphic application
+  const nuxt = new Nuxt(config)
+  t.context.nuxt = nuxt // We keep a reference to Nuxt so we can close the server at the end of the test
   await new Builder(nuxt).build()
   nuxt.listen(4000, 'localhost')
 })
 
 // Example of testing only generated html
 test('Route / exits and render HTML', async t => {
+  const { nuxt } = t.context
   let context = {}
   const { html } = await nuxt.renderRoute('/', context)
   t.true(html.includes('<h1 class="red">Hello world!</h1>'))
 })
 
 // Example of testing via DOM checking
-test('Route / exits and render HTML with CSS applied', async t => {
+test('Route / exists and renders HTML with CSS applied', async t => {
+  const { nuxt } = t.context
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
   t.not(element, null)
@@ -105,6 +100,7 @@ test('Route / exits and render HTML with CSS applied', async t => {
 
 // Close the Nuxt server
 test.after('Closing server', t => {
+  const { nuxt } = t.context
   nuxt.close()
 })
 ```
@@ -121,7 +117,7 @@ jsdom has some limitations because it does not use a browser. However, it will c
 
 > [ESLint](http://eslint.org) is a great tool to keep your code clean.
 
-> [Prettier](prettier.io) is a very popular code formatter.
+> [Prettier](https://prettier.io) is a very popular code formatter.
 
 You can add ESLint with Prettier pretty easily with Nuxt.js, first, you need to add the npm dependencies:
 
@@ -161,7 +157,7 @@ module.exports = {
 }
 ```
 
-Then, you can add a `lint` and `lintfix` scripts in your `package.json`:
+Then, you can add `lint` and `lintfix` scripts to your `package.json`:
 
 ```js
 "scripts": {
@@ -170,7 +166,7 @@ Then, you can add a `lint` and `lintfix` scripts in your `package.json`:
 }
 ```
 
-You can now launch `lint` to just check for errors:
+You can now launch `lint` to check for errors:
 
 ```bash
 npm run lint
@@ -182,11 +178,11 @@ or `lintfix` to also fix those which are doable
 npm run lintfix
 ```
 
-ESLint will lint every of your JavaScript and Vue files while ignoring your ignored files defined in your `.gitignore`.
+ESLint will lint all of your JavaScript and Vue files while ignoring your ignored files defined in your `.gitignore`.
 
-It is also recommended to enable ESLint at hot reloading mode via webpack. This way ESLint will run on save during `npm run dev`. Just add the following to your `nuxt.config.js`:
+It is also recommended to enable ESLint hot reloading mode via webpack. This way ESLint will run on save during `npm run dev`. Just add the following to your `nuxt.config.js`:
 
-```
+```js
 ...
   /*
    ** Build configuration
@@ -209,4 +205,8 @@ It is also recommended to enable ESLint at hot reloading mode via webpack. This 
   }
 ```
 
-<p class="Alert Alert--info">One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before commiting your code.</p>
+<div class="Alert Alert--orange">
+
+One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before committing your code.
+
+</div>

@@ -15,7 +15,8 @@ description: 你可以把 Nuxt.js 当做是中间件来集成到已有的 Node.j
 
 例如，结合 [Express.js](https://github.com/expressjs/express) 使用：
 ```js
-const Nuxt = require('nuxt')
+const { Nuxt, Builder } = require('nuxt')
+
 const app = require('express')()
 const isProd = (process.env.NODE_ENV === 'production')
 const port = process.env.PORT || 3000
@@ -30,16 +31,22 @@ app.use(nuxt.render)
 
 // 在开发模式下启用编译构建和热加载
 if (config.dev) {
-  nuxt.build()
-  .catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
+  new Builder(nuxt).build()
+  .then(listen)
+}
+else {
+  listen()
 }
 
-// 服务端监听
-app.listen(port, '0.0.0.0')
-console.log('Server listening on localhost:' + port)
+function listen() {
+  // 服务端监听
+  app.listen(port, '0.0.0.0')
+  console.log('Server listening on `localhost:' + port + '`.')
+}
 ```
 
-<p class="Alert">建议把 **nuxt.render** 放到中间件列表的最后面，因为它不会再调用 next() 方法，而是直接处理你 web 应用的页面渲染。</p>
+<div class="Alert">
+
+建议把 **nuxt.render** 放到中间件列表的最后面，因为它不会再调用 next() 方法，而是直接处理你 web 应用的页面渲染。
+
+</div>

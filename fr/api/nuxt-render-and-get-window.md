@@ -3,8 +3,6 @@ title: "API: nuxt.renderAndGetWindow(url, options)"
 description: Obtient la `window` depuis un URL donné d'une application Nuxt.js.
 ---
 
-# nuxt.renderAndGetWindow(url, options = {})
-
 - Type : `Function`
 - Argument : `String`
   1. `String` : l'URL à rendre
@@ -13,9 +11,13 @@ description: Obtient la `window` depuis un URL donné d'une application Nuxt.js.
 - Valeur de retour : `Promise`
   - Valeur de retour : `window`
 
-> Obtient la `window` à un URL donné d'une application Nuxt.js.
+> Obtient la `window` à un URL donnée d'une application Nuxt.js.
 
-<p class="Alert Alert--info">Cette méthode est faite pour les [tests](guide/development-tools#tests-de-bout-en-bout).</p>
+<div class="Alert Alert--orange">
+
+Cette méthode est faite pour les [tests](guide/development-tools#tests-de-bout-en-bout).
+
+</div>
 
 Pour utiliser cette fonction, vous devez installer `jsdom` :
 

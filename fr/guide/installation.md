@@ -5,32 +5,78 @@ description: Débuter avec Nuxt.js est vraiment facile. Un projet simple n'a bes
 
 > Débuter avec Nuxt.js est vraiment facile. Un projet simple n'a besoin que d'une dépendance à `nuxt`.
 
-## Utiliser le template de base de Nuxt.js
+<div>
+  <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Fondamentaux de Nuxt par vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Fondamentaux de Nuxt.js</h4>
+      <p class="Promote__Content__Description">Apprendre comment démarrer rapidement avec Nuxt.js en vidéos.</p>
+      <p class="Promote__Content__Signature">Cours en vidéo réalisés par VueSchool pour aider au développement de Nuxt.js.</p>
+    </div>
+  </a>
+</div>
 
-Afin de démarrer rapidement, l'équipe Nuxt.js a créé un [template de démarrage](https://github.com/nuxt-community/starter-template).
+## Utiliser `create-nuxt-app`
 
-[Téléchargez le .zip](https://github.com/nuxt-community/starter-template/archive/master.zip) du template de démarrage ou installez le à l'aide de vue-cli :
+Afin de démarrer rapidement, l'équipe Nuxt.js a créé un outil de démarrage [create-nuxt-app](https://github.com/nuxt/create-nuxt-app).
+
+Assurez-vous que [npx](https://www.npmjs.com/package/npx) est installé (`npx` est livré par défaut depuis NPM `5.2.0`)
 
 ```bash
-$ vue init nuxt-community/starter-template <project-name>
+$ npx create-nuxt-app <project-name>
 ```
 
-> Si [vue-cli](https://github.com/vuejs/vue-cli) n'est pas installée, merci de l'installer via `npm install -g vue-cli`
-
-puis installez les dépendances :
+ou avec [yarn](https://yarnpkg.com/en/):
 
 ```bash
-$ cd <nom-du-projet>
-$ npm install
+$ yarn create nuxt-app <project-name>
 ```
 
-et démarrez le projet avec :
+Il vous sera posé quelques questions :
+
+1. Choisir entre différents frameworks intégrés côté serveur :
+  - Aucun (Serveur Nuxt par défaut)
+  - [Express](https://github.com/expressjs/express)
+  - [Koa](https://github.com/koajs/koa)
+  - [Hapi](https://github.com/hapijs/hapi)
+  - [Feathers](https://github.com/feathersjs/feathers)
+  - [Micro](https://github.com/zeit/micro)
+  - [Fastify](https://github.com/fastify/fastify)
+  - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
+2. Choisir votre interface utilisateur préférée :
+  - Aucune (lançant la possibilité d'en ajouter une plus tard)
+  - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
+  - [Vuetify](https://github.com/vuetifyjs/vuetify)
+  - [Bulma](https://github.com/jgthms/bulma)
+  - [Tailwind](https://github.com/tailwindcss/tailwindcss)
+  - [Element UI](https://github.com/ElemeFE/element)
+  - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
+  - [Buefy](https://buefy.github.io)
+  - [iView](https://www.iviewui.com/)
+  - [Tachyons](https://tachyons.io)
+3. Choisissez votre framework de test préféré :
+  - Aucun (sentez-vous libre d'en ajouter un plus tard)
+  - [Jest](https://github.com/facebook/jest)
+  - [AVA](https://github.com/avajs/ava)
+4. Le [mode Nuxt désiré (`Universel` ou `SPA`)](https://nuxtjs.org/guide#single-page-applications-spa-)
+5. Ajouter le [module axios](https://github.com/nuxt-community/axios-module) pour faire des requêtes HTTP facilement dans votre application.
+6. Ajouter [EsLint](https://eslint.org/) pour Linter votre code en sauvegardant.
+7. Ajouter [Prettier](https://prettier.io/) pour prettifier votre code en sauvegardant.
+
+Après réponses, les dépendences s'installerons et la prochaine étape sera de naviguer dans le dossier du projet pour le lancer avec :
+
 ```bash
+$ cd <project-name>
 $ npm run dev
 ```
+
 L'application est désormais accessible à l'adresse http://localhost:3000.
 
-<p class="Alert">Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages.</p>
+<div class="Alert">
+
+Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages.
+
+</div>
 
 Pour en savoir plus sur l'organisation des répertoires dans un projet, consultez la documentation de l'[Architecture des répertoires](/guide/directory-structure).
 
@@ -43,7 +89,11 @@ $ mkdir <nom-du-projet>
 $ cd <nom-du-projet>
 ```
 
-<p class="Alert Alert--nuxt-green"><b>Info :</b> remplacez <code>&lt;nom-du-projet&gt;</nom-du-projet></code> par le nom du projet.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>Info :</b> remplacez <code>&lt;nom-du-projet&gt;</nom-du-projet></code> par le nom du projet.
+
+</div>
 
 ### Le package.json
 
@@ -60,13 +110,12 @@ Le projet a besoin d'un fichier `package.json` avec un script permettant de lanc
 
 `scripts` lancera Nuxt.js via `npm run dev`.
 
-
 ### Installation de `nuxt`
 
 Une fois que le `package.json` est créé, ajoutez `nuxt` au projet via npm :
 
 ```bash
-npm install --save nuxt
+$ npm install --save nuxt
 ```
 
 ### Le dossier `pages`
@@ -83,7 +132,7 @@ puis créez la première page `pages/index.vue`:
 
 ```html
 <template>
-  <h1>Hello world !</h1>
+  <h1>Bonjour le monde !</h1>
 </template>
 ```
 
@@ -95,6 +144,10 @@ $ npm run dev
 
 L'application est désormais accessible à l'adresse http://localhost:3000.
 
-<p class="Alert">Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages</p>
+<div class="Alert">
+
+Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages
+
+</div>
 
 Pour en savoir plus sur la structure des dossiers du projet, consultez la documentation de l'[Architecture des répertoires](/guide/directory-structure).

@@ -7,12 +7,12 @@ description: Nuxt.js에서 window 혹은 document가 undefined인 경우라면?
 
 이 에러는 서버측 랜더링에 원인이 있습니다.
 
-특정 리소스를 클라이언트 측에서만 import를 하고 싶은 경우에는 `process.BROWSER_BUILD` 변수를 사용할 필요가 있습니다.
+특정 리소스를 클라이언트 측에서만 import를 하고 싶은 경우에는 `process.client` 변수를 사용할 필요가 있습니다.
 
 예를 들어 .vue 파일을 다음처럼 작성합니다:
 
 ```js
-if (process.BROWSER_BUILD) {
+if (process.client) {
   require('external_library')
 }
 ```

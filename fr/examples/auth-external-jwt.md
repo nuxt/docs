@@ -9,6 +9,14 @@ code: https://github.com/ahadyekta/nuxt-auth-external-jwt
 
 Dans l'exemple auth-routes l'API et le site Nuxt se lancent ensemble et utilisent la même instance serveur Node.js. Cependant, il est parfois mieux de travailler avec une API externe avec jsonWebToken. Cela sera expliqué simplement à travers cet exemple.
 
+## Module officiel `auth-module`
+
+Si vous souhaitez implémenter un flux d'authentification complexe, par exemple OAuth2, nous suggérons d'utiliser le module officiel [`auth-module`](https://github.com/nuxt-community/auth-module)
+
+## Official `auth-module`
+
+If you want to implement complex authentication flows, for example OAuth2, we suggest using the official [`auth-module`](https://github.com/nuxt-community/auth-module)
+
 ## Structure
 
 Puisque Nuxt.js fournit à la fois le rendu client et serveur ainsi qu'un cookie différent entre le navigateur et le serveur Node.js, nous devons fournir un jeton de donnée qui puisse être accessible par les deux parties.
@@ -33,17 +41,17 @@ npm install cookieparser --save
 À l'intérieur du dossier des pages, créez un fichier `login.vue` et dans ce fichier, dans la partie script, ajoutez :
 
 ```js
-import Cookie from 'js-cookie'
+const Cookie = process.client ? require('js-cookie') : undefined
 
 export default {
   middleware: 'notAuthenticated',
   methods: {
-    postLogin () {
-      setTimeout(() => {
+    postLogin() {
+      setTimeout(() => { // nous simulons la requête asynchrone avec un timeout.
         const auth = {
-          accessToken: 'someStringGotFromApiServiceWithAjax'
+          accessToken: 'uneChaineObtenueDuServiceApiAVecAjax'
         }
-        this.$store.commit('update', auth) // muter `auth` dans le store pour le rendu client
+        this.$store.commit('setAuth', auth) // muter `auth` dans le store pour le rendu client
         Cookie.set('auth', auth) // sauver le jeton dans un cookie pour le rendu serveur
         this.$router.push('/')
       }, 1000)
@@ -61,26 +69,30 @@ Après cela modifiez `index.js` dans le dossier `store` comme ci-dessous :
 ```javascript
 import Vuex from 'vuex'
 
-var cookieparser = require('cookieparser')
+const cookieparser = process.server ? require('cookieparser') : undefined
 
 const createStore = () => {
   return new Vuex.Store({
-    state: {
+    state: () => ({
       auth: null
-    },
+    }),
     mutations: {
-      update (state, data) {
-        state.auth = data
+      setAuth(state, auth) {
+        state.auth = auth
       }
     },
     actions: {
-      nuxtServerInit ({ commit }, { req }) {
-        let accessToken = null
+      nuxtServerInit({ commit }, { req }) {
+        let auth = null
         if (req.headers.cookie) {
-          var parsed = cookieparser.parse(req.headers.cookie)
-          accessToken = JSON.parse(parsed.auth)
+          const parsed = cookieparser.parse(req.headers.cookie)
+          try {
+            auth = JSON.parse(parsed.auth)
+          } catch (err) {
+            // aucun cookie valide trouvé
+          }
         }
-        commit('update', accessToken)
+        commit('setAuth', auth)
       }
     }
   })
@@ -115,4 +127,23 @@ export default function ({ store, redirect }) {
 }
 ```
 
-> Note : utilisez le middleware `authenticated` pour les pages qui ont besoin d'une authentification et le middleware `notAuthenticated` à l'intérieur des pages de type connexion / inscription, etc.
+> Note: utilisez le middleware `authenticated` pour les pages nécessitant une authentification et utilisez le middleware `notAuthenticated` pour les pages login/register et similaires.
+
+## Déconnecter l'utilisateur
+Enfin pour laisser l'utilisateur pouvoir se déconnecter du système, nous pouvons retirer le cookie : 
+
+```javascript
+const Cookie = process.client ? require('js-cookie') : undefined
+
+export default {
+  methods: {
+    logout() {
+      // Un code sera également requis pour invalider le cookie JWT sur une API externe
+      Cookie.remove('auth')
+      this.$store.commit('setAuth', null)
+    }
+  }
+}
+```
+
+> Note: se référer à la méthode en utilisant @click="logout"

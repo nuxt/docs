@@ -15,7 +15,11 @@ description: 渲染指定url并获取对应的window对象。
 
 > 渲染指定url并获取对应的window对象。
 
-<p class="Alert Alert--info">这个方法只用于 [测试目的](guide/development-tools#端对端测试)。</p>
+<div class="Alert Alert--orange">
+
+这个方法只用于 [测试目的](guide/development-tools#端对端测试)。
+
+</div>
 
 要使用这个方法，需要先安装 `jsdom`：
 ```bash

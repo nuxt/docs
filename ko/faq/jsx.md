@@ -22,6 +22,10 @@ export default {
 </script>
 ```
 
-<p class="Alert Alert--info">`h` 를 `createElement`의 alias로 설정하는 것은 Vue 생태계에서 일반적인 컨벤션이며, 또한 JSX에서 요구되는 사항이기도 합니다. 혹시 `h`가 스코프 안에서 사용할 수 없는 경우에는 **앱에서는 에러를 발생시키게 됩니다** </p>
+<div class="Alert Alert--orange">
+
+`h` 를 `createElement`의 alias로 설정하는 것은 Vue 생태계에서 일반적인 컨벤션이며, 또한 JSX에서 요구되는 사항이기도 합니다. 혹시 `h`가 스코프 안에서 사용할 수 없는 경우에는 **앱에서는 에러를 발생시키게 됩니다**
+
+</div>
 
 JSX 사용법에 대한 보다 깊은 이해를 위해서는 Vue.js 공식문서의  [JSX](https://kr.vuejs.org/v2/guide/render-function.html#JSX)를 참고하시기 바랍니다.

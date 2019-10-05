@@ -1,26 +1,23 @@
 ---
-title: "API: The Generator Class"
-description: Nuxt Generator Class
+title: "API: Generator クラス"
+description: Nuxt Generator クラス
 ---
 
-# Generator Class
+# Generator クラス
 
-- Source: **[builder/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/generator.js)**
+- ソース: **[generator/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/generator/src/generator.js)**
 
+## フック
 
-## Tapable plugins
+特定のライフサイクルイベントでのフックを登録できます。
 
-We can register hooks on certain life cycle events.
-
-```js
-nuxt.plugin('generator', generator => {
-    generator.plugin('generate', ({routes}) => {
-        // ...
-    }))
-})
-```
-
-Plugin           | Arguments                   | When
------------------|-----------------------------|--------------------------------------------------------------------------------
-`generateRoutes` | {generator, generateRoutes} | After resolving routes to generate so we have change to customize them
-`generate`       | {generator, routes}         | Just before start generating routes. routes are decorated with payloads
+フック                    | 引数                   | タイミング
+------------------------|-----------------------------|-----------------------------------------------
+`generate:before`       | (nuxt, generateOptions)     | generate する前
+`generate:distRemoved`  | (nuxt)                      | generate のビルド先フォルダがクリーンされるとき
+`generate:distCopied`   | (nuxt)                      | 静的ファイルとビルドされたファイルがコピーされるとき
+`generate:page`         | ({route, path, html})       | ユーザーがパスと html を更新できるようにするフック
+`generate:routeCreated` | (route, path, errors)       | generate されたページの保存に成功したとき
+`generate:extendRoutes` | (routes)                    | ユーザーが generate する routes を更新するためのフック
+`generate:routeFailed`  | (route, errors)             | generate されたページの保存に失敗したとき
+`generate:done`         | (nuxt, errors)              | generate が終了したとき

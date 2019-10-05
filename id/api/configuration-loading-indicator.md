@@ -45,4 +45,4 @@ Indikator built-in mendukung opsi `color` dan `background` .
 
 Jika Anda memerlukan indikator milik Anda sendiri, nilai String atau Name key juga bisa menjadikannya sebagai path pada templat html dari kode sumber (source code) indikator! Semua pengaturan juga melewati templat.
 
-[Kode sumber](https://github.com/nuxt/nuxt.js/tree/dev/lib/app/views/loading) Nuxt Built-ins juga tersedia jika Anda memerlukan base!
+[Kode sumber](https://github.com/nuxt/nuxt.js/tree/dev/packages/vue-app/template/views/loading) Nuxt Built-ins juga tersedia jika Anda memerlukan base!

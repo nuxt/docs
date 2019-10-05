@@ -1,50 +1,55 @@
 ---
-title: Auth External API (JWT)
-description: Authentication with external API service (jsonwebtoken) example with Nuxt.js
+title: 外部認証API (JWT)
+description: Nuxt.js で jsonwebtoken を使った外部認証の例
 github: auth-jwt
 code: https://github.com/ahadyekta/nuxt-auth-external-jwt
 ---
 
-# Documentation
+# ドキュメント
 
-In auth-routes example both api and nuxt start together and use one Node.js server instance. However, sometimes we should work with external api with jsonWebToken. In this example it will be explained in a simple way.
+auth-routes の例では、 api と nuxt の両方を同時に起動し、1つの Node.js サーバインスタンスを使用していました。
+しかし、時には jsonWebToken を使って外部 API を使う必要が出てきます。ここでは簡単に説明します。
 
-## Structure
+## 公式の `auth-module`
 
-Since Nuxt.js provides both server and client rendering and the cookie of browser is different from cookie of the Node.js server, we should push token data to some storage that can be accessible in both sides.
+複雑な認証フローを実装したい場合、例えば OAuth2 は、公式の [`auth-module`](https://github.com/nuxt-community/auth-module) を使用することをおすすめします。
 
-### For server rendering
+## 仕組み
 
-We should save the token in session browser cookie after login, then it can be accessed through `req.headers.cookie` in middleware files, `nuxtServerInit` function or  wherever you can access the `req`.
+Nuxt.js はサーバとクライアントの両方のレンダリングをしており、ブラウザのクッキーは Node.js のサーバサイドのクッキーとは異なるため、トークンのデータを双方からアクセスできる場所に保存する必要があります。
 
-### For client rendering
+### サーバーサイドレンダリングの場合
 
-We directly commit token in the store, as long as the page is not closed or reloaded, we have the token.
+ログイン後にトークンをセッションブラウザのクッキーに保存し、ミドルウェアファイルの `req.headers.cookie` 、 `nuxtServerInit` 関数、または `req` を介してどこからでもアクセスできます。
 
-First, we install the dependencies:
+### クライアントサイドレンダリングの場合
+
+store にトークンを直接保存します。ページが閉じられたり再読み込みされない限り、トークンが保たれます。
+
+まず依存パッケージをインストールします:
 
 ```bash
 npm install js-cookie --save
 npm install cookieparser --save
 ```
 
-## Login Page
+## ログインページ
 
-Then inside page directory make a `login.vue` file, and inside the script section, add:
+次に、ページディレクトリ以下に `login.vue`ファイルを作り、 script 部分に以下のコードを追加します:
 
 ```js
-import Cookie from 'js-cookie'
+const Cookie = process.client ? require('js-cookie') : undefined
 
 export default {
   middleware: 'notAuthenticated',
   methods: {
     postLogin () {
-      setTimeout(() => {
+      setTimeout(() => { // 非同期リクエストのタイムアウトをシミュレートします
         const auth = {
           accessToken: 'someStringGotFromApiServiceWithAjax'
         }
-        this.$store.commit('update', auth) // mutating to store for client rendering
-        Cookie.set('auth', auth) // saving token in cookie for server rendering
+        this.$store.commit('setAuth', auth) // クライアントレンダリング用に変更する
+        Cookie.set('auth', auth) // サーバサイドレンダリングのためにクッキーにトークンを保存する
         this.$router.push('/')
       }, 1000)
     }
@@ -52,35 +57,39 @@ export default {
 }
 ```
 
-> Note: we simulate the async request with timeout.
+> 注意: この例では非同期のリクエストをタイムアウトを使って再現しています。
 
-## Using the store
+## storeを使った例
 
-After that make `index.js` in `store` directory like below :
+その後、 `store` ディレクトリ内に `index.js` をこのように作成します:
 
 ```javascript
 import Vuex from 'vuex'
 
-var cookieparser = require('cookieparser')
+const cookieparser = process.server ? require('cookieparser') : undefined
 
 const createStore = () => {
   return new Vuex.Store({
-    state: {
+    state: () => ({
       auth: null
-    },
+    }),
     mutations: {
-      update (state, data) {
-        state.auth = data
+      setAuth(state, auth) {
+        state.auth = auth
       }
     },
     actions: {
-      nuxtServerInit ({ commit }, { req }) {
-        let accessToken = null
+      nuxtServerInit({ commit }, { req }) {
+        let auth = null
         if (req.headers.cookie) {
-          var parsed = cookieparser.parse(req.headers.cookie)
-          accessToken = JSON.parse(parsed.auth)
+          const parsed = cookieparser.parse(req.headers.cookie)
+          try {
+            auth = JSON.parse(parsed.auth)
+          } catch (err) {
+            // 有効なクッキーが見つからない場合
+          }
         }
-        commit('update', accessToken)
+        commit('setAuth', auth)
       }
     }
   })
@@ -89,30 +98,51 @@ const createStore = () => {
 export default createStore
 ```
 
-> Note: the `nuxtServerInit` function only runs in every server side rendering. So we use it to mutate the session browser cookie in the store. We can get the session browser cookie by using `req.headers.cookie` and parse it using `cookieparser`.
+> 注意: `nuxtServerInit` 関数はサーバサイドでレンダリングされるたびに実行されます。これを使ってストア内のセッションブラウザのクッキーを更新します。
+その後、 `req.headers.cookie` を使ってそのクッキーを取得して、 `cookieparser` を使ってパースすることができます。
 
-## checking auth middlewares
+## 認証用ミドルウェアによる検証
 
-We can check the store for havin the accessToken in every page we need to limit access. In middleware directory we make `authenticated.js` file:
+アクセス制限が必要な全ページで、アクセストークンを持っているかどうかを store を使って検証できます。middleware のディレクトリに `authenticated.js` を作成します:
 
 ```javascript
 export default function ({ store, redirect }) {
-  // If the user is not authenticated
+  // ユーザが認証されていない場合
   if (!store.state.auth) {
     return redirect('/login')
   }
 }
 ```
 
-and in middleware directory make `notAuthenticated.js` file for login page:
+次に、 middleware のディレクトリに login ページ用の `notAuthenticated.js` を作成します:
 
 ```javascript
 export default function ({ store, redirect }) {
-  // If the user is authenticated redirect to home page
+  // ユーザが認証されてホームページにリダイレクトされた場合
   if (store.state.auth) {
     return redirect('/')
   }
 }
 ```
 
-> Note: use `authenticated` middleware for pages which need authentication and use `notAuthenticated` middleware inside the login/register and similar pages.
+> 注意: 認証が必要なページには `authenticated` ミドルウェアを使用し、 login/register などのページには `notAuthenticated` ミドルウェアを使います。
+
+## ユーザのログアウト
+最後に、ユーザをシステムからログアウトさせるため、クッキーを削除することができます:
+
+```javascript
+const Cookie = process.client ? require('js-cookie') : undefined
+
+export default {
+  methods: {
+    logout() {
+      // 外部 API 上の JWT クッキーを無効化させるコードも必要です
+      Cookie.remove('auth')
+      this.$store.commit('setAuth', null)
+    }
+  }
+}
+```
+
+> 注意: @click="logout" を使用して、このメソッドを参照します
+

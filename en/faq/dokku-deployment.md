@@ -1,9 +1,7 @@
 ---
-title: Dokku Deployment
+title: How to deploy on Dokku?
 description: How to deploy a Nuxt.js application on Dokku?
 ---
-
-# How to deploy on Dokku?
 
 We recommend to read [Dokku documentation for the setup](http://dokku.viewdocs.io/dokku/getting-started/installation/) and [Deploying a Node.js Application on Digital Ocean using Dokku](http://jakeklassen.com/post/deploying-a-node-app-on-digital-ocean-using-dokku/).
 
@@ -16,7 +14,7 @@ We need to tell Dokku to install the `devDependencies` of the project (to be abl
 dokku config:set my-nuxt-app NPM_CONFIG_PRODUCTION=false
 ```
 
-Also, we want our application to listen on the port `0.0.0.0` and run in production mode:
+Also, we want our application to listen on the host `0.0.0.0` and run in production mode:
 
 ```bash
 // on Dokku Server
@@ -39,6 +37,12 @@ Then, we tell Dokku to launch `npm run build` via the `scripts.dokku.predeploy` 
     }
   }
 }
+```
+
+To launch the application we run `npm run start` using the [Procfile](http://dokku.viewdocs.io/dokku/deployment/methods/dockerfiles/#procfiles-and-multiple-processes):
+
+```
+web: npm run start
 ```
 
 Finally, we can push our app on Dokku with:

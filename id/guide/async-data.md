@@ -7,11 +7,26 @@ description: Anda mungkin ingin mengambil data dan me-rendernya di sisi-server. 
 
 > Anda mungkin ingin mengambil data dan me-rendernya di sisi-server. Nuxt.js menambahkan metode `asyncData` untuk memungkinkan Anda menangani operasi async sebelum menyetel data komponen.
 
+<div>
+  <a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/async-data-with-nuxtjs.png" srcset="/async-data-with-nuxtjs-2x.png 2x" alt="AsyncData by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
+      <p class="Promote__Content__Description">Learn how to manage asynchronous data with Nuxt.js.</p>
+      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+    </div>
+  </a>
+</div>
+
 ## Metode asyncData
 
 Terkadang Anda hanya ingin mengambil data dan mem-"pre-render"-nya di server tanpa menggunakan simpanan (store). `asyncData` dipanggil setiap saat sebelum memuat komponen (**hanya untuk komponen halaman**). Ini bisa disebut sisi-server atau sebelum menavigasi ke rute yang sesuai. Metode ini menerima [context](/api/context) sebagai argumen pertama, Anda dapat menggunakannya untuk mengambil beberapa data dan Nuxt.js akan menggabungkannya dengan data komponen.
 
-<div class="Alert Alert--orange">Anda **TIDAK** memiliki akses contoh komponen melalui `this` di dalam `asyncData` karena ia dipanggil **sebelum memulai** komponennya.</div>
+<div class="Alert Alert--orange">
+
+Anda **TIDAK** memiliki akses contoh komponen melalui `this` di dalam `asyncData` karena ia dipanggil **sebelum memulai** komponennya.
+
+</div>
 
 Nuxt.js menawarkan berbagai cara untuk menggunakan `asyncData`. Pilih yang paling Anda lazimi:
 

@@ -18,17 +18,17 @@ Kelas-kelas ini adalah jantung dari Nuxt dan harus ada baik ketika runtime maupu
 #### Nuxt
 
 - [Kelas `Nuxt`](/api/internals-nuxt)
-- Sumber: [core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/nuxt.js)
+- Sumber: [core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/nuxt.js)
 
 #### Renderer
 
 - [Kelas `Renderer`](/api/internals-renderer)
-- Sumber: [core/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/renderer.js)
+- Sumber: [vue-renderer/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-renderer/src/renderer.js)
 
 #### ModuleContainer
 
 - [Kelas `ModuleContainer`](/api/internals-module-container)
-- Sumber: [core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/module.js)
+- Sumber: [core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/module.js)
 
 ### Build
 
@@ -37,22 +37,22 @@ Kelas-kelas ini hanya dibutuhkan ketika mode build atau dev.
 ### Builder
 
 - [Kelas `Builder`](/api/internals-builder)
-- Sumber: [builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)
+- Sumber: [builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/builder/src/builder.js)
 
 #### Generator
 
 - [Kelas `Generator`](/api/internals-generator)
-- Sumber: [generator/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/generator.js)
+- Sumber: [generator/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/generator/src/generator.js)
 
 ### Common
 
 #### Utils
 
-- Sumber: [common/utils.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/common/utils.js)
+- Sumber: [utils/src](https://github.com/nuxt/nuxt.js/blob/dev/packages/utils/src)
 
 #### Options
 
-- Sumber: [common/options.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/common/options.js)
+- Sumber: [config/options.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/config/src/options.js)
 
 ## Pengemasan & Penggunaan
 

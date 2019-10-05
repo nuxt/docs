@@ -1,27 +1,27 @@
 ---
 title: 設定
-description: Nuxt.js ではデフォルトの設定でほとんどのユースケースをカバーしていますが `nuxt.config.js` で設定を上書きすることができます。
+description: Nuxt.js ではデフォルトの設定でほとんどのユースケースをカバーしています。`nuxt.config.js` を使ってこの設定を上書きすることができます。
 ---
 
-> Nuxt.js ではデフォルトの設定でほとんどのユースケースをカバーしていますが `nuxt.config.js` で設定を上書きすることができます。
+>  Nuxt.js ではデフォルトの設定でほとんどのユースケースをカバーしています。`nuxt.config.js` を使ってこの設定を上書きすることができます。
 
 ### build
 
-このオプションで vendor.bundle.js ファイルにモジュールを追加できます。vendor.bundle.js は app バンドルファイルのサイズを削減するために生成されるものです。外部のモジュールを使うときに役立ちます。
+このオプションで、`loaders`、`filenames` や `webpack` の設定、`transpilation` を含む `build` ステップにおけるさまざまな設定を行うことができます。
 
-[build オプションに関するドキュメント](/api/configuration-build)
+[`build` オプションに関するドキュメント](/api/configuration-build)
 
 ### css
 
-このオプションで、グローバルに利用したい（どのファイルにもインクルードしたい）CSS ファイル/モジュール/ライブラリを指定できます。
+このオプションで、グローバルに（すべてのページで）利用したい CSS ファイル/モジュール/ライブラリを指定できます。
 
-[css オプションに関するドキュメント](/api/configuration-css)
+[`css` オプションに関するドキュメント](/api/configuration-css)
 
 ### dev
 
-このオプションで、Nuxt.js の開発モードまたはプロダクションモードを定義できます。
+このオプションで、Nuxt.js の `development` または `production` モードを定義できます。（Nuxt.js をプログラム的に使う際に重要です）
 
-[dev オプションに関するドキュメント](/api/configuration-dev)
+[`dev` オプションに関するドキュメント](/api/configuration-dev)
 
 ### env
 
@@ -31,15 +31,15 @@ description: Nuxt.js ではデフォルトの設定でほとんどのユース�
 
 ### generate
 
-このオプションは、動的なルーティングをしているアプリケーションを Nuxt.js で HTML ファイルに変換するときに使います。動的なルーティングに用いるパラメータを指定できます。
+このオプションで、アプリケーションの動的なルーティングに用いるパラメータを指定できます。Nuxt.js により HTML ファイルに変換されます。
 
-[generate オプションに関するドキュメント](/api/configuration-generate)
+[`generate` オプションに関するドキュメント](/api/configuration-generate)
 
 ### head
 
-このオプションで、アプリケーションのデフォルトのメタ情報（訳注: head タグ内のメタタグの情報）を指定できます。
+このオプションで、アプリケーションのデフォルトのメタタグを全て指定できます。
 
-[head オプションに関するドキュメント](/api/configuration-head)
+[`head` オプションに関するドキュメント](/api/configuration-head)
 
 ### loading
 
@@ -49,13 +49,20 @@ description: Nuxt.js ではデフォルトの設定でほとんどのユース�
 
 ### modules
 
-このオプションで、プロジェクトにnuxtモジュールを追加できます。
+このオプションで、プロジェクトに Nuxt モジュールを追加できます。
 
 [`modules` オプションに関するドキュメント](/api/configuration-modules)
 
+### modulesDir
+
+このオプションで、Nuxt.js アプリケーションの node_modules ディレクトリの指定ができます。
+
+[`modulesDir` オプションに関するドキュメント](/api/configuration-modulesdir)
+
+
 ### plugins
 
-このオプションで、ルートの vue.js アプリケーションをインスタンス化する前に実行したい JavaScript plugin を指定できます。
+このオプションで、ルートの Vue.js アプリケーションをインスタンス化する前に実行したい JavaScript plugin を指定できます。
 
 [`plugins` オプションに関するドキュメント](/api/configuration-plugins)
 
@@ -67,18 +74,30 @@ description: Nuxt.js ではデフォルトの設定でほとんどのユース�
 
 ### router
 
-このオプションで、Nuxt.js のデフォルトの vue-router 設定を上書きできます。
+このオプションで、Nuxt.js のデフォルトの Vue Router 設定を上書きできます。
 
 [`router` オプションに関するドキュメント](/api/configuration-router)
 
+### server
+
+このオプションで、Nuxt.js アプリケーションのサーバーインスタンスにおける接続変数を設定できます。
+
+[`server` オプションに関するドキュメント](/api/configuration-server)
+
 ### srcDir
 
-このオプションで、アプリケーションのソースディレクトリを指定できます。
+このオプションで、Nuxt.js アプリケーションのソースディレクトリを指定できます。
 
-[srcDir オプションに関するドキュメント](/api/configuration-srcdir)
+[`srcDir` オプションに関するドキュメント](/api/configuration-srcdir)
+
+### dir
+
+このオプションで、Nuxt.js アプリケーションのカスタムディレクトリを指定できます。
+
+[`dir` オプションに関するドキュメント](/api/configuration-dir)
 
 ### transition
 
-このオプションで、ページ間のトランジションのデフォルト設定を指定できます。
+このオプションで、ページトランジションのデフォルトプロパティを指定できます。
 
-[transition オプションに関するドキュメント](/api/configuration-transition)
+[`transition` オプションに関するドキュメント](/api/configuration-transition)

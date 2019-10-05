@@ -3,8 +3,6 @@ title: "API : nuxt.render(req, res)"
 description: Vous pouvez utiliser Nuxt.js comme un middleware pour votre serveur Node.js.
 ---
 
-# nuxt.render(req, res)
-
 - Type : `Function`
 - Arguments :
   1. [Request](https://nodejs.org/api/http.html#http_class_http_incomingmessage)
@@ -34,10 +32,6 @@ app.use(nuxt.render)
 if (config.dev) {
   new Builder(nuxt).build()
   .then(listen)
-  .catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
 }
 else {
   listen()
@@ -50,4 +44,8 @@ function listen() {
 }
 ```
 
-<p class="Alert">Il est recommandé d'appeler `nuxt.render` à la fin de vos middlewares ainsi il fera le rendu de votre application web et n'appellera pas `next()`.</p>
+<div class="Alert">
+
+Il est recommandé d'appeler `nuxt.render` à la fin de vos middlewares ainsi il fera le rendu de votre application web et n'appellera pas `next()`.
+
+</div>

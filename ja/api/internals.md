@@ -1,76 +1,75 @@
 ---
-title: "API: Nuxt Modules Intro"
-description: Better understand Nuxt internals
+title: 'API: Nuxt のモジュールの紹介'
+description: Nuxt の内部をより深く理解する
 ---
 
 # Nuxt Internals
 
-Nuxt.js has a fully modular architecture which allows developers extending any part of Nuxt Core using a flexible API.
+Nuxt.js には開発者が Nuxt Core の好きな部分を柔軟な API を使って拡張するための十分にモジュール化された仕組みがあります。
 
-Please see [Modules Guide](/guide/modules) for more detailed information if interested developing your own module.
+自分でモジュールを作ってみたいのなら、詳しくは [モジュールガイド](/guide/modules) をご覧ください。
 
-This section helps getting familiar to Nuxt internals and can be used as a reference to understand it better while writing your own modules.
+このセクションは、Nuxt の内部に慣れ親しむためにあり、自分でモジュールを書くときに理解を深めるためのリファレンスとして使えます。
 
-### Core
+### コア
 
-These classes are the hearth of Nuxt and should exist on both runtime and build time.
+これらのクラスは Nuxt の Nuxt の中核にあり、実行時もビルド時も存在しなければなりません。
 
 #### Nuxt
 
-- [`Nuxt` Class](/api/internals-nuxt)
-- Source: [core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/nuxt.js)
+- [`Nuxt` クラス](/api/internals-nuxt)
+- ソース: [core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/nuxt.js)
 
 #### Renderer
 
-- [`Renderer` Class](/api/internals-renderer)
-- Source: [core/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/renderer.js)
+- [`Renderer` クラス](/api/internals-renderer)
+- ソース: [vue-renderer/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-renderer/src/renderer.js)
 
 #### ModuleContainer
 
-- [`ModuleContainer` Class](/api/internals-module-container)
-- Source: [core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/module.js)
+- [`ModuleContainer` クラス](/api/internals-module-container)
+- ソース: [core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/module.js)
 
-### Build
+### ビルド
 
-These classes are only needed for build or dev mode.
+これらのクラスはビルドあるいは開発モードのためだけに必要です。
 
-### Builder
+#### Builder
 
-- [`Builder` Class](/api/internals-builder)
-- Source: [builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/builder.js)
+- [`Builder` クラス](/api/internals-builder)
+- ソース: [builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/builder/src/builder.js)
 
 #### Generator
 
-- [`Generator` Class](/api/internals-generator)
-- Source: [generator/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/generator.js)
+- [`Generator` クラス](/api/internals-generator)
+- ソース: [generator/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/generator/src/generator.js)
 
-### Common
+### 共通
 
 #### Utils
 
-- Source: [common/utils.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/common/utils.js)
+- ソース: [utils/src](https://github.com/nuxt/nuxt.js/blob/dev/packages/utils/src)
 
 #### Options
 
-- Source: [common/options.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/common/options.js)
+- ソース: [config/options.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/config/src/options.js)
 
-## Packaging & Usage
+## パッケージの使い方
 
-Nuxt exports all classes by default. To require them:
+Nuxt はすべてのクラスをデフォルトでエクスポートします。これらを得るには:
 
 ```js
-const { Nuxt, Builder, Utils } = require('nuxt')
+import { Nuxt, Builder, Utils } from 'nuxt'
 ```
 
-## Common patterns
+## よくあるパターン
 
-All Nuxt classes have a reference to `nuxt` instance and options. Every class extends [`tappable`](https://github.com/nuxt/tappable), this way we always have a consistent API across classes to access `options` and `nuxt`.
+すべての Nuxt クラスは `nuxt` インスタンスとオプションへの参照を持っています。
+これにより `options` と `nuxt` にアクセスするための一貫した API を実現しています。
 
 ```js
-const Tapable = require('tappable')
-
-class SomeClass extends Tapable {
-  constructor (nuxt, builder) {
+class SomeClass {
+  constructor (nuxt) {
     super()
     this.nuxt = nuxt
     this.options = nuxt.options
@@ -82,24 +81,24 @@ class SomeClass extends Tapable {
 }
 ```
 
-Classes are *plugable* so they should register a plugin on main `nuxt` container to register more hooks.
+クラスは「プラグ可能」であるので、追加のフックを登録する場合はメインの `nuxt` コンテナにプラグインを登録します。
 
 ```js
-class FooClass extends Tapable {
-  constructor (nuxt, builder) {
+class FooClass {
+  constructor (nuxt) {
     super()
     this.nuxt = nuxt
     this.options = nuxt.options
 
-    this.nuxt.applyPluginsAsync('foo', this)
+    this.nuxt.callHook('foo', this)
   }
 }
 ```
 
-So we can hook into `foo` module like this:
+`foo` モジュールにフックするにはこうします:
 
 ```js
-nuxt.plugin('foo', foo => {
+nuxt.hook('foo', foo => {
     // ...
 })
 ```

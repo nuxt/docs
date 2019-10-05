@@ -30,7 +30,7 @@ Nuxt.js includes the following to create a rich web application development:
 - [Vue Router](https://router.vuejs.org/en/)
 - [Vuex](https://vuex.vuejs.org/en/) (included only when using the [store option](/guide/vuex-store))
 - [Vue Server Renderer](https://ssr.vuejs.org/en/) (excluded when using [`mode: 'spa'`](/api/configuration-mode))
-- [vue-meta](https://github.com/declandewet/vue-meta)
+- [vue-meta](https://github.com/nuxt/vue-meta)
 
 A total of only **57kB min+gzip** (53kB with Vuex).
 
@@ -43,7 +43,7 @@ Under the hood we use [webpack](https://github.com/webpack/webpack) with [vue-lo
 - Server-Side Rendering
 - Powerful Routing System with Asynchronous Data
 - Static File Serving
-- ES6/ES7 Transpilation
+- ES2015+ Transpilation
 - Bundling and minifying of your JS & CSS
 - Managing `<head>` element (`<title>`, `<meta>`, etc.)
 - Hot module replacement in Development
@@ -55,7 +55,7 @@ Under the hood we use [webpack](https://github.com/webpack/webpack) with [vue-lo
 
 This schema shows what is called by Nuxt.js when the server is called or when the user navigate through the app via `<nuxt-link>`:
 
-![nuxt-schema](/nuxt-schema.png)
+![nuxt-schema](/nuxt-schema.svg)
 
 ## Server Rendered (Universal SSR)
 
@@ -112,4 +112,8 @@ We now have a **Serverless Static Generated Web Application** :)
 
 We can go further by thinking of an e-commerce web application made with `nuxt generate` and hosted on a CDN. Everytime a product is out of stock or back in stock, we regenerate the web app. But if the user navigates through the web app in the meantime, it will be up to date thanks to the API calls made to the e-commerce API. No need to have multiple instances of a server + a cache anymore!
 
-<div class="Alert">See [How to deploy on GitHub Pages?](/faq/github-pages) for more details on how to deploy to GitHub Pages.</div>
+<div class="Alert">
+
+See [How to deploy on GitHub Pages?](/faq/github-pages) for more details on how to deploy to GitHub Pages.
+
+</div>

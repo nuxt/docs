@@ -22,13 +22,8 @@ npm install --save-dev ava jsdom
   "test": "ava",
 },
 "ava": {
-  "require": [
-    "babel-register"
-  ]
-},
-"babel": {
-  "presets": [
-    "es2015"
+  "files": [
+    "test/**/*"
   ]
 }
 ```
@@ -70,10 +65,6 @@ import test from 'ava'
 import { Nuxt, Builder } from 'nuxt'
 import { resolve } from 'path'
 
-// Nuxt への参照を保持します
-// そうすればテスト終了時にサーバーをクローズできます
-let nuxt = null
-
 // Nuxt.js を初期化し localhost:4000 のリスニングを開始します
 test.before('Init Nuxt.js', async t => {
   const rootDir = resolve(__dirname, '..')
@@ -81,20 +72,24 @@ test.before('Init Nuxt.js', async t => {
   try { config = require(resolve(rootDir, 'nuxt.config.js')) } catch (e) {}
   config.rootDir = rootDir // project folder
   config.dev = false // production build
-  nuxt = new Nuxt(config)
+  config.mode = 'universal' // Isomorphic application
+  const nuxt = new Nuxt(config)
+  t.context.nuxt = nuxt // Nuxt への参照を保持することでテスト終了時にサーバーをクローズすることができます
   await new Builder(nuxt).build()
   nuxt.listen(4000, 'localhost')
 })
 
 // 生成された HTML のみをテストする例
 test('Route / exits and render HTML', async t => {
+  const { nuxt } = t.context
   let context = {}
   const { html } = await nuxt.renderRoute('/', context)
   t.true(html.includes('<h1 class="red">Hello world!</h1>'))
 })
 
 // DOM チェックを経由してテストする例
-test('Route / exits and render HTML with CSS applied', async t => {
+test('Route / exists and renders HTML with CSS applied', async t => {
+  const { nuxt } = t.context
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
   t.not(element, null)
@@ -105,6 +100,7 @@ test('Route / exits and render HTML with CSS applied', async t => {
 
 // Nuxt サーバーをクローズする
 test.after('Closing server', t => {
+  const { nuxt } = t.context
   nuxt.close()
 })
 ```
@@ -123,7 +119,7 @@ jsdom はブラウザを使っていないため制約がいくつかありま�
 
 > [Prettier](prettier.io) はとても人気のあるコードフォーマッタです。
 
-Nuxt.jsを使ってとても簡単に Prettier と ESLint を追加することができます。まず、npmの依存パッケージを追加する必要があります:
+Nuxt.js を使ってとても簡単に Prettier と ESLint を追加することができます。まず、npm の依存パッケージを追加する必要があります:
 
 ```bash
 npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader eslint-plugin-vue eslint-plugin-prettier prettier
@@ -148,7 +144,7 @@ module.exports = {
     "plugin:vue/recommended",
     "plugin:prettier/recommended"
   ],
-  // *.vue files を lint にかけるために必要
+  // *.vue ファイルを lint にかけるために必要
   plugins: [
     'vue'
   ],
@@ -162,7 +158,7 @@ module.exports = {
 }
 ```
 
-次に、 `package.json` に `lint` と `lintfix` スクリプトを追加することができます :
+そして、`lint` と `lintfix` スクリプトを `package.json` に追加することができます:
 
 ```js
 "scripts": {
@@ -171,7 +167,7 @@ module.exports = {
 }
 ```
 
-エラーの確認に `lint` を実行できます:
+エラーを確認するために、`lint` を実行できます:
 
 ```bash
 npm run lint
@@ -183,11 +179,11 @@ npm run lint
 npm run lintfix
 ```
 
-ESLint は `.gitignore` に定義されたファイルを無視しつつ、それ以外のすべての JavaScript と Vue ファイルを lint します。
+ESLint は `.gitignore` に定義されたファイルを無視しますが、それ以外の全ての JavaScript と Vue ファイルを lint します。
 
-webpackを用いてホットリローディングモードで ESLint を有効にすることをお勧めします。この方法で ESLint は `npm run dev` 中に実行されます。`nuxt.config.js` に以下のコードを追加してください:
+また、Webpack を使用してホットリロードモードで ESLint を有効にすることをお勧めします。この方法で ESLint は `npm run dev` 中に保存で実行されます。`nuxt.config.js` に以下を追加してください：
 
-```
+```js
 ...
   /*
    ** Build configuration
@@ -210,4 +206,8 @@ webpackを用いてホットリローディングモードで ESLint を有効�
   }
 ```
 
-<p class="Alert Alert--info">`"precommit": "npm run lint"` を package.json に追加してコードをコミットする前に自動的に lint するのはベストプラクティスのひとつです。</p>
+<div class="Alert Alert--orange">
+
+package.json に `"precommit": "npm run lint"` を追加してコードをコミットする前に自動的に lint するのはベストプラクティスのひとつです。
+
+</div>

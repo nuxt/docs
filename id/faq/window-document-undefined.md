@@ -5,12 +5,12 @@ description: window atau document tidak terdefinisi di Nuxt.js?
 
 # window atau document tidak terdefinisi?
 
-Hal ini disebabkan oleh proses rendering di sisi-server. Jika Anda hanya ingin mengimpor sumber daya (resource) hanya berada di sisi-klien, maka Anda perlu menggunakan variabel `process.browser`.
+Hal ini disebabkan oleh proses rendering di sisi-server. Jika Anda hanya ingin mengimpor sumber daya (resource) hanya berada di sisi-klien, maka Anda perlu menggunakan variabel `process.client`.
 
 Sebagai contoh, di file `.vue` Anda:
 
 ```js
-if (process.browser) {
+if (process.client) {
   require('pustaka_eksternal')
 }
 ```

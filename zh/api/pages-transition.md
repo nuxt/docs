@@ -63,7 +63,8 @@ Nuxt.js 将使用上面的配置来设置 Vue.js transition 组件，如下：
 |------|------|---------|-----------|
 | `name` | String | `"page"` | 所有路由过渡都会用到的过渡名称。 |
 | `mode` | String | `"out-in"` | 所有路由都用到的过渡模式，见 [Vue.js transition 使用文档](http://vuejs.org/v2/guide/transitions.html#Transition-Modes)。 |
-| `css` | Boolean | `true` | 是否给页面组件根元素添加 CSS 过渡类名。如果值为 `false`，路由过渡时将触发页面组件事件注册的 Javascript 钩子方法。|
+| `css` | Boolean | `true` | 是否给页面组件根元素添加 CSS 过渡类名。如果值为 `false`，路由过渡时将只会触发页面组件注册的 Javascript 钩子事件方法（不会设置 css 类名）。|
+| `duration` | Integer | `n/a` | 在页面切换的持续时间（以毫秒为单位）详情请参考 [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Explicit-Transition-Durations) |
 | `type` | String | `n/a` | 指定过滤动效事件的类型，用于判断过渡结束的时间点。值可以是 "transition" 或 "animation"。 默认情况下, Nuxt.js 会自动侦测动效事件的类型。|
 | `enterClass` | String | `n/a` | 目标路由动效开始时的类名。 详情请参考 [Vue.js transition 使用文档](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) 。|
 | `enterToClass` | String | `n/a` | 目标路由动效结束时的类名。 详情请参考 [Vue.js transition 使用文档](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) 。 |

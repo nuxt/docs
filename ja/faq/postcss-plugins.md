@@ -5,16 +5,45 @@ description: PostCSS プラグインを追加するには？
 
 # PostCSS プラグインを追加するには？
 
-`nuxt.config.js` ファイル内に次のように記述します:
+### 推奨する方法
+
+あなたのプロジェクトディレクトリに `postcss.config.js` が存在する場合は、リネームか削除をします。 それから、 `nuxt.config.js` ファイル内に次のように記述します:
 
 ```js
-module.exports = {
+export default {
   build: {
-    postcss: [
-      require('postcss-nested')(),
-      require('postcss-responsive-type')(),
-      require('postcss-hexrgba')(),
-    ]
+    postcss: {
+      // キーとしてプラグイン名を、値として引数を追加します
+      // プラグインは前もって npm か yarn で dependencies としてインストールしておきます
+      plugins: {
+        // 値として false を渡すことによりプラグインを無効化します
+        'postcss-url': false,
+        'postcss-nested': {},
+        'postcss-responsive-type': {},
+        'postcss-hexrgba': {}
+      },
+      preset: {
+        // postcss-preset-env 設定を変更します
+        autoprefixer: {
+          grid: true
+        }
+      }
+    }
   }
+}
+```
+
+### レガシーな方法
+
+**注意: この方法は非推奨です。**
+
+`postcss.config.js` を使用します。例:
+
+```
+const join = require('path').join
+const tailwindJS = join(__dirname, 'tailwind.js')
+
+module.exports = {
+  plugins: [require('tailwindcss')(tailwindJS), require('autoprefixer')]
 }
 ```

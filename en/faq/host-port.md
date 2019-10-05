@@ -1,48 +1,88 @@
 ---
-title: HOST and PORT
-description: How to edit HOST and PORT with Nuxt.js?
+title: How to edit host and port?
+description: How to edit host and port with Nuxt.js?
 ---
 
-# How to edit HOST and PORT?
+By default, Nuxt development server host is `localhost` (only accessible from within the host machine).
 
-You can configure the PORT with 3 different ways:
+Host `0.0.0.0` is designated to tell Nuxt to resolve a host address, which is accessible to connections _outside_ of the host machine (e.g. LAN).
 
-1. With env variables
+You can configure the connection variables in different ways.  They are listed **from highest to lowest priority**.
 
-  ```js
-  "scripts": {
-    "dev": "HOST=0.0.0.0 PORT=3333 nuxt"
-  }
-  ```
+> **Note:** If `port` is assigned the string value of `'0'` (not `0`, which is falsy), a random port will be assigned to your Nuxt application.
 
-2. Add better cross platform development support.
+## As direct arguments
 
-  **Note**: for better cross platform development support you can use [cross-env](https://www.npmjs.com/package/cross-env) package.
+```sh
+nuxt --hostname myhost --port 3333
+```
+Or
+```js
+"scripts": {
+  "dev": "nuxt --hostname myhost --port 3333"
+}
+```
 
-  Installation:
+## Configure in `nuxt.config.js`:
 
-  ```bash
-  npm install --save-dev cross-env
-  ```
+Inside your `nuxt.config.js`:
 
-  ```js
-  "scripts": {
-    "dev": "cross-env HOST=0.0.0.0 PORT=3333 nuxt"
-  }
-  ```
-
-3. Via a `nuxt` config in the `package.json`:
-
-  Inside your `package.json`:
-
-  ```js
-  "config": {
-    "nuxt": {
-      "host": "0.0.0.0",
-      "port": "3333"
-    }
+```js
+export default {
+  server: {
+    port: 8000, // default: 3000
+    host: '0.0.0.0', // default: localhost
   },
-  "scripts": {
-    "dev": "nuxt"
+  // other configs
+}
+```
+
+
+## With NUXT_HOST and NUXT_PORT env variables
+
+Similar to HOST and PORT but more specific in case you need those for something else.
+
+```js
+"scripts": {
+  "dev": "NUXT_HOST=0.0.0.0 NUXT_PORT=3333 nuxt"
+}
+```
+
+**Note**: for better cross platform development support you can use [cross-env](https://www.npmjs.com/package/cross-env) package.
+
+Installation:
+
+```bash
+npm install --save-dev cross-env
+```
+
+```js
+"scripts": {
+  "dev": "cross-env NUXT_HOST=0.0.0.0 NUXT_PORT=3333 nuxt"
+}
+```
+
+## With HOST and PORT env variables
+
+```js
+"scripts": {
+  "dev": "HOST=0.0.0.0 PORT=3333 nuxt"
+}
+```
+
+
+## Via a `nuxt` config in the `package.json`:
+
+Inside your `package.json`:
+
+```json
+"config": {
+  "nuxt": {
+    "host": "0.0.0.0",
+    "port": "3333"
   }
-  ```
+},
+"scripts": {
+  "dev": "nuxt"
+}
+```

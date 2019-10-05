@@ -31,7 +31,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**Info:** anda bisa menggunakan perintah `nuxt build --analyze` atau `nuxt build -a` untuk mem'build aplikasi dan menjalankan bundle analyzer pada [http://localhost:8888](http://localhost:8888).</p>
+<div class="Alert Alert--teal">
+
+**Info:** anda bisa menggunakan perintah `nuxt build --analyze` atau `nuxt build -a` untuk mem'build aplikasi dan menjalankan bundle analyzer pada [http://localhost:8888](http://localhost:8888).
+
+</div>
 
 ## babel
 
@@ -43,7 +47,7 @@ module.exports = {
 
     ```js
     {
-      presets: ['vue-app']
+      presets: ['@nuxt/babel-preset-app']
     }
     ```
 
@@ -98,7 +102,7 @@ module.exports = {
 }
 ```
 
-Jika anda ingin melihat lebih lanjut mengenai konfigurasi default webpack, lihat [direktori webpack](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack) kami.
+Jika anda ingin melihat lebih lanjut mengenai konfigurasi default webpack, lihat [direktori webpack](https://github.com/nuxt/nuxt.js/tree/dev/packages/webpack/src/config) kami.
 
 ## extractCSS
 
@@ -107,7 +111,7 @@ Jika anda ingin melihat lebih lanjut mengenai konfigurasi default webpack, lihat
 - Type: `Boolean`
 - Default: `false`
 
-Menggunakan `extract-text-webpack-plugin` untuk mengekstrak CSS menjadi beberapa bagian file-file CSS (otomatis terinjeksi dengan template), yang memungkinkan file ter-cache secara terpisah. Ini disarankan bila ada banyak CSS bersama (shared CSS). CSS di dalam komponen async akan tetap digabung sebagai string JavaScript dan ditangani oleh vue-style-loader.
+Menggunakan [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin) untuk mengekstrak CSS menjadi beberapa bagian file-file CSS (otomatis terinjeksi dengan template), yang memungkinkan file ter-cache secara terpisah. Ini disarankan bila ada banyak CSS bersama (shared CSS). CSS di dalam komponen async akan tetap digabung sebagai string JavaScript dan ditangani oleh vue-style-loader.
 
 ## filenames
 

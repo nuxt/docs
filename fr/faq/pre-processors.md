@@ -1,9 +1,7 @@
 ---
-title: Préprocesseurs
+title: Comment utiliser des préprocesseurs?
 description: Comment utiliser des préprocesseurs avec Nuxt.js ?
 ---
-
-# Comment utiliser des préprocesseurs?
 
 Grâce à [Vue Loader](http://vue-loader.vuejs.org/fr/configurations/pre-processors.html), vous pouvez utiliser n'importe quel préprocesseur pour vos `<template>`, `<script>` ou `<style>` : il suffit d'utiliser l'attribut `lang`.
 
@@ -11,12 +9,12 @@ Exemple d'une `pages/index.vue` utilisant [Pug](https://github.com/pugjs/pug), [
 
 ```html
 <template lang="pug">
-  h1.red Hello {{ name }}!
+  h1.red Bonjour {{ name }}!
 </template>
 
 <script lang="coffee">
-module.exports = data: ->
-  { name: 'World' }
+export default data: ->
+  { name: 'le Monde' }
 </script>
 
 <style lang="sass">
@@ -34,5 +32,5 @@ module.exports = data: ->
 Pour être en mesure d'utiliser ces préprocesseurs, nous devons installer leurs loaders webpack :
 
 ```bash
-npm install --save-dev pug@2.0.0-beta6 pug-loader coffeescript coffee-loader node-sass sass-loader
+npm install --save-dev pug@2.0.3 pug-plain-loader coffeescript coffee-loader node-sass sass-loader
 ```

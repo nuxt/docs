@@ -5,7 +5,7 @@ description: Kelas ModuleContainer Nuxt
 
 # Kelas ModuleContainer
 
-- Sumber: **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/module.js)**
+- Sumber: **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/module.js)**
 
 Semua [modules](/guide/modules) akan dipanggil di dalam konteks dari instansi `ModuleContainer`.
 

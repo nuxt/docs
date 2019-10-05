@@ -18,7 +18,11 @@ description: 使用指定的上下文对象渲染指定的路由路径。
 
 和 [nuxt.renderAndGetWindow](/api/nuxt-render-and-get-window) 类似，该方法只用于 [测试目的](guide/development-tools#end-to-end-testing)。
 
-<p class="Alert Alert--info">`nuxt.renderRoute` 需在生成模式（dev: false）的编译过程之后才可调用。</p>
+<div class="Alert Alert--orange">
+
+`nuxt.renderRoute` 需在生产模式（dev: false）的编译过程之后才可调用。
+
+</div>
 
 例如：
 ```js

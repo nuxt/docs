@@ -18,7 +18,11 @@ description: 제공된 문장으로 특정 route를 랜더합니다.
 
 이 기능은 [test purposes](/guide/development-tools#end-to-end-testing) 기능과 [nuxt.renderAndGetWindow](/api/nuxt-render-and-get-window) 기능이 함께 사용되어야 합니다.
 
-<p class="Alert Alert--info">`nuxt.renderRoute`기능은 프로덕션 모드에서의 빌드 후에 실행할 수 있습니다 (dev: false).</p>
+<div class="Alert Alert--orange">
+
+`nuxt.renderRoute`기능은 프로덕션 모드에서의 빌드 후에 실행할 수 있습니다 (dev: false).
+
+</div>
 
 예제:
 ```js

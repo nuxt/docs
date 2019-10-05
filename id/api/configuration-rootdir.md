@@ -14,4 +14,8 @@ Properti ini ditimpa oleh [perintah nuxt](/guide/commands) dan diset ke argumen 
 
 Properti ini digunakan ketika menggunakan [Nuxt.js secara terprogram](/api/nuxt).
 
-<p class="Alert Alert--blue">Kelemahan dari pilihan ini adalah direktori `node_modules` Anda berada di dalam folder `rootDir`. Jika Anda ingin mengatur jalur aplikasi tanpa node_modules, gunakan [opsi `srcDir`](/api/configuration-srcdir).</p>
+<div class="Alert Alert--blue">
+
+Kelemahan dari pilihan ini adalah direktori `node_modules` Anda berada di dalam folder `rootDir`. Jika Anda ingin mengatur jalur aplikasi tanpa node_modules, gunakan [opsi `srcDir`](/api/configuration-srcdir).
+
+</div>

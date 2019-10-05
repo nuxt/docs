@@ -1,16 +1,14 @@
 ---
-title: Ressources externes
+title: Comment utiliser des ressources externes ?
 description: Comment utiliser des ressources externes avec Nuxt.js ?
 ---
-
-# Comment utiliser des ressources externes ?
 
 ## Paramètres globaux
 
 Ajoutez vos ressources dans le fichier `nuxt.config.js` :
 
 ```js
-module.exports = {
+export default {
   head: {
     script: [
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
@@ -33,13 +31,15 @@ Ajoutez vos ressources dans votre fichier `.vue` dans votre répertoire `pages/`
 
 <script>
 export default {
-  head: {
-    script: [
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
-    ],
-    link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
-    ]
+  head () {
+    return {
+      script: [
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
+      ],
+      link: [
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
+      ]
+    }
   }
 }
 </script>

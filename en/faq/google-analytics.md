@@ -1,9 +1,7 @@
 ---
-title: Google Analytics Integration
-description: How to use Google Analytics?
+title: How to use Google Analytics?
+description: How to use Google Analytics in my NuxtJS app?
 ---
-
-# How to use Google Analytics?
 
 First, please check the [official Google Analytics module](https://github.com/nuxt-community/analytics-module) for Nuxt.js.
 
@@ -48,7 +46,7 @@ Then, we tell Nuxt.js to import it in our main application:
 `nuxt.config.js`
 
 ```js
-module.exports = {
+export default {
   plugins: [
     { src: '~plugins/ga.js', ssr: false }
   ]
@@ -57,4 +55,8 @@ module.exports = {
 
 Voilà, Google Analytics is integrated into your Nuxt.js application and will track every page view!
 
-<p class="Alert Alert--nuxt-green"><b>Info:</b> you can use this method for any other tracking service.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>Info:</b> you can use this method for any other tracking service.
+
+</div>

@@ -37,7 +37,11 @@ Anda harus memasukkan perintah ini ke dalam `package.json`:
 
 Kemudian, Anda bisa menjalankan perintah Anda melalui `npm run <command>` (contoh : `npm run dev`).
 
-<p class="Alert Alert--nuxt-green"><b>Pro tip:</b> untuk menyampaikan argumen kepada perintah NPM, Anda perlu nama script ekstra berupa <code>--</code> (contoh: <code>npm run dev -- --spa</code>).</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>Pro tip:</b> untuk menyampaikan argumen kepada perintah NPM, Anda perlu nama script ekstra berupa <code>--</code> (contoh: <code>npm run dev -- --spa</code>).
+
+</div>
 
 ## Lingkungan Pengembangan (Development Environment)
 
@@ -95,7 +99,11 @@ Ia akan membuat folder `dist` dengan segala sesuatu di dalamnya siap untuk digun
 
 Jika Anda memiliki proyek dengan [rute dinamis](/guide/routing#dynamic-routes), lihat [konfigurasi generate](/api/configuration-generate) untuk memberi tahu Nuxt.js cara menghasilkan rute dinamis ini.
 
-<div class="Alert">Saat membuat aplikasi web Anda dengan `nuxt generate`, [konteks](/api/context) yang diberikan ke [data()](/guide/async-data#the-data-method) dan [fetch()](/guide/vuex-store#the-fetch-method) tidak akan memiliki `req` dan `res`.</div>
+<div class="Alert">
+
+Saat membuat aplikasi web Anda dengan `nuxt generate`, [konteks](/api/context) yang diberikan ke [data()](/guide/async-data#the-data-method) dan [fetch()](/guide/vuex-store#the-fetch-method) tidak akan memiliki `req` dan `res`.
+
+</div>
 
 ### Penyebaran Aplikasi Halaman Tunggal (SPA)
 
@@ -111,6 +119,14 @@ Jadi, untuk penyebaran SPA, Anda harus melakukan hal berikut:
 
 Metode penyebaran lain adalah menggunakan Nuxt sebagai middleware dalam kerangka kerja (framework) sewaktu dalam mode `spa` . Ini membantu mengurangi beban server dan menggunakan Nuxt dalam proyek di mana SSR tidak memungkinkan.
 
-<div class="Alert">Lihat [Bagaimana cara deploy di Heroku?] (/faq/heroku-deployment) untuk contoh penyebaran ke host populer.</div>
+<div class="Alert">
 
-<div class="Alert">Lihat [Cara memasang di Halaman GitHub?] (/faq/github-pages) untuk detail lebih lanjut tentang cara menyebarkan ke Halaman GitHub.</div>
+Lihat [Bagaimana cara deploy di Heroku?] (/faq/heroku-deployment) untuk contoh penyebaran ke host populer.
+
+</div>
+
+<div class="Alert">
+
+Lihat [Cara memasang di Halaman GitHub?] (/faq/github-pages) untuk detail lebih lanjut tentang cara menyebarkan ke Halaman GitHub.
+
+</div>

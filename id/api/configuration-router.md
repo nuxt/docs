@@ -24,7 +24,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert-blue">Ketika `base` di-set, Nuxt.js juga akan menambahkan dalam header dokumen `<base href="%7B%7B%20router.base%20%7D%7D">`.</p>
+<div class="Alert Alert-blue">Ketika `base` di-set, Nuxt.js juga akan menambahkan dalam header dokumen `<base href="%7B%7B%20router.base%20%7D%7D">
+
+`.
+
+</div>
 
 > Pilihan ini diberikan langsung ke vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
 
@@ -117,7 +121,7 @@ module.exports = {
 ```js
 export default function (context) {
   // Tambah properti userAgent dalam konteks (tersedia dalam `data` dan `fetch`)
-  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+  context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
 
@@ -152,32 +156,46 @@ Secara default, pilihan scrollBehavior diatur ke:
 
 ```js
 const scrollBehavior = function (to, from, savedPosition) {
-  // Jika posisi yang dikembalikan itu salah atau objek kosong,
-  // akan tetap pada posisi gulir yang sekarang.
+  // if the returned position is falsy or an empty object,
+  // will retain current scroll position.
   let position = false
 
-  // Jika tidak ada `children` terdeteksi
-  if (to.matched.length < 2) {
-    // gulir ke paling atas
+  // if no children detected and scrollToTop is not explicitly disabled
+  if (
+    to.matched.length < 2 &&
+    to.matched.every(r => r.components.default.options.scrollToTop !== false)
+  ) {
+    // scroll to the top of the page
     position = { x: 0, y: 0 }
-  } else if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
-    // Jika salah satu `children` mempunyai opsi scrollTop yang di-set true
+  } else if (to.matched.some(r => r.components.default.options.scrollToTop)) {
+    // if one of the children has scrollToTop option set to true
     position = { x: 0, y: 0 }
   }
 
-  // savedPosition hanya tersedia untuk navigasi popstate (tombol kembali)
+  // savedPosition is only available for popstate navigations (back button)
   if (savedPosition) {
     position = savedPosition
   }
 
-  return new Promise(resolve => {
-    // menunggu transisi keluar selesai (jika perlu)
+  return new Promise((resolve) => {
+    // wait for the out transition to complete (if necessary)
     window.$nuxt.$once('triggerScroll', () => {
-      // coords akan digunakan jika tidak ada selector yang tersedia,
-      // atau jika selector tidak cocok dengan elemen mana pun.
-      if (to.hash && document.querySelector(to.hash)) {
-        // gulir ke `anchor` dengan mengembalikan selector
-        position = { selector: to.hash }
+      // coords will be used if no selector is provided,
+      // or if the selector didn't match any element.
+      if (to.hash) {
+        let hash = to.hash
+        // CSS.escape() is not supported with IE and Edge.
+        if (typeof window.CSS !== 'undefined' && typeof window.CSS.escape !== 'undefined') {
+          hash = '#' + window.CSS.escape(hash.substr(1))
+        }
+        try {
+          if (document.querySelector(hash)) {
+            // scroll to anchor by returning the selector
+            position = { selector: hash }
+          }
+        } catch (e) {
+          console.warn('Failed to save scroll position. Please add CSS.escape() polyfill (https://github.com/mathiasbynens/CSS.escape).')
+        }
       }
       resolve(position)
     })

@@ -5,7 +5,7 @@ description: Kelas Inti Nuxt
 
 # Kelas Nuxt
 
-- Sumber: **[core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/nuxt.js)**
+- Sumber: **[core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/nuxt.js)**
 
 Ini adalah wadah inti yang memungkinkan semua modul dan kelas berkomunikasi satu sama lain. Semua modul memiliki akses ke instansi Nuxt menggunakan `this.nuxt`.
 

@@ -18,7 +18,11 @@ description: Me-render rute tertentu dengan konteks tertentu.
 
 Metode ini kebanyakan digunakan untuk [tujuan pengujian](/guide/development-tools#end-to-end-testing) juga dengan [`nuxt.renderAndGetWindow`](/api/nuxt-render-and-get-window).
 
-<p class="Alert Alert--info">`nuxt.renderRoute` dijalankan setelah proses pembangunan (build) dalam mode produksi (`dev: false`).</p>
+<div class="Alert Alert--orange">
+
+`nuxt.renderRoute` dijalankan setelah proses pembangunan (build) dalam mode produksi (`dev: false`).
+
+</div>
 
 Contoh:
 

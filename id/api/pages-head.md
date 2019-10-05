@@ -6,7 +6,7 @@ description: Nuxt.js menggunakan vue-meta untuk memperbarui `headers` dan `HTML 
 
 # Metode head
 
-> Nuxt.js menggunakan [vue-meta](https://github.com/declandewet/vue-meta) untuk memperbarui `headers` dan `html attributes` pada aplikasi Anda.
+> Nuxt.js menggunakan [vue-meta](https://github.com/nuxt/vue-meta) untuk memperbarui `headers` dan `html attributes` pada aplikasi Anda.
 
 - **Type:** `Object` atau `Function`
 
@@ -39,4 +39,8 @@ export default {
 </script>
 ```
 
-<p class="Alert">Untuk menghindari duplikasi saat menggunakannya pada "komponen child", berikan pengenal unik dengan key `yang tersembunyi`, [baca lebih lanjut] (https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+<div class="Alert">
+
+Untuk menghindari duplikasi saat menggunakannya pada "komponen child", berikan pengenal unik dengan key `yang tersembunyi`, [baca lebih lanjut] (https://vue-meta.nuxtjs.org/api/#tagidkeyname).
+
+</div>

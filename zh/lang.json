@@ -1,6 +1,6 @@
 {
   "iso": "zh",
-  "docVersion": "0.10.7",
+  "docVersion": "2.8.x",
   "links": {
     "api": "API",
     "blog": "博客",
@@ -16,6 +16,9 @@
     "homepage": "首页",
     "live_demo": "在线示例",
     "live_edit": "在线编辑",
+    "tidelift_short": "GET PROFESSIONAL SUPPORT",
+    "official_support": "GET OFFICIAL SUPPORT ⛑",
+    "tidelift": "GET PROFESSIONAL SUPPORT FOR NUXT",
     "twitter": "Twitter",
     "vuejs": "Vue.js",
     "vue_jobs": "工作机会"
@@ -35,7 +38,27 @@
     "meta": {
       "title": "Nuxt.js - Vue.js 通用应用框架",
       "description": "Nuxt.js 是一个基于 Vue.js 的轻量级应用框架，可用来创建服务端渲染 (SSR) 应用，也可充当静态站点引擎生成静态站点应用，具有优雅的代码结构分层和热加载等特性。"
-    }
+    },
+    "welcome": {
+      "app_types_prefix": "For ",
+      "app_types": ["Universal Applications", "Static Generated Applications", "Single Page Applications", "Desktop Applications", "Mobile Applications", "Progressive Web Apps"],
+      "app_types_suffix": "."
+    },
+    "codesandbox_title": "Play with Nuxt.js online",
+    "codesandbox_open": "Open on CodeSandBox.io",
+    "codesandbox_examples": "See more examples",
+    "backer_partners": "Partners",
+    "backer_become_a_partner": "Become A Partner",
+    "backer_sponsors": "Sponsors",
+    "backer_become_a_sponsor": "Become A Sponsor",
+    "backer_backers": "Nuxters",
+    "backer_become_a_backer": "Become A Nuxter",
+    "backer_foundations": "Foundations"
+  },
+  "sponsors": {
+    "title": "Sponsors",
+    "become": "Support us and",
+    "become_partner": "become a partner"
   },
   "footer": {
     "authors": "Chopin Brothers 出品"

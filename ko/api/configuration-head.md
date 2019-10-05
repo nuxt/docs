@@ -22,6 +22,10 @@ module.exports = {
 }
 ```
 
-`head`에 정의할 수 있는 옵션에 대해 확인하려면 [vue-meta 문서](https://github.com/declandewet/vue-meta#recognized-metainfo-properties)를 확인하세요.
+`head`에 정의할 수 있는 옵션에 대해 확인하려면 [vue-meta 문서](https://vue-meta.nuxtjs.org/api/#metainfo-properties)를 확인하세요.
 
-<p class="Alert Alert--teal"><b>정보:</b> `head` 안에서 페이지 컴포넌트 안에서 `head`를 사용할 수 있으며, `this`를 통해 컴포넌트 데이터에 접근할 수 있습니다. [component head 프로퍼티](/api/pages-head)를 확인해주세요.</p>
+<div class="Alert Alert--teal">
+
+<b>정보:</b> `head` 안에서 페이지 컴포넌트 안에서 `head`를 사용할 수 있으며, `this`를 통해 컴포넌트 데이터에 접근할 수 있습니다. [component head 프로퍼티](/api/pages-head)를 확인해주세요.
+
+</div>

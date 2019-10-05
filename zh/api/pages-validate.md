@@ -16,6 +16,22 @@ validate({ params, query }) {
 }
 ```
 
+```js
+async validate({ params, query, store }) {
+  // await operations
+  return true // 如果参数有效
+  return false // 将停止Nuxt.js呈现页面并显示错误页面
+}
+```
+
+您还可以返回一个Promise:
+
+```js
+validate({ params, query, store }) {
+  return new Promise((resolve) => setTimeout(() => resolve()))
+}
+```
+
 Nuxt.js 可以让你在动态路由对应的页面组件（本例为： `pages/users/_id.vue`）中配置一个校验方法。
 
 如果校验方法返回的值不为 `true`， Nuxt.js 将自动加载显示 404 错误页面。
@@ -36,6 +52,17 @@ export default {
   validate ({ params, store }) {
     // 校验 `params.id` 是否存在
     return store.state.categories.some((category) => category.id === params.id)
+  }
+}
+```
+
+您还可以在验证函数执行期间抛出预期或意外错误：
+
+```js
+export default {
+  async validate ({ params, store }) {
+    // 使用自定义消息触发内部服务器500错误
+    throw new Error('Under Construction!')
   }
 }
 ```

@@ -10,7 +10,7 @@ description: 你可以把 Nuxt.js 当做是一个负责页面渲染的中间件�
 
 你可以这样引入 Nuxt.js:
 ```js
-const Nuxt = require('nuxt')
+const { Nuxt } = require('nuxt')
 ```
 
 ### Nuxt(options)
