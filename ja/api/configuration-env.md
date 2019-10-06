@@ -70,3 +70,7 @@ if (process.env.test == 'testing123')
 ```js
 if ('testing123' == 'testing123')
 ```
+
+## serverMiddleware
+
+[serverMiddleware](/api/configuration-servermiddleware) はメインの Nuxt のビルドから分離されているので、`nuxt.config.js` に定義された `env` 変数は使用できません。
