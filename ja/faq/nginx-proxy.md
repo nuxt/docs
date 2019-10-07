@@ -1,9 +1,7 @@
 ---
-title: nginx proxy
+title: nginx をリバースプロキシとして使う
 description: nginx をリバースプロキシとして使うには？
 ---
-
-# nginx をリバースプロキシとして使う
 
 ```nginx
 map $sent_http_content_type $expires {

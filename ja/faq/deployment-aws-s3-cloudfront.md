@@ -1,11 +1,9 @@
 ---
-title: "AWS S3 と CloudFront によるデプロイ"
+title: "S3 と CloudFront を使用して AWS へデプロイするには？"
 description: "S3 と CloudFront を使用した AWS での静的ホスティング"
 ---
 
-# S3 と CloudFront を使用して AWS へデプロイするには？
-
-AWS は Amazon Web Services です。
+AWS は Amazon Web Services の略称です。
 S3 は、静的サイトホスティング用に設定できる静的ストレージです。
 CloudFront は、AWS の CDN（コンテンツ配信ネットワーク）です。
 

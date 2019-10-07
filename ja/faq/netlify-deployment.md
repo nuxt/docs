@@ -1,9 +1,7 @@
 ---
-title: Netlify を使ったデプロイ
+title: Netlify へデプロイするには？
 description: Netlify へデプロイするには？
 ---
-
-# Netlify へデプロイするには？
 
 [Netlify](https://www.netlify.com) へのデプロイは __静的に生成された__ Nuxt.js サイトを迅速にオンライン化するための低摩擦オプションです。
 
