@@ -1,9 +1,7 @@
 ---
-title: クロスオリジンリソース共有
+title: クロスオリジンリソースを共有するには？
 description: クロスオリジンリソースを共有するには？
 ---
-
-# クロスオリジンリソースを共有するには？
 
 [Nuxt.js においてのクロスオリジンリソース共有の解決策](https://github.com/nuxt-community/proxy-module#readme)
 

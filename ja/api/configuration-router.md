@@ -3,8 +3,6 @@ title: "API: router プロパティ"
 description: router プロパティを使って Nuxt.js のルーターをカスタマイズできます。
 ---
 
-# router プロパティ
-
 > router プロパティを使って Nuxt.js のルーター（[vue-router](https://router.vuejs.org/en/)）をカスタマイズできます。
 
 ## base

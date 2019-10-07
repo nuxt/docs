@@ -3,8 +3,6 @@ title: 'API: hooks プロパティ'
 description: フックは Nuxt モジュールで一般的に使われる Nuxt イベントのリスナーですが、 `nuxt.config.js` の中でも利用できます。
 ---
 
-# hooks プロパティ
-
 - 型: `Object`
 
 > フックは Nuxt モジュールで一般的に使われる [Nuxt イベントのリスナー](/api/internals) ですが、 `nuxt.config.js` の中でも利用できます。 より詳しくは [こちら](/api/internals) を参照してください。

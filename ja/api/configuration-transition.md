@@ -1,11 +1,11 @@
 ---
-title: "API: pageTransition と layoutTransition プロパティ"
-description: ページのトランジションのデフォルト設定を指定します。
+title: "API: transition プロパティ"
+description: ページとレイアウトのトランジションのデフォルトプロパティを設定します。
 ---
 
-> Nuxt v2.7.0 では "transition" キーに代わり "pageTransition" が導入され、layout transition キーの命名が統合されています。
+## pageTransition プロパティ
 
-# pageTransition プロパティ
+> Nuxt v2.7.0 では "transition" キーに代わり "pageTransition" が導入され、layout transition キーの命名が統合されています。
 
 - 型: `String` または `Object`
 
@@ -39,7 +39,7 @@ export default {
 `nuxt.config.js` 内の transition キーはページのトランジションのデフォルト設定を指定するために使われます。`transition` キーがオブジェクトのときに利用可能なキーについてより深く理解するには [ページのトランジションプロパティ](/api/pages-transition#オブジェクト) を参照してください。
 
 
-# layoutTransition プロパティ
+## layoutTransition プロパティ
 
 - 型: `String` または `Object`
 

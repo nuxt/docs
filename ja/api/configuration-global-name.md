@@ -3,8 +3,6 @@ title: "API: globalName プロパティ"
 description: Nuxt.js はメインの Vue インスタンスとその他のオプションだけでなく、メインの HTML テンプレート上でもグローバル ID をカスタマイズできます。
 ---
 
-# globalName プロパティ
-
 > Nuxt.js はメインの Vue インスタンスとその他のオプションだけでなく、メインの HTML テンプレート上でもグローバル ID をカスタマイズできます。
 
 - 型: `String`

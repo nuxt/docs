@@ -4,8 +4,6 @@ description: クエリ文字列を監視し、変更時にコンポーネント�
   ...）
 ---
 
-# watchQuery プロパティ
-
 > クエリ文字列を監視し、変更時にコンポーネントメソッドを実行します（asyncData, fetch, validate, layout, ...）
 
 - **型:** `Boolean` or `Array` (デフォルト: `[]`)

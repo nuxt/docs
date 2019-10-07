@@ -4,8 +4,6 @@ description: "`fetch` メソッドは、ページがレンダリングされる�
   `asyncData`メソッドとよく似ています。"
 ---
 
-# fetch メソッド
-
 > fetch メソッドは、ページがレンダリングされる前に、データをストアに入れるために使われます。コンポーネントのデータをセットしないという点を除いては `asyncData` メソッドとよく似ています。
 
 - **型:** `Function`
@@ -31,15 +29,15 @@ description: "`fetch` メソッドは、ページがレンダリングされる�
 export default {
   fetch ({ store, params }) {
     return axios.get('http://my-api/stars')
-      .then((res) => {
-        store.commit('setStars', res.data)
-      })
+    .then((res) => {
+      store.commit('setStars', res.data)
+    })
   }
 }
 </script>
 ```
 
-async/await を使ってコードをスッキリさせることもできます:
+`async`/`await` を使ってコードをスッキリさせることもできます:
 
 ```html
 <template>
