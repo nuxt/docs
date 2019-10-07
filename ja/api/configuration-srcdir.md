@@ -3,8 +3,6 @@ title: 'API: srcDir プロパティ'
 description: Nuxt.js アプリケーションのソースディレクトリを指定します
 ---
 
-# srcDir プロパティ
-
 - 型: `String`
 - デフォルト: [rootDir の値](/api/configuration-rootdir)
 

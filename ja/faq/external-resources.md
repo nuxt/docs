@@ -1,13 +1,11 @@
 ---
-title: 外部リソース
+title: 外部リソースを使うには？
 description: Nuxt.js で外部リソースを使うには？
 ---
 
-# 外部リソースを使うには？
-
 ## グローバルな設定
 
-`nuxt.config.js` ファイル内でリソースをインクルードします:
+`nuxt.config.js` 内でリソースをインクルードします:
 
 ```js
 export default {

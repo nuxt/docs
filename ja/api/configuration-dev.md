@@ -3,8 +3,6 @@ title: 'API: dev プロパティ'
 description: 開発モードかプロダクションモードかを指定します。
 ---
 
-# dev プロパティ
-
 - 型: `Boolean`
 - デフォルト: `true`
 

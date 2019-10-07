@@ -3,8 +3,6 @@ title: "API: validate メソッド"
 description: Nuxt.js では動的なルーティングを行うコンポーネント内でバリデーションメソッドを定義できます。
 ---
 
-# validate メソッド
-
 > Nuxt.js では動的なルーティングを行うコンポーネント内でバリデーションメソッドを定義できます。
 
 - **型:** `Function` または `Async Function`
