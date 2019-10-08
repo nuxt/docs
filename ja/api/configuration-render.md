@@ -3,8 +3,6 @@ title: "API: render プロパティ"
 description: Nuxt.js はページレンダリングの実行時オプションをカスタマイズできます。
 ---
 
-# renderプロパティ
-
 > Nuxt.js はページレンダリングの実行時オプションをカスタマイズできます。
 
 ## bundleRenderer
