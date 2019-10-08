@@ -3,8 +3,6 @@ title: "API: serverMiddleware プロパティ"
 description: サーバーミドルウェアを定義します
 ---
 
-# serverMiddleware プロパティ
-
 - 型: `Array`
     - 要素: `String` または `Object` または `Function`
 
