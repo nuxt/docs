@@ -87,13 +87,13 @@ Request from the Node.js server. If Nuxt is used as a middleware, the request ob
 
 Response from the Node.js server. If Nuxt is used as a middleware, the res object might be different depending on the framework you're using.<br>**Not available via `nuxt generate`**.
 
-## `beforeNuxtRender(fn)` (*Function*)
+### `beforeNuxtRender(fn)` (*Function*)
 
 Use this method to update `__NUXT__` variable rendered on client-side, the `fn` (can be asynchronous) is called with `{ Components, nuxtState }`, see [example](https://github.com/nuxt/nuxt.js/blob/cf6b0df45f678c5ac35535d49710c606ab34787d/test/fixtures/basic/pages/special-state.vue).
 
 ## Client-side keys
 
-These keys are available both on client-side.
+These keys are available only on client-side.
 
 ### `from` ([*Vue Router Route*](https://router.vuejs.org/en/api/route-object.html))
 
