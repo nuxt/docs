@@ -1,9 +1,7 @@
 ---
-title: プリプロセッサ
+title: CSS プリプロセッサを使うには？
 description: Nuxt.js でプリプロセッサを使うには？
 ---
-
-# プリプロセッサを使うには？
 
 [vue-loader](http://vue-loader.vuejs.org/en/configurations/pre-processors.html) のおかげで、ただ `lang` 属性を使うだけで `<template>` や `<script>` あるいは `<style>` などのためのプリプロセッサを使うことができます。
 

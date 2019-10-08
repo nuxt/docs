@@ -3,8 +3,6 @@ title: 'API: build プロパティ'
 description: Nuxt.js ではウェブアプリケーションを自由にビルドできるよう Webpack 設定をカスタマイズできます。
 ---
 
-# build プロパティ
-
 > Nuxt.js ではウェブアプリケーションを自由にビルドできるよう Webpack 設定をカスタマイズできます。
 
 ## analyze
@@ -332,14 +330,6 @@ manifest の使い方をより理解するためには [webpack のドキュメ�
   },
   scss: {},
   stylus: {},
-  ts: {
-    transpileOnly: true,
-    appendTsSuffixTo: [/\.vue$/]
-  },
-  tsx: {
-    transpileOnly: true,
-    appendTsxSuffixTo: [/\.vue$/]
-  },
   vueStyle: {}
 }
 ```

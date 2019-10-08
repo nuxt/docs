@@ -3,8 +3,6 @@ title: "API: The Builder Class"
 description: Nuxt `Builder` Class
 ---
 
-# Builder Class
-
 - Source: **[builder/builder.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/builder/src/builder.js)**
 
 ## Hooks

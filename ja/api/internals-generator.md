@@ -3,8 +3,6 @@ title: "API: Generator クラス"
 description: Nuxt Generator クラス
 ---
 
-# Generator クラス
-
 - ソース: **[generator/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/generator/src/generator.js)**
 
 ## フック

@@ -3,8 +3,6 @@ title: "API: loading プロパティ"
 description: "`loading` プロパティは特定のページに対してデフォルトの loading プログレスバーを無効にするオプションを提供します。"
 ---
 
-# loading プロパティ
-
 > loading プロパティは特定のページに対してデフォルトの loading プログレスバーを無効にするオプションを提供します。
 
 - **型:** `boolean` (デフォルト: `true`)

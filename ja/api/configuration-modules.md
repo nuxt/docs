@@ -3,8 +3,6 @@ title: 'API: modules プロパティ'
 description: モジュールは、Nuxt.js のコア機能を拡張し、無限のインテグレーションを加える Nuxt.js の拡張機能です。
 ---
 
-# modules プロパティ
-
 - 型: `Array`
 
 > モジュールは、Nuxt.js のコア機能を拡張し、無限のインテグレーションを加える Nuxt.js の拡張機能です。  [より深く学ぶ](/guide/modules)

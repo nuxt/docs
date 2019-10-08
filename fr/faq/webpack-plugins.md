@@ -1,9 +1,7 @@
 ---
-title: Plugins webpack
+title: Comment ajouter des plugins webpack ?
 description: Comment ajouter des plugins webpack dans mon application Nuxt.js ?
 ---
-
-# Comment ajouter des plugins webpack ?
 
 Dans `nuxt.config.js` :
 

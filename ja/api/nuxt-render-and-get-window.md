@@ -3,8 +3,6 @@ title: "API: nuxt.renderAndGetWindow(url, options)"
 description: Nuxt.js アプリケーションの URL を渡して window を取得します。
 ---
 
-# nuxt.renderAndGetWindow(url, options = {})
-
 - 型: `Function`
 - 引数: `String`
   1. `String`: レンダリングする URL

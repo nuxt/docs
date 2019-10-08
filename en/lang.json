@@ -1,6 +1,6 @@
 {
   "iso": "en",
-  "docVersion": "2.9.X",
+  "docVersion": "2.10.X",
   "links": {
     "api": "API",
     "blog": "Blog",
@@ -30,7 +30,7 @@
     "please_wait": "Please wait...",
     "please_define_title": "Please define a title in the front matter",
     "please_define_description": "Please define a description in the front matter",
-    "search": "Search",
+    "search": "Search (\"/\" to focus)",
     "version": "Version"
   },
   "homepage": {

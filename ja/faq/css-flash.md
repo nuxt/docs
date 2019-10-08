@@ -1,9 +1,7 @@
 ---
-title: CSS Flash
+title: なぜ CSS Flash が見えるのか？
 description: なぜ CSS Flash が見えるのか？
 ---
-
-# なぜ CSS Flash が見えるのか？
 
 ![cssflash](/flash_css.gif)
 

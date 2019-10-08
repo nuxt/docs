@@ -3,8 +3,6 @@ title: 'API: dir プロパティ'
 description: カスタムディレクトリを定義します。
 ---
 
-# dir プロパティ
-
 - 型: `Object`
 - デフォルト:
 

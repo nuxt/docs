@@ -3,8 +3,6 @@ title: "API: plugins プロパティ"
 description: Nuxt.js の plugins オプションで Vue.js プラグインを使うことができます。
 ---
 
-# plugins プロパティ
-
 **情報**: Nuxt.js 2.4 以降、プラグインタイプを指定するための `plugins` のオプションとして `mode` が導入されました。指定可能な値は `client` または `server` です。 `ssr：false` は `mode: 'client'` に適応され、次のメジャーリリースでは非推奨になります。
 
 - 型: `Array`

@@ -3,8 +3,6 @@ title: "API: middleware プロパティ"
 description: アプリケーションの特定のページにミドルウェアを設定します。
 ---
 
-# middleware プロパティ
-
 - 型: `String` または `Array` または `Function`
   - 要素: `String` または `Function`
 

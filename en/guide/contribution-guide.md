@@ -98,7 +98,7 @@ style changes. If there are still errors left, you must correct them manually.
 
 ### Documentation
 
-If you are adding a new feature, do a refactoring or change the behavior of Nuxt in any other manner, you'll likely
+If you are adding a new feature, or refactoring or changing the behavior of Nuxt in any other manner, you'll likely
 want to document the changes. Please do so with a PR to the [docs](https://github.com/nuxt/docs/pulls) repository.
 You don't have to write documentation up immediately (but please do so as soon as your pull request is mature enough).
 

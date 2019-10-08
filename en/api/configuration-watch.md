@@ -3,8 +3,6 @@ title: "API: The watch Property"
 description: The watch property lets you watch custom files for restarting the server.
 ---
 
-# The watch Property
-
 - Type: `Object`
 - Default: `[]`
 
