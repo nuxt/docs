@@ -77,7 +77,7 @@ Use this method to show the error page: `error(params)`. The `params` should hav
 
 ## Server-side keys
 
-These keys are available both on server-side.
+These keys are available only on the server-side.
 
 ### `req` ([*http.Request*](https://nodejs.org/api/http.html#http_class_http_incomingmessage))
 
