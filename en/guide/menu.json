@@ -5,9 +5,9 @@
       {
         "to": "", "name": "Introduction",
         "contents": [
-          { "to": "#what-is-nuxt-js-", "name": "What is Nuxt.js?" },
-          { "to": "#how-it-works", "name": "How it Works" },
+          { "to": "#what-is-nuxtjs-", "name": "What is Nuxt.js?" },
           { "to": "#features", "name": "Features" },
+          { "to": "#how-it-works", "name": "How it Works" },
           { "to": "#schema", "name": "Schema" },
           { "to": "#server-rendered-universal-ssr-", "name": "Server Rendered" },
           { "to": "#single-page-applications-spa-", "name": "Single Page Application" },
@@ -25,7 +25,7 @@
       {
         "to": "/installation", "name": "Installation",
         "contents": [
-          { "to": "#using-nuxt-js-starter-template", "name": "Using Nuxt.js starter template" },
+          { "to": "#using-code-create-nuxt-app-code-", "name": "Using create-nuxt-app" },
           { "to": "#starting-from-scratch", "name": "Starting from scratch" }
         ]
       },
@@ -52,7 +52,7 @@
       {
         "to": "/views", "name": "Views",
         "contents": [
-          { "to": "#document", "name": "Document" },
+          { "to": "#app-template", "name": "App Template" },
           { "to": "#layouts", "name": "Layouts" },
           { "to": "#pages", "name": "Pages" },
           { "to": "#html-head", "name": "HTML Head" }
@@ -89,6 +89,7 @@
           { "to": "#list-of-nuxt-js-modules", "name": "List of Nuxt.js modules" },
           { "to": "#write-a-basic-module", "name": "Write a basic Module" },
           { "to": "#async-modules", "name": "Async Modules" },
+          { "to": "#build-only-modules", "name": "Build-only Modules" },
           { "to": "#common-snippets", "name": "Common Snippets" },
           { "to": "#run-tasks-on-specific-hooks", "name": "Run Tasks on Specific hooks" },
           { "to": "#module-package-commands", "name": "Module package commands" }
@@ -105,12 +106,7 @@
         ]
       },
       {
-        "to": "/typescript", "name": "TypeScript Support",
-        "contents": [
-          { "to": "#get-started", "name": "Get started" },
-          { "to": "#from-javascript-to-typescript", "name": "From JavaScript to TypeScript" },
-          { "to": "#linting-with-eslint", "name": "Linting with ESLint" }
-        ]
+        "to": "/typescript", "name": "TypeScript Support"
       },
       {
         "to": "/commands", "name": "Commands and Deployment",
@@ -126,14 +122,6 @@
           { "to": "#end-to-end-testing", "name": "End-to-End Testing" },
           { "to": "#eslint-and-prettier", "name": "ESLint and Prettier" }
         ]
-      }
-    ]
-  },
-  {
-    "title": "Resources",
-    "links": [
-      {
-        "to": "/themes", "name": "Themes (new)"
       }
     ]
   }

@@ -6,8 +6,8 @@
         "to": "", "name": "はじめに",
         "contents": [
           { "to": "#nuxt-js-とは何か-", "name": "Nuxt.js とは何か？" },
-          { "to": "#どのように動作するか-", "name": "どのように動作するか？" },
           { "to": "#主な機能", "name": "主な機能" },
+          { "to": "#どのように動作するか-", "name": "どのように動作するか？" },
           { "to": "#図解", "name": "図解" },
           { "to": "#サーバーサイドレンダリング-ユニバーサル-ssr-", "name": "サーバーサイドレンダリング（ユニバーサル SSR）" },
           { "to": "#シングルページアプリケーション-spa-", "name": "シングルページアプリケーション（SPA）" },
@@ -25,7 +25,7 @@
       {
         "to": "/installation", "name": "インストール",
         "contents": [
-          { "to": "#nuxt-js-を使ったスターターテンプレート", "name": "Nuxt.js を使ったスターターテンプレート" },
+          { "to": "#create-nuxt-app を使用する", "name": "create-nuxt-app を使用する" },
           { "to": "#スクラッチから始める", "name": "スクラッチから始める" }
         ]
       },
@@ -52,7 +52,7 @@
       {
         "to": "/views", "name": "ビュー",
         "contents": [
-          { "to": "#ドキュメント", "name": "ドキュメント" },
+          { "to": "#アプリテンプレート", "name": "アプリテンプレート" },
           { "to": "#レイアウト", "name": "レイアウト" },
           { "to": "#ページ", "name": "ページ" },
           { "to": "#html-の-head-情報", "name": "HTML の head 情報" }
@@ -89,6 +89,7 @@
           { "to": "#nuxt-js-公式モジュール一覧", "name": "Nuxt.js 公式モジュール一覧" },
           { "to": "#基本的なモジュールを書く", "name": "基本的なモジュールを書く" },
           { "to": "#非同期モジュール", "name": "非同期モジュール" },
+          { "to": "#ビルド専用モジュール", "name": "ビルド専用モジュール" },
           { "to": "#共通のスニペット", "name": "共通のスニペット" },
           { "to": "#特定のフックでタスクを実行する", "name": "特定のフックでタスクを実行する" },
           { "to": "#モジュールパッケージコマンド", "name": "モジュールパッケージコマンド" }
@@ -105,12 +106,7 @@
         ]
       },
       {
-        "to": "/typescript", "name": "TypeScript Support",
-        "contents": [
-          { "to": "#はじめる", "name": "はじめる" },
-          { "to": "#JavaScript-から-TypeScript-へ", "name": "JavaScript から TypeScript へ" },
-          { "to": "#ESLint-を使った-Linting", "name": "ESLint を使った Linting" }
-        ]
+        "to": "/typescript", "name": "TypeScript サポート"
       },
       {
         "to": "/commands", "name": "コマンドとデプロイ",
@@ -126,14 +122,6 @@
           { "to": "#エンドツーエンドテスト", "name": "エンドツーエンドテスト" },
           { "to": "#eslint-と-prettier", "name": "ESLint と Prettier" }
         ]
-      }
-    ]
-  },
-  {
-    "title": "リソース",
-    "links": [
-      {
-        "to": "/themes", "name": "テーマ (new)"
       }
     ]
   }

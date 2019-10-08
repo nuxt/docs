@@ -3,8 +3,6 @@ title: "API : nuxt.renderRoute(route, context)"
 description: Faire le rendu d'une route spécifique avec un contexte donné.
 ---
 
-# nuxt.renderRoute(route, context = {})
-
 - Type : `Function`
 - Arguments :
   1. `String` : route sur laquelle faire le rendu

@@ -80,7 +80,7 @@ test.before('Init Nuxt.js', async t => {
 })
 
 // Example of testing only generated html
-test('Route / exits and render HTML', async t => {
+test('Route / exists and render HTML', async t => {
   const { nuxt } = t.context
   let context = {}
   const { html } = await nuxt.renderRoute('/', context)

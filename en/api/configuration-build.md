@@ -3,8 +3,6 @@ title: "API: The build Property"
 description: Nuxt.js lets you customize the webpack configuration for building your web application as you want.
 ---
 
-# The build Property
-
 > Nuxt.js lets you customize the webpack configuration for building your web application as you want.
 
 ## analyze
@@ -332,14 +330,6 @@ HTML files created during the build process (will be applied for *all modes*).
   },
   scss: {},
   stylus: {},
-  ts: {
-    transpileOnly: true,
-    appendTsSuffixTo: [/\.vue$/]
-  },
-  tsx: {
-    transpileOnly: true,
-    appendTsxSuffixTo: [/\.vue$/]
-  },
   vueStyle: {}
 }
 ```
@@ -375,15 +365,6 @@ HTML files created during the build process (will be applied for *all modes*).
 
 > See the [Node Sass documentation](https://github.com/sass/node-sass/blob/master/README.md#options) for all available Sass options.
 > Note: `loaders.sass` is for [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html)
-
-### loaders.ts
-
-> Loader for typescript file and `lang="ts"` Vue SFC.
-> More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#loader-options).
-
-### loaders.tsx
-
-> More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#options).
 
 ### loaders.vueStyle
 
@@ -683,54 +664,22 @@ See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/t
 
 ## transpile
 
-- Type: `Array<string | RegExp>`
+- Type: `Array<String | RegExp | Function>`
 - Default: `[]`
 
-If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Each item in transpile can be a package name, or a string or regex object matching the dependency's file name.
+If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Each item in transpile can be a package name, a string or regex object matching the dependency's file name.
 
-## typescript
+Starting with `v2.9.0`, you can also use a function to conditionnaly transpile, the function will receive a object (`{ isDev, isServer, isClient, isModern, isLegacy }`):
 
-> Customize Nuxt.js TypeScript support.
-
-<div class="Alert Alert--blue">
-
-**Important**: This property will be ignored if [`TypeScript Support`](/guide/typescript) hasn't be set up in your project.
-
-</div>
-
-- Type: `Object`
-- Default:
-
-  ```js
-  {
-    typeCheck: true,
-    ignoreNotFoundWarnings: false
+```js
+{
+  build: {
+    transpile: [
+      ({ isLegacy }) => isLegacy && 'ky'
+    ]
   }
-  ```
-
-### typescript.typeCheck
-
-> Enables TypeScript type checking on a separate process.
-
-- Type: `Boolean` or `Object`
-- Default: `true`
-
-When enabled, Nuxt.js uses [fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) to provide type checking.
-
-You can use an `Object` to override plugin options or set it to `false` to disable it.
-
-### typescript.ignoreNotFoundWarnings
-
-> Enables suppress not found typescript warnings.
-
-- Type: `Boolean`
-- Default: `false`
-
-When enabled, you can suppress `export ... was not found ...` warnings.
-
-See also about background information [https://github.com/TypeStrong/ts-loader/issues/653](https://github.com/TypeStrong/ts-loader/issues/653)
-
-**Warning:** This property might suppress the warnings you want to see. Be careful with how you configure it.
+}
+```
 
 ## vueLoader
 
@@ -765,6 +714,20 @@ export default {
     watch: [
       '~/.nuxt/support.js'
     ]
+  }
+}
+```
+
+## followSymlinks
+
+> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example. 
+
+- Type: `Boolean`
+
+```js
+export default {
+  build: {
+    followSymlinks: false
   }
 }
 ```

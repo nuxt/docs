@@ -3,8 +3,6 @@ title: "API: The serverMiddleware Property"
 description: Define server-side middleware.
 ---
 
-# The serverMiddleware Property
-
 - Type: `Array`
     - Items: `String` or `Object` or `Function`
 
@@ -67,7 +65,7 @@ Middleware (`api/logger.js`):
 ```js
 export default function (req, res, next) {
     // req is the Node.js http request object
-    console.log(req.path)
+    console.log(req.url)
 
     // res is the Node.js http response object
 

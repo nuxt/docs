@@ -2,7 +2,15 @@
   {
     "title": "基本",
     "links": [
-      { "name": "Context", "to": "/context" }
+      {
+        "name": "Context",
+        "to": "/context",
+        "contents": [
+          { "name": "ユニバーサルキー", "to": "#universal-keys" },
+          { "name": "サーバーサイドキー", "to": "#server-side-keys" },
+          { "name": "クライアントサイドキー", "to": "#client-side-keys" }
+        ]
+      }
     ]
   },
   {
@@ -34,7 +42,7 @@
       { "name": "nuxt", "to": "/components-nuxt" },
       { "name": "nuxt-child", "to": "/components-nuxt-child" },
       { "name": "nuxt-link", "to": "/components-nuxt-link" },
-      { "name": "no-ssr", "to": "/components-no-ssr" }
+      { "name": "client-only", "to": "/components-client-only" }
     ]
   },
   {
@@ -80,7 +88,6 @@
           { "name": "templates", "to": "#templates" },
           { "name": "terser", "to": "#terser" },
           { "name": "transpile", "to": "#transpile" },
-          { "name": "typescript", "to": "#typescript" },
           { "name": "vueLoader", "to": "#vueloader" },
           { "name": "watch", "to": "#watch" }
         ]

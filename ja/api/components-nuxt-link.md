@@ -3,8 +3,6 @@ title: "API: <nuxt-link> コンポーネント"
 description: ページ間を nuxt-link を使ってリンクさせます。
 ---
 
-# &lt;nuxt-link&gt; コンポーネント
-
 > このコンポーネントは、ページコンポーネント間のナビゲーションを提供し、賢い prefetching（先読み）でパフォーマンスを高めるのに使用します。
 
 `<nuxt-link>` は Nuxt の重要な要素です。あなたのアプリケーションを**遷移するのに使われるべきコンポーネント**で、従来の Vue アプリケーションにおける `<router-link>` と似ています。実際に、`<nuxt-link>` は [`<router-link>`](https://router.vuejs.org/api/#router-link) を拡張しています。つまり、同じプロパティを取り、同じように使うことができるということです。詳しくは、[Vue Router のドキュメント](https://router.vuejs.org/api/#router-link) を参照してください。

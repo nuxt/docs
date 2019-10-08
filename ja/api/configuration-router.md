@@ -3,8 +3,6 @@ title: "API: router プロパティ"
 description: router プロパティを使って Nuxt.js のルーターをカスタマイズできます。
 ---
 
-# router プロパティ
-
 > router プロパティを使って Nuxt.js のルーター（[vue-router](https://router.vuejs.org/en/)）をカスタマイズできます。
 
 ## base
@@ -77,7 +75,33 @@ export default {
 }
 ```
 
-ルートのスキーマは [vue-router](https://router.vuejs.org/en/) のスキーマを尊重すべきです。
+ルートのスキーマは [vue-router](https://router.vuejs.org/ja/) のスキーマを尊重すべきです。
+
+<div class="Alert Alert--orange">
+
+<b>警告：</b> [名前付きビュー](/guide/routing#%E5%90%8D%E5%89%8D%E4%BB%98%E3%81%8D%E3%83%93%E3%83%A5%E3%83%BC)を使うルートを追加する場合、対応する名前付き `components` の `chunkNames` を追加することを忘れないでください。
+
+</div>
+
+`nuxt.config.js`
+```js
+export default {
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        path: '/users/:id',
+        components: {
+          default: resolve(__dirname, 'pages/users'), // または routes[index].component
+          modal: resolve(__dirname, 'components/modal.vue')
+        },
+        chunkNames: {
+          modal: 'components/modal'
+        }
+      })
+    }
+  }
+}
+```
 
 ## fallback
 
@@ -205,7 +229,7 @@ export default {
 
 ## prefetchLinks
 
-> この機能は Nuxt.js v2.4.0 で追加されました
+> この機能は Nuxt v2.4.0 で追加されました
 
 - 型: `Boolean`
 - デフォルト: `true`
@@ -248,69 +272,22 @@ export default {
 
 - 型: `Function`
 
-`scrollBehavior` オプションを使って、ページ間のスクロール位置についての独自の振る舞いを定義できます。このメソッドはページがレンダリングされるたびに毎回呼び出されます。
+`scrollBehavior` オプションを使って、ページ間のスクロール位置についての独自の振る舞いを定義できます。このメソッドはページがレンダリングされるたびに毎回呼び出されます。詳細は [vue-router のスクロールの振る舞い](https://router.vuejs.org/ja/guide/advanced/scroll-behavior.html)を参照してください。
 
-デフォルトでは scrollBehavior オプションは次のようにセットされています:
+<div class="Alert Alert-blue">
 
-```js
-const scrollBehavior = function (to, from, savedPosition) {
-  // 返された位置が falsy な値や空のオブジェクトだったときは、
-  // 現在のスクロール位置を保持します
-  let position = false
+v2.9.0 以降、ファイルを使用してルーターの scrollBehavior を上書きすることができます。このファイルは `~/app/router.scrollBehavior.js` に配置する必要があります。
 
-  // 子のオブジェクトが検出されず、scrollToTop が明示的に無効になっていない場合
-  if (
-    to.matched.length < 2 &&
-    to.matched.every(r => r.components.default.options.scrollToTop !== false)
-  ) {
-    // ページのトップへスクロールします
-    position = { x: 0, y: 0 }
-  } else if (to.matched.some(r => r.components.default.options.scrollToTop)) {
-    // 子のオブジェクトの1つが scrollToTop オプションを true に設定している場合
-    position = { x: 0, y: 0 }
-  }
+</div>
 
-  // savedPosition は popState ナビゲーションでのみ利用できます（戻るボタン）
-  if (savedPosition) {
-    position = savedPosition
-  }
+Nuxt のデフォルトの `router.scrollBehavior.js` ファイルは次の場所にあります：[packages/vue-app/template/router.scrollBehavior.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/router.scrollBehavior.js)
 
-  return new Promise((resolve) => {
-    // （必要であれば）out トランジションが完了するのを待ちます
-    window.$nuxt.$once('triggerScroll', () => {
-      // セレクタが提供されていない場合またはセレクタがどの要素とも一致しなかった場合は
-      // 座標が使用されます
-      if (to.hash) {
-        let hash = to.hash
-        // CSS.escape() は IE および Edge ではサポートされていません
-        if (typeof window.CSS !== 'undefined' && typeof window.CSS.escape !== 'undefined') {
-          hash = '#' + window.CSS.escape(hash.substr(1))
-        }
-        try {
-          if (document.querySelector(hash)) {
-            // セレクタを返すことでアンカーまでスクロールします
-            position = { selector: hash }
-          }
-        } catch (e) {
-          console.warn('スクロール位置を保存できませんでした。 CSS.escape() polyfill (https://github.com/mathiasbynens/CSS.escape) を追加してください。')
-        }
-      }
-      resolve(position)
-    })
-  })
-}
-```
 
 すべてのルートにおいて強制的にトップまでスクロールさせる例:
 
-`nuxt.config.js`
-
+`app/router.scrollBehavior.js`
 ```js
-export default {
-  router: {
-    scrollBehavior: function (to, from, savedPosition) {
-      return { x: 0, y: 0 }
-    }
-  }
+export default function (to, from, savedPosition) {
+  return { x: 0, y: 0 }
 }
 ```

@@ -1,9 +1,7 @@
 ---
-title: "API: pageTransition プロパティ"
+title: "API: ページ `transition` プロパティ"
 description: "Nuxt.js では `<transition>` コンポーネントを使って、ページ間を遷移する際のトランジション/アニメーションを行うことができます。"
 ---
-
-# transition プロパティ
 
 > Nuxt.js は [`<transition>`](https://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) コンポーネントを使って、ページ間を遷移する際のトランジション/アニメーションを行うことができます。
 

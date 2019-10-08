@@ -3,8 +3,6 @@ title: "API: serverMiddleware プロパティ"
 description: サーバーミドルウェアを定義します
 ---
 
-# serverMiddleware プロパティ
-
 - 型: `Array`
     - 要素: `String` または `Object` または `Function`
 
@@ -64,7 +62,7 @@ export default {
 ```js
 export default function (req, res, next) {
     // req は Node.js の HTTPリクエストオブジェクトです
-    console.log(req.path)
+    console.log(req.url)
 
     // res は Node.js の HTTPレスポンスオブジェクトです
 

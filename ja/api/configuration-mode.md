@@ -3,7 +3,6 @@ title: 'API: mode プロパティ'
 description: デフォルトの nuxt モードを変更します。
 ---
 
-# mode プロパティ
 - 型: `string`
   - デフォルト値: `'universal'`
   - 受け取ることができる値:

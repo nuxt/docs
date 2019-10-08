@@ -3,8 +3,6 @@ title: "API: Renderer クラス"
 description: Nuxt Renderer クラス
 ---
 
-# Renderer クラス
-
 - ソース: **[vue-renderer/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-renderer/src/renderer.js)**
 
 このクラスは、すべての SSR とアセットのリクエストを処理して提供する connect ミドルウェアをエクスポートしています。
