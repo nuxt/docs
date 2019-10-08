@@ -248,10 +248,11 @@ export default {
 }
 ```
 
-To disable the prefetching on a specific link, you can use the `no-prefetch` prop:
+To disable the prefetching on a specific link, you can use the `no-prefetch` prop. Since Nuxt.js v2.10.0, you can also use the `prefetch` prop set to `false`:
 
 ```html
 <nuxt-link to="/about" no-prefetch>About page not pre-fetched</nuxt-link>
+<nuxt-link to="/about" :prefetch="false">About page not pre-fetched</nuxt-link>
 ```
 
 To disable the prefetching on all links, set the `prefetchLinks` to `false`:
@@ -263,6 +264,12 @@ export default {
     prefetchLinks: false
   }
 }
+```
+
+Since Nuxt.js v2.10.0, if you have set `prefetchLinks` to `false` but you want to prefetch a specific link, you can use the `prefetch` prop:
+
+```html
+<nuxt-link to="/about" prefetch>About page pre-fetched</nuxt-link>
 ```
 
 ## scrollBehavior
