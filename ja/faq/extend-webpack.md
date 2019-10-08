@@ -1,9 +1,7 @@
 ---
-title: webpack の拡張
+title: webpack の設定を拡張するには？
 description: Webpack の設定を拡張するには？
 ---
-
-# Webpack の設定を拡張するには？
 
 `nuxt.config.js` 内の `extend` オプションを通して Nuxt の webpack 設定を拡張できます
 `build` プロパティの `extend` オプションは2つの引数を受け取る関数です。第一引数は、Nuxt の webpack 設定からエクスポートされた webpack `config` オブジェクトです。
