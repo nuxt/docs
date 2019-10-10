@@ -54,7 +54,7 @@ export default {
 [watchQuery](/api/pages-watchquery)选项中指定的查询会被用于构建`key`。如果`watchQuery`为`true`，则默认使用`fullPath`。
 
 - name: `string` (_Nuxt v2.4.0 新增_)
-  - 此 prop 将设置为`<router-view />`，用于呈现页面组件的命名视图。
+  - 此 prop 将提供给`<router-view />`使用，用于渲染命名视图。
   - 默认: `default`
 
 查看例子请点击： [命名视图例子](/examples/named-views).
