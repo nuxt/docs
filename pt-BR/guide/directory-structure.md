@@ -8,6 +8,8 @@ Descrição: A estrutura de aplicação padrão do Nuxt.js destina-se a fornecer
 
 ## Diretórios
 
+<br />
+
 ### Diretórios assets
 O diretório `assets` contém seus recursos não compilados, como Less, Sass ou JavaScript.
 
