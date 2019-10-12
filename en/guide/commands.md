@@ -100,6 +100,12 @@ npm run generate
 
 It will create a `dist` folder with everything inside ready to be deployed on a static hosting site.
 
+To see error status from page generation, you need to pass `--fail-on-page-error` argument to command:
+
+```bash
+npm run generate --fail-on-page-error
+```
+
 If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take a look at the [generate configuration](/api/configuration-generate) to tell Nuxt.js how to generate these dynamic routes.
 
 <div class="Alert">
