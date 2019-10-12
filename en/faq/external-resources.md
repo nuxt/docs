@@ -6,7 +6,9 @@ description: How to use external resources with Nuxt.js?
 ## Global Settings
 
 You can include your external resources in the head object or function.
-The following example is with an object, but the second one is with a head function. If you encounter problems you may would like to switch to the function.
+The following example is with an object, the second one is with a function. 
+If you encounter problems you may would like to switch to the head function.
+
 Include your resources in `nuxt.config.js`:
 
 ```js
