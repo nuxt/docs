@@ -5,7 +5,8 @@ description: Share environment variables between client and server.
 
 - Type: `Object`
 
-> Nuxt.js lets you create environment variables that will be shared for the client and server-side.
+> Nuxt.js lets you create environment variables that will be shared for the client side from server side. As you see in the example, the server side variable BASE_URL is brought to client side within the env property in nuxt.config.js. Alternatively, another value is defined (http://localhost:3000). So the env property defines environment variables client side, that can be assigned using server side environment variables, dotenv module environment variables, system variables, URLs and so on.
+*Be careful to read about process.env and process.env == {} below for better troubleshooting.
 
 Example (`nuxt.config.js`):
 
