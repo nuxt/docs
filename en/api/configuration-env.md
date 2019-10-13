@@ -9,7 +9,7 @@ description: Share environment variables between client and server.
 
 As you see in the example, the server side variable BASE_URL is copied to the client side via the `env` property in the `nuxt.config.js`. 
 Alternatively, another value is defined (http://localhost:3000). 
-So the env property defines environment variables that should be present on the client side, that can be assigned using server side environment variables, the [dotenv module](https://github.com/nuxt-community/dotenv-module) or similar.
+So the env property defines environment variables that should be present on the client side, that can be assigned using server side environment variables, the [dotenv module](https://github.com/nuxt-community/dotenv-module) ones or similar.
 *Make sure to read about `process.env` and `process.env == {}` below for better troubleshooting.
 
 Example (`nuxt.config.js`):
