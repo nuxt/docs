@@ -7,7 +7,7 @@ description: How to use external resources with Nuxt.js?
 
 You can include your external resources in the head object or function.
 The following example is with an object, the second one is with a function. 
-If you encounter problems you may would like to switch to the head function.
+If you encounter problems you may would like to switch to the head function: especially when you want to use values coming from the Vue component (so all "non-static" content), a function is the only way to go (and to ensure dependencies are tracked and reactivity works).
 
 Include your resources in `nuxt.config.js`:
 
