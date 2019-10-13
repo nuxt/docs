@@ -100,7 +100,7 @@ npm run generate
 
 It will create a `dist` folder with everything inside ready to be deployed on a static hosting site.
 
-To see error status from page generation, you need to pass `--fail-on-page-error` argument to command:
+To return non-zero status code when a page error is encountered and let CI cancel deployment, you need to pass `--fail-on-page-error` argument to command. 
 
 ```bash
 npm run generate --fail-on-page-error
