@@ -2,74 +2,28 @@
   "iso": "fr",
   "docVersion": "2.8.X",
   "links": {
-    "api": "API",
-    "blog": "Blog",
-    "chat": "Chat",
-    "documentation": "Documentation",
     "download": "Téléchargement",
-    "examples": "Exemples",
-    "ecosystem": "Écosystème",
-    "faq": "FAQ",
-    "get_started": "Commencer",
-    "github": "GitHub",
-    "guide": "Guide",
-    "homepage": "Accueil",
-    "live_demo": "Voir en ligne",
-    "live_edit": "Éditer en ligne",
-    "tidelift_short": "OBTENIR UN SUPPORT PROFESSIONNEL",
-    "official_support": "OBTENIR UN SUPPORT OFFICIEL ⛑",
-    "tidelift": "OBTENIR UN SUPPORT PROFESSIONNEL POUR NUXT",
-    "twitter": "Twitter",
-    "vuejs": "Vue.js",
-    "vue_jobs": "Vue Jobs"
+    "live_edit": "Éditer en ligne"
   },
   "text": {
     "an_error_occured": "Une erreur s'est produite",
     "api_page_not_found": "La page API est introuvable",
-    "example_file": "Fichiers d'exemples",
-    "please_wait": "Patientez...",
     "please_define_title": "Merci de définir un titre",
     "please_define_description": "Merci de définir une description",
     "search": "Rechercher",
-    "version": "Version",
-    "vue_toronto": "Vous souhaitez découvrir comment créer une application Vue.js universelle avec Nuxt ? Rejoignez notre atelier le 14 novembre 2018 à Vue Toronto !"
+    "version": "Version"
   },
   "homepage": {
-    "title": "Le Framework Vue.js",
     "meta": {
       "title": "Nuxt.js - Le Framework Vue.js",
       "description": "Nuxt.js fournit toutes les configurations nécessaires pour rendre vos développements d'application Vue.js agréable. Nuxt.js peut créer des Applications Universelles, Monopages ou Statiques Générées."
     },
     "welcome": {
-      "app_types_prefix": "Pour ",
-      "app_types": ["Applications Universelles", "Applications Statiques Générées", "Applications Monopages", "Applications de Bureau", "Applications Mobiles", "Applications Web Progressives"],
-      "app_types_suffix": "."
-    },
-    "codesandbox_title": "Jouez en ligne avec Nuxt.js",
-    "codesandbox_open": "Ouivrir dans CodeSandBox.io",
-    "codesandbox_examples": "Voir plus d'exemples",
-    "backer_partners": "Partenaires",
-    "backer_become_a_partner": "Devenir un partner",
-    "backer_sponsors": "Sponsors",
-    "backer_become_a_sponsor": "Devenir un sponsor",
-    "backer_backers": "Supporter",
-    "backer_become_a_backer": "Devenir un supporteur",
-    "backer_foundations": "Fondations"
-  },
-  "sponsors": {
-    "title": "Sponsors",
-    "become": "Nous soutenir et",
-    "become_partner": "devenir un partenaire"
-  },
-  "footer": {
-    "authors": "Réalisé par les frères Chopin"
+    }
   },
   "guide": {
     "release_notes": "Notes de versions (en)",
     "contribute": "Vous avez vu une erreur ou vous souhaitez contribuer à la documentation ?",
     "edit_on_github": "Éditez cette page sur GitHub !"
-  },
-  "examples": {
-    "source_code": "Code source"
   }
 }
