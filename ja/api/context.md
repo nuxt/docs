@@ -87,7 +87,7 @@ Node.js サーバーからのリクエスト。Nuxt がミドルウェアとし�
 
 Node.js サーバーからのレスポンス。 Nuxt がミドルウェアとして使用されている場合、使用しているフレームワークに応じてレスポンスオブジェクトが異なることがあります。<br>**`nuxt generate` からは使用できません**。
 
-## `beforeNuxtRender(fn)` (*Function*)
+### `beforeNuxtRender(fn)` (*Function*)
 
 クライアントサイドでレンダリングされた `__NUXT__` 変数がアップデートされます。`fn`（非同期にすることができます）は `{ Components, nuxtState }` と共に呼ばれます。詳細は[例](https://github.com/nuxt/nuxt.js/blob/cf6b0df45f678c5ac35535d49710c606ab34787d/test/fixtures/basic/pages/special-state.vue)を参照してください。
 
