@@ -5,12 +5,11 @@ description: Share environment variables between client and server.
 
 - Type: `Object`
 
-> Nuxt.js lets you create environment variables that will be shared for the client side from server side. 
+> Nuxt.js lets you create environment variables client side, also to be shared from server side. 
 
-As you see in the example, the server side variable BASE_URL is copied to the client side via the `env` property in the `nuxt.config.js`. 
-Alternatively, another value is defined (http://localhost:3000). 
-So the env property defines environment variables that should be present on the client side, that can be assigned using server side environment variables, the [dotenv module](https://github.com/nuxt-community/dotenv-module) ones or similar.
-*Make sure to read about `process.env` and `process.env == {}` below for better troubleshooting.
+The env property defines environment variables that should be available on the client side. They can be assigned using server side environment variables, the [dotenv module](https://github.com/nuxt-community/dotenv-module) ones or similar.
+
+**Make sure to read about `process.env` and `process.env == {}` below for better troubleshooting.
 
 Example (`nuxt.config.js`):
 
@@ -22,7 +21,8 @@ export default {
 }
 ```
 
-This lets you create a `baseUrl` property that will be equal to the `BASE_URL` environment variable if defined, otherwise, equal to `'http://localhost:3000'`.
+This lets you create a `baseUrl` property that will be equal to the `BASE_URL` server side environment variable if available or defined. If not, `baseUrl` in client side will be equal to `'http://localhost:3000'`. The server side variable BASE_URL is therefore copied to the client side via the `env` property in the `nuxt.config.js`. 
+Alternatively, the other value is defined (http://localhost:3000). 
 
 Then, I can access my `baseUrl` variable in 2 ways:
 
