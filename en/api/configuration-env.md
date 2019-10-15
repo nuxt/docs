@@ -9,7 +9,7 @@ description: Share environment variables between client and server.
 
 The env property defines environment variables that should be available on the client side. They can be assigned using server side environment variables, the [dotenv module](https://github.com/nuxt-community/dotenv-module) ones or similar.
 
-**Make sure to read about `process.env` and `process.env == {}` below for better troubleshooting.
+**Make sure to read about `process.env` and `process.env == {}` below for better troubleshooting.**
 
 Example (`nuxt.config.js`):
 
