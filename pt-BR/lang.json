@@ -3,7 +3,8 @@
   "docVersion": "2.1.0",
   "links": {
     "download": "Baixar",
-    "live_edit": "Live Edit"
+    "live_edit": "Live Edit",
+    "guide": "Guia"
   },
   "text": {
     "an_error_occurred": "Um erro ocorreu",
@@ -19,6 +20,8 @@
       "description": "Nuxt.js é um framework minimalista para aplicações Vue.js com recursos\ncomo SSR(Server Side Rendering ), code-splitting, hot-reloading, gerador de\narquivos estáticos e muito mais!"
     },
     "welcome": {
+      "get_started": "Começar",
+      "github_stars": "22K+ github stars"
     }
   },
   "guide": {

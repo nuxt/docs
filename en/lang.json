@@ -19,6 +19,8 @@
       "description": "Nuxt.js presets all the configuration needed to make your development of a Vue.js application enjoyable. Nuxt.js can produce Universal, Single Page and Static Generated Applications."
     },
     "welcome": {
+      "get_started": "get started",
+      "github_stars": "22K+ github stars"
     }
   },
   "guide": {

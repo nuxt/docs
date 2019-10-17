@@ -19,6 +19,8 @@
       "description": "Nuxt.js is a minimal framework for creating Vue.js applications with server side rendering, code-splitting, hot-reloading, static generation and more!"
     },
     "welcome": {
+      "get_started": "get started",
+      "github_stars": "22K+ github stars"
     }
   },
   "guide": {

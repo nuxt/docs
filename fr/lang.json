@@ -6,7 +6,7 @@
     "live_edit": "Éditer en ligne"
   },
   "text": {
-    "an_error_occured": "Une erreur s'est produite",
+    "an_error_occurred": "Une erreur s'est produite",
     "api_page_not_found": "La page API est introuvable",
     "please_define_title": "Merci de définir un titre",
     "please_define_description": "Merci de définir une description",
@@ -19,6 +19,8 @@
       "description": "Nuxt.js fournit toutes les configurations nécessaires pour rendre vos développements d'application Vue.js agréable. Nuxt.js peut créer des Applications Universelles, Monopages ou Statiques Générées."
     },
     "welcome": {
+      "get_started": "Commencer",
+      "github_stars": "22K+ github stars"
     }
   },
   "guide": {
