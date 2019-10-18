@@ -518,7 +518,7 @@ export default {
   }
   ```
 
-如果代码分模块用于 `layout`, `pages` 和 `commons` (常用: vue|vue-loader|vue-router|vuex...).
+是否对此模块进行代码分割 `layout`, `pages` 和 `commons` (commons 包括: vue|vue-loader|vue-router|vuex...).
 
 ## ssr
 
@@ -691,7 +691,7 @@ export default {
 
 ## followSymlinks
 
-> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example. 
+> 默认情况下， `build` 任务不会扫描快捷方式链接的文件。此项，开启后会扫描，从而实现快捷方式链接文件的用法，例如 `pages` 文件夹。 
 
 - Type: `Boolean`
 
