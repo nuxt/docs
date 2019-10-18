@@ -1,4 +1,4 @@
 ---
-title: <span class="nWelcome_Content_Title_Primary">Vue.js</span> フレームワーク
+title: プログレッシブ<br><span class="text-nuxt-lightgreen">Vue.js</span> フレームワーク<br>
 ---
-Nuxt.js は Vue.js アプリケーションの開発を楽しくするために必要なすべての設定が揃っています。
+NuxtJS を使用し自信を持って次の Vue.js アプリケーションをビルドしましょう。ウェブ開発をシンプルかつ強力にする<span title="Under MIT license">オープンソース</span>フレームワークです。
