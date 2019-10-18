@@ -19,6 +19,8 @@
       "description": "Nuxt.js은 서버 사이드 렌더링, 코드 분리, 핫 리로딩, 정적 생성기 등과 함께 Vue.js 어플리케이션을 만들기 위한 최소한의 프레임워크입니다!"
     },
     "welcome": {
+      "get_started": "시작하기",
+      "github_stars": "22K+ github stars"
     }
   },
   "guide": {
