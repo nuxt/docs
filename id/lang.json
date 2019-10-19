@@ -21,6 +21,9 @@
     "welcome": {
       "get_started": "Memulai",
       "github_stars": "22K+ github stars"
+    },
+    "why": {
+      "try_nuxtjs_online": "Coba NuxtJS Online"
     }
   },
   "guide": {

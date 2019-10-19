@@ -21,6 +21,9 @@
     "welcome": {
       "get_started": "начало работы",
       "github_stars": "22K+ github stars"
+    },
+    "why": {
+      "try_nuxtjs_online": "Попробуйте NuxtJS онлайн"
     }
   },
   "guide": {

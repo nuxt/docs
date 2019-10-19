@@ -21,6 +21,9 @@
     "welcome": {
       "get_started": "Commencer",
       "github_stars": "22K+ github stars"
+    },
+    "why": {
+      "try_nuxtjs_online": "Essayez NuxtJS Online"
     }
   },
   "guide": {

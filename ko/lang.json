@@ -21,6 +21,9 @@
     "welcome": {
       "get_started": "시작하기",
       "github_stars": "22K+ github stars"
+    },
+    "why": {
+      "try_nuxtjs_online": "Try NuxtJS Online"
     }
   },
   "guide": {
