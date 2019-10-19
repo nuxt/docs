@@ -45,8 +45,8 @@ Un cas usuel d'utilisation d'un modèle personnalisé d'application est d'ajoute
 <!-- TODO: Load polyfills here? -->
 ## Mises en page
 
-Les mises en pages sont une aide apréciable quand vous voulez changer l'aspect de votre application Nuxt§.js.
-Que vous souhaitez inclure une barre latérale ou avoir une disposition distincte pour mobiles ou ordinateurs fixes
+Les mises en pages sont une aide appréciable quand vous voulez changer l'aspect de votre application Nuxt.js.
+Que vous souhaitez inclure une barre latérale ou avoir une disposition distincte pour mobile ou ordinateur
 
 ### Mise en page par défaut
 
@@ -59,7 +59,7 @@ Il sera utilisé pour toutes les pages qui n'ont pas de mise en page spécifiée
 
 </div>
 
-La mise en page par défaut qui vient par défaut fait simplement trois lignes et affiche simplement le composant page :
+La mise en page fournie par défaut fait simplement trois lignes et affiche simplement le composant page :
 
 ```html
 <template>
@@ -69,7 +69,7 @@ La mise en page par défaut qui vient par défaut fait simplement trois lignes e
 
 ### Mise en page personnalisée
 
-Chaque fichier (*premier niveau*) dans le répertoire `layouts` créera une mise en page personnalisée accessible via la propriété `layout` dans le composant de la page.
+Chaque fichier (*premier niveau*) dans le répertoire `layouts` créera une mise en page personnalisée accessible via la propriété `layout` des composants page.
 
 Disons que nous voulons créer une mise en page de blog et l'enregistrer sous `layouts/blog.vue` :
 
@@ -82,7 +82,7 @@ Disons que nous voulons créer une mise en page de blog et l'enregistrer sous `l
 </template>
 ```
 
-Maintenant nous devons dire aux pages (par exemple `pages/posts.vue`) d'utiliser votre mise en page personnalisée :
+Maintenant nous devons indiquer aux pages (par exemple `pages/posts.vue`) d'utiliser votre mise en page personnalisée :
 
 ```html
 <template>
@@ -104,7 +104,7 @@ Regardez la [vidéo de démonstration](https://www.youtube.com/watch?v=YOKnSTp7d
 
 ### Page d'erreur
 
-La page d'erreur est un *coposant page* qui sera toujours affichée lorsqu'une erreur se produit (qui ne survient pas pendant le rendu côté serveur).
+La page d'erreur est une *page composant* qui sera toujours affichée lorsqu'une erreur se produit (qui ne survient pas pendant le rendu côté serveur).
 
 <div class="Alert Alert--orange">
 
@@ -112,9 +112,9 @@ La page d'erreur est un *coposant page* qui sera toujours affichée lorsqu'une e
 
 </div>
 
-Comme mentionné précédament, cette mise en page est spéciale, car vous **ne devez pas** inclure `<nuxt/>` dans cette mise en page.
+Comme mentionné précédemment, cette mise en page est spéciale, car vous **ne devez pas** inclure `<nuxt/>` dans cette mise en page.
 Vous devez voir cette mise en page comme un composant affiché quand une erreur survient (`404`, `500`, etc.).
-Similaire aux autre composants page, vous pouvez définir une mise en page personnalisée pour la page d'erreur comme habituellement.
+Similaire aux autre composants page, vous pouvez définir une mise en page personnalisée pour la page d'erreur.
 
 Le code source de la page d'erreur par défaut est [disponible sur GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
 
@@ -140,12 +140,12 @@ export default {
 
 ## Pages
 
-Chaque composant de page est un composant Vue, mais Nuxt.js ajoute des clés spéciales pour rendre le développement de votre application universelle le plus simple possible.
+Chaque composant page est un composant Vue, mais Nuxt.js ajoute des clés spéciales pour rendre le développement de votre application universelle le plus simple possible.
 
 <div class="Promo__Video">
   <a href="https://vueschool.io/lessons/nuxtjs-page-components?friend=nuxt" target="_blank">
     <p class="Promo__Video__Icon">
-      Visonner un cours gratuit sur les <strong>composants de page Nuxt.js</strong> sur Vue School (EN)
+      Visonner un cours gratuit sur les <strong>composants page Nuxt.js</strong> sur Vue School (EN)
     </p>
   </a>
 </div>
@@ -159,8 +159,8 @@ Chaque composant de page est un composant Vue, mais Nuxt.js ajoute des clés sp�
 export default {
   asyncData (context) {
     // appelé à chaque fois avant le chargement du composant
-    // comme sont nom l'indique, il peut être asynchrone
-    // De plus, l'objet retourné sera ajouté à votre objet data
+    // comme son nom l'indique, il peut être asynchrone
+    // De plus, l'objet retourné sera ajouté à votre objet `data`
     return { name: 'le Monde' }
   },
   fetch () {
@@ -184,12 +184,12 @@ export default {
 | Attribut | Description | Documentation |
 |----------|-------------|---------------|
 | `asyncData` | L'attribut le plus important. Il peut être asynchrone et reçoit le contexte comme argument. | [Guide : Données asynchrones](/guide/async-data) |
-| `fetch` | Utilisé pour peupler le store avant de faire le rendu de la page. C'est comme la méthode `asyncData`, sauf qu'il ne peuple pas le composant `data` | [pages de l'API sur `fetch`](/api/pages-fetch) |
+| `fetch` | Utilisé pour peupler le store avant de faire le rendu de la page. Identique à la méthode `asyncData`, sauf qu'il ne peuple pas le composant `data` | [pages de l'API sur `fetch`](/api/pages-fetch) |
 | `head` | Défini des balises `<meta>` spécifiques pour la page en cours. | [pages de l'API sur `head`](/api/pages-head) |
 | `layout` | Défini une mise en page existantes dans le répertoire `layouts`. | [pages de l'API sur `layout`](/api/pages-layout) |
 | `loading` | Si mis à `false`, empèche la page d'appeler automatiquement `this.$nuxt.$loading.finish()` quand vous allez dessus et `this.$nuxt.$loading.start()` quand vous la quittez, vous permettant de contrôller **manuellement** ce comportement, comme le montre [cet exemple](https://nuxtjs.org/examples/custom-page-loading). Seulement appliqué si `loading` est défini dans `nuxt.config.js`. | [configuration `loading` de l'API](/api/configuration-loading) |
-| `transition` | Défini une transition spécifique pour une page. | [pages de l'API sur `transition`](/api/pages-transition) |
-| `scrollToTop` | Booléen (par défaut: `false`). Indique si vous souhaitez que la position se déplace vers le haut avant d'afficher la page. Est utilisé pour les [Routes imbriquées](/guide/routing#routes-imbriqu-es) | [pages de l'API sur `scrollToTop`](/api/pages-scrolltotop#the-scrolltotop-property) |
+| `transition` | Défini une transition spécifique pour la page. | [pages de l'API sur `transition`](/api/pages-transition) |
+| `scrollToTop` | Booléen (par défaut : `false`). Indique si vous souhaitez que la position de défilement de la page soit déplacée vers le haut avant d'afficher la page. Est utilisé pour les [Routes imbriquées](/guide/routing#routes-imbriqu-es) | [pages de l'API sur `scrollToTop`](/api/pages-scrolltotop#the-scrolltotop-property) |
 | `validate` | Fonction de validation pour les [Routes dynamiques](/guide/routing#routes-dynamiques). | [pages de l'API sur `validate`](/api/pages-validate#the-validate-method) |
 | `middleware` | Défini un middleware pour cette page. Ce middleware sera exécuté avant d'effectuer le rendu de la page. | [Guide : Middleware](/guide/routing#middleware) |
 
