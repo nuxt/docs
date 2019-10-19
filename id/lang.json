@@ -24,6 +24,9 @@
     },
     "why": {
       "try_nuxtjs_online": "Coba NuxtJS Online"
+    },
+    "sponsors": {
+      "become_a_sponsor": "Menjadi Sponsor"
     }
   },
   "guide": {

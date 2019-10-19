@@ -24,6 +24,9 @@
     },
     "why": {
       "try_nuxtjs_online": "Try NuxtJS Online"
+    },
+    "sponsors": {
+      "become_a_sponsor": "스폰서되기"
     }
   },
   "guide": {

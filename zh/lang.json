@@ -24,6 +24,9 @@
     },
     "why": {
       "try_nuxtjs_online": "在线尝试 NuxtJS"
+    },
+    "sponsors": {
+      "become_a_sponsor": "成为赞助商"
     }
   },
   "guide": {
