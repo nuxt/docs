@@ -39,6 +39,20 @@ Nuxt.js では `asyncData` メソッドを使うために、いくつかの異�
 
 </div>
 
+`node_modules` 内の `axios` を直接使用しており、`axios.interceptors` を使用してデータを処理する場合、interceptors を追加する前にインスタンスを作成してください。そうしなければ、サーバレンダリングされたページをリフレッシュする際に、interceptor が複数追加され、データエラーが発生します。
+
+```js
+import axios from 'axios';
+const myaxios = axios.create({
+  // ...
+});
+myaxios.interceptors.response.use(function (response) {
+  return response.data
+}, function (error) {
+  //...
+});
+```
+
 ### Promise を返す
 
 ```js
