@@ -73,6 +73,23 @@ export default {
 }
 ```
 
+If you want to sort your routes, you can use the `sortRoutes(routes)` function from `@nuxt/utils`:
+
+`nuxt.config.js`
+```js
+import { sortRoutes } from '@nuxt/utils'
+export default {
+  router: {
+    extendRoutes (routes, resolve) {
+      // Add some routes here ...
+      
+      // and then sort them
+      sortRoutes(routes)
+    }
+  }
+}
+```
+
 The schema of the route should respect the [vue-router](https://router.vuejs.org/en/) schema.
 
 <div class="Alert Alert--orange">
