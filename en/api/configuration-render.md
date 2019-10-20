@@ -37,6 +37,23 @@ To disable etag for pages set `etag: false`
 
 See [etag](https://www.npmjs.com/package/etag) docs for possible options.
 
+You can specify your own hash function by specifying `etag.hash`:
+
+`nuxt.config.js`
+```js
+import { murmurHash128 } from 'murmurhash-native'
+
+export default {
+  render: {
+    etag: {
+      hash: html => murmurHash128(html)
+    }
+  }
+}
+```
+
+In this case we use [murmurhash-native](https://github.com/royaltm/node-murmurhash-native), which is faster for larger html body sizes. Note that the `weak` option is ignored, when specifying your own hash function.
+
 ## compressor
 
 - Type `Object`
