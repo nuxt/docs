@@ -1,11 +1,9 @@
 ---
-title: "AWS S3 と CloudFront によるデプロイ"
+title: "S3 と CloudFront を使用して AWS へデプロイするには？"
 description: "S3 と CloudFront を使用した AWS での静的ホスティング"
 ---
 
-# S3 と CloudFront を使用して AWS へデプロイするには？
-
-AWS は Amazon Web Services です。
+AWS は Amazon Web Services の略称です。
 S3 は、静的サイトホスティング用に設定できる静的ストレージです。
 CloudFront は、AWS の CDN（コンテンツ配信ネットワーク）です。
 
@@ -61,9 +59,7 @@ gulpfile.js     -  ファイルを S3 にプッシュして CloudFront のキャ
 3. セキュリティアクセスを設定する
 4. プロジェクトにビルドスクリプトを設定する
 
-### 1. AWS: S3 バケットの設定
-
-### 2. AWS: CloudFront Distribution の設定
+### AWS: S3 バケットと CloudFront Distribution の設定
 
 ステップ1 と 2 については、この [S3 と CloudFront をセットアップするためのチュートリアル](https://reidweb.com/2017/02/06/cloudfront-cdn-tutorial/)に従ってください。
 
@@ -72,7 +68,7 @@ gulpfile.js     -  ファイルを S3 にプッシュして CloudFront のキャ
 - AWS_BUCKET_NAME="example.com"
 - AWS_CLOUDFRONT="UPPERCASE"
 
-### 3. AWS: セキュリティアクセスを設定する
+### AWS: セキュリティアクセスを設定する
 
 ステップ3 では、以下のことができるユーザーを作成する必要があります:
 
@@ -127,7 +123,7 @@ gulpfile.js     -  ファイルを S3 にプッシュして CloudFront のキャ
 - AWS_ACCESS_KEY_ID="key"
 - AWS_SECRET_ACCESS_KEY="secret"
 
-### 4. Laptop: プロジェクトのビルドスクリプトを設定する
+### Laptop: プロジェクトのビルドスクリプトを設定する
 
 4.1) `deploy.sh` スクリプトを作成します。詳細は [nvm（node version manager）](https://github.com/creationix/nvm)を参照してください。
 

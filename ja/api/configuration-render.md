@@ -3,8 +3,6 @@ title: "API: render プロパティ"
 description: Nuxt.js はページレンダリングの実行時オプションをカスタマイズできます。
 ---
 
-# renderプロパティ
-
 > Nuxt.js はページレンダリングの実行時オプションをカスタマイズできます。
 
 ## bundleRenderer
@@ -155,7 +153,7 @@ pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
 
 > これは Content-Security-Policy で適用された外部リソースを読み込む設定をするために使用します。
 
-`script-src` ポリシーに `'unsafe-inline'` が含まれている場合、CSP のハッシュは追加されないことに注意してください。これは、ハッシュが存在する場合、ブラウザが `'unsafe-inline'` を無視するためです。CSPv1 の後方互換性のために `'unsafe-inline'` とハッシュの両方の定義が必要な場合は、オプションの `unsafeInlineCompatiblity` を `true` に設定します。
+`script-src` ポリシーに `'unsafe-inline'` が含まれている場合、CSP のハッシュは追加されないことに注意してください。これは、ハッシュが存在する場合、ブラウザが `'unsafe-inline'` を無視するためです。CSPv1 の後方互換性のために `'unsafe-inline'` とハッシュの両方の定義が必要な場合は、オプションの `unsafeInlineCompatibility` を `true` に設定します。
 
 例 (`nuxt.config.js`)
 

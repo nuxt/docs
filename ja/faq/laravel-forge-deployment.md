@@ -3,8 +3,6 @@ title: Laravel Forge へデプロイ
 description: Laravel Forge にデプロイするには？
 ---
 
-# Laravel Forge へデプロイ
-
 ## 1- 前提条件
 
 Nuxt アプリケーションを Laravel Forge にデプロイする説明をする前に、以下のことを確認してください:

@@ -42,6 +42,20 @@ We are using [axios](https://github.com/mzabriskie/axios) to make isomorphic HTT
 
 </div>
 
+If you are using `axios` directly from `node_modules` and used the `axios.interceptors` add interceptors to transform the data, make sure create an instance before add interceptors. If not, when you refresh the serverRender page,  the interceptors will be added multiple, that will cause data error.
+
+```js
+import axios from 'axios';
+const myaxios = axios.create({
+  // ...
+});
+myaxios.interceptors.response.use(function (response) {
+  return response.data
+}, function (error) {
+  //...
+});
+```
+
 ### Returning a Promise
 
 ```js

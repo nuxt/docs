@@ -1,9 +1,7 @@
 ---
-title: GitHub Pages へデプロイ
+title: GitHub Pages へデプロイするには？
 description: GitHub Pages へデプロイするには？
 ---
-
-# GitHub Pages へデプロイするには？
 
 Nuxt.js を使うと、例えば [GitHub Pages](https://pages.github.com/) のような静的ホスティングサービスで、ウェブアプリケーションをホストすることが可能です。
 

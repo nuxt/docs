@@ -3,8 +3,6 @@ title: "API: generate プロパティ"
 description: ユニバーサルなウェブアプリケーションから静的なウェブアプリケーションの生成について設定します。
 ---
 
-# generate プロパティ
-
 - 型: `Object`
 
 > ユニバーサルなウェブアプリケーションから静的なウェブアプリケーションの生成について設定します。
@@ -12,7 +10,6 @@ description: ユニバーサルなウェブアプリケーションから静的�
 `nuxt generate` コマンドを実行するか `nuxt.generate()` を呼び出したとき、Nuxt.js は `generate` プロパティで定義された設定を使います。
 
 `nuxt.config.js` 
-
 ```js
 export default {
   generate: {
@@ -49,7 +46,6 @@ export default {
 
 - 型: `Array`
 
-
 配列の正規表現を指定することができ、指定した正規表現に一致するルートの生成を防ぎます。`generate.fallback` が使用されている場合、ルートは引き続きアクセスすることができます。
 
 デフォルトでは、`nuxt generate` を実行するとそれぞれのルートに対してファイルが作成されます。
@@ -63,6 +59,7 @@ export default {
 ```
 
 「ignore」をもつすべてのルートに一致する正規表現を追加すると、これらのルートの生成が防止されます。
+
 nuxt.config.js 
 ```js
 export default {
@@ -82,7 +79,7 @@ export default {
 ## fallback
 
 - 型: `String` または `Boolean`
-- デフォルト: `'200.html'`
+- デフォルト: `200.html`
 
 ```js
 export default {
@@ -92,10 +89,28 @@ export default {
 }
 ```
 
-SPA のフォールバックとなるパス。このファイルは、 generate されたサイトを静的サイトホスティングへデプロイする時に利用します。`mode: 'spa'` においてルーティングが存在しない場合、フォールバックされます。
+フォールバックする HTML ファイルのパス。エラーページとして設定する必要があります。この設定により、不明なルートも Nuxt を介してレンダリングされます。
+未設定またはファルシーな値が設定されている場合、フォールバック HTML ファイルの名前は `200.html` になります。もし、`true` を設定すると、ファイル名は `404.html` になります。値として文字列を指定すると、その文字列が代わりに使用されます。
 
-_情報：このオプションは [Netlify](https://netlify.com) や HTML フォールバックを使用している静的ホスティングで使用すると便利です。_
+SPA を実行するときは、他のルートが生成されず必要となる唯一のファイルになるので、`200.html` を使用するのがより慣用的です。
 
+```js
+fallback: false
+```
+
+静的に生成されたページを運用する場合、エラーページと [excludes](/api/configuration-generate#exclude) でカバーされているページに `404.html` を使用することをおすすめします（静的ページとして生成してほしくない場合）。
+
+```js
+fallback: true
+```
+
+ただし、Nuxt では任意のページを設定できるため、`200.html` または `404.html` を使用したくない場合は代わりに文字列を追加して、そのページにリダイレクトするようにすることができます。これはもちろん必須ではなく、`200.html`/`404.html` にリダイレクトするのがベストです。
+
+```js
+fallback: 'fallbackPage.html' 
+```
+
+*情報：複数のサービス（例えば Netlify）では、`404.html` を自動的に検出します。ウェブサーバーを独自に設定する場合は、ドキュメントを参照してエラーページの設定方法を確認してください（そして、エラーページを `404.html` ファイルに設定してください）。*
 
 ## interval
 
@@ -113,7 +128,7 @@ _情報：このオプションは [Netlify](https://netlify.com) や HTML フ�
 
 - 型: `Array`
 
-generate コマンドでは [動的なルーティング](/guide/routing#動的なルーティング) は無視されます。
+`generate` コマンド（yarn generate）では [動的なルーティング](/guide/routing#動的なルーティング) は無視されます。Nuxt はこれらのルートが何であるのか知らないので、生成することができません。
 
 例:
 
@@ -265,7 +280,6 @@ async asyncData ({ params, error, payload }) {
 false を設定した場合、ルーティングパスに従う形で HTML ファイルを生成します:
 
 `nuxt.config.js` 
-
 ```js
 export default {
   generate: {

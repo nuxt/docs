@@ -38,6 +38,20 @@ Nuxt.js 提供了几种不同的方法来使用 `asyncData` 方法，你可以�
 
 </div>
 
+如果您的项目中直接使用了`node_modules`中的`axios`，并且使用`axios.interceptors`添加拦截器对请求或响应数据进行了处理，确保使用 `axios.create`创建实例后再使用。否则多次刷新页面请求服务器，服务端渲染会重复添加拦截器，导致数据处理错误。
+
+```js
+import axios from 'axios';
+const myaxios = axios.create({
+  // ...
+});
+myaxios.interceptors.response.use(function (response) {
+  return response.data
+}, function (error) {
+  //...
+});
+```
+
 ### 返回 Promise
 ```js
 export default {
