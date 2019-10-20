@@ -27,6 +27,15 @@
     },
     "sponsors": {
       "become_a_sponsor": "Seja um patrocinador"
+    },
+    "newsletter_form": {
+      "email": "Email",
+      "subscribing": "Subscribing...",
+      "subscribe": "Subscribe",
+      "subscribed_messages": {
+        "pre": "An email to confirm your subscription has been sent to",
+        "post": "💚"
+      }
     }
   },
   "guide": {
