@@ -37,7 +37,7 @@ To disable etag for pages set `etag: false`
 
 See [etag](https://www.npmjs.com/package/etag) docs for possible options.
 
-You can specify your own hash function by specifying `etag.hash`:
+You can use your own hash function by specifying `etag.hash`:
 
 `nuxt.config.js`
 ```js
