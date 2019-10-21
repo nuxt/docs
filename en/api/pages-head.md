@@ -9,7 +9,7 @@ description: Nuxt.js uses vue-meta to update the headers and HTML attributes of 
 
 Use the `head` method to set the HTML Head tags for the current page.
 
-Your component data are available with `this` in the `head` method, you can use set custom meta tags with the page data.
+Your component data are available with `this` in the `head` method, you can use set custom meta tags with the page data. Be sure to also take a look at the [Nuxt FAQ](https://nuxtjs.org/faq/).
 
 ```html
 <template>
