@@ -3,6 +3,51 @@ title: How to deploy on Azure Portal?
 description: How to deploy a Nuxt.js application on Azure Portal?
 ---
 
+## Requirements
+- It is required that you select a backend when setting up the project. Even if you don't need it, or else the site wont start up.
+- The server is running Node 8 or greater
+
+## What if I already have a project without an backend?
+No worries. It is easy to add an express server to an existing project.
+
+Download the index.js file from this gist: https://gist.github.com/dasmikko/bef743ad4400f8b1c1c8c6e494f081d6 and place it inside a folder called `server` in the root of your project.
+
+Then edit your nuxt.config.js, like so:
+
+Before:
+
+```
+import pkg from './package'
+
+export default {
+... config
+}
+```
+
+After: 
+```
+module.exports = {
+... config
+}
+
+```
+
+**Remember to remove the references to the pkg object inside the config.**
+
+Thats it!
+
+## How to set Node version on Web App in DevOps
+
+You can set the Node version on the server, via the App setting inside the "Deploy Azure Web Service" task in the release pipeline
+
+Add this to the App settings field under "Application and Configuration Settings"
+```
+-WEBSITE_NODE_DEFAULT_VERSION 10.16.3
+```
+It's recommended to use the LTS version.
+
+## Artifacts
+
 If you are using Azure DevOps and let the build pipeline do its work you and want to store artifacts. Files
 which are prefixed with a `.` must be moved to the artifact folder explicitly. Then you can create an Artifact Archive and 
 download it afterwards in your Release Deployment. 
