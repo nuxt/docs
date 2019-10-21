@@ -21,6 +21,21 @@
     "welcome": {
       "get_started": "Commencer",
       "github_stars": "22K+ github stars"
+    },
+    "why": {
+      "try_nuxtjs_online": "Essayez NuxtJS Online"
+    },
+    "sponsors": {
+      "become_a_sponsor": "Devenir sponsor"
+    },
+    "newsletter_form": {
+      "email": "Email",
+      "subscribing": "Subscribing...",
+      "subscribe": "Subscribe",
+      "subscribed_messages": {
+        "pre": "An email to confirm your subscription has been sent to",
+        "post": "💚"
+      }
     }
   },
   "guide": {
