@@ -21,6 +21,21 @@
     "welcome": {
       "get_started": "начало работы",
       "github_stars": "22K+ github stars"
+    },
+    "why": {
+      "try_nuxtjs_online": "Попробуйте NuxtJS онлайн"
+    },
+    "sponsors": {
+      "become_a_sponsor": "Стань спонсором"
+    },
+    "newsletter_form": {
+      "email": "Email",
+      "subscribing": "Subscribing...",
+      "subscribe": "Subscribe",
+      "subscribed_messages": {
+        "pre": "An email to confirm your subscription has been sent to",
+        "post": "💚"
+      }
     }
   },
   "guide": {

@@ -3,8 +3,7 @@
   "docVersion": "2.1.0",
   "links": {
     "download": "Baixar",
-    "live_edit": "Live Edit",
-    "guide": "Guia"
+    "live_edit": "Live Edit"
   },
   "text": {
     "an_error_occurred": "Um erro ocorreu",
@@ -22,6 +21,21 @@
     "welcome": {
       "get_started": "Começar",
       "github_stars": "22K+ github stars"
+    },
+    "why": {
+      "try_nuxtjs_online": "Experimente o NuxtJS Online"
+    },
+    "sponsors": {
+      "become_a_sponsor": "Seja um patrocinador"
+    },
+    "newsletter_form": {
+      "email": "Email",
+      "subscribing": "Subscribing...",
+      "subscribe": "Subscribe",
+      "subscribed_messages": {
+        "pre": "An email to confirm your subscription has been sent to",
+        "post": "💚"
+      }
     }
   },
   "guide": {

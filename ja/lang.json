@@ -27,6 +27,15 @@
     },
     "sponsors": {
       "become_a_sponsor": "スポンサーになる"
+    },
+    "newsletter_form": {
+      "email": "メールアドレス",
+      "subscribing": "送信中...",
+      "subscribe": "購読する",
+      "subscribed_messages": {
+        "pre": "購読を確認するメールを",
+        "post": "に送信しました 💚"
+      }
     }
   },
   "guide": {
