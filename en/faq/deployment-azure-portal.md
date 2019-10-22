@@ -49,7 +49,7 @@ async function start () {
 start()
 ```
 
-Then edit your nuxt.config.js, like so:
+Then edit your nuxt.config.js:
 
 Before:
 
