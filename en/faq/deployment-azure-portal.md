@@ -4,7 +4,7 @@ description: How to deploy a Nuxt.js application on Azure Portal?
 ---
 
 ## Requirements
-- It is required that you select a backend when setting up the project. Even if you don't need it, or else the site wont start up.
+- It is required that you select a backend when setting up the project. Even if you don't need it, or else the site won't start up.
 - The server is running Node 8 or greater
 
 ## What if I already have a project without an backend?
