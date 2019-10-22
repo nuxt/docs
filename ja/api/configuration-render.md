@@ -37,6 +37,23 @@ Nuxt.js は既に最高の SSR のデフォルト設定を提供していて、�
 
 利用可能なオプションは [etag](https://www.npmjs.com/package/etag) を参照してください。
 
+`etag.hash` を指定することで、独自のハッシュ関数を使用することができます。
+
+`nuxt.config.js`
+```js
+import { murmurHash128 } from 'murmurhash-native'
+
+export default {
+  render: {
+    etag: {
+      hash: html => murmurHash128(html)
+    }
+  }
+}
+```
+
+この場合、html の body サイズが大きいほどより高速な [murmurhash-native](https://github.com/royaltm/node-murmurhash-native) を使用します。独自のハッシュ関数を指定した場合、`weak` オプションは無視されることに注意してください。
+
 ## compressor
 
 - 型 `Object`
