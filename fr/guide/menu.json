@@ -10,7 +10,7 @@
           { "to": "#fonctionnalit-s", "name": "Fonctionnalités" },
           { "to": "#sch-ma", "name": "Schéma" },
           { "to": "#rendu-c-t-serveur-ssr-universel-", "name": "Rendu côté serveur" },
-          { "to": "#single-page-applications-spa-", "name": "Application monopage" },
+          { "to": "#application-monopage", "name": "Application monopage" },
           { "to": "#g-n-ration-statique-pr-rendu-", "name": "Génération statique" }
         ]
       },
