@@ -10,7 +10,44 @@ description: How to deploy a Nuxt.js application on Azure Portal?
 ## What if I already have a project without an backend?
 No worries. It is easy to add an express server to an existing project.
 
-Download the index.js file from this gist: https://gist.github.com/dasmikko/bef743ad4400f8b1c1c8c6e494f081d6 and place it inside a folder called `server` in the root of your project.
+Create a new folder called `server` in the root of the project. Then create an `index.js` file inside the `server` folder and paste the following inside the `index.js`:
+
+```
+const express = require('express')
+const consola = require('consola')
+const { Nuxt, Builder } = require('nuxt')
+const app = express()
+
+// Import and Set Nuxt.js options
+const config = require('../nuxt.config.js')
+config.dev = process.env.NODE_ENV !== 'production'
+
+async function start () {
+  // Init Nuxt.js
+  const nuxt = new Nuxt(config)
+
+  const { host, port } = nuxt.options.server
+
+  // Build only in dev mode
+  if (config.dev) {
+    const builder = new Builder(nuxt)
+    await builder.build()
+  } else {
+    await nuxt.ready()
+  }
+
+  // Give nuxt middleware to express
+  app.use(nuxt.render)
+
+  // Listen the server
+  app.listen(port, host)
+  consola.ready({
+    message: `Server listening on http://${host}:${port}`,
+    badge: true
+  })
+}
+start()
+```
 
 Then edit your nuxt.config.js, like so:
 
