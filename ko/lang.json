@@ -21,6 +21,21 @@
     "welcome": {
       "get_started": "시작하기",
       "github_stars": "22K+ github stars"
+    },
+    "why": {
+      "try_nuxtjs_online": "Try NuxtJS Online"
+    },
+    "sponsors": {
+      "become_a_sponsor": "스폰서되기"
+    },
+    "newsletter_form": {
+      "email": "Email",
+      "subscribing": "Subscribing...",
+      "subscribe": "Subscribe",
+      "subscribed_messages": {
+        "pre": "An email to confirm your subscription has been sent to",
+        "post": "💚"
+      }
     }
   },
   "guide": {
