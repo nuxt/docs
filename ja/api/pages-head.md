@@ -9,7 +9,8 @@ description: Nuxt.js はアプリケーションの headers 及び html attribut
 
 現在のページの HTML の head タグを設定するために `head` メソッドを使います。
 
-コンポーネントのデータは `head` メソッド内で `this` を使って利用できます。ページのデータを使って独自のメタタグを設定することもできます。
+コンポーネントのデータは `head` メソッド内で `this` を使って利用できます。ページのデータを使って独自のメタタグを設定することもできます。[Nuxt FAQ](https://nuxtjs.org/faq/) も必ずご覧ください。
+
 
 ```html
 <template>
