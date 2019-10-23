@@ -32,8 +32,8 @@ const Nuxt = require('nuxt')
 const nuxt = new Nuxt()
 
 nuxt.renderAndGetWindow('http://localhost:3000')
-.then((window) => {
+  .then((window) => {
   // head의 <title>이 보여집니다.
-  console.log(window.document.title)
-})
+    console.log(window.document.title)
+  })
 ```

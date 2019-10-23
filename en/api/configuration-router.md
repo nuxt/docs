@@ -82,7 +82,7 @@ export default {
   router: {
     extendRoutes (routes, resolve) {
       // Add some routes here ...
-      
+
       // and then sort them
       sortRoutes(routes)
     }

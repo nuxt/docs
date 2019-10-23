@@ -35,14 +35,14 @@ import serveStatic from 'serve-static'
 
 export default {
   serverMiddleware: [
-      // redirect-ssl npm パッケージを登録します
-      'redirect-ssl',
+    // redirect-ssl npm パッケージを登録します
+    'redirect-ssl',
 
-      // /api/* を処理するために、プロジェクトの api ディレクトリからファイルを登録します
-      { path: '/api', handler: '~/api/index.js' },
+    // /api/* を処理するために、プロジェクトの api ディレクトリからファイルを登録します
+    { path: '/api', handler: '~/api/index.js' },
 
-      // カスタムインスタンスを作成することもできます。
-      { path: '/static2', handler: serveStatic(__dirname + '/static2') }
+    // カスタムインスタンスを作成することもできます。
+    { path: '/static2', handler: serveStatic(__dirname + '/static2') }
   ]
 }
 ```
@@ -61,14 +61,14 @@ export default {
 
 ```js
 export default function (req, res, next) {
-    // req は Node.js の HTTPリクエストオブジェクトです
-    console.log(req.url)
+  // req は Node.js の HTTPリクエストオブジェクトです
+  console.log(req.url)
 
-    // res は Node.js の HTTPレスポンスオブジェクトです
+  // res は Node.js の HTTPレスポンスオブジェクトです
 
-    // next は 次のミドルウェアを呼び出すための関数です。
-    // あなたのミドルウェアが最後でない場合、関数の最後で next を呼び出すのを忘れないでください！
-    next()
+  // next は 次のミドルウェアを呼び出すための関数です。
+  // あなたのミドルウェアが最後でない場合、関数の最後で next を呼び出すのを忘れないでください！
+  next()
 }
 ```
 
@@ -76,6 +76,6 @@ Nuxt Config (`nuxt.config.js`):
 
 ```js
 serverMiddleware: [
-    '~/api/logger'
+  '~/api/logger'
 ]
 ```

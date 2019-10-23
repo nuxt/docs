@@ -15,7 +15,7 @@ description: Nuxt.js允许您为应用程序内部定义服务器访问变量 `n
 export default {
   server: {
     port: 8000, // default: 3000
-    host: '0.0.0.0', // default: localhost,
+    host: '0.0.0.0' // default: localhost,
   }
 }
 ```

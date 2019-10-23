@@ -14,8 +14,8 @@ Ini adalah wadah inti yang memungkinkan semua modul dan kelas berkomunikasi satu
 Kita bisa mendaftarkan kait (hooks) pada peristiwa siklus hidup (life cycle) tertentu.
 
 ```js
-nuxt.plugin('ready', async nuxt => {
-    // Kode kustom Anda di sini
+nuxt.plugin('ready', async (nuxt) => {
+  // Kode kustom Anda di sini
 })
 ```
 

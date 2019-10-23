@@ -65,8 +65,8 @@ nuxt.config.js
 export default {
   generate: {
     exclude: [
-      /^(?=.*\bignore\b).*$/,
-    ],
+      /^(?=.*\bignore\b).*$/
+    ]
   }
 }
 ```
@@ -107,7 +107,7 @@ fallback: true
 ただし、Nuxt では任意のページを設定できるため、`200.html` または `404.html` を使用したくない場合は代わりに文字列を追加して、そのページにリダイレクトするようにすることができます。これはもちろん必須ではなく、`200.html`/`404.html` にリダイレクトするのがベストです。
 
 ```js
-fallback: 'fallbackPage.html' 
+fallback: 'fallbackPage.html'
 ```
 
 *情報：複数のサービス（例えば Netlify）では、`404.html` を自動的に検出します。ウェブサーバーを独自に設定する場合は、ドキュメントを参照してエラーページの設定方法を確認してください（そして、エラーページを `404.html` ファイルに設定してください）。*
@@ -188,13 +188,13 @@ import axios from 'axios'
 
 export default {
   generate: {
-    routes: function () {
+    routes () {
       return axios.get('https://my-api/users')
-      .then((res) => {
-        return res.data.map((user) => {
-          return '/users/' + user.id
+        .then((res) => {
+          return res.data.map((user) => {
+            return '/users/' + user.id
+          })
         })
-      })
     }
   }
 }
@@ -209,15 +209,15 @@ import axios from 'axios'
 
 export default {
   generate: {
-    routes: function (callback) {
+    routes (callback) {
       axios.get('https://my-api/users')
-      .then((res) => {
-        const routes = res.data.map((user) => {
-          return '/users/' + user.id
+        .then((res) => {
+          const routes = res.data.map((user) => {
+            return '/users/' + user.id
+          })
+          callback(null, routes)
         })
-        callback(null, routes)
-      })
-      .catch(callback)
+        .catch(callback)
     }
   }
 }
@@ -234,16 +234,16 @@ import axios from 'axios'
 
 export default {
   generate: {
-    routes: function () {
+    routes () {
       return axios.get('https://my-api/users')
-      .then((res) => {
-        return res.data.map((user) => {
-          return {
-            route: '/users/' + user.id,
-            payload: user
-          }
+        .then((res) => {
+          return res.data.map((user) => {
+            return {
+              route: '/users/' + user.id,
+              payload: user
+            }
+          })
         })
-      })
     }
   }
 }

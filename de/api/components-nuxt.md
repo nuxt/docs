@@ -43,9 +43,9 @@ There are 3 ways to handle internal `key` prop of `<router-view/>`.
 
   ```js
   export default {
-     key(route) {
-       return route.fullPath
-     }
+    key (route) {
+      return route.fullPath
+    }
   }
   ```
 

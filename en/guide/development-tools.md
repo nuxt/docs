@@ -61,12 +61,12 @@ When we launch our app with `npm run dev` and open http://localhost:3000, we can
 We add our test file `test/index.test.js`:
 
 ```js
+import { resolve } from 'path'
 import test from 'ava'
 import { Nuxt, Builder } from 'nuxt'
-import { resolve } from 'path'
 
 // Init Nuxt.js and start listening on localhost:4000
-test.before('Init Nuxt.js', async t => {
+test.before('Init Nuxt.js', async (t) => {
   const rootDir = resolve(__dirname, '..')
   let config = {}
   try { config = require(resolve(rootDir, 'nuxt.config.js')) } catch (e) {}
@@ -80,15 +80,15 @@ test.before('Init Nuxt.js', async t => {
 })
 
 // Example of testing only generated html
-test('Route / exists and render HTML', async t => {
+test('Route / exists and render HTML', async (t) => {
   const { nuxt } = t.context
-  let context = {}
+  const context = {}
   const { html } = await nuxt.renderRoute('/', context)
   t.true(html.includes('<h1 class="red">Hello world!</h1>'))
 })
 
 // Example of testing via DOM checking
-test('Route / exists and renders HTML with CSS applied', async t => {
+test('Route / exists and renders HTML with CSS applied', async (t) => {
   const { nuxt } = t.context
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
@@ -99,7 +99,7 @@ test('Route / exists and renders HTML with CSS applied', async t => {
 })
 
 // Close the Nuxt server
-test.after('Closing server', t => {
+test.after('Closing server', (t) => {
   const { nuxt } = t.context
   nuxt.close()
 })
@@ -137,11 +137,11 @@ module.exports = {
     parser: 'babel-eslint'
   },
   extends: [
-    "eslint:recommended",
+    'eslint:recommended',
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    "plugin:vue/recommended",
-    "plugin:prettier/recommended"
+    'plugin:vue/recommended',
+    'plugin:prettier/recommended'
   ],
   // required to lint *.vue files
   plugins: [
@@ -149,10 +149,10 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    "semi": [2, "never"],
-    "no-console": "off",
-    "vue/max-attributes-per-line": "off",
-    "prettier/prettier": ["error", { "semi": false }]
+    'semi': [2, 'never'],
+    'no-console': 'off',
+    'vue/max-attributes-per-line': 'off',
+    'prettier/prettier': ['error', { 'semi': false }]
   }
 }
 ```

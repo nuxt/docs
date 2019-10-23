@@ -17,7 +17,7 @@ export default {
   render: {
     bundleRenderer: {
       directives: {
-        custom1: function (el, dir) {
+        custom1 (el, dir) {
           // something ...
         }
       }

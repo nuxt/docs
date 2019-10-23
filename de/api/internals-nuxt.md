@@ -14,8 +14,8 @@ This is the core container which allows all modules and classes communicate with
 We can register hooks on certain life cycle events.
 
 ```js
-nuxt.hook('ready', async nuxt => {
-    // Your custom code here
+nuxt.hook('ready', async (nuxt) => {
+  // Your custom code here
 })
 ```
 

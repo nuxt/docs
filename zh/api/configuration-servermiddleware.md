@@ -25,14 +25,14 @@ import serveStatic from 'serve-static'
 
 export default {
   serverMiddleware: [
-      // Will register redirect-ssl npm package
-      'redirect-ssl',
+    // Will register redirect-ssl npm package
+    'redirect-ssl',
 
-      // Will register file from project api directory to handle /api/* requires
-      { path: '/api', handler: '~/api/index.js' },
+    // Will register file from project api directory to handle /api/* requires
+    { path: '/api', handler: '~/api/index.js' },
 
-      // We can create custom instances too
-      { path: '/static2', handler: serveStatic(__dirname + '/static2') }
+    // We can create custom instances too
+    { path: '/static2', handler: serveStatic(__dirname + '/static2') }
   ]
 }
 ```
@@ -50,14 +50,14 @@ Middleware (`api/logger.js`):
 
 ```js
 export default function (req, res, next) {
-    // req 是 Node.js http request 对象
-    console.log(req.path)
+  // req 是 Node.js http request 对象
+  console.log(req.path)
 
-    // res 是 Node.js http response 对象
+  // res 是 Node.js http response 对象
 
-    //next是一个调用下一个中间件的函数
-    // 如果您的中间件不是最终执行，请不要忘记在最后调用next！
-    next()
+  // next是一个调用下一个中间件的函数
+  // 如果您的中间件不是最终执行，请不要忘记在最后调用next！
+  next()
 }
 ```
 
@@ -65,6 +65,6 @@ Nuxt 配置 (`nuxt.config.js`):
 
 ```js
 serverMiddleware: [
-    '~/api/logger'
+  '~/api/logger'
 ]
 ```

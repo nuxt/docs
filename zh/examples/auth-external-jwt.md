@@ -42,7 +42,7 @@ const Cookie = process.client ? require('js-cookie') : undefined
 export default {
   middleware: 'notAuthenticated',
   methods: {
-    postLogin() {
+    postLogin () {
       setTimeout(() => { // 我们用超时模拟异步请求。
         const auth = {
           accessToken: 'someStringGotFromApiServiceWithAjax'
@@ -73,12 +73,12 @@ const createStore = () => {
       auth: null
     }),
     mutations: {
-      setAuth(state, auth) {
+      setAuth (state, auth) {
         state.auth = auth
       }
     },
     actions: {
-      nuxtServerInit({ commit }, { req }) {
+      nuxtServerInit ({ commit }, { req }) {
         let auth = null
         if (req.headers.cookie) {
           const parsed = cookieparser.parse(req.headers.cookie)
@@ -133,7 +133,7 @@ const Cookie = process.client ? require('js-cookie') : undefined
 
 export default {
   methods: {
-    logout() {
+    logout () {
       // 使外部API上的JWT Cookie无效
       Cookie.remove('auth')
       this.$store.commit('setAuth', null)

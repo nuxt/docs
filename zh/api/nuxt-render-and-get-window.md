@@ -32,9 +32,9 @@ const Nuxt = require('nuxt')
 const nuxt = new Nuxt()
 
 nuxt.renderAndGetWindow('http://localhost:3000')
-.then((window) => {
+  .then((window) => {
   // 显示文档标题
-  console.log(window.document.title)
-})
+    console.log(window.document.title)
+  })
 ```
 

@@ -104,7 +104,7 @@ Si la propriété `pageTransition` est une fonction :
 ```js
 export default {
   pageTransition (to, from) {
-    if (!from) return 'slide-left'
+    if (!from) { return 'slide-left' }
     return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
   }
 }

@@ -84,7 +84,7 @@ export default {
   router: {
     extendRoutes (routes, resolve) {
       // ルートをここに追加する
-      
+
       // ソートをする
       sortRoutes(routes)
     }
