@@ -10,7 +10,7 @@
     "api_page_not_found": "API ページが見つかりません",
     "please_define_title": "Frontmatter 内の title を定義してください",
     "please_define_description": "Frontmatter 内の description を定義してください",
-    "search": "検索 (\"/\" で絞り込み)",
+    "search": "検索 (\"/\" でフォーカス)",
     "version": "バージョン"
   },
   "homepage": {
