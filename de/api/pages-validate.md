@@ -34,8 +34,8 @@ You can also check some data in your [store](/guide/vuex-store) for example (fil
 ```js
 export default {
   validate ({ params, store }) {
-    // Check if `params.id` is an existing category
-    return store.state.categories.some((category) => category.id === params.id)
+    // Check if `params.id` is an existing category
+    return store.state.categories.some(category => category.id === params.id)
   }
 }
 ```

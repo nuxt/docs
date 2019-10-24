@@ -12,16 +12,16 @@ description: Nuxt ModuleContainer クラス
 特定のライフサイクルイベントでのフックを登録できます。
 
 ```js
-nuxt.moduleContainer.plugin('ready', async moduleContainer => {
-    // すべてのモジュールの準備ができたらここを実行します
+nuxt.moduleContainer.plugin('ready', async (moduleContainer) => {
+  // すべてのモジュールの準備ができたらここを実行します
 })
 ```
 
 [モジュール](/guide/modules) コンテキストの中では代わりに以下のようにできます:
 
 ```js
-this.plugin('ready', async moduleContainer => {
-    // すべてのモジュールの準備ができたらここを実行します
+this.plugin('ready', async (moduleContainer) => {
+  // すべてのモジュールの準備ができたらここを実行します
 })
 ```
 

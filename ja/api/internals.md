@@ -73,7 +73,7 @@ class SomeClass {
     this.options = nuxt.options
   }
 
-  someFunction() {
+  someFunction () {
     // We have access to `this.nuxt` and `this.options`
   }
 }
@@ -96,7 +96,7 @@ class FooClass {
 `foo` モジュールにフックするにはこうします:
 
 ```js
-nuxt.hook('foo', foo => {
-    // ...
+nuxt.hook('foo', (foo) => {
+  // ...
 })
 ```

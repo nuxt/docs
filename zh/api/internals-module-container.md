@@ -14,16 +14,16 @@ description: Nuxt ModuleContainer Class
 我们可以在某些生命周期事件中注册hooks。
 
 ```js
-nuxt.moduleContainer.plugin('ready', async moduleContainer => {
-    // Do this after all modules where ready
+nuxt.moduleContainer.plugin('ready', async (moduleContainer) => {
+  // Do this after all modules where ready
 })
 ```
 
 在 [modules](/guide/modules) 的`context`中我们可以使用它:
 
 ```js
-this.plugin('ready', async moduleContainer => {
-    // Do this after all modules where ready
+this.plugin('ready', async (moduleContainer) => {
+  // Do this after all modules where ready
 })
 ```
 

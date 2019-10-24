@@ -20,7 +20,7 @@ export default {
       setTimeout(() => this.$nuxt.$loading.finish(), 500)
     })
   }
- }
+}
 ```
 
 如果要在`mounted`方法中启动它，请确保使用`this.$nextTick`来调用它，因为`$loading`可能无法立即使用。

@@ -28,7 +28,7 @@ description: По-умолчанию, Nuxt.js использует vue-loader, f
 То он будет преобразован к виду:
 
 ```js
-createElement('img', { attrs: { src: require('~assets/image.png') }})
+createElement('img', { attrs: { src: require('~assets/image.png') } })
 ```
 
 Из-за того, что `.png` — не JavaScript-файл, то Nuxt.js конфигурирует Webpack таким образом, чтобы [file-loader](https://github.com/webpack/file-loader) и [url-loader](https://github.com/webpack/url-loader) сделали преобразования вместо вас.

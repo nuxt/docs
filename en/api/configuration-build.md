@@ -85,13 +85,13 @@ Or override default value by returning whole presets list:
 export default {
   build: {
     babel: {
-      presets({ isServer }, [ preset, options ]) {
+      presets ({ isServer }, [ preset, options ]) {
         return [
           [
             preset, {
               buildTarget: isServer ? 'server' : 'client',
               ...options
-          }],
+            }],
           [
             // Other presets
           ]
@@ -474,7 +474,7 @@ export default {
   build: {
     postcss: {
       plugins: {
-          // Disable `postcss-url`
+        // Disable `postcss-url`
         'postcss-url': false,
         // Add some plugins
         'postcss-nested': {},

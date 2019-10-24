@@ -18,7 +18,7 @@ if (process.client) {
 Jika Anda menggunakan pustaka (library) ini dalam beberapa file, sebaiknya tambahkan ke [bundel vendor](/api/configuration-build#build-vendor) melalui `nuxt.config.js`:
 
 ```js
-  build: {
-    vendor: ['pustaka_eksternal']
-  }
+build: {
+  vendor: ['pustaka_eksternal']
+}
 ```

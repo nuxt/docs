@@ -13,10 +13,10 @@ description: Nuxt `Builder` Class
 We can register hooks on certain life cycle events.
 
 ```js
-nuxt.plugin('build', builder => {
-    builder.plugin('extendRoutes', async ({routes}) =>  {
-        // ...
-    })
+nuxt.plugin('build', (builder) => {
+  builder.plugin('extendRoutes', async ({ routes }) => {
+    // ...
+  })
 })
 ```
 

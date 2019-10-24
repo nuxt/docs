@@ -278,8 +278,8 @@ __注意:__ 404 ページのハンドリングは `_.vue` ページのロジッ�
 ``` js
 export default {
   router: {
-    extendRoutes(routes, resolve) {
-      let index = routes.findIndex(route => route.name === 'main')
+    extendRoutes (routes, resolve) {
+      const index = routes.findIndex(route => route.name === 'main')
       routes[index] = {
         ...routes[index],
         components: {

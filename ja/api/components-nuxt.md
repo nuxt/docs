@@ -41,9 +41,9 @@ description: レイアウト内でページコンポーネントを表示しま�
 
   ```js
   export default {
-     key(route) {
-       return route.fullPath
-     }
+    key (route) {
+      return route.fullPath
+    }
   }
   ```
 

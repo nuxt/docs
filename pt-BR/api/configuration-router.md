@@ -201,7 +201,7 @@ Example of forcing the scroll position to the top for every routes:
 ```js
 module.exports = {
   router: {
-    scrollBehavior: function (to, from, savedPosition) {
+    scrollBehavior (to, from, savedPosition) {
       return { x: 0, y: 0 }
     }
   }

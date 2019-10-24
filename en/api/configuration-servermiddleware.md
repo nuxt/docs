@@ -38,14 +38,14 @@ import serveStatic from 'serve-static'
 
 export default {
   serverMiddleware: [
-      // Will register redirect-ssl npm package
-      'redirect-ssl',
+    // Will register redirect-ssl npm package
+    'redirect-ssl',
 
-      // Will register file from project api directory to handle /api/* requires
-      { path: '/api', handler: '~/api/index.js' },
+    // Will register file from project api directory to handle /api/* requires
+    { path: '/api', handler: '~/api/index.js' },
 
-      // We can create custom instances too
-      { path: '/static2', handler: serveStatic(__dirname + '/static2') }
+    // We can create custom instances too
+    { path: '/static2', handler: serveStatic(__dirname + '/static2') }
   ]
 }
 ```
@@ -64,14 +64,14 @@ Middleware (`api/logger.js`):
 
 ```js
 export default function (req, res, next) {
-    // req is the Node.js http request object
-    console.log(req.url)
+  // req is the Node.js http request object
+  console.log(req.url)
 
-    // res is the Node.js http response object
+  // res is the Node.js http response object
 
-    // next is a function to call to invoke the next middleware
-    // Don't forget to call next at the end if your middleware is not an endpoint!
-    next()
+  // next is a function to call to invoke the next middleware
+  // Don't forget to call next at the end if your middleware is not an endpoint!
+  next()
 }
 ```
 
@@ -79,6 +79,6 @@ Nuxt Config (`nuxt.config.js`):
 
 ```js
 serverMiddleware: [
-    '~/api/logger'
+  '~/api/logger'
 ]
 ```

@@ -61,12 +61,12 @@ export default {
 `test/index.test.js` というテストファイルを追加します:
 
 ```js
+import { resolve } from 'path'
 import test from 'ava'
 import { Nuxt, Builder } from 'nuxt'
-import { resolve } from 'path'
 
 // Nuxt.js を初期化し localhost:4000 のリスニングを開始します
-test.before('Init Nuxt.js', async t => {
+test.before('Init Nuxt.js', async (t) => {
   const rootDir = resolve(__dirname, '..')
   let config = {}
   try { config = require(resolve(rootDir, 'nuxt.config.js')) } catch (e) {}
@@ -80,15 +80,15 @@ test.before('Init Nuxt.js', async t => {
 })
 
 // 生成された HTML のみをテストする例
-test('Route / exists and render HTML', async t => {
+test('Route / exists and render HTML', async (t) => {
   const { nuxt } = t.context
-  let context = {}
+  const context = {}
   const { html } = await nuxt.renderRoute('/', context)
   t.true(html.includes('<h1 class="red">Hello world!</h1>'))
 })
 
 // DOM チェックを経由してテストする例
-test('Route / exists and renders HTML with CSS applied', async t => {
+test('Route / exists and renders HTML with CSS applied', async (t) => {
   const { nuxt } = t.context
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
@@ -99,7 +99,7 @@ test('Route / exists and renders HTML with CSS applied', async t => {
 })
 
 // Nuxt サーバーをクローズする
-test.after('Closing server', t => {
+test.after('Closing server', (t) => {
   const { nuxt } = t.context
   nuxt.close()
 })
@@ -138,11 +138,11 @@ module.exports = {
     parser: 'babel-eslint'
   },
   extends: [
-    "eslint:recommended",
+    'eslint:recommended',
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // より厳しいルールにするには`plugin:vue/strongly-recommended` もしくは `plugin:vue/recommended` に切り替えることを検討してください。
-    "plugin:vue/recommended",
-    "plugin:prettier/recommended"
+    'plugin:vue/recommended',
+    'plugin:prettier/recommended'
   ],
   // *.vue ファイルを lint にかけるために必要
   plugins: [
@@ -150,10 +150,10 @@ module.exports = {
   ],
   // ここにカスタムルールを追加します。
   rules: {
-    "semi": [2, "never"],
-    "no-console": "off",
-    "vue/max-attributes-per-line": "off",
-    "prettier/prettier": ["error", { "semi": false }]
+    'semi': [2, 'never'],
+    'no-console': 'off',
+    'vue/max-attributes-per-line': 'off',
+    'prettier/prettier': ['error', { 'semi': false }]
   }
 }
 ```

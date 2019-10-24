@@ -10,9 +10,9 @@ description: Webpack 설정을 확장하려면?
 ```js
 module.exports = {
   build: {
-     extend (config, { isDev, isClient }) {
-       // ...
-     }
+    extend (config, { isDev, isClient }) {
+      // ...
+    }
   }
 }
 ```

@@ -277,8 +277,8 @@ To render named views you can use `<nuxt name="top"/>` or `<nuxt-child name="top
 ``` js
 export default {
   router: {
-    extendRoutes(routes, resolve) {
-      let index = routes.findIndex(route => route.name === 'main')
+    extendRoutes (routes, resolve) {
+      const index = routes.findIndex(route => route.name === 'main')
       routes[index] = {
         ...routes[index],
         components: {

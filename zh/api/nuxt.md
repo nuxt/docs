@@ -22,9 +22,9 @@ const options = {}
 
 const nuxt = new Nuxt(options)
 nuxt.build()
-.then(() => {
+  .then(() => {
   // 这里可以用 nuxt.render(req, res) 或者 nuxt.renderRoute(route, context)
-})
+  })
 ```
 
 你可以参考 [nuxt-express](https://github.com/nuxt/express) 和 [adonuxt](https://github.com/nuxt/adonuxt) 这两个新手应用项目以便快速入门。
