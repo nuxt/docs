@@ -40,9 +40,9 @@ Nuxt.js menawarkan berbagai cara untuk menggunakan `asyncData`. Pilih yang palin
 export default {
   asyncData ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
   }
 }
 ```
@@ -52,7 +52,7 @@ export default {
 ```js
 export default {
   async asyncData ({ params }) {
-    let { data } = await axios.get(`https://my-api/posts/${params.id}`)
+    const { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
 }
@@ -64,9 +64,9 @@ export default {
 export default {
   asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
+      .then((res) => {
+        callback(null, { title: res.data.title })
+      })
   }
 }
 ```
@@ -99,12 +99,12 @@ Contoh dengan `Promise`:
 export default {
   asyncData ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
-    .catch((e) => {
-      error({ statusCode: 404, message: 'Post not found' })
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
+      .catch((e) => {
+        error({ statusCode: 404, message: 'Post not found' })
+      })
   }
 }
 ```
@@ -115,12 +115,12 @@ Jika Anda menggunakan argumen `callback`, Anda dapat memanggil secara langsung d
 export default {
   asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
-    .catch((e) => {
-      callback({ statusCode: 404, message: 'Post not found' })
-    })
+      .then((res) => {
+        callback(null, { title: res.data.title })
+      })
+      .catch((e) => {
+        callback({ statusCode: 404, message: 'Post not found' })
+      })
   }
 }
 ```

@@ -12,7 +12,7 @@ There are several ways to set the key. For more details, please refer to the `nu
 
 ```js
 export default {
-  key(route) {
+  key (route) {
     return route.fullPath
   }
 }

@@ -49,7 +49,7 @@ export default {
 export default {
   validate ({ params, store }) {
     // `params.id` が存在している category の id なのか否かをチェックする
-    return store.state.categories.some((category) => category.id === params.id)
+    return store.state.categories.some(category => category.id === params.id)
   }
 }
 ```
@@ -58,9 +58,9 @@ export default {
 
  ```js
 export default {
-  async validate ({ params, store }) {
-    // 500 internal server error とともにカスタムメッセージを投げる
-    throw new Error('Under Construction!')
-  }
+   async validate ({ params, store }) {
+     // 500 internal server error とともにカスタムメッセージを投げる
+     throw new Error('Under Construction!')
+   }
 }
 ```

@@ -12,10 +12,10 @@ description: Kelas `Builder` Nuxt
 Kita bisa mendaftarkan kait pada acara siklus hidup tertentu.
 
 ```js
-nuxt.plugin('build', builder => {
-    builder.plugin('extendRoutes', async ({routes}) =>  {
-        // ...
-    })
+nuxt.plugin('build', (builder) => {
+  builder.plugin('extendRoutes', async ({ routes }) => {
+    // ...
+  })
 })
 ```
 

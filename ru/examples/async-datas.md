@@ -22,9 +22,9 @@ Example with returning a `Promise`:
 export default {
   data ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
   }
 }
 ```
@@ -34,9 +34,9 @@ Example with using the `callback` argument:
 export default {
   data ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
+      .then((res) => {
+        callback(null, { title: res.data.title })
+      })
   }
 }
 ```
@@ -76,12 +76,12 @@ Example with a `Promise`:
 export default {
   data ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
-    .catch((e) => {
-      error({ statusCode: 404, message: 'Post not found' })
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
+      .catch((e) => {
+        error({ statusCode: 404, message: 'Post not found' })
+      })
   }
 }
 ```
@@ -91,12 +91,12 @@ If you're using the `callback` argument, you can call it directly with the error
 export default {
   data ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
-    .catch((e) => {
-      callback({ statusCode: 404, message: 'Post not found' })
-    })
+      .then((res) => {
+        callback(null, { title: res.data.title })
+      })
+      .catch((e) => {
+        callback({ statusCode: 404, message: 'Post not found' })
+      })
   }
 }
 ```

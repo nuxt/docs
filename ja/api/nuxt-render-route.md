@@ -33,15 +33,15 @@ config.dev = false
 const nuxt = new Nuxt(config)
 
 new Builder(nuxt)
-.build()
-.then(() => nuxt.renderRoute('/'))
-.then(({ html, error, redirected }) => {
+  .build()
+  .then(() => nuxt.renderRoute('/'))
+  .then(({ html, error, redirected }) => {
   // `html` は常に文字列になります
 
-  // エラーレイアウトが表示されるときは `error` は null ではありません。エラーフォーマットは下記:
-  // { statusCode: 500, message: 'エラーメッセージ' }
+    // エラーレイアウトが表示されるときは `error` は null ではありません。エラーフォーマットは下記:
+    // { statusCode: 500, message: 'エラーメッセージ' }
 
   // `asyncData()` または `fetch()` 内で `redirect()` が使われたときは `redirected` は `false` ではありません
   // { path: '/other-path', query: {}, status: 302 }
-})
+  })
 ```

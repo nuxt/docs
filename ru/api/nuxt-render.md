@@ -13,12 +13,12 @@ const Nuxt = require('nuxt')
 
 const nuxt = new Nuxt()
 nuxt.build()
-.then(() => {
+  .then(() => {
   // Рендерить каждый маршрут с Nuxt.js
-  app.use(nuxt.render)
-  // Запустить сервер
-  app.listen(3000)
-})
+    app.use(nuxt.render)
+    // Запустить сервер
+    app.listen(3000)
+  })
 ```
 
 <div class="Alert">
