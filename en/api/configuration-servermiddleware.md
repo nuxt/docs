@@ -85,7 +85,7 @@ serverMiddleware: [
 
 If your server middleware consists of a list of functions mapped to paths:
 
-```
+```js
 export default {
   serverMiddleware: [
     { path: '/a', handler: '~/api/a.js' },
@@ -97,7 +97,7 @@ export default {
 
 You can alternatively pass an object to define them, as follows:
 
-```
+```js
 export default {
   serverMiddleware: {
     '/a': '~/api/a.js',
