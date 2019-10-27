@@ -5,7 +5,11 @@ description: Nuxt.js에서는 루트 vue.js 어플리케이션이 만들어지�
 
 > Nuxt.js에서는 루트 vue.js 어플리케이션이 만들어지기 전에 실행할 js 플러그인을 정의할 수 있습니다. 직접 만든 라이브러리나 외부 모듈들 모두 사용 가능합니다.
 
-<div class="Alert">모든 Vue [인스턴스의 라이프사이클](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram)에서 **클라이언트사이드와 서버사이드 모두 호출되는 메소드** 는 `beforeCreate`와 `created` 뿐입니다. 다른 메소드들은 모두 클라이언트 사이드에서만 호출됨을 명심하세요!</div>
+<div class="Alert">
+
+모든 Vue [인스턴스의 라이프사이클](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram)에서 **클라이언트사이드와 서버사이드 모두 호출되는 메소드** 는 `beforeCreate`와 `created` 뿐입니다. 다른 메소드들은 모두 클라이언트 사이드에서만 호출됨을 명심하세요!
+
+</div>
 
 ## 외부 패키지
 

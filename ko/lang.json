@@ -2,50 +2,45 @@
   "iso": "ko",
   "docVersion": "0.10.7",
   "links": {
-    "api": "API",
-    "blog": "블로그",
-    "chat": "채팅",
-    "documentation": "문서",
     "download": "다운로드",
-    "examples": "예제",
-    "ecosystem": "생태계",
-    "faq": "FAQ",
-    "get_started": "시작하기",
-    "github": "GitHub",
-    "guide": "가이드",
-    "homepage": "홈페이지",
-    "live_demo": "라이브 데모",
-    "live_edit": "라이브 수정",
-    "twitter": "트위터",
-    "vuejs": "Vue.js",
-    "vue_jobs": "Vue 구인/구직"
+    "live_edit": "라이브 수정"
   },
   "text": {
     "an_error_occurred": "에러가 발생했습니다.",
     "api_page_not_found": "API 페이지를 찾을 수 없습니다.",
-    "example_file": "예제 파일",
-    "please_wait": "잠시만 기다려주세요...",
     "please_define_title": "front matter에 title을 정의해주세요.",
     "please_define_description": "front matter에 description을 정의해주세요.",
     "search": "검색",
     "version": "버전"
   },
   "homepage": {
-    "title": "범용 Vue.js 어플리케이션",
     "meta": {
       "title": "Nuxt.js - 범용 Vue.js 어플리케이션",
       "description": "Nuxt.js은 서버 사이드 렌더링, 코드 분리, 핫 리로딩, 정적 생성기 등과 함께 Vue.js 어플리케이션을 만들기 위한 최소한의 프레임워크입니다!"
+    },
+    "welcome": {
+      "get_started": "시작하기",
+      "github_stars": "22K+ github stars"
+    },
+    "why": {
+      "try_nuxtjs_online": "Try NuxtJS Online"
+    },
+    "sponsors": {
+      "become_a_sponsor": "스폰서되기"
+    },
+    "newsletter_form": {
+      "email": "Email",
+      "subscribing": "Subscribing...",
+      "subscribe": "Subscribe",
+      "subscribed_messages": {
+        "pre": "An email to confirm your subscription has been sent to",
+        "post": "💚"
+      }
     }
-  },
-  "footer": {
-    "authors": "Made by Chopin Brothers"
   },
   "guide": {
     "release_notes": "릴리즈 노트",
     "contribute": "잘못된 부분이 있거나 이 문서에 기여하고 싶으신가요?",
     "edit_on_github": "GitHub에서 이 페이지를 수정해주세요!"
-  },
-  "examples": {
-    "source_code": "소스 코드"
   }
 }

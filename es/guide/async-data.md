@@ -6,6 +6,17 @@ description: You may want to fetch data and render it on the server-side. Nuxt.j
 > You may want to fetch data and render it on the server-side.
 Nuxt.js adds an `asyncData` method to let you handle async operations before setting the component data.
 
+<div>
+  <a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/async-data-with-nuxtjs.png" srcset="/async-data-with-nuxtjs-2x.png 2x" alt="AsyncData by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
+      <p class="Promote__Content__Description">Learn how to manage asynchronous data with Nuxt.js.</p>
+      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+    </div>
+  </a>
+</div>
+
 ## The asyncData Method
 
 Sometimes you just want to fetch data and pre-render it on the server-side without using a store.
@@ -13,7 +24,11 @@ Sometimes you just want to fetch data and pre-render it on the server-side witho
 It can be called server-side or before navigating to the corresponding route.
 This method receives [the context](/api#context) as the first argument, you can use it to fetch some data and nuxt.js will merge it with the component data.
 
-<div class="Alert Alert--orange">You do **NOT** have access of the component instance through `this` inside `data` because it is called **before initiating** the component.</div>
+<div class="Alert Alert--orange">
+
+You do **NOT** have access of the component instance through `this` inside `data` because it is called **before initiating** the component.
+
+</div>
 
 Nuxt.js offers you different ways to use `asyncData`. Choose the one you're the most familiar with:
 
@@ -26,9 +41,9 @@ Nuxt.js offers you different ways to use `asyncData`. Choose the one you're the 
 export default {
   asyncData ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
   }
 }
 ```
@@ -37,7 +52,7 @@ export default {
 ```js
 export default {
   async asyncData ({ params }) {
-    let { data } = await axios.get(`https://my-api/posts/${params.id}`)
+    const { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
 }
@@ -48,9 +63,9 @@ export default {
 export default {
   asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
+      .then((res) => {
+        callback(null, { title: res.data.title })
+      })
   }
 }
 ```
@@ -83,12 +98,12 @@ Example with a `Promise`:
 export default {
   asyncData ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
-    .catch((e) => {
-      error({ statusCode: 404, message: 'Post not found' })
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
+      .catch((e) => {
+        error({ statusCode: 404, message: 'Post not found' })
+      })
   }
 }
 ```
@@ -98,12 +113,12 @@ If you're using the `callback` argument, you can call it directly with the error
 export default {
   asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
-    .catch((e) => {
-      callback({ statusCode: 404, message: 'Post not found' })
-    })
+      .then((res) => {
+        callback(null, { title: res.data.title })
+      })
+      .catch((e) => {
+        callback({ statusCode: 404, message: 'Post not found' })
+      })
   }
 }
 ```

@@ -1,14 +1,11 @@
 ---
-title: Google アナリティクスの統合
+title: Google アナリティクスを使うには？
 description: Google アナリティクスを使うには？
 ---
 
-# Google アナリティクスを使うには？
+はじめに、Nuxt.js 用の [公式 Google アナリティクスモジュール](https://github.com/nuxt-community/analytics-module) があるのでそちらを確認してください。
 
-はじめに、Nuxt.js用の [公式 Google アナリティクスモジュール](https://github.com/nuxt-community/analytics-module) があるのでそちらを確認してください。
-
-それ以外の方法で、[Google アナリティクス](https://www.google.com/analytics/) を
- Nuxt.js アプリケーションで使うには `plugins/ga.js` というファイルを作成することを推奨します:
+その他に [Google Analytics](https://www.google.com/analytics/) を Nuxt.js アプリケーションで使用するには、`plugins/ga.js`というファイルを作成することをお勧めします:
 
 ```js
 /* eslint-disable */
@@ -49,7 +46,7 @@ export default ({ app }) => {
 `nuxt.config.js`
 
 ```js
-module.exports = {
+export default {
   plugins: [
     { src: '~plugins/ga.js', ssr: false }
   ]
@@ -58,4 +55,8 @@ module.exports = {
 
 よし！これで Google アナリティクスは Nuxt.js アプリケーションに統合され、すべてのページビューをトラッキングするようになりました！
 
-<p class="Alert Alert--nuxt-green"><b>情報:</b> 他のトラッキングサービスでも、同様の方法を使うことができます。</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>情報:</b> 他のトラッキングサービスでも、同様の方法を使うことができます。
+
+</div>

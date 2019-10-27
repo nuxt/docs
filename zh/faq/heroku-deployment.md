@@ -32,9 +32,26 @@ heroku config:set NODE_ENV=production
 }
 ```
 
-最后，使用以下命令将应用源码推送至 Heroku：
+Heroku使用 [Procfile](https://devcenter.heroku.com/articles/procfile) (命名文件`Procfile`，没有文件扩展名)，指定 apps dynos 执行的命令。 启动 Procfile 会非常简单，并且需要包含以下行：
+
+```
+web: npm run start
+```
+
+这将指示运行`npm run start`命令并告诉heroku将外部HTTP流量引导到它。
+
+最后，我们可以在Heroku上推送应用程序：
+
 ```bash
 git push heroku master
 ```
 
-嘿嘿！现在你的 nuxt.js 应用已成功部署至 Heroku！
+要将**非主分支部署**到Heroku，请使用：
+
+```bash
+git push heroku develop:master
+```
+
+其中`develop`是你的分支的名称。
+
+您的Nuxt.js应用程序现在托管在Heroku上！

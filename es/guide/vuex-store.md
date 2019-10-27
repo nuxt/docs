@@ -77,7 +77,7 @@ export const state = () => ({
 export const mutations = {
   add (state, text) {
     state.list.push({
-      text: text,
+      text,
       done: false
     })
   },
@@ -162,7 +162,11 @@ export default {
 </style>
 ```
 
-<div class="Alert">You can also have modules by exporting a store instance, you will have to add them manually on your store.</div>
+<div class="Alert">
+
+You can also have modules by exporting a store instance, you will have to add them manually on your store.
+
+</div>
 
 ## The fetch Method
 

@@ -3,13 +3,20 @@ title: "API : La propriété generate"
 description: Configure la génération de votre application web universelle vers une application web statique.
 ---
 
-# La propriété generate
-
 - Type : `Object`
 
 > Configure la génération de votre application web universelle vers une application web statique.
 
 Quand vous lancez `nuxt generate` ou appelez `nuxt.generate()`, Nuxt.js utilisera la configuration définie dans la propriété `generate`.
+
+nuxt.config.js 
+```js
+export default {
+  generate: {
+    ...
+  }
+}
+```
 
 ## dir
 
@@ -18,6 +25,23 @@ Quand vous lancez `nuxt generate` ou appelez `nuxt.generate()`, Nuxt.js utiliser
 
 Nom du répertoire créé par `nuxt generate`.
 
+## devtools
+
+- Type: `boolean`
+- Default: `false`
+
+Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools) inspection.
+
+If you already activated through nuxt.config.js or otherwise, devtools enable regardless of the flag.
+
+
+## fallback
+
+- Type: `String` or `Boolean`
+- Default: `'200.html'`
+
+The path to the SPA fallback. This file can be used when doing deploys of generated sites to static hosting. It falls back to `mode: 'spa'` when a route isn't generated.
+
 ## interval
 
 - Type : `Number`
@@ -25,35 +49,10 @@ Nom du répertoire créé par `nuxt generate`.
 
 Interval entre 2 rendus pour éviter d'inonder les appels d'API effectués par une API potentielle de l'application web.
 
-## minify
+## minify (En)
 
-- Type : `Object`
-- Par défaut :
-
-```js
-minify: {
-  collapseBooleanAttributes: true,
-  collapseWhitespace: false,
-  decodeEntities: true,
-  minifyCSS: true,
-  minifyJS: true,
-  processConditionalComments: true,
-  removeAttributeQuotes: false,
-  removeComments: false,
-  removeEmptyAttributes: true,
-  removeOptionalTags: true,
-  removeRedundantAttributes: true,
-  removeScriptTypeAttributes: false,
-  removeStyleLinkTypeAttributes: false,
-  removeTagWhitespace: false,
-  sortAttributes: true,
-  sortClassName: false,
-  trimCustomFragments: true,
-  useShortDoctype: true
-}
-```
-
-Vous pouvez changer la configuration par défaut de [html-minifier](https://github.com/kangax/html-minifier) utilisée par Nuxt.js pour minifier les fichiers HTML créés pendant le processus de génération.
+- **Deprecated!**
+- Use [build.html.minify](/api/configuration-build#html-minify) instead
 
 ## routes
 
@@ -77,7 +76,7 @@ Si vous voulez que Nuxt.js génère les routes avec des paramètres dynamiques, 
 Nous ajoutons les routes pour `/utilisateurs/:id` dans `nuxt.config.js` :
 
 ```js
-module.exports = {
+export default {
   generate: {
     routes: [
       '/utilisateurs/1',
@@ -115,17 +114,17 @@ Génial, mais que se passe t-il si nous avons des **paramètres dynamiques** ?
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
-module.exports = {
+export default {
   generate: {
-    routes: function () {
+    routes () {
       return axios.get('https://mon-api/utilisateurs')
-      .then((res) => {
-        return res.data.map((user) => {
-          return '/utilisateurs/' + user.id
+        .then((res) => {
+          return res.data.map((user) => {
+            return '/utilisateurs/' + user.id
+          })
         })
-      })
     }
   }
 }
@@ -136,19 +135,19 @@ module.exports = {
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
-module.exports = {
+export default {
   generate: {
-    routes: function (callback) {
+    routes (callback) {
       axios.get('https://mon-api/utilisateurs')
-      .then((res) => {
-        var routes = res.data.map((user) => {
-          return '/utilisateurs/' + user.id
+        .then((res) => {
+          const routes = res.data.map((user) => {
+            return '/utilisateurs/' + user.id
+          })
+          callback(null, routes)
         })
-        callback(null, routes)
-      })
-      .catch(callback)
+        .catch(callback)
     }
   }
 }
@@ -161,20 +160,20 @@ Dans l'exemple ci-dessus, nous avons utilisé `user.id` depuis le serveur pour g
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
-module.exports = {
+export default {
   generate: {
-    routes: function () {
+    routes () {
       return axios.get('https://mon-api/utilisateurs')
-      .then((res) => {
-        return res.data.map((user) => {
-          return {
-            route: '/utilisateurs/' + user.id,
-            payload: user
-          }
+        .then((res) => {
+          return res.data.map((user) => {
+            return {
+              route: '/utilisateurs/' + user.id,
+              payload: user
+            }
+          })
         })
-      })
     }
   }
 }
@@ -210,6 +209,15 @@ Exemple :
 
 Quand il est mis à `false`, les fichier HTML seront générés en accord avec les chemins de routes :
 
+nuxt.config.js 
+```js
+export default {
+  generate: {
+    subFolders: false
+  }
+}
+```
+
 ```bash
 -| dist/
 ---| index.html
@@ -219,3 +227,10 @@ Quand il est mis à `false`, les fichier HTML seront générés en accord avec l
 ```
 
 _Note : cette option peut être utile en utilisant [Netlify](https://netlify.com) ou n'importe quel hébergement utilisant des alternatives HTML._
+
+## concurrence
+
+- Type: `Number`
+- Default: `500`
+
+La génération de routes est concurrente, `generate.concurrency` spécifie le nombre de routes qui peuvent être exécuté par un thread.

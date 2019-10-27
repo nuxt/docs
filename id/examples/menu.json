@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Essentials",
+    "links": [
+      { "name": "Hello World", "to": "" },
+      { "name": "SEO HTML Head", "to": "/seo-html-head" }
+    ]
+  },
+  {
+    "title": "Customization",
+    "links": [
+      { "name": "Custom Loading", "to": "/custom-loading" },
+      { "name": "Custom Routes", "to": "/custom-routes" },
+      { "name": "Global CSS", "to": "/global-css" },
+      { "name": "Layouts", "to": "/layouts" },
+      { "name": "Middleware", "to": "/middleware" },
+      { "name": "Nested Routes", "to": "/nested-routes" },
+      { "name": "Plugins", "to": "/plugins" },
+      { "name": "Routes transitions", "to": "/routes-transitions" }
+    ]
+  },
+  {
+    "title": "Advanced",
+    "links": [
+      { "name": "Async Data", "to": "/async-data" },
+      { "name": "Auth Routes", "to": "/auth-routes" },
+      { "name": "Vuex Store", "to": "/vuex-store" },
+      { "name": "i18n", "to": "/i18n" },
+      { "name": "Testing", "to": "/testing" }
+    ]
+  }
+]

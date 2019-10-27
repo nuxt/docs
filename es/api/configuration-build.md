@@ -29,7 +29,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--teal">**INFO:** You can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)</p>
+<div class="Alert Alert--teal">
+
+**INFO:** You can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888)
+
+</div>
 
 ## babel
 
@@ -40,7 +44,7 @@ module.exports = {
 Default:
 ```js
 {
-  presets: ['vue-app']
+  presets: ['@nuxt/babel-preset-app']
 }
 ```
 
@@ -64,7 +68,7 @@ module.exports = {
 The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are:
 
 1. Webpack config object
-2. Object with the folowing keys (all boolean): `isDev`, `isClient`, `isServer`
+2. Object with the folowing keys (all boolean except `loaders`): `isDev`, `isClient`, `isServer`
 
 Example (`nuxt.config.js`):
 ```js
@@ -80,7 +84,7 @@ module.exports = {
 }
 ```
 
-If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/master/lib/builder/webpack).
+If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/dev/packages/webpack/src/config).
 
 ## filenames
 
@@ -158,7 +162,11 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert--orange">When the loaders are defined in the `nuxt.config.js`, the default loaders will be overwritten.</p>
+<div class="Alert Alert--orange">
+
+When the loaders are defined in the `nuxt.config.js`, the default loaders will be overwritten.
+
+</div>
 
 ## plugins
 
@@ -232,6 +240,15 @@ module.exports = {
 
 Then, when launching `nuxt build`, upload the content of `.nuxt/dist/` directory to your CDN and voilà!
 
+## quiet
+
+> If you want to run Nuxt build in a quiet mode which suppresses all building logs and warnings, use this config
+
+- Type: `Boolean` or `Object`
+- Default: `Boolean(env.ci || env.test)`
+
+By default, quiet mode is enable in CI or test environment.
+
 ## vendor
 
 > Nuxt.js lets you add modules inside the `vendor.bundle.js` file generated to reduce the size of the app bundle. It's really useful when using external modules (like `axios` for example)
@@ -257,6 +274,20 @@ module.exports = {
       'axios',
       '~plugins/my-lib.js'
     ]
+  }
+}
+```
+
+## followSymlinks
+
+> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example. 
+
+- Type: `Boolean`
+
+```js
+export default {
+  build: {
+    followSymlinks: false
   }
 }
 ```

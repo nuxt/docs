@@ -3,22 +3,23 @@ title: Views
 description: The Views section describes all you need to configure data and views for a specific route in your Nuxt.js Application (Document, Layouts, Pages and HTML Head).
 ---
 
-> The Views section describes all you need to configure data and views for a specific route in your Nuxt.js Application (Document, Layouts, Pages and HTML Head).
+> The Views section describes all you need to configure data and views for a specific route in your Nuxt.js Application (App Template, Layouts, Pages and HTML Head).
 
-![nuxt-views-schema](/nuxt-views-schema.png)
+![nuxt-views-schema](/nuxt-views-schema.svg)
 
-## Document
+## App Template
 
-> You can customise the main document with Nuxt.js.
+> You can customize the HTML app template used by Nuxt.js to include scripts or conditional CSS classes.
 
-To extend the HTML template, create `app.html` at the root of your project.
+To change the template, create an `app.html` file, in the src folder of your project. (which is the project's root directory by default).
 
-The default template is:
+
+The default template used by Nuxt.js is:
 
 ```html
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -27,13 +28,13 @@ The default template is:
 </html>
 ```
 
-One example is to add conditional CSS classes for IE:
+One use case of using a custom app template is to add conditional CSS classes for IE:
 
 ```html
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -42,17 +43,25 @@ One example is to add conditional CSS classes for IE:
 </html>
 ```
 
+<!-- TODO: Load polyfills here? -->
+
 ## Layouts
 
-Nuxt.js lets you extend the main layout or create custom layouts by adding them in the `layouts` directory.
+Layouts are a great help when you want to change the look and feel of your Nuxt.js app.
+Whether you want to include a sidebar or having distinct layouts for mobile and desktop
 
 ### Default Layout
 
 You can extend the main layout by adding a `layouts/default.vue` file.
+It will be used for all pages that don't have a layout specified.
 
-*Make sure to add the `<nuxt/>` component when creating a layout to display the page component.*
+<div class="Alert Alert--nuxt-green">
 
-The default layout source code is:
+<b>Info:</b> Make sure to add the `<nuxt/>` component when creating a layout to actually include the page component.
+
+</div>
+
+The default layout that comes out of the box is just three lines long and simply renders the page component:
 
 ```html
 <template>
@@ -60,15 +69,58 @@ The default layout source code is:
 </template>
 ```
 
+### Custom Layout
+
+Every file (*top-level*) in the `layouts` directory will create a custom layout accessible with the `layout` property in the page components.
+
+Let's say we want to create a blog layout and save it to `layouts/blog.vue`:
+
+```html
+<template>
+  <div>
+    <div>My blog navigation bar here</div>
+    <nuxt/>
+  </div>
+</template>
+```
+
+Then we have to tell the pages (i.e. `pages/posts.vue`) to use your custom layout:
+
+```html
+<template>
+<!-- Your template -->
+</template>
+<script>
+export default {
+  layout: 'blog'
+  // page component definitions
+}
+</script>
+```
+
+More information about the `layout` property: [API Pages `layout`](/api/pages-layout)
+
+Check out the [demonstration video](https://www.youtube.com/watch?v=YOKnSTp7d38) to see custom layouts in action.
+
+<!-- TODO: Scoped styles best practice -->
+
 ### Error Page
 
-You can customize the error page by adding a `layouts/error.vue` file.
+The error page is a *page component* which is always displayed when an error occurs (that does not happen while server-side rendering).
 
-This layout is special, since you should _not_ include `<nuxt/>` inside its template. You must see this layout as a component displayed when an error occurs (`404`, `500`, etc.).
+<div class="Alert Alert--orange">
 
-The default error page source code is [available on GitHub](https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-error.vue).
+<b>Warning:</b> Though this file is placed in the <code>layouts</code> folder, it should be treated as a <b>page</b>.
 
-Example of a custom error page in `layouts/error.vue`:
+</div>
+
+As mentioned above, this layout is special, since you **should not** include `<nuxt/>` inside its template.
+You must see this layout as a component displayed when an error occurs (`404`, `500`, etc.).
+Similar to other page components, you can set a custom layout for the error page as well in the usual way.
+
+The default error page source code is [available on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
+
+You can customize the error page by adding a `layouts/error.vue` file:
 
 ```html
 <template>
@@ -87,40 +139,18 @@ export default {
 </script>
 ```
 
-### Custom Layout
-
-Every file (*first level*) in the `layouts` directory will create a custom layout accessible with the `layout` property in the page component.
-
-*Make sure to add the `<nuxt/>` component when creating a layout to display the page component.*
-
-Example of `layouts/blog.vue`:
-
-```html
-<template>
-  <div>
-    <div>My blog navigation bar here</div>
-    <nuxt/>
-  </div>
-</template>
-```
-
-And then in `pages/posts.vue`, you can tell Nuxt.js to use your custom layout:
-
-```html
-<script>
-export default {
-  layout: 'blog'
-}
-</script>
-```
-
-More information about the `layout` property: [API Pages `layout`](/api/pages-layout)
-
-Check the [demonstration video](https://www.youtube.com/watch?v=YOKnSTp7d38) to see it in action.
 
 ## Pages
 
-Every Page component is a Vue component, but Nuxt.js adds special keys to make the development of your universal application as easy as possible.
+Every Page component is a Vue component but Nuxt.js adds special attributes and functions to make the development of your universal application as easy as possible.
+
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-page-components?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Watch a free lesson about <strong>Nuxt.js Page Components</strong> on Vue School 
+    </p>
+  </a>
+</div>
 
 ```html
 <template>
@@ -131,6 +161,8 @@ Every Page component is a Vue component, but Nuxt.js adds special keys to make t
 export default {
   asyncData (context) {
     // called every time before loading the component
+    // as the name said, it can be async
+    // Also, the returned object will be merged with your data object
     return { name: 'World' }
   },
   fetch () {
@@ -151,33 +183,32 @@ export default {
 </style>
 ```
 
-| Attribute | Description |
-|-----------|-------------|
-| `asyncData` | The most important key. It can be asynchronous and receives the context as argument. Please read the [async data documentation](/guide/async-data) to learn how it works. |
-| `fetch` | Used to fill the store before rendering the page. It's like the `data` method, except it doesn't set the component data. See the [API Pages `fetch` documentation](/api/pages-fetch). |
-| `head` | Set specific `<meta>` tags for the current page. See [API Pages `head` documentation](/api/pages-head). |
-| `layout` | Specify a layout defined in the `layouts` directory. See [API Pages `layout` documentation](/api/pages-layout). |
-| `transition` | Set a specific transition for the page. See [API Pages `transition`](/api/pages-transition). |
-| `scrollToTop` | Boolean (default: `false`). Specify if you want the page to scroll to the top before rendering the page. It's used for [nested routes](/guide/routing#nested-routes). |
-| `validate` | Validator function for [dynamic routes](/guide/routing#dynamic-routes). |
-| `middleware` | Set middleware for this page. The middleware will be called before rendering the page. See routes [middleware](/guide/routing#middleware). |
+| Attribute | Description | Documentation |
+|-----------|-------------| ------------- |
+| `asyncData` | The most important key. It can be asynchronous and receives the context as argument. | [Guide: Async data](/guide/async-data) |
+| `fetch` | Used to fill the store before rendering the page. It's like the `asyncData` method, except it doesn't set the component data. | [API Pages `fetch`](/api/pages-fetch) |
+| `head` | Set specific `<meta>` tags for the current page. | [API Pages `head`](/api/pages-head) |
+| `layout` | Specify a layout defined in the `layouts` directory. | [API Pages `layout`](/api/pages-layout) |
+| `loading` | If set to `false`, prevents a page from automatically calling `this.$nuxt.$loading.finish()` as you enter it and `this.$nuxt.$loading.start()` as you leave it, allowing you to **manually** control the behavior, as [this example](/examples/custom-page-loading) shows. Only applies if `loading` is also set in `nuxt.config.js`. | [API Configuration `loading`](/api/configuration-loading) |
+| `transition` | Defines a specific transition for the page. | [API Pages `transition`](/api/pages-transition) |
+| `scrollToTop` | Boolean (default: `false`). Specify if you want the page to scroll to the top before rendering the page. It's used for [nested routes](/guide/routing#nested-routes). | [API Pages `scrollToTop`](/api/pages-scrolltotop#the-scrolltotop-property) |
+| `validate` | Validator function for [dynamic routes](/guide/routing#dynamic-routes). | [API Pages `validate`](/api/pages-validate#the-validate-method) |
+| `middleware` | Defines middleware for this page. The middleware will be called before rendering the page. | [Guide: middleware](/guide/routing#middleware) |
 
 More information about the pages properties usage: [API Pages](/api)
 
 ## HTML Head
 
-Nuxt.js uses [vue-meta](https://github.com/declandewet/vue-meta) to update the `headers` and `html attributes` of your application.
+Nuxt.js uses [vue-meta](https://github.com/nuxt/vue-meta) to update the `document head` and `meta attributes` of your application.
 
-Nuxt.js configures `vue-meta` with these options:
+The `vue-meta` Nuxt.js uses can be found [on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/index.js#L42-L48).
 
-```js
-{
-  keyName: 'head', // the component option name that vue-meta looks for meta info on.
-  attribute: 'data-n-head', // the attribute name vue-meta adds to the tags it observes
-  ssrAttribute: 'data-n-head-ssr', // the attribute name that lets vue-meta know that meta info has already been server-rendered
-  tagIDKeyName: 'hid' // the property name that vue-meta uses to determine whether to overwrite or append a tag
-}
-```
+<div class="Alert Alert--teal">
+
+<b>Info:</b> Nuxt.js uses <code>hid</code> instead of the default <code>vmid</code> key to identify meta elements
+
+</div>
+
 
 ### Default Meta Tags
 
@@ -197,12 +228,10 @@ head: {
 }
 ```
 
-To learn more about the options available for `head`, take a look at [vue-meta documentation](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
+To learn more about the options available for `head`, take a look at [vue-meta documentation](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
-More information about the `head` method: [API Configuration `head`](/api/configuration-head).
+More information about the `head` method are available on the [API Configuration `head`](/api/configuration-head) page.
 
 ### Custom Meta Tags for a Page
 
-More information about the head method: [API Pages `head`](/api/pages-head).
-
-<p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the `hid` key. [Learn more](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+More information about the head method can be found on the [API Pages `head`](/api/pages-head) page.

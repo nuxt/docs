@@ -1,51 +1,46 @@
 {
   "iso": "zh",
-  "docVersion": "0.10.7",
+  "docVersion": "2.8.x",
   "links": {
-    "api": "API",
-    "blog": "博客",
-    "chat": "聊天",
-    "documentation": "文档",
     "download": "下载",
-    "examples": "示例",
-    "ecosystem": "更多",
-    "faq": "常见问题",
-    "get_started": "开始使用",
-    "github": "GitHub",
-    "guide": "教程",
-    "homepage": "首页",
-    "live_demo": "在线示例",
-    "live_edit": "在线编辑",
-    "twitter": "Twitter",
-    "vuejs": "Vue.js",
-    "vue_jobs": "工作机会"
+    "live_edit": "在线编辑"
   },
   "text": {
     "an_error_occurred": "文档API服务异常",
     "api_page_not_found": "API页面不存在",
-    "example_file": "示例文件",
-    "please_wait": "请稍候...",
     "please_define_title": "请在文档页头中指定标题(title)字段",
     "please_define_description": "请在文档页头中指定描述(description)字段",
     "search": "搜索",
     "version": "版本"
   },
   "homepage": {
-    "title": "Vue.js 通用应用框架",
     "meta": {
       "title": "Nuxt.js - Vue.js 通用应用框架",
       "description": "Nuxt.js 是一个基于 Vue.js 的轻量级应用框架，可用来创建服务端渲染 (SSR) 应用，也可充当静态站点引擎生成静态站点应用，具有优雅的代码结构分层和热加载等特性。"
+    },
+    "welcome": {
+      "get_started": "开始使用",
+      "github_stars": "22K+ github stars"
+    },
+    "why": {
+      "try_nuxtjs_online": "在线尝试 NuxtJS"
+    },
+    "sponsors": {
+      "become_a_sponsor": "成为赞助商"
+    },
+    "newsletter_form": {
+      "email": "Email",
+      "subscribing": "Subscribing...",
+      "subscribe": "Subscribe",
+      "subscribed_messages": {
+        "pre": "An email to confirm your subscription has been sent to",
+        "post": "💚"
+      }
     }
-  },
-  "footer": {
-    "authors": "Chopin Brothers 出品"
   },
   "guide": {
     "release_notes": "版本信息",
     "contribute": "如何提交问题或文档贡献？",
     "edit_on_github": "在 GitHub 编辑此页面！"
-  },
-  "examples": {
-    "source_code": "源码"
   }
 }

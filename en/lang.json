@@ -1,51 +1,46 @@
 {
   "iso": "en",
-  "docVersion": "1.0.0-rc11",
+  "docVersion": "2.10.X",
   "links": {
-    "api": "API",
-    "blog": "Blog",
-    "chat": "Chat",
-    "documentation": "Documentation",
     "download": "Download",
-    "examples": "Examples",
-    "ecosystem": "Ecosystem",
-    "faq": "FAQ",
-    "get_started": "get started",
-    "github": "GitHub",
-    "guide": "Guide",
-    "homepage": "Home page",
-    "live_demo": "Live Demo",
-    "live_edit": "Live Edit",
-    "twitter": "Twitter",
-    "vuejs": "Vue.js",
-    "vue_jobs": "Vue Jobs"
+    "live_edit": "Live Edit"
   },
   "text": {
-    "an_error_occured": "An error occurred",
+    "an_error_occurred": "An error occurred",
     "api_page_not_found": "API page not found",
-    "example_file": "Example Files",
-    "please_wait": "Please wait...",
     "please_define_title": "Please define a title in the front matter",
     "please_define_description": "Please define a description in the front matter",
-    "search": "Search",
+    "search": "Search (\"/\" to focus)",
     "version": "Version"
   },
   "homepage": {
-    "title": "Universal Vue.js Applications",
     "meta": {
-      "title": "Nuxt.js - Universal Vue.js Applications",
-      "description": "Nuxt.js is a minimal framework for creating Vue.js applications with server side rendering, code-splitting, hot-reloading, static generation and more!"
+      "title": "Nuxt.js - The Vue.js Framework",
+      "description": "Nuxt.js presets all the configuration needed to make your development of a Vue.js application enjoyable. Nuxt.js can produce Universal, Single Page and Static Generated Applications."
+    },
+    "welcome": {
+      "get_started": "get started",
+      "github_stars": "22K+ github stars"
+    },
+    "why": {
+      "try_nuxtjs_online": "Try NuxtJS Online"
+    },
+    "sponsors": {
+      "become_a_sponsor": "Become a sponsor"
+    },
+    "newsletter_form": {
+      "email": "Email",
+      "subscribing": "Subscribing...",
+      "subscribe": "Subscribe",
+      "subscribed_messages": {
+        "pre": "An email to confirm your subscription has been sent to",
+        "post": "💚"
+      }
     }
-  },
-  "footer": {
-    "authors": "Made by Chopin Brothers"
   },
   "guide": {
     "release_notes": "Release Notes",
     "contribute": "Caught a mistake or want to contribute to the documentation?",
     "edit_on_github": "Edit this page on GitHub!"
-  },
-  "examples": {
-    "source_code": "Source Code"
   }
 }

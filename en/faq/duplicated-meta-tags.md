@@ -1,13 +1,15 @@
 ---
-title: Duplicated Meta tags
+title: Duplicated Meta tags?
 description: Duplicated Meta tags with Nuxt.js?
 ---
 
-# Duplicated Meta tags?
+This is a "feature" of [vue-meta](https://github.com/nuxt/vue-meta), please take a look at the [documentation of head elements](/guide/views#html-head).
 
-This is a "feature" of [vue-meta](https://github.com/declandewet/vue-meta), please take a look at the [documentation of head elements](/guide/views#html-head).
+<div class="Alert">
 
-> To avoid any duplication when used in child component, please give an unique identifier with the `hid` key, please [read more](https://github.com/declandewet/vue-meta#lists-of-tags) about it.
+To avoid any duplication when used in child component, please give a unique identifier with the <code>hid</code> key. [Learn more](https://vue-meta.nuxtjs.org/api/#tagidkeyname).
+
+</div>
 
 For the meta description, you need to add the unique identifier `hid` so vue-meta will know that it has to overwrite the default tag.
 
@@ -26,7 +28,7 @@ Your `nuxt.config.js`:
 ...
 ```
 
-An then in your individual page:
+And then in your individual page:
 
 ```js
 export default {

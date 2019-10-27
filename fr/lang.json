@@ -1,51 +1,46 @@
 {
   "iso": "fr",
-  "docVersion": "1.0.0-rc11",
+  "docVersion": "2.8.X",
   "links": {
-    "api": "API",
-    "blog": "Blog",
-    "chat": "Chat",
-    "documentation": "Documentation",
     "download": "Téléchargement",
-    "examples": "Exemples",
-    "ecosystem": "Écosystème",
-    "faq": "FAQ",
-    "get_started": "Commencer",
-    "github": "GitHub",
-    "guide": "Guide",
-    "homepage": "Accueil",
-    "live_demo": "Voir en ligne",
-    "live_edit": "Éditer en ligne",
-    "twitter": "Twitter",
-    "vuejs": "Vue.js",
-    "vue_jobs": "Vue Jobs"
+    "live_edit": "Éditer en ligne"
   },
   "text": {
-    "an_error_occured": "Une erreur s'est produite",
+    "an_error_occurred": "Une erreur s'est produite",
     "api_page_not_found": "La page API est introuvable",
-    "example_file": "Fichiers d'exemples",
-    "please_wait": "Patientez...",
     "please_define_title": "Merci de définir un titre",
     "please_define_description": "Merci de définir une description",
     "search": "Rechercher",
     "version": "Version"
   },
   "homepage": {
-    "title": "Applications Vue.js universelles",
     "meta": {
-      "title": "Nuxt.js - Applications Vue.js universelles",
-      "description": "Nuxt.js est un framework minimal pour créer des applications Vue.js avec du rendu côté serveur, de la scission de code, du rechargement à chaud, de la génération de sites statiques et plus encore !"
+      "title": "Nuxt.js - Le Framework Vue.js",
+      "description": "Nuxt.js fournit toutes les configurations nécessaires pour rendre vos développements d'application Vue.js agréable. Nuxt.js peut créer des Applications Universelles, Monopages ou Statiques Générées."
+    },
+    "welcome": {
+      "get_started": "Commencer",
+      "github_stars": "22K+ github stars"
+    },
+    "why": {
+      "try_nuxtjs_online": "Essayez NuxtJS Online"
+    },
+    "sponsors": {
+      "become_a_sponsor": "Devenir sponsor"
+    },
+    "newsletter_form": {
+      "email": "Email",
+      "subscribing": "Subscribing...",
+      "subscribe": "Subscribe",
+      "subscribed_messages": {
+        "pre": "An email to confirm your subscription has been sent to",
+        "post": "💚"
+      }
     }
-  },
-  "footer": {
-    "authors": "Réalisé par les frères Chopin"
   },
   "guide": {
     "release_notes": "Notes de versions (en)",
     "contribute": "Vous avez vu une erreur ou vous souhaitez contribuer à la documentation ?",
     "edit_on_github": "Éditez cette page sur GitHub !"
-  },
-  "examples": {
-    "source_code": "Code source"
   }
 }

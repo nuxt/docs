@@ -1,36 +1,82 @@
 ---
-title: 安装
-description: Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt` 添加为依赖组件即可。
+title: "安装"
+description: "Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt` 添加为依赖组件即可。"
 ---
 
 > Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt` 添加为依赖组件即可。
 
-## 新手模板
+<div>
+  <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Nuxt Fundamentals by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Nuxt.js 基础知识</h4>
+      <p class="Promote__Content__Description">了解如何在视频中快速使用Nuxt.js</p>
+      <p class="Promote__Content__Signature">由VueSchool制作视频课程，用于支持Nuxt.js开发</p>
+    </div>
+  </a>
+</div>
 
-为了便于大家快速使用，Nuxt.js提供了一个 [starter 模板](https://github.com/nuxt-community/starter-template)。
+## 运行 create-nuxt-app
 
-[下载模板的压缩包](https://github.com/nuxt-community/starter-template/archive/master.zip) 或利用 `vue-cli` 安装使用：
+为了快速入门，Nuxt.js团队创建了脚手架工具 [create-nuxt-app](https://github.com/nuxt/create-nuxt-app)。
+
+确保安装了npx（npx在NPM版本5.2.0默认安装了）：
 
 ```bash
-$ vue init nuxt-community/starter-template <project-name>
+$ npx create-nuxt-app <项目名>
 ```
 
-> 如果 [vue-cli](https://github.com/vuejs/vue-cli) 没有安装, 需先通过 `npm install -g vue-cli` 来安装。
+或者用yarn ：
 
-然后安装依赖包：
+```bash
+$ yarn create nuxt-app <项目名>
+```
+
+它会让你进行一些选择:
+
+1. 在集成的服务器端框架之间进行选择:
+  - None (Nuxt默认服务器)
+  - [Express](https://github.com/expressjs/express)
+  - [Koa](https://github.com/koajs/koa)
+  - [Hapi](https://github.com/hapijs/hapi)
+  - [Feathers](https://github.com/feathersjs/feathers)
+  - [Micro](https://github.com/zeit/micro)
+  - [Fastify](https://github.com/fastify/fastify)
+  - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
+2. 选择您喜欢的UI框架:
+  - None (无)
+  - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
+  - [Vuetify](https://github.com/vuetifyjs/vuetify)
+  - [Bulma](https://github.com/jgthms/bulma)
+  - [Tailwind](https://github.com/tailwindcss/tailwindcss)
+  - [Element UI](https://github.com/ElemeFE/element)
+  - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
+  - [Buefy](https://buefy.github.io)
+  - [iView](https://www.iviewui.com/)
+  - [Tachyons](https://tachyons.io)
+3. 选择您喜欢的测试框架:
+  - None (随意添加一个)
+  - [Jest](https://github.com/facebook/jest)
+  - [AVA](https://github.com/avajs/ava)
+4. 选择你想要的Nuxt模式 (`Universal` or `SPA`)
+5. 添加 [axios module](https://github.com/nuxt-community/axios-module) 以轻松地将HTTP请求发送到您的应用程序中。
+6. 添加 [EsLint](https://eslint.org/) 以在保存时代码规范和错误检查您的代码。
+7. 添加 [Prettier](https://prettier.io/) 以在保存时格式化/美化您的代码。
+
+当运行完时，它将安装所有依赖项，因此下一步是启动项目:
 
 ```bash
 $ cd <project-name>
-$ npm install
-```
-
-接着通过以下命令启动项目：
-```bash
 $ npm run dev
 ```
-应用现在运行在 http://localhost:3000
 
-<p class="Alert">注意：Nuxt.js 会监听 `pages` 目录中的文件变更并自动重启， 当添加新页面时没有必要手工重启应用。</p>
+应用现在运行在 http://localhost:3000 上运行。
+
+<div class="Alert">
+
+注意：Nuxt.js 会监听 `pages` 目录中的文件更改，因此在添加新页面时无需重新启动应用程序。
+
+</div>
 
 了解模板项目的目录结构： [目录结构](/guide/directory-structure)。
 
@@ -43,7 +89,11 @@ $ mkdir <项目名>
 $ cd <项目名>
 ```
 
-*提示: 将 项目名 替换成为你想创建的实际项目名*
+<div class="Alert Alert--nuxt-green">
+
+<b>提示:</b> 将 <code>&lt;项目名&gt;</nom-du-projet></code> 替换成为你想创建的实际项目名。
+
+</div>
 
 ### 新建 package.json 文件
 
@@ -62,7 +112,7 @@ $ cd <项目名>
 
 一旦 `package.json` 创建好， 可以通过以下npm命令将 `nuxt` 安装至项目中：
 ```bash
-npm install --save nuxt
+$ npm install --save nuxt
 ```
 
 ### pages 目录
@@ -85,8 +135,12 @@ $ mkdir pages
 ```bash
 $ npm run dev
 ```
-Bingo！现在我们的应用运行在 http://localhost:3000
+现在我们的应用运行在 http://localhost:3000 上运行。
 
-<p class="Alert">注意：Nuxt.js 会监听 `pages` 目录中的文件变更并自动重启， 当添加新页面时没有必要手工重启应用。</p>
+<div class="Alert">
+
+注意：Nuxt.js 会监听 `pages` 目录中的文件更改，因此在添加新页面时无需重新启动应用程序。
+
+</div>
 
 了解更多关于Nuxt.js应用的目录结构： [目录结构](/guide/directory-structure)。

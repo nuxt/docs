@@ -56,14 +56,14 @@ I added `vue-notifications` in the `vendor` key to make sure that it won't be in
 
 #### Only in browser build
 
-Some plugins might work only in the browser, for this, you can use the `process.BROWSER_BUILD` variable to check if the plugin will run from the server or from the client.
+Some plugins might work only in the browser, for this, you can use the `process.client` variable to check if the plugin will run from the server or from the client.
 
 Example:
 ```js
 import Vue from 'vue'
 import VueNotifications from 'vue-notifications'
 
-if (process.BROWSER_BUILD) {
+if (process.client) {
   Vue.use(VueNotifications)
 }
 ```

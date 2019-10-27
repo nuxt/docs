@@ -27,5 +27,5 @@ module.exports = data: ->
 
 To be able to use these pre-processors, we need to install their webpack loaders:
 ```bash
-npm install --save-dev pug@2.0.0-beta6 pug-loader coffee-script coffee-loader node-sass sass-loader
+npm install --save-dev pug@2.0.0-beta6 pug-loader coffeescript coffee-loader node-sass sass-loader
 ```

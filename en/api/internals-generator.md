@@ -3,24 +3,19 @@ title: "API: The Generator Class"
 description: Nuxt Generator Class
 ---
 
-# Generator Class
+- Source: **[generator/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/generator/src/generator.js)**
 
-- Source: **[builder/generator.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/generator.js)**
-
-
-## Tapable plugins
+## Hooks
 
 We can register hooks on certain life cycle events.
 
-```js
-nuxt.plugin('generator', generator => {
-    generator.plugin('generate', ({routes}) => {
-        // ...
-    }))
-})
-```
-
-Plugin           | Arguments                   | When
------------------|-----------------------------|--------------------------------------------------------------------------------
-`generateRoutes` | {generator, generateRoutes} | After resolving routes to generate so we have change to customize them
-`generate`       | {generator, routes}         | Just before start generating routes. routes are decorated with payloads
+Hook                    | Arguments                   | When
+------------------------|-----------------------------|-----------------------------------------------
+`generate:before`       | (nuxt, generateOptions)     | Hook on before generation
+`generate:distRemoved`  | (nuxt)                      | Hook on  destination folder  cleaned
+`generate:distCopied`   | (nuxt)                      | Hook on copy static and built files
+`generate:page`         | ({route, path, html})       | Hook to let user update the path & html
+`generate:routeCreated` | ({route, path, errors})       | Hook on saving generated page success
+`generate:extendRoutes` | (routes)                    | Hook to let user update the routes to generate
+`generate:routeFailed`  | (route, errors)             | Hook on saving generated page failure
+`generate:done`         | (nuxt, errors)              | Hook on generation finished

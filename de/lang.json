@@ -1,0 +1,46 @@
+{
+  "iso": "en",
+  "docVersion": "1.4.0",
+  "links": {
+    "download": "Download",
+    "live_edit": "Live Edit"
+  },
+  "text": {
+    "an_error_occurred": "An error occurred",
+    "api_page_not_found": "API page not found",
+    "please_define_title": "Please define a title in the front matter",
+    "please_define_description": "Please define a description in the front matter",
+    "search": "Search",
+    "version": "Version"
+  },
+  "homepage": {
+    "meta": {
+      "title": "Nuxt.js - Universal Vue.js Applications",
+      "description": "Nuxt.js is a minimal framework for creating Vue.js applications with server side rendering, code-splitting, hot-reloading, static generation and more!"
+    },
+    "welcome": {
+      "get_started": "get started",
+      "github_stars": "22K+ github stars"
+    },
+    "why": {
+      "try_nuxtjs_online": "Probieren Sie NuxtJS Online aus"
+    },
+    "sponsors": {
+      "become_a_sponsor": "Sponsor werden"
+    },
+    "newsletter_form": {
+      "email": "Email",
+      "subscribing": "Subscribing...",
+      "subscribe": "Subscribe",
+      "subscribed_messages": {
+        "pre": "An email to confirm your subscription has been sent to",
+        "post": "💚"
+      }
+    }
+  },
+  "guide": {
+    "release_notes": "Release Notes",
+    "contribute": "Caught a mistake or want to contribute to the documentation?",
+    "edit_on_github": "Edit this page on GitHub!"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "iso": "id",
+  "docVersion": "1.0.0-rc11",
+  "links": {
+    "download": "Unduh",
+    "live_edit": "Sunting Langsung"
+  },
+  "text": {
+    "an_error_occurred": "An error occurred",
+    "api_page_not_found": "Halaman API tidak ditemukan",
+    "please_define_title": "Please define a title in the front matter",
+    "please_define_description": "Please define a description in the front matter",
+    "search": "Cari",
+    "version": "Versi"
+  },
+  "homepage": {
+    "meta": {
+      "title": "Nuxt.js - Aplikasi Vue.js Universal",
+      "description": "Nuxt.js adalah framework minimalis untuk membuat aplikasi Vue.js dengan server side rendering, hot-reloading, static generation, dan banyak lagi!"
+    },
+    "welcome": {
+      "get_started": "Memulai",
+      "github_stars": "22K+ github stars"
+    },
+    "why": {
+      "try_nuxtjs_online": "Coba NuxtJS Online"
+    },
+    "sponsors": {
+      "become_a_sponsor": "Menjadi Sponsor"
+    },
+    "newsletter_form": {
+      "email": "Email",
+      "subscribing": "Subscribing...",
+      "subscribe": "Subscribe",
+      "subscribed_messages": {
+        "pre": "An email to confirm your subscription has been sent to",
+        "post": "💚"
+      }
+    }
+  },
+  "guide": {
+    "release_notes": "Release Notes",
+    "contribute": "Jumpa kesalahan atau ingin berkontribusi pada dokumentasi ini?",
+    "edit_on_github": "Sunting halaman ini di GitHub!"
+  }
+}

@@ -30,7 +30,7 @@ description: Nuxt는 강력한 에셋 처리를 위해 기본적으로 Webpack�
 아래와 같이 컴파일 될 것입니다:
 
 ```js
-createElement('img', { attrs: { src: require('~assets/image.png') }})
+createElement('img', { attrs: { src: require('~assets/image.png') } })
 ```
 
 `.png` 파일은 자바스크립트 파일이 아니기 때문에 nuxt.js는 이를 처리하기 위해 [file-loader](https://github.com/webpack/file-loader)와 [url-loader](https://github.com/webpack/url-loader)를 사용합니다.

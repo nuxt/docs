@@ -1,71 +1,74 @@
 ---
-title: "API: The serverMiddleware Property"
-description: Define server-side middleware.
+title: "API: serverMiddleware プロパティ"
+description: サーバーミドルウェアを定義します
 ---
 
-# The serverMiddleware Property
+- 型: `Array`
+    - 要素: `String` または `Object` または `Function`
 
-- Type: `Array`
-    - Items: `String` or `Object` or `Function`
+Nuxt は内部で [connect](https://github.com/senchalabs/connect) のインスタンスを作ります。
+それはミドルウェアをスタックに登録したり、 **外部サーバーを必要とせず** に API などのルートを増やす事を可能にしてくれます。
+connect 自体はミドルウェアで、登録されたミドルウェアは `nuxt start` と [express-template](https://github.com/nuxt-community/express-template) のようなプログラム的な使用法を持つミドルウェアとして使用されます。 Nuxt [モジュール](/guide/modules) もまた [this.addServerMiddleware()](/api/internals-module-container#addservermiddleware-middleware-) を使用して `serverMiddleware` を提供できます。
 
-Nuxt internally creates a [connect](https://github.com/senchalabs/connect) instance,
-so we can register our middleware to it's stack and having chance
-to provide more routes like API **without need to an external server**.
-Because connect itself is a middleware, registered middleware will work with both `nuxt start`
-and also when used as a middleware with programmatic usages like [express-template](https://github.com/nuxt-community/express-template).
-Nuxt [Modules](/guide/modules) can also provide `serverMiddleware`
-using [this.addServerMiddleware()](/api/internals-module-container#addservermiddleware-middleware-)
+それらに加え、デフォルトで `true` にする `prefix` オプションを導入しました。サーバーミドルウェアに router base を追加します。
 
-## serverMiddleware vs middleware!
-Don't confuse it with [routes middleware](/guide/routing#middleware) which are being called before each route by Vue in Client Side or SSR.
-`serverMiddleware` are just running in server side **before** vue-server-renderer and can be used for server specific tasks
-like handling API requests or serving assets.
+**例:**
 
-## Usage
+* サーバーミドルウェアパス: `/api`
+* Router base: `/admin`
+* With `prefix: true` (default): `/admin/api`
+* With `prefix: false`: `/api`
 
-If middleware is String Nuxt.js will try to automatically resolve and require it. 
+## サーバミドルウェア vs ミドルウェア！
 
-Example (`nuxt.config.js`):
+クライアントサイドや SSR の Vue で各ルートの前に呼び出されている [ルーティングのミドルウェア](/guide/routing#ミドルウェア)  と混同しないでください。
+`serverMiddleware` は `vue-server-renderer` の **前に** サーバー側で実行され、API リクエストの処理やアセットの処理などのサーバー固有のタスクとして使用できます。
+
+## 使用方法
+
+もしミドルウェアが文字列の場合、 Nuxt.js は自動的にそれを解決し、そのミドルウェアを要求します。
+
+例 (`nuxt.config.js`):
 
 ```js
-const serveStatic = require('serve-static')
+import serveStatic from 'serve-static'
 
-module.exports = {
+export default {
   serverMiddleware: [
-      // Will register redirect-ssl npm package
-      'redirect-ssl',
+    // redirect-ssl npm パッケージを登録します
+    'redirect-ssl',
 
-      // Will register file from project api directory to handle /api/* requires
-      { path: '/api', handler: '~/api/index.js' },
+    // /api/* を処理するために、プロジェクトの api ディレクトリからファイルを登録します
+    { path: '/api', handler: '~/api/index.js' },
 
-      // We can create custom instances too
-      { path: '/static2', handler: serveStatic(__dirname + '/static2') }
+    // カスタムインスタンスを作成することもできます。
+    { path: '/static2', handler: serveStatic(__dirname + '/static2') }
   ]
 }
 ```
 
 <p class="Alert Alert--danger">
-    <b>HEADS UP! </b>
-    If you don't want middleware to register for all routes you have to use Object form with specific path,
-    otherwise nuxt default handler won't work!
+    <b>注意点！</b>
+    もしミドルウェアをすべてのルートに登録したくない場合は、特定のパスでオブジェクトフォームを使用する必要があります。
+    そうしないと nuxt の デフォルトハンドラは機能しません。
 </p>
 
-## Custom Server Middleware
+## カスタムサーバーミドルウェア
 
-It is also possible writing custom middleware. For more information See [Connect Docs](https://github.com/senchalabs/connect#appusefn).
+カスタムミドルウェアの作成も可能です。 詳細については、 [Connect Docs](https://github.com/senchalabs/connect#appusefn) を参照してください。
 
-Middleware (`api/logger.js`):
+ミドルウェア (`api/logger.js`):
 
 ```js
-module.exports = function (req, res, next) {
-    // req is the Node.js http request object
-    console.log(req.path)
-    
-    // res is the Node.js http response object
+export default function (req, res, next) {
+  // req は Node.js の HTTPリクエストオブジェクトです
+  console.log(req.url)
 
-    // next is a function to call to invoke the next middleware
-    // Don't forget to call next at the end if your middleware is not an endpoint!
-    next()
+  // res は Node.js の HTTPレスポンスオブジェクトです
+
+  // next は 次のミドルウェアを呼び出すための関数です。
+  // あなたのミドルウェアが最後でない場合、関数の最後で next を呼び出すのを忘れないでください！
+  next()
 }
 ```
 
@@ -73,6 +76,6 @@ Nuxt Config (`nuxt.config.js`):
 
 ```js
 serverMiddleware: [
-    '~/api/logger'
+  '~/api/logger'
 ]
 ```

@@ -7,6 +7,8 @@ description: La estructura de aplicaciones predeterminada de Nuxt.js tiene como 
 
 ## Directorios
 
+<br />
+
 ### El directorio de Assets
 
 El directorio de `assets` contiene sus archivos no compilados como LESS, SASS o JavaScript.

@@ -3,19 +3,21 @@ title: "API: nuxt.renderAndGetWindow(url, options)"
 description: Nuxt.js アプリケーションの URL を渡して window を取得します。
 ---
 
-# nuxt.renderAndGetWindow(url, options = {})
-
-- タイプ: `関数`
-- 引数: `文字列`
-  1. `文字列`: レンダリングする URL
-  2. *オプション*, `オブジェクト`: オプション
-    - virtualConsole: `ブーリアン`（デフォルト: `true`）
-- 戻り値: `プロミス`
+- 型: `Function`
+- 引数: `String`
+  1. `String`: レンダリングする URL
+  2. *オプション*, `Object`: オプション
+    - virtualConsole: `Boolean`（デフォルト: `true`）
+- 戻り値: `Promise`
   - 戻り値: `window`
 
 > Nuxt.js アプリケーションの URL を渡して window を取得します。
 
-<p class="Alert Alert--info">このメソッドは [テストする目的](guide/development-tools#end-to-end-testing) で使われます。</p>
+<div class="Alert Alert--orange">
+
+このメソッドは [テストする目的](guide/development-tools#end-to-end-testing) で使われます。
+
+</div>
 
 この関数を使うためには `jsdom` をインストールする必要があります。:
 
@@ -26,12 +28,16 @@ npm install --save-dev jsdom
 例:
 
 ```js
-const Nuxt = require('nuxt')
-const nuxt = new Nuxt()
+const { Nuxt, Builder } = require('nuxt')
+
+const config = require('./nuxt.config.js')
+config.dev = false
+
+const nuxt = new Nuxt(config)
 
 nuxt.renderAndGetWindow('http://localhost:3000')
-.then((window) => {
+  .then((window) => {
   // head 内の <title> の内容を表示
-  console.log(window.document.title)
-})
+    console.log(window.document.title)
+  })
 ```

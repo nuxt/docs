@@ -3,16 +3,30 @@ title: "API: validate メソッド"
 description: Nuxt.js では動的なルーティングを行うコンポーネント内でバリデーションメソッドを定義できます。
 ---
 
-# validate メソッド
-
 > Nuxt.js では動的なルーティングを行うコンポーネント内でバリデーションメソッドを定義できます。
 
-- **タイプ:** `関数`
+- **型:** `Function` または `Async Function`
 
 ```js
 validate({ params, query, store }) {
   return true // params バリデーションを通過したとき
   return false // Nuxt.js がルートをレンダリングするのを中止して、エラーページを表示させる
+}
+```
+
+```js
+async validate({ params, query, store }) {
+  // await の処理
+  return true // params バリデーションを通過したとき
+  return false // Nuxt.js がルートをレンダリングするのを中止して、エラーページを表示させる
+}
+```
+
+プロミスを返すこともできます:
+
+```js
+validate({ params, query, store }) {
+  return new Promise((resolve) => setTimeout(() => resolve()))
 }
 ```
 
@@ -35,7 +49,18 @@ export default {
 export default {
   validate ({ params, store }) {
     // `params.id` が存在している category の id なのか否かをチェックする
-    return store.state.categories.some((category) => category.id === params.id)
+    return store.state.categories.some(category => category.id === params.id)
   }
+}
+```
+
+さらにバリデーション関数を実行中に、想定したエラーや想定外のエラーを投げることもできます:
+
+ ```js
+export default {
+   async validate ({ params, store }) {
+     // 500 internal server error とともにカスタムメッセージを投げる
+     throw new Error('Under Construction!')
+   }
 }
 ```

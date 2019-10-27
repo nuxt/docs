@@ -1,58 +1,55 @@
 ---
-title: "API: The dev Property"
-description: Define the development or production mode.
+title: "API : La propriété dev"
+description: Défini le mode développement ou le mode production.
 ---
 
-# The dev Property (En)
+- Type : `Boolean`
+- Par défaut : `true`
 
-- Type: `Boolean`
-- Default: `true`
+> Défini le mode développement ou le mode production de Nuxt.js.
 
-> Define the development or production mode of nuxt.js
+Cette propriété est surchargée par les [commandes `nuxt`](/guide/commands) :
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>This property is overwritten by [nuxt commands](/guide/commands):</p>
+- `dev` est forcé à `true` avec `nuxt`
+- `dev` est forcé à `false` avec `nuxt build`, `nuxt start` et `nuxt generate`
 
-- `dev` is forced to `true` with `nuxt`
-- `dev` is forced to `false` with `nuxt build`, `nuxt start` and `nuxt generate`
+Cette propriété devrait être utilisée [programmatiquement avec Nuxt.js](/api/nuxt) :
 
-This property should be used when using [nuxt.js programmatically](/api/nuxt):
-
-Example:
+Exemple :
 
 `nuxt.config.js`
+
 ```js
-module.exports = {
+export default {
   dev: (process.env.NODE_ENV !== 'production')
 }
 ```
 
 `server.js`
+
 ```js
 const { Nuxt, Builder } = require('nuxt')
 const app = require('express')()
 const port = process.env.PORT || 3000
 
-// We instantiate Nuxt.js with the options
-let config = require('./nuxt.config.js')
+// Nous instancions Nuxt.js avec les options
+const config = require('./nuxt.config.js')
 const nuxt = new Nuxt(config)
 app.use(nuxt.render)
 
-// Build only in dev mode
+// Build seulement en mode dev
 if (config.dev) {
   new Builder(nuxt).build()
-  .catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
 }
 
-// Listen the server
+// Écouter le serveur
 app.listen(port, '0.0.0.0').then(() => {
-  nuxt.showOpen()
+  console.log(`Server is listening on port: ${port}`)
 })
 ```
 
-Then in your `package.json`:
+Puis dans votre `package.json` :
+
 ```json
 {
   "scripts": {
@@ -63,4 +60,4 @@ Then in your `package.json`:
 }
 ```
 
-Note: You'll need to run `npm install --save-dev cross-env` for the above example to work. If you're *not* developing on Windows you can leave cross-env out of your `start` script and set `NODE_ENV` directly.
+Note : vous devez lancer `npm install --save-dev cross-env` pour faire fonctionner l'exemple ci-dessus. Si vous **ne** développez **pas** sur Windows vous pouvez retirer `cross-env` de vos scripts `start` et directement définir `NODE_ENV`.

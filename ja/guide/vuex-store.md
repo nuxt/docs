@@ -3,58 +3,35 @@ title: Vuex ストア
 description: 状態を管理してくれる Vuex ストアは、あらゆる大規模アプリケーションにとても役に立ちます。Nuxt.js が Vuex をコアに組み入れたのはそのような理由からです。
 ---
 
-> 状態を管理してくれる Vuex ストアは、あらゆる大規模アプリケーションにとても役に立ちます。Nuxt.js が [Vuex](https://github.com/vuejs/vuex) をコアに組み入れたのはそのような理由からです。
+> 状態を管理してくれる Vuex ストアは、あらゆる大規模アプリケーションにとても役に立ちます。Nuxt.js が [Vuex](https://vuex.vuejs.org/ja/) をコアに組み入れたのはそのような理由からです。
+
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/utilising-the-vuex-store-nuxtjs?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Vue School で <strong>Nuxt.js と Vuex</strong> についての無料レッスンをみる
+    </p>
+  </a>
+</div>
 
 ## ストアを有効にする
 
-Nuxt.js は `store` ディレクトが存在するときにはそちらを探索します:
+Nuxt.js は `store` ディレクトリを探索し存在するときには以下を実行します:
 
 1. Vuex をインポートします
-2. `vuex` モジュールを vendor のバンドルファイルに追加します
-3. `store` オプションをルートの `Vue` インスタンスに追加します
+2. `store` オプションをルートの Vue インスタンスに追加します
 
 Nuxt.js では **2つのモードのストア** があります。どちらか好みのほうを選んで使ってください:
 
-- **クラシックモード:** `store/index.js` がストアインスタンスを返します
-- **モジュールモード:** `store` ディレクトリ内のすべての `*.js` ファイルが [モジュール](http://vuex.vuejs.org/en/modules.html) に変換されます（`index` はルートモジュールとして存在します）
+- **モジュールモード:** `store` ディレクトリ内のすべての `*.js` ファイルが [名前空間付きモジュール](https://vuex.vuejs.org/ja/guide/modules.html) に変換されます（`index` はルートモジュールとして存在します）
+- **クラシックモード (__廃止予定__):** `store/index.js` がストアインスタンスを返します
 
-## クラシックモード
-
-ストアをクラシックモードで有効にするには `store/index.js` ファイルを作成し、ストアインスタンスをエクスポートします:
-
-```js
-import Vuex from 'vuex'
-
-const store = () => new Vuex.Store({
-
-  state: {
-    counter: 0
-  },
-  mutations: {
-    increment (state) {
-      state.counter++
-    }
-  }
-})
-
-export default store
-```
-
-> `vuex` は Nuxt.js によって取り込まれているため、別途インストールする必要はありません。
-
-クラシックモードを有効にすると、コンポーネント内で `this.$store` を使うことができます:
-
-```html
-<template>
-  <button @click="$store.commit('increment')">{{ $store.state.counter }}</button>
-</template>
-```
+モードに関わらず、サーバーサイドで不要な*共有*状態を避けるため、`state` の値は**常に `function`** でなければなりません。
 
 ## モジュールモード
 
 > Nuxt.js では `store` ディレクトリ内にモジュールと対応するファイルを持つことができます。
 
-このオプションを使いたいときは、ストアインスタンスの代わりに、`store/index.js` 内でステート、ミューテーション、アクションをエクスポートします:
+まずはじめに、`store/index.js` 内でステートを関数として、ミューテーション、アクションをオブジェクトとしてシンプルにエクスポートします:
 
 ```js
 export const state = () => ({
@@ -78,7 +55,7 @@ export const state = () => ({
 export const mutations = {
   add (state, text) {
     state.list.push({
-      text: text,
+      text,
       done: false
     })
   },
@@ -95,7 +72,9 @@ export const mutations = {
 
 ```js
 new Vuex.Store({
-  state: { counter: 0 },
+  state: () => ({
+    counter: 0
+  }),
   mutations: {
     increment (state) {
       state.counter++
@@ -103,9 +82,10 @@ new Vuex.Store({
   },
   modules: {
     todos: {
-      state: {
+      namespaced: true,
+      state: () => ({
         list: []
-      },
+      }),
       mutations: {
         add (state, { text }) {
           state.list.push({
@@ -143,7 +123,9 @@ import { mapMutations } from 'vuex'
 
 export default {
   computed: {
-    todos () { return this.$store.state.todos.list }
+    todos () {
+      return this.$store.state.todos.list
+    }
   },
   methods: {
     addTodo (e) {
@@ -164,8 +146,31 @@ export default {
 </style>
 ```
 
+> モジュールメソッドは、 `store` ディレクトリにあるサブディレクトリの実装なしにトップレベルの定義に対しても機能します。
 
-<div class="Alert">ストアインスタンスをエクスポートすることでモジュールを持つこともできます。その際にはモジュールをストアに手動で追加する必要があります。</div>
+ステートの例です。`store/state.js` を作成し、以下の行を追加します。
+
+```js
+export default () => ({
+  counter: 0
+})
+```
+
+対応するミューテーションは `store/mutations.js` にあります。
+
+```js
+export default {
+  increment (state) {
+    state.counter++
+  }
+}
+```
+
+### モジュールファイル
+
+オプションでモジュールファイルを `state.js`、` actions.js`、 `mutations.js`、` getters.js` といった別々のファイルに分離することができます。`index.js` ファイルで状態やゲッター、ミューテーションを持ちながら、アクションを別のファイルを分けた場合もまた適切に認識されます。
+
+> 情報: 分割ファイルモジュールを使っている時にアロー関数を使うと、```this``` は構文的にしか利用できないことを覚えておく必要があります。 レキシカルスコープは単に ```this``` が常にアロー関数の所有者を参照することを意味しています。もしアロー関数が含まれていない場合、 ```this``` は undefined になります。解決策として「普通の」関数でスコープを作ると、そこで ```this``` を使うことができるようになります。
 
 ### プラグイン
 
@@ -187,7 +192,7 @@ export const mutations = {
 }
 ```
 
-プラグインについてのさらに詳しい情報は [Vuex ドキュメント](https://vuex.vuejs.org/en/plugins.html) を参照してください。
+プラグインについてのさらに詳しい情報は [Vuex ドキュメント](https://vuex.vuejs.org/ja/guide/plugins.html) を参照してください。
 
 ## fetch メソッド
 
@@ -213,6 +218,55 @@ actions: {
 
 > Vuex ストアの *モジュール* モードを使っている場合はなら、プライマリモジュール（`store/index.js`）のみ、このアクションを受け取ることができます。その他のモジュールのアクションでも使いたい場合は、プライマリモジュールからチェインする必要があります。
 
-コンテキストは `nuxtServerInit` へ第二引数として渡されます。`context.redirect()` や `context.error()` が除外される点を除いては `data` メソッドや `fetch` メソッドと共通しています。
+[コンテキスト](/api/context)は、`asyncData`や `fetch` メソッドと同様に `nuxtServerInit` に第二引数として渡されます。
 
-> 注意: 非同期の nuxtServerInit アクションは nuxt サーバーの待機を可能にするために Promise を返さなければなりません
+> 注意: 非同期の `nuxtServerInit` アクションは nuxt サーバーの待機を可能にするために Promise を返さなければなりません
+
+```js
+actions: {
+  async nuxtServerInit({ dispatch }) {
+    await dispatch('core/load')
+  }
+}
+```
+
+## Vuex Strict モード
+
+Strict モードは dev モードではデフォルトで有効化されており、production モードでは無効化されています。strict モードを dev で無効化するには、以下の例を参照してください。
+
+`export const strict = false`
+
+### クラシックモード
+
+> この機能は Nuxt 3 で廃止し、削除される予定です。
+
+クラシックモードでストアを使うには、Vuex インスタンスを返す関数がエクスポートされている `store/index.js` ファイルを作る必要があります。
+
+```js
+import Vuex from 'vuex'
+
+const createStore = () => {
+  return new Vuex.Store({
+    state: () => ({
+      counter: 0
+    }),
+    mutations: {
+      increment (state) {
+        state.counter++
+      }
+    }
+  })
+}
+
+export default createStore
+```
+
+> `vuex` は Nuxt.js によって取り込まれているため、別途インストールする必要はありません。
+
+クラシックモードを有効にすると、コンポーネント内で `this.$store` を使うことができます:
+
+```html
+<template>
+  <button @click="$store.commit('increment')">{{ $store.state.counter }}</button>
+</template>
+```

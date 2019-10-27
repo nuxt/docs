@@ -7,6 +7,8 @@ description: Nuxt.js 어플리케이션의 기본 구조는 작고 큰 어플리
 
 ## 디렉토리
 
+<br />
+
 ### Assets 디렉토리
 
 `assets` 디렉토리는 LESS, SASS, Javascript 같은 컴파일되지 않은 에셋들을 포함하는 디렉토리 입니다.
@@ -86,4 +88,8 @@ _이 파일의 이름은 변경할 수 없습니다._
 
 설정을 변경하지 않았다면, `srcDir` 은 `rootDir` 와 같습니다.
 
-<p class="Alert Alert--nuxt-green"><b>INFO:</b> `vue` 템플릿 내에서 `assets` 이나 `static` 디렉토리에 링크할 필요가 있다면 `~assets/your_image.png`, `~static/your_image.png` 처럼 입력해야 합니다.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>INFO:</b> `vue` 템플릿 내에서 `assets` 이나 `static` 디렉토리에 링크할 필요가 있다면 `~assets/your_image.png`, `~static/your_image.png` 처럼 입력해야 합니다.
+
+</div>

@@ -1,51 +1,46 @@
 {
   "iso": "ja",
-  "docVersion": "1.0.0-rc11",
+  "docVersion": "2.10.X",
   "links": {
-    "api": "API",
-    "blog": "ブログ",
-    "chat": "チャット",
-    "documentation": "ドキュメント",
     "download": "ダウンロード",
-    "examples": "例",
-    "ecosystem": "エコシステム",
-    "faq": "FAQ",
-    "get_started": "はじめる",
-    "github": "GitHub",
-    "guide": "ガイド",
-    "homepage": "ホーム",
-    "live_demo": "ライブデモ",
-    "live_edit": "ライブ編集",
-    "twitter": "Twitter",
-    "vuejs": "Vue.js",
-    "vue_jobs": "Vue Jobs"
+    "live_edit": "ライブ編集"
   },
   "text": {
     "an_error_occurred": "エラーが発生しました",
     "api_page_not_found": "API ページが見つかりません",
-    "example_file": "サンプルファイル",
-    "please_wait": "お待ちください...",
     "please_define_title": "Frontmatter 内の title を定義してください",
     "please_define_description": "Frontmatter 内の description を定義してください",
-    "search": "検索",
+    "search": "検索 (\"/\" でフォーカス)",
     "version": "バージョン"
   },
   "homepage": {
-    "title": "ユニバーサル Vue.js アプリケーション",
     "meta": {
       "title": "Nuxt.js - ユニバーサル Vue.js アプリケーション",
       "description": "Nuxt.js はサーバーサイドレンダリングやコード分割、ホットリローディング、静的ファイル生成などを備えた Vue.js アプリケーションを構築するためのミニマルなフレームワークです！"
+    },
+    "welcome": {
+      "get_started": "はじめる",
+      "github_stars": "22K+ github stars"
+    },
+    "why": {
+      "try_nuxtjs_online": "Nuxt.js をオンラインで試す"
+    },
+    "sponsors": {
+      "become_a_sponsor": "スポンサーになる"
+    },
+    "newsletter_form": {
+      "email": "メールアドレス",
+      "subscribing": "送信中...",
+      "subscribe": "購読する",
+      "subscribed_messages": {
+        "pre": "購読を確認するメールを",
+        "post": "に送信しました 💚"
+      }
     }
-  },
-  "footer": {
-    "authors": "Made by Chopin Brothers"
   },
   "guide": {
     "release_notes": "リリースノート",
     "contribute": "間違いを見つけた、またはドキュメントに貢献したいですか？",
     "edit_on_github": "GitHub でこのページを編集する"
-  },
-  "examples": {
-    "source_code": "ソースコード"
   }
 }

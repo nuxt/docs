@@ -77,7 +77,7 @@ export const state = () => ({
 export const mutations = {
   add (state, text) {
     state.list.push({
-      text: text,
+      text,
       done: false
     })
   },
@@ -126,7 +126,11 @@ export default {
 </style>
 ```
 
-<div class="Alert">Модули, экспортирующие экземпляр хранилища, использовать тоже можно — но подключать их придётся вручную.</div>
+<div class="Alert">
+
+Модули, экспортирующие экземпляр хранилища, использовать тоже можно — но подключать их придётся вручную.
+
+</div>
 
 ## Метод fetch
 

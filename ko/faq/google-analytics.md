@@ -48,10 +48,12 @@ if (process.env.NODE_ENV === 'production') {
   /*
   ** Google 애널리틱스 스크립트를 include
   */
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  (function (i, s, o, g, r, a, m) {
+    i.GoogleAnalyticsObject = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga')
   /*
   ** 현재 페이지를 설정
   */
@@ -88,4 +90,8 @@ module.exports = {
 
 자! 이걸로 Google 애널리틱스는 Nuxt.js 어플리케이션에 통합되었고, 모든 페이지뷰를 트랙킹할수 있게 되었습니다!
 
-<p class="Alert Alert--nuxt-green"><b>정보:</b> 다른 트랙킹 서비스라도 동일한 방법으로 사용할 수 있습니다.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>정보:</b> 다른 트랙킹 서비스라도 동일한 방법으로 사용할 수 있습니다.
+
+</div>

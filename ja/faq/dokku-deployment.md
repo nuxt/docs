@@ -1,13 +1,11 @@
 ---
-title: Dokku へデプロイ
+title: Dokku へデプロイするには？
 description: Dokku へデプロイするには？
 ---
 
-# Dokku へデプロイするには？
+[Dokku のセットアップに関するドキュメント](http://dokku.viewdocs.io/dokku/getting-started/installation/) と [Dokku を使って Digital Ocean 上に Node.js アプリケーションにデプロイする](http://jakeklassen.com/post/deploying-a-node-app-on-digital-ocean-using-dokku/) を読むことをお勧めします。
 
-[Dokku のセットアップのドキュメント](http://dokku.viewdocs.io/dokku/getting-started/installation/) 及び [Dokku を使っている Digital Ocean 上の Node.js アプリケーションのデプロイ](http://jakeklassen.com/post/deploying-a-node-app-on-digital-ocean-using-dokku/) をお読みになることをお勧めします。
-
-例として、Nuxt.js のアプリケーションを以下 `my-nuxt-app` と呼びます。
+例として、Nuxt.js アプリケーションを `my-nuxt-app` としましょう。
 
 まず `npm run build` を実行できるようにするために、Dokku にプロジェクトの `devDependencies` をインストールすることを伝える必要があります:
 
@@ -23,11 +21,13 @@ dokku config:set my-nuxt-app NPM_CONFIG_PRODUCTION=false
 dokku config:set my-nuxt-app HOST=0.0.0.0 NODE_ENV=production
 ```
 
-`dokku config my-nuxt-app` とタイプして、下の 3行を確認します。
+`dokku config my-nuxt-app` を入力し、以下の 3行を確認します。
 
 ![nuxt config vars Dokku](https://i.imgur.com/9FNsaoQ.png)
 
-それから `app.json` 内の `scripts.dokku.predeploy` スクリプトを使って、Heroku に `npm run build` を実行するよう伝えます。プロジェクトのルートディレクトリに `app.json` という名前のファイルを作成してください:
+そして、`app.json` 内のスクリプト部 `scripts.dokku.predeploy` を介して Dokku に `npm run build` を実行すること伝えます。:
+
+`プロジェクトのルートディレクトリに app.json という名前のファイルを作成してください。`
 
 ```js
 {
@@ -37,6 +37,12 @@ dokku config:set my-nuxt-app HOST=0.0.0.0 NODE_ENV=production
     }
   }
 }
+```
+
+[Procfile](http://dokku.viewdocs.io/dokku/deployment/methods/dockerfiles/#procfiles-and-multiple-processes) を使ってアプリケーションを起動するために `npm run start` を実行します:
+
+```
+web: npm run start
 ```
 
 最後にアプリケーションを Dokku に git push します:

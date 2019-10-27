@@ -1,24 +1,57 @@
 ---
 title: 非同期なデータ
-description: サーバーサイドでデータを取得し、それをレンダリングしたいことがあるでしょう。Nuxt.js はコンポーネントのデータをセットする前に非同期の処理を行えるようにするために
-  `asyncData` メソッドを追加しています。
+description: サーバーサイドでデータを取得し、それをレンダリングしたいことがあるでしょう。 Nuxt.js はコンポーネントのデータをセットする前に非同期の処理を行えるようにするために `asyncData` メソッドを追加しています。
 ---
 
-> サーバーサイドでデータを取得し、それをレンダリングしたいことがあるでしょう。Nuxt.js はコンポーネントのデータをセットする前に非同期の処理を行えるようにするために `asyncData` メソッドを追加しています。
+> サーバーサイドでデータを取得し、それをレンダリングしたいことがあるでしょう。 Nuxt.js はコンポーネントを初期化する前に非同期の処理を行えるようにするために `asyncData` メソッドを追加しています。
+
+<div>
+  <a href="https://vueschool.io/courses/async-data-with-nuxtjs?friend=nuxt" target="_blank" class="Promote">
+  <img src="/async-data-with-nuxtjs.png" srcset="/async-data-with-nuxtjs-2x.png 2x" alt="AsyncData by vueschool"/>
+  <div class="Promote__Content">
+    <h4 class="Promote__Content__Title">Nuxt.js で非同期なデータを扱う</h4>
+    <p class="Promote__Content__Description">Nuxt.js で非同期なデータをどう管理するかについて学びます。</p>
+    <p class="Promote__Content__Signature">Nuxt.js の開発をサポートするために、VueSchool がビデオコースを作りました。</p>
+  </div>
+  </a>
+</div>
 
 ## asyncData メソッド
 
-サーバーサイドでストアは使わずに、単にデータをフェッチしてレンダリングの事前処理をしたいときがあるでしょう。`asyncData` はコンポーネント（ページコンポーネントに限ります）がロードされる前に毎回呼び出されます。サーバーサイドレンダリングや、ユーザーがページを遷移する前にも呼び出されます。そしてこのメソッドは第一引数として [コンテキスト](/api#%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88) を受け取り、コンテキストを使ってデータを取得してコンポーネントのデータとマージすることができます。
+場合によっては、ストアを使用せずにデータをフェッチし、サーバー上でプレレンダリングしたい場合があります。 `asyncData` は **ページ** コンポーネントがローディングされる前に常に呼び出されます。サーバーサイドでは 1回だけ（Nuxt アプリへの最初のリクエスト）呼び出され、クライアントサイドではページ遷移をするたびに呼び出されます。このメソッドは、第一引数として[コンテキスト](/api/context)を受け取ります。これを使用してデータを取得し、 Nuxt.js はコンポーネントデータとマージすることができます。
 
+Nuxt.js は返されたオブジェクトとコンポーネントデータを自動的にマージします。
 
-<div class="Alert Alert--orange">`asyncData` メソッド内の `this` を通してコンポーネントのインスタンスにアクセスすることは **できません**。それはコンポーネントがインスタンス化される前に data メソッドが呼び出されるためです。</div>
+<div class="Alert Alert--orange">
 
+`asyncData` メソッド内の `this` を通してコンポーネントのインスタンスにアクセスすることは **できません**。それはコンポーネントが **インスタンス化される前に** このメソッドが呼び出されるからです。
 
-Nuxt.js では asyncData メソッドを使うために、いくつかの異なるやり方があるので、お好きなものを選んでください:
+</div>
 
-1. `Promise` を返す。Nuxt.js はコンポーネントがレンダリングされる前に Promise が解決されるまで待ちます
+Nuxt.js では `asyncData` メソッドを使うために、いくつかの異なるやり方があるので、お好きなものを選んでください:
+
+1. `Promise` を返す。 Nuxt.js はコンポーネントがレンダリングされる前に `Promise` が解決されるまで待ちます
 2. [async/await](https://github.com/lukehoban/ecmascript-asyncawait) を使う（[より深く理解する](https://zeit.co/blog/async-and-await)）
-3. 第二引数としてコールバックを定義する。右のように呼び出される必要があります: `callback(err, data)`
+
+<div class="Alert Alert--grey">
+
+私たちは isomorphic な HTTP リクエストを作るために [axios](https://github.com/mzabriskie/axios) を使っています。私たちはあなたの Nuxt プロジェクトに、私たちの [axios module](https://axios.nuxtjs.org/) を使うことを<strong>強くオススメ</strong>します。
+
+</div>
+
+`node_modules` 内の `axios` を直接使用しており、`axios.interceptors` を使用してデータを処理する場合、interceptors を追加する前にインスタンスを作成してください。そうしなければ、サーバレンダリングされたページをリフレッシュする際に、interceptor が複数追加され、データエラーが発生します。
+
+```js
+import axios from 'axios'
+const myaxios = axios.create({
+  // ...
+})
+myaxios.interceptors.response.use(function (response) {
+  return response.data
+}, function (error) {
+  // ...
+})
+```
 
 ### Promise を返す
 
@@ -26,9 +59,9 @@ Nuxt.js では asyncData メソッドを使うために、いくつかの異な�
 export default {
   asyncData ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
   }
 }
 ```
@@ -38,21 +71,8 @@ export default {
 ```js
 export default {
   async asyncData ({ params }) {
-    let { data } = await axios.get(`https://my-api/posts/${params.id}`)
+    const { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
-  }
-}
-```
-
-### コールバックを使う
-
-```js
-export default {
-  asyncData ({ params }, callback) {
-    axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
   }
 }
 ```
@@ -69,15 +89,48 @@ asyncData の結果はコンポーネントのデータと **マージされ** �
 
 ## コンテキスト
 
-`context` 内で利用できるキーの一覧を確認するには [ページ data API](/api) を参照してください。
+`context` 内で利用できるキーの一覧を確認するには [API 基本 `Context`](/api/context) を参照してください。
+
+### `req`/`res` オブジェクトの利用
+
+サーバーサイドで `asyncData` が呼ばれた場合、ユーザーリクエストの `req` と `res` オブジェクトにアクセスできます。
+
+```js
+export default {
+  async asyncData ({ req, res }) {
+    // req と res を使う前にサーバーサイドか
+    // どうかチェックしてください
+    if (process.server) {
+      return { host: req.headers.host }
+    }
+
+    return {}
+  }
+}
+```
 
 ### 動的なルートデータへのアクセス
 
-動的なルートデータへアクセスするために、`asyncData` プロパティに注入されたコンテキストオブジェクトを使用することができます。例えば、動的なルートパラメータは、それを構成したファイルまたはフォルダの名前を使用してアクセスできます。`_slug.vue` と命名されたファイルを定義した場合は、`context.params.slug` でアクセスすることができます。
+`context` パラメータを利用して動的ルートデータにアクセスすることもできます。たとえば、動的ルートパラメータには、それを設定したファイルまたはフォルダの名前を使用してアクセスできます。 `pages` フォルダに `_slug.vue` という名前のファイルを定義した場合、 `context.params.slug` を介して値にアクセスできます。
+
+
+```js
+export default {
+  async asyncData ({ params }) {
+    const slug = params.slug // /abc というパスを呼び出した時、 slug は "abc" になる
+    return { slug }
+  }
+}
+```
+
+### クエリの変化のリスニング
+
+デフォルトでは、クエリストリングの変化で `asyncData` メソッドは**呼ばれません**。ページネーションコンポーネントのビルド時などにこの振る舞いを変更したい場合は、ページコンポーネントの `watchQuery` プロパティを見るパラメータを設定することができます。より詳しい情報は [API `watchQuery` プロパティ](/api/pages-watchquery) を参照してください。
+
 
 ## エラー処理
 
-Nuxt.jsは`error(params)`を`context`に追加し、それをエラーページを表示するために呼び出すことができます。`params.statusCode`はサーバー側から適切なステータスコードを表示するためにも使用されます。
+Nuxt.js は、 `context` に `error(params)` メソッドを追加し、エラーページを表示するためにそれを呼び出すことができます。 `params.statusCode` は、サーバーサイドから適切なステータスコードを表示するためにも使用されます。
 
 `Promise` による例:
 
@@ -85,28 +138,12 @@ Nuxt.jsは`error(params)`を`context`に追加し、それをエラーページ�
 export default {
   asyncData ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
-    .catch((e) => {
-      error({ statusCode: 404, message: 'ページが見つかりません' })
-    })
-  }
-}
-```
-
-`callback`引数を使用する場合、直接エラーによってそれを呼び出すことができ、そして Nuxt.js は `error` メソッドを呼び出すことができます:
-
-```js
-export default {
-  asyncData ({ params }, callback) {
-    axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
-    .catch((e) => {
-      callback({ statusCode: 404, message: 'ページが見つかりません' })
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
+      .catch((e) => {
+        error({ statusCode: 404, message: 'ページが見つかりません' })
+      })
   }
 }
 ```

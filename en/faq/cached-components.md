@@ -1,9 +1,7 @@
 ---
-title: Caching Components
-description: How to cache components?
+title: How to cache Vue components?
+description: How to cache Vue components in NuxtJS?
 ---
-
-# How to cache Vue components?
 
 > Although Vue's SSR is quite fast, it can't match the performance of pure string-based templating due to the cost of creating component instances and Virtual DOM nodes. In cases where SSR performance is critical, wisely leveraging caching strategies can greatly improve response time and reduce server load.
 
@@ -24,7 +22,7 @@ To avoid boilerplate, use [Component Cache module](https://github.com/nuxt-commu
     ['@nuxtjs/component-cache', {
       max: 10000,
       maxAge: 1000 * 60 * 60
-    }],
+    }]
   ]
 }
 ```
@@ -33,7 +31,7 @@ See [component-level caching](http://ssr.vuejs.org/en/caching.html#component-lev
 
 ## Don't forget, that
 
-- Cache-able component **must define a unique `name` option**.
-- You should ***NOT*** cache components, that
-  - has child components that may rely on global state.
-  - has child components that produces side effects on the render `context`.
+- Cache-able components **must define a unique `name` option**.
+- You should **_NOT_** cache components, that
+  - have child components that may rely on global state.
+  - have child components that produce side effects on the render `context`.

@@ -15,7 +15,11 @@ description: Get the window from a given url of a nuxt.js application.
 
 > Get the window from a given url of a nuxt.js application.
 
-<p class="Alert Alert--info">This method is made for [test purposes](guide/development-tools#end-to-end-testing).</p>
+<div class="Alert Alert--orange">
+
+This method is made for [test purposes](guide/development-tools#end-to-end-testing).
+
+</div>
 
 To use this function, you have to install `jsdom`:
 ```bash
@@ -28,8 +32,8 @@ const Nuxt = require('nuxt')
 const nuxt = new Nuxt()
 
 nuxt.renderAndGetWindow('http://localhost:3000')
-.then((window) => {
+  .then((window) => {
   // Display the head <title>
-  console.log(window.document.title)
-})
+    console.log(window.document.title)
+  })
 ```

@@ -79,6 +79,15 @@
         ]
       },
       {
+        "to": "/modules", "name": "模 块",
+        "contents": [
+          { "to": "#介绍", "name": "介绍" },
+          { "to": "#基本模块", "name": "基本模块" },
+          { "to": "#异步模块", "name": "异步模块" },
+          { "to": "#常见模块", "name": "常见模块" }
+        ]
+      },
+      {
         "to": "/vuex-store", "name": "Vuex 状态树",
         "contents": [
           { "to": "#使用状态树", "name": "使用状态树" },
@@ -89,7 +98,11 @@
         ]
       },
       {
-        "to": "/commands", "name": "命 令",
+        "to": "/typescript", "name": "支持 TypeScript",
+        "contents": []
+      },
+      {
+        "to": "/commands", "name": "命令和部署",
         "contents": [
           { "to": "#命令列表", "name": "命令列表" },
           { "to": "#开发模式", "name": "开发模式" },

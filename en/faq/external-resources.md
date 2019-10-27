@@ -1,22 +1,24 @@
 ---
-title: External resources
+title: How to use external resources?
 description: How to use external resources with Nuxt.js?
 ---
 
-# How to use external resources?
-
 ## Global Settings
 
-Include your resources in the `nuxt.config.js` file:
+You can include your external resources in the head object or function.
+As described in the [head API docs](https://nuxtjs.org/api/pages-head/), the following examples shows the use of `head` as an object and as a function. 
+If you want to use values from your Vue component like computed properties or data, you can use the `head()` function, returning the final head object.
+
+Include your resources in `nuxt.config.js` (here in the head object):
 
 ```js
-module.exports = {
+export default {
   head: {
     script: [
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
     ],
     link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap' }
     ]
   }
 }
@@ -24,7 +26,7 @@ module.exports = {
 
 ## Local Settings
 
-Include your resources in your `.vue` file inside the `pages/` directory:
+Include your resources in your `.vue` file inside the `pages/` directory (here in the head fuction):
 
 ```html
 <template>
@@ -33,13 +35,15 @@ Include your resources in your `.vue` file inside the `pages/` directory:
 
 <script>
 export default {
-  head: {
-    script: [
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
-    ],
-    link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
-    ]
+  head () {
+    return {
+      script: [
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
+      ],
+      link: [
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap' }
+      ]
+    }
   }
 }
 </script>
