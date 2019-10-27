@@ -718,9 +718,9 @@ export default {
 ```
 ## followSymlinks
 
-> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example. 
+> デフォルトでは、ビルドプロセスはシンボリックリンク内のファイルをスキャンしません。この boolean 値にはそれらが含まれているため、例えば「ページ」フォルダーなどのフォルダー内でシンボリックリンクを使うことができます。
 
-- Type: `Boolean`
+- 型: `Boolean`
 
 ```js
 export default {
