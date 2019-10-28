@@ -1,5 +1,5 @@
 ---
-title: Komponen Custom Loading
+title: Kustomisasi Komponen Loading
 description: Contoh Komponen Custom Loading pada Nuxt.js
 github: custom-loading
 livedemo: https://custom-loading.nuxtjs.org
