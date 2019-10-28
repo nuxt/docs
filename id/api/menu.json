@@ -1,12 +1,12 @@
 [
   {
-    "title": "Essential",
+    "title": "Intisari",
     "links": [
       { "name": "Context", "to": "/context" }
     ]
   },
   {
-    "title": "Pages",
+    "title": "Halaman",
     "links": [
       { "name": "asyncData", "to": "/" },
       { "name": "fetch", "to": "/pages-fetch" },
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "title": "Components",
+    "title": "Komponen",
     "links": [
       { "name": "nuxt", "to": "/components-nuxt" },
       { "name": "nuxt-child", "to": "/components-nuxt-child" },
@@ -35,7 +35,7 @@
     ]
   },
   {
-    "title": "Configuration",
+    "title": "Pengaturan",
     "links": [
       {
         "name": "build",
@@ -76,9 +76,9 @@
         "name": "loading",
         "to": "/configuration-loading",
         "contents": [
-          { "name": "Disable the Progress Bar", "to": "#disable-the-progress-bar" },
-          { "name": "Customize the Progress Bar", "to": "#customize-the-progress-bar" },
-          { "name": "Use a Custom Loading Component", "to": "#use-a-custom-loading-component" }
+          { "name": "Non-aktifkan Progress Bar", "to": "#disable-the-progress-bar" },
+          { "name": "Kustomisasi Progress Bar", "to": "#customize-the-progress-bar" },
+          { "name": "Menggunakan Penyesuaian Loading Component", "to": "#use-a-custom-loading-component" }
         ]
       },
       { "name": "loadingIndicator", "to": "/configuration-loading-indicator" },
@@ -128,14 +128,14 @@
   {
     "title": "Programmatically",
     "links": [
-      { "name": "Usage", "to": "/nuxt" },
+      { "name": "Cara Penggunaan", "to": "/nuxt" },
       { "name": "render", "to": "/nuxt-render" },
       { "name": "renderRoute", "to": "/nuxt-render-route" },
       { "name": "renderAndGetWindow", "to": "/nuxt-render-and-get-window" }
     ]
   },
   {
-    "title": "Internals",
+    "title": "Internal",
     "links": [
       { "name": "Intro", "to": "/internals" },
       { "name": "Nuxt", "to": "/internals-nuxt" },
