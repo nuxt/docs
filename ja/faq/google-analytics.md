@@ -48,7 +48,7 @@ export default ({ app }) => {
 ```js
 export default {
   plugins: [
-    { src: '~plugins/ga.js', ssr: false }
+    { src: '~plugins/ga.js', mode: 'client' }
   ]
 }
 ```
