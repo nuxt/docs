@@ -1,6 +1,6 @@
 ---
-title: Data async di dalam komponen
-description: Data async di dalam komponen?
+title: Async Data di dalam komponen
+description: Async Data di dalam komponen?
 ---
 
 # Data async di dalam komponen

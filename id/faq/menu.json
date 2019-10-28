@@ -1,36 +1,36 @@
 [
   {
-    "title": "Configuration",
+    "title": "Pengaturan",
     "links": [
-      { "name": "How to use external resources?", "to": "" },
-      { "name": "How to use pre-processors?", "to": "/pre-processors" },
-      { "name": "How to use JSX?", "to": "/jsx" },
-      { "name": "How to add PostCSS plugins?", "to": "/postcss-plugins" },
-      { "name": "How to extend webpack config?", "to": "/extend-webpack" },
-      { "name": "How to add webpack plugins?", "to": "/webpack-plugins" },
-      { "name": "How to edit HOST and PORT?", "to": "/host-port" },
-      { "name": "How to use cached components?", "to": "/cached-components" },
-      { "name": "How to use Google Analytics?", "to": "/google-analytics" }
+      { "name": "Bagaimana cara menggunakan eksternal resource?", "to": "" },
+      { "name": "Bagaimana cara menggunakan pre-processors?", "to": "/pre-processors" },
+      { "name": "Bagaimana cara menggunakan JSX?", "to": "/jsx" },
+      { "name": "Bagaimana cara menambahkan PostCSS plugins?", "to": "/postcss-plugins" },
+      { "name": "Bagaimana cara extend webpack config?", "to": "/extend-webpack" },
+      { "name": "Bagaimana cara menambahkan webpack plugins?", "to": "/webpack-plugins" },
+      { "name": "Bagaimana cara mengedit HOST and PORT?", "to": "/host-port" },
+      { "name": "Bagaimana cara men-cache komponen?", "to": "/cached-components" },
+      { "name": "Bagaimana cara menggunakan Google Analytics?", "to": "/google-analytics" }
     ]
   },
   {
-    "title": "Development",
+    "title": "Pengembangan",
     "links": [
-      { "name": "window/document undefined?", "to": "/window-document-undefined" },
-      { "name": "Why a CSS Flash appears?", "to": "/css-flash" },
-      { "name": "Async data in components?", "to": "/async-data-components" },
-      { "name": "Duplicated Meta Tags?", "to": "/duplicated-meta-tags" }
+      { "name": "window/document tidak terdefinisi?", "to": "/window-document-undefined" },
+      { "name": "Mengapa CSS Flash muncul?", "to": "/css-flash" },
+      { "name": "Async data didalam komponen?", "to": "/async-data-components" },
+      { "name": "Meta Tags terduplikasi?", "to": "/duplicated-meta-tags" }
     ]
   },
   {
     "title": "Deployment",
     "links": [
-      { "name": "How to deploy on Heroku?", "to": "/heroku-deployment" },
-      { "name": "How to deploy with Now?", "to": "/now-deployment" },
-      { "name": "How to deploy on Dokku?", "to": "/dokku-deployment" },
-      { "name": "How to deploy with Surge?", "to": "/surge-deployment" },
-      { "name": "How to deploy on GitHub?", "to": "/github-pages" },
-      { "name": "Using nginx as a proxy", "to": "/nginx-proxy" }
+      { "name": "Bagaimana cara deploy on Heroku?", "to": "/heroku-deployment" },
+      { "name": "Bagaimana cara deploy with Now?", "to": "/now-deployment" },
+      { "name": "Bagaimana cara deploy on Dokku?", "to": "/dokku-deployment" },
+      { "name": "Bagaimana cara deploy with Surge?", "to": "/surge-deployment" },
+      { "name": "Bagaimana cara deploy on GitHub?", "to": "/github-pages" },
+      { "name": "Menggunakan nginx sebagai proxy", "to": "/nginx-proxy" }
     ]
   }
 ]
