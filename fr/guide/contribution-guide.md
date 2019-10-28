@@ -32,7 +32,7 @@ ou un [Rapport de bogue](https://bug.nuxtjs.org/).
 
 ### Setup
 
-Avant même d'exécuter vos tests, pensez a installer toutes les dépendances.
+Avant même d'exécuter vos tests, pensez à installer toutes les dépendances.
 
  ```sh
 yarn
