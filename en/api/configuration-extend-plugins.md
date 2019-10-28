@@ -9,21 +9,22 @@ description: The extendPlugins property lets you customize Nuxt.js plugins.
 - Default: `undefined`
 
 You may want to extend plugins or change plugins order created by Nuxt.js.
-This function accepts array of [plugin](/api/configuration-plugins) objects and should return array of plugin objects.
+This function accepts an array of [plugin](/api/configuration-plugins) objects and should return array of plugin objects.
 
-Example of changing plugins order:
+Example of changing plugins order (`nuxt.config.js`):
 
-Example (`nuxt.config.js`):
 ```js
 export default {
-  extendPlugins: plugins => {
+  extendPlugins (plugins) {
     const pluginIndex = plugins.findIndex(
-        ({ src }) => src === '~/plugins/shouldBeFirst.js',
-    );
-    const shouldBeFirstPlugin = plugins[pluginIndex];
-    plugins.splice(pluginIndex, 1);
-    plugins.unshift(shouldBeFirstPlugin);
-    return plugins;
-  },
+      ({ src }) => src === '~/plugins/shouldBeFirst.js'
+    )
+    const shouldBeFirstPlugin = plugins[pluginIndex]
+
+    plugins.splice(pluginIndex, 1)
+    plugins.unshift(shouldBeFirstPlugin)
+
+    return plugins
+  }
 }
 ```
