@@ -102,7 +102,9 @@
       },
       { "name": "css", "to": "/configuration-css" },
       { "name": "dev", "to": "/configuration-dev" },
+      { "name": "dir", "to": "/configuration-dir" },
       { "name": "env", "to": "/configuration-env" },
+      { "name": "extendPlugins", "to": "/configuration-extend-plugins" },
       {
         "name": "generate",
         "to": "/configuration-generate",
@@ -118,6 +120,7 @@
           { "name": "subFolders", "to": "#subfolders" }
         ]
       },
+      { "name": "globalName", "to": "/configuration-global-name" },
       { "name": "head", "to": "/configuration-head" },
       { "name": "hooks", "to": "/configuration-hooks" },
       { "name": "ignore", "to": "/configuration-ignore" },
@@ -178,11 +181,9 @@
       { "name": "server", "to": "/configuration-server" },
       { "name": "serverMiddleware", "to": "/configuration-servermiddleware" },
       { "name": "srcDir", "to": "/configuration-srcdir" },
-      { "name": "dir", "to": "/configuration-dir" },
       { "name": "transition", "to": "/configuration-transition" },
       { "name": "vue.config", "to": "/configuration-vue-config" },
       { "name": "watch", "to": "/configuration-watch" },
-      { "name": "globalName", "to": "/configuration-global-name" },
       {
         "name": "watchers",
         "to": "/configuration-watchers",
