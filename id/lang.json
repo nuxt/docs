@@ -1,46 +1,46 @@
 {
-  "iso": "id",
-  "docVersion": "1.0.0-rc11",
+  "iso": "en",
+  "docVersion": "2.10.X",
   "links": {
     "download": "Unduh",
     "live_edit": "Sunting Langsung"
   },
   "text": {
-    "an_error_occurred": "An error occurred",
+    "an_error_occurred": "Terjadi kesalahan",
     "api_page_not_found": "Halaman API tidak ditemukan",
-    "please_define_title": "Please define a title in the front matter",
-    "please_define_description": "Please define a description in the front matter",
-    "search": "Cari",
+    "please_define_title": "Mohon beri judul pada front matter",
+    "please_define_description": "Mohon beri deskripsi pada front matter",
+    "search": "Cari (Tekan \"/\" untuk fokus)",
     "version": "Versi"
   },
   "homepage": {
     "meta": {
-      "title": "Nuxt.js - Aplikasi Vue.js Universal",
-      "description": "Nuxt.js adalah framework minimalis untuk membuat aplikasi Vue.js dengan server side rendering, hot-reloading, static generation, dan banyak lagi!"
+      "title": "Nuxt.js - Kerangka kerja Vue.js",
+      "description": "Nuxt.js menyediakan semua konfigurasi yang dibutuhkan untuk pengembangan aplikasi Vue.js yang menyenangkan. Nuxt.js dapat memproduksi Universal, Single Page dan Static Generated Applications."
     },
     "welcome": {
-      "get_started": "Memulai",
-      "github_stars": "22K+ github stars"
+      "get_started": "memulai",
+      "github_stars": "22K+ bintang github"
     },
     "why": {
-      "try_nuxtjs_online": "Coba NuxtJS Online"
+      "try_nuxtjs_online": "Coba NuxtJS secara Daring"
     },
     "sponsors": {
-      "become_a_sponsor": "Menjadi Sponsor"
+      "become_a_sponsor": "Jadi sponsor"
     },
     "newsletter_form": {
-      "email": "Email",
-      "subscribing": "Subscribing...",
-      "subscribe": "Subscribe",
+      "email": "Surel",
+      "subscribing": "Mendaftarkan langanan...",
+      "subscribe": "Berlangganan",
       "subscribed_messages": {
-        "pre": "An email to confirm your subscription has been sent to",
+        "pre": "Sebuah surel untuk mengonfirmasi langganan Anda telah dikirimkan",
         "post": "💚"
       }
     }
   },
   "guide": {
-    "release_notes": "Release Notes",
-    "contribute": "Jumpa kesalahan atau ingin berkontribusi pada dokumentasi ini?",
-    "edit_on_github": "Sunting halaman ini di GitHub!"
+    "release_notes": "Catatan Rilis",
+    "contribute": "Menemukan kesalahan atau ingin berkontribusi ke dokumentasi?",
+    "edit_on_github": "Sunting halaman ini di Github!"
   }
 }
