@@ -9,9 +9,9 @@ description: Untuk memulai dengan Nuxt.js itu sangat mudah. suatu projek yang se
   <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
     <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Nuxt Fundamentals by vueschool"/>
     <div class="Promote__Content">
-      <h4 class="Promote__Content__Title">Nuxt.js Fundamentals</h4>
-      <p class="Promote__Content__Description">Learn how to get started quickly with Nuxt.js in videos.</p>
-      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+      <h4 class="Promote__Content__Title">Fundamental Nuxt.js</h4>
+      <p class="Promote__Content__Description">Pelajari bagaimana untuk memulai Nuxt.js secara cepat melalui video-video.</p>
+      <p class="Promote__Content__Signature">Video kursus dibuat oleh VueSchool untuk mendukung pengembangan Nuxt.js.</p>
     </div>
   </a>
 </div>

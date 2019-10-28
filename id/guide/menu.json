@@ -1,116 +1,116 @@
 [
   {
-    "title": "Prologue",
+    "title": "Prolog",
     "links": [
       {
-        "to": "", "name": "Introduction",
+        "to": "", "name": "Pengenalan",
         "contents": [
-          { "to": "#what-is-nuxt-js-", "name": "What is Nuxt.js ?" },
-          { "to": "#how-it-works", "name": "How it Works" },
-          { "to": "#features", "name": "Features" },
-          { "to": "#schema", "name": "Schema" },
-          { "to": "#server-rendered-universal-ssr-", "name": "Server Rendered" },
-          { "to": "#single-page-applications-spa-", "name": "Single Page Application" },
-          { "to": "#static-generated-pre-rendering-", "name": "Static Generated" }
+          { "to": "#what-is-nuxt-js-", "name": "Apa itu Nuxt.js ?" },
+          { "to": "#how-it-works", "name": "Bagaimana Nuxt.js bekerja" },
+          { "to": "#features", "name": "Fitur-fitur" },
+          { "to": "#schema", "name": "Skema" },
+          { "to": "#server-rendered-universal-ssr-", "name": "Server Render" },
+          { "to": "#single-page-applications-spa-", "name": "Aplikasi Halaman Tunggal (SPA)" },
+          { "to": "#static-generated-pre-rendering-", "name": "Digenerate statis" }
         ]
       },
-      { "to": "/contribution-guide", "name": "Contribution Guide" },
-      { "to": "/release-notes", "name": "Release Notes" }
+      { "to": "/contribution-guide", "name": "Panduan Kontribusi" },
+      { "to": "/release-notes", "name": "Catatan Rilis" }
     ]
   },
   {
-    "title": "Getting Started",
+    "title": "Mulai",
     "links": [
       {
-        "to": "/installation", "name": "Installation",
+        "to": "/installation", "name": "Instalasi",
         "contents": [
-          { "to": "#using-nuxt-js-starter-template", "name": "Using Nuxt.js starter template" },
-          { "to": "#starting-from-scratch", "name": "Starting from scratch" }
+          { "to": "#using-nuxt-js-starter-template", "name": "Menggunakan template pemula Nuxt.js" },
+          { "to": "#starting-from-scratch", "name": "Memulai dari awal" }
         ]
       },
       {
-        "to": "/directory-structure", "name": "Directory Structure",
+        "to": "/directory-structure", "name": "Struktur Direktori",
         "contents": [
-          { "to": "#directories", "name": "Directories" },
-          { "to": "#aliases", "name": "Aliases" }
+          { "to": "#directories", "name": "Direktori" },
+          { "to": "#aliases", "name": "Alias" }
         ]
       },
-      { "to": "/configuration", "name": "Configuration" },
+      { "to": "/configuration", "name": "Pengaturan" },
       {
-        "to": "/routing", "name": "Routing",
+        "to": "/routing", "name": "Rute",
         "contents": [
-          { "to": "#basic-routes", "name": "Basic Routes" },
-          { "to": "#dynamic-routes", "name": "Dynamic Routes" },
-          { "to": "#nested-routes", "name": "Nested Routes" },
-          { "to": "#dynamic-nested-routes", "name": "Dynamic Nested Routes" },
-          { "to": "#transitions", "name": "Transitions" },
+          { "to": "#basic-routes", "name": "Rute Dasar" },
+          { "to": "#dynamic-routes", "name": "Rute Dinamis" },
+          { "to": "#nested-routes", "name": "Rute Bersarang" },
+          { "to": "#dynamic-nested-routes", "name": "Rute Dinamis Bersarang" },
+          { "to": "#transitions", "name": "Transisi" },
           { "to": "#middleware", "name": "Middleware" }
         ]
       },
       {
-        "to": "/views", "name": "Views",
+        "to": "/views", "name": "Tampilan",
         "contents": [
-          { "to": "#document", "name": "Document" },
-          { "to": "#layouts", "name": "Layouts" },
-          { "to": "#pages", "name": "Pages" },
+          { "to": "#document", "name": "Dokumen" },
+          { "to": "#layouts", "name": "Tata Letak" },
+          { "to": "#pages", "name": "Halaman-halaman" },
           { "to": "#html-head", "name": "HTML Head" }
         ]
       },
       {
         "to": "/async-data", "name": "Async Data",
         "contents": [
-          { "to": "#the-data-method", "name": "The asyncData Method" },
-          { "to": "#the-context", "name": "The Context" },
-          { "to": "#handling-errors", "name": "Handling Errors" }
+          { "to": "#the-data-method", "name": "Metode asyncData" },
+          { "to": "#the-context", "name": "Konteks" },
+          { "to": "#handling-errors", "name": "Menghandle Eror" }
         ]
       },
       {
         "to": "/assets", "name": "Assets",
         "contents": [
           { "to": "#webpacked", "name": "Webpacked" },
-          { "to": "#static", "name": "Static" }
+          { "to": "#static", "name": "Statis" }
         ]
       },
       {
-        "to": "/plugins", "name": "Plugins",
+        "to": "/plugins", "name": "Plugin",
         "contents": [
-          { "to": "#external-packages", "name": "External Packages" },
-          { "to": "#vue-plugins", "name": "Vue Plugins" },
-          { "to": "#inject-in-root-amp-context", "name": "Inject in $root & context" },
-          { "to": "#client-side-only", "name": "Client-side only" }
+          { "to": "#external-packages", "name": "Paket Eksternal" },
+          { "to": "#vue-plugins", "name": "Plugin Vue" },
+          { "to": "#inject-in-root-amp-context", "name": "Injeksi didalam $root & konteks" },
+          { "to": "#client-side-only", "name": "Hanya client-side" }
         ]
       },
       {
-        "to": "/modules", "name": "Modules",
+        "to": "/modules", "name": "Modul-modul",
         "contents": [
-          { "to": "#introduction", "name": "Introduction" },
-          { "to": "#write-a-basic-module", "name": "Write a basic Module" },
-          { "to": "#async-modules", "name": "Async Modules" },
-          { "to": "#common-snippets", "name": "Common Snippets" }
+          { "to": "#introduction", "name": "Pengenalan" },
+          { "to": "#write-a-basic-module", "name": "Penulisan modul dasar" },
+          { "to": "#async-modules", "name": "Modul-modul Async" },
+          { "to": "#common-snippets", "name": "Cuplikan Umum" }
         ]
       },
       {
         "to": "/vuex-store", "name": "Vuex Store",
         "contents": [
-          { "to": "#activate-the-store", "name": "Activate the Store" },
-          { "to": "#classic-mode", "name": "Classic mode" },
-          { "to": "#modules-mode", "name": "Modules mode" },
-          { "to": "#the-fetch-method", "name": "The fetch Method" },
-          { "to": "#the-nuxtserverinit-action", "name": "The nuxtServerInit Action" }
+          { "to": "#activate-the-store", "name": "Mengaktifkan Store" },
+          { "to": "#classic-mode", "name": "Mode klasik" },
+          { "to": "#modules-mode", "name": "Mode modul" },
+          { "to": "#the-fetch-method", "name": "Metode Fetch" },
+          { "to": "#the-nuxtserverinit-action", "name": "nuxtServerInit Action" }
         ]
       },
       {
-        "to": "/commands", "name": "Commands and Deployment",
+        "to": "/commands", "name": "Perintah-perintah dan Penyebaran",
         "contents": [
-          { "to": "#list-of-commands", "name": "List of Commands" },
-          { "to": "#development-environment", "name": "Development Enviroment" },
-          { "to": "#production-deployment", "name": "Production Deployment" }
+          { "to": "#list-of-commands", "name": "Daftar Perintah" },
+          { "to": "#development-environment", "name": "Lingkungan Pengembangan" },
+          { "to": "#production-deployment", "name": "Lingkungan Produksi" }
         ]
       },
       {
-        "to": "/development-tools", "name": "Development Tools",
+        "to": "/development-tools", "name": "Alat-alat Pengembangan",
         "contents": [
-          { "to": "#end-to-end-testing", "name": "End-to-End Testing" },
+          { "to": "#end-to-end-testing", "name": "Pengetesan End-to-End" },
           { "to": "#eslint", "name": "ESLint" }
         ]
       }
