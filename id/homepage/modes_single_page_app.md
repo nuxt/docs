@@ -1,9 +1,7 @@
 ---
-title: Single Page App
-content_title: Single Page Application (SPA)
+title: Aplikasi Satu Halaman
+content_title: Aplikasi Satu Halaman (SPA)
 ---
-Don't need SSR or Static Site Generation but still want to profit from the benefits that Nuxt provides?
-Are you slowly transitioning your app and want to start lightweight? Then the traditional SPA mode will
-likely be your choice.
-The outcome will be a typical Vue SPA as you know it but influenced by your Nuxt configuration and the
-framework itself.
+Tidak membutuhkan SSR atau Pembuatan Situs Statis (<em>Static Site Generation</em>) tetapi masih ingin mendapatkan keuntungan yang Nuxt berikan?
+Apakah Anda mengubah aplikasi Anda secara lambat dan ingin membuatnya lebih ringan? Maka model tradisional SPA kemungkinan menjadi pilihan Anda.
+Hasilnya adalah Vue SPA yang Anda tahu pada umumnya tetapi dipengaruhi oleh konfigurasi Nuxt dan kerangka kerjannya.

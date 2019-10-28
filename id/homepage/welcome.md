@@ -1,4 +1,4 @@
 ---
-title: The Progressive<br><span class="text-nuxt-lightgreen">Vue.js</span> Framework<br>
+title: Kerangka Kerja Progresif<br><span class="text-nuxt-lightgreen">Vue.js</span>
 ---
-Build your next Vue.js application with confidence using NuxtJS. An <span title="Under MIT license">open source</span> framework making web development simple and powerful.
+Bangun aplikasi Vue.js Anda selanjutnya dengan kepercayaan menggunakan NuxtJS. Sebuah kerangka kerja <span title="Under MIT license">sumber terbuka</spam> untuk membuat pengembangan web mudah dan canggih.
