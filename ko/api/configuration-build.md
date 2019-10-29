@@ -91,22 +91,26 @@ module.exports = {
 
 > 사용자가 정의한 번들 파일이름
 
-기본값:
-```js
-{
-  manifest: 'manifest.[hash].js',
-  vendor: 'vendor.bundle.[hash].js',
-  app: 'nuxt.bundle.[chunkhash].js'
-}
-```
+- 기본값:
+
+  ```js
+  {
+    app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    chunk: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
+    img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
+    font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]',
+    video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
+  }
+  ```
 
 예제 (`nuxt.config.js`):
+
 ```js
-module.exports = {
+export default {
   build: {
     filenames: {
-      vendor: 'vendor.[hash].js',
-      app: 'app.[chunkhash].js'
+      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[contenthash].js'
     }
   }
 }
