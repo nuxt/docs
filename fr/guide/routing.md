@@ -270,9 +270,9 @@ Chemin | Fichier
 
 __Note :__ traiter les pages 404 est maintenant inclu dans la logique de la page `_.vue`. [Vous trouverez ici plus d'information sur les redirections 404](/guide/async-data#handling-errors).
 
-### Named Views (EN)
+### Routes nommées
 
-To render named views you can use `<nuxt name="top"/>` or `<nuxt-child name="top"/>` components in your layout/page. To specify named view of page we need to extend router config in `nuxt.config.js` file:
+Pour afficher les routes nommées, vous pouvez utiliser les composants `<nuxt name="top"/>` ou `<nuxt-child name="top"/>` dans votre layout/page. Pour spécifier une route nommée dans une page vous devez d'abord étendre la config de votre routeur dans le fichier `nuxt.config.js`:
   
 ``` js
 export default {
@@ -293,9 +293,9 @@ export default {
   }
 }
 ```
-It require to extend interested route with 2 properties `components` and `chunkNames`. Named view in this config example has name `top`.
+Il est nécessaire d'étendre la route en question avec 2 propriétés, `components` and `chunkNames`. La vue nommée dans cet exemple a dans sa configuration une clef `name` avec comme valeur `top`.
 
-To see an example, take a look at the [named-views example](/examples/named-views).
+Pour voir un exemple, jetez un coup d'œil au [examples de vue nommées](/examples/named-views).
 
 ### Alternative pour application monopage
 

@@ -83,7 +83,7 @@ export default ({ app: { router }, store }) => {
 ```js
 module.exports = {
   plugins: [
-    { src: '~plugins/ga.js', ssr: false }
+    { src: '~plugins/ga.js', mode: 'client' }
   ]
 }
 ```
