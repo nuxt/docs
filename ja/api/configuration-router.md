@@ -207,7 +207,6 @@ export default {
 ```
 
 `middleware/user-agent.js`
-
 ```js
 export default function (context) {
   // userAgent プロパティを context 内に追加します（context は `data` メソッドや `fetch` メソッド内で利用できます）
@@ -268,10 +267,11 @@ export default {
 }
 ```
 
-特定のリンクで先読みを無効にしたい場合は、`no-prefetch` 属性を使用します:
+特定のリンクで先読みを無効にしたい場合は、`no-prefetch` プロパティを使用します。Nuxt.js v2.10.0 からは `prefetch` プロパティを `false` に設定することもできます。:
 
 ```html
-<nuxt-link to="/about" no-prefetch>About page not pre-fetched</nuxt-link>
+<nuxt-link to="/about" no-prefetch>先読みしないページについて</nuxt-link>
+<nuxt-link to="/about" :prefetch="false">先読みしないページについて</nuxt-link>
 ```
 
 全てのリンクで先読みを無効にしたい場合は、`prefetchLinks` を `false` に設定してください:
@@ -283,6 +283,12 @@ export default {
     prefetchLinks: false
   }
 }
+```
+
+Nuxt.js v2.10.0 からは prefetchLinks` を `false` に設定した上で特定のリンクを先読みしたい場合 `prefetch` プロパティを使うことができます。
+
+```html
+<nuxt-link to="/about" prefetch>先読みするページについて</nuxt-link>
 ```
 
 ## scrollBehavior
