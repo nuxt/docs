@@ -267,11 +267,11 @@ export default {
 }
 ```
 
-特定のリンクで先読みを無効にしたい場合は、`no-prefetch` 属性を使用します。Nuxt.js v2.10.0 からは `false` に設定された `prefetch` プロパティを使うこともできます。:
+特定のリンクで先読みを無効にしたい場合は、`no-prefetch` プロパティを使用します。Nuxt.js v2.10.0 からは `prefetch` プロパティを `false` に設定することもできます。:
 
 ```html
-<nuxt-link to="/about" no-prefetch>About page not pre-fetched</nuxt-link>
-<nuxt-link to="/about" :prefetch="false">About page not pre-fetched</nuxt-link>
+<nuxt-link to="/about" no-prefetch>先読みしないページについて</nuxt-link>
+<nuxt-link to="/about" :prefetch="false">先読みしないページについて</nuxt-link>
 ```
 
 全てのリンクで先読みを無効にしたい場合は、`prefetchLinks` を `false` に設定してください:
@@ -285,10 +285,10 @@ export default {
 }
 ```
 
-Nuxt.js v2.10.0 からは prefetchLinks` を `false` に設定した上で特定のリンクをプリフェッチしたい場合 `prefetch` プロパティを使うことができます。
+Nuxt.js v2.10.0 からは prefetchLinks` を `false` に設定した上で特定のリンクを先読みしたい場合 `prefetch` プロパティを使うことができます。
 
 ```html
-<nuxt-link to="/about" prefetch>About page pre-fetched</nuxt-link>
+<nuxt-link to="/about" prefetch>先読みするページについて</nuxt-link>
 ```
 
 ## scrollBehavior
