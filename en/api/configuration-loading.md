@@ -20,7 +20,7 @@ export default {
       setTimeout(() => this.$nuxt.$loading.finish(), 500)
     })
   }
- }
+}
 ```
 
 ## Disable the Progress Bar

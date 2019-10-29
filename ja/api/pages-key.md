@@ -13,7 +13,7 @@ description: 内部の `<router-view>` コンポーネントに `key` プロパ�
 
 ```js
 export default {
-  key(route) {
+  key (route) {
     return route.fullPath
   }
 }

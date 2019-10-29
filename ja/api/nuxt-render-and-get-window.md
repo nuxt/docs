@@ -36,8 +36,8 @@ config.dev = false
 const nuxt = new Nuxt(config)
 
 nuxt.renderAndGetWindow('http://localhost:3000')
-.then((window) => {
+  .then((window) => {
   // head 内の <title> の内容を表示
-  console.log(window.document.title)
-})
+    console.log(window.document.title)
+  })
 ```

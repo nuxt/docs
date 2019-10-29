@@ -25,12 +25,12 @@ module.exports = {
 
 在 `server.js` 中：
 ```js
-const {Nuxt, Builder} = require('nuxt')
+const { Nuxt, Builder } = require('nuxt')
 const app = require('express')()
 const port = process.env.PORT || 3000
 
 // 传入配置初始化 Nuxt.js 实例
-let config = require('./nuxt.config.js')
+const config = require('./nuxt.config.js')
 const nuxt = new Nuxt(config)
 app.use(nuxt.render)
 

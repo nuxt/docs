@@ -34,8 +34,8 @@ export default {
 ```js
 export default {
   validate ({ params, store }) {
-    // `params.id` 항목이 존재한다면 검사합니다.
-    return store.state.categories.some((category) => category.id === params.id)
+    // `params.id` 항목이 존재한다면 검사합니다.
+    return store.state.categories.some(category => category.id === params.id)
   }
 }
 ```

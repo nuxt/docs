@@ -15,7 +15,7 @@ description: 내부의 `<router-view>` 컴포넌트의 `key` 프로퍼티를 설
 
 ```js
 export default {
-  keys(route) {
+  keys (route) {
     return route.fullPath
   }
 }

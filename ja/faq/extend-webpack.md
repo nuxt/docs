@@ -15,11 +15,11 @@ export default {
       config.module.rules.push(
         {
           test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-          loader: 'file-loader',
+          loader: 'file-loader'
         }
       )
       // isDev が true の場合、webpack を開発モードに設定します
-      if (isDev) config.mode = 'development'
+      if (isDev) { config.mode = 'development' }
     }
   }
 }

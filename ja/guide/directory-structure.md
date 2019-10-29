@@ -15,8 +15,6 @@ description: デフォルトの Nuxt.js アプリケーションの構造は、�
 
 ## ディレクトリ
 
-<br />
-
 ### assets ディレクトリ
 
 `assets` ディレクトリには Stylus や SASS、 Image、 Font のようなコンパイルされていないファイルを入れます。

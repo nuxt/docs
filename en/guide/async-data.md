@@ -45,15 +45,15 @@ We are using [axios](https://github.com/mzabriskie/axios) to make isomorphic HTT
 If you are using `axios` directly from `node_modules` and used the `axios.interceptors` add interceptors to transform the data, make sure create an instance before add interceptors. If not, when you refresh the serverRender page,  the interceptors will be added multiple, that will cause data error.
 
 ```js
-import axios from 'axios';
+import axios from 'axios'
 const myaxios = axios.create({
   // ...
-});
+})
 myaxios.interceptors.response.use(function (response) {
   return response.data
 }, function (error) {
-  //...
-});
+  // ...
+})
 ```
 
 ### Returning a Promise
@@ -62,9 +62,9 @@ myaxios.interceptors.response.use(function (response) {
 export default {
   asyncData ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
   }
 }
 ```
@@ -74,7 +74,7 @@ export default {
 ```js
 export default {
   async asyncData ({ params }) {
-    let { data } = await axios.get(`https://my-api/posts/${params.id}`)
+    const { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
 }
@@ -106,7 +106,7 @@ export default {
     // Please check if you are on the server side before
     // using req and res
     if (process.server) {
-     return { host: req.headers.host }
+      return { host: req.headers.host }
     }
 
     return {}
@@ -147,12 +147,12 @@ Example with a `Promise`:
 export default {
   asyncData ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
-    .catch((e) => {
-      error({ statusCode: 404, message: 'Post not found' })
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
+      .catch((e) => {
+        error({ statusCode: 404, message: 'Post not found' })
+      })
   }
 }
 ```

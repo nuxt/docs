@@ -277,8 +277,8 @@ __Note:__ 处理404页面，现在符合`_.vue`页面的逻辑。 [有关404重�
 ``` js
 export default {
   router: {
-    extendRoutes(routes, resolve) {
-      let index = routes.findIndex(route => route.name === 'main')
+    extendRoutes (routes, resolve) {
+      const index = routes.findIndex(route => route.name === 'main')
       routes[index] = {
         ...routes[index],
         components: {

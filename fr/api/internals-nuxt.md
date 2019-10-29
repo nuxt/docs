@@ -12,8 +12,8 @@ C'est le conteneur cœur qui permet à tous les modules et classes de communique
 Nous pouvons enregistrer des points d'ancrage sur certains évènements du cycle de vie.
 
 ```js
-nuxt.hook('ready', async nuxt => {
-    // Votre code personnalisé ici
+nuxt.hook('ready', async (nuxt) => {
+  // Votre code personnalisé ici
 })
 ```
 

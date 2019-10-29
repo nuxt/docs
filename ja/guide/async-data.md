@@ -42,15 +42,15 @@ Nuxt.js では `asyncData` メソッドを使うために、いくつかの異�
 `node_modules` 内の `axios` を直接使用しており、`axios.interceptors` を使用してデータを処理する場合、interceptors を追加する前にインスタンスを作成してください。そうしなければ、サーバレンダリングされたページをリフレッシュする際に、interceptor が複数追加され、データエラーが発生します。
 
 ```js
-import axios from 'axios';
+import axios from 'axios'
 const myaxios = axios.create({
   // ...
-});
+})
 myaxios.interceptors.response.use(function (response) {
   return response.data
 }, function (error) {
-  //...
-});
+  // ...
+})
 ```
 
 ### Promise を返す
@@ -59,9 +59,9 @@ myaxios.interceptors.response.use(function (response) {
 export default {
   asyncData ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
   }
 }
 ```
@@ -71,7 +71,7 @@ export default {
 ```js
 export default {
   async asyncData ({ params }) {
-    let { data } = await axios.get(`https://my-api/posts/${params.id}`)
+    const { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
 }
@@ -101,7 +101,7 @@ export default {
     // req と res を使う前にサーバーサイドか
     // どうかチェックしてください
     if (process.server) {
-     return { host: req.headers.host }
+      return { host: req.headers.host }
     }
 
     return {}
@@ -138,12 +138,12 @@ Nuxt.js は、 `context` に `error(params)` メソッドを追加し、エラ�
 export default {
   asyncData ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
-    .catch((e) => {
-      error({ statusCode: 404, message: 'ページが見つかりません' })
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
+      .catch((e) => {
+        error({ statusCode: 404, message: 'ページが見つかりません' })
+      })
   }
 }
 ```

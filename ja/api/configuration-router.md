@@ -75,6 +75,23 @@ export default {
 }
 ```
 
+ルートをソートしたい場合、`@nuxt/utils` の `sortRoutes(routes)` 関数を使用できます。
+
+`nuxt.config.js`
+```js
+import { sortRoutes } from '@nuxt/utils'
+export default {
+  router: {
+    extendRoutes (routes, resolve) {
+      // ルートをここに追加する
+
+      // ソートをする
+      sortRoutes(routes)
+    }
+  }
+}
+```
+
 ルートのスキーマは [vue-router](https://router.vuejs.org/ja/) のスキーマを尊重すべきです。
 
 <div class="Alert Alert--orange">

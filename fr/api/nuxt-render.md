@@ -31,13 +31,12 @@ app.use(nuxt.render)
 // Faire le build seulement en mode de développement avec du rechargement à chaud
 if (config.dev) {
   new Builder(nuxt).build()
-  .then(listen)
-}
-else {
+    .then(listen)
+} else {
   listen()
 }
 
-function listen() {
+function listen () {
   // Écouter le serveur
   app.listen(port, '0.0.0.0')
   console.log('Le serveur écoute sur `localhost:' + port + '`.')

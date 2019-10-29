@@ -32,14 +32,14 @@ const serveStatic = require('serve-static')
 
 module.exports = {
   serverMiddleware: [
-      // Akan mendaftarkan paket npm redirect-ssl
-      'redirect-ssl',
+    // Akan mendaftarkan paket npm redirect-ssl
+    'redirect-ssl',
 
-      // Akan mendaftarkan berkas dari direktori api proyek untuk menangani /api/*
-      { path: '/api', handler: '~/api/index.js' },
+    // Akan mendaftarkan berkas dari direktori api proyek untuk menangani /api/*
+    { path: '/api', handler: '~/api/index.js' },
 
-      // Kita juga dapat membuat instansi sendiri (custom)
-      { path: '/static2', handler: serveStatic(__dirname + '/static2') }
+    // Kita juga dapat membuat instansi sendiri (custom)
+    { path: '/static2', handler: serveStatic(__dirname + '/static2') }
   ]
 }
 ```
@@ -58,14 +58,14 @@ Middleware (`api/logger.js`):
 
 ```js
 module.exports = function (req, res, next) {
-    // req adalah obyek permintaan (request) http Node.js
-    console.log(req.path)
+  // req adalah obyek permintaan (request) http Node.js
+  console.log(req.path)
 
-    // res adalah obyek respon (response) http Node.js
+  // res adalah obyek respon (response) http Node.js
 
-    // next adalah sebuah function untuk memanggil middleware selanjutnya
-    // Jangan lupa untuk memanggil next pada akhir middleware ketika middleware anda bukan sebuah titik pemberhentian (endpoint)!
-    next()
+  // next adalah sebuah function untuk memanggil middleware selanjutnya
+  // Jangan lupa untuk memanggil next pada akhir middleware ketika middleware anda bukan sebuah titik pemberhentian (endpoint)!
+  next()
 }
 ```
 
@@ -73,6 +73,6 @@ Konfigurasi Nuxt (`nuxt.config.js`):
 
 ```js
 serverMiddleware: [
-    '~/api/logger'
+  '~/api/logger'
 ]
 ```

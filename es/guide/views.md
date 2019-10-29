@@ -89,7 +89,7 @@ Example of configuring a custom error page in `nuxt.config.js`:
 
 ```js
 module.exports = {
-  ErrorPage: '~/components/custom-error.vue',
+  ErrorPage: '~/components/custom-error.vue'
 }
 ```
 

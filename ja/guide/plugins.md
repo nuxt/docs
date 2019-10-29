@@ -94,7 +94,7 @@ Vue インスタンスへのコンテキストの注入は、通常の Vue ア�
 ```js
 import Vue from 'vue'
 
-Vue.prototype.$myInjectedFunction = (string) => console.log("This is an example", string)
+Vue.prototype.$myInjectedFunction = string => console.log('This is an example', string)
 ```
 
 `nuxt.config.js`:
@@ -111,7 +111,7 @@ export default {
 
 ```js
 export default {
-  mounted(){
+  mounted () {
     this.$myInjectedFunction('test')
   }
 }
@@ -126,7 +126,7 @@ Vue インスタンスへのコンテキストの注入は、通常の Vue ア�
 ```js
 export default ({ app }, inject) => {
   // context.app オブジェクトへ関数を直接セットします
-  app.myInjectedFunction = (string) => console.log('Okay, another function', string)
+  app.myInjectedFunction = string => console.log('Okay, another function', string)
 }
 ```
 
@@ -144,7 +144,7 @@ export default {
 
 ```js
 export default {
-  asyncData(context){
+  asyncData (context) {
     context.app.myInjectedFunction('ctx!')
   }
 }
@@ -160,7 +160,7 @@ Vue インスタンスへのコンテンツの注入は、通常の Vue アプ�
 
 ```js
 export default ({ app }, inject) => {
-  inject('myInjectedFunction', (string) => console.log('That was easy!', string))
+  inject('myInjectedFunction', string => console.log('That was easy!', string))
 }
 ```
 
@@ -178,10 +178,10 @@ export default {
 
 ```js
 export default {
-  mounted(){
+  mounted () {
     this.$myInjectedFunction('works in mounted')
   },
-  asyncData(context){
+  asyncData (context) {
     context.app.$myInjectedFunction('works with context')
   }
 }
@@ -195,7 +195,7 @@ export const state = () => ({
 })
 
 export const mutations = {
-  changeSomeValue(state, newValue) {
+  changeSomeValue (state, newValue) {
     this.$myInjectedFunction('accessible in mutations')
     state.someValue = newValue
   }
@@ -204,7 +204,7 @@ export const mutations = {
 export const actions = {
   setSomeValueToWhatever ({ commit }) {
     this.$myInjectedFunction('accessible in actions')
-    const newValue = "whatever"
+    const newValue = 'whatever'
     commit('changeSomeValue', newValue)
   }
 }

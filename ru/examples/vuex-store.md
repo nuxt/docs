@@ -62,9 +62,9 @@ For example:
 export default {
   fetch ({ store, params }) {
     return axios.get('http://my-url')
-    .then((res) => {
-      store.commit('setUser', res.data)
-    })
+      .then((res) => {
+        store.commit('setUser', res.data)
+      })
   }
 }
 ```

@@ -85,13 +85,13 @@ export default {
 export default {
   build: {
     babel: {
-      presets({ isServer }, [ preset, options ]) {
+      presets ({ isServer }, [ preset, options ]) {
         return [
           [
             preset, {
               buildTarget: isServer ? 'server' : 'client',
               ...options
-          }],
+            }],
           [
             // 他のプリセット
           ]
@@ -170,7 +170,7 @@ export default {
     extend (config, { isClient }) {
       // クライアントのバンドルの Webpack 設定のみを拡張する
       if (isClient) {
-        config.devtool = '#source-map'
+        config.devtool = 'source-map'
       }
     }
   }

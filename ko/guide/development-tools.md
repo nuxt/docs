@@ -66,16 +66,16 @@ export default {
 `test/index.test.js` 테스트 파일을 추가합니다:
 
 ```js
+import { resolve } from 'path'
 import test from 'ava'
 import { Nuxt, Builder } from 'nuxt'
-import { resolve } from 'path'
 
 // nuxt 와 server 인스턴스를 여기에 확보해둡니다.
 // 그러면 테스트가 종료되었을 때 이것들을 close할 수 있습니다.
 let nuxt = null
 
 // Nuxt.js 를 초기화하고 localhost:4000 에서 리스닝하는 서버를 작성합니다.
-test.before('Init Nuxt.js', async t => {
+test.before('Init Nuxt.js', async (t) => {
   const rootDir = resolve(__dirname, '..')
   let config = {}
   try { config = require(resolve(rootDir, 'nuxt.config.js')) } catch (e) {}
@@ -87,14 +87,14 @@ test.before('Init Nuxt.js', async t => {
 })
 
 // 생성된 HTML 만을 테스트하는 예제
-test('Route / exits and render HTML', async t => {
-  let context = {}
+test('Route / exits and render HTML', async (t) => {
+  const context = {}
   const { html } = await nuxt.renderRoute('/', context)
   t.true(html.includes('<h1 class="red">Hello world!</h1>'))
 })
 
 // DOM 을 경유하여 체크하는 테스트 예제
-test('Route / exits and render HTML with CSS applied', async t => {
+test('Route / exits and render HTML with CSS applied', async (t) => {
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
   t.not(element, null)
@@ -104,7 +104,7 @@ test('Route / exits and render HTML with CSS applied', async t => {
 })
 
 // 서버를 닫고 nuxt 에 파일갱신 리스닝을 중지시킨다
-test.after('Closing server and nuxt.js', t => {
+test.after('Closing server and nuxt.js', (t) => {
   nuxt.close()
 })
 ```
@@ -142,11 +142,11 @@ module.exports = {
     parser: 'babel-eslint'
   },
   extends: [
-    "eslint:recommended",
+    'eslint:recommended',
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    "plugin:vue/recommended",
-    "plugin:prettier/recommended"
+    'plugin:vue/recommended',
+    'plugin:prettier/recommended'
   ],
   // required to lint *.vue files
   plugins: [
@@ -154,10 +154,10 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    "semi": [2, "never"],
-    "no-console": "off",
-    "vue/max-attributes-per-line": "off",
-    "prettier/prettier": ["error", { "semi": false }]
+    'semi': [2, 'never'],
+    'no-console': 'off',
+    'vue/max-attributes-per-line': 'off',
+    'prettier/prettier': ['error', { 'semi': false }]
   }
 }
 ```

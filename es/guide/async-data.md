@@ -41,9 +41,9 @@ Nuxt.js offers you different ways to use `asyncData`. Choose the one you're the 
 export default {
   asyncData ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
   }
 }
 ```
@@ -52,7 +52,7 @@ export default {
 ```js
 export default {
   async asyncData ({ params }) {
-    let { data } = await axios.get(`https://my-api/posts/${params.id}`)
+    const { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
 }
@@ -63,9 +63,9 @@ export default {
 export default {
   asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
+      .then((res) => {
+        callback(null, { title: res.data.title })
+      })
   }
 }
 ```
@@ -98,12 +98,12 @@ Example with a `Promise`:
 export default {
   asyncData ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
-    .catch((e) => {
-      error({ statusCode: 404, message: 'Post not found' })
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
+      .catch((e) => {
+        error({ statusCode: 404, message: 'Post not found' })
+      })
   }
 }
 ```
@@ -113,12 +113,12 @@ If you're using the `callback` argument, you can call it directly with the error
 export default {
   asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
-    .catch((e) => {
-      callback({ statusCode: 404, message: 'Post not found' })
-    })
+      .then((res) => {
+        callback(null, { title: res.data.title })
+      })
+      .catch((e) => {
+        callback({ statusCode: 404, message: 'Post not found' })
+      })
   }
 }
 ```
