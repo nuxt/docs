@@ -101,3 +101,22 @@ This option lets you define the custom directories of your Nuxt.js application.
 This option lets you define the default properties of the page transitions.
 
 [Documentation about `transition` integration](/api/configuration-transition)
+
+
+## Asynchronous Configuration
+
+If you need to populate some options (e.g.&nbsp;the head) with asynchronous data (e.g.&nbsp;coming from an API), you have the possibility to return a promise. Here is an example:
+
+```js
+import axios from 'axios'
+
+export default async () => {
+  const data = await axios.get('endpoint')
+  return {
+    head: {
+      title: data.head.title,
+      //... rest of config
+    }
+  }
+}
+```
