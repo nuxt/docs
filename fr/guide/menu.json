@@ -77,7 +77,7 @@
         "contents": [
           { "to": "#modules-externes", "name": "Modules externes" },
           { "to": "#plugins-vue", "name": "Plugins Vue" },
-          { "to": "#injection-dans-root-et-context", "name": "Injection dans $root et context" },
+          { "to": "#injection-dans-root-et-le-contexte", "name": "Injection dans $root et context" },
           { "to": "#c-t-client-uniquement", "name": "Côté client uniquement" }
         ]
       },
