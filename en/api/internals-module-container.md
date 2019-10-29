@@ -69,6 +69,10 @@ Allows easily extending webpack build config by chaining [options.build.extend](
 
 Allows easily extending routes by chaining [options.build.extendRoutes](/api/configuration-router#extendroutes) function.
 
+### extendPlugins (fn)
+
+Allows easily extending plugins by chaining [options.extendPlugins](/api/configuration-extend-plugins) function.
+
 ### addModule (moduleOpts, requireOnce)
 
 *Async function*

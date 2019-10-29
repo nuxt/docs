@@ -7,7 +7,7 @@ description: La section des vues décrit tout ce dont vous avez besoin pour conf
 
 ![nuxt-views-schema](/nuxt-views-schema.svg)
 
-## modèle de l'application
+## Document
 
 > Vous pouvez personnaliser le modèle HTML de l'application utilisée par Nuxt.js pour inclure des scripts ou du CSS conditionnel.
 
