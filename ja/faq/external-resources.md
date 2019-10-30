@@ -9,7 +9,7 @@ head オブジェクトもしくは関数の中に、外部のリソースを含
 [head API docs](https://ja.nuxtjs.org/api/pages-head/) で説明されているように、次の例では `head` をオブジェクトと関数として使用します。
 computed プロパティもしくは data プロパティのような Vue コンポーネントから値を使用したい場合、`head()` メソッドを使用して、最終的な head オブジェクトを返すこともできます。
 
-`nuxt.config.js` 内でリソースをインクルードします（head オブジェクトの中）:
+`nuxt.config.js` 内でリソースをインクルードします（この例では head オブジェクト）:
 
 ```js
 export default {
