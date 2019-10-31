@@ -17,12 +17,12 @@ validate({ params, query, store }) {
 ```js
 async validate({ params, query, store }) {
   // await operations (EN)
-  return true // if the params are valid
-  return false // will stop Nuxt.js to render the route and display the error page
+  return true // si le paramètre est valide
+  return false // va stopper le process de rendering de Nuxt.js et afficher la page d'erreur
 }
 ```
 
-You can also return promises (EN):
+Vous pouvez aussi retourner une promesse:
 
 ```js
 validate({ params, query, store }) {

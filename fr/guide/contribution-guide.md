@@ -31,7 +31,9 @@ ou un [Rapport de bogue](https://bug.nuxtjs.org/).
 > Si vous ajoutez une dépendance, merci d'utiliser `yarn add`. Le fichier `yarn.lock` est le point de départ de toutes les dépendances de Nuxt.
 
 ### Setup
- Before running any tests, make sure all dependencies are met and build all packages:
+
+Avant même d'exécuter vos tests, pensez à installer toutes les dépendances.
+
  ```sh
 yarn
 yarn build
