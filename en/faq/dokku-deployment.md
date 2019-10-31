@@ -11,7 +11,7 @@ We need to tell Dokku to install the `devDependencies` of the project (to be abl
 
 ```bash
 // on Dokku Server
-dokku config:set my-nuxt-app NPM_CONFIG_PRODUCTION=false
+dokku config:set my-nuxt-app NPM_CONFIG_PRODUCTION=false YARN_PRODUCTION=false
 ```
 
 Also, we want our application to listen on the host `0.0.0.0` and run in production mode:
