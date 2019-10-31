@@ -25,12 +25,19 @@ description: ページ間を nuxt-link を使ってリンクさせます。
 
 Nuxt.js アプリケーションの応答性を高めるため、viewport（ブラウザの表示領域）内にリンクが表示されたとき、Nuxt.js は*コード分割された*ページを自動的に先読みします。この機能は Google Chrome Labs の [quicklink.js](https://github.com/GoogleChromeLabs/quicklink) にインスパイアされています。
 
-リンク先ページの先読みを無効化するために、`no-prefetch` プロパティを使うことができます:
+リンク先ページの先読みを無効化するために、`no-prefetch` プロパティを使うことができます。Nuxt.js v2.10.0 からは `prefetch` プロパティを `false` に設定することもできます。:
 
 ```html
-<n-link to="/about" no-prefetch>（先読みしない）このサイトについて</n-link>
+<n-link to="/about" no-prefetch>先読みしないページについて</n-link>
+<n-link to="/about" :prefetch="false">先読みしないページについて</n-link>
 ```
 
 [router.prefetchLinks](/api/configuration-router#prefetchlinks) を使って、この挙動をグローバルに設定することができます。
+
+Nuxt.js v2.10.0 からは、[router.prefetchLinks](/api/configuration-router#prefetchlinks) をグローバルに `false` に設定した上で特定のリンクを先読みしたい場合 `prefetch` プロパティを使うことができます。
+
+```html
+<n-link to="/about" prefetch>先読みするページについて</n-link>
+```
 
 また、コード分割されたページの先読みが完了したとき付与される class をカスタマイズするため、 `prefetched-class` プロパティを使用することもできます。この機能は [router.linkPrefetchedClass](/api/configuration-router#linkprefetchedclass) でグローバルに設定できることを必ず確認してください。

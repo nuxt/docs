@@ -102,7 +102,9 @@
       },
       { "name": "css", "to": "/configuration-css" },
       { "name": "dev", "to": "/configuration-dev" },
+      { "name": "dir", "to": "/configuration-dir" },
       { "name": "env", "to": "/configuration-env" },
+      { "name": "extendPlugins", "to": "/configuration-extend-plugins" },
       {
         "name": "generate",
         "to": "/configuration-generate",
@@ -118,6 +120,7 @@
           { "name": "subFolders", "to": "#subfolders" }
         ]
       },
+      { "name": "globalName", "to": "/configuration-global-name" },
       { "name": "head", "to": "/configuration-head" },
       { "name": "hooks", "to": "/configuration-hooks" },
       { "name": "ignore", "to": "/configuration-ignore" },
@@ -126,12 +129,20 @@
         "to": "/configuration-loading",
         "contents": [
           { "name": "Disable the Progress Bar", "to": "#disable-the-progress-bar" },
-          { "name": "Customize the Progress Bar", "to": "#customize-the-progress-bar" },
-          { "name": "Use a Custom Loading Component", "to": "#use-a-custom-loading-component" },
-          { "name": "Internals of the Progress Bar", "to": "#internals-of-the-progress-bar" }
+          { "name": "Customizing the Progress Bar", "to": "#customizing-the-progress-bar" },
+          { "name": "Internals of the Progress Bar", "to": "#internals-of-the-progress-bar" },
+          { "name": "Using a Custom Loading Component", "to": "#using-a-custom-loading-component" }
         ]
       },
-      { "name": "loadingIndicator", "to": "/configuration-loading-indicator" },
+      { 
+        "name": "loadingIndicator", 
+        "to": "/configuration-loading-indicator",
+        "contents": [
+          { "name": "Built-in indicators", "to": "#built-in-indicators" },
+          { "name": "Custom indicators", "to": "#custom-indicators" },
+          { "name": "Disable the Progress Bar", "to": "#disable-the-progress-bar" }
+        ]
+      },
       { "name": "mode", "to": "/configuration-mode" },
       { "name": "modern", "to": "/configuration-modern" },
       { "name": "modules", "to": "/configuration-modules" },
@@ -178,11 +189,9 @@
       { "name": "server", "to": "/configuration-server" },
       { "name": "serverMiddleware", "to": "/configuration-servermiddleware" },
       { "name": "srcDir", "to": "/configuration-srcdir" },
-      { "name": "dir", "to": "/configuration-dir" },
       { "name": "transition", "to": "/configuration-transition" },
       { "name": "vue.config", "to": "/configuration-vue-config" },
       { "name": "watch", "to": "/configuration-watch" },
-      { "name": "globalName", "to": "/configuration-global-name" },
       {
         "name": "watchers",
         "to": "/configuration-watchers",

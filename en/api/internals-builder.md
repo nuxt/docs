@@ -19,7 +19,8 @@ this.nuxt.hook('build:done', (builder) => {
 Hook                 | Arguments                                  | When
 ---------------------|--------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------
 `build:before`       | (nuxt, buildOptions)                       | Before Nuxt build started
-`build:prepared`     | (nuxt, buildOptions)                       | The build directories have been created
+`builder:prepared`     | (nuxt, buildOptions)                       | The build directories have been created
+`builder:extendPlugins`| (plugins)                                  | Generating plugins
 `build:templates`    | ({ templatesFiles, templateVars, resolve }) | Generating `.nuxt` template files
 `build:extendRoutes` | (routes, resolve)                          | Generating routes
 `build:config`       | (webpackConfigs)                           | Before configuration of compilers
