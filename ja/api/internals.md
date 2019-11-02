@@ -3,8 +3,6 @@ title: 'API: Nuxt のモジュールの紹介'
 description: Nuxt の内部をより深く理解する
 ---
 
-# Nuxt Internals
-
 Nuxt.js には開発者が Nuxt Core の好きな部分を柔軟な API を使って拡張するための十分にモジュール化された仕組みがあります。
 
 自分でモジュールを作ってみたいのなら、詳しくは [モジュールガイド](/guide/modules) をご覧ください。
@@ -75,7 +73,7 @@ class SomeClass {
     this.options = nuxt.options
   }
 
-  someFunction() {
+  someFunction () {
     // We have access to `this.nuxt` and `this.options`
   }
 }
@@ -98,7 +96,7 @@ class FooClass {
 `foo` モジュールにフックするにはこうします:
 
 ```js
-nuxt.hook('foo', foo => {
-    // ...
+nuxt.hook('foo', (foo) => {
+  // ...
 })
 ```

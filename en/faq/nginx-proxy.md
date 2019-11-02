@@ -28,7 +28,7 @@ server {
         proxy_set_header X-Forwarded-Proto  $scheme;
         proxy_read_timeout          1m;
         proxy_connect_timeout       1m;
-        proxy_pass                          http://127.0.0.1:3000; # set the adress of the Node.js instance here
+        proxy_pass                          http://127.0.0.1:3000; # set the address of the Node.js instance here
     }
 }
 ```
@@ -68,7 +68,7 @@ server {
 
     charset utf-8;
 
-    root /var/www/NUXT_PROJECT_PATH/dist
+    root /var/www/NUXT_PROJECT_PATH/dist;
 
     location ~* \.(?:ico|gif|jpe?g|png|woff2?|eot|otf|ttf|svg|js|css)$ {
         expires $expires;
@@ -104,7 +104,7 @@ server {
         proxy_http_version          1.1;
         proxy_read_timeout          1m;
         proxy_connect_timeout       1m;
-        proxy_pass                  http://127.0.0.1:3000; # set the adress of the Node.js instance here
+        proxy_pass                  http://127.0.0.1:3000; # set the address of the Node.js instance here
         proxy_cache                 nuxt-cache;
         proxy_cache_bypass          $arg_nocache; # probably better to change this
         proxy_cache_valid           200 302  60m; # set this to your needs
@@ -159,7 +159,7 @@ server {
         proxy_set_header X-Forwarded-Proto  $scheme;
         proxy_read_timeout          1m;
         proxy_connect_timeout       1m;
-        proxy_pass                          http://127.0.0.1:3000; # set the adress of the Node.js
+        proxy_pass                          http://127.0.0.1:3000; # set the address of the Node.js
     }
 
     access_log off;
@@ -225,7 +225,7 @@ server {
         proxy_redirect              off;
         proxy_read_timeout          1m;
         proxy_connect_timeout       1m;
-        proxy_pass                          http://127.0.0.1:3000; # set the adress of the Node.js
+        proxy_pass                          http://127.0.0.1:3000; # set the address of the Node.js
     }
 
     access_log off;

@@ -1,9 +1,7 @@
 ---
-title: ホストとポート番号
+title: ホストとポート番号を変更するには？
 description: ホストとポート番号を変更するには？
 ---
-
-# ホストとポート番号を変更するには？
 
 デフォルトでは、Nuxt の開発サーバーのホストは `localhost`（ホストマシン内からのみアクセスが可能）です。
 
@@ -33,8 +31,8 @@ nuxt --hostname myhost --port 3333
 export default {
   server: {
     port: 8000, // デフォルト: 3000
-    host: '0.0.0.0', // デフォルト: localhost
-  },
+    host: '0.0.0.0' // デフォルト: localhost
+  }
   // その他の設定
 }
 ```

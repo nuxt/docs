@@ -3,8 +3,6 @@ title: 'API: nuxt.render(req, res)'
 description: Node.js サーバーのミドルウェアとして Nuxt.js を使うことができます。
 ---
 
-# nuxt.render(req, res)
-
 - 型: `Function`
 - 引数:
     1. [リクエスト](https://nodejs.org/api/http.html#http_class_http_incomingmessage)
@@ -33,13 +31,12 @@ app.use(nuxt.render)
 // ホットリローディングする開発モードのときのみビルドする
 if (config.dev) {
   new Builder(nuxt).build()
-  .then(listen)
-}
-else {
+    .then(listen)
+} else {
   listen()
 }
 
-function listen() {
+function listen () {
   // サーバーを Listen する
   app.listen(port, '0.0.0.0')
   console.log('Server listening on `localhost:' + port + '`.')

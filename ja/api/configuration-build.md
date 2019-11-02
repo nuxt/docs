@@ -3,8 +3,6 @@ title: 'API: build プロパティ'
 description: Nuxt.js ではウェブアプリケーションを自由にビルドできるよう Webpack 設定をカスタマイズできます。
 ---
 
-# build プロパティ
-
 > Nuxt.js ではウェブアプリケーションを自由にビルドできるよう Webpack 設定をカスタマイズできます。
 
 ## analyze
@@ -87,13 +85,13 @@ export default {
 export default {
   build: {
     babel: {
-      presets({ isServer }, [ preset, options ]) {
+      presets ({ isServer }, [ preset, options ]) {
         return [
           [
             preset, {
               buildTarget: isServer ? 'server' : 'client',
               ...options
-          }],
+            }],
           [
             // 他のプリセット
           ]
@@ -172,7 +170,7 @@ export default {
     extend (config, { isClient }) {
       // クライアントのバンドルの Webpack 設定のみを拡張する
       if (isClient) {
-        config.devtool = '#source-map'
+        config.devtool = 'source-map'
       }
     }
   }
@@ -715,6 +713,19 @@ export default {
     watch: [
       '~/.nuxt/support.js'
     ]
+  }
+}
+```
+## followSymlinks
+
+> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example. 
+
+- Type: `Boolean`
+
+```js
+export default {
+  build: {
+    followSymlinks: false
   }
 }
 ```

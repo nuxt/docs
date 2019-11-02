@@ -115,13 +115,13 @@ const axios = require('axios')
 
 module.exports = {
   generate: {
-    routes: function () {
+    routes () {
       return axios.get('https://my-api/users')
-      .then((res) => {
-        return res.data.map((user) => {
-          return '/users/' + user.id
+        .then((res) => {
+          return res.data.map((user) => {
+            return '/users/' + user.id
+          })
         })
-      })      
     }
   }
 }
@@ -135,15 +135,15 @@ const axios = require('axios')
 
 module.exports = {
   generate: {
-    routes: function (callback) {
+    routes (callback) {
       axios.get('https://my-api/users')
-      .then((res) => {
-        var routes = res.data.map((user) => {
-          return '/users/' + user.id
+        .then((res) => {
+          const routes = res.data.map((user) => {
+            return '/users/' + user.id
+          })
+          callback(null, routes)
         })
-        callback(null, routes)
-      })
-      .catch(callback)
+        .catch(callback)
     }
   }
 }
@@ -159,16 +159,16 @@ const axios = require('axios')
 
 module.exports = {
   generate: {
-    routes: function () {
+    routes () {
       return axios.get('https://my-api/users')
-      .then((res) => {
-        return res.data.map((user) => {
-          return {
-            route: '/users/' + user.id,
-            payload: user
-          }
+        .then((res) => {
+          return res.data.map((user) => {
+            return {
+              route: '/users/' + user.id,
+              payload: user
+            }
+          })
         })
-      })
     }
   }
 }

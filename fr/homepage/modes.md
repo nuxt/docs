@@ -1,4 +1,4 @@
 ---
-title: Rendering modes (EN)
+title: Rendu NUXT<span class="text-nuxt-lightgreen">JS</span>
 ---
-NO CONTENTS
+

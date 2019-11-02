@@ -24,7 +24,7 @@ description: 如何使用 cache 组件？
     ['@nuxtjs/component-cache', {
       max: 10000,
       maxAge: 1000 * 60 * 60
-    }],
+    }]
   ]
 }
 ```

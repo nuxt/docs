@@ -72,7 +72,7 @@ class SomeClass {
     this.options = nuxt.options
   }
 
-  someFunction() {
+  someFunction () {
     // We have access to `this.nuxt` and `this.options`
   }
 }
@@ -95,7 +95,7 @@ class FooClass {
 So we can hook into `foo` module like this:
 
 ```js
-nuxt.hook('foo', foo => {
-    // ...
+nuxt.hook('foo', (foo) => {
+  // ...
 })
 ```

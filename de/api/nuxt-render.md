@@ -33,13 +33,12 @@ app.use(nuxt.render)
 // Build only in dev mode with hot-reloading
 if (config.dev) {
   new Builder(nuxt).build()
-  .then(listen)
-}
-else {
+    .then(listen)
+} else {
   listen()
 }
 
-function listen() {
+function listen () {
   // Listen the server
   app.listen(port, '0.0.0.0')
   console.log('Server listening on `localhost:' + port + '`.')

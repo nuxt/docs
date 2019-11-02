@@ -1,9 +1,7 @@
 ---
-title: Google アナリティクスの統合
+title: Google アナリティクスを使うには？
 description: Google アナリティクスを使うには？
 ---
-
-# Google アナリティクスを使うには？
 
 はじめに、Nuxt.js 用の [公式 Google アナリティクスモジュール](https://github.com/nuxt-community/analytics-module) があるのでそちらを確認してください。
 
@@ -50,7 +48,7 @@ export default ({ app }) => {
 ```js
 export default {
   plugins: [
-    { src: '~plugins/ga.js', ssr: false }
+    { src: '~plugins/ga.js', mode: 'client' }
   ]
 }
 ```

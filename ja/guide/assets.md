@@ -39,7 +39,7 @@ CSS の参照には、`~assets`（スラッシュなし）か、`@` のエイリ
 それは次のようにコンパイルされます:
 
 ```js
-createElement('img', { attrs: { src: require('~/assets/image.png') }})
+createElement('img', { attrs: { src: require('~/assets/image.png') } })
 ```
 
 `.png` は JavaScript ファイルではないため、Nuxt.js は [file-loader](https://github.com/webpack/file-loader) と [url-loader](https://github.com/webpack/url-loader) を使ってそれらを処理できるよう webpack を設定します。

@@ -3,8 +3,6 @@ title: "API: env プロパティ"
 description: クライアントサイドとサーバーサイドで環境変数を共有します。
 ---
 
-# env プロパティ
-
 - 型: `Object`
 
 > Nuxt.js ではクライアントサイドとサーバーサイドで共有される環境変数を作成できます。
@@ -70,3 +68,7 @@ if (process.env.test == 'testing123')
 ```js
 if ('testing123' == 'testing123')
 ```
+
+## serverMiddleware
+
+[serverMiddleware](/api/configuration-servermiddleware) はメインの Nuxt のビルドから分離されているので、`nuxt.config.js` に定義された `env` 変数は使用できません。

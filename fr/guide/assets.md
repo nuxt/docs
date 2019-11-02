@@ -40,7 +40,7 @@ Ou si vous référencez cette image dans `pages/index.vue` :
 Ce sera compilé en :
 
 ```js
-createElement('img', { attrs: { src: require('~/assets/image.png') }})
+createElement('img', { attrs: { src: require('~/assets/image.png') } })
 ```
 
 Puisque que les fichiers `.png` ne sont pas des fichiers JavaScript, Nuxt.js configure webpack pour utiliser [file-loader](https://github.com/webpack/file-loader) et [url-loader](https://github.com/webpack/url-loader) afin de pouvoir s'en charger à votre place.

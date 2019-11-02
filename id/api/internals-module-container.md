@@ -14,16 +14,16 @@ Semua [modules](/guide/modules) akan dipanggil di dalam konteks dari instansi `M
 Kita bisa mendaftarkan kait (hooks) pada peristiwa siklus hidup (life cycle) tertentu.
 
 ```js
-nuxt.moduleContainer.plugin('ready', async moduleContainer => {
-    // Lakukan hal ini setelah semua modul siap
+nuxt.moduleContainer.plugin('ready', async (moduleContainer) => {
+  // Lakukan hal ini setelah semua modul siap
 })
 ```
 
 Di dalam konteks [modules](/guide/modules) kita bisa menggunakan ini sebagai gantinya:
 
 ```js
-this.plugin('ready', async moduleContainer => {
-    // Lakukan hal ini setelah semua modul siap
+this.plugin('ready', async (moduleContainer) => {
+  // Lakukan hal ini setelah semua modul siap
 })
 ```
 

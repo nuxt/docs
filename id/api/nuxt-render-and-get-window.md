@@ -38,8 +38,8 @@ config.dev = false
 const nuxt = new Nuxt(config)
 
 nuxt.renderAndGetWindow('http://localhost:3000')
-.then((window) => {
+  .then((window) => {
   // Tampilkan `<title>` pada head
-  console.log(window.document.title)
-})
+    console.log(window.document.title)
+  })
 ```

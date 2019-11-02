@@ -17,12 +17,12 @@ validate({ params, query, store }) {
 ```js
 async validate({ params, query, store }) {
   // await operations (EN)
-  return true // if the params are valid
-  return false // will stop Nuxt.js to render the route and display the error page
+  return true // si le paramètre est valide
+  return false // va stopper le process de rendering de Nuxt.js et afficher la page d'erreur
 }
 ```
 
-You can also return promises (EN):
+Vous pouvez aussi retourner une promesse:
 
 ```js
 validate({ params, query, store }) {
@@ -48,8 +48,8 @@ Vous pouvez aussi vérifier les données dans votre [store](/guide/vuex-store) (
 ```js
 export default {
   validate ({ params, store }) {
-    // Vérifier si `params.id` est une catégorie existante
-    return store.state.categories.some((category) => category.id === params.id)
+    // Vérifier si `params.id` est une catégorie existante
+    return store.state.categories.some(category => category.id === params.id)
   }
 }
 ```
@@ -59,8 +59,8 @@ Vous pouvez aussi émettre une erreur dans la fonction directement pour afficher
 ```js
 export default {
   async validate ({ params, store }) {
-    // Émet une erreur 500 (internal server error) avec un message
-    throw new Error('En construction!')
+    // Émet une erreur 500 (internal server error) avec un message
+    throw new Error('En construction!')
   }
 }
 ```

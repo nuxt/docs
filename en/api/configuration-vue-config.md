@@ -15,8 +15,8 @@ description: A config object for Vue.config
 export default {
   vue: {
     config: {
-     productionTip: true,
-     devtools: false
+      productionTip: true,
+      devtools: false
     }
   }
 }

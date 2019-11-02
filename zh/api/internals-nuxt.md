@@ -14,8 +14,8 @@ description: Nuxt Core 类
 我们可以在某些生命周期事件中注册hooks。
 
 ```js
-nuxt.hook('ready', async nuxt => {
-    // Your custom code here
+nuxt.hook('ready', async (nuxt) => {
+  // Your custom code here
 })
 ```
 

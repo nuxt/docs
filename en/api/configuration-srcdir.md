@@ -21,8 +21,14 @@ Then, your application structure can be:
 -| app/
 ---| node_modules/
 ---| client/
-------| pages/
+------| assets/
 ------| components/
+------| layouts/
+------| middleware/
+------| pages/
+------| plugins/
+------| static/
+------| store/
 ---| nuxt.config.js
 ---| package.json
 ```

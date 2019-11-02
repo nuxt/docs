@@ -24,7 +24,7 @@ To avoid boilerplate, use [Component Cache module](https://github.com/nuxt-commu
     ['@nuxtjs/component-cache', {
       max: 10000,
       maxAge: 1000 * 60 * 60
-    }],
+    }]
   ]
 }
 ```

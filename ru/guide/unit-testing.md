@@ -53,16 +53,16 @@ export default {
 Добавим наш файл с тестом `test/index.test.js`:
 
 ```js
+import { resolve } from 'path'
 import test from 'ava'
 import { Nuxt, Builder } from 'nuxt'
-import { resolve } from 'path'
 
 // Сохраним экземпляры nuxt и server.
 // Мы сможем сбросить их в конце теста.
 let nuxt = null
 
 // Инициализируем Nuxt.js и создадим сервер по адресу localhost:4000
-test.before('Init Nuxt.js', async t => {
+test.before('Init Nuxt.js', async (t) => {
   const rootDir = resolve(__dirname, '..')
   let config = {}
   try { config = require(resolve(rootDir, 'nuxt.config.js')) } catch (e) {}
@@ -74,14 +74,14 @@ test.before('Init Nuxt.js', async t => {
 })
 
 // Пример генерации html-кода только для этого теста
-test('Route / exits and render HTML', async t => {
-  let context = {}
+test('Route / exits and render HTML', async (t) => {
+  const context = {}
   const { html } = await nuxt.renderRoute('/', context)
   t.true(html.includes('<h1 class="red">Hello world!</h1>'))
 })
 
 // Пример тестирования с помощью проверки DOM
-test('Route / exits and render HTML with CSS applied', async t => {
+test('Route / exits and render HTML with CSS applied', async (t) => {
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
   t.not(element, null)
@@ -91,7 +91,7 @@ test('Route / exits and render HTML with CSS applied', async t => {
 })
 
 // Остановить сервер и попросить nuxt не отслеживать изменения файлов
-test.after('Closing server and nuxt.js', t => {
+test.after('Closing server and nuxt.js', (t) => {
   nuxt.close()
 })
 ```
