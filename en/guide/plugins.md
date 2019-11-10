@@ -5,6 +5,17 @@ description: Nuxt.js allows you to define JavaScript plugins to be run before in
 
 > Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root Vue.js Application. This is especially helpful when using your own libraries or external modules.
 
+<div>
+  <a href="https://youtu.be/j7l5e2ID0aw" target="_blank" class="Promote">
+    <img src="https://img.youtube.com/vi/j7l5e2ID0aw/mqdefault.jpg" alt="Nuxt Plugins by VueScreencasts"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Nuxt Plugins</h4>
+      <p class="Promote__Content__Description">See Nuxt plugins in action, and learn how to make your own.</p>
+      <p class="Promote__Content__Signature">Video made by VueScreencasts to support Nuxt.js development.</p>
+    </div>
+  </a>
+</div>
+
 <div class="Alert">
 
 It is important to know that in any Vue [instance lifecycle](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram), only `beforeCreate` and `created` hooks are called **both, from client-side and server-side**. All other hooks are called only from the client-side.
