@@ -105,7 +105,7 @@ This option lets you define the default properties of the page transitions.
 
 ## Asynchronous Configuration
 
-If you need to populate some options (e.g.&nbsp;the head) with asynchronous data (e.g.&nbsp;coming from an API), you have the possibility to return a promise. Here is an example:
+If you need to populate some options (e.g. the head) with asynchronous data (e.g. coming from an API), you have the possibility to return a promise. Here is an example:
 
 ```js
 import axios from 'axios'
