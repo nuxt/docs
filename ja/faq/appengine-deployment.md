@@ -1,9 +1,7 @@
 ---
-title: Google App Engine へのデプロイ
+title: Google App Engine へデプロイするには？
 description: Nuxt.js を Google App Engine へデプロイするには？
 ---
-
-# Google App Engine へデプロイするには？
 
 [Google App Engine](https://cloud.google.com/appengine/) へのデプロイは Google のクラウドサービスでユニバーサル Nuxt アプリケーションをホストするための迅速で簡単なソリューションです。
 
@@ -41,6 +39,13 @@ env_variables:
   NODE_ENV: 'production'
 ```
 
+また、フレキシブル環境の最小構成の設定ファイルは以下です:
+
+```yaml
+runtime: nodejs
+env: flex
+```
+
 ## ビルドとデプロイ
 
 さあ、あなたのアプリケーションを `npm run build` でビルドしてください。
@@ -48,7 +53,7 @@ env_variables:
 これで、アプリケーションを Google App Engine にアップロードする準備が整いました。では、次のコマンドを実行してください:
 
 ```
-gcloud app deploy app.yaml --project <project-id>
+gcloud app deploy app.yaml --project [project-id]
 ```
 
 ほら！　Nuxt.js アプリケーションが Google App Engine 上にホストされました！
@@ -56,4 +61,5 @@ gcloud app deploy app.yaml --project <project-id>
 ## 詳細
 
 - app.yaml ファイルの `instance_class` 属性はアプリケーションのインスタンスクラスを設定します。F2 インスタンスは完全に無料ではありませんが、Nuxt アプリケーションを実行するために必要な最小限のメモリを有しています。
-- deploy コマンドには、必ず project-name ではなく project-id を入れてください。これら 2 つは異なるものです - しかし混同しやすいです。
+
+deploy コマンドには、必ず `project-name` ではなく `project-id` を入れてください。これら 2 つは異なるものです - しかし混同しやすいです。

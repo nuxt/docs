@@ -55,9 +55,9 @@ npm run dev
 
 ## Production Deployment
 
-Nuxt.js lets you choose between three modes to deploy your application: SSR, SPA or Static Generated.
+Nuxt.js lets you choose between three modes to deploy your application: SSR, Static Generated, or SPA.
 
-### Server Rendered Deployment (Universal)
+### Server-Side Rendered Deployment (Universal SSR)
 
 To deploy, instead of running `nuxt`, you probably want to build ahead of time. Therefore, building and starting are separate commands:
 
@@ -99,6 +99,16 @@ npm run generate
 ```
 
 It will create a `dist` folder with everything inside ready to be deployed on a static hosting site.
+
+To return a non-zero status code when a page error is encountered and let the CI/CD fail the deployment or build, you can use the `--fail-on-page-error` argument.
+
+```bash
+npm run generate --fail-on-page-error
+
+// OR
+
+yarn generate --fail-on-page-error
+```
 
 If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take a look at the [generate configuration](/api/configuration-generate) to tell Nuxt.js how to generate these dynamic routes.
 

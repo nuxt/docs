@@ -33,7 +33,7 @@ Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능
 - [Vue Router](https://router.vuejs.org/en/)
 - [Vuex](https://vuex.vuejs.org/en/) ([store 옵션](/guide/vuex-store)을 사용하는 경우에만 포함)
 - [Vue Server Renderer](https://ssr.vuejs.org/en/) ([`mode: 'spa'`](/api/configuration-mode)를 사용하는 경우에는 제외)
-- [vue-meta](https://github.com/declandewet/vue-meta)
+- [vue-meta](https://github.com/nuxt/vue-meta)
 
 총 용량이 **57kB min+gzip** 밖에 되지 않습니다. (53kB  Vuex 포함).
 
@@ -46,7 +46,7 @@ Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능
 - 서버 사이드 렌더링
 - 비동기 데이터 기반의 강력한 라우팅 시스템
 - 정적 파일 전송
-- ES6/ES7 지원
+- ES2015+ 지원
 - JS & CSS 코드 번들링 및 압축
 - `<head>` 요소 관리 (`<title>`, `<meta>`, 기타.)
 - 개발 중 Hot module 대체

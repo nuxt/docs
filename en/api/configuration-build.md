@@ -3,8 +3,6 @@ title: "API: The build Property"
 description: Nuxt.js lets you customize the webpack configuration for building your web application as you want.
 ---
 
-# The build Property
-
 > Nuxt.js lets you customize the webpack configuration for building your web application as you want.
 
 ## analyze
@@ -32,7 +30,7 @@ export default {
 
 <div class="Alert Alert--teal">
 
-**Info:** you can use the command `nuxt build --analyze` or `nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888).
+**Info:** you can use the command `yarn nuxt build --analyze` or `yarn nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888). If you are not using `yarn` you can run the command with `npx`.
 
 </div>
 
@@ -40,7 +38,7 @@ export default {
 
 > Customize Babel configuration for JavaScript and Vue files. `.babelrc` is ignored by default.
 
-- Type: `Object`
+- Type: `Object` See `babel-loader` [options](https://github.com/babel/babel-loader#options) and `babel` [options](https://babeljs.io/docs/en/options)
 - Default:
 
   ```js
@@ -50,35 +48,55 @@ export default {
     presets: ['@nuxt/babel-preset-app']
   }
   ```
-  
 
 The default targets of [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) are `ie: '9'` in the `client` build, and `node: 'current'` in the `server` build.
 
+### presets
+
+- Type: `Function`
+- Argument:
+  1. `Object`: { isServer: true | false }
+  2. `Array`:
+      - preset name `@nuxt/babel-preset-app`
+      - [`options`](https://github.com/nuxt/nuxt.js/tree/dev/packages/babel-preset-app#options) of `@nuxt/babel-preset-app`
+
 **Note**: The presets configured in `build.babel.presets` will be applied to both, the client and the server build. The target will be set by Nuxt accordingly (client/server). If you want configure the preset differently for the client or the server build, please use `presets` as a function:
+
+> We **highly recommend** to use the default preset instead of below customization
 
 ```js
 export default {
   build: {
     babel: {
-      presets({ isServer }) {
-        const targets = isServer ? { node: '10' } : { ie: '11' }
-        return [
-          [ require.resolve('@nuxt/babel-preset-app'), { targets } ]
-        ]
+      presets({ isServer }, [ preset, options ]) {
+        // change options directly
+        options.targets = isServer ? ... :  ...
+        options.corejs = ...
+        // return nothing
       }
     }
   }
 }
 ```
 
-We **highly recommend** to use the default preset. However, you can change the preset if you have to. 
+Or override default value by returning whole presets list:
 
-*Example* for custom presets:
 ```js
 export default {
   build: {
     babel: {
-      presets: ['es2015', 'stage-0']
+      presets ({ isServer }, [ preset, options ]) {
+        return [
+          [
+            preset, {
+              buildTarget: isServer ? 'server' : 'client',
+              ...options
+            }],
+          [
+            // Other presets
+          ]
+        ]
+      }
     }
   }
 }
@@ -152,7 +170,7 @@ export default {
     extend (config, { isClient }) {
       // Extend only webpack config for client-bundle
       if (isClient) {
-        config.devtool = '#source-map'
+        config.devtool = 'source-map'
       }
     }
   }
@@ -187,7 +205,7 @@ export default {
 - Type: `Boolean`
 - Default: `false`
 
-Using [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) under the hood, all your CSS will be extracted into separate files, usually one per component. This allows caching your CSS and JavaScript separately and is worth a try in case you have a lot of global or shared CSS.
+Using [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin/) under the hood, all your CSS will be extracted into separate files, usually one per component. This allows caching your CSS and JavaScript separately and is worth a try in case you have a lot of global or shared CSS.
 
 <div class="Alert Alert--teal">
 
@@ -226,7 +244,7 @@ export default {
 }
 ```
 
-To understand a bit more about the use of manifests, take a look at this [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/).
+To understand a bit more about the use of manifests, take a look at this [webpack documentation](https://webpack.js.org/guides/code-splitting/).
 
 ## friendlyErrors
 
@@ -273,6 +291,14 @@ See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware
 Configuration for the [html-minifier](https://github.com/kangax/html-minifier) plugin used to minify
 HTML files created during the build process (will be applied for *all modes*).
 
+## indicator
+
+> Display build indicator for hot module replacement in development (available in `v2.8.0+`)
+- Type: `Boolean`
+- Default: `true`
+
+![nuxt-build-indicator](https://user-images.githubusercontent.com/5158436/58500509-93ba0f80-8197-11e9-8524-e115c6d32571.gif)
+
 ## loaders
 
 > Customize options of Nuxt.js integrated webpack loaders.
@@ -304,14 +330,6 @@ HTML files created during the build process (will be applied for *all modes*).
   },
   scss: {},
   stylus: {},
-  ts: {
-    transpileOnly: true,
-    appendTsSuffixTo: [/\.vue$/]
-  },
-  tsx: {
-    transpileOnly: true,
-    appendTsxSuffixTo: [/\.vue$/]
-  },
   vueStyle: {}
 }
 ```
@@ -341,21 +359,12 @@ HTML files created during the build process (will be applied for *all modes*).
 
 ### loaders.less
 
-> You can pass any Less specific options to the `less-loader via` via `loaders.less`. See the [Less documentation](http://lesscss.org/usage/#command-line-usage-options) for all available options in dash-case.
+> You can pass any Less specific options to the `less-loader` via `loaders.less`. See the [Less documentation](http://lesscss.org/usage/#command-line-usage-options) for all available options in dash-case.
 
 ### loaders.sass and loaders.scss
 
 > See the [Node Sass documentation](https://github.com/sass/node-sass/blob/master/README.md#options) for all available Sass options.
 > Note: `loaders.sass` is for [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html)
-
-### loaders.ts
-
-> Loader for typescript file and `lang="ts"` Vue SFC.
-> More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#loader-options).
-
-### loaders.tsx
-
-> More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#options).
 
 ### loaders.vueStyle
 
@@ -446,10 +455,13 @@ export default {
     plugins: {
       'postcss-import': {},
       'postcss-url': {},
-      'postcss-preset-env': {},
+      'postcss-preset-env': this.preset,
       'cssnano': { preset: 'default' } // disabled in dev mode
     },
-    order: 'cssnanoLast'
+    order: 'presetEnvAndCssnanoLast',
+    preset: {
+      stage: 2
+    }
   }
   ```
 
@@ -462,7 +474,7 @@ export default {
   build: {
     postcss: {
       plugins: {
-          // Disable `postcss-url`
+        // Disable `postcss-url`
         'postcss-url': false,
         // Add some plugins
         'postcss-nested': {},
@@ -652,40 +664,22 @@ See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/t
 
 ## transpile
 
-- Type: `Array<string | RegExp>`
+- Type: `Array<String | RegExp | Function>`
 - Default: `[]`
 
-If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Each item in transpile can be a package name, or a string or regex object matching the dependency's file name.
+If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Each item in transpile can be a package name, a string or regex object matching the dependency's file name.
 
-## typescript
+Starting with `v2.9.0`, you can also use a function to conditionnaly transpile, the function will receive a object (`{ isDev, isServer, isClient, isModern, isLegacy }`):
 
-> Customize Nuxt.js TypeScript support.
-
-<div class="Alert Alert--blue">
-
-**Important**: This property will be ignored if [`TypeScript Support`](/guide/typescript) hasn't be set up in your project.
-
-</div>
-
-- Type: `Object`
-- Default:
-
-  ```js
-  {
-    typeCheck: true
+```js
+{
+  build: {
+    transpile: [
+      ({ isLegacy }) => isLegacy && 'ky'
+    ]
   }
-  ```
-
-### typescript.typeCheck
-
-> Enables TypeScript type checking on a separate process.
-
-- Type: `Boolean` or `Object`
-- Default: `true`
-
-When enabled, Nuxt.js uses [fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) to provide type checking.
-
-You can use an `Object` to override plugin options or set it to `false` to disable it.
+}
+```
 
 ## vueLoader
 
@@ -720,6 +714,20 @@ export default {
     watch: [
       '~/.nuxt/support.js'
     ]
+  }
+}
+```
+
+## followSymlinks
+
+> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example. 
+
+- Type: `Boolean`
+
+```js
+export default {
+  build: {
+    followSymlinks: false
   }
 }
 ```

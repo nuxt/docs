@@ -21,7 +21,7 @@ const options = {}
 
 const nuxt = new Nuxt(options)
 nuxt.build()
-.then(() => {
+  .then(() => {
   // Здесь можно использовать nuxt.render(req, res) или nuxt.renderRoute(route, context)
-})
+  })
 ```

@@ -3,7 +3,7 @@ title: 'API: '
 description: Menampilkan halaman saat ini.
 ---
 
-# Komponen <nuxt-child>
+# Komponen &lt;nuxt-child&gt;
 
 > Komponen ini digunakan untuk menampilkan "children" komponen pada [rute bersarang](/guide/routing#nested-routes).
 

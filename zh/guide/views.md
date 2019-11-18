@@ -18,7 +18,7 @@ description: 视图章节的内容阐述了如何在 Nuxt.js 应用中为指定�
 ```html
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -33,7 +33,7 @@ description: 视图章节的内容阐述了如何在 Nuxt.js 应用中为指定�
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -131,6 +131,14 @@ export default {
 
 页面组件实际上是 Vue 组件，只不过 Nuxt.js 为这些组件添加了一些特殊的配置项（对应 Nuxt.js 提供的功能特性）以便你能快速开发通用应用。
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-page-components?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      观看Vue School出品的 <strong>Nuxt.js 页面组件</strong> 的免费课程 
+    </p>
+  </a>
+</div>
+
 ```html
 <template>
   <h1 class="red">Hello {{ name }}!</h1>
@@ -178,7 +186,7 @@ Nuxt.js 为页面提供的特殊配置项：
 
 ## HTML 头部
 
-Nuxt.js 使用了 [`vue-meta`](https://github.com/declandewet/vue-meta) 更新应用的 `头部标签(Head)` and `html 属性`。
+Nuxt.js 使用了 [`vue-meta`](https://github.com/nuxt/vue-meta) 更新应用的 `头部标签(Head)` and `html 属性`。
 
 Nuxt.js 使用以下参数配置 `vue-meta`:
 ```js
@@ -213,7 +221,7 @@ head: {
 }
 ```
 
-想了解 `head` 变量的所有可选项的话，请查阅 [`vue-meta` 使用文档](https://github.com/declandewet/vue-meta#recognized-metainfo-properties)。
+想了解 `head` 变量的所有可选项的话，请查阅 [`vue-meta` 使用文档](https://vue-meta.nuxtjs.org/api/#metainfo-properties)。
 
 关于 Nuxt.js 应用 HTML 头部配置的更多信息，请参考 [HTML 头部配置 API](/api/configuration-head)。
 
@@ -223,6 +231,6 @@ head: {
 
 <div class="Alert Alert--teal">
 
-<b>注意:</b> 为了避免子组件中的meta标签不能正确覆盖父组件中相同的标签而产生重复的现象，建议利用 `hid` 键为meta标签配一个唯一的标识编号。请阅读[关于 `vue-meta` 的更多信息](https://github.com/declandewet/vue-meta#lists-of-tags)。
+<b>注意:</b> 为了避免子组件中的meta标签不能正确覆盖父组件中相同的标签而产生重复的现象，建议利用 `hid` 键为meta标签配一个唯一的标识编号。请阅读[关于 `vue-meta` 的更多信息](https://vue-meta.nuxtjs.org/api/#tagidkeyname)。
 
 </div>

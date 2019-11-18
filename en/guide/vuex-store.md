@@ -5,6 +5,14 @@ description: Using a store to manage the state is important for every big applic
 
 > Using a store to manage the state is important for every big application. That's why Nuxt.js implements [Vuex](https://vuex.vuejs.org/en/) in its core.
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/utilising-the-vuex-store-nuxtjs?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Watch a free lesson about <strong>Nuxt.js and Vuex</strong> on Vue School 
+    </p>
+  </a>
+</div>
+
 ## Activate the Store
 
 Nuxt.js will look for the `store` directory, if it exists, it will:
@@ -47,7 +55,7 @@ export const state = () => ({
 export const mutations = {
   add (state, text) {
     state.list.push({
-      text: text,
+      text,
       done: false
     })
   },

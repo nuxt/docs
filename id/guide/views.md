@@ -20,7 +20,7 @@ Templat default-nya adalah:
 ```html
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -35,7 +35,7 @@ Salah satu contoh jika menambahkan kelas CSS bersyarat (conditional CSS) untuk I
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -168,7 +168,7 @@ Informasi lebih lanjut tentang penggunaan properti halaman: [Halaman API](/api)
 
 ## HTML Head
 
-Nuxt.js menggunakan [vue-meta](https://github.com/declandewet/vue-meta) untuk memperbarui `headers` dan `atribut-atribut html` pada aplikasi Anda.
+Nuxt.js menggunakan [vue-meta](https://github.com/nuxt/vue-meta) untuk memperbarui `headers` dan `atribut-atribut html` pada aplikasi Anda.
 
 Nuxt.js mengonfigurasi `vue-meta` dengan opsi ini:
 
@@ -199,7 +199,7 @@ head: {
 }
 ```
 
-Untuk mengetahui daftar pilihan yang dapat Anda berikan pada metode `head`, lihat [dokumentasi vue-meta ](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
+Untuk mengetahui daftar pilihan yang dapat Anda berikan pada metode `head`, lihat [dokumentasi vue-meta ](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
 Informasi lebih lanjut tentang metode `head` : <a href="/api/configuration-head" data-md-type="link">Konfigurasi API `head`</a>.
 
@@ -209,6 +209,6 @@ Informasi lebih lanjut tentang metode head : [Halaman API `head`](/api/pages-hea
 
 <div class="Alert">
 
-Untuk menghindari duplikasi saat menggunakannya pada child komponen, berikan pengenal unik dengan key `hid`. [Baca lebih lanjut] (https://github.com/declandewet/vue-meta#lists-of-tags) .
+Untuk menghindari duplikasi saat menggunakannya pada child komponen, berikan pengenal unik dengan key `hid`. [Baca lebih lanjut] (https://vue-meta.nuxtjs.org/api/#tagidkeyname) .
 
 </div>

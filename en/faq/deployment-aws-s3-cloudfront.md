@@ -1,11 +1,9 @@
 ---
-title: "AWS: S3+Cloudfront Deployment"
+title: "How to Deploy on AWS w/ S3 and Cloudfront?"
 description: Static Hosting on AWS with S3 and Cloudfront
 ---
 
-# How to Deploy on AWS w/ S3 and Cloudfront
-
-AWS is Amazon Web Services.  
+AWS stands for Amazon Web Services.  
 S3 is their static storage which can be configured for Static Site Hosting.
 Cloudfront is their CDN (content delivery network)
 
@@ -61,16 +59,15 @@ gulpfile.js     -  `gulp deploy` code to push files to S3 and invalidate CloudFr
   3. Configure security access
   4. Setup build script in your project
   
-### 1. AWS: Setup your S3 bucket
-### 2. AWS: Setup your CloudFront Distribution
+### AWS: Setup your S3 bucket and CloudFront Distribution
 
-For steps 1. and 2, follow this [tutorial to setup your S3 and CloudFront](https://reidweb.com/2017/02/06/cloudfront-cdn-tutorial/)
+Please follow this [tutorial to setup your S3 and CloudFront](https://reidweb.com/2017/02/06/cloudfront-cdn-tutorial/) for step one and two.
 
 You should now have this data:
   - AWS_BUCKET_NAME="example.com" 
   - AWS_CLOUDFRONT="UPPERCASE"
 
-### 3. AWS: Configure security access
+### AWS: Configure security access
 
 For step 3, we need to create a user that can:
   - Update the bucket contents
@@ -123,7 +120,7 @@ You should now have this data:
   - AWS_ACCESS_KEY_ID="key" 
   - AWS_SECRET_ACCESS_KEY="secret" 
 
-### 4. Laptop: Setup your project's build script
+### Laptop: Setup your project's build script
 
 4.1) Create a `deploy.sh` script.  See optional [nvm (node version manager)](https://github.com/creationix/nvm).
 ``` bash
@@ -165,60 +162,65 @@ npm install -g gulp
 4.4) Create a `gulpfile.js` with the build script
 
 ``` javascript
-var gulp = require('gulp');
-var awspublish = require('gulp-awspublish');
-var cloudfront = require('gulp-cloudfront-invalidate-aws-publish');
-var parallelize = require('concurrent-transform');
+const gulp = require('gulp')
+const awspublish = require('gulp-awspublish')
+const cloudfront = require('gulp-cloudfront-invalidate-aws-publish')
+const parallelize = require('concurrent-transform')
 
 // https://docs.aws.amazon.com/cli/latest/userguide/cli-environment.html
 
-var config = {
+const config = {
 
   // Required
-  params: { Bucket: process.env.AWS_BUCKET_NAME },
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  params: {
+    Bucket: process.env.AWS_BUCKET_NAME
+  },
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    signatureVersion: 'v3'
+  },
 
   // Optional
-  deleteOldVersions: false,                 // NOT FOR PRODUCTION
+  deleteOldVersions: false, // NOT FOR PRODUCTION
   distribution: process.env.AWS_CLOUDFRONT, // CloudFront distribution ID
   region: process.env.AWS_DEFAULT_REGION,
-  headers: { /*'Cache-Control': 'max-age=315360000, no-transform, public',*/ },
+  headers: { /* 'Cache-Control': 'max-age=315360000, no-transform, public', */ },
 
   // Sensible Defaults - gitignore these Files and Dirs
   distDir: 'dist',
   indexRootPath: true,
   cacheFileName: '.awspublish',
   concurrentUploads: 10,
-  wait: true,  // wait for CloudFront invalidation to complete (about 30-60 seconds)
+  wait: true // wait for CloudFront invalidation to complete (about 30-60 seconds)
 }
 
-gulp.task('deploy', function() {
+gulp.task('deploy', function () {
   // create a new publisher using S3 options
   // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property
-  var publisher = awspublish.create(config, config);
+  const publisher = awspublish.create(config)
 
-  var g = gulp.src('./' + config.distDir + '/**');
-    // publisher will add Content-Length, Content-Type and headers specified above
-    // If not specified it will set x-amz-acl to public-read by default
+  let g = gulp.src('./' + config.distDir + '/**')
+  // publisher will add Content-Length, Content-Type and headers specified above
+  // If not specified it will set x-amz-acl to public-read by default
   g = g.pipe(parallelize(publisher.publish(config.headers), config.concurrentUploads))
 
   // Invalidate CDN
   if (config.distribution) {
-    console.log('Configured with CloudFront distribution');
-    g = g.pipe(cloudfront(config));
+    console.log('Configured with CloudFront distribution')
+    g = g.pipe(cloudfront(config))
   } else {
-    console.log('No CloudFront distribution configured - skipping CDN invalidation');
+    console.log('No CloudFront distribution configured - skipping CDN invalidation')
   }
 
   // Delete removed files
-  if (config.deleteOldVersions) g = g.pipe(publisher.sync());
+  if (config.deleteOldVersions) { g = g.pipe(publisher.sync()) }
   // create a cache file to speed up consecutive uploads
-  g = g.pipe(publisher.cache());
+  g = g.pipe(publisher.cache())
   // print upload updates to console
-  g = g.pipe(awspublish.reporter());
-  return g;
-});
+  g = g.pipe(awspublish.reporter())
+  return g
+})
 ```
 4.5) Deploy and debug
 
@@ -328,4 +330,4 @@ Configured with CloudFront distribution
 [21:26:09] Finished 'deploy' after 42 s
 ```
 
-Note that the `ClouFront invalidation created: XXXX` is the only output from the CloudFront invalidation npm package.  If you don't see that, it's not working.  
+Note that the `CloudFront invalidation created: XXXX` is the only output from the CloudFront invalidation npm package.  If you don't see that, it's not working.  

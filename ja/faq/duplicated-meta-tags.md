@@ -1,15 +1,13 @@
 ---
-title: 重複したメタタグ
+title: メタタグが重複したときは？
 description: メタタグが重複したときは？
 ---
 
-# メタタグが重複したときは？
-
-これは [vue-meta](https://github.com/declandewet/vue-meta) の "特徴" です。[head 要素のドキュメント](/guide/views#html-%E3%81%AE-head-%E6%83%85%E5%A0%B1) を参照してください。
+これは [vue-meta](https://github.com/nuxt/vue-meta) の "特徴" です。[head 要素のドキュメント](/guide/views#html-%E3%81%AE-head-%E6%83%85%E5%A0%B1) を参照してください。
 
 <div class="Alert">
 
-子コンポーネント利用された時にメタ情報が重複してしまうことを避けるために <code>hid</code> キーで一意な識別子を与えてください｡ これについてより深く理解するには [こちら](https://github.com/declandewet/vue-meta#lists-of-tags) を参照してください。
+子コンポーネント利用された時にメタ情報が重複してしまうことを避けるために <code>hid</code> キーで一意な識別子を与えてください｡ これについてより深く理解するには [こちら](https://vue-meta.nuxtjs.org/api/#tagidkeyname) を参照してください。
 
 </div>
 

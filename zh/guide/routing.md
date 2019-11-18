@@ -59,6 +59,14 @@ router: {
 
 在 Nuxt.js 里面定义带参数的动态路由，需要创建对应的**以下划线作为前缀**的 Vue 文件 或 目录。
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-dynamic-routes?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      观看Vue School出品的 <strong>动态路由</strong> 免费课程
+    </p>
+  </a>
+</div>
+
 以下目录结构：
 
 ```bash
@@ -269,8 +277,8 @@ __Note:__ 处理404页面，现在符合`_.vue`页面的逻辑。 [有关404重�
 ``` js
 export default {
   router: {
-    extendRoutes(routes, resolve) {
-      let index = routes.findIndex(route => route.name === 'main')
+    extendRoutes (routes, resolve) {
+      const index = routes.findIndex(route => route.name === 'main')
       routes[index] = {
         ...routes[index],
         components: {
@@ -436,6 +444,16 @@ module.exports = {
 }
 ```
 
-`stats` 中间件将在每个路由改变时被调用。
+现在，`stats` 中间件将在每个路由改变时被调用。
+
+您也可以将 middleware 添加到指定的布局或者页面:
+
+`pages/index.vue` 或者 `layouts/default.vue`
+
+```js
+export default {
+  middleware: 'stats'
+}
+```
 
 如果你想看到一个使用中间件的真实例子，请参阅在 GitHub 上的[example-auth0](https://github.com/nuxt/example-auth0)。

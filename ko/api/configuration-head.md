@@ -22,7 +22,7 @@ module.exports = {
 }
 ```
 
-`head`에 정의할 수 있는 옵션에 대해 확인하려면 [vue-meta 문서](https://github.com/declandewet/vue-meta#recognized-metainfo-properties)를 확인하세요.
+`head`에 정의할 수 있는 옵션에 대해 확인하려면 [vue-meta 문서](https://vue-meta.nuxtjs.org/api/#metainfo-properties)를 확인하세요.
 
 <div class="Alert Alert--teal">
 

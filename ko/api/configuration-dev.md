@@ -32,7 +32,7 @@ const app = require('express')()
 const port = process.env.PORT || 3000
 
 // Nuxt.js를 옵션으로 인스턴스화 합니다.
-let config = require('./nuxt.config.js')
+const config = require('./nuxt.config.js')
 const nuxt = new Nuxt(config)
 app.use(nuxt.render)
 

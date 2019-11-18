@@ -10,7 +10,7 @@ description: Nuxt.js est livré avec un ensemble de commandes utiles, tant pour 
 | Commande      | Description                                                                                                       |
 |---------------|-------------------------------------------------------------------------------------------------------------------|
 | nuxt          | Lancer un serveur de développement sur localhost:3000 avec du rechargement à chaud.                               |
-| nuxt build    | Créez votre application avec un serveur web et minifiez les JS & CSS (pour la production).                        |
+| nuxt build    | Créez votre application avec webpack et minifiez les JS & CSS (pour la production).                               |
 | nuxt start    | Démarrez le serveur en mode production (après avoir exécuté `nuxt build`).                                        |
 | nuxt generate | Créez l'application et générez toutes les routes en tant que fichiers HTML (utilisé pour l'hébergement statique). |
 
@@ -19,7 +19,8 @@ description: Nuxt.js est livré avec un ensemble de commandes utiles, tant pour 
 Vous pouvez utiliser `--help` avec n'importe quelle commande pour obtenir des détails d'utilisation. Les arguments communs sont :
 
 - **`--config-file` ou `-c`:** spécifie le chemin vers le fichier `nuxt.config.js`.
-- **`--spa` ou `-s`:** lance la commande en mode application monopage en désactivant le rendu côté serveur.
+- **`--spa` ou `-s`:** lance la commande en mode application monopage et désactive le rendu côté serveur.
+- **`--unix-socket` ou `-n`:** Spécifie le chemin d'un socket UNIX.
 
 #### Utiliser un fichier package.json
 
@@ -54,7 +55,7 @@ npm run dev
 
 ## Déploiement en production
 
-Nuxt.js permet de choisir entre trois modes de déploiement pour votre application : rendu côté serveur, application monopage ou généré de manière statique.
+Nuxt.js vous permet de choisir entre trois modes de déploiement pour votre application : rendu côté serveur, application monopage ou généré de manière statique.
 
 ### Déploiement pour un rendu côté serveur (universelle)
 
@@ -64,6 +65,10 @@ Pour déployer, au lieu d'exécuter `nuxt`, vous voulez probablement faire d'abo
 nuxt build
 nuxt start
 ```
+
+Vous pouvez aussi définir `server.https` dans votre fichier `nuxt.config.js` avec le même ensemble d'options passé à [`https.createServer`](https://nodejs.org/api/https.html), si vous décidez de servir Nuxt.js en mode HTTPS.
+Les sockets Unix sont aussi disponibles si vous spécifiez l'option `server.socket` dans `nuxt.config.js` (ou `-n` dans [CLI](https://nuxtjs.org/guide/commands#list-of-commands)).
+Si vous utilisez les [sockets Unix](https://en.wikipedia.org/wiki/Berkeley_sockets), vérifiez de ne pas valoriser les paramètres `host` et `port` sinon le paramètre `socket` est ignoré.
 
 Le fichier `package.json` suivant est recommandé :
 
@@ -83,7 +88,7 @@ Le fichier `package.json` suivant est recommandé :
 
 Note : nous recommandons d'ajouter `.nuxt` dans `.npmignore` ou `.gitignore`.
 
-### Déploiement pour une génération statique
+### Déploiement pour une génération statique (pré-rendue)
 
 Nuxt.js vous offre la possibilité d'héberger votre application web sur tout hébergement statique.
 
@@ -99,15 +104,15 @@ Si vous avez un projet avec des [routes dynamiques](/guide/routing#dynamic-route
 
 <div class="Alert">
 
-Lors de la génération de votre application web avec `nuxt generate`, [le contexte](/api/context) donné à [data()](/guide/async-data#la-m-thode-data) et [fetch()](/guide/vuex-store#la-m-thode-fetch) n'aura pas de `req` et `res`.
+Lors de la génération de votre application web avec `nuxt generate`, [le contexte](/api/context) donné à [asyncData](/guide/async-data) et [fetch](/guide/vuex-store#la-m-thode-fetch) n'aura pas de `req` et `res`.
 
 </div>
 
 ### Déploiement pour une application monopage (SPA)
 
-`nuxt generate` a toujours besoin du SSR pendant le temps de génération afin de prérendre nos pages dans le but d'obtenir un chargement de page rapide et du contenu solide pour la SEO. Le contenu est généré lors de la *phase de build*. Il ne faut pas l'utiliser, par exemple, pour les applications ou le contenu dépend de l'authentification de l'utilisateur ou pour une API en temps réel (du moins pour le premier chargement).
+`nuxt generate` a toujours besoin du moteur SSR pendant le temps de la génération afin de prérendre toutes nos pages, et d'avoir du contenu solide pour la SEO et un chargement de page rapide. Le contenu est généré lors de la *phase de build*. Il ne faut pas l'utiliser, par exemple, pour les applications où le contenu dépend de l'authentification de l'utilisateur ou pour une API en temps réel (du moins pour le premier chargement).
 
-L'idée de l'application monopage est simple ! Quand le mode SPA est activé en utilisant `mode: 'spa'` ou l'option `--spa`, la génération se lance automatiquement après le build mais cette fois sans contenu de page et seulement avec les meta, ressources et liens communs.
+L'idée de l'application monopage est simple ! Quand le mode SPA est activé en utilisant `mode: 'spa'` ou l'option `--spa`, et que nous lançons la construction, la génération se lance automatiquement après la construction. Cette génération contient les meta, ressources et liens communs, mais sans contenu de page.
 
 Donc pour un déploiement en mode SPA, vous devez :
 
@@ -115,16 +120,10 @@ Donc pour un déploiement en mode SPA, vous devez :
 - Lancez `npm run build`.
 - Déployez le dossier `dist/` créé sur votre hébergement statique comme Surge, GitHub Pages ou nginx.
 
-Une autre possibilité de déploiement est que nous pouvons utiliser Nuxt comme un middleware dans des frameworks si le mode est `spa`. Ceci aide à réduire le temps de chargement et à utiliser Nuxt dans des projets ou le SSR n'est pas possible.
+Une autre possibilité de déploiement est d'utiliser Nuxt comme un middleware dans des frameworks si le mode est `spa`. Ceci aide à réduire le temps de chargement et à utiliser Nuxt dans des projets ou le SSR n'est pas possible.
 
 <div class="Alert">
 
-Consultez [Comment déployer sur Heroku ?](/faq/heroku-deployment) pour un exemple de déploiement sur des hébergements populaires.
-
-</div>
-
-<div class="Alert">
-
-Counsultez [Comment déployez sur GitHub Pages ?](/faq/github-pages) pour plus d'informations sur un hébergement GitHub Pages.
+Consultez les [Question fréquentes](/faq) et trouver des exemples astucieux de déploiements sur des hôtes populaires.
 
 </div>

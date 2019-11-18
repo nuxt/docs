@@ -31,7 +31,7 @@ Nuxt.js incluí o seguintes itens para criar um desenvolvimento de aplicações 
 - [Vue Router](https://router.vuejs.org/en/)
 - [Vuex](https://vuex.vuejs.org/en/) (incluído apenas quando a [opção de store](/guide/vuex-store) é usada)
 - [Vue Server Renderer](https://ssr.vuejs.org/en/) (excluído quando [`mode: 'spa'`](/api/configuration-mode))
-- [vue-meta](https://github.com/declandewet/vue-meta)
+- [vue-meta](https://github.com/nuxt/vue-meta)
 
 Um total de apenas **57kB min+gzip** (60kB com Vuex).
 
@@ -44,7 +44,7 @@ Por debaixo dos panos nós usamos [webpack](https://github.com/webpack/webpack) 
 - Server-Side Rendering
 - Sistema de rotas robusto com Asynchronous Data
 - Servidor de arquivos estáticos
-- Transpilação para ES6/ES7
+- Transpilação para ES2015+
 - Gera o build e minifica seus arquivos JS & CSS
 - Gerencie a tag `<head>` (`<title>`, `<meta>`, etc.)
 - Hot module replacement em desenvolvimento

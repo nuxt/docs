@@ -1,46 +1,34 @@
 ---
-title: Now を使ったデプロイ
+title: Now へデプロイするには？
 description: Now へデプロイするには？
 ---
 
-# Now へデプロイするには？
+![nuxt-now-builder](https://user-images.githubusercontent.com/904724/61308402-7a752d00-a7f0-11e9-9502-23731ccd00fd.png)
 
 ## Now V2
 
-**Note:** サーバーサイドレンダリングされた Nuxt アプリは、Now v2 ではデプロイできません。そのような場合は、Now v1 を使ってください。
+[Now V2](https://zeit.co/now) を使ってデプロイするために、Nuxt.js チームとコントリビューターは公式の [@nuxtjs/now-builder](https://github.com/nuxt/now-builder) パッケージを作成しました。
 
-[ZEIT Now](https://zeit.co/now) を使ってデプロイするには、`package.json` のカスタマイズと、`now.json`の設定ファイルを作成します。
+必要なのは `now.json` をセットアップすることです:
 
-* `package.json` に `now-build` script コマンドを追加して下さい。:
-  * SPA (without SSR) の場合:
-    ```js
-    "scripts": {
-       ...
-       "now-build": "nuxt build --spa"
+```json
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "nuxt.config.js",
+      "use": "@nuxtjs/now-builder",
+      "config": {}
     }
-    ```
-  * Static Generated (Pre Rendering)の場合:
-    ```js
-    "scripts": {
-       ...
-       "now-build": "nuxt generate"
-    }
-    ```
-* `now.json` を作成し、`builds` を定義してください。:
+  ]
+}
+```
 
-  ```json
-  {
-    "version": 2,
-    "builds": [
-      { "src": "package.json", "use": "@now/static-build" }
-    ]
-  }
-  ```
-* これで `now` を実行できます！エンジョイ！
+詳細や例については https://github.com/nuxt/now-builder で見ることができます。
 
 ## Now V1 (レガシー)
 
-[now.sh](https://zeit.co/now) を使ってデプロイするには `package.json` を次のように記述することが推奨されます:
+[Now V1](https://zeit.co/now) を使ってデプロイするには `package.json` を次のように記述することが推奨されます:
 
 ```json
 {

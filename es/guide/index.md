@@ -30,7 +30,7 @@ Nuxt.js incluye lo siguientepara crear un desarrollo de aplicaciones web avanzad
 - [Vue 2](https://github.com/vuejs/vue)
 - [Vue-Router](https://github.com/vuejs/vue-router)
 - [Vuex](https://github.com/vuejs/vuex) (Solo se incluye cuando se utiliza [La opción store](/guide/vuex-store))
-- [Vue-Meta](https://github.com/declandewet/vue-meta)
+- [Vue-Meta](https://github.com/nuxt/vue-meta)
 
 Un total de solo **28kb min+gzip** (31kb con vuex).
 
@@ -43,7 +43,7 @@ Debajo del capo, usamos [Webpack](https://github.com/webpack/webpack) con [vue-l
 - Renderizado del lado del Servidor
 - Potente sistema de enrutamiento con datos asincronos.
 - Servidor de archivos estaticos
-- Transpilación de ES6/ES7
+- Transpilación de ES2015+
 - Agrupamiento y minificación de su JS y CSS
 - Gestion de elementos en el HEAD
 - Recarga en caliente en desarrollo

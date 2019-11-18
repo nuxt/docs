@@ -1,9 +1,7 @@
 ---
-title: "API : introduction aux modules Nuxt"
+title: "API : Mécanismes de Nuxt"
 description: Mieux comprendre les mécanismes de Nuxt
 ---
-
-# Mécanismes de Nuxt
 
 Nuxt.js a une architecture intégralement modulable permettant au développeur d'étendre n'importe quelle partie du cœur de Nuxt en utilisant son API.
 
@@ -56,27 +54,25 @@ Ces classes sont seulement utiles pour le build ou le mode développement.
 
 ## Utilisation et paquetage
 
-Nuxt exporte toutes les classes par défaut. Voici comment les `require` :
+Nuxt exporte toutes les classes par défaut. Voici comment les importer :
 
 ```js
-const { Nuxt, Builder, Utils } = require('nuxt')
+import { Nuxt, Builder, Utils } from 'nuxt'
 ```
 
 ## Pans de codes communs
 
-Toutes les classes Nuxt ont une référence à l'instance `nuxt` et aux `options`. Chaque classe étend [`tappable`](https://github.com/nuxt/tappable), de cette manière nous avons toujours une API cohérente à travers les classes pour accéder à `options` et à `nuxt`.
+Toutes les classes Nuxt ont une référence à l'instance `nuxt` et aux `options`, de cette manière nous avons toujours une API cohérente à travers les classes pour accéder à `options` et à `nuxt`.
 
 ```js
-const Tapable = require('tappable')
-
-class SomeClass extends Tapable {
-  constructor (nuxt, builder) {
+class SomeClass {
+  constructor (nuxt) {
     super()
     this.nuxt = nuxt
     this.options = nuxt.options
   }
 
-  someFunction() {
+  someFunction () {
     // Nous avons accès à `this.nuxt` and `this.options`
   }
 }
@@ -85,13 +81,13 @@ class SomeClass extends Tapable {
 Les classes sont *plugable* aussi elle devrait enregistrer un plugin sur le conteneur `nuxt` principal pour enregistrer plus de points d'ancrage.
 
 ```js
-class FooClass extends Tapable {
-  constructor (nuxt, builder) {
+class FooClass {
+  constructor (nuxt) {
     super()
     this.nuxt = nuxt
     this.options = nuxt.options
 
-    this.nuxt.applyPluginsAsync('foo', this)
+    this.nuxt.callHook('foo', this)
   }
 }
 ```
@@ -99,7 +95,7 @@ class FooClass extends Tapable {
 Aussi nous pouvons l'ancrer dans le module `foo` comme ceci :
 
 ```js
-nuxt.hook('foo', foo => {
-    // ...
+nuxt.hook('foo', (foo) => {
+  // ...
 })
 ```

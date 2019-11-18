@@ -5,6 +5,14 @@ description: 状態を管理してくれる Vuex ストアは、あらゆる大�
 
 > 状態を管理してくれる Vuex ストアは、あらゆる大規模アプリケーションにとても役に立ちます。Nuxt.js が [Vuex](https://vuex.vuejs.org/ja/) をコアに組み入れたのはそのような理由からです。
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/utilising-the-vuex-store-nuxtjs?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Vue School で <strong>Nuxt.js と Vuex</strong> についての無料レッスンをみる
+    </p>
+  </a>
+</div>
+
 ## ストアを有効にする
 
 Nuxt.js は `store` ディレクトリを探索し存在するときには以下を実行します:
@@ -47,7 +55,7 @@ export const state = () => ({
 export const mutations = {
   add (state, text) {
     state.list.push({
-      text: text,
+      text,
       done: false
     })
   },
@@ -115,7 +123,9 @@ import { mapMutations } from 'vuex'
 
 export default {
   computed: {
-    todos () { return this.$store.state.todos.list }
+    todos () {
+      return this.$store.state.todos.list
+    }
   },
   methods: {
     addTodo (e) {

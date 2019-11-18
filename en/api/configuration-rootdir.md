@@ -3,8 +3,6 @@ title: "API: The rootDir Property"
 description: Define the workspace of Nuxt.js application
 ---
 
-# The rootDir Property
-
 - Type: `String`
 - Default: `process.cwd()`
 

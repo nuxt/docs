@@ -66,7 +66,7 @@ module.exports = {
     '~/modules/simple'
 
     // Passing options
-    ['~/modules/simple', { token: '123' }]
+      ['~/modules/simple', { token: '123' }]
   ]
 }
 ```
@@ -88,9 +88,9 @@ Be aware that `async`/`await` is only supported in Node.js > 7.2. So if you are 
 ```js
 const fse = require('fs-extra')
 
-module.exports = async function asyncModule() {
+module.exports = async function asyncModule () {
   // You can do async works here using `async`/`await`
-  let pages = await fse.readJson('./pages.json')
+  const pages = await fse.readJson('./pages.json')
 }
 ```
 
@@ -99,10 +99,10 @@ module.exports = async function asyncModule() {
 ```js
 const axios = require('axios')
 
-module.exports = function asyncModule() {
+module.exports = function asyncModule () {
   return axios.get('https://jsonplaceholder.typicode.com/users')
     .then(res => res.data.map(user => '/users/' + user.username))
-    .then(routes => {
+    .then((routes) => {
       // Do something by extending Nuxt routes
     })
 }
@@ -113,10 +113,10 @@ module.exports = function asyncModule() {
 ```js
 const axios = require('axios')
 
-module.exports = function asyncModule(callback) {
+module.exports = function asyncModule (callback) {
   axios.get('https://jsonplaceholder.typicode.com/users')
     .then(res => res.data.map(user => '/users/' + user.username))
-    .then(routes => {
+    .then((routes) => {
       callback()
     })
 }
@@ -241,7 +241,6 @@ module.exports = function (moduleOptions) {
   this.options.build.plugins.push({
     apply (compiler) {
       compiler.plugin('emit', (compilation, cb) => {
-
         // This will generate `.nuxt/dist/info.txt' with contents of info variable.
         // Source can be buffer too
         compilation.assets['info.txt'] = { source: () => info, size: () => info.length }
@@ -283,27 +282,27 @@ Your module may need to do things only on specific conditions not just during Nu
 ```js
 module.exports = function () {
   // Add hook for modules
-  this.nuxt.hook('module', moduleContainer => {
+  this.nuxt.hook('module', (moduleContainer) => {
     // This will be called when all modules finished loading
   })
 
   // Add hook for renderer
-  this.nuxt.hook('renderer', renderer => {
+  this.nuxt.hook('renderer', (renderer) => {
     // This will be called when renderer was created
   })
 
   // Add hook for build
-  this.nuxt.hook('build', async builder => {
+  this.nuxt.hook('build', async (builder) => {
     // This will be called once when builder created
 
     // We can even register internal hooks here
-    builder.hook('compile', ({compiler}) => {
-        // This will be run just before webpack compiler starts
+    builder.hook('compile', ({ compiler }) => {
+      // This will be run just before webpack compiler starts
     })
   })
 
   // Add hook for generate
-  this.nuxt.hook('generate', async generator => {
+  this.nuxt.hook('generate', async (generator) => {
     // This will be called when a Nuxt generate starts
   })
 }

@@ -3,15 +3,13 @@ title: 'API: head メソッド'
 description: Nuxt.js はアプリケーションの headers 及び html attributes を更新するために vue-meta を使います。
 ---
 
-# head メソッド
-
-> Nuxt.js はアプリケーションの `headers` 及び `html attributes` を更新するために [vue-meta](https://github.com/declandewet/vue-meta) を使います。
+> Nuxt.js はアプリケーションの `headers` 及び `html attributes` を更新するために [vue-meta](https://github.com/nuxt/vue-meta) を使います。
 
 - **型:** `Object` または `Function`
 
 現在のページの HTML の head タグを設定するために `head` メソッドを使います。
 
-コンポーネントのデータは `head` メソッド内で `this` を使って利用できます。ページのデータを使って独自のメタタグを設定することもできます。
+コンポーネントのデータは `head` メソッド内で `this` を使って利用できます。ページのデータを使って独自のメタタグを設定することもできます。[Nuxt FAQ](https://ja.nuxtjs.org/faq/) も必ずご覧ください。
 
 ```html
 <template>
@@ -40,6 +38,6 @@ export default {
 
 <div class="Alert Alert--teal">
 
-<b>情報:</b> 子コンポーネント利用されたときにメタ情報が重複してしまうことを避けるために `hid` キーを使ってユニーク識別子を meta 要素に設定してください。 詳しくは [こちら](https://github.com/declandewet/vue-meta#lists-of-tags) を参照してください。
+<b>情報:</b> 子コンポーネント利用されたときにメタ情報が重複してしまうことを避けるために `hid` キーを使ってユニーク識別子を meta 要素に設定してください。 詳しくは [こちら](https://vue-meta.nuxtjs.org/api/#tagidkeyname) を参照してください。
 
 </div>

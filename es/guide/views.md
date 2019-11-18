@@ -18,7 +18,7 @@ The default template is:
 ```html
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -33,7 +33,7 @@ One example if to add conditional CSS classes for IE:
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -89,7 +89,7 @@ Example of configuring a custom error page in `nuxt.config.js`:
 
 ```js
 module.exports = {
-  ErrorPage: '~/components/custom-error.vue',
+  ErrorPage: '~/components/custom-error.vue'
 }
 ```
 
@@ -171,7 +171,7 @@ More information about the pages properties usage: [API Pages](/api)
 
 ## HTML Head
 
-Nuxt.js uses [vue-meta](https://github.com/declandewet/vue-meta) to update the `headers` and `html attributes` of your application.
+Nuxt.js uses [vue-meta](https://github.com/nuxt/vue-meta) to update the `headers` and `html attributes` of your application.
 
 Nuxt.js configures `vue-meta` with these options:
 ```js
@@ -200,7 +200,7 @@ head: {
 }
 ```
 
-To know the list of options you can give to `head`, take a look at [vue-meta documentation](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
+To know the list of options you can give to `head`, take a look at [vue-meta documentation](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
 More information about the head method: [API Configuration head](/api/configuration-head)
 
@@ -210,6 +210,6 @@ More information about the head method: [API Pages head](/api/pages-head)
 
 <div class="Alert">
 
-To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://github.com/declandewet/vue-meta#lists-of-tags).
+To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://vue-meta.nuxtjs.org/api/#tagidkeyname).
 
 </div>

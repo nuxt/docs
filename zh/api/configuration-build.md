@@ -57,7 +57,7 @@ module.exports = {
 export default {
   build: {
     babel: {
-      presets({ isServer }) {
+      presets ({ isServer }) {
         const targets = isServer ? { node: '10' } : { ie: '11' }
         return [
           [ require.resolve('@nuxt/babel-preset-app'), { targets } ]
@@ -136,7 +136,9 @@ export default {
   它们是**长期支持**的。这里不要使用`process.client`和`process.server`，因为它们是`'undefined'`。
 
 </div>
+
 例如 (`nuxt.config.js`)：
+
 ```js
 module.exports = {
   build: {
@@ -211,12 +213,6 @@ export default {
 ```
 要更多了解使用，可以移步[webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/)
 
-## hotMiddleware
-
-- 类型: `Object`
-
-请查看 [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) 了解更多可用选项。
-
 ## friendlyErrors
 
 - 类型: `Boolean`
@@ -236,7 +232,7 @@ export default {
 
 - 类型: `Object`
 
-请查看 [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) 来了解更多配置
+请查看 [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) 了解更多可用选项。
 
 ## html.minify
 
@@ -459,7 +455,7 @@ export default {
   build: {
     postcss: {
       plugins: {
-          // Disable `postcss-url`
+        // Disable `postcss-url`
         'postcss-url': false,
         // Add some plugins
         'postcss-nested': {},
@@ -568,11 +564,11 @@ $ yarn add @nuxtjs/style-resources
 ```js
 export default {
   modules: [
-    '@nuxtjs/style-resources',
+    '@nuxtjs/style-resources'
   ],
   styleResources: {
     scss: './assets/variables.scss',
-    less: './assets/**/*.less',
+    less: './assets/**/*.less'
     // sass: ...
   }
 }
@@ -689,6 +685,20 @@ export default {
     watch: [
       '~/.nuxt/support.js'
     ]
+  }
+}
+```
+
+## followSymlinks
+
+> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example. 
+
+- Type: `Boolean`
+
+```js
+export default {
+  build: {
+    followSymlinks: false
   }
 }
 ```

@@ -11,14 +11,15 @@ description: The Views section describes all you need to configure data and view
 
 > You can customize the HTML app template used by Nuxt.js to include scripts or conditional CSS classes.
 
-To change the template, create an `app.html` file in the root folder of your project.
+To change the template, create an `app.html` file, in the src folder of your project. (which is the project's root directory by default).
+
 
 The default template used by Nuxt.js is:
 
 ```html
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -33,7 +34,7 @@ One use case of using a custom app template is to add conditional CSS classes fo
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -143,6 +144,14 @@ export default {
 
 Every Page component is a Vue component but Nuxt.js adds special attributes and functions to make the development of your universal application as easy as possible.
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-page-components?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Watch a free lesson about <strong>Nuxt.js Page Components</strong> on Vue School 
+    </p>
+  </a>
+</div>
+
 ```html
 <template>
   <h1 class="red">Hello {{ name }}!</h1>
@@ -190,9 +199,9 @@ More information about the pages properties usage: [API Pages](/api)
 
 ## HTML Head
 
-Nuxt.js uses [vue-meta](https://github.com/declandewet/vue-meta) to update the `document head` and `meta attributes` of your application.
+Nuxt.js uses [vue-meta](https://vue-meta.nuxtjs.org/) to update the `document head` and `meta attributes` of your application.
 
-The `vue-meta` Nuxt.js uses can be found [on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/index.js#L29-L35)
+The `vue-meta` Nuxt.js uses can be found [on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/index.js#L42-L48).
 
 <div class="Alert Alert--teal">
 
@@ -219,7 +228,7 @@ head: {
 }
 ```
 
-To learn more about the options available for `head`, take a look at [vue-meta documentation](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
+To learn more about the options available for `head`, take a look at [vue-meta documentation](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
 More information about the `head` method are available on the [API Configuration `head`](/api/configuration-head) page.
 

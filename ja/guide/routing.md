@@ -1,6 +1,6 @@
 ---
 title: ルーティング
-description: Nuxt.js はウェブアプリケーションのルーティングを生成するためにファイルシステムを利用します。
+description: "Nuxt.js はウェブアプリケーションのルーティングを生成するためにファイルシステムを利用します。"
 ---
 
 > Nuxt.js は `pages` ディレクトリ内の Vue ファイルの木構造に沿って、自動的に [vue-router](https://github.com/vuejs/vue-router) の設定を生成します。
@@ -59,6 +59,14 @@ router: {
 
 パラメータを使って動的なルーティングを定義するには .vue ファイル名またはディレクトリ名に **アンダースコアのプレフィックス** を付ける必要があります。
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-dynamic-routes?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+     Vue School で<strong>動的なルーティング</strong>についての無料レッスンをみる
+    </p>
+  </a>
+</div>
+
 下記のような木構造のとき:
 
 ```bash
@@ -100,11 +108,11 @@ router: {
 }
 ```
 
-`user-id` と名付けられたルートに `:id?` というパスがありますが、これはこの `:id` が必須ではないことを表します。もし必須にしたい場合は、代わりに `users/_id` ディレクトリ内に `index.vue` ファイルを作成してください。
+`users-id` と名付けられたルートに `:id?` というパスがありますが、これはこの `:id` が必須ではないことを表します。もし必須にしたい場合は、代わりに `users/_id` ディレクトリ内に `index.vue` ファイルを作成してください。
 
 <div class="Alert Alert--orange">
 
-<b>警告</b>: `generate` コマンドでは動的なルーティングは無視されます。:  [generate 設定 API](/api/configuration-generate#routes)
+**警告**: `generate` コマンドで動的なルーティングは無視されます。:  [generate 設定 API](/api/configuration-generate#routes)
 
 </div>
 
@@ -135,7 +143,7 @@ Nuxt.js では vue-router の子ルートを使ってルートをネストさせ
 
 <div class="Alert Alert--orange">
 
-<b>警告:</b> `<nuxt-child>` を親コンポーネント内（<code>.vue</code> ファイル内）に書くことを忘れないでください。</nuxt-child>
+<b>警告:</b> `<nuxt-child/>` を親コンポーネント内（<code>.vue</code> ファイル内）に書くことを忘れないでください。
 
 </div>
 
@@ -236,7 +244,7 @@ router: {
 ### 未知の動的でネストされたルート
 
 もし URL 構造の深さが不明な場合は、ネストされたパスに動的にマッチさせる `_.vue` ファイルを使用することができます。
-これは_より詳細な_リクエストにマッチしなかったリクエストをハンドリングします。
+これは _より詳細な_ リクエストにマッチしなかったリクエストをハンドリングします。
 
 下記のようなファイルの木構造のとき:
 
@@ -270,8 +278,8 @@ __注意:__ 404 ページのハンドリングは `_.vue` ページのロジッ�
 ``` js
 export default {
   router: {
-    extendRoutes(routes, resolve) {
-      let index = routes.findIndex(route => route.name === 'main')
+    extendRoutes (routes, resolve) {
+      const index = routes.findIndex(route => route.name === 'main')
       routes[index] = {
         ...routes[index],
         components: {
@@ -316,30 +324,11 @@ GitHub Pages と Netlify は `404.html` ファイルを自動的に認識する�
 
 #### Firebase ホスティング向けの実装
 
-Firebase ホスティング上でフォールバックを使用するためには、`generate.fallback` を `true` にし、以下の設定を使用します。 ([さらに詳しく](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
-
-```json
-{
-  "hosting": {
-    "public": "dist",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/404.html"
-      }
-    ]
-  }
-}
-```
+Firebase ホスティングは `404.html` ファイルを自動的に[処理できる](https://firebase.google.com/docs/hosting/full-config#404)ため、`generate.fallback` を `true` に設定すると、404 のデフォルトレスポンスコードと一緒にエラーページがレンダリングされます。
 
 ## トランジション
 
-Nuxt.js では [<transition> コンポーネントを使って、ページ間を遷移する際のトランジション/アニメーションを行うことができます。</transition>](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components)
+Nuxt.js では [`<transition>`](https://jp.vuejs.org/v2/guide/transitions.html#%E5%8D%98%E4%B8%80%E8%A6%81%E7%B4%A0-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%B7%E3%83%A7%E3%83%B3) コンポーネントを使って、ページ間を遷移する際のトランジション/アニメーションを行うことができます。
 
 ### グローバルな設定
 
@@ -405,7 +394,7 @@ export default {
 
 **ミドルウェアは `middleware/` ディレクトリに入れます。** ファイル名はミドルウェアの名前となります（`middleware/auth.js` は `auth` ミドルウェアになります）
 
-ミドルウェアは第一引数として [コンテキスト](/api#%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88) を受け取ります:
+ミドルウェアは第一引数として [コンテキスト](/api/context) を受け取ります:
 
 ```js
 export default function (context) {

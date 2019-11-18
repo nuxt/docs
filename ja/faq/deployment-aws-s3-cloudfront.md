@@ -1,11 +1,9 @@
 ---
-title: "AWS S3 と CloudFront によるデプロイ"
+title: "S3 と CloudFront を使用して AWS へデプロイするには？"
 description: "S3 と CloudFront を使用した AWS での静的ホスティング"
 ---
 
-# S3 と CloudFront を使用して AWS へデプロイするには？
-
-AWS は Amazon Web Services です。
+AWS は Amazon Web Services の略称です。
 S3 は、静的サイトホスティング用に設定できる静的ストレージです。
 CloudFront は、AWS の CDN（コンテンツ配信ネットワーク）です。
 
@@ -61,9 +59,7 @@ gulpfile.js     -  ファイルを S3 にプッシュして CloudFront のキャ
 3. セキュリティアクセスを設定する
 4. プロジェクトにビルドスクリプトを設定する
 
-### 1. AWS: S3 バケットの設定
-
-### 2. AWS: CloudFront Distribution の設定
+### AWS: S3 バケットと CloudFront Distribution の設定
 
 ステップ1 と 2 については、この [S3 と CloudFront をセットアップするためのチュートリアル](https://reidweb.com/2017/02/06/cloudfront-cdn-tutorial/)に従ってください。
 
@@ -72,7 +68,7 @@ gulpfile.js     -  ファイルを S3 にプッシュして CloudFront のキャ
 - AWS_BUCKET_NAME="example.com"
 - AWS_CLOUDFRONT="UPPERCASE"
 
-### 3. AWS: セキュリティアクセスを設定する
+### AWS: セキュリティアクセスを設定する
 
 ステップ3 では、以下のことができるユーザーを作成する必要があります:
 
@@ -127,7 +123,7 @@ gulpfile.js     -  ファイルを S3 にプッシュして CloudFront のキャ
 - AWS_ACCESS_KEY_ID="key"
 - AWS_SECRET_ACCESS_KEY="secret"
 
-### 4. Laptop: プロジェクトのビルドスクリプトを設定する
+### Laptop: プロジェクトのビルドスクリプトを設定する
 
 4.1) `deploy.sh` スクリプトを作成します。詳細は [nvm（node version manager）](https://github.com/creationix/nvm)を参照してください。
 
@@ -172,60 +168,65 @@ npm install -g gulp
 4.4) `gulpfile.js` をビルドスクリプトとともに作成します。
 
 ```javascript
-var gulp = require('gulp');
-var awspublish = require('gulp-awspublish');
-var cloudfront = require('gulp-cloudfront-invalidate-aws-publish');
-var parallelize = require('concurrent-transform');
+const gulp = require('gulp')
+const awspublish = require('gulp-awspublish')
+const cloudfront = require('gulp-cloudfront-invalidate-aws-publish')
+const parallelize = require('concurrent-transform')
 
 // https://docs.aws.amazon.com/cli/latest/userguide/cli-environment.html
 
-var config = {
+const config = {
 
   // 必須
-  params: { Bucket: process.env.AWS_BUCKET_NAME },
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  params: {
+    Bucket: process.env.AWS_BUCKET_NAME
+  },
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    signatureVersion: 'v3'
+  },
 
   // 任意
-  deleteOldVersions: false,                 // PRODUCTION で使用しない
+  deleteOldVersions: false, // PRODUCTION で使用しない
   distribution: process.env.AWS_CLOUDFRONT, // CloudFront distribution ID
   region: process.env.AWS_DEFAULT_REGION,
-  headers: { /*'Cache-Control': 'max-age=315360000, no-transform, public',*/ },
+  headers: { /* 'Cache-Control': 'max-age=315360000, no-transform, public', */ },
 
   // 適切なデフォルト値 - これらのファイル及びディレクトリは gitignore されている
   distDir: 'dist',
   indexRootPath: true,
   cacheFileName: '.awspublish',
   concurrentUploads: 10,
-  wait: true,  // CloudFront のキャッシュ削除が完了するまでの時間（約30〜60秒）
+  wait: true // CloudFront のキャッシュ削除が完了するまでの時間（約30〜60秒）
 }
 
-gulp.task('deploy', function() {
+gulp.task('deploy', function () {
   // S3 オプションを使用して新しい publisher を作成する
   // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property
-  var publisher = awspublish.create(config, config);
+  const publisher = awspublish.create(config)
 
-  var g = gulp.src('./' + config.distDir + '/**');
-    // publisher は、上記で指定した Content-Length、Content-Type、および他のヘッダーを追加する
-    // 指定しない場合、はデフォルトで x-amz-acl が public-read に設定される
+  let g = gulp.src('./' + config.distDir + '/**')
+  // publisher は、上記で指定した Content-Length、Content-Type、および他のヘッダーを追加する
+  // 指定しない場合、はデフォルトで x-amz-acl が public-read に設定される
   g = g.pipe(parallelize(publisher.publish(config.headers), config.concurrentUploads))
 
   // CDN のキャッシュを削除する
   if (config.distribution) {
-    console.log('Configured with CloudFront distribution');
-    g = g.pipe(cloudfront(config));
+    console.log('Configured with CloudFront distribution')
+    g = g.pipe(cloudfront(config))
   } else {
-    console.log('No CloudFront distribution configured - skipping CDN invalidation');
+    console.log('No CloudFront distribution configured - skipping CDN invalidation')
   }
 
   // 削除したファイルを同期する
-  if (config.deleteOldVersions) g = g.pipe(publisher.sync());
+  if (config.deleteOldVersions) { g = g.pipe(publisher.sync()) }
   // 連続したアップロードを高速化するためにキャッシュファイルを作成する
-  g = g.pipe(publisher.cache());
+  g = g.pipe(publisher.cache())
   // アップロードの更新をコンソールに出力する
-  g = g.pipe(awspublish.reporter());
-  return g;
-});
+  g = g.pipe(awspublish.reporter())
+  return g
+})
 ```
 
 4.5) デプロイとデバッグ

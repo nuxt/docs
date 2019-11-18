@@ -36,7 +36,7 @@ description: 默认情况下 Nuxt 使用 vue-loader、file-loader 以及 url-loa
 那么编译后会被转换成：
 
 ```js
-createElement('img', { attrs: { src: require('~/assets/image.png') }})
+createElement('img', { attrs: { src: require('~/assets/image.png') } })
 ```
 
 `.png` 并非 JavaScript 文件, 因此 Nuxt.js 通过配置Webpack使用[file-loader](https://github.com/webpack/file-loader) 和 [url-loader](https://github.com/webpack/url-loader) 这两个加载器来处理此类引用。
@@ -98,5 +98,5 @@ Nuxt 服务器启动的时候，该目录下的文件会映射至应用的根路
 <img src="/my-image.png"/>
 
 <!-- 引用 assets 目录下经过 webpack 构建处理后的图片 -->
-<img src="/assets/my-image-2.png"/>
+<img src="~/assets/my-image-2.png"/>
 ```

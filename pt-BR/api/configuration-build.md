@@ -255,15 +255,15 @@ Example (`nuxt.config.js`):
 ```js
 module.exports = {
   build: {
-      templates: [
-         {
-           src: '~/modules/support/plugin.js', // src can be absolute or relative
-           dst: 'support.js', // dst is relative to project `.nuxt` dir
-           options: { // Options are provided to template as `options` key
-               live_chat: false
-           }
-         }
-      ]
+    templates: [
+      {
+        src: '~/modules/support/plugin.js', // src can be absolute or relative
+        dst: 'support.js', // dst is relative to project `.nuxt` dir
+        options: { // Options are provided to template as `options` key
+          live_chat: false
+        }
+      }
+    ]
   }
 }
 ```
@@ -310,9 +310,23 @@ module.exports = {
 ```js
 module.exports = {
   build: {
-      watch: [
-          '~/.nuxt/support.js'
-      ]
+    watch: [
+      '~/.nuxt/support.js'
+    ]
+  }
+}
+```
+
+## followSymlinks
+
+> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example. 
+
+- Type: `Boolean`
+
+```js
+export default {
+  build: {
+    followSymlinks: false
   }
 }
 ```

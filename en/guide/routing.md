@@ -59,6 +59,14 @@ router: {
 
 To define a dynamic route with a parameter, you need to define a .vue file OR a directory **prefixed by an underscore**.
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-dynamic-routes?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Watch a free lesson about <strong>dynamic routes</strong> on Vue School 
+    </p>
+  </a>
+</div>
+
 This file tree:
 
 ```bash
@@ -269,8 +277,8 @@ To render named views you can use `<nuxt name="top"/>` or `<nuxt-child name="top
 ``` js
 export default {
   router: {
-    extendRoutes(routes, resolve) {
-      let index = routes.findIndex(route => route.name === 'main')
+    extendRoutes (routes, resolve) {
+      const index = routes.findIndex(route => route.name === 'main')
       routes[index] = {
         ...routes[index],
         components: {
@@ -314,26 +322,7 @@ GitHub Pages and Netlify recognize the `404.html` file automatically, so setting
 
 #### Implementation for Firebase Hosting
 
-To use the fallback on Firebase Hosting, configure `generate.fallback` to `true` and use the following config ([more info](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
-
-``` json
-{
-  "hosting": {
-    "public": "dist",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/404.html"
-      }
-    ]
-  }
-}
-```
+Firebase Hosting [can handle](https://firebase.google.com/docs/hosting/full-config#404) the `404.html` file automatically, so setting `generate.fallback` to `true` will render the error page with a default response code of 404.
 
 ## Transitions
 

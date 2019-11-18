@@ -3,8 +3,6 @@ title: "API: The modern Property"
 description: Build and server a modern bundle
 ---
 
-# The modern Property
-
 > This feature is inspired by [vue-cli modern mode](https://cli.vuejs.org/guide/browser-compatibility.html#modern-mode) 
 
 - Type: `String` or `Boolean`

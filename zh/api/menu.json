@@ -11,7 +11,9 @@
       { "name": "asyncData", "to": "/" },
       { "name": "fetch", "to": "/pages-fetch" },
       { "name": "head", "to": "/pages-head" },
+      { "name": "key", "to": "/pages-key" },
       { "name": "layout", "to": "/pages-layout" },
+      { "name": "loading", "to": "/pages-loading" },
       { "name": "middleware", "to": "/pages-middleware" },
       { "name": "scrollToTop", "to": "/pages-scrolltotop" },
       {
@@ -118,11 +120,15 @@
         "contents": [
           { "name": "bundleRenderer", "to": "#bundleRenderer" },
           { "name": "etag", "to": "#etag" },
+          { "name": "compressor", "to": "#compressor" },
+          { "name": "fallback", "to": "#fallback" },
           { "name": "gzip", "to": "#gzip" },
           { "name": "http2", "to": "#http2" },
           { "name": "resourceHints", "to": "#resourceHints" },
           { "name": "ssr", "to": "#ssr" },
-          { "name": "static", "to": "#static" }
+          { "name": "static", "to": "#static" },
+          { "name": "dist", "to": "#dist" },
+          { "name": "csp", "to": "#csp" }
         ]
       },
       { "name": "rootDir", "to": "/configuration-rootdir" },
@@ -132,13 +138,15 @@
         "contents": [
           { "name": "base", "to": "#base" },
           { "name": "extendRoutes", "to": "#extendroutes" },
+          { "name": "fallback", "to": "#fallback" },
           { "name": "linkActiveClass", "to": "#linkactiveclass" },
           { "name": "linkExactActiveClass", "to": "#linkexactactiveclass" },
+          { "name": "linkPrefetchedClass", "to": "#linkprefetchedclass" },
           { "name": "middleware", "to": "#middleware" },
           { "name": "mode", "to": "#mode" },
-          { "name": "scrollBehavior", "to": "#scrollbehavior" },
           { "name": "parseQuery / stringifyQuery", "to": "#parsequery-stringifyquery" },
-          { "name": "fallback", "to": "#fallback" }
+          { "name": "prefetchLinks", "to": "#prefetchlinks" },
+          { "name": "scrollBehavior", "to": "#scrollbehavior" }
         ]
       },
       { "name": "server", "to": "/configuration-server" },

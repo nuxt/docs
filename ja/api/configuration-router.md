@@ -3,8 +3,6 @@ title: "API: router プロパティ"
 description: router プロパティを使って Nuxt.js のルーターをカスタマイズできます。
 ---
 
-# router プロパティ
-
 > router プロパティを使って Nuxt.js のルーター（[vue-router](https://router.vuejs.org/en/)）をカスタマイズできます。
 
 ## base
@@ -36,6 +34,23 @@ export default {
 
 > このオプションは vue-router の [base](https://router.vuejs.org/ja/api/#base) に直接付与されます。
 
+## routeNameSplitter
+
+- 型: `String`
+- デフォルト: `'-'`
+
+Nuxt.js が使うルート名の区切り文字を変更したい場合があるでしょう。設定ファイル内の `routeNameSplitter` オプションを使用して変更することが可能です。
+`pages/posts/_id.vue` というページファイルがあるとします。Nuxt はプログラムに従ってルート名を生成します。この場合は `posts-id` です。`routeNameSplitter` の設定を `/` に変更することによって `posts/id` へ変更されます。
+
+例 (`nuxt.config.js`):
+```js
+export default {
+  router: {
+    routeNameSplitter: '/'
+  }
+}
+```
+
 ## extendRoutes
 
 - 型: `Function`
@@ -60,7 +75,61 @@ export default {
 }
 ```
 
-ルートのスキーマは [vue-router](https://router.vuejs.org/en/) のスキーマを尊重すべきです。
+ルートをソートしたい場合、`@nuxt/utils` の `sortRoutes(routes)` 関数を使用できます。
+
+`nuxt.config.js`
+```js
+import { sortRoutes } from '@nuxt/utils'
+export default {
+  router: {
+    extendRoutes (routes, resolve) {
+      // ルートをここに追加する
+
+      // ソートをする
+      sortRoutes(routes)
+    }
+  }
+}
+```
+
+ルートのスキーマは [vue-router](https://router.vuejs.org/ja/) のスキーマを尊重すべきです。
+
+<div class="Alert Alert--orange">
+
+<b>警告：</b> [名前付きビュー](/guide/routing#%E5%90%8D%E5%89%8D%E4%BB%98%E3%81%8D%E3%83%93%E3%83%A5%E3%83%BC)を使うルートを追加する場合、対応する名前付き `components` の `chunkNames` を追加することを忘れないでください。
+
+</div>
+
+`nuxt.config.js`
+```js
+export default {
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        path: '/users/:id',
+        components: {
+          default: resolve(__dirname, 'pages/users'), // または routes[index].component
+          modal: resolve(__dirname, 'components/modal.vue')
+        },
+        chunkNames: {
+          modal: 'components/modal'
+        }
+      })
+    }
+  }
+}
+```
+
+## fallback
+
+- 型: `Boolean`
+- デフォルト: `false`
+
+history.pushState がサポートされていないブラウザにおいて、モードが history に設定されているとき、ルーターを hash モードにフォールバックするかどうか制御します。
+
+これを false に設定すると、本質的に全ての router-link ナビゲーションが IE9 においてフルページリフレッシュになります。これは、アプリケーションがサーバサイドレンダリングされ、 IE9 で動作する必要がある場合に便利です。なぜなら、サーバーサイドレンダリングではハッシュモードの URL が機能しないためです。
+
+> このオプションは vue-router の [fallback](https://router.vuejs.org/ja/api/#fallback) に直接付与されます。
 
 ## linkActiveClass
 
@@ -100,6 +169,23 @@ export default {
 
 > このオプションは [linkexactactiveclass](https://router.vuejs.org/ja/api/#linkexactactiveclass) に直接付与されます.
 
+## linkPrefetchedClass
+
+- 型: `String`
+- デフォルト: `false`
+
+[`<nuxt-link>`](/api/components-nuxt-link) の prefetch クラスをグローバルに設定する（デフォルトでは無効の機能）
+
+例 (`nuxt.config.js`):
+
+```js
+export default {
+  router: {
+    linkPrefetchedClass: 'nuxt-link-prefetched'
+  }
+}
+```
+
 ## middleware
 
 - 型: `String` または `Array`
@@ -121,7 +207,6 @@ export default {
 ```
 
 `middleware/user-agent.js`
-
 ```js
 export default function (context) {
   // userAgent プロパティを context 内に追加します（context は `data` メソッドや `fetch` メソッド内で利用できます）
@@ -150,63 +235,6 @@ export default {
 
 > このオプションは直接 vue-router の [mode](https://router.vuejs.org/ja/api/#mode) に渡されます。
 
-## scrollBehavior
-
-- 型: `Function`
-
-`scrollBehavior` オプションを使って、ページ間のスクロール位置についての独自の振る舞いを定義できます。このメソッドはページがレンダリングされるたびに毎回呼び出されます。
-
-デフォルトでは scrollBehavior オプションは次のようにセットされています:
-
-```js
-const scrollBehavior = function (to, from, savedPosition) {
-  // 返された位置が偽または空のオブジェクトだったときは、
-  // 現在のスクロール位置を保持する
-  let position = false
-
-  // 子パスが見つからないとき
-  if (to.matched.length < 2) {
-    // ページのトップへスクロールする
-    position = { x: 0, y: 0 }
-  } else if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
-    // 子パスのひとつが scrollToTop オプションが true にセットされているとき
-    position = { x: 0, y: 0 }
-  }
-
-  // savedPosition は popState ナビゲーションでのみ利用できます（戻るボタン）
-  if (savedPosition) {
-    position = savedPosition
-  }
-
-  return new Promise(resolve => {
-    //（必要であれば）out トランジションが完了するのを待つ
-    window.$nuxt.$once('triggerScroll', () => {
-      // セレクタが渡されなかったとき、
-      // または、セレクタがどの要素にもマッチしなかったときは、座標が用いられる
-      if (to.hash && document.querySelector(to.hash)) {
-        // セレクタを返すことでアンカーまでスクロールする
-        position = { selector: to.hash }
-      }
-      resolve(position)
-    })
-  })
-}
-```
-
-すべてのルートにおいて強制的にトップまでスクロールさせる例:
-
-`nuxt.config.js`
-
-```js
-export default {
-  router: {
-    scrollBehavior: function (to, from, savedPosition) {
-      return { x: 0, y: 0 }
-    }
-  }
-}
-```
-
 ## parseQuery / stringifyQuery
 
 - 型: `Function`
@@ -215,13 +243,74 @@ export default {
 
 > このオプションは vue-router の [parseQuery / stringifyQuery](https://router.vuejs.org/ja/api/#parsequery-stringifyquery) に直接付与されます。
 
-## fallback
+## prefetchLinks
+
+> この機能は Nuxt v2.4.0 で追加されました
 
 - 型: `Boolean`
-- デフォルト: `false`
+- デフォルト: `true`
 
-history.pushState がサポートされていないブラウザにおいて、モードが history に設定されているとき、ルーターを hash モードにフォールバックするかどうか制御します。
+viewport（ブラウザの表示領域）内にリンクが表示されたとき *コード分割された* ページを先読みする `<nuxt-link>` の設定をします。
+[IntersectionObserver](https://developer.mozilla.org/ja/docs/Web/API/Intersection_Observer_API) がサポートされている必要があります ([CanIUse](https://caniuse.com/#feat=intersectionobserver)を御覧ください）。
 
-これを false に設定すると、本質的に全ての router-link ナビゲーションが IE9 においてフルページリフレッシュになります。これは、アプリケーションがサーバサイドレンダリングされ、 IE9 で動作する必要がある場合に便利です。なぜなら、サーバーサイドレンダリングではハッシュモードの URL が機能しないためです。
+この機能を [Polyfill.io](https://polyfill.io) のようなサービスで条件付きで埋め込むことをお勧めします:
 
-> このオプションは vue-router の [fallback](https://router.vuejs.org/ja/api/#fallback) に直接付与されます。
+`nuxt.config.js`
+
+```js
+export default {
+  head: {
+    script: [
+      { src: 'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver', body: true }
+    ]
+  }
+}
+```
+
+特定のリンクで先読みを無効にしたい場合は、`no-prefetch` プロパティを使用します。Nuxt.js v2.10.0 からは `prefetch` プロパティを `false` に設定することもできます。:
+
+```html
+<nuxt-link to="/about" no-prefetch>先読みしないページについて</nuxt-link>
+<nuxt-link to="/about" :prefetch="false">先読みしないページについて</nuxt-link>
+```
+
+全てのリンクで先読みを無効にしたい場合は、`prefetchLinks` を `false` に設定してください:
+
+```js
+// nuxt.config.js
+export default {
+  router: {
+    prefetchLinks: false
+  }
+}
+```
+
+Nuxt.js v2.10.0 からは prefetchLinks` を `false` に設定した上で特定のリンクを先読みしたい場合 `prefetch` プロパティを使うことができます。
+
+```html
+<nuxt-link to="/about" prefetch>先読みするページについて</nuxt-link>
+```
+
+## scrollBehavior
+
+- 型: `Function`
+
+`scrollBehavior` オプションを使って、ページ間のスクロール位置についての独自の振る舞いを定義できます。このメソッドはページがレンダリングされるたびに毎回呼び出されます。詳細は [vue-router のスクロールの振る舞い](https://router.vuejs.org/ja/guide/advanced/scroll-behavior.html)を参照してください。
+
+<div class="Alert Alert-blue">
+
+v2.9.0 以降、ファイルを使用してルーターの scrollBehavior を上書きすることができます。このファイルは `~/app/router.scrollBehavior.js` に配置する必要があります。
+
+</div>
+
+Nuxt のデフォルトの `router.scrollBehavior.js` ファイルは次の場所にあります：[packages/vue-app/template/router.scrollBehavior.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/router.scrollBehavior.js)
+
+
+すべてのルートにおいて強制的にトップまでスクロールさせる例:
+
+`app/router.scrollBehavior.js`
+```js
+export default function (to, from, savedPosition) {
+  return { x: 0, y: 0 }
+}
+```

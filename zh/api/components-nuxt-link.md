@@ -19,5 +19,18 @@ description: nuxt-link 组件用于在页面中添加链接至别的页面。
   </div>
 </template>
 ```
+**别名:** `<n-link>`, `<NuxtLink>`, 和 `<NLink>`
 
-将来我们会为 `nuxt-link` 组件增加更多的功能特性，例如资源预加载，用于提升 nuxt.js 应用的响应速度。
+> Nuxt.js v2.4.0添加
+
+为了提高Nuxt.js应用程序的响应能力，当链接将显示在视口中时，Nuxt.js将自动预获取代码分割页面。此功能的灵感来自Google Chrome Labs的[quicklink.js](https://github.com/GoogleChromeLabs/quicklink)。
+
+要禁用链接页面的预获取，可以使用`no-prefetch`：
+
+```html
+<n-link to="/about" no-prefetch>About page not pre-fetched</n-link>
+```
+
+您可以使用[router.prefetchLinks](/api/configuration-router#prefetchlinks)全局配置此行为。
+
+关于`prefetched-class`还可用于自定义在预获取代码分割页面时添加的类。确保使用[router.linkPrefetchedClass](/api/configuration-router#linkprefetchedclass)全局设置此功能。

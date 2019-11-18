@@ -3,8 +3,6 @@ title: 'API: buildDir プロパティ'
 description: dist ディレクトリを定義します。
 ---
 
-# buildDir プロパティ
-
 - 型: `String`
 - デフォルト: `.nuxt`
 

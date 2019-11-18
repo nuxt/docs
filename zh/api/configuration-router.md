@@ -31,6 +31,22 @@ module.exports = {
 
 > 该配置项的值会被直接传给 vue-router 的[构造器](https://router.vuejs.org/zh-cn/api/options.html)。
 
+## routeNameSplitter
+
+- 类型: `String`
+- 默认: `'-'`
+
+您可能希望更改Nuxt.js使用的路由名称之间的分隔符。您可以通过配置文件中的`routeNameSplitter`选项执行此操作。想象一下，我们有页面文件`pages/posts/_id.vue`。Nuxt将以编程方式生成路由名称，在本例中为`posts-id`。因此，将`routeNameSplitter`配置修改为`/`，这样路由名称生成为`posts/id`。
+
+例如 (`nuxt.config.js`):
+```js
+export default {
+  router: {
+    routeNameSplitter: '/'
+  }
+}
+```
+
 ## extendRoutes
 
 - 类型: `Function`
@@ -92,6 +108,23 @@ export default {
 
 > 此选项直接提供给vue-router [linkexactactiveclass](https://router.vuejs.org/api/#linkexactactiveclass).
 
+## linkPrefetchedClass
+
+- 类型: `String`
+- 默认: `false`
+
+全局配置[`<nuxt-link>`](/api/components-nuxt-link)默认值(默认情况下禁用功能)
+
+例子 (`nuxt.config.js`):
+
+```js
+export default {
+  router: {
+    linkPrefetchedClass: 'nuxt-link-prefetched'
+  }
+}
+```
+
 ## middleware
 
 - 类型： `String` 或 `Array`
@@ -147,27 +180,51 @@ module.exports = {
 
 `scrollBehavior` 的默认配置为：
 ```js
-const scrollBehavior = (to, from, savedPosition) => {
-  // savedPosition 只有在 popstate 导航（如按浏览器的返回按钮）时可以获取。
-  if (savedPosition) {
-    return savedPosition
-  } else {
-    let position = {}
-    // 目标页面子组件少于两个
-    if (to.matched.length < 2) {
-      // 滚动至页面顶部
-      position = { x: 0, y: 0 }
-    }
-    else if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
-      // 如果目标页面子组件中存在配置了scrollToTop为true
-      position = { x: 0, y: 0 }
-    }
-    // 如果目标页面的url有锚点,  则滚动至锚点所在的位置
-    if (to.hash) {
-      position = { selector: to.hash }
-    }
-    return position
+const scrollBehavior = function (to, from, savedPosition) {
+  // if the returned position is falsy or an empty object,
+  // will retain current scroll position.
+  let position = false
+
+  // if no children detected and scrollToTop is not explicitly disabled
+  if (
+    to.matched.length < 2 &&
+    to.matched.every(r => r.components.default.options.scrollToTop !== false)
+  ) {
+    // scroll to the top of the page
+    position = { x: 0, y: 0 }
+  } else if (to.matched.some(r => r.components.default.options.scrollToTop)) {
+    // if one of the children has scrollToTop option set to true
+    position = { x: 0, y: 0 }
   }
+
+  // savedPosition is only available for popstate navigations (back button)
+  if (savedPosition) {
+    position = savedPosition
+  }
+
+  return new Promise((resolve) => {
+    // wait for the out transition to complete (if necessary)
+    window.$nuxt.$once('triggerScroll', () => {
+      // coords will be used if no selector is provided,
+      // or if the selector didn't match any element.
+      if (to.hash) {
+        let hash = to.hash
+        // CSS.escape() is not supported with IE and Edge.
+        if (typeof window.CSS !== 'undefined' && typeof window.CSS.escape !== 'undefined') {
+          hash = '#' + window.CSS.escape(hash.substr(1))
+        }
+        try {
+          if (document.querySelector(hash)) {
+            // scroll to anchor by returning the selector
+            position = { selector: hash }
+          }
+        } catch (e) {
+          console.warn('Failed to save scroll position. Please add CSS.escape() polyfill (https://github.com/mathiasbynens/CSS.escape).')
+        }
+      }
+      resolve(position)
+    })
+  })
 }
 ```
 
@@ -177,7 +234,7 @@ const scrollBehavior = (to, from, savedPosition) => {
 ```js
 module.exports = {
   router: {
-    scrollBehavior: function (to, from, savedPosition) {
+    scrollBehavior (to, from, savedPosition) {
       return { x: 0, y: 0 }
     }
   }
@@ -193,6 +250,46 @@ module.exports = {
 提供自定义查询字符串解析/字符串化功能。覆盖默认值。
 
 > 此选项直接提供在vue-router [parseQuery / stringifyQuery](https://router.vuejs.org/api/#parsequery-stringifyquery).
+
+## prefetchLinks
+
+> Nuxt v2.4.0 添加
+
+- 类型: `Boolean`
+- 默认: `true`
+
+在视图中检测到时，配置`<nuxt-link>`用来预获取*代码分割*页面。需要支持[IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)(参阅 [CanIUse](https://caniuse.com/#feat=intersectionobserver))。
+
+我们建议使用[Polyfill.io](https://polyfill.io)等服务有条件地填充此功能：
+
+`nuxt.config.js`
+
+```js
+export default {
+  head: {
+    script: [
+      { src: 'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver', body: true }
+    ]
+  }
+}
+```
+
+要禁用特定链接上的预取，可以使用`no-prefetch` 属性：
+
+```html
+<nuxt-link to="/about" no-prefetch>About page not pre-fetched</nuxt-link>
+```
+
+要全局禁用所有链接上的预取，请将`prefetchLinks`设置为`false`：
+
+```js
+// nuxt.config.js
+export default {
+  router: {
+    prefetchLinks: false
+  }
+}
+```
 
 ## fallback
 

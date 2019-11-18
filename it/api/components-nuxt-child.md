@@ -3,7 +3,7 @@ title: 'API: Il '
 description: Guarda questa pagina.
 ---
 
-# Il componente <nuxt-child>
+# Il componente &lt;nuxt-child&gt;
 
 > Questo componente è utilizzato per mostrare i componenti figli come definiti nell'albero delle [route](/guide/routing#nested-routes).
 

@@ -9,9 +9,9 @@ description: Nuxt.js 扩展了 Vue.js，增加了一个叫 `asyncData` 的方法
   <a href="http://vueschool.io/?friend=nuxt" target="_blank" class="Promote">
     <img src="/async-data-with-nuxtjs.png" srcset="/async-data-with-nuxtjs-2x.png 2x" alt="AsyncData by vueschool"/>
     <div class="Promote__Content">
-      <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
-      <p class="Promote__Content__Description">Learn how to manage asynchronous data with Nuxt.js.</p>
-      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+      <h4 class="Promote__Content__Title">使用Nuxt.js的异步数据</h4>
+      <p class="Promote__Content__Description">了解如何使用Nuxt.js管理异步数据。</p>
+      <p class="Promote__Content__Signature">由VueSchool制作视频课程，用于支持Nuxt.js开发。</p>
     </div>
   </a>
 </div>
@@ -38,14 +38,28 @@ Nuxt.js 提供了几种不同的方法来使用 `asyncData` 方法，你可以�
 
 </div>
 
+如果您的项目中直接使用了`node_modules`中的`axios`，并且使用`axios.interceptors`添加拦截器对请求或响应数据进行了处理，确保使用 `axios.create`创建实例后再使用。否则多次刷新页面请求服务器，服务端渲染会重复添加拦截器，导致数据处理错误。
+
+```js
+import axios from 'axios'
+const myaxios = axios.create({
+  // ...
+})
+myaxios.interceptors.response.use(function (response) {
+  return response.data
+}, function (error) {
+  // ...
+})
+```
+
 ### 返回 Promise
 ```js
 export default {
   asyncData ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
   }
 }
 ```
@@ -54,7 +68,7 @@ export default {
 ```js
 export default {
   async asyncData ({ params }) {
-    let { data } = await axios.get(`https://my-api/posts/${params.id}`)
+    const { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
 }
@@ -65,9 +79,9 @@ export default {
 export default {
   asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
+      .then((res) => {
+        callback(null, { title: res.data.title })
+      })
   }
 }
 ```
@@ -108,7 +122,7 @@ export default {
     // 请检查您是否在服务器端
     // 使用 req 和 res
     if (process.server) {
-     return { host: req.headers.host }
+      return { host: req.headers.host }
     }
 
     return {}
@@ -142,12 +156,12 @@ Nuxt.js 在上下文对象`context`中提供了一个 `error(params)` 方法，�
 export default {
   asyncData ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
-    .catch((e) => {
-      error({ statusCode: 404, message: 'Post not found' })
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
+      .catch((e) => {
+        error({ statusCode: 404, message: 'Post not found' })
+      })
   }
 }
 ```
@@ -157,12 +171,12 @@ export default {
 export default {
   asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
-    .catch((e) => {
-      callback({ statusCode: 404, message: 'Post not found' })
-    })
+      .then((res) => {
+        callback(null, { title: res.data.title })
+      })
+      .catch((e) => {
+        callback({ statusCode: 404, message: 'Post not found' })
+      })
   }
 }
 ```

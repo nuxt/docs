@@ -53,7 +53,7 @@ export default store
 
 > Nuxt.js는 `store` 디렉토리에서 모든 모듈을 관리할 수 있도록 해줍니다.
 
-만약 모듈 모드를 원한다면 `store/index.js` 파일에 store 인스턴스 대신 state와 mutaions, actions를 export 합니다:
+만약 모듈 모드를 원한다면 `store/index.js` 파일에 store 인스턴스 대신 state와 mutations, actions를 export 합니다:
 
 ```js
 export const state = () => ({
@@ -76,7 +76,7 @@ export const state = () => ({
 export const mutations = {
   add (state, text) {
     state.list.push({
-      text: text,
+      text,
       done: false
     })
   },

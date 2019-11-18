@@ -3,8 +3,6 @@ title: "API: watchers プロパティ"
 description: watchers プロパティで監視設定を上書きできます。
 ---
 
-# watchers プロパティ
-
 - 型: `Object`
 - デフォルト: `{}`
 

@@ -3,7 +3,17 @@ title: "API: plugins プロパティ"
 description: Nuxt.js の plugins オプションで Vue.js プラグインを使うことができます。
 ---
 
-# plugins プロパティ
+**情報**: Nuxt.js 2.4 以降、プラグインタイプを指定するための `plugins` のオプションとして `mode` が導入されました。指定可能な値は `client` または `server` です。 `ssr：false` は `mode: 'client'` に適応され、次のメジャーリリースでは非推奨になります。
+
+- 型: `Array`
+  - 要素: `String` または `Object`
+
+オブジェクトの場合にはプロパティは次のとおり:
+
+  - src: `String` (ファイルパス）
+  - mode: `String` (`client` もしくは `server` になります）*定義された場合, ファイルはそれぞれの（クライアントまたはサーバー）側にのみ含まれます。*
+
+**情報**: 古いバージョン
 
 - 型: `Array`
   - 要素: `String` または `Object`
@@ -19,20 +29,37 @@ description: Nuxt.js の plugins オプションで Vue.js プラグインを使
 
 ```js
 export default {
-  plugins: ['~/plugins/vue-notifications']
+  plugins: [
+    { src: '~/plugins/both-sides.js' },
+    { src: '~/plugins/client-only.js', mode: 'client' },
+    { src: '~/plugins/server-only.js', mode: 'server' }
+  ]
 }
 ```
 
-それから `plugins/vue-notifications.js` ファイルを作る必要があります:
+UI フレームワークの例 (`nuxt.config.js`):
+
+```js
+export default {
+  plugins: ['@/plugins/ant-design-vue']
+}
+```
+
+これは `plugins/ant-design-vue.js` のファイルを参照します:
 
 ```js
 import Vue from 'vue'
-import VueNotifications from 'vue-notifications'
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css' // Ant Designのドキュメントに従っています
 
-Vue.use(VueNotifications)
+Vue.use(Antd)
 ```
 
+css は [Ant Design のドキュメントに従ってインポートされています](https://vue.ant.design/docs/vue/getting-started/#3.-Use-antd's-Components "プラグインを構築するためのヒント")。
+
 `plugins` プロパティで設定されたパスはすべて、メインアプリケーションが初期化される前に **インポート** されます。
+
+## いつプラグインを使うか？
 
 `Vue.use()` を使う必要があるときは毎回 `plugins/` 内にファイルを作成し、そのパスを `nuxt.config.js` 内の `plugins` に追加する必要があります。
 

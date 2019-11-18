@@ -9,9 +9,9 @@ description: "Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt`
   <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
     <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Nuxt Fundamentals by vueschool"/>
     <div class="Promote__Content">
-      <h4 class="Promote__Content__Title">Nuxt.js Fundamentals</h4>
-      <p class="Promote__Content__Description">Learn how to get started quickly with Nuxt.js in videos.</p>
-      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+      <h4 class="Promote__Content__Title">Nuxt.js 基础知识</h4>
+      <p class="Promote__Content__Description">了解如何在视频中快速使用Nuxt.js</p>
+      <p class="Promote__Content__Signature">由VueSchool制作视频课程，用于支持Nuxt.js开发</p>
     </div>
   </a>
 </div>
@@ -41,6 +41,7 @@ $ yarn create nuxt-app <项目名>
   - [Hapi](https://github.com/hapijs/hapi)
   - [Feathers](https://github.com/feathersjs/feathers)
   - [Micro](https://github.com/zeit/micro)
+  - [Fastify](https://github.com/fastify/fastify)
   - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
 2. 选择您喜欢的UI框架:
   - None (无)
@@ -51,14 +52,21 @@ $ yarn create nuxt-app <项目名>
   - [Element UI](https://github.com/ElemeFE/element)
   - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
-3. 选择你想要的Nuxt模式 (`Universal` or `SPA`)
-4. 添加 [axios module](https://github.com/nuxt-community/axios-module) 以轻松地将HTTP请求发送到您的应用程序中。
-5. 添加 [EsLint](https://eslint.org/) 以在保存时代码规范和错误检查您的代码。
-5. 添加 [Prettier](https://prettier.io/) 以在保存时格式化/美化您的代码。
+  - [iView](https://www.iviewui.com/)
+  - [Tachyons](https://tachyons.io)
+3. 选择您喜欢的测试框架:
+  - None (随意添加一个)
+  - [Jest](https://github.com/facebook/jest)
+  - [AVA](https://github.com/avajs/ava)
+4. 选择你想要的Nuxt模式 (`Universal` or `SPA`)
+5. 添加 [axios module](https://github.com/nuxt-community/axios-module) 以轻松地将HTTP请求发送到您的应用程序中。
+6. 添加 [EsLint](https://eslint.org/) 以在保存时代码规范和错误检查您的代码。
+7. 添加 [Prettier](https://prettier.io/) 以在保存时格式化/美化您的代码。
 
 当运行完时，它将安装所有依赖项，因此下一步是启动项目:
 
 ```bash
+$ cd <project-name>
 $ npm run dev
 ```
 

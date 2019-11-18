@@ -1,0 +1,30 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:lts
+
+    working_directory: ~/doc
+
+    steps:
+      - checkout
+      - run:
+          name: install
+          command: >
+            yarn global add
+            textlint
+            @textlint-rule/textlint-rule-no-invalid-control-character
+            textlint-filter-rule-whitelist
+            textlint-rule-preset-ja-spacing
+            textlint-rule-preset-jtf-style
+            textlint-rule-common-misspellings
+      - run:
+          name: lint-en
+          command: yarn textlint --config en/.textlintrc.json en/**/*.md
+      - run:
+          name: lint-ja
+          command: yarn textlint --config ja/.textlintrc.json ja/**/*.md

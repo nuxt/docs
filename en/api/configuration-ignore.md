@@ -3,7 +3,7 @@ title: "API: The ignore Property"
 description: Define the ignore files for your Nuxt.js application
 ---
 
-# .nuxtignore
+## .nuxtignore
 
 You can use a `.nuxtignore` file to let Nuxt.js ignore `layout`, `page`, `store` and `middleware` files in your project’s root directory (`rootDir`) during the build phase.
 The `.nuxtignore` file is subject to the same specification as `.gitignore` and `.eslintignore` files, in which each line is a glob pattern indicating which files should be ignored.
@@ -19,7 +19,7 @@ layouts/*-ignore.vue
 # ignore page bar.vue
 pages/bar.vue
 # ignore page inside ignore folder
-layouts/ignore/*.vue
+pages/ignore/*.vue
 
 # ignore store baz.js
 store/baz.js
@@ -33,18 +33,18 @@ middleware/foo/*.js
 
 > More details about the spec are in [gitignore doc](https://git-scm.com/docs/gitignore)
 
-# The ignorePrefix Property
+## The ignorePrefix Property
 
 - Type: `String`
 - Default: `'-'`
 
-> Any file in pages/ layout/ middleware/ or store/ will be ignored during building if its filename starts with the prefix specified by `ignorePrefix`.
+> Any file in pages/, layout/, middleware/ or store/ will be ignored during building if its filename starts with the prefix specified by `ignorePrefix`.
 
 By default all files which start with `-` will be ignored, such as `store/-foo.js` and `pages/-bar.vue`. This allows for co-locating tests, utilities, and components with their callers without themselves being converted into routes, stores, etc.
 
 **Note:** This option will be deprecated in Nuxt.js 3. We recommend using a `.nuxtignore` file instead.
 
-# The ignore Property
+## The ignore Property
 
 - Type: `Array`
 - Default: `['**/*.test.*']`

@@ -76,7 +76,7 @@ class SomeClass extends Tapable {
     this.options = nuxt.options
   }
 
-  someFunction() {
+  someFunction () {
     // Kita memiliki akses ke `this.nuxt` dan `this.options`
   }
 }
@@ -99,7 +99,7 @@ class FooClass extends Tapable {
 Jadi kita dapat mengaitkan (hook) modul `foo` seperti ini:
 
 ```js
-nuxt.plugin('foo', foo => {
-    // ...
+nuxt.plugin('foo', (foo) => {
+  // ...
 })
 ```

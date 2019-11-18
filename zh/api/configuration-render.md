@@ -17,7 +17,7 @@ export default {
   render: {
     bundleRenderer: {
       directives: {
-        custom1: function (el, dir) {
+        custom1 (el, dir) {
           // something ...
         }
       }
@@ -43,6 +43,14 @@ export default {
 当提供对象（或虚假值）时，将使用[压缩](https://www.npmjs.com/package/compression)中间件（具有相应选项）。
 
 如果您想使用自己的压缩中间件，可以直接引用它(例如： `otherComp({ myOptions: 'example' })`)。
+
+## fallback
+- 类型 `Object`
+  - 默认: `{ dist: {}, static: { skipUnknown: true } }`
+
+中间件配置选项[serve-placeholder](https://github.com/nuxt/serve-placeholder)。
+
+如果要禁用其中一个或两者，则可以传递`false`。
 
 ### http2
 - 类型 `Object`

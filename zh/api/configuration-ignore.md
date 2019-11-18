@@ -3,6 +3,35 @@ title: "API: ignore 属性"
 description: 为Nuxt.js应用程序自定义忽略文件
 ---
 
+# .nuxtignore
+
+您可以使用`.nuxtignore`文件让Nuxt.js在构建打包阶段忽略项目根目录(`rootDir`)中的布局(`layout`)，页面(`page`)，`store`和中间件(`middleware`)文件。`.nu​​xtignore`文件与.gitignore和.eslintignore文件的规范相同，其中每一行都是一个glob模式，指定应该忽略哪些文件。
+
+例如:
+
+```
+# ignore layout foo.vue
+layouts/foo.vue
+# ignore layout files whose name ends with -ignore.vue
+layouts/*-ignore.vue
+
+# ignore page bar.vue
+pages/bar.vue
+# ignore page inside ignore folder
+pages/ignore/*.vue
+
+# ignore store baz.js
+store/baz.js
+# ignore store files match *.test.*
+store/ignore/*.test.*
+
+# ignore middleware files under foo folder except foo/bar.js
+middleware/foo/*.js
+!middleware/foo/bar.js
+```
+
+> 在[gitignore doc](https://git-scm.com/docs/gitignore)中查看关于规范中的更多配置细节
+
 # ignorePrefix 属性
 
 - 类型: `String`

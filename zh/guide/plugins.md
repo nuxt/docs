@@ -3,7 +3,7 @@ title: 插件
 description: 你可以配置需要在 `根vue.js应用` 实例化之前需要运行的 Javascript 插件，可以是你自己写的库或第三方模块。
 ---
 
-> Nuxt.js允许您在实例化Vue.js应用程序之前运行js插件。这在您需要使用自己的库或第三方模块时特别有用。
+> Nuxt.js允许您在运行Vue.js应用程序之前执行js插件。这在您需要使用自己的库或第三方模块时特别有用。
 
 <div class="Alert">
 
@@ -61,10 +61,22 @@ module.exports = {
 
 想了解更多关于 `plugins` 的配置，请参考 [插件 API 文档](/api/configuration-plugins)。
 
+### ES6 插件
+
+如果插件位于`node_modules`并导出模块，需要将其添加到`transpile`构建选项：
+
+```js
+module.exports = {
+  build: {
+    transpile: ['vue-notifications']
+  }
+}
+```
+您可以参考 [构建配置](/api/configuration-build/#transpile) 文档来获取更多构建选项。
 
 ## 注入 $root 和 context
 
-有时您希望在整个应用程序中使用某个函数。您可以将它们注入到Vue实例（客户端），context（服务器端）甚至Vuex。在Nuxt.js中使用前缀`$`为这些函数添加注入。
+有时您希望在整个应用程序中使用某个函数或属性值，此时，你需要将它们注入到Vue实例（客户端），context（服务器端）甚至 store(Vuex)。按照惯例，新增的属性或方法名使用`$`作为前缀。
 
 ### 注入 Vue 实例
 
@@ -75,7 +87,7 @@ module.exports = {
 ```js
 import Vue from 'vue'
 
-Vue.prototype.$myInjectedFunction = (string) => console.log("This is an example", string)
+Vue.prototype.$myInjectedFunction = string => console.log('This is an example', string)
 ```
 
 `nuxt.config.js`:
@@ -92,7 +104,7 @@ export default {
 
 ```js
 export default {
-  mounted(){
+  mounted () {
     this.$myInjectedFunction('test')
   }
 }
@@ -107,7 +119,7 @@ context注入方式和在其它vue应用程序中注入类似。
 ```js
 export default ({ app }, inject) => {
   // Set the function directly on the context.app object
-  app.myInjectedFunction = (string) => console.log('Okay, another function', string)
+  app.myInjectedFunction = string => console.log('Okay, another function', string)
 }
 ```
 
@@ -124,7 +136,7 @@ export default {
 
 ```js
 export default {
-  asyncData(context){
+  asyncData (context) {
     context.app.myInjectedFunction('ctx!')
   }
 }
@@ -139,7 +151,7 @@ export default {
 
 ```js
 export default ({ app }, inject) => {
-  inject('myInjectedFunction', (string) => console.log('That was easy!', string))
+  inject('myInjectedFunction', string => console.log('That was easy!', string))
 }
 ```
 
@@ -156,10 +168,10 @@ export default {
 
 ```js
 export default {
-  mounted(){
+  mounted () {
     this.$myInjectedFunction('works in mounted')
   },
-  asyncData(context){
+  asyncData (context) {
     context.app.$myInjectedFunction('works with context')
   }
 }
@@ -173,7 +185,7 @@ export const state = () => ({
 })
 
 export const mutations = {
-  changeSomeValue(state, newValue) {
+  changeSomeValue (state, newValue) {
     this.$myInjectedFunction('accessible in mutations')
     state.someValue = newValue
   }
@@ -182,7 +194,7 @@ export const mutations = {
 export const actions = {
   setSomeValueToWhatever ({ commit }) {
     this.$myInjectedFunction('accessible in actions')
-    const newValue = "whatever"
+    const newValue = 'whatever'
     commit('changeSomeValue', newValue)
   }
 }

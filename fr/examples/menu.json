@@ -40,6 +40,11 @@
         "to": "/middleware"
       },
       {
+
+        "name": "Vues nommées",
+        "to": "/named-views"
+      },
+      {
         "name": "Routes imbriquées",
         "to": "/nested-routes"
       },
@@ -61,7 +66,7 @@
         "to": "/async-data"
       },
       {
-        "name": "Authentification de routes",
+        "name": "Authentification de routes (EN)",
         "to": "/auth-routes"
       },
       {
@@ -79,6 +84,19 @@
       {
         "name": "Tests",
         "to": "/testing"
+      }
+    ]
+  },
+  {
+    "title": "TypeScript",
+    "links": [
+      {
+        "name": "Hello World",
+        "to": "/typescript"
+      },
+      {
+        "name": "Store Vuex",
+        "to": "/typescript-vuex"
       }
     ]
   }

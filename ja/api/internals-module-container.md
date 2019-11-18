@@ -3,8 +3,6 @@ title: "API: ModuleContainer クラス"
 description: Nuxt ModuleContainer クラス
 ---
 
-# ModuleContainer クラス
-
 - ソース: **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/module.js)**
 
 すべての [モジュール](/guide/modules) は `ModuleContainer` インスタンスのコンテキスト内で呼び出されます。
@@ -14,16 +12,16 @@ description: Nuxt ModuleContainer クラス
 特定のライフサイクルイベントでのフックを登録できます。
 
 ```js
-nuxt.moduleContainer.plugin('ready', async moduleContainer => {
-    // すべてのモジュールの準備ができたらここを実行します
+nuxt.moduleContainer.plugin('ready', async (moduleContainer) => {
+  // すべてのモジュールの準備ができたらここを実行します
 })
 ```
 
 [モジュール](/guide/modules) コンテキストの中では代わりに以下のようにできます:
 
 ```js
-this.plugin('ready', async moduleContainer => {
-    // すべてのモジュールの準備ができたらここを実行します
+this.plugin('ready', async (moduleContainer) => {
+  // すべてのモジュールの準備ができたらここを実行します
 })
 ```
 

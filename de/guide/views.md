@@ -18,7 +18,7 @@ The default template is:
 ```html
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -33,7 +33,7 @@ One example is to add conditional CSS classes for IE:
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -167,7 +167,7 @@ More information about the pages properties usage: [API Pages](/api)
 
 ## HTML Head
 
-Nuxt.js uses [vue-meta](https://github.com/declandewet/vue-meta) to update the `headers` and `html attributes` of your application.
+Nuxt.js uses [vue-meta](https://github.com/nuxt/vue-meta) to update the `headers` and `html attributes` of your application.
 
 Nuxt.js configures `vue-meta` with these options:
 
@@ -198,7 +198,7 @@ head: {
 }
 ```
 
-To learn more about the options available for `head`, take a look at [vue-meta documentation](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
+To learn more about the options available for `head`, take a look at [vue-meta documentation](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
 More information about the `head` method: [API Configuration `head`](/api/configuration-head).
 
@@ -208,6 +208,6 @@ More information about the head method: [API Pages `head`](/api/pages-head).
 
 <div class="Alert">
 
-To avoid any duplication when used in child component, please give a unique identifier with the <code>hid</code> key. [Learn more](https://github.com/declandewet/vue-meta#lists-of-tags).
+To avoid any duplication when used in child component, please give a unique identifier with the <code>hid</code> key. [Learn more](https://vue-meta.nuxtjs.org/api/#tagidkeyname).
 
 </div>

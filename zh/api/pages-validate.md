@@ -50,8 +50,8 @@ export default {
 ```js
 export default {
   validate ({ params, store }) {
-    // 校验 `params.id` 是否存在
-    return store.state.categories.some((category) => category.id === params.id)
+    // 校验 `params.id` 是否存在
+    return store.state.categories.some(category => category.id === params.id)
   }
 }
 ```
@@ -61,8 +61,8 @@ export default {
 ```js
 export default {
   async validate ({ params, store }) {
-    // 使用自定义消息触发内部服务器500错误
-    throw new Error('Under Construction!')
+    // 使用自定义消息触发内部服务器500错误
+    throw new Error('Under Construction!')
   }
 }
 ```

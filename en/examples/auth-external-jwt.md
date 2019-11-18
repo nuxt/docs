@@ -42,7 +42,7 @@ const Cookie = process.client ? require('js-cookie') : undefined
 export default {
   middleware: 'notAuthenticated',
   methods: {
-    postLogin() {
+    postLogin () {
       setTimeout(() => { // we simulate the async request with timeout.
         const auth = {
           accessToken: 'someStringGotFromApiServiceWithAjax'
@@ -73,12 +73,12 @@ const createStore = () => {
       auth: null
     }),
     mutations: {
-      setAuth(state, auth) {
+      setAuth (state, auth) {
         state.auth = auth
       }
     },
     actions: {
-      nuxtServerInit({ commit }, { req }) {
+      nuxtServerInit ({ commit }, { req }) {
         let auth = null
         if (req.headers.cookie) {
           const parsed = cookieparser.parse(req.headers.cookie)
@@ -133,7 +133,7 @@ const Cookie = process.client ? require('js-cookie') : undefined
 
 export default {
   methods: {
-    logout() {
+    logout () {
       // Code will also be required to invalidate the JWT Cookie on external API
       Cookie.remove('auth')
       this.$store.commit('setAuth', null)

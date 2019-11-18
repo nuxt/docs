@@ -5,6 +5,7 @@
       { "name": "API: asyncData 메소드", "to": "/" },
       { "name": "API: fetch 메소드", "to": "/pages-fetch" },
       { "name": "API: head 메서드", "to": "/pages-head" },
+      { "name": "API: key 프로퍼티", "to": "/pages-key" },
       { "name": "API: layout 프로퍼티", "to": "/pages-layout" },
       { "name": "API: middleware 프로퍼티", "to": "/pages-middleware" },
       { "name": "API: scrollToTop 프로퍼티", "to": "/pages-scrolltotop" },

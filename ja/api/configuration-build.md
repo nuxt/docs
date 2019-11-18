@@ -3,8 +3,6 @@ title: 'API: build プロパティ'
 description: Nuxt.js ではウェブアプリケーションを自由にビルドできるよう Webpack 設定をカスタマイズできます。
 ---
 
-# build プロパティ
-
 > Nuxt.js ではウェブアプリケーションを自由にビルドできるよう Webpack 設定をカスタマイズできます。
 
 ## analyze
@@ -32,30 +30,73 @@ export default {
 
 <div class="Alert Alert--teal">
 
-**情報:** `nuxt build --analyze` または `nuxt build -a` コマンドを使って、アプリケーションをビルドしてバンドルアナライザを [http://localhost:8888](http://localhost:8888) で起動できます。
+**情報:** `yarn nuxt build --analyze` または `yarn nuxt build -a` コマンドを使って、アプリケーションをビルドしてバンドルアナライザを [http://localhost:8888](http://localhost:8888) で起動できます。`yarn` を使っていない場合は、コマンドに `npx` を付けて実行できます。
 
 </div>
 
 ## babel
 
-> JavaScript や Vue ファイルのために Babel の設定をカスタマイズします。
+> JavaScript や Vue ファイルのために Babel の設定をカスタマイズします。 `.babelrc` はデフォルトで無視されます。
 
-- 型: `Object`
+- 型: `Object` `babel-loader` の [options](https://github.com/babel/babel-loader#options) と `babel` の [options](https://babeljs.io/docs/en/options) を参照してください
 - デフォルト:
 
   ```js
   {
+    babelrc: false,
+    cacheDirectory: undefined,
     presets: ['@nuxt/babel-preset-app']
   }
   ```
 
-例（`nuxt.config.js`）:
+[@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) のデフォルトターゲットは `client` ビルドでは `ie: '9'`、`server` ビルドでは `node: 'current'` になります。
+
+### presets
+
+- 型: `Function`
+- 引数:
+  1. `Object`: { isServer: true | false }
+  2. `Array`:
+      - プリセット名 `@nuxt/babel-preset-app`
+      - `@nuxt/babel-preset-app` の [`options`](https://github.com/nuxt/nuxt.js/tree/dev/packages/babel-preset-app#options)
+
+**メモ**: `build.babel.presets` のプリセットの設定はクライアントビルド、サーバービルド両方に適用されます。ターゲットは（クライアント/サーバー）それぞれに応じて Nuxt によって設定されます。クライアントビルドとサーバービルドで異なるプリセットの設定をしたい場合は、関数として `presets` を使用してください。
+
+> 以下のカスタマイズの代わりにデフォルトのプリセットを使用することを **強くお勧めします**
 
 ```js
 export default {
   build: {
     babel: {
-      presets: ['es2015', 'stage-0']
+      presets({ isServer }, [ preset, options ]) {
+        // 直接オプションを変更する
+        options.targets = isServer ? ... :  ...
+        options.corejs = ...
+        // 何も返さない
+      }
+    }
+  }
+}
+```
+
+もしくは、プリセットのリスト全体を返すことによってデフォルトの値を上書きします:
+
+```js
+export default {
+  build: {
+    babel: {
+      presets ({ isServer }, [ preset, options ]) {
+        return [
+          [
+            preset, {
+              buildTarget: isServer ? 'server' : 'client',
+              ...options
+            }],
+          [
+            // 他のプリセット
+          ]
+        ]
+      }
     }
   }
 }
@@ -65,8 +106,18 @@ export default {
 
 - 型: `Boolean`
 - デフォルト: `false`
+- ⚠️ 実験的機能です
 
 > [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin#options) と [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) でキャッシュを有効化します。
+
+## crossorigin
+
+- 型: `String`
+- デフォルト: `undefined`
+
+生成された HTML の `<link rel="stylesheet">` タグと `<script>` タグの `crossorigin` 属性を設定します。
+
+詳細: [CORS settings attributes](https://developer.mozilla.org/ja/docs/Web/HTML/CORS_settings_attributes)
 
 ## cssSourceMap
 
@@ -80,6 +131,15 @@ export default {
 - 型: `Object`
 
 利用できるオプションは [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) を参照してください。
+
+## devtools
+
+- 型: `boolean`
+- デフォルト: `false`
+
+[vue-devtools](https://github.com/vuejs/vue-devtools) を許可するかどうかを設定します。
+
+既に nuxt.config.js などで有効化している場合は、このフラグに関係なく devtools が有効になります。
 
 ## extend
 
@@ -110,7 +170,7 @@ export default {
     extend (config, { isClient }) {
       // クライアントのバンドルの Webpack 設定のみを拡張する
       if (isClient) {
-        config.devtool = '#source-map'
+        config.devtool = 'source-map'
       }
     }
   }
@@ -145,8 +205,7 @@ export default {
 - 型: `Boolean`
 - デフォルト: `false`
 
-
-内部で [`mini-extract-css-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) が使われ、全ての CSS は別々のファイルに、通常はコンポーネントごとに1つ抽出されます。これは CSS と JavaScript を別々にキャッシュすることを可能にし、多くのグローバルまたは共通 CSS が存在する場合には試してみる価値があります。
+内部で [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin/) が使われ、全ての CSS は別々のファイルに、通常はコンポーネントごとに1つ抽出されます。これは CSS と JavaScript を別々にキャッシュすることを可能にし、多くのグローバルまたは共通 CSS が存在する場合には試してみる価値があります。
 
 <div class="Alert Alert--teal">
 
@@ -185,7 +244,22 @@ export default {
 }
 ```
 
-manifest の使い方をより理解するためには [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/) を参照してください。
+manifest の使い方をより理解するためには [webpack のドキュメント](https://webpack.js.org/guides/code-splitting/) を参照してください。
+
+## friendlyErrors
+
+- 型: `Boolean`
+- デフォルト: `true` (上書きが有効）
+
+[FriendlyErrorsWebpackPlugin](https://github.com/nuxt/friendly-errors-webpack-plugin)によって提供される上書きを有効にするか無効にするかを設定します。
+
+## hardSource
+
+- 型: `Boolean`
+- デフォルト: `false`
+- ⚠️ 実験的機能です
+
+キャッシュを改善するために [HardSourceWebpackPlugin](https://github.com/mzgoddard/hard-source-webpack-plugin) を有効にします。
 
 ## hotMiddleware
 
@@ -215,6 +289,15 @@ manifest の使い方をより理解するためには [webpack documentation](h
 **情報:** `html.minify`に変更を加えても、それらはデフォルトとマージされません！
 
 ビルドプロセス中に作成された HTML ファイルのミニファイに使われる [html-minifier](https://github.com/kangax/html-minifier) プラグインの設定（*全てのモード*に適用される）。
+
+## indicator
+
+> 開発モードでホットリローディングのビルドインジケーターを表示します(`v2.8.0+` から利用可能)
+
+- 型: `Boolean`
+- デフォルト: `true`
+
+![nuxt-build-indicator](https://user-images.githubusercontent.com/5158436/58500509-93ba0f80-8197-11e9-8524-e115c6d32571.gif)
 
 ## loaders
 
@@ -276,7 +359,7 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 ### loaders.less
 
-> Less specific オプションは、`loaders.less` を介して `less-loader に渡すことができます。dash-case で利用可能な全てのオプションについては [Less documentation](http://lesscss.org/usage/#command-line-usage-options) を参照してください。
+> Less specific オプションは、`loaders.less` を介して `less-loader` に渡すことができます。dash-case で利用可能な全てのオプションについては [Less documentation](http://lesscss.org/usage/#command-line-usage-options) を参照してください。
 
 ### loaders.sass と loaders.scss
 
@@ -330,6 +413,7 @@ OptimizeCSSAssets プラグインのオプションです。
 
 - 型: `Boolean`
 - デフォルト: `false`
+- ⚠️ 実験的機能です
 
 webpack のビルドで[thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) を有効にします。
 
@@ -362,7 +446,7 @@ export default {
 
 - 型: `Array`、`Object`（推奨）、`Function` または `Boolean`
 
-  **注意：**  Nuxt.js は [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env) を適用しました。デフォルトでは、[Stage 2 features](https://cssdb.org/) と [Autoprefixer](https://github.com/postcss/autoprefixer) が有効になっています。`build.postcss.preset` を使うことで設定が出来ます。
+  **注意：**  Nuxt.js は [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env) を適用しました。デフォルトでは、[Stage 2 features](https://cssdb.org/) と [Autoprefixer](https://github.com/postcss/autoprefixer) が有効になっています。`build.postcss.preset` を使うことで設定が出来ます
 
 - デフォルト:
 
@@ -371,10 +455,13 @@ export default {
     plugins: {
       'postcss-import': {},
       'postcss-url': {},
-      'postcss-preset-env': {},
+      'postcss-preset-env': this.preset,
       'cssnano': { preset: 'default' } // 開発モードでは無効化されています
     },
-    order: 'cssnanoLast'
+    order: 'presetEnvAndCssnanoLast',
+    preset: {
+      stage: 2
+    }
   }
   ```
 
@@ -403,7 +490,6 @@ export default {
   }
 }
 ```
-
 
 postcss の設定が `Object` 型の場合、プラグインの順番の定義に `order`を利用できます:
 
@@ -491,7 +577,7 @@ export default {
 
 <div class="Alert Alert--orange">
 
-**警告** このプロパティは非推奨です。 パフォーマンスおよび開発体験の向上のために、代わりに [style-resources-modules](https://github.com/nuxt-community/style-resources-module/) を使用してください。
+**警告** このプロパティは非推奨です。 パフォーマンスおよび開発体験の向上のために、代わりに [style-resources-module](https://github.com/nuxt-community/style-resources-module/) を使用してください。
 
 </div>
 
@@ -571,21 +657,32 @@ export default {
 
 Terser プラグインのオプションです。 `false` を設定するとこのプラグインは無効になります。
 
-`soruceMap` は webpack の `confing.devtool` が `source-?map` と一致した際に有効になります。
+`soruceMap` は webpack の `config.devtool` が `source-?map` と一致した際に有効になります。
 
 [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin) を参照してください。
 
-
 ## transpile
 
-- 型: `Array<string | RegExp>`
+- 型: `Array<String | RegExp | Function>`
 - デフォルト: `[]`
 
 特定の依存関係を Babel で変換したい場合、`build.transpile` を追加することができます。transpile の項目は、マッチする依存ファイル名の文字列または正規表現オブジェクトになります。
 
+`v2.9.0` 以降からは、関数を使用して条件付きでトランスパイルすることもできます。関数はオブジェクト（`{ isDev, isServer, isClient, isModern, isLegacy }`）を受け取ります：
+
+```js
+{
+  build: {
+    transpile: [
+      ({ isLegacy }) => isLegacy && 'ky'
+    ]
+  }
+}
+```
+
 ## vueLoader
 
-> 注意: この設定は Nuxt 2.0 から削除されました。[`build.loaders.vue`](#loaders) を変わりに使用してください。
+> 注意: この設定は Nuxt 2.0 から削除されました。[`build.loaders.vue`](#loaders) をかわりに使用してください。
 
 - 型: `Object`
 - デフォルト
@@ -616,6 +713,19 @@ export default {
     watch: [
       '~/.nuxt/support.js'
     ]
+  }
+}
+```
+## followSymlinks
+
+> デフォルトでは、ビルドプロセスはシンボリックリンク内のファイルをスキャンしません。`followSymlinks` を `true` に設定するとフォルダー（例えば `pages`）内のシンボリックリンクがビルドプロセスでスキャンされます。
+
+- 型: `Boolean`
+
+```js
+export default {
+  build: {
+    followSymlinks: false
   }
 }
 ```

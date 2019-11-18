@@ -3,8 +3,6 @@ title: Déployer sur GitHub Pages
 description: Comment déployer une application Nuxt.js sur GitHub Pages
 ---
 
-# Comment déployer sur GitHub Pages ?
-
 Nuxt.js vous offre la possibilité d'héberger votre application web sur n'importe quel hébergeur statique tel que [GitHub Pages](https://pages.github.com/) par exemple.
 
 Pour déployer sur GitHub Pages, vous devez générer votre application web de manière statique :
@@ -30,7 +28,7 @@ Si vous déployez le dossier `dist` sans ajouter une [base du router](https://nu
 Pour régler ce problème nous devons ajouter la configuration d'une [base au router](https://nuxtjs.org/api/configuration-router/#base) dans `nuxt.config.js` :
 
 ```js
-module.exports = {
+export default {
   router: {
     base: '/<nom-du-depot>/'
   }
@@ -50,7 +48,7 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   }
 } : {}
 
-module.exports = {
+export default {
   ...routerBase
 }
 ```

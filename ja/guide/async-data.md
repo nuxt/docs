@@ -9,22 +9,22 @@ description: サーバーサイドでデータを取得し、それをレンダ�
   <a href="https://vueschool.io/courses/async-data-with-nuxtjs?friend=nuxt" target="_blank" class="Promote">
   <img src="/async-data-with-nuxtjs.png" srcset="/async-data-with-nuxtjs-2x.png 2x" alt="AsyncData by vueschool"/>
   <div class="Promote__Content">
-    <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
-    <p class="Promote__Content__Description">Learn how to manage asynchronous data with Nuxt.js.</p>
-    <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+    <h4 class="Promote__Content__Title">Nuxt.js で非同期なデータを扱う</h4>
+    <p class="Promote__Content__Description">Nuxt.js で非同期なデータをどう管理するかについて学びます。</p>
+    <p class="Promote__Content__Signature">Nuxt.js の開発をサポートするために、VueSchool がビデオコースを作りました。</p>
   </div>
   </a>
 </div>
 
 ## asyncData メソッド
 
-場合によっては、ストアを使用せずにデータをフェッチし、サーバー上でプレレンダリングしたい場合があります。 `asyncData` は **ページ** コンポーネントがローディングされる前に常に呼び出されます。サーバーサイドでは1回だけ( Nuxt アプリへの最初のリクエスト)呼び出され、クライアントサイドではページ遷移をするたびに呼び出されます。このメソッドは、第一引数として[コンテキスト](/api/context)を受け取ります。これを使用してデータを取得し、 Nuxt.js はコンポーネントデータとマージすることができます。
+場合によっては、ストアを使用せずにデータをフェッチし、サーバー上でプレレンダリングしたい場合があります。 `asyncData` は **ページ** コンポーネントがローディングされる前に常に呼び出されます。サーバーサイドでは 1回だけ（Nuxt アプリへの最初のリクエスト）呼び出され、クライアントサイドではページ遷移をするたびに呼び出されます。このメソッドは、第一引数として[コンテキスト](/api/context)を受け取ります。これを使用してデータを取得し、 Nuxt.js はコンポーネントデータとマージすることができます。
 
 Nuxt.js は返されたオブジェクトとコンポーネントデータを自動的にマージします。
 
 <div class="Alert Alert--orange">
 
-`asyncData` メソッド内の `this` を通してコンポーネントのインスタンスにアクセスすることは **できません**。それはコンポーネントが **インスタンス化される前に** にこのメソッドが呼び出されるからです。
+`asyncData` メソッド内の `this` を通してコンポーネントのインスタンスにアクセスすることは **できません**。それはコンポーネントが **インスタンス化される前に** このメソッドが呼び出されるからです。
 
 </div>
 
@@ -39,15 +39,29 @@ Nuxt.js では `asyncData` メソッドを使うために、いくつかの異�
 
 </div>
 
+`node_modules` 内の `axios` を直接使用しており、`axios.interceptors` を使用してデータを処理する場合、interceptors を追加する前にインスタンスを作成してください。そうしなければ、サーバレンダリングされたページをリフレッシュする際に、interceptor が複数追加され、データエラーが発生します。
+
+```js
+import axios from 'axios'
+const myaxios = axios.create({
+  // ...
+})
+myaxios.interceptors.response.use(function (response) {
+  return response.data
+}, function (error) {
+  // ...
+})
+```
+
 ### Promise を返す
 
 ```js
 export default {
   asyncData ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
   }
 }
 ```
@@ -57,7 +71,7 @@ export default {
 ```js
 export default {
   async asyncData ({ params }) {
-    let { data } = await axios.get(`https://my-api/posts/${params.id}`)
+    const { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
 }
@@ -87,7 +101,7 @@ export default {
     // req と res を使う前にサーバーサイドか
     // どうかチェックしてください
     if (process.server) {
-     return { host: req.headers.host }
+      return { host: req.headers.host }
     }
 
     return {}
@@ -124,12 +138,12 @@ Nuxt.js は、 `context` に `error(params)` メソッドを追加し、エラ�
 export default {
   asyncData ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
-    .catch((e) => {
-      error({ statusCode: 404, message: 'ページが見つかりません' })
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
+      .catch((e) => {
+        error({ statusCode: 404, message: 'ページが見つかりません' })
+      })
   }
 }
 ```

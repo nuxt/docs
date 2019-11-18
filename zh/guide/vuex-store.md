@@ -5,6 +5,14 @@ description: 对于每个大项目来说，使用状态树 (store) 管理状态 
 
 > 对于每个大项目来说，使用状态树 (store) 管理状态 (state) 十分有必要。这就是为什么 Nuxt.js 内核实现了 [Vuex](https://github.com/vuejs/vuex)。
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/utilising-the-vuex-store-nuxtjs?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+    在Vue School 上观看关于<strong>Nuxt.js 和 Vuex</strong> 的免费课程
+    </p>
+  </a>
+</div>
+
 ## 使用状态树
 
 Nuxt.js 会尝试找到应用根目录下的 `store` 目录，如果该目录存在，它将做以下的事情：
@@ -14,8 +22,12 @@ Nuxt.js 会尝试找到应用根目录下的 `store` 目录，如果该目录存
 3. 设置 `Vue` 根实例的 `store` 配置项
 
 Nuxt.js 支持两种使用 `store` 的方式，你可以择一使用：
-- **普通方式：** `store/index.js` 返回一个 Vuex.Store 实例
+
 - **模块方式：** `store` 目录下的每个 `.js` 文件会被转换成为状态树[指定命名的子模块](http://vuex.vuejs.org/en/modules.html) （当然，`index` 是根模块）
+
+- **Classic(不建议使用)：** `store/index.js`返回创建Vuex.Store实例的方法。
+
+无论使用那种模式，您的`state`的值应该**始终是**`function`，为了避免返回引用类型，会导致多个实例相互影响。
 
 ### 普通方式
 
@@ -45,7 +57,7 @@ export const state = () => ({
 export const mutations = {
   add (state, text) {
     state.list.push({
-      text: text,
+      text,
       done: false
     })
   },
@@ -231,7 +243,11 @@ actions: {
 
 `export const strict = false`
 
-### 普通方式
+### 经典模式
+
+> 此功能已经弃用，将在Nuxt 3中删除。
+
+要使用经典模式创建Vuex，我们应该创建`store/index.js`到处返回Vuex实例的方法的文件：
 
 ```js
 import Vuex from 'vuex'
@@ -251,4 +267,14 @@ const createStore = () => {
 }
 
 export default createStore
+```
+
+> 我们不需要安装，因为Vuex由Nuxt.js提供。
+
+我们现在可以在我们的组件中使用`this.$store`：
+
+```html
+<template>
+  <button @click="$store.commit('increment')">{{ $store.state.counter }}</button>
+</template>
 ```

@@ -3,8 +3,6 @@ title: "API: scrollToTop プロパティ"
 description: scrollToTop プロパティで、ページをレンダリングする前にトップまでスクロールか否かを指定できます。
 ---
 
-# scrollToTop プロパティ
-
 > scrollToTop プロパティで、ページをレンダリングする前にトップまでスクロールか否かを指定できます。
 
 - **型:** `Boolean`（デフォルト: `false`）

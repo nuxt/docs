@@ -33,6 +33,16 @@ Modules are great if you:
 - Are often up against short deadlines and don't have time to dig into the details of every new library or integration.
 - Are tired of dealing with breaking changes to low-level interfaces, and need things that **just work™**.
 
+## List of Nuxt.js modules
+
+The Nuxt.js team offers **official** modules:
+- [@nuxt/http](https://http.nuxtjs.org): Light and universal way to make HTTP requests, based on [ky-universal](https://github.com/sindresorhus/ky-universal)
+- [@nuxtjs/axios](https://axios.nuxtjs.org): Secure and Easy Axios integration with Nuxt.js to make HTTP requests
+- [@nuxtjs/pwa](https://pwa.nuxtjs.org): Supercharge Nuxt with a heavily tested, updated and stable PWA solution
+- [@nuxtjs/auth](https://auth.nuxtjs.org): Authentication module for Nuxt.js, offering different schemes and strategies
+
+A list of Nuxt.js modules made by the community is available on https://github.com/topics/nuxt-module
+
 ## Write a basic Module
 
 As already mentioned modules are just simple functions. They can be packaged as npm modules or directly included in project source code.
@@ -77,7 +87,7 @@ export default {
     '~/modules/simple'
 
     // Passing options directly
-    ['~/modules/simple', { token: '123' }]
+      ['~/modules/simple', { token: '123' }]
   ]
 }
 ```
@@ -89,20 +99,30 @@ Please refer to [modules configuration](/api/configuration-modules) docs for mor
 
 Not all modules will do everything synchronous. For example you may want to develop a module which needs fetching some API or doing async IO. For this, Nuxt supports async modules which can return a Promise or call a callback.
 
-### Use async/await
+## Build-only Modules
+
+Usually, modules are only required during development and build time. Using `buildModules` helps to make production startup faster and also significantly decreasing `node_modules` size for production deployments. If you are a module author, It is highly recommended to suggest users installing your package as a `devDependency` and use `buildModules` instead of `modules` for `nuxt.config.js`.
+
+Your module is a `buildModule` unless:
+- It is providing a serverMiddleware
+- It has to register a Node.js runtime hook (Like sentry)
+- It is affecting vue-renderer behavior or using a hook from `server:` or `vue-renderer:` namespace
+- Anything else that is outside of webpack scope (Hint: plugins and templates are compiled and are in webpack scope)
 
 <div class="Alert Alert--orange">
 
-Be aware that `async`/`await` is only supported in Node.js > 7.2. So if you are a module developer at least warn users about that if using them. For heavily async modules or better legacy support you can use either a bundler to transform it for older Node.js compatibility or a promise method.
+<b>NOTE:</b> If you are going to offer using <code>buildModules</code> please mention that this feature is only available since Nuxt <b>v2.9</b>. Older users should upgrade Nuxt or use the <code>modules</code> section.
 
 </div>
+
+### Use async/await
 
 ```js
 import fse from 'fs-extra'
 
-export default async function asyncModule() {
+export default async function asyncModule () {
   // You can do async works here using `async`/`await`
-  let pages = await fse.readJson('./pages.json')
+  const pages = await fse.readJson('./pages.json')
 }
 ```
 
@@ -111,10 +131,10 @@ export default async function asyncModule() {
 ```js
 import axios from 'axios'
 
-export default function asyncModule() {
+export default function asyncModule () {
   return axios.get('https://jsonplaceholder.typicode.com/users')
     .then(res => res.data.map(user => '/users/' + user.username))
-    .then(routes => {
+    .then((routes) => {
       // Do something by extending Nuxt routes
     })
 }
@@ -245,7 +265,6 @@ export default function (moduleOptions) {
   this.options.build.plugins.push({
     apply (compiler) {
       compiler.plugin('emit', (compilation, cb) => {
-
         // This will generate `.nuxt/dist/info.txt' with contents of info variable.
         // Source can be buffer too
         compilation.assets['info.txt'] = { source: () => info, size: () => info.length }
@@ -289,21 +308,20 @@ Nuxt will wait for your function if it return a Promise or is defined as `async`
 Here are some basic examples:
 
 ```js
-export default function myModule() {
-
-  this.nuxt.hook('modules:done', moduleContainer => {
+export default function myModule () {
+  this.nuxt.hook('modules:done', (moduleContainer) => {
     // This will be called when all modules finished loading
   })
 
-  this.nuxt.hook('render:before', renderer => {
+  this.nuxt.hook('render:before', (renderer) => {
     // Called after the renderer was created
   })
 
-  this.nuxt.hook('build:compile', async ({name, compiler }) => {
+  this.nuxt.hook('build:compile', async ({ name, compiler }) => {
     // Called before the compiler (default: webpack) starts
   })
 
-  this.nuxt.hook('generate:before', async generator => {
+  this.nuxt.hook('generate:before', async (generator) => {
     // This will be called before Nuxt generates your pages
   })
 }
@@ -332,7 +350,7 @@ NuxtCommand.run({
       description: 'Simple test string'
     }
   },
-  run(cmd) {
+  run (cmd) {
     consola.info(cmd.argv)
   }
 })
