@@ -19,7 +19,8 @@ this.nuxt.hook('build:done', (builder) => {
 フック                | 引数                                        | タイミング
 ---------------------|--------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------
 `build:before`       | (nuxt, buildOptions)                       | Nuxt のビルドが始まる前
-`build:prepared`     | (nuxt, buildOptions)                       | ビルドディレクトリが作成された時
+`builder:prepared`     | (nuxt, buildOptions)                       | The build directories have been created
+`builder:extendPlugins`| (plugins)                                  | Generating plugins
 `build:templates`    | ({ templatesFiles, templateVars, resolve }) | `.nuxt` テンプレートファイルを生成する時
 `build:extendRoutes` | (routes, resolve)                          | ルーティングを生成する時
 `build:config`       | (webpackConfigs)                           | コンパイラの設定前
