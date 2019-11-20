@@ -71,7 +71,7 @@ this.plugin('ready', async (moduleContainer) => {
 
 ### extendPlugins (fn)
 
-Allows easily extending plugins by chaining [options.extendPlugins](/api/configuration-extend-plugins) function.
+[options.extendPlugins](/api/configuration-extend-plugins) 関数をチェーンさせることで plugins を簡単に拡張できます。
 
 ### addModule (moduleOpts, requireOnce)
 
