@@ -196,7 +196,7 @@ export default {
 
 ## HTML ヘッド
 
-Nuxt.js は、`document head` とアプリケーションの `meta attributes` を更新するために [vue-meta](https://github.com/nuxt/vue-meta) を使用しています。
+Nuxt.js は、`document head` とアプリケーションの `meta attributes` を更新するために [vue-meta](https://vue-meta.nuxtjs.org/) を使用しています。
 
 Nuxt.js が使っている `vue-meta` は、[GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/index.js#L42-L48) で参照できます。
 
