@@ -8,7 +8,7 @@ description: extendPlugins プロパティは Nuxt.js の plugins をカスタ�
 - 型: `Function`
 - デフォルト: `undefined`
 
-plugins を拡張したり、 Nuxt.js によって作成され plugins の順序を変更したりできます。
+plugins を拡張したり、 Nuxt.js によって決められた plugins の順番を変更したりできます。
 この関数は [plugin](/api/configuration-plugins) オブジェクトの配列を受け取って、plugin オブジェクトの配列を返します。
 
 plugins の順番を変更する例 (`nuxt.config.js`):
