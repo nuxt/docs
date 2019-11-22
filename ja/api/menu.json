@@ -125,12 +125,11 @@
         ]
       },
       {
-        "name": "loadingIndicator", 
+        "name": "loadingIndicator",
         "to": "/configuration-loading-indicator",
         "contents": [
           { "name": "内蔵されているインジケータ", "to": "#内蔵されているインジケータ" },
-          { "name": "カスタムインジケータ", "to": "#カスタムインジケータ" },
-          { "name": "プログレスバーを無効にする", "to": "#disable-the-progress-bar" }
+          { "name": "カスタムインジケータ", "to": "#カスタムインジケータ" }
         ]
       },
       { "name": "mode", "to": "/configuration-mode" },
