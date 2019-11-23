@@ -69,6 +69,10 @@ this.plugin('ready', async (moduleContainer) => {
 
 [options.build.extendRoutes](/api/configuration-router#extendroutes) 関数をチェーンさせることで routes を簡単に拡張できます。
 
+### extendPlugins (fn)
+
+[options.extendPlugins](/api/configuration-extend-plugins) 関数をチェーンさせることで plugins を簡単に拡張できます。
+
 ### addModule (moduleOpts, requireOnce)
 
 モジュールを登録します。`moduleOpts` は文字列または `[src, options]` です。`requireOnce` が `true` で解決されたモジュールが `meta` をエクスポートしている場合に、同じモジュールを二度登録するのを回避します。
