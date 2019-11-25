@@ -23,7 +23,7 @@ The `assets` directory contains your un-compiled assets such as Stylus or Sass f
 
 ### The Components Directory
 
-The `components` directory contains your Vue.js Components. You can't use either `asyncData` or `fetch` in these components.
+The `components` directory contains your Vue.js Components. You can use either `asyncData` or `fetch` in these components.
 
 ### The Layouts Directory
 
