@@ -79,3 +79,30 @@ serverMiddleware: [
   '~/api/logger'
 ]
 ```
+
+## オブジェクト構文
+
+
+サーバーミドルウェアがパスにマッピングされた機能リストで構成されている場合:
+
+```js
+export default {
+  serverMiddleware: [
+    { path: '/a', handler: '~/api/a.js' },
+    { path: '/b', handler: '~/api/b.js' },
+    { path: '/c', handler: '~/api/c.js' },
+  ]
+}
+```
+
+あるいは、次のとおりオブジェクトを渡して定義することもできます:
+
+```js
+export default {
+  serverMiddleware: {
+    '/a': '~/api/a.js',
+    '/b': '~/api/b.js',
+    '/c': '~/api/c.js',
+  }
+}
+```
