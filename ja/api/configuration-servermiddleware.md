@@ -19,7 +19,7 @@ connect 自体はミドルウェアで、登録されたミドルウェアは `n
 * With `prefix: true` (default): `/admin/api`
 * With `prefix: false`: `/api`
 
-## サーバミドルウェア vs ミドルウェア！
+## サーバーミドルウェア vs ミドルウェア！
 
 クライアントサイドや SSR の Vue で各ルートの前に呼び出されている [ルーティングのミドルウェア](/guide/routing#ミドルウェア)  と混同しないでください。
 `serverMiddleware` は `vue-server-renderer` の **前に** サーバー側で実行され、API リクエストの処理やアセットの処理などのサーバー固有のタスクとして使用できます。
