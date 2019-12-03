@@ -172,6 +172,8 @@ pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
 
 `script-src` ポリシーに `'unsafe-inline'` が含まれている場合、CSP のハッシュは追加されないことに注意してください。これは、ハッシュが存在する場合、ブラウザが `'unsafe-inline'` を無視するためです。CSPv1 の後方互換性のために `'unsafe-inline'` とハッシュの両方の定義が必要な場合は、オプションの `unsafeInlineCompatibility` を `true` に設定します。
 
+すべての CSP ポリシーで [`<meta http-equiv="Content-Security-Policy"/>`](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) を追加するには、 `csp.addMeta` を `true` に設定する必要があります。
+
 例 (`nuxt.config.js`)
 
 ```js
@@ -195,7 +197,8 @@ export default {
         'report-uri': [
           'https://report.example.com/report-csp-violations'
         ]
-      }
+      },
+      addMeta: true
     }
   }
 }
