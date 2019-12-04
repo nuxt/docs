@@ -14,7 +14,7 @@ description: 设置内部`<router-view>`组件的`key`属性
 
 ```js
 export default {
-  key(route) {
+  key (route) {
     return route.fullPath
   }
 }

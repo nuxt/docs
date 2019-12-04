@@ -1,9 +1,7 @@
 ---
-title: nginx proxy
+title: nginx をリバースプロキシとして使う
 description: nginx をリバースプロキシとして使うには？
 ---
-
-# nginx をリバースプロキシとして使う
 
 ```nginx
 map $sent_http_content_type $expires {
@@ -70,7 +68,7 @@ server {
 
     charset utf-8;
 
-    root /var/www/NUXT_PROJECT_PATH/dist
+    root /var/www/NUXT_PROJECT_PATH/dist;
 
     location ~* \.(?:ico|gif|jpe?g|png|woff2?|eot|otf|ttf|svg|js|css)$ {
         expires $expires;

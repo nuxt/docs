@@ -3,8 +3,6 @@ title: "API: The build Property"
 description: Nuxt.js lets you customize the webpack configuration for building your web application as you want.
 ---
 
-# The build Property
-
 > Nuxt.js lets you customize the webpack configuration for building your web application as you want.
 
 ## analyze
@@ -87,13 +85,13 @@ Or override default value by returning whole presets list:
 export default {
   build: {
     babel: {
-      presets({ isServer }, [ preset, options ]) {
+      presets ({ isServer }, [ preset, options ]) {
         return [
           [
             preset, {
               buildTarget: isServer ? 'server' : 'client',
               ...options
-          }],
+            }],
           [
             // Other presets
           ]
@@ -172,7 +170,7 @@ export default {
     extend (config, { isClient }) {
       // Extend only webpack config for client-bundle
       if (isClient) {
-        config.devtool = '#source-map'
+        config.devtool = 'source-map'
       }
     }
   }
@@ -476,7 +474,7 @@ export default {
   build: {
     postcss: {
       plugins: {
-          // Disable `postcss-url`
+        // Disable `postcss-url`
         'postcss-url': false,
         // Add some plugins
         'postcss-nested': {},
@@ -716,6 +714,20 @@ export default {
     watch: [
       '~/.nuxt/support.js'
     ]
+  }
+}
+```
+
+## followSymlinks
+
+> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example. 
+
+- Type: `Boolean`
+
+```js
+export default {
+  build: {
+    followSymlinks: false
   }
 }
 ```

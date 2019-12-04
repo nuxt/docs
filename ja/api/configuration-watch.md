@@ -3,8 +3,6 @@ title: "API: watch プロパティ"
 description: watch プロパティはサーバーの再起動のためにカスタムファイルを監視してくれます。
 ---
 
-# watch プロパティ
-
 - 型: `Object`
 - デフォルト: `[]`
 

@@ -57,7 +57,7 @@ module.exports = {
 export default {
   build: {
     babel: {
-      presets({ isServer }) {
+      presets ({ isServer }) {
         const targets = isServer ? { node: '10' } : { ie: '11' }
         return [
           [ require.resolve('@nuxt/babel-preset-app'), { targets } ]
@@ -455,7 +455,7 @@ export default {
   build: {
     postcss: {
       plugins: {
-          // Disable `postcss-url`
+        // Disable `postcss-url`
         'postcss-url': false,
         // Add some plugins
         'postcss-nested': {},
@@ -564,11 +564,11 @@ $ yarn add @nuxtjs/style-resources
 ```js
 export default {
   modules: [
-    '@nuxtjs/style-resources',
+    '@nuxtjs/style-resources'
   ],
   styleResources: {
     scss: './assets/variables.scss',
-    less: './assets/**/*.less',
+    less: './assets/**/*.less'
     // sass: ...
   }
 }
@@ -685,6 +685,20 @@ export default {
     watch: [
       '~/.nuxt/support.js'
     ]
+  }
+}
+```
+
+## followSymlinks
+
+> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example. 
+
+- Type: `Boolean`
+
+```js
+export default {
+  build: {
+    followSymlinks: false
   }
 }
 ```

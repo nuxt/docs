@@ -3,8 +3,6 @@ title: "API: head プロパティ"
 description: Nuxt.js では nuxt.config.js 内にアプリケーションのデフォルトのメタ情報を定義できます。
 ---
 
-# head プロパティ
-
 > Nuxt.js では `nuxt.config.js` 内にアプリケーションのデフォルトのメタ情報を定義できます。それには `head` プロパティを使います
 
 - 型: `Object`

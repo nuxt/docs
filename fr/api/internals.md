@@ -1,9 +1,7 @@
 ---
-title: "API : introduction aux modules Nuxt"
+title: "API : Mécanismes de Nuxt"
 description: Mieux comprendre les mécanismes de Nuxt
 ---
-
-# Mécanismes de Nuxt
 
 Nuxt.js a une architecture intégralement modulable permettant au développeur d'étendre n'importe quelle partie du cœur de Nuxt en utilisant son API.
 
@@ -74,7 +72,7 @@ class SomeClass {
     this.options = nuxt.options
   }
 
-  someFunction() {
+  someFunction () {
     // Nous avons accès à `this.nuxt` and `this.options`
   }
 }
@@ -97,7 +95,7 @@ class FooClass {
 Aussi nous pouvons l'ancrer dans le module `foo` comme ceci :
 
 ```js
-nuxt.hook('foo', foo => {
-    // ...
+nuxt.hook('foo', (foo) => {
+  // ...
 })
 ```

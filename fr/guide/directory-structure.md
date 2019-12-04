@@ -15,6 +15,8 @@ description: La structure par défaut d'une application Nuxt.js est destinée à
 
 ## Répertoires
 
+<br />
+
 ### Le répertoire des ressources
 
 Le répertoire `assets` contient vos ressources non compilées tels que vos fichiers Stylus ou Sass, des images et des polices.

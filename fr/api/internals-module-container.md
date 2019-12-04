@@ -3,8 +3,6 @@ title: "API : la classe ModuleContainer"
 description: La classe `ModuleContainer` de Nuxt
 ---
 
-# Classe ModuleContainer
-
 - Source : **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/module.js)**
 
 Tous les [modules](/guide/modules) seront appelés dans le contexte de l'instance de `ModuleContainer`.
@@ -14,16 +12,16 @@ Tous les [modules](/guide/modules) seront appelés dans le contexte de l'instanc
 Nous pouvons enregistrer des points d'ancrage sur certains évènements du cycle de vie.
 
 ```js
-nuxt.moduleContainer.plugin('ready', async moduleContainer => {
-    // Faire ceci après que tous les modules soient prêts
+nuxt.moduleContainer.plugin('ready', async (moduleContainer) => {
+  // Faire ceci après que tous les modules soient prêts
 })
 ```
 
 Dans le contexte des [modules](/guide/modules) nous pouvons utiliser ceci à la place :
 
 ```js
-this.plugin('ready', async moduleContainer => {
-    // Faire ceci après que tous les modules soient prêts
+this.plugin('ready', async (moduleContainer) => {
+  // Faire ceci après que tous les modules soient prêts
 })
 ```
 

@@ -61,7 +61,7 @@ After that make `index.js` in `store` directory like below :
 ```javascript
 import Vuex from 'vuex'
 
-var cookieparser = require('cookieparser')
+const cookieparser = require('cookieparser')
 
 const createStore = () => {
   return new Vuex.Store({
@@ -77,7 +77,7 @@ const createStore = () => {
       nuxtServerInit ({ commit }, { req }) {
         let accessToken = null
         if (req.headers.cookie) {
-          var parsed = cookieparser.parse(req.headers.cookie)
+          const parsed = cookieparser.parse(req.headers.cookie)
           accessToken = JSON.parse(parsed.auth)
         }
         commit('update', accessToken)

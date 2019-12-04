@@ -57,7 +57,7 @@ export const state = () => ({
 export const mutations = {
   add (state, text) {
     state.list.push({
-      text: text,
+      text,
       done: false
     })
   },

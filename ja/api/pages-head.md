@@ -3,15 +3,13 @@ title: 'API: head メソッド'
 description: Nuxt.js はアプリケーションの headers 及び html attributes を更新するために vue-meta を使います。
 ---
 
-# head メソッド
-
 > Nuxt.js はアプリケーションの `headers` 及び `html attributes` を更新するために [vue-meta](https://github.com/nuxt/vue-meta) を使います。
 
 - **型:** `Object` または `Function`
 
 現在のページの HTML の head タグを設定するために `head` メソッドを使います。
 
-コンポーネントのデータは `head` メソッド内で `this` を使って利用できます。ページのデータを使って独自のメタタグを設定することもできます。
+コンポーネントのデータは `head` メソッド内で `this` を使って利用できます。ページのデータを使って独自のメタタグを設定することもできます。[Nuxt FAQ](https://ja.nuxtjs.org/faq/) も必ずご覧ください。
 
 ```html
 <template>

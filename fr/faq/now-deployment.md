@@ -3,8 +3,6 @@ title: Déployer avec Now
 description: Comment déployer une application Nuxt.js avec Now ?
 ---
 
-# Comment déployer avec Now ?
-
 ## Now V2 (EN)
 
 **Note:** You cannot deploy a server-side-rendered Nuxt app with Now V2 right now. Please use Now V1 for such apps.

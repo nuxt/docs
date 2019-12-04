@@ -1,9 +1,7 @@
 ---
-title: "API: The pageTransition Property"
+title: "API: The page `transition` Property"
 description: Nuxt.js uses the `<transition>` component to let you create amazing transitions/animations between your pages.
 ---
-
-# The transition Property
 
 > Nuxt.js uses the [`<transition>`](https://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your pages.
 
@@ -106,7 +104,7 @@ If the `transition` key is set as a function:
 ```js
 export default {
   transition (to, from) {
-    if (!from) return 'slide-left'
+    if (!from) { return 'slide-left' }
     return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
   }
 }

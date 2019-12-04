@@ -3,8 +3,6 @@ title: "API : la méthode validate (EN)"
 description: Nuxt.js vous permet de définir une méthode de validation dans votre composant de route dynamique.
 ---
 
-# La méthode validate (EN)
-
 > Nuxt.js vous permet de définir une méthode de validation dans votre composant de route dynamique.
 
 - **Type:** `Function` ou `Async Function`
@@ -19,12 +17,12 @@ validate({ params, query, store }) {
 ```js
 async validate({ params, query, store }) {
   // await operations (EN)
-  return true // if the params are valid
-  return false // will stop Nuxt.js to render the route and display the error page
+  return true // si le paramètre est valide
+  return false // va stopper le process de rendering de Nuxt.js et afficher la page d'erreur
 }
 ```
 
-You can also return promises (EN):
+Vous pouvez aussi retourner une promesse:
 
 ```js
 validate({ params, query, store }) {
@@ -50,22 +48,19 @@ Vous pouvez aussi vérifier les données dans votre [store](/guide/vuex-store) (
 ```js
 export default {
   validate ({ params, store }) {
-    // Vérifier si `params.id` est une catégorie existante
-    return store.state.categories.some((category) => category.id === params.id)
+    // Vérifier si `params.id` est une catégorie existante
+    return store.state.categories.some(category => category.id === params.id)
   }
 }
 ```
 
-You can also throw expected or unexpected errors during validate function execution (EN):
+Vous pouvez aussi émettre une erreur dans la fonction directement pour afficher la page d'erreur :
 
 ```js
 export default {
   async validate ({ params, store }) {
-    // Throws a 500 internal server error with custom message
-    throw new Error('Under Construction!')
+    // Émet une erreur 500 (internal server error) avec un message
+    throw new Error('En construction!')
   }
 }
 ```
-
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>
-

@@ -3,8 +3,6 @@ title: "API: nuxt.render(req, res)"
 description: You can use Nuxt.js as a middleware for your Node.js server.
 ---
 
-# nuxt.render(req, res)
-
 - Type: `Function`
 - Arguments:
   1. [Request](https://nodejs.org/api/http.html#http_class_http_incomingmessage)
@@ -33,13 +31,12 @@ app.use(nuxt.render)
 // Build only in dev mode with hot-reloading
 if (config.dev) {
   new Builder(nuxt).build()
-  .then(listen)
-}
-else {
+    .then(listen)
+} else {
   listen()
 }
 
-function listen() {
+function listen () {
   // Listen the server
   app.listen(port, '0.0.0.0')
   console.log('Server listening on `localhost:' + port + '`.')

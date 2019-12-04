@@ -1,9 +1,7 @@
 ---
-title: Dokku へデプロイ
+title: Dokku へデプロイするには？
 description: Dokku へデプロイするには？
 ---
-
-# Dokku へデプロイするには？
 
 [Dokku のセットアップに関するドキュメント](http://dokku.viewdocs.io/dokku/getting-started/installation/) と [Dokku を使って Digital Ocean 上に Node.js アプリケーションにデプロイする](http://jakeklassen.com/post/deploying-a-node-app-on-digital-ocean-using-dokku/) を読むことをお勧めします。
 

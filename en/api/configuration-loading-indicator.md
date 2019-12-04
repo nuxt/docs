@@ -3,8 +3,6 @@ title: "API: The loading indicator Property"
 description: Show fancy loading indicator while SPA page is loading!
 ---
 
-# The loadingIndicator Property
-
 > Show fancy loading indicator while SPA page is loading!
 
 When running Nuxt.js in SPA mode, there is no content from the server side on the first page load. So, instead of showing a blank page while the page loads, we may show a spinner.

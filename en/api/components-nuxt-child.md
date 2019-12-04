@@ -3,8 +3,6 @@ title: "API: The <nuxt-child> Component"
 description: Display the current page.
 ---
 
-# The &lt;nuxt-child&gt; Component
-
 > This component is used for displaying the children components in a [nested route](/guide/routing#nested-routes).
 
 Example:

@@ -3,8 +3,6 @@ title: 'API: build プロパティ'
 description: Nuxt.js ではウェブアプリケーションを自由にビルドできるよう Webpack 設定をカスタマイズできます。
 ---
 
-# build プロパティ
-
 > Nuxt.js ではウェブアプリケーションを自由にビルドできるよう Webpack 設定をカスタマイズできます。
 
 ## analyze
@@ -87,13 +85,13 @@ export default {
 export default {
   build: {
     babel: {
-      presets({ isServer }, [ preset, options ]) {
+      presets ({ isServer }, [ preset, options ]) {
         return [
           [
             preset, {
               buildTarget: isServer ? 'server' : 'client',
               ...options
-          }],
+            }],
           [
             // 他のプリセット
           ]
@@ -172,7 +170,7 @@ export default {
     extend (config, { isClient }) {
       // クライアントのバンドルの Webpack 設定のみを拡張する
       if (isClient) {
-        config.devtool = '#source-map'
+        config.devtool = 'source-map'
       }
     }
   }
@@ -332,14 +330,6 @@ manifest の使い方をより理解するためには [webpack のドキュメ�
   },
   scss: {},
   stylus: {},
-  ts: {
-    transpileOnly: true,
-    appendTsSuffixTo: [/\.vue$/]
-  },
-  tsx: {
-    transpileOnly: true,
-    appendTsxSuffixTo: [/\.vue$/]
-  },
   vueStyle: {}
 }
 ```
@@ -723,6 +713,19 @@ export default {
     watch: [
       '~/.nuxt/support.js'
     ]
+  }
+}
+```
+## followSymlinks
+
+> デフォルトでは、ビルドプロセスはシンボリックリンク内のファイルをスキャンしません。`followSymlinks` を `true` に設定するとフォルダー（例えば `pages`）内のシンボリックリンクがビルドプロセスでスキャンされます。
+
+- 型: `Boolean`
+
+```js
+export default {
+  build: {
+    followSymlinks: false
   }
 }
 ```

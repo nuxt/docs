@@ -3,8 +3,6 @@ title: "API: nuxt.renderRoute(route, context)"
 description: Render a specific route with a given context.
 ---
 
-# nuxt.renderRoute(route, context = {})
-
 - Type: `Function`
 - Arguments:
   1. `String` : route to render
@@ -35,15 +33,15 @@ config.dev = false
 const nuxt = new Nuxt(config)
 
 new Builder(nuxt)
-.build()
-.then(() => nuxt.renderRoute('/'))
-.then(({ html, error, redirected }) => {
+  .build()
+  .then(() => nuxt.renderRoute('/'))
+  .then(({ html, error, redirected }) => {
   // `html` will be always a string
 
-  // `error` not null when the error layout is displayed, the error format is:
-  // { statusCode: 500, message: 'My error message' }
+    // `error` not null when the error layout is displayed, the error format is:
+    // { statusCode: 500, message: 'My error message' }
 
   // `redirected` is not `false` when `redirect()` has been used in `asyncData()` or `fetch()`
   // { path: '/other-path', query: {}, status: 302 }
-})
+  })
 ```

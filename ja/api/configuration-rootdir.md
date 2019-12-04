@@ -3,8 +3,6 @@ title: "API: rootDir プロパティ"
 description: Nuxt.js アプリケーションのワークスペースを指定します。
 ---
 
-# rootDir プロパティ
-
 - 型: `String`
 - デフォルト: `process.cwd()`
 

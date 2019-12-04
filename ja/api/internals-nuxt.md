@@ -3,8 +3,6 @@ title: 'API: Nuxt クラス'
 description: Nuxt のコアクラス
 ---
 
-# Nuxt クラス
-
 - ソース: **[core/nuxt.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/nuxt.js)**
 
 すべてのモジュールとクラスが通信できるようにするためのコアのコンテナです。すべてのモジュールは Nuxt インスタンスに `this.nuxt` を使ってアクセスできます。
@@ -14,8 +12,8 @@ description: Nuxt のコアクラス
 特定のライフサイクルイベントでのフックを登録できます。
 
 ```js
-nuxt.hook('ready', async nuxt => {
-    // ここにコードを記述してください
+nuxt.hook('ready', async (nuxt) => {
+  // ここにコードを記述してください
 })
 ```
 

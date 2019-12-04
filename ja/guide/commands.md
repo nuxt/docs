@@ -100,6 +100,17 @@ npm run generate
 
 静的なホスティングサイトにデプロイする準備が整ったものが全て入った `dist` フォルダが作成されます。
 
+ページエラーが発生した際に0以外のステータスコードを返し、CI/CD によるデプロイまたはビルドを失敗させるには、 `--fail-on-page-error` 引数を使用することができます。
+
+```bash
+npm run generate --fail-on-page-error
+
+// または
+
+yarn generate --fail-on-page-error
+```
+
+
 プロジェクトで [動的なルーティング](/guide/routing#dynamic-routes) を使っている場合は、Nuxt.js に動的なルーティングを生成させるために [generate 設定](/api/configuration-generate) に目を通してください。
 
 <div class="Alert">

@@ -7,6 +7,8 @@ description: Nuxt.js 어플리케이션의 기본 구조는 작고 큰 어플리
 
 ## 디렉토리
 
+<br />
+
 ### Assets 디렉토리
 
 `assets` 디렉토리는 LESS, SASS, Javascript 같은 컴파일되지 않은 에셋들을 포함하는 디렉토리 입니다.

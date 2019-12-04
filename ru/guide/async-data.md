@@ -37,9 +37,9 @@ description: Nuxt.js перехватывает метод data от vue.js, ч�
 export default {
   data ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
   }
 }
 ```
@@ -48,7 +48,7 @@ export default {
 ```js
 export default {
   async data ({ params }) {
-    let { data } = await axios.get(`https://my-api/posts/${params.id}`)
+    const { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
 }
@@ -59,9 +59,9 @@ export default {
 export default {
   data ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
+      .then((res) => {
+        callback(null, { title: res.data.title })
+      })
   }
 }
 ```
@@ -101,12 +101,12 @@ export default {
 export default {
   data ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
-    .catch((e) => {
-      error({ statusCode: 404, message: 'Страница не найдена' })
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
+      .catch((e) => {
+        error({ statusCode: 404, message: 'Страница не найдена' })
+      })
   }
 }
 ```
@@ -116,12 +116,12 @@ export default {
 export default {
   data ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
-    .catch((e) => {
-      callback({ statusCode: 404, message: 'Сообщение не найдено' })
-    })
+      .then((res) => {
+        callback(null, { title: res.data.title })
+      })
+      .catch((e) => {
+        callback({ statusCode: 404, message: 'Сообщение не найдено' })
+      })
   }
 }
 ```

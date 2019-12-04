@@ -91,7 +91,7 @@ L'injection de contenu dans les instances Vue fonctionne de la même façon que 
 ```js
 import Vue from 'vue'
 
-Vue.prototype.$maFonctionInjectee = (chaine) => console.log("Ceci est un example", chaine)
+Vue.prototype.$maFonctionInjectee = chaine => console.log('Ceci est un example', chaine)
 ```
 
 `nuxt.config.js`:
@@ -108,7 +108,7 @@ Vous pouvez maintenant utiliser cette fonction dans tous vos composants Vue.
 
 ```js
 export default {
-  mounted(){
+  mounted () {
     this.$maFonctionInjectee('test')
   }
 }
@@ -124,7 +124,7 @@ L'injection de contenu dans les instances Vue fonctionne de la même façon que 
 ```js
 export default ({ app }, inject) => {
   // Défini la fonction directement dans l'objet context.app
-  app.maFonctionInjectee = (chaine) => console.log('Ok, une autre fonction', chaine)
+  app.maFonctionInjectee = chaine => console.log('Ok, une autre fonction', chaine)
 }
 ```
 
@@ -142,7 +142,7 @@ La fonction est maintenant disponible partout où vous aurez accès au `context`
 
 ```js
 export default {
-  asyncData(context){
+  asyncData (context) {
     context.app.maFonctionInjectee('Contexte !')
   }
 }
@@ -176,10 +176,10 @@ Maintenant la fonction peut être utilisé depuis `context`, via `this` dans les
 
 ```js
 export default {
-  mounted(){
+  mounted () {
     this.$maFonctionInjectee('fonctionne dans mounted()')
   },
-  asyncData(context){
+  asyncData (context) {
     context.app.$maFonctionInjectee('fonctionne avec le contexte')
   }
 }
@@ -193,7 +193,7 @@ export const state = () => ({
 })
 
 export const mutations = {
-  changeUneValeur(state, nouvelleValeur) {
+  changeUneValeur (state, nouvelleValeur) {
     this.$maFonctionInjectee('accessible dans les mutations')
     state.uneValeur = nouvelleValeur
   }
@@ -202,7 +202,7 @@ export const mutations = {
 export const actions = {
   setUneValeurAvecQuelquechose ({ commit }) {
     this.$maFonctionInjectee('accessible dans les actions')
-    const nouvelleValeur = "quelquechose"
+    const nouvelleValeur = 'quelquechose'
     commit('changeUneValeur', nouvelleValeur)
   }
 }

@@ -3,8 +3,6 @@ title: 'API: hooks プロパティ'
 description: フックは Nuxt モジュールで一般的に使われる Nuxt イベントのリスナーですが、 `nuxt.config.js` の中でも利用できます。
 ---
 
-# hooks プロパティ
-
 - 型: `Object`
 
 > フックは Nuxt モジュールで一般的に使われる [Nuxt イベントのリスナー](/api/internals) ですが、 `nuxt.config.js` の中でも利用できます。 より詳しくは [こちら](/api/internals) を参照してください。
@@ -18,7 +16,7 @@ import path from 'path'
 export default {
   hooks: {
     build: {
-      done(builder) {
+      done (builder) {
         const extraFilePath = path.join(builder.nuxt.options.buildDir, 'extra-file')
         fs.writeFileSync(extraFilePath, 'Something extra')
       }
@@ -83,7 +81,7 @@ export default {
    // file: hooks/render.js
    import redirectRootToPortal from './route-redirect-portal'
 
-   export default nuxtConfig => {
+   export default (nuxtConfig) => {
      const router = Reflect.has(nuxtConfig, 'router') ? nuxtConfig.router : {}
      const base = Reflect.has(router, 'base') ? router.base : '/portal'
 
@@ -92,7 +90,7 @@ export default {
         * 'render:setupMiddleware'
         * {@link node_modules/nuxt/lib/core/renderer.js}
         */
-       setupMiddleware(app) {
+       setupMiddleware (app) {
          app.use('/', redirectRootToPortal(base))
        }
      }
@@ -130,7 +128,7 @@ export default {
     * @param {Function} next ミドルウェアのコールバック
     */
    export default desiredContextRoot =>
-     function projectHooksRouteRedirectPortal(req, res, next) {
+     function projectHooksRouteRedirectPortal (req, res, next) {
        const desiredContextRootRegExp = new RegExp(`^${desiredContextRoot}`)
        const _parsedUrl = Reflect.has(req, '_parsedUrl') ? req._parsedUrl : null
        const url = _parsedUrl !== null ? _parsedUrl : parseurl(req)

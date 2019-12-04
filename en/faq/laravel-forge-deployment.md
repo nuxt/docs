@@ -3,8 +3,6 @@ title: Laravel Forge deployment
 description: How to deploy Nuxt.js app with Laravel Forge?
 ---
 
-# Laravel Forge deployment
-
 ## 1- Pre-requisits
 
 Before starting to describe the process of deploying a Nuxt app with Laravel Forge, I will assume that you have already:
@@ -117,7 +115,7 @@ server {
         proxy_set_header X-Forwarded-Proto  $scheme;
         proxy_read_timeout          1m;
         proxy_connect_timeout       1m;
-        proxy_pass                          http://127.0.0.1:3000; # set the adress of the Node.js
+        proxy_pass                          http://127.0.0.1:3000; # set the address of the Node.js
     }
 
     access_log off;
