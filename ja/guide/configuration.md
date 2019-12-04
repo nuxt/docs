@@ -101,3 +101,25 @@ description: Nuxt.js ではデフォルトの設定でほとんどのユース�
 このオプションで、ページトランジションのデフォルトプロパティを指定できます。
 
 [`transition` オプションに関するドキュメント](/api/configuration-transition)
+
+
+## Asynchronous Configuration
+
+If you need to populate some options (e.g. the head) with asynchronous data (e.g. coming from an API), you have the possibility to return a promise. Here is an example:
+
+```js
+/*
+axios-module cannot be used in nuxt.config.js
+You need to import axios and configure it again
+*/
+import axios from 'axios'
+export default async () => {
+  const data = await axios.get('endpoint')
+  return {
+    head: {
+      title: data.head.title,
+      //... rest of config
+    }
+  }
+}
+```
