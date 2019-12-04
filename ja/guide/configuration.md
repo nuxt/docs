@@ -105,12 +105,12 @@ description: Nuxt.js ではデフォルトの設定でほとんどのユース�
 
 ## Asynchronous Configuration
 
-If you need to populate some options (e.g. the head) with asynchronous data (e.g. coming from an API), you have the possibility to return a promise. Here is an example:
+一部のオプション（例えば、head）に非同期データ（例えば、API からのデータなど）を入力する必要がある場合は、promise を返す可能性があります。例は以下のとおりです。
 
 ```js
 /*
-axios-module cannot be used in nuxt.config.js
-You need to import axios and configure it again
+nuxt.config.js では axios-module を使用できません。
+axios をインポートして、再度設定する必要があります。
 */
 import axios from 'axios'
 export default async () => {
@@ -118,7 +118,7 @@ export default async () => {
   return {
     head: {
       title: data.head.title,
-      //... rest of config
+      //... REST の設定
     }
   }
 }
