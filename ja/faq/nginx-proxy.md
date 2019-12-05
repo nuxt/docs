@@ -68,7 +68,7 @@ server {
 
     charset utf-8;
 
-    root /var/www/NUXT_PROJECT_PATH/dist
+    root /var/www/NUXT_PROJECT_PATH/dist;
 
     location ~* \.(?:ico|gif|jpe?g|png|woff2?|eot|otf|ttf|svg|js|css)$ {
         expires $expires;
