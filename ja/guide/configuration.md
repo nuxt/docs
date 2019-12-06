@@ -113,6 +113,7 @@ nuxt.config.js では axios-module を使用できません。
 axios をインポートして、再度設定する必要があります。
 */
 import axios from 'axios'
+
 export default async () => {
   const data = await axios.get('endpoint')
   return {
