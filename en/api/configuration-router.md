@@ -318,6 +318,6 @@ export default function (to, from, savedPosition) {
 - Default: `undefined`
 - Available since: v2.10
 
-If this option iss set to true, trailing slashes will be appended to every route. If set to false, they'll be removed.
+If this option is set to true, trailing slashes will be appended to every route. If set to false, they'll be removed.
 
 **Attention**: This option should not be set without preparation and has to be tested thoroughly. When setting `router.trailingSlash` to something else than `undefined`, the opposite route will stop working. Thus 301 redirects should be in place and you *internal linking* has to be adapted correctly. If you set `trailingSlash` to `true`, then only `example.com/abc/` will work but not `example.com/abc`. On false, it's vice-versa
