@@ -51,9 +51,9 @@ It will ask you some questions:
   - [Tailwind](https://github.com/tailwindcss/tailwindcss)
   - [Element UI](https://github.com/ElemeFE/element)
   - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
-  - [Buefy](https://buefy.github.io)
-  - [iView](https://www.iviewui.com/)
-  - [Tachyons](https://tachyons.io)
+  - [Buefy](https://github.com/buefy/buefy)
+  - [iView](https://github.com/iview/iview)
+  - [Tachyons](https://github.com/tachyons-css/tachyons)
 3. Choose your favorite testing framework:
   - None (feel free to add one later)
   - [Jest](https://github.com/facebook/jest)
