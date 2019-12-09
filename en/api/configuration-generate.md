@@ -31,7 +31,7 @@ The generation of routes are concurrent, `generate.concurrency` specifies the am
 - Type: `String`
 - Default: `'dist'`
 
-Directory name created by `nuxt generate`.
+Directory name created when building the web application in static mode with `nuxt generate` or in SPA mode with `nuxt build`.
 
 ## devtools
 
