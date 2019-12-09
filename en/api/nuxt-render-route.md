@@ -36,7 +36,7 @@ new Builder(nuxt)
   .build()
   .then(() => nuxt.renderRoute('/'))
   .then(({ html, error, redirected }) => {
-  // `html` will be always a string
+  // `html` will always be a string
 
     // `error` not null when the error layout is displayed, the error format is:
     // { statusCode: 500, message: 'My error message' }
