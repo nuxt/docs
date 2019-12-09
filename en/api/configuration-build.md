@@ -213,6 +213,34 @@ Using [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extra
 
 </div>
 
+You may want to extract all your CSS to a single file.
+There is a workaround for this:
+
+<div class="Alert Alert--orange">
+⚠️ It is not recommended extracting everything into a single file. 
+Extracting into multiple css files is better for caching and preload isolation.
+It can also improve page performance by downloading and resolving only those resources that are needed.
+</div>
+
+```js
+export default {
+  build: {
+    extractCSS: true,
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
+    }
+  }
+}
+```
 
 ## filenames
 
