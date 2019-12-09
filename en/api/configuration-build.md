@@ -512,6 +512,34 @@ export default {
   }
 }
 ```
+### postcss plugins & nuxt-tailwindcss
+
+If you want to apply postcss plugin (eg. postcss-pxtorem) on the nuxt-tailwindcss configuration, you have to change order and load first tailwindcss.
+
+**This setup have no impact on the nuxt-purgecss.**
+
+Example (`nuxt.config.js`):
+
+```js
+import { join } from 'path'
+
+export default {
+  // ...
+  build: {
+    postcss: {
+      plugins: {
+        tailwindcss: join(__dirname, 'tailwind.config.js'),
+        'postcss-pxtorem': {
+          propList: [
+            '*',
+            '!border*',
+          ]
+        }
+      }
+    }
+  }
+}
+```
 
 ## profile
 
