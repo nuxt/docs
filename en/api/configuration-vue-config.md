@@ -11,6 +11,8 @@ description: A config object for Vue.config
 
 **Example**
 
+`nuxt.config.js`
+
 ```js
 export default {
   vue: {
