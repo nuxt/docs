@@ -22,6 +22,12 @@ You can use `--help` with any command to get detailed usage. Common arguments ar
 - **`--spa` or `-s`:** Runs command in SPA mode and disables server side rendering.
 - **`--unix-socket` or `-n`:** specify the path to a UNIX socket.
 
+#### Hooks
+
+Hook                 | Objective
+---------------------|----------------------------------------------------------------------------------------------------------------------------------------
+`cli:buildError` | Captures build errors in dev mode and display them on loading screen
+
 #### Using in package.json
 
 You should put these commands in the `package.json`:

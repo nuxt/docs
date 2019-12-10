@@ -13,9 +13,9 @@ Pour simplifier les choses pour les contributeurs et les responsables, nous util
 Merci de vous assurer d'inclure la méthode pour reproduire ou un [CodeSandBox](https://template.nuxtjs.org/)
 de sorte que les bogues puissent être reproduits sans grands efforts. Plus un bogue peut être reproduit, plus vite nous pourrons commencer à le réparer !
 
-## Propositions de fusion
+## Propositions de d'amelioration (Merge Request / Pull request)
 
-Nous aimons voir vos propositions de fusion, même s'il ne s'agit que d'une faute de frappe !
+Nous aimons voir vos propositions d'amélioration, même s'il ne s'agit que d'une faute de frappe !
 
 Cependant, toute amélioration significative doit être associée à une
 [demande d'amélioration](https://feature.nuxtjs.org/) existante
@@ -23,10 +23,10 @@ ou un [Rapport de bogue](https://bug.nuxtjs.org/).
 
 ### Pour commencer
 
-1. [Dupliquer](https://help.github.com/articles/fork-a-repo/) ce dépôt sur votre propre compte GitHub puis le [cloner](https://help.github.com/articles/cloning-a-repository/) suir votre appareil.
+1. [Dupliquer / Fork](https://help.github.com/articles/fork-a-repo/) ce dépôt sur votre propre compte GitHub puis le [cloner](https://help.github.com/articles/cloning-a-repository/) suir votre appareil.
 2. Lancer `npm install` ou `yarn install` pour installer les dépendances.
 
-> _Notez que **npm** et **yarn** peuvent tous les deux oublier d'installer des dépendances. Pour remédier à cela, vous pouvez soit supprimer le répertoire `node_modules` dans votre exemple d'application et d'installer à nouveau, ou installer localement les dépendances manquantes._
+> _Notez que **npm** et **yarn** peuvent tous les deux oublier d'installer des dépendances. Pour remédier à cela, vous pouvez soit supprimer le répertoire `node_modules` dans votre exemple d'application et installer à nouveau, ou installer localement les dépendances manquantes._
 
 > Si vous ajoutez une dépendance, merci d'utiliser `yarn add`. Le fichier `yarn.lock` est le point de départ de toutes les dépendances de Nuxt.
 
@@ -41,24 +41,22 @@ yarn build
 
 ### Structure de test
 
-Une bonne proposition de fusion, qu'elle inclue une correction de bogue ou une nouvelle fonctionnalité, comprendra souvent des tests.
+Une bonne pull request, qui inclue une correction de bogue ou une nouvelle fonctionnalité, comprendra souvent des tests.
 Pour écrire de bons tests, laissez-nous expliquer notre structure de test :
 
 #### Correctifs
 
 Les correctifs (que vous trouverez dans `tests/fixtures`) contiennent plusieurs applications Nuxt. Afin de conserver un temps de construction le plus court possible,
-nous ne construisons pas une application Nuxt par correctifs. Au lieu de cela, les correctifs sont construits (`yarn test:fixtures`) avant d'exécuter
-les tests unitaires actuels.
+nous ne construisons pas une application Nuxt par correctifs. Au lieu de cela, les correctifs sont construits (`yarn test:fixtures`) avant d'exécuter les tests unitaires actuels.
 
-Assurez-vous **de modifier** ou **d'ajouter un nouveau correctif** lorsque vous soumettez une proposition de fusion pour refléter correctement les changements (si nécessaire).
+Assurez-vous **de modifier** ou **d'ajouter un nouveau correctif** lorsque vous soumettez une pull request afin de refléter correctement les changements (si nécessaire).
 
 De plus, n'oubliez pas de **reconstruire** un correctif après l'avoir modifié en lançant le test correspondant
 avec `jest test/fixtures/my-fixture/my-fixture.test.js` !
 
 #### Tests unitaires
 
-Les tests unitaires peuvent être trouvés dans `tests/unit` et seront exécutés après la construction des correctifs. Un nouveau serveur Nuxt sera utilisé
-par test de sorte qu'aucun état partagé (excepté l'état initial de l'étape de construction) n'est présent.
+Les tests unitaires peuvent être trouvés dans `tests/unit` et seront exécutés après la construction des correctifs. Un nouveau serveur Nuxt sera utilisé par test de sorte qu'aucun état partagé (excepté l'état initial de l'étape de construction) ne soit présent.
 
 Après avoir ajouté vos tests unitaires, vous pouvez les exécuter directement :
 
@@ -76,7 +74,7 @@ Encore une fois, sachez que vous devrez peut-être reconstruire vos correctifs a
 
 ### Tester vos changements
 
-Pendant que vous travaillez sur votre demande de fusion, vous voudrez probablement vérifier si votre correctif est correctement configuré ou bien déboguer vos modifications actuelles.
+Pendant que vous travaillez sur votre pull request, vous voudrez probablement vérifier si votre correctif est correctement configuré ou bien déboguer vos modifications actuelles.
 
 Pour ce faire, vous pouvez utiliser le scripte Nuxt lui-même pour lancer par exemple votre correctif ou une application d'exemple :
 
@@ -94,19 +92,16 @@ Cela aidera grandement à comprendre les changements et aussi aider les utilisat
 
 ### Mise en forme
 
-Comme vous l'avez peut-être remarqué, nous utilisons ESLint pour appliquer un code standard. Merci de lancer `yarn lint` avant d'enregistrer
-vos changements afin de vérifier que la mise en forme du code est correcte. Sinon, vous pouvez utiliser `yarn lint --fix` ou `npm run lint -- --fix` (sans faute !) pour corriger la plupart
-des changements de style. S'il reste des erreurs, vous devez les corriger manuellement.
+Comme vous l'avez peut-être remarqué, nous utilisons ESLint pour appliquer un code standard. Merci de lancer `yarn lint` avant d'enregistrer vos changements afin de vérifier que la mise en forme du code est correcte. Sinon, vous pouvez utiliser `yarn lint --fix` ou `npm run lint -- --fix` (sans faute !) pour corriger la plupart des changements de style. S'il reste des erreurs, vous devez les corriger manuellement.
 
 ### Documentation
 
-Si vous avez ajouté une nouvelle fonctionnalité, fait une refonte ou changé le comportement de Nuxt d'une autre manière, vous voudrez probablement
-documenter les changements. Merci de le faire par une proposition de fusion sur le dépôt de la [documentation](https://github.com/nuxt/docs/pulls).
-Vous n'êtes pas obligé de modifier la documentation immédiatement (mais veuillez le faire dès que votre demande de fusion est suffisamment mature).
+Si vous avez ajouté une nouvelle fonctionnalité, fait une refonte ou changé le comportement de Nuxt d'une autre manière, vous voudrez probablement documenter les changements. Merci de le faire par une pull request sur le dépôt de la [documentation](https://github.com/nuxt/docs/pulls).
+Vous n'êtes pas obligé de modifier la documentation immédiatement (mais veuillez le faire dès que votre pull request est suffisamment mature).
 
 ### Listes de contrôle finales
 
-Lors de la soumission de votre demande de fusion, il y a un formulaire simple que vous devez remplir.
+Lors de la soumission de votre pull request, il y a un formulaire simple que vous devez remplir.
 Veuillez cocher toutes les "réponses" appropriées dans les listes de contrôle.
 
 ### Dépannages
