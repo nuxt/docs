@@ -22,6 +22,12 @@ nuxt generate | アプリケーションをビルドして、ルートごとに 
 - **`--spa` または `-s`:** サーバサイドレンダリングモードを不可にし、 SPA モードでコマンドを実行します。
 - **`--unix-socket` または `-n`:** UNIX ソケットへのパスを明記します。
 
+#### Hooks
+
+Hook                 | Objective
+---------------------|----------------------------------------------------------------------------------------------------------------------------------------
+`cli:buildError` | Captures build errors in dev mode and display them on loading screen
+
 #### package.jsonで使用する
 
 これらのコマンドを `package.json` に書いておくと良いでしょう:
