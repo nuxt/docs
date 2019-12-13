@@ -25,7 +25,7 @@ export default {
 
 To know the list of options you can give to `head`, take a look at [vue-meta documentation](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
-You can also use `head` in your components and access to the component data through `this` ([read more](/api/pages-head)).
+You can also use `head` in your components to access component data through the `this` keyword ([read more](/api/pages-head)).
 
 <div class="Alert Alert--teal">
 
