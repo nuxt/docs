@@ -7,7 +7,7 @@ description: Nuxt.js で外部リソースを使うには？
 
 head オブジェクトもしくは関数の中に、外部のリソースを含めることができます。
 [head API docs](https://ja.nuxtjs.org/api/pages-head/) で説明されているように、次の例では `head` をオブジェクトと関数として使用します。
-computed プロパティもしくは data プロパティのような Vue コンポーネントから値を使用したい場合、`head()` メソッドを使用して、最終的な head オブジェクトを返すこともできます。
+computed プロパティもしくは data プロパティのような Vue コンポーネントから値を使用したい場合、`head()` メソッドを使用して、最終的な head オブジェクトを返すこともできます。 You can also pass each resource an optional `body: true` to include the resource before the closing `</body>` tag.
 
 `nuxt.config.js` 内でリソースをインクルードします（この例では head オブジェクト）:
 
