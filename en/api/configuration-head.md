@@ -5,7 +5,7 @@ description: Nuxt.js let you define all default meta for your application inside
 
 > Nuxt.js let you define all default meta for your application inside `nuxt.config.js`, use the same `head` property
 
-- Type: `Object`
+- Type: `Object` or `Function`
 
 An example `nuxt.config.js`:
 ```js
@@ -25,7 +25,7 @@ export default {
 
 To know the list of options you can give to `head`, take a look at [vue-meta documentation](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
-You can also use `head` in your components to access component data through the `this` keyword ([read more](/api/pages-head)).
+You can also use `head` as a function in your components to access the component data through `this` ([read more](/api/pages-head)).
 
 <div class="Alert Alert--teal">
 
