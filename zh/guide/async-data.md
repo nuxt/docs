@@ -34,7 +34,7 @@ Nuxt.js 提供了几种不同的方法来使用 `asyncData` 方法，你可以�
 
 <div class="Alert Alert--grey">
 
-我们使用 [axios](https://github.com/mzabriskie/axios) 重构 HTTP 请求, 我们 <strong>强烈建议您</strong> 使用 [axios 模块](https://axios.nuxtjs.org/) 用于您的Nuxt项目中。
+我们使用 [axios](https://github.com/mzabriskie/axios) 重构 HTTP 请求, 我们 **强烈建议您** 使用我们的 [axios 模块](https://axios.nuxtjs.org/) 用于您的Nuxt项目中。
 
 </div>
 
