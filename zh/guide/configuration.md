@@ -94,7 +94,7 @@ Nuxt.js 允许你在自动生成的 `vendor.bundle.js` 文件中添加一些模�
 
 此选项允许您配置Nuxt.js应用程序的自定义目录。
 
-[Documentation about `dir` integration](/api/configuration-dir)
+[关于 dir 配置项的详细文档](/api/configuration-dir)
 
 ### transition
 
