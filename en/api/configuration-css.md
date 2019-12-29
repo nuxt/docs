@@ -30,3 +30,5 @@ export default {
 ```
 
 Nuxt.js will automatically guess the file type by its extension and use the appropriate pre-processor loader for webpack. You will still need to install the required loader if you need to use them.
+
+Info: SCSS variables declared in these global files, will *not* not be available for use by components. You have to either import them individually into every component that should have access to these variables or use the official https://github.com/nuxt-community/style-resources-module module to make scss variables globally accessible.
