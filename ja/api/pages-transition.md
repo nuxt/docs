@@ -71,8 +71,7 @@ export default {
 | `leaveToClass` | `String` | `n/a` | トランジション終了時の状態のクラスです。詳細は [Vue.js のドキュメント](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) 参照 |
 | `leaveActiveClass` | `String` | `n/a` | トランジション中に適用されるクラスです。詳細は [Vue.js のドキュメント](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) 参照 |
 
-`pageTransition` の中でメソッドを定義することもでき、メソッドは [JavaScript フック](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks) で使われます:
-You can also define methods in the page `transition` property, these are for the [JavaScript hooks](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks):
+ページの `transition` プロパティの中でメソッドを定義することもでき、メソッドは [JavaScript フック](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks) で使われます:
 
 - `beforeEnter(el)`
 - `enter(el, done)`
