@@ -19,7 +19,7 @@ connect 自体はミドルウェアで、登録されたミドルウェアは `n
 * With `prefix: true` (default): `/admin/api`
 * With `prefix: false`: `/api`
 
-## サーバミドルウェア vs ミドルウェア！
+## サーバーミドルウェア vs ミドルウェア！
 
 クライアントサイドや SSR の Vue で各ルートの前に呼び出されている [ルーティングのミドルウェア](/guide/routing#ミドルウェア)  と混同しないでください。
 `serverMiddleware` は `vue-server-renderer` の **前に** サーバー側で実行され、API リクエストの処理やアセットの処理などのサーバー固有のタスクとして使用できます。
@@ -78,4 +78,30 @@ Nuxt Config (`nuxt.config.js`):
 serverMiddleware: [
   '~/api/logger'
 ]
+```
+
+## オブジェクト構文
+
+パスにマッピングされた関数のリストでサーバーミドルウェアが構成されている場合:
+
+```js
+export default {
+  serverMiddleware: [
+    { path: '/a', handler: '~/api/a.js' },
+    { path: '/b', handler: '~/api/b.js' },
+    { path: '/c', handler: '~/api/c.js' },
+  ]
+}
+```
+
+あるいは、次のとおりオブジェクトを渡して定義することもできます:
+
+```js
+export default {
+  serverMiddleware: {
+    '/a': '~/api/a.js',
+    '/b': '~/api/b.js',
+    '/c': '~/api/c.js',
+  }
+}
 ```
