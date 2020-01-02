@@ -24,7 +24,8 @@ If you use `url('~assets/image.png')` in your CSS, it will be *translated* into 
 <div class="Alert Alert--orange">
 
 **Warning:** Starting from Nuxt 2.0 the `~/` alias won't be resolved correctly in your CSS files.
-You must use `~assets` (without a slash) or the `@` alias in `url` CSS references, i.e. `background: url("~assets/banner.svg")`
+You must use `~assets` (without a slash) or the `~@` alias (with a slash) in `url` CSS references, i.e. `background: url("~assets/banner.svg")` and
+`background: url("~@/assets/banner.svg")`
 
 </div>
 
