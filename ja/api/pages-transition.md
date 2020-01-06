@@ -71,7 +71,7 @@ export default {
 | `leaveToClass` | `String` | `n/a` | トランジション終了時の状態のクラスです。詳細は [Vue.js のドキュメント](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) 参照 |
 | `leaveActiveClass` | `String` | `n/a` | トランジション中に適用されるクラスです。詳細は [Vue.js のドキュメント](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes) 参照 |
 
-`pageTransition` の中でメソッドを定義することもでき、メソッドは [JavaScript フック](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks) で使われます:
+ページの `transition` プロパティの中でメソッドを定義することもでき、メソッドは [JavaScript フック](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks) で使われます:
 
 - `beforeEnter(el)`
 - `enter(el, done)`
@@ -81,6 +81,16 @@ export default {
 - `leave(el, done)`
 - `afterLeave(el)`
 - `leaveCancelled(el)`
+
+```js
+export default {
+  transition: {
+    afterLeave(el) {
+      console.log('afterLeave', el)
+    }
+  }
+}
+```
 
 *メモ: JavaScript のみのトランジションのために明示的に `css: false` を追加しておくのは良いアイディアです。これは Vue は CSS 判定をスキップさせます。また誤って CSS ルールがトランジションに干渉するのを防ぎます。*
 

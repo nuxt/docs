@@ -31,7 +31,7 @@ export default {
 - 型: `String`
 - デフォルト: `'dist'`
 
-`nuxt generate` で作成されるディレクトリ名です。
+`nuxt generate` か、 SPA モードでの `nuxt build` によって、ウェブアプリケーションがビルドされる時に作成されるディレクトリ名です。
 
 ## devtools
 
