@@ -10,9 +10,9 @@ description: 如何扩展 Webpack 的配置？
 ```js
 module.exports = {
   build: {
-     extend (config, { isDev, isClient }) {
-       // ...
-     }
+    extend (config, { isDev, isClient }) {
+      // ...
+    }
   }
 }
 ```

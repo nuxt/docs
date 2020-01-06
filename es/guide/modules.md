@@ -87,7 +87,7 @@ export default {
     '~/modules/simple'
 
     // Passing options directly
-    ['~/modules/simple', { token: '123' }]
+      ['~/modules/simple', { token: '123' }]
   ]
 }
 ```
@@ -110,9 +110,9 @@ Be aware that `async`/`await` is only supported in Node.js > 7.2. So if you are 
 ```js
 import fse from 'fs-extra'
 
-export default async function asyncModule() {
+export default async function asyncModule () {
   // You can do async works here using `async`/`await`
-  let pages = await fse.readJson('./pages.json')
+  const pages = await fse.readJson('./pages.json')
 }
 ```
 
@@ -121,10 +121,10 @@ export default async function asyncModule() {
 ```js
 import axios from 'axios'
 
-export default function asyncModule() {
+export default function asyncModule () {
   return axios.get('https://jsonplaceholder.typicode.com/users')
     .then(res => res.data.map(user => '/users/' + user.username))
-    .then(routes => {
+    .then((routes) => {
       // Do something by extending Nuxt routes
     })
 }
@@ -255,7 +255,6 @@ export default function (moduleOptions) {
   this.options.build.plugins.push({
     apply (compiler) {
       compiler.plugin('emit', (compilation, cb) => {
-
         // This will generate `.nuxt/dist/info.txt' with contents of info variable.
         // Source can be buffer too
         compilation.assets['info.txt'] = { source: () => info, size: () => info.length }
@@ -299,21 +298,20 @@ Nuxt will wait for your function if it return a Promise or is defined as `async`
 Here are some basic examples:
 
 ```js
-export default function myModule() {
-
-  this.nuxt.hook('modules:done', moduleContainer => {
+export default function myModule () {
+  this.nuxt.hook('modules:done', (moduleContainer) => {
     // This will be called when all modules finished loading
   })
 
-  this.nuxt.hook('render:before', renderer => {
+  this.nuxt.hook('render:before', (renderer) => {
     // Called after the renderer was created
   })
 
-  this.nuxt.hook('build:compile', async ({name, compiler }) => {
+  this.nuxt.hook('build:compile', async ({ name, compiler }) => {
     // Called before the compiler (default: webpack) starts
   })
 
-  this.nuxt.hook('generate:before', async generator => {
+  this.nuxt.hook('generate:before', async (generator) => {
     // This will be called before Nuxt generates your pages
   })
 }
@@ -342,7 +340,7 @@ NuxtCommand.run({
       description: 'Simple test string'
     }
   },
-  run(cmd) {
+  run (cmd) {
     consola.info(cmd.argv)
   }
 })

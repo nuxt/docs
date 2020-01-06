@@ -12,8 +12,8 @@ description: Nuxt のコアクラス
 特定のライフサイクルイベントでのフックを登録できます。
 
 ```js
-nuxt.hook('ready', async nuxt => {
-    // ここにコードを記述してください
+nuxt.hook('ready', async (nuxt) => {
+  // ここにコードを記述してください
 })
 ```
 

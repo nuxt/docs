@@ -12,16 +12,16 @@ description: Nuxt ModuleContainer クラス
 特定のライフサイクルイベントでのフックを登録できます。
 
 ```js
-nuxt.moduleContainer.plugin('ready', async moduleContainer => {
-    // すべてのモジュールの準備ができたらここを実行します
+nuxt.moduleContainer.plugin('ready', async (moduleContainer) => {
+  // すべてのモジュールの準備ができたらここを実行します
 })
 ```
 
 [モジュール](/guide/modules) コンテキストの中では代わりに以下のようにできます:
 
 ```js
-this.plugin('ready', async moduleContainer => {
-    // すべてのモジュールの準備ができたらここを実行します
+this.plugin('ready', async (moduleContainer) => {
+  // すべてのモジュールの準備ができたらここを実行します
 })
 ```
 
@@ -68,6 +68,10 @@ this.plugin('ready', async moduleContainer => {
 ### extendRoutes (fn)
 
 [options.build.extendRoutes](/api/configuration-router#extendroutes) 関数をチェーンさせることで routes を簡単に拡張できます。
+
+### extendPlugins (fn)
+
+[options.extendPlugins](/api/configuration-extend-plugins) 関数をチェーンさせることで plugins を簡単に拡張できます。
 
 ### addModule (moduleOpts, requireOnce)
 

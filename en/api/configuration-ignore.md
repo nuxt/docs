@@ -52,3 +52,17 @@ By default all files which start with `-` will be ignored, such as `store/-foo.j
 > More customizable than `ignorePrefix`: all files matching glob patterns specified inside `ignore` will be ignored in building.
 
 **Note:** This option will be deprecated in Nuxt.js 3. We recommend using a `.nuxtignore` file instead.
+
+## ignoreOptions
+
+`nuxtignore` is using `node-ignore` under the hood, `ignoreOptions` can be configured as `options` of `node-ignore`.
+
+Example (`nuxt.config.js`, make .nuxtignore patterns case-sensitive ):
+
+```js
+export default {
+  ignoreOptions: {
+    ignorecase: false
+  }
+}
+```

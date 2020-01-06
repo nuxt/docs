@@ -12,16 +12,16 @@ All [modules](/guide/modules) will be called within context of `ModuleContainer`
 We can register hooks on certain life cycle events.
 
 ```js
-nuxt.moduleContainer.plugin('ready', async moduleContainer => {
-    // Do this after all modules where ready
+nuxt.moduleContainer.plugin('ready', async (moduleContainer) => {
+  // Do this after all modules where ready
 })
 ```
 
 Inside [modules](/guide/modules) context we can use this instead:
 
 ```js
-this.plugin('ready', async moduleContainer => {
-    // Do this after all modules where ready
+this.plugin('ready', async (moduleContainer) => {
+  // Do this after all modules where ready
 })
 ```
 
@@ -68,6 +68,10 @@ Allows easily extending webpack build config by chaining [options.build.extend](
 ### extendRoutes (fn)
 
 Allows easily extending routes by chaining [options.build.extendRoutes](/api/configuration-router#extendroutes) function.
+
+### extendPlugins (fn)
+
+Allows easily extending plugins by chaining [options.extendPlugins](/api/configuration-extend-plugins) function.
 
 ### addModule (moduleOpts, requireOnce)
 

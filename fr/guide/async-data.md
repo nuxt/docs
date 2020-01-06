@@ -48,9 +48,9 @@ Nous utilisons [axios](https://github.com/mzabriskie/axios) pour faire des requ�
 export default {
   asyncData ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
   }
 }
 ```
@@ -60,7 +60,7 @@ export default {
 ```js
 export default {
   async asyncData ({ params }) {
-    let { data } = await axios.get(`https://my-api/posts/${params.id}`)
+    const { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
 }
@@ -92,7 +92,7 @@ export default {
     // Merci de vérifier en premier lieu si vous êtes du côté serveur
     // avant d'utiliser req et res
     if (process.server) {
-     return { host: req.headers.host }
+      return { host: req.headers.host }
     }
 
     return {}
@@ -132,12 +132,12 @@ Exemple avec une `Promise` :
 export default {
   asyncData ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
-    .catch((e) => {
-      error({ statusCode: 404, message: 'Billet non trouvé' })
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
+      .catch((e) => {
+        error({ statusCode: 404, message: 'Billet non trouvé' })
+      })
   }
 }
 ```

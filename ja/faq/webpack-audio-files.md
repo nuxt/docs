@@ -8,15 +8,15 @@ description: オーディオファイルをロードするように Webpack の�
 ```js
 export default {
   build: {
-    extend(config, ctx) {
+    extend (config, ctx) {
       config.module.rules.push({
         test: /\.(ogg|mp3|wav|mpe?g)$/i,
         loader: 'file-loader',
         options: {
-          name: '[path][name].[ext]',
-        },
+          name: '[path][name].[ext]'
+        }
       })
-    },
+    }
   }
 }
 ```
@@ -27,24 +27,24 @@ export default {
 
 ```js
 export default {
-   build: {
+  build: {
     loaders: {
       vue: {
         transformAssetUrls: {
-          audio: 'src',
-        },
-      },
+          audio: 'src'
+        }
+      }
     },
 
-    extend(config, ctx) {
+    extend (config, ctx) {
       config.module.rules.push({
         test: /\.(ogg|mp3|wav|mpe?g)$/i,
         loader: 'file-loader',
         options: {
-          name: '[path][name].[ext]',
-        },
+          name: '[path][name].[ext]'
+        }
       })
-    },
-  },
+    }
+  }
 }
 ```

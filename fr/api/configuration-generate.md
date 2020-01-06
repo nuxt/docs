@@ -118,13 +118,13 @@ import axios from 'axios'
 
 export default {
   generate: {
-    routes: function () {
+    routes () {
       return axios.get('https://mon-api/utilisateurs')
-      .then((res) => {
-        return res.data.map((user) => {
-          return '/utilisateurs/' + user.id
+        .then((res) => {
+          return res.data.map((user) => {
+            return '/utilisateurs/' + user.id
+          })
         })
-      })
     }
   }
 }
@@ -139,15 +139,15 @@ import axios from 'axios'
 
 export default {
   generate: {
-    routes: function (callback) {
+    routes (callback) {
       axios.get('https://mon-api/utilisateurs')
-      .then((res) => {
-        const routes = res.data.map((user) => {
-          return '/utilisateurs/' + user.id
+        .then((res) => {
+          const routes = res.data.map((user) => {
+            return '/utilisateurs/' + user.id
+          })
+          callback(null, routes)
         })
-        callback(null, routes)
-      })
-      .catch(callback)
+        .catch(callback)
     }
   }
 }
@@ -164,16 +164,16 @@ import axios from 'axios'
 
 export default {
   generate: {
-    routes: function () {
+    routes () {
       return axios.get('https://mon-api/utilisateurs')
-      .then((res) => {
-        return res.data.map((user) => {
-          return {
-            route: '/utilisateurs/' + user.id,
-            payload: user
-          }
+        .then((res) => {
+          return res.data.map((user) => {
+            return {
+              route: '/utilisateurs/' + user.id,
+              payload: user
+            }
+          })
         })
-      })
     }
   }
 }

@@ -31,7 +31,7 @@ The generation of routes are concurrent, `generate.concurrency` specifies the am
 - Type: `String`
 - Default: `'dist'`
 
-Directory name created by `nuxt generate`.
+Directory name created when building the web application in static mode with `nuxt generate` or in SPA mode with `nuxt build`.
 
 ## devtools
 
@@ -65,8 +65,8 @@ nuxt.config.js
 export default {
   generate: {
     exclude: [
-      /^(?=.*\bignore\b).*$/,
-    ],
+      /^(?=.*\bignore\b).*$/
+    ]
   }
 }
 ```
@@ -107,7 +107,7 @@ fallback: true
 However, Nuxt allows you to configure any page you like so if you don't want to use the `200.html` or `404.html` you can add a string and then you just have to make sure you redirect to that page instead. This is of course not necessary and is best to redirect to `200.html`/`404.html`.
 
 ```js
-fallback: 'fallbackPage.html' 
+fallback: 'fallbackPage.html'
 ```
 
  *Note: Multiple services (e.g. Netlify) detect a `404.html` automatically. If you configure your webserver on your own, please consult it's documentation to find out how to set up an error page (and set it to the `404.html` file) * 
@@ -188,13 +188,13 @@ import axios from 'axios'
 
 export default {
   generate: {
-    routes: function () {
+    routes () {
       return axios.get('https://my-api/users')
-      .then((res) => {
-        return res.data.map((user) => {
-          return '/users/' + user.id
+        .then((res) => {
+          return res.data.map((user) => {
+            return '/users/' + user.id
+          })
         })
-      })
     }
   }
 }
@@ -209,15 +209,15 @@ import axios from 'axios'
 
 export default {
   generate: {
-    routes: function (callback) {
+    routes (callback) {
       axios.get('https://my-api/users')
-      .then((res) => {
-        const routes = res.data.map((user) => {
-          return '/users/' + user.id
+        .then((res) => {
+          const routes = res.data.map((user) => {
+            return '/users/' + user.id
+          })
+          callback(null, routes)
         })
-        callback(null, routes)
-      })
-      .catch(callback)
+        .catch(callback)
     }
   }
 }
@@ -234,16 +234,16 @@ import axios from 'axios'
 
 export default {
   generate: {
-    routes: function () {
+    routes () {
       return axios.get('https://my-api/users')
-      .then((res) => {
-        return res.data.map((user) => {
-          return {
-            route: '/users/' + user.id,
-            payload: user
-          }
+        .then((res) => {
+          return res.data.map((user) => {
+            return {
+              route: '/users/' + user.id,
+              payload: user
+            }
+          })
         })
-      })
     }
   }
 }

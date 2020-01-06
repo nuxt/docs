@@ -277,8 +277,8 @@ To render named views you can use `<nuxt name="top"/>` or `<nuxt-child name="top
 ``` js
 export default {
   router: {
-    extendRoutes(routes, resolve) {
-      let index = routes.findIndex(route => route.name === 'main')
+    extendRoutes (routes, resolve) {
+      const index = routes.findIndex(route => route.name === 'main')
       routes[index] = {
         ...routes[index],
         components: {
@@ -311,6 +311,10 @@ export default {
   }
 }
 ```
+
+### Locally Accessing Route Params
+
+You can access the current route parameters within your local page or component by referencing `this.$route.params.{parameterName}`. For example, if you had a dynamic users page (`users\_id.vue`) and wanted to access the `id` parameter to load the user or process information, you could access the variable like this: `this.$route.params.id`.
 
 #### Implementation for Surge
 

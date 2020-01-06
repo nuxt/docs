@@ -43,9 +43,9 @@ description: 该组件用于在布局中显示页面组件（即非布局内容�
 
 ```js
 export default {
-   key(route) {
-     return route.fullPath
-   }
+  key (route) {
+    return route.fullPath
+  }
 }
 ```
 

@@ -18,7 +18,7 @@ if (process.client) {
 If you are using this library within multiple files, we recommend that you add it into your [vendor bundle](/api/configuration-build#build-vendor) via `nuxt.config.js`:
 
 ```js
-  build: {
-    vendor: ['external_library']
-  }
+build: {
+  vendor: ['external_library']
+}
 ```

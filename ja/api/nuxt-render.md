@@ -31,13 +31,12 @@ app.use(nuxt.render)
 // ホットリローディングする開発モードのときのみビルドする
 if (config.dev) {
   new Builder(nuxt).build()
-  .then(listen)
-}
-else {
+    .then(listen)
+} else {
   listen()
 }
 
-function listen() {
+function listen () {
   // サーバーを Listen する
   app.listen(port, '0.0.0.0')
   console.log('Server listening on `localhost:' + port + '`.')

@@ -48,8 +48,8 @@ You can also check some data in your [store](/guide/vuex-store) for example (fil
 ```js
 export default {
   validate ({ params, store }) {
-    // Check if `params.id` is an existing category
-    return store.state.categories.some((category) => category.id === params.id)
+    // Check if `params.id` is an existing category
+    return store.state.categories.some(category => category.id === params.id)
   }
 }
 ```
@@ -59,8 +59,8 @@ You can also throw expected or unexpected errors during validate function execut
 ```js
 export default {
   async validate ({ params, store }) {
-    // Throws a 500 internal server error with custom message
-    throw new Error('Under Construction!')
+    // Throws a 500 internal server error with custom message
+    throw new Error('Under Construction!')
   }
 }
 ```

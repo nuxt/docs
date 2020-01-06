@@ -21,7 +21,7 @@ const isProd = (process.env.NODE_ENV === 'production')
 const port = process.env.PORT || 3000
 
 // options으로 nuxt.js를 인스턴스화 합니다.
-let config = require('./nuxt.config.js')
+const config = require('./nuxt.config.js')
 config.dev = !isProd
 const nuxt = new Nuxt(config)
 

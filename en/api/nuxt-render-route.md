@@ -33,15 +33,15 @@ config.dev = false
 const nuxt = new Nuxt(config)
 
 new Builder(nuxt)
-.build()
-.then(() => nuxt.renderRoute('/'))
-.then(({ html, error, redirected }) => {
-  // `html` will be always a string
+  .build()
+  .then(() => nuxt.renderRoute('/'))
+  .then(({ html, error, redirected }) => {
+  // `html` will always be a string
 
-  // `error` not null when the error layout is displayed, the error format is:
-  // { statusCode: 500, message: 'My error message' }
+    // `error` not null when the error layout is displayed, the error format is:
+    // { statusCode: 500, message: 'My error message' }
 
   // `redirected` is not `false` when `redirect()` has been used in `asyncData()` or `fetch()`
   // { path: '/other-path', query: {}, status: 302 }
-})
+  })
 ```

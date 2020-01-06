@@ -20,7 +20,7 @@ export default {
       setTimeout(() => this.$nuxt.$loading.finish(), 500)
     })
   }
- }
+}
 ```
 
 > If you want to start it in the `mounted` method, make sure to use ` this.$nextTick`, because $loading may not be available immediately. 

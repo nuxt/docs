@@ -31,7 +31,7 @@ Regardless of the mode, your `state` value should **always be a `function`** to 
 
 > Nuxt.js lets you have a `store` directory with every file corresponding to a module.
 
-To get started, simply export the state as a function, and the mutations and actions as objects in `store/index.js`:
+To get started, export the state as a function, and the mutations and actions as objects in `store/index.js`:
 
 ```js
 export const state = () => ({
@@ -55,7 +55,7 @@ export const state = () => ({
 export const mutations = {
   add (state, text) {
     state.list.push({
-      text: text,
+      text,
       done: false
     })
   },
@@ -170,7 +170,7 @@ export default {
 
 You can optionally break down a module file into separate files: `state.js`, `actions.js`, `mutations.js` and `getters.js`. If you maintain an `index.js` file with state, getters and mutations while having a single separate file for actions, that will also still be properly recognized.
 
-> Note: Whilst using split-file modules, you must remember that using arrow functions, ```this``` is only lexically available. Lexical scoping simply means that the ```this``` always references the owner of the arrow function. If the arrow function is not contained then ```this``` would be undefined. The solution is to use a "normal" function which produces its own scope and thus has ```this``` available.
+> Note: Whilst using split-file modules, you must remember that using arrow functions, ```this``` is only lexically available. Lexical scoping means that the ```this``` always references the owner of the arrow function. If the arrow function is not contained then ```this``` would be undefined. The solution is to use a "normal" function which produces its own scope and thus has ```this``` available.
 
 ### Plugins
 

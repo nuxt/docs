@@ -13,7 +13,7 @@ module.exports = {
     postcss: [
       require('postcss-nested')(),
       require('postcss-responsive-type')(),
-      require('postcss-hexrgba')(),
+      require('postcss-hexrgba')()
     ]
   }
 }

@@ -66,16 +66,16 @@ Saat kita meluncurkan aplikasi kita dengan `npm run dev` dan buka http: // local
 Kita tambahkan file test `test/index.test.js`:
 
 ```js
+import { resolve } from 'path'
 import test from 'ava'
 import { Nuxt, Builder } from 'nuxt'
-import { resolve } from 'path'
 
 // Kita tetap mengacu kepada Nuxt agar kita bisa
 // menutup server pada akhir tes
 let nuxt = null
 
 // Init Nuxt.js dan mulai `listening` pada localhost:4000
-test.before('Init Nuxt.js', async t => {
+test.before('Init Nuxt.js', async (t) => {
   const rootDir = resolve(__dirname, '..')
   let config = {}
   try { config = require(resolve(rootDir, 'nuxt.config.js')) } catch (e) {}
@@ -87,14 +87,14 @@ test.before('Init Nuxt.js', async t => {
 })
 
 // Contoh `testing` only generated html
-test('Route / exits and render HTML', async t => {
-  let context = {}
+test('Route / exits and render HTML', async (t) => {
+  const context = {}
   const { html } = await nuxt.renderRoute('/', context)
   t.true(html.includes('<h1 class="red">Hello world!</h1>'))
 })
 
 // Example of testing via DOM checking
-test('Route / exits and render HTML with CSS applied', async t => {
+test('Route / exits and render HTML with CSS applied', async (t) => {
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
   t.not(element, null)
@@ -104,7 +104,7 @@ test('Route / exits and render HTML with CSS applied', async t => {
 })
 
 // Close the Nuxt server
-test.after('Closing server', t => {
+test.after('Closing server', (t) => {
   nuxt.close()
 })
 ```
@@ -142,11 +142,11 @@ module.exports = {
     parser: 'babel-eslint'
   },
   extends: [
-    "eslint:recommended",
+    'eslint:recommended',
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // Pertimbangkan untuk menggunakan `plugin:vue/strongly-recommended` atau `plugin:vue/recommended` untuk memperketat aturan.
-    "plugin:vue/recommended",
-    "plugin:prettier/recommended"
+    'plugin:vue/recommended',
+    'plugin:prettier/recommended'
   ],
   // diperlukan untuk melinting file *.vue
   plugins: [
@@ -154,10 +154,10 @@ module.exports = {
   ],
   // tambahkan aturan anda disini
   rules: {
-    "semi": [2, "never"],
-    "no-console": "off",
-    "vue/max-attributes-per-line": "off",
-    "prettier/prettier": ["error", { "semi": false }]
+    'semi': [2, 'never'],
+    'no-console': 'off',
+    'vue/max-attributes-per-line': 'off',
+    'prettier/prettier': ['error', { 'semi': false }]
   }
 }
 ```

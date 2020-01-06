@@ -85,13 +85,13 @@ Or override default value by returning whole presets list:
 export default {
   build: {
     babel: {
-      presets({ isServer }, [ preset, options ]) {
+      presets ({ isServer }, [ preset, options ]) {
         return [
           [
             preset, {
               buildTarget: isServer ? 'server' : 'client',
               ...options
-          }],
+            }],
           [
             // Other presets
           ]
@@ -213,6 +213,34 @@ Using [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extra
 
 </div>
 
+You may want to extract all your CSS to a single file.
+There is a workaround for this:
+
+<div class="Alert Alert--orange">
+⚠️ It is not recommended extracting everything into a single file. 
+Extracting into multiple css files is better for caching and preload isolation.
+It can also improve page performance by downloading and resolving only those resources that are needed.
+</div>
+
+```js
+export default {
+  build: {
+    extractCSS: true,
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
+    }
+  }
+}
+```
 
 ## filenames
 
@@ -474,7 +502,7 @@ export default {
   build: {
     postcss: {
       plugins: {
-          // Disable `postcss-url`
+        // Disable `postcss-url`
         'postcss-url': false,
         // Add some plugins
         'postcss-nested': {},
@@ -508,6 +536,34 @@ export default {
       order: ['postcss-import', 'postcss-preset-env', 'cssnano']
       // Function to calculate plugin order
       order: (names, presets) => presets.cssnanoLast(names)
+    }
+  }
+}
+```
+### postcss plugins & nuxt-tailwindcss
+
+If you want to apply postcss plugin (eg. postcss-pxtorem) on the nuxt-tailwindcss configuration, you have to change order and load first tailwindcss.
+
+**This setup have no impact on the nuxt-purgecss.**
+
+Example (`nuxt.config.js`):
+
+```js
+import { join } from 'path'
+
+export default {
+  // ...
+  build: {
+    postcss: {
+      plugins: {
+        tailwindcss: join(__dirname, 'tailwind.config.js'),
+        'postcss-pxtorem': {
+          propList: [
+            '*',
+            '!border*',
+          ]
+        }
+      }
     }
   }
 }

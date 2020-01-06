@@ -74,7 +74,7 @@ class SomeClass {
     this.options = nuxt.options
   }
 
-  someFunction() {
+  someFunction () {
     // We have access to `this.nuxt` and `this.options`
   }
 }
@@ -97,7 +97,7 @@ class FooClass {
 所以我们可以像这样挂载hook `foo`模块：
 
 ```js
-nuxt.hook('foo', foo => {
-    // ...
+nuxt.hook('foo', (foo) => {
+  // ...
 })
 ```

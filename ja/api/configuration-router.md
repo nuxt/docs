@@ -75,6 +75,23 @@ export default {
 }
 ```
 
+ルートをソートしたい場合、`@nuxt/utils` の `sortRoutes(routes)` 関数を使用できます。
+
+`nuxt.config.js`
+```js
+import { sortRoutes } from '@nuxt/utils'
+export default {
+  router: {
+    extendRoutes (routes, resolve) {
+      // ルートをここに追加する
+
+      // ソートをする
+      sortRoutes(routes)
+    }
+  }
+}
+```
+
 ルートのスキーマは [vue-router](https://router.vuejs.org/ja/) のスキーマを尊重すべきです。
 
 <div class="Alert Alert--orange">
@@ -190,7 +207,6 @@ export default {
 ```
 
 `middleware/user-agent.js`
-
 ```js
 export default function (context) {
   // userAgent プロパティを context 内に追加します（context は `data` メソッドや `fetch` メソッド内で利用できます）
@@ -251,10 +267,11 @@ export default {
 }
 ```
 
-特定のリンクで先読みを無効にしたい場合は、`no-prefetch` 属性を使用します:
+特定のリンクで先読みを無効にしたい場合は、`no-prefetch` プロパティを使用します。Nuxt.js v2.10.0 からは `prefetch` プロパティを `false` に設定することもできます。:
 
 ```html
-<nuxt-link to="/about" no-prefetch>About page not pre-fetched</nuxt-link>
+<nuxt-link to="/about" no-prefetch>先読みしないページについて</nuxt-link>
+<nuxt-link to="/about" :prefetch="false">先読みしないページについて</nuxt-link>
 ```
 
 全てのリンクで先読みを無効にしたい場合は、`prefetchLinks` を `false` に設定してください:
@@ -266,6 +283,12 @@ export default {
     prefetchLinks: false
   }
 }
+```
+
+Nuxt.js v2.10.0 からは prefetchLinks` を `false` に設定した上で特定のリンクを先読みしたい場合 `prefetch` プロパティを使うことができます。
+
+```html
+<nuxt-link to="/about" prefetch>先読みするページについて</nuxt-link>
 ```
 
 ## scrollBehavior
@@ -291,3 +314,13 @@ export default function (to, from, savedPosition) {
   return { x: 0, y: 0 }
 }
 ```
+
+## trailingSlash
+
+- 型： `Boolean` または `undefined`
+- デフォルト： `undefined`
+- 利用可能なバージョン： v2.10 以降
+
+このオプションを true に設定した場合、末尾のスラッシュがすべてのルートに追加されます。もし false に設定した場合はそれらは削除されます。
+
+**注意**： このオプションは準備なしに設定しないでください。徹底的にテストする必要があります。`router.trailingSlash` に `undefined` 以外の値を設定すると反対のルートは機能しなくなります。したがって、301 リダイレクトが適切に行われ、*内部リンク*が適切に適応される必要があります。`trailingSlash` を `true` に設定する場合、`example.com/abc/` のみが機能し `example.com/abc` は機能しません。false に設定する場合はその逆になります。

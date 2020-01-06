@@ -9,12 +9,11 @@ description: "Nuxt.js est un framework pour créer des applications Vue, vous po
 
 Son principal objectif est le **rendu de l'Interface Utilisateur** tout en faisant abstraction de la distribution client/serveur.
 
-Notre but est de créer un framework suffisamment flexible afin que vous puissiez l'utiliser comme base dans un projet principal ou en tant que supplément pour votre projet actuel basé sur Node.js.
+Notre but est de créer un framework suffisamment flexible afin que vous puissiez l'utiliser comme base dans un projet principal ou que vous puissiez l'implémenter incrementalement sur votre projet actuel basé sur Node.js.
 
-Nuxt.js fournit toute la configuration nécessaire pour rendre vos développements de **rendu côté serveur** avec des applications Vue.js agréable.
+Nuxt.js fournit toute la configuration nécessaire pour rendre votre développement de **rendu côté serveur** avec Vue.js agréable avec son mode **universel** par défaut.
 
-De plus, nous fournissons également une option de déploiement appelée *nuxt generate*. Elle va créer une application Vue.js avec **génération statique**.
-Nous pensons que cette options peut-être la prochaine grosse étape dans le développement de vos applications web avec microservices.
+De plus, nous fournissons également une option de déploiement appelée [*nuxt generate*](https://fr.nuxtjs.org/api/configuration-generate/#la-propri-t-generate). Elle va créer une application Vue.js pré-rendu et pré-configuré avec **génération statique**. Elle vous permettra donc de profiter du SSR sans avoir besoin d'un vrai server nuxt. Nous pensons que cette option sera la prochaine grosse étape dans le développement de vos applications web avec micro services.
 
 Bien entendu, vous pouvez également utiliser Nuxt.js pour créer des applications monopages rapidement (mode `spa`), ce qui est utile pour conserver les fonctionnalités de Nuxt quand vous travaillez sur la partie backoffice de vos applications.
 
@@ -34,19 +33,19 @@ Nuxt.js inclut les éléments suivants afin de créer une expérience de dévelo
 
 Un total de seulement **57ko min+gzip** (60ko avec Vuex).
 
-Sous le capot, nous utilisons [webpack](https://github.com/webpack/webpack) avec [vue-loader](https://github.com/vuejs/vue-loader) et [babel-loader](https://github.com/babel/babel-loader) pour empaqueter (« bundle »), scinder (« code-split ») et minifier votre code.
+Sous le capot, nous utilisons [webpack](https://github.com/webpack/webpack) avec [vue-loader](https://github.com/vuejs/vue-loader) et [babel-loader](https://github.com/babel/babel-loader) pour empaqueter (« bundle »), scinder (« code-splitting ») et minifier votre code.
 
 ## Fonctionnalités
 
 - Écriture des fichiers Vue (`*.vue*`)
-- Scission de code automatique
+- Splitting de code automatique
 - Rendu coté serveur (ou « SSR » pour « Server-Side Rendering »)
-- Routage puissant à l'aide de données asynchrones
+- Routage automatique et puissant à l'aide de données asynchrones
 - Serveur de fichiers statiques
 - Transpilation [ES2015+](https://babeljs.io/docs/en/learn/)
 - Empaquetage et minification de vos fichiers JS et CSS
 - Gestion des éléments de balise d'en-tête `<head>` HTML (`<title>`, `<meta>`, etc.)
-- Rechargement à chaud pendant le développement
+- Rechargement à chaud pendant le développement (hot module reload or HMR)
 - Préprocesseur : Sass, Less, Stylus, etc.
 - Entête HTTP/2 PUSH
 - Extensibilité avec une architecture modulaire
@@ -63,7 +62,7 @@ Vous pouvez utiliser Nuxt.js comme framework pour gérer le rendu complet de l'i
 
 En utilisant la commande `nuxt`, Nuxt démarrera un serveur de développement avec rechargement à chaud et [Vue Server Renderer](https://ssr.vuejs.org/fr/) sera configuré pour faire automatiquement le rendu de votre application côté serveur.
 
-### Application monopage
+## Application monopage
 
 Si pour une quelconque raison vous préférez ne pas utiliser le rendu côté serveur ou que vous avez besoin d'un hébergement statique pour votre application, vous pouvez simplement utiliser le mode application monopage (ou « SPA » pour « Simple Page Application ») en utilisant la commande `nuxt --spa`. Combiné avec la fonctionnalité de *génération*, vous avez la une puissante application monopage qui ne nécessite aucunement Node.js ou un serveur spécial pour fonctionner.
 

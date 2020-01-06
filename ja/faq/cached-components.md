@@ -22,7 +22,7 @@ description: NuxtJS で Vue コンポーネントをキャッシュするには�
     ['@nuxtjs/component-cache', {
       max: 10000,
       maxAge: 1000 * 60 * 60
-    }],
+    }]
   ]
 }
 ```

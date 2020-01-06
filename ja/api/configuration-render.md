@@ -16,7 +16,7 @@ export default {
   render: {
     bundleRenderer: {
       directives: {
-        custom1: function (el, dir) {
+        custom1 (el, dir) {
           // 何かの処理 ...
         }
       }
@@ -36,6 +36,23 @@ Nuxt.js は既に最高の SSR のデフォルト設定を提供していて、�
 ページの etag を無効にするためには `etag: false` をセットしてください。
 
 利用可能なオプションは [etag](https://www.npmjs.com/package/etag) を参照してください。
+
+`etag.hash` を指定することで、独自のハッシュ関数を使用することができます。
+
+`nuxt.config.js`
+```js
+import { murmurHash128 } from 'murmurhash-native'
+
+export default {
+  render: {
+    etag: {
+      hash: html => murmurHash128(html)
+    }
+  }
+}
+```
+
+この場合、html の body サイズが大きいほどより高速な [murmurhash-native](https://github.com/royaltm/node-murmurhash-native) を使用します。独自のハッシュ関数を指定した場合、`weak` オプションは無視されることに注意してください。
 
 ## compressor
 
@@ -155,6 +172,8 @@ pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
 
 `script-src` ポリシーに `'unsafe-inline'` が含まれている場合、CSP のハッシュは追加されないことに注意してください。これは、ハッシュが存在する場合、ブラウザが `'unsafe-inline'` を無視するためです。CSPv1 の後方互換性のために `'unsafe-inline'` とハッシュの両方の定義が必要な場合は、オプションの `unsafeInlineCompatibility` を `true` に設定します。
 
+すべての CSP ポリシーで [`<meta http-equiv="Content-Security-Policy"/>`](https://developer.mozilla.org/ja/docs/Web/HTTP/CSP) を追加するには、 `csp.addMeta` を `true` に設定する必要があります。
+
 例 (`nuxt.config.js`)
 
 ```js
@@ -178,7 +197,8 @@ export default {
         'report-uri': [
           'https://report.example.com/report-csp-violations'
         ]
-      }
+      },
+      addMeta: true
     }
   }
 }

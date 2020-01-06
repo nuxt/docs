@@ -5,6 +5,8 @@ description: The `context` provides additional objects/params from Nuxt not trad
 
 > The `context` provides additional objects/params from Nuxt to Vue components and is available in special nuxt lifecycle areas like [`asyncData`](/api), [`fetch`](/api/pages-fetch), [`plugins`](/guide/plugins), [`middleware`](/guide/routing#middleware) and [`nuxtServerInit`](/guide/vuex-store#the-nuxtserverinit-action).
 
+> *Note: "The Context" we refer to here is not to be confused with the `context` object available in [`Vuex Actions`](https://vuex.vuejs.org/guide/actions.html). The two are unrelated.*
+
 ```js
 function (context) {
   // Universal keys

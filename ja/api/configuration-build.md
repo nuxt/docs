@@ -85,13 +85,13 @@ export default {
 export default {
   build: {
     babel: {
-      presets({ isServer }, [ preset, options ]) {
+      presets ({ isServer }, [ preset, options ]) {
         return [
           [
             preset, {
               buildTarget: isServer ? 'server' : 'client',
               ...options
-          }],
+            }],
           [
             // 他のプリセット
           ]
@@ -170,7 +170,7 @@ export default {
     extend (config, { isClient }) {
       // クライアントのバンドルの Webpack 設定のみを拡張する
       if (isClient) {
-        config.devtool = '#source-map'
+        config.devtool = 'source-map'
       }
     }
   }
@@ -718,9 +718,9 @@ export default {
 ```
 ## followSymlinks
 
-> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example. 
+> デフォルトでは、ビルドプロセスはシンボリックリンク内のファイルをスキャンしません。`followSymlinks` を `true` に設定するとフォルダー（例えば `pages`）内のシンボリックリンクがビルドプロセスでスキャンされます。
 
-- Type: `Boolean`
+- 型: `Boolean`
 
 ```js
 export default {

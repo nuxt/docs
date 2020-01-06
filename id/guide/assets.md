@@ -33,7 +33,7 @@ Atau jika pada `pages/index.vue` Anda menggunakan:
 Maka akan dikompilasikan menjadi:
 
 ```js
-createElement('img', { attrs: { src: require('~/assets/image.png') }})
+createElement('img', { attrs: { src: require('~/assets/image.png') } })
 ```
 
 Karena `.png` bukan file dari JavaScript, Nuxt.js mengonfigurasi webpack untuk menggunakan [file-loader](https://github.com/webpack/file-loader) dan [url-loader](https://github.com/webpack/url-loader) untuk menanganinya untuk Anda.
