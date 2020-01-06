@@ -3,9 +3,9 @@
     "title": "Prologue",
     "links": [
       {
-        "to": "", "name": "Introduction",
+        "to": "", "name": "Introdução",
         "contents": [
-          { "to": "#what-is-nuxt-js-", "name": "What is Nuxt.js ?" },
+          { "to": "#what-is-nuxt-js-", "name": "O que é Nuxt.js ?" },
           { "to": "#how-it-works", "name": "How it Works" },
           { "to": "#features", "name": "Features" },
           { "to": "#schema", "name": "Schema" },
