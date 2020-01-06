@@ -221,16 +221,16 @@ export default {
 - 型: `Object`
 - デフォルト:
 
-```js
-{
-  app: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
-  chunk: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
-  css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
-  img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[hash:7].[ext]',
-  font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[hash:7].[ext]',
-  video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[hash:7].[ext]'
-}
-```
+  ```js
+  {
+    app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    chunk: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
+    img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
+    font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]',
+    video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
+  }
+  ```
 
 この例ではチャンク名を数値の ID に変更します（`nuxt.config.js`）:
 
@@ -238,7 +238,7 @@ export default {
 export default {
   build: {
     filenames: {
-      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[chunkhash].js'
+      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[contenthash].js'
     }
   }
 }
@@ -718,9 +718,9 @@ export default {
 ```
 ## followSymlinks
 
-> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example. 
+> デフォルトでは、ビルドプロセスはシンボリックリンク内のファイルをスキャンしません。`followSymlinks` を `true` に設定するとフォルダー（例えば `pages`）内のシンボリックリンクがビルドプロセスでスキャンされます。
 
-- Type: `Boolean`
+- 型: `Boolean`
 
 ```js
 export default {

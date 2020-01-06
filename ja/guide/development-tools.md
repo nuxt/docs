@@ -117,7 +117,7 @@ jsdom はブラウザを使っていないため制約がいくつかありま�
 
 > [ESLint](http://eslint.org) はコードをきれいに保つ優れたツールです。
 
-> [Prettier](prettier.io) はとても人気のあるコードフォーマッタです。
+> [Prettier](https://prettier.io/) はとても人気のあるコードフォーマッタです。
 
 Nuxt.js を使ってとても簡単に Prettier と ESLint を追加することができます。まず、npm の依存パッケージを追加する必要があります:
 

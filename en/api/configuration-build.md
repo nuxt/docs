@@ -213,6 +213,34 @@ Using [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extra
 
 </div>
 
+You may want to extract all your CSS to a single file.
+There is a workaround for this:
+
+<div class="Alert Alert--orange">
+⚠️ It is not recommended extracting everything into a single file. 
+Extracting into multiple css files is better for caching and preload isolation.
+It can also improve page performance by downloading and resolving only those resources that are needed.
+</div>
+
+```js
+export default {
+  build: {
+    extractCSS: true,
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
+    }
+  }
+}
+```
 
 ## filenames
 
@@ -221,16 +249,16 @@ Using [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extra
 - Type: `Object`
 - Default:
 
-```js
-{
-  app: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
-  chunk: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
-  css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
-  img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[hash:7].[ext]',
-  font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[hash:7].[ext]',
-  video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[hash:7].[ext]'
-}
-```
+  ```js
+  {
+    app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    chunk: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
+    img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
+    font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]',
+    video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
+  }
+  ```
 
 This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
 
@@ -238,7 +266,7 @@ This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
 export default {
   build: {
     filenames: {
-      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[chunkhash].js'
+      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[contenthash].js'
     }
   }
 }
@@ -508,6 +536,34 @@ export default {
       order: ['postcss-import', 'postcss-preset-env', 'cssnano']
       // Function to calculate plugin order
       order: (names, presets) => presets.cssnanoLast(names)
+    }
+  }
+}
+```
+### postcss plugins & nuxt-tailwindcss
+
+If you want to apply postcss plugin (eg. postcss-pxtorem) on the nuxt-tailwindcss configuration, you have to change order and load first tailwindcss.
+
+**This setup have no impact on the nuxt-purgecss.**
+
+Example (`nuxt.config.js`):
+
+```js
+import { join } from 'path'
+
+export default {
+  // ...
+  build: {
+    postcss: {
+      plugins: {
+        tailwindcss: join(__dirname, 'tailwind.config.js'),
+        'postcss-pxtorem': {
+          propList: [
+            '*',
+            '!border*',
+          ]
+        }
+      }
     }
   }
 }
