@@ -11,7 +11,7 @@ description: Dokku へデプロイするには？
 
 ```bash
 // Dokku サーバー上で
-dokku config:set my-nuxt-app NPM_CONFIG_PRODUCTION=false
+dokku config:set my-nuxt-app NPM_CONFIG_PRODUCTION=false YARN_PRODUCTION=false
 ```
 
 また、アプリケーションに `0.0.0.0` ポートを Listen させ、プロダクションモードで起動します:
