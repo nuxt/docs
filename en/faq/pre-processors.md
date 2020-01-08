@@ -32,5 +32,13 @@ export default data: ->
 To use these pre-processors, we need to install their webpack loaders:
 
 ```bash
-npm install --save-dev pug@2.0.3 pug-plain-loader coffeescript coffee-loader node-sass sass-loader
+npm install --save-dev pug@2.0.3 pug-plain-loader
+```
+
+```bash
+npm install --save-dev coffeescript coffee-loader
+```
+
+```bash
+npm install --save-dev node-sass sass-loader
 ```
