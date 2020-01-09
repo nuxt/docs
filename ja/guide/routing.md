@@ -314,9 +314,9 @@ export default {
 }
 ```
 
-### Locally Accessing Route Params
+### ルートパラメータへのローカルアクセス
 
-You can access the current route parameters within your local page or component by referencing `this.$route.params.{parameterName}`. For example, if you had a dynamic users page (`users\_id.vue`) and wanted to access the `id` parameter to load the user or process information, you could access the variable like this: `this.$route.params.id`.
+ローカルページまたはコンポーネント内の現在のルートパラメータは、`this.$route.params.{parameterName}` を参照することでアクセスできます。たとえば、動的ユーザーページ (`users\_id.vue`) があり、ユーザーまたはプロセス情報を読み込むために `id` パラメータにアクセスする場合、次のような変数にアクセスできます。： `this.$route.params.id`
 
 #### Surge 向けの実装
 
