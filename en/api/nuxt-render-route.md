@@ -28,9 +28,11 @@ Example:
 const { getNuxt, build } = require('nuxt')
 
 const nuxt = await getNuxt({ dev: false })
+
+// Build for production (optional if you run this script after `nuxt build`)
 await build(nuxt)
 
-const { html, error, redirected } = nuxt.renderRoute('/')
+const { html, error, redirected } = await nuxt.renderRoute('/')
 
 // `html` will always be a string
 
