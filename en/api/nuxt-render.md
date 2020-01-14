@@ -31,10 +31,6 @@ async function start() {
   if (isDev) {
     await build(nuxt)
   }
-  listen()
-}
-
-function listen () {
   // Listen the server
   app.listen(port, '0.0.0.0')
   console.log('Server listening on `localhost:' + port + '`.')
