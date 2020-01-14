@@ -25,23 +25,18 @@ This method should be used mostly for [test purposes](/guide/development-tools#e
 Example:
 
 ```js
-const { Nuxt, Builder } = require('nuxt')
+const { getNuxt, build } = require('nuxt')
 
-const config = require('./nuxt.config.js')
-config.dev = false
+const nuxt = await getNuxt({ dev: false })
+await build(nuxt)
 
-const nuxt = new Nuxt(config)
+const { html, error, redirected } = nuxt.renderRoute('/')
 
-new Builder(nuxt)
-  .build()
-  .then(() => nuxt.renderRoute('/'))
-  .then(({ html, error, redirected }) => {
-  // `html` will always be a string
+// `html` will always be a string
 
-    // `error` not null when the error layout is displayed, the error format is:
-    // { statusCode: 500, message: 'My error message' }
+// `error` not null when the error layout is displayed, the error format is:
+// { statusCode: 500, message: 'My error message' }
 
-  // `redirected` is not `false` when `redirect()` has been used in `asyncData()` or `fetch()`
-  // { path: '/other-path', query: {}, status: 302 }
-  })
+// `redirected` is not `false` when `redirect()` has been used in `asyncData()` or `fetch()`
+// { path: '/other-path', query: {}, status: 302 }
 ```
