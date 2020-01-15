@@ -29,7 +29,7 @@ async function start() {
 
   // Build only in dev mode with hot-reloading
   if (isDev) {
-    await build(nuxt)
+    build(nuxt)
   }
   // Listen the server
   app.listen(port, '0.0.0.0')
