@@ -42,16 +42,12 @@ middleware/foo/*.js
 
 By default all files which start with `-` will be ignored, such as `store/-foo.js` and `pages/-bar.vue`. This allows for co-locating tests, utilities, and components with their callers without themselves being converted into routes, stores, etc.
 
-**Note:** This option will be deprecated in Nuxt.js 3. We recommend using a `.nuxtignore` file instead.
-
 ## The ignore Property
 
 - Type: `Array`
 - Default: `['**/*.test.*']`
 
 > More customizable than `ignorePrefix`: all files matching glob patterns specified inside `ignore` will be ignored in building.
-
-**Note:** This option will be deprecated in Nuxt.js 3. We recommend using a `.nuxtignore` file instead.
 
 ## ignoreOptions
 
