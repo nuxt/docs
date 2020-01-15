@@ -4,7 +4,7 @@ description: You can use Nuxt.js programmatically to use it as a middleware givi
 ---
 
 You might want to use your own server with your middleware and your API. That's why you can use Nuxt.js programmatically.
-
+You can see programmatic examples at [examples/programmtic](https://github.com/nuxt/nuxt.js/tree/dev/examples/programmatic/scripts).
 
 ## Nuxt Constructor
 
