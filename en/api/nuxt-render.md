@@ -22,7 +22,7 @@ const port = process.env.PORT || 3000
 
 async function start() {
   // We get Nuxt instance
-  const nuxt = await getNuxt({ dev })
+  const nuxt = await getNuxt(isDev ? 'dev' : 'start')
 
   // Render every route with Nuxt.js
   app.use(nuxt.render)
