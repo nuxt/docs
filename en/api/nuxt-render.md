@@ -14,7 +14,7 @@ description: You can use Nuxt.js as a middleware for your Node.js server.
 Example with [Express](https://github.com/expressjs/express):
 
 ```js
-const { getNuxt, build } = require('nuxt')
+const { loadNuxt, build } = require('nuxt')
 
 const app = require('express')()
 const isDev = process.env.NODE_ENV !== 'production'
@@ -22,7 +22,7 @@ const port = process.env.PORT || 3000
 
 async function start() {
   // We get Nuxt instance
-  const nuxt = await getNuxt(isDev ? 'dev' : 'start')
+  const nuxt = await loadNuxt(isDev ? 'dev' : 'start')
 
   // Render every route with Nuxt.js
   app.use(nuxt.render)
