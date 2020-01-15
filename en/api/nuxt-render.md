@@ -17,7 +17,7 @@ Example with [Express](https://github.com/expressjs/express):
 const { getNuxt, build } = require('nuxt')
 
 const app = require('express')()
-const dev = process.env.NODE_ENV !== 'production'
+const isDev = process.env.NODE_ENV !== 'production'
 const port = process.env.PORT || 3000
 
 async function start() {
