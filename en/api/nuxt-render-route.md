@@ -27,18 +27,22 @@ Example:
 ```js
 const { getNuxt, build } = require('nuxt')
 
-const nuxt = await getNuxt({ dev: false })
+async function start() {
+  const nuxt = await getNuxt({ dev: false })
 
-// Build for production (optional if you run this script after `nuxt build`)
-await build(nuxt)
+  // Build for production (optional if you run this script after `nuxt build`)
+  await build(nuxt)
 
-const { html, error, redirected } = await nuxt.renderRoute('/')
+  const { html, error, redirected } = await nuxt.renderRoute('/')
 
-// `html` will always be a string
+  // `html` will always be a string
 
-// `error` not null when the error layout is displayed, the error format is:
-// { statusCode: 500, message: 'My error message' }
+  // `error` not null when the error layout is displayed, the error format is:
+  // { statusCode: 500, message: 'My error message' }
 
-// `redirected` is not `false` when `redirect()` has been used in `asyncData()` or `fetch()`
-// { path: '/other-path', query: {}, status: 302 }
+  // `redirected` is not `false` when `redirect()` has been used in `asyncData()` or `fetch()`
+  // { path: '/other-path', query: {}, status: 302 }
+}
+
+start()
 ```
