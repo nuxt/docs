@@ -14,13 +14,13 @@ To see the list of options to give to Nuxt.js, see the configuration section.
 const { getNuxt, build } = require('nuxt')
 
 // Check if we need to run Nuxt in development mode
-const dev = process.env.NODE_ENV !== 'production'
+const isDev = process.env.NODE_ENV !== 'production'
 
 // Get a ready to use Nuxt instance
-const nuxt = await getNuxt({ dev })
+const nuxt = await getNuxt(isDev ? 'dev' : 'start')
 
 // Enable live build & reloading on dev
-if (dev) {
+if (isDev) {
   build(nuxt)
 }
 
