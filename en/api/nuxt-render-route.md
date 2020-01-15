@@ -18,7 +18,7 @@ This method should be used mostly for [test purposes](/guide/development-tools#e
 
 <div class="Alert Alert--orange">
 
-`nuxt.renderRoute` should be executed after the build process in production mode (`dev: false`).
+`nuxt.renderRoute` should be executed after the build process in production mode.
 
 </div>
 
@@ -28,10 +28,9 @@ Example:
 const { getNuxt, build } = require('nuxt')
 
 async function start() {
-  const nuxt = await getNuxt({ dev: false })
-
-  // Build for production (optional if you run this script after `nuxt build`)
-  await build(nuxt)
+  // Get nuxt instance for start (production mode)
+  // Make sure to have run `nuxt build` before running this script
+  const nuxt = await getNuxt({ for: 'start' })
 
   const { html, error, redirected } = await nuxt.renderRoute('/')
 
