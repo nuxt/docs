@@ -25,12 +25,12 @@ This method should be used mostly for [test purposes](/guide/development-tools#e
 Example:
 
 ```js
-const { getNuxt, build } = require('nuxt')
+const { loadNuxt, build } = require('nuxt')
 
 async function start() {
   // Get nuxt instance for start (production mode)
   // Make sure to have run `nuxt build` before running this script
-  const nuxt = await getNuxt({ for: 'start' })
+  const nuxt = await loadNuxt({ for: 'start' })
 
   const { html, error, redirected } = await nuxt.renderRoute('/')
 
