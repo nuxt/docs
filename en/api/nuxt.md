@@ -11,13 +11,13 @@ You might want to use your own server with your middleware and your API. That's 
 To see the list of options to give to Nuxt.js, see the configuration section.
 
 ```js
-const { getNuxt, build } = require('nuxt')
+const { loadNuxt, build } = require('nuxt')
 
 // Check if we need to run Nuxt in development mode
 const isDev = process.env.NODE_ENV !== 'production'
 
 // Get a ready to use Nuxt instance
-const nuxt = await getNuxt(isDev ? 'dev' : 'start')
+const nuxt = await loadNuxt(isDev ? 'dev' : 'start')
 
 // Enable live build & reloading on dev
 if (isDev) {
