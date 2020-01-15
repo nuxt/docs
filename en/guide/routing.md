@@ -439,14 +439,14 @@ export default {
 
 Now the `stats` middleware will be called for every route change.
 
-You can add your middleware to a specific layout or page as well:
+You can add your middleware (even multiple) to a specific layout or page as well:
 
 
 `pages/index.vue` or `layouts/default.vue`
 
 ```js
 export default {
-  middleware: 'stats'
+  middleware: ['auth', 'stats']
 }
 ```
 
