@@ -43,7 +43,7 @@
           { "to": "#routes-dynamiques", "name": "Routes dynamiques" },
           { "to": "#routes-imbriqu-es", "name": "Routes imbriquées" },
           { "to": "#routes-dynamiques-imbriqu-es", "name": "Routes dynamiques imbriquées" },
-          { "to": "#named-views", "name": "Named Views (EN)" },
+          { "to": "#routes-nomm-es", "name": "Routes nommées" },
           { "to": "#transitions", "name": "Transitions" },
           { "to": "#middleware", "name": "Middleware" }
         ]

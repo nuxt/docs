@@ -1,6 +1,6 @@
 {
   "iso": "ja",
-  "docVersion": "2.10.X",
+  "docVersion": "2.11.X",
   "links": {
     "download": "ダウンロード",
     "live_edit": "ライブ編集"
@@ -20,7 +20,7 @@
     },
     "welcome": {
       "get_started": "はじめる",
-      "github_stars": "22K+ github stars"
+      "github_stars": "24K+ github stars"
     },
     "why": {
       "try_nuxtjs_online": "Nuxt.js をオンラインで試す"

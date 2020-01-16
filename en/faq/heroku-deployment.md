@@ -30,17 +30,6 @@ You should see this in your Heroku dashboard (Settings section):
 
 ![nuxt config vars Heroku](https://i.imgur.com/EEKl6aS.png)
 
-Then, we tell Heroku to launch `npm run build` via the `heroku-postbuild` script in our `package.json`:
-
-```js
-"scripts": {
-  "dev": "nuxt",
-  "build": "nuxt build",
-  "start": "nuxt start",
-  "heroku-postbuild": "npm run build"
-}
-```
-
 Heroku uses a [Procfile](https://devcenter.heroku.com/articles/procfile) (name the file `Procfile` with no file extension) that specifies the commands that are executed by the apps dynos. To start the Procfile will be very simple, and needs to contain the following line:
 
 ```
