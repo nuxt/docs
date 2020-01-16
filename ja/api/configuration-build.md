@@ -213,13 +213,13 @@ export default {
 
 </div>
 
-You may want to extract all your CSS to a single file.
-There is a workaround for this:
+全ての CSS を単一ファイルに抽出した方がいいこともあります。
+このための回避策があります。:
 
 <div class="Alert Alert--orange">
-⚠️ It is not recommended extracting everything into a single file. 
-Extracting into multiple css files is better for caching and preload isolation.
-It can also improve page performance by downloading and resolving only those resources that are needed.
+⚠️ 全てのファイルを単一ファイルに抽出することは推奨しません。
+複数の CSS ファイルに抽出する方が、キャッシングとプリロードの分離に適しています。
+また、必要なリソースのみをダウンロードして解決することによって、ページのパフォーマンスを向上させることもできます。
 </div>
 
 ```js
