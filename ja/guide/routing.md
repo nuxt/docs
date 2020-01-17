@@ -442,14 +442,14 @@ export default {
 
 これで `stats` ミドルウェアはすべてのルート変更時に呼び出されるようになります。
 
-同様に、特定のレイアウトもしくはページ内にもミドルウェアを追加することができます:
+同様に、特定のレイアウトもしくはページ内にもミドルウェア（複数であっても）を追加することができます:
 
 
 `pages/index.vue` または `layouts/default.vue`
 
 ```js
 export default {
-  middleware: 'stats'
+  middleware: ['auth', 'stats']
 }
 ```
 
