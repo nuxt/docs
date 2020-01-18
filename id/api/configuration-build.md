@@ -121,23 +121,24 @@ Menggunakan [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey
 
 - Default:
 
-    ```js
-    {
-      css: 'common.[contenthash].css',
-      manifest: 'manifest.[hash].js',
-      vendor: 'common.[chunkhash].js',
-      app: 'app.[chunkhash].js',
-      chunk: '[name].[chunkhash].js'
-    }
-    ```
+  ```js
+  {
+    app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    chunk: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
+    img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
+    font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]',
+    video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
+  }
+  ```
 
 Contoh berikut ini mengubah nama-nama chunk menjadi id numerik (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     filenames: {
-      chunk: '[id].[chunkhash].js'
+      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[contenthash].js'
     }
   }
 }

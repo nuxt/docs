@@ -86,18 +86,5 @@
         "to": "/testing"
       }
     ]
-  },
-  {
-    "title": "TypeScript",
-    "links": [
-      {
-        "name": "Hello World",
-        "to": "/typescript"
-      },
-      {
-        "name": "Store Vuex",
-        "to": "/typescript-vuex"
-      }
-    ]
   }
 ]

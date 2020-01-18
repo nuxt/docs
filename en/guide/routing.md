@@ -312,6 +312,10 @@ export default {
 }
 ```
 
+### Locally Accessing Route Params
+
+You can access the current route parameters within your local page or component by referencing `this.$route.params.{parameterName}`. For example, if you had a dynamic users page (`users\_id.vue`) and wanted to access the `id` parameter to load the user or process information, you could access the variable like this: `this.$route.params.id`.
+
 #### Implementation for Surge
 
 Surge [can handle](https://surge.sh/help/adding-a-custom-404-not-found-page) both `200.html` and `404.html`. `generate.fallback` is set to `200.html` by default, so no need to change it.
@@ -435,14 +439,14 @@ export default {
 
 Now the `stats` middleware will be called for every route change.
 
-You can add your middleware to a specific layout or page as well:
+You can add your middleware (even multiple) to a specific layout or page as well:
 
 
 `pages/index.vue` or `layouts/default.vue`
 
 ```js
 export default {
-  middleware: 'stats'
+  middleware: ['auth', 'stats']
 }
 ```
 

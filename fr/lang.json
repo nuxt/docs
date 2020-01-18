@@ -20,7 +20,7 @@
     },
     "welcome": {
       "get_started": "Commencer",
-      "github_stars": "22K+ github stars"
+      "github_stars": "24K+ github stars"
     },
     "why": {
       "try_nuxtjs_online": "Essayez NuxtJS Online"
@@ -30,10 +30,10 @@
     },
     "newsletter_form": {
       "email": "Email",
-      "subscribing": "Subscribing...",
-      "subscribe": "Subscribe",
+      "subscribing": "S'abonner...",
+      "subscribe": "S'abonner",
       "subscribed_messages": {
-        "pre": "An email to confirm your subscription has been sent to",
+        "pre": "Un email pour confirmer que votre abonnement a été envoyé à",
         "post": "💚"
       }
     }
