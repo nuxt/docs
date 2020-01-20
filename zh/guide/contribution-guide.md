@@ -91,8 +91,7 @@ yarn nuxt test/fixtures/your-fixture-app
 ### 文档
 
 如果您要添加新功能，请进行重构或以任何其他方式更改Nuxt的行为，您可能会这样做
-想要记录变化。 Please do so with a PR to the [docs](https://github.com/nuxt/docs/pulls) repository.
-请提交PR到 [docs](https://github.com/nuxt/docs/pulls) 代码仓库。您不必立即编写文档（但请在PR足够严谨及检查后提交）。
+想要记录变化。请提交PR到 [docs](https://github.com/nuxt/docs/pulls) 代码仓库。您不必立即编写文档（但请在PR足够严谨及检查后提交）。
 
 ### 提交过程
 

@@ -213,6 +213,34 @@ export default {
 
 </div>
 
+全ての CSS を単一ファイルに抽出した方がいいこともあります。
+このための回避策があります。:
+
+<div class="Alert Alert--orange">
+⚠️ 全てのファイルを単一ファイルに抽出することは推奨しません。
+複数の CSS ファイルに抽出する方が、キャッシングとプリロードの分離に適しています。
+また、必要なリソースのみをダウンロードして解決することによって、ページのパフォーマンスを向上させることもできます。
+</div>
+
+```js
+export default {
+  build: {
+    extractCSS: true,
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
+    }
+  }
+}
+```
 
 ## filenames
 
