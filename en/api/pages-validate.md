@@ -7,6 +7,8 @@ description: Nuxt.js lets you define a validator method inside your dynamic rout
 
 - **Type:** `Function` or `Async Function`
 
+`validate` is called every time before navigating to a new route. It will be called server-side once (on the first request to the Nuxt app) and client-side when navigating to further routes. This method takes the [`context`](/api/context) as an argument.
+
 ```js
 validate({ params, query, store }) {
   return true // if the params are valid
