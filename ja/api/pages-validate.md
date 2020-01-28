@@ -7,6 +7,8 @@ description: Nuxt.js では動的なルーティングを行うコンポーネ�
 
 - **型:** `Function` または `Async Function`
 
+`validate` is called every time before navigating to a new route. It will be called server-side once (on the first request to the Nuxt app) and client-side when navigating to further routes. This method takes the [`context`](/api/context) object as an argument.
+
 ```js
 validate({ params, query, store }) {
   return true // params バリデーションを通過したとき
