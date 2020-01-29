@@ -5,38 +5,41 @@ description: The `fetch` method is used to fill the store before rendering the p
 
 ## Nuxt >= 2.12
 
-### New fetch() with Nuxt.js
-
-Nuxt.js introduces a new hook called `fetch` **in any of your Vue components**.
+Nuxt.js `v2.12` introduces a new hook called `fetch` **in any of your Vue components**.
 
 See [live demo](https://nuxt-new-fetch.surge.sh) and [code example](https://github.com/nuxt/nuxt.js/tree/dev/examples/new-fetch).
 
-<div class="Alert Alert--green">
+<div class="Alert Alert--orange">
 
-`fetch(context) { ... }` has been deprecated, instead you can use an anonymous middleware in your page: `middleware(context) { ... }`
+`fetch(context)` has been deprecated, instead you can use an [anonymous middleware](/api/pages-middleware#anonymous-middleware) in your page: `middleware(context)`
 
 </div>
 
 ### When to use fetch?
 
-Every time you need to fetch **asynchronous** data. `fetch` is called on server-side when rendering the route, and on client-side when navigating.
+Every time you need to get **asynchronous** data. `fetch` is called on server-side when rendering the route, and on client-side when navigating.
 
-It also introduces `$fetchState` at the component level:
+It exposes `$fetchState` at the component level:
 - `$fetchState.pending`: `Boolean`, let you display a placeholder when `fetch` is being called *on client-side*.
 - `$fetchState.error`: `null` or `Error`, let you show an error message
 - `$fetchState.timestamp`: `Integer`, timestamp of the last fetch, useful for caching with `keep-alive`
 
-<div class="Alert Alert--green">
-  
-You can tell Nuxt to call `fetch` only on client-side by specifing `fetchOnServer: false`.<br>
-With it, `$fetchState.pending` will be `true` when server-rendering the component.
+As well as `$fetch()` to call the `fetch` hook from your component methods or template:
 
-</div>
+```html
+<button @click="$fetch">Refresh</button>
+```
 
 ### Options
 
-- `fetchOnServer`: `Boolean` (default: `true`), call fetch() when server-rendering the page
+- `fetchOnServer`: `Boolean` (default: `true`), call `fetch()` when server-rendering the page
 - `fetchDelay`: `Integer` (default: `200`), set the minimum executing time in milliseconds (to avoid quick flashes)
+
+<div class="Alert Alert--green">
+  
+When `fetchOnServer` is `false`, `fetch` will be called only on client-side and `$fetchState.pending` will be `true` when server-rendering the component.
+
+</div>
 
 ### Example
 
@@ -124,6 +127,22 @@ When navigating, you should now see `"Loading post #..."` on client-side, and no
 In the component having `fetch` hook, you will also have access to `this.$fetch()` to re-call `fetch` hook (`$fetchState.pending` will become `true` again).
 
 </div>
+
+
+### Listening to query string changes
+
+The `fetch` hook **is not called** on query string changes by default. To watch for query changes you can add a watcher on `$route.query` and call `$fetch`:
+
+```js
+export default {
+  watch: {
+    '$route.query': '$fetch'
+  },
+  async fetch() {
+    // Called also on query changes
+  }
+}
+```
 
 ### Caching
 
