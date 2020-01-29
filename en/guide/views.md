@@ -217,7 +217,7 @@ Nuxt.js lets you define all default `<meta>` tags for your application inside `n
 Example of a custom viewport with a custom Google font:
 
 ```js
-head: {
+head () {
   meta: [
     { charset: 'utf-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
