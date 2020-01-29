@@ -3,13 +3,13 @@ title: "API: The fetch Method"
 description: The `fetch` method is used to fill the store before rendering the page, it's like the `asyncData` method except it doesn't set the component data.
 ---
 
-# Nuxt >= 2.12
+## Nuxt >= 2.12
 
-## New fetch() with Nuxt.js
+### New fetch() with Nuxt.js
 
 Nuxt.js introduces a new hook called `fetch` **in any of your Vue components**.
 
-See [live demo](https://nuxt-new-fetch.surge.sh).
+See [live demo](https://nuxt-new-fetch.surge.sh) and [code example](https://github.com/nuxt/nuxt.js/tree/dev/examples/new-fetch).
 
 <div class="Alert Alert--green">
 
@@ -17,7 +17,7 @@ See [live demo](https://nuxt-new-fetch.surge.sh).
 
 </div>
 
-## When to use fetch?
+### When to use fetch?
 
 Every time you need to fetch **asynchronous** data. `fetch` is called on server-side when rendering the route, and on client-side when navigating.
 
@@ -38,7 +38,7 @@ With it, `$fetchState.pending` will be `true` when server-rendering the componen
 - `fetchOnServer`: `Boolean` (default: `true`), call fetch() when server-rendering the page
 - `fetchDelay`: `Integer` (default: `200`), set the minimum executing time in milliseconds (to avoid quick flashes)
 
-## Example
+### Example
 
 <div class="Alert Alert--green">
 
@@ -49,7 +49,8 @@ We are going to use the official [http module](https://http.nuxtjs.org) to make 
 Let's have a blog with our home page listing our posts:
 
 `pages/index.vue`
-```vue
+
+```html
 <template>
   <div>
     <h1>Blog posts</h1>
@@ -90,7 +91,7 @@ Now, let's add `pages/posts/_id.vue` page to display a post on `/posts/:id`.
 </div>
 
 `pages/posts/_id.vue`
-```vue
+```html
 <template>
   <div v-if="$fetchState.pending">Fetching post #{{$route.params.id}}...</div>
   <div v-else>
@@ -124,12 +125,12 @@ In the component having `fetch` hook, you will also have access to `this.$fetch(
 
 </div>
 
-## Caching
+### Caching
 
 You can use `keep-alive` directive in `<nuxt/>` and `<nuxt-child/>` component to save `fetch` calls on pages you already visited:
 
 `layouts/default.vue`
-```vue
+```html
 <template>
   <nuxt keep-alive />
 </template>
@@ -148,7 +149,7 @@ Nuxt will directly fill `this.$fetchState.timestamp` (timestamp) of the last `fe
 
 `pages/posts/_id.vue`
 
-```vue
+```html
 <template>
   ...
 </template>
@@ -178,7 +179,7 @@ The navigation to the same page will not call `fetch` if last `fetch` call was b
 ![fetch-keep-alive-nuxt](https://user-images.githubusercontent.com/904724/54164405-c6881d80-445c-11e9-94e0-366406270874.gif)
 
 
-# Nuxt <= 2.11
+## Nuxt <= 2.11
 
 > The fetch method is used to fill the store before rendering the page, it's like the `asyncData` method except it doesn't set the component data.
 
@@ -232,7 +233,7 @@ export default {
 </script>
 ```
 
-## Vuex
+### Vuex
 
 If you want to call a store action, use `store.dispatch` inside `fetch`, make sure to wait for the end of the action by using `async`/`await` inside:
 
@@ -258,6 +259,6 @@ export const actions = {
 }
 ```
 
-## Listening to query string changes
+### Listening to query string changes
 
 The `fetch` method **is not called** on query string changes by default. If you want to change this behavior, for example when building a pagination component, you can setup parameters that should be listened to through the `watchQuery` property of your page component. Learn more on the [API `watchQuery` page](/api/pages-watchquery).
