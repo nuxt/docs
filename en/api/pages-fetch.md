@@ -11,6 +11,12 @@ Nuxt.js introduces a new hook called `fetch` **in any of your Vue components**.
 
 See [live demo](https://nuxt-new-fetch.surge.sh).
 
+<div class="Alert Alert--green">
+
+`fetch(context) { ... }` has been deprecated, instead you can use an anonymous middleware in your page: `middleware(context) { ... }`
+
+</div>
+
 ## When to use fetch?
 
 Every time you need to fetch **asynchronous** data. `fetch` is called on server-side when rendering the route, and on client-side when navigating.
