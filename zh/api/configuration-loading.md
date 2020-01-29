@@ -126,7 +126,7 @@ export default {
 
 ```js
 module.exports = {
-  loading: '~components/loading.vue'
+  loading: '~/components/loading.vue'
 }
 ```
 
