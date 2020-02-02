@@ -1,15 +1,17 @@
 ---
-title: "API : La propriété env (EN)"
-description: Partager les variables d'environnement entre client et serveur.
+title: "API: La propriété env"
+description: Partager les variables d'environement entre client et serveur.
 ---
 
-# La propriété env
+- Type: `Object`
 
-- Type : `Object`
+> Nuxt.js nous laisse creer des variable d'environement côté client, pouvant être partagées également côté serveur. 
 
-> Nuxt.js vous permet de créer des variables d'environnement qui seront partagées entre le côté client et serveur.
+La propriété env défini les variables d'environement que l'on a côté client. Elles peuvent être assignée en parametrant les variables côté serveur, celle du [module dotenv](https://github.com/nuxt-community/dotenv-module) ou similaires.
 
-Exemple (`nuxt.config.js`) :
+**Lire `process.env` et `process.env == {}` ci dessous pour une meilleure compréhension.**
+
+Exemple (`nuxt.config.js`):
 
 ```js
 export default {
@@ -19,18 +21,23 @@ export default {
 }
 ```
 
-Cela me permet de créer une propriété `baseUrl` qui sera égale à la variable d'environnement `BASE_URL` si définie, sinon à `'http://localhost:3000'`.
+Cela nous permet de créer une propriété `baseUrl` qui sera égale à la valeur de `BASE_URL`, la variable d'environement côté serveur si définie et accessible. Sinon, `baseUrl` côté client sera égale à `'http://localhost:3000'`. Par conséquent la variable côté serveur BASE_URL est copiée au côté client dans la propriété `env` par l'intermédiaire de `nuxt.config.js`.
+Autrement, la valeur sera (http://localhost:3000). 
 
-Puis, je peux accéder à ma variable `baseUrl` de deux manières :
+à partir de là, Nous pouvons accéder à `baseUrl` de 2 manières:
 
 1. Via `process.env.baseUrl`.
-2. Via `context.env.baseUrl`, voir l'[API context](/api/context).
+2. Via `context.env.baseUrl`, voir [context API](/api/context).
 
-Vous pouvez utiliser la propriété `env` pour fournir un jeton public par exemple.
+If you define environment variables starting with `NUXT_ENV_` in the build phase (f.ex. `NUXT_ENV_COOL_WORD=freezing nuxt build`, they'll be automatically injected into the process environment. Be aware that they'll potentially take precedence over defined variables in your `nuxt.config.js` with the same name.
 
-Nous pouvons utiliser l'exemple ci-dessus pour configurer [axios](https://github.com/mzabriskie/axios).
+## process.env == {}
 
-`plugins/axios.js` :
+Vous pouvez utiliser la propriété `env` pour donner un jeton public par exemple.
+
+Pour l'exemple ci-dessus, nous pouvons l'utiliser pour configurer [axios](https://github.com/mzabriskie/axios).
+
+`plugins / axios.js`:
 
 ```js
 import axios from 'axios'
@@ -40,17 +47,19 @@ export default axios.create({
 })
 ```
 
-Puis, dans vos pages, vous pouvez importer axios ainsi : `import axios from '~/plugins/axios'`
+Ensuite, dans vos pages, vous pouvez importer axios comme ceci: `import axios from '~/plugins/axios'`
 
-## Automatic injection of environment variables (EN)
+## Injection automatique de variables d'environnement
 
-If you define environment variables starting with `NUXT_ENV_` in the build phase (f.ex. `NUXT_ENV_COOL_WORD=freezing nuxt build`, they'll be automatically injected into the process environment. Be aware that they'll potentially take precedence over defined variables in your `nuxt.config.js` with the same name.
+Si vous définissez des variables d'environnement commençant par `NUXT_ENV_` dans la phase de compilation (nuxt build). 
+Par exemple, `NUXT_ENV_COOL_WORD=freezing nuxt build`, elles seront automatiquement injectées dans la propriété d'environnement process.env
+Soyez conscient qu'elles auront potentiellement la priorité sur les variables définies dans votre `nuxt.config.js` avec le même nom.
 
 ## process.env == {}
 
-Notez que Nuxt utilise le `definePlugin` de webpack pour définir une variable d'environnement. Cela signifie que l'actuel `process` ou `process.env` de Node.js n'est ni accessible ni défini. Chacune des propriétés de `env` définie dans nuxt.config.js est individuellement associée à `process.env.xxxx` et convertie pendant la compilation.
+Notez que Nuxt utilise `definePlugin` de webpack pour définir la variable d'environnement. Cela signifie que le `process` ou` process.env` réel de Node.js n'est ni disponible ni défini. Chacune des propriétés `env` définies dans nuxt.config.js est mappée individuellement en` process.env.xxxx` et convertie pendant la compilation.
 
-Cela signifie que `console.log(process.env)` affichera `{}` mais `console.log(process.env.you_var)` va tout de même afficher votre valeur. Quand webpack compile votre code, il remplace toutes les instances de `process.env.your_var` par la valeur qui lui est affectée. Par ex. : `env.test = 'testing123'`. Si vous utilisez `process.env.test` quelque part dans votre code, il sera transformé en 'testing123'.
+Cela signifie que `console.log(process.env)` affichera `{}` mais `console.log(process.env.your_var)` affichera toujours votre valeur. Lorsque webpack compile votre code, il remplace toutes les instances de `process.env.your_var` par la valeur que vous avez définie. c'est-à-dire: `env.test = 'testing123'`. Si vous utilisez quelque part `process.env.test` dans votre code, il est en fait traduit par 'testing123'.
 
 avant
 
@@ -64,4 +73,6 @@ après
 if ('testing123' == 'testing123')
 ```
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>
+## serverMiddleware
+
+Comme le [serverMiddleware] (/api/configuration-servermiddleware) est découplé de la version principale de Nuxt, les variables `env` définies dans` nuxt.config.js` n'y sont pas disponibles.

@@ -1,9 +1,7 @@
 ---
-title: nginx proxy
+title: Utiliser nginx comme proxy inverse
 description: Comment utiliser nginx en tant que proxy inverse ?
 ---
-
-# Utiliser nginx comme proxy inverse
 
 ```nginx
 map $sent_http_content_type $expires {
@@ -106,7 +104,7 @@ server {
         proxy_http_version          1.1;
         proxy_read_timeout          1m;
         proxy_connect_timeout       1m;
-        proxy_pass                  http://127.0.0.1:3000; # set the adress of the Node.js instance here
+        proxy_pass                  http://127.0.0.1:3000; # set the address of the Node.js instance here
         proxy_cache                 nuxt-cache;
         proxy_cache_bypass          $arg_nocache; # probably better to change this
         proxy_cache_valid           200 302  60m; # set this to your needs

@@ -94,7 +94,7 @@ Nuxt.js 将使用上面的配置来设置 Vue.js transition 组件，如下：
 ```js
 export default {
   transition (to, from) {
-    if (!from) return 'slide-left'
+    if (!from) { return 'slide-left' }
     return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
   }
 }

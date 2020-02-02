@@ -1,9 +1,7 @@
 ---
-title: Dokku へデプロイ
+title: Dokku へデプロイするには？
 description: Dokku へデプロイするには？
 ---
-
-# Dokku へデプロイするには？
 
 [Dokku のセットアップに関するドキュメント](http://dokku.viewdocs.io/dokku/getting-started/installation/) と [Dokku を使って Digital Ocean 上に Node.js アプリケーションにデプロイする](http://jakeklassen.com/post/deploying-a-node-app-on-digital-ocean-using-dokku/) を読むことをお勧めします。
 
@@ -13,7 +11,7 @@ description: Dokku へデプロイするには？
 
 ```bash
 // Dokku サーバー上で
-dokku config:set my-nuxt-app NPM_CONFIG_PRODUCTION=false
+dokku config:set my-nuxt-app NPM_CONFIG_PRODUCTION=false YARN_PRODUCTION=false
 ```
 
 また、アプリケーションに `0.0.0.0` ポートを Listen させ、プロダクションモードで起動します:

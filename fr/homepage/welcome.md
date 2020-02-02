@@ -1,4 +1,4 @@
 ---
-title: The <span class="nWelcome_Content_Title_Primary">Vue.js</span> Framework (EN)
+title: Le framework <br>progressif <span class="text-nuxt-lightgreen">Vue.js</span><br>
 ---
-Nuxt.js presets all the configuration needed to make your development of a Vue.js application enjoyable.
+Construisez votre prochaine application Vue.js en toute confiance avec NuxtJS. Un framework open source rendant le développement web simple et puissant.

@@ -57,7 +57,7 @@ module.exports = {
 export default {
   build: {
     babel: {
-      presets({ isServer }) {
+      presets ({ isServer }) {
         const targets = isServer ? { node: '10' } : { ie: '11' }
         return [
           [ require.resolve('@nuxt/babel-preset-app'), { targets } ]
@@ -188,17 +188,18 @@ export default {
 
 > 自定义打包文件名
 
-默认值：
-```js
-{
-  app: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
-  chunk: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
-  css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
-  img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[hash:7].[ext]',
-  font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[hash:7].[ext]',
-  video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[hash:7].[ext]'
-}
-```
+- 默认值：
+
+  ```js
+  {
+    app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    chunk: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
+    img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
+    font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]',
+    video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
+  }
+  ```
 
 此示例将 chunk 名称更改为数字id (`nuxt.config.js`):
 
@@ -206,11 +207,12 @@ export default {
 export default {
   build: {
     filenames: {
-      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[chunkhash].js'
+      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[contenthash].js'
     }
   }
 }
 ```
+
 要更多了解使用，可以移步[webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/)
 
 ## friendlyErrors
@@ -455,7 +457,7 @@ export default {
   build: {
     postcss: {
       plugins: {
-          // Disable `postcss-url`
+        // Disable `postcss-url`
         'postcss-url': false,
         // Add some plugins
         'postcss-nested': {},
@@ -564,11 +566,11 @@ $ yarn add @nuxtjs/style-resources
 ```js
 export default {
   modules: [
-    '@nuxtjs/style-resources',
+    '@nuxtjs/style-resources'
   ],
   styleResources: {
     scss: './assets/variables.scss',
-    less: './assets/**/*.less',
+    less: './assets/**/*.less'
     // sass: ...
   }
 }
@@ -685,6 +687,20 @@ export default {
     watch: [
       '~/.nuxt/support.js'
     ]
+  }
+}
+```
+
+## followSymlinks
+
+> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example. 
+
+- Type: `Boolean`
+
+```js
+export default {
+  build: {
+    followSymlinks: false
   }
 }
 ```

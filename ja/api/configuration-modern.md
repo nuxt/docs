@@ -3,8 +3,6 @@ title: "API: modern プロパティ"
 description: モダンバンドルをビルドして配信する
 ---
 
-# modern プロパティ
-
 > この機能は [vue-cli modern モード](https://cli.vuejs.org/guide/browser-compatibility.html#modern-mode) にインスパイアされています
 
 - 型: `String` または `Boolean`

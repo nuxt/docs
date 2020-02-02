@@ -17,14 +17,14 @@
       { "name": "middleware", "to": "/pages-middleware" },
       { "name": "scrollToTop", "to": "/pages-scrolltotop" },
       {
-        "name": "transition (EN)", "to": "/pages-transition",
+        "name": "transition", "to": "/pages-transition",
         "contents": [
           { "name": "Chaine de caractères", "to": "#chaine-de-caract-res" },
           { "name": "Objet", "to": "#objet" },
           { "name": "Fonction", "to": "#fonction" }
         ]
       },
-      { "name": "validate (EN)", "to": "/pages-validate" },
+      { "name": "validate", "to": "/pages-validate" },
       { "name": "watchQuery (EN)", "to": "/pages-watchquery" }
     ]
   },
@@ -34,7 +34,7 @@
       { "name": "nuxt (EN)", "to": "/components-nuxt" },
       { "name": "nuxt-child (EN)", "to": "/components-nuxt-child" },
       { "name": "nuxt-link (EN)", "to": "/components-nuxt-link" },
-      { "name": "no-ssr", "to": "/components-no-ssr" }
+      { "name": "client-only", "to": "/components-client-only" }
     ]
   },
   {
@@ -79,7 +79,6 @@
           { "name": "templates", "to": "#templates" },
           { "name": "terser", "to": "#terser" },
           { "name": "transpile", "to": "#transpile" },
-          { "name": "typescript", "to": "#typescript" },
           { "name": "vueLoader", "to": "#vueloader" },
           { "name": "watch", "to": "#watch" }
         ]

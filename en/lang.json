@@ -1,74 +1,46 @@
 {
   "iso": "en",
-  "docVersion": "2.9.X",
+  "docVersion": "2.11.X",
   "links": {
-    "api": "API",
-    "blog": "Blog",
-    "chat": "Chat",
-    "documentation": "Documentation",
     "download": "Download",
-    "examples": "Examples",
-    "ecosystem": "Ecosystem",
-    "faq": "FAQ",
-    "get_started": "get started",
-    "github": "GitHub",
-    "guide": "Guide",
-    "homepage": "Home page",
-    "live_demo": "Live Demo",
-    "live_edit": "Live Edit",
-    "tidelift_short": "GET PROFESSIONAL SUPPORT",
-    "official_support": "GET OFFICIAL SUPPORT ⛑",
-    "tidelift": "GET PROFESSIONAL SUPPORT FOR NUXT",
-    "twitter": "Twitter",
-    "vuejs": "Vue.js",
-    "vue_jobs": "Vue Jobs"
+    "live_edit": "Live Edit"
   },
   "text": {
     "an_error_occurred": "An error occurred",
     "api_page_not_found": "API page not found",
-    "example_file": "Example Files",
-    "please_wait": "Please wait...",
     "please_define_title": "Please define a title in the front matter",
     "please_define_description": "Please define a description in the front matter",
-    "search": "Search",
+    "search": "Search (\"/\" to focus)",
     "version": "Version"
   },
   "homepage": {
-    "title": "The Vue.js Framework",
     "meta": {
       "title": "Nuxt.js - The Vue.js Framework",
       "description": "Nuxt.js presets all the configuration needed to make your development of a Vue.js application enjoyable. Nuxt.js can produce Universal, Single Page and Static Generated Applications."
     },
     "welcome": {
-      "app_types_prefix": "For ",
-      "app_types": ["Universal Applications", "Static Generated Applications", "Single Page Applications", "Desktop Applications", "Mobile Applications", "Progressive Web Apps"],
-      "app_types_suffix": "."
+      "get_started": "get started",
+      "github_stars": "24K+ github stars"
     },
-    "codesandbox_title": "Play with Nuxt.js online",
-    "codesandbox_open": "Open on CodeSandBox.io",
-    "codesandbox_examples": "See more examples",
-    "backer_partners": "Partners",
-    "backer_become_a_partner": "Become A Partner",
-    "backer_sponsors": "Sponsors",
-    "backer_become_a_sponsor": "Become A Sponsor",
-    "backer_backers": "Nuxters",
-    "backer_become_a_backer": "Become A Nuxter",
-    "backer_foundations": "Foundations"
-  },
-  "sponsors": {
-    "title": "Sponsors",
-    "become": "Support us and",
-    "become_partner": "become a partner"
-  },
-  "footer": {
-    "authors": "Made by Chopin Brothers"
+    "why": {
+      "try_nuxtjs_online": "Try NuxtJS Online"
+    },
+    "sponsors": {
+      "become_a_sponsor": "Become a sponsor"
+    },
+    "newsletter_form": {
+      "email": "Email",
+      "subscribing": "Subscribing...",
+      "subscribe": "Subscribe",
+      "subscribed_messages": {
+        "pre": "An email to confirm your subscription has been sent to",
+        "post": "💚"
+      }
+    }
   },
   "guide": {
     "release_notes": "Release Notes",
     "contribute": "Caught a mistake or want to contribute to the documentation?",
     "edit_on_github": "Edit this page on GitHub!"
-  },
-  "examples": {
-    "source_code": "Source Code"
   }
 }

@@ -277,8 +277,8 @@ To render named views you can use `<nuxt name="top"/>` or `<nuxt-child name="top
 ``` js
 export default {
   router: {
-    extendRoutes(routes, resolve) {
-      let index = routes.findIndex(route => route.name === 'main')
+    extendRoutes (routes, resolve) {
+      const index = routes.findIndex(route => route.name === 'main')
       routes[index] = {
         ...routes[index],
         components: {
@@ -311,6 +311,10 @@ export default {
   }
 }
 ```
+
+### Locally Accessing Route Params
+
+You can access the current route parameters within your local page or component by referencing `this.$route.params.{parameterName}`. For example, if you had a dynamic users page (`users\_id.vue`) and wanted to access the `id` parameter to load the user or process information, you could access the variable like this: `this.$route.params.id`.
 
 #### Implementation for Surge
 
@@ -390,7 +394,7 @@ More information about the transition property: [API Pages transition](/api/page
 
 > Middleware lets you define custom functions that can be run before rendering either a page or a group of pages.
 
-**Every middleware should be placed in the `middleware/` directory.** The filename will be the name of the middleware (`middleware/auth.js` will be the `auth` middleware).
+**Shared middleware should be placed in the `middleware/` directory.** The filename will be the name of the middleware (`middleware/auth.js` will be the `auth` middleware). You can also defined page-specific middleware by using a function directly, see [anonymous middleware](/api/pages-middleware#anonymous-middleware).
 
 A middleware receives [the context](/api/context) as first argument:
 
@@ -435,14 +439,14 @@ export default {
 
 Now the `stats` middleware will be called for every route change.
 
-You can add your middleware to a specific layout or page as well:
+You can add your middleware (even multiple) to a specific layout or page as well:
 
 
 `pages/index.vue` or `layouts/default.vue`
 
 ```js
 export default {
-  middleware: 'stats'
+  middleware: ['auth', 'stats']
 }
 ```
 

@@ -3,9 +3,6 @@ title: "API: vue.config プロパティ"
 description: Vue.config のための config オブジェクト
 ---
 
-
-# vue.config プロパティ
-
 - 型: `Object`
 - デフォルト: `{ silent: !isDev, performance: isDev }`
 
@@ -18,8 +15,8 @@ description: Vue.config のための config オブジェクト
 export default {
   vue: {
     config: {
-     productionTip: true,
-     devtools: false
+      productionTip: true,
+      devtools: false
     }
   }
 }

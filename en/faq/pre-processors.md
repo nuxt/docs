@@ -1,9 +1,7 @@
 ---
-title: Pre-processors
+title: How to use CSS pre-processors?
 description: How to use pre-processors with Nuxt.js?
 ---
-
-# How to use pre-processors?
 
 Thanks to [Vue Loader](http://vue-loader.vuejs.org/en/configurations/pre-processors.html), you can use any kind of pre-processor for your `<template>`, `<script>` or `<style>`: simply use the `lang` attribute.
 
@@ -34,5 +32,13 @@ export default data: ->
 To use these pre-processors, we need to install their webpack loaders:
 
 ```bash
-npm install --save-dev pug@2.0.3 pug-plain-loader coffeescript coffee-loader node-sass sass-loader
+npm install --save-dev pug@2.0.3 pug-plain-loader
+```
+
+```bash
+npm install --save-dev coffeescript coffee-loader
+```
+
+```bash
+npm install --save-dev node-sass sass-loader
 ```

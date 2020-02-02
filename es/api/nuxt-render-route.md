@@ -27,21 +27,21 @@ This method should be used mostly for [test purposes](/guide/development-tools#e
 Example:
 ```js
 const Nuxt = require('nuxt')
-let config = require('./nuxt.config.js')
+const config = require('./nuxt.config.js')
 config.dev = false
 const nuxt = new Nuxt(config)
 
 nuxt.build()
-.then(() => {
-  return nuxt.renderRoute('/')
-})
-.then(({ html, error, redirected }) => {
+  .then(() => {
+    return nuxt.renderRoute('/')
+  })
+  .then(({ html, error, redirected }) => {
   // html will be always a string
 
-  // error not null when the error layout is displayed, the error format is:
-  // { statusCode: 500, message: 'My error message' }
+    // error not null when the error layout is displayed, the error format is:
+    // { statusCode: 500, message: 'My error message' }
 
   // redirected is not false when redirect() has been used in data() or fetch()
   // { path: '/other-path', query: {}, status: 302 }
-})
+  })
 ```

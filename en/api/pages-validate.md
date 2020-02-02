@@ -3,11 +3,11 @@ title: "API: The validate Method"
 description: Nuxt.js lets you define a validator method inside your dynamic route component.
 ---
 
-# The validate Method
-
 > Nuxt.js lets you define a validator method inside your dynamic route component.
 
 - **Type:** `Function` or `Async Function`
+
+`validate` is called every time before navigating to a new route. It will be called server-side once (on the first request to the Nuxt app) and client-side when navigating to further routes. This method takes the [`context`](/api/context) object as an argument.
 
 ```js
 validate({ params, query, store }) {
@@ -50,8 +50,8 @@ You can also check some data in your [store](/guide/vuex-store) for example (fil
 ```js
 export default {
   validate ({ params, store }) {
-    // Check if `params.id` is an existing category
-    return store.state.categories.some((category) => category.id === params.id)
+    // Check if `params.id` is an existing category
+    return store.state.categories.some(category => category.id === params.id)
   }
 }
 ```
@@ -61,8 +61,8 @@ You can also throw expected or unexpected errors during validate function execut
 ```js
 export default {
   async validate ({ params, store }) {
-    // Throws a 500 internal server error with custom message
-    throw new Error('Under Construction!')
+    // Throws a 500 internal server error with custom message
+    throw new Error('Under Construction!')
   }
 }
 ```

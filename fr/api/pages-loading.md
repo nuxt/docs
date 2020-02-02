@@ -1,17 +1,15 @@
 ---
-title: "API: The loading Property (EN)"
-description: The `loading` property gives you the option to disable the default loading progress bar on a specific page.
+title: "API: la propriété loading"
+description: La propriété `loading` vous permet de désactiver la barre de progression du chargement par défaut sur une page spécifique.
 ---
 
-# The loading Property (EN)
+> La propriété loading vous permet de désactiver la barre de progression du chargement par défaut sur une page spécifique.
 
-> The loading property gives you the option to disable the default loading progress bar on a specific page.
+- **Type:** `Boolean` (défaut: `true`)
 
-- **Type:** `Boolean` (default: `true`)
+Par défaut, Nuxt.js utilise son propre composant pour afficher une barre de progression entre les routes.
 
-By default, Nuxt.js uses its own component to show a progress bar between the routes.
-
-You can disable or customize it globally through the [Configuration's loading option](/api/configuration-loading), but also disable it for specific pages by setting the `loading` property to `false` :
+Vous pouvez le désactiver ou le personnaliser globalement via l'[option loading](/api/configuration-loading), mais aussi le désactiver pour des pages spécifiques en définissant la propriété `loading` sur `false`:
 
 ```html
 <template>
@@ -25,6 +23,4 @@ export default {
 </script>
 ```
 
-You can find an official example using this property [here](/examples/custom-page-loading).
-
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>
+Vous pouvez trouver un exemple officiel en utilisant cette propriété [ici](/examples/custom-page-loading).

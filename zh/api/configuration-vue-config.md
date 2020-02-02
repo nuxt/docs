@@ -18,8 +18,8 @@ description: Vue.config的配置对象
 export default {
   vue: {
     config: {
-     productionTip: true,
-     devtools: false
+      productionTip: true,
+      devtools: false
     }
   }
 }

@@ -83,7 +83,7 @@ _This file cannot be renamed without extra configuration._
 
 The `package.json` file contains your Application dependencies and scripts.
 
-_This file can not be renamed._
+_This file cannot be renamed._
 
 ## Aliases
 

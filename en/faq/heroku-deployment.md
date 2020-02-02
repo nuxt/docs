@@ -1,9 +1,7 @@
 ---
-title: Heroku Deployment
+title: How to deploy on Heroku?
 description: How to deploy Nuxt.js on Heroku?
 ---
-
-# How to deploy on Heroku?
 
 We recommend you read the [Heroku documentation for Node.js](https://devcenter.heroku.com/articles/nodejs-support).
 
@@ -31,17 +29,6 @@ heroku config:set NODE_ENV=production
 You should see this in your Heroku dashboard (Settings section):
 
 ![nuxt config vars Heroku](https://i.imgur.com/EEKl6aS.png)
-
-Then, we tell Heroku to launch `npm run build` via the `heroku-postbuild` script in our `package.json`:
-
-```js
-"scripts": {
-  "dev": "nuxt",
-  "build": "nuxt build",
-  "start": "nuxt start",
-  "heroku-postbuild": "npm run build"
-}
-```
 
 Heroku uses a [Procfile](https://devcenter.heroku.com/articles/procfile) (name the file `Procfile` with no file extension) that specifies the commands that are executed by the apps dynos. To start the Procfile will be very simple, and needs to contain the following line:
 

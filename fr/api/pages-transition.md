@@ -3,8 +3,6 @@ title: "API : la propriété pageTransition (EN)"
 description: Nuxt.js utilise le composant de `<transition>` afin de créer des transitions / animations époustouflantes entre vos pages.
 ---
 
-# La propriété pageTransition (EN)
-
 > Nuxt.js v2.7+ introduit `pageTransition` en lieu et place de `transition` pour améliorer le nommage avec les transitions de mise en page. Avec Nuxt 3, `transition` sera dérpécié.
 
 - **Type :** `String` ou `Object` ou `Function`
@@ -86,9 +84,9 @@ Vous pouvez également définir des méthodes dans l'objet `pageTransition` afin
 
 *Note : c'est une bonne pratique que de définir explicitement `css: false` pour les transitions uniquement JavaScript afin que Vue passe la détection CSS. Cela prévient également les potentielles interférences entre les déclarations CSS.*
 
-### Transition Mode (EN)
+### Mode de transition
 
-**The default transition mode for pages differs from the default mode in Vue.js**. The `pageTransition` mode is by default set to `out-in`. If you want to run leaving and entering transitions simultaneously, you have to set the mode to the empty string `mode: ''`. 
+**Le mode par défault  our les transitions diffère de Vue.js**. Le mode par défaur pour `pageTransition` est `out-in`. Si vous voulez avoir les transitions de sortie et d'entrée en même temps, vous devez mettre `mode: ''`.
 
 ```js
 export default {
@@ -106,7 +104,7 @@ Si la propriété `pageTransition` est une fonction :
 ```js
 export default {
   pageTransition (to, from) {
-    if (!from) return 'slide-left'
+    if (!from) { return 'slide-left' }
     return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
   }
 }

@@ -3,8 +3,6 @@ title: "API: modulesDir プロパティ"
 description: あなたの Nuxt アプリケーションためのモジュールディレクトリを定義します。
 ---
 
-# modulesDir プロパティ
-
 - 型: `Array`
 - デフォルト: `['node_modules']`
 

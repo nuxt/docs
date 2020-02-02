@@ -14,10 +14,10 @@ Kelas ini mengekspor middleware koneksi yang menangani dan menyajikan semua perm
 Kita bisa mendaftarkan kait (hooks) pada peristiwa siklus hidup (life cycle) tertentu.
 
 ```js
-nuxt.plugin('renderer', renderer => {
-    renderer.plugin('setupMiddleware', app => {
-        // ...
-    })
+nuxt.plugin('renderer', (renderer) => {
+  renderer.plugin('setupMiddleware', (app) => {
+    // ...
+  })
 })
 ```
 

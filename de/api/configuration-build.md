@@ -120,21 +120,22 @@ Using [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extra
 
   ```js
   {
-    css: 'common.[contenthash].css',
-    manifest: 'manifest.[hash].js',
-    vendor: 'common.[chunkhash].js',
-    app: 'app.[chunkhash].js',
-    chunk: '[name].[chunkhash].js'
+    app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    chunk: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
+    img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
+    font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]',
+    video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
   }
   ```
 
 This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   build: {
     filenames: {
-      chunk: '[id].[chunkhash].js'
+      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[contenthash].js'
     }
   }
 }
@@ -428,5 +429,19 @@ If you want to transpile specific dependencies with Babel, you can add them in `
     }
   }
   ```
+
+## followSymlinks
+
+> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example. 
+
+- Type: `Boolean`
+
+```js
+export default {
+  build: {
+    followSymlinks: false
+  }
+}
+```
 
 > Specify the [Vue Loader Options](https://vue-loader.vuejs.org/options.html).

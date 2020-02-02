@@ -3,8 +3,6 @@ title: "API: nuxt.renderAndGetWindow(url, options)"
 description: Get the `window` from a given URL of a Nuxt.js Application.
 ---
 
-# nuxt.renderAndGetWindow(url, options = {})
-
 - Type: `Function`
 - Argument: `String`
   1. `String`: URL to render
@@ -38,8 +36,8 @@ config.dev = false
 const nuxt = new Nuxt(config)
 
 nuxt.renderAndGetWindow('http://localhost:3000')
-.then((window) => {
+  .then((window) => {
   // Display the head `<title>`
-  console.log(window.document.title)
-})
+    console.log(window.document.title)
+  })
 ```

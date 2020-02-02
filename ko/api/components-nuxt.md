@@ -43,9 +43,9 @@ description: 레이아웃 내부의 페이지 컴포넌트를 보여줍니다.
 
   ```js
   export default {
-     key(route) {
-       return route.fullPath
-     }
+    key (route) {
+      return route.fullPath
+    }
   }
   ```
 

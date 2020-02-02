@@ -1,13 +1,15 @@
 ---
-title: External resources
+title: How to use external resources?
 description: How to use external resources with Nuxt.js?
 ---
 
-# How to use external resources?
-
 ## Global Settings
 
-Include your resources in the `nuxt.config.js` file:
+You can include your external resources in the head object or function.
+As described in the [head API docs](https://nuxtjs.org/api/pages-head/), the following examples shows the use of `head` as an object and as a function. 
+If you want to use values from your Vue component like computed properties or data, you can use the `head()` function, returning the final head object. You can also pass each resource an optional `body: true` to include the resource before the closing `</body>` tag.
+
+Include your resources in `nuxt.config.js` (here in the head object):
 
 ```js
 export default {
@@ -24,7 +26,7 @@ export default {
 
 ## Local Settings
 
-Include your resources in your `.vue` file inside the `pages/` directory:
+Include your resources in your `.vue` file inside the `pages/` directory (here in the head fuction):
 
 ```html
 <template>

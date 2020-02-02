@@ -77,7 +77,7 @@ export default {
     '~/modules/simple'
 
     // 直接オプションを渡す
-    ['~/modules/simple', { token: '123' }]
+      ['~/modules/simple', { token: '123' }]
   ]
 }
 ```
@@ -90,7 +90,7 @@ export default {
 
 ## ビルド専用モジュール
 
-通常、モジュールは開発時とビルド時のみ必要です。`buildModules` を使用すると、本番環境の起動を高速化し、本番環境のデプロイで `node_modules` のサイズを大幅に削減することができます。あなたがモジュールの作成者である場合、パッケージを `devDependency` としてインストールし、`nuxt.config.js` の `modules` ではなく `buildModules` を使用することをお勧めします。
+通常、モジュールは開発時とビルド時のみ必要です。`buildModules` を使用すると、本番環境の起動を高速化し、本番環境のデプロイで `node_modules` のサイズを大幅に削減することができます。あなたがモジュールの作成者である場合、あなたのパッケージを `devDependency` としてインストールし、`nuxt.config.js` の `modules` ではなく `buildModules` を使用するよう、ユーザーに提案することをお勧めします。
 
 次の場合を除き、モジュールは `buildModule` です：
 - serverMiddleware を提供している
@@ -109,9 +109,9 @@ export default {
 ```js
 import fse from 'fs-extra'
 
-export default async function asyncModule() {
+export default async function asyncModule () {
   // `async`/`await` を使って非同期処理ができる
-  let pages = await fse.readJson('./pages.json')
+  const pages = await fse.readJson('./pages.json')
 }
 ```
 
@@ -120,10 +120,10 @@ export default async function asyncModule() {
 ```js
 import axios from 'axios'
 
-export default function asyncModule() {
+export default function asyncModule () {
   return axios.get('https://jsonplaceholder.typicode.com/users')
     .then(res => res.data.map(user => '/users/' + user.username))
-    .then(routes => {
+    .then((routes) => {
       // Nuxt のルートを拡張して何かの処理を行う
     })
 }
@@ -249,7 +249,6 @@ export default function (moduleOptions) {
   this.options.build.plugins.push({
     apply (compiler) {
       compiler.plugin('emit', (compilation, cb) => {
-
         // info 変数の内容を用いて `.nuxt/dist/info.txt' を生成する
         // source はバッファとなる
         compilation.assets['info.txt'] = { source: () => info, size: () => info.length }
@@ -291,21 +290,20 @@ export default function (moduleOptions) {
 以下が基本的な例です。
 
 ```js
-export default function myModule() {
-
-  this.nuxt.hook('modules:done', moduleContainer => {
+export default function myModule () {
+  this.nuxt.hook('modules:done', (moduleContainer) => {
     // 全てのモジュールのロードが完了したときに呼ばれます
   })
 
-  this.nuxt.hook('render:before', renderer => {
+  this.nuxt.hook('render:before', (renderer) => {
     // renderer が作成された後に呼ばれます
   })
 
-  this.nuxt.hook('build:compile', async ({name, compiler }) => {
+  this.nuxt.hook('build:compile', async ({ name, compiler }) => {
     // コンパイラ (デフォルト: webpack) が始まる前に呼ばれます
   })
 
-  this.nuxt.hook('generate:before', async generator => {
+  this.nuxt.hook('generate:before', async (generator) => {
     // Nuxt が pages を generate する前に呼ばれます
   })
 }
@@ -334,7 +332,7 @@ NuxtCommand.run({
       description: 'Simple test string'
     }
   },
-  run(cmd) {
+  run (cmd) {
     consola.info(cmd.argv)
   }
 })

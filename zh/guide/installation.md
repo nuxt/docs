@@ -51,9 +51,9 @@ $ yarn create nuxt-app <项目名>
   - [Tailwind](https://github.com/tailwindcss/tailwindcss)
   - [Element UI](https://github.com/ElemeFE/element)
   - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
-  - [Buefy](https://buefy.github.io)
-  - [iView](https://www.iviewui.com/)
-  - [Tachyons](https://tachyons.io)
+  - [Buefy](https://github.com/buefy/buefy)
+  - [iView](https://github.com/iview/iview)
+  - [Tachyons](https://github.com/tachyons-css/tachyons)
 3. 选择您喜欢的测试框架:
   - None (随意添加一个)
   - [Jest](https://github.com/facebook/jest)

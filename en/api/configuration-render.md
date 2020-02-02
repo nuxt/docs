@@ -3,8 +3,6 @@ title: "API: The render Property"
 description: Nuxt.js lets you customize runtime options for rendering pages
 ---
 
-# The render Property
-
 > Nuxt.js lets you customize runtime options for rendering pages
 
 ## bundleRenderer
@@ -18,7 +16,7 @@ export default {
   render: {
     bundleRenderer: {
       directives: {
-        custom1: function (el, dir) {
+        custom1 (el, dir) {
           // something ...
         }
       }
@@ -38,6 +36,23 @@ It is recommended to not use this option as Nuxt.js is already providing best SS
 To disable etag for pages set `etag: false`
 
 See [etag](https://www.npmjs.com/package/etag) docs for possible options.
+
+You can use your own hash function by specifying `etag.hash`:
+
+`nuxt.config.js`
+```js
+import { murmurHash128 } from 'murmurhash-native'
+
+export default {
+  render: {
+    etag: {
+      hash: html => murmurHash128(html)
+    }
+  }
+}
+```
+
+In this case we use [murmurhash-native](https://github.com/royaltm/node-murmurhash-native), which is faster for larger html body sizes. Note that the `weak` option is ignored, when specifying your own hash function.
 
 ## compressor
 
@@ -156,7 +171,9 @@ See [serve-static](https://www.npmjs.com/package/serve-static) docs for possible
 
 > Use this to configure to load external resources of Content-Security-Policy
 
-Note that CSP hashes will not be added if `script-src` policy contains `'unsafe-inline'`. This is due to browser ignoring `'unsafe-inline'` if hashes are present. Set option `unsafeInlineCompatiblity` to `true` if you want both hashes and `'unsafe-inline'` for CSPv1 compatibility.
+Note that CSP hashes will not be added if `script-src` policy contains `'unsafe-inline'`. This is due to browser ignoring `'unsafe-inline'` if hashes are present. Set option `unsafeInlineCompatibility` to `true` if you want both hashes and `'unsafe-inline'` for CSPv1 compatibility.
+
+In order to add [`<meta http-equiv="Content-Security-Policy"/>`](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) with all the CSP policies you need to set `csp.addMeta` to `true`.
 
 Example (`nuxt.config.js`)
 
@@ -181,7 +198,8 @@ export default {
         'report-uri': [
           'https://report.example.com/report-csp-violations'
         ]
-      }
+      },
+      addMeta: true
     }
   }
 }

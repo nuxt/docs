@@ -27,21 +27,21 @@ description: 제공된 문장으로 특정 route를 랜더합니다.
 예제:
 ```js
 const Nuxt = require('nuxt')
-let config = require('./nuxt.config.js')
+const config = require('./nuxt.config.js')
 config.dev = false
 const nuxt = new Nuxt(config)
 
 nuxt.build()
-.then(() => {
-  return nuxt.renderRoute('/')
-})
-.then(({ html, error, redirected }) => {
+  .then(() => {
+    return nuxt.renderRoute('/')
+  })
+  .then(({ html, error, redirected }) => {
   // html은 항상 문자열 입니다.
 
-  // error가 null이 아닐 때 아래와 같은 형식으로 보여집니다.
-  // { statusCode: 500, message: '에러 메세지' }
+    // error가 null이 아닐 때 아래와 같은 형식으로 보여집니다.
+    // { statusCode: 500, message: '에러 메세지' }
 
   // redirected는 redirect()가 date() 또는 fetch()로 사용되면 false가 아닙니다:
   // { path: '/other-path', query: {}, status: 302 }
-})
+  })
 ```

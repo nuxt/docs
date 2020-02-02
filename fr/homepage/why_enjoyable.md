@@ -1,6 +1,6 @@
 ---
-title: Enjoyable (EN)
+title: Agréable
 ---
-Our main focus is the Developer Experience. We love Nuxt.js and continuously improve the framework so you love it too! 💚
+Notre principal objectif est l'expérience des développeurs. Nous aimons Nuxt.js et améliorons continuellement le framework pour que vous l'aimiez aussi! 💚
 
-Expect appealing solutions, descriptive error messages, powerful defaults and detailed documentation. If questions or problems come up, our helpful community will help you out.
+Attendez-vous à des solutions attrayantes, des messages d'erreur descriptifs, des paramètres par défaut puissants et une documentation détaillée. Si des questions ou des problèmes surviennent, notre communauté attentionnée vous aidera.

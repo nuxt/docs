@@ -15,6 +15,8 @@ description: Nuxt.js 的默认应用目录架构提供了良好的代码分层�
 
 ## 目录
 
+<br />
+
 ### 资源目录
 
 资源目录 `assets` 用于组织未编译的静态资源如 `LESS`、`SASS` 或 `JavaScript`。

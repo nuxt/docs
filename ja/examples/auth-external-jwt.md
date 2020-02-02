@@ -74,12 +74,12 @@ const createStore = () => {
       auth: null
     }),
     mutations: {
-      setAuth(state, auth) {
+      setAuth (state, auth) {
         state.auth = auth
       }
     },
     actions: {
-      nuxtServerInit({ commit }, { req }) {
+      nuxtServerInit ({ commit }, { req }) {
         let auth = null
         if (req.headers.cookie) {
           const parsed = cookieparser.parse(req.headers.cookie)
@@ -135,7 +135,7 @@ const Cookie = process.client ? require('js-cookie') : undefined
 
 export default {
   methods: {
-    logout() {
+    logout () {
       // 外部 API 上の JWT クッキーを無効化させるコードも必要です
       Cookie.remove('auth')
       this.$store.commit('setAuth', null)

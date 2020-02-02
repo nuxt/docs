@@ -1,9 +1,7 @@
 ---
-title: "API: The pageTransition Property"
+title: "API: The page `transition` Property"
 description: Nuxt.js uses the `<transition>` component to let you create amazing transitions/animations between your pages.
 ---
-
-# The transition Property
 
 > Nuxt.js uses the [`<transition>`](https://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your pages.
 
@@ -73,7 +71,7 @@ The `transition` object can have the following properties:
 | `leaveToClass`     | `String`  | n/a        | The ending state for the transition. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes).                                                                                    |
 | `leaveActiveClass` | `String`  | n/a        | The class applied across the entire transition duration. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes).                                                                |
 
-You can also define methods in the `pageTransition`, these are for the [JavaScript hooks](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks):
+You can also define methods in the page `transition` property, these are for the [JavaScript hooks](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks):
 
 - `beforeEnter(el)`
 - `enter(el, done)`
@@ -83,6 +81,16 @@ You can also define methods in the `pageTransition`, these are for the [JavaScri
 - `leave(el, done)`
 - `afterLeave(el)`
 - `leaveCancelled(el)`
+
+```js
+export default {
+  transition: {
+    afterLeave(el) {
+      console.log('afterLeave', el)
+    }
+  }
+}
+```
 
 *Note: it’s also a good idea to explicitly add `css: false` for JavaScript-only transitions so that Vue can skip the CSS detection. This also prevents CSS rules from accidentally interfering with the transition.*
 
@@ -106,7 +114,7 @@ If the `transition` key is set as a function:
 ```js
 export default {
   transition (to, from) {
-    if (!from) return 'slide-left'
+    if (!from) { return 'slide-left' }
     return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
   }
 }

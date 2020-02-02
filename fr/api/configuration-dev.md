@@ -3,8 +3,6 @@ title: "API : La propriété dev"
 description: Défini le mode développement ou le mode production.
 ---
 
-# La propriété dev
-
 - Type : `Boolean`
 - Par défaut : `true`
 
@@ -35,7 +33,7 @@ const app = require('express')()
 const port = process.env.PORT || 3000
 
 // Nous instancions Nuxt.js avec les options
-let config = require('./nuxt.config.js')
+const config = require('./nuxt.config.js')
 const nuxt = new Nuxt(config)
 app.use(nuxt.render)
 

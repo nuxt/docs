@@ -1,9 +1,7 @@
 ---
-title: Déploiement S3+Cloudfront de AWS
-description: Hébergement statique sur AWS avec S3 et Cloudfront
+title: Comment déployer sur AWS avec S3 et Cloudfront
+description: Hébergement statique sur AWS avec S3 et Cloudfront pour NuxtJS
 ---
-
-# Comment déployer sur AWS avec S3 et Cloudfront
 
 AWS est un service web d'Amazon.
 S3 est leur stockage statique qui peut être configuré pour de l'hébergement de site statique.
@@ -166,17 +164,17 @@ npm install -g gulp
 4.4) Créer `gulpfile.js` avec le script de build
 
 ``` javascript
-var gulp = require('gulp');
-var awspublish = require('gulp-awspublish');
-var cloudfront = require('gulp-cloudfront-invalidate-aws-publish');
-var parallelize = require('concurrent-transform');
+const gulp = require('gulp')
+const awspublish = require('gulp-awspublish')
+const cloudfront = require('gulp-cloudfront-invalidate-aws-publish')
+const parallelize = require('concurrent-transform')
 
 // https://docs.aws.amazon.com/cli/latest/userguide/cli-environment.html
 
-var config = {
+const config = {
 
   // Obligatoire
-  params: { 
+  params: {
     Bucket: process.env.AWS_BUCKET_NAME
   },
   credentials: {
@@ -186,45 +184,45 @@ var config = {
   },
 
   // Facultatif
-  deleteOldVersions: false,                 // NOT FOR PRODUCTION
+  deleteOldVersions: false, // NOT FOR PRODUCTION
   distribution: process.env.AWS_CLOUDFRONT, // CloudFront distribution ID
   region: process.env.AWS_DEFAULT_REGION,
-  headers: { /*'Cache-Control': 'max-age=315360000, no-transform, public',*/ },
+  headers: { /* 'Cache-Control': 'max-age=315360000, no-transform, public', */ },
 
   // Sensible Defaults - ajouter ces fichiers et répertoires à gitignore
   distDir: 'dist',
   indexRootPath: true,
   cacheFileName: '.awspublish',
   concurrentUploads: 10,
-  wait: true,  // attendre l'invalidation de Cloudfront (environ 30-60 secondes)
+  wait: true // attendre l'invalidation de Cloudfront (environ 30-60 secondes)
 }
 
-gulp.task('deploy', function() {
+gulp.task('deploy', function () {
   // créer un nouveau publieur en utilisant les options de S3
   // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property
-  var publisher = awspublish.create(config);
+  const publisher = awspublish.create(config)
 
-  var g = gulp.src('./' + config.distDir + '/**');
-    // le publieur ajoutera Content-Length, Content-Type les les entêtes spécifiées ci-dessous
-    // Si non renseignés, x-amz-acl aura la valeur public-read par défaut
+  let g = gulp.src('./' + config.distDir + '/**')
+  // le publieur ajoutera Content-Length, Content-Type les les entêtes spécifiées ci-dessous
+  // Si non renseignés, x-amz-acl aura la valeur public-read par défaut
   g = g.pipe(parallelize(publisher.publish(config.headers), config.concurrentUploads))
 
   // Invalide le CDN
   if (config.distribution) {
-    console.log('Configured with CloudFront distribution');
-    g = g.pipe(cloudfront(config));
+    console.log('Configured with CloudFront distribution')
+    g = g.pipe(cloudfront(config))
   } else {
-    console.log('No CloudFront distribution configured - skipping CDN invalidation');
+    console.log('No CloudFront distribution configured - skipping CDN invalidation')
   }
 
   // supprimer les fichiers à supprimer
-  if (config.deleteOldVersions) g = g.pipe(publisher.sync());
+  if (config.deleteOldVersions) { g = g.pipe(publisher.sync()) }
   // créer un fichier de cache pour accélérer les envois successifs
-  g = g.pipe(publisher.cache());
+  g = g.pipe(publisher.cache())
   // afficher l'avancement de l'envoi dans la console
-  g = g.pipe(awspublish.reporter());
-  return g;
-});
+  g = g.pipe(awspublish.reporter())
+  return g
+})
 ```
 4.5) Deployer et déboguer
 

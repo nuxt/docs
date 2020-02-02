@@ -3,11 +3,13 @@ title: "API: env プロパティ"
 description: クライアントサイドとサーバーサイドで環境変数を共有します。
 ---
 
-# env プロパティ
-
 - 型: `Object`
 
 > Nuxt.js ではクライアントサイドとサーバーサイドで共有される環境変数を作成できます。
+
+env プロパティはクライアントサイドで使用できる環境変数を定義します。これらはサーバーサイド環境変数や [dotenv モジュール](https://github.com/nuxt-community/dotenv-module) などを使用して割り当てることができます。
+
+**より良いトラブルシューティングのために、後述の `process.env` と `process.env == {}` を必ず読んでください。**
 
 例（`nuxt.config.js`）:
 
@@ -19,12 +21,13 @@ export default {
 }
 ```
 
-このように記述すると `baseUrl` プロパティは、環境変数 `BASE_URL` が定義されていればそれと同じになり、そうでなければ `http://localhost:3000` になります。
+これにより、利用可能または定義されていれば、サーバーサイドの環境変数 `BASE_URL` と等しい `baseUrl` プロパティが作成することができます。もしそうでなければ、クライアントサイドの `baseUrl` は `http://localhost:3000` と等しくなります。したがってサーバーサイドの環境変数 BASE_URL は `nuxt.config.js` の `env` プロパティを経由してクライアントサイドにコピーされます。
+あるいは、他の値が定義されます（http://localhost:3000）。
 
 そして `baseUrl` 変数にアクセスするには 2つの方法があります:
 
 1. `process.env.baseUrl` 経由でアクセスする
-2. `context.baseUrl` を経由する。詳細は [コンテキスト API](/api#コンテキスト)
+2. `context.env.baseUrl` を経由する。詳細は [コンテキスト API](/api/context)
 
 例えば `env` プロパティを使って公開トークンを付与することができます。
 
@@ -70,3 +73,7 @@ if (process.env.test == 'testing123')
 ```js
 if ('testing123' == 'testing123')
 ```
+
+## serverMiddleware
+
+[serverMiddleware](/api/configuration-servermiddleware) はメインの Nuxt のビルドから分離されているので、`nuxt.config.js` に定義された `env` 変数は使用できません。

@@ -3,8 +3,6 @@ title: 'API: dev プロパティ'
 description: 開発モードかプロダクションモードかを指定します。
 ---
 
-# dev プロパティ
-
 - 型: `Boolean`
 - デフォルト: `true`
 
@@ -35,7 +33,7 @@ const app = require('express')()
 const port = process.env.PORT || 3000
 
 // Nuxt.js をオプションを使ってインスタンス化する
-let config = require('./nuxt.config.js')
+const config = require('./nuxt.config.js')
 const nuxt = new Nuxt(config)
 app.use(nuxt.render)
 

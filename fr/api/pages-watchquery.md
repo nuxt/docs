@@ -1,16 +1,14 @@
 ---
-title: "API: The watchQuery Property (EN)"
-description: Watch query strings and execute component methods on change (asyncData, fetch, validate, layout, ...)
+title: "API: la propriété watchQuery"
+description: Observer les chaînes de requête et exécuter les méthodes du composant lors d'une modification (asyncData, fetch, validate, layout, ...)
 ---
 
-# The watchQuery Property (EN)
+> Observer les chaînes de requête et exécuter les méthodes du composant lors de modifications (asyncData, fetch, validate, layout, ...)
+- **Type:** `Boolean` our `Array` our `Function` (défaut: `[]`)
 
-> Watch query strings and execute component methods on change (asyncData, fetch, validate, layout, ...)
-- **Type:** `Boolean` or `Array` (default: `[]`)
+Utilisez la clé `watchQuery` pour configurer un watcher pour les chaînes de requête. Si les chaînes définies changent, toutes les méthodes du composant (asyncData, fetch, validate, layout, ...) seront appelées. Watching est désactivée par défaut pour améliorer les performances.
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Use the `watchQuery` key to set up a watcher for query strings. If the defined strings change, all component methods (asyncData, fetch, validate, layout, ...) will be called. Watching is disabled by default to improve performance.</p>
-
-If you want to set up a watcher for all query strings, set `watchQuery: true`.
+Si vous souhaitez configurer un watcher pour toutes les chaînes de requête, définissez `watchQuery: true`.
 
 ```js
 export default {
@@ -18,4 +16,14 @@ export default {
 }
 ```
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>
+Vous pouvez également utiliser la fonction `watchQuery(newQuery, oldQuery)` pour avoir des watchers plus affinés.
+
+```js
+export default {
+  watchQuery (newQuery, oldQuery) {
+    // Only execute component methods if the old query string contained `bar`
+    // and the new query string contains `foo`
+    return newQuery.foo && oldQuery.bar
+  }
+}
+```

@@ -1,9 +1,7 @@
 ---
-title: "API: Nuxt(options)"
+title: "API: Using Nuxt.js Programmatically"
 description: You can use Nuxt.js programmatically to use it as a middleware giving you the freedom of creating your own server for rendering your web applications.
 ---
-
-# Using Nuxt.js Programmatically
 
 You might want to use your own server with your middleware and your API. That's why you can use Nuxt.js programmatically.
 
@@ -26,6 +24,9 @@ const config = require('./nuxt.config.js')
 
 // Create a new Nuxt instance
 const nuxt = new Nuxt(config)
+
+// Make sure to wait for Nuxt to load modules before proceeding
+await nuxt.ready()
 
 // Enable live build & reloading on dev
 if (nuxt.options.dev) {
