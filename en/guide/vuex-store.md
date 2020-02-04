@@ -220,7 +220,7 @@ actions: {
 
 The [context](/api/context) is given to `nuxtServerInit` as the 2nd argument, it is the same as `asyncData` or `fetch` method.
 
-If `nuxt generate` is ran, `nuxtServerInif` will be executed for every dynamic route generated.
+If `nuxt generate` is ran, `nuxtServerInit` will be executed for every dynamic route generated.
 
 > Note: Asynchronous `nuxtServerInit` actions must return a Promise or leverage async/await to allow the `nuxt` server to wait on them.
 
