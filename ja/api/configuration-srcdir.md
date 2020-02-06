@@ -42,20 +42,20 @@ export default {
 
 例2:
 
-例1の代わりに、nuxt.config を src フォルダに移動することもできます。この場合、クライアントを rootDir として指定するだけで、srcDir を空のままにできます:
+例1の代わりに、nuxt.config を src フォルダに移動することもできます。この場合、client を rootDir として指定するだけで、srcDir を空のままにできます:
 
 前提条件:
 ```js
 // nuxt.config.js
 export default {
-  srcDir: '' // または、単に削除します
+  srcDir: '' // または、単に削除
 }
 // package.json
   "script": {
-    "dev": "yarn nuxt client" // クライアントが rootDir として設定されます
+    "dev": "yarn nuxt client" // client を rootDir として設定
   }
 ```
-次のフォルダ構成で動作します（nuxt.config はクライアントディレクトリにあることに注意してください）。
+次のフォルダ構成で動作します（nuxt.config は client ディレクトリにあることに注意してください）。
 ```bash
 -| app/
 ---| node_modules/
