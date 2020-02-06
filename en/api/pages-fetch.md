@@ -89,9 +89,10 @@ If you go directly to [http://localhost:3000/](http://localhost:3000/), you will
 <div class="Alert Alert--green">
   
 Nuxt will smartly detect what data you mutated inside `fetch` and optimises the JSON included in the returned HTML.
-Now, let's add `pages/posts/_id.vue` page to display a post on `/posts/:id`.
 
 </div>
+
+Now, let's add `pages/posts/_id.vue` page to display a post on `/posts/:id`.
 
 `pages/posts/_id.vue`
 ```html
