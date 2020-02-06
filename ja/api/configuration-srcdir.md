@@ -6,26 +6,24 @@ description: Nuxt.js アプリケーションのソースディレクトリを�
 - 型: `String`
 - デフォルト: [rootDir の値](/api/configuration-rootdir)
 
-If a relative path is specified it will be relative to the rootDir
+相対パスを指定すると、rootDir からの相対パスになります。
 
 例（`nuxt.config.js`）:
 
-Example 1:
-Prerequisites:
+例1:
+前提条件:
 ```js
 // nuxt.config.js
 export default {
   srcDir: 'client/'
 }
+
 // package.json
   "script": {
     "dev": "yarn nuxt"
   }
 ```
-works with the following folder structure (note that nuxt.config is listed in the app directory)
-
-上のように指定すると、アプリケーションの構造を次のようにできます:
-
+次のフォルダ構成で動作します（nuxt.config は app ディレクトリにあることに注意してください）。
 ```bash
 -| app/
 ---| node_modules/
@@ -42,22 +40,22 @@ works with the following folder structure (note that nuxt.config is listed in th
 ------| store/
 ```
 
-Example 2:
+例2:
 
-Instead of example 1 you can also move the nuxt.config into your src folder. In this case you only need to specify client as the rootDir and you can leave srcDir empty:
+例1の代わりに、nuxt.config を src フォルダに移動することもできます。この場合、クライアントを rootDir として指定するだけで、srcDir を空のままにできます:
 
-Prerequisites:
+前提条件:
 ```js
 // nuxt.config.js
 export default {
-  srcDir: '' // or just remove it
+  srcDir: '' // または、単に削除します
 }
 // package.json
   "script": {
-    "dev": "yarn nuxt client" // this sets client as the rootDir
+    "dev": "yarn nuxt client" // クライアントが rootDir として設定されます
   }
 ```
-works with the following folder structure (note that nuxt.config is listed in the client directory)
+次のフォルダ構成で動作します（nuxt.config はクライアントディレクトリにあることに注意してください）。
 ```bash
 -| app/
 ---| node_modules/
