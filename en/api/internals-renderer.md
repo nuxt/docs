@@ -18,6 +18,6 @@ Hook                      | Arguments                | When
  `render:errorMiddleware` | (app) *connect instance* | Before adding Nuxt error middleware, useful to add your own middleware before using Nuxt's. See the [Sentry module](https://github.com/nuxt-community/sentry-module/blob/master/lib/module.js#L122) for more info.
  `render:resourcesLoaded` | (resources)              | Called after resources for renderer are loaded (client manifest, server bundle, etc).
  `render:done`            |  (renderer)              | SSR Middleware and all resources are ready (Renderer ready)
- `render:routeContext`    |  (context.nuxt)          | *Every time a route is server-rendered and before `render:route` hook*. Called before serializing Nuxt context into `window.__NUXT__`, useful to add some data that you can fetch on client-side.
+ `vue-renderer:ssr:context`    |  (context)          | *Every time a route is server-rendered and before `render:route` hook*. Called before serializing Nuxt context into `window.__NUXT__`, useful to add some data that you can fetch on client-side. Used to be called `render:routeContext`
  `render:route`           |  (url, result, context)  | *Every time a route is server-rendered*. Called before sending back the request to the browser.
  `render:routeDone`       |  (url, result, context)  | *Every time a route is server-rendered*. Called after the response has been sent to the browser. 
