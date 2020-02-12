@@ -1,27 +1,34 @@
 ---
 title: 소개
-description: 2016년 10월 25일, zeit.co의 개발팀은 서버사이드 렌더링 React 애플리케이션을 위한 프레임워크인 Next.js
-  프레임워크를 발표했습니다. 발표 몇 시간 뒤, Next.js처럼 서버사이드 렌더링 Vue.js 애플리케이션을 위한 프레임워크를 만들자는 생각이
-  들었고, 그렇게 Nuxt.js가 탄생했습니다.
+description: Nuxt는 현대 웹 애플리케이션을 만들기 위해 Vue.js를 기반으로 하는 진보적인 프레임워크입니다. Vue.js의 공식 라이브러리(vue, vue-router 및 vuex)와 강력한 개발 도구(webpack, Babel and PostCSS)을 기반으로 합니다.
 ---
 
-> 2016년 10월 25일, [zeit.co](https://zeit.co/)의 개발팀은 서버사이드 렌더링 React 애플리케이션을 위한 프레임워크인 [Next.js](https://zeit.co/blog/next) 프레임워크를 발표했습니다. 발표 몇 시간 뒤, Next.js처럼 서버사이드 렌더링 [Vue.js](https://vuejs.org) 애플리케이션을 위한 프레임워크를 만들자는 생각이 들었고, 그렇게 **Nuxt.js** 가 탄생했습니다.
+>  Nuxt는 현대 웹 애플리케이션을 만들기 위해 Vue.js를 기반으로 하는 진보적인 프레임워크입니다. Nuxt는 Vue.js의 공식 라이브러리(vue, vue-router 및 vuex)와 강력한 개발 도구(webpack, Babel and PostCSS)를 기반으로 합니다. Nuxt의 목표는 뛰어난 개발자 경험과 함께 강력하고 뛰어난 웹 개발을 가능하도록 하는 것입니다.
 
 ## What is Nuxt.js?
 
-Nuxt.js는 일반적인 Vue.js 어플리케이션을 만드는 프레임워크 입니다.
+Nuxt는 공식 Vue 가이드라인에 따라 강력한 아키텍처를 제공하도록 설계된 프레임워크입니다. 점진적으로 도입이 가능하며, 정적 랜딩 페이지에서 복잡한 엔터프라이즈 웹 애플리케이션까지 생성할 수 있습니다.
 
-주요 범위는 클라이언트/서버 배포를 추상화 하는 동안의 **UI rendering** 입니다.
+기본적으로 다재다능해서, 다양한 타겟들(server, serverless 또는 static)을 지원하며, 서버 사이드 렌더링은 전환(switch)이 가능합니다.
 
+강력한 모듈 에코시스템으로 확장 가능하므로 여러분의 REST 또는 GraphQL 엔드포인트, 즐겨찾는 CMS, CSS 프레임워크 등과 쉽게 연결할 수 있습니다. PWA 및 AMP 지원은 Nuxt 프로젝트에서 하나의 모듈일 뿐입니다.
 
-우리의 목표는 Node.js 기반의 프로젝트 또는 기본 프로젝트 베이스로 사용할 수 있을 만큼 유연한 프레임워크를 만드는 것 입니다.
+NuxtJS는 당신의 Vue.js 프로젝트의 추죽으로, 유연하면서도 확신 있는 프로젝트를 구축할 수 있는 구조를 제공합니다.
 
-Nuxt.js는 Vue.js 애플리케이션 **서버 렌더링**을 보다 즐겁게 개발하는 데 필요한 모든 구성을 미리 설정합니다.
+## 특징
 
-또한 우리는 *nuxt generate* 라고 부르는 배포 옵션을 제공하며, 이는 Vue.js 애플리케이션을 **정적으로 생성** 하는 옵션입니다.
-이 옵션이 마이크로 서비스를 지향하는 웹 애플리케이션 개발의 다음 단계가 될 수 있다고 생각합니다.
-
-Nuxt.js 프레임워크는 비동기 데이터, 미들웨어, 레이아웃 등과 같이 클라이언트 측과 서버 측 사이에서 개발하는데 도움되는 많은 기능을 제공합니다.
+- Vue 파일 쓰기 (`*.vue`)
+- 코드 분할 자동화
+- 서버 사이드 렌더링
+- 비동기 데이터 기반의 강력한 라우팅 시스템
+- 정적 파일 전송
+- [ES2015+](https://babeljs.io/docs/en/learn/) 지원
+- JS & CSS 코드 번들링 및 압축
+- `<head>` 요소 관리 (`<title>`, `<meta>`, 기타.)
+- 개발 중 Hot module 대체
+- 전 처리기 지원: SASS, LESS, Stylus 등
+- HTTP/2 푸시 헤더 준비
+- 모듈식 아키텍처 확장
 
 ## 어떻게 동작합니까?
 
@@ -37,22 +44,11 @@ Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능
 
 총 용량이 **57kB min+gzip** 밖에 되지 않습니다. (53kB  Vuex 포함).
 
+<div class="Alert">
+
 [vue-loader](https://github.com/vuejs/vue-loader)와 [babel-loader](https://github.com/babel/babel-loader)와 함께 [Webpack](https://github.com/webpack/webpack)을 사용해서 코드를 묶고, 분할하며, 압축합니다.
 
-## 특징
-
-- Vue 파일 쓰기 (`*.vue`)
-- 코드 분할 자동화
-- 서버 사이드 렌더링
-- 비동기 데이터 기반의 강력한 라우팅 시스템
-- 정적 파일 전송
-- ES2015+ 지원
-- JS & CSS 코드 번들링 및 압축
-- `<head>` 요소 관리 (`<title>`, `<meta>`, 기타.)
-- 개발 중 Hot module 대체
-- 전 처리기 지원: SASS, LESS, Stylus 등
-- HTTP/2 푸시 헤더 준비
-- 모듈식 아키텍처 확장
+</div>
 
 ## 구조
 
@@ -68,7 +64,7 @@ Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능
 
 ### Single Page Applications (SPA)
 
-어떤 이유로 든 서버 측 렌더링을 사용하지 않거나 애플리케이션에 정적 호스팅이 필요한 경우 `nuxt --spa`를 사용하여 SPA 모드를 간단하게 사용할 수 있습니다. *generate* 기능과 함께 Node.js 런타임이나 특수 서버 처리를 사용하지 않고도 강력한 SPA 배포 메커니즘을 제공합니다.
+어떤 이유로든 서버 측 렌더링을 사용하지 않거나 애플리케이션에 정적 호스팅이 필요한 경우 `nuxt --spa`를 사용하여 SPA 모드를 간단하게 사용할 수 있습니다. *generate* 기능과 함께 Node.js 런타임이나 특수 서버 처리를 사용하지 않고도 강력한 SPA 배포 메커니즘을 제공합니다.
 
 이에 대한 자세한 내용을 [명령어](/guide/commands)에서 확인합니다.
 
@@ -79,6 +75,17 @@ Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능
 nuxt.js에서 가장 큰 혁신은 아마 `nuxt generate` 명령어 가 될 것입니다.
 
 이는 애플리케이션을 빌드할 때 모든 라우트를 HTML로 생성하는 명령어 입니다.
+
+<div>
+  <a href="https://vueschool.io/courses/static-site-generation-with-nuxtjs?friend=nuxt" target="_blank" class="Promote">
+    <img src="/static-site-generation-with-nuxtjs.png" alt="Static Site Generation with Nuxt.js by vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Static Site Generation with Nuxt.js</h4>
+      <p class="Promote__Content__Description">Learn how to generate static websites (pre rendering) to improve both performance and SEO while eliminating hosting costs.</p>
+      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js development.</p>
+    </div>
+  </a>
+</div>
 
 예를 들어 다음과 같은 파일 구조가 있습니다:
 
