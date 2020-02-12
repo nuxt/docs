@@ -9,11 +9,11 @@ description: Nuxt는 현대 웹 애플리케이션을 만들기 위해 Vue.js를
 
 Nuxt는 공식 Vue 가이드라인에 따라 강력한 아키텍처를 제공하도록 설계된 프레임워크입니다. 점진적으로 도입이 가능하며, 정적 랜딩 페이지에서 복잡한 엔터프라이즈 웹 애플리케이션까지 생성할 수 있습니다.
 
-기본적으로 다재다능해서, 다양한 타겟들(server, serverless 또는 static)을 지원하며, 서버 사이드 렌더링은 전환(switch)이 가능합니다.
+기본적으로 다재다능해서, 다양한 타겟들(server, serverless 또는 static)을 지원하며, 서버 사이드 렌더링은 전환이 가능합니다.
 
 강력한 모듈 에코시스템으로 확장 가능하므로 여러분의 REST 또는 GraphQL 엔드포인트, 즐겨찾는 CMS, CSS 프레임워크 등과 쉽게 연결할 수 있습니다. PWA 및 AMP 지원은 Nuxt 프로젝트에서 하나의 모듈일 뿐입니다.
 
-NuxtJS는 당신의 Vue.js 프로젝트의 추죽으로, 유연하면서도 확신 있는 프로젝트를 구축할 수 있는 구조를 제공합니다.
+NuxtJS는 당신의 Vue.js 프로젝트의 추죽으로, 유연하면서도 확신을 갖고 프로젝트를 구축할 수 있는 구조를 제공합니다.
 
 ## 특징
 
@@ -27,7 +27,7 @@ NuxtJS는 당신의 Vue.js 프로젝트의 추죽으로, 유연하면서도 확�
 - `<head>` 요소 관리 (`<title>`, `<meta>`, 기타.)
 - 개발 중 Hot module 대체
 - 전 처리기 지원: SASS, LESS, Stylus 등
-- HTTP/2 푸시 헤더 준비
+- HTTP/2 푸시 헤더가 준비됨
 - 모듈식 아키텍처 확장
 
 ## 어떻게 동작합니까?
@@ -80,9 +80,9 @@ nuxt.js에서 가장 큰 혁신은 아마 `nuxt generate` 명령어 가 될 것�
   <a href="https://vueschool.io/courses/static-site-generation-with-nuxtjs?friend=nuxt" target="_blank" class="Promote">
     <img src="/static-site-generation-with-nuxtjs.png" alt="Static Site Generation with Nuxt.js by vueschool"/>
     <div class="Promote__Content">
-      <h4 class="Promote__Content__Title">Static Site Generation with Nuxt.js</h4>
-      <p class="Promote__Content__Description">Learn how to generate static websites (pre rendering) to improve both performance and SEO while eliminating hosting costs.</p>
-      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js development.</p>
+      <h4 class="Promote__Content__Title">Nuxt.js로 정적 웹사이트 생성하기</h4>
+      <p class="Promote__Content__Description">호스팅 비용을 줄이면서 퍼포먼스와 SEO를 개선시키기 위한 정적 웹사이트를(프리-렌더링) 생성해보세요.</p>
+      <p class="Promote__Content__Signature">Nuxt.js 개발을 지원하는 VueSchool이 동영상 강의를 제작했습니다.</p>
     </div>
   </a>
 </div>
@@ -104,26 +104,23 @@ nuxt.js에서 가장 큰 혁신은 아마 `nuxt generate` 명령어 가 될 것�
 ----| index.html
 ```
 
-이렇게 하면 생성된 웹 어플리케이션을 모든 정적 호스팅에서 호스팅 할 수 있습니다 !
+이렇게 하면 생성된 웹 어플리케이션을 모든 정적 호스팅에서 호스팅 할 수 있습니다!
 
-가장 좋은 예는 이 웹 사이트 입니다. 이는 GitHub Pages에서 생성되고 호스트 됩니다.:
+가장 좋은 예는 이 웹 사이트 입니다. 이 웹사이트는 [Netlify](https://www.netlify.com)에서 생성되고 호스팅됩니다. 우리의 [소스코드](https://github.com/nuxt/nuxtjs.org)나 Vue School에서 [How to deploy Nuxt.js to Netlify](https://vueschool.io/lessons/how-to-deploy-nuxtjs-to-netlify?friend=nuxt) 해당 강의를 참조해주세요.
 
-- [Source code](https://github.com/nuxt/nuxtjs.org)
-- [Generated code](https://github.com/nuxt/nuxtjs.org/tree/gh-pages)
+우리는 수동으로 애플리케이션을 [docs repository](https://github.com/nuxt/docs)를 업데이트할 때마다 생성하고 싶지 않았고, 그래서 다음과 같이 Netlify에 훅을 트리거합니다:
 
-우리는 [docs repository](https://github.com/nuxt/docs)가 업데이트될 때마다 수동으로 애플리케이션을 매번 생성하고 싶지 않았고, 그래서 매번 push를 하면 아래의 AWS Lambda를 호출하도록 했습니다:
+1. [nuxtjs.org repository](https://github.com/nuxt/nuxtjs.org) 클론
+2. `npm install`로 디펜던시들을 설치
+3. `npm run generate` 실행
+4. `dist` 디렉토리 배포
 
-1. [nuxtjs.org repository](https://github.com/nuxt/nuxtjs.org) Clone
-2. `npm install`를 통한 의존성 설치
-3. `nuxt generate` 실행
-4. `dist` 폴더를 `gh-pages` 브랜치로 Push
+우리는 이제 **정적 생성 웹 어플리케이션**를 생성했습니다. :)
 
-우리는 이제 **서버 없는 정적 생성  웹 어플리케이션**를 가졌습니다. :)
-
-우리는 재고가 있거나 없는 경우 항상 웹앱을 `nuxt generate`로 재생성하고 CDN에 호스팅하는 방식의 e-commerce 웹 애플리케이션을 생각해볼 수 있습니다. 만약 사용자가 그동안 웹앱을 탐색한다면, e-commerce API를 호출하면 최신 정보가 제공될 것입니다. 서버의 다중 인스턴스와 캐싱을 더 이상 고민할 필요가 없습니다!
+우리는 제품의 재고가 있거나 없는 경우 항상 웹앱을 `nuxt generate`로 재생성하고 CDN에 호스팅하는 방식의 e-commerce 웹 애플리케이션을 생각해볼 수 있습니다. 만약 사용자가 그동안 웹 앱을 탐색한다면, e-commerce API에 API를 호출하는 것으로 항상 최신 정보로 업데이트 될 것입니다. 서버의 다중 인스턴스와 캐싱을 더 이상 고민할 필요가 없습니다!
 
 <div class="Alert">
 
-깃 허브 페이지에 배포하는 방법에 대한 자세한 내용은 [How to deploy on GitHub Pages?](/faq/github-pages)를 참조하십시오.
+[How to deploy on Netlify?](/faq/netlify-deployment)로 Netlify에 배포하는 방법에 대해 더 알아보세요.
 
 </div>
