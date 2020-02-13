@@ -60,7 +60,7 @@ Method | Required | Keterangan
 --- | --- | ---
 `start()` | Required | Dipanggil ketika sebuah route berpindah, di sini di mana Anda menampilkan komponen Anda.
 `finish()` | Required | Dipanggil ketika rute dimuat (dan data diambil (fetch)), di sini tempat Anda menyembunyikan komponen Anda.
-`fail()` | *Optional* | Dipanggil ketika route tidak dapat dimuat (misalnya ketika gagal untuk mengambil data).
+`fail(error)` | *Optional* | Dipanggil ketika route tidak dapat dimuat (misalnya ketika gagal untuk mengambil data).
 `increase(num)` | *Optional* | Dipanggil pada saat memuat komponen route, `num` adalah Integer 
 
 Kita dapat membuat komponen kustom pada `components/loading.vue` :
