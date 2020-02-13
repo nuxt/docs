@@ -57,7 +57,7 @@ Nuxt.js가 호출 할 기본 컴포넌트 대신 사용자 컴포넌트를 직�
 |--------|----------|-------------|
 | `start()` | Required | 경로가 변경될 때 호출되며, 그 시점에 컴포넌트가 보여집니다. |
 | `finish()` | Required | 경로가 로드되었을 때(그리고 데이터가 fetch 되었을 때) 호출되며, 그 시점에 컴포넌트를 숨깁니다. |
-| `fail()` | *Optional* | 경로가 로드되지 않았을 때 호출됩니다 (예를들어 데이터가 fetch에 실패했을 때). |
+| `fail(error)` | *Optional* | 경로가 로드되지 않았을 때 호출됩니다 (예를들어 데이터가 fetch에 실패했을 때). |
 | `increase(num)` | *Optional* | 경로가 로딩중인 동안, `num` 정수가 100보다 작을 때 호출됩니다. |
 
 우리는 `components/loading.vue`에 사용자 정의 컴포넌트를 만들 수 있습니다:
@@ -104,6 +104,6 @@ export default {
 
 ```js
 module.exports = {
-  loading: '~components/loading.vue'
+  loading: '~/components/loading.vue'
 }
 ```

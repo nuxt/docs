@@ -139,8 +139,7 @@
         "to": "/configuration-loading-indicator",
         "contents": [
           { "name": "Built-in indicators", "to": "#built-in-indicators" },
-          { "name": "Custom indicators", "to": "#custom-indicators" },
-          { "name": "Disable the Progress Bar", "to": "#disable-the-progress-bar" }
+          { "name": "Custom indicators", "to": "#custom-indicators" }
         ]
       },
       { "name": "mode", "to": "/configuration-mode" },

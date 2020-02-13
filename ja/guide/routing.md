@@ -314,6 +314,10 @@ export default {
 }
 ```
 
+### ルートパラメータへのローカルアクセス
+
+ローカルページまたはコンポーネント内の現在のルートパラメータは、`this.$route.params.{parameterName}` を参照することでアクセスできます。例えば、動的ユーザーページ (`users\_id.vue`) があり、ユーザーまたはプロセス情報を読み込むために `id` パラメータにアクセスする場合、次のような変数にアクセスできます。： `this.$route.params.id`
+
 #### Surge 向けの実装
 
 Surge は `200.html` と `404.html` の両方を[ハンドリングできます](https://surge.sh/help/adding-a-custom-404-not-found-page)。`generate.fallback` はデフォルトで `200.html` に設定されるので、変更する必要はありません。
@@ -438,14 +442,14 @@ export default {
 
 これで `stats` ミドルウェアはすべてのルート変更時に呼び出されるようになります。
 
-同様に、特定のレイアウトもしくはページ内にもミドルウェアを追加することができます:
+同様に、特定のレイアウトもしくはページ内にもミドルウェア（複数であっても）を追加することができます:
 
 
 `pages/index.vue` または `layouts/default.vue`
 
 ```js
 export default {
-  middleware: 'stats'
+  middleware: ['auth', 'stats']
 }
 ```
 

@@ -5,6 +5,8 @@ description: "`context` は、従来 Vue コンポーネントが使用できな
 
 > `context` は Nuxt から Vue コンポーネントへ追加のオブジェクト/パラメータを提供し、[`asyncData`](/api)、[`fetch`](/api/pages-fetch)、[`plugins`](/guide/plugins)、[`middleware`](/guide/routing/#%E3%83%9F%E3%83%89%E3%83%AB%E3%82%A6%E3%82%A7%E3%82%A2)、そして [`nuxtServerInit`](/guide/vuex-store/#nuxtserverinit-%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3) のような特別な nuxt ライフサイクル内で利用可能です。
 
+> *注意: ここで言及する"コンテキスト"は、[`Vuex Actions`](https://vuex.vuejs.org/ja/guide/actions.html) で利用する `context` オブジェクトと混同しないでください。2つは無関係です。
+
 ```js
 function (context) {
   // Universal keys
