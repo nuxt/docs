@@ -30,17 +30,6 @@ heroku config:set NODE_ENV=production
 
 ![nuxt config vars Heroku](https://i.imgur.com/EEKl6aS.png)
 
-それから `package.json` 内の `heroku-postbuild` スクリプトを使って、Heroku に `npm run build` を実行するよう伝えます:
-
-```js
-"scripts": {
-  "dev": "nuxt",
-  "build": "nuxt build",
-  "start": "nuxt start",
-  "heroku-postbuild": "npm run build"
-}
-```
-
 Heroku はアプリの dyno によって実行されるコマンドを指定する [Procfile](https://devcenter.heroku.com/articles/procfile) (ファイル拡張子を付けずにファイル名を `Procfile` という名前にします）を使用します。Procfile を起動するのはとてもシンプルで、以下の行を含める必要があります:
 
 ```

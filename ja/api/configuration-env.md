@@ -27,7 +27,7 @@ export default {
 そして `baseUrl` 変数にアクセスするには 2つの方法があります:
 
 1. `process.env.baseUrl` 経由でアクセスする
-2. `context.baseUrl` を経由する。詳細は [コンテキスト API](/api#コンテキスト)
+2. `context.env.baseUrl` を経由する。詳細は [コンテキスト API](/api/context)
 
 例えば `env` プロパティを使って公開トークンを付与することができます。
 

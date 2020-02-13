@@ -71,7 +71,7 @@ The `transition` object can have the following properties:
 | `leaveToClass`     | `String`  | n/a        | The ending state for the transition. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes).                                                                                    |
 | `leaveActiveClass` | `String`  | n/a        | The class applied across the entire transition duration. See [Vue.js documentation](https://vuejs.org/v2/guide/transitions.html#Custom-Transition-Classes).                                                                |
 
-You can also define methods in the `pageTransition`, these are for the [JavaScript hooks](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks):
+You can also define methods in the page `transition` property, these are for the [JavaScript hooks](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks):
 
 - `beforeEnter(el)`
 - `enter(el, done)`
@@ -81,6 +81,16 @@ You can also define methods in the `pageTransition`, these are for the [JavaScri
 - `leave(el, done)`
 - `afterLeave(el)`
 - `leaveCancelled(el)`
+
+```js
+export default {
+  transition: {
+    afterLeave(el) {
+      console.log('afterLeave', el)
+    }
+  }
+}
+```
 
 *Note: it’s also a good idea to explicitly add `css: false` for JavaScript-only transitions so that Vue can skip the CSS detection. This also prevents CSS rules from accidentally interfering with the transition.*
 

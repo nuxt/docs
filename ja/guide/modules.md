@@ -90,7 +90,7 @@ export default {
 
 ## ビルド専用モジュール
 
-通常、モジュールは開発時とビルド時のみ必要です。`buildModules` を使用すると、本番環境の起動を高速化し、本番環境のデプロイで `node_modules` のサイズを大幅に削減することができます。あなたがモジュールの作成者である場合、パッケージを `devDependency` としてインストールし、`nuxt.config.js` の `modules` ではなく `buildModules` を使用することをお勧めします。
+通常、モジュールは開発時とビルド時のみ必要です。`buildModules` を使用すると、本番環境の起動を高速化し、本番環境のデプロイで `node_modules` のサイズを大幅に削減することができます。あなたがモジュールの作成者である場合、あなたのパッケージを `devDependency` としてインストールし、`nuxt.config.js` の `modules` ではなく `buildModules` を使用するよう、ユーザーに提案することをお勧めします。
 
 次の場合を除き、モジュールは `buildModule` です：
 - serverMiddleware を提供している
