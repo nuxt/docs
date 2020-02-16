@@ -19,7 +19,7 @@ description: Nuxt.js 어플리케이션의 기본 구조는 작고 큰 어플리
 
 ### Assets 디렉토리
 
-`assets` 디렉토리는  Stylus나 Sass 파일, 이미지나 폰트와 같은 컴파일되지 않은 에셋들을 포함하는 디렉토리 입니다.
+`assets` 디렉토리는 Stylus나 Sass 파일, 이미지나 폰트와 같은 컴파일되지 않은 에셋들을 포함하는 디렉토리 입니다.
 
 [Assets의 동작에 대한 문서](/guide/assets)
 
@@ -59,7 +59,7 @@ _이 디렉토리 이름은 추가적인 설정 없이는 변경할 수 없습�
 
 `static` 디렉토리는 서버의 루트(`/static/robots.txt`는 `http://localhost:3000/robots.txt`로 접근 가능)에 바로 연결되고, 변경되지 않을 파일들을 담습니다(예를 들어, favicon과 같은).
 
-**예를 들어:** `/static/robots.txt`는`/robots.txt`로 연결됩니다.
+**예를 들어:** `/static/robots.txt`는 `/robots.txt`로 연결됩니다.
 
 _이 디렉토리 이름은 추가적인 설정 없이는 변경할 수 없습니다._
 
