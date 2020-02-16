@@ -26,7 +26,7 @@ Nuxt.js 팀은 빠른 시작을 위해 [create-nuxt-app](https://github.com/nuxt
 $ npx create-nuxt-app <project-name>
 ```
 
-Or with [yarn](https://yarnpkg.com/en/):
+아니면 [yarn](https://yarnpkg.com/en/)으로는:
 
 ```bash
 $ yarn create nuxt-app <project-name>
@@ -58,10 +58,10 @@ $ yarn create nuxt-app <project-name>
   - None (차후에 언제든 추가 가능)
   - [Jest](https://github.com/facebook/jest)
   - [AVA](https://github.com/avajs/ava)
-4. [넉스트 모드(`Universial` 혹은 `SPA`)](https://nuxtjs.org/guide#single-page-applications-spa-).
-5. HTTP 통신을 위한 [axios module](https://github.com/nuxt-community/axios-module).
-6. 저장 시 코드 린트를 위한 [EsLint](https://eslint.org/).
-7. 코드를 prettify하기 위한 [Prettier](https://prettier.io/).
+4. [넉스트 모드(`Universial` 혹은 `SPA`)](https://nuxtjs.org/guide#single-page-applications-spa-) 선택.
+5. HTTP 통신을 위한 [axios module](https://github.com/nuxt-community/axios-module) 추가 여부.
+6. 저장 시 코드 린트를 위한 [EsLint](https://eslint.org/) 추가 여부.
+7. 코드를 prettify하기 위한 [Prettier](https://prettier.io/) 추가 여부.
 
 선택을 했다면, 모든 디펜던시들은 설치가 될 것입니다. 따라서 다음 단계는 프로젝트 폴더로 이동해 다음 명렁어로 실행하는 것입니다:
 
@@ -120,7 +120,7 @@ $ npm install --save nuxt
 
 ### `pages` 디렉토리
 
-`pages` 디렉토리에 있는 `*.vue` 파일들을 Nuxt.js는 애플리케이션의 라우터로 사용할 것입니다.
+`pages` 디렉토리에 있는 `*.vue` 파일들을 Nuxt.js는 애플리케이션의 라우트(route)로 사용할 것입니다.
 
 `pages` 디렉토리 생성하기:
 
