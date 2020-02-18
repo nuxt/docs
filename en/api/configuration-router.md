@@ -297,7 +297,7 @@ The `scrollBehavior` option lets you define a custom behavior for the scroll pos
 
 <div class="Alert Alert-blue">
 
-Starting from v2.9.0, you can use a file to overwrite the router scrollBehavior, this file should be placed in `~/app/router.scrollBehavior.js`.
+Starting from v2.9.0, you can use a file to overwrite the router scrollBehavior, this file should be placed in `~/app/router.scrollBehavior.js` (note: filename is case-sensitive if running on Windows).
 
 </div>
 
