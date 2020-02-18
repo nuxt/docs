@@ -1,11 +1,11 @@
 ---
 title: 설정
-description: Nuxt.js 기본 설정은 대부분의 기능을 사용할 수 있도록 되어있지만, nuxt.config.js 파일로 덮어 쓸 수 있습니다.
+description: Nuxt.js 기본 설정은 대부분의 기능을 사용할 수 있도록 되어있지만, 이를 nuxt.config.js 파일로 덮어 쓸 수 있습니다.
 ---
-> Nuxt.js 기본 설정은 대부분의 기능을 사용할 수 있도록 되어있지만, nuxt.config.js 파일로 덮어 쓸 수 있습니다.
+> Nuxt.js 기본 설정은 대부분의 기능을 사용할 수 있도록 되어있지만, 이를 nuxt.config.js 파일로 덮어 쓸 수 있습니다.
 
 ### build
-이 옵션을 사용하면 `build` 단계에서 `loaders`, `filenames`, `webpack` 설정과 `transpilation`을 포함한  다양한 세팅들을 설정할 수 있습니다.
+이 옵션을 사용하면 `build` 단계에서 `loaders`, `filenames`, `webpack` 설정과 `transpilation`을 포함한 다양한 세팅들을 설정할 수 있습니다.
 [build 옵션에 대한 문서](/api/configuration-build)
 
 ### css
@@ -31,6 +31,18 @@ description: Nuxt.js 기본 설정은 대부분의 기능을 사용할 수 있�
 ### loading
 이 옵션을 사용하면 Nuxt.js를 사용하여 기본적으로 불러올 loading 컴포넌트를 사용자 정의 할 수 있습니다.
 [loading 옵션에 대한 문서](/api/configuration-loading)
+
+### modules
+
+이 옵션을 사용하면 프로젝트의 Nuxt.js 모듈을 추가할 수 있습니다.
+
+[modules 옵션에 대한 문서](/api/configuration-modules)
+
+### modulesDir
+
+이 옵션을 사용하면 Nuxt.js 애플리케이션의 node_modules 폴더를 정의할 수 있습니다.
+
+[modulesDir 옵션에 대한 문서](/api/configuration-modulesdir)
 
 ### plugins
 이 옵션을 사용하면 루트 Vue.js 어플리케이션을 인스턴스화 하기 전에 실행할 Javascript 플러그인을 정의 할 수 있습니다.
@@ -61,7 +73,7 @@ description: Nuxt.js 기본 설정은 대부분의 기능을 사용할 수 있�
 [transition 옵션에 대한 문서](/api/configuration-transition)
 
 ## Asynchronous Configuration
-만약 비동기 데이터로 (예를 들어, API에서 받아오는 데이터) 어떤 옵션들을 생성해야 한다면(예를 들어, head 옵션) 프로미스를 리턴할 수 있습니다. 아래는 그 예시입니다.
+만약 비동기 데이터로 (예를 들어, API에서 받아오는 데이터) 어떤 옵션들을 생성해야 한다면(예를 들어, head 옵션) 프로미스를 리턴할 수 있습니다. 아래는 그 예시입니다:
 ```js
 /* 
 axios-module cannot be used in nuxt.config.js
