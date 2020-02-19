@@ -11,7 +11,7 @@ for automatically loading JavaScript modules (_lodash_ and _jQuery_) instead of 
 them everywhere.
 
 ```js
-import webpack from 'webpack'
+const webpack  = require('webpack')
 
 export default {
   build: {
