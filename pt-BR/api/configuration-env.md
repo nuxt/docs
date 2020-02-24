@@ -14,17 +14,17 @@ Example (`nuxt.config.js`):
 ```js
 module.exports = {
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    baseURL: process.env.BASE_URL || 'http://localhost:3000'
   }
 }
 ```
 
-This lets me create a `baseUrl` property that will be equal to the `BASE_URL` environment variable if defined, otherwise, equal to `http://localhost:3000`.
+This lets me create a `baseURL` property that will be equal to the `BASE_URL` environment variable if defined, otherwise, equal to `http://localhost:3000`.
 
-Then, I can access my `baseUrl` variable with 2 ways:
+Then, I can access my `baseURL` variable with 2 ways:
 
-1. Via `process.env.baseUrl`
-2. Via `context.env.baseUrl`, see [context api](/api/context)
+1. Via `process.env.baseURL`
+2. Via `context.env.baseURL`, see [context api](/api/context)
 
 You can use the `env` property for giving public token for example.
 
@@ -35,7 +35,7 @@ For the example above, we can use it to configure [axios](https://github.com/mza
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: process.env.baseUrl
+  baseURL: process.env.baseURL
 })
 ```
 

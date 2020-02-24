@@ -16,18 +16,18 @@ env プロパティはクライアントサイドで使用できる環境変数�
 ```js
 export default {
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    baseURL: process.env.BASE_URL || 'http://localhost:3000'
   }
 }
 ```
 
-これにより、利用可能または定義されていれば、サーバーサイドの環境変数 `BASE_URL` と等しい `baseUrl` プロパティが作成することができます。もしそうでなければ、クライアントサイドの `baseUrl` は `http://localhost:3000` と等しくなります。したがってサーバーサイドの環境変数 BASE_URL は `nuxt.config.js` の `env` プロパティを経由してクライアントサイドにコピーされます。
+これにより、利用可能または定義されていれば、サーバーサイドの環境変数 `BASE_URL` と等しい `baseURL` プロパティが作成することができます。もしそうでなければ、クライアントサイドの `baseURL` は `http://localhost:3000` と等しくなります。したがってサーバーサイドの環境変数 BASE_URL は `nuxt.config.js` の `env` プロパティを経由してクライアントサイドにコピーされます。
 あるいは、他の値が定義されます（http://localhost:3000）。
 
-そして `baseUrl` 変数にアクセスするには 2つの方法があります:
+そして `baseURL` 変数にアクセスするには 2つの方法があります:
 
-1. `process.env.baseUrl` 経由でアクセスする
-2. `context.env.baseUrl` を経由する。詳細は [コンテキスト API](/api/context)
+1. `process.env.baseURL` 経由でアクセスする
+2. `context.env.baseURL` を経由する。詳細は [コンテキスト API](/api/context)
 
 例えば `env` プロパティを使って公開トークンを付与することができます。
 
@@ -39,7 +39,7 @@ export default {
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: process.env.baseUrl
+  baseURL: process.env.baseURL
 })
 ```
 

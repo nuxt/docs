@@ -16,18 +16,18 @@ Exemple (`nuxt.config.js`):
 ```js
 export default {
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    baseURL: process.env.BASE_URL || 'http://localhost:3000'
   }
 }
 ```
 
-Cela nous permet de créer une propriété `baseUrl` qui sera égale à la valeur de `BASE_URL`, la variable d'environement côté serveur si définie et accessible. Sinon, `baseUrl` côté client sera égale à `'http://localhost:3000'`. Par conséquent la variable côté serveur BASE_URL est copiée au côté client dans la propriété `env` par l'intermédiaire de `nuxt.config.js`.
+Cela nous permet de créer une propriété `baseURL` qui sera égale à la valeur de `BASE_URL`, la variable d'environement côté serveur si définie et accessible. Sinon, `baseURL` côté client sera égale à `'http://localhost:3000'`. Par conséquent la variable côté serveur BASE_URL est copiée au côté client dans la propriété `env` par l'intermédiaire de `nuxt.config.js`.
 Autrement, la valeur sera (http://localhost:3000). 
 
-à partir de là, Nous pouvons accéder à `baseUrl` de 2 manières:
+à partir de là, Nous pouvons accéder à `baseURL` de 2 manières:
 
-1. Via `process.env.baseUrl`.
-2. Via `context.env.baseUrl`, voir [context API](/api/context).
+1. Via `process.env.baseURL`.
+2. Via `context.env.baseURL`, voir [context API](/api/context).
 
 If you define environment variables starting with `NUXT_ENV_` in the build phase (f.ex. `NUXT_ENV_COOL_WORD=freezing nuxt build`, they'll be automatically injected into the process environment. Be aware that they'll potentially take precedence over defined variables in your `nuxt.config.js` with the same name.
 
@@ -43,7 +43,7 @@ Pour l'exemple ci-dessus, nous pouvons l'utiliser pour configurer [axios](https:
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: process.env.baseUrl
+  baseURL: process.env.baseURL
 })
 ```
 

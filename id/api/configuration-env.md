@@ -14,17 +14,17 @@ Contoh (`nuxt.config.js`):
 ```js
 module.exports = {
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    baseURL: process.env.BASE_URL || 'http://localhost:3000'
   }
 }
 ```
 
-Ini memungkinkan kita membuat properti `baseUrl` yang akan sama dengan variabel lingkungan (environment) `BASE_URL` jika terdefinisi, tetapi jika tidak, properti baseUrl akan sama dengan `http://localhost:3000`.
+Ini memungkinkan kita membuat properti `baseURL` yang akan sama dengan variabel lingkungan (environment) `BASE_URL` jika terdefinisi, tetapi jika tidak, properti baseURL akan sama dengan `http://localhost:3000`.
 
-Kemudian, kita bisa mengakses variabel `baseUrl` di atas dengan 2 cara:
+Kemudian, kita bisa mengakses variabel `baseURL` di atas dengan 2 cara:
 
-1. Melalui `process.env.baseUrl`, atau
-2. Melalui `context.env.baseUrl`, lihat [context api](/api/context)
+1. Melalui `process.env.baseURL`, atau
+2. Melalui `context.env.baseURL`, lihat [context api](/api/context)
 
 Anda dapat menggunakan properti `env` untuk memberikan "public token" sebagai contoh.
 
@@ -36,7 +36,7 @@ Untuk contoh di atas, kita bisa menggunakannya untuk mengkonfigurasi [axios](htt
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: process.env.baseUrl
+  baseURL: process.env.baseURL
 })
 ```
 

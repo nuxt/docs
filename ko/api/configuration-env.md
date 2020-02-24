@@ -14,16 +14,16 @@ description: 클라이언트와 서버 사이 공유되는 환경 변수.
 ```js
 module.exports = {
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    baseURL: process.env.BASE_URL || 'http://localhost:3000'
   }
 }
 ```
 
-`BASE_URL`가 정의되어 있다면, `baseUrl` 프로피티를 만들 수 있으며 `baseUrl`은 `http://localhost:3000`과 같습니다.
+`BASE_URL`가 정의되어 있다면, `baseURL` 프로피티를 만들 수 있으며 `baseURL`은 `http://localhost:3000`과 같습니다.
 
-자신의 `baseUrl`로 접근할 2가지 방법이 있습니다:
-1. `process.env.baseUrl`
-2. `context.baseUrl`, [context api](/api#context) 페이지로 확인할 수 있습니다.
+자신의 `baseURL`로 접근할 2가지 방법이 있습니다:
+1. `process.env.baseURL`
+2. `context.baseURL`, [context api](/api#context) 페이지로 확인할 수 있습니다.
 
 예제의 public token을 제공하기 위해 `env` 프로퍼티를 사용합니다.
 
@@ -34,7 +34,7 @@ module.exports = {
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: process.env.baseUrl
+  baseURL: process.env.baseURL
 })
 ```
 
