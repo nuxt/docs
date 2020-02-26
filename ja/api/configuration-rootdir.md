@@ -8,7 +8,7 @@ description: Nuxt.js アプリケーションのワークスペースを指定�
 
 > Nuxt.js アプリケーションのワークスペースディレクトリを指定します。
 
-引数が渡された場合、このプロパティは [nuxt commands](/guide/commands) によって上書きされます。(例: `nuxt my-app/` を実行すると `rootDir` が current/working ディレクトリから `./my-app/` の絶対パスに設定されます。
+[nuxt commands](/guide/commands) に引数が渡された場合、このプロパティは上書きされます。(例: `nuxt my-app/` を実行すると `rootDir` が current/working ディレクトリから `./my-app/` の絶対パスに設定されます。
 
 [Nuxt.js をプログラムで使う](/api/nuxt)を使用しない限り、このオプションを指定する必要は通常ありません。
 
