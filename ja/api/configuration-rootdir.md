@@ -10,7 +10,7 @@ description: Nuxt.js アプリケーションのワークスペースを指定�
 
 [nuxt commands](/guide/commands) に引数が渡された場合、このプロパティは上書きされます。(例: `nuxt my-app/` を実行すると `rootDir` が current/working ディレクトリから `./my-app/` の絶対パスに設定されます。
 
-[Nuxt.js をプログラムで使う](/api/nuxt)を使用しない限り、このオプションを指定する必要は通常ありません。
+[Nuxt.js をプログラムで使用](/api/nuxt)しない限り、このオプションを指定する必要は通常ありません。
 
 <div class="Alert Alert--blue">
 [依存関係を解決](https://nodejs.org/api/modules.html#modules_all_together)できるようにするには、 `node_modules` ディレクトリを含むパッケージルート両方の `rootDir` が同じディレクトリツリー内にある必要があります。
