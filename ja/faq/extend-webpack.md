@@ -27,11 +27,11 @@ export default {
 
 `extend` メソッドは一度はサーバーのバンドルのため、一度はクライアントのバンドルのため、つまり二度呼び出されます。
 
-## Examples
+## 例
 
-#### Customize chunks configuration
+#### チャンク構成をカスタマイズ
 
-You may want to tweak a bit [optimization configuration](/api/configuration-build#optimization), avoiding to rewrite default object.
+デフォルトを書き換えることを避けて、わずかな[最適化構成](/api/configuration-build#optimization)を微調整することができます。
 ```js
 export default {
   build: {
@@ -44,9 +44,9 @@ export default {
 }
 ```
 
-#### Execute ESLint on every webpack build in dev environment
+#### 開発環境のすべての Webpack ビルドで ESLint を実行します
 
-In order to be aware of code style errors, you may want to run [ESLint](https://github.com/webpack-contrib/eslint-loader) on every build in dev environment. 
+コードスタイルエラーを認識するために、開発環境のすべてのビルドで [ESLint](https://github.com/webpack-contrib/eslint-loader) を実行することができます。
 ```js
 export default {
   build: {
