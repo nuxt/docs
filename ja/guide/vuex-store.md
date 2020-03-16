@@ -220,7 +220,7 @@ actions: {
 
 [コンテキスト](/api/context)は、`asyncData`や `fetch` メソッドと同様に `nuxtServerInit` に第二引数として渡されます。
 
-If `nuxt generate` is ran, `nuxtServerInit` will be executed for every dynamic route generated.
+`nuxt generate` が実行されると、生成されたすべての動的ルートに対して `nuxtServerInit` が実行されます。
 
 > 注意: 非同期の `nuxtServerInit` アクションは nuxt サーバーの待機を可能にするために Promise を返さなければなりません
 
