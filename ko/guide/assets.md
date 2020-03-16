@@ -18,7 +18,7 @@ description: Nuxt는 강력한 에셋 처리를 위해 기본적으로 Webpack�
 ----| index.vue
 ```
 
-만약 CSS에서 `url('~assets/image.png')` 로 사용했다면 `require('~assets/image.png')`로 변환됩니다.
+만약 CSS에서 `url('~assets/image.png')` 로 사용했다면 `require('~assets/image.png')`로 *변환*됩니다.
 
 <div class="Alert Alert--orange">
 
