@@ -87,7 +87,7 @@ module.exports = {
 
 ## $root 와 context 합치기
 
-[vue-18n](https://github.com/kazupon/vue-i18n)같은 몇몇 플러그인은 앱의 루트에서 사용하기 위해 루트와 합쳐질 필요가 있습니다. 루트 컴포넌트와 Context에 플러그인을 추가하기 위한 Nuxt.js의 `injectAs` 속성을 소개합니다.
+[vue-i18n](https://github.com/kazupon/vue-i18n)같은 몇몇 플러그인은 앱의 루트에서 사용하기 위해 루트와 합쳐질 필요가 있습니다. 루트 컴포넌트와 Context에 플러그인을 추가하기 위한 Nuxt.js의 `injectAs` 속성을 소개합니다.
 
 `plugins/i18n.js`:
 ```js
