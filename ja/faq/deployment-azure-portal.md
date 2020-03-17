@@ -3,25 +3,26 @@ title: Azure Portal へデプロイするには？
 description: Azure Portal へデプロイするには？
 ---
 
-## Requirements
+## 前提条件
 - It is required that you select a backend when setting up the project. Even if you don't need it, or else the site won't start up.
-- The server is running Node 8 or greater
+- プロジェクトのセットアップ時にバックエンドを選択する必要があります。必要ない場合でも、サイトが起動しません。
+- サーバーは Node v8以降を実行しています。
 
-## What if I already have a project without an backend?
-No worries. It is easy to add an express server to an existing project.
+## バックエンドのないプロジェクトが既にある場合はどうなりますか？
+心配ありません。Express サーバーを既存のプロジェクトに簡単に追加できます。
 
-Create a new folder called `server` in the root of the project. Then create an `index.js` file inside the `server` folder and paste the following inside the `index.js`:
+プロジェクトのルートに `server` という新しいフォルダを作成します。次に、`server` フォルダ内に `index.js` ファイルを作成し以下を貼り付けます：
 
 ```
 const express = require('express')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
 const app = express()
-// Import and Set Nuxt.js options
+// Nuxt.js オプションのインポートと設定
 const config = require('../nuxt.config.js')
 config.dev = process.env.NODE_ENV !== 'production'
 async function start () {
-  // Init Nuxt.js
+  // Nuxt.js を初期化
   const nuxt = new Nuxt(config)
   const { host, port } = nuxt.options.server
   // Build only in dev mode
@@ -31,9 +32,9 @@ async function start () {
   } else {
     await nuxt.ready()
   }
-  // Give nuxt middleware to express
+  // express に nuxt ミドルウェアを提供する
   app.use(nuxt.render)
-  // Listen the server
+  // サーバーがリッスンする
   app.listen(port, host)
   consola.ready({
     message: `Server listening on http://${host}:${port}`,
@@ -43,9 +44,9 @@ async function start () {
 start()
 ```
 
-Then edit your nuxt.config.js:
+次に、nuxt.config.js を編集します:
 
-Before:
+ビフォー:
 
 ```
 import pkg from './package'
@@ -54,28 +55,28 @@ export default {
 }
 ```
 
-After: 
+アフター:
 ```
 module.exports = {
 ... config
 }
 ```
 
-**Remember to remove the references to the pkg object inside the config.**
+**このファイルから pkg オブジェクトへの参照を削除することを忘れないでください。**
 
-Thats it!
+それだけです!
 
-## How to set Node version on Web App in DevOps
+## DevOps で Web アプリの Node バージョンを設定する方法
 
-You can set the Node version on the server, via the App setting inside the "Deploy Azure Web Service" task in the release pipeline
+リリースパイプラインの "Deploy Azure Web Service" タスク内のアプリ設定を介して、サーバー上の Node バージョンを設定できます。
 
-Add this to the App settings field under "Application and Configuration Settings"
+これを "Application and Configuration Settings" の下のアプリケーション設定フィールドに追加します。
 ```
 -WEBSITE_NODE_DEFAULT_VERSION 10.16.3
 ```
-It's recommended to use the LTS version.
+LTS バージョンの使用を推奨します。
 
-## Artifacts
+## アーティファクト
 
 Azure DevOps を使用しており、かつビルドパイプラインを走らせていて、アーティファクトを保存したい場合、 ファイル名の先頭に `.` が付いているファイルは、アーティファクトフォルダーに明示的に移動する必要があります。そして、アーティファクトアーカイブを作成することで、リリースデプロイ時にダウンロードすることができます。
 
