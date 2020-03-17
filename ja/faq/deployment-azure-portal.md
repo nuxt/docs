@@ -4,7 +4,6 @@ description: Azure Portal へデプロイするには？
 ---
 
 ## 前提条件
-- It is required that you select a backend when setting up the project. Even if you don't need it, or else the site won't start up.
 - プロジェクトのセットアップ時にバックエンドを選択する必要があります。必要ない場合でも、サイトが起動しません。
 - サーバーは Node v8以降を実行しています。
 
