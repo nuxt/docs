@@ -26,10 +26,9 @@ description: Now へデプロイするには？
 
 詳細や例については https://github.com/nuxt/now-builder で見ることができます。
 
+### Nuxt PWA モジュールを持つ Service Worker
 
-### Service Worker with Nuxt PWA Module
-
-To avoid 404 for Service Workers, make sure to include `sw` to your routes settings.
+Service Worker の404を回避するために、ルート設定に `sw` を必ず含めるようにしてください。
 
 ```json
 {
