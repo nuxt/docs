@@ -26,6 +26,38 @@ description: Now へデプロイするには？
 
 詳細や例については https://github.com/nuxt/now-builder で見ることができます。
 
+
+### Service Worker with Nuxt PWA Module
+
+To avoid 404 for Service Workers, make sure to include `sw` to your routes settings.
+
+```json
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "nuxt.config.js",
+      "use": "@nuxtjs/now-builder",
+      "config": {
+        "serverFiles": ["package.json"]
+      }
+    }
+  ],
+  "routes": [
+    { "src": "/_nuxt/.+", "headers": { "Cache-Control": "max-age=31557600" } },
+    {
+      "src": "/sw.js",
+      "dest": "/_nuxt/static/sw.js",
+      "headers": {
+        "cache-control": "public, max-age=43200, immutable",
+        "Service-Worker-Allowed": "/"
+      }
+    },
+    { "src": "/(.*)", "dest": "/" }
+  ]
+}
+```
+
 ## Now V1 (レガシー)
 
 [Now V1](https://zeit.co/now) を使ってデプロイするには `package.json` を次のように記述することが推奨されます:
