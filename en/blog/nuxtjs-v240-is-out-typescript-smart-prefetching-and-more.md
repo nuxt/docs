@@ -245,69 +245,11 @@ We made a full rewrite of how SSR bundle is packaged.
 
 This means better performance, less memory overhead, fewer OOM crashes and easier SSR bundle debugging.
 
-<div class="table-wrapper-paragraph">
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>_</th>
-
-<th>Before</th>
-
-<th>After</th>
-
-<th>Diff</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>Dist</td>
-
-<td>8.2M</td>
-
-<td>7.2M</td>
-
-<td>-1M / 12%</td>
-
-</tr>
-
-<tr>
-
-<td>Dev</td>
-
-<td>281 MB (RSS: 439 MB)</td>
-
-<td>237 MB (RSS: 354 MB)</td>
-
-<td>-44M / 16% (RSS: -85M / 19%)</td>
-
-</tr>
-
-<tr>
-
-<td>Start</td>
-
-<td>106 MB (RSS: 169 MB)</td>
-
-<td>71.7 MB (RSS: 137 MB)</td>
-
-<td>-34M / 32% (RSS: -32M / 19%)</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-</div>
+|_|Before|After|Diff|
+|--- |--- |--- |--- |
+|Dist|8.2M|7.2M|-1M / 12%|
+|Dev|281 MB (RSS: 439 MB)|237 MB (RSS: 354 MB)|-44M / 16% (RSS: -85M / 19%)|
+|Start|106 MB (RSS: 169 MB)|71.7 MB (RSS: 137 MB)|-34M / 32% (RSS: -32M / 19%)|
 
 This feature has been implemented by [@pi0](https://dev.to/pi0) on PR #4439.
 
