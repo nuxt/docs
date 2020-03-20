@@ -3,7 +3,10 @@ title: Nuxt.js v2.4.0 is out! TypeScript, Smart prefetching and more...
 description:
 imgUrl: 
 date: 2019-01-28
-author: Sébastien Chopin
+authors:
+  - name: Sébastien Chopin
+    avatarUrl: https://pbs.twimg.com/profile_images/1042510623962275840/1Iw_Mvud_400x400.jpg
+    link: https://twitter.com/atinux
 tags:
     - nuxt
     - vue

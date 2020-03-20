@@ -3,7 +3,10 @@ title: "NuxtJS: From Terminal to Browser"
 description: How we changed the developer experience to stop switching between the terminal and browser.
 imgUrl: https://thepracticaldev.s3.amazonaws.com/i/7095k5vbtx5w3gggrw48.png
 date: 2019-06-04
-author: Sébastien Chopin
+authors:
+  - name: Sébastien Chopin
+    avatarUrl: https://pbs.twimg.com/profile_images/1042510623962275840/1Iw_Mvud_400x400.jpg
+    link: https://twitter.com/atinux
 tags:
     - vue
     - nuxt
