@@ -3,7 +3,10 @@ title: "NuxtJS: From Terminal to Browser"
 description: How we changed the developer experience to stop switching between the terminal and browser.
 imgUrl: https://user-images.githubusercontent.com/904724/77157043-e525e900-6aa0-11ea-82b2-e73cc688c48b.jpg
 date: 2019-06-04
-author: Sébastien Chopin
+authors:
+  - name: Sébastien Chopin
+    avatarUrl: https://pbs.twimg.com/profile_images/1042510623962275840/1Iw_Mvud_400x400.jpg
+    link: https://twitter.com/atinux
 tags:
     - webpack
     - DX
