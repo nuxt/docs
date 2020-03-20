@@ -1,32 +1,30 @@
 ---
-title: Nuxt.js v2.4.0 is out! TypeScript, Smart prefetching and more...
-description:
-imgUrl: 
+title: NuxtJS v2.4.0 is out
+description: TypeScript, smart prefetching, RFC process, releases plan and more...
+imgUrl: https://user-images.githubusercontent.com/904724/77156498-c3783200-6a9f-11ea-86bd-b085ceae3e23.jpg
 date: 2019-01-28
 author: Sébastien Chopin
 tags:
-    - nuxt
-    - vue
-    - javascript
     - framework
+    - release
 ---
 
 > You can see this release note on GitHub as well: [https://github.com/nuxt/nuxt.js/releases/tag/v2.4.0](https://github.com/nuxt/nuxt.js/releases/tag/v2.4.0)
 
-## [](#important-news)Important news 👀
+## Important news 👀
 
-### [](#new-core-team-member)New core team member 🐤
+### New core team member 🐤
 
 We are really proud to announce Kevin Marrec ([@kevinmarrec](https://dev.to/kevinmarrec) ) as a new core team member of Nuxt.js. He is French 🇫🇷 and responsible for the TypeScript integration 💚
 
-### [](#official-consulting-%E2%9B%91)Official Consulting ⛑
+### Official Consulting ⛑
 
 We now offer official support & consulting from the core team. We partnered with Otechie for the process and already did some beta-tests with selected companies.
 
 Are you interested or curious?  
 Learn more on [https://otechie.com/nuxt](https://otechie.com/nuxt) 🙌
 
-### [](#rfc-process)RFC Process 📎
+### RFC Process 📎
 
 We invite you to take a look at our [nuxt/rfcs](https://github.com/nuxt/rfcs) repository where we discuss the future of Nuxt and its vision.
 
