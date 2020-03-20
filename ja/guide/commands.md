@@ -106,14 +106,14 @@ npm run generate
 
 静的なホスティングサイトにデプロイする準備が整ったものが全て入った `dist` フォルダが作成されます。
 
-ページエラーが発生した際に0以外のステータスコードを返し、CI/CD によるデプロイまたはビルドを失敗させるには、 `--fail-on-page-error` 引数を使用することができます。
+ページエラーが発生した際に0以外のステータスコードを返し、CI/CD によるデプロイまたはビルドを失敗させるには、 `--fail-on-error` 引数を使用することができます。
 
 ```bash
-npm run generate --fail-on-page-error
+npm run generate --fail-on-error
 
 // または
 
-yarn generate --fail-on-page-error
+yarn generate --fail-on-error
 ```
 
 

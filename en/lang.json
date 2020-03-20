@@ -1,6 +1,6 @@
 {
   "iso": "en",
-  "docVersion": "2.11.X",
+  "docVersion": "2.12.X",
   "links": {
     "download": "Download",
     "live_edit": "Live Edit"
@@ -20,7 +20,7 @@
     },
     "welcome": {
       "get_started": "get started",
-      "github_stars": "24K+ github stars"
+      "github_stars": "26K+ github stars"
     },
     "why": {
       "try_nuxtjs_online": "Try NuxtJS Online"

@@ -1,5 +1,5 @@
 ---
-title: Server Side Rendered
+title: Rendu côté serveur
 content_title: Server Side Rendered
 ---
 The most popular mode for Nuxt. With SSR, also called "universal" or "isomorphic" mode, a Node.js server
