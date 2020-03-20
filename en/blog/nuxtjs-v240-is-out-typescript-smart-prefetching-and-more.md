@@ -1,6 +1,6 @@
 ---
 title: NuxtJS v2.4.0 is out
-description: TypeScript, smart prefetching, RFC process, releases plan and more...
+description: TypeScript, smart prefetching, RFC process, module commands, releases plan and more...
 imgUrl: https://user-images.githubusercontent.com/904724/77156498-c3783200-6a9f-11ea-86bd-b085ceae3e23.jpg
 date: 2019-01-28
 author: Sébastien Chopin
@@ -8,8 +8,6 @@ tags:
     - framework
     - release
 ---
-
-> You can see this release note on GitHub as well: [https://github.com/nuxt/nuxt.js/releases/tag/v2.4.0](https://github.com/nuxt/nuxt.js/releases/tag/v2.4.0)
 
 ## Important news 👀
 
@@ -37,7 +35,7 @@ Here are some interesting proposals if you want to learn more about the upcoming
 *   [Module improvements](https://github.com/nuxt/rfcs/issues/10) to give more power to Nuxt modules
 *   And [many more](https://github.com/nuxt/rfcs/issues) 💚
 
-### [](#release-plan)Release Plan 🚢
+### Release Plan 🚢
 
 Starting with this release, Nuxt will adhere to a formalized release plan (as good as possible). Also, an end of life for older major versions is defined within [RELEASE_PLAN.md](https://github.com/nuxt/nuxt.js/blob/dev/RELEASE_PLAN.md).
 
@@ -49,7 +47,7 @@ Quick summary:
 
 We strongly invite you to read the [RELEASE_PLAN.md](https://github.com/nuxt/nuxt.js/blob/dev/RELEASE_PLAN.md) for further details.
 
-### [](#thank-you)Thank you ❤️
+### Thank you ❤️
 
 We want to specially thanks:
 
@@ -58,9 +56,9 @@ We want to specially thanks:
 *   All the devs working for companies using Nuxt.js and who helped us building a [showcases list](https://github.com/nuxt/nuxt.js/issues/4681)
 *   Our backers and sponsors supporting us financially through our [open Collective](https://opencollective.com/nuxtjs)
 
-## [](#new-features)New Features ✨
+## New Features ✨
 
-### [](#speaking-of-typescript)Speaking of TypeScript...
+### Speaking of TypeScript...
 
 > TypeScript support has landed!
 
@@ -77,7 +75,7 @@ This work has been made by [@kevinmarrec](https://dev.to/kevinmarrec) with the h
 
 ⚠️ **Experimental:** We are waiting for your feedback to keep improving it and breaking changes can occur without a semver major release. However, all changes will be documented properly
 
-### [](#smart-prefetching-%EF%B8%8F)Smart prefetching ⚡️
+### Smart prefetching ⚡️
 
 Nuxt.js will automagically prefetch the code-splitted pages linked with `<nuxt-link>` when visible in the viewport **by default**. This hugely improves the end user performances, inspired by [quicklink](https://github.com/GoogleChromeLabs/quicklink).
 
@@ -92,7 +90,7 @@ Demos are online and we recommend you to try it out to feel the difference:
 
 You can learn more about this feature in the associated PR #4574 and in [the documentation](https://nuxtjs.org/api/components-nuxt-link).
 
-### [](#hmr-amp-best-practices-for-raw-store-endraw-)HMR & best practices for `store/` 👀
+### HMR & best practices for `store/` 👀
 
 > Save more development time with full HMR support for the store (`mutations`, `getters`, and `actions`).
 
@@ -100,7 +98,7 @@ You can learn more about this feature in the associated PR #4574 and in [the doc
 
 This feature has been implemented by [@mannil](https://dev.to/mannil) & [@atinux](https://dev.to/atinux) on PRs #4589, #4582 and #4791
 
-### [](#autocomplete-for-vs-code-via-vetur-extension)Autocomplete for VS Code (via. Vetur extension) ✅
+### Autocomplete for VS Code (via. Vetur extension) ✅
 
 If you are using VS Code, with this version, you will now have autocomplete for Nuxt.js components:
 
@@ -108,7 +106,7 @@ If you are using VS Code, with this version, you will now have autocomplete for 
 
 This feature has been implemented by [@octref](https://dev.to/octref) & [@atinux](https://dev.to/atinux) on PR #4524
 
-### [](#port-taken-nuxt-got-your-back)Port taken? Nuxt got your back! 💪
+### Port taken? Nuxt got your back! 💪
 
 If Nuxt wants to listen on a port which is already used, it will warn you **in development** and listen to a free port instead:
 
@@ -120,7 +118,7 @@ In production it will throw an error instead to avoid unwanted behavior:
 
 This feature has been implemented by [@ricardogobbosouza](https://dev.to/ricardogobbosouza) on PR #4428 with the help of [@pi0](https://dev.to/pi0) and [@mannil](https://dev.to/mannil) .
 
-### [](#suggest-installing-missing-dependencies-or-mismatches)Suggest installing missing dependencies or mismatches 💯
+### Suggest installing missing dependencies or mismatches 💯
 
 Nuxt requires all peer like dependencies as a dependency for easier usage. Sometimes this causes unwanted behaviors when users explicitly add a specific version in their package.json which is incompatible with nuxt. This could also help to resolve popular Vue packages version mismatch error (#198, #669, #1084, #1414, #1851, #2079, #2406, #3454).
 
@@ -128,17 +126,17 @@ Nuxt is now able to automatically self-verify installed dependencies and warn wi
 
 [![image](https://res.cloudinary.com/practicaldev/image/fetch/s--x7Y9f4Oe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/5158436/50593651-613d0c80-0eae-11e9-89b4-396c5f64d31d.png)](https://res.cloudinary.com/practicaldev/image/fetch/s--x7Y9f4Oe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/5158436/50593651-613d0c80-0eae-11e9-89b4-396c5f64d31d.png)
 
-This feature has been implemented by [@pi0](https://dev.to/pi0) in PR #4669
+This feature has been implemented by [@pi0](https://dev.to/pi0) in PR [#4669](https://github.com/nuxt/nuxt.js/pull/4669)
 
-### [](#autodetection-of-modern-bundles)Auto-detection of modern bundles 🥇
+### Auto-detection of modern bundles 🥇
 
 When running `nuxt start`, Nuxt will automatically detect if you built your app modern mode enabled. No need to run `nuxt start --modern`explicitly anymore 🌟
 
 [![screenshot 2018-11-30 at 16 55 48](https://res.cloudinary.com/practicaldev/image/fetch/s--gocbhrVn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/904724/49299896-1bf97980-f4c1-11e8-9321-9268c0f4c228.png)](https://res.cloudinary.com/practicaldev/image/fetch/s--gocbhrVn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/904724/49299896-1bf97980-f4c1-11e8-9321-9268c0f4c228.png)
 
-This detection was created by [@clarkdo](https://dev.to/clarkdo) on PR #4422
+This detection was created by [@clarkdo](https://dev.to/clarkdo) on PR [#4422](https://github.com/nuxt/nuxt.js/pull/4422)
 
-### [](#plugin-modes-and-file-extensions)Plugin modes and file extensions 💅
+### Plugin modes and file extensions 💅
 
 Until now, you used `ssr: false` in your plugin declarations to disable server-side rendering. We decided to deprecate that option and introduce a `mode` instead, which can be `'all'`, `'client'` or `'server'`. No worries, `ssr` is still working (until Nuxt 3).
 
@@ -174,9 +172,9 @@ The declaration will be internally transformed to:
 
 (If you specify the `mode` manually, it will overwrite the suffix detection)
 
-This feature has been implemented by [@clarkdo](https://dev.to/clarkdo) on PR #4592
+This feature has been implemented by [@clarkdo](https://dev.to/clarkdo) on PR [#4592](https://github.com/nuxt/nuxt.js/pull/4592)
 
-### [](#module-commands-%F0%9F%96%A5)Module commands 🖥
+### Module commands 🖥
 
 Nuxt modules can now include `bin` scripts that are recognized by Nuxt's CLI.
 
@@ -221,7 +219,7 @@ You can learn more about that in the [modules command documentation](https://nux
 
 This feature has been implemented by [@galvez](https://dev.to/galvez) on PR #4314 with the help of [@pi0](https://dev.to/pi0) .
 
-### [](#postcss-in-vue-components)PostCSS in Vue Components 💃
+### PostCSS in Vue Components 💃
 
 You can now use `lang="postcss"` in your Vue components. Postcss has applied to _all_ your styles anyway (e.g. to resolve aliases like `~`) but the `lang` attribute enables autocomplete and syntax highlighting for some IDEs.
 
@@ -229,15 +227,15 @@ You can now use `lang="postcss"` in your Vue components. Postcss has applied to 
 
 This feature has been implemented by [@mannil](https://dev.to/mannil) on PR #4417.
 
-### [](#no-more-extensions-for-stylesheets-needed)No more extensions for Stylesheets needed 🦅
+### No more extensions for Stylesheets needed 🦅
 
 [![stylesheet extensions](https://res.cloudinary.com/practicaldev/image/fetch/s--EN8qtaNn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://user-images.githubusercontent.com/640208/51384714-05f95400-1b15-11e9-9ff4-d05451c9d548.gif)](https://res.cloudinary.com/practicaldev/image/fetch/s--EN8qtaNn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://user-images.githubusercontent.com/640208/51384714-05f95400-1b15-11e9-9ff4-d05451c9d548.gif)
 
 We are concerned to improve the Developer Experience ("DX") with each release. This small change allows you to omit the file extension for CSS/SCSS/Postcss/Less/Stylus/... files listed in the `css` array inside your `nuxt.config.js`. For the `plugins` or `serverMiddleware` key, this is already possible.
 
-This feature has been implemented by [@mannil](https://dev.to/mannil) on PR #4671.
+This feature has been implemented by [@mannil](https://dev.to/mannil) on PR [#4671](https://github.com/nuxt/nuxt.js/pull/4671).
 
-### [](#ssr-bundle-improvements)SSR Bundle improvements 🔹
+### SSR Bundle improvements 🔹
 
 We made a full rewrite of how SSR bundle is packaged.
 
@@ -249,9 +247,9 @@ This means better performance, less memory overhead, fewer OOM crashes and easie
 |Dev|281 MB (RSS: 439 MB)|237 MB (RSS: 354 MB)|-44M / 16% (RSS: -85M / 19%)|
 |Start|106 MB (RSS: 169 MB)|71.7 MB (RSS: 137 MB)|-34M / 32% (RSS: -32M / 19%)|
 
-This feature has been implemented by [@pi0](https://dev.to/pi0) on PR #4439.
+This feature has been implemented by [@pi0](https://dev.to/pi0) on PR [#4439](https://github.com/nuxt/nuxt.js/pull/4439).
 
-## [](#other-changes)Other changes 🌔
+## Other changes 🌔
 
 *   `process.modern` can be used for distinguishing modern environment.
 *   Add `server.timing` to give Server-Timing header, useful for monitoring and performances overview (PR #4800)
@@ -275,7 +273,7 @@ This feature has been implemented by [@pi0](https://dev.to/pi0) on PR #4439.
     *   feat: check modern build file in modern mode (#4467)
     *   refactor: migrate to extract-css-chunks-webpack-plugin (#4495)
 
-## [](#further-patches-30)Further Patches (30+) 🔍
+## Further Patches (30+) 🔍
 
 *   hotfix(vue-app): ReferenceError error passed with routeChanged (PR #4444)
 *   fix(vue-app): properly serialize head functions (PR #4558 #4585)
@@ -310,6 +308,6 @@ This feature has been implemented by [@pi0](https://dev.to/pi0) on PR #4439.
 *   fix(ts): Add missing `loading` property to Component options (#4786)
 *   fix: match subdir under node_module in transpile (#4850)
 
-### [](#upgrade-note)Upgrade Note ⚠️
+### Upgrade Note ⚠️
 
 Due to a known problem (webpack/webpack#8656, #4869, #4839) users of **npm** should either remove `package-lock.json` and reinstall before upgrade or use `npm update acorn --depth 20 && npm dedupe` after upgrading to 2.4.0\. **yarn** users should have no problems but removing `yarn.lock` still recommended before the upgrade process.
