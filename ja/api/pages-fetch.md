@@ -6,51 +6,51 @@ description: "`fetch` メソッドは、ページがレンダリングされる�
 
 ## Nuxt >= 2.12
 
-Nuxt.js `v2.12` introduces a new hook called `fetch` **in any of your Vue components**.
+Nuxt.js `v2.12` では、**あらゆる Vue コンポーネント**に `fetch` という新しいフックが導入されています。
 
-See [live demo](https://nuxt-new-fetch.surge.sh) and [code example](https://github.com/nuxt/nuxt.js/tree/dev/examples/new-fetch).
+[ライブデモ](https://nuxt-new-fetch.surge.sh)と[コード例](https://github.com/nuxt/nuxt.js/tree/dev/examples/new-fetch)を見てください。
 
 <div class="Alert Alert--orange">
 
-`fetch(context)` has been deprecated, instead you can use an [anonymous middleware](/api/pages-middleware#anonymous-middleware) in your page: `middleware(context)`
+`fetch(context)` は非推奨になりましたが、代わりに[無名ミドルウェア](/api/pages-middleware#無名ミドルウェア) をページ内で使用できます: `middleware(context)`
 
 </div>
 
-### When to use fetch?
+### fetch を使うタイミングは？
 
-Every time you need to get **asynchronous** data. `fetch` is called on server-side when rendering the route, and on client-side when navigating.
+**非同期**データ取得の必要があるたびに `fetch` はサーバーサイドでルートをレンダリングするときに呼び出され、クライアントサイドではナビゲートするときに呼び出されます。
 
-It exposes `$fetchState` at the component level:
-- `$fetchState.pending`: `Boolean`, let you display a placeholder when `fetch` is being called *on client-side*.
-- `$fetchState.error`: `null` or `Error`, let you show an error message
-- `$fetchState.timestamp`: `Integer`, timestamp of the last fetch, useful for caching with `keep-alive`
+コンポーネントレベルで `$fetchState` を公開します:
+- `$fetchState.pending`: `Boolean`, `fetch` が *クライアントサイド* で呼び出されたときにプレースホルダを示します
+- `$fetchState.error`: `null` または `Error`, エラーメッセージを示します
+- `$fetchState.timestamp`: `Integer`, 直近 fetch のタイムスタンプです。`keep-alive` でのキャッシングに便利です
 
-As well as `$fetch()` to call the `fetch` hook from your component methods or template:
+また、コンポーネントメソッドやテンプレートから `fetch` フックを呼び出すには `$fetch()` を使用します:
 
 ```html
 <button @click="$fetch">Refresh</button>
 ```
 
-### Options
+### オプション
 
-- `fetchOnServer`: `Boolean` (default: `true`), call `fetch()` when server-rendering the page
-- `fetchDelay`: `Integer` (default: `200`), set the minimum executing time in milliseconds (to avoid quick flashes)
-
-<div class="Alert Alert--green">
-
-When `fetchOnServer` is `false`, `fetch` will be called only on client-side and `$fetchState.pending` will be `true` when server-rendering the component.
-
-</div>
-
-### Example
+- `fetchOnServer`: `Boolean` (default: `true`), サーバーがページをレンダリングする際に `fetch()` を呼び出す
+- `fetchDelay`: `Integer` (default: `200`), 最小実行時間をミリ秒単位で設定します（過剰実行を防ぐため）
 
 <div class="Alert Alert--green">
 
-We are going to use the official [http module](https://http.nuxtjs.org) to make HTTP requests.
+`fetchOnServer` が `false` の場合、`fetch` はクライアントサイドでのみ呼び出され、サーバでコンポーネントをレンダリングする際には `$fetchState.pending` は `true` となります。
 
 </div>
 
-Let's have a blog with our home page listing our posts:
+### 例
+
+<div class="Alert Alert--green">
+
+今回は公式の [http モジュール](https://http.nuxtjs.org)を使って HTTP リクエストを行ってみます。
+
+</div>
+
+投稿記事を掲載したブログをホームページに持ちましょう:
 
 `pages/index.vue`
 
@@ -82,18 +82,18 @@ export default {
 </script>
 ```
 
-If you go directly to [http://localhost:3000/](http://localhost:3000/), you will see directly the full list of posts which has been **server-rendered** (great for SEO).
+あなたが直接 [http://localhost:3000/](http://localhost:3000/) にアクセスすると、**サーバーレンダリング**（SEO に効果があります）されている完全な投稿リストを見ることができます。
 
 <img width="669" alt="Screenshot 2019-03-11 at 23 04 57" src="https://user-images.githubusercontent.com/904724/54161334-1f9e8400-4452-11e9-97bf-996a6e69d9db.png">
 
 
 <div class="Alert Alert--green">
 
-Nuxt will smartly detect what data you mutated inside `fetch` and optimises the JSON included in the returned HTML.
+Nuxt は、`fetch` の中でどのようなデータを変化させたかをスマートに検出し、返された HTML に含まれる JSON を最適化します。
 
 </div>
 
-Now, let's add `pages/posts/_id.vue` page to display a post on `/posts/:id`.
+では、`pages/posts/_id.vue` ページを追加して、`/posts/:id` に投稿を表示させてみましょう。
 
 `pages/posts/_id.vue`
 ```html
@@ -120,20 +120,20 @@ export default {
 </script>
 ```
 
-When navigating, you should now see `"Loading post #..."` on client-side, and no loading when refreshing a post (hard refresh on the browser).
+ナビゲートすると、クライアントサイドに `"Loading post #..."` が表示され、投稿の更新時にはロードされません（ブラウザ上ではハードリフレッシュ）。
 
 <img width="669" alt="fetch-nuxt3" src="https://user-images.githubusercontent.com/904724/54161844-d3544380-4453-11e9-9586-7428597db40e.gif">
 
 <div class="Alert Alert--green">
 
-In the component having `fetch` hook, you will also have access to `this.$fetch()` to re-call `fetch` hook (`$fetchState.pending` will become `true` again).
+`fetch` フックを持つコンポーネントでは、`this.$fetch()` にアクセスして `fetch` フックを再呼び出します（`$fetchState.pending` は再び `true` になります)。
 
 </div>
 
 
-### Listening to query string changes
+### クエリ文字列の変更をリッスンする
 
-The `fetch` hook **is not called** on query string changes by default. To watch for query changes you can add a watcher on `$route.query` and call `$fetch`:
+`fetch` フックはクエリの文字列が変更にデフォルトでは**呼び出されません**。クエリの変更を監視するには、`$route.query` にウォッチャを追加して `$fetch` を呼び出すことができます:
 
 ```js
 export default {
@@ -141,14 +141,14 @@ export default {
     '$route.query': '$fetch'
   },
   async fetch() {
-    // Called also on query changes
+    // クエリの変更時にも呼び出される
   }
 }
 ```
 
-### Caching
+### キャッシング
 
-You can use `keep-alive` directive in `<nuxt/>` and `<nuxt-child/>` component to save `fetch` calls on pages you already visited:
+`<nuxt/>` や `<nuxt-child/>` コンポーネントで `keep-alive` ディレクティブを使うと、既に訪問したページの `fetch` 呼び出しを保存することができます:
 
 `layouts/default.vue`
 ```html
@@ -159,14 +159,14 @@ You can use `keep-alive` directive in `<nuxt/>` and `<nuxt-child/>` component to
 
 <div class="Alert Alert--green">
 
-You can also specify the [props](https://vuejs.org/v2/api/#keep-alive) passed to `<keep-alive>` by passing a prop `keep-alive-props` to the `<nuxt>` component.<br>
-Example: `<nuxt keep-alive :keep-alive-props="{ max: 10 }" />` to keep only 10 page components in memory.
+`<nuxt>` コンポーネントに `keep-alive-props` を渡すことで、`<keep-alive>` に渡す [props](https://jp.vuejs.org/v2/api/index.html#keep-alive) を指定することもできます。<br>
+例: `<nuxt keep-alive :keep-alive-props="{ max: 10 }" />` 10ページのコンポーネントだけをメモリに保持するために。
 
 </div>
 
-### Using `activated` hook
+### `activated` を使う
 
-Nuxt will directly fill `this.$fetchState.timestamp` (timestamp) of the last `fetch` call (ssr included). You can use this property combined with `activated` hook to add a 30 seconds cache to `fetch`:
+Nuxt は、最後に `fetch` を呼び出したときの `this.$fetchState.timestamp`（タイムスタンプ）を直接付与します（ssr を含む）。このプロパティを `activated` フックと組み合わせることで、`fetch` に30秒のキャッシュを追加することができます。
 
 `pages/posts/_id.vue`
 
@@ -183,7 +183,7 @@ export default {
     }
   },
   activated() {
-    // Call fetch again if last fetch more than 30 sec ago
+    // 最後の fetch から30秒以上経っていれば、fetch を呼び出します
     if (this.$fetchState.timestamp <= (Date.now() - 30000)) {
       this.$fetch()
     }
@@ -195,7 +195,7 @@ export default {
 </script>
 ```
 
-The navigation to the same page will not call `fetch` if last `fetch` call was before 30 sec ago.
+最後の `fetch` 呼び出しが30秒以内であれば、同じページへのナビゲーションは `fetch` を呼び出しません。
 
 ![fetch-keep-alive-nuxt](https://user-images.githubusercontent.com/904724/54164405-c6881d80-445c-11e9-94e0-366406270874.gif)
 
@@ -208,7 +208,7 @@ The navigation to the same page will not call `fetch` if last `fetch` call was b
 
 `fetch` メソッドが*設定されている場合*、コンポーネント（**ページコンポーネントに限ります**）がロードされる前に毎回呼び出されます。サーバサイドでは一度だけ呼び出され（Nuxt アプリケーションへの最初のリクエスト時）、クライアントサイドでは他のルートへ移動したときに呼び出されます。
 
-`fetch` メソッドは第一引数として [ `context`](/api/context) オブジェクトを受け取るので、データを取得し、取得したデータをストアに入れることができます。`fetch` メソッドを非同期にするためには **Promise を返却してください**。そうすれば nuxt.js はコンポーネントがレンダリングされる前に promise が解決されるまで待機します。
+`fetch` メソッドは第一引数として [`context`](/api/context) オブジェクトを受け取るので、データを取得し、取得したデータをストアに入れることができます。`fetch` メソッドを非同期にするためには **Promise を返却してください**。そうすれば nuxt.js はコンポーネントがレンダリングされる前に promise が解決されるまで待機します。
 
 <div class="Alert Alert--orange">
 
