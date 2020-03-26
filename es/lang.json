@@ -5,6 +5,37 @@
     "download": "Descarga",
     "live_edit": "Editar en vivo"
   },
+  "headerLinks": [
+    {
+      "name": "Guide",
+      "slug": "guide",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "API",
+      "slug": "api",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Examples",
+      "slug": "examples",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "FAQ",
+      "slug": "faq",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Resources",
+      "slug": "resources",
+      "type": "static"
+    }
+  ],
   "text": {
     "an_error_occurred": "Ha ocurrido un error",
     "api_page_not_found": "La pagina de la API no se encuentra",
