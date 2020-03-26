@@ -11,7 +11,7 @@ Nuxt is a framework designed to give you a strong architecture following officia
 
 Versatile by nature, it supports different targets (server, serverless or static) and server side rendering is switchable.
 
-Extendable with a strong module ecosystem, it makes it easy to connect your REST or GraphQL endpoints, favorites CMS, CSS frameworks and more. PWA and AMP support is only a module away from your Nuxt project.
+Extendable with a strong module ecosystem, it makes it easy to connect your REST or GraphQL endpoints, favorite CMS, CSS frameworks and more. PWA and AMP support is only a module away from your Nuxt project.
 
 NuxtJS is the backbone of your Vue.js project, giving structure to build your project with confidence while being flexible.
 
