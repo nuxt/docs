@@ -41,6 +41,22 @@ When `fetchOnServer` is `false`, `fetch` will be called only on client-side and 
 
 </div>
 
+```html
+<script>
+export default {
+  data () {
+    return {
+      posts: []
+    }
+  },
+  async fetch () {
+    this.posts = await this.$http.$get('https://jsonplaceholder.typicode.com/posts')
+  },
+  fetchOnServer: false
+}
+</script>
+```
+
 ### Example
 
 <div class="Alert Alert--green">
