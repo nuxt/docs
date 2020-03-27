@@ -30,6 +30,8 @@ As well as `$fetch()` to call the `fetch` hook from your component methods or te
 <button @click="$fetch">Refresh</button>
 ```
 
+You can access the Nuxt [context](/api/context) with `this.$nuxt.context`.
+
 ### Options
 
 - `fetchOnServer`: `Boolean` (default: `true`), call `fetch()` when server-rendering the page
