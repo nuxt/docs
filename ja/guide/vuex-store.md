@@ -111,10 +111,10 @@ new Vuex.Store({
 <template>
   <ul>
     <li v-for="todo in todos">
-      <input type="checkbox" :checked="todo.done" @change="toggle(todo)">
+      <input :checked="todo.done" @change="toggle(todo)" type="checkbox">
       <span :class="{ done: todo.done }">{{ todo.text }}</span>
     </li>
-    <li><input placeholder="What needs to be done?" @keyup.enter="addTodo"></li>
+    <li><input @keyup.enter="addTodo" placeholder="What needs to be done?"></li>
   </ul>
 </template>
 

@@ -24,3 +24,40 @@ export default {
 }
 ```
 The `extend` method gets called twice - Once for the client bundle and the other for the server bundle.
+
+## Examples
+
+#### Customize chunks configuration
+
+You may want to tweak a bit [optimization configuration](/api/configuration-build#optimization), avoiding to rewrite default object.
+```js
+export default {
+  build: {
+    extend (config, { isClient }) {
+      if (isClient) {
+          config.optimization.splitChunks.maxSize = 200000;
+      }
+    }
+  }
+}
+```
+
+#### Execute ESLint on every webpack build in dev environment
+
+In order to be aware of code style errors, you may want to run [ESLint](https://github.com/webpack-contrib/eslint-loader) on every build in dev environment. 
+```js
+export default {
+  build: {
+    extend (config, { isDev, isClient }) {
+      if (isDev && isClient) {
+          config.module.rules.push({
+              enforce: 'pre',
+              test: /\.(js|vue)$/,
+              loader: 'eslint-loader',
+              exclude: /(node_modules)/,
+          });
+      }
+    }
+  }
+}
+```
