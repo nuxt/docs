@@ -30,7 +30,7 @@ As well as `$fetch()` to call the `fetch` hook from your component methods or te
 <button @click="$fetch">Refresh</button>
 ```
 
-You can access the Nuxt [context](/api/context) with `this.$nuxt.context`/
+You can access the Nuxt [context](/api/context) with `this.$nuxt.context`.
 
 ### Options
 
