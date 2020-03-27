@@ -92,9 +92,9 @@ Cette option vous permet de définir le dossier source de votre application Nuxt
 
 ### dir
 
-This option lets you define the custom directories of your Nuxt.js application.
+Cette option vous permet de définir les dossiers personnalisés de votre application Nuxt.js.
 
-[Documentation about `dir` integration](/api/configuration-dir)
+[Consultez la documentation à propos de `dir`](/api/configuration-dir)
 
 ### transition
 
