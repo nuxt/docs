@@ -68,7 +68,7 @@ export default {
 
 ### ES6 プラグイン
 
-プラグインが `node_modules` にあり、ES6 モジュールをエクスポートしている場合、それを ` transpile` ビルドオプションに追加する必要があるかもしれません：
+プラグインが `node_modules` にあり、ES6 モジュールをエクスポートしている場合、それを ` transpile` ビルドオプションに追加する必要があるかもしれません:
 
 ```js
 module.exports = {
