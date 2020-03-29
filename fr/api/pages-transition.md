@@ -86,7 +86,7 @@ Vous pouvez également définir des méthodes dans l'objet `pageTransition` afin
 
 ### Mode de transition
 
-**Le mode par défault  our les transitions diffère de Vue.js**. Le mode par défaur pour `pageTransition` est `out-in`. Si vous voulez avoir les transitions de sortie et d'entrée en même temps, vous devez mettre `mode: ''`.
+**Le mode par défault pour les transitions diffère de Vue.js**. Le mode par défaur pour `pageTransition` est `out-in`. Si vous voulez avoir les transitions de sortie et d'entrée en même temps, vous devez mettre `mode: ''`.
 
 ```js
 export default {
