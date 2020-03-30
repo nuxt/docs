@@ -5,6 +5,37 @@
     "download": "ダウンロード",
     "live_edit": "ライブ編集"
   },
+  "headerLinks": [
+    {
+      "name": "Guide",
+      "slug": "guide",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "API",
+      "slug": "api",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Examples",
+      "slug": "examples",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "FAQ",
+      "slug": "faq",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Resources",
+      "slug": "resources",
+      "type": "static"
+    }
+  ],
   "text": {
     "an_error_occurred": "エラーが発生しました",
     "api_page_not_found": "API ページが見つかりません",
