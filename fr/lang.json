@@ -34,6 +34,11 @@
       "name": "Resources",
       "slug": "resources",
       "type": "static"
+    },
+    {
+      "name": "Blog",
+      "slug": "blog",
+      "type": "static"
     }
   ],
   "text": {

@@ -1,7 +1,7 @@
 ---
 title: NuxtJS v2.4.0 is out
 description: TypeScript, smart prefetching, RFC process, module commands, releases plan and more...
-imgUrl: https://user-images.githubusercontent.com/904724/77156498-c3783200-6a9f-11ea-86bd-b085ceae3e23.jpg
+imgUrl: blog/nuxtjs-v240-is-out-typescript-smart-prefetching-and-more/main.jpg
 date: 2019-01-28
 authors:
   - name: Sébastien Chopin
