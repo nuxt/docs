@@ -63,7 +63,7 @@ export default function SimpleModule (moduleOptions) {
 
 **`this.options`**
 
-이를 사용해 Nuxt 옵션에 직접 액세스할 수 있습니다. 이것은 디폴트 옵션이 모두 할당된 사용자의 "nuxt.config.js"의 내용으로, 모듈 간 공유 옵션에 사용할 수 있습니다.
+이를 사용해 Nuxt 옵션에 직접 액세스할 수 있습니다. 이것은 디폴트 옵션이 모두 할당된 사용자의 `nuxt.config.js`의 내용으로, 모듈 간 공유 옵션에 사용할 수 있습니다.
 
 **`this.nuxt`**
 
@@ -190,7 +190,7 @@ export default function nuxtBootstrapVue (moduleOptions) {
 
 ### 템플릿 플러그인
 
-등록된 템플릿과 플러그인은 [lodash template](https://lodash.com/docs/4.17.4#template))를 활용하여 등록된 플러그인 아웃풋을 조건부로 변경할 수 있다.
+등록된 템플릿과 플러그인은 [lodash templates](https://lodash.com/docs/4.17.4#template))를 활용하여 등록된 플러그인 아웃풋을 조건부로 변경할 수 있다.
 
 **plugin.js**
 
@@ -291,7 +291,7 @@ export default function (moduleOptions) {
 
 여러분의 모듈은 Nuxt 초기화 뿐 아니라 특정 조건에서만 작업을 수행해야 할 수 있습니다.
 우리는 강력한 [Hookable](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js) Nuxt.js 시스템을 사용하여 특정 이벤트에 대한 작업을 수행할 수 있습니다.
-Nuxt는 프로미스를 반환하거나 `async`로 정의될 경우 당신의 함수를 기다릴 것이다.
+Nuxt는 프로미스를 반환하거나 `async`로 정의될 경우 여러분의 함수를 기다릴 것입니다.
 
 아래는 기본 예제입니다:
 
@@ -320,7 +320,7 @@ export default function myModule () {
 **Experimental**
 
 `v2.4.0`부터는 Nuxt 모듈의 패키지를 통해 사용자 지정 nuxt 명령을 추가할 수 있습니다.
-그렇게 하려면 커맨드를 정의할 때 반드시 `NuxtCommand` API를 따라야 합니다. my-module/bin/command.js의 간단한 예는 다음과 같습니다:
+그렇게 하려면 커맨드를 정의할 때 반드시 `NuxtCommand` API를 따라야 합니다. `my-module/bin/command.js`의 간단한 예는 다음과 같습니다:
 
 ```js
 #!/usr/bin/env node
