@@ -101,7 +101,7 @@ export default {
 
 <div class="Alert Alert--orange">
 
-Be aware that `async`/`await` is only supported in Node.js > 7.2. So if you are a module developer at least warn users about that if using them. For heavily async modules or better legacy support you can use either a bundler to transform it for older Node.js compatibility or a promise method.
+ `async`/`await`은 Node.js 7.2 이상에서만 지원됩니다. 그러므로 만약 여러분이 모듈 개발자이고 이  `async`/`await`를 사용한다면 적어도 사용자들에게 이를 알려주셔야 합니다. 비동기 모듈 또는 더 나은 레거시 지원의 경우 번들러를 사용하여 이전 Node.js 호환성을 위해 변환하거나 프로미스 메소드를 사용할 수 있습니다.
 
 </div>
 
@@ -114,7 +114,7 @@ export default async function asyncModule () {
 }
 ```
 
-### Return a Promise
+### 프로미스 리턴
 
 ```js
 import axios from 'axios'
@@ -128,12 +128,12 @@ export default function asyncModule () {
 }
 ```
 
-## Common Snippets
+## 일반 스니펫
 
-### Top level options
+### 최상위 옵션
 
-Sometimes it is more convenient if we can use top level options while registering modules in `nuxt.config.js`.
-This allows us to combine multiple option sources.
+`nuxt.config.js`에 모듈을 등록할 때 최상위 옵션을 사용할 수 있다면 더 편리할 수 있습니다.
+이는 우리가 복수의 옵션 소스를 결합할 수 있게 해줍니다.
 
 **nuxt.config.js**
 
@@ -162,11 +162,11 @@ export default function (moduleOptions) {
 }
 ```
 
-### Provide plugins
+### 플러그인 제공
 
-It is common that modules provide one or more plugins when added.
-For example [bootstrap-vue](https://bootstrap-vue.js.org) module would require to register itself into Vue.
-In such situations we can use the `this.addPlugin` helper.
+모듈이 추가될 때 하나 이상의 플러그인을 제공하는 것이 일반적입니다.
+예를 들어 [bootstrap-vue](https://bootstrap-vue.js.org) 모듈은 Vue에 자기자신을 등록하기를 요구합니다.
+이런 상황에서는 `this.addPlugin`를 사용할 수 있습니다.
 
 **plugin.js**
 
@@ -188,9 +188,9 @@ export default function nuxtBootstrapVue (moduleOptions) {
 }
 ```
 
-### Template plugins
+### 템플릿 플러그인
 
-Registered templates and plugins can leverage [lodash templates](https://lodash.com/docs/4.17.4#template) to conditionally change registered plugins output.
+등록된 템플릿과 플러그인은 [lodash template](https://lodash.com/docs/4.17.4#template))를 활용하여 등록된 플러그인 아웃풋을 조건부로 변경할 수 있다.
 
 **plugin.js**
 
@@ -223,9 +223,9 @@ export default function nuxtBootstrapVue (moduleOptions) {
 }
 ```
 
-### Add a CSS library
+### CSS 라이브러리 추가
 
-If your module will provide a CSS library, make sure to perform a check if the user already included the library to avoid duplicates, and add **an option to disable** the CSS library in the module.
+모듈이 CSS 라이브러리를 제공하는 경우, 중복 방지를 위해 사용자가 라이브러리를 이미 포함했는지 확인하고 **비활성화 옵션**을 추가하세요.
 
 **module.js**
 
@@ -238,11 +238,11 @@ export default function (moduleOptions) {
 }
 ```
 
-### Emit assets
+### 애셋 내보내기
 
 <!-- todo: up2date? -->
 
-We can register webpack plugins to emit assets during build.
+우리는 webpack 플러그인을 등록하여 빌드 중에 애셋을 내보낼 수 있습니다.
 
 **module.js**
 
@@ -264,9 +264,9 @@ export default function (moduleOptions) {
 }
 ```
 
-### Register custom webpack loaders
+### 커스텀 웹팩 로더 등록하기 
 
-We can do the same as `build.extend` in `nuxt.config.js` using `this.extendBuild`.
+`this.extendBuild`를 사용해 `nuxt.config.js`에서 `build.extend`를 사용하는 것으로 같은 일을 할 수 있습니다.
 
 **module.js**
 
@@ -287,13 +287,13 @@ export default function (moduleOptions) {
 }
 ```
 
-## Run Tasks on Specific hooks
+## 특정 훅에서 작업 실행
 
-Your module may need to do things only on specific conditions and not just during Nuxt initialization.
-We can use the powerful [Hookable](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js) Nuxt.js system to do tasks on specific events.
-Nuxt will wait for your function if it return a Promise or is defined as `async`.
+여러분의 모듈은 Nuxt 초기화 뿐 아니라 특정 조건에서만 작업을 수행해야 할 수 있습니다.
+우리는 강력한 [Hookable](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js) Nuxt.js 시스템을 사용하여 특정 이벤트에 대한 작업을 수행할 수 있습니다.
+Nuxt는 프로미스를 반환하거나 `async`로 정의될 경우 당신의 함수를 기다릴 것이다.
 
-Here are some basic examples:
+아래는 기본 예제입니다:
 
 ```js
 export default function myModule () {
@@ -315,11 +315,12 @@ export default function myModule () {
 }
 ```
 
-## Module package commands
+## 모듈 패키지 명령어
 
 **Experimental**
 
-Starting in `v2.4.0`, you can add custom nuxt commands through a Nuxt module's package. To do so, you must follow the `NuxtCommand` API when defining your command. A simple example hypothetically placed in `my-module/bin/command.js` looks like this:
+`v2.4.0`부터는 Nuxt 모듈의 패키지를 통해 사용자 지정 nuxt 명령을 추가할 수 있습니다.
+그렇게 하려면 커맨드를 정의할 때 반드시 `NuxtCommand` API를 따라야 합니다. my-module/bin/command.js의 간단한 예는 다음과 같습니다:
 
 ```js
 #!/usr/bin/env node
@@ -344,14 +345,16 @@ NuxtCommand.run({
 })
 ```
 
-A few things of note here. First, notice the call to `/usr/bin/env` to retrieve the Node executable. Also notice that ES module syntax can't be used for commands unless you manually incorporate [`esm`](https://github.com/standard-things/esm) into your code.
+여기 주목해야 할 몇 가지가 있습니다. 먼저 노드 실행 파일을 검색하기 위한 `/usr/bin/env` 호출을 주목해주세요. 또한 [`esm`](https://github.com/standard-things/esm))을 코드에 수동으로 포함하지 않는 한 커맨드에 ES 모듈 구문을 사용할 수 없다는 점에 유의하세요.
 
-Next, you'll notice how `NuxtCommand.run()` is used to specify the settings and behavior of the command. Options are defined in `options`, which get parsed via [`minimist`](https://github.com/substack/minimist).
-Once arguments are parsed, `run()` is automatically called with the `NuxtCommand` instance as first parameter.
+다음으로, 커맨드의 설정과 동작을 지정하기 위해 `NuxtCommand.run()`이 어떻게 사용되는지 알 수 있을 것입니다. 옵션은 `options`에 정의되어 [`minimist`](https://github.com/substack/minimist)로 파싱됩니다.
 
-In the example above, `cmd.argv` is used to retrieve parsed command-line arguments. There are more methods and properties in `NuxtCommand` -- documentation on them will be provided as this feature is further tested and improved.
+인자가 파싱되면, 첫번째 `NuxtCommand` 인스턴스와 함께 `run()`이 자동적으로 호출됩니다.
 
-To make your command recognizable by the Nuxt CLI, list it under the `bin` section of your package.json, using the `nuxt-module` convention, where `module` relates to your package's name. With this central binary, you can use `argv` to further parse more `subcommands` for your command if you desire.
+위의 예제에서는 구문 분석된 커맨드라인 인자를 조회하는 데 `cmd.argv`를 사용합니다. `NuxtCommand`에는 더 많은 메소드와 프로퍼티들이 있습니다(이 기능이 추가 테스트 및 개선됨에 따라 이에 대한 추가 문서를 제공할 예정입니다).
+
+여러분의 커맨드를 Nuxt CLI가 인식할 수 있게끔 만들기 위해, 여러분의 package.json의 `bin` 섹션에 이를 등록하시고, 여러분의 패키지명과 관련있는 `module`의 `nuxt-module` 컨밴션을 따라 주세요.
+이 중심 바이너리로, 여러분의 목적대로 커맨드에 따른 더 많은 `subcommands`를 파싱하기 위해 `argv`를 사용할 수 있습니다.
 
 ```js
 {
@@ -361,10 +364,10 @@ To make your command recognizable by the Nuxt CLI, list it under the `bin` secti
 }
 ```
 
-Once your package is installed (via NPM or Yarn), you'll be able to execute `nuxt foobar ...` on the command-line.
+(NPM이나 Yarn을 통해) 여러분의 패키지가 설치되면, `nuxt foobar ...`로 커맨드 라인을 실행시킬 수 있습니다.
 
 <div class="Alert">
 
-There are way more hooks and possibilities for modules. Please read the [Nuxt Internals](/api/internals) to find out more about the nuxt-internal API.
+모듈에 대해 더 많은 훅과 사용 방법이 있습니다. 더 nuxt-internal API에 대해 보시려면 [Nuxt Internals](/api/internals)를 참조해주세요. 
 
 </div>
