@@ -1,7 +1,7 @@
 ---
 title: "Understanding how fetch works in Nuxt 2.12"
 description: Explore different features of the fetch hook and learn a brand new way to bring data into Nuxt applications.
-imgUrl: https://cdn.krutiepatel.com/2020-04/new-fetch-lifecycle-hooks.png
+imgUrl: blog/new-fetch-lifecycle-hooks.png
 date: 2020-04-02
 authors:
   - name: Krutie Patel
@@ -22,7 +22,7 @@ In this post, we will explore different features of the fetch hook and try to un
 
 In terms of Nuxt lifecycle hooks, `fetch` sits within Vue lifecycle after `created` hook. As we already know that, all Vue lifecycle hooks are called with their `this` context. The same applies to `fetch` hook as well.
 
-![New fetch in Nuxt lifecycle](https://cdn.krutiepatel.com/2020-04/new-fetch-lifecycle-hooks.png)
+![New fetch in Nuxt lifecycle](/blog/new-fetch-lifecycle-hooks.png)
 
 Fetch hook is called after the component instance is created on the server-side. That makes `this` context available inside the `fetch`.
 
