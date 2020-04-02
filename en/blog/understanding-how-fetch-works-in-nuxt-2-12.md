@@ -27,9 +27,11 @@ In terms of Nuxt lifecycle hooks, `fetch` sits within Vue lifecycle after `creat
 Fetch hook is called after the component instance is created on the server-side. That makes `this` context available inside the `fetch`.
 
 ```js
-fetch() {
-  console.log(this);
-}
+export default {
+  fetch() {
+    console.log(this);
+  }
+};
 ```
 
 Let’s see what this could mean for page components.
@@ -90,7 +92,7 @@ Because we’re fetching data asynchronously, the new fetch() provides a `$fetch
 
 Below is what the `$fetchState` object looks like.
 
-```js
+```
 $fetchState = {
   pending: true | false,
   error: null | {},
@@ -106,10 +108,16 @@ We have three keys,
 
 These keys are then used directly in the template area of the component to show relevant placeholders during the process of fetching data from the API.
 
-```js
-  <p v-if="$fetchState.pending">Fetching posts...</p>
-  <p v-else-if="$fetchState.error">Error while fetching posts</p>
-  <ul v-else> … </ul>
+```html
+<template>
+  <div>
+    <p v-if="$fetchState.pending">Fetching posts...</p>
+    <p v-else-if="$fetchState.error">Error while fetching posts</p>
+    <ul v-else>
+      …
+    </ul>
+  </div>
+</template>
 ```
 
 ## [](#fetch-as-a-method)Fetch as a method
@@ -123,11 +131,13 @@ New fetch hook also acts as a method that can be invoked upon user interaction o
 
 ```js
 // from component methods in script section
+export default {
   methods: {
     refresh() {
-      this.$fetch()
+      this.$fetch();
     }
   }
+};
 ```
 
 ## [](#making-nuxt-pages-more-performant)Making Nuxt pages more performant
@@ -160,13 +170,15 @@ Above is one way to boost page performance which is more high-level and generic,
 
 Vue’s `activated` hook is used here with Nuxt's `keep-alive` prop to re-fetch the data.
 
-```
+```js
+export default {
   activated() {
     // Call fetch again if last fetch more than a minute ago
     if (this.$fetchState.timestamp <= Date.now() - 60000) {
-      this.$fetch()
+      this.$fetch();
     }
   }
+};
 ```
 
 ## [](#asyncData-vs-fetch)asyncData vs Fetch
@@ -182,12 +194,16 @@ As of Nuxt 2.12, `asyncData` method is still an active feature. Let’s examine 
 3. Adds payload by **returning** the data
 
 ```js
-async asyncData(context) {
-  const data = await context.$axios.$get(`https://jsonplaceholder.typicode.com/todos`);
-  // `todos` does not have to be declared in data()
-  return { todos: data.Item };
-  // `todos` is merged with local data
-}
+export default {
+  async asyncData(context) {
+    const data = await context.$axios.$get(
+      `https://jsonplaceholder.typicode.com/todos`
+    );
+    // `todos` does not have to be declared in data()
+    return { todos: data.Item };
+    // `todos` is merged with local data
+  }
+};
 ```
 
 ### [](#new-fetch)New Fetch
@@ -197,18 +213,20 @@ async asyncData(context) {
 3. Simply **mutates** the local data
 
 ```js
-data() {
-  return {
-    todos: []
-  };
-},
-async fetch() {
-  const { data } = await axios.get(
-  `https://jsonplaceholder.typicode.com/todos`
-  );
-  // `todos` has to be declared in data()
-  this.todos = data;
-}
+export default {
+  data() {
+    return {
+      todos: []
+    };
+  },
+  async fetch() {
+    const { data } = await axios.get(
+      `https://jsonplaceholder.typicode.com/todos`
+    );
+    // `todos` has to be declared in data()
+    this.todos = data;
+  }
+};
 ```
 
 ## [](#fetch-before-nuxt-2-12)Fetch before Nuxt 2.12
@@ -231,17 +249,21 @@ Here’s the list of notable changes in `fetch` hook compared with **before** an
 **Before -** We had access to the Nuxt `context` on page-level components, given that the `context` is passed as a first parameter.
 
 ```js
-fetch(context) {
-  // …
-}
+export default {
+  fetch(context) {
+    // …
+  }
+};
 ```
 
 **After -** We can access `this` context just like Vue client-side hooks without passing any parameters.
 
 ```js
-fetch() {
-  console.log(this);
-}
+export default {
+  fetch() {
+    console.log(this);
+  }
+};
 ```
 
 ### 3
