@@ -35,7 +35,7 @@ You can access the Nuxt [context](/api/context) within the fetch hook using `thi
 ### Options
 
 - `fetchOnServer`: `Boolean` (default: `true`), call `fetch()` when server-rendering the page
-- `fetchDelay`: `Integer` (default: `200`), set the minimum executing time in milliseconds (to avoid quick flashes)
+- `fetchDelay`: `Integer` (default: `200`), milliseconds to wait before calling `fetch()` (to avoid rendering flashes)
 
 <div class="Alert Alert--green">
   
