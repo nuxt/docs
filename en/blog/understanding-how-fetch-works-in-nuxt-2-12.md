@@ -18,7 +18,7 @@ Nuxt introduces a new `fetch` with the latest release of version 2.12. Fetch pro
 
 In this post, we will explore different features of the fetch hook and try to understand how it works.
 
-## [](#fetch-hook-and-nuxt-lifecycle)Fetch Hook and Nuxt Lifecycle
+## Fetch Hook and Nuxt Lifecycle
 
 In terms of Nuxt lifecycle hooks, `fetch` sits within Vue lifecycle after `created` hook. As we already know that, all Vue lifecycle hooks are called with their `this` context. The same applies to `fetch` hook as well.
 
@@ -36,19 +36,19 @@ export default {
 
 Let’s see what this could mean for page components.
 
-### [](#page-components)Page Components
+### Page Components
 
 With the help of `this` context, fetch is able to mutate component’s data directly. It means we can set the component’s local data without having to dispatch Vuex store action or committing mutation from the page component.
 
 As a result, Vuex becomes optional, but not impossible. We can still use `this.$store` as usual to access Vuex store if required.
 
-## [](#availability-of-fetch-hook)Availability of fetch hook
+## Availability of fetch hook
 
 With `fetch`, we can pre-fetch the data asynchronously **in any Vue components**. It means, other than page components found in `/pages` directory, every other `.vue` components found in `/layouts` and `/components` directories can also benefit from the fetch hook.
 
 Let's see what this could mean for layout and building-block components.
 
-### [](#layout-components)Layout Components
+### Layout Components
 
 Using new `fetch`, now we can make API calls directly from the layout components. This was impossible prior to the release of v2.12.
 
@@ -58,7 +58,7 @@ Using new `fetch`, now we can make API calls directly from the layout components
 - Fetch user related data (i.e. user profile, shopping-cart item count) in the navbar
 - Fetch site relevant data on `layouts/error.vue`
 
-### [](#building-block-components)Building-block (Child/Nested) Components
+### Building-block (Child/Nested) Components
 
 With `fetch` hook available in child components as well, we can off-load some of the data-fetching tasks from page-level components, and delegate them over to nested components. This was also impossible prior to the release of v2.12.
 
@@ -66,13 +66,13 @@ This reduces the responsibility of route-level components to a great extent.
 
 **Possible use case -** We can still pass props to child components, but if the child components need to have their own data-fetching logic, now they can!
 
-## [](#call-order-of-multiple-fetch-hooks)Call order of multiple fetch hooks
+## Call order of multiple fetch hooks
 
 Since each component can have its own data-fetching logic, you may ask what would be the order in which each of them are called?
 
 Fetch hook is called on server-side once (on the first request to the Nuxt app) and then on client-side when navigating to further routes. But since we can define one fetch hook for each component, fetch hooks are called in sequence of their hierarchy.
 
-### [](#disabling-fetch-on-server-side)Disabling fetch on server-side
+### Disabling fetch on server-side
 
 In addition, we can even disable fetch on the server-side if required.
 
@@ -84,7 +84,7 @@ export default {
 
 And this way, the fetch hook will only be called on client-side. When `fetchOnServer` is set to false, `$fetchState.pending` becomes `true` when the component is rendered on server-side.
 
-## [](#error-handling)Error Handling
+## Error Handling
 
 New `fetch` handles error at component level. Let’s see how.
 
@@ -120,7 +120,7 @@ These keys are then used directly in the template area of the component to show 
 </template>
 ```
 
-## [](#fetch-as-a-method)Fetch as a method
+## Fetch as a method
 
 New fetch hook also acts as a method that can be invoked upon user interaction or invoked programmatically from the component methods.
 
@@ -140,7 +140,7 @@ export default {
 };
 ```
 
-## [](#making-nuxt-pages-more-performant)Making Nuxt pages more performant
+## Making Nuxt pages more performant
 
 We can use `:keep-alive-props` prop and `activated` hook to make Nuxt page components more performant using a new fetch hook.
 
@@ -181,13 +181,13 @@ export default {
 };
 ```
 
-## [](#asyncData-vs-fetch)asyncData vs Fetch
+## asyncData vs Fetch
 
 As far as page components are concerned, new `fetch` seems way too similar to `asyncData()` because they both deal with the local data. But there are some key differences worth taking note of as below.
 
 As of Nuxt 2.12, `asyncData` method is still an active feature. Let’s examine some of the key differences between `asyncData` and new `fetch`.
 
-### [](#asyncData)AsyncData
+### AsyncData
 
 1. `asyncData` is limited to only page-level components
 2. `this` context is unavailable
@@ -206,7 +206,7 @@ export default {
 };
 ```
 
-### [](#new-fetch)New Fetch
+### New Fetch
 
 1. `fetch` is available in all Vue components
 2. `this` context is available
@@ -229,22 +229,23 @@ export default {
 };
 ```
 
-## [](#fetch-before-nuxt-2-12)Fetch before Nuxt 2.12
+## Fetch before Nuxt 2.12
 
 If you have been working with Nuxt for a while, then you’ll know that the previous version of `fetch` was significantly different.
 
 > **Is this a breaking change?**
+
 > No, it isn't. Actually, the old fetch can still be used by passing the `context` as the first argument to avoid any breaking changes in your existing Nuxt applications.
 
 Here’s the list of notable changes in `fetch` hook compared with **before** and **after** v2.12.
 
-### 1
+### First
 
 **Before -** `fetch` hook was called before initiating the component, hence `this` wasn’t available inside the fetch hook.
 
 **After -** `fetch` is called after the component instance is created on the server-side when the route is accessed.
 
-### 2
+### Second
 
 **Before -** We had access to the Nuxt `context` on page-level components, given that the `context` is passed as a first parameter.
 
@@ -266,13 +267,13 @@ export default {
 };
 ```
 
-### 3
+### Third
 
 **Before -** Only page (route-level) components were allowed to fetch data on the server-side.
 
 **After -** Now, we can pre-fetch the data asynchronously in any Vue components.
 
-### 4
+### Fourth
 
 **Before -** `fetch` could be called server-side once (on the first request to the Nuxt app) and client-side when navigating to further routes.
 
@@ -280,7 +281,7 @@ export default {
 
 …since we can have one `fetch` for each component, `fetch` hooks are called in sequence of their hierarchy.
 
-### 5
+### Fifth
 
 **Before -** We used the `context.error` function that redirected a page when an error occurred during API calls.
 
@@ -289,9 +290,10 @@ export default {
 No page redirection is performed during error handling.
 
 > **Does this mean we cannot redirect users to a custom error page like we did prior to Nuxt 2.12?**
-> Yes, but with `asyncData()` when it's about page-level component data. Simply use `this.$nuxt.error({ statusCode: 404, message: Data not found' })` to redirect and show a custom error page.
 
-## [](#conclusion)Conclusion
+Yes, but with `asyncData()` when it's about page-level component data. Simply use `this.$nuxt.error({ statusCode: 404, message: Data not found' })` to redirect and show a custom error page.
+
+## Conclusion
 
 New fetch hook brings a lot of improvements and provides more flexibility in fetching data and organising route-level & building-block components in a whole new way!
 
