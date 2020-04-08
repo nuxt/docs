@@ -20,17 +20,17 @@ See [live demo](https://nuxt-new-fetch.surge.sh) and [code example](https://gith
 Every time you need to get **asynchronous** data. `fetch` is called on server-side when rendering the route, and on client-side when navigating.
 
 It exposes `$fetchState` at the component level:
-- `$fetchState.pending`: `Boolean`, let you display a placeholder when `fetch` is being called *on client-side*.
-- `$fetchState.error`: `null` or `Error`, let you show an error message
-- `$fetchState.timestamp`: `Integer`, timestamp of the last fetch, useful for caching with `keep-alive`
+- `$fetchState.pending`: `Boolean`, allows you to display a placeholder when `fetch` is being called *on client-side*.
+- `$fetchState.error`: `null` or `Error`, allows you to display an error message
+- `$fetchState.timestamp`: `Integer`, is a timestamp of the last fetch, useful for caching with `keep-alive`
 
-As well as `$fetch()` to call the `fetch` hook from your component methods or template:
+If you want to call the `fetch` hook from your component methods or template use:
 
 ```html
 <button @click="$fetch">Refresh</button>
 ```
 
-You can access the Nuxt [context](/api/context) with `this.$nuxt.context`.
+You can access the Nuxt [context](/api/context) within the fetch hook using `this.$nuxt.context`.
 
 ### Options
 
@@ -39,7 +39,7 @@ You can access the Nuxt [context](/api/context) with `this.$nuxt.context`.
 
 <div class="Alert Alert--green">
   
-When `fetchOnServer` is `false`, `fetch` will be called only on client-side and `$fetchState.pending` will be `true` when server-rendering the component.
+When `fetchOnServer` is `false`, `fetch` will be called only on client-side and `$fetchState.pending` will return `true` when server-rendering the component.
 
 </div>
 
@@ -106,7 +106,7 @@ If you go directly to [http://localhost:3000/](http://localhost:3000/), you will
 
 <div class="Alert Alert--green">
   
-Nuxt will smartly detect what data you mutated inside `fetch` and optimises the JSON included in the returned HTML.
+Nuxt will intelligently detect what data you mutated inside `fetch` and will optimise the JSON included in the returned HTML.
 
 </div>
 
@@ -143,7 +143,7 @@ When navigating, you should now see `"Loading post #..."` on client-side, and no
 
 <div class="Alert Alert--green">
   
-In the component having `fetch` hook, you will also have access to `this.$fetch()` to re-call `fetch` hook (`$fetchState.pending` will become `true` again).
+If the component contains the `fetch` hook, you will also have access to `this.$fetch()` to re-call the `fetch` hook (`$fetchState.pending` will become `true` again).
 
 </div>
 
