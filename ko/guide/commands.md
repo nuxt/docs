@@ -73,10 +73,9 @@ Nuxt.js는 서버 사이드 렌더링 모드 혹은 정적 파일을 생성하�
 nuxt build
 nuxt start
 ```
-
-You can also set `server.https` in your `nuxt.config.js` with the same set of options passed to [`https.createServer`](https://nodejs.org/api/https.html), should you choose to serve Nuxt.js in HTTPS mode.
-Unix sockets are also available if you set the `server.socket` option in `nuxt.config.js` (or `-n` in the [CLI](https://nuxtjs.org/guide/commands#list-of-commands)).
-When using [Unix sockets](https://en.wikipedia.org/wiki/Berkeley_sockets), make sure not to set the `host` and `port` parameters otherwise the `socket` parameter is ignored.
+또한 `nuxt.config.js`에서  [`https.createServer`](https://nodejs.org/api/https.html)와 같은 옵션으로 `server.https`를 설정할 수 있습니다. HTTPS 모드에서 Nuxt.js를 제공하도록 선택할 수 있습니다.
+`server.socket` 옵션을 `nuxt.config.js`에 설정하는 것으로 Unix sockets 또한 사용가능합니다. (아니면 [CLI](https://nuxtjs.org/guide/commands#list-of-commands)에서 `-n` 사용).
+[Unix 소켓](https://en.wikipedia.org/wiki/Berkeley_sockets)을 사용할 때, `host` 및 `port` 매개 변수를 설정하지 마세요. 그렇지 않으면 `socket` 파라미터가 무시됩니다.
 
 `package.json`는 다음과 같이 작성하는 것을 권장합니다.
 
@@ -107,13 +106,13 @@ npm run generate
 
 이 명령어는 정적 호스팅 서비스에 배포될 모든 파일들이 담긴 `dist` 폴더를 생성할 것입니다.
 
+페이지 에러가 생겼을 때 non-zero 상태 코드를 리턴하고 CI/CD가 배포나 빌드를 실패하도록 하려면, `--fail-on-error` 인자를 사용할 수 있습니다.
 
-To return a non-zero status code when a page error is encountered and let the CI/CD fail the deployment or build, you can use the `--fail-on-error` argument.
 
 ```bash
 npm run generate --fail-on-error
 
-// OR
+// 아니면
 
 yarn generate --fail-on-error
 ```
@@ -127,20 +126,20 @@ yarn generate --fail-on-error
 
 ### Single Page Application Deployment (SPA)
 
-`nuxt generate` still needs its SSR engine during build/generate time while having the advantage of having all our pages pre rendered, and have a high SEO and page load score. The content is generated at *build time*. For example, we can't use it for applications where content depends on user authentication or a real time API (at least for the first load).
+`nuxt generate`는 모든 페이지들이 프리 렌더링되고 향상된 SEO나 페이지 로드 속도를 갖는 이점이 있지만, 여전히 build/generate 시에 SSR 엔진을 필요로 합니다. 컨텐츠는 *빌드 타임*에 생성됩니다. 예를 들어 콘텐츠가 사용자 인증 또는 실시간 API(최소한 첫 번째 로드 시)에 따라 달라지는 애플리케이션에는 사용할 수 없습니다. 
 
-The SPA idea is simple! When SPA mode is enabled using `mode: 'spa'` or `--spa` flag, and we run build, generation automatically starts after the build. This generation contains common meta and resource links, but not page content.
+SPA는 간단합니다! `mode: 'spa'`나 '--spa' 플래그로 SPA 모드가 활성화되면, 우리는 빌드하고 자동적으로 빌드 이후 제너레이션은 시작됩니다. 이 제너레이션은 일반적인 meta나 리소스 링크들은 포함하지만, 페이지 컨텐츠는 갖고 있지 않습니다.
 
-So, for an SPA deployment, you must do the following:
+따라서, SPA 배포에 대해 여러분은 아래를 따라야합니다:
 
- - Change `mode` in `nuxt.config.js` to `spa`.
- - Run `npm run build`.
- - Deploy the created `dist/` folder to your static hosting like Surge, GitHub Pages or nginx.
+ - `nuxt.config.js`의 `mode`를 `spa`로 변경.
+ - `npm run build` 실행.
+ - 생성된 `dist/` 폴더를 Surge, GitHub Pages나 nginx와 같은 정적 호스팅으로 이동.
 
-Another possible deployment method is to use Nuxt as a middleware in frameworks while in `spa` mode. This helps reduce server load and uses Nuxt in projects where SSR is not possible.
+또 다른 가능한 배포 방법은 `spa` 모드에 있는 동안 프레임워크에서 Nuxt를 미들웨어로 사용하는 것입니다. 이를 통해 서버 로드를 줄이고 SSR이 불가능한 프로젝트에서 Nuxt를 사용할 수 있습니다.
 
 <div class="Alert">
 
-Read our [FAQ](/faq) and find nifty examples for deployments to popular hosts.
+우리의 [FAQ](/faq)를 보시고 nifty 예시를 참조해 주세요.
 
 </div>
