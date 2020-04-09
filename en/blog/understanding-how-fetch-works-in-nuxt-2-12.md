@@ -140,7 +140,7 @@ async fetch() {
 }
 ```
 
-Note that no page-redirection is performed by setting the HTTP status code above, but **this is useful for correct SEO.**
+Setting the HTTP status code this way **is useful for correct SEO**.
 
 ## Fetch as a method
 
@@ -305,15 +305,15 @@ export default {
 
 ### 5. Error Handling
 
-**Before -** We used the `context.error` function that redirected a page when an error occurred during API calls.
+**Before -** We used the `context.error` function that showed a custom error page when an error occurred during API calls.
 
 **After -** New `fetch` uses the `$fetchState` object to handle errors in the template area during API calls.
 
-No page redirection is performed during error handling.
+Error handling is performed at component level.
 
-> **Does this mean we cannot redirect users to a custom error page like we did prior to Nuxt 2.12?**
+> **Does this mean we cannot show users a custom error page like we did prior to Nuxt 2.12?**
 
-Yes we can, but only with `asyncData(context)` when it's about page-level component data. Simply use `context.error({ statusCode: 404, message: 'Data not found' })` to redirect and show a custom error page.
+Yes we can, but only with `asyncData()` when it's about page-level component data. Simply use `this.$nuxt.error({ statusCode: 404, message: 'Data not found' })` to show a custom error page.
 
 ## Conclusion
 
