@@ -34,12 +34,12 @@ You can access the Nuxt [context](/api/context) within the fetch hook using `thi
 
 ### Options
 
-- `fetchOnServer`: `Boolean` (default: `true`), call `fetch()` when server-rendering the page
+- `fetchOnServer`: `Boolean` or `Function` (default: `true`), call `fetch()` when server-rendering the page
 - `fetchDelay`: `Integer` (default: `200`), set the minimum executing time in milliseconds (to avoid quick flashes)
 
 <div class="Alert Alert--green">
   
-When `fetchOnServer` is `false`, `fetch` will be called only on client-side and `$fetchState.pending` will return `true` when server-rendering the component.
+When `fetchOnServer` is falsy (`false` or returns `false`), `fetch` will be called only on client-side and `$fetchState.pending` will return `true` when server-rendering the component.
 
 </div>
 
