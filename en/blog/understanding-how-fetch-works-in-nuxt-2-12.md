@@ -313,7 +313,7 @@ No page redirection is performed during error handling.
 
 > **Does this mean we cannot redirect users to a custom error page like we did prior to Nuxt 2.12?**
 
-Yes we can, but only with `asyncData()` when it's about page-level component data. Simply use `this.$nuxt.error({ statusCode: 404, message: 'Data not found' })` to redirect and show a custom error page.
+Yes we can, but only with `asyncData(context)` when it's about page-level component data. Simply use `context.error({ statusCode: 404, message: 'Data not found' })` to redirect and show a custom error page.
 
 ## Conclusion
 
