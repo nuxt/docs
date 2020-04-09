@@ -13,13 +13,7 @@ We recommend you read the [Heroku documentation for Node.js](https://devcenter.h
   </a>
 </div>
 
-First, we need to tell Heroku to install the `devDependencies` of the project (to be able to launch `npm run build`):
-
-```bash
-heroku config:set NPM_CONFIG_PRODUCTION=false
-```
-
-Also, we want our application to listen on the host `0.0.0.0` and run in production mode:
+First, we want our application to listen on the host `0.0.0.0` and run in production mode:
 
 ```bash
 heroku config:set HOST=0.0.0.0
