@@ -124,7 +124,6 @@ When error occurs at **component-level**, we can set HTTP status code on server-
 
 ```js
 async fetch() {
-
   const post = await fetch(`https://jsonplaceholder.typicode.com/posts/${this.$route.params.id}`)
                      .then((res) => res.json())
 
@@ -314,7 +313,7 @@ No page redirection is performed during error handling.
 
 > **Does this mean we cannot redirect users to a custom error page like we did prior to Nuxt 2.12?**
 
-Yes we can, but only with `asyncData()` when it's about page-level component data. Simply use `this.$nuxt.error({ statusCode: 404, message: Data not found' })` to redirect and show a custom error page.
+Yes we can, but only with `asyncData()` when it's about page-level component data. Simply use `this.$nuxt.error({ statusCode: 404, message: 'Data not found' })` to redirect and show a custom error page.
 
 ## Conclusion
 
