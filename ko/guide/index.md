@@ -5,7 +5,7 @@ description: Nuxt는 현대 웹 애플리케이션을 만들기 위해 Vue.js를
 
 >  Nuxt는 현대 웹 애플리케이션을 만들기 위해 Vue.js를 기반으로 하는 진보적인 프레임워크입니다. Nuxt는 Vue.js의 공식 라이브러리(vue, vue-router 및 vuex)와 강력한 개발 도구(webpack, Babel and PostCSS)를 기반으로 합니다. Nuxt의 목표는 뛰어난 개발자 경험과 함께 강력하고 뛰어난 웹 개발을 가능하도록 하는 것입니다.
 
-## What is Nuxt.js?
+## Nuxt.js란 무엇인가?
 
 Nuxt는 공식 Vue 가이드라인에 따라 강력한 아키텍처를 제공하도록 설계된 프레임워크입니다. 점진적으로 도입이 가능하며, 정적 랜딩 페이지에서 복잡한 엔터프라이즈 웹 애플리케이션까지 생성할 수 있습니다.
 
