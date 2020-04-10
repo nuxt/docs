@@ -5,7 +5,7 @@ description: Nuxt는 현대 웹 애플리케이션을 만들기 위해 Vue.js를
 
 >  Nuxt는 현대 웹 애플리케이션을 만들기 위해 Vue.js를 기반으로 하는 진보적인 프레임워크입니다. Nuxt는 Vue.js의 공식 라이브러리(vue, vue-router 및 vuex)와 강력한 개발 도구(webpack, Babel and PostCSS)를 기반으로 합니다. Nuxt의 목표는 뛰어난 개발자 경험과 함께 강력하고 뛰어난 웹 개발을 가능하도록 하는 것입니다.
 
-## Nuxt.js란 무엇인가?
+## Nuxt.js란 무엇인가요?
 
 Nuxt는 공식 Vue 가이드라인에 따라 강력한 아키텍처를 제공하도록 설계된 프레임워크입니다. 점진적으로 도입이 가능하며, 정적 랜딩 페이지에서 복잡한 엔터프라이즈 웹 애플리케이션까지 생성할 수 있습니다.
 
@@ -30,7 +30,7 @@ NuxtJS는 당신의 Vue.js 프로젝트의 추죽으로, 유연하면서도 확�
 - HTTP/2 푸시 헤더가 준비됨
 - 모듈식 아키텍처 확장
 
-## 어떻게 동작합니까?
+## 어떻게 작동하나요?
 
 ![Vue with Webpack and Babel](https://i.imgur.com/avEUftE.png)
 
@@ -62,7 +62,7 @@ Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능
 
 `nuxt`를 시작할때 자동으로 서버 렌더링 하도록 구성된 핫 리로드 및 [Vue Server Renderer](https://ssr.vuejs.org/en/)로 개발 서버를 시작합니다.
 
-### Single Page Applications (SPA)
+## Single Page Applications (SPA)
 
 어떤 이유로든 서버 측 렌더링을 사용하지 않거나 애플리케이션에 정적 호스팅이 필요한 경우 `nuxt --spa`를 사용하여 SPA 모드를 간단하게 사용할 수 있습니다. *generate* 기능과 함께 Node.js 런타임이나 특수 서버 처리를 사용하지 않고도 강력한 SPA 배포 메커니즘을 제공합니다.
 

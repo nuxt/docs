@@ -97,6 +97,22 @@ export default {
 
 모든 모듈들이 모든 것을 동기적으로 처리하는 것은 아닙니다. 예를 들어 API를 호출하거나 비동기 IO를 수행하는 모듈을 개발하려 할 수 있습니다. 이를 위해 Nuxt는 프로미스나 콜백을 반환할 수 있는 비동기 모듈을 지원합니다.
 
+## Build-only 모듈
+
+일반적으로 모듈은 개발 및 빌드 시간에만 필요합니다. `buildModules`를 사용하면 프로덕션 시작 시간을 단축하고 프로덕션 배포를 위한 'node_modules' 크기를 크게 줄일 수 있습니다. 모듈 작성자인 경우 사용자에게 패키지를 `devDependency`로 설치하고 `nuxt.config.js`에는 `modules` 대신 `buildModules`를 사용하라고 제안하는 것이 좋습니다.
+
+다음의 경우가 아닌한 여러분의 모듈은 `buildModule`입니다.
+- serverMiddleware를 제공하는 경우
+- (sentry와 같이) Node.js 런타임 훅에 등록된 경우
+- vue-renderer 동작에 영향을 미치거나 `server:` 또는 `vue-renderer:` 네임스페이스의 후크를 사용합니다.
+- 웹 팩 범위를 벗어나는 기타 모든 기능(힌트: 플러그인과 템플릿이 컴파일되어 웹 팩 범위에 속합니다)
+
+<div class="Alert Alert--orange">
+
+<b>NOTE:</b> 만약 여러분이 <code>buildModules</code>를 제안하실 거라면, 이 기능이 Nuxt <b>2.9</b>에서만 사용가능하다는 것을 언급해 주세요. 이보다 예전 버전의 사용자들은 Nuxt를 업그레이드하거나 <code>modules</code> 섹션을 사용해야 합니다.
+
+</div>
+
 ### async/await 사용
 
 <div class="Alert Alert--orange">
