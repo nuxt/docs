@@ -1,9 +1,6 @@
 ---
-title: Server Side Rendered
-content_title: Server Side Rendered
+title: Рендеринг на сервере (SSR)
+content_title: Рендеринг на сервере (SSR)
 ---
-The most popular mode for Nuxt. With SSR, also called "universal" or "isomorphic" mode, a Node.js server
-will be used to deliver HTML based on your Vue components to the client instead of the pure javascript.
-Using SSR will lead to a large SEO boost, better UX and more opportunities (compared to a traditional Vue SPA).<br><br>
-Because implementing SSR on your own can be really tedious, Nuxt.js gives you full support out of the box
-and will take care of common pitfalls.
+
+Наиболее популярный режим в Nuxt. В режиме SSR, также именуемом "универсальный" или "изоморфный", сервер Node.js будет рендерить HTML перед отправкой на клиент на основе ваших Vue компонентов, вместо отрисовки на чистом javascript. Использование режима SSR улучшает работу с SEO, UX и даёт множество других возможностей (в сравнении с традиционным SPA клиентом на Vue). <br><br> Самостоятельная реализация рендеринга на сервере может стать утомительной задачей, поэтому Nuxt.js предоставляет её полную поддержку из коробки и решает многие подводные камни.
