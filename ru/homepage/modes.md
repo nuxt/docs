@@ -1,4 +1,3 @@
 ---
-title: NUXT<span class="text-nuxt-lightgreen">JS</span> rendering
+title: Рендеринг в NUXT<span class="text-nuxt-lightgreen">JS</span>
 ---
-
