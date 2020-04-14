@@ -1,43 +1,43 @@
 ---
-title: "API: The <nuxt-link> Component"
-description: Link the pages between them with nuxt-link.
+title: "API: Компонент <nuxt-link>"
+description: Создавайте ссылки между страницами с помощью nuxt-link 
 ---
 
-> This component is used to provide navigations between page components and enhance performances with smart prefetching.
+> Этот компонент используется для навигации между компонентами страниц, а так же улучает производительность за счёт умной предварительной загрузки (prefetching)
 
-The `<nuxt-link>` component is an essential of Nuxt. It **should be used to navigate** through your application, similar to the `<router-link>` component in a traditional Vue App. In fact, `<nuxt-link>` extends [`<router-link>`](https://router.vuejs.org/api/#router-link). That means it takes the same properties and can be used in the same manner. Read the [Vue Router documentation](https://router.vuejs.org/api/#router-link) for more information.
+Компонент `<nuxt-link>` — очень важная часть Nuxt. Он **должен быть использован для навигации** внутри вашего приложения, так же как используется компонент `<router-link>` в традиционном приложении Vue. На самом деле `<nuxt-link>` расширяет [`<router-link>`](https://router.vuejs.org/ru/api/#router-link). Это значит, что `<nuxt-link>` принимает те же самые входные параметры и может быть использован точно так же. Смотрите [документацию по Vue Router](https://router.vuejs.org/ru/api/#router-link) для подробностей.
 
-Example (`pages/index.vue`):
+Пример (`pages/index.vue`):
 
 ```html
 <template>
   <div>
-    <h1>Home page</h1>
-    <nuxt-link to="/about">About (internal link that belongs to the Nuxt App)</nuxt-link>
-    <a href="https://nuxtjs.org">External Link to another page</a>
+    <h1>Главная страница</h1>
+    <nuxt-link to="/about">О нас (внутренняя ссылка, принадлежащая Nuxt-приложению)</nuxt-link>
+    <a href="https://nuxtjs.org">внешняя ссылка на другую страницу</a>
   </div>
 </template>
 ```
 
-**Aliases:** `<n-link>`, `<NuxtLink>`, and `<NLink>`
+**Синонимы:** `<n-link>`, `<NuxtLink>`, и `<NLink>`
 
-> Added with Nuxt.js v2.4.0
+> Добавлено в Nuxt.js v2.4.0
 
-To improve the responsiveness of your Nuxt.js applications, when the link will be displayed within the viewport, Nuxt.js will automatically prefetch the *code splitted* page. This feature is inspired by [quicklink.js](https://github.com/GoogleChromeLabs/quicklink) by Google Chrome Labs.
+Для улучшения отзывчивости ваших Nuxt.js приложений, когда ссылка отображается в видимой области на экране, Nuxt.js автоматически инициализирует предварительную загрузку страницы *с разделенным кодом (code-split)*. Эта функция была вдохновлена [quicklink.js](https://github.com/GoogleChromeLabs/quicklink) от Google Chrome Labs.
 
-To disable the prefetching of the linked page, you can use the `no-prefetch` prop. Since Nuxt.js v2.10.0, you can also use the `prefetch` prop set to `false`:
-
-```html
-<n-link to="/about" no-prefetch>About page not pre-fetched</n-link>
-<n-link to="/about" :prefetch="false">About page not pre-fetched</n-link>
-```
-
-You can configure globally this behaviour with [router.prefetchLinks](/api/configuration-router#prefetchlinks).
-
-Since Nuxt.js v2.10.0, if you have set [router.prefetchLinks](/api/configuration-router#prefetchlinks) to `false` globally but you want to prefetch a specific link, you can use the `prefetch` prop:
+Что бы отключить предварительную загрузку страницы, на которую ведёт ссылка, можно использовать входной параметр `no-prefetch`. Начиная с Nuxt.js v2.10.0 так же можно использовать входной параметр `prefetch` со значением `false`:
 
 ```html
-<n-link to="/about" prefetch>About page pre-fetched</n-link>
+<n-link to="/about" no-prefetch>Страница без предварительной загрузки</n-link>
+<n-link to="/about" :prefetch="false">Страница без предварительной загрузки</n-link>
 ```
 
-The `prefetched-class` prop is also available to customize the class added when the code splitted page has been prefetched. Make sure to set up this functionality globally with [router.linkPrefetchedClass](/api/configuration-router#linkprefetchedclass).
+Это поведение можно настроить глобально с помощью настройки [router.prefetchLinks](/api/configuration-router#prefetchlinks).
+
+Начиная с Nuxt.js v2.10.0 если вы установили значение настройки [router.prefetchLinks](/api/configuration-router#prefetchlinks) в `false` глобально, однако хотите предварительной загрузки для конкретной ссылки, то можно использовать входной параметр `prefetch`:
+
+```html
+<n-link to="/about" prefetch>Страница будет предварительно загружена</n-link>
+```
+
+Так же доступен входной параметр `prefetched-class`. Он служит для изменения класса, который добавляется, когда страница с разделенным кодом была предварительно загружена. Эту функциональность можно включить глобально с помощью настройки [router.linkPrefetchedClass](/api/configuration-router#linkprefetchedclass).
