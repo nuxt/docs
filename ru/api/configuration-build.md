@@ -1,26 +1,26 @@
 ---
-title: "API: The build Property"
-description: Nuxt.js lets you customize the webpack configuration for building your web application as you want.
+title: "API: Свойство build"
+description: Nuxt.js позволяет менять конфигурацию webpack для создания веб-приложений так, как вы хотите.
 ---
 
-> Nuxt.js lets you customize the webpack configuration for building your web application as you want.
+> Nuxt.js позволяет менять конфигурацию webpack для создания веб-приложений так, как вы хотите.
 
 ## analyze
 
-> Nuxt.js use [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) to let you visualize your bundles and how to optimize them.
+> Nuxt.js использует библиотеку [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) для того, что бы предоставить возможность визуализации бандлов и возможностей их оптимизации.
 
-- Type: `Boolean` or `Object`
-- Default: `false`
+- Тип: `Boolean` или `Object`
+- Значение по умолчанию: `false`
 
-If an object, see available properties [here](https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin).
+Допустимые свойства для передаваемого объекта можно посмотреть [здесь](https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin).
 
-Example (`nuxt.config.js`):
+Пример (`nuxt.config.js`):
 
 ```js
 export default {
   build: {
     analyze: true,
-    // or
+    // или
     analyze: {
       analyzerMode: 'static'
     }
@@ -30,16 +30,16 @@ export default {
 
 <div class="Alert Alert--teal">
 
-**Info:** you can use the command `yarn nuxt build --analyze` or `yarn nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888). If you are not using `yarn` you can run the command with `npx`.
+**Информация:** можно использовать команду `yarn nuxt build --analyze` или `yarn nuxt build -a` для сборки приложения и запуска анализатора бандла по адресу [http://localhost:8888](http://localhost:8888). Если вы не используете `yarn`, то эту команду можно запустить с помощью `npx`.
 
 </div>
 
 ## babel
 
-> Customize Babel configuration for JavaScript and Vue files. `.babelrc` is ignored by default.
+> Настройте конфигурацию Babel для файлов Javascript и Vue. `.babelrc` по умолчанию игнорируется.
 
-- Type: `Object` See `babel-loader` [options](https://github.com/babel/babel-loader#options) and `babel` [options](https://babeljs.io/docs/en/options)
-- Default:
+- Тип: `Object` Смотрите опции для [`babel-loader`](https://github.com/babel/babel-loader#options) и [`babel`](https://babeljs.io/docs/en/options)
+- Значение по умолчанию:
 
   ```js
   {
@@ -49,37 +49,37 @@ export default {
   }
   ```
 
-The default targets of [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) are `ie: '9'` in the `client` build, and `node: 'current'` in the `server` build.
+По умолчанию целями для [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/blob/dev/packages/babel-preset-app/src/index.js) являются `ie: '9'` для сборки `client`, и `node: 'current'` для сборки `server`.
 
 ### presets
 
-- Type: `Function`
-- Argument:
+- Тип: `Function`
+- Значение:
   1. `Object`: { isServer: true | false }
   2. `Array`:
-      - preset name `@nuxt/babel-preset-app`
-      - [`options`](https://github.com/nuxt/nuxt.js/tree/dev/packages/babel-preset-app#options) of `@nuxt/babel-preset-app`
+      - название предустановленного набора настроек `@nuxt/babel-preset-app`
+      - [`опции`](https://github.com/nuxt/nuxt.js/tree/dev/packages/babel-preset-app#options) пакета `@nuxt/babel-preset-app`
 
-**Note**: The presets configured in `build.babel.presets` will be applied to both, the client and the server build. The target will be set by Nuxt accordingly (client/server). If you want configure the preset differently for the client or the server build, please use `presets` as a function:
+**Заметка**: предустановленный набор настроек, указанный в `build.babel.presets` будет применен к обеим сборкам, как клиентской, так и серверной. Цель сборки будет установлена фреймворком Nuxt соответственно (клиент/сервер). Если вы хотите использовать разные наборы предустановленных настроек для клиента и сервера, то используйте `presets` как функцию:
 
-> We **highly recommend** to use the default preset instead of below customization
+> Мы **крайне рекомендуем** использовать набор по умолчанию, а не настройку, указанную ниже
 
 ```js
 export default {
   build: {
     babel: {
       presets({ isServer }, [ preset, options ]) {
-        // change options directly
+        // Меняем опции напрямую
         options.targets = isServer ? ... :  ...
         options.corejs = ...
-        // return nothing
+        // Ничего не возвращаем
       }
     }
   }
 }
 ```
 
-Or override default value by returning whole presets list:
+Или замените значение по умолчанию вернув целый список настроек:
 
 ```js
 export default {
@@ -93,7 +93,7 @@ export default {
               ...options
             }],
           [
-            // Other presets
+            // Остальные настройки
           ]
         ]
       }
@@ -104,62 +104,73 @@ export default {
 
 ## cache
 
-- Type: `Boolean`
-- Default: `false`
-- ⚠️ Experimental
+- Тип: `Boolean`
+- Значение по умолчанию: `false`
+- ⚠️ Экспериментальная настройка
 
-> Enable cache of [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin#options) and [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
+> Включает кэширование для [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin#options) и [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader)
+
+## crossorigin
+
+- Тип: `String`
+- Значение по умолчанию: `undefined`
+
+  Настройка атрибута `crossorigin` для тегов `<link rel="stylesheet">` и `<script>` в сгенерированном HTML.
+
+  Больше информации: [настройки атрибутов CORS](https://developer.mozilla.org/ru/docs/Web/HTML/CORS_settings_attributes)
 
 ## cssSourceMap
 
-- Type: `boolean`
-- Default: `true` for dev and `false` for production.
+- Тип: `boolean`
+- Значение по умолчанию: `true` для dev и `false` для production.
 
-> Enables CSS Source Map support
+> Включает карту исходного кода для CSS
 
 ## devMiddleware
 
-- Type: `Object`
+- Тип: `Object`
 
-See [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) for available options.
+Доступные опции можно посмотреть здесь: [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware).
+
+Смотрите [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) на предмет доступных опций.
 
 ## devtools
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- Значение по умолчанию: `false`
 
-Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools) inspection.
+Настройка, которая позволяет разрешить или запретить инспекцию с помощью [vue-devtools](https://github.com/vuejs/vue-devtools).
 
-If you already activated through nuxt.config.js or otherwise, devtools enable regardless of the flag.
+Если инструменты разработчика были активированы каким-то образом помимо этой настройки, то этот флаг будет проигнорирован.
 
 ## extend
 
-> Extend the webpack configuration manually for the client & server bundles.
+> Расширение конфигурации webpack вручную для клиентской и серверной сборок.
 
-- Type: `Function`
+- Тип: `Function`
 
-The extend is called twice, one time for the server bundle, and one time for the client bundle. The arguments of the method are:
+Функция `extend` вызывается дважды: один раз для серверной сборки, второй раз для клиентской. Аргументами данной функции являются:
 
-1. The Webpack config object,
-2. An object with the following keys (all boolean except `loaders`): `isDev`, `isClient`, `isServer`, `loaders`.
+1. Объект конфигурации Webpack,
+2. Объект со следующими свойствами (все булевы, кроме `loaders`): `isDev`, `isClient`, `isServer`, `loaders`.
 
 
 <div class="Alert Alert--orange">
 
-  **Warning:**
-  The `isClient` and `isServer` keys provided in are separate from the keys available in [`context`](/api/context).
-  They are **not** deprecated. Do not use `process.client` and `process.server` here as they are `undefined` at this point.
+  **Внимание:**
+  Предоставленные ключи `isClient` и `isServer` отличаются от ключей с таким же названием, которые присутствуют в контексте([`context`](/api/context)).
+  Они **не считаются** устаревшими. Не используйте `process.client` и `process.server` в этой функции, так как на данный момент они всё ещё будут `undefined`.
 
 </div>
 
 
-Example (`nuxt.config.js`):
+Пример (`nuxt.config.js`):
 
 ```js
 export default {
   build: {
     extend (config, { isClient }) {
-      // Extend only webpack config for client-bundle
+      // Расширение конфигурации Webpack только для клиента
       if (isClient) {
         config.devtool = 'source-map'
       }
@@ -168,19 +179,19 @@ export default {
 }
 ```
 
-If you want to see more about our default webpack configuration, take a look at our [webpack directory](https://github.com/nuxt/nuxt.js/tree/dev/packages/webpack/src/config).
+Если вы хотите узнать больше о нашей стандартной конфигурации Webpack, то посмотрите на нашу [директорию webpack](https://github.com/nuxt/nuxt.js/tree/dev/packages/webpack/src/config).
 
-### loaders in extend
+### загрузчики (loaders) в extend
 
-`loaders` has the same object structure as [build.loaders](#loaders), so you can change the options of loaders inside `extend`.
+`loaders` (загрузчики) имеет такую же структуру объекта, как и [build.loaders](#loaders), поэтому можно поменять настройки загрузчиков прямо в `extend`.
 
-Example (`nuxt.config.js`):
+Пример (`nuxt.config.js`):
 
 ```js
 export default {
   build: {
     extend (config, { isClient, loaders: { vue } }) {
-      // Extend only webpack config for client-bundle
+      // Расширение конфигурации Webpack только для клиента
       if (isClient) {
         vue.transformAssetUrls.video = ['src', 'poster']
       }
@@ -191,26 +202,26 @@ export default {
 
 ## extractCSS
 
-> Enables Common CSS Extraction using Vue Server Renderer [guidelines](https://ssr.vuejs.org/en/css.html).
+> Включает извлечение общего CSS согласно [инструкциям](https://ssr.vuejs.org/en/css.html) Vue Server Renderer.
 
-- Type: `Boolean`
-- Default: `false`
+- Тип: `Boolean`
+- Значение по умолчанию: `false`
 
-Using [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin/) under the hood, all your CSS will be extracted into separate files, usually one per component. This allows caching your CSS and JavaScript separately and is worth a try in case you have a lot of global or shared CSS.
+За счёт использования внутри [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin/), весь ваш CSS будет извлечён в отдельные файлы, обычно по одному на компонент. Такое поведение позволяет отдельно кэшировать CSS и JS. Имеет смысл попробовать данную настройку, если у вас много глобального или общего CSS.
 
 <div class="Alert Alert--teal">
 
-**Note:** There was a bug prior to Vue 2.5.18 that removed critical CSS imports when using this options.
+**Информация:** Во Vue до версии 2.5.18 существовал баг, который удалял критически важные импорты CSS при использовании этой настройки.
 
 </div>
 
-You may want to extract all your CSS to a single file.
-There is a workaround for this:
+Возможно, вы захотите извлечь весь CSS в отдельный файл.
+Для этого есть отдельный подход:
 
 <div class="Alert Alert--orange">
-⚠️ It is not recommended extracting everything into a single file.
-Extracting into multiple css files is better for caching and preload isolation.
-It can also improve page performance by downloading and resolving only those resources that are needed.
+⚠️ Не рекомендуется извлекать все стили в один файл. 
+Извлечение в отдельные файлы лучше для кэширования и предварительной загрузки. 
+Так же это может улучшить производительность страницы за счет загрузки только необходимых ресурсов.
 </div>
 
 ```js
@@ -235,10 +246,10 @@ export default {
 
 ## filenames
 
-> Customize bundle filenames.
+> Настройка имен файлов для бандлов.
 
-- Type: `Object`
-- Default:
+- Тип: `Object`
+- Значение по умолчанию:
 
   ```js
   {
@@ -251,7 +262,7 @@ export default {
   }
   ```
 
-This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
+Этот пример заменяет красивые имена файлов на числовые идентификаторы (`nuxt.config.js`):
 
 ```js
 export default {
@@ -262,34 +273,33 @@ export default {
   }
 }
 ```
-
-To understand a bit more about the use of manifests, take a look at this [webpack documentation](https://webpack.js.org/guides/code-splitting/).
+Для того, что бы лучше разобраться с использованием манифестов, можно посмотреть на [документацию webpack]https://webpack.js.org/guides/code-splitting/).
 
 ## friendlyErrors
 
-- Type: `Boolean`
-- Default: `true` (Overlay enabled)
+- Тип: `Boolean`
+- Значение по умолчанию: `true` (Оверлей включен)
 
-Enables or disables the overlay provided by [FriendlyErrorsWebpackPlugin](https://github.com/nuxt/friendly-errors-webpack-plugin)
+Включает или выключает оверлей, предоставляемый плагином [FriendlyErrorsWebpackPlugin](https://github.com/nuxt/friendly-errors-webpack-plugin).
 
 ## hardSource
 
-- Type: `Boolean`
-- Default: `false`
-- ⚠️ Experimental
+- Тип: `Boolean`
+- Значение по умолчанию: `false`
+- ⚠️ Экспериментальная настройка
 
-Enables the [HardSourceWebpackPlugin](https://github.com/mzgoddard/hard-source-webpack-plugin) for improved caching
+Включает плагин [HardSourceWebpackPlugin](https://github.com/mzgoddard/hard-source-webpack-plugin) для улучшенного кэширования.
 
 ## hotMiddleware
 
-- Type: `Object`
+- Тип: `Object`
 
-See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for available options.
+Доступные опции описаны в документации [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware).
 
 ## html.minify
 
-- Type: `Object`
-- Default:
+- Тип: `Object`
+- Значение по умолчанию:
 
 ```js
 {
@@ -305,25 +315,25 @@ See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware
 }
 ```
 
-**Attention:** If you make changes to `html.minify`, they won't be merged with the defaults!
+**Внимание:** Изменения, которые вы вносите в `html.minify`, не будут объединены со значениями по умолчанию!
 
-Configuration for the [html-minifier](https://github.com/kangax/html-minifier) plugin used to minify
-HTML files created during the build process (will be applied for *all modes*).
+Настройки для плагина [html-minifier](https://github.com/kangax/html-minifier), который используется для минимизации
+HTML файлов, созданных в процессе сборки (это применимо ко *всем режимам*).
 
 ## indicator
 
-> Display build indicator for hot module replacement in development (available in `v2.8.0+`)
-- Type: `Boolean`
-- Default: `true`
+> Отобразить индикатор сборки для горячей подмены модулей во время разработки (доступно начиная с версии `v2.8.0+`)
+- Тип: `Boolean`
+- Значение по умолчанию: `true`
 
 ![nuxt-build-indicator](https://user-images.githubusercontent.com/5158436/58500509-93ba0f80-8197-11e9-8524-e115c6d32571.gif)
 
 ## loaders
 
-> Customize options of Nuxt.js integrated webpack loaders.
+> Настройки опций для загрузчиков, которые есть в Nuxt.js по умолчанию.
 
-- Type: `Object`
-- Default:
+- Тип: `Object`
+- Значение по умолчанию:
 
 ```js
 {
@@ -353,46 +363,46 @@ HTML files created during the build process (will be applied for *all modes*).
 }
 ```
 
-> Note: In addition to specifying the configurations in `nuxt.config.js`, it can also be modified by [build.extend](#extend)
+> Обратите внимание: Помимо изменения настроек напрямую в `nuxt.config.js`, они так же могут быть изменены в [build.extend](#extend)
 
 ### loaders.file
 
-> More details are in [file-loader options](https://github.com/webpack-contrib/file-loader#options).
+> Больше информации в [опциях file-loader](https://github.com/webpack-contrib/file-loader#options).
 
 ### loaders.fontUrl and loaders.imgUrl
 
-> More details are in [url-loader options](https://github.com/webpack-contrib/url-loader#options).
+> Больше информации в [опциях url-loader](https://github.com/webpack-contrib/url-loader#options).
 
 ### loaders.pugPlain
 
-> More details are in [pug-plain-loader](https://github.com/yyx990803/pug-plain-loader) or [Pug compiler options](https://pugjs.org/api/reference.html#options).
+> Больше информации в [опциях pug-plain-loader](https://github.com/yyx990803/pug-plain-loader) или [опциях Pug compiler](https://pugjs.org/api/reference.html#options).
 
 ### loaders.vue
 
-> More details are in [vue-loader options](https://vue-loader.vuejs.org/options.html).
+> Больше информации в [опциях vue-loader](https://vue-loader.vuejs.org/options.html).
 
 ### loaders.css and loaders.cssModules
 
-> More details are in [css-loader options](https://github.com/webpack-contrib/css-loader#options).
-> Note: cssModules is loader options for usage of [CSS Modules](https://vue-loader.vuejs.org/guide/css-modules.html#css-modules)
+> Больше информации в [опциях css-loader](https://github.com/webpack-contrib/css-loader#options).
+> Информация: cssModules это опции для использования [Модулей CSS](https://vue-loader.vuejs.org/guide/css-modules.html#css-modules)
 
 ### loaders.less
 
-> You can pass any Less specific options to the `less-loader` via `loaders.less`. See the [Less documentation](http://lesscss.org/usage/#command-line-usage-options) for all available options in dash-case.
+> Можно передавать дополнительные опции для `less-loader` через `loaders.less`. Доступны все опции для командной строки (которые начинаются с `-`), которые описаны в [документации Less](http://lesscss.org/usage/#command-line-usage-options).
 
 ### loaders.sass and loaders.scss
 
-> See the [Node Sass documentation](https://github.com/sass/node-sass/blob/master/README.md#options) for all available Sass options.
-> Note: `loaders.sass` is for [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html)
+> Смотрите [документацию Node Sass](https://github.com/sass/node-sass/blob/master/README.md#options) на предмет всех доступных опций.
+> Информация: `loaders.sass` - это загрузчик для [синтаксиса Sass, построенного на отступах](https://sass-lang.com/documentation/syntax#the-indented-syntax)
 
 ### loaders.vueStyle
 
-> More details are in [vue-style-loader options](https://github.com/vuejs/vue-style-loader#options).
+> Больше информации в [vue-style-loader](https://github.com/vuejs/vue-style-loader#options).
 
 ## optimization
 
-- Type: `Object`
-- Default:
+- Тип: `Object`
+- Значение по умолчанию:
 
   ```js
   {
@@ -410,40 +420,40 @@ HTML files created during the build process (will be applied for *all modes*).
   }
   ```
 
-The default value of `splitChunks.name` is `true` in `dev` or `analyze` mode.
+Значением по умолчанию для `splitChunks.name` является `true` в режимах `dev` или `analyze`.
 
-You can set `minimizer` to a customized Array of plugins or set `minimize` to `false` to disable all minimizers.
-(`minimize` is being disabled for development by default)
+Вы можете задать значением `minimizer` массив плагинов, или присвоить `minimize` значение `false`, чтобы отключить
+любые минификаторы. (`minimize` отключено по умолчанию в режиме разработки)
 
-See [Webpack Optimization](https://webpack.js.org/configuration/optimization).
+Подробнее об [оптимизации Webpack](https://webpack.js.org/configuration/optimization).
 
 ## optimizeCSS
 
-- Type: `Object` or `Boolean`
-- Default:
+- Тип: `Object` or `Boolean`
+- Значение по умолчанию:
   - `false`
-  - `{}` when extractCSS is enabled
+  - `{}` когда включен `extractCSS`
 
-OptimizeCSSAssets plugin options.
+Опции для плагина OptimizeCSSAssets.
 
-See [NMFR/optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin).
+Подробнее: [NMFR/optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin).
 
 ## parallel
 
-- Type: `Boolean`
-- Default: `false`
-- ⚠️ Experimental
+- Тип: `Boolean`
+- Значение по умолчанию: `false`
+- ⚠️ Экспериментальная настройка
 
-> Enable [thread-loader](https://github.com/webpack-contrib/thread-loader#thread-loader) in webpack building
+> Включение [потокового загрузчика (thread-loader)](https://github.com/webpack-contrib/thread-loader#thread-loader) при сборке webpack
 
 ## plugins
 
-> Add webpack plugins
+> Добавление плагинов webpack
 
-- Type: `Array`
-- Default: `[]`
+- Тип: `Array`
+- Значение по умолчанию: `[]`
 
-Example (`nuxt.config.js`):
+Пример (`nuxt.config.js`):
 
 ```js
 import webpack from 'webpack'
@@ -461,13 +471,13 @@ export default {
 
 ## postcss
 
-> Customize [PostCSS Loader](https://github.com/postcss/postcss-loader#usage) plugins.
+> Изменение плагинов для [загрузчика PostCSS Loader](https://github.com/postcss/postcss-loader#usage).
 
-- Type: `Array` (legacy, will override defaults), `Object` (recommended), `Function` or `Boolean`
+- Тип: `Array` (устарело, полностью заменяет значения по умолчанию), `Object` (рекомендовано), `Function` or `Boolean`
 
-  **Note:** Nuxt.js has applied [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env). By default it enables [Stage 2 features](https://cssdb.org/) and [Autoprefixer](https://github.com/postcss/autoprefixer), you can use `build.postcss.preset` to configure it.
+  **Заметка:** Nuxt.js применяет [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env). По умолчанию это включает [возможности  из Stage 2](https://cssdb.org/) и [Autoprefixer](https://github.com/postcss/autoprefixer). Можно использовать `build.postcss.preset` для настроек.
 
-- Default:
+- Значение по умолчанию:
 
   ```js
   {
@@ -475,7 +485,7 @@ export default {
       'postcss-import': {},
       'postcss-url': {},
       'postcss-preset-env': this.preset,
-      'cssnano': { preset: 'default' } // disabled in dev mode
+      'cssnano': { preset: 'default' } // выключено в режиме разработки
     },
     order: 'presetEnvAndCssnanoLast',
     preset: {
@@ -484,18 +494,18 @@ export default {
   }
   ```
 
-Your custom plugin settings will be merged with the default plugins (unless you are using an `Array` instead of an `Object`).
+Ваши настройки плагинов будут объединены с настройками по умолчанию (только если вы не используете массив вместо объекта).
 
-Example (`nuxt.config.js`):
+Пример (`nuxt.config.js`):
 
 ```js
 export default {
   build: {
     postcss: {
       plugins: {
-        // Disable `postcss-url`
+        // Отключаем `postcss-url`
         'postcss-url': false,
-        // Add some plugins
+        // Добавляем дополнительных плагинов
         'postcss-nested': {},
         'postcss-responsive-type': {},
         'postcss-hexrgba': {}
@@ -510,34 +520,34 @@ export default {
 }
 ```
 
-If the postcss configuration is an `Object`, `order` can be used for defining the plugin order:
+Если в качестве настроек для postcss используется `Object`, то параметр `order` может быть использован для изменения порядка плагинов:
 
-- Type: `Array` (ordered plugin names), `String` (order preset name), `Function`
-- Default: `cssnanoLast` (put `cssnano` in last)
+- Тип: `Array` (имена плагинов по порядку), `String` (имя настройки), `Function`
+- Значение по умолчанию: `cssnanoLast` (использовать `cssnano` последним)
 
-Example (`nuxt.config.js`):
+Пример (`nuxt.config.js`):
 
 ```js
 export default {
   build: {
     postcss: {
-      // preset name
+      // название готовой настройки
       order: 'cssnanoLast',
-      // ordered plugin names
+      // упорядоченный список имен плагинов
       order: ['postcss-import', 'postcss-preset-env', 'cssnano']
-      // Function to calculate plugin order
+      // функция, вычисляющая порядок плагинов
       order: (names, presets) => presets.cssnanoLast(names)
     }
   }
 }
 ```
-### postcss plugins & nuxt-tailwindcss
+### postcss плагины и nuxt-tailwindcss
 
-If you want to apply postcss plugin (eg. postcss-pxtorem) on the nuxt-tailwindcss configuration, you have to change order and load first tailwindcss.
+Если вы хотите применить плагин postcss (например, postcss-pxtorem) используя конфигурацию nuxt-tailwindcss, то требуется поменять порядок и начинать с загрузки tailwindcss.
 
-**This setup have no impact on the nuxt-purgecss.**
+**Эта настройка не влияет на nuxt-purgecss.**
 
-Example (`nuxt.config.js`):
+Пример (`nuxt.config.js`):
 
 ```js
 import { join } from 'path'
@@ -562,19 +572,19 @@ export default {
 
 ## profile
 
-- Type: `Boolean`
-- Default: enabled by command line argument `--profile`
+- Тип: `Boolean`
+- Значение по умолчанию: можно включить с помощью аргумента командной строки `--profile`
 
-> Enable the profiler in [WebpackBar](https://github.com/nuxt/webpackbar#profile)
+> Включить профилирование с помощью [WebpackBar](https://github.com/nuxt/webpackbar#profile)
 
 ## publicPath
 
-> Nuxt.js lets you upload your dist files to your CDN for maximum performances, simply set the `publicPath` to your CDN.
+> Nuxt.js позволяет вам загрузить готовые файлы сборки на CDN для наилучшей производительности. Для этого нужно всего лишь указать путь к CDN в `publicPath`.
 
-- Type: `String`
-- Default: `'/_nuxt/'`
+- Тип: `String`
+- Значение по умолчанию: `'/_nuxt/'`
 
-Example (`nuxt.config.js`):
+Пример (`nuxt.config.js`):
 
 ```js
 export default {
@@ -584,19 +594,19 @@ export default {
 }
 ```
 
-Then, when launching `nuxt build`, upload the content of `.nuxt/dist/client` directory to your CDN and voilà!
+Тогда при запуске `nuxt build` загрузите содержимое папки `.nuxt/dist/client` на ваш CDN и готово!
 
 ## quiet
 
-> Suppresses most of the build output log
+> Скрывает большую часть лога сборки
 
-- Type: `Boolean`
-- Default: Enabled when a `CI` or `test` environment is detected by [std-env](https://github.com/blindmedia/std-env)
+- Тип: `Boolean`
+- Значение по умолчанию: включено, если обнаружено `CI` или `test` окружение с помощью [std-env](https://github.com/blindmedia/std-env)
 
 ## splitChunks
 
-- Type: `Object`
-- Default:
+- Тип: `Object`
+- Значение по умолчанию:
 
   ```js
   {
@@ -606,36 +616,36 @@ Then, when launching `nuxt build`, upload the content of `.nuxt/dist/client` dir
   }
   ```
 
-If split codes for `layout`, `pages` and `commons` (common libs: vue|vue-loader|vue-router|vuex...).
+Переключает, нужно ли выделять в отдельные части код из `layout`, `pages` и `commons` (общие библиотеки: vue|vue-loader|vue-router|vuex...).
 
 
 ## ssr
 
-> Creates special webpack bundle for SSR renderer.
+> Создает специальный отдельный бандл для рендерера SSR.
 
-- Type: `Boolean`
-- Default: `true` for universal mode and `false` for spa mode
+- Тип: `Boolean`
+- Значение по умолчанию: `true` для универсального режима; `false` для режима одностраничного приложения
 
-This option is automatically set based on `mode` value if not provided.
+Эта опция выбирается автоматически на основании значения `mode`, если она не была указана явно.
 
 ## styleResources
 
-- Type: `Object`
-- Default: `{}`
+- Тип: `Object`
+- Значение по умолчанию: `{}`
 
 <div class="Alert Alert--orange">
 
-**Warning:** This property is deprecated. Please use the [style-resources-module](https://github.com/nuxt-community/style-resources-module/) instead for improved performance and better DX!
+**Внимание:** Это свойство устарело. Пожалуйста, используйте вместо этого [style-resources-module](https://github.com/nuxt-community/style-resources-module/) для лучшей производительности и процесса разработки!
 
 </div>
 
-This is useful when you need to inject some variables and mixins in your pages without having to import them every time.
+Это может быть полезно, когда вы хотите вставить какие-то переменные или миксины на свои странице, но при этом не импортировать их каждый раз.
 
-Nuxt.js uses https://github.com/yenshih/style-resources-loader to achieve this behaviour.
+Nuxt.js использует https://github.com/yenshih/style-resources-loader для этого поведения.
 
-You need to specify the patterns/path you want to include for the given pre-processors: `less`, `sass`, `scss` or `stylus`
+Вам понадобится указать шаблоны/пути, которые вы хотите включить для любых препроцессоров: `less`, `sass`, `scss` or `stylus`
 
-You cannot use path aliases here (`~` and `@`), you need to use relative or absolute paths.
+Обратите внимание, здесь нельзя использовать псевдонимы путей (`~` и `@`), нужно использовать абсолютные или относительные пути.
 
 `nuxt.config.js`:
 
@@ -658,20 +668,20 @@ You cannot use path aliases here (`~` and `@`), you need to use relative or abso
 
 ## templates
 
-> Nuxt.js allows you provide your own templates which will be rendered based on Nuxt configuration. This feature is specially useful for using with [modules](/guide/modules).
+> Nuxt.js позволяет вам использовать свои шаблоны, которые будут отрисованы на основании конфигурации Nuxt. Этот функционал особенно удобен при использовании с [модулями](/guide/modules).
 
-- Type: `Array`
+- Тип: `Array`
 
-Example (`nuxt.config.js`):
+Пример (`nuxt.config.js`):
 
 ```js
 export default {
   build: {
     templates: [
       {
-        src: '~/modules/support/plugin.js', // `src` can be absolute or relative
-        dst: 'support.js', // `dst` is relative to project `.nuxt` dir
-        options: { // Options are provided to template as `options` key
+        src: '~/modules/support/plugin.js', // `src` может быть абсолютным или относительным
+        dst: 'support.js', // `dst` относительно директории `.nuxt`
+        options: { // Опции передаются в шаблон по ключу `options`
           live_chat: false
         }
       }
@@ -680,12 +690,12 @@ export default {
 }
 ```
 
-Templates are rendered using [`lodash.template`](https://lodash.com/docs/#template) you can learn more about using them [here](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
+Шаблоны отрисовываются с помощью [`lodash.template`](https://lodash.com/docs/#template). Больше информации доступно [здесь](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
 
 ## terser
 
-- Type: `Object` or `Boolean`
-- Default:
+- Тип: `Object` or `Boolean`
+- Значение по умолчанию:
 
 ```js
 {
@@ -703,20 +713,20 @@ Templates are rendered using [`lodash.template`](https://lodash.com/docs/#templa
 }
 ```
 
-Terser plugin options. Set to `false` to disable this plugin.
+Опции для плагина terser (минификация JavaScript). Установка значения в `false` отключает плагин.
 
-`sourceMap` will be enabled when webpack `config.devtool` matches `source-?map`
+`sourceMap` будет включено, если `config.devtool` совпадает с `source-?map`
 
-See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin).
+Смотрите [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin).
 
 ## transpile
 
-- Type: `Array<String | RegExp | Function>`
-- Default: `[]`
+- Тип: `Array<String | RegExp | Function>`
+- Значение по умолчанию: `[]`
 
-If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Each item in transpile can be a package name, a string or regex object matching the dependency's file name.
+Если вы хотите транспилировать конкретные зависимости с помощью Babel, вы можете добавить их в `build.transpile`. Каждый элемент в массиве может быть названием пакета, строкой или регулярным выражением, с которым должно совпадать название файла у зависимости.
 
-Starting with `v2.9.0`, you can also use a function to conditionally transpile, the function will receive a object (`{ isDev, isServer, isClient, isModern, isLegacy }`):
+Начиная с `v2.9.0` так же можно указывать функцию чтобы транспилировать условно. Функция получает объект с булевыми свойствами (`{ isDev, isServer, isClient, isModern, isLegacy }`):
 
 ```js
 {
@@ -730,10 +740,10 @@ Starting with `v2.9.0`, you can also use a function to conditionally transpile, 
 
 ## vueLoader
 
-> Note: This config has been removed since Nuxt 2.0, please use [`build.loaders.vue`](#loaders)instead.
+> Информация: Эта опция убрана начиная с Nuxt 2.0, используйте [`build.loaders.vue`](#loaders) вместо этого.
 
-- Type: `Object`
-- Default:
+- Тип: `Object`
+- Значение по умолчанию:
 
   ```js
   {
@@ -747,13 +757,13 @@ Starting with `v2.9.0`, you can also use a function to conditionally transpile, 
   }
   ```
 
-> Specify the [Vue Loader Options](https://vue-loader.vuejs.org/options.html).
+> Позволяет указывать опции для [загрузчика Vue](https://vue-loader.vuejs.org/options.html).
 
 ## watch
 
-> You can provide your custom files to watch and regenerate after changes. This feature is specially useful for using with [modules](/guide/modules).
+> Можно указывать свои файлы, изменения в которых будут вызывать пересборку. Этот функционал особенно удобен при работе с [модулями](/guide/modules).
 
-- Type: `Array<String>`
+- Тип: `Array<String>`
 
 ```js
 export default {
@@ -767,9 +777,9 @@ export default {
 
 ## followSymlinks
 
-> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example.
+> По умолчанию процесс сборки не просматривает папки, являющиеся символическими ссылками. Этот флаг позволяет включить это поведение, разрешая использования символических ссылок, например, в папке `pages`.
 
-- Type: `Boolean`
+- Тип: `Boolean`
 
 ```js
 export default {
