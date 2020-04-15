@@ -1,33 +1,33 @@
 ---
-title: "API: The <nuxt> Component"
-description: Display the page components inside a layout.
+title: "API: Компонент <nuxt>"
+description: Отображение компонентов страницы в шаблоне.
 ---
 
-> This component is used only in [layouts](/guide/views#layouts) to display the page components.
+> Этот компонент используется только в [шаблонах](/guide/views#layouts) для отображения компонентов страницы
 
-Example (`layouts/default.vue`):
+Пример (`layouts/default.vue`):
 
 ```html
 <template>
   <div>
-    <div>My nav bar</div>
+    <div>Меню навигации</div>
     <nuxt/>
-    <div>My footer</div>
+    <div>Подвал</div>
   </div>
 </template>
 ```
 
-To see an example, take a look at the [layouts example](/examples/layouts).
+Пример можно увидеть на странице [с примером шаблонов](/examples/layouts).
 
-**Props**:
+**Входные параметры**:
 
 - nuxtChildKey: `string`
-  - This prop will be set to `<router-view/>`, useful to make transitions inside a dynamic page and different route.
-  - Default: `$route.path`
+  - Этот входной параметр будет передан в `<router-view/>`, его удобно использовать для настройки переходов между путями внутри динамической страницы.
+  - Значение по умолчанию: `$route.path`
 
-There are 3 ways to handle internal `key` prop of `<router-view/>`.
+Есть три способа работы с внутренним входным параметром `key` компонента `<router-view/>`.
 
-1. `nuxtChildKey` prop
+1. Входной параметр `nuxtChildKey`
 
   ```html
   <template>
@@ -37,7 +37,7 @@ There are 3 ways to handle internal `key` prop of `<router-view/>`.
   </template>
   ```
 
-2. `key` option in page components: `string` or `function`
+2. Опция `key` в компоненте страниц: тип может быть `string` или `function`
 
   ```js
   export default {
@@ -47,8 +47,8 @@ There are 3 ways to handle internal `key` prop of `<router-view/>`.
   }
   ```
 
-- name: `string` (_introduced with Nuxt v2.4.0_)
-  - This prop will be set to `<router-view/>`, used to render named-view of page component.
-  - Default: `default`
+- name: `string` (_добавлено в Nuxt v2.4.0_)
+  - Этот входной параметр будет передан в `<router-view/>`, используется для отображения именованного представления для страницы.
+  - Значение по умолчанию: `default`
 
-To see an example, take a look at the [named-views example](/examples/named-views).
+Пример можно увидеть на странице [с примером именованных представлений](/examples/named-views).
