@@ -60,4 +60,4 @@ export default {
 </script>
 ```
 
-Чтобы узнать больше о промежуточной обработке, см. [middleware guide](/guide/routing#middleware).
+Чтобы узнать больше о промежуточной обработке, см. [руководство по middleware](/guide/routing#middleware).
