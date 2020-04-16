@@ -1,51 +1,51 @@
 ---
-title: "API: The <client-only> Component"
-description: Render a component only on client-side, and display a placeholder text on server-side.
+title: "API: Компонент <client-only>"
+description: Отрисовка компонента только на стороне клиента, при этом отрисовывая заглушку на стороне сервера.
 ---
 
-> This component is used to purposely render a component only on client-side. To import a component only on the client, register the component in a [client-side only plugin](/guide/plugins#client-side-only).
+> Этот компонент используется для того, чтобы целенаправленно отрисовать его дочерний компонент только на клиентской стороне. Для того чтобы импортировать компонент только на клиенте, требуется зарегистрировать компонент в [плагинах, активных только на клиенте](/guide/plugins#client-side-only).
 
 <div class="Alert Alert--orange">
 
-**Warning:** If you are using a version of Nuxt < `v2.9.0`, use `<no-ssr>` instead of `<client-only>`
+**Внимание:** Если вы используете версию Nuxt < `v2.9.0`, тогда используйте `<no-ssr>` вместо `<client-only>`
 
 </div>
 
 
-**Props**:
+**Входные параметры**:
 - placeholder: `string`
-  - Use a text as placeholder until `<client-only />` is mounted on client-side.
+  - Использовать текст в качестве заглушки, пока `<client-only />` монтируется на стороне клиента.
 
 ```html
 <template>
   <div>
     <sidebar />
     <client-only placeholder="Loading...">
-      <!-- this component will only be rendered on client-side -->
+      <!-- Этот компонент будет отрисован только на стороне клиента -->
       <comments />
     </client-only>
   </div>
 </template>
 ```
 
-**Slots**:
+**Слоты**:
 
 - placeholder:
-  - Use a slot as placeholder until `<client-only />` is mounted on client-side.
+  - Использовать слот в качестве заглушки, пока `<client-only />` монтируется на стороне клиента.
  
  ```html
 <template>
   <div>
     <sidebar />
     <client-only>
-      <!-- this component will only be rendered on client-side -->
+      <!-- Этот компонент будет отрисован только на стороне клиента -->
       <comments />
   
-      <!-- loading indicator, rendered on server-side -->
+      <!-- индикатор загрузки, отрисовывается на стороне сервера -->
       <comments-placeholder slot="placeholder" />
     </client-only>
   </div>
 </template>
 ```
 
-This component is imported from [egoist/vue-client-only](https://github.com/egoist/vue-client-only). Thanks [@egoist](https://github.com/egoist)!
+Этот компонент импортирован из [egoist/vue-client-only](https://github.com/egoist/vue-client-only). Спасибо, [@egoist](https://github.com/egoist)!
