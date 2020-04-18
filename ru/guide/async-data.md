@@ -1,48 +1,48 @@
 ---
-title: Async Data
-description: You may want to fetch data and render it on the server-side. Nuxt.js adds an `asyncData` method to let you handle async operations before setting the component data.
+title: Асинхронные данные
+description: Возможно вы захотите получить данные и выполнить их отрисовку на стороне сервера. Nuxt.js добавляет метод `asyncData`, который позволяет вам выполнить асинхронные операции перед установкой `data` компонента.
 ---
 
-> You may want to fetch data and render it on the server-side. Nuxt.js adds an `asyncData` method to let you handle async operations before initializing the component
+> Возможно вы захотите получить данные и выполнить их отрисовку на стороне сервера. Nuxt.js добавляет метод `asyncData`, который позволяет вам выполнить асинхронные операции перед инициализацией компонента.
 
 <div>
   <a href="https://vueschool.io/courses/async-data-with-nuxtjs?friend=nuxt" target="_blank" class="Promote">
-    <img src="/async-data-with-nuxtjs.png" srcset="/async-data-with-nuxtjs-2x.png 2x" alt="AsyncData by vueschool"/>
+    <img src="/async-data-with-nuxtjs.png" srcset="/async-data-with-nuxtjs-2x.png 2x" alt="AsyncData от vueschool"/>
     <div class="Promote__Content">
-      <h4 class="Promote__Content__Title">Async Data with Nuxt.js</h4>
-      <p class="Promote__Content__Description">Learn how to manage asynchronous data with Nuxt.js.</p>
-      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js development.</p>
+      <h4 class="Promote__Content__Title">Асинхронные данные в Nuxt.js</h4>
+      <p class="Promote__Content__Description">Научитесь управлять асинхронными данными в Nuxt.js.</p>
+      <p class="Promote__Content__Signature">Видео курсы созданные VueSchool для поддержки разработки Nuxt.js.</p>
     </div>
   </a>
 </div>
 
-## The asyncData method
+## Метод asyncData
 
-Sometimes you just want to fetch data and pre-render it on the server without using a store. 
-`asyncData` is called every time before loading the **page** component.
-It will be called server-side once (on the first request to the Nuxt app) and client-side when navigating to further routes. 
-This method receives [the context](/api/context) as the first argument, you can use it to fetch some data and Nuxt.js will merge it with the component data.
+Иногда вам нужно получить данные и выполнить их предварительную отрисовку на стороне сервера без использования хранилища. 
+`asyncData` вызывается каждый раз перед загрузкой компонента **страницы**.
+Метод будет вызван единожды на стороне сервера (при первом запросе к Nuxt приложению) и на стороне клиента при переходе по маршрутам. 
+Этот метод принимает [context](/api/context) как первый аргумент, вы можете использовать его для получения нужных данных и Nuxt.js объединит их с `data` компонента.
 
-Nuxt.js will automatically merge the returned object with the component data.
+Nuxt.js автоматически объединит возвращаемый объект с `data` компонента.
 
 <div class="Alert Alert--orange">
 
-You do **NOT** have access to the component instance through `this` inside `asyncData` because it is called **before initializing** the component.
+Вы **НЕ** имеете доступ к корневому экземпляру через `this` внутри `asyncData` так как он вызывается **перед инициализацией** компонента.
 
 </div>
 
-Nuxt.js offers you different ways to use `asyncData`. Choose the one you're the most familiar with:
+Nuxt.js предлагает несколько вариантов использования `asyncData`. Выберите наиболее знакомый:
 
-1. Returning a `Promise`. Nuxt.js will wait for the promise to be resolved before rendering the component.
-2. Using the [async/await](https://javascript.info/async-await) ([learn more about it](https://zeit.co/blog/async-and-await))
+1. Возвращая `Promise`. Nuxt.js будет ожидать его состояния resolved перед тем, как выполнить отрисовку компонента.
+2. Используя директивы [async/await](https://javascript.info/async-await) ([подробнее об этом](https://zeit.co/blog/async-and-await))
 
 <div class="Alert Alert--grey">
 
-We are using [axios](https://github.com/mzabriskie/axios) to make isomorphic HTTP requests, we <strong>strongly recommend</strong> to use our [axios module](https://axios.nuxtjs.org/) for your Nuxt projects.
+Мы используем [axios](https://github.com/mzabriskie/axios) для выполнения изоморфных HTTP запросов, мы <strong>очень рекомендуем</strong> использовать наш [модуль axios](https://axios.nuxtjs.org/) для ваших проектов на Nuxt.
 
 </div>
 
-If you are using `axios` directly from `node_modules` and used the `axios.interceptors` to add interceptors to transform the data, make sure to create an instance before adding interceptors. If not, when you refresh the serverRender page,  the interceptors will be added multiple times, which will cause a data error.
+Если вы подключаете `axios` прямо из `node_modules` и используете `axios.interceptors` для добавления перехватчиков для обработки данных, убедитесь, что создали экземпляр перед добавлением перехватчиков. Если этого не сделать, то при обновлении страницы на сервере перехватчики будут добавляться несколько раз, что приведет к ошибке данных.
 
 ```js
 import axios from 'axios'
@@ -56,7 +56,7 @@ myaxios.interceptors.response.use(function (response) {
 })
 ```
 
-### Returning a Promise
+### Возвращая Promise
 
 ```js
 export default {
@@ -69,7 +69,7 @@ export default {
 }
 ```
 
-### Using async/await
+### Используя async/await
 
 ```js
 export default {
@@ -81,10 +81,10 @@ export default {
 ```
 
 
-### Displaying the data
+### Отображение данных
 
-The result from asyncData will be **merged** with data.
-You can display the data inside your template like you're used to doing:
+Результат asyncData будет **объединён** с `data`.
+Вы можете отображать данные внутри вашего шаблона как обычно:
 
 ```html
 <template>
@@ -92,19 +92,18 @@ You can display the data inside your template like you're used to doing:
 </template>
 ```
 
-## The Context
+## Аргумент `Context`
 
-To see the list of available keys in `context`, take a look at the [API Essential `context`](/api/context).
+Чтобы увидеть список доступных ключей `context`, взгляните на [API контекста страниц](/api/context).
 
-### Use `req`/`res` objects
+### Используя объекты `req`/`res`
 
-When `asyncData` is called on server side, you have access to the `req` and `res` objects of the user request.
+Когда `asyncData` вызывается на стороне сервера, вы имеете доступ к объектам `req` и `res` пользовательского запроса.
 
 ```js
 export default {
   async asyncData ({ req, res }) {
-    // Please check if you are on the server side before
-    // using req and res
+    // Проверьте на стороне сервера прежде, чем использовать req и res
     if (process.server) {
       return { host: req.headers.host }
     }
@@ -114,34 +113,34 @@ export default {
 }
 ```
 
-### Accessing dynamic route data
+### Доступ к данным динамического маршрута
 
-You can use the `context` parameter to access dynamic route data as well!
-For example, dynamic route params can be retrieved using the name of the file or folder that configured it.
-If you've defined a file named `_slug.vue` in your `pages` folder, you can access the value via `context.params.slug`:
+Вы также можете использовать параметр `context` для доступа к данным динамического маршрута!
+К примеру, параметры динамического маршрута могут быть получены с использованием имени файла или папки.
+Если вы создаете файл с именем `_slug.vue` в папке`pages`, вы можете получить доступ к значениям через `context.params.slug`:
 
 ```js
 export default {
   async asyncData ({ params }) {
-    const slug = params.slug // When calling /abc the slug will be "abc"
+    const slug = params.slug // Когда вызываем /abc slug будет "abc"
     return { slug }
   }
 }
 ```
 
 
-### Listening to query changes
+### Отслеживание изменений query-параметров
 
-The `asyncData` method **is not called** on query string changes by default.
-If you want to change this behavior, for example when building a pagination component,
-you can set up parameters that should be listened to with the `watchQuery` property of your page component.
-Learn more on the [API `watchQuery` page](/api/pages-watchquery) page.
+Метод `asyncData` по умолчанию **не вызывается** при изменении query-параметра.
+Если вы хотите изменить это поведение, например, для постраничной навигации, то
+вы можете настроить параметры, которые должны отслеживаться в свойстве `watchQuery` вашего компонента страницы.
+Узнайте больше на странице [API `watchQuery` страницы](/api/pages-watchquery).
 
-## Handling Errors
+## Обработка ошибок
 
-Nuxt.js adds the `error(params)` method in the `context`, which you can call to display the error page. `params.statusCode` will be also used to render the proper status code from the server-side.
+Nuxt.js добавляет метод `error(params)` в `context`, который вы можете вызвать для отображения страницы ошибки. `params.statusCode` также будет использоваться для визуализации подходящего кода ошибки со стороны сервера.
 
-Example with a `Promise`:
+Пример с `Promise`:
 
 ```js
 export default {
@@ -158,4 +157,4 @@ export default {
 ```
 
 
-To customize the error page, take a look at the [views guide](/guide/views#layouts) .
+Для изменения вида страницы ошибки взгляните на [руководство по представлениям](/guide/views#layouts) .
