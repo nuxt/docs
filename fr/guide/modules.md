@@ -1,7 +1,6 @@
 ---
 title: Modules
-description: Les modules sont des extensions de Nuxt.js qui peuvent étendre ses fonctionnalités de base et d'y ajouter 
-des intégrations.
+description: Les modules sont des extensions de Nuxt.js qui peuvent étendre ses fonctionnalités de base et d'y ajouter des intégrations.
 ---
 
 > Les modules sont des extensions de Nuxt.js qui peuvent étendre ses fonctionnalités de base et d'y ajouter des intégrations.
@@ -33,8 +32,7 @@ Les modules sont parfaits si vous:
 - Êtes un membre d'une **entreprise** qui valorise **la qualité** et **la ré-utilisabilité**.
 - Êtes souvent contre les délais courts et que vous n'avez pas le temps d'entrer dans les détails de chaque nouvelle 
 bibliothèque ou intégration.
-- En avez assez de devoir gérer les modifications apportées aux interfaces de bas niveau, et avez besoin de chose qui 
-**fonctionne simplement™**
+- En avez assez de devoir gérer les modifications apportées aux interfaces de bas niveau, et avez besoin de chose qui **fonctionne simplement™**
 
 ## Liste des modules de Nuxt.js
 
@@ -80,8 +78,7 @@ Ceci est une référence à l'instance courante de Nuxt. Se référer à
 
 **`this`**
 
-Contexte des modules. Veuillez consulter la documentation de la classe 
-[contenru de module](/api/internals-module-container) pour les méthodes disponibles.
+Contexte des modules. Veuillez consulter la documentation de la classe [ModuleContainer](/api/internals-module-container) pour les méthodes disponibles.
 
 **`module.exports.meta`**
 

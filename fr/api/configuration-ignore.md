@@ -32,7 +32,7 @@ middleware/foo/*.js
 !middleware/foo/bar.js
 ```
 
-> Plus d'informations sur les détails de la spécification dans la [documentation de gitignore](https://git-scm.com/docs/gitignore)
+> Plus d'informations sur les détails de la spécification dans la [documentation de gitignore](https://git-scm.com/docs/gitignore).
 
 ## La propriété ignorePrefix
 

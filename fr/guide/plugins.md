@@ -74,7 +74,8 @@ module.exports = {
   }
 }
 ```
-You can refer to the [configuration build](/api/configuration-build/#transpile) docs for more build options.
+Vous pouvez vous référer à la documentation de [configuration](/api/configuration-build/#transpile) 
+pour plus d'options de construction.
 
 ## Injection dans $root et le contexte
 
