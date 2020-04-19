@@ -96,6 +96,6 @@ By default, `srcDir` is the same as `rootDir`.
 
 <div class="Alert Alert--nuxt-green">
 
-<b>Info:</b> Inside your `vue` templates, if you need to link to your `assets` or `static` directory, use `~/assets/your_image.png` and `~/static/your_image.png`.
+<b>Info:</b> Inside your `vue` templates, if you need to link to your `assets` or `static` directory, use `~assets/your_image.png` and `~static/your_image.png`.
 
 </div>
