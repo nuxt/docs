@@ -63,9 +63,9 @@ export default {
 
 Pour en savoir plus sur l'attribut `plugins`, consultez [La propriété `plugins`](/api/configuration-plugins) de l'API.
 
-### ES6 plugins (EN)
+### ES6 plugins
 
-If the plugin is located in `node_modules` and exports an ES6 module, you may need to add it to the `transpile` build option:
+Si le plugin est situé dans `node_modules` et exporter en tant que module ES6, vous devrez ajouter l'option de construction `transpile` :
 
 ```js
 module.exports = {
@@ -258,20 +258,20 @@ export default {
 }
 ```
 
-### Name conventional plugin (EN)
+### Convention de nommage d'un plugin
 
-If plugin is assumed to be run only in client or server side, `.client.js` or `.server.js` can be applied as extension of plugin file, the file will be automatically included in corresponding side.
+Si votre plugin doit être executé uniquement côté client ou serveur, `.client.js` ou `.server.js` peut être appliqué comme extension de fichier, le fichier sera automatiquement inclu dans le mode correspondant.
 
-Example:
+Exemple:
 
 `nuxt.config.js`:
 
 ```js
 export default {
   plugins: [
-    '~/plugins/foo.client.js', // only in client side
-    '~/plugins/bar.server.js', // only in server side
-    '~/plugins/baz.js' // both client & server
+    '~/plugins/foo.client.js', // côté client uniquement
+    '~/plugins/bar.server.js', // côté serveur uniquement
+    '~/plugins/baz.js' // côté client et serveur
   ]
 }
 ```
