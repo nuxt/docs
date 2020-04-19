@@ -19,7 +19,7 @@
       "routeName": "section-slug"
     },
     {
-      "name": "Examples",
+      "name": "Exemples",
       "slug": "examples",
       "type": "dynamic",
       "routeName": "section-slug"
@@ -31,7 +31,7 @@
       "routeName": "section-slug"
     },
     {
-      "name": "Resources",
+      "name": "Ressources",
       "slug": "resources",
       "type": "static"
     },
