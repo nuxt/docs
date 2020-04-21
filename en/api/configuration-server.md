@@ -38,6 +38,9 @@ export default {
 }
 ```
 
+You can find additional information on creating server keys and certificates on `localhost` on [certificates for localhost](https://letsencrypt.org/docs/certificates-for-localhost/) article.
+
+
 ## Example using sockets configuration
 
 ```js
