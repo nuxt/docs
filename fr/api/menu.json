@@ -47,7 +47,7 @@
     "title": "Configuration",
     "links": [
       {
-        "name": "build (EN)", "to": "/configuration-build",
+        "name": "build", "to": "/configuration-build",
         "contents": [
           { "name": "analyze", "to": "#analyze" },
           { "name": "babel", "to": "#babel" },
