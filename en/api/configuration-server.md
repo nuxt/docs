@@ -22,7 +22,8 @@ export default {
 This lets you specify the [host and port](/faq/host-port) for your Nuxt.js server instance.
 
 ## Example using HTTPS configuration
-nuxt.config.js
+
+`nuxt.config.js`
 ```js
 import path from 'path'
 import fs from 'fs'
@@ -36,24 +37,6 @@ export default {
   }
 }
 ```
-/server/index.js
-```js
-// Add to top of file:
-const https = require('https')
-...
-...
-...
-// Listen to the server
-// replace app.listen(port, host) with:
-https.createServer(nuxt.options.server.https, app).listen(port, host)
-// Update console message to reflect 'https' insted of 'http'
-consola.ready({
-  message: `Server listening on https://${host}:${port}`,
-  badge: true
-  })
-```
-You can find additional information on creating server keys and certificates
-including how to use them when developing on ```localhost``` from the article [How to get HTTPS working in localhost development environment](https://reactpaths.com/how-to-get-https-working-in-localhost-development-environment-f17de34af046).
 
 ## Example using sockets configuration
 
