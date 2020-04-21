@@ -1,6 +1,6 @@
 ---
 title: "API: 컨텍스트"
-description: `context`는 Vue 컴포넌트에서 일반적으로 사용할 수 없는 Nuxt의 추가 객체/파라미터를 제공합니다. `context`는 `asyncData`, `plugins`, `middlewares`, `modules`, 그리고 `store/nuxtServerInit`와 같은 특별한 nuxt 라이프사이클 영역에서 사용할 수 있습니다. 
+description: 'context`는 Vue 컴포넌트에서 일반적으로 사용할 수 없는 Nuxt의 추가 객체/파라미터를 제공합니다. `context`는 `asyncData`, `plugins`, `middlewares`, `modules`, 그리고 `store/nuxtServerInit`와 같은 특별한 nuxt 라이프사이클 영역에서 사용할 수 있습니다.'
 ---
 
 > `context`는 Vue 컴포넌트에서 일반적으로 사용할 수 없는 Nuxt의 추가 객체/파라미터를 제공하고 [`asyncData`](/api), [`fetch`](/api/pages-fetch), [`plugins`](/guide/plugins), [`middleware`](/guide/routing#middleware) 그리고 [`nuxtServerInit`](/guide/vuex-store#the-nuxtserverinit-action)와 같은 특정 Nuxt 라이프사이클에서 사용가능합니다.
