@@ -79,7 +79,7 @@
           { "to": "#external-packages", "name": "External Packages" },
           { "to": "#vue-plugins", "name": "Vue Plugins" },
           { "to": "#inject-in-root-amp-context", "name": "Inject in $root & context" },
-          { "to": "#client-side-only", "name": "Client-side only" }
+          { "to": "#client-or-server-side-only", "name": "Client or server side only" }
         ]
       },
       {
