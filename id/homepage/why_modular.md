@@ -1,4 +1,4 @@
 ---
 title: Modular
 ---
-Nuxt is based on a powerful modular architecture. You can choose from more than 50 modules to make your development faster and easier. You don't have to reinvent the wheel to get PWA benefits, add Google Analytics to your page or generate a sitemap.
+Nuxt didasarkan pada arsitektur modular yang kuat. Anda dapat memilih lebih dari 50 modul untuk membuat pengembangan Anda lebih cepat dan lebih mudah. Anda tidak harus menemukan pandangan untuk mendapatkan manfaat PWA, menambahkan Google Analytics ke halaman Anda atau membuat peta situs.
