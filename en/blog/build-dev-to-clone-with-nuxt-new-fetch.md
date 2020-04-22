@@ -272,7 +272,7 @@ Pay attention to this code block:
 
 ```js
 async fetch() {
-	const articles = await fetch(`https://dev.to/api/articles?tag=nuxt&state=rising&page=${this.currentPage}`).then((res) => res.json())
+  const articles = await fetch(`https://dev.to/api/articles?tag=nuxt&state=rising&page=${this.currentPage}`).then((res) => res.json())
 
   this.articles = this.articles.concat(articles)
 }
