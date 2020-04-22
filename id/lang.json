@@ -7,7 +7,7 @@
   },
   "headerLinks": [
     {
-      "name": "Guide",
+      "name": "Panduan",
       "slug": "guide",
       "type": "dynamic",
       "routeName": "section-slug"
@@ -19,7 +19,7 @@
       "routeName": "section-slug"
     },
     {
-      "name": "Examples",
+      "name": "Contoh",
       "slug": "examples",
       "type": "dynamic",
       "routeName": "section-slug"
@@ -31,7 +31,7 @@
       "routeName": "section-slug"
     },
     {
-      "name": "Resources",
+      "name": "Sumber Daya",
       "slug": "resources",
       "type": "static"
     },
@@ -42,10 +42,10 @@
     }
   ],
   "text": {
-    "an_error_occurred": "An error occurred",
+    "an_error_occurred": "Terjadi error",
     "api_page_not_found": "Halaman API tidak ditemukan",
-    "please_define_title": "Please define a title in the front matter",
-    "please_define_description": "Please define a description in the front matter",
+    "please_define_title": "Silakan tentukan judul di bagian depan",
+    "please_define_description": "Silahkan tentukan deskripsi di bagian depan",
     "search": "Cari",
     "version": "Versi"
   },
@@ -66,16 +66,16 @@
     },
     "newsletter_form": {
       "email": "Email",
-      "subscribing": "Subscribing...",
-      "subscribe": "Subscribe",
+      "subscribing": "Berlangganan...",
+      "subscribe": "Berlangganan",
       "subscribed_messages": {
-        "pre": "An email to confirm your subscription has been sent to",
+        "pre": "Sebuah email konfirmasi berlangganan Anda telah dikirim",
         "post": "💚"
       }
     }
   },
   "guide": {
-    "release_notes": "Release Notes",
+    "release_notes": "Catatan Rilis",
     "contribute": "Jumpa kesalahan atau ingin berkontribusi pada dokumentasi ini?",
     "edit_on_github": "Sunting halaman ini di GitHub!"
   }
