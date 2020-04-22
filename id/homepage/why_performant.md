@@ -1,6 +1,6 @@
 ---
-title: Performant
+title: Kinerja
 ---
-With Nuxt.js, your application will be optimized out of the box.
-We do our best to build performant applications by utilizing Vue.js and Node.js best practices.
-To squeeze every unnecessary bit out of your app Nuxt includes a bundle analyzer and lots of opportunities to fine-tune your app.
+Dengan Nuxt.js, aplikasi Anda akan dioptimalkan secara luar biasa.
+Kami melakukan yang terbaik untuk membangun aplikasi berkinerja dengan memanfaatkan praktik terbaik Vue.js dan Node.js.
+Untuk memeras setiap bit yang tidak perlu dari aplikasi Anda, Nuxt menyertakan penganalisis bundel dan banyak peluang untuk menyempurnakan aplikasi Anda.
