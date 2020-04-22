@@ -1,4 +1,4 @@
 ---
-title: Nuxt<span class="text-nuxt-lightgreen">JS</span> Newsletter
+title: Berita Nuxt<span class="text-nuxt-lightgreen">JS</span>
 ---
-Get the latest Nuxt news to your inbox, curated by the core team and contributors.
+Dapatkan berita terbaru Nuxt di inbox Anda, dikuratori oleh tim inti dan kontributor.
