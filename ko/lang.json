@@ -1,6 +1,6 @@
 {
   "iso": "ko",
-  "docVersion": "0.10.7",
+  "docVersion": "2.12.X",
   "links": {
     "download": "다운로드",
     "live_edit": "라이브 수정"
@@ -51,25 +51,25 @@
   },
   "homepage": {
     "meta": {
-      "title": "Nuxt.js - 범용 Vue.js 어플리케이션",
-      "description": "Nuxt.js은 서버 사이드 렌더링, 코드 분리, 핫 리로딩, 정적 생성기 등과 함께 Vue.js 어플리케이션을 만들기 위한 최소한의 프레임워크입니다!"
+      "title": "Nuxt.js - Vue.js 프레임워크",
+      "description": "uxt.js는 Vue.js 애플리케이션 개발을 즐겁게 하는 데 필요한 모든 구성을 사전 설정합니다. Nuxt.js는 범용, SPA 및 정적 생성 애플리케이션을 만들 수 있습니다."
     },
     "welcome": {
       "get_started": "시작하기",
       "github_stars": "26K+ github stars"
     },
     "why": {
-      "try_nuxtjs_online": "Try NuxtJS Online"
+      "try_nuxtjs_online": "NuxtJS Online 시작하기"
     },
     "sponsors": {
       "become_a_sponsor": "스폰서되기"
     },
     "newsletter_form": {
       "email": "Email",
-      "subscribing": "Subscribing...",
+      "subscribing": "구독중...",
       "subscribe": "Subscribe",
       "subscribed_messages": {
-        "pre": "An email to confirm your subscription has been sent to",
+        "pre": "구독 확인용 이메일이 주소로 전송되었습니다.",
         "post": "💚"
       }
     }
