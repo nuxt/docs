@@ -1,6 +1,6 @@
 {
   "iso": "ko",
-  "docVersion": "2.12.X",
+  "docVersion": "0.10.7",
   "links": {
     "download": "다운로드",
     "live_edit": "라이브 수정"
@@ -52,7 +52,7 @@
   "homepage": {
     "meta": {
       "title": "Nuxt.js - Vue.js 프레임워크",
-      "description": "uxt.js는 Vue.js 애플리케이션 개발을 즐겁게 하는 데 필요한 모든 구성을 사전 설정합니다. Nuxt.js는 범용, SPA 및 정적 생성 애플리케이션을 만들 수 있습니다."
+      "description": "Nuxt.js는 Vue.js 애플리케이션 개발을 즐겁게 하는 데 필요한 모든 구성을 사전 설정합니다. Nuxt.js는 범용, SPA 및 정적 생성 애플리케이션을 만들 수 있습니다."
     },
     "welcome": {
       "get_started": "시작하기",
