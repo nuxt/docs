@@ -23,7 +23,7 @@ Hook                 | Arguments                                  | When
 `builder:extendPlugins`| (plugins)                                  | Generating plugins
 `build:templates`    | ({ templatesFiles, templateVars, resolve }) | Generating `.nuxt` template files
 `build:extendRoutes` | (routes, resolve)                          | Generating routes
-`build:config`       | (webpackConfigs)                           | Before configuration of compilers
+`webpack:config`       | (webpackConfigs)                           | Before configuration of compilers
 `build:compile`      | ({ name, compiler })                       | Before webpack compile (compiler is a webpack `Compiler` instance), if universal mode, called twice with name `'client'` and `'server'`
 `build:compiled`     | ({ name, compiler, stats })                | webpack build finished
 `build:done`         | (nuxt)                                     | Nuxt build finished

@@ -120,6 +120,28 @@ These keys are then used directly in the template area of the component to show 
 </template>
 ```
 
+When error occurs at **component-level**, we can set HTTP status code on server-side by checking `process.server` in fetch hook and follow it up with `throw new Error()` statement.
+
+```js
+async fetch() {
+  const post = await fetch(`https://jsonplaceholder.typicode.com/posts/${this.$route.params.id}`)
+                     .then((res) => res.json())
+
+  if (post.id === this.$route.params.id) {
+      this.post = post
+    } else {
+      // set status code on server and
+      if (process.server) {
+        this.$nuxt.context.res.statusCode = 404
+      }
+      // use throw new Error()
+      throw new Error('Post not found')
+    }
+}
+```
+
+Setting the HTTP status code this way **is useful for correct SEO**.
+
 ## Fetch as a method
 
 New fetch hook also acts as a method that can be invoked upon user interaction or invoked programmatically from the component methods.
@@ -239,13 +261,13 @@ If you have been working with Nuxt for a while, then you’ll know that the prev
 
 Here’s the list of notable changes in `fetch` hook compared with **before** and **after** v2.12.
 
-### First
+### 1. Call order of `fetch` hook
 
 **Before -** `fetch` hook was called before initiating the component, hence `this` wasn’t available inside the fetch hook.
 
 **After -** `fetch` is called after the component instance is created on the server-side when the route is accessed.
 
-### Second
+### 2. `this` vs `context`
 
 **Before -** We had access to the Nuxt `context` on page-level components, given that the `context` is passed as a first parameter.
 
@@ -267,13 +289,13 @@ export default {
 };
 ```
 
-### Third
+### 3. Availability of `fetch` hook
 
 **Before -** Only page (route-level) components were allowed to fetch data on the server-side.
 
 **After -** Now, we can pre-fetch the data asynchronously in any Vue components.
 
-### Fourth
+### 4. Call order of `fetch` hook
 
 **Before -** `fetch` could be called server-side once (on the first request to the Nuxt app) and client-side when navigating to further routes.
 
@@ -281,17 +303,17 @@ export default {
 
 …since we can have one `fetch` for each component, `fetch` hooks are called in sequence of their hierarchy.
 
-### Fifth
+### 5. Error Handling
 
-**Before -** We used the `context.error` function that redirected a page when an error occurred during API calls.
+**Before -** We used the `context.error` function that showed a custom error page when an error occurred during API calls.
 
 **After -** New `fetch` uses the `$fetchState` object to handle errors in the template area during API calls.
 
-No page redirection is performed during error handling.
+Error handling is performed at component level.
 
-> **Does this mean we cannot redirect users to a custom error page like we did prior to Nuxt 2.12?**
+> **Does this mean we cannot show users a custom error page like we did prior to Nuxt 2.12?**
 
-Yes, but with `asyncData()` when it's about page-level component data. Simply use `this.$nuxt.error({ statusCode: 404, message: Data not found' })` to redirect and show a custom error page.
+Yes we can, but only with `asyncData()` when it's about page-level component data. Simply use `this.$nuxt.error({ statusCode: 404, message: 'Data not found' })` to show a custom error page.
 
 ## Conclusion
 
@@ -300,3 +322,8 @@ New fetch hook brings a lot of improvements and provides more flexibility in fet
 It will certainly make you think a little differently when you plan and design your new Nuxt project that requires multiple API calls within the same route.
 
 I hope this article has helped you get acquainted with the new `fetch` feature. I'd love to see what you build with it.
+
+## What's next
+
+- Read [Sergey Bedritsky's article](/blog/build-dev-to-clone-with-nuxt-new-fetch) to see new `fetch` hook in action as he shows how to buid dev.to clone!
+- Already missed March newsletter? [Subscribe to Nuxt newsletter](#subscribe-to-newsletter) and get latest articles and resources delivered right into your inbox.
