@@ -70,10 +70,6 @@ import { resolve } from 'path'
 import test from 'ava'
 import { Nuxt, Builder } from 'nuxt'
 
-// nuxt 와 server 인스턴스를 여기에 확보해둡니다.
-// 그러면 테스트가 종료되었을 때 이것들을 close할 수 있습니다.
-let nuxt = null
-
 // Nuxt.js 를 초기화하고 localhost:4000 에서 리스닝하는 서버를 작성합니다.
 test.before('Init Nuxt.js', async (t) => {
   const rootDir = resolve(__dirname, '..')
@@ -81,20 +77,24 @@ test.before('Init Nuxt.js', async (t) => {
   try { config = require(resolve(rootDir, 'nuxt.config.js')) } catch (e) {}
   config.rootDir = rootDir // project folder
   config.dev = false // production build
-  nuxt = new Nuxt(config)
+  config.mode = 'universal' // Isomorphic application
+  const nuxt = new Nuxt(config)
+  t.context.nuxt = nuxt // Nuxt를 여기에 담아둡니다. 그러면 테스트가 종료되었을 때 이것들을 close할 수 있습니다.
   await new Builder(nuxt).build()
   nuxt.listen(4000, 'localhost')
 })
 
 // 생성된 HTML 만을 테스트하는 예제
-test('Route / exits and render HTML', async (t) => {
+test('Route / exists and render HTML', async (t) => {
+  const { nuxt } = t.context
   const context = {}
   const { html } = await nuxt.renderRoute('/', context)
   t.true(html.includes('<h1 class="red">Hello world!</h1>'))
 })
 
 // DOM 을 경유하여 체크하는 테스트 예제
-test('Route / exits and render HTML with CSS applied', async (t) => {
+test('Route / exists and renders HTML with CSS applied', async (t) => {
+  const { nuxt } = t.context
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
   t.not(element, null)
@@ -103,8 +103,9 @@ test('Route / exits and render HTML with CSS applied', async (t) => {
   t.is(window.getComputedStyle(element).color, 'red')
 })
 
-// 서버를 닫고 nuxt 에 파일갱신 리스닝을 중지시킨다
-test.after('Closing server and nuxt.js', (t) => {
+// 서버를 닫음
+test.after('Closing server', (t) => {
+  const { nuxt } = t.context
   nuxt.close()
 })
 ```

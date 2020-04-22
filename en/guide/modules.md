@@ -302,7 +302,7 @@ export default function (moduleOptions) {
 ## Run Tasks on Specific hooks
 
 Your module may need to do things only on specific conditions and not just during Nuxt initialization.
-We can use the powerful [Hookable](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js) Nuxt.js system to do tasks on specific events.
+We can use the powerful hooks Nuxt.js system to do tasks on specific events (based on [Hable](https://github.com/jsless/hable)).
 Nuxt will wait for your function if it return a Promise or is defined as `async`.
 
 Here are some basic examples:

@@ -111,10 +111,10 @@ new Vuex.Store({
 <template>
   <ul>
     <li v-for="todo in todos">
-      <input type="checkbox" :checked="todo.done" @change="toggle(todo)">
+      <input :checked="todo.done" @change="toggle(todo)" type="checkbox">
       <span :class="{ done: todo.done }">{{ todo.text }}</span>
     </li>
-    <li><input placeholder="What needs to be done?" @keyup.enter="addTodo"></li>
+    <li><input @keyup.enter="addTodo" placeholder="What needs to be done?"></li>
   </ul>
 </template>
 
@@ -202,7 +202,7 @@ fetch メソッドについてより深く理解するためには [ページの
 
 ## nuxtServerInit アクション
 
-`nuxtServerInit` というアクションがストア内に定義されているときは、Nuxt.js はそれをコンテキストとともに呼び出します（ただしサーバーサイドに限ります）。サーバーサイドからクライアントサイドに直接渡したいデータがあるときに便利です。
+`nuxtServerInit` というアクションがストア内に定義されて、かつ `universal` モードである場合は、Nuxt.js はそれをコンテキストとともに呼び出します（ただしサーバーサイドに限ります）。サーバーサイドからクライアントサイドに直接渡したいデータがあるときに便利です。
 
 例えば、サーバーサイドでセッションを持っていて、接続しているユーザーに `req.session.user` を通じてアクセスできるとします。認証されたユーザーにストアを渡すために `store/index.js` 下記のように書き換えます:
 
@@ -219,6 +219,8 @@ actions: {
 > Vuex ストアの *モジュール* モードを使っている場合はなら、プライマリモジュール（`store/index.js`）のみ、このアクションを受け取ることができます。その他のモジュールのアクションでも使いたい場合は、プライマリモジュールからチェインする必要があります。
 
 [コンテキスト](/api/context)は、`asyncData`や `fetch` メソッドと同様に `nuxtServerInit` に第二引数として渡されます。
+
+`nuxt generate` が実行されると、生成されたすべての動的ルートに対して `nuxtServerInit` が実行されます。
 
 > 注意: 非同期の `nuxtServerInit` アクションは nuxt サーバーの待機を可能にするために Promise を返さなければなりません
 

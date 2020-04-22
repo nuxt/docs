@@ -394,7 +394,7 @@ More information about the transition property: [API Pages transition](/api/page
 
 > Middleware lets you define custom functions that can be run before rendering either a page or a group of pages.
 
-**Every middleware should be placed in the `middleware/` directory.** The filename will be the name of the middleware (`middleware/auth.js` will be the `auth` middleware).
+**Shared middleware should be placed in the `middleware/` directory.** The filename will be the name of the middleware (`middleware/auth.js` will be the `auth` middleware). You can also defined page-specific middleware by using a function directly, see [anonymous middleware](/api/pages-middleware#anonymous-middleware).
 
 A middleware receives [the context](/api/context) as first argument:
 
@@ -439,14 +439,14 @@ export default {
 
 Now the `stats` middleware will be called for every route change.
 
-You can add your middleware to a specific layout or page as well:
+You can add your middleware (even multiple) to a specific layout or page as well:
 
 
 `pages/index.vue` or `layouts/default.vue`
 
 ```js
 export default {
-  middleware: 'stats'
+  middleware: ['auth', 'stats']
 }
 ```
 

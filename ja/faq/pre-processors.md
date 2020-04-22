@@ -32,5 +32,13 @@ export default data: ->
 これらのプリプロセッサを使うために Webpack のローダーをインストールする必要があります。
 
 ```bash
-npm install --save-dev pug@2.0.3 pug-plain-loader coffeescript coffee-loader node-sass sass-loader
+npm install --save-dev pug@2.0.3 pug-plain-loader
+```
+
+```bash
+npm install --save-dev coffeescript coffee-loader
+```
+
+```bash
+npm install --save-dev node-sass sass-loader
 ```

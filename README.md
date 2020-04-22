@@ -33,8 +33,8 @@ Chinese translation is maintained by AOTU Labs from China, Shenzhen.
 Japanese translation is maintained by [Vue.js Japan User Group](https://github.com/vuejs-jp/home).
 
 - Translation Repo - [https://github.com/vuejs-jp/ja.docs.nuxtjs](https://github.com/vuejs-jp/ja.docs.nuxtjs)
-- Primary maintainer - [INOUE Takuya(@inouetakuya)](http://blog.inouetakuya.info/), [numa(@aytdm)](https://github.com/aytdm)
-- Primary translator - [INOUE Takuya(@inouetakuya)](https://github.com/inouetakuya), [numa(@aytdm)](https://github.com/aytdm)
+- Primary maintainer - [INOUE Takuya(@inouetakuya)](http://blog.inouetakuya.info/), [numa(@aytdm)](https://github.com/aytdm), [53(@53able)](https://github.com/53able)
+- Primary translator - [INOUE Takuya(@inouetakuya)](https://github.com/inouetakuya), [numa(@aytdm)](https://github.com/aytdm), [53(@53able)](https://github.com/53able)
 
 ### Korean
 
@@ -42,7 +42,7 @@ Korean translation is maintained by Taewoong La.
 
 - Translation Repo - [/DiyLecko/ko.docs.nuxtjs](https://github.com/DiyLecko/ko.docs.nuxtjs)
 - Primary maintainer - [Taewoong La](http://blog.naver.com/diy_lecko)
-- Primary translator - [june](http://jicjjang.github.io), [wanybae](https://github.com/wanybae), [rellario](https://github.com/rellario)
+- Primary translator - [june](http://jicjjang.github.io), [wanybae](https://github.com/wanybae), [rellario](https://github.com/rellario), [Nahyeon Lee](https://github.com/nh0627)
 
 ### French
 

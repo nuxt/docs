@@ -23,7 +23,7 @@ The `assets` directory contains your un-compiled assets such as Stylus or Sass f
 
 ### The Components Directory
 
-The `components` directory contains your Vue.js Components. You can't use either `asyncData` or `fetch` in these components.
+The `components` directory contains your Vue.js Components. You can't use `asyncData` in these components.
 
 ### The Layouts Directory
 
@@ -83,7 +83,7 @@ _This file cannot be renamed without extra configuration._
 
 The `package.json` file contains your Application dependencies and scripts.
 
-_This file can not be renamed._
+_This file cannot be renamed._
 
 ## Aliases
 

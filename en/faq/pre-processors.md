@@ -32,7 +32,7 @@ export default data: ->
 To use these pre-processors, we need to install their webpack loaders:
 
 ```bash
-npm install --save-dev pug@2.0.3 pug-plain-loader
+npm install --save-dev pug pug-plain-loader
 ```
 
 ```bash

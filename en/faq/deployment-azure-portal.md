@@ -3,6 +3,88 @@ title: How to deploy on Azure Portal?
 description: How to deploy a Nuxt.js application on Azure Portal?
 ---
 
+## Requirements
+- It is required that you select a backend when setting up the project. Even if you don't need it, or else the site won't start up.
+- The server is running Node 8 or greater
+
+## What if I already have a project without an backend?
+No worries. It is easy to add an express server to an existing project.
+
+Create a new folder called `server` in the root of the project. Then create an `index.js` file inside the `server` folder and paste the following inside the `index.js`:
+
+```
+const express = require('express')
+const consola = require('consola')
+const { Nuxt, Builder } = require('nuxt')
+const app = express()
+
+// Import and Set Nuxt.js options
+const config = require('../nuxt.config.js')
+config.dev = process.env.NODE_ENV !== 'production'
+
+async function start () {
+  // Init Nuxt.js
+  const nuxt = new Nuxt(config)
+
+  const { host, port } = nuxt.options.server
+
+  // Build only in dev mode
+  if (config.dev) {
+    const builder = new Builder(nuxt)
+    await builder.build()
+  } else {
+    await nuxt.ready()
+  }
+
+  // Give nuxt middleware to express
+  app.use(nuxt.render)
+
+  // Listen the server
+  app.listen(port, host)
+  consola.ready({
+    message: `Server listening on http://${host}:${port}`,
+    badge: true
+  })
+}
+start()
+```
+
+Then edit your nuxt.config.js:
+
+Before:
+
+```
+import pkg from './package'
+
+export default {
+... config
+}
+```
+
+After: 
+```
+module.exports = {
+... config
+}
+
+```
+
+**Remember to remove the references to the pkg object inside the config.**
+
+Thats it!
+
+## How to set Node version on Web App in DevOps
+
+You can set the Node version on the server, via the App setting inside the "Deploy Azure Web Service" task in the release pipeline
+
+Add this to the App settings field under "Application and Configuration Settings"
+```
+-WEBSITE_NODE_DEFAULT_VERSION 10.16.3
+```
+It's recommended to use the LTS version.
+
+## Artifacts
+
 If you are using Azure DevOps and let the build pipeline do its work you and want to store artifacts. Files
 which are prefixed with a `.` must be moved to the artifact folder explicitly. Then you can create an Artifact Archive and 
 download it afterwards in your Release Deployment. 

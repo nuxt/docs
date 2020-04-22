@@ -1,5 +1,19 @@
 [
   {
+    "title": "Essential",
+    "links": [
+      {
+        "name": "컨텍스트",
+        "to": "/context",
+        "contents": [
+          { "name": "범용 키", "to": "#범용-키" },
+          { "name": "서버 사이드 키", "to": "#서버-사이드-키" },
+          { "name": "클라이언트 사이드 키", "to": "#클라이언트-사이드-키" }
+        ]
+      }
+    ]
+  },
+  {
     "title": "Pages",
     "links": [
       { "name": "API: asyncData 메소드", "to": "/" },

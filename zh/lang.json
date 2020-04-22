@@ -1,10 +1,46 @@
 {
   "iso": "zh",
-  "docVersion": "2.8.x",
+  "docVersion": "2.11.X",
   "links": {
     "download": "下载",
     "live_edit": "在线编辑"
   },
+  "headerLinks": [
+    {
+      "name": "Guide",
+      "slug": "guide",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "API",
+      "slug": "api",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Examples",
+      "slug": "examples",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "FAQ",
+      "slug": "faq",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Resources",
+      "slug": "resources",
+      "type": "static"
+    },
+    {
+      "name": "Blog",
+      "slug": "blog",
+      "type": "static"
+    }
+  ],
   "text": {
     "an_error_occurred": "文档API服务异常",
     "api_page_not_found": "API页面不存在",
@@ -20,7 +56,7 @@
     },
     "welcome": {
       "get_started": "开始使用",
-      "github_stars": "24K+ github stars"
+      "github_stars": "26K+ github stars"
     },
     "why": {
       "try_nuxtjs_online": "在线尝试 NuxtJS"

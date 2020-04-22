@@ -26,7 +26,7 @@ export default {
 
 ## Local Settings
 
-Include your resources in your `.vue` file inside the `pages/` directory (here in the head fuction):
+Include your resources in your `.vue` file inside the `pages/` directory (here in the head function):
 
 ```html
 <template>

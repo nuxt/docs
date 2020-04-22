@@ -110,11 +110,11 @@ And in your `pages/todos.vue`, using the `todos` module:
 ```html
 <template>
   <ul>
-    <li v-for="todo in todos">
-      <input type="checkbox" :checked="todo.done" @change="toggle(todo)">
+    <li v-for="todo in todos" :key="todo.text">
+      <input :checked="todo.done" @change="toggle(todo)" type="checkbox">
       <span :class="{ done: todo.done }">{{ todo.text }}</span>
     </li>
-    <li><input placeholder="What needs to be done?" @keyup.enter="addTodo"></li>
+    <li><input @keyup.enter="addTodo" placeholder="What needs to be done?"></li>
   </ul>
 </template>
 
@@ -202,7 +202,7 @@ More information about the fetch method: [API Pages fetch](/api/pages-fetch).
 
 ## The nuxtServerInit Action
 
-If the action `nuxtServerInit` is defined in the store, Nuxt.js will call it with the context (only from the server-side). It's useful when we have some data on the server we want to give directly to the client-side.
+If the action `nuxtServerInit` is defined in the store and the mode is `universal`, Nuxt.js will call it with the context (only from the server-side). It's useful when we have some data on the server we want to give directly to the client-side.
 
 For example, let's say we have sessions on the server-side and we can access the connected user through `req.session.user`. To give the authenticated user to our store, we update our `store/index.js` to the following:
 
@@ -219,6 +219,8 @@ actions: {
 > If you are using the _Modules_ mode of the Vuex store, only the primary module (in `store/index.js`) will receive this action. You'll need to chain your module actions from there.
 
 The [context](/api/context) is given to `nuxtServerInit` as the 2nd argument, it is the same as `asyncData` or `fetch` method.
+
+If `nuxt generate` is ran, `nuxtServerInit` will be executed for every dynamic route generated.
 
 > Note: Asynchronous `nuxtServerInit` actions must return a Promise or leverage async/await to allow the `nuxt` server to wait on them.
 
