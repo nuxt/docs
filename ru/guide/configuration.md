@@ -1,116 +1,116 @@
 ---
-title: Configuration
-description: By default, Nuxt.js is configured to cover most use cases. This default configuration can be overwritten by using the `nuxt.config.js` file.
+title: Конфигурация
+description: По умолчанию, Nuxt.js сконфигурирован для покрытия большинства случаев использования. Эти настройки могут быть переопределены в файле `nuxt.config.js`.
 ---
 
-> By default, Nuxt.js is configured to cover most use cases. This default configuration can be overwritten with the `nuxt.config.js` file.
+> По умолчанию, Nuxt.js сконфигурирован для покрытия большинства случаев использования. Эти настройки могут быть переопределены в файле `nuxt.config.js`.
 
 ### build
 
-This option lets you configure various settings for the `build` step, including `loaders`, `filenames`, the `webpack` config and `transpilation`.
+Этот параметр позволяет настроить различные параметры для шага `build`, включающего: `loaders`, `filenames`, конфигурацию `webpack` и `transpilation`.
 
-[Documentation about `build` integration](/api/configuration-build)
+[Подробнее о `build`](/api/configuration-build)
 
 ### css
 
-This option lets you define the CSS files, modules, and libraries you want to include globally (on every page).
+Этот параметр позволяет вам указать файлы CSS, модули и библиотеки, которые вы хотели бы подключить глобально (на каждой странице).
 
-[Documentation about `css` integration](/api/configuration-css)
+[Подробнее о `css`](/api/configuration-css)
 
 ### dev
 
-This option lets you define the `development` or `production` mode of Nuxt.js (important when you use Nuxt.js programatically)
+Этот параметр позволяет вам указать режим `development` или `production` для Nuxt.js (важно, когда вы используете Nuxt.js программно).
 
-[Documentation about `dev` integration](/api/configuration-dev)
+[Подробнее о `dev`](/api/configuration-dev)
 
 ### env
 
-This option lets you define environment variables that are available to both client and server.
+Этот параметр позволяет вам указать переменные окружения, которые будут доступны как клиенту, так и серверу.
 
-[Documentation about `env` integration](/api/configuration-env)
+[Подробнее о `env`](/api/configuration-env)
 
 ### generate
 
-This option lets you set up parameter values for every dynamic route in your application that will be transformed into HTML files by Nuxt.js.
+Этот параметр позволяет вам установить значения параметров для каждого динамического маршрута в вашем приложении, Nuxt.js преобразует это в набор HTML файлов.
 
-[Documentation about generate integration](/api/configuration-generate)
+[Подробнее о generate](/api/configuration-generate)
 
 ### head
 
-This option lets you define all default meta tags for your application.
+Этот параметр позволяет вам указать значения для всех мета-тегов страницы по умолчанию.
 
-[Documentation about head integration](/api/configuration-head)
+[Подробнее о head](/api/configuration-head)
 
 ### loading
 
-This option lets you customize the loading component that Nuxt.js uses by default.
+Этот параметр позволяет вам настроить компонент загрузки, который Nuxt.js использует по умолчанию.
 
-[Documentation about `loading` integration](/api/configuration-loading)
+[Подробнее о `loading`](/api/configuration-loading)
 
 ### modules
 
-With this option you can add Nuxt.js modules to your project.
+Этот параметр позволяет вам добавить модули Nuxt.js в ваше приложение.
 
-[Documentation about `modules` integration](/api/configuration-modules)
+[Подробнее о `modules`](/api/configuration-modules)
 
 ### modulesDir
 
-This option lets you define the node_modules folder of your Nuxt.js Application.
+Этот параметр позволяет вам указать путь к директории node_modules в вашем Nuxt.js приложении.
 
-[Documentation about `modulesDir` integration](/api/configuration-modulesdir)
+[Подробнее о `modulesDir`](/api/configuration-modulesdir)
 
 
 ### plugins
 
-This option lets you define JavaScript plugins that should be run before instantiating the root Vue.js application.
+Этот параметр позволяет вам указать JavaScript плагины, которые должны выполниться перед созданием корневого экземпляра Vue.js.
 
-[Documentation about `plugins` integration](/api/configuration-plugins)
+[Подробнее о `plugins`](/api/configuration-plugins)
 
 ### rootDir
 
-This option lets you define the workspace of your Nuxt.js application.
+Этот параметр позволяет вам указать корневую директорию вашего Nuxt.js приложения.
 
-[Documentation about `rootDir` integration](/api/configuration-rootdir)
+[Подробнее о `rootDir`](/api/configuration-rootdir)
 
 ### router
 
-With the `router` option you overwrite the default Nuxt.js configuration of Vue Router.
+С параметром `router` вы переопределите стандартную конфигурацию Vue Router для Nuxt.js.
 
-[Documentation about `router` integration](/api/configuration-router)
+[Подробнее о `router`](/api/configuration-router)
 
 ### server
 
-This option lets you configure the connection variables for the server instance of your Nuxt.js application.
+Этот параметр позволяет вам настроить переменные соединения для экземпляра сервера вашего Nuxt.js приложения.
 
-[Documentation about `server` integration](/api/configuration-server)
+[Подробнее о `server`](/api/configuration-server)
 
 ### srcDir
 
-This option lets you define the source directory of your Nuxt.js application.
+Этот параметр позволяет вам указать директорию ресурсов вашего Nuxt.js приложения.
 
-[Documentation about `srcDir` integration](/api/configuration-srcdir)
+[Подробнее о `srcDir`](/api/configuration-srcdir)
 
 ### dir
 
-This option lets you define the custom directories of your Nuxt.js application.
+Этот параметр позволяет вам указать произвольные директории для вашего Nuxt.js приложения.
 
-[Documentation about `dir` integration](/api/configuration-dir)
+[Подробнее о `dir`](/api/configuration-dir)
 
 ### transition
 
-This option lets you define the default properties of the page transitions.
+Этот параметр позволяет вам указать стандартные значения для анимации переходов страницы.
 
-[Documentation about `transition` integration](/api/configuration-transition)
+[Подробнее о `transition`](/api/configuration-transition)
 
 
-## Asynchronous Configuration
+## Асинхронная конфигурация
 
-If you need to populate some options (e.g. the head) with asynchronous data (e.g. coming from an API), you have the possibility to return a promise. Here is an example:
+Если вам нужно заполнить некоторые параметры (например, заголовок) асинхронными данными (например, поступающими из API), у вас есть возможность вернуть `promise`. Например:
 
 ```js
 /* 
-axios-module cannot be used in nuxt.config.js
-You need to import axios and configure it again
+axios-module не может быть использован в nuxt.config.js
+Вам нужно импортировать axios и настроить его снова
 */
 import axios from 'axios'
 
@@ -119,7 +119,7 @@ export default async () => {
   return {
     head: {
       title: data.head.title,
-      //... rest of config
+      //... остальная часть конфигурации
     }
   }
 }
