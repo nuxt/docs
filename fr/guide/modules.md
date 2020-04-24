@@ -79,7 +79,7 @@ Ceci est une référence à l'instance courante de Nuxt. Se référer à
 **`this`**
 
 Contexte des modules. Veuillez consulter la documentation de la classe 
-[contenu de module](/api/internals-module-container) pour les méthodes disponibles.
+[ModuleContainer](/api/internals-module-container) pour les méthodes disponibles.
 
 **`module.exports.meta`**
 
