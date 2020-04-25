@@ -67,7 +67,7 @@
     "newsletter_form": {
       "email": "Email",
       "subscribing": "구독중...",
-      "subscribe": "Subscribe",
+      "subscribe": "구독하기",
       "subscribed_messages": {
         "pre": "구독 확인용 이메일이 주소로 전송되었습니다.",
         "post": "💚"
