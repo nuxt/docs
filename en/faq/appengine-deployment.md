@@ -36,7 +36,6 @@ handlers:
 
 env_variables:
   HOST: '0.0.0.0'
-  NODE_ENV: 'production'
 ```
 
 or for flexible environment the minimal configuration is:

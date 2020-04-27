@@ -21,8 +21,8 @@ Vous pouvez également utiliser la fonction `watchQuery(newQuery, oldQuery)` pou
 ```js
 export default {
   watchQuery (newQuery, oldQuery) {
-    // Only execute component methods if the old query string contained `bar`
-    // and the new query string contains `foo`
+    // Exécute les méthodes de composant uniquement si l'ancienne chaîne de requête contenait `bar`
+    // et que la nouvelle chaîne de requête contient `foo`    
     return newQuery.foo && oldQuery.bar
   }
 }
