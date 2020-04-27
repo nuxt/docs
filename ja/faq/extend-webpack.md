@@ -31,7 +31,7 @@ export default {
 
 #### チャンク構成をカスタマイズ
 
-デフォルトを書き換えることを避けて、わずかな[最適化の構成](/api/configuration-build#optimization)を微調整することができます。
+デフォルトオブジェクトを書き換えることを避けて、[最適化構成](/api/configuration-build#optimization) を多少調整することができます。
 ```js
 export default {
   build: {
