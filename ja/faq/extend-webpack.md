@@ -44,7 +44,7 @@ export default {
 }
 ```
 
-#### 開発環境のすべての Webpack ビルドで ESLint を実行します
+#### 開発環境のすべての Webpack ビルドで ESLint を実行
 
 コードスタイルエラーを認識するために、開発環境のすべてのビルドで [ESLint](https://github.com/webpack-contrib/eslint-loader) を実行することができます。
 ```js
