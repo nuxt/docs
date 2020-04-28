@@ -2,18 +2,18 @@
   {
     "title": "Essentiel",
     "links": [
-      { "name": "Context (EN)", "to": "/context" }
+      { "name": "Context", "to": "/context" }
     ]
   },
   {
     "title": "Pages",
     "links": [
       { "name": "asyncData", "to": "/" },
-      { "name": "fetch (EN)", "to": "/pages-fetch" },
+      { "name": "fetch", "to": "/pages-fetch" },
       { "name": "head", "to": "/pages-head" },
-      { "name": "key (EN)", "to": "/pages-key" },
+      { "name": "key", "to": "/pages-key" },
       { "name": "layout", "to": "/pages-layout" },
-      { "name": "loading (EN)", "to": "/pages-loading" },
+      { "name": "loading", "to": "/pages-loading" },
       { "name": "middleware", "to": "/pages-middleware" },
       { "name": "scrollToTop", "to": "/pages-scrolltotop" },
       {
@@ -25,22 +25,22 @@
         ]
       },
       { "name": "validate", "to": "/pages-validate" },
-      { "name": "watchQuery (EN)", "to": "/pages-watchquery" }
+      { "name": "watchQuery", "to": "/pages-watchquery" }
     ]
   },
   {
     "title": "Composants",
     "links": [
-      { "name": "nuxt (EN)", "to": "/components-nuxt" },
-      { "name": "nuxt-child (EN)", "to": "/components-nuxt-child" },
-      { "name": "nuxt-link (EN)", "to": "/components-nuxt-link" },
+      { "name": "nuxt", "to": "/components-nuxt" },
+      { "name": "nuxt-child", "to": "/components-nuxt-child" },
+      { "name": "nuxt-link", "to": "/components-nuxt-link" },
       { "name": "client-only", "to": "/components-client-only" }
     ]
   },
   {
     "title": "Utilitaires",
     "links": [
-      { "name": "$nuxt (EN)", "to": "/$nuxt" }
+      { "name": "$nuxt", "to": "/$nuxt" }
     ]
   },
   {
@@ -86,7 +86,7 @@
       { "name": "buildDir", "to": "/configuration-builddir" },
       { "name": "css", "to": "/configuration-css" },
       { "name": "dev", "to": "/configuration-dev" },
-      { "name": "env (EN)", "to": "/configuration-env" },
+      { "name": "env", "to": "/configuration-env" },
       {
         "name": "generate", "to": "/configuration-generate",
         "contents": [
@@ -100,11 +100,11 @@
           { "name": "concurrency", "to": "#concurrency" }
         ]
       },
-      { "name": "head (EN)", "to": "/configuration-head" },
+      { "name": "head", "to": "/configuration-head" },
       { "name": "hooks (EN)", "to": "/configuration-hooks" },
-      { "name": "ignore (EN)", "to": "/configuration-ignore" },
+      { "name": "ignore", "to": "/configuration-ignore" },
       {
-        "name": "loading (EN)", "to": "/configuration-loading",
+        "name": "loading", "to": "/configuration-loading",
         "contents": [
           { "name": "Disable the Progress Bar", "to": "#disable-the-progress-bar" },
           { "name": "Customize the Progress Bar", "to": "#customize-the-progress-bar" },

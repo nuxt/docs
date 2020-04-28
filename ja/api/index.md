@@ -9,7 +9,7 @@ description: サーバーサイドでデータを取得し、それをレンダ�
 
 <div class="Alert Alert--nuxt-green">
 
-<b>情報:</b>[非同期なデータ](/guide/async-data)ページもご覧ください！
+<b>情報:</b> [非同期なデータ](/guide/async-data)ページもご覧ください！
 
 </div>
 
