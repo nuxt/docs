@@ -27,7 +27,7 @@ Nuxt.js will automatically merge the returned object with the component data.
 
 <div class="Alert Alert--orange">
 
-You do **NOT** have access of the component instance through `this` inside `asyncData` because it is called **before initiating** the component.
+You do **NOT** have access to the component instance through `this` inside `asyncData` because it is called **before initializing** the component.
 
 </div>
 
