@@ -7,7 +7,7 @@ description: Upgrading Nuxt.js is quick, but more involved than updating your pa
 
 ## Getting Started
 
-1. Check the [release notes](/guide/release-notes) for the version you wish to upgrade to to see if there are any additional instructions for that particular release.
+1. Check the [release notes](/guide/release-notes) for the version you wish to upgrade to see if there are any additional instructions for that particular release.
 2. Update the version specified for the `nuxt` package in your `package.json` file.
 
 After this step instructions vary depending upon whether you are using Yarn or NPM. _[Yarn](https://yarnpkg.com/en/docs/usage) is the preferred package manager for working with Nuxt as it is the development tool which tests have been written against._
