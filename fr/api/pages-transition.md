@@ -3,7 +3,7 @@ title: "API : la propriété pageTransition (EN)"
 description: Nuxt.js utilise le composant de `<transition>` afin de créer des transitions / animations époustouflantes entre vos pages.
 ---
 
-> Nuxt.js v2.7+ introduit `pageTransition` en lieu et place de `transition` pour améliorer le nommage avec les transitions de mise en page. Avec Nuxt 3, `transition` sera dérpécié.
+> Nuxt.js v2.7+ introduit `pageTransition` en lieu et place de `transition` pour améliorer le nommage avec les transitions de mise en page. Avec Nuxt 3, `transition` sera déprécié.
 
 - **Type :** `String` ou `Object` ou `Function`
 
@@ -86,7 +86,7 @@ Vous pouvez également définir des méthodes dans l'objet `pageTransition` afin
 
 ### Mode de transition
 
-**Le mode par défault  our les transitions diffère de Vue.js**. Le mode par défaur pour `pageTransition` est `out-in`. Si vous voulez avoir les transitions de sortie et d'entrée en même temps, vous devez mettre `mode: ''`.
+**Le mode par défault pour les transitions diffère de Vue.js**. Le mode par défaur pour `pageTransition` est `out-in`. Si vous voulez avoir les transitions de sortie et d'entrée en même temps, vous devez mettre `mode: ''`.
 
 ```js
 export default {
