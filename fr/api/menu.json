@@ -101,7 +101,7 @@
         ]
       },
       { "name": "head", "to": "/configuration-head" },
-      { "name": "hooks (EN)", "to": "/configuration-hooks" },
+      { "name": "hooks", "to": "/configuration-hooks" },
       { "name": "ignore", "to": "/configuration-ignore" },
       {
         "name": "loading", "to": "/configuration-loading",
@@ -112,12 +112,12 @@
           { "name": "Internals of the Progress Bar", "to": "#internals-of-the-progress-bar" }
         ]
       },
-      { "name": "loadingIndicator (EN)", "to": "/configuration-loading-indicator" },
-      { "name": "mode (EN)", "to": "/configuration-mode" },
-      { "name": "modern (EN)", "to": "/configuration-modern" },
-      { "name": "modules (EN)", "to": "/configuration-modules" },
-      { "name": "modulesDir (EN)", "to": "/configuration-modulesdir" },
-      { "name": "plugins (EN)", "to": "/configuration-plugins" },
+      { "name": "loadingIndicator", "to": "/configuration-loading-indicator" },
+      { "name": "mode", "to": "/configuration-mode" },
+      { "name": "modern", "to": "/configuration-modern" },
+      { "name": "modules", "to": "/configuration-modules" },
+      { "name": "modulesDir", "to": "/configuration-modulesdir" },
+      { "name": "plugins", "to": "/configuration-plugins" },
       {
         "name": "render (EN)", "to": "/configuration-render",
         "contents": [
