@@ -110,7 +110,7 @@ And in your `pages/todos.vue`, using the `todos` module:
 ```html
 <template>
   <ul>
-    <li v-for="todo in todos">
+    <li v-for="todo in todos" :key="todo.text">
       <input :checked="todo.done" @change="toggle(todo)" type="checkbox">
       <span :class="{ done: todo.done }">{{ todo.text }}</span>
     </li>
