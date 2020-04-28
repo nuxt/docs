@@ -5,16 +5,18 @@
       {
         "to": "", "name": "소개",
         "contents": [
-          { "to": "#nuxt-js란-무엇인가-", "name": "Nuxt.js란 무엇인가?" },
-          { "to": "#어떻게-동작합니까-", "name": "어떻게 동작합니까?" },
+          { "to": "#nuxt-js란-무엇인가요-", "name": "Nuxt.js란 무엇인가요?" },
           { "to": "#특징", "name": "특징" },
+          { "to": "#어떻게-작동하나요-", "name": "어떻게 작동하나요?" },
           { "to": "#구조", "name": "구조" },
-          { "to": "#서버에서-렌더링하기", "name": "서버에서 렌더링하기" },
-          { "to": "#정적-파일로-생성하기", "name": "정적 파일로 생성하기" }
+          { "to": "#서버-렌더링-범용-ssr-", "name": "서버 렌더링" },
+          { "to": "#single-page-applications-spa-", "name": "SPA" },
+          { "to": "#정적-생성-사전-렌더링-", "name": "정적 생성" }
         ]
       },
       { "to": "/contribution-guide", "name": "Contribution 가이드" },
-      { "to": "/release-notes", "name": "릴리즈 노트" }
+      { "to": "/release-notes", "name": "릴리즈 노트" },
+      { "to": "/upgrading", "name": "업그레이드하기" }
     ]
   },
   {
@@ -23,15 +25,15 @@
       {
         "to": "/installation", "name": "설치",
         "contents": [
-          { "to": "#nuxt-js-starter-템플릿-사용하기", "name": "Nuxt.js starter 템플릿 사용하기" },
-          { "to": "#처음부터-시작하기", "name": "처음부터 시작하기" }
+          { "to": "#-code-create-nuxt-app-code-사용하기", "name": "create-nuxt-app 사용하기" },
+          { "to": "#처음부터-nuxt-시작하기", "name": "처음부터 시작하기" }
         ]
       },
       {
         "to": "/directory-structure", "name": "디렉토리 구조",
         "contents": [
-          { "to": "#디렉토리들", "name": "디렉토리들" },
-          { "to": "#aliases", "name": "Aliases" }
+          { "to": "#디렉토리", "name": "디렉토리" },
+          { "to": "#별칭", "name": "별칭" }
         ]
       },
       { "to": "/configuration", "name": "설정" },
@@ -42,6 +44,7 @@
           { "to": "#동적-라우트", "name": "동적 라우트" },
           { "to": "#중첩-라우트", "name": "중첩 라우트" },
           { "to": "#동적-중첩-라우트", "name": "동적 중첩 라우트" },
+          { "to": "#named-views", "name": "Named Views" },
           { "to": "#트랜지션", "name": "트랜지션" },
           { "to": "#미들웨어", "name": "미들웨어" }
         ]
@@ -49,7 +52,7 @@
       {
         "to": "/views", "name": "Views",
         "contents": [
-          { "to": "#도큐먼트", "name": "도큐먼트" },
+          { "to": "#앱-탬플릿", "name": "앱 템플릿" },
           { "to": "#레이아웃", "name": "레이아웃" },
           { "to": "#페이지", "name": "페이지" },
           { "to": "#html-head", "name": "HTML Head" }
@@ -60,7 +63,7 @@
         "contents": [
           { "to": "#asyncdata-메소드", "name": "asyncData 메소드" },
           { "to": "#context", "name": "Context" },
-          { "to": "#에러-핸들링", "name": "에러 핸들링" }
+          { "to": "#에러처리", "name": "에러처리" }
         ]
       },
       {
@@ -75,20 +78,22 @@
         "contents": [
           { "to": "#외부-패키지", "name": "외부 패키지" },
           { "to": "#vue-플러그인", "name": "Vue 플러그인" },
-          { "to": "#-root-와-context-합치기", "name": "$root 와 context 합치기" },
+          { "to": "#es6-플러그인", "name": "ES6 플러그인" },
+          { "to": "#-root-와-context에-주입하기", "name": "$root와 context에 주입하기" },
           { "to": "#클라이언트에서만-사용하기", "name": "클라이언트에서만 사용하기" }
         ]
       },
       {
-        "to": "/modules", "name": "Modules",
+        "to": "/modules", "name": "모듈",
         "contents": [
-          { "to": "#introduction", "name": "Introduction" },
-          { "to": "#list-of-nuxt-js-modules", "name": "List of Nuxt.js modules" },
-          { "to": "#write-a-basic-module", "name": "Write a basic Module" },
-          { "to": "#async-modules", "name": "Async Modules" },
-          { "to": "#common-snippets", "name": "Common Snippets" },
-          { "to": "#run-tasks-on-specific-hooks", "name": "Run Tasks on Specific hooks" },
-          { "to": "#module-package-commands", "name": "Module package commands" }
+          { "to": "#소개", "name": "소개" },
+          { "to": "#nuxt-js-모듈-리스트", "name": "Nuxt.js 모듈 리스트" },
+          { "to": "#기본-모듈-작성하기", "name": "기본 모듈 작성하기" },
+          { "to": "#비동기-모듈", "name": "비동기 모듈" },
+          { "to": "#build-only-모듈", "name": "Build-only 모듈" },
+          { "to": "#일반-스니펫", "name": "일반 스니펫" },
+          { "to": "#특정-훅에서-작업-실행", "name": "특정 훅에서 작업 실행" },
+          { "to": "#모듈-패키지-명령어", "name": "모듈 패키지 명령어" }
         ]
       },
       {
@@ -98,8 +103,13 @@
           { "to": "#클래식-모드", "name": "클래식 모드" },
           { "to": "#모듈-모드", "name": "모듈 모드" },
           { "to": "#fetch-메소드", "name": "fetch 메소드" },
-          { "to": "#nuxtserverinit-액션", "name": "nuxtServerInit 액션" }
+          { "to": "#nuxtserverinit-액션", "name": "nuxtServerInit 액션" },
+          { "to": "#vuex-strict 모드", "name": "Vuex Strict 모드" },
+          { "to": "#클래식-모드", "name": "클래식 모드" }
         ]
+      },
+      {
+        "to": "/typescript", "name": "TypeScript 지원"
       },
       {
         "to": "/commands", "name": "명령어들",
@@ -113,7 +123,7 @@
         "to": "/development-tools", "name": "개발 툴",
         "contents": [
           { "to": "#end-to-end-테스트", "name": "End-To-End 테스트" },
-          { "to": "#eslint", "name": "ESLint" }
+          { "to": "#eslint와-prettier", "name": "ESLint와 Prettier" }
         ]
       }
     ]
