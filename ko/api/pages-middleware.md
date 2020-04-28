@@ -10,12 +10,27 @@ description: 어플리케이션의 특정 페이지에 대한 미들웨어 설�
 
 어플리케이션의 특정 페이지에 대한 미들웨어 설정.
 
-예제:
 
-`pages/secret.vue`
+## Named middleware
+
+You can create named middleware by creating a file inside the `middleware/` directory, the file name will be the middleware name.
+
+`middleware/authenticated.js`:
+
+```js
+export default function ({ store, redirect }) {
+  // If the user is not authenticated
+  if (!store.state.authenticated) {
+    return redirect('/login')
+  }
+}
+```
+
+`pages/secret.vue`:
+
 ```html
 <template>
-  <h1>비밀 페이지</h1>
+  <h1>Secret page</h1>
 </template>
 
 <script>
@@ -25,14 +40,28 @@ export default {
 </script>
 ```
 
-`middleware/authenticated.js`
-```js
-export default function ({ store, redirect }) {
-  // 사용자가 인증을 하지 않은 경우.
-  if (!store.state.authenticated) {
-    return redirect('/login')
+## Anonymous middleware
+
+If you need to use a middleware only for a specific page, you can directly use a function for it (or an array of functions):
+
+`pages/secret.vue`:
+
+```html
+<template>
+  <h1>Secret page</h1>
+</template>
+
+<script>
+export default {
+  middleware ({ store, redirect }) {
+    // 유저가 인증되지 않았다면
+    if (!store.state.authenticated) {
+      return redirect('/login')
+    }
   }
 }
+</script>
 ```
 
-더 많은 middleware에 대해 배우고 싶으시다면, [middleware 가이드](/guide/routing#middleware)를 참고해주시기 바랍니다.
+To learn more about the middleware, see the [middleware guide](/guide/routing#middleware).
+
