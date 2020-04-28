@@ -17,13 +17,17 @@ const express = require('express')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
 const app = express()
+
 // Nuxt.js オプションのインポートと設定
 const config = require('../nuxt.config.js')
 config.dev = process.env.NODE_ENV !== 'production'
+
 async function start () {
   // Nuxt.js を初期化
   const nuxt = new Nuxt(config)
+
   const { host, port } = nuxt.options.server
+
   // Build only in dev mode
   if (config.dev) {
     const builder = new Builder(nuxt)
@@ -31,8 +35,10 @@ async function start () {
   } else {
     await nuxt.ready()
   }
+
   // express に nuxt ミドルウェアを提供する
   app.use(nuxt.render)
+
   // サーバーがリッスンする
   app.listen(port, host)
   consola.ready({
@@ -49,6 +55,7 @@ start()
 
 ```
 import pkg from './package'
+
 export default {
 ... config
 }
