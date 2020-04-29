@@ -7,12 +7,12 @@ description: Nuxt.js est livré avec un ensemble de commandes utiles, tant pour 
 
 ## Liste des commandes
 
-| Commande      | Description                                                                                                       |
-|---------------|-------------------------------------------------------------------------------------------------------------------|
-| nuxt          | Lancer un serveur de développement sur localhost:3000 avec du rechargement à chaud.                               |
-| nuxt build    | Créez votre application avec webpack et minifiez les JS & CSS (pour la production).                               |
-| nuxt start    | Démarrez le serveur en mode production (après avoir exécuté `nuxt build`).                                        |
-| nuxt generate | Créez l'application et générez toutes les routes en tant que fichiers HTML (utilisé pour l'hébergement statique). |
+Commande | Description
+--- | ---
+nuxt | Lancer un serveur de développement sur localhost:3000 avec du rechargement à chaud.
+nuxt build | Créez votre application avec webpack et minifiez les JS & CSS (pour la production).
+nuxt start | Démarrez le serveur en mode production (après avoir exécuté `nuxt build`).
+nuxt generate | Créez l'application et générez toutes les routes en tant que fichiers HTML (utilisé pour l'hébergement statique).
 
 #### Arguments
 
@@ -22,7 +22,13 @@ Vous pouvez utiliser `--help` avec n'importe quelle commande pour obtenir des d�
 - **`--spa` ou `-s`:** lance la commande en mode application monopage et désactive le rendu côté serveur.
 - **`--unix-socket` ou `-n`:** Spécifie le chemin d'un socket UNIX.
 
-#### Utiliser un fichier package.json
+#### Hooks
+
+Hook | Objectif
+--- | ---
+`cli:buildError` | Capture une erreur en développement pour l'afficher dans l'écran de chargement.
+
+#### Utilisation dans le package.json
 
 Vous devriez ajouter ces commandes au `package.json` :
 
@@ -38,10 +44,12 @@ Vous devriez ajouter ces commandes au `package.json` :
 Ensuite, vous pouvez lancer vos commandes via `npm run <command>` (exemple : `npm run dev`).
 
 <div class="Alert Alert--nuxt-green">
+</div>
 
 <b>Astuce :</b> pour passer des arguments à une commande npm, vous devez utiliser un <code>--</code> supplémentaire après le nom du script (exemple : <code>npm run dev -- --spa</code>).
 
-</div>
+
+
 
 ## Environnement de développement
 
@@ -66,9 +74,7 @@ nuxt build
 nuxt start
 ```
 
-Vous pouvez aussi définir `server.https` dans votre fichier `nuxt.config.js` avec le même ensemble d'options passé à [`https.createServer`](https://nodejs.org/api/https.html), si vous décidez de servir Nuxt.js en mode HTTPS.
-Les sockets Unix sont aussi disponibles si vous spécifiez l'option `server.socket` dans `nuxt.config.js` (ou `-n` dans [CLI](https://nuxtjs.org/guide/commands#list-of-commands)).
-Si vous utilisez les [sockets Unix](https://en.wikipedia.org/wiki/Berkeley_sockets), vérifiez de ne pas valoriser les paramètres `host` et `port` sinon le paramètre `socket` est ignoré.
+Vous pouvez aussi définir `server.https` dans votre fichier `nuxt.config.js` avec le même ensemble d'options passé à [`https.createServer`](https://nodejs.org/api/https.html), si vous décidez de servir Nuxt.js en mode HTTPS. Les sockets Unix sont aussi disponibles si vous spécifiez l'option `server.socket` dans `nuxt.config.js` (ou `-n` dans [CLI](https://nuxtjs.org/guide/commands#list-of-commands)). Si vous utilisez les [sockets Unix](https://en.wikipedia.org/wiki/Berkeley_sockets), vérifiez de ne pas valoriser les paramètres `host` et `port` sinon le paramètre `socket` est ignoré.
 
 Le fichier `package.json` suivant est recommandé :
 
@@ -100,13 +106,25 @@ npm run generate
 
 Il créera un dossier `dist` avec tout à l'intérieur prêt à être déployé sur un hébergement de site statique.
 
+Pour retourner un status code different de zéro quand la génération d'une page échoue afin de notifier le CI/CD de ne pas déployer, vous pouvez utiliser l'option `--fail-on-error`.
+
+```bash
+npm run generate --fail-on-error
+
+// OR
+
+yarn generate --fail-on-error
+```
+
 Si vous avez un projet avec des [routes dynamiques](/guide/routing#dynamic-routes), regardez la [configuration de la commande generate](/api/configuration-generate) afin de dire à Nuxt.js comment générer ces routes dynamiques.
 
 <div class="Alert">
+</div>
 
 Lors de la génération de votre application web avec `nuxt generate`, [le contexte](/api/context) donné à [asyncData](/guide/async-data) et [fetch](/guide/vuex-store#la-m-thode-fetch) n'aura pas de `req` et `res`.
 
-</div>
+
+
 
 ### Déploiement pour une application monopage (SPA)
 
@@ -123,7 +141,9 @@ Donc pour un déploiement en mode SPA, vous devez :
 Une autre possibilité de déploiement est d'utiliser Nuxt comme un middleware dans des frameworks si le mode est `spa`. Ceci aide à réduire le temps de chargement et à utiliser Nuxt dans des projets ou le SSR n'est pas possible.
 
 <div class="Alert">
+</div>
 
 Consultez les [Question fréquentes](/faq) et trouver des exemples astucieux de déploiements sur des hôtes populaires.
 
-</div>
+
+
