@@ -82,7 +82,7 @@
         ]
       },
       {
-        "to": "/modules", "name": "Modules (EN)",
+        "to": "/modules", "name": "Modules",
         "contents": [
           { "to": "#introduction", "name": "Introduction" },
           { "to": "#list-of-nuxt-js-modules", "name": "List of Nuxt.js modules" },
