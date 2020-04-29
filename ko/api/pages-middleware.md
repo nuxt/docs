@@ -1,25 +1,22 @@
 ---
 title: "API: middleware 프로퍼티"
-description: 어플리케이션의 특정 페이지에 대한 미들웨어 설정.
+description: 어플리케이션의 특정 페이지에 대한 미들웨어를 설정합니다.
 ---
 
-# middleware 프로퍼티
+- Type: `String` or `Array` or `Function`
+  - Items: `String` or `Function`
 
-- 타입: `String` 또는 `Array`
-  - Items: `String`
+어플리케이션의 특정 페이지에 대한 미들웨어를 설정합니다.
 
-어플리케이션의 특정 페이지에 대한 미들웨어 설정.
+## 이름이 있는 미들웨어
 
-
-## Named middleware
-
-You can create named middleware by creating a file inside the `middleware/` directory, the file name will be the middleware name.
+`middleware/` 디렉토리에 파일을 생성하는 것으로 이름이 있는 미들웨어를 만드실 수 있습니다. 파일명이 미들웨어명이 될 것입니다.
 
 `middleware/authenticated.js`:
 
 ```js
 export default function ({ store, redirect }) {
-  // If the user is not authenticated
+  // 유저가 권한이 없다면
   if (!store.state.authenticated) {
     return redirect('/login')
   }
@@ -40,9 +37,9 @@ export default {
 </script>
 ```
 
-## Anonymous middleware
+## 익명 미들웨어
 
-If you need to use a middleware only for a specific page, you can directly use a function for it (or an array of functions):
+특정 페이지에 대해서만 미들웨어를 셋팅하고 싶을 수 있습니다. 이럴 때에는 직접적으로 함수를 생성하시면 됩니다(혹은 함수의 배열).
 
 `pages/secret.vue`:
 
@@ -63,5 +60,5 @@ export default {
 </script>
 ```
 
-To learn more about the middleware, see the [middleware guide](/guide/routing#middleware).
+미들웨어에 대해 더 알고 싶으시다면, [미들웨어 가이드](/guide/routing#middleware)를 참조해 주세요..
 

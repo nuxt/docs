@@ -3,8 +3,6 @@ title: "API: scrollToTop 프로퍼티"
 description: scrollToTop 프로퍼티로 페이지를 랜더링하기 전에 페이지의 최상단까지의 스크롤 여부를 지정할 수 있습니다.
 ---
 
-# scrollToTop 프로퍼티
-
 > scrollToTop 프로퍼티로 페이지를 랜더링하기 전에 페이지의 최상단까지의 스크롤 여부를 지정할 수 있습니다.
 
 - **타입:** `Boolean`（기본값: `false`）

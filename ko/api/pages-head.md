@@ -3,8 +3,6 @@ title: "API: head 메서드"
 description: Nuxt.js는 vue-meta를 사용하여 애플리케이션의 `헤더`와 `html 속성`을 업데이트합니다.
 ---
 
-# head 메서드
-
 > Nuxt.js는 [vue-meta](https://github.com/nuxt/vue-meta)를 사용하여 애플리케이션의 `헤더`와 `html 속성`을 업데이트합니다.
 
 - **타입:** `Object` 또는 `Function`
