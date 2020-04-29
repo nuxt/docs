@@ -124,6 +124,6 @@ Une autre possibilité de déploiement est d'utiliser Nuxt comme un middleware d
 
 <div class="Alert">
 
-Consultez les [Question fréquentes](/faq) et trouvez des exemples astucieux de déploiements sur des hôtes populaires.
+Consultez les [Questions fréquentes](/faq) et trouvez des exemples astucieux de déploiements sur des hôtes populaires.
 
 </div>
