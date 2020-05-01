@@ -84,6 +84,13 @@
         ]
       },
       { "name": "buildDir", "to": "/configuration-builddir" },
+      {
+        "name": "cli",
+        "to": "/configuration-cli",
+        "contents": [
+          { "name": "bannerColor", "to": "#bannercolor" }
+        ]
+      },
       { "name": "css", "to": "/configuration-css" },
       { "name": "dev", "to": "/configuration-dev" },
       { "name": "env", "to": "/configuration-env" },
