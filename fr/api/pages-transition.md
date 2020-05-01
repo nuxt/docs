@@ -1,5 +1,5 @@
 ---
-title: "API : la propriété pageTransition (EN)"
+title: "API : la propriété pageTransition"
 description: Nuxt.js utilise le composant de `<transition>` afin de créer des transitions / animations époustouflantes entre vos pages.
 ---
 
