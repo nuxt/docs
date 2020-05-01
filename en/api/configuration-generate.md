@@ -45,15 +45,25 @@ If you already activated through nuxt.config.js or otherwise, devtools enable re
 ## exclude
 
 - Type: `Array`
+  - Items: `String` or `RegExp`
 
-It accepts an array of regular expressions and will prevent generation of routes matching them. The routes will still be accessible when `generate.fallback` is used.
+It accepts an array of string or regular expressions and will prevent generation of routes matching them. The routes will still be accessible when `generate.fallback` is used.
+
+Taking this examples of structure:
+```bash
+-| pages/
+---| index.vue
+---| admin/
+-----| about.vue
+-----| index.vue
+```
 
 By default, running `nuxt generate` will create a file for each route.
 
 ```bash
 -| dist/
 ---| index.html
----| ignore/
+---| admin/
 -----| about.html
 -----| item.html
 ```
@@ -65,7 +75,7 @@ nuxt.config.js
 export default {
   generate: {
     exclude: [
-      /^(?=.*\bignore\b).*$/
+      /^\/admin/ // path starts with /admin
     ]
   }
 }
@@ -74,6 +84,16 @@ export default {
 ```bash
 -| dist/
 ---| index.html
+```
+
+You can also exclude a specific route by giving a string:
+
+```js
+export default {
+  generate: {
+    exclude: ['/my-secret-page']
+  }
+}
 ```
 
 ## fallback

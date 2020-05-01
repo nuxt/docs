@@ -140,7 +140,6 @@ export const actions = {
     commit('changeSomeValue', newValue)
   }
 }
-
 ```
 
 ## Client or server side only
