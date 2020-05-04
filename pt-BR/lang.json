@@ -66,10 +66,10 @@
     },
     "newsletter_form": {
       "email": "E-mail",
-      "subscribing": "Inscrevendo...",
+      "subscribing": "Subscrevendo...",
       "subscribe": "Inscrever-se",
       "subscribed_messages": {
-        "pre": "Um e-mail para confirmar sua subscrição foi enviado para",
+        "pre": "Um e-mail para confirmar sua inscrição foi enviado para",
         "post": "💚"
       }
     }
