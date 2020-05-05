@@ -66,7 +66,7 @@ Performances has a huge impact on how visitors see and interact with your websit
 
 ### Discovery
 
-Concepts and new features can sometimes be more difficult to explain, instead of using them. Feedback subjects since the last 3 years has been mostly about our lack of explaination and marketing. That's true. It's difficult to explain a framework that can do static site generation (SSG) or dynamic rendering (SSR) as well as optional server-side rendering with convention over configuration in **a simple sentence**. Good news, we are working on a brand new website full of Nuxt.js informations and features explanations. 
+Concepts and new features can sometimes be more difficult to explain, instead of using them. Feedback subjects since the last 3 years has been mostly about our lack of explanation and marketing. That's true. It's difficult to explain a framework that can do static site generation (SSG) or dynamic rendering (SSR) as well as optional server-side rendering with convention over configuration in **a simple sentence**. Good news, we are working on a brand new website full of Nuxt.js informations and features explanations. 
 
 ### Academy
 
