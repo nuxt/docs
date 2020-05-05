@@ -1,21 +1,21 @@
 ---
-title: Development Tools
-description: Nuxt.js helps you to make your web development enjoyable.
+title: Инструменты разработки
+description: Nuxt.js помогает сделать разработку приятнее.
 ---
 
-> Testing your application is part of the web development. Nuxt.js helps you to make it as easy as possible.
+> Тестирование вашего приложения является частью веб-разработки. Nuxt.js помогает сделать тестирование проще, насколько это возможно.
 
-## End-to-End Testing
+## End-to-End тестирование
 
-[AVA](https://github.com/avajs/ava) is a powerful JavaScript testing framework, mixed with [jsdom](https://github.com/tmpvar/jsdom), we can use them to do end-to-end testing easily.
+[AVA](https://github.com/avajs/ava) это мощная среда тестирования JavaScript, совмещенная с [jsdom](https://github.com/tmpvar/jsdom), чтобы мы могли просто выполнять end-to-end тесты.
 
-First, we need to add AVA and jsdom as development dependencies:
+Для начала нам нужно добавить AVA и jsdom как зависимости разработки:
 
 ```bash
 npm install --save-dev ava jsdom
 ```
 
-Then add a test script to our `package.json` and configure AVA to compile files that we import into our tests.
+Затем, добавить скрипт test в ваш `package.json` и настроить AVA для компиляции файлов, которые мы импортируем в наших тестах.
 
 ```javascript
 "scripts": {
@@ -28,23 +28,23 @@ Then add a test script to our `package.json` and configure AVA to compile files 
 }
 ```
 
-We are going to write our tests in the `test` folder:
+Мы будем писать наши тесты в директории `test`:
 
 ```bash
 mkdir test
 ```
 
-Let's say we have a page in `pages/index.vue`:
+Допустим, что у нас есть страница `pages/index.vue`:
 
 ```html
 <template>
-  <h1 class="red">Hello {{ name }}!</h1>
+  <h1 class="red">Привет {{ name }}!</h1>
 </template>
 
 <script>
 export default {
   data () {
-    return { name: 'world' }
+    return { name: 'мир' }
   }
 }
 </script>
@@ -56,76 +56,76 @@ export default {
 </style>
 ```
 
-When we launch our app with `npm run dev` and open http://localhost:3000, we can see our red `Hello world!` title.
+Когда мы запустим наше приложение `npm run dev` и откроем http://localhost:3000, мы увидим наш красный заголовок `Привет мир!`.
 
-We add our test file `test/index.test.js`:
+Добавим файл нашего теста `test/index.test.js`:
 
 ```js
 import { resolve } from 'path'
 import test from 'ava'
 import { Nuxt, Builder } from 'nuxt'
 
-// Init Nuxt.js and start listening on localhost:4000
+// Инициализируем Nuxt.js и запустим его на localhost:4000
 test.before('Init Nuxt.js', async (t) => {
   const rootDir = resolve(__dirname, '..')
   let config = {}
   try { config = require(resolve(rootDir, 'nuxt.config.js')) } catch (e) {}
-  config.rootDir = rootDir // project folder
-  config.dev = false // production build
-  config.mode = 'universal' // Isomorphic application
+  config.rootDir = rootDir // корневая директория проекта
+  config.dev = false // продакшен сборка
+  config.mode = 'universal' // Изоморфное приложение
   const nuxt = new Nuxt(config)
-  t.context.nuxt = nuxt // We keep a reference to Nuxt so we can close the server at the end of the test
+  t.context.nuxt = nuxt // Мы сохраняем ссылку на Nuxt, чтобы мы могли закрыть сервер в конце теста
   await new Builder(nuxt).build()
   nuxt.listen(4000, 'localhost')
 })
 
-// Example of testing only generated html
-test('Route / exists and render HTML', async (t) => {
+// Пример тестирования сгенерированного HTML
+test('Маршрут / существует и отрисовывает HTML', async (t) => {
   const { nuxt } = t.context
   const context = {}
   const { html } = await nuxt.renderRoute('/', context)
-  t.true(html.includes('<h1 class="red">Hello world!</h1>'))
+  t.true(html.includes('<h1 class="red">Привет мир!</h1>'))
 })
 
-// Example of testing via DOM checking
-test('Route / exists and renders HTML with CSS applied', async (t) => {
+// Пример теста с проверкой DOM
+test('Маршрут / существует и отрисовывает HTML с примененным CSS классом', async (t) => {
   const { nuxt } = t.context
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
   t.not(element, null)
-  t.is(element.textContent, 'Hello world!')
+  t.is(element.textContent, 'Привет мир!')
   t.is(element.className, 'red')
   t.is(window.getComputedStyle(element).color, 'red')
 })
 
-// Close the Nuxt server
+// Закрытие сервера Nuxt
 test.after('Closing server', (t) => {
   const { nuxt } = t.context
   nuxt.close()
 })
 ```
 
-We can now launch our tests:
+Теперь мы можем запустить наши тесты:
 
 ```bash
 npm test
 ```
 
-jsdom has some limitations because it does not use a browser. However, it will cover most of our tests. If you want to use a browser to test your application, you might want to check out [Nightwatch.js](http://nightwatchjs.org).
+jsdom имеет некоторые ограничения из-за того, что он не использует браузер. Тем не менее, он будет покрывать большинство наших тестов. Если вы хотите использовать браузер для тестирования вашего приложения, то вы можете использовать [Nightwatch.js](http://nightwatchjs.org).
 
-## ESLint and Prettier
+## ESLint и Prettier
 
-> [ESLint](http://eslint.org) is a great tool to keep your code clean.
+> [ESLint](http://eslint.org) отличный инструмент для поддержания чистоты вашего кода.
 
-> [Prettier](https://prettier.io) is a very popular code formatter.
+> [Prettier](https://prettier.io) это очень популярный инструмент для форматирования кода.
 
-You can add ESLint with Prettier pretty easily with Nuxt.js, first, you need to add the npm dependencies:
+Вы легко можете добавить ESLint с Prettier с помощью Nuxt.js, для начала вам нужно добавить зависимости npm:
 
 ```bash
 npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader eslint-plugin-vue eslint-plugin-prettier prettier
 ```
 
-Then, you can configure ESLint via a `.eslintrc.js` file in your root project directory:
+Затем, вы можете настроить ESLint с помощью файла `.eslintrc.js` в корневой директории проекта:
 ```js
 module.exports = {
   root: true,
@@ -139,15 +139,15 @@ module.exports = {
   extends: [
     'eslint:recommended',
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+    // рассмотрите возможность перехода на `plugin:vue/strongly-recommended` или `plugin:vue/recommended` для более строгих правил.
     'plugin:vue/recommended',
     'plugin:prettier/recommended'
   ],
-  // required to lint *.vue files
+  // требуется для линтинга файлов *.vue
   plugins: [
     'vue'
   ],
-  // add your custom rules here
+  // добавьте ваши правила
   rules: {
     'semi': [2, 'never'],
     'no-console': 'off',
@@ -157,7 +157,7 @@ module.exports = {
 }
 ```
 
-Then, you can add `lint` and `lintfix` scripts to your `package.json`:
+Затем, вы можете добавить скрипты `lint` и `lintfix` в ваш `package.json`:
 
 ```js
 "scripts": {
@@ -166,33 +166,33 @@ Then, you can add `lint` and `lintfix` scripts to your `package.json`:
 }
 ```
 
-You can now launch `lint` to check for errors:
+Теперь можно запустить `lint` для проверки ошибок:
 
 ```bash
 npm run lint
 ```
 
-or `lintfix` to also fix those which are doable
+или `lintfix` для исправления того, что возможно
 
 ```bash
 npm run lintfix
 ```
 
-ESLint will lint all of your JavaScript and Vue files while ignoring your ignored files defined in your `.gitignore`.
+ESLint будет исправлять все ваши файлы JavaScript и Vue, игнорируя то, что указанно в вашем `.gitignore`.
 
-It is also recommended to enable ESLint hot reloading mode via webpack. This way ESLint will run on save during `npm run dev`. Just add the following to your `nuxt.config.js`:
+Также рекомендуется включить режим горячей перезагрузки ESLint через webpack. Таким образом ESLint будет работать при сохранении во время `npm run dev`. Просто добавьте следующее в ваш `nuxt.config.js`:
 
 ```js
 ...
   /*
-   ** Build configuration
+   ** Конфигурация сборки
   */
   build: {
    /*
-    ** You can extend webpack config here
+    ** Здесь вы можете дополнить конфигурацию webpack
    */
    extend(config, ctx) {
-      // Run ESLint on save
+      // Запуск ESLint при сохранении
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: "pre",
@@ -207,6 +207,6 @@ It is also recommended to enable ESLint hot reloading mode via webpack. This way
 
 <div class="Alert Alert--orange">
 
-One best practice is to add also `"precommit": "npm run lint"` in your package.json to lint your code automatically before committing your code.
+Одна из лучших практик это добавить скрипт `"precommit": "npm run lint"` в ваш package.json для автоматического линтинга перед коммитом вашего кода.
 
 </div>
