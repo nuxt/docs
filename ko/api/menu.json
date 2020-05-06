@@ -38,7 +38,7 @@
           { "name": "Function", "to": "#function" }
         ]
       },
-      { "name": "유효성 검증된", "to": "/pages-validate" }
+      { "name": "validate", "to": "/pages-validate" }
     ]
   },
   {
@@ -46,7 +46,14 @@
     "links": [
       { "name": "nuxt", "to": "/components-nuxt" },
       { "name": "nuxt-child", "to": "/components-nuxt-child" },
-      { "name": "nuxt-link", "to": "/components-nuxt-link" }
+      { "name": "nuxt-link", "to": "/components-nuxt-link" },
+      { "name": "client-only", "to": "/components-client-only" }
+    ]
+  },
+  {
+    "title": "Utils",
+    "links": [
+      { "name": "$nuxt", "to": "/$nuxt" }
     ]
   },
   {
@@ -67,10 +74,20 @@
           { "name": "vendor", "to": "#vendor" }
         ]
       },
+      { "name": "buildDir", "to": "/configuration-builddir" },
+      {
+        "name": "cli",
+        "to": "/configuration-cli",
+        "contents": [
+          { "name": "bannerColor", "to": "#bannercolor" }
+        ]
+      },
       { "name": "캐시", "to": "/configuration-cache" },
       { "name": "css", "to": "/configuration-css" },
       { "name": "dev", "to": "/configuration-dev" },
+      { "name": "dir", "to": "/configuration-dir" },
       { "name": "env", "to": "/configuration-env" },
+      { "name": "extendPlugins", "to": "/configuration-extend-plugins" },
       {
         "name": "generate",
         "to": "/configuration-generate",
