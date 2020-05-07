@@ -1,11 +1,11 @@
 ---
-title: "API: The <nuxt-child> Component"
-description: Display the current page.
+title: "API: Компонент <nuxt-child>"
+description: Отображение дочерних страниц.
 ---
 
-> This component is used for displaying the children components in a [nested route](/guide/routing#nested-routes).
+> Этот компонент используется для отображения дочерних компонентов во [вложеных маршрутах](/guide/routing#nested-routes).
 
-Example:
+Пример:
 
 ```bash
 -| pages/
@@ -14,7 +14,7 @@ Example:
 ---| parent.vue
 ```
 
-This file tree will generate these routes:
+Данное дерево файлов сгенерирует следующий набор маршрутов:
 
 ```js
 [
@@ -33,18 +33,18 @@ This file tree will generate these routes:
 ]
 ```
 
-To display the `child.vue` component, we have to insert `<nuxt-child/>` inside `pages/parent.vue`:
+Что бы отобразить компонент `child.vue`, нам требуется добавить `<nuxt-child/>` внутри `pages/parent.vue`:
 
 ```html
 <template>
   <div>
-    <h1>I am the parent view</h1>
+    <h1>Я - компонент-родитель</h1>
     <nuxt-child :foobar="123" />
   </div>
 </template>
 ```
 
-`<nuxt-child/>` accepts `keep-alive` and `keep-alive-props`:
+`<nuxt-child/>` принимает входные параметры `keep-alive` и `keep-alive-props`:
 
 ```html
 <template>
@@ -53,7 +53,7 @@ To display the `child.vue` component, we have to insert `<nuxt-child/>` inside `
   </div>
 </template>
 
-<!-- will be converted into something like this -->
+<!-- Будет преобразовано во что-то наподобие: -->
 <div>
   <keep-alive :exclude="['modal']">
     <router-view />
@@ -61,15 +61,15 @@ To display the `child.vue` component, we have to insert `<nuxt-child/>` inside `
 </div>
 ```
 
-> Child components can also receive properties like a regular Vue component.
+> Дочерние компоненты так же могут принимать входные параметры, как и обычные компоненты Vue.
 
-To see an example, take a look at the [nested-routes example](/examples/nested-routes).
+Пример можно увидеть на странице [с примером вложенных маршрутов](/examples/nested-routes).
 
-## Named View
+## Именованные представления
 
-> Introduced with Nuxt v2.4.0
+> Добавлено в Nuxt v2.4.0
 
-`<nuxt-child/>` accepts `name` prop to render named-view:
+`<nuxt-child/>` принимает входной параметр `name` для отрисовки именованных представлений:
 
 ```html
 <template>
@@ -80,4 +80,4 @@ To see an example, take a look at the [nested-routes example](/examples/nested-r
 </template>
 ```
 
-To see an example, take a look at the [named-views example](/examples/named-views).
+Пример можно увидеть на странице [с примером именованных представлений](/examples/named-views).
