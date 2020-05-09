@@ -221,7 +221,7 @@ export default {
 </script>
 ```
 
-La navigation vers la même page n'appellera pas `fetch` si le dernier appel `fetch` remonte à plus de 30 secondes.
+La navigation vers la même page n'appellera pas `fetch` si le dernier appel `fetch` remonte à moins de 30 secondes.
 
 ![fetch-keep-alive-nuxt](https://user-images.githubusercontent.com/904724/54164405-c6881d80-445c-11e9-94e0-366406270874.gif)
 
