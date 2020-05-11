@@ -25,35 +25,42 @@
           { "name": "Nuxt <= 2.11", "to": "#nuxt-lt-2-11" }
         ]
       },
-      { "name": "head 메서드", "to": "/pages-head" },
-      { "name": "key 프로퍼티", "to": "/pages-key" },
-      { "name": "layout 프로퍼티", "to": "/pages-layout" },
-      { "name": "middleware 프로퍼티", "to": "/pages-middleware" },
-      { "name": "scrollToTop 프로퍼티", "to": "/pages-scrolltotop" },
+      { "name": "head", "to": "/pages-head" },
+      { "name": "key", "to": "/pages-key" },
+      { "name": "layout", "to": "/pages-layout" },
+      { "name": "middleware", "to": "/pages-middleware" },
+      { "name": "scrollToTop", "to": "/pages-scrolltotop" },
       {
-        "name": "transition 프로퍼티", "to": "/pages-transition",
+        "name": "transition", "to": "/pages-transition",
         "contents": [
           { "name": "String", "to": "#string" },
           { "name": "Object", "to": "#object" },
           { "name": "Function", "to": "#function" }
         ]
       },
-      { "name": "유효성 검증된 메서드", "to": "/pages-validate" }
+      { "name": "validate", "to": "/pages-validate" }
     ]
   },
   {
     "title": "Components",
     "links": [
-      { "name": "<nuxt> 컴포넌트", "to": "/components-nuxt" },
-      { "name": "<nuxt-child> 컴포넌트", "to": "/components-nuxt-child" },
-      { "name": "<nuxt-link> 컴포넌트", "to": "/components-nuxt-link" }
+      { "name": "nuxt", "to": "/components-nuxt" },
+      { "name": "nuxt-child", "to": "/components-nuxt-child" },
+      { "name": "nuxt-link", "to": "/components-nuxt-link" },
+      { "name": "client-only", "to": "/components-client-only" }
+    ]
+  },
+  {
+    "title": "Utils",
+    "links": [
+      { "name": "$nuxt", "to": "/$nuxt" }
     ]
   },
   {
     "title": "Configuration",
     "links": [
       {
-        "name": "build 프로퍼티",
+        "name": "build",
         "to": "/configuration-build",
         "contents": [
           { "name": "analyze", "to": "#analyze" },
@@ -67,12 +74,22 @@
           { "name": "vendor", "to": "#vendor" }
         ]
       },
-      { "name": "캐시 프로퍼티", "to": "/configuration-cache" },
-      { "name": "css 프로퍼티", "to": "/configuration-css" },
-      { "name": "dev 프로퍼티", "to": "/configuration-dev" },
-      { "name": "env 프로퍼티", "to": "/configuration-env" },
+      { "name": "buildDir", "to": "/configuration-builddir" },
       {
-        "name": "generate 프로퍼티",
+        "name": "cli",
+        "to": "/configuration-cli",
+        "contents": [
+          { "name": "bannerColor", "to": "#bannercolor" }
+        ]
+      },
+      { "name": "캐시", "to": "/configuration-cache" },
+      { "name": "css", "to": "/configuration-css" },
+      { "name": "dev", "to": "/configuration-dev" },
+      { "name": "dir", "to": "/configuration-dir" },
+      { "name": "env", "to": "/configuration-env" },
+      { "name": "extendPlugins", "to": "/configuration-extend-plugins" },
+      {
+        "name": "generate",
         "to": "/configuration-generate",
         "contents": [
           { "name": "dir", "to": "#dir" },
@@ -80,9 +97,9 @@
           { "name": "경로", "to": "#routes" }
         ]
       },
-      { "name": "head 프로퍼티", "to": "/configuration-head" },
+      { "name": "head", "to": "/configuration-head" },
       {
-        "name": "loading 프로퍼티",
+        "name": "loading",
         "to": "/configuration-loading",
         "contents": [
           { "name": "Progress Bar 사용 여부", "to": "#disable-the-progress-bar" },
@@ -91,17 +108,17 @@
         ]
       },
       {
-        "name": "performance 프로퍼티",
+        "name": "performance",
         "to": "/configuration-performance",
         "contents": [
           { "name": "gzip", "to": "#gzip" },
           { "name": "prefetch", "to": "#prefetch" }
         ]
       },
-      { "name": "plugins 프로퍼티", "to": "/configuration-plugins" },
-      { "name": "rootDir 프로퍼티", "to": "/configuration-rootdir" },
+      { "name": "plugins", "to": "/configuration-plugins" },
+      { "name": "rootDir", "to": "/configuration-rootdir" },
       {
-        "name": "router 프로퍼티",
+        "name": "router",
         "to": "/configuration-router",
         "contents": [
           { "name": "base", "to": "#base" },
@@ -112,10 +129,10 @@
           { "name": "extendRoutes", "to": "#extendroutes" }
         ]
       },
-      { "name": "srcDir 프로퍼티", "to": "/configuration-srcdir" },
-      { "name": "transition 프로퍼티", "to": "/configuration-transition" },
+      { "name": "srcDir", "to": "/configuration-srcdir" },
+      { "name": "transition", "to": "/configuration-transition" },
       {
-        "name": "watchers 프로퍼티",
+        "name": "watchers",
         "to": "/configuration-watchers",
         "contents": [
           { "name": "chokidar", "to": "#chokidar" },
