@@ -49,7 +49,7 @@ this.plugin('ready', async (moduleContainer) => {
 
 `fileName` を与えない、または `template` が文字列の場合、ファイル名はデフォルトで `[dirName].[fileName].[pathHash].[ext]` となります。
 
-このメソッドは最終的な `{ dist, src, options }` オブジェクトを返します。
+このメソッドは最終的な `{ dst, src, options }` オブジェクトを返します。
 
 ### addPlugin (template)
 
