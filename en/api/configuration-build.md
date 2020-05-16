@@ -217,7 +217,7 @@ You may want to extract all your CSS to a single file.
 There is a workaround for this:
 
 <div class="Alert Alert--orange">
-⚠️ It is not recommended extracting everything into a single file. 
+⚠️ It is not recommended extracting everything into a single file.
 Extracting into multiple css files is better for caching and preload isolation.
 It can also improve page performance by downloading and resolving only those resources that are needed.
 </div>
@@ -776,14 +776,14 @@ export default {
 
 ## followSymlinks
 
-> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example. 
+> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example.
 
 - Type: `Boolean`
 
 ```js
 export default {
   build: {
-    followSymlinks: false
+    followSymlinks: true
   }
 }
 ```
