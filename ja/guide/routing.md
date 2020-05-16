@@ -272,11 +272,11 @@ __注意:__ 404 ページのハンドリングは `_.vue` ページのロジッ�
 
 ## routerの拡張
 
-Nuxtのルーティングを拡張するためにはいくつかの方法があります。
+Nuxt のルーティングを拡張するためにはいくつかの方法があります。
 
 - [router-extras-module](https://github.com/nuxt-community/router-extras-module) はページコンポーネントのルートパラメータをカスタマイズできます。
-- [@nuxtjs/router](https://github.com/nuxt-community/router-module) は独自の`router.js`を使ってNuxt routerを上書きすることができます。
-- [router.extendRoutes](https://nuxtjs.org/api/configuration-router#extendroutes) プロパティを`nuxt.config.js`で使います。
+- [@nuxtjs/router](https://github.com/nuxt-community/router-module) は独自の `router.js` を使って Nuxt router を上書きすることができます。
+- [router.extendRoutes](https://nuxtjs.org/api/configuration-router#extendroutes) プロパティを `nuxt.config.js` で使います。
 
 ### 名前付きビュー
 
