@@ -54,6 +54,7 @@ It will ask you some questions:
   - [Buefy](https://github.com/buefy/buefy)
   - [iView](https://github.com/iview/iview)
   - [Tachyons](https://github.com/tachyons-css/tachyons)
+  - [Vuesax](https://github.com/lusaxweb/vuesax)
 3. Choose your favorite testing framework:
   - None (feel free to add one later)
   - [Jest](https://github.com/facebook/jest)

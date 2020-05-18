@@ -7,7 +7,7 @@ description: Nuxt.js vous permet de personnaliser la configuration de webpack po
 
 ## analyze
 
-> Nuxt.js utilise [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) pour vous 
+> Nuxt.js utilise [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) pour vous
 > permettre de visualiser vos paquets et comment les optimiser.
 
 - Type: `Boolean` ou `Object`
@@ -61,8 +61,8 @@ Les cibles par défaut de [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.
       - le nom du préréglage `@nuxt/babel-preset-app`
       - [`options`](https://github.com/nuxt/nuxt.js/tree/dev/packages/babel-preset-app#options) de `@nuxt/babel-preset-app`
 
-**Remarque**: Les pré-réglages configurés dans `build.babel.presets` seront appliqués à la fois à la génération du client 
-et du serveur. La cible sera fixée par Nuxt en conséquence (client/serveur). Si vous souhaitez configurer le 
+**Remarque**: Les pré-réglages configurés dans `build.babel.presets` seront appliqués à la fois à la génération du client
+et du serveur. La cible sera fixée par Nuxt en conséquence (client/serveur). Si vous souhaitez configurer le
 préréglage différemment pour le client ou la version du serveur, veuillez utiliser `presets` comme fonction:
 
 > Nous **recommandons vivement** d'utiliser le pré-réglage par défaut au lieu de la personnalisation ci-dessous:
@@ -150,7 +150,7 @@ Si vous l'avez déjà activé via `nuxt.config.js` ou autrement, devtools est ac
 
 - Type: `Function`
 
-L'extension est appelée deux fois, une fois pour le groupe de serveurs et une fois pour le groupe de clients. Les 
+L'extension est appelée deux fois, une fois pour le groupe de serveurs et une fois pour le groupe de clients. Les
 arguments de la méthode sont:
 
 1. L'objet de configuration Webpack,
@@ -161,7 +161,7 @@ arguments de la méthode sont:
 
   **Attention:**
   Les clés `isClient` et `isServer` fournies sont distinctes des clés disponibles dans [`context`](/api/context).
-  Elles ne **sont pas** dépréciées. N'utilisez pas `process.client` et `process.server` ici car elles ne sont pas définies 
+  Elles ne **sont pas** dépréciées. N'utilisez pas `process.client` et `process.server` ici car elles ne sont pas définies
   à ce stade.
 
 </div>
@@ -182,12 +182,12 @@ export default {
 }
 ```
 
-Si vous souhaitez en savoir plus sur notre configuration de webpack par défaut, jetez un œil à notre 
+Si vous souhaitez en savoir plus sur notre configuration de webpack par défaut, jetez un œil à notre
 [répertoire webpack](https://github.com/nuxt/nuxt.js/tree/dev/packages/webpack/src/config).
 
 ### loaders in extend
 
-`loaders` a la même structure d'objet que [build.loaders](#loaders), afin que vous puissiez modifier les options des 
+`loaders` a la même structure d'objet que [build.loaders](#loaders), afin que vous puissiez modifier les options des
 chargement à l'intérieur de `extend`.
 
 Exemple (`nuxt.config.js`):
@@ -212,14 +212,14 @@ export default {
 - Type: `Boolean`
 - Par défaut: `false`
 
-En utilisant [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin/) 
-sous le capot, tous vos CSS seront extraits dans des fichiers séparés, généralement un par composant. Cela permet de 
-mettre en cache votre CSS et JavaScript séparément et vaut la peine d'essayer si vous avez beaucoup de CSS globaux 
+En utilisant [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin/)
+sous le capot, tous vos CSS seront extraits dans des fichiers séparés, généralement un par composant. Cela permet de
+mettre en cache votre CSS et JavaScript séparément et vaut la peine d'essayer si vous avez beaucoup de CSS globaux
 ou partagés.
 
 <div class="Alert Alert--teal">
 
-**Remarque:** Il y avait un bug avant Vue 2.5.18 qui supprimait les importations CSS critiques lors de l'utilisation 
+**Remarque:** Il y avait un bug avant Vue 2.5.18 qui supprimait les importations CSS critiques lors de l'utilisation
 de ces options.
 
 </div>
@@ -230,7 +230,7 @@ Il existe une solution pour cela:
 <div class="Alert Alert--orange">
 ⚠️ Il n'est pas recommandé d'extraire tout dans un seul fichier.
 L'extraction dans plusieurs fichiers CSS est meilleure pour la mise en cache et l'isolation de préchargement.
-Cela peut également améliorer les performances des pages en téléchargeant et en résolvant uniquement les ressources 
+Cela peut également améliorer les performances des pages en téléchargeant et en résolvant uniquement les ressources
 nécessaires.
 </div>
 
@@ -328,7 +328,7 @@ Voir [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middlewar
 
 **Attention:** Si vous apportez des modifications à `html.minify`, elles ne seront pas fusionnées avec les valeurs par défaut!
 
-Configuration du plugin [html-minifier](https://github.com/kangax/html-minifier) utilisé pour minimiser 
+Configuration du plugin [html-minifier](https://github.com/kangax/html-minifier) utilisé pour minimiser
 les fichiers HTML créés pendant le processus de construction (seront appliqués pour *tous les modes*).
 
 ## indicator
@@ -431,7 +431,7 @@ les fichiers HTML créés pendant le processus de construction (seront appliqué
 
 La valeur par défaut de `splitChunks.name` est `true` en mode `dev` ou `analyze`.
 
-Vous pouvez définir `minimizer` sur un tableau personnalisé de plugins ou définir `minimize` sur `false` pour désactiver 
+Vous pouvez définir `minimizer` sur un tableau personnalisé de plugins ou définir `minimize` sur `false` pour désactiver
 tous les minimiseurs.
 (`minimize` est désactivé par défaut pour le développement)
 
@@ -504,7 +504,7 @@ export default {
   }
   ```
 
-Vos paramètres de plugin personnalisés seront fusionnés avec les plugins par défaut (sauf si vous utilisez un `Array` 
+Vos paramètres de plugin personnalisés seront fusionnés avec les plugins par défaut (sauf si vous utilisez un `Array`
 à la place d'un `Object`).
 
 Exemple (`nuxt.config.js`):
@@ -554,7 +554,7 @@ export default {
 ```
 ### postcss plugins & nuxt-tailwindcss
 
-Si vous souhaitez appliquer le plugin postcss (par exemple postcss-pxtorem) sur la configuration de nuxt-tailwindcss, 
+Si vous souhaitez appliquer le plugin postcss (par exemple postcss-pxtorem) sur la configuration de nuxt-tailwindcss,
 vous devez changer l'ordre et charger tailwindcss en premier.
 
 **Cette configuration n'a aucun impact sur le nuxt-purgecss.**
@@ -654,7 +654,7 @@ Ceci est utile lorsque vous devez injecter des variables et des mixins dans vos 
 
 Nuxt.js utilise [style-resources-loader](https://github.com/yenshih/style-resources-loader) pour obtenir ce comportement.
 
-Vous devez spécifier les motifs/chemin que vous souhaitez inclure pour les pré-processeurs donnés: `less`, `sass`, `scss` 
+Vous devez spécifier les motifs/chemin que vous souhaitez inclure pour les pré-processeurs donnés: `less`, `sass`, `scss`
 ou `stylus`.
 
 Vous ne pouvez pas utiliser d'alias de chemin ici (`~` et `@`), vous devez utiliser des chemins relatifs ou absolus.
@@ -680,7 +680,7 @@ Vous ne pouvez pas utiliser d'alias de chemin ici (`~` et `@`), vous devez utili
 
 ## templates
 
-> Nuxt.js vous permet de fournir vos propres modèles qui seront rendus en fonction de la configuration de Nuxt. 
+> Nuxt.js vous permet de fournir vos propres modèles qui seront rendus en fonction de la configuration de Nuxt.
 > Cette fonctionnalité est particulièrement utile pour une utilisation avec [modules](/guide/modules).
 
 - Type: `Array`
@@ -703,7 +703,7 @@ export default {
 }
 ```
 
-Les modèles sont rendues à l'aide de [`lodash.template`](https://lodash.com/docs/#template), vous pouvez en savoir plus 
+Les modèles sont rendues à l'aide de [`lodash.template`](https://lodash.com/docs/#template), vous pouvez en savoir plus
 sur leur utilisation [ici](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
 
 ## terser
@@ -738,11 +738,11 @@ Voir [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/
 - Type: `Array<String | RegExp | Function>`
 - Par défaut: `[]`
 
-Si vous souhaitez transpiler des dépendances spécifiques avec Babel, vous pouvez les ajouter dans `build.transpile`. 
-Chaque élément transpilé peut être un nom de package, une chaîne ou un objet regex correspondant au nom de fichier de 
+Si vous souhaitez transpiler des dépendances spécifiques avec Babel, vous pouvez les ajouter dans `build.transpile`.
+Chaque élément transpilé peut être un nom de package, une chaîne ou un objet regex correspondant au nom de fichier de
 la dépendance.
 
-À partir de `v2.9.0`, vous pouvez également utiliser une fonction pour transpiler conditionnellement, la fonction 
+À partir de `v2.9.0`, vous pouvez également utiliser une fonction pour transpiler conditionnellement, la fonction
 recevra un objet (`{ isDev, isServer, isClient, isModern, isLegacy }`):
 
 ```js
@@ -778,7 +778,7 @@ recevra un objet (`{ isDev, isServer, isClient, isModern, isLegacy }`):
 
 ## watch
 
-> Vous pouvez fournir vos fichiers personnalisés à regarder et à régénérer après les modifications. Cette fonctionnalité 
+> Vous pouvez fournir vos fichiers personnalisés à regarder et à régénérer après les modifications. Cette fonctionnalité
 > est particulièrement utile pour une utilisation avec [modules](/guide/modules).
 
 - Type: `Array<String>`
@@ -795,7 +795,7 @@ export default {
 
 ## followSymlinks
 
-> Par défaut, le processus de génération n'analyse pas les fichiers à l'intérieur des liens symboliques. Ce booléen les 
+> Par défaut, le processus de génération n'analyse pas les fichiers à l'intérieur des liens symboliques. Ce booléen les
 > inclut, permettant ainsi l'utilisation de liens symboliques dans des dossiers tels que le dossier "pages", par exemple.  
 
 - Type: `Boolean`
@@ -803,7 +803,7 @@ export default {
 ```js
 export default {
   build: {
-    followSymlinks: false
+    followSymlinks: true
   }
 }
 ```
