@@ -10,7 +10,7 @@
       { "name": "Comment ajouter des plugins webpack ?", "to": "/webpack-plugins" },
       { "name": "Comment changer le HOST et le PORT ?", "to": "/host-port" },
       { "name": "Comment mettre en cache des composants ?", "to": "/cached-components" },
-      { "name": "Comment intégrer Google Analytics ?", "to": "/google-analytics" },
+      { "name": "Comment intégrer Google Analytics ?", "to": "/ga" },
       { "name": "How to share cross origin resource? (EN)", "to": "/http-proxy"},
       { "name": "How to extend Webpack config to load audio files? (EN)", "to": "/webpack-audio-files" }
     ]
