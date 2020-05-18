@@ -60,5 +60,6 @@ Voilà! Your Nuxt.js application is now hosted on Google App Engine!
 ## Further Information
 
 - The `instance_class` attribute in your app.yaml file sets the class of your app instance. Instance F2 is not completely free, but has the minimum memory needed to run a Nuxt application.
+- Make sure `start` in package.json is the command that you want to run after deployment. If you usually run by `start:prod` or some other command, your app will not work as expected.
 
 Make sure to put the `project-id` and not the `project-name` in the deploy command. These are two different things but easy to mix up.
