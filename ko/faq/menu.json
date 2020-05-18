@@ -9,7 +9,7 @@
       { "name": "Webpack 설정의 확장", "to": "/extend-webpack" },
       { "name": "Webpack 플러그인", "to": "/webpack-plugins" },
       { "name": "host와 port 번호", "to": "/host-port" },
-      { "name": "Google 애널리틱스의 통합", "to": "/google-analytics" }
+      { "name": "Google 애널리틱스의 통합", "to": "/ga" }
     ]
   },
   {
