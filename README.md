@@ -42,7 +42,7 @@ Korean translation is maintained by Taewoong La.
 
 - Translation Repo - [/DiyLecko/ko.docs.nuxtjs](https://github.com/DiyLecko/ko.docs.nuxtjs)
 - Primary maintainer - [Taewoong La](http://blog.naver.com/diy_lecko)
-- Primary translator - [june](http://jicjjang.github.io), [wanybae](https://github.com/wanybae), [rellario](https://github.com/rellario)
+- Primary translator - [june](http://jicjjang.github.io), [wanybae](https://github.com/wanybae), [rellario](https://github.com/rellario), [Nahyeon Lee](https://github.com/nh0627)
 
 ### French
 

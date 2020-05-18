@@ -269,7 +269,7 @@ Path | File
 
 __Note:__ 404 페이지는 이제 `_.vue` 페이지의 로직에 달렸습니다[404 리디렉션에 대한 정보를 여기서 찾아주세요](/guide/async-data#handling-errors).
 
-### Named Views
+## Named Views
 
 Named view들을 렌더링하기 위해서 `<nuxt name="top"/>`나 `<nuxt-child name="top"/>` 컴포넌트를 layout/page에서 사용할 수 있습니다. 페이지의 named view를 구체적으로 표시하기 위해서는 `nuxt.config.js` 파일의 라우터 설정을 확장해야합니다:
   
