@@ -25,7 +25,7 @@ Ou
 
 ## Configurer dans `nuxt.config.js` :
 
-À l'intérieur de `nuxt.config.js` :
+Dans votre `nuxt.config.js` :
 
 ```js
 export default {
