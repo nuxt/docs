@@ -108,6 +108,7 @@
         ]
       },
       { "name": "css", "to": "/configuration-css" },
+      { "name": "components", "to": "/configuration-components" },
       { "name": "dev", "to": "/configuration-dev" },
       { "name": "dir", "to": "/configuration-dir" },
       { "name": "env", "to": "/configuration-env" },
