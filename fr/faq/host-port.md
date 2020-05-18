@@ -9,7 +9,7 @@ Pour indiquer à Nuxt qu'il doit rendre accessible l'hôte depuis des connexions
 
 Vous pouvez configurer les variables de connexion de plusieurs façons. Ces dernières sont listées **de la plus grande priorité à la plus petite**.
 
-> **Remarque:** Si au `port` est assigné la chaîne de caractères `'0'` (et non `0`, qui est incorrect), un port aléatoire sera attribué à votre application Nuxt.
+> **Remarque:** Si vous assignez à la variable `port` la chaîne de caractères `'0'` (et non `0`, qui est incorrect), un port aléatoire sera attribué à votre application Nuxt.
 
 ## En utilisant des arguments directs
 
