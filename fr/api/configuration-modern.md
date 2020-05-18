@@ -3,7 +3,7 @@ title: "API: La propriété modern"
 description: Créez et servez un bundle moderne
 ---
 
-> Cette fonctionnalité est inspirée du [mode monderne vue-cli](https://cli.vuejs.org/guide/browser-compatibility.html#modern-mode) 
+> Cette fonctionnalité est inspirée du [mode moderne vue-cli](https://cli.vuejs.org/guide/browser-compatibility.html#modern-mode) 
 
 - Type: `String` or `Boolean`
   - Par défaut: false
