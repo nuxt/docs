@@ -1,4 +1,4 @@
 ---
-title: Modular
+title: Модульный
 ---
-Nuxt is based on a powerful modular architecture. You can choose from more than 50 modules to make your development faster and easier. You don't have to reinvent the wheel to get PWA benefits, add Google Analytics to your page or generate a sitemap.
+Nuxt разработан на основе мощной модульной архитектуры. Более 50 разнообразных модулей сделают разработку проще и быстрее. Вам не придется изобретать велосипед, чтобы прикрутить PWA-фичи, Google Analytics, генерацию sitemap и многие другие типовые вещи.

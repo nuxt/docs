@@ -23,7 +23,7 @@ tags:
 <video src="/blog/build-dev-to-clone-with-nuxt-new-fetch/dev-clone-nuxt.mp4" autoplay loop playsinline controls></video>
 
 <p align="center">
-  <a href="https://boyps.sse.codesandbox.io" target="_blank" rel="noopener nofollow">View demo</a> / 
+  <a href="https://dev-clone.nuxtjs.app" target="_blank" rel="noopener nofollow">View demo</a> / 
   <a href="https://github.com/bdrtsky/nuxt-dev-to-clone" target="_blank" rel="noopener nofollow">Source</a>
 </p>
 
@@ -228,7 +228,7 @@ Moreover, Nuxt gives us fine grained control over `keep-alive` with the `keep-al
 
 Let’s dive into the `fetch` feature itself. 
 
-Currently as you can see from the [final result](https://boyps.sse.codesandbox.io/) we have 3 page components that basically reuse the same code — it’s the `index.vue`, `top.vue` and `t/_tag.vue` page components. They simply render a list of article preview cards.
+Currently as you can see from the [final result](https://dev-clone.nuxtjs.app/) we have 3 page components that basically reuse the same code — it’s the `index.vue`, `top.vue` and `t/_tag.vue` page components. They simply render a list of article preview cards.
 
 `index.vue`
 
