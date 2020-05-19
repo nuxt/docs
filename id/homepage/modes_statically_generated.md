@@ -1,10 +1,8 @@
 ---
-title: Statically Generated
-content_title: Statically Generated
----              
-Static Site Generation is a very hot topic right now (aka JAMStack). Instead of switching to another framework and
-spending time to get used to it, why not killing two birds with one stone?
-<span style="color: #777">(only proverbial 🐦🐦)</span><br><br>
-Nuxt.js supports generating a static website based on your Vue application. It is the "best of both worlds"
-as you don't need a server but still have SEO benefits because Nuxt will pre-render all pages and include
-the necessary HTML. Also, you can deploy the resulting page easily to Netlify or GitHub pages.
+title: Generasi Secara Statis
+content_title: Generasi Secara Statis
+---
+Generasi Situs Statis adalah topik panas saat ini (aka JAMStack). Daripada beralih ke framework lain dan menghabiskan waktu untuk menggunakannya, kenapa tidak membunuh dua burung dengan satu batu?
+<span style="color: #777">(hanya pepatah 🐦🐦)</span><br><br>
+Nuxt.js mendukung untuk membuat situs web statis berbasis aplikasi Vue Anda. Ini menjadi "terbaik di dua dunia"
+seperti anda tidak membutuhkan server tetapi tetap memiliki manfaat SEO karena Nuxt akan pra-render semua halaman dan termasuk HTML yang diperlukan. Juga, Anda dapat deploy hasil halaman dengan mudah ke Netlify atau Github Pages.

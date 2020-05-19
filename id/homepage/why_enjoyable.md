@@ -1,6 +1,6 @@
 ---
-title: Enjoyable
+title: Menyenangkan
 ---
-Our main focus is the Developer Experience. We love Nuxt.js and continuously improve the framework so you love it too! 💚
+Fokus utama kami adalah Pengalaman Developer. Kami mencintai Nuxt.js dan terus-menerus memperbaiki framework agar Anda menyukainya juga! 💚
 
-Expect appealing solutions, descriptive error messages, powerful defaults and detailed documentation. If questions or problems come up, our helpful community will help you out.
+Harapkan solusi yang menarik, pesan kesalahan deskriptif, standar kuat dan dokumentasi terperinci. Jika ada pertanyaan atau masalah, komunitas kami akan membantu Anda.
