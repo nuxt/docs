@@ -61,5 +61,6 @@ gcloud app deploy app.yaml --project [project-id]
 ## 詳細
 
 - app.yaml ファイルの `instance_class` 属性はアプリケーションのインスタンスクラスを設定します。F2 インスタンスは完全に無料ではありませんが、Nuxt アプリケーションを実行するために必要な最小限のメモリを有しています。
+- package.json の `start` がデプロイ後に実行したいコマンドであることを確認してください。普段から `start:prod` などの別のコマンドを実行している場合、アプリケーションは期待通りに動作しません。
 
 deploy コマンドには、必ず `project-name` ではなく `project-id` を入れてください。これら 2 つは異なるものです - しかし混同しやすいです。
