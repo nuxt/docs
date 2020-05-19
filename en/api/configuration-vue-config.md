@@ -3,9 +3,6 @@ title: "API: The vue.config Property"
 description: A config object for Vue.config
 ---
 
-
-# The vue.config Property
-
 - Type: `Object`
 - Default: `{ silent: !isDev, performance: isDev }`
 
@@ -14,12 +11,14 @@ description: A config object for Vue.config
 
 **Example**
 
+`nuxt.config.js`
+
 ```js
 export default {
   vue: {
     config: {
-     productionTip: true,
-     devtools: false
+      productionTip: true,
+      devtools: false
     }
   }
 }

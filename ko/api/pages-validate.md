@@ -3,8 +3,6 @@ title: "API: 유효성 검증된 메서드"
 description: Nuxt.js는 당신의 동적 route 컴포넌트 안에서 유효성 검증 메서드를 정의합니다.
 ---
 
-# 유효성 검사 메서드
-
 > Nuxt.js는 당신의 동적 route 컴포넌트 안에서 유효성 검증 메서드를 정의합니다.
 
 - **타입:** `Function`
@@ -34,8 +32,8 @@ export default {
 ```js
 export default {
   validate ({ params, store }) {
-    // `params.id` 항목이 존재한다면 검사합니다.
-    return store.state.categories.some((category) => category.id === params.id)
+    // `params.id` 항목이 존재한다면 검사합니다.
+    return store.state.categories.some(category => category.id === params.id)
   }
 }
 ```

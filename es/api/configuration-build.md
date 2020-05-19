@@ -92,22 +92,26 @@ If you want to see more about our default webpack configuration, take a look at 
 
 > Customize bundle filenames
 
-Default:
-```js
-{
-  manifest: 'manifest.[hash].js',
-  vendor: 'vendor.bundle.[hash].js',
-  app: 'nuxt.bundle.[chunkhash].js'
-}
-```
+- Default:
 
-Example (`nuxt.config.js`):
+  ```js
+  {
+    app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    chunk: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
+    img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
+    font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]',
+    video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
+  }
+  ```
+
+This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
+
 ```js
-module.exports = {
+export default {
   build: {
     filenames: {
-      vendor: 'vendor.[hash].js',
-      app: 'app.[chunkhash].js'
+      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[contenthash].js'
     }
   }
 }
@@ -274,6 +278,20 @@ module.exports = {
       'axios',
       '~plugins/my-lib.js'
     ]
+  }
+}
+```
+
+## followSymlinks
+
+> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example.
+
+- Type: `Boolean`
+
+```js
+export default {
+  build: {
+    followSymlinks: true
   }
 }
 ```

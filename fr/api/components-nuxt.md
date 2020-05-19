@@ -1,27 +1,56 @@
 ---
-title: "API : le composant <nuxt>"
-description: Affiche un composant de page à l'intérieur d'une mise en page.
+title: "API: Le composant <nuxt>"
+description: Affichez les composants de la page dans une mise en page.
 ---
 
-# Le composant &lt;nuxt&gt;
+> Ce composant est utilisé uniquement dans les [mises en page](/guide/views#layouts) pour afficher les composants de la 
+> page.
 
-> Ce composant est utilisé seulement dans les [mises en page](/guide/views#mises-en-page) pour afficher les composants de page.
-
-**Props** :
-- nuxtChildKey : `string`
-  - Cette prop va être appliquée à `<router-view/>`. Utile pour faire des transitions à l'intérieur d'une page dynamique et d'une route différente.
-  - par défaut : `$route.path`
-
-Exemple (`layouts/default.vue`) :
+Exemple (`layouts/default.vue`):
 
 ```html
 <template>
   <div>
-    <div>Ma barre de navigation</div>
+    <div>My nav bar</div>
     <nuxt/>
-    <div>Mon pied de page</div>
+    <div>My footer</div>
   </div>
 </template>
 ```
 
-Pour voir un exemple, consultez l'[exemple de mise en page](/examples/layouts).
+Pour voir un example, jetez un œil à [l'exemple de mise en page](/examples/layouts).
+
+**Propriétés**:
+
+- nuxtChildKey: `string`
+  - Cette propriété sera définie sur `<router-view/>`, utile pour effectuer des transitions à l'intérieur d'une page 
+ dynamique et de différentes routes.
+  - Par défaut: `$route.path`
+
+Il y a 3 façons de gérer les propriétés internes `key` de `<router-view/>`.
+
+1. `nuxtChildKey` propriété
+
+  ```html
+  <template>
+     <div>
+       <nuxt :nuxt-child-key="someKey"/>
+     </div>
+  </template>
+  ```
+
+2. l'option `key` à l'intérieur des composants de la page : `string` ou `function`
+
+  ```js
+  export default {
+    key (route) {
+      return route.fullPath
+    }
+  }
+  ```
+
+- nom: `string` (_introduit avec Nuxt v2.4.0_)
+  - Cette propriété sera définie sur `<router-view/>`, utilisé pour rendre la vue nommée de la page du composant.
+  - Par défaut: `default`
+
+Pour voir un example, jetez un œil à [l'exemple de vue nommée](/examples/named-views).

@@ -1,18 +1,17 @@
 ---
-title: "API: The loading indicator Property"
-description: Show fancy loading indicator while SPA page is loading!
+title: "API: Propriété de l'indicateur de chargement"
+description: Afficher un indicateur de fantaisie pendant le chargement de la page SPA!
 ---
 
-# The loadingIndicator Property (En)
+> Afficher un indicateur de fantaisie pendant le chargement de la page SPA!
 
-> Show fancy loading indicator while SPA page is loading!
+Lors de l'exécution de Nuxt.js en mode SPA, il n'y a pas de contenu côté serveur lors du premier chargement de page. 
+Ainsi, au lieu d'afficher une page vierge pendant le chargement de la page, nous pouvons afficher un spinner.
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>When running Nuxt.js in SPA mode, there is no content from the server side on the first page load. So, instead of showing a blank page while the page loads, we may show a spinner.</p>
+Cette propriété peut avoir 3 types différents: `string` ou `false` ou `object`. Si une valeur de chaîne est fournie, 
+elle est convertie en style d'objet.
 
-This property can have 3 different types: `string` or `false` or `object`.
-If a string value is provided it is converted to object style.
-
-Default value is: 
+La valeur par défaut est:
 ```js
 {
   name: 'circle',
@@ -21,10 +20,10 @@ Default value is:
 }
 ```
 
-## Built-in indicators
+## Indicateurs intégrés
 
-These indicators are ported from awesome [Spinkit](http://tobiasahlin.com/spinkit) project.
-You can use its demo page to preview spinners.
+Ces indicateurs sont portés à partir du projet génial de [Spinkit](http://tobiasahlin.com/spinkit). Vous pouvez utiliser 
+sa page de démonstration pour prévisualiser les loaders.
 
 - circle
 - cube-grid
@@ -38,11 +37,11 @@ You can use its demo page to preview spinners.
 - three-bounce
 - wandering-cubes
 
-Built-in indicators support `color` and `background` options.
+Les indicateurs intégrés supportent les options `color` et `background`.
 
-## Custom indicators
+## Indicateurs personnalisés
 
-If you need your own special indicator, a String value or Name key can also be a path to an html template of indicator source code!
-All of the options are passed to the template, too.
+Si vous avez besoin de votre propre indicateur spécial, une valeur de chaîne ou un nom de clé peut également être un 
+chemin vers un modèle html de code source d'indicateur! Toutes les options sont également transmises au modèle.
 
-Nuxt's built-in [source code](https://github.com/nuxt/nuxt.js/tree/dev/packages/vue-app/template/views/loading) is also available if you need a base!
+Le [code source](https://github.com/nuxt/nuxt.js/tree/dev/packages/vue-app/template/views/loading) fonction intégrée de Nuxt est également disponible si vous avez besoin d'une base!

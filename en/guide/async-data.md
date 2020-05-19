@@ -27,7 +27,7 @@ Nuxt.js will automatically merge the returned object with the component data.
 
 <div class="Alert Alert--orange">
 
-You do **NOT** have access of the component instance through `this` inside `asyncData` because it is called **before initiating** the component.
+You do **NOT** have access to the component instance through `this` inside `asyncData` because it is called **before initializing** the component.
 
 </div>
 
@@ -42,15 +42,29 @@ We are using [axios](https://github.com/mzabriskie/axios) to make isomorphic HTT
 
 </div>
 
+If you are using `axios` directly from `node_modules` and used the `axios.interceptors` to add interceptors to transform the data, make sure to create an instance before adding interceptors. If not, when you refresh the serverRender page,  the interceptors will be added multiple times, which will cause a data error.
+
+```js
+import axios from 'axios'
+const myaxios = axios.create({
+  // ...
+})
+myaxios.interceptors.response.use(function (response) {
+  return response.data
+}, function (error) {
+  // ...
+})
+```
+
 ### Returning a Promise
 
 ```js
 export default {
   asyncData ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
   }
 }
 ```
@@ -60,7 +74,7 @@ export default {
 ```js
 export default {
   async asyncData ({ params }) {
-    let { data } = await axios.get(`https://my-api/posts/${params.id}`)
+    const { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
 }
@@ -92,7 +106,7 @@ export default {
     // Please check if you are on the server side before
     // using req and res
     if (process.server) {
-     return { host: req.headers.host }
+      return { host: req.headers.host }
     }
 
     return {}
@@ -133,12 +147,12 @@ Example with a `Promise`:
 export default {
   asyncData ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
-    .catch((e) => {
-      error({ statusCode: 404, message: 'Post not found' })
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
+      .catch((e) => {
+        error({ statusCode: 404, message: 'Post not found' })
+      })
   }
 }
 ```

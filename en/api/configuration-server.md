@@ -3,8 +3,6 @@ title: "API: The server Property"
 description: Nuxt.js let you define the server connection variables for your application inside `nuxt.config.js`.
 ---
 
-# The server Property
-
 - Type: `Object`
 
 > Nuxt.js let you define the server connection variables for your application inside `nuxt.config.js`.
@@ -25,6 +23,7 @@ This lets you specify the [host and port](/faq/host-port) for your Nuxt.js serve
 
 ## Example using HTTPS configuration
 
+`nuxt.config.js`
 ```js
 import path from 'path'
 import fs from 'fs'
@@ -38,6 +37,9 @@ export default {
   }
 }
 ```
+
+You can find additional information on creating server keys and certificates on `localhost` on [certificates for localhost](https://letsencrypt.org/docs/certificates-for-localhost/) article.
+
 
 ## Example using sockets configuration
 

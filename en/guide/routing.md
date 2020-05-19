@@ -59,14 +59,6 @@ router: {
 
 To define a dynamic route with a parameter, you need to define a .vue file OR a directory **prefixed by an underscore**.
 
-<div class="Promo__Video">
-  <a href="https://vueschool.io/lessons/nuxtjs-dynamic-routes?friend=nuxt" target="_blank">
-    <p class="Promo__Video__Icon">
-      Watch a free lesson about <strong>dynamic routes</strong> on Vue School 
-    </p>
-  </a>
-</div>
-
 This file tree:
 
 ```bash
@@ -270,15 +262,23 @@ Path | File
 
 __Note:__ Handling 404 pages is now up to the logic of the `_.vue` page. [More on 404 redirecting can be found here](/guide/async-data#handling-errors).
 
-### Named Views
+## Extending the router
+
+There are multiple ways to extend the routing with Nuxt:
+
+- [router-extras-module](https://github.com/nuxt-community/router-extras-module) to customise the route parameters in the page component
+- [@nuxtjs/router](https://github.com/nuxt-community/router-module) to overwrite the Nuxt router and write your own `router.js` file
+- Use the [router.extendRoutes](https://nuxtjs.org/api/configuration-router#extendroutes) property in your `nuxt.config.js`
+
+## Named Views
 
 To render named views you can use `<nuxt name="top"/>` or `<nuxt-child name="top"/>` components in your layout/page. To specify named view of page we need to extend router config in `nuxt.config.js` file:
   
 ``` js
 export default {
   router: {
-    extendRoutes(routes, resolve) {
-      let index = routes.findIndex(route => route.name === 'main')
+    extendRoutes (routes, resolve) {
+      const index = routes.findIndex(route => route.name === 'main')
       routes[index] = {
         ...routes[index],
         components: {
@@ -312,6 +312,10 @@ export default {
 }
 ```
 
+### Locally Accessing Route Params
+
+You can access the current route parameters within your local page or component by referencing `this.$route.params.{parameterName}`. For example, if you had a dynamic users page (`users\_id.vue`) and wanted to access the `id` parameter to load the user or process information, you could access the variable like this: `this.$route.params.id`.
+
 #### Implementation for Surge
 
 Surge [can handle](https://surge.sh/help/adding-a-custom-404-not-found-page) both `200.html` and `404.html`. `generate.fallback` is set to `200.html` by default, so no need to change it.
@@ -322,26 +326,7 @@ GitHub Pages and Netlify recognize the `404.html` file automatically, so setting
 
 #### Implementation for Firebase Hosting
 
-To use the fallback on Firebase Hosting, configure `generate.fallback` to `true` and use the following config ([more info](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
-
-``` json
-{
-  "hosting": {
-    "public": "dist",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/404.html"
-      }
-    ]
-  }
-}
-```
+Firebase Hosting [can handle](https://firebase.google.com/docs/hosting/full-config#404) the `404.html` file automatically, so setting `generate.fallback` to `true` will render the error page with a default response code of 404.
 
 ## Transitions
 
@@ -409,7 +394,7 @@ More information about the transition property: [API Pages transition](/api/page
 
 > Middleware lets you define custom functions that can be run before rendering either a page or a group of pages.
 
-**Every middleware should be placed in the `middleware/` directory.** The filename will be the name of the middleware (`middleware/auth.js` will be the `auth` middleware).
+**Shared middleware should be placed in the `middleware/` directory.** The filename will be the name of the middleware (`middleware/auth.js` will be the `auth` middleware). You can also defined page-specific middleware by using a function directly, see [anonymous middleware](/api/pages-middleware#anonymous-middleware).
 
 A middleware receives [the context](/api/context) as first argument:
 
@@ -454,14 +439,14 @@ export default {
 
 Now the `stats` middleware will be called for every route change.
 
-You can add your middleware to a specific layout or page as well:
+You can add your middleware (even multiple) to a specific layout or page as well:
 
 
 `pages/index.vue` or `layouts/default.vue`
 
 ```js
 export default {
-  middleware: 'stats'
+  middleware: ['auth', 'stats']
 }
 ```
 

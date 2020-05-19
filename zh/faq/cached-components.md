@@ -24,7 +24,7 @@ description: 如何使用 cache 组件？
     ['@nuxtjs/component-cache', {
       max: 10000,
       maxAge: 1000 * 60 * 60
-    }],
+    }]
   ]
 }
 ```
@@ -35,5 +35,5 @@ description: 如何使用 cache 组件？
 
 - 可缓存组件**必须定义唯一 `name` 选项**。
 - 不应该缓存组件的情况
-  - 拥有可能依赖于全球状态的子组件。
+  - 可能拥有依赖`global`数据的子组件。
   - 具有在渲染`context`中产生副作用的子组件。

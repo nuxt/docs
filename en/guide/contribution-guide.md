@@ -23,7 +23,7 @@ or [bug report](https://bug.nuxtjs.org/).
 
 ### Getting started
 
-1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device.
+1. [Fork](https://help.github.com/articles/fork-a-repo/) the [Nuxt repository](https://github.com/nuxt/nuxt.js) to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device.
 2. Run `npm install` or `yarn install` to install the dependencies.
 
 > _Note that both **npm** and **yarn** have been seen to miss installing dependencies. To remedy that, you can either delete the `node_modules` folder in your example app and install again or do a local install of the missing dependencies._
@@ -98,7 +98,7 @@ style changes. If there are still errors left, you must correct them manually.
 
 ### Documentation
 
-If you are adding a new feature, do a refactoring or change the behavior of Nuxt in any other manner, you'll likely
+If you are adding a new feature, or refactoring or changing the behavior of Nuxt in any other manner, you'll likely
 want to document the changes. Please do so with a PR to the [docs](https://github.com/nuxt/docs/pulls) repository.
 You don't have to write documentation up immediately (but please do so as soon as your pull request is mature enough).
 

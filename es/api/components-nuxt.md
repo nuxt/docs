@@ -43,15 +43,11 @@ There are 3 ways to handle internal `key` prop of `<router-view/>`.
 
   ```js
   export default {
-     key(route) {
-       return route.fullPath
-     }
+    key (route) {
+      return route.fullPath
+    }
   }
   ```
-
-3. `watchQuery` option in page components: `boolean` or `string[]`
-
-  Queries specified in [watchQuery](/api/pages-watchquery) option will be considered on building the key. If `watchQuery` is `true`, `fullPath` is used.
 
 - name: `string` (_introduced with Nuxt v2.4.0_)
   - This prop will be set to `<router-view/>`, used to render named-view of page component.

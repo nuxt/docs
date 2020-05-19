@@ -3,8 +3,6 @@ title: "API: router プロパティ"
 description: router プロパティを使って Nuxt.js のルーターをカスタマイズできます。
 ---
 
-# router プロパティ
-
 > router プロパティを使って Nuxt.js のルーター（[vue-router](https://router.vuejs.org/en/)）をカスタマイズできます。
 
 ## base
@@ -77,7 +75,50 @@ export default {
 }
 ```
 
-ルートのスキーマは [vue-router](https://router.vuejs.org/en/) のスキーマを尊重すべきです。
+ルートをソートしたい場合、`@nuxt/utils` の `sortRoutes(routes)` 関数を使用できます。
+
+`nuxt.config.js`
+```js
+import { sortRoutes } from '@nuxt/utils'
+export default {
+  router: {
+    extendRoutes (routes, resolve) {
+      // ルートをここに追加する
+
+      // ソートをする
+      sortRoutes(routes)
+    }
+  }
+}
+```
+
+ルートのスキーマは [vue-router](https://router.vuejs.org/ja/) のスキーマを尊重すべきです。
+
+<div class="Alert Alert--orange">
+
+<b>警告：</b> [名前付きビュー](/guide/routing#%E5%90%8D%E5%89%8D%E4%BB%98%E3%81%8D%E3%83%93%E3%83%A5%E3%83%BC)を使うルートを追加する場合、対応する名前付き `components` の `chunkNames` を追加することを忘れないでください。
+
+</div>
+
+`nuxt.config.js`
+```js
+export default {
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        path: '/users/:id',
+        components: {
+          default: resolve(__dirname, 'pages/users'), // または routes[index].component
+          modal: resolve(__dirname, 'components/modal.vue')
+        },
+        chunkNames: {
+          modal: 'components/modal'
+        }
+      })
+    }
+  }
+}
+```
 
 ## fallback
 
@@ -166,7 +207,6 @@ export default {
 ```
 
 `middleware/user-agent.js`
-
 ```js
 export default function (context) {
   // userAgent プロパティを context 内に追加します（context は `data` メソッドや `fetch` メソッド内で利用できます）
@@ -205,7 +245,7 @@ export default {
 
 ## prefetchLinks
 
-> この機能は Nuxt.js v2.4.0 で追加されました
+> この機能は Nuxt v2.4.0 で追加されました
 
 - 型: `Boolean`
 - デフォルト: `true`
@@ -227,10 +267,11 @@ export default {
 }
 ```
 
-特定のリンクで先読みを無効にしたい場合は、`no-prefetch` 属性を使用します:
+特定のリンクで先読みを無効にしたい場合は、`no-prefetch` プロパティを使用します。Nuxt.js v2.10.0 からは `prefetch` プロパティを `false` に設定することもできます。:
 
 ```html
-<nuxt-link to="/about" no-prefetch>About page not pre-fetched</nuxt-link>
+<nuxt-link to="/about" no-prefetch>先読みしないページについて</nuxt-link>
+<nuxt-link to="/about" :prefetch="false">先読みしないページについて</nuxt-link>
 ```
 
 全てのリンクで先読みを無効にしたい場合は、`prefetchLinks` を `false` に設定してください:
@@ -244,59 +285,42 @@ export default {
 }
 ```
 
+Nuxt.js v2.10.0 からは `prefetchLinks` を `false` に設定した上で特定のリンクを先読みしたい場合 `prefetch` プロパティを使うことができます。
+
+```html
+<nuxt-link to="/about" prefetch>先読みするページについて</nuxt-link>
+```
+
 ## scrollBehavior
 
 - 型: `Function`
 
-`scrollBehavior` オプションを使って、ページ間のスクロール位置についての独自の振る舞いを定義できます。このメソッドはページがレンダリングされるたびに毎回呼び出されます。
+`scrollBehavior` オプションを使って、ページ間のスクロール位置についての独自の振る舞いを定義できます。このメソッドはページがレンダリングされるたびに毎回呼び出されます。詳細は [vue-router のスクロールの振る舞い](https://router.vuejs.org/ja/guide/advanced/scroll-behavior.html)を参照してください。
 
-デフォルトでは scrollBehavior オプションは次のようにセットされています:
+<div class="Alert Alert-blue">
 
-```js
-const scrollBehavior = function (to, from, savedPosition) {
-  // 返された位置が偽または空のオブジェクトだったときは、
-  // 現在のスクロール位置を保持する
-  let position = false
+v2.9.0 以降、ファイルを使用してルーターの scrollBehavior を上書きすることができます。このファイルは `~/app/router.scrollBehavior.js` に配置する必要があります。
 
-  // 子パスが見つからないとき
-  if (to.matched.length < 2) {
-    // ページのトップへスクロールする
-    position = { x: 0, y: 0 }
-  } else if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
-    // 子パスのひとつが scrollToTop オプションが true にセットされているとき
-    position = { x: 0, y: 0 }
-  }
+</div>
 
-  // savedPosition は popState ナビゲーションでのみ利用できます（戻るボタン）
-  if (savedPosition) {
-    position = savedPosition
-  }
+Nuxt のデフォルトの `router.scrollBehavior.js` ファイルは次の場所にあります：[packages/vue-app/template/router.scrollBehavior.js](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/router.scrollBehavior.js)
 
-  return new Promise(resolve => {
-    //（必要であれば）out トランジションが完了するのを待つ
-    window.$nuxt.$once('triggerScroll', () => {
-      // セレクタが渡されなかったとき、
-      // または、セレクタがどの要素にもマッチしなかったときは、座標が用いられる
-      if (to.hash && document.querySelector(to.hash)) {
-        // セレクタを返すことでアンカーまでスクロールする
-        position = { selector: to.hash }
-      }
-      resolve(position)
-    })
-  })
-}
-```
 
 すべてのルートにおいて強制的にトップまでスクロールさせる例:
 
-`nuxt.config.js`
-
+`app/router.scrollBehavior.js`
 ```js
-export default {
-  router: {
-    scrollBehavior: function (to, from, savedPosition) {
-      return { x: 0, y: 0 }
-    }
-  }
+export default function (to, from, savedPosition) {
+  return { x: 0, y: 0 }
 }
 ```
+
+## trailingSlash
+
+- 型： `Boolean` または `undefined`
+- デフォルト： `undefined`
+- 利用可能なバージョン： v2.10 以降
+
+このオプションを true に設定した場合、末尾のスラッシュがすべてのルートに追加されます。もし false に設定した場合はそれらは削除されます。
+
+**注意**： このオプションは準備なしに設定しないでください。徹底的にテストする必要があります。`router.trailingSlash` に `undefined` 以外の値を設定すると反対のルートは機能しなくなります。したがって、301 リダイレクトが適切に行われ、*内部リンク*が適切に適応される必要があります。`trailingSlash` を `true` に設定する場合、`example.com/abc/` のみが機能し `example.com/abc` は機能しません。false に設定する場合はその逆になります。

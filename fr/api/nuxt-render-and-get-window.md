@@ -3,8 +3,6 @@ title: "API: nuxt.renderAndGetWindow(url, options)"
 description: Obtient la `window` depuis un URL donné d'une application Nuxt.js.
 ---
 
-# nuxt.renderAndGetWindow(url, options = {})
-
 - Type : `Function`
 - Argument : `String`
   1. `String` : l'URL à rendre
@@ -38,8 +36,8 @@ config.dev = false
 const nuxt = new Nuxt(config)
 
 nuxt.renderAndGetWindow('http://localhost:3000')
-.then((window) => {
+  .then((window) => {
   // Afficher l'entête `<title>`
-  console.log(window.document.title)
-})
+    console.log(window.document.title)
+  })
 ```

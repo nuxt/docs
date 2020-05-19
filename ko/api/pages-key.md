@@ -3,8 +3,6 @@ title: "API: key 프로퍼티"
 description: 내부의 `<router-view>` 컴포넌트의 `key` 프로퍼티를 설정합니다.
 ---
 
-# key 프로퍼티
-
 > 내부의 `<router-view>` 컴포넌트의 `key` 프로퍼티를 설정합니다.
 
 - **타입:** `String` 또는 `Function`
@@ -15,7 +13,7 @@ description: 내부의 `<router-view>` 컴포넌트의 `key` 프로퍼티를 설
 
 ```js
 export default {
-  keys(route) {
+  keys (route) {
     return route.fullPath
   }
 }

@@ -40,6 +40,11 @@
         "to": "/middleware"
       },
       {
+
+        "name": "Vues nommées",
+        "to": "/named-views"
+      },
+      {
         "name": "Routes imbriquées",
         "to": "/nested-routes"
       },

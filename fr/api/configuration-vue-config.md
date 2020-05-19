@@ -1,31 +1,30 @@
 ---
-title: "API: The vue.config Property"
-description: A config object for Vue.config
+title: "API: La propriété vue.config"
+description: Un objet de configuration pour Vue.config
 ---
 
-
-# The vue.config Property (En)
-
 - Type: `Object`
-- Default: `{ silent: !isDev, performance: isDev }`
+- Par défaut: `{ silent: !isDev, performance: isDev }`
 
-> The vue.config property provides a direct configuration bridge for the `Vue.config`
+> La propriété vue.config fournit un pont de configuration direct pour `Vue.config`
 
 
-**Example**
+**Exemple**
+
+`nuxt.config.js`
 
 ```js
 export default {
   vue: {
     config: {
-     productionTip: true,
-     devtools: false
+      productionTip: true,
+      devtools: false
     }
   }
 }
 ```
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>This configuration will lead to the following Vue.config:</p>
+Cette configuration conduira à Vue.config suivant:
 
 ``` js
 Vue.config.productionTip // true
@@ -35,4 +34,4 @@ Vue.config.performance // isDev [default value]
 ```
 
 
-To learn more about the `Vue.config` API, check out the [official Vue documentation](https://vuejs.org/v2/api/#Global-Config)
+Pour en savoir plus sur l'API `Vue.config`, consultez la [documentation officielle de Vue](https://vuejs.org/v2/api/#Global-Config)

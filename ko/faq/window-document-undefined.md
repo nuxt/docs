@@ -22,7 +22,7 @@ if (process.client) {
 `nuxt.config.js` 파일에 해당 라이브러리를 [vendor bundle](/api/configuration-build#vendor) 에 추가하는 것을 잊지 말기 바랍니다.
 
 ```js
-  build: {
-    vendor: ['external_library']
-  }
+build: {
+  vendor: ['external_library']
+}
 ```

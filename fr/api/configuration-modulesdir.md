@@ -1,13 +1,21 @@
 ---
-title: "API: The modulesDir Property"
-description: Define the modules directory for your Nuxt.js application
+title: "API: La propriété modulesDir"
+description: Définissez le répertoire des modules pour votre application Nuxt.js
 ---
 
-# The modulesDir Property
+- Type: `Array`
+- Par défaut: `['node_modules']`
 
-> Used to set the modules directories for path resolving, for example: webpack resolveLoading, nodeExternal and postcss. Configuration path is relative to options.rootDir.
+> Utilisé pour définir les répertoires des modules pour la résolution de chemin, par exemple: Webpack `resolveLoading`, `nodeExternals` et `postcss`.Le chemin de configuration est relatif à [options.rootDir](/api/configuration-rootdir) (par défaut: `process.cwd()`).
 
-Type: `Array`
-Default: `['node_modules']`
+Exemple (`nuxt.config.js`):
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>
+```js
+export default {
+  modulesDir: ['../../node_modules']
+}
+```
+
+La définition de ce champ peut être nécessaire si votre projet est organisé comme un mono-référentiel de style espace de 
+travail Yarn.
+

@@ -1,5 +1,5 @@
 # dependencies
-yarn.lock
+package-lock.json
 node_modules
 
 # logs
@@ -8,3 +8,4 @@ yarn-error.log
 .DS_Store
 .vscode
 .idea
+.iml

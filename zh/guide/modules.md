@@ -9,7 +9,7 @@ description: 模块是Nuxt.js扩展，可以扩展其核心功能并添加无限
 
 在使用Nuxt开发应用程序时，您很快就会发现框架的核心功能还不够。 Nuxt可以使用配置选项和插件进行扩展，但是在多个项目中维护这些自定义是繁琐、重复和耗时的。 另一方面，开箱即用支持每个项目的需求将使Nuxt非常复杂且难以使用。
 
-这就是Nuxt提供更高阶**模块系统**的原因，可以轻松扩展核心。 模块只是在引导Nuxt时按顺序调用的**函数**。 框架在加载之前等待每个模块完成。 如此，模块几乎可以自定义Nuxt的任何地方。 我们可以使用功能强大的 [Hookable](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js) Nuxt.js系统来完成特定事件的任务。
+这就是Nuxt提供更高阶**模块系统**的原因，可以轻松扩展核心。 模块只是在引导Nuxt时按顺序调用的**函数**。 框架在加载之前等待每个模块完成。 如此，模块几乎可以自定义Nuxt的任何地方。 我们可以使用功能强大的 [Hookable](https://github.com/nuxt-contrib/hookable) Nuxt.js系统来完成特定事件的任务。
 
 最重要的是, Nuxt模块可以合并到npm包中。 这使得它们易于跨项目开发重用并与Nuxt社区共享, 我们可以创建一个高质量的Nuxt附加组件生态系统。
 
@@ -76,7 +76,7 @@ export default {
     '~/modules/simple'
 
     // Passing options
-    ['~/modules/simple', { token: '123' }]
+      ['~/modules/simple', { token: '123' }]
   ]
 }
 ```
@@ -98,9 +98,9 @@ export default {
 ```js
 import fse from 'fs-extra'
 
-export default async function asyncModule() {
+export default async function asyncModule () {
   // You can do async works here using `async`/`await`
-  let pages = await fse.readJson('./pages.json')
+  const pages = await fse.readJson('./pages.json')
 }
 ```
 
@@ -109,10 +109,10 @@ export default async function asyncModule() {
 ```js
 import axios from 'axios'
 
-export default function asyncModule() {
+export default function asyncModule () {
   return axios.get('https://jsonplaceholder.typicode.com/users')
     .then(res => res.data.map(user => '/users/' + user.username))
-    .then(routes => {
+    .then((routes) => {
       // Do something by extending Nuxt routes
     })
 }
@@ -123,10 +123,10 @@ export default function asyncModule() {
 ```js
 import axios from 'axios'
 
-export default function asyncModule(callback) {
+export default function asyncModule (callback) {
   axios.get('https://jsonplaceholder.typicode.com/users')
     .then(res => res.data.map(user => '/users/' + user.username))
-    .then(routes => {
+    .then((routes) => {
       callback()
     })
 }
@@ -251,7 +251,6 @@ export default function (moduleOptions) {
   this.options.build.plugins.push({
     apply (compiler) {
       compiler.plugin('emit', (compilation, cb) => {
-
         // This will generate `.nuxt/dist/info.txt' with contents of info variable.
         // Source can be buffer too
         compilation.assets['info.txt'] = { source: () => info, size: () => info.length }
@@ -293,27 +292,27 @@ export default function (moduleOptions) {
 ```js
 export default function () {
   // Add hook for modules
-  this.nuxt.hook('module', moduleContainer => {
+  this.nuxt.hook('module', (moduleContainer) => {
     // This will be called when all modules finished loading
   })
 
   // Add hook for renderer
-  this.nuxt.hook('renderer', renderer => {
+  this.nuxt.hook('renderer', (renderer) => {
     // This will be called when renderer was created
   })
 
   // Add hook for build
-  this.nuxt.hook('build', async builder => {
+  this.nuxt.hook('build', async (builder) => {
     // This will be called once when builder created
 
     // We can even register internal hooks here
-    builder.hook('compile', ({compiler}) => {
-        // This will be run just before webpack compiler starts
+    builder.hook('compile', ({ compiler }) => {
+      // This will be run just before webpack compiler starts
     })
   })
 
   // Add hook for generate
-  this.nuxt.hook('generate', async generator => {
+  this.nuxt.hook('generate', async (generator) => {
     // This will be called when a Nuxt generate starts
   })
 }
@@ -342,7 +341,7 @@ NuxtCommand.run({
       description: 'Simple test string'
     }
   },
-  run(cmd) {
+  run (cmd) {
     consola.info(cmd.argv)
   }
 })

@@ -1,26 +1,24 @@
 ---
-title: "API: The watchers Property"
-description: The watchers property lets you overwrite watchers configuration.
+title: "API: La propriété watchers"
+description: La propriété watchers vous permet d'écraser la configuration des observateurs.
 ---
 
-# The watchers Property (En)
-
 - Type: `Object`
-- Default: `{}`
+- Par défaut: `{}`
 
-> The watchers property lets you overwrite watchers configuration in your nuxt.config.js.
+> La propriété watchers vous permet d'écraser la configuration des watchers dans votre nuxt.config.js.
 
 ## chokidar
 
 - Type: `Object`
-- Default: `{}`
+- Par défaut: `{}`
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>To learn more about chokidar options, see the [chokidar API](https://github.com/paulmillr/chokidar#api).</p>
+Pour en savoir plus sur les options chokidar, consultez [chokidar API](https://github.com/paulmillr/chokidar#api).
 
 ## webpack
 
 - Type: `Object`
-- Default:
+- Par défaut:
 
 ```js
 watchers: {
@@ -31,4 +29,4 @@ watchers: {
 }
 ```
 
-To learn more about webpack watchoptions, see the [webpack documentation](https://webpack.js.org/configuration/watch/#watchoptions).
+Pour en savoir plus sur les watchoptions de webpack, voir la [documentation de webpack](https://webpack.js.org/configuration/watch/#watchoptions).

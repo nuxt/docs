@@ -3,8 +3,6 @@ title: "API: server プロパティ"
 description: Nuxt.js では、アプリケーションのサーバー接続用の変数を `nuxt.config.js` 内に定義できます。
 ---
 
-# server プロパティ
-
 - 型: `Object`
 
 > Nuxt.js では、アプリケーションのサーバー接続用の変数を `nuxt.config.js` 内に定義できます。

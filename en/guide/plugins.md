@@ -91,7 +91,7 @@ Injecting context into Vue instances works similar to when doing this in standar
 ```js
 import Vue from 'vue'
 
-Vue.prototype.$myInjectedFunction = (string) => console.log("This is an example", string)
+Vue.prototype.$myInjectedFunction = string => console.log('This is an example', string)
 ```
 
 `nuxt.config.js`:
@@ -108,7 +108,7 @@ You can now use the function in all your Vue components.
 
 ```js
 export default {
-  mounted(){
+  mounted () {
     this.$myInjectedFunction('test')
   }
 }
@@ -124,7 +124,7 @@ Injecting context into Vue instances works similar to when doing this in standar
 ```js
 export default ({ app }, inject) => {
   // Set the function directly on the context.app object
-  app.myInjectedFunction = (string) => console.log('Okay, another function', string)
+  app.myInjectedFunction = string => console.log('Okay, another function', string)
 }
 ```
 
@@ -142,7 +142,7 @@ The function is now available whenever you have access to the `context` (for exa
 
 ```js
 export default {
-  asyncData(context){
+  asyncData (context) {
     context.app.myInjectedFunction('ctx!')
   }
 }
@@ -158,7 +158,7 @@ Injecting content into Vue instances works similar to when doing this in standar
 
 ```js
 export default ({ app }, inject) => {
-  inject('myInjectedFunction', (string) => console.log('That was easy!', string))
+  inject('myInjectedFunction', string => console.log('That was easy!', string))
 }
 ```
 
@@ -176,10 +176,10 @@ Now the function can be used from `context`, via `this` in Vue instances and via
 
 ```js
 export default {
-  mounted(){
+  mounted () {
     this.$myInjectedFunction('works in mounted')
   },
-  asyncData(context){
+  asyncData (context) {
     context.app.$myInjectedFunction('works with context')
   }
 }
@@ -193,7 +193,7 @@ export const state = () => ({
 })
 
 export const mutations = {
-  changeSomeValue(state, newValue) {
+  changeSomeValue (state, newValue) {
     this.$myInjectedFunction('accessible in mutations')
     state.someValue = newValue
   }
@@ -202,7 +202,7 @@ export const mutations = {
 export const actions = {
   setSomeValueToWhatever ({ commit }) {
     this.$myInjectedFunction('accessible in actions')
-    const newValue = "whatever"
+    const newValue = 'whatever'
     commit('changeSomeValue', newValue)
   }
 }
@@ -213,7 +213,7 @@ export const actions = {
 ## Client-side only
 
 Some plugins might work **only in the browser** because they lack SSR support.
-In these situations you can use the `ssr: false` option in `plugins` to add the plugin only on the client-side.
+In these situations you can use the `mode`: `client` option in `plugins` to add the plugin only on the client-side.
 
 Example:
 
@@ -222,7 +222,7 @@ Example:
 ```js
 export default {
   plugins: [
-    { src: '~/plugins/vue-notifications', ssr: false }
+    { src: '~/plugins/vue-notifications', mode: 'client' }
   ]
 }
 ```

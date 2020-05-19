@@ -22,9 +22,9 @@ const options = {}
 
 const nuxt = new Nuxt(options)
 nuxt.build()
-.then(() => {
+  .then(() => {
   // We can use nuxt.render(req, res) or nuxt.renderRoute(route, context)
-})
+  })
 ```
 
 You can take a look at the [nuxt-express](https://github.com/nuxt/express) and [adonuxt](https://github.com/nuxt/adonuxt) starters to start quickly.

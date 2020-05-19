@@ -10,9 +10,9 @@ You can extend the webpack configuration via the `extend` option in your `nuxt.c
 ```js
 module.exports = {
   build: {
-     extend (config, { isDev, isClient }) {
-       // ...
-     }
+    extend (config, { isDev, isClient }) {
+      // ...
+    }
   }
 }
 ```

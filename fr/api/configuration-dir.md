@@ -1,16 +1,15 @@
 ---
-title: "API: The dir Property (EN)"
-description: Define the custom directories for your Nuxt.js application
+title: "API: La propriété dir"
+description: Définir les dossiers personnalisés de votre application Nuxt.js.
 ---
 
-# The dir Property
-
 - Type: `Object`
-- Default:
+- Valeurs par défaut:
 
 ```js
 {
   assets: 'assets',
+  app: 'app',
   layouts: 'layouts',
   middleware: 'middleware',
   pages: 'pages',
@@ -19,14 +18,15 @@ description: Define the custom directories for your Nuxt.js application
 }
 ```
 
-> Define the custom directories for your Nuxt.js application
+> Définir les dossiers personnalisés de votre application Nuxt.js.
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Example (`nuxt.config.js`):</p>
+Exemple (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   dir: {
     assets: 'custom-assets',
+    app: 'custom-app',
     layouts: 'custom-layouts',
     middleware: 'custom-middleware',
     pages: 'custom-pages',

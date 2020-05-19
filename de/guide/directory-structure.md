@@ -7,6 +7,8 @@ description: The default Nuxt.js application structure is intended to provide a 
 
 ## Directories
 
+<br />
+
 ### The Assets Directory
 
 The `assets` directory contains your un-compiled assets such as Less, Sass or JavaScript.

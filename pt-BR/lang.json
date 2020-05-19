@@ -2,73 +2,81 @@
   "iso": "pt-BR",
   "docVersion": "2.1.0",
   "links": {
-    "api": "API",
-    "blog": "Blog",
-    "chat": "Chat",
-    "documentation": "Documentação",
     "download": "Baixar",
-    "examples": "Exemplos",
-    "ecosystem": "Ecossistema",
-    "faq": "FAQ",
-    "get_started": "Começar",
-    "github": "GitHub",
-    "guide": "Guia",
-    "homepage": "Página inicial",
-    "live_demo": "Live Demo",
-    "live_edit": "Live Edit",
-    "tidelift_short": "GET PROFESSIONAL SUPPORT",
-    "official_support": "GET OFFICIAL SUPPORT ⛑",
-    "tidelift": "GET PROFESSIONAL SUPPORT FOR NUXT",
-    "twitter": "Twitter",
-    "vuejs": "Vue.js",
-    "vue_jobs": "Vue Jobs"
+    "live_edit": "Live Edit"
   },
+  "headerLinks": [
+    {
+      "name": "Guia",
+      "slug": "guide",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "API",
+      "slug": "api",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Examplos",
+      "slug": "examples",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "FAQ",
+      "slug": "faq",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Recursos",
+      "slug": "resources",
+      "type": "static"
+    },
+    {
+      "name": "Blog",
+      "slug": "blog",
+      "type": "static"
+    }
+  ],
   "text": {
     "an_error_occurred": "Um erro ocorreu",
     "api_page_not_found": "Página da API não encontrada",
-    "example_file": "Arquivos de exemplo",
-    "please_wait": "Por favor aguarde...",
     "please_define_title": "Por favor defina um título a seguir",
     "please_define_description": "Por favor defina uma descrição a seguir",
     "search": "Pesquisar",
     "version": "Versão"
   },
   "homepage": {
-    "title": "Aplicações Vue.js universais",
     "meta": {
       "title": "Nuxt.js - Aplicações Vue.js universais",
       "description": "Nuxt.js é um framework minimalista para aplicações Vue.js com recursos\ncomo SSR(Server Side Rendering ), code-splitting, hot-reloading, gerador de\narquivos estáticos e muito mais!"
     },
     "welcome": {
-      "app_types_prefix": "For ",
-      "app_types": ["Universal Applications", "Static Generated Applications", "Single Page Applications", "Desktop Applications", "Mobile Applications", "Progressive Web Apps"],
-      "app_types_suffix": "."
+      "get_started": "Começar",
+      "github_stars": "27K+ estrelas no github"
     },
-    "codesandbox_title": "Experimente o Nuxt.js online",
-    "codesandbox_open": "Abrir no CodeSandBox.io",
-    "codesandbox_examples": "Veja mais exemplos",
-    "backer_partners": "Partners",
-    "backer_become_a_partner": "Become A Partner",
-    "backer_sponsors": "Sponsors",
-    "backer_become_a_sponsor": "Become A Sponsor",
-    "backer_backers": "Backers",
-    "backer_become_a_backer": "Become A Backer",
-    "backer_foundations": "Foundations"
-  },
-  "sponsors": {
-    "title": "Patrocinadores",
-    "become": "Apoie-nos e",
-    "become_partner": "torne-se um parceiro"
-  },
-  "footer": {
-    "authors": "Criado pelos irmãos Chopin"
+    "why": {
+      "try_nuxtjs_online": "Experimente o NuxtJS Online"
+    },
+    "sponsors": {
+      "become_a_sponsor": "Seja um patrocinador"
+    },
+    "newsletter_form": {
+      "email": "E-mail",
+      "subscribing": "Subscrevendo...",
+      "subscribe": "Inscrever-se",
+      "subscribed_messages": {
+        "pre": "Um e-mail para confirmar sua inscrição foi enviado para",
+        "post": "💚"
+      }
+    }
   },
   "guide": {
     "release_notes": "Notas de lançamento",
     "contribute": "Achou algum erro ou quer contribuir para documentação?",
     "edit_on_github": "Altere esta página no GitHub!"
-  },
-  "examples": {
-    "source_code": "Código-fonte"
   }
 }

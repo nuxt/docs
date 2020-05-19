@@ -66,35 +66,35 @@ export default {
 `test/index.test.js` 테스트 파일을 추가합니다:
 
 ```js
+import { resolve } from 'path'
 import test from 'ava'
 import { Nuxt, Builder } from 'nuxt'
-import { resolve } from 'path'
-
-// nuxt 와 server 인스턴스를 여기에 확보해둡니다.
-// 그러면 테스트가 종료되었을 때 이것들을 close할 수 있습니다.
-let nuxt = null
 
 // Nuxt.js 를 초기화하고 localhost:4000 에서 리스닝하는 서버를 작성합니다.
-test.before('Init Nuxt.js', async t => {
+test.before('Init Nuxt.js', async (t) => {
   const rootDir = resolve(__dirname, '..')
   let config = {}
   try { config = require(resolve(rootDir, 'nuxt.config.js')) } catch (e) {}
   config.rootDir = rootDir // project folder
   config.dev = false // production build
-  nuxt = new Nuxt(config)
+  config.mode = 'universal' // Isomorphic application
+  const nuxt = new Nuxt(config)
+  t.context.nuxt = nuxt // Nuxt를 여기에 담아둡니다. 그러면 테스트가 종료되었을 때 이것들을 close할 수 있습니다.
   await new Builder(nuxt).build()
   nuxt.listen(4000, 'localhost')
 })
 
 // 생성된 HTML 만을 테스트하는 예제
-test('Route / exits and render HTML', async t => {
-  let context = {}
+test('Route / exists and render HTML', async (t) => {
+  const { nuxt } = t.context
+  const context = {}
   const { html } = await nuxt.renderRoute('/', context)
   t.true(html.includes('<h1 class="red">Hello world!</h1>'))
 })
 
 // DOM 을 경유하여 체크하는 테스트 예제
-test('Route / exits and render HTML with CSS applied', async t => {
+test('Route / exists and renders HTML with CSS applied', async (t) => {
+  const { nuxt } = t.context
   const window = await nuxt.renderAndGetWindow('http://localhost:4000/')
   const element = window.document.querySelector('.red')
   t.not(element, null)
@@ -103,8 +103,9 @@ test('Route / exits and render HTML with CSS applied', async t => {
   t.is(window.getComputedStyle(element).color, 'red')
 })
 
-// 서버를 닫고 nuxt 에 파일갱신 리스닝을 중지시킨다
-test.after('Closing server and nuxt.js', t => {
+// 서버를 닫음
+test.after('Closing server', (t) => {
+  const { nuxt } = t.context
   nuxt.close()
 })
 ```
@@ -142,11 +143,11 @@ module.exports = {
     parser: 'babel-eslint'
   },
   extends: [
-    "eslint:recommended",
+    'eslint:recommended',
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    "plugin:vue/recommended",
-    "plugin:prettier/recommended"
+    'plugin:vue/recommended',
+    'plugin:prettier/recommended'
   ],
   // required to lint *.vue files
   plugins: [
@@ -154,10 +155,10 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    "semi": [2, "never"],
-    "no-console": "off",
-    "vue/max-attributes-per-line": "off",
-    "prettier/prettier": ["error", { "semi": false }]
+    'semi': [2, 'never'],
+    'no-console': 'off',
+    'vue/max-attributes-per-line': 'off',
+    'prettier/prettier': ['error', { 'semi': false }]
   }
 }
 ```
@@ -185,7 +186,7 @@ npm run lintfix
 
 ESLint 는 `.gitignore`에 정의된 파일들을 무시하면서 모든 JavaScript 및 Vue 파일을 lint 합니다.
 
-또한 webpack을 통해 핫 리로드 모드에서 ESLink를 활성화하는 것이 좋습니다. 이렇게 하면 ESLint는 `npm run dev` 실행 동안 저장시 실행 됩니다. `nuxt.config.js`에 다음을 추가하십시오.:
+또한 webpack을 통해 핫 리로드 모드에서 ESLint를 활성화하는 것이 좋습니다. 이렇게 하면 ESLint는 `npm run dev` 실행 동안 저장시 실행 됩니다. `nuxt.config.js`에 다음을 추가하십시오.:
 
 ```js
 ...

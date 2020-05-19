@@ -3,8 +3,6 @@ title: "API: Nuxt Modules Intro"
 description: Better understand Nuxt internals
 ---
 
-# Nuxt Internals
-
 Nuxt.js has a fully modular architecture which allows developers extending any part of Nuxt Core using a flexible API.
 
 Please see [Modules Guide](/guide/modules) for more detailed information if interested developing your own module.
@@ -74,7 +72,7 @@ class SomeClass {
     this.options = nuxt.options
   }
 
-  someFunction() {
+  someFunction () {
     // We have access to `this.nuxt` and `this.options`
   }
 }
@@ -97,7 +95,7 @@ class FooClass {
 So we can hook into `foo` module like this:
 
 ```js
-nuxt.hook('foo', foo => {
-    // ...
+nuxt.hook('foo', (foo) => {
+  // ...
 })
 ```

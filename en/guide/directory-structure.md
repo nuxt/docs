@@ -23,7 +23,7 @@ The `assets` directory contains your un-compiled assets such as Stylus or Sass f
 
 ### The Components Directory
 
-The `components` directory contains your Vue.js Components. You can't use either `asyncData` or `fetch` in these components.
+The `components` directory contains your Vue.js Components. You can't use `asyncData` in these components.
 
 ### The Layouts Directory
 
@@ -55,7 +55,7 @@ The `plugins` directory contains your Javascript plugins that you want to run be
 
 ### The Static Directory
 
-The `static` directory is directly mapped to the server root (`/static/robots.txt` is accessible under `http://localhost:3000/robots.txt`) and contains files that likely won't be changed (i.e. the favicon)
+The `static` directory is directly mapped to the server root (`/static/robots.txt` is accessible under `http://localhost:3000/robots.txt`) and contains files that likely won't be changed (e.g. the favicon)
 
 **Example:** `/static/robots.txt` is mapped as `/robots.txt`
 
@@ -83,7 +83,7 @@ _This file cannot be renamed without extra configuration._
 
 The `package.json` file contains your Application dependencies and scripts.
 
-_This file can not be renamed._
+_This file cannot be renamed._
 
 ## Aliases
 

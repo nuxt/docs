@@ -10,7 +10,9 @@
       { "name": "Comment ajouter des plugins webpack ?", "to": "/webpack-plugins" },
       { "name": "Comment changer le HOST et le PORT ?", "to": "/host-port" },
       { "name": "Comment mettre en cache des composants ?", "to": "/cached-components" },
-      { "name": "Comment intégrer Google Analytics ?", "to": "/google-analytics" }
+      { "name": "Comment intégrer Google Analytics ?", "to": "/ga" },
+      { "name": "Comment partager des ressources cross-origin ?", "to": "/http-proxy"},
+      { "name": "Comment étendre Webpack pour charger des fichiers audio ?", "to": "/webpack-audio-files" }
     ]
   },
   {
@@ -19,18 +21,22 @@
       { "name": "window / document undefined ?", "to": "/window-document-undefined" },
       { "name": "Pourquoi un flash CSS apparait ?", "to": "/css-flash" },
       { "name": "Données asynchrones dans les composants ?", "to": "/async-data-components" },
-      { "name": "Balises meta dupliquées ?", "to": "/duplicated-meta-tags" }
+      { "name": "Balises meta dupliquées ?", "to": "/duplicated-meta-tags" },
+      { "name": "iOS et numéros de téléphone", "to": "/ios-phone-numbers" }
     ]
   },
   {
     "title": "Déploiement",
     "links": [
-      { "name": "Déployer sur Heroku", "to": "/heroku-deployment" },
-      { "name": "Déployer avec Netlify (EN)", "to": "/netlify-deployment" },
-      { "name": "Déployer avec Now", "to": "/now-deployment" },
+      { "name": "Deployer sur AWS avec S3 et Cloudfront", "to": "/deployment-aws-s3-cloudfront" },
+      { "name": "Deployer sur Azure Portal", "to": "/deployment-azure-portal" },
       { "name": "Déployer sur Dokku", "to": "/dokku-deployment" },
-      { "name": "Déployer avec Surge", "to": "/surge-deployment" },
-      { "name": "Déployer sur GitHub Pages", "to": "/github-pages" },
+      { "name": "Déployer sur GitHub", "to": "/github-pages" },
+      { "name": "Deployer sur Google App Engine", "to": "/appengine-deployment" },
+      { "name": "Déployer sur Heroku", "to": "/heroku-deployment" },
+      { "name": "Déployer sur Netlify", "to": "/netlify-deployment" },
+      { "name": "Déployer sur Now", "to": "/now-deployment" },
+      { "name": "Déployer sur Surge", "to": "/surge-deployment" },
       { "name": "Utiliser nginx en tant que proxy", "to": "/nginx-proxy" }
     ]
   }

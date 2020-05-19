@@ -3,8 +3,6 @@ title: 'API: <nuxt> コンポーネント'
 description: レイアウト内でページコンポーネントを表示します。
 ---
 
-# &lt;nuxt&gt; コンポーネント
-
 > このコンポーネントは [レイアウト](/guide/views#%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88) 内でのみ、ページコンポーネントを表示するために使われます。
 
 例（`layouts/default.vue`）:
@@ -43,18 +41,14 @@ description: レイアウト内でページコンポーネントを表示しま�
 
   ```js
   export default {
-     key(route) {
-       return route.fullPath
-     }
+    key (route) {
+      return route.fullPath
+    }
   }
   ```
 
-3. 各ページコンポーネントの `watchQuery` オプション: `boolean` or `string[]`
-
-  [watchQuery](/api/pages-watchquery) に設定されたクエリはキーを生成するとき考慮されます。 `watchQuery` が `true` の場合は `fullPath` が使われます。
-
 - name：`string` (_Nuxt v2.4.0で導入されました_)
-  - この prop は `<router-view/>` に設定され、ページコンポーネントの名前付きビューをレンダリングするのに利用されます。
+  - この prop は `<router-view/>` に設定され、ページコンポーネントの名前付きビューをレンダリングするのに利用されます
   - デフォルト: `default`
 
 実際の例を見たいときは [名前付きビューの例](/examples/named-views) を参照してください。

@@ -11,9 +11,9 @@ description: Views セクションでは、Nuxt.js アプリケーション（�
 
 > スクリプトまたは条件付きの CSS クラスを含めるために Nuxt.js で使われる HTML アプリテンプレートをカスタマイズできます。
 
-テンプレートを変更するために、プロジェクトのルートフォルダに `app.html` ファイルを作成します。
+テンプレートを変更するために、プロジェクトのソースフォルダ（デフォルトはプロジェクトのルートディレクトリ）に `app.html` ファイルを作成します。
 
-Nuxt.js 使われるデフォルトのテンプレート:
+Nuxt.js によって使われるデフォルトのテンプレート:
 
 ```html
 <!DOCTYPE html>
@@ -72,7 +72,7 @@ Nuxt.js アプリの外観を変更したい場合、レイアウトは非常に
 
 `layouts` ディレクトリのすべてのファイル（*第一階層*）は、ページコンポーネントの `layout` プロパティでアクセス可能なカスタムレイアウトを作成します。
 
-ブログのレイアウトを作成して、それを `layouts/blog.vue` に書くとき例：
+ブログのレイアウトを作成して、それを `layouts/blog.vue` に書くときの例：
 
 ```html
 <template>
@@ -196,9 +196,9 @@ export default {
 
 ## HTML ヘッド
 
-Nuxt.js は、`document head` とアプリケーションの `meta attributes` を更新するために [vue-meta](https://github.com/nuxt/vue-meta) を使用しています。
+Nuxt.js は、`document head` とアプリケーションの `meta attributes` を更新するために [vue-meta](https://vue-meta.nuxtjs.org/) を使用しています。
 
-Nuxt.js が使っている `vue-meta` は、[GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/index.js#L29-L35) で参照できます。
+Nuxt.js が使っている `vue-meta` は、[GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/index.js#L42-L48) で参照できます。
 
 <div class="Alert Alert--teal">
 

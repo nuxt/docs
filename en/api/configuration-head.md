@@ -3,11 +3,9 @@ title: "API: The head Property"
 description: Nuxt.js let you define all default meta for your application inside nuxt.config.js.
 ---
 
-# The head Property
-
 > Nuxt.js let you define all default meta for your application inside `nuxt.config.js`, use the same `head` property
 
-- Type: `Object`
+- Type: `Object` or `Function`
 
 An example `nuxt.config.js`:
 ```js
@@ -27,10 +25,10 @@ export default {
 
 To know the list of options you can give to `head`, take a look at [vue-meta documentation](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
-You can also use `head` in your components and access to the component data through `this` ([read more](/api/pages-head)).
+You can also use `head` as a function in your components to access the component data through `this` ([read more](/api/pages-head)).
 
 <div class="Alert Alert--teal">
 
-<b>Info:</b> To avoid duplicated meta tags when used in child component, set up an unique identifier with the `hid` key for your meta elements ([read more](https://vue-meta.nuxtjs.org/api/#tagidkeyname)).
+<b>Info:</b> To avoid duplicated meta tags when used in child component, set up a unique identifier with the `hid` key for your meta elements ([read more](https://vue-meta.nuxtjs.org/api/#tagidkeyname)).
 
 </div>

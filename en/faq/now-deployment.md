@@ -1,45 +1,67 @@
 ---
-title: Now Deployment
+title: How to deploy with Now?
 description: How to deploy Nuxt.js app with Now?
 ---
 
-# How to deploy with Now?
+![nuxt-now-builder](https://user-images.githubusercontent.com/904724/61308402-7a752d00-a7f0-11e9-9502-23731ccd00fd.png)
 
 ## Now V2
 
-**Note:** You cannot deploy a server-side-rendered Nuxt app with Now V2 right now. Please use Now V1 for such apps.
+To deploy with [Now V2](https://zeit.co/now), the Nuxt.js team and contributors worked on an official [@nuxtjs/now-builder](https://github.com/nuxt/now-builder) package.
 
-To deploy with [ZEIT Now](https://zeit.co/now) you need to customize `package.json` add create a `now.json` config.
+All you have to do is to setup a `now.json` file:
 
-* Add `now-build` script command to `package.json`:
-  * For SPA (without SSR):
-    ```js
-    "scripts": {
-       ...
-       "now-build": "nuxt build --spa"
+```json
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "nuxt.config.js",
+      "use": "@nuxtjs/now-builder",
+      "config": {}
     }
-    ```
-  * For Static Generated (Pre Rendering):
-    ```js
-    "scripts": {
-       ...
-       "now-build": "nuxt generate"
+  ]
+}
+```
+
+
+### Service Worker with Nuxt PWA Module
+
+To avoid 404 for Service Workers, make sure to include `sw` to your routes settings.
+
+```json
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "nuxt.config.js",
+      "use": "@nuxtjs/now-builder",
+      "config": {
+        "serverFiles": ["package.json"]
+      }
     }
-    ```
-* Create `now.json` and define `builds`
-  ```json
-  {
-    "version": 2,
-    "builds": [
-      { "src": "package.json", "use": "@now/static-build" }
-    ]
-  }
-  ```
-* Run `now` and enjoy!
+  ],
+  "routes": [
+    { "src": "/_nuxt/.+", "headers": { "Cache-Control": "max-age=31557600" } },
+    {
+      "src": "/sw.js",
+      "dest": "/_nuxt/static/sw.js",
+      "headers": {
+        "cache-control": "public, max-age=43200, immutable",
+        "Service-Worker-Allowed": "/"
+      }
+    },
+    { "src": "/(.*)", "dest": "/" }
+  ]
+}
+```
+
+You can learn more and see examples on https://github.com/nuxt/now-builder
+
 
 ## Now V1 (legacy)
 
-To deploy with [now.sh](https://zeit.co/now) a `package.json` like follows is recommended:
+To deploy with [Now V1](https://zeit.co/now) a `package.json` like follows is recommended:
 
 ```json
 {

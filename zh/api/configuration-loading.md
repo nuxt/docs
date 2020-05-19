@@ -20,7 +20,7 @@ export default {
       setTimeout(() => this.$nuxt.$loading.finish(), 500)
     })
   }
- }
+}
 ```
 
 如果要在`mounted`方法中启动它，请确保使用`this.$nextTick`来调用它，因为`$loading`可能无法立即使用。
@@ -79,7 +79,7 @@ module.exports = {
 |--------|----------|-------------|
 | `start()` | 是 | 路由更新（即浏览器地址变化）时调用, 请在该方法内显示组件。 |
 | `finish()` | 是 | 路由更新完毕（即`asyncData`方法调用完成且页面加载完）时调用，请在该方法内隐藏组件。 |
-| `fail()` | *否* | 路由更新失败时调用（如`asyncData`方法返回异常）。 |
+| `fail(error)` | *否* | 路由更新失败时调用（如`asyncData`方法返回异常）。 |
 | `increase(num)` | *否* | 页面加载过程中调用, `num` 是小于 100 的整数。 |
 
 我们可以在 `components` 目录下创建自定义的加载组件，如 `components/loading.vue`：
@@ -126,7 +126,7 @@ export default {
 
 ```js
 module.exports = {
-  loading: '~components/loading.vue'
+  loading: '~/components/loading.vue'
 }
 ```
 

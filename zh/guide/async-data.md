@@ -34,18 +34,32 @@ Nuxt.js 提供了几种不同的方法来使用 `asyncData` 方法，你可以�
 
 <div class="Alert Alert--grey">
 
-我们使用 [axios](https://github.com/mzabriskie/axios) 重构 HTTP 请求, 我们 <strong>强烈建议您</strong> 使用 [axios 模块](https://axios.nuxtjs.org/) 用于您的Nuxt项目中。
+我们使用 [axios](https://github.com/mzabriskie/axios) 重构 HTTP 请求, 我们 **强烈建议您** 使用我们的 [axios 模块](https://axios.nuxtjs.org/) 用于您的Nuxt项目中。
 
 </div>
+
+如果您的项目中直接使用了`node_modules`中的`axios`，并且使用`axios.interceptors`添加拦截器对请求或响应数据进行了处理，确保使用 `axios.create`创建实例后再使用。否则多次刷新页面请求服务器，服务端渲染会重复添加拦截器，导致数据处理错误。
+
+```js
+import axios from 'axios'
+const myaxios = axios.create({
+  // ...
+})
+myaxios.interceptors.response.use(function (response) {
+  return response.data
+}, function (error) {
+  // ...
+})
+```
 
 ### 返回 Promise
 ```js
 export default {
   asyncData ({ params }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
   }
 }
 ```
@@ -54,7 +68,7 @@ export default {
 ```js
 export default {
   async asyncData ({ params }) {
-    let { data } = await axios.get(`https://my-api/posts/${params.id}`)
+    const { data } = await axios.get(`https://my-api/posts/${params.id}`)
     return { title: data.title }
   }
 }
@@ -65,9 +79,9 @@ export default {
 export default {
   asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
+      .then((res) => {
+        callback(null, { title: res.data.title })
+      })
   }
 }
 ```
@@ -108,7 +122,7 @@ export default {
     // 请检查您是否在服务器端
     // 使用 req 和 res
     if (process.server) {
-     return { host: req.headers.host }
+      return { host: req.headers.host }
     }
 
     return {}
@@ -142,12 +156,12 @@ Nuxt.js 在上下文对象`context`中提供了一个 `error(params)` 方法，�
 export default {
   asyncData ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      return { title: res.data.title }
-    })
-    .catch((e) => {
-      error({ statusCode: 404, message: 'Post not found' })
-    })
+      .then((res) => {
+        return { title: res.data.title }
+      })
+      .catch((e) => {
+        error({ statusCode: 404, message: 'Post not found' })
+      })
   }
 }
 ```
@@ -157,12 +171,12 @@ export default {
 export default {
   asyncData ({ params }, callback) {
     axios.get(`https://my-api/posts/${params.id}`)
-    .then((res) => {
-      callback(null, { title: res.data.title })
-    })
-    .catch((e) => {
-      callback({ statusCode: 404, message: 'Post not found' })
-    })
+      .then((res) => {
+        callback(null, { title: res.data.title })
+      })
+      .catch((e) => {
+        callback({ statusCode: 404, message: 'Post not found' })
+      })
   }
 }
 ```

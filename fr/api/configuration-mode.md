@@ -1,15 +1,13 @@
 ---
-title: "API: The mode Property"
-description: Change default nuxt mode
+title: "API: La propriété mode"
+description: Changer le mode nuxt par défaut
 ---
 
-# The mode Property (En)
 - Type: `string`
-  - Default: `universal`
-  - Possible values:
-    - `'spa'`: No server-side rendering (only client-side navigation)
-    - `'universal'`: Isomorphic application (server-side rendering + client-side navigation)
+  - Par défaut: `universal`
+  - Valeurs possibles:
+    - `'spa'`: Pas de rendu côté serveur (uniquement navigation côté client)
+    - `'universal'`: Application isomorphe (rendu côté serveur + navigation côté client)
 
-> You can use this option to change default nuxt mode for your project using `nuxt.config.js`
+> Vous pouvez utiliser cette option pour changer le mode nuxt par défaut pour votre projet en utilisant `nuxt.config.js`
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

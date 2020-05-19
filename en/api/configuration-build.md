@@ -3,8 +3,6 @@ title: "API: The build Property"
 description: Nuxt.js lets you customize the webpack configuration for building your web application as you want.
 ---
 
-# The build Property
-
 > Nuxt.js lets you customize the webpack configuration for building your web application as you want.
 
 ## analyze
@@ -32,7 +30,7 @@ export default {
 
 <div class="Alert Alert--teal">
 
-**Info:** you can use the command `yarn nuxt build --analyze` or `yarn nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888). If you are not using yarn you can run the command with npx.
+**Info:** you can use the command `yarn nuxt build --analyze` or `yarn nuxt build -a` to build your application and launch the bundle analyzer on [http://localhost:8888](http://localhost:8888). If you are not using `yarn` you can run the command with `npx`.
 
 </div>
 
@@ -87,13 +85,13 @@ Or override default value by returning whole presets list:
 export default {
   build: {
     babel: {
-      presets({ isServer }, [ preset, options ]) {
+      presets ({ isServer }, [ preset, options ]) {
         return [
           [
             preset, {
               buildTarget: isServer ? 'server' : 'client',
               ...options
-          }],
+            }],
           [
             // Other presets
           ]
@@ -172,7 +170,7 @@ export default {
     extend (config, { isClient }) {
       // Extend only webpack config for client-bundle
       if (isClient) {
-        config.devtool = '#source-map'
+        config.devtool = 'source-map'
       }
     }
   }
@@ -215,6 +213,34 @@ Using [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extra
 
 </div>
 
+You may want to extract all your CSS to a single file.
+There is a workaround for this:
+
+<div class="Alert Alert--orange">
+⚠️ It is not recommended extracting everything into a single file.
+Extracting into multiple css files is better for caching and preload isolation.
+It can also improve page performance by downloading and resolving only those resources that are needed.
+</div>
+
+```js
+export default {
+  build: {
+    extractCSS: true,
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
+    }
+  }
+}
+```
 
 ## filenames
 
@@ -223,16 +249,16 @@ Using [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extra
 - Type: `Object`
 - Default:
 
-```js
-{
-  app: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
-  chunk: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
-  css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
-  img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[hash:7].[ext]',
-  font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[hash:7].[ext]',
-  video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[hash:7].[ext]'
-}
-```
+  ```js
+  {
+    app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    chunk: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
+    img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
+    font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]',
+    video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
+  }
+  ```
 
 This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
 
@@ -240,7 +266,7 @@ This example changes fancy chunk names to numerical ids (`nuxt.config.js`):
 export default {
   build: {
     filenames: {
-      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[chunkhash].js'
+      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[contenthash].js'
     }
   }
 }
@@ -293,6 +319,14 @@ See [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware
 Configuration for the [html-minifier](https://github.com/kangax/html-minifier) plugin used to minify
 HTML files created during the build process (will be applied for *all modes*).
 
+## indicator
+
+> Display build indicator for hot module replacement in development (available in `v2.8.0+`)
+- Type: `Boolean`
+- Default: `true`
+
+![nuxt-build-indicator](https://user-images.githubusercontent.com/5158436/58500509-93ba0f80-8197-11e9-8524-e115c6d32571.gif)
+
 ## loaders
 
 > Customize options of Nuxt.js integrated webpack loaders.
@@ -324,14 +358,6 @@ HTML files created during the build process (will be applied for *all modes*).
   },
   scss: {},
   stylus: {},
-  ts: {
-    transpileOnly: true,
-    appendTsSuffixTo: [/\.vue$/]
-  },
-  tsx: {
-    transpileOnly: true,
-    appendTsxSuffixTo: [/\.vue$/]
-  },
   vueStyle: {}
 }
 ```
@@ -367,15 +393,6 @@ HTML files created during the build process (will be applied for *all modes*).
 
 > See the [Node Sass documentation](https://github.com/sass/node-sass/blob/master/README.md#options) for all available Sass options.
 > Note: `loaders.sass` is for [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html)
-
-### loaders.ts
-
-> Loader for typescript file and `lang="ts"` Vue SFC.
-> More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#loader-options).
-
-### loaders.tsx
-
-> More details are in [ts-loader options](https://github.com/TypeStrong/ts-loader#options).
 
 ### loaders.vueStyle
 
@@ -466,10 +483,13 @@ export default {
     plugins: {
       'postcss-import': {},
       'postcss-url': {},
-      'postcss-preset-env': {},
+      'postcss-preset-env': this.preset,
       'cssnano': { preset: 'default' } // disabled in dev mode
     },
-    order: 'cssnanoLast'
+    order: 'presetEnvAndCssnanoLast',
+    preset: {
+      stage: 2
+    }
   }
   ```
 
@@ -482,7 +502,7 @@ export default {
   build: {
     postcss: {
       plugins: {
-          // Disable `postcss-url`
+        // Disable `postcss-url`
         'postcss-url': false,
         // Add some plugins
         'postcss-nested': {},
@@ -516,6 +536,34 @@ export default {
       order: ['postcss-import', 'postcss-preset-env', 'cssnano']
       // Function to calculate plugin order
       order: (names, presets) => presets.cssnanoLast(names)
+    }
+  }
+}
+```
+### postcss plugins & nuxt-tailwindcss
+
+If you want to apply postcss plugin (eg. postcss-pxtorem) on the nuxt-tailwindcss configuration, you have to change order and load first tailwindcss.
+
+**This setup have no impact on the nuxt-purgecss.**
+
+Example (`nuxt.config.js`):
+
+```js
+import { join } from 'path'
+
+export default {
+  // ...
+  build: {
+    postcss: {
+      plugins: {
+        tailwindcss: join(__dirname, 'tailwind.config.js'),
+        'postcss-pxtorem': {
+          propList: [
+            '*',
+            '!border*',
+          ]
+        }
+      }
     }
   }
 }
@@ -672,54 +720,22 @@ See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/t
 
 ## transpile
 
-- Type: `Array<string | RegExp>`
+- Type: `Array<String | RegExp | Function>`
 - Default: `[]`
 
-If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Each item in transpile can be a package name, or a string or regex object matching the dependency's file name.
+If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Each item in transpile can be a package name, a string or regex object matching the dependency's file name.
 
-## typescript
+Starting with `v2.9.0`, you can also use a function to conditionally transpile, the function will receive a object (`{ isDev, isServer, isClient, isModern, isLegacy }`):
 
-> Customize Nuxt.js TypeScript support.
-
-<div class="Alert Alert--blue">
-
-**Important**: This property will be ignored if [`TypeScript Support`](/guide/typescript) hasn't be set up in your project.
-
-</div>
-
-- Type: `Object`
-- Default:
-
-  ```js
-  {
-    typeCheck: true,
-    ignoreNotFoundWarnings: false
+```js
+{
+  build: {
+    transpile: [
+      ({ isLegacy }) => isLegacy && 'ky'
+    ]
   }
-  ```
-
-### typescript.typeCheck
-
-> Enables TypeScript type checking on a separate process.
-
-- Type: `Boolean` or `Object`
-- Default: `true`
-
-When enabled, Nuxt.js uses [fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) to provide type checking.
-
-You can use an `Object` to override plugin options or set it to `false` to disable it.
-
-### typescript.ignoreNotFoundWarnings
-
-> Enables suppress not found typescript warnings.
-
-- Type: `Boolean`
-- Default: `false`
-
-When enabled, you can suppress `export ... was not found ...` warnings.
-
-See also about background information [https://github.com/TypeStrong/ts-loader/issues/653](https://github.com/TypeStrong/ts-loader/issues/653)
-
-**Warning:** This property might suppress the warnings you want to see. Be careful with how you configure it.
+}
+```
 
 ## vueLoader
 
@@ -754,6 +770,20 @@ export default {
     watch: [
       '~/.nuxt/support.js'
     ]
+  }
+}
+```
+
+## followSymlinks
+
+> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example.
+
+- Type: `Boolean`
+
+```js
+export default {
+  build: {
+    followSymlinks: true
   }
 }
 ```

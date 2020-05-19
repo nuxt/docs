@@ -11,7 +11,8 @@ description: The Views section describes all you need to configure data and view
 
 > You can customize the HTML app template used by Nuxt.js to include scripts or conditional CSS classes.
 
-To change the template, create an `app.html` file in the root folder of your project.
+To change the template, create an `app.html` file, in the src folder of your project. (which is the project's root directory by default).
+
 
 The default template used by Nuxt.js is:
 
@@ -46,8 +47,7 @@ One use case of using a custom app template is to add conditional CSS classes fo
 
 ## Layouts
 
-Layouts are a great help when you want to change the look and feel of your Nuxt.js app.
-Whether you want to include a sidebar or having distinct layouts for mobile and desktop
+Layouts are a great help when you want to change the look and feel of your Nuxt.js app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
 
 ### Default Layout
 
@@ -198,9 +198,9 @@ More information about the pages properties usage: [API Pages](/api)
 
 ## HTML Head
 
-Nuxt.js uses [vue-meta](https://github.com/nuxt/vue-meta) to update the `document head` and `meta attributes` of your application.
+Nuxt.js uses [vue-meta](https://vue-meta.nuxtjs.org/) to update the `document head` and `meta attributes` of your application.
 
-The `vue-meta` Nuxt.js uses can be found [on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/index.js#L29-L35)
+The `vue-meta` Nuxt.js uses can be found [on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/index.js#L42-L48).
 
 <div class="Alert Alert--teal">
 

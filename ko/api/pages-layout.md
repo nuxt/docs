@@ -3,8 +3,6 @@ title: "API: layout 프로퍼티"
 description: layouts 디렉토리의 모든 파일(최상위 레벨)은 페이지 컴포넌트의 layout 프로퍼티를 사용하여 접근가능한 사용자 정의 layout을 만들 수 있습니다.
 ---
 
-# layout 프로퍼티
-
 > layouts 디렉토리의 모든 파일(최상위 레벨)은 페이지 컴포넌트의 layout 프로퍼티를 사용하여 접근가능한 사용자 정의 layout을 만들 수 있습니다.
 
 - **타입:** `String` 또는 `Function` (기본값: `'default'`)

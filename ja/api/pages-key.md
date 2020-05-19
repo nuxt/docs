@@ -3,8 +3,6 @@ title: "key プロパティ"
 description: 内部の `<router-view>` コンポーネントに `key` プロパティを設定します
 ---
 
-# key プロパティ
-
 > 内部の `<router-view>` コンポーネントに `key` プロパティを設定します。
 
 - **型:** `String` or `Function`
@@ -15,7 +13,7 @@ description: 内部の `<router-view>` コンポーネントに `key` プロパ�
 
 ```js
 export default {
-  keys(route) {
+  key (route) {
     return route.fullPath
   }
 }

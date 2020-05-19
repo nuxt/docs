@@ -17,7 +17,7 @@ Hook                      | Arguments                | When
 --------------------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  `render:before`          | (renderer, options)      | 在为Renderer类设置中间件和资源之前，对重载某些方法或选项很有用。
  `render:setupMiddleware` | (app) *connect instance* | 在Nuxt添加它的中间件堆栈之前。我们可以用它来注册自定义服务器端中间件。
- `render:errorMiddleware` | (app) *connect instance* | 在添加Nuxt错误中间件之前，在使用Nuxt之前添加自己的中间件很有用。有关详细信息，请参阅[Sentry module](https://github.com/nuxt-community/sentry-module/blob/master/lib/sentry.js)模块。
+ `render:errorMiddleware` | (app) *connect instance* | 在添加Nuxt错误中间件之前，在使用Nuxt之前添加自己的中间件很有用。有关详细信息，请参阅[Sentry module](https://github.com/nuxt-community/sentry-module/blob/master/lib/module.js#L122)模块。
  `render:resourcesLoaded` | (resources)              | 在加载渲染器的资源之后调用。
  `render:done`            |  (renderer)              | SSR中间件和所有资源都准备就绪（渲染器就绪）
  `render:routeContext`    |  (context.nuxt)          | 每次路由是服务器渲染时和渲染之前：路由hooks。在将`Nuxt`上下文序列化为窗口`__ NUXT__`之前调用，对于添加一些可以在客户端获取的数据很有用。

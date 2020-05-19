@@ -41,6 +41,7 @@ $ yarn create nuxt-app <project-name>
   - [Hapi](https://github.com/hapijs/hapi)
   - [Feathers](https://github.com/feathersjs/feathers)
   - [Micro](https://github.com/zeit/micro)
+  - [Fastify](https://github.com/fastify/fastify)
   - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
 2. 好きな UI フレームワークを選択します:
   - None（後からでも追加できます）
@@ -50,7 +51,9 @@ $ yarn create nuxt-app <project-name>
   - [Tailwind](https://github.com/tailwindcss/tailwindcss)
   - [Element UI](https://github.com/ElemeFE/element)
   - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
-  - [Buefy](https://buefy.github.io)
+  - [Buefy](https://github.com/buefy/buefy)
+  - [iView](https://github.com/iview/iview)
+  - [Tachyons](https://github.com/tachyons-css/tachyons)
 3. 好きなテスティングフレームワークを選択します:
   - None (後からでも追加できます）
   - [Jest](https://github.com/facebook/jest)
@@ -78,7 +81,7 @@ Nuxt.js は `pages` ディレクトリ内のファイルの更新を監視しま
 
 ## スクラッチから始める
 
-Nuxt.js アプリケーションをスクラッチから作ることもとても簡単で、必要なものは *1つのファイルと 1つのディレクトリ* だけです。まずはアプリケーションで動かす空のディレクトリを作りましょう:
+Nuxt.js プロジェクトをスクラッチから作ることも簡単で、必要なのは *1つのファイルと 1つのディレクトリ* だけです。まずは空のディレクトリを作りましょう:
 
 ```bash
 $ mkdir <project-name>
@@ -93,7 +96,7 @@ $ cd <project-name>
 
 ### package.json
 
-`nuxt` の起動方法を指定する `package.json` ファイルが必要です:
+それぞれのプロジェクトには、 `nuxt` を起動するために `package.json` ファイルが必要です。下記の json を package.json にコピーをして、 npm install を実行する前に保存してください:
 
 ```json
 {

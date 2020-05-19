@@ -1,40 +1,19 @@
 ---
 title: はじめに
-description: "Nuxt.js は Vue アプリケーションを作成するフレームワークです。ユニバーサルアプリケーション、静的に生成されるアプリケーション、シングルページアプリケーションの中から作成するアプリケーションを選ぶことができます。"
+description: "Nuxtは、モダンな Web アプリケーションを作成する Vue.js に基づいたプログレッシブフレームワークです。Vue.js 公式ライブラリ（vue、vue-router や vuex）および強力な開発ツール（webpack、Babel や PostCSS）に基づいています。"
 ---
 
-> Nuxt.js は Vue アプリケーションを作成するフレームワークです。ユニバーサルアプリケーション、静的に生成されるアプリケーション、シングルページアプリケーションの中から作成するアプリケーションを選ぶことができます。
+> Nuxtは、モダンな web アプリケーションを作成する Vue.js に基づいたプログレッシブフレームワークです。Vue.js 公式ライブラリ（vue、vue-router や vuex）および強力な開発ツール（webpack、Babel や PostCSS）に基づいています。 Nuxt の目標は、優れた開発者エクスペリエンスを念頭に置き、Web 開発を強力かつ高性能にすることです。
 
-## Nuxt.js とは何か？
+## NuxtJS とは何か？
 
-サーバサイドとクライアントサイドのディストリビューションを抽象化しつつ **UI レンダリングすること**に焦点を当てています。
+Nuxt は、Vue の公式ガイドラインに沿って強力なアーキテクチャを提供するように設計されたフレームワークです。一部分から徐々に採用することが可能で、静的なランディングページから複雑な企業向け web アプリケーションの作成に使用できます。
 
-私たちのゴールは、メインプロジェクトの基礎として利用したり、既存の Node.js ベースのプロジェクトに追加したりできるような柔軟なフレームワークを作成することです。
+本質的に汎用性があり、さまざまなターゲット（サーバー、サーバーレス、または静的）をサポートし、サーバーサイドのレンダリングは切り替えることができます。
 
-Nuxt.js は**サーバーサイドレンダリング**をもっと楽しめるように Vue.js アプリケーションの開発に必要な設定をあらかじめプリセットしています。
+強力なモジュールエコシステムにより拡張可能で、REST や GraphQL エンドポイント、お気に入りの CMS や CSS フレームワークなどさまざまなものに簡単に接続できます。PWA および AMP のサポートは、Nuxt プロジェクトからは隔離されたモジュールにすぎません。
 
-加えて、_nuxt generate_ と呼ばれる別の開発オプションも提供しています。これは**静的に生成された** Vue.js アプリケーションを構築します。
-私たちはこのオプションが、マイクロサービスなウェブアプリケーションの開発において次なる大きな一歩になり得ると信じています。
-
-さらに、Nuxt.js はシングルページアプリケーション（`spa` モード）を手早く作成する際にも使えます。バックオフィスのアプリケーションとして動きつつ、Nuxt の機能を使うのに便利です。
-
-フレームワークとして、Nuxt.js はクライアントサイドとサーバーサイド間の開発を手助けするたくさんの機能を備えています。例えば、非同期でのデータのやり取りや、ミドルウェアとしての利用、レイアウト機能などがあります。
-
-## どのように動作するか？
-
-![Vue with webpack and Babel](https://i.imgur.com/avEUftE.png)
-
-Nuxt.js はリッチなウェブアプリケーションを構築するために下記のものを含んでいます:
-
-- [Vue 2](https://vuejs.org/)
-- [Vue Router](https://router.vuejs.org/ja/)
-- [Vuex](https://vuex.vuejs.org/ja/)（[ストアオプション](/guide/vuex-store)を利用している場合に限る）
-- [Vue Server Renderer](https://ssr.vuejs.org/ja/)（[`mode: 'spa'`](/api/configuration-mode) を利用している場合を除く）
-- [vue-meta](https://github.com/nuxt/vue-meta)
-
-すべて合わせてもわずか **57kB min+gzip** です。（Vuex 利用時は 60kB）
-
-バンドルやソースコードの分割やミニファイ化するために内部で [webpack](https://github.com/webpack/webpack)、[vue-loader](https://github.com/vuejs/vue-loader) と [babel-loader](https://github.com/babel/babel-loader) を使います。
+NuxtJS は Vue.js プロジェクトのバックボーンであり、柔軟でありながら自信を持ってプロジェクトを構築するための構造を提供します。
 
 ## 主な機能
 
@@ -51,6 +30,24 @@ Nuxt.js はリッチなウェブアプリケーションを構築するために
 - HTTP/2 push headers ready
 - モジュール構造で拡張できること
 
+## どのように動作するか？
+
+Nuxt.js はリッチなウェブアプリケーションを構築するために下記のものを含んでいます:
+
+- [Vue 2](https://vuejs.org/)
+- [Vue Router](https://router.vuejs.org/ja/)
+- [Vuex](https://vuex.vuejs.org/ja/)（[ストアオプション](/guide/vuex-store)を利用している場合に限る）
+- [Vue Server Renderer](https://ssr.vuejs.org/ja/)（[`mode: 'spa'`](/api/configuration-mode) を利用している場合を除く）
+- [Vue Meta](https://github.com/nuxt/vue-meta)
+
+すべて合わせてもわずか **57kB min+gzip** です。（Vuex 利用時は 60kB）
+
+<div class="Alert">
+
+バンドルやソースコードの分割やミニファイ化するために内部で [webpack](https://github.com/webpack/webpack)、[vue-loader](https://github.com/vuejs/vue-loader) と [babel-loader](https://github.com/babel/babel-loader) を使います。
+
+</div>
+
 ## 図解
 
 下の図は、サーバーサイドで処理が実行されたときや、ユーザーが `<nuxt-link>` を通して遷移したときに Nuxt.js によって何が呼び出されるかを表しています:
@@ -63,13 +60,13 @@ Nuxt.js をプロジェクトの UI レンダリング全体を担うフレー�
 
 `nuxt` コマンドを実行すると開発サーバーが起動します。このサーバーはホットリローディング及び [Vue Server Renderer](https://ssr.vuejs.org/ja/) を備えており、アプリケーションが自動的にサーバーサイドレンダリングするよう設定されています。
 
-### シングルページアプリケーション（SPA）
+## シングルページアプリケーション（SPA）
 
 もし何らかの理由でサーバーサイドレンダリングを使いたくない、あるいはアプリケーションを静的にホスティングする必要があるときは `nuxt --spa` を使って、シンプルに SPA モードを使うことができます。_generate_ 機能と組み合わせて使うことで、Node.js ランタイムや特別なサーバー処理を利用する必要なしに、SPA のパワフルなデプロイを実現できます。
 
 コマンドについてより深く理解するには [コマンド](/guide/commands) を参照してください。
 
-既にサーバーがあるならば Nuxt.js をミドルウェアとして追加することができます。ユニバーサルなウェブアプリケーションの開発に Nuxt.js を利用する際、制限は何ひとつありません。 [Nuxt.js をプログラム的に使う](/api/nuxt) ガイドを参照してください。
+サーバーが既にある場合は、Nuxt.js をミドルウェアとして組み込むことができます。ユニバーサルなウェブアプリケーションの開発に Nuxt.js を利用する際、制限は何ひとつありません。 [Nuxt.js をプログラム的に使う](/api/nuxt) ガイドを参照してください。
 
 ## 静的ファイルの生成
 

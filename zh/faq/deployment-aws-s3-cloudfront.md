@@ -165,14 +165,14 @@ npm install -g gulp
 4.4) 使用构建脚本创建`gulpfile.js`
 
 ``` javascript
-var gulp = require('gulp');
-var awspublish = require('gulp-awspublish');
-var cloudfront = require('gulp-cloudfront-invalidate-aws-publish');
-var parallelize = require('concurrent-transform');
+const gulp = require('gulp')
+const awspublish = require('gulp-awspublish')
+const cloudfront = require('gulp-cloudfront-invalidate-aws-publish')
+const parallelize = require('concurrent-transform')
 
 // https://docs.aws.amazon.com/cli/latest/userguide/cli-environment.html
 
-var config = {
+const config = {
 
   // Required
   params: { Bucket: process.env.AWS_BUCKET_NAME },
@@ -180,45 +180,45 @@ var config = {
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
 
   // Optional
-  deleteOldVersions: false,                 // NOT FOR PRODUCTION
+  deleteOldVersions: false, // NOT FOR PRODUCTION
   distribution: process.env.AWS_CLOUDFRONT, // Cloudfront distribution ID
   region: process.env.AWS_DEFAULT_REGION,
-  headers: { /*'Cache-Control': 'max-age=315360000, no-transform, public',*/ },
+  headers: { /* 'Cache-Control': 'max-age=315360000, no-transform, public', */ },
 
   // Sensible Defaults - gitignore these Files and Dirs
   distDir: 'dist',
   indexRootPath: true,
   cacheFileName: '.awspublish',
   concurrentUploads: 10,
-  wait: true,  // wait for Cloudfront invalidation to complete (about 30-60 seconds)
+  wait: true // wait for Cloudfront invalidation to complete (about 30-60 seconds)
 }
 
-gulp.task('deploy', function() {
+gulp.task('deploy', function () {
   // create a new publisher using S3 options
   // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property
-  var publisher = awspublish.create(config, config);
+  const publisher = awspublish.create(config, config)
 
-  var g = gulp.src('./' + config.distDir + '/**');
-    // publisher will add Content-Length, Content-Type and headers specified above
-    // If not specified it will set x-amz-acl to public-read by default
+  let g = gulp.src('./' + config.distDir + '/**')
+  // publisher will add Content-Length, Content-Type and headers specified above
+  // If not specified it will set x-amz-acl to public-read by default
   g = g.pipe(parallelize(publisher.publish(config.headers), config.concurrentUploads))
 
   // Invalidate CDN
   if (config.distribution) {
-    console.log('Configured with Cloudfront distribution');
-    g = g.pipe(cloudfront(config));
+    console.log('Configured with Cloudfront distribution')
+    g = g.pipe(cloudfront(config))
   } else {
-    console.log('No Cloudfront distribution configured - skipping CDN invalidation');
+    console.log('No Cloudfront distribution configured - skipping CDN invalidation')
   }
 
   // Delete removed files
-  if (config.deleteOldVersions) g = g.pipe(publisher.sync());
+  if (config.deleteOldVersions) { g = g.pipe(publisher.sync()) }
   // create a cache file to speed up consecutive uploads
-  g = g.pipe(publisher.cache());
+  g = g.pipe(publisher.cache())
   // print upload updates to console
-  g = g.pipe(awspublish.reporter());
-  return g;
-});
+  g = g.pipe(awspublish.reporter())
+  return g
+})
 ```
 4.5) 部署和调试
 

@@ -3,8 +3,6 @@ title: 'API: build プロパティ'
 description: Nuxt.js ではウェブアプリケーションを自由にビルドできるよう Webpack 設定をカスタマイズできます。
 ---
 
-# build プロパティ
-
 > Nuxt.js ではウェブアプリケーションを自由にビルドできるよう Webpack 設定をカスタマイズできます。
 
 ## analyze
@@ -32,7 +30,7 @@ export default {
 
 <div class="Alert Alert--teal">
 
-**情報:** `nuxt build --analyze` または `nuxt build -a` コマンドを使って、アプリケーションをビルドしてバンドルアナライザを [http://localhost:8888](http://localhost:8888) で起動できます。
+**情報:** `yarn nuxt build --analyze` または `yarn nuxt build -a` コマンドを使って、アプリケーションをビルドしてバンドルアナライザを [http://localhost:8888](http://localhost:8888) で起動できます。`yarn` を使っていない場合は、コマンドに `npx` を付けて実行できます。
 
 </div>
 
@@ -87,13 +85,13 @@ export default {
 export default {
   build: {
     babel: {
-      presets({ isServer }, [ preset, options ]) {
+      presets ({ isServer }, [ preset, options ]) {
         return [
           [
             preset, {
               buildTarget: isServer ? 'server' : 'client',
               ...options
-          }],
+            }],
           [
             // 他のプリセット
           ]
@@ -172,7 +170,7 @@ export default {
     extend (config, { isClient }) {
       // クライアントのバンドルの Webpack 設定のみを拡張する
       if (isClient) {
-        config.devtool = '#source-map'
+        config.devtool = 'source-map'
       }
     }
   }
@@ -207,7 +205,6 @@ export default {
 - 型: `Boolean`
 - デフォルト: `false`
 
-
 内部で [`extract-css-chunks-webpack-plugin`](https://github.com/faceyspacey/extract-css-chunks-webpack-plugin/) が使われ、全ての CSS は別々のファイルに、通常はコンポーネントごとに1つ抽出されます。これは CSS と JavaScript を別々にキャッシュすることを可能にし、多くのグローバルまたは共通 CSS が存在する場合には試してみる価値があります。
 
 <div class="Alert Alert--teal">
@@ -216,6 +213,34 @@ export default {
 
 </div>
 
+全ての CSS を単一ファイルに抽出した方がいいこともあります。
+このための回避策があります。:
+
+<div class="Alert Alert--orange">
+⚠️ 全てのファイルを単一ファイルに抽出することは推奨しません。
+複数の CSS ファイルに抽出する方が、キャッシングとプリロードの分離に適しています。
+また、必要なリソースのみをダウンロードして解決することによって、ページのパフォーマンスを向上させることもできます。
+</div>
+
+```js
+export default {
+  build: {
+    extractCSS: true,
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
+    }
+  }
+}
+```
 
 ## filenames
 
@@ -224,16 +249,16 @@ export default {
 - 型: `Object`
 - デフォルト:
 
-```js
-{
-  app: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
-  chunk: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
-  css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
-  img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[hash:7].[ext]',
-  font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[hash:7].[ext]',
-  video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[hash:7].[ext]'
-}
-```
+  ```js
+  {
+    app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    chunk: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+    css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
+    img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
+    font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]',
+    video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
+  }
+  ```
 
 この例ではチャンク名を数値の ID に変更します（`nuxt.config.js`）:
 
@@ -241,13 +266,13 @@ export default {
 export default {
   build: {
     filenames: {
-      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[chunkhash].js'
+      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[contenthash].js'
     }
   }
 }
 ```
 
-manifest の使い方をより理解するためには [webpack documentation](https://webpack.js.org/guides/code-splitting-libraries/) を参照してください。
+manifest の使い方をより理解するためには [webpack のドキュメント](https://webpack.js.org/guides/code-splitting/) を参照してください。
 
 ## friendlyErrors
 
@@ -292,6 +317,15 @@ manifest の使い方をより理解するためには [webpack documentation](h
 **情報:** `html.minify`に変更を加えても、それらはデフォルトとマージされません！
 
 ビルドプロセス中に作成された HTML ファイルのミニファイに使われる [html-minifier](https://github.com/kangax/html-minifier) プラグインの設定（*全てのモード*に適用される）。
+
+## indicator
+
+> 開発モードでホットリローディングのビルドインジケーターを表示します(`v2.8.0+` から利用可能)
+
+- 型: `Boolean`
+- デフォルト: `true`
+
+![nuxt-build-indicator](https://user-images.githubusercontent.com/5158436/58500509-93ba0f80-8197-11e9-8524-e115c6d32571.gif)
 
 ## loaders
 
@@ -359,15 +393,6 @@ manifest の使い方をより理解するためには [webpack documentation](h
 
 > 利用可能な全てのオプションについては [Node Sass documentation](https://github.com/sass/node-sass/blob/master/README.md#options) を参照してください。
 > 注意: `loaders.sass` は [Sass Indented Syntax](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html) 用です。
-
-### loaders.ts
-
-> typescript ファイルと Vue SFC の `lang="ts"` 用のローダーです。
-> 詳細は [ts-loader options](https://github.com/TypeStrong/ts-loader#loader-options) を参照してください。
-
-### loaders.tsx
-
-> 詳細は [ts-loader options](https://github.com/TypeStrong/ts-loader#options) を参照してください。
 
 ### loaders.vueStyle
 
@@ -458,10 +483,13 @@ export default {
     plugins: {
       'postcss-import': {},
       'postcss-url': {},
-      'postcss-preset-env': {},
+      'postcss-preset-env': this.preset,
       'cssnano': { preset: 'default' } // 開発モードでは無効化されています
     },
-    order: 'cssnanoLast'
+    order: 'presetEnvAndCssnanoLast',
+    preset: {
+      stage: 2
+    }
   }
   ```
 
@@ -490,7 +518,6 @@ export default {
   }
 }
 ```
-
 
 postcss の設定が `Object` 型の場合、プラグインの順番の定義に `order`を利用できます:
 
@@ -578,7 +605,7 @@ export default {
 
 <div class="Alert Alert--orange">
 
-**警告** このプロパティは非推奨です。 パフォーマンスおよび開発体験の向上のために、代わりに [style-resources-modules](https://github.com/nuxt-community/style-resources-module/) を使用してください。
+**警告** このプロパティは非推奨です。 パフォーマンスおよび開発体験の向上のために、代わりに [style-resources-module](https://github.com/nuxt-community/style-resources-module/) を使用してください。
 
 </div>
 
@@ -658,66 +685,32 @@ export default {
 
 Terser プラグインのオプションです。 `false` を設定するとこのプラグインは無効になります。
 
-`soruceMap` は webpack の `confing.devtool` が `source-?map` と一致した際に有効になります。
+`soruceMap` は webpack の `config.devtool` が `source-?map` と一致した際に有効になります。
 
 [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin) を参照してください。
 
-
 ## transpile
 
-- 型: `Array<string | RegExp>`
+- 型: `Array<String | RegExp | Function>`
 - デフォルト: `[]`
 
 特定の依存関係を Babel で変換したい場合、`build.transpile` を追加することができます。transpile の項目は、マッチする依存ファイル名の文字列または正規表現オブジェクトになります。
 
-## typescript
+`v2.9.0` 以降からは、関数を使用して条件付きでトランスパイルすることもできます。関数はオブジェクト（`{ isDev, isServer, isClient, isModern, isLegacy }`）を受け取ります：
 
-> Nuxt.js の TypeScript のサポートをカスタマイズします。
-
-<div class="Alert Alert--blue">
-
-**重要**: プロジェクト内で [`TypeScript Support`](/guide/typescript) が設定されていない場合、このプロパティは無視されます。
-
-</div>
-
-- 型: `Object`
-- デフォルト:
-
-  ```js
-  {
-    typeCheck: true,
-    ignoreNotFoundWarnings: false
+```js
+{
+  build: {
+    transpile: [
+      ({ isLegacy }) => isLegacy && 'ky'
+    ]
   }
-  ```
-
-### typescript.typeCheck
-
-> TypeScript の型チェックを別プロセスで実行することを有効にします。
-
-- 型: `Boolean` または `Object`
-- デフォルト: `true`
-
-もし有効の場合、Nuxt.js は [fork-ts-checker-webpack-plugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) を使って型チェックを行います。
-
-`Object` を使用してプラグインのオプションを上書きすることができます。または `false` に設定することで無効にすることも出来ます。
-
-### typescript.ignoreNotFoundWarnings
-
-> typescript の not foundの warning を抑制します。
-
-- 型: `Boolean`
-- デフォルト: `false`
-
-有効にすると、`export ... was not found ...` の warning を抑制することが出来ます。
-
-背景についてはこちらも参照してください。 [https://github.com/TypeStrong/ts-loader/issues/653](https://github.com/TypeStrong/ts-loader/issues/653)
-
-**警告:** このプロパティは本来見たい warning も抑制する可能性があります。設定には注意してください。
-
+}
+```
 
 ## vueLoader
 
-> 注意: この設定は Nuxt 2.0 から削除されました。[`build.loaders.vue`](#loaders) を変わりに使用してください。
+> 注意: この設定は Nuxt 2.0 から削除されました。[`build.loaders.vue`](#loaders) をかわりに使用してください。
 
 - 型: `Object`
 - デフォルト
@@ -748,6 +741,19 @@ export default {
     watch: [
       '~/.nuxt/support.js'
     ]
+  }
+}
+```
+## followSymlinks
+
+> デフォルトでは、ビルドプロセスはシンボリックリンク内のファイルをスキャンしません。`followSymlinks` を `true` に設定するとフォルダー（例えば `pages`）内のシンボリックリンクがビルドプロセスでスキャンされます。
+
+- 型: `Boolean`
+
+```js
+export default {
+  build: {
+    followSymlinks: true
   }
 }
 ```

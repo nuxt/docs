@@ -1,74 +1,82 @@
 {
   "iso": "ja",
-  "docVersion": "2.6.X",
+  "docVersion": "2.11.X",
   "links": {
-    "api": "API",
-    "blog": "ブログ",
-    "chat": "チャット",
-    "documentation": "ドキュメント",
     "download": "ダウンロード",
-    "examples": "例",
-    "ecosystem": "エコシステム",
-    "faq": "FAQ",
-    "get_started": "はじめる",
-    "github": "GitHub",
-    "guide": "ガイド",
-    "homepage": "ホーム",
-    "live_demo": "ライブデモ",
-    "live_edit": "ライブ編集",
-    "tidelift_short": "専門的なサポートを得る",
-    "official_support": "公式サポートを得る ⛑",
-    "tidelift": "Nuxt の専門的なサポートを得る",
-    "twitter": "Twitter",
-    "vuejs": "Vue.js",
-    "vue_jobs": "Vue Jobs"
+    "live_edit": "ライブ編集"
   },
+  "headerLinks": [
+    {
+      "name": "Guide",
+      "slug": "guide",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "API",
+      "slug": "api",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Examples",
+      "slug": "examples",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "FAQ",
+      "slug": "faq",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Resources",
+      "slug": "resources",
+      "type": "static"
+    },
+    {
+      "name": "Blog",
+      "slug": "blog",
+      "type": "static"
+    }
+  ],
   "text": {
     "an_error_occurred": "エラーが発生しました",
     "api_page_not_found": "API ページが見つかりません",
-    "example_file": "サンプルファイル",
-    "please_wait": "お待ちください...",
     "please_define_title": "Frontmatter 内の title を定義してください",
     "please_define_description": "Frontmatter 内の description を定義してください",
-    "search": "検索",
+    "search": "検索 (\"/\" でフォーカス)",
     "version": "バージョン"
   },
   "homepage": {
-    "title": "ユニバーサル Vue.js アプリケーション",
     "meta": {
       "title": "Nuxt.js - ユニバーサル Vue.js アプリケーション",
       "description": "Nuxt.js はサーバーサイドレンダリングやコード分割、ホットリローディング、静的ファイル生成などを備えた Vue.js アプリケーションを構築するためのミニマルなフレームワークです！"
     },
     "welcome": {
-      "app_types_prefix": "",
-      "app_types": ["ユニバーサルアプリケーション", "静的に生成されたアプリケーション", "シングルページアプリケーション", "デスクトップアプリケーション", "モバイルアプリケーション", "プログレッシブウェブアプリケーション"],
-      "app_types_suffix": "のために"
+      "get_started": "はじめる",
+      "github_stars": "27K+ github stars"
     },
-    "codesandbox_title": "Nuxt.js をオンラインで試す",
-    "codesandbox_open": "CodeSandBox.io で開く",
-    "codesandbox_examples": "他のサンプルを見る",
-    "backer_partners": "パートナー",
-    "backer_become_a_partner": "パートナーになる",
-    "backer_sponsors": "スポンサー",
-    "backer_become_a_sponsor": "スポンサーになる",
-    "backer_backers": "後援者",
-    "backer_become_a_backer": "後援者になる",
-    "backer_foundations": "財団"
-  },
-  "sponsors": {
-    "title": "スポンサー",
-    "become": "私たちをサポートし、",
-    "become_partner": "パートナーになってください"
-  },
-  "footer": {
-    "authors": "Made by Chopin Brothers"
+    "why": {
+      "try_nuxtjs_online": "Nuxt.js をオンラインで試す"
+    },
+    "sponsors": {
+      "become_a_sponsor": "スポンサーになる"
+    },
+    "newsletter_form": {
+      "email": "メールアドレス",
+      "subscribing": "送信中...",
+      "subscribe": "購読する",
+      "subscribed_messages": {
+        "pre": "購読を確認するメールを",
+        "post": "に送信しました 💚"
+      }
+    }
   },
   "guide": {
     "release_notes": "リリースノート",
     "contribute": "間違いを見つけた、またはドキュメントに貢献したいですか？",
     "edit_on_github": "GitHub でこのページを編集する"
-  },
-  "examples": {
-    "source_code": "ソースコード"
   }
 }

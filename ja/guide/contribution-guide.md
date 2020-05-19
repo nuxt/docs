@@ -20,7 +20,7 @@ description: Nuxt.js への貢献はどんなものでも大歓迎です！
 
 ### 始める
 
-1. このリポジトリを自身の GitHub account に [Fork](https://help.github.com/articles/fork-a-repo/) し、ローカルに [clone](https://help.github.com/articles/cloning-a-repository/) します。
+1. [Nuxtのリポジトリ](https://github.com/nuxt/nuxt.js)を自身の GitHub account に [Fork](https://help.github.com/articles/fork-a-repo/) し、ローカルに [clone](https://help.github.com/articles/cloning-a-repository/) します。
 2. `npm install` または `yarn install` を実行し、依存関係のあるパッケージをインストールします。
 
 > _**npm** と **yarn** 共に依存関係のあるパッケージをインストールし忘れていないか注意してください。これを解決するには、`node_modules` ディレクトリを削除するか、未インストールの依存関係のあるパッケージをローカルでインストールしてください。_

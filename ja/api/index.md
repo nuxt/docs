@@ -3,15 +3,13 @@ title: "API: asyncData メソッド"
 description: サーバーサイドでデータを取得し、それをレンダリングしたいことがあるでしょう。Nuxt.js はコンポーネントのデータをセットする前に非同期の処理を行えるようにするために `asyncData` メソッドを追加しています。
 ---
 
-# asyncData メソッド
-
 > サーバーサイドでデータを取得し、それをレンダリングしたいことがあるでしょう。Nuxt.js はコンポーネントのデータをセットする前に非同期の処理を行えるようにするために `asyncData` メソッドを追加しています。
 
 - **型:** `Function`
 
 <div class="Alert Alert--nuxt-green">
 
-<b>情報:</b>[非同期なデータ](/guide/async-data)ページもご覧ください！
+<b>情報:</b> [非同期なデータ](/guide/async-data)ページもご覧ください！
 
 </div>
 

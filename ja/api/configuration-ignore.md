@@ -3,7 +3,7 @@ title: "API: ignore プロパティ"
 description: ignore 対象とするファイルを定義します
 ---
 
-# .nuxtignore
+## .nuxtignore
 
 `.nuxtignore` ファイルを使用することで、ビルド時にプロジェクトルート (`rootDir`) にある `layout`, `page`, `store` そして `middleware` のファイルを Nuxt.js に無視させることが出来ます。
 
@@ -32,22 +32,18 @@ middleware/foo/*.js
 
 > 仕様に関する詳細はこちらを参照してください [gitignore doc](https://git-scm.com/docs/gitignore)
 
-# ignorePrefix プロパティ
+## ignorePrefix プロパティ
 
 - 型: `String`
 - デフォルト: `'-'`
 
-> pages/ layout/ middleware/ store/ ディレクトリに含まれるファイルの中で、ファイル名が `ignorePrefix` プロパティで指定された接頭辞から始まる場合にはビルド時に無視されます。
+> pages/、layout/、middleware/ や store/ ディレクトリに含まれるファイルの中で、ファイル名が `ignorePrefix` プロパティで指定された接頭辞から始まる場合にはビルド時に無視されます。
 
 デフォルトでは `-` で始まる `store/-foo.js` や `pages/-bar.vue` のようなファイルは全て無視されます。これによりルートやストア等に変換されることなく、呼び出し元と同じ場所にテスト、ユーティリティ、コンポーネント等のファイルを置くことができます。
 
-**メモ:** このオプションは Nuxt.js 3 で非推奨になります。代わりに `.nuxtignore` ファイルを使うことをお勧めします。
-
-# ignore プロパティ
+## ignore プロパティ
 
 - 型: `Array`
 - デフォルト: `['**/*.test.*']`
 
 > `ignorePrefix` よりもカスタマイズしやすいです: `ignore` プロパティに指定した glob パターンと一致する全てのファイルがビルド時に無視されます
-
-**メモ:** このオプションは Nuxt.js 3 で非推奨になります。代わりに `.nuxtignore` ファイルを使うことをお勧めします。

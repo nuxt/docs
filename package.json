@@ -3,25 +3,8 @@
   "version": "1.0.0",
   "description": "Nuxt.js documentation files",
   "scripts": {
-    "textlint:ja": "textlint --config ja/.textlintrc ja/**/*.md",
-    "textlint:ja:fix": "textlint --config ja/.textlintrc --fix --format diff ja/**/*.md"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "linters": {
-      "*.js": [
-        "eslint --fix",
-        "git add"
-      ],
-      "ja/**/*.md": [
-        "textlint --config ja/.textlintrc --fix --format diff",
-        "git add"
-      ]
-    }
+    "textlint": "textlint",
+    "lint": "eslint --ext md ."
   },
   "repository": {
     "type": "git",
@@ -40,12 +23,9 @@
   },
   "homepage": "https://github.com/nuxt/docs#readme",
   "devDependencies": {
-    "@textlint-rule/textlint-rule-no-invalid-control-character": "^1.2.0",
-    "husky": "^1.3.1",
-    "lint-staged": "^8.1.5",
-    "textlint": "^11.2.3",
-    "textlint-filter-rule-whitelist": "^2.0.0",
-    "textlint-rule-preset-ja-spacing": "^2.0.1",
-    "textlint-rule-preset-jtf-style": "^2.3.1"
+    "@nuxtjs/eslint-config": "^1.1.2",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.5.1",
+    "eslint-plugin-markdown": "^1.0.1"
   }
 }

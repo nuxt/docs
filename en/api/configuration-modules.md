@@ -3,8 +3,6 @@ title: "API: The modules Property"
 description: Modules are Nuxt.js extensions which can extend its core functionality and add endless integrations.
 ---
 
-# The modules Property
-
 - Type: `Array`
 
 > Modules are Nuxt.js extensions which can extend it's core functionality and add endless integrations.  [Learn More](/guide/modules)
@@ -38,3 +36,19 @@ Note that they are required at runtime so should be already transpiled if depend
 
 Please see [Modules Guide](/guide/modules) for more detailed information on how they work or if interested developing your own module.
 Also we have provided an official [Modules](https://github.com/nuxt-community/awesome-nuxt#modules) Section listing dozens of production ready modules made by Nuxt Community.
+
+## `buildModules`
+
+<div class="Alert Alert--info">
+
+This feature is available since Nuxt v2.9
+
+</div>
+
+Some modules are only required during development and build time. Using `buildModules` helps to make production startup faster and also significantly decreasing `node_modules` size for production deployments. Please refer to each module docs to see if it is recommended to use `modules` or `buildModules`.
+
+The usage difference is:
+
+- Instead of adding to `modules` inside `nuxt.config.js`, use `buildModules`
+- Instead of adding to `dependencies` inside `package.json`, use `devDependencies` (`yarn add --dev` or `npm install --save-dev`)
+

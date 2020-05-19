@@ -1,21 +1,69 @@
 ---
-title: "API: The ignore Property (EN)"
-description: Define the ignore files for your Nuxt.js application
+title: "API: La propriété ignore"
+description: Définissez les fichiers ignorés pour votre application Nuxt.js
 ---
 
-# The ignorePrefix Property
+## .nuxtignore
+
+Vous pouvez utiliser un fichier `.nuxtignore` pour permettre à Nuxt.js d'ignorer les fichiers `layout`, `page`, `store` et `middleware` dans le répertoire racine de votre projet (`rootDir`) pendant la phase de construction.
+Le fichier `.nuxtignore` est soumis aux mêmes spécifications que les fichiers `.gitignore` et `.eslintignore`, dans 
+lequel chaque ligne est un modèle global indiquant quels fichiers doivent être ignorés.
+
+Par exemple:
+
+```
+# ignore la mise en page de foo.vue
+layouts/foo.vue
+# ignore la mise en page des fichiers qui ont un nom se terminant par -ignore.vue
+layouts/*-ignore.vue
+
+# ignore la page bar.vue
+pages/bar.vue
+# ignore les pages à l'intérieur du dossier ignore
+pages/ignore/*.vue
+
+# ignore le store baz.js
+store/baz.js
+# ignore les fichiers du store qui contiennent *.test.*
+store/ignore/*.test.*
+
+# ignore les fichiers middleware sous le dossier foo à l'exception de foo/bar.js
+middleware/foo/*.js
+!middleware/foo/bar.js
+```
+
+> Plus d'informations sur les détails de la spécification dans la [documentation de gitignore](https://git-scm.com/docs/gitignore).
+
+## La propriété ignorePrefix
 
 - Type: `String`
-- Default: `'-'`
+- Par défaut : `'-'`
 
-> Any file in pages/ layout/ middleware/ or store/ will be ignored during building if its filename starts with the prefix specified by `ignorePrefix`.
+> Tout fichier dans pages/, layout/, middleware/ ou store/ sera ignoré lors de la construction si son nom de fichier 
+> commence par le préfixe spécifié par `ignorePrefix`.
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>By default all files which start with `-` will be ignored, such as `store/-foo.js` and `pages/-bar.vue`. This allows for co-locating tests, utilities, and components with their callers without themselves being converted into routes, stores, etc.</p>
+Par défaut, tous les fichiers commençant par `-` seront ignorés, tels que `store/-foo.js` et `pages / -bar.vue`. Cela 
+permet de localiser les tests, les utilitaires et les composants avec leurs appelants sans être eux-mêmes convertis en 
+chemin, store, etc.
 
-# The ignore Property
+## La propriété ignore
 
 - Type: `Array`
-- Default: `['**/*.test.*']`
+- Par défaut : `['**/*.test.*']`
 
-> More customizable than `ignorePrefix`: all files matching glob patterns specified inside `ignore` will be ignored in building.
+> Plus personnalisable que `ignorePrefix`: tous les fichiers correspondant aux motifs globaux spécifiés dans `ignore` 
+> seront ignorés lors de la construction.
 
+## ignoreOptions
+
+`nuxtignore` utilise `node-ignore` sous le capot, `ignoreOptions` peut être configuré comme `options` de `node-ignore`.
+
+Exemple (`nuxt.config.js`, rendre les modèles .nuxtignore sensibles à la casse) :
+
+```js
+export default {
+  ignoreOptions: {
+    ignorecase: false
+  }
+}
+```

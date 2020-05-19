@@ -1,31 +1,37 @@
 ---
-title: "API: The head Property"
-description: Nuxt.js let you define all default meta for your application inside nuxt.config.js.
+title: "API: La propriété d'entête"
+description: Nuxt.js vous permet de définir toutes les méta par défaut pour votre application dans nuxt.config.js.
 ---
 
-# The head Property (En)
+> Nuxt.js vous permet de définir toutes les métas par défaut pour votre application dans `nuxt.config.js`, en utilisant 
+> la même propriété `head`
 
-> Nuxt.js let you define all default meta for your application inside `nuxt.config.js`, use the same `head` property:
+- Type: `Object` ou `Function`
 
-- Type: `Object`
-
+Un example `nuxt.config.js`:
 ```js
-module.exports = {
+export default {
   head: {
     titleTemplate: '%s - Nuxt.js',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+
+      // hid est utilisé comme identifiant unique. N'utilisez pas `vmid` car cela ne fonctionnera pas
       { hid: 'description', name: 'description', content: 'Meta description' }
     ]
   }
 }
 ```
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>To know the list of options you can give to `head`, take a look at [vue-meta documentation](https://vue-meta.nuxtjs.org/api/#metainfo-properties).</p>
+Pour connaitre la liste des options que vous pouvez donner à `head`, jeter un coup d'œil à la [documentation vue-meta](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
+
+Vous pouvez également utiliser `head` en tant que fonction dans vos composants pour accéder aux données des composants 
+via `this` ([lire la suite](/api/pages-head)).
 
 <div class="Alert Alert--teal">
 
-<b>INFO:</b> You can also use `head` in the page components and access to the component data through `this`, see [component head property](/api/pages-head).
+<b>Info:</b> Pour éviter les balises métas dupliquées lorsqu'elles sont utilisées dans le composant enfant, configurez 
+un identifiant unique avec la clé `hid` pour vos méta-éléments([lire la suite](https://vue-meta.nuxtjs.org/api/#tagidkeyname)).
 
 </div>

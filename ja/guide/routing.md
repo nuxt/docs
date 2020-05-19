@@ -244,7 +244,7 @@ router: {
 ### 未知の動的でネストされたルート
 
 もし URL 構造の深さが不明な場合は、ネストされたパスに動的にマッチさせる `_.vue` ファイルを使用することができます。
-これは_より詳細な_リクエストにマッチしなかったリクエストをハンドリングします。
+これは _より詳細な_ リクエストにマッチしなかったリクエストをハンドリングします。
 
 下記のようなファイルの木構造のとき:
 
@@ -270,7 +270,15 @@ Path | File
 
 __注意:__ 404 ページのハンドリングは `_.vue` ページのロジックに依存します。[404 リダイレクトについての詳細はこちら](/guide/async-data#handling-errors)を参照してください。
 
-### 名前付きビュー
+## router の拡張
+
+Nuxt のルーティングを拡張するためにはいくつかの方法があります。
+
+- [router-extras-module](https://github.com/nuxt-community/router-extras-module) はページコンポーネントのルートパラメータをカスタマイズできます
+- [@nuxtjs/router](https://github.com/nuxt-community/router-module) は独自の `router.js` を使って Nuxt router を上書きすることができます
+- [router.extendRoutes](https://nuxtjs.org/api/configuration-router#extendroutes) プロパティを `nuxt.config.js` で使います
+
+## 名前付きビュー
 
 名前付きビューをレンダリングするために `<nuxt name="top"/>` または `<nuxt-child name="top"/>` コンポーネントを layout/page 内で使用できます。
 名前付きビューを特定するには `nuxt.config.js` ファイルのルータ設定の拡張が必要です。
@@ -278,8 +286,8 @@ __注意:__ 404 ページのハンドリングは `_.vue` ページのロジッ�
 ``` js
 export default {
   router: {
-    extendRoutes(routes, resolve) {
-      let index = routes.findIndex(route => route.name === 'main')
+    extendRoutes (routes, resolve) {
+      const index = routes.findIndex(route => route.name === 'main')
       routes[index] = {
         ...routes[index],
         components: {
@@ -314,6 +322,10 @@ export default {
 }
 ```
 
+### ルートパラメータへのローカルアクセス
+
+ローカルページまたはコンポーネント内の現在のルートパラメータは、`this.$route.params.{parameterName}` を参照することでアクセスできます。例えば、動的ユーザーページ (`users\_id.vue`) があり、ユーザーまたはプロセス情報を読み込むために `id` パラメータにアクセスする場合、次のような変数にアクセスできます。： `this.$route.params.id`
+
 #### Surge 向けの実装
 
 Surge は `200.html` と `404.html` の両方を[ハンドリングできます](https://surge.sh/help/adding-a-custom-404-not-found-page)。`generate.fallback` はデフォルトで `200.html` に設定されるので、変更する必要はありません。
@@ -324,30 +336,11 @@ GitHub Pages と Netlify は `404.html` ファイルを自動的に認識する�
 
 #### Firebase ホスティング向けの実装
 
-Firebase ホスティング上でフォールバックを使用するためには、`generate.fallback` を `true` にし、以下の設定を使用します。 ([さらに詳しく](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
-
-```json
-{
-  "hosting": {
-    "public": "dist",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/404.html"
-      }
-    ]
-  }
-}
-```
+Firebase ホスティングは `404.html` ファイルを自動的に[処理できる](https://firebase.google.com/docs/hosting/full-config#404)ため、`generate.fallback` を `true` に設定すると、404 のデフォルトレスポンスコードと一緒にエラーページがレンダリングされます。
 
 ## トランジション
 
-Nuxt.js では [<transition> コンポーネントを使って、ページ間を遷移する際のトランジション/アニメーションを行うことができます。</transition>](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components)
+Nuxt.js では [`<transition>`](https://jp.vuejs.org/v2/guide/transitions.html#%E5%8D%98%E4%B8%80%E8%A6%81%E7%B4%A0-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%B7%E3%83%A7%E3%83%B3) コンポーネントを使って、ページ間を遷移する際のトランジション/アニメーションを行うことができます。
 
 ### グローバルな設定
 
@@ -411,7 +404,7 @@ export default {
 
 > ミドルウェアを使うと、特定のページやいくつかのページのグループがレンダリングされる前に実行されるカスタム関数を定義することができます。
 
-**ミドルウェアは `middleware/` ディレクトリに入れます。** ファイル名はミドルウェアの名前となります（`middleware/auth.js` は `auth` ミドルウェアになります）
+**ミドルウェアは `middleware/` ディレクトリに入れてください。** ファイル名はミドルウェアの名前となります（`middleware/auth.js` は `auth` ミドルウェアになります）。関数を直接使用してページ固有のミドルウェアを定義することもできます。[anonymous middleware](/api/pages-middleware#無名ミドルウェア) を参照してください。
 
 ミドルウェアは第一引数として [コンテキスト](/api/context) を受け取ります:
 
@@ -457,14 +450,14 @@ export default {
 
 これで `stats` ミドルウェアはすべてのルート変更時に呼び出されるようになります。
 
-同様に、特定のレイアウトもしくはページ内にもミドルウェアを追加することができます:
+同様に、特定のレイアウトもしくはページ内にもミドルウェア（複数であっても）を追加することができます:
 
 
 `pages/index.vue` または `layouts/default.vue`
 
 ```js
 export default {
-  middleware: 'stats'
+  middleware: ['auth', 'stats']
 }
 ```
 

@@ -1,32 +1,75 @@
 ---
-title: "API: The srcDir Property"
-description: Define the source directory of your Nuxt.js application
+title: "API: La propriété srcDir"
+description: Définissez le répertoire source de votre application Nuxt.js
 ---
 
-# The srcDir Property (En)
-
 - Type: `String`
-- Default: [rootDir value](/api/configuration-rootdir)
+- Par défaut: [valeur rootDir](/api/configuration-rootdir)
 
-> Define the source directory of your Nuxt.js application
+> Définissez le répertoire source de votre application Nuxt.js
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Example (`nuxt.config.js`):</p>
+Si un chemin relatif est spécifié, il sera relatif au rootDir
 
+Exemple 1:
+Conditions préalables:
 ```js
-module.exports = {
+// nuxt.config.js
+export default {
   srcDir: 'client/'
 }
-```
 
-Then, your application structure can be:
+// package.json
+  "script": {
+    "dev": "yarn nuxt"
+  }
+```
+fonctionne avec la structure de dossiers suivante (notez que nuxt.config est répertorié dans le répertoire de l'application)
 ```bash
 -| app/
 ---| node_modules/
----| client/
-------| pages/
-------| components/
 ---| nuxt.config.js
 ---| package.json
+---| client/
+------| assets/
+------| components/
+------| layouts/
+------| middleware/
+------| pages/
+------| plugins/
+------| static/
+------| store/
 ```
 
-This option is useful to have a custom server and using Nuxt.js, so all npm dependencies can be regrouped in one `package.json`.
+Exemple 2:
+
+Contrairement à l'exemple 1, vous pouvez également déplacer le nuxt.config dans votre dossier src. Dans ce cas, il vous
+suffit de spécifier le client comme rootDir et vous pouvez laisser srcDir vide:
+
+Conditions préalables:
+```js
+// nuxt.config.js
+export default {
+  srcDir: '' // ou simplement le retirer
+}
+
+// package.json
+  "script": {
+    "dev": "yarn nuxt client" // cela définit le client comme rootDir
+  }
+```
+fonctionne avec la structure de dossiers suivante (notez que nuxt.config est répertorié dans le répertoire client)
+```bash
+-| app/
+---| node_modules/
+---| package.json
+---| client/
+------| nuxt.config.js
+------| assets/
+------| components/
+------| layouts/
+------| middleware/
+------| pages/
+------| plugins/
+------| static/
+------| store/
+```

@@ -1,40 +1,61 @@
 ---
-title: "API: The modules Property"
-description: Modules are Nuxt.js extensions which can extend its core functionality and add endless integrations.
+title: "API: La propriété modules"
+description: Les modules sont des extensions Nuxt.js qui peuvent étendre ses fonctionnalités de base et ajouter des intégrations sans fin.
 ---
-
-# The modules Property (En)
 
 - Type: `Array`
 
-> Modules are Nuxt.js extensions which can extend it's core functionality and add endless integrations.  [Learn More](/guide/modules)
+> Les modules sont des extensions Nuxt.js qui peuvent étendre ses fonctionnalités de base et ajouter des intégrations sans fin. [En savoir plus](/guide/modules)
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Example (`nuxt.config.js`):</p>
+Exemple (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   modules: [
-    // Using package name
+    // Utilisation du nom du package
     '@nuxtjs/axios',
 
-    // Relative to your project srcDir
+    // Par rapport à votre projet srcDir
     '~/modules/awesome.js',
 
-    // Providing options
+    // Offrir des options
     ['@nuxtjs/google-analytics', { ua: 'X1234567' }],
 
-    // Inline definition
+    // Définition en ligne
     function () { }
   ]
 }
 ```
-Module developers usually provide additionally needed steps and details for usage.
+Les développeurs de modules fournissent généralement les étapes et les détails supplémentaires nécessaires à l'utilisation.
 
-Nuxt.js tries to resolve each item in the modules array using node require path (in the `node_modules`) and then will be resolved from project `srcDir` if `~` alias is used. Modules are executed sequentially so the order is important.
+Nuxt.js essaie de résoudre chaque élément du tableau de modules en utilisant le chemin de nœud requis (dans le 
+`node_modules`), puis sera résolu à partir du projet `srcDir` si l'alias `~` est utilisé. Les modules sont exécutés 
+séquentiellement, donc l'ordre est important.
 
-Modules should export a function to enhance nuxt build/runtime and optionally return a promise until their job is finished.
-Note that they are required at runtime so should be already transpiled if depending on modern ES6 features.
+Les modules doivent exporter une fonction pour améliorer la construction/exécution de Nuxt et éventuellement renvoyer 
+une promesse jusqu'à ce que leur travail soit terminé.
+Notez qu'ils sont requis au moment de l'exécution et doivent donc déjà être transpilés si cela dépend des fonctionnalités 
+ES6 modernes.
 
+Veuillez consulter le [Guide des modules](/guide/modules) pour plus d'informations sur leur fonctionnement ou si vous 
+êtes intéressé par le développement de votre propre module.
+Nous avons également fourni une section officielle [Modules](https://github.com/nuxt-community/awesome-nuxt#modules) 
+répertoriant des dizaines de modules prêts à la production fabriqués par la communauté Nuxt.
 
-Please see [Modules Guide](/guide/modules) for more detailed information on how they work or if interested developing your own module.
-Also we have provided an official [Modules](https://github.com/nuxt-community/awesome-nuxt#modules) Section listing dozens of production ready modules made by Nuxt Community.
+## `buildModules`
+
+<div class="Alert Alert--info">
+
+Cette fonctionnalité est disponible depuis Nuxt v2.9
+
+</div>
+
+Certains modules ne sont nécessaires que pendant le développement et la construction. L'utilisation de `buildModules` 
+permet d'accélérer le démarrage de la production et également de réduire considérablement la taille de `node_modules` 
+pour les déploiements de production. Veuillez vous référer à la documentation de chaque module pour voir s'il est 
+recommandé d'utiliser `modules` ou `buildModules`.
+
+La différence d'utilisation est:
+
+- Au lieu d'ajouter à `modules` dans` nuxt.config.js`, utilisez `buildModules`
+- Au lieu d'ajouter à `dependencies` dans `package.json`, utilisez `devDependencies` (`yarn add --dev` ou `npm install --save-dev`)

@@ -1,9 +1,7 @@
 ---
-title: Google App Engine Deployment
+title: How to deploy on Google App Engine?
 description: How to deploy Nuxt.js on Google App Engine?
 ---
-
-# How to deploy on Google App Engine?
 
 Deploying to [Google App Engine](https://cloud.google.com/appengine/) is a fast and easy solution for hosting your universal Nuxt application on Google's Cloud Services.
 
@@ -38,7 +36,13 @@ handlers:
 
 env_variables:
   HOST: '0.0.0.0'
-  NODE_ENV: 'production'
+```
+
+or for flexible environment the minimal configuration is:
+
+```yaml
+runtime: nodejs
+env: flex
 ```
 
 ## Build and deploy the app
@@ -56,5 +60,6 @@ Voilà! Your Nuxt.js application is now hosted on Google App Engine!
 ## Further Information
 
 - The `instance_class` attribute in your app.yaml file sets the class of your app instance. Instance F2 is not completely free, but has the minimum memory needed to run a Nuxt application.
+- Make sure `start` in package.json is the command that you want to run after deployment. If you usually run by `start:prod` or some other command, your app will not work as expected.
 
 Make sure to put the `project-id` and not the `project-name` in the deploy command. These are two different things but easy to mix up.

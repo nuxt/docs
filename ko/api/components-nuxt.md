@@ -43,15 +43,11 @@ description: 레이아웃 내부의 페이지 컴포넌트를 보여줍니다.
 
   ```js
   export default {
-     key(route) {
-       return route.fullPath
-     }
+    key (route) {
+      return route.fullPath
+    }
   }
   ```
-
-3. 각 페이지 컴포넌트의 `watchQuery` 옵션: `boolean` or `string[]`
-
-  [watchQuery](/api/pages-watchquery) 옵션에 설정한 쿼리는 키를 생성할 때 고려됩니다. 만약 `watchQuery`가 `true`라면 `fullPath`를 사용하게 됩니다.
 
 - name: `string` (_introduced with Nuxt v2.4.0_)
   - 이 속성은 `<router-view/>`의 속성으로 설정됩니다. 페이지 컴포넌트의 named-view를 렌더링 하는데 사용됩니다.

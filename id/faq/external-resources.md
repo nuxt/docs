@@ -1,13 +1,13 @@
 ---
-title: External resources
-description: How to use external resources with Nuxt.js?
+title: Sumber daya eksternal
+description: Bagaimana cara menggunakan sumber daya eksternal dengan Nuxt.js?
 ---
 
-# How to use external resources?
+# Bagaimana cara menggunakan sumber daya eksternal?
 
-## Global Settings
+## Pengaturan Global
 
-Include your resources in the `nuxt.config.js` file:
+Masukan tautan sumber daya Anda didalam file `nuxt.config.js`:
 
 ```js
 module.exports = {
@@ -22,13 +22,13 @@ module.exports = {
 }
 ```
 
-## Local Settings
+## Pengaturan Lokal
 
-Include your resources in your `.vue` file inside the `pages/` directory:
+Masukan tautan sumber daya Anda didalam file `.vue` yang berada didalam direktori `pages/`:
 
 ```html
 <template>
-  <h1>About page with jQuery and Roboto font</h1>
+  <h1>Halaman tentang dengan jQuery dan font Roboto</h1>
 </template>
 
 <script>

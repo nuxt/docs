@@ -3,8 +3,6 @@ title: "API: transition 프로퍼티"
 description: Nuxt.js에서는 transition 컴포넌트를 사용해서 페이지를 이동하는 동안에 트랜지션/애니메이션을 발생시킬 수 있습니다.
 ---
 
-# transition 프로퍼티
-
 > Nuxt.js는 [&lt;transition&gt;](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) 컴포넌트를 사용하여 페이지를 이동하는 동안에 트랜지션/에니메이션을 발생시킬 수 있습니다.
 
 - **타입:** `String` 혹은 `Object` 혹은 `Function`
@@ -93,7 +91,7 @@ export default {
 ```js
 export default {
   transition (to, from) {
-    if (!from) return 'slide-left'
+    if (!from) { return 'slide-left' }
     return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
   }
 }

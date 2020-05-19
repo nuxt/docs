@@ -1,15 +1,17 @@
 ---
-title: "API: The transition Property"
-description: Set the default properties of the page transitions.
+title: "API: Les propriétés transition"
+description: Définissez les propriétés par défaut des transitions de page et de mise en page.
 ---
 
-# The transition Property (En)
+## La propriété pageTransition
 
-- Type: `String` or `Object`
+> Nuxt v2.7.0 introduit la clé "pageTransition" en faveur de la clé "transition" pour consolider la dénomination avec les clés de transition de mise en page.
 
-> Used to set the default properties of the page transitions.
+- Type: `String` ou `Object`
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Default:</p>
+> Utilisé pour définir les propriétés par défaut des transitions de page.
+
+Par défaut:
 ```js
 {
   name: 'page',
@@ -17,13 +19,13 @@ description: Set the default properties of the page transitions.
 }
 ```
 
-Example (`nuxt.config.js`):
+Exemple (`nuxt.config.js`):
 
 ```js
-module.exports = {
-  transition: 'page'
-  // or
-  transition: {
+export default {
+  pageTransition: 'page'
+  // ou
+  pageTransition: {
     name: 'page',
     mode: 'out-in',
     beforeEnter (el) {
@@ -33,15 +35,16 @@ module.exports = {
 }
 ```
 
-The transition key in `nuxt.config.js` is used to set the default properties for the page transitions. To learn more about the available keys when the `transition` key is an object, see the [pages transition property](/api/pages-transition#object).
+La clé de transition dans `nuxt.config.js` est utilisée pour définir les propriétés par défaut des transitions de page. 
+Pour en savoir plus sur les clés disponibles lorsque la clé `transition` est un objet, consultez la [propriété de transition des pages](/api/pages-transition#object).
 
-# The layoutTransition Property
+## La propriété layoutTransition
 
-- Type: `String` or `Object`
+- Type: `String` ou `Object`
 
-> Used to set the default properties of the layout transitions. Configurations are same as `layout`
+> Utilisé pour définir les propriétés par défaut des transitions de mise en page. Les configurations sont les mêmes que `layout`
 
-Default:
+Par défaut:
 
 ```js
 {
@@ -50,12 +53,12 @@ Default:
 }
 ```
 
-Example (`nuxt.config.js`):
+Exemple (`nuxt.config.js`):
 
 ```js
-module.exports = {
+export default {
   layoutTransition: 'layout'
-  // or
+  // ou
   layoutTransition: {
     name: 'layout',
     mode: 'out-in'
@@ -63,7 +66,7 @@ module.exports = {
 }
 ```
 
-Example global `css`:
+Exemple global `css`:
 
 ```css
 .layout-enter-active, .layout-leave-active {

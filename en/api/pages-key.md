@@ -3,8 +3,6 @@ title: "API: The key Property"
 description: Set the `key` property of internal `<router-view>` component
 ---
 
-# The key Property
-
 > Set the `key` property of internal `<router-view>` component
 - **Type:** `String` or `Function`
 
@@ -14,7 +12,7 @@ There are several ways to set the key. For more details, please refer to the `nu
 
 ```js
 export default {
-  keys(route) {
+  key (route) {
     return route.fullPath
   }
 }

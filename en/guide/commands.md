@@ -22,6 +22,12 @@ You can use `--help` with any command to get detailed usage. Common arguments ar
 - **`--spa` or `-s`:** Runs command in SPA mode and disables server side rendering.
 - **`--unix-socket` or `-n`:** specify the path to a UNIX socket.
 
+#### Hooks
+
+Hook                 | Objective
+---------------------|----------------------------------------------------------------------------------------------------------------------------------------
+`cli:buildError` | Captures build errors in dev mode and display them on loading screen
+
 #### Using in package.json
 
 You should put these commands in the `package.json`:
@@ -99,6 +105,16 @@ npm run generate
 ```
 
 It will create a `dist` folder with everything inside ready to be deployed on a static hosting site.
+
+To return a non-zero status code when a page error is encountered and let the CI/CD fail the deployment or build, you can use the `--fail-on-error` argument.
+
+```bash
+npm run generate --fail-on-error
+
+// OR
+
+yarn generate --fail-on-error
+```
 
 If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take a look at the [generate configuration](/api/configuration-generate) to tell Nuxt.js how to generate these dynamic routes.
 
