@@ -44,6 +44,7 @@
           { "to": "#dynamic-routes", "name": "Dynamic Routes" },
           { "to": "#nested-routes", "name": "Nested Routes" },
           { "to": "#dynamic-nested-routes", "name": "Dynamic Nested Routes" },
+          { "to": "#extending-the-router", "name": "Extending the router" },
           { "to": "#named-views", "name": "Named Views" },
           { "to": "#transitions", "name": "Transitions" },
           { "to": "#middleware", "name": "Middleware" }

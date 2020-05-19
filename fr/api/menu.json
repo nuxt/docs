@@ -47,7 +47,7 @@
     "title": "Configuration",
     "links": [
       {
-        "name": "build (EN)", "to": "/configuration-build",
+        "name": "build", "to": "/configuration-build",
         "contents": [
           { "name": "analyze", "to": "#analyze" },
           { "name": "babel", "to": "#babel" },
@@ -84,6 +84,13 @@
         ]
       },
       { "name": "buildDir", "to": "/configuration-builddir" },
+      {
+        "name": "cli",
+        "to": "/configuration-cli",
+        "contents": [
+          { "name": "bannerColor", "to": "#bannercolor" }
+        ]
+      },
       { "name": "css", "to": "/configuration-css" },
       { "name": "dev", "to": "/configuration-dev" },
       { "name": "env", "to": "/configuration-env" },
@@ -101,7 +108,7 @@
         ]
       },
       { "name": "head", "to": "/configuration-head" },
-      { "name": "hooks (EN)", "to": "/configuration-hooks" },
+      { "name": "hooks", "to": "/configuration-hooks" },
       { "name": "ignore", "to": "/configuration-ignore" },
       {
         "name": "loading", "to": "/configuration-loading",
@@ -112,14 +119,14 @@
           { "name": "Internals of the Progress Bar", "to": "#internals-of-the-progress-bar" }
         ]
       },
-      { "name": "loadingIndicator (EN)", "to": "/configuration-loading-indicator" },
-      { "name": "mode (EN)", "to": "/configuration-mode" },
-      { "name": "modern (EN)", "to": "/configuration-modern" },
-      { "name": "modules (EN)", "to": "/configuration-modules" },
-      { "name": "modulesDir (EN)", "to": "/configuration-modulesdir" },
-      { "name": "plugins (EN)", "to": "/configuration-plugins" },
+      { "name": "loadingIndicator", "to": "/configuration-loading-indicator" },
+      { "name": "mode", "to": "/configuration-mode" },
+      { "name": "modern", "to": "/configuration-modern" },
+      { "name": "modules", "to": "/configuration-modules" },
+      { "name": "modulesDir", "to": "/configuration-modulesdir" },
+      { "name": "plugins", "to": "/configuration-plugins" },
       {
-        "name": "render (EN)", "to": "/configuration-render",
+        "name": "render", "to": "/configuration-render",
         "contents": [
           { "name": "bundleRenderer", "to": "#bundlerenderer" },
           { "name": "etag", "to": "#etag" },
@@ -135,9 +142,9 @@
           { "name": "csp", "to": "#csp" }
         ]
       },
-      { "name": "rootDir (EN)", "to": "/configuration-rootdir" },
+      { "name": "rootDir", "to": "/configuration-rootdir" },
       {
-        "name": "router (EN)", "to": "/configuration-router",
+        "name": "router", "to": "/configuration-router",
         "contents": [
           { "name": "base", "to": "#base" },
           { "name": "routeNameSplitter", "to": "#routenamesplitter" },
@@ -153,19 +160,19 @@
           { "name": "scrollBehavior", "to": "#scrollbehavior" }
         ]
       },
-      { "name": "server (EN)", "to": "/configuration-server" },
-      { "name": "serverMiddleware (EN)", "to": "/configuration-servermiddleware" },
-      { "name": "srcDir (EN)", "to": "/configuration-srcdir" },
-      { "name": "dir (EN)", "to": "/configuration-dir" },
-      { "name": "transition (EN)", "to": "/configuration-transition" },
-      { "name": "vue.config (EN)", "to": "/configuration-vue-config" },
-      { "name": "watch (EN)", "to": "/configuration-watch" },
-      { "name": "globalName (EN)", "to": "/configuration-global-name" },
+      { "name": "server", "to": "/configuration-server" },
+      { "name": "serverMiddleware", "to": "/configuration-servermiddleware" },
+      { "name": "srcDir", "to": "/configuration-srcdir" },
+      { "name": "dir", "to": "/configuration-dir" },
+      { "name": "transition", "to": "/configuration-transition" },
+      { "name": "vue.config", "to": "/configuration-vue-config" },
+      { "name": "watch", "to": "/configuration-watch" },
+      { "name": "globalName", "to": "/configuration-global-name" },
       {
-        "name": "watchers (EN)", "to": "/configuration-watchers",
+        "name": "watchers", "to": "/configuration-watchers",
         "contents": [
-          { "name": "chokidar (EN)", "to": "#chokidar" },
-          { "name": "webpack (EN)", "to": "#webpack" }
+          { "name": "chokidar", "to": "#chokidar" },
+          { "name": "webpack", "to": "#webpack" }
         ]
       }
     ]
