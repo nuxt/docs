@@ -6,9 +6,9 @@
         "name": "컨택스트",
         "to": "/context",
         "contents": [
-          { "name": "범용 키", "to": "#universal-keys" },
-          { "name": "서버사이드 키", "to": "#server-side-keys" },
-          { "name": "클라이언트 사이드 키", "to": "#client-side-keys" }
+          { "name": "범용 키", "to": "#범용-키" },
+          { "name": "서버사이드 키", "to": "#서버사이드-키" },
+          { "name": "클라이언트 사이드 키", "to": "#클라이언트-사이드-키" }
         ]
       }
     ]

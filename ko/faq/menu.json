@@ -19,7 +19,7 @@
     "title": "개발",
     "links": [
       { "name": "window/document undefined?", "to": "/window-document-undefined" },
-      { "name": "WCSS Flash가 나타나나요?", "to": "/css-flash" },
+      { "name": "왜 CSS 플래시 현상이 있나요?", "to": "/css-flash" },
       { "name": "컴포넌트 내에서 비동기 데이터는 어떻게 하나요?", "to": "/async-data-components" },
       { "name": "중복 Meta Tags는 어떻게 하나요?", "to": "/duplicated-meta-tags" },
       { "name": "iOS와 전화번호", "to": "/ios-phone-numbers" },
