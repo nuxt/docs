@@ -61,7 +61,7 @@ Azure App Service Static App needs access to the repository where your Nuxt.js a
 
 ### Step 3: **Configure the build process**
 
-There are few things that Azure App Service Static App can assume--things like automatically installing npm modules and running `npm run build`. There are also few you have to be explicit about, like what folder will the static app be copied to after build so the static site can be served from there.
+There are few things that Azure App Service Static App can assume - things like automatically installing npm modules and running `npm run build`. There are also few you have to be explicit about, like what folder will the static app be copied to after build so the static site can be served from there.
 
 1. Click on the **Build** tab to configure the static output folder.
 2. Type **dist** in the *App artifact location* text box.
