@@ -1,20 +1,20 @@
 [
   {
-    "title": "Essential",
+    "title": "에센셜",
     "links": [
       {
-        "name": "Context",
+        "name": "컨택스트",
         "to": "/context",
         "contents": [
-          { "name": "Universal keys", "to": "#universal-keys" },
-          { "name": "Server-Side Keys", "to": "#server-side-keys" },
-          { "name": "Client-Side keys", "to": "#client-side-keys" }
+          { "name": "범용 키", "to": "#universal-keys" },
+          { "name": "서버사이드 키", "to": "#server-side-keys" },
+          { "name": "클라이언트 사이드 키", "to": "#client-side-keys" }
         ]
       }
     ]
   },
   {
-    "title": "Pages",
+    "title": "페이지",
     "links": [
       { "name": "asyncData", "to": "/" },
       {
@@ -44,7 +44,7 @@
     ]
   },
   {
-    "title": "Components",
+    "title": "컴포넌트",
     "links": [
       { "name": "nuxt", "to": "/components-nuxt" },
       { "name": "nuxt-child", "to": "/components-nuxt-child" },
@@ -53,13 +53,13 @@
     ]
   },
   {
-    "title": "Utils",
+    "title": "유틸",
     "links": [
       { "name": "$nuxt", "to": "/$nuxt" }
     ]
   },
   {
-    "title": "Configuration",
+    "title": "설정",
     "links": [
       {
         "name": "build",
@@ -209,18 +209,18 @@
     ]
   },
   {
-    "title": "Programmatically",
+    "title": "프로그램적 사용",
     "links": [
-      { "name": "Usage", "to": "/nuxt" },
+      { "name": "사용", "to": "/nuxt" },
       { "name": "render", "to": "/nuxt-render" },
       { "name": "renderRoute", "to": "/nuxt-render-route" },
       { "name": "renderAndGetWindow", "to": "/nuxt-render-and-get-window" }
     ]
   },
   {
-    "title": "Internals",
+    "title": "내부 모듈",
     "links": [
-      { "name": "Intro", "to": "/internals" },
+      { "name": "소개", "to": "/internals" },
       { "name": "Nuxt", "to": "/internals-nuxt" },
       { "name": "Renderer", "to": "/internals-renderer" },
       { "name": "Module Container", "to": "/internals-module-container" },
