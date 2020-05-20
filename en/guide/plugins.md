@@ -148,6 +148,10 @@ export default {
 }
 ```
 
+<div class="Alert">
+NB : Don't use a `Vue.use()`, `Vue.component()`, and globally, don't plug anything in Vue **inside** this function, dedicated to Nuxt injection. It will cause memory leak, server-side.
+</div>
+
 ### Combined inject
 
 If you need the function in the `context`, Vue instances and maybe even in the Vuex store, you can use the `inject` function, which is the second parameter of the plugins exported function.
