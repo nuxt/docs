@@ -158,7 +158,10 @@ Injecting content into Vue instances works similar to when doing this in standar
 
 ```js
 export default ({ app }, inject) => {
-  inject('myInjectedFunction', string => console.log('That was easy!', string))
+  const myInjectedFunction = string => console.log('This was easey', string)
+  
+  app.myInjectedFunction = myInjectedFunction
+  inject('myInjectedFunction', myInjectedFunction)
 }
 ```
 
