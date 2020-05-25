@@ -154,9 +154,11 @@ or
 <html class="light-mode"> // or dark mode if you have already seen the light
 ```
 
-You can also change the colour in the console by typing
+You can also change the colour in the console by typing:
 
-`$nuxt.$colorMode.preference = "sepia"`
+```js
+$nuxt.$colorMode.preference = "sepia"
+```
 
 <video src="/blog/going-dark-with-nuxtjs-color-mode/testing-console.mp4" autoplay loop playsinline controls></video>
 
