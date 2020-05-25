@@ -1,22 +1,23 @@
 ---
 title: "Going dark with Nuxt.js color mode"
-description: The @nuxtjs/color-mode module is a cool way of adding dark mode to your site. But not only does it switch from dark to light but also any color theme (eg. sepia mode). It even has auto detection so that it will choose the right mode depending on your system appearance.
+description: 'The @nuxtjs/color-mode module is a cool way of adding dark mode to your site. But not only does it switch from dark to light but also any color theme (eg. sepia mode). It even has auto detection so that it will choose the right mode depending on your system appearance.'
 imgUrl: blog/going-dark-with-nuxtjs-color-mode/main.png
 date: 2020-05-19
 authors:
-  - name: Debbie O'Brien
+  - name: "Debbie O'Brien"
     avatarUrl: https://pbs.twimg.com/profile_images/1252900852156772352/JLIVJ-TC_400x400.jpg
     link: https://twitter.com/debs_obrien
 tags:
   - Nuxt
   - Color mode
 ---
+
 <p align="center">
   <a href="https://color-mode.nuxtjs.app/" target="_blank" rel="noopener nofollow">View demo</a> / 
   <a href="https://github.com/nuxt-community/color-mode-module" target="_blank" rel="noopener nofollow">Source</a>
 </p>
 
-The @nuxtjs/color-mode module is a cool way of adding dark mode to your site. But not only does it switch from dark to light but also any color theme (eg: sepia mode). It even has auto detection so that it will choose the right mode depending on your system appearance.
+The [@nuxtjs/color-mode module](https://github.com/nuxt-community/color-mode-module) is a cool way of adding dark mode to your site. But not only does it switch from dark to light but also any color theme (eg: sepia mode). It even has auto detection so that it will choose the right mode depending on your system appearance.
 
 - [How does it work](#how-does-it-work)
 - [Let's get started](#let-39-s-get-started)
@@ -53,7 +54,7 @@ You can work on an already created project or start a new one. For this example 
 
 ```html
 <template>
-    <h1>Testing color mode</h1>
+  <h1>Testing color mode</h1>
 </template>
 ```
 
@@ -74,9 +75,9 @@ Then you need to add the module to the `buildModules` section of your nuxt.confi
 
 ```javascript
 export default {
-    buildModules: [
-        '@nuxtjs/color-mode'
-    ]
+  buildModules: [
+    '@nuxtjs/color-mode'
+  ]
 }
 ```
 
@@ -131,10 +132,8 @@ In order to use this CSS file in our application we need to register it. We do t
 
 `nuxt.config.js`
 
-```javascript
-css: [
-    '@/assets/main.css'
-  ],
+```js
+css: ['@/assets/main.css']
 ```
 
 ### Inspecting the HTML
@@ -170,7 +169,7 @@ Let's create a component called `ColorModePicker` and we can add a list of color
 
 `components/ColorModePicker.vue`
 
-```js
+```html
 <template>
   <div>
     <ul>
@@ -186,10 +185,10 @@ And in our data property let's return an array of colors for each mode.
 
 `components/ColorModePicker.vue`
 
-```js
+```html
 <script>
 export default {
-    data () {
+  data () {
     return {
       colors: ['system', 'light', 'dark', 'sepia']
     }
@@ -211,10 +210,11 @@ Let's import our component into our index.vue page so we can see what is happeni
 
 <script>
 import ColorModePicker from '@/components/ColorModePicker'
+
 export default {
-    components:{
-        ColorModePicker
-    }
+  components:{
+    ColorModePicker
+  }
 }
 </script>
 ```
@@ -232,8 +232,7 @@ We can use our `$colorMode` helper that we get with the color-mode module. When 
 `components/ColorModePicker.vue`
 
 ```html
-<li v-for="color of colors" :key="color" 
-@click="$colorMode.preference = color">
+<li v-for="color of colors" :key="color" @click="$colorMode.preference = color">
 ```
 
 This is actually all you need in order for it to work. If you check in your browser you will see that by clicking on any of the colors the background is changing. It probably won't have a pointer cursor so if you think it doesn't work it probably does just you are used to seeing the cursor.
@@ -261,8 +260,8 @@ Then we need to add it to your `nuxt.config.js` in the buildModules section whic
 
 ```js
 buildModules: [
-    '@nuxtjs/svg',
-    '@nuxtjs/color-mode'
+  '@nuxtjs/svg',
+  '@nuxtjs/color-mode'
 ]
 ```
 
