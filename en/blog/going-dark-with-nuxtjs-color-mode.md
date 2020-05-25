@@ -19,7 +19,7 @@ tags:
 The @nuxtjs/color-mode module is a cool way of adding dark mode to your site. But not only does it switch from dark to light but also any color theme (eg: sepia mode). It even has auto detection so that it will choose the right mode depending on your system appearance.
 
 - [How does it work](#how-does-it-work)
-- [Let's get started](#lets-get-started)
+- [Let's get started](#let-39-s-get-started)
   - [Install the color-mode module](#install-the-color-mode-module)
   - [Adding your colour styles](#adding-your-colour-styles)
   - [Inspecting the HTML](#inspecting-the-html)
@@ -150,8 +150,8 @@ Using the dev tools change the mode to sepia-mode and light-mode to see the effe
 
 ```html
 <html class="sepia-mode">
-or
-<html class="light-mode"> // or dark mode if you have already seen the light
+<!-- or -->
+<html class="light-mode"> <!-- or dark mode if you have already seen the light -->
 ```
 
 You can also change the colour in the console by typing:
@@ -272,7 +272,7 @@ We can now import these svg icons as components using the `?inline` query so tha
 
 `components/ColorModePicker.vue`
 
-```js
+```html
 <script>
 import IconSystem from '@/assets/icons/system.svg?inline'
 import IconLight from '@/assets/icons/light.svg?inline'
@@ -286,7 +286,7 @@ export default {
     IconDark,
     IconSepia
   },
-... // data property will be here
+  // ... data property will be here
 </script>
 ```
 
@@ -305,10 +305,7 @@ Let's move our click event from our `<li>` to our icon component.
 `components/ColorModePicker.vue`
 
 ```html
-<component
-     :is="`icon-${color}`"
-     @click="$colorMode.preference = color"
-/>
+<component :is="`icon-${color}`" @click="$colorMode.preference = color" />
 ```
 
 ### Styling our icons
@@ -353,22 +350,22 @@ To do this we can create a method that will return the class we want. We can cal
 
 ```js
 data () {
-    return {
-      colors: ['system', 'light', 'dark', 'sepia']
-    }
-  },
+  return {
+    colors: ['system', 'light', 'dark', 'sepia']
+  }
+},
 methods: {
-    getClasses (color) {
-      // Does not set classes on ssr when preference is system (because we don't know the preference until client-side)
-      if (this.$colorMode.unknown) {
-        return {}
-      }
-      return {
-        preferred: color === this.$colorMode.preference,
-        selected: color === this.$colorMode.value
-      }
+  getClasses (color) {
+    // Does not set classes on ssr when preference is system (because we don't know the preference until client-side)
+    if (this.$colorMode.unknown) {
+      return {}
+    }
+    return {
+      preferred: color === this.$colorMode.preference,
+      selected: color === this.$colorMode.value
     }
   }
+}
 ```
 
 We can now add this class to our icon component. The class will call the getClasses method passing in the color we receive when we use the click event.
@@ -376,11 +373,7 @@ We can now add this class to our icon component. The class will call the getClas
 `components/ColorModePicker.vue`
 
 ```html
-<component
-     :is="`icon-${color}`"
-     @click="$colorMode.preference = color"
-    :class="getClasses(color)"
-/>
+<component :is="`icon-${color}`" @click="$colorMode.preference = color" :class="getClasses(color)" />
 ```
 
 And you will see in the browser the colours are being applied just as we wanted. But it is not very clear when we click the system icon what is going on.
@@ -399,7 +392,7 @@ Let's create a ColorScheme component under our `<ul>` with a placeholder and a t
 
 ```html
 <ColorScheme placeholder="..." tag="span">
-   Color mode: <b>{{ $colorMode.preference }}</b>
+  Color mode: <b>{{ $colorMode.preference }}</b>
 </ColorScheme>
 ```
 
@@ -415,8 +408,8 @@ We can improve this further by seeing when the preference is the system and addi
 
 ```html
 <ColorScheme placeholder="..." tag="span">
-        Color mode: <b>{{ $colorMode.preference }}</b>
-        <span v-if="$colorMode.preference === 'system'">(<i>{{ $colorMode.value }}</i> mode detected)</span>
+  Color mode: <b>{{ $colorMode.preference }}</b>
+  <span v-if="$colorMode.preference === 'system'">(<i>{{ $colorMode.value }}</i> mode detected)</span>
 </ColorScheme>
 ```
 
@@ -428,7 +421,7 @@ We now just have to tidy up a few styles. Let's get rid of the dots from the `<u
 
 `components/ColorModePicker.vue`
 
-```html
+```css
 ul {
   list-style: none;
   padding: 0;
@@ -479,4 +472,4 @@ In this article we explored Nuxt.js new fetch and built an app with basic DEV.TO
 ### What to do next
 
 - To learn more about using the color-mode with Tailwind check out [this article](https://medium.com/@fayazara/quick-way-to-implement-darkmode-in-nuxt-js-tailwindcss-corona-virus-tracker-712d004a0846).
-- Subscribe to the newsletter to not miss the upcoming articles and resources.
+- [Subscribe to the newsletter](#subscribe-to-newsletter) to not miss the upcoming articles and resources.
