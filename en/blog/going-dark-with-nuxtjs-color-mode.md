@@ -466,8 +466,6 @@ And there you have your beautiful and fully working color-mode component. Feel f
 
 <video src="/blog/going-dark-with-nuxtjs-color-mode/final-working-version.mp4" autoplay loop playsinline controls></video>
 
-In this article we explored Nuxt.js new fetch and built an app with basic DEV.TO content features and structure using only this fetch hook. I hope you got some inspiration to build your own version of DEV.TO. Don’t forget to check out the source code for a more complete example and functionality.
-
 ### What to do next
 
 - To learn more about using the color-mode with Tailwind check out [this article](https://medium.com/@fayazara/quick-way-to-implement-darkmode-in-nuxt-js-tailwindcss-corona-virus-tracker-712d004a0846).
