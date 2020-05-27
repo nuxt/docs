@@ -1,6 +1,6 @@
 ---
 title: "API: loading 프로퍼티"
-description: '`loading` 프로퍼티는 특정 페이지에서 디폴트인 로딩 진행바를 비활성화하는 옵션을 제공합니다.'
+description: `loading` 프로퍼티는 특정 페이지에서 디폴트인 로딩 진행바를 비활성화하는 옵션을 제공합니다.
 ---
 
 > `loading` 프로퍼티는 특정 페이지에서 디폴트인 로딩 진행바를 비활성화하는 옵션을 제공합니다.
@@ -22,4 +22,8 @@ export default {
 }
 </script>
 ```
+<<<<<<< HEAD
 [여기](/examples/custom-page-loading)에서 이 프로퍼티에 대한 공식 예제를 보실 수 있습니다.
+=======
+[여기](/examples/custom-page-loading)에서 이 프로퍼티에 대한 공식 예제를 보실 수 있습니다.
+>>>>>>> ko: update /api/pages-loading.md
