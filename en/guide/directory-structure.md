@@ -27,7 +27,7 @@ The `components` directory contains your Vue.js Components.
 
 <div class="Alert Alert--orange">
   
-Components in this directory will not have access to [`asyncData`](/guide/async-data].
+Components in this directory will not have access to [asyncData](/guide/async-data].
 
 </div>
 
