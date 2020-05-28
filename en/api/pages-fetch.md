@@ -24,10 +24,22 @@ It exposes `$fetchState` at the component level:
 - `$fetchState.error`: `null` or `Error`, allows you to display an error message
 - `$fetchState.timestamp`: `Integer`, is a timestamp of the last fetch, useful for caching with `keep-alive`
 
-If you want to call the `fetch` hook from your component methods or template use:
+If you want to call the `fetch` hook from your template use:
 
 ```html
 <button @click="$fetch">Refresh</button>
+```
+or component method:
+
+```javascript
+// from component methods in script section
+export default {
+  methods: {
+    refresh() {
+      this.$fetch();
+    }
+  }
+};
 ```
 
 You can access the Nuxt [context](/api/context) within the fetch hook using `this.$nuxt.context`.
