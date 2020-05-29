@@ -42,22 +42,25 @@ export default {
 
 ## Vue Plugins
 
-If we want to use Vue plugins, like [vue-notifications](https://github.com/se-panfilov/vue-notifications) to display notification in our application, we need to setup the plugin before launching the app.
-
-We create the file `plugins/vue-notifications.js`:
+If we want to use Vue plugins, like [v-tooltip](https://akryum.github.io/v-tooltip) to display tooltips in our application, we need to setup the plugin before launching the app.
+First we install the plugin
+```bash
+npm install --save v-tooltip
+```
+We create the file `plugins/vue-tooltips.js`:
 
 ```js
 import Vue from 'vue'
-import VueNotifications from 'vue-notifications'
+import VTooltip from 'v-tooltip'
 
-Vue.use(VueNotifications)
+Vue.use(VTooltip)
 ```
 
 Then we add the file path inside the `plugins` key of our `nuxt.config.js`:
 
 ```js
 export default {
-  plugins: ['~/plugins/vue-notifications']
+  plugins: ['@/plugins/vue-tooltip.js']
 }
 ```
 
