@@ -27,7 +27,7 @@ description: デフォルトの Nuxt.js アプリケーションの構造は、�
 
 <div class="Alert Alert--orange">
 
-このディレクトリ内のコンポーネントは [`asyncData`](/guide/async-data] を利用できません。
+このディレクトリ内のコンポーネントは [`asyncData`](/guide/async-data) を利用できません。
 
 </div>
 
