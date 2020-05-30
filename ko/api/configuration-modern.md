@@ -31,7 +31,7 @@ description: 모던 번들을 빌드하고 서비스하세요
 ```
 ** *nuxt generate*에 대해:** `mordern` 프로퍼티는 `nuxt generate` 명령어의 동작에도 영향을 줍니다. 하지만 이 경우 `client` 옵션만 사용되며, 다른 값이 주어지지 않은 채 `nuxt generate --modern` 명령어를 실행하면 자동으로 `client` 옵션이 선택됩니다.
 
-- `nuxt start` 명령어 실행 시 `modern`이 명시되지 않으면 Nust는 자동으로 모드에 따라 `modern` 빌드를 감지해 냅니다. 자동 감지되는 모드는 다음과 같습니다:
+- `nuxt start` 명령어 실행 시 `modern`이 명시되지 않으면 Nuxt는 자동으로 모드에 따라 `modern` 빌드를 감지해 냅니다. 자동 감지되는 모드는 다음과 같습니다:
 
 | 모드           | 모던 모드       |
 | ------------- |:-------------:|
