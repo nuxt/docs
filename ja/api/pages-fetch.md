@@ -164,7 +164,7 @@ export default {
 
 </div>
 
-### `activated` を使う
+### `activated` フックを使う
 
 Nuxt は、最後に `fetch` を呼び出したときの `this.$fetchState.timestamp`（タイムスタンプ）を直接付与します（ssr を含む）。このプロパティを `activated` フックと組み合わせることで、`fetch` に30秒のキャッシュを追加することができます。
 
