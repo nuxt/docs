@@ -1,6 +1,6 @@
 {
   "iso": "ko",
-  "docVersion": "0.10.7",
+  "docVersion": "2.12.X",
   "links": {
     "download": "다운로드",
     "live_edit": "라이브 수정"
@@ -56,7 +56,7 @@
     },
     "welcome": {
       "get_started": "시작하기",
-      "github_stars": "26K+ github stars"
+      "github_stars": "27K+ github stars"
     },
     "why": {
       "try_nuxtjs_online": "NuxtJS Online 시작하기"
