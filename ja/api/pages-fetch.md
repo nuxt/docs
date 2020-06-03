@@ -21,9 +21,9 @@ Nuxt.js `v2.12` では、**あらゆる Vue コンポーネント**に `fetch` �
 **非同期**データ取得の必要があるたびに `fetch` はサーバーサイドでルートをレンダリングするときに呼び出され、クライアントサイドではナビゲートするときに呼び出されます。
 
 コンポーネントレベルで `$fetchState` を公開します:
-- `$fetchState.pending`: `Boolean`, `fetch` が *クライアントサイド* で呼び出されたときにプレースホルダを示します
-- `$fetchState.error`: `null` または `Error`, エラーメッセージを示します
-- `$fetchState.timestamp`: `Integer`, 直近 fetch のタイムスタンプです。`keep-alive` でのキャッシングに便利です
+- `$fetchState.pending`: `Boolean`。`fetch` が*クライアントサイド*で呼び出されたときにプレースホルダを示します。
+- `$fetchState.error`: `null` または `Error`。エラーメッセージを示します。
+- `$fetchState.timestamp`: `Integer`。最後に fetch したタイムスタンプです。`keep-alive` でのキャッシングに便利です。
 
 また、コンポーネントメソッドやテンプレートから `fetch` フックを呼び出すには `$fetch()` を使用します:
 
