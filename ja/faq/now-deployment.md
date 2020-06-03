@@ -28,7 +28,7 @@ description: Now へデプロイするには？
 
 ### Nuxt PWA モジュールを持つ Service Worker
 
-Service Worker の404を回避するために、ルート設定に `sw` を必ず含めるようにしてください。
+Service Worker の 404 を回避するために、ルート設定に `sw` を必ず含めるようにしてください。
 
 ```json
 {
