@@ -5,6 +5,42 @@
     "download": "Téléchargement",
     "live_edit": "Éditer en ligne"
   },
+  "headerLinks": [
+    {
+      "name": "Guide",
+      "slug": "guide",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "API",
+      "slug": "api",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Exemples",
+      "slug": "examples",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "FAQ",
+      "slug": "faq",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Ressources",
+      "slug": "resources",
+      "type": "static"
+    },
+    {
+      "name": "Blog",
+      "slug": "blog",
+      "type": "static"
+    }
+  ],
   "text": {
     "an_error_occurred": "Une erreur s'est produite",
     "api_page_not_found": "La page API est introuvable",
@@ -15,12 +51,12 @@
   },
   "homepage": {
     "meta": {
-      "title": "Nuxt.js - Le Framework Vue.js",
+      "title": "Nuxt.js - Le Framework Vue.js Intuitif",
       "description": "Nuxt.js fournit toutes les configurations nécessaires pour rendre vos développements d'application Vue.js agréable. Nuxt.js peut créer des Applications Universelles, Monopages ou Statiques Générées."
     },
     "welcome": {
       "get_started": "Commencer",
-      "github_stars": "26K+ github stars"
+      "github_stars": "27K+ github stars"
     },
     "why": {
       "try_nuxtjs_online": "Essayez NuxtJS Online"

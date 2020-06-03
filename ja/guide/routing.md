@@ -270,7 +270,15 @@ Path | File
 
 __注意:__ 404 ページのハンドリングは `_.vue` ページのロジックに依存します。[404 リダイレクトについての詳細はこちら](/guide/async-data#handling-errors)を参照してください。
 
-### 名前付きビュー
+## router の拡張
+
+Nuxt のルーティングを拡張するためにはいくつかの方法があります。
+
+- [router-extras-module](https://github.com/nuxt-community/router-extras-module) はページコンポーネントのルートパラメータをカスタマイズできます
+- [@nuxtjs/router](https://github.com/nuxt-community/router-module) は独自の `router.js` を使って Nuxt router を上書きすることができます
+- [router.extendRoutes](https://nuxtjs.org/api/configuration-router#extendroutes) プロパティを `nuxt.config.js` で使います
+
+## 名前付きビュー
 
 名前付きビューをレンダリングするために `<nuxt name="top"/>` または `<nuxt-child name="top"/>` コンポーネントを layout/page 内で使用できます。
 名前付きビューを特定するには `nuxt.config.js` ファイルのルータ設定の拡張が必要です。

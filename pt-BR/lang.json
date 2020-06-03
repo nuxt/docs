@@ -5,6 +5,42 @@
     "download": "Baixar",
     "live_edit": "Live Edit"
   },
+  "headerLinks": [
+    {
+      "name": "Guia",
+      "slug": "guide",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "API",
+      "slug": "api",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Examplos",
+      "slug": "examples",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "FAQ",
+      "slug": "faq",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Recursos",
+      "slug": "resources",
+      "type": "static"
+    },
+    {
+      "name": "Blog",
+      "slug": "blog",
+      "type": "static"
+    }
+  ],
   "text": {
     "an_error_occurred": "Um erro ocorreu",
     "api_page_not_found": "Página da API não encontrada",
@@ -20,7 +56,7 @@
     },
     "welcome": {
       "get_started": "Começar",
-      "github_stars": "26K+ github stars"
+      "github_stars": "27K+ estrelas no github"
     },
     "why": {
       "try_nuxtjs_online": "Experimente o NuxtJS Online"
@@ -29,11 +65,11 @@
       "become_a_sponsor": "Seja um patrocinador"
     },
     "newsletter_form": {
-      "email": "Email",
-      "subscribing": "Subscribing...",
-      "subscribe": "Subscribe",
+      "email": "E-mail",
+      "subscribing": "Subscrevendo...",
+      "subscribe": "Inscrever-se",
       "subscribed_messages": {
-        "pre": "An email to confirm your subscription has been sent to",
+        "pre": "Um e-mail para confirmar sua inscrição foi enviado para",
         "post": "💚"
       }
     }

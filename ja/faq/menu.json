@@ -10,7 +10,7 @@
       { "name": "Webpack プラグインを追加するには？", "to": "/webpack-plugins" },
       { "name": "ホストとポート番号を変更するには？", "to": "/host-port" },
       { "name": "キャッシュコンポーネントを使うには？", "to": "/cached-components" },
-      { "name": "Google アナリティクスを使うには？", "to": "/google-analytics" },
+      { "name": "Google アナリティクスを使うには？", "to": "/ga" },
       { "name": "クロスオリジンリソースを共有するには？", "to": "/http-proxy"},
       { "name": "オーディオファイルをロードするように Webpack の設定を拡張するには？", "to": "/webpack-audio-files" }
     ]

@@ -1,5 +1,5 @@
 ---
-title: Authentification de routes (EN)
+title: Authentification de routes
 description: Exemple d'authentification de routes avec Nuxt.js
 github: auth-routes
 livedemo: https://nuxt-auth-routes.gomix.me
@@ -10,9 +10,10 @@ liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 
 > Nuxt.js peut être utilisé pour créer facilement des routes authentifiées.
 
-## Module officiel `auth-module` (EN)
+## Module officiel `auth-module`
 
-If you want to implement complex authentication flows, for example OAuth2, we suggest using the official [`auth-module`](https://github.com/nuxt-community/auth-module)
+Si vous souhaitez implémenter des flux d'authentification complexes, par exemple OAuth2, nous vous suggérons d'utiliser 
+la fonction officielle [`auth-module`](https://github.com/nuxt-community/auth-module)
 
 ## Avec Express et Sessions
 
@@ -89,7 +90,7 @@ Et nous modifions nos scripts dans `package.json` :
 // ...
 ```
 
-Note : vous devrez exécuter `npm install --save-dev cross-env` afin de faire fonctionner l'exemple précédent. Si vous n'êtes pas en train de développer sur Windows, vous pouvez laisser cross-env en dehors de votre script `start` et définir `NODE_ENV` directement.
+Remarque: vous devrez exécuter `npm install --save-dev cross-env` afin de faire fonctionner l'exemple précédent. Si vous n'êtes pas en train de développer sur Windows, vous pouvez laisser cross-env en dehors de votre script `start` et définir `NODE_ENV` directement.
 
 ## Utilisation du store
 
@@ -226,5 +227,3 @@ export default {
 ```
 
 Nous pouvons voir dans la méthode `fetch` que nous appelons `redirect('/')` lorsque notre utilisateur n'est pas connecté.
-
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>
