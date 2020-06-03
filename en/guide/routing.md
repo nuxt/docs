@@ -59,14 +59,6 @@ router: {
 
 To define a dynamic route with a parameter, you need to define a .vue file OR a directory **prefixed by an underscore**.
 
-<div class="Promo__Video">
-  <a href="https://vueschool.io/lessons/nuxtjs-dynamic-routes?friend=nuxt" target="_blank">
-    <p class="Promo__Video__Icon">
-      Watch a free lesson about <strong>dynamic routes</strong> on Vue School 
-    </p>
-  </a>
-</div>
-
 This file tree:
 
 ```bash
@@ -270,7 +262,15 @@ Path | File
 
 __Note:__ Handling 404 pages is now up to the logic of the `_.vue` page. [More on 404 redirecting can be found here](/guide/async-data#handling-errors).
 
-### Named Views
+## Extending the router
+
+There are multiple ways to extend the routing with Nuxt:
+
+- [router-extras-module](https://github.com/nuxt-community/router-extras-module) to customise the route parameters in the page component
+- [@nuxtjs/router](https://github.com/nuxt-community/router-module) to overwrite the Nuxt router and write your own `router.js` file
+- Use the [router.extendRoutes](https://nuxtjs.org/api/configuration-router#extendroutes) property in your `nuxt.config.js`
+
+## Named Views
 
 To render named views you can use `<nuxt name="top"/>` or `<nuxt-child name="top"/>` components in your layout/page. To specify named view of page we need to extend router config in `nuxt.config.js` file:
   

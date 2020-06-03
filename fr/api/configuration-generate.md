@@ -28,19 +28,20 @@ Nom du répertoire créé par `nuxt generate`.
 ## devtools
 
 - Type: `boolean`
-- Default: `false`
+- Par défaut: `false`
 
-Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools) inspection.
+Configurer pour rendre l'inspection de [vue-devtools](https://github.com/vuejs/vue-devtools).
 
-If you already activated through nuxt.config.js or otherwise, devtools enable regardless of the flag.
+Si vous l'avez déjà activé via `nuxt.config.js` ou autrement, devtools est activé indépendamment de l'indicateur.
 
 
 ## fallback
 
 - Type: `String` or `Boolean`
-- Default: `'200.html'`
+- Par défaut: `'200.html'`
 
-The path to the SPA fallback. This file can be used when doing deploys of generated sites to static hosting. It falls back to `mode: 'spa'` when a route isn't generated.
+Le chemin vers l'appel SPA. Ce fichier peut être utilisé lors de déploiements de sites générés vers un hébergement 
+statique. Il revient au `mode: 'spa'` lorsqu'un chemin n'est pas généré.
 
 ## interval
 
@@ -49,10 +50,10 @@ The path to the SPA fallback. This file can be used when doing deploys of genera
 
 Interval entre 2 rendus pour éviter d'inonder les appels d'API effectués par une API potentielle de l'application web.
 
-## minify (En)
+## minify
 
-- **Deprecated!**
-- Use [build.html.minify](/api/configuration-build#html-minify) instead
+- **Déprécié!**
+- Utiliser [build.html.minify](/api/configuration-build#html-minify) à la place
 
 ## routes
 
