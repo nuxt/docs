@@ -1,6 +1,6 @@
 ---
-Titulo: Estrutura de diretórios
-Descrição: A estrutura de aplicação padrão do Nuxt.js destina-se a fornecer um ótimo ponto de partida para aplicativos grandes e pequenos.
+title: Estrutura de diretórios
+description: A estrutura de aplicação padrão do Nuxt.js destina-se a fornecer um ótimo ponto de partida para aplicativos grandes e pequenos.
 ---
 
 > A estrutura de aplicação padrão do Nuxt.js destina-se a fornecer um excelente ponto de partida para aplicativos pequenos e grandes. Claro, você é livre para organizar seu aplicativo da maneira que quiser.
