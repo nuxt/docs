@@ -195,7 +195,7 @@ export default {
 </script>
 ```
 
-最後の `fetch` 呼び出しが30秒以内であれば、同じページへのナビゲーションは `fetch` を呼び出しません。
+最後の `fetch` 呼び出しが30秒以内であれば、同じページへの遷移で `fetch` は呼ばれません。
 
 ![fetch-keep-alive-nuxt](https://user-images.githubusercontent.com/904724/54164405-c6881d80-445c-11e9-94e0-366406270874.gif)
 
