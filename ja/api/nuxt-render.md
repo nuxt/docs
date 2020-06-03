@@ -21,7 +21,7 @@ const isDev = (process.env.NODE_ENV !== 'production')
 const port = process.env.PORT || 3000
 
 async function start() {
-  // Nuxt インスタンスを取得
+  // Nuxt インスタンスを使えるように準備
   const nuxt = await loadNuxt(isDev ? 'dev' : 'start')
 
   // すべてのルートを Nuxt.js でレンダリング
