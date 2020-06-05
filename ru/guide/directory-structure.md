@@ -8,7 +8,7 @@ description: Стандартная структура Nuxt.js приложен�
 <div class="Promo__Video">
   <a href="https://vueschool.io/lessons/guided-nuxtjs-project-tour?friend=nuxt" target="_blank">
     <p class="Promo__Video__Icon">
-      Посмотрите бесплатный урок о <strong>структуре директории Nuxt.js</strong> на Vue School 
+      Посмотрите бесплатный урок о <strong>структуре директорий Nuxt.js</strong> на Vue School 
     </p>
   </a>
 </div>
