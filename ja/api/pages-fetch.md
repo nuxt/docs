@@ -159,7 +159,7 @@ export default {
 
 <div class="Alert Alert--green">
 
-`<nuxt>` コンポーネントに `keep-alive-props` を渡すことで、`<keep-alive>` に渡す [props](https://jp.vuejs.org/v2/api/index.html#keep-alive) を指定することもできます。<br>
+また、`<nuxt>` コンポーネントに prop の `keep-alive-props` を渡すことで、`<keep-alive>` に渡す [props](https://jp.vuejs.org/v2/api/index.html#keep-alive) を指定することもできます。<br>
 例: `<nuxt keep-alive :keep-alive-props="{ max: 10 }" />` ページコンポーネントを 10 ページ分だけメモリに保持するようにします。
 
 </div>
