@@ -12,7 +12,7 @@ Nuxt.js `v2.12` では、**あらゆる Vue コンポーネント**に `fetch` �
 
 <div class="Alert Alert--orange">
 
-`fetch(context)` は非推奨になりましたが、代わりに[無名ミドルウェア](/api/pages-middleware#無名ミドルウェア) をページ内で使用できます: `middleware(context)`
+`fetch(context)` は非推奨になりましたが、代わりに[無名ミドルウェア](/api/pages-middleware#無名ミドルウェア)をページ内の `middleware(context)` で使用できます。
 
 </div>
 
