@@ -126,7 +126,7 @@ export default {
 
 <div class="Alert Alert--green">
 
-`fetch` フックを持つコンポーネントでは、`this.$fetch()` にアクセスして `fetch` フックを再呼び出します（`$fetchState.pending` は再び `true` になります）。
+`fetch` フックを持つコンポーネントでは、`this.$fetch()` にアクセスして `fetch` フックを再呼び出しします（`$fetchState.pending` は再び `true` になります）。
 
 </div>
 
