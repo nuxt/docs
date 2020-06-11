@@ -23,6 +23,7 @@ export default {
 
 ## HTTPS 設定を用いた例
 
+`nuxt.config.js`
 ```js
 import path from 'path'
 import fs from 'fs'
@@ -36,6 +37,8 @@ export default {
   }
 }
 ```
+
+秘密鍵と証明書を `localhost` で作成する方法については、 [certificates for localhost](https://letsencrypt.org/docs/certificates-for-localhost/) を参照してください。
 
 ## ソケット設定を用いた例
 
