@@ -61,3 +61,18 @@ export default {
   }
 }
 ```
+
+
+#### Import webpack plugin only for client side
+
+```js
+export default {
+  build: {
+    extend (config, { isDev, isClient }) {
+      if (isClient) {
+        config.plugins.push(new ProgressPlugin({ profile: true }))
+      }
+    }
+  }
+}
+```
