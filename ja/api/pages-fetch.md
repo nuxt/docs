@@ -33,8 +33,8 @@ Nuxt.js `v2.12` では、**あらゆる Vue コンポーネント**に `fetch` �
 
 ### オプション
 
-- `fetchOnServer`: `Boolean` (default: `true`), サーバーがページをレンダリングする際に `fetch()` を呼び出す
-- `fetchDelay`: `Integer` (default: `200`), 最小実行時間をミリ秒単位で設定します（過剰実行を防ぐため）
+- `fetchOnServer`: `Boolean` (デフォルト: `true`)。サーバーがページをレンダリングする際に `fetch()` を呼び出します。
+- `fetchDelay`: `Integer` (デフォルト: `200`)。最小実行時間をミリ秒単位で設定します（過剰実行を防ぐため）。
 
 <div class="Alert Alert--green">
 
