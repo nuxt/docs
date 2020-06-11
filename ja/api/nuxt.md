@@ -5,30 +5,24 @@ description: Nuxt.js はプログラム上で、ミドルウェアとして使�
 
 あなた自身のサーバーと共にミドルウェアや API を使いたい場合もあるかもしれません。
 そういった場合、 Nuxt.js をプログラムから利用することが可能です。
-
-Nuxt.js をこのように require できます:
-
-```js
-const { Nuxt, Builder } = require('nuxt')
-```
+プログラムの例は、[examples/programmtic](https://github.com/nuxt/nuxt.js/tree/dev/examples/programmatic/scripts) で見ることができます。
 
 ## Nuxt のコンストラクタ
 
 Nuxt.js に渡すことができるオプション一覧を見るには、設定のセクションを参照してください。
 
 ```js
-// Nuxt と Builder モジュールを require します
-const { Nuxt, Builder } = require('nuxt')
+const { loadNuxt, build } = require('nuxt')
 
-// Nuxt の設定ファイルを require します
-const config = require('./nuxt.config.js')
+// Nuxt を開発モードで実行する必要があるかどうかをチェックします
+const isDev = process.env.NODE_ENV !== 'production'
 
-// 新たに Nuxt のインスタンスを生成します
-const nuxt = new Nuxt(config)
+// Nuxt のインスタンスを取得します
+const nuxt = await loadNuxt(isDev ? 'dev' : 'start')
 
 // 開発環境の場合にライブビルドとライブリロードを有効化します
-if (nuxt.options.dev) {
-  new Builder(nuxt).build()
+if (isDev) {
+  build(nuxt)
 }
 
 // nuxt.render(req, res) もしくは nuxt.renderRoute(route, context) を利用することが可能です
