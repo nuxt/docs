@@ -120,7 +120,7 @@ export default {
 </script>
 ```
 
-ナビゲートすると、クライアントサイドに `"Loading post #..."` が表示され、投稿の更新時にはロードされません（ブラウザ上ではハードリフレッシュ）。
+遷移すると、クライアントサイドに `"Loading post #..."` が表示され、投稿の更新時には `"Loading post #..."` の表示はありません（ブラウザ上ではハードリフレッシュ）。
 
 <img width="669" alt="fetch-nuxt3" src="https://user-images.githubusercontent.com/904724/54161844-d3544380-4453-11e9-9586-7428597db40e.gif">
 
