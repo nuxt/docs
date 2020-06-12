@@ -66,7 +66,7 @@
         "to": "/async-data"
       },
       {
-        "name": "Authentification de routes (EN)",
+        "name": "Authentification de routes",
         "to": "/auth-routes"
       },
       {

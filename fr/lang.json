@@ -19,7 +19,7 @@
       "routeName": "section-slug"
     },
     {
-      "name": "Examples",
+      "name": "Exemples",
       "slug": "examples",
       "type": "dynamic",
       "routeName": "section-slug"
@@ -31,7 +31,7 @@
       "routeName": "section-slug"
     },
     {
-      "name": "Resources",
+      "name": "Ressources",
       "slug": "resources",
       "type": "static"
     },
@@ -51,12 +51,12 @@
   },
   "homepage": {
     "meta": {
-      "title": "Nuxt.js - Le Framework Vue.js",
+      "title": "Nuxt.js - Le Framework Vue.js Intuitif",
       "description": "Nuxt.js fournit toutes les configurations nécessaires pour rendre vos développements d'application Vue.js agréable. Nuxt.js peut créer des Applications Universelles, Monopages ou Statiques Générées."
     },
     "welcome": {
       "get_started": "Commencer",
-      "github_stars": "26K+ github stars"
+      "github_stars": "27K+ github stars"
     },
     "why": {
       "try_nuxtjs_online": "Essayez NuxtJS Online"
