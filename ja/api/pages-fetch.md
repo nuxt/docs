@@ -35,12 +35,12 @@ Nuxt [context](/api/context) には、`this.$nuxt.context` からアクセスで
 
 ### オプション
 
-- `fetchOnServer`: `Boolean` (デフォルト: `true`)。サーバーがページをレンダリングする際に `fetch()` を呼び出します。
-- `fetchDelay`: `Integer` (デフォルト: `200`)。最小実行時間をミリ秒単位で設定します（過剰実行を防ぐため）。
+- `fetchOnServer`: `Boolean` または `Function`（デフォルト: `true`）。サーバーがページをレンダリングする際に `fetch()` を呼び出します。
+- `fetchDelay`: `Integer`（デフォルト: `200`）。最小実行時間をミリ秒単位で設定します（過剰実行を防ぐため）。
 
 <div class="Alert Alert--green">
 
-`fetchOnServer` が `false` の場合、`fetch` はクライアントサイドでのみ呼び出され、サーバでコンポーネントをレンダリングする際には `$fetchState.pending` は `true` となります。
+`fetchOnServer` がファルシー（`false` または `false` を返す）な場合、`fetch` はクライアントサイドでのみ呼び出され、サーバでコンポーネントをレンダリングする際には `$fetchState.pending` は `true` となります。
 
 </div>
 
