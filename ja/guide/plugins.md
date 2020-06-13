@@ -213,7 +213,7 @@ export const actions = {
 
 <div class="Alert">
 
-Vueプラグインは、export関数の中で使用できないことに注意してください。それぞれのリクエストの前にexport関数を呼び出す、
+Vueプラグインは、 export 関数の中で使用できないことに注意してください。それぞれのリクエストの前に export 関数を呼び出す、
 つまり、`Vue.use(...)`, `Vue.mixin(...)`, `Vue.component(...)`などを多数呼び出すことは、アプリのクラッシュを引き起こす可能性があります。
 
 </div>
