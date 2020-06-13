@@ -27,7 +27,7 @@ Nuxt を使ってプロダクションレベルのアプリケーションを開
 Nuxt.js チームが提供している **公式** モジュール:
 
 - [@nuxt/http](https://http.nuxtjs.org): [ky-universal](https://github.com/sindresorhus/ky-universal) をベースにしており、軽量でユニバーサルな HTTP リクエストを送ります
-- [@nuxt/content](https://content.nuxtjs.org): `content` ディレクトリへの書き込みや、MongoDB のような API を通した Markdown や JSON、 YAML、 CSV ファイルの取得をします
+- [@nuxt/content](https://content.nuxtjs.org): `content` ディレクトリへの書き込みや、MongoDB のような API を通した Markdown や JSON、YAML、CSV ファイルの取得をします
 - [@nuxtjs/axios](https://axios.nuxtjs.org): セキュアかつ簡単に Axios と Nuxt.js とを統合し、HTTP リクエストを送ります
 - [@nuxtjs/pwa](https://pwa.nuxtjs.org): 十分にテストされアップデートされた安定した PWA ソリューションを Nuxt に提供します
 - [@nuxtjs/auth](https://auth.nuxtjs.org): Nuxt.js のための認証モジュールです。さまざまなスキームやストラテジーを提供します
