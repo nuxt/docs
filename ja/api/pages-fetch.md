@@ -31,6 +31,8 @@ Nuxt.js `v2.12` では、**あらゆる Vue コンポーネント**に `fetch` �
 <button @click="$fetch">Refresh</button>
 ```
 
+Nuxt [context](/api/context) には、`this.$nuxt.context` からアクセスできます。
+
 ### オプション
 
 - `fetchOnServer`: `Boolean` (デフォルト: `true`)。サーバーがページをレンダリングする際に `fetch()` を呼び出します。
