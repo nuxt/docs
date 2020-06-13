@@ -25,13 +25,13 @@ Nuxt.js `v2.12` では、**あらゆる Vue コンポーネント**に `fetch` �
 - `$fetchState.error`: `null` または `Error`。エラーメッセージを示します。
 - `$fetchState.timestamp`: `Integer`。最後に fetch したタイムスタンプです。`keep-alive` でのキャッシングに便利です。
 
-また、コンポーネントメソッドやテンプレートから `fetch` フックを呼び出すには `$fetch()` を使用します:
+コンポーネントメソッドやテンプレートから `fetch` フックを呼び出すには、以下のように `$fetch()` を使用します:
 
 ```html
 <button @click="$fetch">Refresh</button>
 ```
 
-Nuxt [context](/api/context) には、`this.$nuxt.context` からアクセスできます。
+fetch フック内では `this.$nuxt.context` を使用して、Nuxt [context](/api/context) にアクセスできます。
 
 ### オプション
 
@@ -40,7 +40,7 @@ Nuxt [context](/api/context) には、`this.$nuxt.context` からアクセスで
 
 <div class="Alert Alert--green">
 
-`fetchOnServer` がファルシー（`false` または `false` を返す）な場合、`fetch` はクライアントサイドでのみ呼び出され、サーバでコンポーネントをレンダリングする際には `$fetchState.pending` は `true` となります。
+`fetchOnServer` がファルシー（`false` または `false` を返す）な場合、`fetch` はクライアントサイドでのみ呼び出され、サーバでコンポーネントをレンダリングする際には `$fetchState.pending` は `true` を返します。
 
 </div>
 
@@ -107,7 +107,7 @@ export default {
 
 <div class="Alert Alert--green">
 
-Nuxt は、`fetch` の中でどのようなデータを変化させたかをスマートに検出し、返された HTML に含まれる JSON を最適化します。
+Nuxt は、`fetch` の中でどのようなデータを変化させたかをうまく検出し、返された HTML に含まれる JSON を最適化します。
 
 </div>
 
@@ -144,7 +144,7 @@ export default {
 
 <div class="Alert Alert--green">
 
-`fetch` フックを持つコンポーネントでは、`this.$fetch()` にアクセスして `fetch` フックを再呼び出しします（`$fetchState.pending` は再び `true` になります）。
+`fetch` フックを含むコンポーネントの場合、`this.$fetch()` にアクセスして `fetch` フックを再呼び出しします（`$fetchState.pending` は再び `true` になります）。
 
 </div>
 
