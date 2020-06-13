@@ -10,6 +10,7 @@ When running Nuxt.js in SPA mode, there is no content from the server side on th
 This property can have 3 different types: `string` or `false` or `object`. If a string value is provided it is converted to object style.
 
 Default value is:
+
 ```js
 loadingIndicator: {
   name: 'circle',
@@ -20,7 +21,7 @@ loadingIndicator: {
 
 ## Built-in indicators
 
-These indicators are imported from awesome [Spinkit](http://tobiasahlin.com/spinkit) project. You can use its demo page to preview spinners.
+These indicators are imported from the awesome [Spinkit](http://tobiasahlin.com/spinkit) project. You can use its demo page to preview spinners.
 
 - circle
 - cube-grid
