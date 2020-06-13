@@ -44,6 +44,22 @@ Nuxt [context](/api/context) には、`this.$nuxt.context` からアクセスで
 
 </div>
 
+```html
+<script>
+export default {
+  data () {
+    return {
+      posts: []
+    }
+  },
+  async fetch () {
+    this.posts = await this.$http.$get('https://jsonplaceholder.typicode.com/posts')
+  },
+  fetchOnServer: false
+}
+</script>
+```
+
 ### 例
 
 <div class="Alert Alert--green">
