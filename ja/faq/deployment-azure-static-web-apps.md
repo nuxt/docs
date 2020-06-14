@@ -1,10 +1,10 @@
 ---
-title: How to deploy on Azure Static Web Apps?
-description: How to deploy a Nuxt.js application on Azure Static Web Apps?
+title: Azure Static Web Apps にデプロイするには?
+description: Azure Static Web Apps を Nuxt.js アプリケーションをデプロイするには?
 ---
-You can now deploy your static sites to Azure using Azure static web apps. You will need to have your app in Github as Azure static web apps leverages Github actions which allow you to re-build your static site on every git push.
+Azure Static Web Apps を使って静的サイトを Azure にデプロイすることができます。Azure Static Web Apps は、git push のたびに静的なサイトを再構築できる GitHub Actions を利用しているので、GitHub で ウェブアプリケーションを作成する必要があります。
 
-There are 2 things you need to configure in order to deploy your app to Azure static web apps. The first one is to modify the build command as Azure reads the build command from your package.json and for static sites we need to use the generate command.
+Azure Static Web Apps にデプロイするために必要な設定が2つあります。1つ目は、Azure が package.json から build コマンドを読み取るので、build コマンドを用意することです。静的サイトの場合は generate コマンドを使用する必要があります。
 
 `package.json`
 
@@ -12,9 +12,9 @@ There are 2 things you need to configure in order to deploy your app to Azure st
 build: "nuxt generate"
 ```
 
-For Nuxt `2.13+`, use `build: "nuxt build && nuxt export"`
+Nuxt `2.13+` からは、 `build: "nuxt build && nuxt export"` を使ってください。
 
-The second one is to add a routes.json file which is important for catching custom 404 pages and spa fallback pages.
+2つ目は、カスタム 404 ページや SPA フォールバックページをキャッチするために重要な routes.json ファイルを追加することです。
 
 `static/routes.json`
 
@@ -31,81 +31,81 @@ The second one is to add a routes.json file which is important for catching cust
 }
 ```
 
-If you want to test out deploying to Azure static web apps, we have created a small demo application that is all setup and configured. You will just need to clone it and add it to your Github repo. You can then follow the steps on - Deploying your app with Azure Static Web Apps.
+Azure Static Web Apps へのデプロイをテストするために、すべてのセットアップと設定が完了した小さなデモアプリケーションを作成しました。クローンして GitHub のリポジトリに追加するだけです。その後、次の手順（Azure Static Web Apps にアプリケーションをデプロイ）に従ってください。
 
-[Clone the demo app](https://github.com/debs-obrien/nuxtjs-azure-static-app)
+[デモアプリケーションをクローンしてください](https://github.com/debs-obrien/nuxtjs-azure-static-app)
 
-## Deploying your app with Azure Static Web Apps
+## Azure Static Web Apps にアプリケーションをデプロイ
 
-### Step 1: **Create Azure static web apps**
+### ステップ 1: **Azure Static Web Apps を作成**
 
-1. Navigate to the [Azure Portal](https://portal.azure.com/).
-2. Click **Create a Resource** then search for **Static App** and select it.
-3. Select a subscription from the *Subscription* dropdown list or use the default one.
-4. Click the **New** link below the *Resource group* dropdown. In *New resource group name*, type **nuxt** and click **OK**
-5. Provide a globally unique name for your app in the **Name** text box. Valid characters include `a-z`, `A-Z`, `0-9`, and `-`. The app name is used to identify the app in your list of resources therefore it is a good idea to name your app using the name of your repository.
-6. In the *Region* dropdown, choose a region closest to you.
+1. [Azure Portal](https://portal.azure.com/) へ遷移します。
+2. **Create a Resource** をクリックし、**Static App** を探して選択してください。
+3. *Subscription* のドロップダウンリストからサブスクリプションを選択するか、デフォルトのサブスクリプションを使用します。
+4. *Resource Group* のドロップダウンの下にある **Create new** リンクをクリックします。*Name* に **nuxt** と入力し、**OK** をクリックします。
+5. **Name** のテキストボックスにグローバルユニークなアプリケーションの名前を入力します。有効な文字は、`a-z`、`A-Z`、`0-9`、および `-` です。アプリケーションの名前は、リソースリストでアプリケーションを識別するために使用されるため、リポジトリ名を使って名付けることをお勧めします。
+6. *Region* のドロップダウンは、近くの地域を選んでください。
 
-![Azure Portal resource and app setup](https://user-images.githubusercontent.com/13063165/82118135-71891b00-9775-11ea-8284-aa94d17a3bc3.png)
+![Azure Portal のリソースとアプリケーションのセットアップ](https://user-images.githubusercontent.com/13063165/82118135-71891b00-9775-11ea-8284-aa94d17a3bc3.png)
 
-### Step 2: **Add a GitHub repository**
+### ステップ 2: **GitHub リポジトリを追加**
 
-Azure App Service Static App needs access to the repository where your Nuxt.js app lives so it can automatically deploy commits:
+Azure App Service の Static App は、コミットを自動的にデプロイできるように、Nuxt.js アプリケーションがあるリポジトリにアクセスする必要があります:
 
-1. Click the **Sign in with GitHub button**
-2. Select the **Organization** under which you created the repo for your Nuxt.js project. It can also be your GitHub username.
-3. Find the name of the repository you created earlier and select it.
-4. Choose **master** as the branch from the *Branch* dropdown.
+1. **Sign in with GitHub ボタン** をクリックします。
+2. Nuxt.js プロジェクトのリポジトリを作成した **Organization** を選択します。GitHub のユーザー名を指定することもできます。
+3. 作成したリポジトリの名前を探して選択します。
+4. *Branch* のドロップダウンから **master** ブランチを選択します。
 
-![how to add github](https://user-images.githubusercontent.com/13063165/82118359-38ea4100-9777-11ea-9c5e-7ba5c4da708e.png)
+![GitHub を追加する方法](https://user-images.githubusercontent.com/13063165/82118359-38ea4100-9777-11ea-9c5e-7ba5c4da708e.png)
 
-### Step 3: **Configure the build process**
+### ステップ 3: **ビルドプロセスの設定**
 
-There are few things that Azure App Service Static App can assume - things like automatically installing npm modules and running `npm run build`. There are also few you have to be explicit about, like what folder will the static app be copied to after build so the static site can be served from there.
+Azure App Service の Static App が想定できることはいくつかあります。npm モジュールを自動的にインストールしたり、`npm run build` を実行したりします。また、ビルド後の静的アプリケーションは、どのフォルダにコピーするかなど、明示しなければならないこともいくつかあります。
 
-1. Click on the **Build** tab to configure the static output folder.
-2. Type **dist** in the *App artifact location* text box.
+1. **Build** タブをクリックして、静的アプリケーションの出力フォルダを設定します。
+2. *App artifact location* のテキストボックスに **dist** と入力します。
 
-![Azure portal configure build](https://user-images.githubusercontent.com/13063165/82118277-71d5e600-9776-11ea-88ad-48cf0793905d.png)
+![Azure portal のビルド設定](https://user-images.githubusercontent.com/13063165/82118277-71d5e600-9776-11ea-88ad-48cf0793905d.png)
 
-### Step 4: **Review and create**
+### ステップ 4: **確認と作成**
 
-1. Click the **Review + Create** button to verify the details are all correct.
-2. Click **Create** to start the creation of the resource and also provision a GitHub Action for deployment.
-3. Once the deployment is completed, click **Go to resource**
+1. **Review + Create** ボタンをクリックして、詳細がすべて正しいことを確認します。
+2. **Create** をクリックすると、リソースの作成が開始され、デプロイ用の GitHub Action も提供されます。
+3. デプロイが完了したら、**Go to resource** をクリックします。
 
-![azure portal deployment complete message](https://user-images.githubusercontent.com/13063165/82118390-67681c00-9777-11ea-9778-671dc768393e.png)
+![Azure portal のデプロイ完了メッセージ](https://user-images.githubusercontent.com/13063165/82118390-67681c00-9777-11ea-9778-671dc768393e.png)
 
-4. On the resource screen, click the *URL* link to open your deployed application.
+4. リソース画面で、*URL* リンクをクリックして、デプロイしたアプリケーションを開きます。
 
-![resource screen with url to your deployed app](https://user-images.githubusercontent.com/13063165/82118042-d001c980-9774-11ea-94f5-57d995aa5391.png)
+![デプロイされたアプリケーションのURLを含むリソース画面](https://user-images.githubusercontent.com/13063165/82118042-d001c980-9774-11ea-94f5-57d995aa5391.png)
 
-Congrats your static site is now hosted on Azure static web apps.
+おめでとうございます。静的サイトが Azure Static Web Apps にホストされました。
 
-## Rebuild your static app and monitoring deployment
+## 静的アプリケーションの再構築とデプロイの監視
 
-Now all you have to do is modify your code and push your changes. Pushing your changes will activate a Github action and your new site will automatically rebuild. You can monitor the workflow by clicking on the actions tab in your Github repo and you can inspect even further by selecting the last commit you made. You can then watch to see when the deploy is finished or inspect the log if you have any deployment errors.
+あとはコードを修正して、変更をプッシュするだけです。変更をプッシュすると GitHub Action が起動し、新しいサイトが自動的に再構築されます。GitHub リポジトリの Actions タブをクリックすることでワークフローを監視することができ、最後に行ったコミットを選択することでさらに調査することができます。デプロイが終了したかどうかを確認したり、デプロイエラーが発生した場合はログを調査したりすることができます。
 
-![Github actions screen](https://user-images.githubusercontent.com/13063165/82118249-34715880-9776-11ea-92e2-dbd21bbf7cb6.png)
+![GitHub Actions の画面](https://user-images.githubusercontent.com/13063165/82118249-34715880-9776-11ea-92e2-dbd21bbf7cb6.png)
 
-## Did you know?
+## 補足説明
 
-### **How to handle dynamic routes**
+### **動的なルーティングを扱う方法**
 
-If you are working with dynamic pages such as _id.vue then you you will need to add these routes to the generate property in your nuxt config.
+_id.vue のような動的なページを扱う場合は、これらのルートを nuxt.config.js の generate プロパティに追加する必要があります。
 
-[See the documentation on how to handle dynamic routes.](https://nuxtjs.org/api/configuration-generate#routes)
+[動的なルーティングを扱う方法のドキュメントを参照してください。](https://ja.nuxtjs.org/api/configuration-generate/#routes)
 
 <div class="Alert">
-If you are using Nuxt 2.13+ then you won't have to worry about this as there is a built in crawler which will crawl all dynamics by crawling the links in your site.
+Nuxt 2.13+ を使用しているのであれば、すべての動的ページをサイトリンクからクロールするクローラーが組み込まれているので、このことを心配する必要はありません。
 </div>
 
-### How to add an error page
+### エラーページを追加する方法
 
-In order to not have the default 404 page you can create an `error.vue` file in your layouts folder. 
+デフォルトの 404 ページを持たないようにするには、layouts フォルダに `error.vue` ファイルを作成します。
 
-### How to add SPA fallback
+### SPA フォールバックを追加する方法
 
-If you would like some pages to not be generated but act as a single page application you can do so using the generate.excludes property in your nuxt.config file.
+いくつかのページを生成せずにシングルページアプリケーションとして動作させたい場合は、nuxt.config ファイルの中の generate.excludes プロパティを使用して、可能になります。
 
-[See the documentation on spa fallback](https://nuxtjs.org/api/configuration-generate#exclude)
+[SPA フォールバックに関するドキュメントを参照してください。](https://ja.nuxtjs.org/api/configuration-generate#exclude)
