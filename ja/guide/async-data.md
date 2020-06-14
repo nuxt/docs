@@ -31,7 +31,7 @@ Nuxt.js は返されたオブジェクトとコンポーネントデータを自
 Nuxt.js では `asyncData` メソッドを使うために、いくつかの異なるやり方があるので、お好きなものを選んでください:
 
 1. `Promise` を返す。 Nuxt.js はコンポーネントがレンダリングされる前に `Promise` が解決されるまで待ちます
-2. [async/await](https://github.com/lukehoban/ecmascript-asyncawait) を使う（[より深く理解する](https://zeit.co/blog/async-and-await)）
+2. [async/await](https://ja.javascript.info/async-await) を使う
 
 <div class="Alert Alert--grey">
 
