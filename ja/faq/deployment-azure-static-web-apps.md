@@ -1,6 +1,6 @@
 ---
-title: Azure Static Web Apps にデプロイするには?
-description: Azure Static Web Apps を Nuxt.js アプリケーションをデプロイするには?
+title: Azure Static Web Apps へデプロイするには?
+description: Azure Static Web Apps へ Nuxt.js アプリケーションをデプロイするには?
 ---
 Azure Static Web Apps を使って静的サイトを Azure にデプロイすることができます。Azure Static Web Apps は、git push のたびに静的なサイトを再構築できる GitHub Actions を利用しているので、GitHub で ウェブアプリケーションを作成する必要があります。
 
