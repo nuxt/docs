@@ -1,6 +1,6 @@
 ---
 title: "API: server 프로퍼티"
-description: `nuxt.config.js`를 통해서 애플리케이션의 서버 연결 변수를 설정할 수 있습니다.
+description: '`nuxt.config.js`를 통해서 애플리케이션의 서버 연결 변수를 설정할 수 있습니다.'
 ---
 
 - 타입: `Object`
