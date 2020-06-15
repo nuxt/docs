@@ -1,8 +1,8 @@
 ---
 title: "Moving from @nuxtjs/dotenv to runtime config"
 description: 'In our frontend applications, we often use APIs and third-party integrations which require us to use configuration data which is usually provided by environment variables. These variables should not be exposed to the frontend as the browser environment is accessible by all visitors.'
-imgUrl: blog/going-dark-with-nuxtjs-color-mode/main.png
-date: 2020-06-12
+imgUrl: 
+date: 2020-06-15
 authors:
   - name: "Debbie O'Brien"
     avatarUrl: https://pbs.twimg.com/profile_images/1252900852156772352/JLIVJ-TC_400x400.jpg
