@@ -13,13 +13,7 @@ description: Heroku へデプロイするには？
   </a>
 </div>
 
-まず `npm run build` を実行できるようにするために、Heroku にプロジェクトの `devDependencies` をインストールすることを伝える必要があります:
-
-```bash
-heroku config:set NPM_CONFIG_PRODUCTION=false
-```
-
-また､アプリケーションにホスト `0.0.0.0` を listen させプロダクションモードで起動します:
+まず､アプリケーションにホスト `0.0.0.0` をリッスンさせプロダクションモードで起動します:
 
 ```bash
 heroku config:set HOST=0.0.0.0
