@@ -172,7 +172,7 @@ Vous pouvez alors lancer `lint` pour simplement vérifier les erreurs :
 npm run lint
 ```
 
-or `lintfix` to also fix those which are doable
+ou `lintfix` pour aussi réparer celles qui sont corrigeables
 
 ```bash
 npm run lintfix

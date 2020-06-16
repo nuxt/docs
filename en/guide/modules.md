@@ -37,11 +37,12 @@ Modules are great if you:
 
 The Nuxt.js team offers **official** modules:
 - [@nuxt/http](https://http.nuxtjs.org): Light and universal way to make HTTP requests, based on [ky-universal](https://github.com/sindresorhus/ky-universal)
+- [@nuxt/content](https://content.nuxtjs.org): Write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API
 - [@nuxtjs/axios](https://axios.nuxtjs.org): Secure and Easy Axios integration with Nuxt.js to make HTTP requests
 - [@nuxtjs/pwa](https://pwa.nuxtjs.org): Supercharge Nuxt with a heavily tested, updated and stable PWA solution
 - [@nuxtjs/auth](https://auth.nuxtjs.org): Authentication module for Nuxt.js, offering different schemes and strategies
 
-A list of Nuxt.js modules made by the community is available on https://github.com/topics/nuxt-module
+A list of Nuxt.js modules made by the community is available on https://awesomejs.dev/for/nuxt/ and https://github.com/topics/nuxt-module
 
 ## Write a basic Module
 
@@ -302,7 +303,7 @@ export default function (moduleOptions) {
 ## Run Tasks on Specific hooks
 
 Your module may need to do things only on specific conditions and not just during Nuxt initialization.
-We can use the powerful [Hookable](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js) Nuxt.js system to do tasks on specific events.
+We can use the powerful hooks Nuxt.js system to do tasks on specific events (based on [Hable](https://github.com/jsless/hable)).
 Nuxt will wait for your function if it return a Promise or is defined as `async`.
 
 Here are some basic examples:

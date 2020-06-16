@@ -11,7 +11,7 @@ This property can have 3 different types: `string` or `false` or `object`. If a 
 
 Default value is:
 ```js
-{
+loadingIndicator: {
   name: 'circle',
   color: '#3B8070',
   background: 'white'
@@ -20,7 +20,7 @@ Default value is:
 
 ## Built-in indicators
 
-These indicators are ported from awesome [Spinkit](http://tobiasahlin.com/spinkit) project. You can use its demo page to preview spinners.
+These indicators are imported from the awesome [Spinkit](http://tobiasahlin.com/spinkit) project. You can use its demo page to preview spinners.
 
 - circle
 - cube-grid

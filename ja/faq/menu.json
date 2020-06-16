@@ -10,7 +10,7 @@
       { "name": "Webpack プラグインを追加するには？", "to": "/webpack-plugins" },
       { "name": "ホストとポート番号を変更するには？", "to": "/host-port" },
       { "name": "キャッシュコンポーネントを使うには？", "to": "/cached-components" },
-      { "name": "Google アナリティクスを使うには？", "to": "/google-analytics" },
+      { "name": "Google アナリティクスを使うには？", "to": "/ga" },
       { "name": "クロスオリジンリソースを共有するには？", "to": "/http-proxy"},
       { "name": "オーディオファイルをロードするように Webpack の設定を拡張するには？", "to": "/webpack-audio-files" }
     ]
@@ -30,6 +30,8 @@
     "title": "デプロイ",
     "links": [
       { "name": "AWS の S3 と Cloudfront へデプロイするには？", "to": "/deployment-aws-s3-cloudfront" },
+      { "name": "Azure Portal へデプロイするには?", "to": "/deployment-azure-portal" },
+      { "name": "Azure Static Web Apps へデプロイするには?", "to": "/deployment-azure-static-web-apps" },
       { "name": "Dokku へデプロイするには？", "to": "/dokku-deployment" },
       { "name": "GitHub Pages へデプロイするには？", "to": "/github-pages" },
       { "name": "Google App Engine へデプロイするには？", "to": "/appengine-deployment" },

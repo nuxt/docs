@@ -68,7 +68,7 @@ nuxt start
 
 Vous pouvez aussi définir `server.https` dans votre fichier `nuxt.config.js` avec le même ensemble d'options passé à [`https.createServer`](https://nodejs.org/api/https.html), si vous décidez de servir Nuxt.js en mode HTTPS.
 Les sockets Unix sont aussi disponibles si vous spécifiez l'option `server.socket` dans `nuxt.config.js` (ou `-n` dans [CLI](https://nuxtjs.org/guide/commands#list-of-commands)).
-Si vous utilisez les [sockets Unix](https://en.wikipedia.org/wiki/Berkeley_sockets), vérifiez de ne pas valoriser les paramètres `host` et `port` sinon le paramètre `socket` est ignoré.
+Si vous utilisez les [sockets Unix](https://en.wikipedia.org/wiki/Berkeley_sockets), assurez-vous de laisser les paramètres `host` et `port` vides, sinon le paramètre `socket` sera ignoré.
 
 Le fichier `package.json` suivant est recommandé :
 
@@ -110,7 +110,7 @@ Lors de la génération de votre application web avec `nuxt generate`, [le conte
 
 ### Déploiement pour une application monopage (SPA)
 
-`nuxt generate` a toujours besoin du moteur SSR pendant le temps de la génération afin de prérendre toutes nos pages, et d'avoir du contenu solide pour la SEO et un chargement de page rapide. Le contenu est généré lors de la *phase de build*. Il ne faut pas l'utiliser, par exemple, pour les applications où le contenu dépend de l'authentification de l'utilisateur ou pour une API en temps réel (du moins pour le premier chargement).
+`nuxt generate` a toujours besoin du moteur SSR pendant la génération afin de pré-rendre toutes les pages, et d'avoir du contenu solide pour la SEO et un chargement de page rapide. Le contenu est généré lors de la *phase de build*. Il ne faut pas l'utiliser, par exemple, pour les applications où le contenu dépend de l'authentification de l'utilisateur ou pour une API en temps réel (du moins pour le premier chargement).
 
 L'idée de l'application monopage est simple ! Quand le mode SPA est activé en utilisant `mode: 'spa'` ou l'option `--spa`, et que nous lançons la construction, la génération se lance automatiquement après la construction. Cette génération contient les meta, ressources et liens communs, mais sans contenu de page.
 
@@ -124,6 +124,6 @@ Une autre possibilité de déploiement est d'utiliser Nuxt comme un middleware d
 
 <div class="Alert">
 
-Consultez les [Question fréquentes](/faq) et trouver des exemples astucieux de déploiements sur des hôtes populaires.
+Consultez les [Questions fréquentes](/faq) et trouvez des exemples astucieux de déploiements sur des hôtes populaires.
 
 </div>
