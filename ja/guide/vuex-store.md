@@ -56,12 +56,11 @@ export const mutations = {
   add (state, text) {
     state.list.push({
       text,
-      done: false,
-      id: Date.now()
+      done: false
     })
   },
   remove (state, { todo }) {
-    state.list = state.list.filter(item => item.id !== todo.id)
+    state.list.splice(state.list.indexOf(todo), 1)
   },
   toggle (state, todo) {
     todo.done = !todo.done
@@ -91,11 +90,12 @@ new Vuex.Store({
         add (state, { text }) {
           state.list.push({
             text,
-            done: false
+            done: false,
+            id: Date.now()
           })
         },
         remove (state, { todo }) {
-          state.list.splice(state.list.indexOf(todo), 1)
+          state.list = state.list.filter(item => item.id !== todo.id)
         },
         toggle (state, { todo }) {
           todo.done = !todo.done
@@ -243,7 +243,7 @@ Strict モードは dev モードではデフォルトで有効化されてお�
 
 `export const strict = false`
 
-### クラシックモード
+## クラシックモード
 
 > この機能は Nuxt 3 で廃止し、削除される予定です。
 
