@@ -69,7 +69,11 @@ yarn add --dev @nuxtjs/color-mode
 
 Then you need to add the module to the `buildModules` section of your nuxt.config.js file. 
 
-ℹ️If you don't have a nuxt.config.js file already you can create one in the root directory and add the code below.
+<div class="Alert Alert--nuxt-green">
+
+<b>Info:</b> If you don't have a nuxt.config.js file already you can create one in the root directory and add the code below.
+
+</div>
 
 `nuxt.config.js`
 
@@ -83,7 +87,11 @@ export default {
 
 If you using a version of Nuxt.js lower than 2.9.0 you will need to add it to the `modules` property instead of `buildModules`.
 
-ℹ️To check what version of Nuxt.js you have you can run `yarn nuxt -v` or `npm run nuxt -v`
+<div class="Alert Alert--nuxt-green">
+
+<b>Info:</b> To check what version of Nuxt.js you have you can run `yarn nuxt -v` or `npm run nuxt -v`
+
+</div>
 
 ### Adding your colour styles
 
