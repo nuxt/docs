@@ -3,15 +3,15 @@ title: Introduction
 description: "Nuxt is a progressive framework based on Vue.js to create modern web applications. It is based on Vue.js official libraries (vue, vue-router and vuex) and powerful development tools (webpack, Babel and PostCSS)."
 ---
 
-> Nuxt is a progressive framework based on Vue.js to create modern web applications. It is based on Vue.js official libraries (vue, vue-router and vuex) and powerful development tools (webpack, Babel and PostCSS). Nuxt goal is to make web development powerful and performant with a great developer experience in mind.
+> Nuxt is a progressive framework based on Vue.js to create modern web applications. It is based on Vue.js official libraries (vue, vue-router and vuex) and powerful development tools (webpack, Babel and PostCSS). Nuxt's goal is to make web development powerful and performant with a great developer experience in mind.
 
 ## What is NuxtJS?
 
-Nuxt is a framework designed to give you a strong architecture following official Vue guidelines. Incrementally adoptable, it can be used to create from static landing pages to complex enterprise ready web applications.
+Nuxt is a framework designed to give you a strong architecture following official Vue guidelines. Incrementally adoptable, it can be used to create everything from static landing pages to complex enterprise ready web applications.
 
 Versatile by nature, it supports different targets (server, serverless or static) and server side rendering is switchable.
 
-Extendable with a strong module ecosystem, it makes it easy to connect your REST or GraphQL endpoints, favorites CMS, CSS frameworks and more. PWA and AMP support is only a module away from your Nuxt project.
+Extendable with a strong module ecosystem, it makes it easy to connect your REST or GraphQL endpoints, favorite CMS, CSS frameworks and more. PWA and AMP support is only a module away from your Nuxt project.
 
 NuxtJS is the backbone of your Vue.js project, giving structure to build your project with confidence while being flexible.
 
@@ -66,7 +66,7 @@ If, for any reason, you prefer not to use server side rendering or need static h
 
 Take a look at [the commands](/guide/commands) to learn more about usage.
 
-If you already have a server, you can plug Nuxt.js by using it as a middleware. There is no restriction at all when using Nuxt.js for developing your Universal Web Applications. See the [Using Nuxt.js Programmatically](/api/nuxt) guide.
+If you already have a server, you can plug in Nuxt.js by using it as a middleware. There is no restriction at all when using Nuxt.js for developing your Universal Web Applications. See the [Using Nuxt.js Programmatically](/api/nuxt) guide.
 
 ## Static Generated (Pre Rendering)
 

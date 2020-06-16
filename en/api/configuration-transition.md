@@ -41,7 +41,7 @@ The transition key in `nuxt.config.js` is used to set the default properties for
 
 - Type: `String` or `Object`
 
-> Used to set the default properties of the layout transitions. Configurations are same as `layout`
+> Used to set the default properties of the layout transitions. The value provided in the `name` option is configured to work with the name provided in `layout` from your `layouts` folder.
 
 Default:
 

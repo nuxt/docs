@@ -27,14 +27,14 @@ Nuxt.js will automatically merge the returned object with the component data.
 
 <div class="Alert Alert--orange">
 
-You do **NOT** have access of the component instance through `this` inside `asyncData` because it is called **before initiating** the component.
+You do **NOT** have access to the component instance through `this` inside `asyncData` because it is called **before initializing** the component.
 
 </div>
 
 Nuxt.js offers you different ways to use `asyncData`. Choose the one you're the most familiar with:
 
 1. Returning a `Promise`. Nuxt.js will wait for the promise to be resolved before rendering the component.
-2. Using the [async/await](https://javascript.info/async-await) ([learn more about it](https://zeit.co/blog/async-and-await))
+2. Using [async/await](https://javascript.info/async-await)
 
 <div class="Alert Alert--grey">
 

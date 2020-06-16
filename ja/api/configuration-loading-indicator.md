@@ -12,7 +12,7 @@ SPA モードで Nuxt.js を実行すると、はじめのページ読み込み�
 
 デフォルト値:
 ```js
-{
+loadingIndicator: {
   name: 'circle',
   color: '#3B8070',
   background: 'white'

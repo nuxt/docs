@@ -90,11 +90,12 @@ new Vuex.Store({
         add (state, { text }) {
           state.list.push({
             text,
-            done: false
+            done: false,
+            id: Date.now()
           })
         },
         remove (state, { todo }) {
-          state.list.splice(state.list.indexOf(todo), 1)
+          state.list = state.list.filter(item => item.id !== todo.id)
         },
         toggle (state, { todo }) {
           todo.done = !todo.done
@@ -110,11 +111,12 @@ new Vuex.Store({
 ```html
 <template>
   <ul>
-    <li v-for="todo in todos">
-      <input type="checkbox" :checked="todo.done" @change="toggle(todo)">
+    <li v-for="todo in todos" :key="todo.id">
+      <input :checked="todo.done" @change="toggle(todo)" type="checkbox">
       <span :class="{ done: todo.done }">{{ todo.text }}</span>
+      <button @click="removeTodo(todo)">remove</button>
     </li>
-    <li><input placeholder="What needs to be done?" @keyup.enter="addTodo"></li>
+    <li><input @keyup.enter="addTodo" placeholder="What needs to be done?"></li>
   </ul>
 </template>
 
@@ -134,7 +136,10 @@ export default {
     },
     ...mapMutations({
       toggle: 'todos/toggle'
-    })
+    }),
+    removeTodo (todo){
+      this.$store.commit('todos/remove', todo)
+    }
   }
 }
 </script>
@@ -202,7 +207,7 @@ fetch メソッドについてより深く理解するためには [ページの
 
 ## nuxtServerInit アクション
 
-`nuxtServerInit` というアクションがストア内に定義されているときは、Nuxt.js はそれをコンテキストとともに呼び出します（ただしサーバーサイドに限ります）。サーバーサイドからクライアントサイドに直接渡したいデータがあるときに便利です。
+`nuxtServerInit` というアクションがストア内に定義されて、かつ `universal` モードである場合は、Nuxt.js はそれをコンテキストとともに呼び出します（ただしサーバーサイドに限ります）。サーバーサイドからクライアントサイドに直接渡したいデータがあるときに便利です。
 
 例えば、サーバーサイドでセッションを持っていて、接続しているユーザーに `req.session.user` を通じてアクセスできるとします。認証されたユーザーにストアを渡すために `store/index.js` 下記のように書き換えます:
 
@@ -220,6 +225,8 @@ actions: {
 
 [コンテキスト](/api/context)は、`asyncData`や `fetch` メソッドと同様に `nuxtServerInit` に第二引数として渡されます。
 
+`nuxt generate` が実行されると、生成されたすべての動的ルートに対して `nuxtServerInit` が実行されます。
+
 > 注意: 非同期の `nuxtServerInit` アクションは nuxt サーバーの待機を可能にするために Promise を返さなければなりません
 
 ```js
@@ -236,7 +243,7 @@ Strict モードは dev モードではデフォルトで有効化されてお�
 
 `export const strict = false`
 
-### クラシックモード
+## クラシックモード
 
 > この機能は Nuxt 3 で廃止し、削除される予定です。
 
