@@ -261,7 +261,7 @@ viewport（ブラウザの表示領域）内にリンクが表示されたとき
 export default {
   head: {
     script: [
-      { src: 'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver', body: true }
+      { src: 'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver', body: true }
     ]
   }
 }
