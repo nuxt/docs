@@ -90,11 +90,12 @@ new Vuex.Store({
         add (state, { text }) {
           state.list.push({
             text,
-            done: false
+            done: false,
+            id: Date.now()
           })
         },
         remove (state, { todo }) {
-          state.list.splice(state.list.indexOf(todo), 1)
+          state.list = state.list.filter(item => item.id !== todo.id)
         },
         toggle (state, { todo }) {
           todo.done = !todo.done
@@ -110,9 +111,10 @@ new Vuex.Store({
 ```html
 <template>
   <ul>
-    <li v-for="todo in todos">
+    <li v-for="todo in todos" :key="todo.id">
       <input :checked="todo.done" @change="toggle(todo)" type="checkbox">
       <span :class="{ done: todo.done }">{{ todo.text }}</span>
+      <button @click="removeTodo(todo)">remove</button>
     </li>
     <li><input @keyup.enter="addTodo" placeholder="What needs to be done?"></li>
   </ul>
@@ -134,7 +136,10 @@ export default {
     },
     ...mapMutations({
       toggle: 'todos/toggle'
-    })
+    }),
+    removeTodo (todo){
+      this.$store.commit('todos/remove', todo)
+    }
   }
 }
 </script>
@@ -238,7 +243,7 @@ Strict モードは dev モードではデフォルトで有効化されてお�
 
 `export const strict = false`
 
-### クラシックモード
+## クラシックモード
 
 > この機能は Nuxt 3 で廃止し、削除される予定です。
 

@@ -195,7 +195,7 @@ Example: `<nuxt keep-alive :keep-alive-props="{ max: 10 }" />` to keep only 10 p
 
 ### Using `activated` hook
 
-Nuxt will directly fill `this.$fetchState.timestamp` (timestamp) of the last `fetch` call (ssr included). You can use this property combined with `activated` hook to add a 30 seconds cache to `fetch`:
+Nuxt will directly fill `this.$fetchState.timestamp` (timestamp) of the last `fetch` call (SSR included). You can use this property combined with `activated` hook to add a 30 seconds cache to `fetch`:
 
 `pages/posts/_id.vue`
 
@@ -242,7 +242,7 @@ The `fetch` method receives [the `context`](/api/context) object as the first ar
 
 <div class="Alert Alert--orange">
 
-**Warning**: You **don't** have access of the component instance through `this` inside `fetch` because it is called **before initiating** the component.
+**Warning**: You **don't** have access to the component instance through `this` inside `fetch` because it is called **before initiating** the component.
 
 </div>
 
