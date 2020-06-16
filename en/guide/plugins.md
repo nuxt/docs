@@ -212,6 +212,13 @@ export const actions = {
 
 ```
 
+<div class="Alert">
+
+Be ware, do not use Vue plugins inside exported functions. exported functions called before each request,
+so calling `Vue.use(...)`, `Vue.mixin(...)`, `Vue.component(...)`, cause your app crash after too many requests.
+
+</div>
+
 
 ## Client-side only
 

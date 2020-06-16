@@ -23,7 +23,13 @@ description: デフォルトの Nuxt.js アプリケーションの構造は、�
 
 ### components ディレクトリ
 
-`components` ディレクトリには Vue.js のコンポーネントファイルを入れます。これらのコンポーネントでは `asyncData` や `fetch` を使うことはできません。
+`components` ディレクトリには Vue.js のコンポーネントファイルを入れます。
+
+<div class="Alert Alert--orange">
+
+このディレクトリ内のコンポーネントは [`asyncData`](/guide/async-data) を利用できません。
+
+</div>
 
 ### layouts ディレクトリ
 
