@@ -35,7 +35,8 @@
       { "name": "在Netlify上部署", "to": "/netlify-deployment" },
       { "name": "如何使用 Now.sh 部署？", "to": "/now-deployment" },
       { "name": "如何使用 Surge.sh 部署？", "to": "/surge-deployment" },
-      { "name": "使用nginx作为代理", "to": "/nginx-proxy" }
+      { "name": "使用nginx作为代理", "to": "/nginx-proxy" },
+      { "name": "在21云盒子上部署", "to": "/21yunbox-deployment" }
     ]
   }
 ]
