@@ -17,7 +17,7 @@ export default {
 ```
 
 You can also use the function `watchQuery(newQuery, oldQuery)` to have more refined watchers.
-a
+
 ```js
 export default {
   watchQuery (newQuery, oldQuery) {

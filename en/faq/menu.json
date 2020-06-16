@@ -31,6 +31,7 @@
     "links": [
       { "name": "Deploy on AWS w/ S3 and Cloudfront", "to": "/deployment-aws-s3-cloudfront" },
       { "name": "Deploy on Azure Portal", "to": "/deployment-azure-portal" },
+      { "name": "Deploy on Azure Static Web Apps", "to": "/deployment-azure-static-web-apps" },
       { "name": "Deploy on Dokku", "to": "/dokku-deployment" },
       { "name": "Deploy on GitHub", "to": "/github-pages" },
       { "name": "Deploy on Google App Engine", "to": "/appengine-deployment" },
@@ -38,6 +39,7 @@
       { "name": "Deploy on Netlify", "to": "/netlify-deployment" },
       { "name": "Deploy on Now", "to": "/now-deployment" },
       { "name": "Deploy on Surge", "to": "/surge-deployment" },
+      { "name": "Deploy using PM2 cluster mode ", "to": "/nginx-proxy" },
       { "name": "Using nginx as a proxy", "to": "/nginx-proxy" }
     ]
   }
