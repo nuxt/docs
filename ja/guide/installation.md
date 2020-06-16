@@ -54,6 +54,7 @@ $ yarn create nuxt-app <project-name>
   - [Buefy](https://github.com/buefy/buefy)
   - [iView](https://github.com/iview/iview)
   - [Tachyons](https://github.com/tachyons-css/tachyons)
+  - [Vuesax](https://github.com/lusaxweb/vuesax)
 3. 好きなテスティングフレームワークを選択します:
   - None (後からでも追加できます）
   - [Jest](https://github.com/facebook/jest)
