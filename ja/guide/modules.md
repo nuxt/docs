@@ -27,11 +27,12 @@ Nuxt を使ってプロダクションレベルのアプリケーションを開
 Nuxt.js チームが提供している **公式** モジュール:
 
 - [@nuxt/http](https://http.nuxtjs.org): [ky-universal](https://github.com/sindresorhus/ky-universal) をベースにしており、軽量でユニバーサルな HTTP リクエストを送ります
+- [@nuxt/content](https://content.nuxtjs.org): `content` ディレクトリへの書き込みや、MongoDB のような API を通した Markdown や JSON、YAML、CSV ファイルの取得をします
 - [@nuxtjs/axios](https://axios.nuxtjs.org): セキュアかつ簡単に Axios と Nuxt.js とを統合し、HTTP リクエストを送ります
 - [@nuxtjs/pwa](https://pwa.nuxtjs.org): 十分にテストされアップデートされた安定した PWA ソリューションを Nuxt に提供します
 - [@nuxtjs/auth](https://auth.nuxtjs.org): Nuxt.js のための認証モジュールです。さまざまなスキームやストラテジーを提供します
 
-コミュニティによって作成されたモジュール一覧は https://github.com/topics/nuxt-module で確認できます。
+コミュニティによって作成されたモジュール一覧は https://awesomejs.dev/for/nuxt/ と https://github.com/topics/nuxt-module で確認できます。
 
 ## 基本的なモジュールを書く
 
@@ -285,7 +286,7 @@ export default function (moduleOptions) {
 
 ## 特定のフックでタスクを実行する
 
-単に Nuxt の初期化処理時だけではなく、特定の条件下でのみ、モジュールにある処理を実行させたいこともあるでしょう。強力な [Hookable](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js) Nuxt.js システムを使用して特定のイベントでタスクを実行できます。タスクが Promise を返すか `async` として定義されている場合は Nuxt はその関数を待機します。
+単に Nuxt の初期化処理時だけではなく、特定の条件下でのみ、モジュールにある処理を実行させたいこともあるでしょう。Nuxt.js システムの強力なフックを使用して特定のイベントでタスクを実行できます（[Hable](https://github.com/jsless/hable) をベースにしています）。Nuxt は関数が Promise を返すか、`async` として定義されている場合その関数を待機します。
 
 以下が基本的な例です。
 
