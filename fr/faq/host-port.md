@@ -1,15 +1,15 @@
 ---
-title: Comment modifier l'hôte et le port?
-description: Comment modifier l'hôte et le port avec Nuxt.js?
+title: Comment modifier l'hôte et le port ?
+description: Comment modifier l'hôte et le port avec Nuxt.js ?
 ---
 
-Par défault, Le serveur de développement Nuxt est `localhost` (uniquement accessible depuis la machine hôte).
+Par défaut, l'hôte du serveur de développement Nuxt est `localhost` (accessible uniquement depuis la machine hôte).
 
-L'hôte `0.0.0.0` est conçu pour indiquer à Nuxt pour rendre disponible l'addresse de l'hôte, accessible depuis des connexions _extérieures_ à la machine hôte (e.g. LAN).
+Pour indiquer à Nuxt qu'il doit rendre accessible l'hôte depuis des connexions _extérieures_ à celui-ci (par exemple, sur un LAN), vous pouvez utiliser l'hôte `0.0.0.0`.
 
-Vous pouvez configurer les variables de connexion de plusieurs façons. Ces derniers sont affichés **de la plus grande priorité à la plus petite**.
+Vous pouvez configurer les variables de connexion de plusieurs façons. Ces dernières sont listées **de la plus grande priorité à la plus petite**.
 
-> **Remarque:** Si au `port` est assigné une chaîne de charactère `'0'` (et non `0`, qui est incorrect), un port aléatoire sera attribué à votre application Nuxt.
+> **Remarque:** Si vous assignez à la variable `port` la chaîne de caractères `'0'` (et non `0`, qui est incorrect), un port aléatoire sera attribué à votre application Nuxt.
 
 ## En utilisant des arguments directs
 
@@ -23,24 +23,23 @@ Ou
 }
 ```
 
-## Configurer dans le fichier `nuxt.config.js`:
+## Configurer dans `nuxt.config.js` :
 
-A l'intérieure de votre fichier `nuxt.config.js`:
+Dans votre `nuxt.config.js` :
 
 ```js
 export default {
   server: {
-    port: 8000, // par défaut: 3000
-    host: '0.0.0.0' // par défaut: localhost
+    port: 8000, // par défaut : 3000
+    host: '0.0.0.0' // par défaut : localhost
   }
-  // d'autres configurations
+  // autres configurations
 }
 ```
 
+## En utilisant les variables d'environnement NUXT_HOST et NUXT_PORT
 
-## En utilisant les variables environments NUXT_HOST et NUXT_PORT
-
-Similaire à HOST et PORT, mais plus spécifique lorsque vous avez besoin de les utiliser à d'autres fins. 
+Similaires à HOST et PORT, mais plus spécifiques, au cas où vous auriez besoin de celles-ci pour autre chose. 
 
 ```js
 "scripts": {
@@ -48,9 +47,9 @@ Similaire à HOST et PORT, mais plus spécifique lorsque vous avez besoin de les
 }
 ```
 
-**Remarque**: pour une meilleur compatibilité d'un développement multi-platforme, vous pouvez utiliser [cross-env](https://www.npmjs.com/package/cross-env) package.
+**Remarque**: pour une meilleure compatibilité lors d'un développement multiplateforme, vous pouvez utiliser le paquet [cross-env](https://www.npmjs.com/package/cross-env).
 
-Installation:
+Installation :
 
 ```bash
 npm install --save-dev cross-env
@@ -62,7 +61,7 @@ npm install --save-dev cross-env
 }
 ```
 
-## En utilisant les variables environment HOST et PORT
+## En utilisant les variables d'environnement HOST et PORT
 
 ```js
 "scripts": {
@@ -70,10 +69,9 @@ npm install --save-dev cross-env
 }
 ```
 
+## Via la configuration `nuxt` dans `package.json` :
 
-## A partir de la configuration `nuxt` dans le fichier `package.json`:
-
-Dans votre fichier `package.json`:
+Dans votre `package.json` :
 
 ```json
 "config": {
