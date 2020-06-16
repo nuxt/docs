@@ -34,7 +34,7 @@ You do **NOT** have access to the component instance through `this` inside `asyn
 Nuxt.js offers you different ways to use `asyncData`. Choose the one you're the most familiar with:
 
 1. Returning a `Promise`. Nuxt.js will wait for the promise to be resolved before rendering the component.
-2. Using the [async/await](https://javascript.info/async-await) ([learn more about it](https://zeit.co/blog/async-and-await))
+2. Using [async/await](https://javascript.info/async-await)
 
 <div class="Alert Alert--grey">
 
