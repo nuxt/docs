@@ -36,7 +36,6 @@ handlers:
 
 env_variables:
   HOST: '0.0.0.0'
-  NODE_ENV: 'production'
 ```
 
 また、フレキシブル環境の最小構成の設定ファイルは以下です:

@@ -27,7 +27,7 @@ description: Nuxt.js でプリプロセッサを使うには？
 これらのプリプロセッサを使うために Webpack のローダーをインストールする必要があります。
 
 ```bash
-npm install --save-dev pug@2.0.3 pug-plain-loader
+npm install --save-dev pug pug-plain-loader
 ```
 
 ```bash
