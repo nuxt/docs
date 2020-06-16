@@ -30,6 +30,6 @@ export default {
 ```
 <div class="Alert Alert--orange">
 
-**警告**: 2.12で導入された新しい `fetch` メソッドは `watchQuery` の影響を受けません。詳しくは、 [クエリ文字列の変化のリスニング](/api/pages-fetch#クエリ文字列の変化のリスニング)を参照してください。
+**警告**: 2.12で導入された新しい `fetch` フックは `watchQuery` の影響を受けません。詳しくは、 [クエリ文字列の変化のリスニング](/api/pages-fetch#クエリ文字列の変化のリスニング)を参照してください。
 
 </div>
