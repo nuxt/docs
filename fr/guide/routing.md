@@ -250,7 +250,7 @@ Cette arborescence :
 
 ```bash
 pages/
---| people/
+--| personne/
 -----| _id.vue
 -----| index.vue
 --| _.vue

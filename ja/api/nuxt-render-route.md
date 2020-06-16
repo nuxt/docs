@@ -18,30 +18,30 @@ description: 特定のルートをレンダリングします。その際にコ�
 
 <div class="Alert Alert--orange">
 
-`nuxt.renderRoute` はプロダクションモード（dev: false）ではビルド処理の後に実行すると良いでしょう。
+`nuxt.renderRoute` はプロダクションモードではビルド処理の後に実行すると良いでしょう。
 
 </div>
 
 例:
 
 ```js
-const { Nuxt, Builder } = require('nuxt')
+const { loadNuxt, build } = require('nuxt')
 
-const config = require('./nuxt.config.js')
-config.dev = false
+async function start() {
+  // 起動用の nuxt インスタンスを取得します（プロダクションモード）
+  // このスクリプトを実行する前に `nuxt build` を実行していることを確認してください
+  const nuxt = await loadNuxt({ for: 'start' })
 
-const nuxt = new Nuxt(config)
+  const { html, error, redirected } = await nuxt.renderRoute('/')
 
-new Builder(nuxt)
-  .build()
-  .then(() => nuxt.renderRoute('/'))
-  .then(({ html, error, redirected }) => {
   // `html` は常に文字列になります
 
-    // エラーレイアウトが表示されるときは `error` は null ではありません。エラーフォーマットは下記:
-    // { statusCode: 500, message: 'エラーメッセージ' }
+  // エラーレイアウトが表示されるときは `error` は null ではありません。エラーフォーマットは下記:
+  // { statusCode: 500, message: 'エラーメッセージ' }
 
   // `asyncData()` または `fetch()` 内で `redirect()` が使われたときは `redirected` は `false` ではありません
   // { path: '/other-path', query: {}, status: 302 }
-  })
+}
+
+start()
 ```
