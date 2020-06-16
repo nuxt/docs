@@ -217,7 +217,7 @@ You may want to extract all your CSS to a single file.
 There is a workaround for this:
 
 <div class="Alert Alert--orange">
-⚠️ It is not recommended extracting everything into a single file. 
+⚠️ It is not recommended extracting everything into a single file.
 Extracting into multiple css files is better for caching and preload isolation.
 It can also improve page performance by downloading and resolving only those resources that are needed.
 </div>
@@ -725,7 +725,7 @@ See [webpack-contrib/terser-webpack-plugin](https://github.com/webpack-contrib/t
 
 If you want to transpile specific dependencies with Babel, you can add them in `build.transpile`. Each item in transpile can be a package name, a string or regex object matching the dependency's file name.
 
-Starting with `v2.9.0`, you can also use a function to conditionnaly transpile, the function will receive a object (`{ isDev, isServer, isClient, isModern, isLegacy }`):
+Starting with `v2.9.0`, you can also use a function to conditionally transpile, the function will receive a object (`{ isDev, isServer, isClient, isModern, isLegacy }`):
 
 ```js
 {
@@ -776,14 +776,14 @@ export default {
 
 ## followSymlinks
 
-> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example. 
+> By default, the build process does not scan files inside symlinks. This boolean includes them, thus allowing usage of symlinks inside folders such as the "pages" folder, for example.
 
 - Type: `Boolean`
 
 ```js
 export default {
   build: {
-    followSymlinks: false
+    followSymlinks: true
   }
 }
 ```

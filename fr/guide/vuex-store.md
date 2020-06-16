@@ -22,7 +22,7 @@ Nuxt.js recherchera le répertoire `store`. S'il existe, il :
 
 Nuxt.js vous laisse le choix entre **2 modes de store**, choisissez celui qui vous convient le mieux :
 
-- **Modules :** chaque fichier `.js` dans le répertoire `store` est transformé en tant que [module avec son propre espace de nom](http://vuex.vuejs.org/fr/modules.html) (`index` étant le module racine).
+- **Modules :** chaque fichier `.js` dans le répertoire `store` est transformé en tant que module avec son propre espace de nom (`index` étant le module racine).
 - **Classique (__deprécié__):** `store/index.js` retourne une méthode pour créer une instance de store.
 
 Quelque soit le mode utilisé, votre valeur `state` devrait **toujours être une `function`** afin d'éviter tout état *partagé* non désiré du côté serveur.

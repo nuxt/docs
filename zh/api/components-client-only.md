@@ -25,7 +25,7 @@ description: Render a component only on client-side, and display a placeholder t
     <client-only placeholder="Loading...">
       <!-- comments 组件只会在客户端被渲染 -->
       <comments />
-    </client-side>
+    </client-only>
   </div>
 </template>
 ```

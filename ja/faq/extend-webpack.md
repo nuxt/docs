@@ -26,3 +26,40 @@ export default {
 ```
 
 `extend` メソッドは一度はサーバーのバンドルのため、一度はクライアントのバンドルのため、つまり二度呼び出されます。
+
+## 例
+
+#### チャンク構成をカスタマイズ
+
+デフォルトのオブジェクトを書き換えずに [最適化構成](/api/configuration-build#optimization) を多少調整することができます。
+```js
+export default {
+  build: {
+    extend (config, { isClient }) {
+      if (isClient) {
+          config.optimization.splitChunks.maxSize = 200000;
+      }
+    }
+  }
+}
+```
+
+#### 開発環境のすべての Webpack ビルドで ESLint を実行
+
+コードスタイルエラーを認識するために、開発環境のすべてのビルドで [ESLint](https://github.com/webpack-contrib/eslint-loader) を実行することができます。
+```js
+export default {
+  build: {
+    extend (config, { isDev, isClient }) {
+      if (isDev && isClient) {
+          config.module.rules.push({
+              enforce: 'pre',
+              test: /\.(js|vue)$/,
+              loader: 'eslint-loader',
+              exclude: /(node_modules)/,
+          });
+      }
+    }
+  }
+}
+```

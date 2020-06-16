@@ -1,4 +1,4 @@
 ---
-title: Welcome figure - video
+title: Figura de boas vindas - vídeo
 ---
-Video produced by <a href="https://www.vuemastery.com" target="_blank" rel="noopener">Vue Mastery</a>, download their free <a href="https://www.vuemastery.com/nuxt-cheat-sheet/" target="_blank" rel="noopener">Nuxt Cheat Sheet</a>.
+Vídeo produzido por <a href="https://www.vuemastery.com" target="_blank" rel="noopener">Vue Mastery</a>, faça o download gratuito das <a href="https://www.vuemastery.com/nuxt-cheat-sheet/" target="_blank" rel="noopener">Dicas do Nuxt</a>.

@@ -261,7 +261,7 @@ viewport（ブラウザの表示領域）内にリンクが表示されたとき
 export default {
   head: {
     script: [
-      { src: 'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver', body: true }
+      { src: 'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver', body: true }
     ]
   }
 }
@@ -285,7 +285,7 @@ export default {
 }
 ```
 
-Nuxt.js v2.10.0 からは prefetchLinks` を `false` に設定した上で特定のリンクを先読みしたい場合 `prefetch` プロパティを使うことができます。
+Nuxt.js v2.10.0 からは `prefetchLinks` を `false` に設定した上で特定のリンクを先読みしたい場合 `prefetch` プロパティを使うことができます。
 
 ```html
 <nuxt-link to="/about" prefetch>先読みするページについて</nuxt-link>

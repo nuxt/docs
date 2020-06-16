@@ -1,6 +1,4 @@
 ---
-title: Performant
+title: Быстрый
 ---
-With Nuxt.js, your application will be optimized out of the box.
-We do our best to build performant applications by utilizing Vue.js and Node.js best practices.
-To squeeze every unnecessary bit out of your app Nuxt includes a bundle analyzer and lots of opportunities to fine-tune your app.
+Nuxt.js оптимизирует ваше приложение сразу из коробки. Мы постоянно работаем над повышением производительности приложений, используя наработки Vue.js и Node.js. Чтобы выжать максимум из вашего приложения в Nuxt влючен анализатор бандлов и множество возможностей для тонкой настройки приложения.

@@ -5,6 +5,42 @@
     "download": "Скачать",
     "live_edit": "Живое редактирование"
   },
+  "headerLinks": [
+    {
+      "name": "Guide",
+      "slug": "guide",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "API",
+      "slug": "api",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Examples",
+      "slug": "examples",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "FAQ",
+      "slug": "faq",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Resources",
+      "slug": "resources",
+      "type": "static"
+    },
+    {
+      "name": "Blog",
+      "slug": "blog",
+      "type": "static"
+    }
+  ],
   "text": {
     "an_error_occurred": "An error occurred",
     "api_page_not_found": "API page not found",
@@ -20,7 +56,7 @@
     },
     "welcome": {
       "get_started": "начало работы",
-      "github_stars": "24K+ github stars"
+      "github_stars": "27K+ github stars"
     },
     "why": {
       "try_nuxtjs_online": "Попробуйте NuxtJS онлайн"
