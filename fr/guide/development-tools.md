@@ -139,7 +139,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // préférer utiliser `plugin:vue/strongly-recommended` ou `plugin:vue/recommended` pour des règles stictes.
+    // préférez utiliser `plugin:vue/strongly-recommended` ou `plugin:vue/recommended` pour des règles strictes.
     'plugin:vue/recommended',
     'plugin:prettier/recommended'
   ],
