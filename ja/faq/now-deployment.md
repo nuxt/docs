@@ -7,7 +7,7 @@ description: Vercel へデプロイするには？
 
 ## Vercel
 
-[Vercel](https://vercel.com) を使ってデプロイするために、Nuxt.js チームとコントリビューターは公式の [@nuxtjs/now-builder](https://github.com/nuxt/now-builder) パッケージを作成しました ('Now' は Vercel の以前の名前です)。
+[Vercel](https://vercel.com) を使ってデプロイするために、Nuxt.js チームとコントリビューターは公式の [@nuxtjs/now-builder](https://github.com/nuxt/now-builder) パッケージを作成しました （'Now' は Vercel の以前の名前です）。
 
 必要なのは `now.json` をセットアップすることです:
 
