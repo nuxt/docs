@@ -25,7 +25,7 @@ description: レイアウト内でページコンポーネントを表示しま�
   - この prop は `<router-view/>` に設定され、動的なページと異なるルートの中で遷移させるのに便利です
   - デフォルト: `$route.path`
 
-`<router-view/>` の `key` prop を操作する方法は3つあります。
+`<router-view/>` の `key` prop を操作する方法は 2 つあります。
 
 1. `nuxtChildKey` prop
 
