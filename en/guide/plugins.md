@@ -82,7 +82,7 @@ Sometimes you want to make functions or values available across the app.
 You can inject those variables into Vue instances (client side), the context (server side) and even in the Vuex store.
 It is a convention to prefix those functions with a `$`.
 
-Nuxt provides you an `inject(key, value)` method to do easily, it given as the second parameter when exporting a function. The `$` will be prepended automatically to the key.
+Nuxt.js provides you with an `inject(key, value)` method so you can easily inject variables. It is given as the second parameter when exporting a function. The `$` will be prepended automatically to the key.
 
 `plugins/hello.js`:
 
