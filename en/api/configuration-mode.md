@@ -3,6 +3,8 @@ title: "API: The mode Property"
 description: Change default nuxt mode
 ---
 
+For Nuxt <= v2.12:
+
 - Type: `string`
   - Default: `universal`
   - Possible values:
