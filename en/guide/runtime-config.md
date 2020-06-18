@@ -25,7 +25,7 @@ export default {
 ```
 
 - `publicRuntimeConfig` is available using `$config` in both server and client.
-- `privateRuntimeConfig` is **only avilable on server** using same `$config` (it overrides `publicRuntimeConfig`)
+- `privateRuntimeConfig` is **only available on server** using same `$config` (it overrides `publicRuntimeConfig`)
 
 ###  Usage
 
