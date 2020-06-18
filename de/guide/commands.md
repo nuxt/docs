@@ -110,7 +110,7 @@ It will create a `dist` folder with everything inside ready to be deployed on a 
 
 <div class="Alert Alert-blue">
 
-As of Nuxt v2.13 there is a crawler installed that will now crawl your link tags and generate your routes when using the command `nuxt export` based on those links. 
+As of Nuxt v2.13 there is a crawler installed that will now crawl your link tags and generate your routes when using the command `nuxt build && nuxt export` based on those links. 
 
 </div>
 
@@ -122,13 +122,13 @@ As of Nuxt v2.13 there is a crawler installed that will now crawl your link tags
 
 <div class="Alert">
 
-When generating your web application with `nuxt generate`, [the context](/api/context) given to [data()](/guide/async-data#the-data-method) and [fetch()](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.
+When generating your web application with `nuxt build && nuxt export` or `nuxt generate`, [the context](/api/context) given to [data()](/guide/async-data#the-data-method) and [fetch()](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.
 
 </div>
 
 ### Single Page Application Deployment (SPA)
 
-`nuxt export` and `nuxt generate` still need the SSR engine during build/generate time while having the advantage of having all our pages pre rendered, and have a high SEO and page load score. The content is generated at *build time*. For example, we can't use it for applications where content depends on user authentication or a real time API (at least for the first load).
+`nuxt build && nuxt export` or `nuxt generate` still need the SSR engine during build/generate time while having the advantage of having all our pages pre rendered, and have a high SEO and page load score. The content is generated at *build time*. For example, we can't use it for applications where content depends on user authentication or a real time API (at least for the first load).
 
 The SPA idea is simple! When SPA mode is enabled using `mode: 'spa'` or `--spa` flag, and we run build, generation automatically starts after the build. This generation contains common meta and resource links, but not page content.
 

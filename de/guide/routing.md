@@ -104,7 +104,7 @@ As you can see the route named `users-id` has the path `:id?` which makes it opt
 
 <div class="Alert Alert-blue">
 
-As of Nuxt >= v2.13 there is a crawler installed that will now crawl your link tags and generate your routes when using the command `nuxt export` based on those links. 
+As of Nuxt >= v2.13 there is a crawler installed that will now crawl your link tags and generate your routes when using the command `nuxt build && nuxt export` based on those links. 
 
 </div>
 

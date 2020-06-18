@@ -63,6 +63,14 @@ and now we just need to set `DEPLOY_ENV='GH_PAGES'` to build the site for GitHub
 },
 ```
 
+```js
+/* package.json */
+"scripts": {
+  "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
+  "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate"
+},
+```
+
 For Windows user, you might want to install [cross-env](https://github.com/kentcdodds/cross-env) if you are not using `bash`
 
 ```sh

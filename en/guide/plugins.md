@@ -188,4 +188,4 @@ In case you need to import some libraries in a plugin only on *server-side*, you
 
 Also, if you need to know if you are inside a static app (via `nuxt generate` or `nuxt export`), you can check if `process.static` is set to `true`. This is only the case during and after the generation.
 
-You can also combine both options to hit the spot when a page is being server-rendered by `nuxt generate` before being saved (`process.static && process.server`).
+You can also combine both options to hit the spot when a page is being server-rendered by `nuxt build && nuxt export` or `nuxt generate` before being saved (`process.static && process.server`).
