@@ -1,7 +1,7 @@
 ---
 title: "Moving from @nuxtjs/dotenv to runtime config"
 description: 'In our frontend applications, we often use APIs and third-party integrations which require us to use configuration data which is usually provided by environment variables. These variables should not be exposed to the frontend as the browser environment is accessible by all visitors.'
-imgUrl: 
+imgUrl: blog/moving-from-nuxtjs-dotenv-to-runtime-config/main.png
 date: 2020-06-15
 authors:
   - name: "Debbie O'Brien"
@@ -25,8 +25,8 @@ It's time to migrate from @nuxtjs/dotenv module to use our new runtime config wh
 - [Using your config values](#using-your-config-values)
 - [Migrating your config values in your script tags](#migrating-your-config-values-in-your-script-tags)
 - [Migrating your config values in your templates](#migrating-your-config-values-in-your-templates)
-- [Expand/Interpolation Support](#expandinterpolation-support)
-- [Best Practices:](#best-practices)
+- [Expand/Interpolation Support](#expand-interpolation-support)
+- [Best Practices:](#best-practices-)
 - [Conclusion](#conclusion)
 - [What to do next](#what-to-do-next)
 
@@ -126,9 +126,9 @@ export default {
 
 If you have your env variables stored in your nuxt.config then you can migrate these to use the new runtime configs by adding them to your nuxt.config file.
 
-If your `.env` variables in your nuxt.config look like this:
+If your env variables in your nuxt.config look like this:
 
-`.env`
+`nuxt.config.js`
 
 ```js
 export default {
