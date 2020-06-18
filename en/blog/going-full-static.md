@@ -23,6 +23,11 @@ tags:
 
 *Bonus: you can run `nuxt serve` to run a local server serving your generated static application.*
 
+<video poster="https://res.cloudinary.com/nuxt/video/upload/v1588095794/nnuxt-full-static_rnnbvm.jpg" loop playsinline controls>
+  <source src="https://res.cloudinary.com/nuxt/video/upload/v1588095794/nuxt-full-static_rnnbvm.webm" type="video/webm" />
+  <source src="https://res.cloudinary.com/nuxt/video/upload/v1592503417/nuxt-full-static_rnnbvm.mp4" type="video/mp4" />
+  <source src="https://res.cloudinary.com/nuxt/video/upload/v1588095794/nuxt-full-static_rnnbvm.ogv" type="video/ogg" />
+</video>
 
 ## Table of Contents
 
@@ -95,13 +100,9 @@ To avoid introducing a breaking change for `nuxt generate`, we are introducing a
 
 We also improved the [smart prefetching](https://nuxtjs.org/blog/introducing-smart-prefetching) when doing full static, it will also fetch the payloads, making instant navigations 👀
 
-<video src="/blog/going-full-static/" autoplay loop playsinline controls></video>
-
 ### Crawler integrated
 
 On top of it, it has a crawler inside, detecting every relative link and generate it:
-
-<video src="/blog/going-full-static/" autoplay loop playsinline controls></video>
 
 If you want to exclude a bunch of routes, use the [generate.exclude](https://nuxtjs.org/api/configuration-generate#exclude). You can keep using [generate.routes](https://nuxtjs.org/api/configuration-generate#routes) to add extra routes that the crawler could not detect.
 
