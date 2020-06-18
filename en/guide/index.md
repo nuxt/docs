@@ -119,11 +119,9 @@ The new full static module which is available since v2.13 generates your html an
 
 Nuxt v2.13 also comes with a crawler installed which will crawl your link tags and generate your dynamic routes based on these links which means there is no need to manually generate your dynamic links anymore.
 
-The static module works by saving the calls to your API in payload.json files in a static folder. These payloads are then cached for better performance and offline support and as your API is not called on client side navigation any more, it also means you do not have to expose your API to the public. 
+The static target works by saving the calls to your API in payload.js files in a static folder. These payloads are then cached for better performance and offline support and as your API is not called on client side navigation any more (when called using asyncData and fetch), it also means you do not have to expose your API to the public. 
 
-When your site is generated your html is generated with all it's content and on client side navigation these pages are reconstructed using the payload files for your API data. By separating the code from the content you can easily re-generate your content without the need to re-generate your whole site. That means once your site is built and you only want to change your content you can simply call `nuxt export` which will re-generate your content only, and as the content doesn't need to go through webpack it means content regeneration is lightening fast. 
-
-With the new static module you can also preview your content changes, for example when coming from an API, by adding the query param `?query=true` to the end of your page. This means when your site is live in production you can make changes in your API and preview them live on your site with a simple query and then when ready you can rebuild your content with the `nuxt export` command or rebuild your whole site with the `nuxt build && nuxt export` command.
+When your site is generated your html is generated with all it's content and on client side navigation these pages are reconstructed using the payload files for your API data. By separating the code from the content you can easily re-generate your content without the need to re-build your whole site. That means once your site is built and you only want to change your content you can simply call `nuxt export` which will re-generate your content only, and as the content doesn't need to go through webpack it means content regeneration is lightening fast. 
 
 If you want to generate static sties, using Nuxt >= v2.13, you will need to add `static` as the `target` in your nuxt.config file. The default value for `target` is `server`.
 
@@ -133,7 +131,7 @@ export default {
   target: 'static'
 }
 ```
-
+[To learn more about the new static target checkout our article](/blog/going-full-static.md)
 
 <div class="Alert">
 

@@ -1,17 +1,16 @@
 ---
-title: "API: The mode Property"
+title: "API: The target Property"
 description: Change default nuxt target
 ---
 
-For Nuxt >= v2.13:
+Deployment targets for Nuxt >= v2.13:
 
 - Type: `string`
   - Default: `server`
   - Possible values:
     - `'server'`: For server side rendering
-    - `'static'`: Isomorphic application otherwise known as static sites (server-side rendering at build time + client-side navigation)
+    - `'static'`: For static sites
 
 > You can use this option to change default nuxt target for your project using `nuxt.config.js`
 
-
-Use [mode](/en/api/configuration-mode.md) for Nuxt <= v2.12
+To learn more about the new static target check out our article(/blog/going-full-static.md)

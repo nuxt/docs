@@ -25,6 +25,19 @@ export default {
 
 The generation of routes are concurrent, `generate.concurrency` specifies the amount of routes that run in one thread.
 
+## crawler
+ - Type: `boolean`
+ - Default: true
+
+As of Nuxt <= v2.13 Nuxt.js comes with a crawler installed that will crawl your relative links and generate your dynamic links based on these links. If you want to disable this feature you can set the value to `false`
+
+```js
+export default {
+  generate: {
+    crawler: false
+  }
+}
+```
 
 ## dir
 
