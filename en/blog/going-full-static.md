@@ -112,7 +112,6 @@ To disable the crawler, set `generate.crawler: false` in your `nuxt.config.js`
 
 By separating `nuxt build` and `nuxt export`, we are opening a new range of improvement: pre-render your pages only if you content has changed, this means: no Wepack build → faster redeployments.
 
-<video src="/blog/going-full-static/" autoplay loop playsinline controls></video>
 
 ## New command: `nuxt serve`
 
@@ -137,7 +136,6 @@ It will automatically refresh the page data (calling `nuxtServerInit`, `asyncDat
 
 When the preview mode is activated, `asyncData` and `fetch` original methods will be called.
 
-<video src="/blog/going-full-static/" autoplay loop playsinline controls></video>
 
 ## Commands
 
