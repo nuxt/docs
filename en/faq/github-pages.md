@@ -55,14 +55,16 @@ export default {
 
 and now we just need to set `DEPLOY_ENV='GH_PAGES'` to build the site for GitHub Pages:
 
+For Nuxt >= v2.13
 ```js
 /* package.json */
 "scripts": {
   "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
-  "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate"
+  "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build && nuxt export"
 },
 ```
 
+For Nuxt <= v2.12
 ```js
 /* package.json */
 "scripts": {
@@ -83,6 +85,17 @@ npm install push-dir --save-dev
 
 Add a `deploy` command to your `package.json` with the branch as `gh-pages` for project repository OR `master` for user or organization site.
 
+For Nuxt >= v2.13
+```js
+"scripts": {
+  "dev": "nuxt",
+  "build": "nuxt build",
+  "start": "nuxt start",
+  "generate": "nuxt export && nuxt build",
+  "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+},
+```
+For Nuxt <= v2.12
 ```js
 "scripts": {
   "dev": "nuxt",
