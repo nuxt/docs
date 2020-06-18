@@ -13,4 +13,4 @@ For Nuxt <= v2.12:
 
 > You can use this option to change default nuxt mode for your project using `nuxt.config.js`
 
-
+Use [target](/en/api/configuration-target.md) for Nuxt >= v2.13

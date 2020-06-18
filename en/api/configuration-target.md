@@ -14,3 +14,4 @@ For Nuxt >= v2.13:
 > You can use this option to change default nuxt target for your project using `nuxt.config.js`
 
 
+Use [mode](/en/api/configuration-mode.md) for Nuxt <= v2.12
