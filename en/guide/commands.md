@@ -7,11 +7,22 @@ description: Nuxt.js comes with a set of useful commands, both for development a
 
 ## List of Commands
 
+You can now run different commands depending on the [target](/api/configuration-target.md)
+
+`server`
+
 | Command         | Description                                                                              |
 |-----------------|------------------------------------------------------------------------------------------|
-| nuxt            | Launch a development server on localhost:3000 with hot-reloading.                        |
+| nuxt dev            | Launch a development server on localhost:3000 with hot-reloading.                        |
 | nuxt build      | Build your application with webpack and minify the JS & CSS (for production).            |
 | nuxt start      | Start the server in production mode (after running `nuxt build`).                        |
+
+`static`
+
+| Command         | Description                                                                              |
+|-----------------|------------------------------------------------------------------------------------------|
+| nuxt dev            | Launch a development server on localhost:3000 with hot-reloading.                        |
+| nuxt build      | Build your application with webpack and minify the JS & CSS (for production).            |
 | nuxt export     | Generate every route as a HTML file (used for static hosting with Nuxt >= v2.13). |
 | nuxt serve     | Serve your production application from dist/ directory (Nuxt >= v2.13). |
 | nuxt generate   | Build the application and generate every route as a HTML file (used for static hosting with Nuxt <= v2.12). |
