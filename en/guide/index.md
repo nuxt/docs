@@ -125,6 +125,14 @@ When your site is generated your html is generated with all it's content and on 
 
 With the new static module you can also preview your content changes, for example when coming from an API, by adding the query param `?query=true` to the end of your page. This means when your site is live in production you can make changes in your API and preview them live on your site with a simple query and then when ready you can rebuild your content with the `nuxt export` command or rebuild your whole site with the `nuxt build && nuxt export` command.
 
+Don't forget if you want to generate static sties to add `static` as the `target` in your nuxt.config file as the default value is `server`.
+
+```js
+export default {
+  target: 'static'
+}
+```
+
 
 <div class="Alert">
 
