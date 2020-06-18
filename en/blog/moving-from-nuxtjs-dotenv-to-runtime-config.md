@@ -281,5 +281,5 @@ export default {
 
 ## What to do next
 
-- To learn more about going full static checkout [this article](blog/going-full-static).
+- To learn more about going full static checkout [this article](/blog/going-full-static).
 - [Subscribe to the newsletter](#subscribe-to-newsletter) to not miss the upcoming articles and resources.
