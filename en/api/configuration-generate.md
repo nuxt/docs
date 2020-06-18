@@ -169,7 +169,9 @@ As of Nuxt v2.13 there is a crawler installed that will now crawl your link tags
 
 <div class="Alert Alert--orange">
 
-**Warning:** dynamic routes are ignored by the `generate` command when using Nuxt <= v2.12: [API Configuration generate](/api/configuration-generate#routes)
+**Warning:** If you using Nuxt >= v2.13 and have pages that have no links such as secret pages and you would like these to also be generated then you can use the `generate.routes` property.
+
+**Warning:** dynamic routes are ignored by the `generate` command when using Nuxt <= v2.12 
 
 </div>
 
