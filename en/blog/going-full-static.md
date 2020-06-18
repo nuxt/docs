@@ -160,5 +160,5 @@ You can now run different commands depending of the `target`:
 
 ### What to do next
 
-- To learn more about how to move from @nuxtjs/dotenv to runtime config check out [this article](blog/moving-from-nuxtjs-dotenv-to-runtime-config).
+- To learn more about how to move from @nuxtjs/dotenv to runtime config check out [this article](/blog/moving-from-nuxtjs-dotenv-to-runtime-config).
 - [Subscribe to the newsletter](#subscribe-to-newsletter) to not miss the upcoming articles and resources.
