@@ -87,9 +87,12 @@ Nuxt.js provides you with an `inject(key, value)` method so you can easily injec
 `plugins/hello.js`:
 
 ```js
-export default ({ app }, inject) => {
+export default (context, inject) => {
+  const hello = (msg) => console.log(`Hello ${msg}!`)
   // Inject $hello(msg) in Vue, context and store.
-  inject('hello', (msg) => console.log(`Hello ${msg}!`))
+  inject('hello', hello)
+  // For Nuxt <= 2.12, also add 👇
+  context.$hello = hello
 }
 ```
 
@@ -111,10 +114,8 @@ export default {
     this.$hello('mounted')
     // will console.log 'Hello mounted!'
   },
-  asyncData (context) {
-    context.$hello('asyncData')
-    // If using Nuxt <= 2.12, use 👇
-    context.app.$hello('asyncData')
+  asyncData ({ $hello ) {
+    $hello('asyncData')
   }
 }
 ```
