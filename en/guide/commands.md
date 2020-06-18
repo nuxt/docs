@@ -7,7 +7,7 @@ description: Nuxt.js comes with a set of useful commands, both for development a
 
 ## List of Commands
 
-You can now run different commands depending on the [target](/api/configuration-target.md)
+You can now run different commands depending on the [target](/api/configuration-target)
 
 `server`
 
