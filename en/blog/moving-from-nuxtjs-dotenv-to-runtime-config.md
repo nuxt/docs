@@ -62,7 +62,7 @@ export default {
 }
 ```
 
-###The new runtime config values are:
+### The new runtime config values are:
 
 - `publicRuntimeConfig` should hold all env variables that are public as these will be exposed on the frontend. This could include a reference to your public URL for example.
 - `privateRuntimeConfig` should hold all env variables that are private and that should not be exposed on the frontend. This could include a reference to your API secret tokens for example.
