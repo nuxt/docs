@@ -80,12 +80,10 @@ And we update our `package.json` scripts:
 "scripts": {
   "dev": "node server.js",
   "build": "nuxt build",
-  "start": "cross-env NODE_ENV=production node server.js"
+  "start": "NODE_ENV=production node server.js"
 }
 // ...
 ```
-
-Note: You'll need to run `npm install --save-dev cross-env` for the above example to work. If you're *not* developing on Windows you can leave cross-env out of your `start` script and set `NODE_ENV` directly.
 
 ## Using the store
 

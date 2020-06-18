@@ -71,19 +71,6 @@ and now we just need to set `DEPLOY_ENV='GH_PAGES'` to build the site for GitHub
 },
 ```
 
-For Windows user, you might want to install [cross-env](https://github.com/kentcdodds/cross-env) if you are not using `bash`
-
-```sh
-npm install cross-env --save-dev
-```
-
-then use it this way:
-
-```js
-  "build:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
-  "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate"
-```
-
 ## Command line deployment
 
 You can also use [push-dir package](https://github.com/L33T-KR3W/push-dir):
