@@ -413,7 +413,7 @@ export default function (context) {
   context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
-In universal mode, middlewares will be called server-side once (on the first request to the Nuxt app or when page refreshes) and client-side when navigating to further routes.  In SPA mode, middlewares will be called client-side on the first request and when navigating to further routes. 
+In universal mode, middlewares will be called server-side once (on the first request to the Nuxt app or when page refreshes) and client-side when navigating to further routes. While generating the pages statically the middlewares will be called once on build time instead of the server-side calls. In SPA mode, middlewares will be called client-side on the first request and when navigating to further routes.
 
 The middleware will be executed in series in this order:
 

@@ -1,13 +1,13 @@
 ---
-title: Now へデプロイするには？
-description: Now へデプロイするには？
+title: Vercel へデプロイするには？
+description: Vercel へデプロイするには？
 ---
 
 ![nuxt-now-builder](https://user-images.githubusercontent.com/904724/61308402-7a752d00-a7f0-11e9-9502-23731ccd00fd.png)
 
-## Now V2
+## Vercel
 
-[Now V2](https://zeit.co/now) を使ってデプロイするために、Nuxt.js チームとコントリビューターは公式の [@nuxtjs/now-builder](https://github.com/nuxt/now-builder) パッケージを作成しました。
+[Vercel](https://vercel.com) を使ってデプロイするために、Nuxt.js チームとコントリビューターは公式の [@nuxtjs/now-builder](https://github.com/nuxt/now-builder) パッケージを作成しました（'Now' は Vercel の以前の名前です）。
 
 必要なのは `now.json` をセットアップすることです:
 
@@ -25,6 +25,37 @@ description: Now へデプロイするには？
 ```
 
 詳細や例については https://github.com/nuxt/now-builder で見ることができます。
+
+### Nuxt PWA モジュールを持つ Service Worker
+
+Service Worker の 404 を回避するために、ルート設定に `sw` を必ず含めるようにしてください。
+
+```json
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "nuxt.config.js",
+      "use": "@nuxtjs/now-builder",
+      "config": {
+        "serverFiles": ["package.json"]
+      }
+    }
+  ],
+  "routes": [
+    { "src": "/_nuxt/.+", "headers": { "Cache-Control": "max-age=31557600" } },
+    {
+      "src": "/sw.js",
+      "dest": "/_nuxt/static/sw.js",
+      "headers": {
+        "cache-control": "public, max-age=43200, immutable",
+        "Service-Worker-Allowed": "/"
+      }
+    },
+    { "src": "/(.*)", "dest": "/" }
+  ]
+}
+```
 
 ## Now V1 (レガシー)
 

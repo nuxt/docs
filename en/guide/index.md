@@ -7,7 +7,7 @@ description: "Nuxt is a progressive framework based on Vue.js to create modern w
 
 ## What is NuxtJS?
 
-Nuxt is a framework designed to give you a strong architecture following official Vue guidelines. Incrementally adoptable, it can be used to create from static landing pages to complex enterprise ready web applications.
+Nuxt is a framework designed to give you a strong architecture following official Vue guidelines. Incrementally adoptable, it can be used to create everything from static landing pages to complex enterprise ready web applications.
 
 Versatile by nature, it supports different targets (server, serverless or static) and server side rendering is switchable.
 

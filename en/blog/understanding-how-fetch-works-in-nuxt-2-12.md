@@ -313,7 +313,7 @@ Error handling is performed at component level.
 
 > **Does this mean we cannot show users a custom error page like we did prior to Nuxt 2.12?**
 
-Yes we can, but only with `asyncData()` when it's about page-level component data. Simply use `this.$nuxt.error({ statusCode: 404, message: 'Data not found' })` to show a custom error page.
+Yes we can, but only with `asyncData()` when it's about page-level component data. When using `fetch`, we can utilize `this.$nuxt.error({ statusCode: 404, message: 'Data not found' })` to show a custom error page.
 
 ## Conclusion
 

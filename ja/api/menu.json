@@ -17,7 +17,14 @@
     "title": "ページ",
     "links": [
       { "name": "asyncData", "to": "/" },
-      { "name": "fetch", "to": "/pages-fetch" },
+      {
+        "name": "fetch",
+        "to": "/pages-fetch",
+        "contents": [
+          { "name": "Nuxt >= 2.12", "to": "#nuxt-gt-2-12" },
+          { "name": "Nuxt <= 2.11", "to": "#nuxt-lt-2-11" }
+        ]
+      },
       { "name": "head", "to": "/pages-head" },
       { "name": "key", "to": "/pages-key" },
       { "name": "layout", "to": "/pages-layout" },
