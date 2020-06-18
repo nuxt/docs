@@ -6,10 +6,10 @@ description: Change default nuxt target
 For Nuxt >= v2.13:
 
 - Type: `string`
-  - Default: `static`
+  - Default: `server`
   - Possible values:
-    - `'spa'`: No server-side rendering (only client-side navigation)
-    - `'static'`: Isomorphic application otherwise known as static sites (server-side rendering + client-side navigation)
+    - `'server'`: For server side rendering
+    - `'static'`: Isomorphic application otherwise known as static sites (server-side rendering at build time + client-side navigation)
 
 > You can use this option to change default nuxt target for your project using `nuxt.config.js`
 
