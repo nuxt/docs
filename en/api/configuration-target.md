@@ -13,4 +13,4 @@ Deployment targets for Nuxt >= v2.13:
 
 > You can use this option to change default nuxt target for your project using `nuxt.config.js`
 
-To learn more about the new static target check out our article(/blog/going-full-static.md)
+To learn more about the new static target check out our [article](/blog/going-full-static).
