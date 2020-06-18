@@ -21,6 +21,6 @@ Press the _"New site from Git"_ button on the Netlify dashboard. Authenticate wi
 
 > Optionally, you can add additional ENV variables via the _"Advanced"_ button. These can be helpful for swapping in alternative API credentials and so on. Netlify also provides a [default ENV variables](https://www.netlify.com/docs/build-settings/#build-environment-variables) which can be read by your Nuxt.js application at build time.
 
-Click _"Deploy site"_ to immediately trigger a deploy. Your Netlify site will be assigned a random URL and deployed using the `nuxt generate` command.
+Click _"Deploy site"_ to immediately trigger a deploy. Your Netlify site will be assigned a random URL and deployed using the `nuxt build && nuxt export`(v2.13) or `nuxt generate`(v2.12) command.
 
 Voilà! Your Nuxt.js application is now hosted on Netlify!
