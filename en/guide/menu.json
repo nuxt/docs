@@ -107,6 +107,9 @@
         ]
       },
       {
+        "to": "/runtime-config", "name": "Runtime Config"
+      },
+      {
         "to": "/typescript", "name": "TypeScript Support"
       },
       {

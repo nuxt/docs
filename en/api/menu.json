@@ -193,6 +193,20 @@
           { "name": "trailingSlash", "to": "#trailingslash" }
         ]
       },
+      {
+        "name": "runtimeConfig",
+         "to": "/configuration-runtime-config",
+         "contents": [
+          {
+            "name": "publicRuntimeConfig",
+            "to": "#public-runtime-config"
+          },
+          {
+            "name": "privateRuntimeConfig",
+            "to": "#private-runtime-config"
+          }
+        ]
+      },
       { "name": "server", "to": "/configuration-server" },
       { "name": "serverMiddleware", "to": "/configuration-servermiddleware" },
       { "name": "srcDir", "to": "/configuration-srcdir" },
