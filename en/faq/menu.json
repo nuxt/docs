@@ -39,6 +39,7 @@
       { "name": "Deploy on Netlify", "to": "/netlify-deployment" },
       { "name": "Deploy on Now", "to": "/now-deployment" },
       { "name": "Deploy on Surge", "to": "/surge-deployment" },
+      { "name": "Deploy using PM2 cluster mode ", "to": "/deployment-pm2" },
       { "name": "Using nginx as a proxy", "to": "/nginx-proxy" }
     ]
   }

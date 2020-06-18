@@ -4,11 +4,11 @@ description: クエリ文字列を監視し、変更時にコンポーネント�
   ...）
 ---
 
-> クエリ文字列を監視し、変更時にコンポーネントメソッドを実行します（asyncData, fetch, validate, layout, ...）
+> クエリ文字列を監視し、変更時にコンポーネントメソッドを実行します（asyncData, fetch(context), validate, layout, ...）
 
 - **型:** `Boolean`、`Array` または `Function` (デフォルト: `[]`)
 
-`watchQuery` キーを設定し、監視するクエリ文字列を設定します。定義した文字列に変更が生じると、全てのコンポーネントメソッド（asyncData, fetch, validate, layout, ...）が呼ばれます。パフォーマンス向上のため、監視はデフォルトで無効になっています。
+`watchQuery` キーを設定し、監視するクエリ文字列を設定します。定義した文字列に変更が生じると、全てのコンポーネントメソッド（asyncData, fetch(context), validate, layout, ...）が呼ばれます。パフォーマンス向上のため、監視はデフォルトで無効になっています。
 
 すべてのクエリ文字列に対して監視を設定したい場合は、`watchQuery：true` を設定してください。
 
@@ -28,3 +28,8 @@ export default {
   }
 }
 ```
+<div class="Alert Alert--orange">
+
+**警告**: 2.12で導入された新しい `fetch` フックは `watchQuery` の影響を受けません。詳しくは、 [クエリ文字列の変化のリスニング](/api/pages-fetch#クエリ文字列の変化のリスニング)を参照してください。
+
+</div>
