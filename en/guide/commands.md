@@ -32,6 +32,16 @@ Hook                 | Objective
 
 You should put these commands in the `package.json`:
 
+Nuxt >= v2.13:
+```json
+"scripts": {
+  "dev": "nuxt",
+  "build": "nuxt build",
+  "start": "nuxt start",
+  "generate": "nuxt build && nuxt export"
+}
+```
+Nuxt <= v2.12:
 ```json
 "scripts": {
   "dev": "nuxt",
