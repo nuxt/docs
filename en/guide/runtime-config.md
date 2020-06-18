@@ -1,12 +1,15 @@
 ---
-title: RuntimeConfig
-description: RuntimeConfig allows passing dynamic config and environment variables to the nuxt context
+title: Runtime Config
+description: Runtime config allows passing dynamic config and environment variables to the nuxt context
 ---
 
-Nuxt.js supports [env](/api/configuration-env) config to provide configuration via `process.env`. This is done by webpack's [DefinePlugin](https://webpack.js.org/plugins/define-plugin/). This approach had two downsides:
+Nuxt.js supports [env](/api/configuration-env) config to provide configuration via `process.env`. This is done by webpack's [DefinePlugin](https://webpack.js.org/plugins/define-plugin/).
 
+This approach had two downsides:
 - Values are read during build time and persisted into webpack bundle. So for a change to `process.env` we need to rebuild which is against [12factor](https://12factor.net/) app design
 - It can easily mislead to expose secret keys to client-side bundle
+
+You can learn more about why we are [moving from @nuxtjs/dotenv to runtime config](/blog/moving-from-nuxtjs-dotenv-to-runtime-config.md).
 
 ### Runtime Config (2.13+)
 
@@ -21,7 +24,8 @@ export default {
 }
 ```
 
-`publicRuntimeConfig` is avilable using `$config` in both server and client. `privateRuntimeConfig` is only avilable on server using same `$config` (it overrides `publicRuntimeConfig`)
+- `publicRuntimeConfig` is available using `$config` in both server and client.
+- `privateRuntimeConfig` is **only avilable on server** using same `$config` (it overrides `publicRuntimeConfig`)
 
 ###  Usage
 
@@ -40,12 +44,19 @@ export default {
 
 ### `.env` support
 
-If you have `.env` file in project root directory, it will be automatically loaded using [dotenv](https://github.com/motdotla/dotenv) and is accessible via `process.env`. `process.env` is updated so we can use it right inside `nuxt.config` for runtime config. Values are interpolated and expanded with an improved version of [dotenv-expand](https://github.com/motdotla/dotenv-expand). `.env` file is also watched to reload during `nuxt dev`. You can customize path  to
-by using cli `--dotenv <file>` or disabled by `--dotenv false`.
+If you have `.env` file in project root directory, it will be automatically loaded using [dotenv](https://github.com/motdotla/dotenv) and is accessible via `process.env`.
+
+`process.env` is updated so we can use it right inside `nuxt.config` for runtime config. Values are interpolated and expanded with an improved version of [dotenv-expand](https://github.com/motdotla/dotenv-expand).
+
+`.env` file is also watched to reload during `nuxt dev`. You can customize the env path by using `--dotenv <file>` or disabling with `--dotenv false`.
 
 ### Expand/Interpolation Support
 
-Supported both for dotenv and runtime config. Expand for runtime config happens only if there is already a key (see `API_SECRET` example). Interpolation allows nesting env vars (see `baseURL` example). It is also possible to use a function for `publicRuntimeConfig` and `privateRuntimeConfig` but not recommended.
+> Supported both for dotenv and runtime config.
+
+Expand for runtime config happens only if there is already a key (see `API_SECRET` example).
+
+Interpolation allows easy nesting env vars (see `baseURL` example).
 
 `.env`:
 
@@ -64,7 +75,9 @@ export default {
   },
   privateRuntimeConfig: {
     baseURL: '${PUBLIC_URL}${BASE_URL}',
-    API_SECRET: ''
+    API_SECRET: '${API_SECRET}' // similar to using process.env.API_SECRET
   },
 }
 ```
+
+Note, it is possible to use a function for `publicRuntimeConfig` and `privateRuntimeConfig` but not recommended.
