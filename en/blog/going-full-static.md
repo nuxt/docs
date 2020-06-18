@@ -112,8 +112,6 @@ To disable the crawler, set `generate.crawler: false` in your `nuxt.config.js`
 
 By separating `nuxt build` and `nuxt export`, we are opening a new range of improvement: pre-render your pages only if you content has changed, this means: no Wepack build → faster redeployments.
 
-<video src="/blog/going-full-static/" autoplay loop playsinline controls></video>
-
 ## New command: `nuxt serve`
 
 Once you statically generated your Nuxt app into `dist/`, use `nuxt serve` to start a production HTTP server and serve your static app, supporting [SPA Fallback](/guide/routing#spa-fallback).
@@ -136,8 +134,6 @@ export default async function ({ query, enablePreview }) {
 It will automatically refresh the page data (calling `nuxtServerInit`, `asyncData` and `fetch`).
 
 When the preview mode is activated, `asyncData` and `fetch` original methods will be called.
-
-<video src="/blog/going-full-static/" autoplay loop playsinline controls></video>
 
 ## Commands
 
