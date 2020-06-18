@@ -131,7 +131,7 @@ export default {
   target: 'static'
 }
 ```
-[To learn more about the new static target checkout our article](/blog/going-full-static.md)
+To learn more about the new static target checkout our [article](/blog/going-full-static)
 
 <div class="Alert">
 
