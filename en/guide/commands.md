@@ -12,7 +12,8 @@ description: Nuxt.js comes with a set of useful commands, both for development a
 | nuxt            | Launch a development server on localhost:3000 with hot-reloading.                        |
 | nuxt build      | Build your application with webpack and minify the JS & CSS (for production).            |
 | nuxt start      | Start the server in production mode (after running `nuxt build`).                        |
-| nuxt generate   | Build the application and generate every route as a HTML file (used for static hosting). |
+| nuxt build && nuxt export     | Build the application and generate every route as a HTML file (used for static hosting with Nuxt <= v2.13). |
+| nuxt generate   | Build the application and generate every route as a HTML file (used for static hosting with Nuxt <= v2.12). |
 
 #### Arguments
 
@@ -116,6 +117,15 @@ For Nuxt >= 2.13:
     "generate": "nuxt build && nuxt export"
   } 
 ```
+In your `nuxt.config` file you need to add the `target` property with the value of `static`
+`nuxt.config.js`
+```js
+export default {
+  target: 'static'
+}
+```
+
+
 For Nuxt <= 2.12:
 ```json
 "scripts": {
@@ -127,7 +137,7 @@ For Nuxt <= 2.12:
 npm run generate
 ```
 
-It will create a `dist` folder with everything inside ready to be deployed on a static hosting site.
+Nuxt.js will create a `dist` folder with everything inside ready to be deployed on a static hosting service.
 
 To return a non-zero status code when a page error is encountered and let the CI/CD fail the deployment or build, you can use the `--fail-on-error` argument.
 
