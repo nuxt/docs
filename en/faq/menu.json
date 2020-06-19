@@ -35,6 +35,7 @@
       { "name": "Deploy on Dokku", "to": "/dokku-deployment" },
       { "name": "Deploy on GitHub", "to": "/github-pages" },
       { "name": "Deploy on Google App Engine", "to": "/appengine-deployment" },
+      { "name": "Deploy on Google Cloud Run", "to": "/deployment-cloud-run" },
       { "name": "Deploy on Heroku", "to": "/heroku-deployment" },
       { "name": "Deploy on Netlify", "to": "/netlify-deployment" },
       { "name": "Deploy on Now", "to": "/now-deployment" },
