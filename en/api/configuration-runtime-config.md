@@ -10,10 +10,10 @@ For more information of usage, please see [runtime config guide](/guide/runtime-
 
 - Type: `Object`
 
-Value of this object is accessible from both client and server using `$config`.
+Value of this object is **accessible from both client and server** using `$config`.
 
 ## `privateRuntimeConfig`
 
 - Type: `Object`
 
-Value of this object is accessible only from client using `$config`. Overrides `publicRuntimeConfig` for server.
+Value of this object is accessible from **server only** using `$config`. Overrides `publicRuntimeConfig` for server.
