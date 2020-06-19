@@ -132,8 +132,8 @@ If your env variables in your nuxt.config look like this:
 ```js
 export default {
 	env:  {
-		BASE_URL=https://nuxtjs.org
-		API_SECRET=1234
+		BASE_URL: 'https://nuxtjs.org',
+		API_SECRET: '1234'
 	}
 }
 ```
