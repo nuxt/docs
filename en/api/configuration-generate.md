@@ -29,7 +29,7 @@ The generation of routes are concurrent, `generate.concurrency` specifies the am
  - Type: `boolean`
  - Default: true
 
-As of Nuxt <= v2.13 Nuxt.js comes with a crawler installed that will crawl your relative links and generate your dynamic links based on these links. If you want to disable this feature you can set the value to `false`
+As of Nuxt >= v2.13 Nuxt.js comes with a crawler installed that will crawl your relative links and generate your dynamic links based on these links. If you want to disable this feature you can set the value to `false`
 
 ```js
 export default {
