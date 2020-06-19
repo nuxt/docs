@@ -9,14 +9,14 @@ description: Configure the generation of your universal web application to a sta
 
 > Configure the generation of your universal web application to a static web application.
 
-When launching `nuxt generate` or calling `nuxt.generate()`, Nuxt.js will use the configuration defined in the `generate` property.
+When launching `nuxt export` or `nuxt generate` or calling `nuxt.generate()`, Nuxt.js will use the configuration defined in the `generate` property.
 
 ## dir
 
 - Type: `String`
 - Default: `'dist'`
 
-Directory name created by `nuxt generate`.
+Directory name created by `nuxt export` or nuxt `generate`.
 
 ## fallback
 
@@ -66,7 +66,9 @@ You can change the default configuration of [html-minifier](https://github.com/k
 
 - Type: `Array`
 
-[Dynamic routes](/guide/routing#dynamic-routes) are ignored by the `generate` command.
+As of Nuxt v2.13 there is a crawler installed that will now crawl your link tags and generate your routes when using the command `nuxt export` based on those links. 
+
+[Dynamic routes](/guide/routing#dynamic-routes) are ignored by the `generate` command when using Nuxt <= v2.12.
 
 Example:
 
@@ -201,7 +203,7 @@ async asyncData ({ params, error, payload }) {
 - Type: `Boolean`
 - Default: `true`
 
-By default, running `nuxt generate` will create a directory for each route & serve an `index.html` file.
+By default, running `nuxt export` or `nuxt generate` will create a directory for each route & serve an `index.html` file.
 
 Example:
 

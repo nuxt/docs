@@ -149,4 +149,4 @@ Vue.use(VueNotifications)
 
 In case you need to require some libraries only for the server, you can use the `process.server` variable set to `true` when webpack is creating the `server.bundle.js` file.
 
-Also, if you need to know if you are inside a generated app (via `nuxt generate`), you can check `process.static`, set to `true` during generation and after. To know the state when a page is being server-rendered by `nuxt generate` before being saved, you can use `process.static && process.server`.
+Also, if you need to know if you are inside a generated app (via `nuxt export` or `nuxt generate`), you can check `process.static`, set to `true` during generation and after. To know the state when a page is being server-rendered by `nuxt build && nuxt export` or `nuxt generate` before being saved, you can use `process.static && process.server`.
