@@ -9,7 +9,7 @@ This approach had two downsides:
 - Values are read during build time and persisted into webpack bundle. So for a change to `process.env` we need to rebuild which is against [12factor](https://12factor.net/) app design
 - It can easily mislead to expose secret keys to client-side bundle
 
-You can learn more about why we are [moving from @nuxtjs/dotenv to runtime config](/blog/moving-from-nuxtjs-dotenv-to-runtime-config.md).
+You can learn more about why we are [moving from @nuxtjs/dotenv to runtime config](/blog/moving-from-nuxtjs-dotenv-to-runtime-config).
 
 ### Runtime Config (2.13+)
 
