@@ -22,8 +22,4 @@ export default {
 }
 </script>
 ```
-<<<<<<< HEAD
 [여기](/examples/custom-page-loading)에서 이 프로퍼티에 대한 공식 예제를 보실 수 있습니다.
-=======
-[여기](/examples/custom-page-loading)에서 이 프로퍼티에 대한 공식 예제를 보실 수 있습니다.
->>>>>>> ko: update /api/pages-loading.md
