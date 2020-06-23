@@ -1,7 +1,7 @@
 ---
 title: "Improve Your Developer Experience With Nuxt Components"
 description: Explore how you can imports and registers Vue components automatically using @nuxt/components module.
-imgUrl: ""
+imgUrl: "blog/improve-developer-experience-nuxt-components/main.png"
 date: 2020-06-22
 authors:
   - name: Krutie Patel
