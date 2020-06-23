@@ -39,7 +39,7 @@ Here is how Debbie O’Brien explains how it works,
   - [Pattern option](#pattern-option)
 - [Exclusion paths](#exclusion-paths)
   - [Ignore option](#ignore-option)
-  - [.nuxtignore, ignore property & ignore option](#nuxtignore-ignore-property-ignore-option)
+  - [.nuxtignore, ignore property & ignore option](#nuxtignore-ignore-property--ignore-option)
 - [Lazy loading your components](#Lazy-loading-your-components)
   - [Try it yourself - Lazy-loading](#try-it-yourself---lazy-loading)
 - [Third-party component library](#third-party-component-library)
