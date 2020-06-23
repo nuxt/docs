@@ -33,18 +33,17 @@ Here is how Debbie O’Brien explains how it works,
 - [Cheatsheet](#cheatsheet)
 - [Directory path as a String](#directory-path-as-a-string)
 - [Directory path as an Object](#directory-path-as-an-object)
-  - [Try it yourself - Directory Paths](#try-it-yourself-directory-paths)
+  - [Try it yourself - Directory Paths](#try-it-yourself---directory-paths)
 - [Inclusion paths](#inclusion-paths)
   - [Extensions option](#extensions-option)
-    - [Try it yourself - Extensions](#try-it-yourself-extensions)
   - [Pattern option](#pattern-option)
 - [Exclusion paths](#exclusion-paths)
   - [Ignore option](#ignore-option)
   - [.nuxtignore, ignore property & ignore option](#nuxtignore-ignore-property-ignore-option)
 - [Lazy loading your components](#Lazy-loading-your-components)
-  - [Try it yourself - Lazy-loading](#try-it-yourself-lazy-loading)
+  - [Try it yourself - Lazy-loading](#try-it-yourself---lazy-loading)
 - [Third-party component library](#third-party-component-library)
-  - [Try it yourself - Third-party library](#try-it-yourself-third-party-library)
+  - [Try it yourself - Third-party library](#try-it-yourself---third-party-library)
 - [Conclusion](#conclusion)
 
 In this article, we'll learn about `@nuxt/components` by example. I have setup a demo with two sets of UI components, `ui-1` and `ui-2`.
@@ -106,7 +105,7 @@ Minimal configuration above is enough to get you started. However, like any othe
 
 ![One-page summary of @nuxt/components module](https://cdn.krutiepatel.com/2020-06/nuxt_components_Module-Cheatsheet.png)
 
-> ![Download printable PDF here](https://cdn.krutiepatel.com/2020-06/nuxt_components_Module-Cheatsheet.pdf)
+> [Download printable PDF here](https://cdn.krutiepatel.com/2020-06/nuxt_components_Module-Cheatsheet.pdf)
 
 Using module options, you can select particular directories with specific file-extensions from the `~/components` directory.
 
