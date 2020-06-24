@@ -76,26 +76,10 @@ From Nuxt v2.13 onward, this module **will be available by default** when you cr
 // nuxt.config.js
 export default {
   components: true,
-};
+}
 ```
 
-In case your project is using Nuxt version between v2.10 - v2.12, you'll need to,
-
-1. manually install the module (`npm install @nuxt/components --save-dev`),
-2. add `@nuxt/components` to `buildModules` and finally,
-3. activate it using `components: true` in `nuxt.config.js` .
-
-```js
-// For nuxt v2.10 - v2.12
-// nuxt.config.js
-export default {
-  buildModules: [
-    // Remove when upgrading to nuxt 2.13+
-    "@nuxt/components",
-  ],
-  components: true,
-};
-```
+In case your project is using Nuxt version below v2.13**we recommend you to upgrade your Nuxt version since there is no breaking between these versions.
 
 💡 **If `components: true` is set, `~/components` directory is scanned by default.**
 
