@@ -22,13 +22,13 @@ The Nuxt team has introduced **[@nuxt/components](https://www.npmjs.com/package/
 
 In a nutshell, this module automatically scans, imports and registers Vue components found in the **`~/components`** directory, so that we don't have to write import statements when we use them in either pages, layouts or even within components.
 
-Here is how Debbie O’Brien explains how it works,
+Here is how [Debbie O’Brien](https://twitter.com/debs_obrien) explains how it works,
 
 > _This module parses your template and automatically includes the component in the file where you are using it such as a page, layout or even a component. Because Nuxt.js uses automatic code splitting to split your pages by default this module works perfect as it will only contain the components that are used on that page. Also, if you use a component in more than 2 pages, Nuxt.js will automatically create a shared chunk for them thanks to the magic of WebPack._
 
 ## Table of Contents
 
-- [Introduction](#Introduction)
+- [Introduction](#introduction)
 - [Module Setup](#module-setup)
 - [Cheatsheet](#cheatsheet)
 - [Directory path as a String](#directory-path-as-a-string)
@@ -81,7 +81,7 @@ export default {
 
 In case your project is using Nuxt version between v2.10 - v2.12, you'll need to,
 
-1. manually install the module,
+1. manually install the module (`npm install @nuxt/components --save-dev`),
 2. add `@nuxt/components` to `buildModules` and finally,
 3. activate it using `components: true` in `nuxt.config.js` .
 
@@ -113,7 +113,7 @@ To accept custom directory options, `components:` accepts **an array of director
 
 Let’s see both formats in detail.
 
-# Directory path as a String
+## Directory path as a String
 
 **Directory path as a string** is a simplified version to indicate which directory to scan, watch and register.
 
@@ -127,7 +127,7 @@ export default {
 };
 ```
 
-# Directory path as an Object
+## Directory path as an Object
 
 Directory path as an object gets bit more interesting! **When path is given as an object, it becomes a required.**
 
@@ -166,7 +166,7 @@ It’s important to note that, the scope of these options is limited to the `pat
 <aex-card> </aex-card>
 ```
 
-## Try it yourself - Directory Paths
+### Try it yourself - Directory Paths
 
 In our sample project:
 
@@ -196,14 +196,14 @@ This is the scenario where you'll need to import your components in the script t
 
 Fortunately, this module allow us to specify directory paths or file extensions or the combination of both to selectively include or exclude files from being auto-imported. Keep reading to see **how.**
 
-# Inclusion paths
+## Inclusion paths
 
 There are couple of ways we can selectively include component files this using module.
 
 1. `extensions` option
 2. `patterns` option
 
-## Extensions option
+### Extensions option
 
 `extensions` option lets you indicate which file extensions - from the given `path` - should be scanned and registered. `extensions` option accepts an array of **multiple** file extensions in `String` format.
 
@@ -233,7 +233,7 @@ In our sample project,
 
 1. Examine the source-code for `MagicButton` at `/components/ui-2/MagicButton/` and its configuration in `nuxt.config.js`.
 
-`extensions` option is best for including selected files at a given `path`. However, there are always advance use-cases when we need finer control over selecting components - from within sub-directories even!
+`extensions` option is best for including selected files at a given `path`. However, there are always advanced use-cases when we need finer control over selecting components - from within sub-directories even!
 
 For those edge-cases, we can leverage `pattern` and `ignore` options to indicate path patterns for inclusion and exclusion respectively.
 
@@ -249,7 +249,7 @@ For those edge-cases, we can leverage `pattern` and `ignore` options to indicate
 
 Continue reading further to see more examples of these two options and how they work.
 
-## Pattern option
+### Pattern option
 
 `pattern` option lets you define which type of components - from the given `path` - should be scanned and registered. Unlike `extensions`, `pattern` is defined as a **single** `String` and it must follow [glob pattern style](https://github.com/isaacs/node-glob#glob-primer).
 
@@ -277,7 +277,7 @@ export default {
    ** Build configuration
    */
   build: {
-    additionalExtensions: ["jsx"],
+    additionalExtensions: ['jsx'],
   },
 };
 ```
@@ -291,7 +291,7 @@ If required, you can manually specify extensions to completely customise the pat
 ```js
 // Multiple extensions
 /* Only vue and jsx files will be scanned at given path */
-pattern:`**/*.{vue,jsx}`,
+pattern: '**/*.{vue,jsx}',
 ```
 
 Or for single file,
@@ -299,14 +299,14 @@ Or for single file,
 ```js
 // Single extension
 /* Only vue files will be scanned at given path */
-pattern:`**/*.vue`,
+pattern: '**/*.vue',
 ```
 
-# Exclusion paths
+## Exclusion paths
 
 We just saw how inclusion patterns work. `ignore` option on the other hand that helps us exclude components from scanning.
 
-## Ignore option
+### Ignore option
 
 `ignore` option does exactly opposite of what `pattern` does **and instead of just one string, it accepts an array of strings!** These strings must also follow [glob pattern style](https://github.com/isaacs/node-glob#glob-primer).
 
@@ -335,7 +335,7 @@ Ignore option excludes components with specified locations and extensions from s
 }
 ```
 
-## .nuxtignore, ignore property & ignore option:
+### .nuxtignore, ignore property & ignore option:
 
 It's important we highlight two similar features of Nuxt that ignore files just like our `ignore` option.
 
@@ -364,7 +364,7 @@ Now, let’s say all of your components are automatically imported into the proj
 
 This brings us to the next feature of this module that is worth highlighting, **Lazy Loading.**
 
-# Lazy loading your components
+## Lazy loading your components
 
 Components that aren't required immediately upon initial render - such as components below the fold, sidebar, modals or any other components that are rendered conditionally with `v-if` or `v-else` - qualifies for lazy-loading (aka dynamic import).
 
@@ -382,7 +382,7 @@ Lazy loading your components is super easy with this module. You can simply add 
 
 And that’s pretty much it, you have got your component dynamically imported, on-demand!
 
-## Try it yourself - Lazy-loading
+### Try it yourself - Lazy-loading
 
 Lazy loading is already implemented at `/pages/lazy-loading-example.vue`
 
@@ -395,7 +395,7 @@ See `List.js, ListItem.js` and `ListItemIcon.js` in the screenshot below.
 
 ![Lazy loading with nuxt/components](https://cdn.krutiepatel.com/2020-06/lazy-loading-with-nuxt-components.png)
 
-# Third-party component library
+## Third-party component library
 
 Third-party components libraries can also benefit from `@nuxt/components`.
 
@@ -429,7 +429,7 @@ buildModules: [
 ],
 ```
 
-## Try it yourself - Third-party library
+### Try it yourself - Third-party library
 
 In our sample project, I have implemented `Kru-Components` at `pages/third-party-example.vue`. Make sure to setup Kru-Components locally and then `npm link` it to our sample project.
 
@@ -437,7 +437,7 @@ In our sample project, I have implemented `Kru-Components` at `pages/third-party
 
 For more concrete example, I'd recommend you keep an eye on [Chakra UI](https://github.com/chakra-ui/chakra-ui-vue) for Vue as they're [working towards making the library compatible](https://twitter.com/codebender828/status/1265702818888876033) with `@nuxt/components`.
 
-# Conclusion
+## Conclusion
 
 If you've made it this far, you can see how this module presents several opportunities to fine-tune how we auto-import components and improve overall Nuxt Developer Experience. Here's the brief summary of what we learned in this article.
 
