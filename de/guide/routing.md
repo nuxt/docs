@@ -102,11 +102,18 @@ router: {
 
 As you can see the route named `users-id` has the path `:id?` which makes it optional, if you want to make it required, create an `index.vue` file in the `users/_id` directory.
 
-<div class="Alert Alert--orange">
+<div class="Alert Alert-blue">
 
-<b>Warning:</b> dynamic routes are ignored by the `generate` command: [API Configuration generate](/api/configuration-generate#routes)
+As of Nuxt >= v2.13 there is a crawler installed that will now crawl your link tags and generate your routes when using the command `nuxt build && nuxt export` based on those links. 
 
 </div>
+
+<div class="Alert Alert--orange">
+
+**Warning:** dynamic routes are ignored by the `generate` command when using Nuxt <= v2.12: [API Configuration generate](/api/configuration-generate#routes)
+
+</div>
+
 
 ### Validate Route Params
 
@@ -254,11 +261,11 @@ Surge [can handle](https://surge.sh/help/adding-a-custom-404-not-found-page) bot
 
 #### Implementation for GitHub Pages and Netlify
 
-GitHub Pages and Netlify recognize the `404.html` file automatically, so setting `generate.fallback` to `true` is all we have to do!
+GitHub Pages and Netlify recognize the `404.html` file automatically, so setting `generate.fallback` to `'404.html'` is all we have to do!
 
 #### Implementation for Firebase Hosting
 
-To use on Firebase Hosting, configure `generate.fallback` to `true` and use the following config ([more info](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
+To use on Firebase Hosting, configure `generate.fallback` to `'404.html'` and use the following config ([more info](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites)):
 
 ``` json
 {

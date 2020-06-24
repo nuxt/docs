@@ -102,9 +102,19 @@ router: {
 
 As you can see the route named `users-id` has the path `:id?` which makes it optional, if you want to make it required, create an `index.vue` file in the `users/_id` directory instead.
 
+<div class="Alert Alert-blue">
+
+As of Nuxt >= v2.13 there is a crawler installed that will now crawl your link tags and generate your routes when using the command `nuxt build && nuxt export` based on those links. 
+
+</div>
+
 <div class="Alert Alert--orange">
 
-**Warning:** dynamic routes are ignored by the `generate` command: [API Configuration generate](/api/configuration-generate#routes)
+**Warning:** If you using Nuxt >= v2.13 and have pages that have no links such as secret pages and you would like these to also be generated then you can use the `generate.routes` property.
+
+**Warning:** dynamic routes are ignored by the `generate` command when using Nuxt <= v2.12 
+
+[API Configuration generate](/api/configuration-generate#routes)
 
 </div>
 

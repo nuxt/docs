@@ -25,7 +25,7 @@ To see an example, take a look at the [layouts example](/examples/layouts).
   - This prop will be set to `<router-view/>`, useful to make transitions inside a dynamic page and different route.
   - Default: `$route.path`
 
-There are 3 ways to handle internal `key` prop of `<router-view/>`.
+There are 2 ways to handle internal `key` prop of `<router-view/>`.
 
 1. `nuxtChildKey` prop
 

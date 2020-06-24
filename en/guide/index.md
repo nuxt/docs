@@ -7,7 +7,7 @@ description: "Nuxt is a progressive framework based on Vue.js to create modern w
 
 ## What is NuxtJS?
 
-Nuxt is a framework designed to give you a strong architecture following official Vue guidelines. Incrementally adoptable, it can be used to create from static landing pages to complex enterprise ready web applications.
+Nuxt is a framework designed to give you a strong architecture following official Vue guidelines. Incrementally adoptable, it can be used to create everything from static landing pages to complex enterprise ready web applications.
 
 Versatile by nature, it supports different targets (server, serverless or static) and server side rendering is switchable.
 
@@ -70,7 +70,7 @@ If you already have a server, you can plug in Nuxt.js by using it as a middlewar
 
 ## Static Generated (Pre Rendering)
 
-The big innovation of Nuxt.js comes with the `nuxt generate` command.
+The big innovation of Nuxt.js comes with the  `nuxt build && nuxt export` command for Nuxt >= v2.13 or `nuxt generate` command for Nuxt <= v2.12.
 
 When building your application, it will generate the HTML for every one of your routes and store it in a file.
 
@@ -110,12 +110,28 @@ We don't want to manually generate the application every time we update the [doc
 
 1. Clones the [nuxtjs.org repository](https://github.com/nuxt/nuxtjs.org)
 2. Installs the dependencies via `npm install`
-3. Runs `npm run generate`
+3. Runs `nuxt build && nuxt export`(>= v2.13) or `nuxt generate`(<= v2.12)
 4. Serves the `dist` directory
 
 We now have an automated **Static Generated Web Application** :)
 
-We can go further by thinking of an e-commerce web application made with `nuxt generate` and hosted on a CDN. Every time a product is out of stock or back in stock, we regenerate the web app. But if the user navigates through the web app in the meantime, it will be up to date thanks to the API calls made to the e-commerce API. No need to have multiple instances of a server + a cache any more!
+The new full static module which is available since v2.13 generates your html and static assets at build time which means everything is already generated and therefore not only is it great for SEO but it can also be hosted for free on any of the static hosting providers. 
+
+Nuxt v2.13 also comes with a crawler installed which will crawl your link tags and generate your dynamic routes based on these links which means there is no need to manually generate your dynamic links anymore.
+
+The static target works by saving the calls to your API in payload.js files in a static folder. These payloads are then cached for better performance and offline support and as your API is not called on client side navigation any more (when called using asyncData and fetch), it also means you do not have to expose your API to the public. 
+
+When your site is generated your html is generated with all its content and on client side navigation these pages are reconstructed using the payload files for your API data. By separating the code from the content you can easily re-generate your content without the need to re-build your whole site. That means once your site is built and you only want to change your content you can simply call `nuxt export` which will re-generate your content only, and as the content doesn't need to go through webpack it means content regeneration is lightening fast. 
+
+If you want to generate static sites, using Nuxt >= v2.13, you will need to add `static` as the `target` in your nuxt.config file. The default value for `target` is `server`.
+
+`nuxt.config.js`
+```js
+export default {
+  target: 'static'
+}
+```
+To learn more about the new static target checkout our [article](/blog/going-full-static)
 
 <div class="Alert">
 
