@@ -121,9 +121,9 @@ Nuxt v2.13 also comes with a crawler installed which will crawl your link tags a
 
 The static target works by saving the calls to your API in payload.js files in a static folder. These payloads are then cached for better performance and offline support and as your API is not called on client side navigation any more (when called using asyncData and fetch), it also means you do not have to expose your API to the public. 
 
-When your site is generated your html is generated with all it's content and on client side navigation these pages are reconstructed using the payload files for your API data. By separating the code from the content you can easily re-generate your content without the need to re-build your whole site. That means once your site is built and you only want to change your content you can simply call `nuxt export` which will re-generate your content only, and as the content doesn't need to go through webpack it means content regeneration is lightening fast. 
+When your site is generated your html is generated with all its content and on client side navigation these pages are reconstructed using the payload files for your API data. By separating the code from the content you can easily re-generate your content without the need to re-build your whole site. That means once your site is built and you only want to change your content you can simply call `nuxt export` which will re-generate your content only, and as the content doesn't need to go through webpack it means content regeneration is lightening fast. 
 
-If you want to generate static sties, using Nuxt >= v2.13, you will need to add `static` as the `target` in your nuxt.config file. The default value for `target` is `server`.
+If you want to generate static sites, using Nuxt >= v2.13, you will need to add `static` as the `target` in your nuxt.config file. The default value for `target` is `server`.
 
 `nuxt.config.js`
 ```js
