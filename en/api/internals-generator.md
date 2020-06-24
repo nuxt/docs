@@ -11,7 +11,7 @@ Starting with Nuxt `2.13+`, you have access to `nuxt export` for full static gen
 
 Hook                    | Arguments                   | When
 ------------------------|-----------------------------|-----------------------------------------------
-`export:before`         | (generator)                 | Hook on before exporting, you have acces to `generator.setPayload` for adding a payload for every route that will be generated.
+`export:before`         | (generator)                 | Hook on before exporting, you have access to `generator.setPayload` for adding a payload for every route that will be generated.
 `export:distRemoved`    | (generator)                 | Hook on  destination folder  cleaned
 `export:distCopied`     | (generator)                 | Hook on copy static and built files
 `export:route`          | ({ route, setPayload })     | Hook before generating the page, useful for dynamic payload, see [#7422](https://github.com/nuxt/nuxt.js/pull/7422)
