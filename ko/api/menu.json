@@ -3,7 +3,7 @@
     "title": "에센셜",
     "links": [
       {
-        "name": "컨택스트",
+        "name": "context",
         "to": "/context",
         "contents": [
           { "name": "범용 키", "to": "#범용-키" },
@@ -211,7 +211,7 @@
   {
     "title": "프로그램적 사용",
     "links": [
-      { "name": "사용", "to": "/nuxt" },
+      { "name": "Nuxt(options)", "to": "/nuxt" },
       { "name": "render", "to": "/nuxt-render" },
       { "name": "renderRoute", "to": "/nuxt-render-route" },
       { "name": "renderAndGetWindow", "to": "/nuxt-render-and-get-window" }
@@ -220,7 +220,7 @@
   {
     "title": "내부 모듈",
     "links": [
-      { "name": "소개", "to": "/internals" },
+      { "name": "Intro", "to": "/internals" },
       { "name": "Nuxt", "to": "/internals-nuxt" },
       { "name": "Renderer", "to": "/internals-renderer" },
       { "name": "Module Container", "to": "/internals-module-container" },
