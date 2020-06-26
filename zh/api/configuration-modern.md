@@ -39,6 +39,6 @@ description: Build and server a modern bundle
 | spa           | client        |
 
 - 在使用`nuxt generate`时，`modern mode`只有`client`
-- 使用 [`build.crossorigin`](/api/configuration-build#crossorigin) 在`<link>` 和 `<script>` 中设置 `crossorigin` 属性
+- 使用 [`render.crossorigin`](/api/configuration-render#crossorigin) 在`<link>` 和 `<script>` 中设置 `crossorigin` 属性
 
 > 请参阅 [Phillip Walton's excellent post](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) 来了解更多关于modern builds信息.
