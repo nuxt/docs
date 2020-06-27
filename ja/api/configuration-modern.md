@@ -39,6 +39,6 @@ description: モダンバンドルをビルドして配信する
 | spa           | client        |
 
 - `nuxt generate` のモダンモードは `client` のみになります。
-- [`build.crossorigin`](/api/configuration-build#crossorigin) を使用し、`<link>` と `<script>` の `crossorigin` 属性を設定してください。
+- [`render.crossorigin`](/api/configuration-render#crossorigin) を使用し、`<link>` と `<script>` の `crossorigin` 属性を設定してください。
 
 > モダンビルドについてもっと詳しくは [Phillip Walton's excellent post](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) を参照してください。
