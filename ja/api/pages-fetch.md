@@ -184,7 +184,7 @@ export default {
 
 ### `activated` フックを使う
 
-Nuxt は、最後に `fetch` を呼び出したときの `this.$fetchState.timestamp`（タイムスタンプ）を直接付与します（ssr を含む）。このプロパティを `activated` フックと組み合わせることで、`fetch` に30秒のキャッシュを追加することができます。
+Nuxt は、最後に `fetch` を呼び出したときの `this.$fetchState.timestamp`（タイムスタンプ）を直接付与します（SSR を含む）。このプロパティを `activated` フックと組み合わせることで、`fetch` に30秒のキャッシュを追加することができます。
 
 `pages/posts/_id.vue`
 
@@ -230,7 +230,7 @@ export default {
 
 <div class="Alert Alert--orange">
 
-**警告**: `fetch` メソッド内の `this` を通してコンポーネントのインスタンスにアクセスすることは **できません**。それはコンポーネントがインスタンス化される前に呼び出されるためです。
+**警告**: `fetch` メソッド内では、コンポーネントがインスタンス化される前に呼び出されるため、`this` を通してコンポーネントのインスタンスにアクセスすることは**できません**。
 
 </div>
 
