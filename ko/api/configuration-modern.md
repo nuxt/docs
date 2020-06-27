@@ -39,6 +39,6 @@ description: 모던 번들을 빌드하고 서비스하세요
 | spa           | client        |
 
 - `nuxt generate`의 모던 모드는 `client`만 가능합니다
-- [`build.crossorigin`](/api/configuration-build#crossorigin)으로 `<link>`와 `<script>`의 `crossorigin` 속성을 설정할 수 있습니다
+- [`render.crossorigin`](/api/configuration-render#crossorigin)으로 `<link>`와 `<script>`의 `crossorigin` 속성을 설정할 수 있습니다
 
 > 모던 빌드에 대한 더 자세한 내용은 [Phillip Walton의 멋진 포스트](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/)를 참조하세요
