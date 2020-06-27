@@ -25,10 +25,22 @@ Nuxt.js `v2.12` では、**あらゆる Vue コンポーネント**に `fetch` �
 - `$fetchState.error`: `null` または `Error`。エラーメッセージを示します。
 - `$fetchState.timestamp`: `Integer`。最後に fetch したタイムスタンプです。`keep-alive` でのキャッシングに便利です。
 
-コンポーネントメソッドやテンプレートから `fetch` フックを呼び出すには、以下のように `$fetch()` を使用します:
+テンプレートから `fetch` フックを呼び出すには、以下のように `$fetch()` を使用します:
 
 ```html
 <button @click="$fetch">Refresh</button>
+```
+コンポーネントメソッドでは以下のとおりです:
+
+```javascript
+// スクリプトセクションのコンポーネントメソッドより
+export default {
+  methods: {
+    refresh() {
+      this.$fetch();
+    }
+  }
+};
 ```
 
 fetch フック内では `this.$nuxt.context` を使用して、Nuxt [context](/api/context) にアクセスできます。
