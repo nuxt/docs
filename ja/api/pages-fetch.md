@@ -25,10 +25,22 @@ Nuxt.js `v2.12` では、**あらゆる Vue コンポーネント**に `fetch` �
 - `$fetchState.error`: `null` または `Error`。エラーメッセージを示します。
 - `$fetchState.timestamp`: `Integer`。最後に fetch したタイムスタンプです。`keep-alive` でのキャッシングに便利です。
 
-コンポーネントメソッドやテンプレートから `fetch` フックを呼び出すには、以下のように `$fetch()` を使用します:
+テンプレートから `fetch` フックを呼び出すには、以下のように `$fetch()` を使用します:
 
 ```html
 <button @click="$fetch">Refresh</button>
+```
+コンポーネントメソッドでは以下のとおりです:
+
+```javascript
+// スクリプトセクションのコンポーネントメソッドより
+export default {
+  methods: {
+    refresh() {
+      this.$fetch();
+    }
+  }
+};
 ```
 
 fetch フック内では `this.$nuxt.context` を使用して、Nuxt [context](/api/context) にアクセスできます。
@@ -184,7 +196,7 @@ export default {
 
 ### `activated` フックを使う
 
-Nuxt は、最後に `fetch` を呼び出したときの `this.$fetchState.timestamp`（タイムスタンプ）を直接付与します（ssr を含む）。このプロパティを `activated` フックと組み合わせることで、`fetch` に30秒のキャッシュを追加することができます。
+Nuxt は、最後に `fetch` を呼び出したときの `this.$fetchState.timestamp`（タイムスタンプ）を直接付与します（SSR を含む）。このプロパティを `activated` フックと組み合わせることで、`fetch` に30秒のキャッシュを追加することができます。
 
 `pages/posts/_id.vue`
 
@@ -230,7 +242,7 @@ export default {
 
 <div class="Alert Alert--orange">
 
-**警告**: `fetch` メソッド内の `this` を通してコンポーネントのインスタンスにアクセスすることは **できません**。それはコンポーネントがインスタンス化される前に呼び出されるためです。
+**警告**: `fetch` メソッド内では、コンポーネントがインスタンス化される前に呼び出されるため、`this` を通してコンポーネントのインスタンスにアクセスすることは**できません**。
 
 </div>
 
