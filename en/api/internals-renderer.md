@@ -20,4 +20,5 @@ Hook                      | Arguments                | When
  `render:done`            |  (renderer)              | SSR Middleware and all resources are ready (Renderer ready)
  `render:routeContext`    |  (context.nuxt)          | *Every time a route is server-rendered and before `render:route` hook*. Called before serializing Nuxt context into `window.__NUXT__`, useful to add some data that you can fetch on client-side.
  `render:route`           |  (url, result, context)  | *Every time a route is server-rendered*. Called before sending back the request to the browser.
+ `render:beforeResponse`  |  (url, result, context)  | *Every time a route is server-rendered*. Called before calling `.end(...)` on the response.
  `render:routeDone`       |  (url, result, context)  | *Every time a route is server-rendered*. Called after the response has been sent to the browser. 
