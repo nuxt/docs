@@ -9,15 +9,15 @@ authors:
     link: https://twitter.com/debs_obrien
 tags:
   - Nuxt
-  - content
-  - markdown
+  - Content
+  - Markdown
 ---
 
-Thanks to the [content module]([https://content.nuxtjs.org/](https://content.nuxtjs.org/)) it is now much easier to get a blog up and running using markdown. The content module is basically a git based headless CMS and will make any developers life much easier when it comes to writing blogs or documentation sites or just adding content to any regular site. In this post I will go through most of the benefits of content module so you can create a blog with ease.
+Thanks to the [content module](https://content.nuxtjs.org) it is now much easier to get a blog up and running using markdown. The content module is basically a git based headless CMS and will make any developers life much easier when it comes to writing blogs or documentation sites or just adding content to any regular site. In this post I will go through most of the benefits of content module so you can create a blog with ease.
 
-- [Getting stated:](#getting-stated)
-  - [Installation:](#installation)
-  - [Let's create our markdown page:](#lets-create-our-markdown-page)
+- [Getting started](#getting-started)
+  - [Installation](#installation)
+  - [Let's create our markdown page](#lets-create-our-markdown-page)
   - [Displaying your content](#displaying-your-content)
   - [Default Injected variables](#default-injected-variables)
   - [Custom Injected variables](#custom-injected-variables)
@@ -37,9 +37,9 @@ Thanks to the [content module]([https://content.nuxtjs.org/](https://content.nux
 - [Generating your content](#generating-your-content)
 - [Conclusion:](#conclusion)
 
-## Getting stated:
+## Getting started:
 
-### Installation:
+### Installation
 
 To get started with content module you will first need to install the module using npm or yarn. 
 
@@ -55,23 +55,21 @@ Then you can add it to your modules property inside your nuxt.config file.
 
 ```js
 export default {
-	{
-	  modules: [
-	    '@nuxt/content'
-	  ]
-	}
+  modules: [
+    '@nuxt/content'
+  ]
 }
 ```
 
 <div class="Alert">
 
-If you have created a new project with `create nuxt-app` you can choose to add the content module and therefore it will be installed for your. 
+If you have created a new project with `create nuxt-app` you can choose to add the content module and therefore it will be installed for you. 
 
 </div>
 
 ### Let's create our markdown page:
 
-The content module works by reading the files in your content directory. 
+The content module works by reading the files in your `content/` directory. 
 
 ```bash
 mkdir content
@@ -79,56 +77,59 @@ mkdir content
 
 <div class="Alert">
 
-If you have created your project with `create nuxt-app` then you will already have this directory created otherwise you will need to create it. 
+If you have created your project with `create nuxt-app`, the `content/` directory will be already created. 
 
 </div>
 
-We can add files here at root level or in different directories. Let's create a folder called articles where we can add all our articles for our blog.
+Let's create an `articles/` directory where we can add the articles for our blog.
 
 ```bash
 mkdir content/articles
 ```
 
-With the content module we can write in markdown, csv, yaml, json, json5 or xml. For this example we will use markdown so let's create a markdown file for our first article. 
+The content module can parse markdown, csv, yaml, json, json5 or xml. Let's create our first article with a markdown file:
 
 ```bash
 touch content/articles/my-first-blog-post.md
 ```
 
-And inside lets add a title and text for our blog post. 
+We can now add a title and text for our blog post: 
 
 ```markdown
 # My first blog post
+
 Welcome to my first blog post using content module
 ```
 
 <div class="Alert">
 
-In markdown we create a h1 title by using the #. Make sure you leave a space between it and your blog title. For more info on writing in markdown see the [basic syntax guide](https://www.markdownguide.org/basic-syntax).
+In markdown we create a `<h1>` title by using `#`. Make sure you leave a space between it and your blog title. For more info on writing in markdown see the [basic syntax guide](https://www.markdownguide.org/basic-syntax).
 
 </div>
 
 ### Displaying your content
 
-We can now display our content on our page. We don't want to create a page called my-first-blog-post as if we had to create a page for each article it would be a lot of work to maintain and update. We can use a dynamic page instead. Dynamic pages in nuxt are created by prefixing the page with an underscore(`_`). As we want the name of the page to be my-first-blog-post we can therefore use the slug which we have access to thanks to the params from vue router. Therefore we will call our page `_slug.vue` and we can place it inside a blog folder so that we will have the word blog in our url.
+To display our content on our page, we don't want to create a page called `my-first-blog-post` as if we had to create a page for each article it would be a lot of work to maintain and update. We can use a [dynamic page](/guide/routing#dynamic-routes) instead. Dynamic pages in nuxt are created by prefixing the page with an underscore(`_`). We want the name of the page to be `my-first-blog-post`, we will use the slug which we have access to thanks to the params from vue router. We will call our page `_slug.vue` and we can place it inside a blog folder so that we will have the word blog in our url.
 
 ```bash
 touch pages/blog/_slug.vue
 ```
 
-Inside this page we will need to fetch our content from our markdown file. We can use asyncData which is available to us in our page components and by using asyncData our page will be rendered after we have fetched all our data. We can access our content through the context by using `$content` and by destructing it we can then use `$content` without having to add the word context before it. As we want to fetch a dynamic page we also need to know which page to fetch. We can use `params` from vue router which is available to us through the context. 
+Inside this page we will need to fetch our content from our markdown file. We can use `asyncData` which is available to us in our page components and our page will be rendered after we have fetched all our data. We can access our content through the context by using `$content`. As we want to fetch a dynamic page we also need to know which page to fetch. We can use `params` from vue router which is available to us through [the context](/api/context). 
 
 `pages/blog/_slug.vue`
 
 ```html
 <script>
 export default {
-  async asyncData ({ $content, params }) {}
+  async asyncData ({ $content, params }) {
+    // fetch our article here
+  }
 }
 </script>
 ```
 
-Inside our asyncData function we create a variable, let's call it article for this example, and we fetch our content using the await from async await followed by `$content`. We need to pass into `$content` what we want to fetch, which in our case is the articles folder followed by the slug, which we get from our params. We then chain the fetch method to the end and return the page which will contain the result of our fetch, which is our blog article.
+Inside our `asyncData` function we create a variable, let's call it `article`, we fetch our content using the `await` followed by `$content`. We need to pass into `$content` what we want to fetch, which in our case is the articles folder followed by the slug, which we get from our params. We then chain the fetch method to the end and return the page which will contain the result of our fetch, which is our blog article.
 
 `pages/blog/_slug.vue`
 
@@ -137,15 +138,14 @@ Inside our asyncData function we create a variable, let's call it article for th
 export default {
   async asyncData ({ $content, params }) {
     const article = await $content('articles', params.slug).fetch()
-    return {
-      article
-    }
+
+    return { article }
   }
 }
 </script>
 ```
 
-We can now display this content by using the `<nuxt-content />` component and passing in the variable we returned into our document prop. In this example we have wrapped it in a HTML article tag as it is better semantic HTML but you can use a div or another HTML tag if you prefer. 
+Let's display our content by using `<nuxt-content />` component by passing in the variable we returned into the `document` prop. In this example we have wrapped it in a HTML article tag as it is better semantic HTML but you can use a div or another HTML tag if you prefer. 
 
 `pages/blog/_slug.vue`
 
@@ -158,6 +158,8 @@ We can now display this content by using the `<nuxt-content />` component and pa
 ```
 
 We can now run our dev server and go to the route [http://localhost:3000/blog/my-first-blog-post](http://localhost:3000/blog/my-first-blog-post) and we should see our content from our markdown file. 
+
+// TODO: Add screenshot here
 
 ### Default Injected variables
 
