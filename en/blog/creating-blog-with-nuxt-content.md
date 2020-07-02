@@ -26,9 +26,9 @@ The [content module](https://content.nuxtjs.org) is a git files based headless C
   <a href="https://github.com/nuxt-company/demo-blog-nuxt-content" target="_blank" rel="noopener nofollow">Source code</a>
 </p>
 
-- [Getting started:](#getting-started)
+- [Getting started](#getting-started)
   - [Installation](#installation)
-  - [Let's create our markdown page:](#lets-create-our-markdown-page)
+  - [Let's create our markdown page](#lets-create-our-markdown-page)
   - [Displaying your content](#displaying-your-content)
   - [Default Injected variables](#default-injected-variables)
   - [Custom Injected variables](#custom-injected-variables)
@@ -41,14 +41,14 @@ The [content module](https://content.nuxtjs.org) is a git files based headless C
   - [Adding a code block to your post](#adding-a-code-block-to-your-post)
   - [Creating a previous and next component](#creating-a-previous-and-next-component)
   - [Working with the API](#working-with-the-api)
-  - [Creating a blog index page:](#creating-a-blog-index-page)
+  - [Creating an index page for our blog:](#creating-an-index-page-for-our-blog)
   - [Using the where query to create an Author page](#using-the-where-query-to-create-an-author-page)
   - [Add a search field](#add-a-search-field)
 - [Live editing your content](#live-editing-your-content)
 - [Generating your content](#generating-your-content)
 - [Conclusion:](#conclusion)
 
-## Getting started:
+## Getting started
 
 ### Installation
 
@@ -78,7 +78,7 @@ If you have created a new project with `create nuxt-app` you can choose to add t
 
 </div>
 
-### Let's create our markdown page:
+### Let's create our markdown page
 
 The content module works by reading the files in our `content/` directory. 
 
@@ -729,7 +729,7 @@ We can now query our results directly in the url and see our results as a JSON w
   <source src="https://res.cloudinary.com/nuxt/video/upload/v1588091670/content-api_aocbcn.ogv" type="video/ogg">
 </video>
 
-### Creating a blog index page:
+### Creating an index page for our blog:
 
 We can now create our blog index page to list out our blog posts. As we already have an index page created we just need to delete all the demo code inside this page.
 
