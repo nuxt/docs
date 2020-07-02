@@ -1,6 +1,6 @@
 ---
-title: PM2 のクラスターモードを使用してデプロイするには?
-description: PM2 のクラスターモードを使用して Nuxt.js をデプロイするには?
+title: PM2 のクラスターモードを使ってデプロイするには?
+description: PM2 のクラスターモードを使って Nuxt.js をデプロイするには?
 ---
 
 [PM2](https://pm2.keymetrics.io/) (Process Manager 2) を用いたデプロイは、ユニバーサル Nuxt アプリケーションをサーバーや VM 上でホストするための迅速で簡単なソリューションです。
