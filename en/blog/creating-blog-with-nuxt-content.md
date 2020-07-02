@@ -235,7 +235,7 @@ And then in our template we can use the formatDate method passing in the date we
 
 ### Custom Injected variables
 
-We can also add custom injected variables by adding a block of YAML front matter to our markdown file. it must be the first thing in the file and must be a valid form of YAML set between three triple dashed lines. This can be very useful for adding a title, description and image to your post which can then be displayed on the main blog page so people can see what your post is about before clicking to read the actual post. 
+We can also add custom injected variables by adding a block of YAML front matter to our markdown file. It must be at the top the file and must be a valid YAML format set between three triple dashed lines. This is useful for adding SEO variables such as title, description and image of your article.
 
 `content/articles/my-first-blog-post.md`
 
@@ -248,7 +248,7 @@ alt: my first blog post
 ---
 ```
 
-You will see in our browser, in our pre tag that we added before, we now have a title, description, img and alt variable that we now have access to by using our article variable followed by what we want to print out. 
+We now have a title, description, img and alt variable that we can access to by using our `article` object variable. 
 
 `pages/blog/_slug.vue`
 
@@ -291,11 +291,11 @@ All other tags that come from our YAML front matter can be styled as normal eith
 
 ⚠️ Scoped styles will not work with nuxt-content so if adding then in the style tag you shouldn't use scoped. You can add the styles here or as a global style in your css folder.
 
-You will also notice how our markdown tags were converted into the correct tags which means we now have two `<h1>` tags. We should remove the one from our markdown file.
+Our markdown tags are converted into the correct tags which means we now have two `<h1>` tags. We should now remove the one from our markdown file.
 
-### Adding an icon to our headings
+### Adding an icon to our headings anchor
 
-You will also notice that inside the `<h2>` tag there is an `<a>` tag with a href that includes an anchor to link to itself (very useful for linking to that section of the page) and a span tag inside it with a class of icon and icon-link. The links in the headings are empty and therefore hidden so let's add a style to them. Using the icon classes we can add an svg as a background image for our icon. You will have to first add the svg to your assets folder. In this example I have added it to an svg folder and I have taken the icon from [Steve Schoger's Hero Icons.](https://github.com/sschoger/heroicons-ui)
+Notice that inside the `<h2>` tag there is an `<a>` tag with a `href` that includes an anchor to link to itself and a `span` tag inside it with `icon` and `icon-link` classes. This is useful for linking to that section of the page. The links in the headings are empty and therefore hidden so let's add a style to them. Using the icon classes we can add an svg as a background image for our icon. You will have to first add the svg to your assets folder. In this example I have added it to an svg folder and I have taken the icon from [Steve Schoger's Hero Icons.](https://github.com/sschoger/heroicons-ui)
 
 `pages/blog/_slug.vue`
 
@@ -311,7 +311,7 @@ You will also notice that inside the `<h2>` tag there is an `<a>` tag with a hre
 
 ### Add a table of contents
 
-We can easily add a table of contents to our blog post. You will see that for now our `toc` is empty. Let's add some headings to our blog post.
+The generated `toc` variable allows us to add a table of contents to our blog post. Let's add some headings to our blog post.
 
 ```markdown
 ## This is a heading
@@ -321,7 +321,7 @@ This is some more info
 This is some more info
 ```
 
-You should now see these new headings inside the `toc` array with an id, a depth and the text. The depth has the value of 2 as it is a `##` heading which corresponds to a `<h2>` tag. We can add subheadings by using the `###` which will give us the depth of 3 which will be a `<h3>` tag.
+Now we can see these new headings inside the `toc` array with an id, a depth and the text. The depth value refer to the heading tag value, so `<h2>` value is 2, `<h3>` value is 3, etc.
 
 `content/articles/my-first-blog-post.md`
 
@@ -353,9 +353,9 @@ As we have access to the `toc` id and text we can loop over these and print each
 </nav>
 ```
 
-You will see in the browser our navigation now works and clicking on one will bring us to the correct part of the document. OK but how does this work exactly? The content module automatically adds an id and a link to each heading. If we inspect one of the headings from our markdown file in our dev tools we will see our `<h2>` tag has an id. This is the same id that is found in the `toc` which is basically how the `toc` can link to the correct heading.
+Now the ToC links are working and clicking on one will bring us to the correct part of the document. The content module automatically adds an id and a link to each heading. If we inspect one of the headings from our markdown file in our dev tools we will see our `<h2>` tag has an id. This is the same id that is found in the `toc` which is basically how the `toc` can link to the correct heading.
 
-We can improve this further by using dynamic classes to style the heading classes based on the depth of the heading which we can add to our nuxt-link tag. Basically if the link has a depth of 2 add a padding on the y axis and if the the depth is 3 add a margin left and a padding bottom. Here I am using [TailwindCSS](https://tailwindcss.com/) classes but feel free to add normal class names and style them with css in the style tag if you prefer.
+We can improve this further by using dynamic classes to style the heading classes based on the depth of the heading which we can add to our nuxt-link tag. If the link has a depth of 2 add a padding on the y axis and if the the depth is 3 add a margin left and a padding bottom. Here we are using [TailwindCSS](https://tailwindcss.com/) classes but feel free to use custom class names and styles.
 
 `pages/blog/_slug.vue`
 
@@ -366,15 +366,9 @@ We can improve this further by using dynamic classes to style the heading classe
 }"
 ```
 
-We can also use a dynamic class on the `<li>` tag which adds a semibold class if the link depth is 2 which means all `<h2>` tags in the Table of Contents will have a semi bold class added to it. 
+### Use HTML into your markdown files
 
-```html
-:class="{ 'font-semibold': link.depth === 2 }"
-```
-
-### Adding HTML to your markdown
-
-Sometimes you might want to add HTML to your markdown so you can style a certain part of your text by adding a class for example. Let's add a div with some tailwind classes so it has a background color of blue with white text, some padding and a margin bottom. If you prefer you can just add a class name and style it normally with css. 
+Sometimes we might want to add HTML to our markdown files. Let's add a div with some classes so it has a background color of blue with white text, some padding and a margin bottom.
 
 `content/articles/my-first-blog-post.md`
 
@@ -386,9 +380,9 @@ Sometimes you might want to add HTML to your markdown so you can style a certain
 
 ### Adding a Vue component
 
-You can also add Vue components inside your markdown. This means if you are re-using a lot of components such as an info or alert box you can create one with the styles you need and pass in the text as a slot.
+We can also add Vue components inside our markdown files. This means if we are re-using components such as an info or alert box, we can create one with the styles we need and pass in the text as a slot.
 
-We can now add components easily to our application by setting components to true in our nuxt.config file. (since v2.13)
+We can now add components to our application by setting the property `components` to `true` in our `nuxt.config file`. (since v2.13)
 
 `nuxt.config.js`
 
@@ -398,7 +392,7 @@ export default {
 }
 ```
 
-Auto importing components will not work for `<nuxt-content>` unless you globally register them by adding a global folder inside the components folder.
+Auto importing components will not work for `<nuxt-content>` unless we globally register them by adding a global folder inside the components folder.
 
 ```bash
 mkdir components/global
@@ -416,7 +410,7 @@ We can then create our InfoBox component inside this folder.
 </template>
 ```
 
-Then in your markdown these components will be available without having to import them. 
+Then in our markdown these components will be available without having to import them. 
 
 `content/articles/my-first-blog-post.md`
 
@@ -430,14 +424,13 @@ Then in your markdown these components will be available without having to impor
 
 <div class="Warning">
 
-The global components will be available throughout your whole application so be careful when adding components to this folder. This works different to adding components in the components folder which are only added if they are being used.
+The global components will be available throughout our whole application so be careful when adding components to this folder. This works different to adding components in the components folder which are only added if they are being used.
 
 </div>
 
 ### Adding an Author component with props
 
-You can also take advantage of the yaml by adding properties there that you can make available to your component through props. For example you could have an about the author component and if you have guest bloggers the author will change. 
-
+An other advantage of the YAML properties is that we can make them available to our component through props. For example, we can have an about the author component and if we have guest bloggers the author will change. 
 In our markdown file we can add a new object to our frontmatter which contains the author's name and bio and image. 
 
 `content/articles/my-first-blog-post.md`
@@ -451,13 +444,13 @@ author:
 ---
 ```
 
-We can now create the author component.
+We can now create the author component. 
 
 ```bash
 touch components/global/Author.vue
 ```
 
-Here we create a div the author image, a title of Author and a dynamic name and bio of the author.
+Here we create a div the author image, a title of Author and a dynamic name and bio of the author. 
 
 `components/global/Author.vue`
 
@@ -505,9 +498,9 @@ To use the component we will need to add it to our markdown and pass in our prop
 <author :author="author" />
 ```
 
-You will see that our component works just as it should which means we have added Vue component to our markdown. 
 
-However putting the component here means we will have to repeat it for every article. In this case it would be better to add it directly to the slug page. We will need to change the author prop to article.author.
+Putting the component here means we will have to repeat it for every article. In this case it would be better to add it directly to the slug page. We will need to change the author prop to `article.author`.
+
 
 `pages/blog/_slug.vue`
 
@@ -530,7 +523,7 @@ We can now move this component out of the global folder and into the components 
 
 ### Adding a code block to your post
 
-Adding code blocks is important for every developer and normally they are a nightmare to style or there just isn't the possibility. With the content module you can easily style your code blocks thanks to the automatic inclusion of [prismJS](https://prismjs.com/). That means you can simply write your code block using the correct markdown syntax and your code block will display with styling depending on the language.
+With the content module we can style our code blocks with to the automatic inclusion of [prismJS](https://prismjs.com/). That means we can write our code block using the correct markdown syntax and our code block will display with styling depending on the language.
 
 `content/articles/my-first-blog-post.md`
 
@@ -570,7 +563,7 @@ The filename will be converted to a span with a filename class which we can then
 }
 ```
 
-If you want to use a different theme other than the default one, for example [prism-themes](https://github.com/PrismJS/prism-themes), you can install it and then add your preferred theme to the content options of your nuxt.config file.
+Different theme can be used, for example [prism-themes](https://github.com/PrismJS/prism-themes), we can install it and then add our preferred theme to the content options of your `nuxt.config file`.
 
 ```bash
 npm install prism-themes
@@ -578,7 +571,7 @@ npm install prism-themes
 yarn add prism-themes
 ```
 
-Then in your nuxt.config file, in the content options, you can add a markdown object with prism and add the theme that you want to use. 
+Then in our `nuxt.config` file, in the content options, we can add a markdown object with prism and add the theme that we want to use. 
 
 `nuxt.config.js`
 
@@ -594,15 +587,14 @@ content: {
 
 ### Creating a previous and next component
 
-We now have a pretty complete blog post but wouldn't it be great if users could easily go from one post to another. First let's duplicate our post so we have 3 posts, my second blog post and my third blog post or whatever name you prefer. You can also modify the text a little so you can see which one is which, add a different photo from [unspash]([https://unsplash.com/](https://unsplash.com/)) and also modify the author to have different authors.
+We now have a pretty complete blog post but wouldn't it be great if users could easily go from one post to another. First let's duplicate our post so we have 3 posts. Then, let's create a new component for our prev and next posts. 
 
-We can now create a new component for our prev and next posts. 
 
 ```bash
 touch components/PrevNext.vue
 ```
 
-In this component we use a `v-if` inside our `NuxtLink` component to see if there is a previous blog post and if there is we add a link to it. We can print out the title of our article using the prev and next variables as these contain all the information from the article. This means we could create a card with an image and description to show the next and previous article but for this example we will just display the title. If there isn't a previous post we just print an empty span which is useful for styling purposes. We then do the exact same with our next link.
+In this component we use a `v-if` inside our `NuxtLink` component to see if there is a previous blog post and if there is we add a link to it. We can print out the title of our article using the `prev` and `next` variables as these contain all the information from the article. This means we could create a card with an image and description to show the next and previous article but for this example we will just display the title. If there isn't a previous post we just print an empty span which is useful for styling purposes. We then do the exact same with our next link.
 
 `components/PrevNext.vue`
 
@@ -629,7 +621,7 @@ In this component we use a `v-if` inside our `NuxtLink` component to see if ther
 </template>
 ```
 
-In our script tag we pass in the props of prev and next with a type of Object and default of null. By passing in these as props it makes them available to us on our blog post page. 
+In our component we pass the props `prev` and `next` to makes them available to us on our blog post page. 
 
 `components/PrevNext.vue`
 
@@ -650,7 +642,7 @@ export default {
 </script>
 ```
 
-We can now get our prev and next articles by adding them to our asyncData. We create an array of const with with the name `prev` and `next` and we await the content from the articles folder. This time we only need the title and the slug so we can chain `only()` to our await and pass in title and slug. 
+We can now get our prev and next articles by adding them to our `asyncData`. We create an array of const with with the name `prev` and `next` and we await the content from the articles folder. This time we only need the title and the slug so we can chain `only()` to our await and pass in title and slug. 
 
 We can use the `sortBy()` method to sort our data by the createdAt date in ascending order. We then use the `surround()` method and pass in the slug from params so that it can get the correct  slug for the previous and next posts. 
 
@@ -705,7 +697,7 @@ As we have set `components: true` in our nuxt.config file we do not need to impo
 
 ### Working with the API
 
-When querying data the Nuxt content module gives you access to the API so that you can query it directly to see what is being returned. You have access to the API in dev mode with the following url: [http://localhost:3000/_content/](http://localhost:3000/_content/). In our example this will be empty as our articles are in a folder called articles therefore we need to use this url [http://localhost:3000/_content/articles](http://localhost:3000/_content/articles) to see our list of articles. 
+When querying data the Content module gives us access to the API so that we can query it directly to see what is being returned. We have access to the API in dev mode with the following url: [http://localhost:3000/_content/](http://localhost:3000/_content/). In our example this will be empty as our articles are in a folder called articles therefore we need to use this url [http://localhost:3000/_content/articles](http://localhost:3000/_content/articles) to see our list of articles. 
 
 <div class="Alert">
 
@@ -729,7 +721,8 @@ We can now query our results directly in the url and see our results as a JSON w
   <source src="https://res.cloudinary.com/nuxt/video/upload/v1588091670/content-api_aocbcn.ogv" type="video/ogg">
 </video>
 
-### Creating a blog index page:
+
+### List all the blog posts:
 
 We can now create our blog index page to list out our blog posts. As we already have an index page created we just need to delete all the demo code inside this page.
 
@@ -812,7 +805,7 @@ export default {
 }
 ```
 
-As you can see we get all our data back only for the author Maria. If we were to use maria without a capital letter we wouldn't get anything back. We can therefore use `$regex` so that it remains with a capital letter. 
+As we can see we get all our data back only for the author Maria. If we were to use maria without a capital letter we wouldn't get anything back. We can therefore use `$regex` so that it remains with a capital letter. 
 
 We then fetch all the details we want to show on this page. In the last example we used the `only()` method to return what we wanted but as we require quite a lot of content we can instead use the `without()` method and pass in what we don't wan't to return which is the body of the post. 
 
@@ -987,7 +980,7 @@ See the [demo code](https://github.com/nuxt-company/demo-blog-nuxt-content) for 
 
 </div>
 
-## Live editing your content
+## Live editing our content
 
 Our blog is looking really great and if we need to modify any of the content on the page we can do so directly in the browser thanks to the live edit feature. All you have to do is double click on your page while in dev mode and and the live edit will open. Here you can modify any of your text and also the front matter. You can even add a component that is in the global components folder and just by clicking away you will see your changes live in the browser and you will see in your editor and console that the file has been modified and saved. 
 
@@ -997,7 +990,7 @@ Our blog is looking really great and if we need to modify any of the content on 
   <source src="https://res.cloudinary.com/nuxt/video/upload/v1588091670/live-edit-content_kdorvi.ogv" type="video/ogg">
 </video>
 
-## Generating your content
+## Generating our content
 
 If we now want to deploy our amazing new blog we can run the `nuxt build` and `nuxt export` command. The `nuxt build` command will build our app adding all our webpack assets and creating .js bundles for us. We can then run the `nuxt export` command which will export our html, css, js and images as static assets. You will also notice that we didn't have to add a routes property or do anything to get our new page as the **crawler** will crawl all links for us and generate our dynamic routes for us.
 
@@ -1007,4 +1000,4 @@ By separating our content from our build it means we can now add a new markdown 
 
 ## Conclusion:
 
-Working with content is great fun and there is so much more you can do and build. Don't forget to showcase your work to use on our discord channel called **showcase** so we can see the cool things you have created and perhaps even feature them in our NuxtLetter. And if you have created anything cool with the content module writing an article on it and posting it to the **article** channel in discord means it might also get featured in the NuxtLetter. Not signed up yet? Well now is a great time to [sign up]([https://nuxtjs.org/#subscribe-to-newsletter](https://nuxtjs.org/#subscribe-to-newsletter)) as we keep releasing more new content and features for Nuxt.js. Enjoy :)
+Working with content is great fun and there is so much more you can do and build. Don't forget to showcase your work to use on our discord channel named **showcase** so we can see the cool things you have created and perhaps even feature them in our NuxtLetter. Not signed up yet? Well now is a great time to [sign up]([https://nuxtjs.org/#subscribe-to-newsletter](https://nuxtjs.org/#subscribe-to-newsletter)) as we keep releasing more new content and features for Nuxt.js. Enjoy :)
