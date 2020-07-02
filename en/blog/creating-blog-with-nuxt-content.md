@@ -46,7 +46,7 @@ The [content module](https://content.nuxtjs.org) is a git files based headless C
   - [Add a search field](#add-a-search-field)
 - [Live editing our content](#live-editing-our-content)
 - [Generating our content](#generating-our-content)
-- [Conclusion:](#conclusion)
+- [Conclusion](#conclusion)
 
 ## Getting started
 
@@ -998,6 +998,6 @@ We can then use the `nuxt serve` command which will serve our production ready s
 
 By separating our content from our build it means we can now add a new markdown page and this time we only need to run `nuxt export` and we will see our new page with our new content in seconds. We only need to run `nuxt build` if we are modifying our .vue pages or components or anything that is not in our content folder. 
 
-## Conclusion:
+## Conclusion
 
-Working with content is great fun and there is so much more you can do and build. Don't forget to showcase your work to use on our discord channel named **showcase** so we can see the cool things you have created and perhaps even feature them in our NuxtLetter. Not signed up yet? Well now is a great time to [sign up]([https://nuxtjs.org/#subscribe-to-newsletter](https://nuxtjs.org/#subscribe-to-newsletter)) as we keep releasing more new content and features for Nuxt.js. Enjoy :)
+Working with content is great fun and there is so much more you can do and build. Don't forget to showcase your work to use on our discord channel named **showcase** so we can see the cool things you have created and perhaps even feature them in our NuxtLetter. Not signed up yet? Well now is a great time to [sign up](https://nuxtjs.org/#subscribe-to-newsletter) as we keep releasing more new content and features for Nuxt.js. Enjoy :)
