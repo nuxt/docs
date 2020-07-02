@@ -15,9 +15,9 @@ tags:
 
 Thanks to the [content module](https://content.nuxtjs.org) it is now much easier to get a blog up and running using markdown. The content module is basically a git based headless CMS and will make any developers life much easier when it comes to writing blogs or documentation sites or just adding content to any regular site. In this post I will go through most of the benefits of content module so you can create a blog with ease.
 
-- [Getting started](#getting-started)
+- [Getting started:](#getting-started)
   - [Installation](#installation)
-  - [Let's create our markdown page](#lets-create-our-markdown-page)
+  - [Let's create our markdown page:](#lets-create-our-markdown-page)
   - [Displaying your content](#displaying-your-content)
   - [Default Injected variables](#default-injected-variables)
   - [Custom Injected variables](#custom-injected-variables)
@@ -159,7 +159,7 @@ Let's display our content by using `<nuxt-content />` component by passing in th
 
 We can now run our dev server and go to the route [http://localhost:3000/blog/my-first-blog-post](http://localhost:3000/blog/my-first-blog-post) and we should see our content from our markdown file. 
 
-// TODO: Add screenshot here
+<img width="743" alt="content from our markdown file" src="https://user-images.githubusercontent.com/13063165/86350954-c3253080-bc63-11ea-8420-2f977d29e74e.png">
 
 ### Default Injected variables
 
