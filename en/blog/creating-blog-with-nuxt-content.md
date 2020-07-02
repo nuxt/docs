@@ -26,9 +26,9 @@ The [content module](https://content.nuxtjs.org) is a git files based headless C
   <a href="https://github.com/nuxt-company/demo-blog-nuxt-content" target="_blank" rel="noopener nofollow">Source code</a>
 </p>
 
-- [Getting started:](#getting-started)
+- [Getting started](#getting-started)
   - [Installation](#installation)
-  - [Let's create our markdown page:](#lets-create-our-markdown-page)
+  - [Let's create our markdown page](#lets-create-our-markdown-page)
   - [Displaying your content](#displaying-your-content)
   - [Default Injected variables](#default-injected-variables)
   - [Custom Injected variables](#custom-injected-variables)
@@ -41,14 +41,14 @@ The [content module](https://content.nuxtjs.org) is a git files based headless C
   - [Adding a code block to your post](#adding-a-code-block-to-your-post)
   - [Creating a previous and next component](#creating-a-previous-and-next-component)
   - [Working with the API](#working-with-the-api)
-  - [Creating a blog index page:](#creating-a-blog-index-page)
+  - [Creating a blog index page](#creating-a-blog-index-page)
   - [Using the where query to create an Author page](#using-the-where-query-to-create-an-author-page)
   - [Add a search field](#add-a-search-field)
 - [Live editing your content](#live-editing-your-content)
 - [Generating your content](#generating-your-content)
-- [Conclusion:](#conclusion)
+- [Conclusion](#conclusion)
 
-## Getting started:
+## Getting started
 
 ### Installation
 
@@ -78,7 +78,7 @@ If you have created a new project with `create nuxt-app` you can choose to add t
 
 </div>
 
-### Let's create our markdown page:
+### Let's create our markdown page
 
 The content module works by reading the files in our `content/` directory. 
 
@@ -722,7 +722,7 @@ We can now query our results directly in the url and see our results as a JSON w
 </video>
 
 
-### List all the blog posts:
+### List all the blog posts
 
 We can now create our blog index page to list out our blog posts. As we already have an index page created we just need to delete all the demo code inside this page.
 
@@ -998,6 +998,6 @@ We can then use the `nuxt serve` command which will serve our production ready s
 
 By separating our content from our build it means we can now add a new markdown page and this time we only need to run `nuxt export` and we will see our new page with our new content in seconds. We only need to run `nuxt build` if we are modifying our .vue pages or components or anything that is not in our content folder. 
 
-## Conclusion:
+## Conclusion
 
-Working with content is great fun and there is so much more you can do and build. Don't forget to showcase your work to use on our discord channel named **showcase** so we can see the cool things you have created and perhaps even feature them in our NuxtLetter. Not signed up yet? Well now is a great time to [sign up]([https://nuxtjs.org/#subscribe-to-newsletter](https://nuxtjs.org/#subscribe-to-newsletter)) as we keep releasing more new content and features for Nuxt.js. Enjoy :)
+Working with content is great fun and there is so much more you can do and build. Don't forget to showcase your work to use on our discord channel named **showcase** so we can see the cool things you have created and perhaps even feature them in our NuxtLetter. Not signed up yet? Well now is a great time to [sign up](https://nuxtjs.org/#subscribe-to-newsletter) as we keep releasing more new content and features for Nuxt.js. Enjoy :)
