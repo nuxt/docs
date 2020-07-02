@@ -1,6 +1,6 @@
 ---
-title: "Creating a Blog with Nuxt Content"
-description: 'Thanks to the content module it is now much easier to get a blog up and running using markdown. The content module is basically a git based headless CMS and will make any developers life much easier when it comes to writing blogs or documentation sites or just adding content to any regular site. In this post I will go through most of the benefits of content module so you can create a blog with ease.'
+title: "Create a Blog with Nuxt Content"
+description: 'The Content module is a git files based headless CMS that provides powerful features when it comes to write blogs, documentation sites or just adding content to any regular website. In this post we will go through most of the benefits of this module and discover how we can create a blog with it.'
 imgUrl: blog/creating-blog-with-nuxt-content/main.png
 date: 2020-07-02
 authors:
@@ -13,11 +13,11 @@ tags:
   - Markdown
 ---
 
-Thanks to the [content module](https://content.nuxtjs.org) it is now much easier to get a blog up and running using markdown. The content module is basically a git based headless CMS and will make any developers life much easier when it comes to writing blogs or documentation sites or just adding content to any regular site. In this post I will go through most of the benefits of content module so you can create a blog with ease.
+The [content module](https://content.nuxtjs.org) is a git files based headless CMS that provides powerful features when it comes to write blogs, documentation sites or just adding content to any regular website. In this post we will go through most of the benefits of this module and discover how we can create a blog with it.
 
 <p align="center">
   <a href="https://blog-with-nuxt-content.netlify.app/" target="_blank" rel="noopener nofollow">View demo</a> / 
-  <a href="https://github.com/nuxt-company/demo-blog-nuxt-content" target="_blank" rel="noopener nofollow">Source</a>
+  <a href="https://github.com/nuxt-company/demo-blog-nuxt-content" target="_blank" rel="noopener nofollow">Source code</a>
 </p>
 
 - [Getting started:](#getting-started)
@@ -46,7 +46,7 @@ Thanks to the [content module](https://content.nuxtjs.org) it is now much easier
 
 ### Installation
 
-To get started with content module you will first need to install the module using npm or yarn. 
+To get started with content module we will first need to install the module using npm or yarn. 
 
 ```bash
 npm install @nuxt/content
@@ -54,7 +54,7 @@ npm install @nuxt/content
 yarn add @nuxt/content
 ```
 
-Then you can add it to your modules property inside your nuxt.config file. 
+Then we can add it to our modules property inside our nuxt.config file. 
 
 `nuxt.config.js`
 
@@ -74,7 +74,7 @@ If you have created a new project with `create nuxt-app` you can choose to add t
 
 ### Let's create our markdown page:
 
-The content module works by reading the files in your `content/` directory. 
+The content module works by reading the files in our `content/` directory. 
 
 ```bash
 mkdir content
@@ -114,13 +114,13 @@ In markdown we create a `<h1>` title by using `#`. Make sure you leave a space b
 
 ### Displaying your content
 
-To display our content on our page, we don't want to create a page called `my-first-blog-post` as if we had to create a page for each article it would be a lot of work to maintain and update. We can use a [dynamic page](/guide/routing#dynamic-routes) instead. Dynamic pages in nuxt are created by prefixing the page with an underscore(`_`). We want the name of the page to be `my-first-blog-post`, we will use the slug which we have access to thanks to the params from vue router. We will call our page `_slug.vue` and we can place it inside a blog folder so that we will have the word blog in our url.
+To display our content in our page, we can use a [dynamic page](/guide/routing#dynamic-routes) by prefixing the page with an underscore(`_`). By creating a page component named `_slug.vue` inside our blog folder, we are able to use the `params.slug` variable provides by vue router to get the name of each article. 
 
 ```bash
 touch pages/blog/_slug.vue
 ```
 
-Inside this page we will need to fetch our content from our markdown file. We can use `asyncData` which is available to us in our page components and our page will be rendered after we have fetched all our data. We can access our content through the context by using `$content`. As we want to fetch a dynamic page we also need to know which page to fetch. We can use `params` from vue router which is available to us through [the context](/api/context). 
+Then we can use `asyncData` in our page component to fetch our article content before the page has been rendered. We can access to our content through the context by using the variable `$content`. As we want to fetch a dynamic page we also need to know which article to fetch with `params.slug` which is available to us through [the context](/api/context). 
 
 `pages/blog/_slug.vue`
 
@@ -134,7 +134,7 @@ export default {
 </script>
 ```
 
-Inside our `asyncData` function we create a variable, let's call it `article`, we fetch our content using the `await` followed by `$content`. We need to pass into `$content` what we want to fetch, which in our case is the articles folder followed by the slug, which we get from our params. We then chain the fetch method to the end and return the page which will contain the result of our fetch, which is our blog article.
+Inside our `asyncData` function we create a variable named `article` and fetch our content using the `await` followed by `$content`. We need to pass into `$content` what we want to fetch, which in our case is the article folder followed by the slug, which we get from our URL params. We then chain the fetch method to the end and return the article which will contain the result of our fetch.
 
 `pages/blog/_slug.vue`
 
@@ -150,7 +150,7 @@ export default {
 </script>
 ```
 
-Let's display our content by using `<nuxt-content />` component by passing in the variable we returned into the `document` prop. In this example we have wrapped it in a HTML article tag as it is better semantic HTML but you can use a div or another HTML tag if you prefer. 
+To display our content we are using the `<nuxt-content />` component by passing in the variable we returned into the `document` prop. In this example we have wrapped it in a HTML article tag as it is better semantic HTML but you can use a div or another HTML tag if you prefer. 
 
 `pages/blog/_slug.vue`
 
@@ -170,16 +170,16 @@ We can now run our dev server and go to the route [http://localhost:3000/blog/my
 
 The nuxt content module gives us access to injected variables that we can access and show in our template. Let's take a look at the default variables that are injected into our document:  
 
-- **body** which is our body text
-- **dir** which is our directory
-- **extension** which in our case is .md
-- **path** which is the path to our article
-- **slug** which is the slug of our article
-- **toc** which is an array containing our table of contents
-- **createdAt** which is the date the article is created at
-- **updatedAt** which is the date the article was last updated
+- **body**: body text
+- **dir**: directory
+- **extension**: file extension (.md in this example)
+- **path**: the file path
+- **slug**: the file slug
+- **toc**: an array containing our table of contents
+- **createdAt**: the file creation date
+- **updatedAt**: the date of the last file update
 
-We can access all these variables by using the page variable that we created earlier. Article is an object that contains all these extra injected variables that we have access to. Let's inspect them by printing it out using a `<pre>` tag.
+We can access all these variables by using the `article` variable that we created earlier. `article` is an object that contains all these extra injected variables that we have access to. Let's inspect them by printing it out using a `<pre>` tag.
 
 `pages/blog/_slug.vue`
 
