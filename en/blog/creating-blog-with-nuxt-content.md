@@ -15,6 +15,12 @@ tags:
 
 The [content module](https://content.nuxtjs.org) is a git files based headless CMS that provides powerful features when it comes to write blogs, documentation sites or just adding content to any regular website. In this post we will go through most of the benefits of this module and discover how we can create a blog with it.
 
+<video poster="https://res.cloudinary.com/nuxt/video/upload/v1588091670/demo-blog-content_shk6kw.jpg" loop="loop" plays-inline="true" controls="controls">
+  <source src="https://res.cloudinary.com/nuxt/video/upload/v1588091670/demo-blog-content_shk6kw.webm" type="video/webm">
+  <source src="https://res.cloudinary.com/nuxt/video/upload/v1592314331/demo-blog-content_shk6kw.mp4" type="video/mp4">
+  <source src="https://res.cloudinary.com/nuxt/video/upload/v1588091670/demo-blog-content_shk6kw.ogv" type="video/ogg">
+</video>
+
 <p align="center">
   <a href="https://blog-with-nuxt-content.netlify.app/" target="_blank" rel="noopener nofollow">View demo</a> / 
   <a href="https://github.com/nuxt-company/demo-blog-nuxt-content" target="_blank" rel="noopener nofollow">Source code</a>
@@ -979,10 +985,10 @@ See the [demo code](https://github.com/nuxt-company/demo-blog-nuxt-content) for 
 
 Our blog is looking really great and if we need to modify any of the content on the page we can do so directly in the browser thanks to the live edit feature. All you have to do is double click on your page while in dev mode and and the live edit will open. Here you can modify any of your text and also the front matter. You can even add a component that is in the global components folder and just by clicking away you will see your changes live in the browser and you will see in your editor and console that the file has been modified and saved. 
 
-<video poster="https://res.cloudinary.com/nuxt/video/upload/v1588091670/nuxt-content-ui_otfj5y.jpg" loop="loop" plays-inline="true" controls="controls">
-  <source src="https://res.cloudinary.com/nuxt/video/upload/v1588091670/nuxt-content-ui_otfj5y.webm" type="video/webm">
-  <source src="https://res.cloudinary.com/nuxt/video/upload/v1592314331/nuxt-content-ui_otfj5y.mp4" type="video/mp4">
-  <source src="https://res.cloudinary.com/nuxt/video/upload/v1588091670/nuxt-content-ui_otfj5y.ogv" type="video/ogg">
+<video poster="https://res.cloudinary.com/nuxt/video/upload/v1588091670/live-edit-content_kdorvi.jpg" loop="loop" plays-inline="true" controls="controls">
+  <source src="https://res.cloudinary.com/nuxt/video/upload/v1588091670/live-edit-content_kdorvi.webm" type="video/webm">
+  <source src="https://res.cloudinary.com/nuxt/video/upload/v1592314331/live-edit-content_kdorvi.mp4" type="video/mp4">
+  <source src="https://res.cloudinary.com/nuxt/video/upload/v1588091670/live-edit-content_kdorvi.ogv" type="video/ogg">
 </video>
 
 ## Generating your content
