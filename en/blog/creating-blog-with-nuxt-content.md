@@ -723,6 +723,12 @@ We can now query our results directly in the url and see our results as a JSON w
 
 [http://localhost:3000/_content/articles?only=title&only=description&only=img&only=slug&only=author](http://localhost:3000/_content/articles?only=title&only=description&only=img&only=slug&only=author)
 
+<video poster="https://res.cloudinary.com/nuxt/video/upload/v1588091670/content-api_aocbcn.jpg" loop="loop" plays-inline="true" controls="controls">
+  <source src="https://res.cloudinary.com/nuxt/video/upload/v1588091670/content-api_aocbcn.webm" type="video/webm">
+  <source src="https://res.cloudinary.com/nuxt/video/upload/v1592314331/content-api_aocbcn.mp4" type="video/mp4">
+  <source src="https://res.cloudinary.com/nuxt/video/upload/v1588091670/content-api_aocbcn.ogv" type="video/ogg">
+</video>
+
 ### Creating a blog index page:
 
 We can now create our blog index page to list out our blog posts. As we already have an index page created we just need to delete all the demo code inside this page.
