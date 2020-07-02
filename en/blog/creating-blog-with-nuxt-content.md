@@ -15,6 +15,11 @@ tags:
 
 Thanks to the [content module](https://content.nuxtjs.org) it is now much easier to get a blog up and running using markdown. The content module is basically a git based headless CMS and will make any developers life much easier when it comes to writing blogs or documentation sites or just adding content to any regular site. In this post I will go through most of the benefits of content module so you can create a blog with ease.
 
+<p align="center">
+  <a href="https://blog-with-nuxt-content.netlify.app/" target="_blank" rel="noopener nofollow">View demo</a> / 
+  <a href="https://github.com/nuxt-company/demo-blog-nuxt-content" target="_blank" rel="noopener nofollow">Source</a>
+</p>
+
 - [Getting started:](#getting-started)
   - [Installation](#installation)
   - [Let's create our markdown page:](#lets-create-our-markdown-page)
@@ -465,7 +470,7 @@ Here we create a div the author image, a title of Author and a dynamic name and 
 
 <div class="Alert">
 
-Styles have been removed from these examples, feel free to add the styles yourself or copy the styles from the [demo code](). 
+Styles have been removed from these examples, feel free to add the styles yourself or copy the styles from the [demo code](https://github.com/nuxt-company/demo-blog-nuxt-content). 
 
 </div>
 
@@ -718,7 +723,7 @@ We can now create our blog index page to list out our blog posts. As we already 
 
 <div class="Alert">
 
-In the demo code I used the main index page instead of creating an index file inside the blog folder because for this example I have no other pages but normally you might have a home page, contact page and then the blog page etc.
+In the [demo code](https://github.com/nuxt-company/demo-blog-nuxt-content) I used the main index page instead of creating an index file inside the blog folder because for this example I have no other pages but normally you might have a home page, contact page and then the blog page etc.
 
 </div>
 
@@ -861,7 +866,7 @@ We can then use our data to print out a nice author page showing the author name
 
 <div class="Alert">
 
-Please note all styles have been removed from this example. You can either style the page yourself or copy the styles from the [demo code]().
+Please note all styles have been removed from this example. You can either style the page yourself or copy the styles from the [demo code](https://github.com/nuxt-company/demo-blog-nuxt-content).
 
 </div>
 
@@ -966,7 +971,7 @@ We can now use our <AppSearchInput> component by adding it anywhere on our page.
 
 <div class="Alert">
 
-See the demo code for improved styling of this page as well as the header component that was added which includes the search component and is therefore displayed on the author and index page. [Demo Code]()
+See the [demo code](https://github.com/nuxt-company/demo-blog-nuxt-content) for improved styling of this page as well as the header component that was added which includes the search component and is therefore displayed on the author and index page.
 
 </div>
 
