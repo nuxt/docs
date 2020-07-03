@@ -118,7 +118,7 @@ export default {
 
 ### Injection dans le contexte
 
-L'injection de contenu dans les instances Vue fonctionne de la même façon que vous pourriez le faire dans une application Vue standard.
+L'injection de contenu dans le contexte fonctionne de la même façon que vous pourriez le faire dans une application Vue standard.
 
 `plugins/injection-contexte.js`:
 
