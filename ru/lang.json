@@ -1,9 +1,9 @@
 {
-  "iso": "en",
-  "docVersion": "2.12.X",
+  "iso": "ru",
+  "docVersion": "2.8.X",
   "links": {
-    "download": "Download",
-    "live_edit": "Live Edit"
+    "download": "Скачать",
+    "live_edit": "Живое редактирование"
   },
   "headerLinks": [
     {
@@ -46,23 +46,23 @@
     "api_page_not_found": "API page not found",
     "please_define_title": "Please define a title in the front matter",
     "please_define_description": "Please define a description in the front matter",
-    "search": "Search (\"/\" to focus)",
-    "version": "Version"
+    "search": "Поиск",
+    "version": "Версия"
   },
   "homepage": {
     "meta": {
-      "title": "Nuxt.js - The Vue.js Framework",
-      "description": "Nuxt.js presets all the configuration needed to make your development of a Vue.js application enjoyable. Nuxt.js can produce Universal, Single Page and Static Generated Applications."
+      "title": "Nuxt.js — Универсальные приложения на Vue.js",
+      "description": "Nuxt.js — это минималистичный фреймворк для создания приложений на Vue.js с серверным рендерингом, разделением кода, горячей заменой модулей, статической генерацией и другими крутыми штуками!"
     },
     "welcome": {
-      "get_started": "get started",
-      "github_stars": "26K+ github stars"
+      "get_started": "начало работы",
+      "github_stars": "28K+ github stars"
     },
     "why": {
-      "try_nuxtjs_online": "Try NuxtJS Online"
+      "try_nuxtjs_online": "Попробуйте NuxtJS онлайн"
     },
     "sponsors": {
-      "become_a_sponsor": "Become a sponsor"
+      "become_a_sponsor": "Стань спонсором"
     },
     "newsletter_form": {
       "email": "Email",
@@ -75,8 +75,8 @@
     }
   },
   "guide": {
-    "release_notes": "Release Notes",
-    "contribute": "Caught a mistake or want to contribute to the documentation?",
-    "edit_on_github": "Edit this page on GitHub!"
+    "release_notes": "Замечания о релизе",
+    "contribute": "Обнаружили ошибку или хотите внести свой вклад в документацию?",
+    "edit_on_github": "Отредактировать эту страницу на GitHub!"
   }
 }

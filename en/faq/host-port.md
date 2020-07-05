@@ -48,20 +48,6 @@ Similar to HOST and PORT but more specific in case you need those for something 
 }
 ```
 
-**Note**: for better cross platform development support you can use [cross-env](https://www.npmjs.com/package/cross-env) package.
-
-Installation:
-
-```bash
-npm install --save-dev cross-env
-```
-
-```js
-"scripts": {
-  "dev": "cross-env NUXT_HOST=0.0.0.0 NUXT_PORT=3333 nuxt"
-}
-```
-
 ## With HOST and PORT env variables
 
 ```js

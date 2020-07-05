@@ -65,6 +65,12 @@ To display the `child.vue` component, we have to insert `<nuxt-child/>` inside `
 
 To see an example, take a look at the [nested-routes example](/examples/nested-routes).
 
+## The activated and deactivated hooks
+
+When using `keep-alive` on `<nuxt-child/>`, the children components will register two additional lifecycle hooks:
+[activated](https://vuejs.org/v2/api/#activated) and [deactivated](https://vuejs.org/v2/api/#deactivated).
+These hooks are called on the client side when entering and leaving the child component.
+
 ## Named View
 
 > Introduced with Nuxt v2.4.0

@@ -270,7 +270,15 @@ Path | File
 
 __注意:__ 404 ページのハンドリングは `_.vue` ページのロジックに依存します。[404 リダイレクトについての詳細はこちら](/guide/async-data#handling-errors)を参照してください。
 
-### 名前付きビュー
+## router の拡張
+
+Nuxt のルーティングを拡張するためにはいくつかの方法があります。
+
+- [router-extras-module](https://github.com/nuxt-community/router-extras-module) はページコンポーネントのルートパラメータをカスタマイズできます
+- [@nuxtjs/router](https://github.com/nuxt-community/router-module) は独自の `router.js` を使って Nuxt router を上書きすることができます
+- [router.extendRoutes](https://nuxtjs.org/api/configuration-router#extendroutes) プロパティを `nuxt.config.js` で使います
+
+## 名前付きビュー
 
 名前付きビューをレンダリングするために `<nuxt name="top"/>` または `<nuxt-child name="top"/>` コンポーネントを layout/page 内で使用できます。
 名前付きビューを特定するには `nuxt.config.js` ファイルのルータ設定の拡張が必要です。
@@ -406,7 +414,7 @@ export default function (context) {
 }
 ```
 
-ユニバーサルモードの場合、ミドルウェアはサーバサイドでは一度だけ呼び出され（Nuxt アプリケーションへの最初のリクエスト時、またはページの再読込み時）クライアントサイドでは他のルートへ移動したときに呼び出されます。SPA モードの場合、ミドルウェアはクライアントサイドで最初のリクエスト時と他のルートへ移動したときに呼び出されます。
+ユニバーサルモードの場合、ミドルウェアはサーバサイドでは一度だけ呼び出され（Nuxt アプリケーションへの最初のリクエスト時、またはページの再読込み時）クライアントサイドでは他のルートへ移動したときに呼び出されます。ページを静的に生成しているときは、ミドルウェアはサーバーサイドではなくビルド時に一度だけ呼び出されます。SPA モードの場合、ミドルウェアはクライアントサイドで最初のリクエスト時と他のルートへ移動したときに呼び出されます。
 
 ミドルウェアは下記の順に実行されます:
 

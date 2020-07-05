@@ -7,7 +7,7 @@ description: Configure the generation of your universal web application to a sta
 
 > Configure the generation of your universal web application to a static web application.
 
-When launching `nuxt generate` or calling `nuxt.generate()`, Nuxt.js will use the configuration defined in the `generate` property.
+When launching `nuxt build && nuxt export`(>= v2.13) or `nuxt generate` (<= v2.12) or calling `nuxt.generate()`, Nuxt.js will use the configuration defined in the `generate` property.
 
 nuxt.config.js 
 ```js
@@ -25,13 +25,26 @@ export default {
 
 The generation of routes are concurrent, `generate.concurrency` specifies the amount of routes that run in one thread.
 
+## crawler
+ - Type: `boolean`
+ - Default: true
+
+As of Nuxt >= v2.13 Nuxt.js comes with a crawler installed that will crawl your relative links and generate your dynamic links based on these links. If you want to disable this feature you can set the value to `false`
+
+```js
+export default {
+  generate: {
+    crawler: false
+  }
+}
+```
 
 ## dir
 
 - Type: `String`
 - Default: `'dist'`
 
-Directory name created when building the web application in static mode with `nuxt generate` or in SPA mode with `nuxt build`.
+Directory name created when building the web application in static mode with `nuxt build && nuxt export`(>= v2.13) or `nuxt generate` (<= v2.12) or in SPA mode with `nuxt build`.
 
 ## devtools
 
@@ -45,15 +58,25 @@ If you already activated through nuxt.config.js or otherwise, devtools enable re
 ## exclude
 
 - Type: `Array`
+  - Items: `String` or `RegExp`
 
-It accepts an array of regular expressions and will prevent generation of routes matching them. The routes will still be accessible when `generate.fallback` is used.
+It accepts an array of string or regular expressions and will prevent generation of routes matching them. The routes will still be accessible when `generate.fallback` is used.
 
-By default, running `nuxt generate` will create a file for each route.
+Taking this examples of structure:
+```bash
+-| pages/
+---| index.vue
+---| admin/
+-----| about.vue
+-----| index.vue
+```
+
+By default, running `nuxt build && nuxt export`(>= v2.13) or `nuxt generate` (<= v2.12) a file will be created for each route.
 
 ```bash
 -| dist/
 ---| index.html
----| ignore/
+---| admin/
 -----| about.html
 -----| item.html
 ```
@@ -65,7 +88,7 @@ nuxt.config.js
 export default {
   generate: {
     exclude: [
-      /^(?=.*\bignore\b).*$/
+      /^\/admin/ // path starts with /admin
     ]
   }
 }
@@ -76,6 +99,16 @@ export default {
 ---| index.html
 ```
 
+You can also exclude a specific route by giving a string:
+
+```js
+export default {
+  generate: {
+    exclude: ['/my-secret-page']
+  }
+}
+```
+
 ## fallback
 
 - Type: `String` or `Boolean`
@@ -84,7 +117,7 @@ export default {
 ```js
 export default {
   generate: {
-    fallback: true
+    fallback: '404.html'
   }
 }
 ```
@@ -128,7 +161,19 @@ Interval between two render cycles to avoid flooding a potential API with API ca
 
 - Type: `Array`
 
-[Dynamic routes](/guide/routing#dynamic-routes) are ignored by the `generate` command (yarn generate). Nuxt does not know what these routes will be so it can't generate them.
+<div class="Alert Alert-blue">
+
+As of Nuxt v2.13 there is a crawler installed that will now crawl your link tags and generate your routes when using the command `nuxt export` based on those links. 
+
+</div>
+
+<div class="Alert Alert--orange">
+
+**Warning:** If you using Nuxt >= v2.13 and have pages that have no links such as secret pages and you would like these to also be generated then you can use the `generate.routes` property.
+
+**Warning:** dynamic routes are ignored by the `generate` command when using Nuxt <= v2.12 
+
+</div>
 
 Example:
 
@@ -263,7 +308,7 @@ async asyncData ({ params, error, payload }) {
 - Type: `Boolean`
 - Default: `true`
 
-By default, running `nuxt generate` will create a directory for each route & serve an `index.html` file.
+By default, running `nuxt build && nuxt export`(>= v2.13) or `nuxt generate`(<= v2.12) Nuxt.js will create a directory for each route & serve an `index.html` file.
 
 Example:
 

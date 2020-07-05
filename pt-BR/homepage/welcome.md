@@ -1,4 +1,6 @@
 ---
-title: The Progressive<br><span class="text-nuxt-lightgreen">Vue.js</span> Framework<br>
+title: O Framework <span class="text-nuxt-lightgreen">Vue</span> Intuitivo<br>
+newsletter_cta: 'Get NuxtJS updates to your inbox each month 💌'
 ---
-Build your next Vue.js application with confidence using NuxtJS. An <span title="Under MIT license">open source</span> framework making web development simple and powerful.
+Crie sua próxima aplicação Vue.Js com confiança usando o NuxtJS. Um framework <span title="Under MIT license">open source</span> que torna o desenvolvimento web simples e poderoso.
+

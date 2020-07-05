@@ -32,38 +32,7 @@ ou avec [yarn](https://yarnpkg.com/en/):
 $ yarn create nuxt-app <project-name>
 ```
 
-Il vous sera posé quelques questions :
-
-1. Choisir entre différents frameworks intégrés côté serveur :
-  - Aucun (Serveur Nuxt par défaut)
-  - [Express](https://github.com/expressjs/express)
-  - [Koa](https://github.com/koajs/koa)
-  - [Hapi](https://github.com/hapijs/hapi)
-  - [Feathers](https://github.com/feathersjs/feathers)
-  - [Micro](https://github.com/zeit/micro)
-  - [Fastify](https://github.com/fastify/fastify)
-  - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
-2. Choisir votre interface utilisateur préférée :
-  - Aucune (lançant la possibilité d'en ajouter une plus tard)
-  - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
-  - [Vuetify](https://github.com/vuetifyjs/vuetify)
-  - [Bulma](https://github.com/jgthms/bulma)
-  - [Tailwind](https://github.com/tailwindcss/tailwindcss)
-  - [Element UI](https://github.com/ElemeFE/element)
-  - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
-  - [Buefy](https://github.com/buefy/buefy)
-  - [iView](https://github.com/iview/iview)
-  - [Tachyons](https://github.com/tachyons-css/tachyons)
-3. Choisissez votre framework de test préféré :
-  - Aucun (sentez-vous libre d'en ajouter un plus tard)
-  - [Jest](https://github.com/facebook/jest)
-  - [AVA](https://github.com/avajs/ava)
-4. Le [mode Nuxt désiré (`Universel` ou `SPA`)](https://nuxtjs.org/guide#single-page-applications-spa-)
-5. Ajouter le [module axios](https://github.com/nuxt-community/axios-module) pour faire des requêtes HTTP facilement dans votre application.
-6. Ajouter [EsLint](https://eslint.org/) pour Linter votre code en sauvegardant.
-7. Ajouter [Prettier](https://prettier.io/) pour prettifier votre code en sauvegardant.
-
-Après réponses, les dépendences s'installerons et la prochaine étape sera de naviguer dans le dossier du projet pour le lancer avec :
+Il vous sera posé quelques questions (nom du projet, options de Nuxt, UI framework, TypeScript, linter, framework de test, etc.), après vos réponses données, les dépendences s'installeront et la prochaine étape sera de naviguer dans le dossier du projet pour le lancer avec :
 
 ```bash
 $ cd <project-name>

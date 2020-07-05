@@ -7,7 +7,7 @@
   },
   "headerLinks": [
     {
-      "name": "Guide",
+      "name": "Guia",
       "slug": "guide",
       "type": "dynamic",
       "routeName": "section-slug"
@@ -19,7 +19,7 @@
       "routeName": "section-slug"
     },
     {
-      "name": "Examples",
+      "name": "Examplos",
       "slug": "examples",
       "type": "dynamic",
       "routeName": "section-slug"
@@ -31,7 +31,7 @@
       "routeName": "section-slug"
     },
     {
-      "name": "Resources",
+      "name": "Recursos",
       "slug": "resources",
       "type": "static"
     },
@@ -56,7 +56,7 @@
     },
     "welcome": {
       "get_started": "Começar",
-      "github_stars": "26K+ github stars"
+      "github_stars": "28K+ estrelas no github"
     },
     "why": {
       "try_nuxtjs_online": "Experimente o NuxtJS Online"
@@ -65,11 +65,11 @@
       "become_a_sponsor": "Seja um patrocinador"
     },
     "newsletter_form": {
-      "email": "Email",
-      "subscribing": "Subscribing...",
-      "subscribe": "Subscribe",
+      "email": "E-mail",
+      "subscribing": "Subscrevendo...",
+      "subscribe": "Inscrever-se",
       "subscribed_messages": {
-        "pre": "An email to confirm your subscription has been sent to",
+        "pre": "Um e-mail para confirmar sua inscrição foi enviado para",
         "post": "💚"
       }
     }

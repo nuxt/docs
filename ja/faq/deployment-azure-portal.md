@@ -3,6 +3,87 @@ title: Azure Portal へデプロイするには？
 description: Azure Portal へデプロイするには？
 ---
 
+## 前提条件
+- プロジェクトのセットアップ時にバックエンドを選択する必要があります。そうしないと、サイトが起動しません。
+- サーバーは Node v8 以降を実行しています。
+
+## バックエンドのないプロジェクトが既にある場合はどうなりますか？
+心配ありません。Express サーバーを既存のプロジェクトに簡単に追加できます。
+
+プロジェクトのルートに `server` という新しいフォルダを作成します。次に、`server` フォルダ内に `index.js` ファイルを作成し以下を貼り付けます：
+
+```
+const express = require('express')
+const consola = require('consola')
+const { Nuxt, Builder } = require('nuxt')
+const app = express()
+
+// Nuxt.js オプションのインポートと設定
+const config = require('../nuxt.config.js')
+config.dev = process.env.NODE_ENV !== 'production'
+
+async function start () {
+  // Nuxt.js を初期化
+  const nuxt = new Nuxt(config)
+
+  const { host, port } = nuxt.options.server
+
+  // Build only in dev mode
+  if (config.dev) {
+    const builder = new Builder(nuxt)
+    await builder.build()
+  } else {
+    await nuxt.ready()
+  }
+
+  // express に nuxt ミドルウェアを提供する
+  app.use(nuxt.render)
+
+  // サーバーがリッスンする
+  app.listen(port, host)
+  consola.ready({
+    message: `Server listening on http://${host}:${port}`,
+    badge: true
+  })
+}
+start()
+```
+
+次に、nuxt.config.js を編集します:
+
+ビフォー:
+
+```
+import pkg from './package'
+
+export default {
+... config
+}
+```
+
+アフター:
+```
+module.exports = {
+... config
+}
+```
+
+**このファイルから pkg オブジェクトへの参照を削除することを忘れないでください。**
+
+それだけです！
+
+## DevOps で Web アプリの Node バージョンを設定する方法
+
+リリースパイプラインの "Deploy Azure Web Service" タスク内のアプリ設定を介して、サーバー上の Node バージョンを設定できます。
+
+これを "Application and Configuration Settings" の下のアプリケーション設定フィールドに追加します。
+```
+-WEBSITE_NODE_DEFAULT_VERSION 10.16.3
+```
+LTS バージョンの使用を推奨します。
+
+## アーティファクト
+
 Azure DevOps を使用しており、かつビルドパイプラインを走らせていて、アーティファクトを保存したい場合、 ファイル名の先頭に `.` が付いているファイルは、アーティファクトフォルダーに明示的に移動する必要があります。そして、アーティファクトアーカイブを作成することで、リリースデプロイ時にダウンロードすることができます。
 
 ## webserver の実行
@@ -74,4 +155,3 @@ Azure Portal の場合、`web.config` ファイルが必要です。ファイル
   </system.webServer>
 </configuration>
 ```
-

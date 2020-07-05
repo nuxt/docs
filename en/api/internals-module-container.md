@@ -49,7 +49,7 @@ Renders given template using [lodash template](https://lodash.com/docs/4.17.4#te
 
 If `fileName` is not provided or `template` is string, target file name defaults to `[dirName].[fileName].[pathHash].[ext]`.
 
-This method returns final `{ dist, src, options }` object.
+This method returns final `{ dst, src, options }` object.
 
 ### addPlugin (template)
 

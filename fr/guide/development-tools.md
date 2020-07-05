@@ -139,7 +139,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // préférer utiliser `plugin:vue/strongly-recommended` ou `plugin:vue/recommended` pour des règles stictes.
+    // préférez utiliser `plugin:vue/strongly-recommended` ou `plugin:vue/recommended` pour des règles strictes.
     'plugin:vue/recommended',
     'plugin:prettier/recommended'
   ],
@@ -172,7 +172,7 @@ Vous pouvez alors lancer `lint` pour simplement vérifier les erreurs :
 npm run lint
 ```
 
-or `lintfix` to also fix those which are doable
+ou `lintfix` pour aussi réparer celles qui sont corrigeables
 
 ```bash
 npm run lintfix

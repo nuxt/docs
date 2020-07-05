@@ -753,7 +753,7 @@ export default {
 ```js
 export default {
   build: {
-    followSymlinks: false
+    followSymlinks: true
   }
 }
 ```

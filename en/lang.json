@@ -1,6 +1,6 @@
 {
   "iso": "en",
-  "docVersion": "2.12.X",
+  "docVersion": "2.13.X",
   "links": {
     "download": "Download",
     "live_edit": "Live Edit"
@@ -51,12 +51,12 @@
   },
   "homepage": {
     "meta": {
-      "title": "Nuxt.js - The Vue.js Framework",
-      "description": "Nuxt.js presets all the configuration needed to make your development of a Vue.js application enjoyable. Nuxt.js can produce Universal, Single Page and Static Generated Applications."
+      "title": "Nuxt.js - The Intuitive Vue Framework",
+      "description": "Build your next Vue.js application with confidence using NuxtJS. An open source framework making web development simple and powerful."
     },
     "welcome": {
       "get_started": "get started",
-      "github_stars": "26K+ github stars"
+      "github_stars": "28K+ github stars"
     },
     "why": {
       "try_nuxtjs_online": "Try NuxtJS Online"

@@ -10,7 +10,7 @@
       { "name": "如何添加 webpack 插件？", "to": "/webpack-plugins" },
       { "name": "如何编辑主机和端口号？", "to": "/host-port" },
       { "name": "如何使用 cached 组件？", "to": "/cached-components" },
-      { "name": "如何使用Google统计分析服务？", "to": "/google-analytics" },
+      { "name": "如何使用Google统计分析服务？", "to": "/ga" },
       { "name": "如何发起跨域资源请求？", "to": "/http-proxy"}
     ]
   },
@@ -35,7 +35,8 @@
       { "name": "在Netlify上部署", "to": "/netlify-deployment" },
       { "name": "如何使用 Now.sh 部署？", "to": "/now-deployment" },
       { "name": "如何使用 Surge.sh 部署？", "to": "/surge-deployment" },
-      { "name": "使用nginx作为代理", "to": "/nginx-proxy" }
+      { "name": "使用nginx作为代理", "to": "/nginx-proxy" },
+      { "name": "在21云盒子上部署", "to": "/21yunbox-deployment" }
     ]
   }
 ]

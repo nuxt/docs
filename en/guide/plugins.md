@@ -1,9 +1,9 @@
 ---
 title: Plugins
-description: Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root Vue.js Application. This is especially helpful when using your own libraries or external modules.
+description: Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root Vue.js Application. This is especially helpful when using Vue libraries, external modules or your own plugins.
 ---
 
-> Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root Vue.js Application. This is especially helpful when using your own libraries or external modules.
+> Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root Vue.js Application. This is especially helpful when using Vue libraries, external modules or your own plugins.
 
 <div class="Alert">
 
@@ -42,22 +42,25 @@ export default {
 
 ## Vue Plugins
 
-If we want to use Vue plugins, like [vue-notifications](https://github.com/se-panfilov/vue-notifications) to display notification in our application, we need to setup the plugin before launching the app.
-
-We create the file `plugins/vue-notifications.js`:
+If we want to use Vue plugins, like [v-tooltip](https://akryum.github.io/v-tooltip) to display tooltips in our application, we need to setup the plugin before launching the app.
+First we install the plugin
+```bash
+npm install --save v-tooltip
+```
+We create the file `plugins/vue-tooltips.js`:
 
 ```js
 import Vue from 'vue'
-import VueNotifications from 'vue-notifications'
+import VTooltip from 'v-tooltip'
 
-Vue.use(VueNotifications)
+Vue.use(VTooltip)
 ```
 
 Then we add the file path inside the `plugins` key of our `nuxt.config.js`:
 
 ```js
 export default {
-  plugins: ['~/plugins/vue-notifications']
+  plugins: ['@/plugins/vue-tooltip.js']
 }
 ```
 
@@ -82,105 +85,40 @@ Sometimes you want to make functions or values available across the app.
 You can inject those variables into Vue instances (client side), the context (server side) and even in the Vuex store.
 It is a convention to prefix those functions with a `$`.
 
-### Inject into Vue instances
+Nuxt.js provides you with an `inject(key, value)` method so you can easily inject variables. It is given as the second parameter when exporting a function. The `$` will be prepended automatically to the key.
 
-Injecting context into Vue instances works similar to when doing this in standard Vue apps.
-
-`plugins/vue-inject.js`:
+`plugins/hello.js`:
 
 ```js
-import Vue from 'vue'
-
-Vue.prototype.$myInjectedFunction = string => console.log('This is an example', string)
+export default (context, inject) => {
+  const hello = (msg) => console.log(`Hello ${msg}!`)
+  // Inject $hello(msg) in Vue, context and store.
+  inject('hello', hello)
+  // For Nuxt <= 2.12, also add 👇
+  context.$hello = hello
+}
 ```
 
 `nuxt.config.js`:
 
 ```js
 export default {
-  plugins: ['~/plugins/vue-inject.js']
+  plugins: ['~/plugins/hello.js']
 }
 ```
 
-You can now use the function in all your Vue components.
+Now `$hello(msg)` can be used from `context`, via `this` in Vue instances and via `this` in store `actions`/`mutations`.
 
 `example-component.vue`:
 
 ```js
 export default {
   mounted () {
-    this.$myInjectedFunction('test')
-  }
-}
-```
-
-
-### Inject into context
-
-Injecting context into Vue instances works similar to when doing this in standard Vue apps.
-
-`plugins/ctx-inject.js`:
-
-```js
-export default ({ app }, inject) => {
-  // Set the function directly on the context.app object
-  app.myInjectedFunction = string => console.log('Okay, another function', string)
-}
-```
-
-`nuxt.config.js`:
-
-```js
-export default {
-  plugins: ['~/plugins/ctx-inject.js']
-}
-```
-
-The function is now available whenever you have access to the `context` (for example in `asyncData` and `fetch`).
-
-`ctx-example-component.vue`:
-
-```js
-export default {
-  asyncData (context) {
-    context.app.myInjectedFunction('ctx!')
-  }
-}
-```
-
-### Combined inject
-
-If you need the function in the `context`, Vue instances and maybe even in the Vuex store, you can use the `inject` function, which is the second parameter of the plugins exported function.
-
-Injecting content into Vue instances works similar to when doing this in standard Vue apps. The `$` will be prepended automatically to the function.
-
-`plugins/combined-inject.js`:
-
-```js
-export default ({ app }, inject) => {
-  inject('myInjectedFunction', string => console.log('That was easy!', string))
-}
-```
-
-`nuxt.config.js`:
-
-```js
-export default {
-  plugins: ['~/plugins/combined-inject.js']
-}
-```
-
-Now the function can be used from `context`, via `this` in Vue instances and via `this` in store `actions`/`mutations`.
-
-`ctx-example-component.vue`:
-
-```js
-export default {
-  mounted () {
-    this.$myInjectedFunction('works in mounted')
+    this.$hello('mounted')
+    // will console.log 'Hello mounted!'
   },
-  asyncData (context) {
-    context.app.$myInjectedFunction('works with context')
+  asyncData ({ $hello }) {
+    $hello('asyncData')
   }
 }
 ```
@@ -194,69 +132,30 @@ export const state = () => ({
 
 export const mutations = {
   changeSomeValue (state, newValue) {
-    this.$myInjectedFunction('accessible in mutations')
+    this.$hello('store mutation')
     state.someValue = newValue
   }
 }
 
 export const actions = {
   setSomeValueToWhatever ({ commit }) {
-    this.$myInjectedFunction('accessible in actions')
+    this.$hello('store action')
     const newValue = 'whatever'
     commit('changeSomeValue', newValue)
   }
 }
-
 ```
 
+## Client or server side only
 
-## Client-side only
+<div class="Alert">
+
+Be ware, do not use Vue plugins inside exported functions. exported functions called before each request,
+so calling `Vue.use(...)`, `Vue.mixin(...)`, `Vue.component(...)`, cause your app crash after too many requests.
+
+</div>
 
 Some plugins might work **only in the browser** because they lack SSR support.
-In these situations you can use the `mode`: `client` option in `plugins` to add the plugin only on the client-side.
-
-Example:
-
-`nuxt.config.js`:
-
-```js
-export default {
-  plugins: [
-    { src: '~/plugins/vue-notifications', mode: 'client' }
-  ]
-}
-```
-
-`plugins/vue-notifications.js`:
-
-```js
-import Vue from 'vue'
-import VueNotifications from 'vue-notifications'
-
-Vue.use(VueNotifications)
-```
-
-In case you need to import some libraries in a plugin only on *server-side*, you can check if the `process.server` variable is set to `true`.
-
-Also, if you need to know if you are inside a generated app (via `nuxt generate`), you can check if `process.static` is set to `true`. This is only the case during and after the generation.
-
-You can also combine both options to hit the spot when a page is being server-rendered by `nuxt generate` before being saved (`process.static && process.server`).
-
-**Note**: Since Nuxt.js 2.4, `mode` has been introduced as option of `plugins` to specify plugin type, possible value are: `client` or `server`. `ssr: false` will be adapted to `mode: 'client'` and deprecated in next major release.
-
-Example:
-
-`nuxt.config.js`:
-
-```js
-export default {
-  plugins: [
-    { src: '~/plugins/both-sides.js' },
-    { src: '~/plugins/client-only.js', mode: 'client' },
-    { src: '~/plugins/server-only.js', mode: 'server' }
-  ]
-}
-```
 
 ### Name conventional plugin
 
@@ -275,3 +174,29 @@ export default {
   ]
 }
 ```
+
+### Object syntax
+
+You can also use the object syntax with the `mode` property (`'client'` or `'server'`) in `plugins`.
+
+Example:
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: [
+    { src: '~/plugins/both-sides.js' },
+    { src: '~/plugins/client-only.js', mode: 'client' }, // only on client side
+    { src: '~/plugins/server-only.js', mode: 'server' } // only on server side
+  ]
+}
+```
+
+### Using process flags
+
+In case you need to import some libraries in a plugin only on *server-side*, you can check if the `process.server` variable is set to `true`.
+
+Also, if you need to know if you are inside a static app (via `nuxt generate` or `nuxt export`), you can check if `process.static` is set to `true`. This is only the case during and after the generation.
+
+You can also combine both options to hit the spot when a page is being server-rendered by `nuxt build && nuxt export` or `nuxt generate` before being saved (`process.static && process.server`).
