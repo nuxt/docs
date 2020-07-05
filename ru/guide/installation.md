@@ -32,38 +32,7 @@ Or with [yarn](https://yarnpkg.com/en/):
 $ yarn create nuxt-app <project-name>
 ```
 
-It will ask you some questions:
-
-1. Choose between integrated server-side frameworks:
-  - None (Nuxt default server)
-  - [Express](https://github.com/expressjs/express)
-  - [Koa](https://github.com/koajs/koa)
-  - [Hapi](https://github.com/hapijs/hapi)
-  - [Feathers](https://github.com/feathersjs/feathers)
-  - [Micro](https://github.com/zeit/micro)
-  - [Fastify](https://github.com/fastify/fastify)
-  - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
-2. Choose your favorite UI framework:
-  - None (feel free to add one later)
-  - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
-  - [Vuetify](https://github.com/vuetifyjs/vuetify)
-  - [Bulma](https://github.com/jgthms/bulma)
-  - [Tailwind](https://github.com/tailwindcss/tailwindcss)
-  - [Element UI](https://github.com/ElemeFE/element)
-  - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
-  - [Buefy](https://github.com/buefy/buefy)
-  - [iView](https://github.com/iview/iview)
-  - [Tachyons](https://github.com/tachyons-css/tachyons)
-3. Choose your favorite testing framework:
-  - None (feel free to add one later)
-  - [Jest](https://github.com/facebook/jest)
-  - [AVA](https://github.com/avajs/ava)
-4. The [Nuxt mode you want (`Universal` or `SPA`)](https://nuxtjs.org/guide#single-page-applications-spa-)
-5. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
-6. Add [EsLint](https://eslint.org/) to Lint your code on save.
-7. Add [Prettier](https://prettier.io/) to prettify your code on save.
-
-When answered, it will install all the dependencies so the next step is to navigate to the project folder and launch it with:
+It will ask you some questions (name, Nuxt options, UI framework, TypeScript, linter, testing framework, etc.), when answered, it will install all the dependencies so the next step is to navigate to the project folder and launch it with:
 
 ```bash
 $ cd <project-name>
