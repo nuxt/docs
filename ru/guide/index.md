@@ -1,91 +1,82 @@
 ---
-title: Introduction
-description: "Nuxt is a progressive framework based on Vue.js to create modern web applications. It is based on Vue.js official libraries (vue, vue-router and vuex) and powerful development tools (webpack, Babel and PostCSS)."
+название: Введение
+описание: "Nuxt - это прогрессивный фреймворк, основанная на Vue.js для создания современных веб-приложений. Он основан на официальных библиотеках Vue.js (vue, vue-router и vuex) и мощных инструментах разработки (webpack, Babel и PostCSS)."
 ---
 
-> Nuxt is a progressive framework based on Vue.js to create modern web applications. It is based on Vue.js official libraries (vue, vue-router and vuex) and powerful development tools (webpack, Babel and PostCSS). Nuxt's goal is to make web development powerful and performant with a great developer experience in mind.
+> Nuxt - это прогрессивный фреймворк, основанный на Vue.js для создания современных веб-приложений. Он основан на официальных библиотеках Vue.js (vue, vue-router и vuex) и мощных инструментах разработки (webpack, Babel и PostCSS). Цель Nuxt - сделать веб-разработку мощной и производительной с учетом большого опыта разработчиков.
 
-## What is NuxtJS?
+## Что такое NuxtJS?
 
-Nuxt is a framework designed to give you a strong architecture following official Vue guidelines. Incrementally adoptable, it can be used to create everything from static landing pages to complex enterprise ready web applications.
+Nuxt - это фреймворк, разработанный для того, чтобы дать вам сильную архитектуру, следуя официальным рекомендациям Vue. Пригодное для использования, оно может использоваться для создания чего угодно, от статических целевых страниц (landing page) до сложных готовых веб-приложений для предприятий.
 
-Versatile by nature, it supports different targets (server, serverless or static) and server side rendering is switchable.
+Универсальный по своей природе, он поддерживает различные цели (серверные, бессерверные или статические), а рендеринг на стороне сервера можно переключать.
 
-Extendable with a strong module ecosystem, it makes it easy to connect your REST or GraphQL endpoints, favorite CMS, CSS frameworks and more. PWA and AMP support is only a module away from your Nuxt project.
+Расширяемый с помощью сильной модульной экосистемы, он позволяет легко подключать конечные точки REST или GraphQL, любимые CMS, CSS-фреймворки и многое другое. Готовая поддержка PWA и AMP - в виде модулей от вашего проекта Nuxt.
 
-NuxtJS is the backbone of your Vue.js project, giving structure to build your project with confidence while being flexible.
+NuxtJS - это основа вашего проекта на Vue.js, которая дает структуру, чтобы строить ваш проект надежно и гибко.
 
-## Features
+## Особенности
 
-- Write Vue Files (`*.vue`)
-- Automatic Code Splitting
-- Server-Side Rendering
-- Powerful Routing System with Asynchronous Data
-- Static File Serving
-- [ES2015+](https://babeljs.io/docs/en/learn/) Transpilation
-- Bundling and minifying of your JS & CSS
-- Managing `<head>` element (`<title>`, `<meta>`, etc.)
-- Hot module replacement in Development
-- Pre-processor: Sass, Less, Stylus, etc.
-- HTTP/2 push headers ready
-- Extending with Modular architecture
+- Формат файлов Vue (`*.vue`)
+- Автоматическое разделение кода
+- Server-Side Rendering (SSR) - рендеринг на стороне сервера
+- Мощная система маршрутизации с асинхронными данными
+- Поддержка статических файлов
+- [ES2015+](https://babeljs.io/docs/en/learn/) транспиляция
+- Пакетирование и минимизация вашего JS & CSS
+- Управление элементом `<head>` (`<title>`, `<meta>` и т.д.)
+- Горячая замена модулей при разработке
+- Поддержка препроцессоров: Sass, Less, Stylus, и т.д.
+- Готовые HTTP/2 заголовки
+- Расширение с Модульной архитектурой
 
-## How it Works
+## Как это работает
 
-Nuxt.js includes the following to create a rich web application development:
+![Vue с Webpack и Babel](https://i.imgur.com/avEUftE.png)
 
-- [Vue 2](https://vuejs.org/)
-- [Vue Router](https://router.vuejs.org/en/)
-- [Vuex](https://vuex.vuejs.org/en/) (included only when using the [store option](/guide/vuex-store))
-- [Vue Server Renderer](https://ssr.vuejs.org/en/) (excluded when using [`mode: 'spa'`](/api/configuration-mode))
-- [Vue Meta](https://github.com/nuxt/vue-meta)
+Для создания богатой разработки веб-приложений, Nuxt.js включает в себя следующее:
 
-A total of only **57kB min+gzip** (60kB with Vuex).
+- [Vue 2](https://ru.vuejs.org/)
+- [Vue Router](https://router.vuejs.org/ru/)
+- [Vuex](https://vuex.vuejs.org/ru/) ( [Nuxt vuex-store](https://ru.nuxtjs.org/guide/vuex-store/) )
+- [Vue Server Renderer](https://ssr.vuejs.org/ru/) ( исключено при использовании [`mode: 'spa'`](/api/configuration-mode))
+- [Vue Meta](https://ru.nuxtjs.org/guide/html-head/)
+
+В общей сложности это занимает всего **57kB min + gzip** (60kB с Vuex).
 
 <div class="Alert">
 
-Under the hood we use [webpack](https://github.com/webpack/webpack) with [vue-loader](https://github.com/vuejs/vue-loader) and [babel-loader](https://github.com/babel/babel-loader) to bundle, code-split and minify your code.
+Под капотом мы используем [webpack](https://webpack.js.org/) с [vue-loader](https://vue-loader.vuejs.org/ru/) и [babel-loader](https://webpack.js.org/loaders/babel-loader/) для объединения, разделения и минимизации вашего кода.
 
 </div>
 
-## Schema
+## Схема
 
-This schema shows what is called by Nuxt.js when the server is called or when the user navigates through the app via `<nuxt-link>`:
+Эта схема показывает, что вызывается Nuxt.js, когда вызывается сервер или когда пользователь перемещается по приложению через nuxt-ссылку `<nuxt-link>`:
 
-![nuxt-schema](/nuxt-schema.svg)
+![nuxt-schema](https://ru.nuxtjs.org/nuxt-schema.svg)
 
-## Server Rendered (Universal SSR)
+## Серверный рендеринг (Universal SSR)
 
-You can use Nuxt.js as a framework to handle all the UI rendering of your project.
+Вы можете использовать Nuxt.js в качестве основы для обработки всего рендеринга пользовательского интерфейса вашего проекта.
 
-When launching `nuxt`, it will start a development server with hot-reloading and [Vue Server Renderer](https://ssr.vuejs.org/en/) configured to automatically server-render your application.
+При запуске `nuxt` запускается сервер разработки с горячей перезагрузкой и [Vue Server Renderer](https://ssr.vuejs.org/ru/), настроенный на автоматическую серверную визуализацию вашего приложения.
 
-## Single Page Applications (SPA)
+## Одностраничные приложения (SPA)
 
-If, for any reason, you prefer not to use server side rendering or need static hosting for your applications, you can simply use SPA mode using `nuxt --spa`. In combination with the *generate* feature, it gives you a powerful SPA deployment mechanism without the need to use a Node.js runtime or any special server handling.
+Если по какой-либо причине вы предпочитаете не использовать рендеринг на стороне сервера (SSR) или вам нужен статический хостинг для ваших приложений, вы можете использовать режим SPA с помощью режима `nuxt --spa`. В сочетании с функцией создания `generate`, он дает вам мощный механизм развертывания SPA без необходимости использования среды выполнения Node.js или какой-либо специальной обработки сервера.
 
-Take a look at [the commands](/guide/commands) to learn more about usage.
+Посмотрите [команды](https://ru.nuxtjs.org/guide/commands/), чтобы узнать больше.
 
-If you already have a server, you can plug in Nuxt.js by using it as a middleware. There is no restriction at all when using Nuxt.js for developing your Universal Web Applications. See the [Using Nuxt.js Programmatically](/api/nuxt) guide.
+Если у вас уже есть сервер, вы можете подключить Nuxt.js, используя его в качестве промежуточного программного обеспечения. Нет никаких ограничений при использовании Nuxt.js для разработки ваших универсальных веб-приложений. [См.Руководство](https://ru.nuxtjs.org/api/nuxt/) по использованию Nuxt.js.
 
-## Static Generated (Pre Rendering)
+## Статическая генерация (предварительный рендеринг)
 
-The big innovation of Nuxt.js comes with the  `nuxt build && nuxt export` command for Nuxt >= v2.13 or `nuxt generate` command for Nuxt <= v2.12.
+Большое новшество в Nuxt.js - это команда экспорта `nuxt build && nuxt export` для Nuxt >= v2.13 или команда создания `nuxt generate` для Nuxt <= v2.12.
 
-When building your application, it will generate the HTML for every one of your routes and store it in a file.
+При создании приложения оно генерирует HTML для каждого из ваших маршрутов и сохраняет его в файле.
 
-<div>
-  <a href="https://vueschool.io/courses/static-site-generation-with-nuxtjs?friend=nuxt" target="_blank" class="Promote">
-    <img src="/static-site-generation-with-nuxtjs.png" alt="Static Site Generation with Nuxt.js by vueschool"/>
-    <div class="Promote__Content">
-      <h4 class="Promote__Content__Title">Static Site Generation with Nuxt.js</h4>
-      <p class="Promote__Content__Description">Learn how to generate static websites (pre rendering) to improve both performance and SEO while eliminating hosting costs.</p>
-      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js development.</p>
-    </div>
-  </a>
-</div>
-
-For example, the following file structure:
+Например, следующая файловая структура:
 
 ```bash
 -| pages/
@@ -93,48 +84,44 @@ For example, the following file structure:
 ----| index.vue
 ```
 
-Will generate:
+Будет сгенерировано, как:
 
-```
+```bash
 -| dist/
 ----| about/
 ------| index.html
 ----| index.html
 ```
 
-With this, you can host your generated web application on any static hosting!
+При этом вы можете разместить созданное вами веб-приложение на любом статическом хостинге!
 
-The best example is this website. It is generated and hosted on [Netlify](https://www.netlify.com), see our [source code](https://github.com/nuxt/nuxtjs.org) or [How to deploy Nuxt.js to Netlify](https://vueschool.io/lessons/how-to-deploy-nuxtjs-to-netlify?friend=nuxt) from Vue School.
+Лучший пример этого сайта. Он создается и размещается на [Netlify](https://www.netlify.com), смотри наш [исходный код](https://github.com/nuxt/nuxtjs.org) или [как развернуть Nuxt.js в Netlify](https://vueschool.io/lessons/how-to-deploy-nuxtjs-to-netlify?friend=nuxt) из Vue School.
 
-We don't want to manually generate the application every time we update the [docs repository](https://github.com/nuxt/docs), it triggers a hook to Netlify which:
+Мы не хотим вручную генерировать приложение каждый раз, когда обновляем хранилище документов, оно вызывает перехват Netlify, который:
 
-1. Clones the [nuxtjs.org repository](https://github.com/nuxt/nuxtjs.org)
-2. Installs the dependencies via `npm install`
-3. Runs `nuxt build && nuxt export`(>= v2.13) or `nuxt generate`(<= v2.12)
-4. Serves the `dist` directory
+1. Клонирует репозиторий [nuxtjs.org](https://github.com/nuxt/nuxtjs.org)
+2. Устанавливает зависимости через `npm install`
+3. Запускает сборку `nuxt build && nuxt export` (>= v2.13) или генерацию `nuxt generate` (<= v2.12)
+4. Обслуживает каталог `dist`
 
-We now have an automated **Static Generated Web Application** :)
+Теперь у нас есть автоматическое **статическое веб-приложение** :)
 
-The new full static module which is available since v2.13 generates your html and static assets at build time which means everything is already generated and therefore not only is it great for SEO but it can also be hosted for free on any of the static hosting providers. 
+Новый полностью статический модуль, который доступен начиная с v2.13, генерирует ваши html и статические активы во время сборки, что означает, что все уже сгенерировано, и, следовательно, он не только отлично подходит для SEO, но также может бесплатно размещаться на любом статическом хостинге.
 
-Nuxt v2.13 also comes with a crawler installed which will crawl your link tags and generate your dynamic routes based on these links which means there is no need to manually generate your dynamic links anymore.
+Nuxt v2.13 также поставляется с установленным сканером, который будет сканировать ваши теги ссылок и генерировать ваши динамические маршруты на основе этих ссылок, что означает, что вам больше не нужно вручную генерировать ваши динамические ссылки.
 
-The static target works by saving the calls to your API in payload.js files in a static folder. These payloads are then cached for better performance and offline support and as your API is not called on client side navigation any more (when called using asyncData and fetch), it also means you do not have to expose your API to the public. 
+Статическая цель работает, сохраняя вызовы вашего API в файлах payload.js в статической папке. Эти полезные данные затем кэшируются для повышения производительности и поддержки в автономном режиме, и поскольку ваш API больше не вызывается при навигации на стороне клиента (при вызове с использованием asyncData и fetch), это также означает, что вам не нужно открывать свой API для публики.
 
-When your site is generated your html is generated with all its content and on client side navigation these pages are reconstructed using the payload files for your API data. By separating the code from the content you can easily re-generate your content without the need to re-build your whole site. That means once your site is built and you only want to change your content you can simply call `nuxt export` which will re-generate your content only, and as the content doesn't need to go through webpack it means content regeneration is lightening fast. 
+Когда ваш сайт генерируется, ваш html генерируется со всем его содержимым, и при навигации на стороне клиента эти страницы восстанавливаются с использованием файлов полезной нагрузки (payload files) для ваших данных API. Отделяя код от контента, вы можете легко сгенерировать ваш контент без необходимости перестраивать весь ваш сайт. Это означает, что после того, как ваш сайт создан, и вы хотите изменить только свой контент, вы можете просто вызвать `nuxt export`, который будет перегенерировать только ваш контент, и, поскольку контент не должен проходить через webpack, это означает, что регенерация контента происходит быстрее.
 
-If you want to generate static sites, using Nuxt >= v2.13, you will need to add `static` as the `target` in your nuxt.config file. The default value for `target` is `server`.
+Если вы хотите генерировать статические сайты, используя Nuxt >= v2.13, вам нужно добавить `static` в качестве цели `target` в ваш файл `nuxt.config`. Значением по умолчанию для `target` является `server`.
 
 `nuxt.config.js`
+
 ```js
 export default {
-  target: 'static'
-}
+  target: "static",
+};
 ```
-To learn more about the new static target checkout our [article](/blog/going-full-static)
 
-<div class="Alert">
-
-See [How to deploy on Netlify?](/faq/netlify-deployment) for more details on how to deploy to Netlify.
-
-</div>
+Для получения более подробной информации смотри [как развернуть на Netlify?](https://ru.nuxtjs.org/faq/netlify-deployment/)

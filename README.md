@@ -12,11 +12,10 @@ For developing in local, see instructions on [nuxt/nuxtjs.org](https://github.co
 
 ### Russian
 
-Russian translation is maintained by Translation Gang.
-
-- Translation Repo - [/translation-gang/ru.docs.nuxtjs](https://github.com/translation-gang/ru.docs.nuxtjs)
-- Primary maintainer - [Grigoriy Beziuk](https://gbezyuk.github.io)
-- Primary translator - [Nicholas Shachmatov](https://github.com/theOnlyBoy)
+- Translation Repo - [https://github.com/theartkod/docs](https://github.com/theartkod/docs)
+- Primary maintainer - [Ilia Belskii](https://github.com/theartkod)
+- Translation team - [https://t.me/nuxtjs_translation](https://t.me/nuxtjs_translation)
+- Translation project - [https://github.com/theartkod/docs/projects/1](https://github.com/theartkod/docs/projects/1)
 
 ### Chinese
 
