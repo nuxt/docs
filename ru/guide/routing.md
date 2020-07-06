@@ -15,7 +15,7 @@ description: Nuxt.js использует файловую систему для
 
 ```html
 <template>
-  <nuxt-link to="/">Домашння страница</nuxt-link>
+  <nuxt-link to="/">Домашняя страница</nuxt-link>
 </template>
 ```
 
