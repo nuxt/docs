@@ -1,27 +1,27 @@
 ---
 title: Routing
-description: Nuxt.js use the file-system to generate the routes of your web applications.
+description: Nuxt.js использует файловую систему для генерирования маршрутов вашего веб-приложения.
 ---
 
-> Nuxt.js automatically generates the [vue-router](https://github.com/vuejs/vue-router) configuration based on your file tree of Vue files inside the `pages` directory.
+> Nuxt.js автоматически генерирует конфигурацию [vue-router](https://github.com/vuejs/vue-router) базируясь на древовидной структуре ваших Vue файлов внутри папки`pages` .
 
 <div class="Alert Alert--grey">
 
-To navigate between pages, we recommend to use the [`<nuxt-link>`](/api/components-nuxt-link) component.
+Для навигации между страницами мы рекомендуем использовать компонент [`<nuxt-link>`](/api/components-nuxt-link) .
 
 </div>
 
-For example:
+Пример:
 
 ```html
 <template>
-  <nuxt-link to="/">Home page</nuxt-link>
+  <nuxt-link to="/">Домашння страница</nuxt-link>
 </template>
 ```
 
-## Basic Routes
+##  Простые пути
 
-This file tree:
+Древовидная структура файловой системы:
 
 ```bash
 pages/
@@ -31,7 +31,7 @@ pages/
 --| index.vue
 ```
 
-will automatically generate:
+Автоматически сгенерирует:
 
 ```js
 router: {
@@ -55,11 +55,11 @@ router: {
 }
 ```
 
-## Dynamic Routes
+## Динамические пути
 
-To define a dynamic route with a parameter, you need to define a .vue file OR a directory **prefixed by an underscore**.
+Чтобы обьявить динамический маршрут как параметр - вам необходимо обьявить файл .vue ИЛИ папку **с нижним подчеркиванием в роли префикса (_)**.
 
-This file tree:
+Древовидная структура файловой системы:
 
 ```bash
 pages/
@@ -71,7 +71,7 @@ pages/
 --| index.vue
 ```
 
-will automatically generate:
+Автоматически сгенерирует:
 
 ```js
 router: {
@@ -100,29 +100,29 @@ router: {
 }
 ```
 
-As you can see the route named `users-id` has the path `:id?` which makes it optional, if you want to make it required, create an `index.vue` file in the `users/_id` directory instead.
+Как вы могли заметить, маршрут с названием `users-id` имеет путь `:id?`, что делает его необязательным. Если вы хотите сделать его обязательным - создайте файл `index.vue` внутри директории `users/_id`.
 
 <div class="Alert Alert-blue">
 
-As of Nuxt >= v2.13 there is a crawler installed that will now crawl your link tags and generate your routes when using the command `nuxt build && nuxt export` based on those links. 
+Начиная с Nuxt >= v2.13 установлен сканер, который теперь будет сканировать ваши теги ссылок и генерировать маршруты при использовании команды `nuxt build && nuxt export` на основе этих ссылок. 
 
 </div>
 
 <div class="Alert Alert--orange">
 
-**Warning:** If you using Nuxt >= v2.13 and have pages that have no links such as secret pages and you would like these to also be generated then you can use the `generate.routes` property.
+**Внимание:** Если вы используете Nuxt >= v2.13 и у вас есть страницы которые не имеют ссылок, как скрытые страницы, и вы хотите сгенерировать и их тоже - вы можете использовать свойство `generate.routes`. 
 
-**Warning:** dynamic routes are ignored by the `generate` command when using Nuxt <= v2.12 
+**Внимание:** При использовании Nuxt <= v2.12 динамические маршруты игнорируются командой `generate`.
 
-[API Configuration generate](/api/configuration-generate#routes)
+[API Конфигурация generate](/api/configuration-generate#routes)
 
 </div>
 
-### Validate Route Params
+### Валидация параметров маршрута 
 
-Nuxt.js lets you define a validator method inside your dynamic route component.
+Nuxt.js позволяет вам определять метод валидации внутри вашего компанента динамеческого маршрута.
 
-In this example: `pages/users/_id.vue`
+Пример: `pages/users/_id.vue`
 
 ```js
 export default {
@@ -133,23 +133,23 @@ export default {
 }
 ```
 
-If the validate method does not return `true` or a `Promise` that resolve to `true`, or throws an Error, Nuxt.js will automatically load the 404 error page or 500 error page in case of an error.
+Если метод validate не возвращает `true` или `Promise`, который преобразуется в `true` или выдаст ошибку - Nuxt.js автоматически загрузит страницу ошибки 404 или страницу ошибки 500 в случае ошибки.
 
-More information about the validate method: [API Pages validate](/api/pages-validate)
+Больше информации о методе валидации: [API Валидация страниц](/api/pages-validate)
 
-## Nested Routes
+## Вложенные маршруты 
 
-Nuxt.js lets you create nested route by using the children routes of vue-router.
+Nuxt.js позволяет вам создавать вложенные маршруты с помощью дочерних маршрутов vue-router.
 
-To define the parent component of a nested route, you need to create a Vue file with the **same name as the directory** which contain your children views.
+Чтобы определить родительский компонент вложенного маршрута, вам нужно создать файл Vue с **таким же именем как у директории**, которая содержит ваши дочерние представления.
 
 <div class="Alert Alert--orange">
 
-<b>Warning:</b> don't forget to include `<nuxt-child/>` inside the parent component (<code>.vue</code> file).
+<b>Внимание:</b> не забудьте добавить `<nuxt-child/>` внутрь родительского компонента (<code>.vue</code> файл).
 
 </div>
 
-This file tree:
+Древовидная структура файловой системы:
 
 ```bash
 pages/
@@ -159,7 +159,7 @@ pages/
 --| users.vue
 ```
 
-will automatically generate:
+Автоматически сгенерирует:
 
 ```js
 router: {
@@ -184,11 +184,11 @@ router: {
 }
 ```
 
-## Dynamic Nested Routes
+## Динамические вложенные маршруты
 
-This scenario should not often happen, but it is possible with Nuxt.js: having dynamic children inside dynamic parents.
+Этот сценарий не должен происходить часто, но это возможно с Nuxt.js: наличие динамических дочерних маршрутов внутри динамических родительских.
 
-This file tree:
+Древовидная структура файловой системы:
 
 ```bash
 pages/
@@ -202,7 +202,7 @@ pages/
 --| index.vue
 ```
 
-will automatically generate:
+Автоматически сгенерирует:
 
 ```js
 router: {
