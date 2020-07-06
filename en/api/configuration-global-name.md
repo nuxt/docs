@@ -18,9 +18,13 @@ Example:
 }
 ```
 
-It needs to be a valid JavaScript identifier.
+<div class="Alert Alert--orange">
 
-## The globals property
+<b>Warning:</b> The `globalName` needs to be a valid JavaScript identifier, and changing it may break support for certain plugins that rely on Nuxt-named functions. If you're looking to just change the visible `__nuxt` HTML ID, then use the `globals` property.
+
+</div>
+
+## The `globals` property
 
 > Customizes specific global names which are based on `globalName` by default.
 
@@ -28,7 +32,7 @@ It needs to be a valid JavaScript identifier.
 - Default:
 
 ```js
-{
+globals: {
   id: globalName => `__${globalName}`,
   nuxt: globalName => `$${globalName}`,
   context: globalName => `__${globalName.toUpperCase()}__`,
