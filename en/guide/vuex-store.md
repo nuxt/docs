@@ -223,7 +223,7 @@ actions: {
 
 > If you are using the _Modules_ mode of the Vuex store, only the primary module (in `store/index.js`) will receive this action. You'll need to chain your module actions from there.
 
-The [context](/api/context) is given to `nuxtServerInit` as the 2nd argument, it is the same as `asyncData` or `fetch` method.
+The vuex [context] object is passed as the 1st argument and the [context](/api/context) is given to `nuxtServerInit` as the 2nd argument. The latter is the same as `asyncData` or `fetch` method.
 
 If `nuxt generate` is ran, `nuxtServerInit` will be executed for every dynamic route generated.
 
