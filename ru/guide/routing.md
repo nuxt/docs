@@ -346,7 +346,7 @@ Nuxt.js использует компонент [`<transition>`](http://vuejs.or
 
 <div class="Alert Alert--nuxt-green">
 
-<b>Информация:</b> Nuxt.js навзание перехода по умолчанию: `"страница"`.
+<b>Информация:</b> Nuxt.js название перехода по умолчанию: `"page"`.
 
 </div>
 
