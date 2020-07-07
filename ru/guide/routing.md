@@ -316,7 +316,7 @@ export default {
 ``` js
 export default {
   generate: {
-    fallback: true, // if you want to use '404.html' вместо стандартного '200.html'
+    fallback: true, // если хотите использовать '404.html' вместо стандартного '200.html'
     fallback: 'my-fallback/file.html' // если вашемо хостингу нужно нестандартное местоположение
   }
 }
