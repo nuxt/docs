@@ -1,37 +1,37 @@
 ---
-title: Vuex Store
-description: Using a store to manage the state is important for every big application. That's why Nuxt.js implements Vuex in its core.
+title: Хранилище Vuex
+description: Использование хранилища для управления состоянием приложения важно для любого крупного проекта, поэтому nuxt.js в своём ядре использует Vuex. 
 ---
 
-> Using a store to manage the state is important for every big application. That's why Nuxt.js implements [Vuex](https://vuex.vuejs.org/en/) in its core.
+> Использование хранилища для управления состоянием приложения важно для любого крупного проекта, поэтому nuxt.js в своём ядре использует [Vuex](https://vuex.vuejs.org/en/). 
 
 <div class="Promo__Video">
   <a href="https://vueschool.io/lessons/utilising-the-vuex-store-nuxtjs?friend=nuxt" target="_blank">
     <p class="Promo__Video__Icon">
-      Watch a free lesson about <strong>Nuxt.js and Vuex</strong> on Vue School 
+      Смотрите бесплатные уроки <strong>Nuxt.js и Vuex</strong> на Vue School 
     </p>
   </a>
 </div>
 
-## Activate the Store
+## Активация хранилища
 
-Nuxt.js will look for the `store` directory, if it exists, it will:
+Nuxt.js будет искать директорию `store`, если она существует - происходит следующее:
 
-1. Import Vuex,
-2. Add the `store` option to the root Vue instance.
+1. Импортируется Vuex,
+2. Опция  `store` добавляется к корневому экземпляру Vue.
 
-Nuxt.js lets you decide between **2 store modes**. You can choose the one you prefer:
+Nuxt.js предлогает **2 режима** работы с хранилищем, вы можете выбрать более подходящий для себя:
 
-- **Modules:** every `.js` file inside the `store` directory is transformed as a [namespaced module](http://vuex.vuejs.org/en/modules.html) (`index` being the root module).
-- **Classic (__deprecated__):** `store/index.js` returns a method to create a store instance.
+- **Модульный:** каждый `.js` файл внутри директории `store` превращается в [модуль с пространством имён](http://vuex.vuejs.org/en/modules.html) (`index` - корневой модуль).
+- **Классический (__устаревший__):** `store/index.js` возвращает метод для создания экземпляра хранилища.
 
-Regardless of the mode, your `state` value should **always be a `function`** to avoid unwanted *shared* state on the server side.
+Независимо от режима, ваше значение `state` должно **всегда быть функцией**, чтобы избежать нежелательного *общего* состояния на стороне сервера.
 
-## Modules mode
+## Модульный режим
 
-> Nuxt.js lets you have a `store` directory with every file corresponding to a module.
+> Nuxt.js позволяет вам иметь директорию `store` с каждым файлом соответствующем модулю.
 
-To get started, export the state as a function, and the mutations and actions as objects in `store/index.js`:
+Для начала, экспортируем состояние как функцию, а мутации и действия - как объекты в `store/index.js`:
 
 ```js
 export const state = () => ({
@@ -45,7 +45,7 @@ export const mutations = {
 }
 ```
 
-Then, you can have a `store/todos.js` file:
+Теперь мы можем использовать файл `store/todos.js`:
 
 ```js
 export const state = () => ({
@@ -68,7 +68,7 @@ export const mutations = {
 }
 ```
 
-The store will be created as such:
+Создадим хранилище:
 
 ```js
 new Vuex.Store({
@@ -106,7 +106,7 @@ new Vuex.Store({
 })
 ```
 
-And in your `pages/todos.vue`, using the `todos` module:
+И в нашем `pages/todos.vue`, используя модуль `todos`:
 
 ```html
 <template>
@@ -114,9 +114,9 @@ And in your `pages/todos.vue`, using the `todos` module:
     <li v-for="todo in todos" :key="todo.id">
       <input :checked="todo.done" @change="toggle(todo)" type="checkbox">
       <span :class="{ done: todo.done }">{{ todo.text }}</span>
-      <button @click="removeTodo(todo)">remove</button>
+      <button @click="removeTodo(todo)">удалить</button>
     </li>
-    <li><input @keyup.enter="addTodo" placeholder="What needs to be done?"></li>
+    <li><input @keyup.enter="addTodo" placeholder="Что нужно сделать?"></li>
   </ul>
 </template>
 
@@ -151,9 +151,9 @@ export default {
 </style>
 ```
 
-> The module method also works for top-level definitions without implementing a sub-directory in the `store` directory
+> Модульный метод также работает и для определений верхнего уровня без реализации под-директории в директории `store`
 
-Example for state: you create a file `store/state.js` and add the following
+Пример для хранилища: мы создали файл `store/state.js` и добавляем следующее
 
 ```js
 export default () => ({
@@ -161,7 +161,7 @@ export default () => ({
 })
 ```
 
-And the corresponding mutations can be in the file `store/mutations.js`
+Соответствующие мутации могут быть в файле `store/mutations.js`
 
 ```js
 export default {
@@ -171,15 +171,15 @@ export default {
 }
 ```
 
-### Module files
+### Файлы модулей
 
-You can optionally break down a module file into separate files: `state.js`, `actions.js`, `mutations.js` and `getters.js`. If you maintain an `index.js` file with state, getters and mutations while having a single separate file for actions, that will also still be properly recognized.
+При желании можно разбить файл модуля на отдельные файлы: `state.js`,` actions.js`, `mutations.js` и` getters.js`. Отдельный файл для действий также будет правильно распознан если содержать файл `index.js` с состоянием, геттерами и мутациями.
 
-> Note: Whilst using split-file modules, you must remember that using arrow functions, ```this``` is only lexically available. Lexical scoping means that the ```this``` always references the owner of the arrow function. If the arrow function is not contained then ```this``` would be undefined. The solution is to use a "normal" function which produces its own scope and thus has ```this``` available.
+> Примечание: при использовании модулей с разделенными файлами нужно помнить, что при использовании стрелочных функций ```this``` доступен только лексически.  Лексическая область видимости подразумевает что ```this``` всегда будет указывать на контекст вызова стрелочной функции. Если контекст вызова отсутствует -  ```this``` будет undefined. Решение состоит в том, чтобы использовать "нормальную" функцию, которая создает свою собственную область видимости и, следовательно, имеет ```this```.
 
-### Plugins
+### Плагины
 
-You can add additional plugins to the store (in the modules mode) by putting them into the `store/index.js` file:
+В хранилище можно добавить дополнительные плагины (в модульном режиме), просто добавляя их в `store/index.js` файл:
 
 ```js
 import myPlugin from 'myPlugin'
@@ -197,19 +197,19 @@ export const mutations = {
 }
 ```
 
-More information about the plugins: [Vuex documentation](https://vuex.vuejs.org/en/plugins.html).
+Больше о плагинах: [документация Vuex](https://vuex.vuejs.org/en/plugins.html).
 
-## The fetch Method
+## Метод fetch
 
-> The `fetch` method is used to fill the store before rendering the page, it's like the `asyncData` method except it doesn't set the component data.
+> Метод `fetch` используется для заполнения хранилища перед рендерингом страницы, он похож на метод `asyncData`, но он не устанавливает данные компонента.
 
-More information about the fetch method: [API Pages fetch](/api/pages-fetch).
+Больше о fetch методе: [API Страницы fetch](/api/pages-fetch).
 
-## The nuxtServerInit Action
+## Действие nuxtServerInit
 
-If the action `nuxtServerInit` is defined in the store and the mode is `universal`, Nuxt.js will call it with the context (only from the server-side). It's useful when we have some data on the server we want to give directly to the client-side.
+Если действие `nuxtServerInit` определено для хранилища (в режиме `universal`) Nuxt.js вызовет его в рамках контекста (только на сервере). Это может быть полезным, если у нас есть данные на сервере, которые мы хотим передать клиентскому приложению напрямую.
 
-For example, let's say we have sessions on the server-side and we can access the connected user through `req.session.user`. To give the authenticated user to our store, we update our `store/index.js` to the following:
+Например, предположим что у нас есть хранилище сессий и мы можем получить доступ к пользователю через `req.session.user`. Чтобы указать данные о пользователе в хранилище, добавьте в `store/index.js` следующий код: 
 
 ```js
 actions: {
@@ -221,13 +221,13 @@ actions: {
 }
 ```
 
-> If you are using the _Modules_ mode of the Vuex store, only the primary module (in `store/index.js`) will receive this action. You'll need to chain your module actions from there.
+> При использовании режима _Modules_ в хранилище Vuex, только основной модуль (в `store / index.js`) получит это действие. Нужно будет связать действия модуля оттуда.
 
-The [context](/api/context) is given to `nuxtServerInit` as the 2nd argument, it is the same as `asyncData` or `fetch` method.
+[Контекст](/api/context) передаётся в `nuxtServerInit` в качестве второго параметра. В целом метод работает так же как `asyncData` или `fetch`.
 
-If `nuxt generate` is ran, `nuxtServerInit` will be executed for every dynamic route generated.
+Если запущен `nuxt generate`,` nuxtServerInit` будет выполняться для каждого сгенерированного динамического маршрута.
 
-> Note: Asynchronous `nuxtServerInit` actions must return a Promise or leverage async/await to allow the `nuxt` server to wait on them.
+> Примечание: Асинхронные действия `nuxtServerInit` должны возвращать Promise или использовать async / await, чтобы позволить серверу` nuxt` ожидать их.
 
 ```js
 actions: {
@@ -237,17 +237,17 @@ actions: {
 }
 ```
 
-## Vuex Strict Mode
+## Строгий режим Vuex
 
-Strict mode is enabled by default on dev mode and turned off in production mode. To disable strict mode in dev, follow the below example in `store/index.js`:
+Для режима разработки строгий режим включен по умолчанию, и выключен для продакшн режима. Пример выключения строгого режим для разработки в `store/index.js`:
 
 `export const strict = false`
 
-## Classic mode
+## Классический режим
 
-> This feature is deprecated and will be removed in Nuxt 3.
+> Эта функция устарела, и будет удалена в Nuxt 3.
 
-To activate the store with the classic mode, we create the `store/index.js` file which should export a method that returns a Vuex instance:
+Чтобы активировать хранилище в классическом режиме, мы создаем файл `store / index.js`, который должен экспортировать метод, который возвращает экземпляр Vuex:
 
 ```js
 import Vuex from 'vuex'
@@ -268,9 +268,9 @@ const createStore = () => {
 export default createStore
 ```
 
-> We don't need to install `vuex` since it's shipped with Nuxt.js.
+> Не нужно устанавливать `vuex`, поскольку он уже есть в Nuxt.js
 
-We can now use `this.$store` inside our components:
+Теперь можно использовать `this.$store` внутри компонентов:
 
 ```html
 <template>
