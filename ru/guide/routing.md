@@ -406,7 +406,7 @@ export default {
 
 **Общее middleware должно быть помещено в `middleware/` директории.** Имя файла будет именем свойства промежуточной обработки (middleware) (`middleware/auth.js` будет `auth` middleware). Вы так же можете определить middleware для конкретной страницы, используя функцию напрямую: [anonymous middleware](/api/pages-middleware#anonymous-middleware).
 
-В качестве первого аргумента middleware получает [the context](/api/context) :
+В качестве первого аргумента middleware получает [context](/api/context) :
 
 ```js
 export default function (context) {
