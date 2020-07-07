@@ -1,27 +1,27 @@
 ---
 title: Routing
-description: Nuxt.js use the file-system to generate the routes of your web applications.
+description: Nuxt.js использует файловую систему для генерирования маршрутов вашего веб-приложения.
 ---
 
-> Nuxt.js automatically generates the [vue-router](https://github.com/vuejs/vue-router) configuration based on your file tree of Vue files inside the `pages` directory.
+> Nuxt.js автоматически генерирует конфигурацию [vue-router](https://github.com/vuejs/vue-router) базируясь на древовидной структуре ваших Vue файлов внутри папки`pages` .
 
 <div class="Alert Alert--grey">
 
-To navigate between pages, we recommend to use the [`<nuxt-link>`](/api/components-nuxt-link) component.
+Для навигации между страницами мы рекомендуем использовать компонент [`<nuxt-link>`](/api/components-nuxt-link) .
 
 </div>
 
-For example:
+Пример:
 
 ```html
 <template>
-  <nuxt-link to="/">Home page</nuxt-link>
+  <nuxt-link to="/">Домашняя страница</nuxt-link>
 </template>
 ```
 
-## Basic Routes
+## Простые пути
 
-This file tree:
+Древовидная структура файловой системы:
 
 ```bash
 pages/
@@ -31,7 +31,7 @@ pages/
 --| index.vue
 ```
 
-will automatically generate:
+Будет сгенерировано в:
 
 ```js
 router: {
@@ -55,11 +55,11 @@ router: {
 }
 ```
 
-## Dynamic Routes
+## Динамические пути
 
-To define a dynamic route with a parameter, you need to define a .vue file OR a directory **prefixed by an underscore**.
+Чтобы обьявить динамический маршрут как параметр - вам необходимо обьявить файл .vue ИЛИ папку **с нижним подчеркиванием в роли префикса (_)**.
 
-This file tree:
+Древовидная структура файловой системы:
 
 ```bash
 pages/
@@ -71,7 +71,7 @@ pages/
 --| index.vue
 ```
 
-will automatically generate:
+Будет сгенерировано в:
 
 ```js
 router: {
@@ -100,29 +100,29 @@ router: {
 }
 ```
 
-As you can see the route named `users-id` has the path `:id?` which makes it optional, if you want to make it required, create an `index.vue` file in the `users/_id` directory instead.
+Как вы могли заметить, маршрут с названием `users-id` имеет путь `:id?`, что делает его необязательным. Если вы хотите сделать его обязательным - создайте файл `index.vue` внутри директории `users/_id`.
 
 <div class="Alert Alert-blue">
 
-As of Nuxt >= v2.13 there is a crawler installed that will now crawl your link tags and generate your routes when using the command `nuxt build && nuxt export` based on those links. 
+Начиная с Nuxt >= v2.13 установлен сканер, который теперь будет сканировать ваши теги ссылок и генерировать маршруты при использовании команды `nuxt build && nuxt export` на основе этих ссылок. 
 
 </div>
 
 <div class="Alert Alert--orange">
 
-**Warning:** If you using Nuxt >= v2.13 and have pages that have no links such as secret pages and you would like these to also be generated then you can use the `generate.routes` property.
+**Внимание:** Если вы используете Nuxt >= v2.13 и у вас есть страницы которые не имеют связей, как "скрытые страницы", и вы хотите сгенерировать и их тоже - вы можете использовать свойство `generate.routes`. 
 
-**Warning:** dynamic routes are ignored by the `generate` command when using Nuxt <= v2.12 
+**Внимание:** При использовании Nuxt <= v2.12 команда `generate` игнорирует динамические маршруты.
 
-[API Configuration generate](/api/configuration-generate#routes)
+[API Конфигурация generate](/api/configuration-generate#routes)
 
 </div>
 
-### Validate Route Params
+### Валидация параметров маршрута 
 
-Nuxt.js lets you define a validator method inside your dynamic route component.
+Nuxt.js позволяет вам определять метод валидации внутри вашего компанента динамеческого маршрута.
 
-In this example: `pages/users/_id.vue`
+Пример: `pages/users/_id.vue`
 
 ```js
 export default {
@@ -133,23 +133,23 @@ export default {
 }
 ```
 
-If the validate method does not return `true` or a `Promise` that resolve to `true`, or throws an Error, Nuxt.js will automatically load the 404 error page or 500 error page in case of an error.
+Если метод validate не возвращает `true` или `Promise`, который преобразуется в `true` или выдаст ошибку - Nuxt.js автоматически загрузит страницу ошибки 404 или страницу ошибки 500 в случае ошибки.
 
-More information about the validate method: [API Pages validate](/api/pages-validate)
+Больше информации о методе валидации: [API Валидация страниц](/api/pages-validate)
 
-## Nested Routes
+## Вложенные маршруты 
 
-Nuxt.js lets you create nested route by using the children routes of vue-router.
+Nuxt.js позволяет вам создавать вложенные маршруты с помощью дочерних маршрутов vue-router.
 
-To define the parent component of a nested route, you need to create a Vue file with the **same name as the directory** which contain your children views.
+Чтобы определить родительский компонент вложенного маршрута, вам нужно создать файл Vue с **таким же именем как у директории**, которая содержит ваши дочерние представления.
 
 <div class="Alert Alert--orange">
 
-<b>Warning:</b> don't forget to include `<nuxt-child/>` inside the parent component (<code>.vue</code> file).
+<b>Внимание:</b> не забудьте добавить `<nuxt-child/>` внутрь родительского компонента (<code>.vue</code> файл).
 
 </div>
 
-This file tree:
+Древовидная структура файловой системы:
 
 ```bash
 pages/
@@ -159,7 +159,7 @@ pages/
 --| users.vue
 ```
 
-will automatically generate:
+Будет сгенерировано в:
 
 ```js
 router: {
@@ -184,11 +184,11 @@ router: {
 }
 ```
 
-## Dynamic Nested Routes
+## Динамические вложенные маршруты
 
-This scenario should not often happen, but it is possible with Nuxt.js: having dynamic children inside dynamic parents.
+Этот сценарий не должен происходить часто, но это возможно с Nuxt.js: наличие динамических дочерних маршрутов внутри динамических родительских.
 
-This file tree:
+Древовидная структура файловой системы:
 
 ```bash
 pages/
@@ -202,7 +202,7 @@ pages/
 --| index.vue
 ```
 
-will automatically generate:
+Будет сгенерировано в:
 
 ```js
 router: {
@@ -243,12 +243,12 @@ router: {
 }
 ```
 
-### Unknown Dynamic Nested Routes
+### Неизвестные динамические вложенные маршруты
 
-If you do not know the depth of your URL structure, you can use `_.vue` to dynamically match nested paths.
-This will handle requests that do not match a _more specific_ request.
+Если вы не знаете глубину своей структуры URL, вы можете использовать `_.vue`для динамического сопоставления вложенных путей.
+Таким образом будут обработаны те запросы, которые не соответствуют _более конкретному_ запросу.
 
-This file tree:
+Древовидная структура файловой системы:
 
 ```bash
 pages/
@@ -259,9 +259,9 @@ pages/
 --| index.vue
 ```
 
-Will handle requests like this:
+Будет сгенерировано в:
 
-Path | File
+Путь | Файл
 --- | ---
 `/` | `index.vue`
 `/people` | `people/index.vue`
@@ -270,19 +270,19 @@ Path | File
 `/about/careers` | `_.vue`
 `/about/careers/chicago` | `_.vue`
 
-__Note:__ Handling 404 pages is now up to the logic of the `_.vue` page. [More on 404 redirecting can be found here](/guide/async-data#handling-errors).
+__Заметка:__ Обработка 404 страниц теперь соответствует логике страницы `_.vue`. [Больше о 404 можно найти здесь](/guide/async-data#handling-errors).
 
-## Extending the router
+## Расширение маршрута 
 
-There are multiple ways to extend the routing with Nuxt:
+Тут указано несколько способов расширить маршрутизацию с Nuxt:
 
-- [router-extras-module](https://github.com/nuxt-community/router-extras-module) to customise the route parameters in the page component
-- [@nuxtjs/router](https://github.com/nuxt-community/router-module) to overwrite the Nuxt router and write your own `router.js` file
-- Use the [router.extendRoutes](https://nuxtjs.org/api/configuration-router#extendroutes) property in your `nuxt.config.js`
+- [router-extras-module](https://github.com/nuxt-community/router-extras-module) настройка параметров маршрута в компоненте страницы
+- [@nuxtjs/router](https://github.com/nuxt-community/router-module) перезаписать маршрутизатор Nuxt и записать свой `router.js` файл
+- Используйте [router.extendRoutes](https://nuxtjs.org/api/configuration-router#extendroutes) свойства в вашем `nuxt.config.js`
 
-## Named Views
+## Именованные представления
 
-To render named views you can use `<nuxt name="top"/>` or `<nuxt-child name="top"/>` components in your layout/page. To specify named view of page we need to extend router config in `nuxt.config.js` file:
+Для отображения именованных представлений вы можете использовать компоненты `<nuxt name="top"/>` или `<nuxt-child name="top"/>` в ваших шаблонах/страницах. Чтобы указать именованное представление страницы, нужно расширить конфигурацию маршрутизатора в файле `nuxt.config.js`:
   
 ``` js
 export default {
@@ -303,56 +303,56 @@ export default {
   }
 }
 ```
-It require to extend interested route with 2 properties `components` and `chunkNames`. Named view in this config example has name `top`.
+Требуется расширить интересующий нас маршрут двумя свойствами: `components` и `chunkNames`. Именованное представление в этом примере конфигурации имеет название `top`.
 
-To see an example, take a look at the [named-views example](/examples/named-views).
+Посмотреть пример именованного представления: [пример именованных представлений](/examples/named-views).
 
 ### SPA fallback
 
-You can enable SPA fallbacks for dynamic routes too. Nuxt.js will output an extra file that is the same as the `index.html` that would be used in `mode: 'spa'`. Most static hosting services can be configured to use the SPA template if no file matches. It won't include the `head` info or any HTML, but it will still resolve and load the data from the API.
+Вы также можете включить SPA fallbacks для динамических маршрутов. Nuxt.js выведет дополнительный файл, такой же как `index.html`, который будет использоватся в `mode: 'spa'`. Большинство сервисов статического хостинга могут быть настроены на использование шаблона SPA, если ни один файл не подошел. Он не будет содержать в себе `head` или какой-либо HTML, но он все равно будет запускаться и загружать данные с API.
 
-We enable this in our `nuxt.config.js` file:
+Мы включили это в нашем `nuxt.config.js` файле:
 
 ``` js
 export default {
   generate: {
-    fallback: true, // if you want to use '404.html' instead of the default '200.html'
-    fallback: 'my-fallback/file.html' // if your hosting needs a custom location
+    fallback: true, // если хотите использовать '404.html' вместо стандартного '200.html'
+    fallback: 'my-fallback/file.html' // если вашемо хостингу нужно нестандартное местоположение
   }
 }
 ```
 
-### Locally Accessing Route Params
+### Локальный доступ к параметрам маршрута 
 
-You can access the current route parameters within your local page or component by referencing `this.$route.params.{parameterName}`. For example, if you had a dynamic users page (`users\_id.vue`) and wanted to access the `id` parameter to load the user or process information, you could access the variable like this: `this.$route.params.id`.
+Вы можете получить доступ к текущим параметрам маршрута на своих локальных страницах или компонентах ссылаясь на `this.$route.params.{parameterName}`. Например, если у вас была динамическая страница пользователей (`users\_id.vue`) и вы хотели получить доступ к параметру `id` для загрузки информации о пользователе, доступ к переменной можно получить таким способом: `this.$route.params.id`.
 
-#### Implementation for Surge
+#### Реализация для Surge
 
-Surge [can handle](https://surge.sh/help/adding-a-custom-404-not-found-page) both `200.html` and `404.html`. `generate.fallback` is set to `200.html` by default, so no need to change it.
+Surge [может обрабатывать](https://surge.sh/help/adding-a-custom-404-not-found-page) как `200.html` так и `404.html`. `generate.fallback` по умолчанию имеет значение `200.html` поэтому менять его не нужно.
 
-#### Implementation for GitHub Pages and Netlify
+#### Реализация для GitHub Pages и Netlify
 
-GitHub Pages and Netlify recognize the `404.html` file automatically, so setting `generate.fallback` to `true` is all we have to do!
+GitHub Pages и Netlify автоматически распознают файл `404.html`, поэтому все что нам нужно сделать - установить `generate.fallback` в значение `true`!
 
-#### Implementation for Firebase Hosting
+#### Реализация для Firebase Hosting
 
-Firebase Hosting [can handle](https://firebase.google.com/docs/hosting/full-config#404) the `404.html` file automatically, so setting `generate.fallback` to `true` will render the error page with a default response code of 404.
+Firebase Hosting [может обрабатывать](https://firebase.google.com/docs/hosting/full-config#404) файл `404.html` автоматически, поэтому `generate.fallback` со значением `true` отобразит страницу ошибки с кодом ответа по умолчанию 404.
 
-## Transitions
+## Переходы
 
-Nuxt.js uses the [`<transition>`](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your routes.
+Nuxt.js использует компонент [`<transition>`](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) чтобы позволить вам создавать красивые переходы/анимации между вашими маршрутами.
 
-### Global Settings
+### Глобальные настройки
 
 <div class="Alert Alert--nuxt-green">
 
-<b>Info:</b> Nuxt.js default transition name is `"page"`.
+<b>Информация:</b> Nuxt.js название перехода по умолчанию: `"page"`.
 
 </div>
 
 To add a fade transition to every page of your application, we need a CSS file that is shared across all our routes, so we start by creating a file in the `assets` folder.
 
-Our global css in `assets/main.css`:
+Наш глобальный css в `assets/main.css`:
 
 ```css
 .page-enter-active, .page-leave-active {
@@ -363,7 +363,7 @@ Our global css in `assets/main.css`:
 }
 ```
 
-Then we add its path to the `css` array in our `nuxt.config.js` file:
+Затем мы добавляем его путь в `css` массив в наш файл `nuxt.config.js`:
 
 ```js
 export default {
@@ -373,13 +373,13 @@ export default {
 }
 ```
 
-More information about the transition key: [API Configuration transition](/api/pages-transition)
+Большое о transition key: [API Конфигурация перехода](/api/pages-transition)
 
-### Page Settings
+### Настройки страницы
 
-You can also define a custom transition for a specific page with the `transition` property.
+Вы также можете определить пользовательский переход для отдельной страницы с помощью свойства `transition`.
 
-We add a new class in our global css in `assets/main.css`:
+Мы добавили новый клас в наш глобальный css в `assets/main.css`:
 
 ```css
 .test-enter-active, .test-leave-active {
@@ -390,7 +390,7 @@ We add a new class in our global css in `assets/main.css`:
 }
 ```
 
-Then we use the transition property to define the class name to use for this page transition:
+Затем мы используем свойство transition, чтобы определить имя класса, которое будет использоваться для этого перехода страницы:
 
 ```js
 export default {
@@ -398,30 +398,30 @@ export default {
 }
 ```
 
-More information about the transition property: [API Pages transition](/api/pages-transition)
+Больше о свойстве transition: [API Pages transition](/api/pages-transition)
 
 ## Middleware
 
-> Middleware lets you define custom functions that can be run before rendering either a page or a group of pages.
+> Свойство промежуточной обработки (middleware) позволяет определять пользовательские функции, которые можно запускать перед отображением страницы или группы страниц.
 
-**Shared middleware should be placed in the `middleware/` directory.** The filename will be the name of the middleware (`middleware/auth.js` will be the `auth` middleware). You can also defined page-specific middleware by using a function directly, see [anonymous middleware](/api/pages-middleware#anonymous-middleware).
+**Общее middleware должно быть помещено в `middleware/` директории.** Имя файла будет именем свойства промежуточной обработки (middleware) (`middleware/auth.js` будет `auth` middleware). Вы так же можете определить middleware для конкретной страницы, используя функцию напрямую: [anonymous middleware](/api/pages-middleware#anonymous-middleware).
 
-A middleware receives [the context](/api/context) as first argument:
+В качестве первого аргумента middleware получает [context](/api/context) :
 
 ```js
 export default function (context) {
   context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
-In universal mode, middlewares will be called server-side once (on the first request to the Nuxt app or when page refreshes) and client-side when navigating to further routes. While generating the pages statically the middlewares will be called once on build time instead of the server-side calls. In SPA mode, middlewares will be called client-side on the first request and when navigating to further routes.
+В универсальном режиме, middleware будет вызыватся на стороне сервера один раз (при первом запросе к приложению Nuxt или при обновлении страницы) и на стороне клиента при переходе к дальнейшим маршрутам. При статическом генерировании страниц middleware будет вызываться один раз во время сборки вместо вызовов на стороне сервера. В режиме SPA, будет вызываться на стороне клиента при первом запросе и при переходе к дальнейшим маршрутам.
 
-The middleware will be executed in series in this order:
+Middleware будет выполнено последовательно в следующем порядке::
 
-1. `nuxt.config.js` (in the order within the file)
-2. Matched layouts
-3. Matched pages
+1. `nuxt.config.js` (в порядке в файле)
+2. Совпадающие макеты
+3. Совпадающие страницы
 
-A middleware can be asynchronous. To do this, simply return a `Promise` or use the 2nd `callback` argument:
+Middleware может быть асинхронным. Для этого просто верните `Promise` или используйте второй аргумент `callback`:
 
 `middleware/stats.js`
 
@@ -435,7 +435,7 @@ export default function ({ route }) {
 }
 ```
 
-Then, in your `nuxt.config.js`, use the `router.middleware` key:
+Затем, в вашем `nuxt.config.js`, используйте ключ `router.middleware`:
 
 `nuxt.config.js`
 
@@ -447,10 +447,9 @@ export default {
 }
 ```
 
-Now the `stats` middleware will be called for every route change.
+Теперь `stats` middleware будет вызываться для каждого изменения маршрута.
 
-You can add your middleware (even multiple) to a specific layout or page as well:
-
+Вы также можете добавить свое middleware (даже несколько) к определенному макету или странице:
 
 `pages/index.vue` or `layouts/default.vue`
 
@@ -460,4 +459,4 @@ export default {
 }
 ```
 
-To see a real-life example using the middleware, please see [example-auth0](https://github.com/nuxt/example-auth0) on GitHub.
+Чтобы увидеть реальный пример использования свойства промежуточной обработки (middleware), см [пример авторизации](https://github.com/nuxt/example-auth0) на GitHub.
