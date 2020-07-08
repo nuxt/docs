@@ -1,27 +1,27 @@
 ---
-title: Upgrading
-description: Upgrading Nuxt.js is quick, but more involved than updating your package.json
+title: Обновление
+description: Обновление Nuxt.js быстрое, но немного сложнее чем просто изменение package.json
 ---
 
-> Upgrading Nuxt.js is quick, but more involved than updating your package.json
+> Обновление Nuxt.js быстрое, но немного сложнее чем просто изменение package.json
 
-## Getting Started
+## Для начала
 
-1. Check the [release notes](/guide/release-notes) for the version you wish to upgrade to see if there are any additional instructions for that particular release.
-2. Update the version specified for the `nuxt` package in your `package.json` file.
+1. Проверьте [заметки о выпуске](/guide/release-notes) для версии, до которой вы хотите обновиться, что бы узнать, есть ли какие-то дополнительные инструкции для конкретного релиза.
+2. Обновите версию пакета `nuxt` , которая указана в вашем файле `package.json`.
 
-After this step instructions vary depending upon whether you are using Yarn or NPM. _[Yarn](https://yarnpkg.com/en/docs/usage) is the preferred package manager for working with Nuxt as it is the development tool which tests have been written against._
+После этого шага инструкции различаются в зависимости от того, используйте вы Yarn или NPM. _[Yarn](https://yarnpkg.com/en/docs/usage) является предпочтительным менеджером пакетов при работе с Nuxt.js, т.к. тесты были написаны именно для этого инструмента разработки._
 
 ## Yarn
 
-3. remove `yarn.lock` file
-4. remove `node_modules` directory
-5. Run the `yarn` command
-6. After installation has completed and you have run your tests consider upgrading other dependencies as well. The `yarn outdated` command can be used.
+3. Удалите файл `yarn.lock`
+4. Удалите директорию `node_modules`
+5. Запустите команду `yarn`
+6. После того, как установка была завершена и вы успешно запустили свои тесты, подумайте над обновлением остальных зависимостей. Для этого может быть использована команда `yarn outdated`.
 
 ## NPM
 
-3. remove `package-lock.json` file
-4. remove `node_modules` directory
-5. Run the `npm install` command
-6. After installation has completed and you have run your tests consider upgrading other dependencies as well. The `npm outdated` command can be used.
+3. Удалите файлы `package-lock.json`
+4. Удалите директорию `node_modules`
+5. Запустите команду `npm install`
+6. После того, как установка была завершена и вы успешно запустили свои тесты, подумайте над обновлением остальных зависимостей. Для этого может быть использована команда `npm outdated`.
