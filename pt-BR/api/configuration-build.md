@@ -198,20 +198,17 @@ module.exports = {
   build: {
     postcss: {
       plugins: {
-        // Disable postcss-url
-      'postcss-url': false
-
-      // Customize postcss-cssnext default options
-      'postcss-cssnext': {
-        features: {
-          customProperties: false
+        // Disable `postcss-url`
+        'postcss-url': false,
+        // Add some plugins
+        'postcss-nested': {},
+        'postcss-responsive-type': {},
+        'postcss-hexrgba': {}
+      },
+      preset: {
+        autoprefixer: {
+          grid: true
         }
-      }
-
-      // Add some plugins
-      'postcss-nested': {},
-      'postcss-responsive-type': {}
-      'postcss-hexrgba': {}
       }
     }
   }
