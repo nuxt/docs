@@ -259,7 +259,7 @@ We recommend conditionally polyfilling this feature with a service like [Polyfil
 export default {
   head: {
     script: [
-      { src: 'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver', body: true }
+      { src: 'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver', body: true }
     ]
   }
 }
@@ -297,7 +297,7 @@ The `scrollBehavior` option lets you define a custom behavior for the scroll pos
 
 <div class="Alert Alert-blue">
 
-Starting from v2.9.0, you can use a file to overwrite the router scrollBehavior, this file should be placed in `~/app/router.scrollBehavior.js`.
+Starting from v2.9.0, you can use a file to overwrite the router scrollBehavior, this file should be placed in `~/app/router.scrollBehavior.js` (note: filename is case-sensitive if running on Windows).
 
 </div>
 

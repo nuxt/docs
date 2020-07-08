@@ -29,7 +29,7 @@ The two versions of bundles are:
   }
 }
 ```
-**Note about *nuxt generate*:** The `modern` property also works with the `nuxt generate` command, but in this case only the `client` option is honored and will be selected automatically when launching the `nuxt generate --modern` command without providing any values.
+**Note about *nuxt generate*:** The `modern` property also works with the `nuxt build && nuxt export`(>= v2.13) or `nuxt generate`(<= v2.12) command, but in this case only the `client` option is honored and will be selected automatically when launching the `nuxt build --modern && nuxt export` or `nuxt generate --modern` command without providing any values.
 
 - Nuxt will automatically detect `modern` build in `nuxt start` when `modern` is not specified, auto-detected mode is:
 
@@ -38,7 +38,7 @@ The two versions of bundles are:
 | universal     | server        |
 | spa           | client        |
 
-- Modern mode for `nuxt generate` can only be `client`
-- Use [`build.crossorigin`](/api/configuration-build#crossorigin) to set `crossorigin` attribute in `<link>` and `<script>`
+- Modern mode for `nuxt build && nuxt export` or `nuxt generate` can only be `client`
+- Use [`render.crossorigin`](/api/configuration-render#crossorigin) to set `crossorigin` attribute in `<link>` and `<script>`
 
 > Please refer [Phillip Walton's excellent post](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) for more knowledge regarding modern builds.

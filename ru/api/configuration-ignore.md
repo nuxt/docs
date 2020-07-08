@@ -38,7 +38,7 @@ middleware/foo/*.js
 - Type: `String`
 - Default: `'-'`
 
-> Any file in pages/, layout/, middleware/ or store/ will be ignored during building if its filename starts with the prefix specified by `ignorePrefix`.
+> Any file in pages/, layouts/, middleware/ or store/ will be ignored during building if its filename starts with the prefix specified by `ignorePrefix`.
 
 By default all files which start with `-` will be ignored, such as `store/-foo.js` and `pages/-bar.vue`. This allows for co-locating tests, utilities, and components with their callers without themselves being converted into routes, stores, etc.
 
