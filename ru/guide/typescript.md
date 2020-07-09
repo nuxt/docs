@@ -1,6 +1,6 @@
 ---
-title: TypeScript Support
-description: Nuxt.js official TypeScript support
+title: Поддержка TypeScript
+description: Официальная поддержка TypeScript в Nuxt.js
 ---
 
-Nuxt.js has full support of typescript (both runtime and buildtime). For the documentation please refer to [https://typescript.nuxtjs.org/](https://typescript.nuxtjs.org/).
+Nuxt.js имеет полную поддержку TypeScript (как во время сборки, так и во время выполнения). Документация доступна тут: [https://typescript.nuxtjs.org/](https://typescript.nuxtjs.org/).
