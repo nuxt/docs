@@ -65,6 +65,11 @@ description: 現在のページを表示します。
 
 実際の例を見たいときは [ネストされたルートの例](/examples/nested-routes) を参照してください。
 
+## フックの活性化と非活性化
+
+`<nuxt-child/>` で `keep-alive` を使用すると、子コンポーネントは 2 つのライフサイクルフック [activated](https://jp.vuejs.org/v2/api/#activated) と [deactivated](https://jp.vuejs.org/v2/api/#deactivated) を新たに登録します。
+これらのフックは子コンポーネントがトグルされるとき、クライアントサイドで呼び出されます。
+
 ## 名前付きビュー
 
 > Nuxt v2.4.0 で導入されました
