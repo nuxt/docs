@@ -299,7 +299,7 @@ Nuxt.js v2.10.0 からは `prefetchLinks` を `false` に設定した上で特�
 
 <div class="Alert Alert-blue">
 
-v2.9.0 以降、ファイルを使用してルーターの scrollBehavior を上書きすることができます。このファイルは `~/app/router.scrollBehavior.js` に配置する必要があります。
+v2.9.0 以降、ファイルを使用してルーターの scrollBehavior を上書きすることができます。このファイルは `~/app/router.scrollBehavior.js` に配置する必要があります（注意: Windows ではファイル名の大文字と小文字を区別します）。
 
 </div>
 
