@@ -11,7 +11,7 @@ description: Define the development or production mode.
 This property is overwritten by [nuxt commands](/guide/commands):
 
 - `dev` is forced to `true` with `nuxt`
-- `dev` is forced to `false` with `nuxt build`, `nuxt start` and `nuxt generate`
+- `dev` is forced to `false` with `nuxt build`, `nuxt start`, `nuxt export` and `nuxt generate`
 
 This property should be used when using [Nuxt.js programmatically](/api/nuxt):
 
@@ -55,9 +55,7 @@ Then in your `package.json`:
   "scripts": {
     "dev": "node server.js",
     "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js"
   }
 }
 ```
-
-Note: You'll need to run `npm install --save-dev cross-env` for the above example to work. If you're *not* developing on Windows you can leave `cross-env` out of your `start` script and set `NODE_ENV` directly.

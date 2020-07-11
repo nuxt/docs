@@ -15,9 +15,10 @@ Hook                      | Arguments                | When
 --------------------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  `render:before`          | (renderer, options)      | Before setting up middleware and resources for the Renderer class, useful to overload some methods or options.
  `render:setupMiddleware` | (app) *connect instance* | Before Nuxt adds its middleware stack. We can use it to register custom server side middleware.
- `render:errorMiddleware` | (app) *connect instance* | Before adding Nuxt error middleware, useful to add your own middleware before using Nuxt's. See the [Sentry module](https://github.com/nuxt-community/sentry-module/blob/master/lib/module.js#L122) for more info.
+ `render:errorMiddleware` | (app) *connect instance* | Before adding Nuxt error middleware, useful to add your own middleware before using Nuxt's. See the [Sentry module](https://github.com/nuxt-community/sentry-module/blob/v4.0.3/lib/module.js#L151) for more info.
  `render:resourcesLoaded` | (resources)              | Called after resources for renderer are loaded (client manifest, server bundle, etc).
  `render:done`            |  (renderer)              | SSR Middleware and all resources are ready (Renderer ready)
  `render:routeContext`    |  (context.nuxt)          | *Every time a route is server-rendered and before `render:route` hook*. Called before serializing Nuxt context into `window.__NUXT__`, useful to add some data that you can fetch on client-side.
  `render:route`           |  (url, result, context)  | *Every time a route is server-rendered*. Called before sending back the request to the browser.
+ `render:beforeResponse`  |  (url, result, context)  | *Every time a route is server-rendered*. Called before calling `.end(...)` on the response.
  `render:routeDone`       |  (url, result, context)  | *Every time a route is server-rendered*. Called after the response has been sent to the browser. 

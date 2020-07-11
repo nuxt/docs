@@ -303,7 +303,7 @@ module.exports = function () {
 
   // Add hook for generate
   this.nuxt.hook('generate', async (generator) => {
-    // This will be called when a Nuxt generate starts
+    // This will be called when a Nuxt  starts
   })
 }
 ```

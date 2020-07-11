@@ -10,5 +10,3 @@ description: Change default nuxt mode
     - `'universal'`: Isomorphic application (server-side rendering + client-side navigation)
 
 > You can use this option to change default nuxt mode for your project using `nuxt.config.js`
-
-

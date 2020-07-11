@@ -88,6 +88,19 @@ Note: we recommend putting `.nuxt` in `.npmignore` or `.gitignore`.
 Nuxt.js gives you the ability to host your web application on any static hosting.
 
 To generate our web application into static files:
+For Nuxt >= 2.13:
+```json
+"scripts": {
+    "generate": "nuxt build && nuxt export"
+  } 
+```
+For Nuxt <= 2.12:
+```json
+"scripts": {
+    "generate": "nuxt generate"
+  } 
+```
+
 
 ```bash
 npm run generate
@@ -95,17 +108,27 @@ npm run generate
 
 It will create a `dist` folder with everything inside ready to be deployed on a static hosting site.
 
-If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take a look at the [generate configuration](/api/configuration-generate) to tell Nuxt.js how to generate these dynamic routes.
+<div class="Alert Alert-blue">
+
+As of Nuxt v2.13 there is a crawler installed that will now crawl your link tags and generate your routes when using the command `nuxt build && nuxt export` based on those links. 
+
+</div>
+
+<div class="Alert Alert--orange">
+
+**Warning:** dynamic routes are ignored by the `generate` command when using Nuxt <= v2.12: [API Configuration generate](/api/configuration-generate#routes)
+
+</div>
 
 <div class="Alert">
 
-When generating your web application with `nuxt generate`, [the context](/api/context) given to [data()](/guide/async-data#the-data-method) and [fetch()](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.
+When generating your web application with `nuxt build && nuxt export` or `nuxt generate`, [the context](/api/context) given to [data()](/guide/async-data#the-data-method) and [fetch()](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.
 
 </div>
 
 ### Single Page Application Deployment (SPA)
 
-`nuxt generate` still needs SSR engine during build/generate time while having the advantage of having all our pages pre rendered, and have a high SEO and page load score. The content is generated at *build time*. For example, we can't use it for applications where content depends on user authentication or a real time API (at least for the first load).
+`nuxt build && nuxt export` or `nuxt generate` still need the SSR engine during build/generate time while having the advantage of having all our pages pre rendered, and have a high SEO and page load score. The content is generated at *build time*. For example, we can't use it for applications where content depends on user authentication or a real time API (at least for the first load).
 
 The SPA idea is simple! When SPA mode is enabled using `mode: 'spa'` or `--spa` flag, and we run build, generation automatically starts after the build. This generation contains common meta and resource links, but not page content.
 

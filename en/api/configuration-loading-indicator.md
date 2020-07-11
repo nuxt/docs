@@ -20,7 +20,7 @@ loadingIndicator: {
 
 ## Built-in indicators
 
-These indicators are imported from awesome [Spinkit](http://tobiasahlin.com/spinkit) project. You can use its demo page to preview spinners.
+These indicators are imported from the awesome [Spinkit](http://tobiasahlin.com/spinkit) project. You can use its demo page to preview spinners.
 
 - circle
 - cube-grid

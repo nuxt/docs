@@ -102,9 +102,19 @@ router: {
 
 As you can see the route named `users-id` has the path `:id?` which makes it optional, if you want to make it required, create an `index.vue` file in the `users/_id` directory instead.
 
+<div class="Alert Alert-blue">
+
+As of Nuxt >= v2.13 there is a crawler installed that will now crawl your link tags and generate your routes when using the command `nuxt build && nuxt export` based on those links. 
+
+</div>
+
 <div class="Alert Alert--orange">
 
-**Warning:** dynamic routes are ignored by the `generate` command: [API Configuration generate](/api/configuration-generate#routes)
+**Warning:** If you using Nuxt >= v2.13 and have pages that have no links such as secret pages and you would like these to also be generated then you can use the `generate.routes` property.
+
+**Warning:** dynamic routes are ignored by the `generate` command when using Nuxt <= v2.12 
+
+[API Configuration generate](/api/configuration-generate#routes)
 
 </div>
 
@@ -403,7 +413,7 @@ export default function (context) {
   context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
-In universal mode, middlewares will be called server-side once (on the first request to the Nuxt app or when page refreshes) and client-side when navigating to further routes.  In SPA mode, middlewares will be called client-side on the first request and when navigating to further routes. 
+In universal mode, middlewares will be called server-side once (on the first request to the Nuxt app or when page refreshes) and client-side when navigating to further routes. While generating the pages statically the middlewares will be called once on build time instead of the server-side calls. In SPA mode, middlewares will be called client-side on the first request and when navigating to further routes.
 
 The middleware will be executed in series in this order:
 
