@@ -91,7 +91,7 @@ For Nuxt >= v2.13
   "dev": "nuxt",
   "build": "nuxt build",
   "start": "nuxt start",
-  "generate": "nuxt export && nuxt build",
+  "generate": "nuxt build && nuxt export",
   "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
 },
 ```
