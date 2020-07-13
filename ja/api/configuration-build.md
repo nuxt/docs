@@ -110,15 +110,6 @@ export default {
 
 > [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin#options) と [cache-loader](https://github.com/webpack-contrib/cache-loader#cache-loader) でキャッシュを有効化します。
 
-## crossorigin
-
-- 型: `String`
-- デフォルト: `undefined`
-
-生成された HTML の `<link rel="stylesheet">` タグと `<script>` タグの `crossorigin` 属性を設定します。
-
-詳細: [CORS settings attributes](https://developer.mozilla.org/ja/docs/Web/HTML/CORS_settings_attributes)
-
 ## cssSourceMap
 
 - 型: `boolean`

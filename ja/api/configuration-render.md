@@ -122,6 +122,15 @@ pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
 このオプションは、提供されていなければ `mode` に基づいて自動的に設定されます。
 これは（例えば Docker で）イメージビルド後にランタイムで SSR を動的に有効/無効にするのに便利です。
 
+## crossorigin
+
+- 型: `String`
+- デフォルト: `undefined`
+
+生成された HTML の `<link rel="stylesheet">` タグと `<script>` タグの `crossorigin` 属性を設定します。
+
+詳細: [CORS settings attributes](https://developer.mozilla.org/ja/docs/Web/HTML/CORS_settings_attributes)
+
 ## ssrLog
 
 - 型: `Boolean` | `String`
