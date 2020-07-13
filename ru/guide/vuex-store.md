@@ -3,7 +3,7 @@ title: Хранилище Vuex
 description: Использование хранилища для управления состоянием приложения важно для любого крупного проекта, поэтому Nuxt.js использует Vuex в своём ядре. 
 ---
 
-> Использование хранилища для управления состоянием приложения важно для любого крупного проекта, поэтому nuxt.js в своём ядре использует [Vuex](https://vuex.vuejs.org/en/). 
+> Использование хранилища для управления состоянием приложения важно для любого крупного проекта, поэтому Nuxt.js использует [Vuex](https://vuex.vuejs.org/en/) в своём ядре.
 
 <div class="Promo__Video">
   <a href="https://vueschool.io/lessons/utilising-the-vuex-store-nuxtjs?friend=nuxt" target="_blank">
