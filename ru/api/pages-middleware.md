@@ -1,22 +1,22 @@
 ---
-title: "API: The middleware Property"
-description: Set the middleware for a specific page of the application.
+title: API: свойство middleware (ПО промежуточной обработки)
+description: Установите промежуточную обработку для конкретной страницы приложения.
 ---
 
-- Type: `String` or `Array` or `Function`
-  - Items: `String` or `Function`
+- Тип: `String`, `Array` или `Function`
+    - Элементы: `String` или `Function`
 
-Set the middleware for a specific page of the application.
+Установите промежуточную обработку для конкретной страницы приложения.
 
-## Named middleware
+## Именованная промежуточная обработка
 
-You can create named middleware by creating a file inside the `middleware/` directory, the file name will be the middleware name.
+Вы можете создать промежуточную обработку, создав файл в каталоге `middleware/` , имя файла будет именем промежуточной обработки.
 
 `middleware/authenticated.js`:
 
 ```js
 export default function ({ store, redirect }) {
-  // If the user is not authenticated
+  // Если пользователь не аутентифицирован
   if (!store.state.authenticated) {
     return redirect('/login')
   }
@@ -37,9 +37,9 @@ export default {
 </script>
 ```
 
-## Anonymous middleware
+## Анонимная промежуточная обработка
 
-If you need to use a middleware only for a specific page, you can directly use a function for it (or an array of functions):
+Если вам нужно использовать промежуточную обработку только для конкретной страницы, вы можете напрямую использовать функцию для нее (или массив функций):
 
 `pages/secret.vue`:
 
@@ -51,7 +51,7 @@ If you need to use a middleware only for a specific page, you can directly use a
 <script>
 export default {
   middleware ({ store, redirect }) {
-    // If the user is not authenticated
+    // Если пользователь не аутентифицирован
     if (!store.state.authenticated) {
       return redirect('/login')
     }
@@ -60,4 +60,4 @@ export default {
 </script>
 ```
 
-To learn more about the middleware, see the [middleware guide](/guide/routing#middleware).
+Чтобы узнать больше о промежуточной обработке, см. [руководство по middleware](/guide/routing#middleware).
