@@ -138,6 +138,12 @@ export default {
 </script>
 ```
 
+For disabling this behaviour your error handler should return true.
+```javascript
+Vue.config.errorHandler = (err, vm, info) => {
+  return true
+}
+```
 
 ## Pages
 
