@@ -41,11 +41,11 @@ These keys are available both on client-side and server-side.
 
 The root Vue instance options that includes all your plugins. For example, when using `i18n`, you can get access to `$i18n` through `context.app.i18n`.
 
-### `store` ([*Vuex Store*](https://vuex.vuejs.org/en/api.html#vuexstore-instance-properties))
+### `store` ([*Vuex Store*](https://vuex.vuejs.org/api/#vuex-store-instance-properties))
 
 Vuex Store instance. **Available only if the [vuex store](/guide/vuex-store) is set**.
 
-### `route` ([*Vue Router Route*](https://router.vuejs.org/en/api/route-object.html))
+### `route` ([*Vue Router Route*](https://router.vuejs.org/api/#the-route-object))
 
 Vue Router route instance.
 
@@ -97,7 +97,7 @@ Use this method to update `__NUXT__` variable rendered on client-side, the `fn` 
 
 These keys are available only on client-side.
 
-### `from` ([*Vue Router Route*](https://router.vuejs.org/en/api/route-object.html))
+### `from` ([*Vue Router Route*](https://router.vuejs.org/api/#the-route-object))
 
 The route navigated from.
 
