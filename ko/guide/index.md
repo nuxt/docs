@@ -32,8 +32,6 @@ NuxtJS는 당신의 Vue.js 프로젝트의 추죽으로, 유연하면서도 확�
 
 ## 어떻게 작동하나요?
 
-![Vue with Webpack and Babel](https://i.imgur.com/avEUftE.png)
-
 Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능들을 포함합니다:
 
 - [Vue 2](https://vuejs.org/)
@@ -42,7 +40,7 @@ Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능
 - [Vue Server Renderer](https://ssr.vuejs.org/en/) ([`mode: 'spa'`](/api/configuration-mode)를 사용하는 경우에는 제외)
 - [vue-meta](https://github.com/nuxt/vue-meta)
 
-총 용량이 **57kB min+gzip** 밖에 되지 않습니다. (53kB  Vuex 포함).
+총 용량이 **57kB min+gzip** 밖에 되지 않습니다. (60kB  Vuex 포함).
 
 <div class="Alert">
 
