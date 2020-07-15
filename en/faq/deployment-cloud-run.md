@@ -5,7 +5,7 @@ description: How to deploy NuxtJS on Google Cloud Run?
 
 [Google Cloud Run](https://cloud.google.com/run) is a fully managed compute platform for deploying and scaling containerized applications quickly and securely.
 
-In this guide, we simply upload the entire project folder to Google Cloud Build with a Dockerfile. After the upload, Cloud Build will automatically generates a container. Then we will deploy this container to Google Cloud Run which will start it with the `start` script in our package.json.
+In this guide, we simply upload the entire project folder to Google Cloud Build with a Dockerfile. After the upload, Cloud Build will automatically generate a container. Then we will deploy this container to Google Cloud Run which will start it with the `start` script in our package.json.
 
 ## Getting Started
 
