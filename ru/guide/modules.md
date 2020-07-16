@@ -1,133 +1,121 @@
 ---
-title: Modules
-description: Modules are Nuxt.js extensions which can extend its core functionality and add endless integrations.
+title: Модули
+description: Модули - это расширения для Nuxt.js, которые могут менять функционал фреймворка и добавлять различные интеграции.
 ---
 
-> Modules are Nuxt.js extensions which can extend its core functionality and add endless integrations.
+> Модули - это расширения для Nuxt.js, которые могут улучшать базовый функционал фреймворка и добавлять различные интеграции.
 
-## Introduction
+## Вступление
 
-While developing production-grade applications with Nuxt, you'll soon discover that the framework's core
-functionality is not enough. Nuxt can be extended with configuration options and plugins,
-but maintaining these customizations across multiple projects is tedious, repetitive and time-consuming.
-On the other hand, supporting every project's needs out of the box would make Nuxt very complex and hard to use.
+В процессе разработки боевых приложений с фреймворком Nuxt, вы вскоре обнаружите, что вам не хватает базовой функциональности фреймворка. Nuxt может быть расширен с помощью настроек конфигурации и плагинов, однако поддержка этих изменений в нескольких проектах утомительна, скучна и занимает много времени. С другой стороны, поддержание требований каждого проекта "из коробки" сделало бы Nuxt очень сложным и тяжёлым в использовании.
 
-This is one of the reasons why Nuxt provides a higher-order module system that makes it easy to extend the core.
-Modules are simply **functions** that are called sequentially when booting Nuxt.
-The framework waits for each module to finish before continuing.
-In this way, modules can customize almost any aspect of Nuxt.
-Thanks to Nuxt's modular design (based on webpack's [Tapable](https://github.com/webpack/tapable)),
-modules can easily register hooks for certain entry points like the builder initialization.
-Modules can also override templates, configure webpack loaders, add CSS libraries, and perform many other useful tasks.
+Это одна из причин, по которой Nuxt предоставляет модульную систему более высокого порядка, которая позволяет с легкостью расширять ядро. Модули - это просто **функции**, которые вызываются поочерёдно во время загрузки Nuxt. Фреймворк ждёт окончания работы каждого модуля перед тем как продолжить. Таким образом, модули могут изменять практически любую сторону Nuxt. Благодаря модульной архитекуре Nuxt (которая основана на библиотеке от webpack [Tapable](https://github.com/webpack/tapable)), модули могут без проблем регистрировать хуки для определенных входных точек, например, для инициализации сборщика. Модули так же могут переопределять шаблоны, настраивать загрузчики для webpack, добавлять CSS-библиотеки и выполнять много других полезных задач.
 
-Best of all, Nuxt modules can be incorporated into npm packages.
-This makes them easy to reuse across projects and to share with the Nuxt community,
-helping create an ecosystem of high-quality Nuxt add-ons.
+Самое лучше - модули Nuxt могут быть встроены в npm пакеты. Это значит, что их легко переиспользовать между проектами, а так же делиться ими с сообществом, создавая экосистему из качественных расширений для Nuxt.
 
-Modules are great if you:
+Модули отлично вам подходят, если вы:
 
-- Are a member of an **agile team** that needs to quickly bootstrap new projects.
-- Are tired of **re-inventing** the wheel for common tasks like integrating Google Analytics.
-- Are a lovely **Open Source** enthusiast who would like to easily **share** your work with the community.
-- Are a member of an **enterprise** company that values **quality** and **reusability**.
-- Are often up against short deadlines and don't have time to dig into the details of every new library or integration.
-- Are tired of dealing with breaking changes to low-level interfaces, and need things that **just work™**.
+- Являетесь членом **гибкой команды**, которой нужно быстро запускать новые проекты.
+- Устали **переизобретать** колесо для частых задач, таких как интеграция Google Analytics.
+- Являетесь очаровательным энтузиастом **Open Source**, который бы хотел **поделиться** своей работой с сообществом.
+- Являетесь членом **Enterprise** компании, который ценит **качество** и **переиспользуемость**.
+- Часто сталкиваетесь со сжатыми сроками, и у вас нет времени залезать в дебри каждой новой библиотки или интеграции
+- Устали разбираться с критическими изменениями в каждой библиотеке и хотите чтобы всё **просто работало™**.
 
-## List of Nuxt.js modules
+## Список модулей Nuxt.js
 
-The Nuxt.js team offers **official** modules:
-- [@nuxt/http](https://http.nuxtjs.org): Light and universal way to make HTTP requests, based on [ky-universal](https://github.com/sindresorhus/ky-universal)
-- [@nuxt/content](https://content.nuxtjs.org): Write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API
-- [@nuxtjs/axios](https://axios.nuxtjs.org): Secure and Easy Axios integration with Nuxt.js to make HTTP requests
-- [@nuxtjs/pwa](https://pwa.nuxtjs.org): Supercharge Nuxt with a heavily tested, updated and stable PWA solution
-- [@nuxtjs/auth](https://auth.nuxtjs.org): Authentication module for Nuxt.js, offering different schemes and strategies
+Команда Nuxt.js предлагает **официальные** модули:
+- [@nuxt/http](https://http.nuxtjs.org): Простой и универсальный способ делать HTTP-запросы, основанный на библиотеке [ky-universal](https://github.com/sindresorhus/ky-universal)
+- [@nuxt/content](https://content.nuxtjs.org): Пишите в директории `content/` и получайте свои файлы Markdown, JSON, YAML и CSV с помощью API, похожего на MongoDB
+- [@nuxtjs/axios](https://axios.nuxtjs.org): Безопасная и простая интеграция библиотеки Axios с Nuxt.js для совершения HTTP-запросов
+- [@nuxtjs/pwa](https://pwa.nuxtjs.org): Разгоните Nuxt с помощью отлично протестированного, обновляемого и стабильного решения  для PWA
+- [@nuxtjs/auth](https://auth.nuxtjs.org): Авторизационный модуль для Nuxt.js, который предлагает различные схемы и стратегии
 
-A list of Nuxt.js modules made by the community is available on https://awesomejs.dev/for/nuxt/ and https://github.com/topics/nuxt-module
+Список модулей Nuxt.js, которые сделаны сообществом, доступен тут: https://awesomejs.dev/for/nuxt/ и тут: https://github.com/topics/nuxt-module
 
-## Write a basic Module
+## Создание простого модуля
 
-As already mentioned modules are just simple functions. They can be packaged as npm modules or directly included in project source code.
+Как было сказано раньше, модули - это просто функции. Они могут быть упакованы в npm-пакет или напрямую включены в исходный код проекта.
 
 **modules/simple.js**
 
 ```js
 export default function SimpleModule (moduleOptions) {
-  // Write your code here
+  // Здесь будет ваш код
 }
 
-// REQUIRED if publishing the module as npm package
+// ОБЯЗАТЕЛЬНО, если вы хотите публиковать ваш модуль на NPM
 // module.exports.meta = require('./package.json')
 ```
 
 **`moduleOptions`**
 
-This is the object passed using `modules` array by user we can use it to customize it's behavior.
+Это объект, который передаётся пользователем при настройке массива `modules`. Мы можем его использовать, чтобы настраивать поведение модуля.
 
 **`this.options`**
 
-You can directly access Nuxt options using this reference. This is the content of the user's `nuxt.config.js` with all default options assigned to. It can be used for shared options between modules.
+Вы можете получить прямой доступ к настройкам Nuxt с помощью этой ссылки. Там находится всё содержимое пользовательского `nuxt.config.js` с заполненными полями по-умолчанию. Они могут быть использованы, чтобы пользоваться одними настройками в нескольких модулях.
 
 **`this.nuxt`**
 
-This is a reference to current Nuxt instance. Refer to [Nuxt class docs for available methods](/api/internals-nuxt).
+Это ссылка на активный экземпляр объекта Nuxt. Смотрите [документацию класса Nuxt для списка доступных методов](/api/internals-nuxt).
 
 **`this`**
 
-Context of modules. Please look into the [ModuleContainer](/api/internals-module-container) class docs for available methods.
+Контекст модулей. Смотрите документацию класса [ModuleContainer](/api/internals-module-container) для списка доступных методов.
 
 **`module.exports.meta`**
 
-This line is **required** if you are publishing module as an npm package. Nuxt internally uses meta to work better with your package.
+Эта строка **необходима**, если вы публикуете модуль как npm-пакет. Внутри Nuxt использует метаданные, чтобы лучше работать с вашим пакетом.
 
 **nuxt.config.js**
 
 ```js
 export default {
   modules: [
-    // Simple usage
+    // Простое использование
     '~/modules/simple'
 
-    // Passing options directly
+    // Передача параметров напрямую
       ['~/modules/simple', { token: '123' }]
   ]
 }
 ```
 
-We then tell Nuxt to load some specific modules for a project with optional parameters as options.
-Please refer to [modules configuration](/api/configuration-modules) docs for more info!
+Затем мы указываем Nuxt, что нужно загрузить конкретные модули для проекта с опциональными параметрами в качестве опций. Смотрите документацию [по настройке модулей](/api/configuration-modules) для остальной информации!
 
-## Async Modules
+## Асинхронные Модули
 
-Not all modules will do everything synchronous. For example you may want to develop a module which needs fetching some API or doing async IO. For this, Nuxt supports async modules which can return a Promise or call a callback.
+Не все модули будут делать всё синхронно, Например, вы можете разработать модуль, который будет получать данные из API или делать асинхронный ввод-вывод. Для этого Nuxt поддерживает модули, которые могут возвращать Promise или вызывать callback-функцию.
 
-## Build-only Modules
+## Модули, используемые только на шаге сборки
 
-Usually, modules are only required during development and build time. Using `buildModules` helps to make production startup faster and also significantly decreasing `node_modules` size for production deployments. If you are a module author, It is highly recommended to suggest users installing your package as a `devDependency` and use `buildModules` instead of `modules` for `nuxt.config.js`.
+Обычно модули нужны только во время разработки и сборки. Использование `buildModules` (модулей, используемых только на шаге сборки) позволяет ускорить загрузку в боевом окружении, при этом существенно сокращая размер директории `node_modules` для боевых развёртываний. Если вы - автор модулей, то рекомендуется предлагать пользователям устанавливать ваш пакет в качестве `devDependency` и использовать `buildModules` вместо `modules` в `nuxt.config.js`.
 
-Your module is a `buildModule` unless:
-- It is providing a serverMiddleware
-- It has to register a Node.js runtime hook (Like sentry)
-- It is affecting vue-renderer behavior or using a hook from `server:` or `vue-renderer:` namespace
-- Anything else that is outside of webpack scope (Hint: plugins and templates are compiled and are in webpack scope)
+Ваш модуль используется только на шаге сборки, если:
+- Он не предоставляет серверную промежуточную обработку (`serverMiddleware`)
+- Ему не нужно регистрировать хук, запускаемый при старте (как, например, sentry)
+- Он не влияет на поведение `vue-renderer` или использует хук из пространств имён `server:` или `vue-renderer:`
+- Делает что-то ещё, что не входит в область ответственности webpack (Подсказка: плагины и шаблоны компилируются и входят в зону ответственности webpack)
 
 <div class="Alert Alert--orange">
 
-<b>NOTE:</b> If you are going to offer using <code>buildModules</code> please mention that this feature is only available since Nuxt <b>v2.9</b>. Older users should upgrade Nuxt or use the <code>modules</code> section.
+<b>ЗАМЕЧАНИЕ:</b> Если вы будете предлагать использовать <code>buildModules</code> то укажите, пожалуйста, что этот функционал доступен в Nuxt начиная с версии <b>v2.9</b>. Пользователи старых версий Nuxt должны обновиться, или использовать вместо этого секцию <code>modules</code>.
 
 </div>
 
-### Use async/await
+### Используйте async/await
 
 ```js
 import fse from 'fs-extra'
 
 export default async function asyncModule () {
-  // You can do async works here using `async`/`await`
+  // Тут можно делать асинхронные действия используя async/await
   const pages = await fse.readJson('./pages.json')
 }
 ```
 
-### Return a Promise
+### Возвращайте Promise
 
 ```js
 import axios from 'axios'
@@ -136,17 +124,16 @@ export default function asyncModule () {
   return axios.get('https://jsonplaceholder.typicode.com/users')
     .then(res => res.data.map(user => '/users/' + user.username))
     .then((routes) => {
-      // Do something by extending Nuxt routes
+      // Тут можно поменять пути, сгенерированные Nuxt
     })
 }
 ```
 
-## Common Snippets
+## Распространённые отрывки кода
 
-### Top level options
+### Настройки на верхнем уровне
 
-Sometimes it is more convenient if we can use top level options while registering modules in `nuxt.config.js`.
-This allows us to combine multiple option sources.
+Иногда более удобно использовать верхнеуровневые опции при регистрации модулей в `nuxt.config.js`. Это позволяет нам совмещать несколько источников для опций.
 
 **nuxt.config.js**
 
@@ -156,7 +143,7 @@ export default {
     ['@nuxtjs/axios', { anotherOption: true }]
   ],
 
-  // axios module is aware of this by using `this.options.axios`
+  // модуль axios знает про эти опции с помощью `this.options.axios`
   axios: {
     option1,
     option2
@@ -168,18 +155,16 @@ export default {
 
 ```js
 export default function (moduleOptions) {
-  // `options` will contain option1, option2 and anotherOption
+  // `options` Будет содержать все три: option1, option2 и anotherOption
   const options = Object.assign({}, this.options.axios, moduleOptions)
 
   // ...
 }
 ```
 
-### Provide plugins
+### Предоставление плагинов
 
-It is common that modules provide one or more plugins when added.
-For example [bootstrap-vue](https://bootstrap-vue.js.org) module would require to register itself into Vue.
-In such situations we can use the `this.addPlugin` helper.
+Распространённой практикой для модулей является предоставление одного или нескольких плагинов при добавлении. Например, модуль [bootstrap-vue](https://bootstrap-vue.js.org) потребовал бы регистрацию себя во Vue. Для таких ситуаций мы можем использовать вспомогательную функцию `this.addPlugin`.
 
 **plugin.js**
 
@@ -196,23 +181,23 @@ Vue.use(BootstrapVue)
 import path from 'path'
 
 export default function nuxtBootstrapVue (moduleOptions) {
-  // Register `plugin.js` template
+  // Регистрируем `plugin.js`
   this.addPlugin(path.resolve(__dirname, 'plugin.js'))
 }
 ```
 
-### Template plugins
+### Плагины-шаблоны
 
-Registered templates and plugins can leverage [lodash templates](https://lodash.com/docs/4.17.4#template) to conditionally change registered plugins output.
+Регистрируемые плагины и шаблоны могут использовать [шаблоны lodash](https://lodash.com/docs/4.17.4#template) чтобы изменять своё содержимое в зависимости от опций.
 
 **plugin.js**
 
 ```js
-// Set Google Analytics UA
+// Установить идентификатор для Google Analytics
 ga('create', '<%= options.ua %>', 'auto')
 
 <% if (options.debug) { %>
-// Dev only code
+// Код, доступный только в режиме разработки
 <% } %>
 ```
 
@@ -222,52 +207,52 @@ ga('create', '<%= options.ua %>', 'auto')
 import path from 'path'
 
 export default function nuxtBootstrapVue (moduleOptions) {
-  // Register `plugin.js` template
+  // Регистрируем шаблон `plugin.js`
   this.addPlugin({
     src: path.resolve(__dirname, 'plugin.js'),
     options: {
-      // Nuxt will replace `options.ua` with `123` when copying plugin to project
+      // Nuxt подменит `options.ua` на `123` при копировании плагина в проект
       ua: 123,
 
-      // conditional parts with dev will be stripped from plugin code on production builds
+      // Условные части кода, которые доступны только при разработке, будут вырезаны из боевой сборки
       debug: this.options.dev
     }
   })
 }
 ```
 
-### Add a CSS library
+### Добавление библиотеки CSS
 
-If your module will provide a CSS library, make sure to perform a check if the user already included the library to avoid duplicates, and add **an option to disable** the CSS library in the module.
+Если ваш модуль предоставляет CSS-библиотеку, то удостоверьтесь, что вы проверили, не добавил ли уже пользователь ту же библиотеку чтобы избежать дубликатов, а так же добавьте **опцию, которая отключит** CSS-библиотеку в модуле.
 
 **module.js**
 
 ```js
 export default function (moduleOptions) {
   if (moduleOptions.fontAwesome !== false) {
-    // Add Font Awesome
+    // Добавляем Font Awesome
     this.options.css.push('font-awesome/css/font-awesome.css')
   }
 }
 ```
 
-### Emit assets
+### Добавление ресурcов
 
 <!-- todo: up2date? -->
 
-We can register webpack plugins to emit assets during build.
+Мы можем регистрировать плагины для webpack, чтобы добавлять ресурсы в процессе сборки.
 
 **module.js**
 
 ```js
 export default function (moduleOptions) {
-  const info = 'Built by awesome module - 1.3 alpha on ' + Date.now()
+  const info = 'Собрано отличным модулем - 1.3 альфа от ' + Date.now()
 
   this.options.build.plugins.push({
     apply (compiler) {
       compiler.plugin('emit', (compilation, cb) => {
-        // This will generate `.nuxt/dist/info.txt' with contents of info variable.
-        // Source can be buffer too
+        // Это создаст файл `.nuxt/dist/info.txt` с содержимым переменной `info`.
+        // Источник так же может являться буфером
         compilation.assets['info.txt'] = { source: () => info, size: () => info.length }
 
         cb()
@@ -279,60 +264,59 @@ export default function (moduleOptions) {
 
 ### Register custom webpack loaders
 
-We can do the same as `build.extend` in `nuxt.config.js` using `this.extendBuild`.
+Мы можем делать то же действие, что и `build.extend` в `nuxt.config.js`, при помощи `this.extendBuild`.
 
 **module.js**
 
 ```js
 export default function (moduleOptions) {
     this.extendBuild((config, { isClient, isServer }) => {
-      // `.foo` Loader
+      // Загрузчик `.foo`
       config.module.rules.push({
         test: /\.foo$/,
         use: [...]
       })
 
-      // Customize existing loaders
-      // Refer to source code for Nuxt internals:
+      // Настройка созданных загрузчиков
+      // Для внутренностей Nuxt смотрите исходный код:
       // https://github.com/nuxt/nuxt.js/tree/dev/packages/builder/src/webpack/base.js
       const barLoader = config.module.rules.find(rule => rule.loader === 'bar-loader')
   })
 }
 ```
 
-## Run Tasks on Specific hooks
+## Запускайте задачи на конкретные хуки
 
-Your module may need to do things only on specific conditions and not just during Nuxt initialization.
-We can use the powerful hooks Nuxt.js system to do tasks on specific events (based on [Hable](https://github.com/jsless/hable)).
-Nuxt will wait for your function if it return a Promise or is defined as `async`.
+Вашему модулю может потребоваться делать какие-то действия только при каких-то условиях, а не просто во время инициализации Nuxt. Мы можем использовать мощную систему хуков Nuxt.js чтобы реагировать на какие-либо события (основано на [Hable](https://github.com/jsless/hable)).
+Nuxt дождётся исполнения вашей функции, если она возвращает Promise или помечена как `async`.
 
 Here are some basic examples:
 
 ```js
 export default function myModule () {
   this.nuxt.hook('modules:done', (moduleContainer) => {
-    // This will be called when all modules finished loading
+    // Это будет вызвано, когда все модули будут загружены
   })
 
   this.nuxt.hook('render:before', (renderer) => {
-    // Called after the renderer was created
+    // Это будет вызвано перед инициализацией отрисовывающего класса
   })
 
   this.nuxt.hook('build:compile', async ({ name, compiler }) => {
-    // Called before the compiler (default: webpack) starts
+    // Это будет вызвано перед запуском компилятора (по-умолчанию, webpack)
   })
 
   this.nuxt.hook('generate:before', async (generator) => {
-    // This will be called before Nuxt generates your pages
+    // Это будет вызвано перед генерацией страниц
   })
 }
 ```
 
-## Module package commands
+## Команды для Nuxt
 
-**Experimental**
+**Эксперементальная поддержка**
 
-Starting in `v2.4.0`, you can add custom nuxt commands through a Nuxt module's package. To do so, you must follow the `NuxtCommand` API when defining your command. A simple example hypothetically placed in `my-module/bin/command.js` looks like this:
+Начиная с версии `v2.4.0`, вы можете добавлять консольные команды для nuxt с помощью модулей. Для этого нужно воспользоваться API  `NuxtCommand` для создания команды. Простой пример, гипотетически размещаемый в `my-module/bin/command.js` может выглядеть так:
 
 ```js
 #!/usr/bin/env node
@@ -342,7 +326,7 @@ const { NuxtCommand } = require('@nuxt/cli')
 
 NuxtCommand.run({
   name: 'command',
-  description: 'My Module Command',
+  description: 'Команда моего модуля',
   usage: 'command <foobar>',
   options: {
     foobar: {
@@ -357,14 +341,13 @@ NuxtCommand.run({
 })
 ```
 
-A few things of note here. First, notice the call to `/usr/bin/env` to retrieve the Node executable. Also notice that ES module syntax can't be used for commands unless you manually incorporate [`esm`](https://github.com/standard-things/esm) into your code.
+Тут следует отметить несколько вещей. Во-первых, обратите внимание на вызов `/usr/bin/env` для получения исполняемого файла Node. Так же обратите внимание, что синтаксис ES-модулей не может быть использован для команд, только если вы не добавите модуль [`esm`](https://github.com/standard-things/esm) в ваш код вручную.
 
-Next, you'll notice how `NuxtCommand.run()` is used to specify the settings and behavior of the command. Options are defined in `options`, which get parsed via [`minimist`](https://github.com/substack/minimist).
-Once arguments are parsed, `run()` is automatically called with the `NuxtCommand` instance as first parameter.
+Затем, обратите внимание, что `NuxtCommand.run()` используется для указания настроек и поведения команды. Опции задаются в параметре `options`; они будут разобраны библиотекой [`minimist`](https://github.com/substack/minimist). После того, как аргументы функции были разобраны, функция `run()` вызывается с экземпляром `NuxtCommand` в качестве первого параметра.
 
-In the example above, `cmd.argv` is used to retrieve parsed command-line arguments. There are more methods and properties in `NuxtCommand` -- documentation on them will be provided as this feature is further tested and improved.
+В примере выше, `cmd.argv` используется для получения разобранных аргументов командной строки. У `NuxtCommand` есть и другие методы и свойства -- документация по ним будет появляться по мере того, как этот функционал будет тестироваться и улучшаться.
 
-To make your command recognizable by the Nuxt CLI, list it under the `bin` section of your package.json, using the `nuxt-module` convention, where `module` relates to your package's name. With this central binary, you can use `argv` to further parse more `subcommands` for your command if you desire.
+Чтобы ваша команда была доступна в Nuxt CLI, добавьте её в секцию `bin` вашего `package.json`, используя соглашение `nuxt-module` , согласно которому `module` согласуется с названием вашего npm-пакета. Используя этот файл в качестве входной точки, вы можете использовать `argv` чтобы разобрать "подкоманды" для вашей команды, если вы этого захотите.
 
 ```js
 {
@@ -374,10 +357,10 @@ To make your command recognizable by the Nuxt CLI, list it under the `bin` secti
 }
 ```
 
-Once your package is installed (via NPM or Yarn), you'll be able to execute `nuxt foobar ...` on the command-line.
+Когда ваш пакет установлен (с помощью NPM или Yarn), вы сможете исполнять `nuxt foobar ...` в командной строке.
 
 <div class="Alert">
 
-There are way more hooks and possibilities for modules. Please read the [Nuxt Internals](/api/internals) to find out more about the nuxt-internal API.
+Существует куда больше хуков и возможностей для модулей. Пожалуйста, прочитайте секцию [Внутренности Nuxt](/api/internals) чтобы узнать больше об API `nuxt-internal`
 
 </div>
