@@ -527,7 +527,6 @@ With the content module we can style our code blocks with to the automatic inclu
 
 `content/articles/my-first-blog-post.md`
 
-```markdown
 ```js
 export default {
   nuxt: "is the best"
@@ -536,18 +535,15 @@ export default {
 
 ```html
 <p>code styling is easy</p>
-}
-```
 ```
 
 We can also add the file name of the code block by adding it inside square brackets after the code block's language.
+For example: js[my-first-blog-post.md]
 
-```markdown
 ```js[my-first-blog-post.md]
 export default {
   nuxt: "is the best"
 }
-```
 ```
 
 The filename will be converted to a span with a filename class which we can then style how we like. For this example I am using tailwind classes but you can use ordinary CSS if you prefer.

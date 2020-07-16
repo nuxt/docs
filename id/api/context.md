@@ -18,8 +18,8 @@ Kunci | Tipe | Tersedia | Deskripsi
 `isStatic` | `Boolean` | Klien & Server | Boolean yang memberitahu bahwa Anda sedang di dalam aplikasi yang dihasilkan (generated app) (melalui `nuxt generate`).
 `isDev` | `Boolean` | Klien & Server | Boolean yang memberitahu bahwa Anda sedang berada di dalam mode pengembangan (dev), dapat berguna untuk menyimpan (cache) beberapa data pada mode produksi.
 `isHMR` | `Boolean` | Klien & Server | Boolean yang memberitahu bahwa metode/middleware dipanggil dari "webpack hot module replacement" (*hanya pada sisi-klien dalam mode pengembangan (dev)*).
-`route` | [Rute Vue Router](https://router.vuejs.org/en/api/route-object.html) | Klien & Server | Instansi rute Vue Router.
-`store` | [Vuex Store](https://vuex.vuejs.org/en/api.html#vuexstore-instance-properties) | Klien & Server | Instansi Vuex Store. **Tersedia hanya jika [vuex store](/guide/vuex-store) telah diatur**.
+`route` | [Rute Vue Router](https://router.vuejs.org/api/#the-route-object) | Klien & Server | Instansi rute Vue Router.
+`store` | [Vuex Store](https://vuex.vuejs.org/api/#vuex-store-instance-properties) | Klien & Server | Instansi Vuex Store. **Tersedia hanya jika [vuex store](/guide/vuex-store) telah diatur**.
 `env` | `Object` | Klien & Server | Environment variables yang diatur di `nuxt.config.js`, lihat [env api](/api/configuration-env).
 `params` | `Object` | Klien & Server | Alias dari `route.params`.
 `query` | `Object` | Klien & Server | Alias dari `route.query`.
