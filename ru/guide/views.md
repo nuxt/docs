@@ -1,20 +1,20 @@
 ---
-title: Views
-description: The Views section describes all you need to configure data and views for a specific route in your Nuxt.js Application (Document, Layouts, Pages and HTML Head).
+title: Представления
+description: Секция "представления" описывает всё, что может вам понадобиться чтобы настроить данные и представления для конкретного пути в вашем приложении Nuxt.js (шаблон приложения, макеты страниц, страницы и содержимое HTML Head).
 ---
 
-> The Views section describes all you need to configure data and views for a specific route in your Nuxt.js Application (App Template, Layouts, Pages and HTML Head).
+> Секция "представления" описывает всё, что может вам понадобиться чтобы настроить данные и представления для конкретного пути в вашем приложении Nuxt.js (шаблон приложения, шаблоны страниц, страницы и содержимое HTML Head).
 
 ![nuxt-views-schema](/nuxt-views-schema.svg)
 
-## App Template
+## Шаблон приложения
 
-> You can customize the HTML app template used by Nuxt.js to include scripts or conditional CSS classes.
+> Вы можете поменять используемый Nuxt.js HTML-шаблон приложения что бы добавить туда скрипты или условные CSS стили.
 
-To change the template, create an `app.html` file, in the src folder of your project. (which is the project's root directory by default).
+Чтобы поменять шаблон, создайте файл `app.html` в директории `src` вашего проекта. (По-умолчанию это корневая директория проекта).
 
 
-The default template used by Nuxt.js is:
+Используемый Nuxt.js по-умолчанию шаблон:
 
 ```html
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ The default template used by Nuxt.js is:
 </html>
 ```
 
-One use case of using a custom app template is to add conditional CSS classes for IE:
+Одно из мест применения для своих шаблонов приложения - добавление условных CSS классов для IE:
 
 ```html
 <!DOCTYPE html>
@@ -45,22 +45,22 @@ One use case of using a custom app template is to add conditional CSS classes fo
 
 <!-- TODO: Load polyfills here? -->
 
-## Layouts
+## Макеты
 
-Layouts are a great help when you want to change the look and feel of your Nuxt.js app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
+Макеты - отличный инструмент, когда вы хотите поменять внешний вид своего приложения Nuxt.js, например если вы хотите добавить боковую панель или сделать различную раскладку для мобильной и десктопной версий.
 
-### Default Layout
+### Макет по-умолчанию
 
-You can extend the main layout by adding a `layouts/default.vue` file.
-It will be used for all pages that don't have a layout specified.
+Вы можете расширить макет по умолчанию добавив файл `layouts/default.vue`.
+Он будет использован на всех страницах, которые не будут иметь указанный макет.
 
 <div class="Alert Alert--nuxt-green">
 
-<b>Info:</b> Make sure to add the `<nuxt/>` component when creating a layout to actually include the page component.
+<b>Информация:</b> Удостоверьтесь, что вы добавили компонент `<nuxt/>` при создании макета чтобы вставить компонент страницы.
 
 </div>
 
-The default layout that comes out of the box is just three lines long and simply renders the page component:
+Макет по умолчанию, который идет из коробки, содержит всего три строки и просто отрисовывает компонент страницы:
 
 ```html
 <template>
@@ -68,109 +68,109 @@ The default layout that comes out of the box is just three lines long and simply
 </template>
 ```
 
-### Custom Layout
+### Пользовательские макеты
 
-Every file (*top-level*) in the `layouts` directory will create a custom layout accessible with the `layout` property in the page components.
+Каждый файл в директории `layouts` (*только на верхнем уровне*) создаст пользовательский макет, доступный с помощью свойства `layout` в компоненте страницы.
 
-Let's say we want to create a blog layout and save it to `layouts/blog.vue`:
+Скажем, мы хотим создать макет для блога и сохранить его в файл `layouts/blog.vue`:
 
 ```html
 <template>
   <div>
-    <div>My blog navigation bar here</div>
+    <div>Навигационная панель для блога</div>
     <nuxt/>
   </div>
 </template>
 ```
 
-Then we have to tell the pages (i.e. `pages/posts.vue`) to use your custom layout:
+Затем мы должны указать на страницах использование пользовательского макета:
 
 ```html
 <template>
-<!-- Your template -->
+<!-- Ваша страница -->
 </template>
 <script>
 export default {
   layout: 'blog'
-  // page component definitions
+  // Остальные свойства страницы
 }
 </script>
 ```
 
-More information about the `layout` property: [API Pages `layout`](/api/pages-layout)
+Больше информации о свойстве `layout`: [API Страниц: свойство `layout`](/api/pages-layout)
 
-Check out the [demonstration video](https://www.youtube.com/watch?v=YOKnSTp7d38) to see custom layouts in action.
+Вы можете посмотреть [видео с демонстрацией](https://www.youtube.com/watch?v=YOKnSTp7d38) чтобы увидеть пользовательские макеты в действии.
 
 <!-- TODO: Scoped styles best practice -->
 
-### Error Page
+### Страница ошибок
 
-The error page is a *page component* which is always displayed when an error occurs (that does not happen while server-side rendering).
+Страница ошибок - это *компонент страницы*, который отображается всегда, когда случается ошибка (если только она не происходит во время отрисовки на стороне сервера).
 
 <div class="Alert Alert--orange">
 
-<b>Warning:</b> Though this file is placed in the <code>layouts</code> folder, it should be treated as a <b>page</b>.
+<b>Внимание:</b> Несмотря на то, что этот файл находится в директории <code>layouts</code>, необходимо обращаться с ним, как со <b>страницей</b>.
 
 </div>
 
-As mentioned above, this layout is special, since you **should not** include `<nuxt/>` inside its template.
-You must see this layout as a component displayed when an error occurs (`404`, `500`, etc.).
-Similar to other page components, you can set a custom layout for the error page as well in the usual way.
+Как указано выше, это макет особый, так как **не нужно** добавлять `<nuxt/>` в его разметку.
+Вы должны рассматривать этот макет как компонент, который будет отображён когда случится ошибка (`404`, `500` и т.д.)
+Как и для других компонентов страниц, вы точно так же можете задать пользовательский макет для страницы ошибок.
 
-The default error page source code is [available on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
+Исходный код страницы ошибок по умолчанию [доступен на GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
 
-You can customize the error page by adding a `layouts/error.vue` file:
+Вы можете изменить страницу ошибок добавив файл `layouts/error.vue`:
 
 ```html
 <template>
   <div class="container">
-    <h1 v-if="error.statusCode === 404">Page not found</h1>
-    <h1 v-else>An error occurred</h1>
-    <nuxt-link to="/">Home page</nuxt-link>
+    <h1 v-if="error.statusCode === 404">Страница не найдена</h1>
+    <h1 v-else>Случилась ошибка</h1>
+    <nuxt-link to="/">Домой</nuxt-link>
   </div>
 </template>
 
 <script>
 export default {
   props: ['error'],
-  layout: 'blog' // you can set a custom layout for the error page
+  layout: 'blog' // вы можете задать пользовательский макет для страницы ошибок
 }
 </script>
 ```
 
 
-## Pages
+## Страницы
 
-Every Page component is a Vue component but Nuxt.js adds special attributes and functions to make the development of your universal application as easy as possible.
+Каждый компонент страницы является компонентом Vue, однако Nuxt.js добавляет к ним особые атрибуты и функции чтобы сделать разработку универсальных приложений как можно легче.
 
 <div class="Promo__Video">
   <a href="https://vueschool.io/lessons/nuxtjs-page-components?friend=nuxt" target="_blank">
     <p class="Promo__Video__Icon">
-      Watch a free lesson about <strong>Nuxt.js Page Components</strong> on Vue School 
+      Посмотрите бесплатный урок о <strong>Компонентах Страниц Nuxt.js</strong> на Vue School 
     </p>
   </a>
 </div>
 
 ```html
 <template>
-  <h1 class="red">Hello {{ name }}!</h1>
+  <h1 class="red">Привет, {{ name }}!</h1>
 </template>
 
 <script>
 export default {
   asyncData (context) {
-    // called every time before loading the component
-    // as the name said, it can be async
-    // Also, the returned object will be merged with your data object
+    // вызывается каждый раз перед загрузкой компонента
+    // как указано в имени, может быть асинхронной
+    // Так же, возвращаемый объект будет объединен с объектом data
     return { name: 'World' }
   },
   fetch () {
-    // The `fetch` method is used to fill the store before rendering the page
+    // Метод `fetch` может быть использован для заполнения Vuex хранилища
   },
   head () {
-    // Set Meta Tags for this Page
+    // Укажите мета теги для данной страницы
   },
-  // and more functionality to discover
+  // и ещё больше различных функций
   ...
 }
 </script>
@@ -182,38 +182,38 @@ export default {
 </style>
 ```
 
-| Attribute | Description | Documentation |
+| Атрибут | Описание | Документация |
 |-----------|-------------| ------------- |
-| `asyncData` | The most important key. It can be asynchronous and receives the context as argument. | [Guide: Async data](/guide/async-data) |
-| `fetch` | Used to fill the store before rendering the page. It's like the `asyncData` method, except it doesn't set the component data. | [API Pages `fetch`](/api/pages-fetch) |
-| `head` | Set specific `<meta>` tags for the current page. | [API Pages `head`](/api/pages-head) |
-| `layout` | Specify a layout defined in the `layouts` directory. | [API Pages `layout`](/api/pages-layout) |
-| `loading` | If set to `false`, prevents a page from automatically calling `this.$nuxt.$loading.finish()` as you enter it and `this.$nuxt.$loading.start()` as you leave it, allowing you to **manually** control the behavior, as [this example](/examples/custom-page-loading) shows. Only applies if `loading` is also set in `nuxt.config.js`. | [API Configuration `loading`](/api/configuration-loading) |
-| `transition` | Defines a specific transition for the page. | [API Pages `transition`](/api/pages-transition) |
-| `scrollToTop` | Boolean (default: `false`). Specify if you want the page to scroll to the top before rendering the page. It's used for [nested routes](/guide/routing#nested-routes). | [API Pages `scrollToTop`](/api/pages-scrolltotop#the-scrolltotop-property) |
-| `validate` | Validator function for [dynamic routes](/guide/routing#dynamic-routes). | [API Pages `validate`](/api/pages-validate#the-validate-method) |
-| `middleware` | Defines middleware for this page. The middleware will be called before rendering the page. | [Guide: middleware](/guide/routing#middleware) |
+| `asyncData` | Самый важный параметр. Может быть асинхронным и получает контекст в качестве аргумента. | [Руководство: Async data](/guide/async-data) |
+| `fetch` | Может быть использовано для заполнения хранилища перед отрисовкой страницы. Как `asyncData`, только не изменяет данные компонента. | [API Страниц `fetch`](/api/pages-fetch) |
+| `head` | Укажите `<meta>` теги для данной страницы. | [API Страниц `head`](/api/pages-head) |
+| `layout` | Укажите макет, который задан в директории `layouts`. | [API Страниц `layout`](/api/pages-layout) |
+| `loading` | Если значение - `false`, то не даёт странице автоматически вызвать методы `this.$nuxt.$loading.finish()` при входе на страницу и `this.$nuxt.$loading.start()` при выходе с неё, позволяя вам **вручную** управлять этим поведением, как показано в [этом примере](/examples/custom-page-loading). Применимо только если `loading` задано в файле `nuxt.config.js`. | [API Конфигурации `loading`](/api/configuration-loading) |
+| `transition` | Задаёт переход для страницы. | [API Страниц `transition`](/api/pages-transition) |
+| `scrollToTop` | Булевое (по-умолчанию: `false`). Укажите, хотите ли вы, что бы страница перематывалась вверх перед отрисовкой. Используется для [вложенных путей](/guide/routing#nested-routes). | [API Страниц `scrollToTop`](/api/pages-scrolltotop#the-scrolltotop-property) |
+| `validate` | Функция-валидатор для [динамических маршрутов](/guide/routing#dynamic-routes). | [API Страниц `validate`](/api/pages-validate#the-validate-method) |
+| `middleware` | Определяет промежуточные обработчики для данной страницы. Обработчики будут вызваны перед отрисовкой страницы. | [Руководство: middleware](/guide/routing#middleware) |
 
-More information about the pages properties usage: [API Pages](/api)
+Больше информации об использовании свойств страниц: [API Страниц](/api)
 
-## HTML Head
+## Содержимое HTML Head
 
-Nuxt.js uses [vue-meta](https://vue-meta.nuxtjs.org/) to update the `document head` and `meta attributes` of your application.
+Nuxt.js использует библиотеку [vue-meta](https://vue-meta.nuxtjs.org/) для обновления `head` страницы и `meta`-атрибутов вашего приложения.
 
-The `vue-meta` Nuxt.js uses can be found [on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/index.js#L42-L48).
+Настройки `vue-meta`, используемые Nuxt.js могут быть найдены [на GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/index.js#L42-L48).
 
 <div class="Alert Alert--teal">
 
-<b>Info:</b> Nuxt.js uses <code>hid</code> instead of the default <code>vmid</code> key to identify meta elements
+<b>Информация:</b> Nuxt.js использует <code>hid</code> вместо стандартного <code>vmid</code> ключа для идентификации мета-элементов.
 
 </div>
 
 
-### Default Meta Tags
+### Мета-теги по-умолчанию
 
-Nuxt.js lets you define all default `<meta>` tags for your application inside `nuxt.config.js`. Define them using the same `head` property:
+Nuxt.js позволяет задать все `<meta>` теги по-умолчанию для всего вашего приложения в файле `nuxt.config.js`. Они задаются с помощью того же свойства `head`:
 
-Example of a custom viewport with a custom Google font:
+Пример пользовательских настроек `viewport` и подключения Google-шрифта:
 
 ```js
 head: {
@@ -227,10 +227,10 @@ head: {
 }
 ```
 
-To learn more about the options available for `head`, take a look at [vue-meta documentation](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
+Чтобы узнать больше об опциях, доступных в `head`, взгляните на [документацию vue-meta](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
-More information about the `head` method are available on the [API Configuration `head`](/api/configuration-head) page.
+Больше информации о методе `head` доступно на странице [API Конфигурации `head`](/api/configuration-head).
 
-### Custom Meta Tags for a Page
+### Изменение мета-тегов для отдельных страниц
 
-More information about the head method can be found on the [API Pages `head`](/api/pages-head) page.
+Больше информации о методе `head` доступно на странице [API Страниц `head`](/api/pages-head).
