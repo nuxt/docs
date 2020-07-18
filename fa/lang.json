@@ -1,0 +1,82 @@
+{
+  "iso": "fa",
+  "docVersion": "2.13.X",
+  "links": {
+    "download": "دانلود",
+    "live_edit": "ویرایش زنده"
+  },
+  "headerLinks": [
+    {
+      "name": "Guide",
+      "slug": "guide",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "API",
+      "slug": "api",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Examples",
+      "slug": "examples",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "FAQ",
+      "slug": "faq",
+      "type": "dynamic",
+      "routeName": "section-slug"
+    },
+    {
+      "name": "Resources",
+      "slug": "resources",
+      "type": "static"
+    },
+    {
+      "name": "Blog",
+      "slug": "blog",
+      "type": "static"
+    }
+  ],
+  "text": {
+    "an_error_occurred": "خطایی رخ داد",
+    "api_page_not_found": "صفحه API پیدا نشد",
+    "please_define_title": "لطفا یک عنوان انتخاب کنید",
+    "please_define_description": "لطفا یک موضوع انتحاب کنید",
+    "search": "جستجو",
+    "version": "نسخه"
+  },
+  "homepage": {
+    "meta": {
+      "title": "NuxtJS - فریم‌ورک جهانی Vue.js",
+      "description": "پروژه بعدی Vue.js خود را با NuxtJS با اطمینان بسازید! فریم‌ورک متن‌بازی که طراحی صفحات وب را به سادگی و با قدرت انجام می‌دهد."
+    },
+    "welcome": {
+      "get_started": "شروع کنید",
+      "github_stars": "بیش از ۲۸ هزار ستاره در گیت‌هاب"
+    },
+    "why": {
+      "try_nuxtjs_online": "NuxtJS را آنلاین امتحان کنید!"
+    },
+    "sponsors": {
+      "become_a_sponsor": "حامی شوید"
+    },
+    "newsletter_form": {
+      "email": "ایمیل",
+      "subscribing": "در حال عضویت...",
+      "subscribe": "عضو شوید",
+      "subscribed_messages": {
+        "pre": "یک ایمیل جهت تایید ارسال شد به",
+        "post": "💚"
+      }
+    }
+  },
+  "guide": {
+    "release_notes": "یادداشت‌های انتشار",
+    "contribute": "مشکلی میبینید یا میخواهید مستندات را گسترش دهید؟",
+    "edit_on_github": "این صفحه را در گیت‌هاب ویرایش کنید!"
+  }
+}
