@@ -62,7 +62,7 @@ Indonesian translation is maintained by [Nuxt.js Indonesian Community](https://g
 
 ### Persian/Farsi (فارسی)
 
-Persian translation is maintained by [https://github.com/AdnanBabakan](https://github.com/AdnanBabakan)
+Persian translation is maintained by [Adnan Babakan](https://github.com/AdnanBabakan)
 
 - Translation repo: [https://github.com/AdnanBabakan/docs](https://github.com/AdnanBabakan/docs)
 
