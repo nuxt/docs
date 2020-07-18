@@ -60,6 +60,12 @@ Indonesian translation is maintained by [Nuxt.js Indonesian Community](https://g
 - Primary maintainer - [Achan](http://achan.id/)
 - Primary translator - [afrianjunior](https://github.com/afrianjunior), [fikrizufri](https://github.com/fikrizufri), [huiralb](https://github.com/huiralb), [jefrydco](https://github.com/jefrydco), [muhibbudins](https://github.com/muhibbudins), [nusendra](https://github.com/nusendra), [perjakasunda](https://github.com/perjakasunda), [tapitapeh](https://github.com/tapitapeh), [wahwahid](https://github.com/wahwahid)
 
+### Persian/Farsi (فارسی)
+
+Persian translation is maintained by [https://github.com/AdnanBabakan](https://github.com/AdnanBabakan)
+
+- Translation repo: [https://github.com/AdnanBabakan/docs](https://github.com/AdnanBabakan/docs)
+
 ### Want to help with the translation?
 
 [gl]: https://gitlocalize.com
