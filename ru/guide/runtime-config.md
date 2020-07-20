@@ -45,6 +45,7 @@ export default {
 
 ### Поддержка `.env`
 
+
 Если в корневой директории вашего проекта есть файл `.env`, он будет автоматически загружен с помощью [dotenv](https://github.com/motdotla/dotenv) и доступен через `process.env`.
 
 `process.env` обновлен, поэтому мы можем использовать его прямо внутри `nuxt.config` для конфигурации runtime. Значения интерполируются и расширяются с помощью улучшенной версии [dotenv-expand](https://github.com/motdotla/dotenv-expand).
