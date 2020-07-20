@@ -10,7 +10,7 @@ Nuxt.js поддерживает конфигурацию [env](/api/configurati
 - Это может легко ввести в заблуждение и подвергнуть опасности "секретные ключи" клиентского бандла 
 
 
-См больше почему мы [переходим от @nuxtjs/dotenv к runtime конфигурации](/blog/moving-from-nuxtjs-dotenv-to-runtime-config).
+См. больше почему мы [переходим от @nuxtjs/dotenv к runtime конфигурации](/blog/moving-from-nuxtjs-dotenv-to-runtime-config).
 
 ### Конфигурация времени исполнения (2.13+)
 
