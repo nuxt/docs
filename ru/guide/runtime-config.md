@@ -1,21 +1,22 @@
 ---
-title: Runtime Config
-description: Runtime config allows passing dynamic config and environment variables to the nuxt context
+title: Конфигурация времени исполнения
+description: Runtime конфигурация позволяет передавать динамическую конфигурацию и переменные среды в контекст nuxt
 ---
 
-Nuxt.js supports [env](/api/configuration-env) config to provide configuration via `process.env`. This is done by webpack's [DefinePlugin](https://webpack.js.org/plugins/define-plugin/).
+Nuxt.js поддерживает конфигурацию [env](/api/configuration-env) для обеспечения конфигурации через `process.env`. Это делается с помощью плагина вебпака [DefinePlugin](https://webpack.js.org/plugins/define-plugin/).
 
-This approach had two downsides:
-- Values are read during build time and persisted into webpack bundle. So for a change to `process.env` we need to rebuild which is against [12factor](https://12factor.net/) app design
-- It can easily mislead to expose secret keys to client-side bundle
+У этого подхода было два недостатка:
+- Значения читаются во время сборки и сохраняются в webpack бандл. Поэтому для изменения в `process.env` нам нужно пересобрать бандл, что противоречит принципам [12-факторных приложений](https://12factor.net/) 
+- Это может легко ввести в заблуждение и подвергнуть опасности "секретные ключи" клиентского бандла 
 
-You can learn more about why we are [moving from @nuxtjs/dotenv to runtime config](/blog/moving-from-nuxtjs-dotenv-to-runtime-config).
 
-### Runtime Config (2.13+)
+См. больше почему мы [переходим от @nuxtjs/dotenv к runtime конфигурации](/blog/moving-from-nuxtjs-dotenv-to-runtime-config).
 
-Two new options added to `nuxt.config` to allow passing runtime configuration which is then accessible using context `$config`.
+### Конфигурация времени исполнения (2.13+)
 
-Config is added to Nuxt payload (`__NUXT__.config`) so there is no need to rebuild to update runtime configuration. SSR, SPA, and Static targets supported with an exception that for static target, a regenerate is necessary.
+Две новые опции добавлены в `nuxt.config`, чтобы разрешить передачу runtime конфигурации, которая затем доступна через контекст `$config`.
+
+Конфигурация добавляется в полезную нагрузку Nuxt (`__NUXT__.config`) поэтому нет необходимости перестраивать для обновления runtime конфигурации. SSR, SPA, и Static targets поддерживаются, за исключением того, что для static targets необходимо перегенерирование.
 
 ```js
 export default {
@@ -24,12 +25,12 @@ export default {
 }
 ```
 
-- `publicRuntimeConfig` is available using `$config` in both server and client.
-- `privateRuntimeConfig` is **only available on server** using same `$config` (it overrides `publicRuntimeConfig`)
+- `publicRuntimeConfig` доступно с помощью `$config` как на сервере, так и на клиенте.
+- `privateRuntimeConfig` **доступно только на сервере** используя тот же `$config` (он переопределяет `publicRuntimeConfig`)
 
-###  Usage
+### Использование
 
-`$config` is available anywhere from context (including pages, store and plugins)
+`$config` доступен в любом месте из контекста (включая страницы, хранилища и плагины)
 
 ```js
 export default {
@@ -42,22 +43,22 @@ export default {
 }
 ```
 
-### `.env` support
+### Поддержка `.env`
 
-If you have `.env` file in project root directory, it will be automatically loaded using [dotenv](https://github.com/motdotla/dotenv) and is accessible via `process.env`.
 
-`process.env` is updated so we can use it right inside `nuxt.config` for runtime config. Values are interpolated and expanded with an improved version of [dotenv-expand](https://github.com/motdotla/dotenv-expand).
+Если в корневой директории вашего проекта есть файл `.env`, он будет автоматически загружен с помощью [dotenv](https://github.com/motdotla/dotenv) и доступен через `process.env`.
 
-`.env` file is also watched to reload during `nuxt dev`. You can customize the env path by using `--dotenv <file>` or disabling with `--dotenv false`.
+`process.env` обновлен, поэтому мы можем использовать его прямо внутри `nuxt.config` для конфигурации runtime. Значения интерполируются и расширяются с помощью улучшенной версии [dotenv-expand](https://github.com/motdotla/dotenv-expand).
 
-### Expand/Interpolation Support
+Файл `.env` также просматривается для перезагрузки во время `nuxt dev`. Вы можете настроить путь env с помощью `--dotenv <file>` или отключив с помощью `--dotenv false`.
 
-> Supported both for dotenv and runtime config.
+### Поддержка Интерполяции/Расширения
 
-Expand for runtime config happens only if there is already a key (see `API_SECRET` example).
+> Поддерживается как для dotenv так и runtime конфигураций.
 
-Interpolation allows easy nesting env vars (see `baseURL` example).
+Развертывание для конфигурации во время выполнения происходит только в том случае, если ключ уже существует (см пример `API_SECRET`).
 
+Интерполяция позволяет легко вкладывать переменные окружения (см пример `baseURL`). 
 `.env`:
 
 ```config
@@ -80,4 +81,4 @@ export default {
 }
 ```
 
-Note, it is possible to use a function for `publicRuntimeConfig` and `privateRuntimeConfig` but not recommended.
+Обратите внимание, что можно использовать `publicRuntimeConfig` и `privateRuntimeConfig` как функцию, но это не рекомендуется.
