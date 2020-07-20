@@ -1,57 +1,44 @@
 ---
-title: Installation
-description: Nuxt.js is really easy to get started with. A simple project only needs the `nuxt` dependency.
+title: Установка
+description: Начать работу с Nuxt.js очень просто. Простой проект требует наличия лишь одной зависимости: `nuxt`.
 ---
 
-> Nuxt.js is really easy to get started with. A simple project only needs the `nuxt` dependency.
+> Начать работу с Nuxt.js очень просто. Простой проект требует наличия лишь одной зависимости: `nuxt`.
 
-<div>
-  <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
-    <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Nuxt Fundamentals by vueschool"/>
-    <div class="Promote__Content">
-      <h4 class="Promote__Content__Title">Nuxt.js Fundamentals</h4>
-      <p class="Promote__Content__Description">Learn how to get started quickly with Nuxt.js in videos.</p>
-      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js development.</p>
-    </div>
-  </a>
-</div>
+## Использование `create-nuxt-app`
 
-## Using `create-nuxt-app`
+Чтобы быстро начать, команда Nuxt.js создала инструмент [create-nuxt-app](https://github.com/nuxt/create-nuxt-app).
 
-To get started quickly, the Nuxt.js team has created scaffolding tool [create-nuxt-app](https://github.com/nuxt/create-nuxt-app).
-
-Make sure you have [npx](https://www.npmjs.com/package/npx) installed (`npx` is shipped by default since NPM `5.2.0`)
+Убедитесь, что у вас установлен [npx](https://www.npmjs.com/package/npx) (`npx` поставляется по умолчанию с версии NPM `5.2.0`)
 
 ```bash
 $ npx create-nuxt-app <project-name>
 ```
 
-Or with [yarn](https://yarnpkg.com/en/):
+Или с [yarn](https://yarnpkg.com/en/):
 
 ```bash
 $ yarn create nuxt-app <project-name>
 ```
 
-It will ask you some questions (name, Nuxt options, UI framework, TypeScript, linter, testing framework, etc.), when answered, it will install all the dependencies so the next step is to navigate to the project folder and launch it with:
+Установщик Nuxt задаст вам несколько вопросов (name, Nuxt options, UI framework, TypeScript, linter, testing framework и т.д.), после этого он установит все зависимости. Следующий шаг - необходимо перейти в папку проекта и запустить его:
 
 ```bash
 $ cd <project-name>
 $ npm run dev
 ```
 
-The application is now running on http://localhost:3000.
+Приложение теперь работает на http://localhost:3000.
 
 <div class="Alert">
-
-Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.
-
+Nuxt.js будет отслеживать изменения файлов внутри каталога страниц `pages`, поэтому нет необходимости перезапускать приложение при добавлении новых страниц.
 </div>
 
-To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
+Узнать больше о структуре каталогов проекта: [Документация. Структура папок](https://ru.nuxtjs.org/guide/directory-structure/).
 
-## Starting from scratch
+## Создание с нуля
 
-Creating a Nuxt.js project from scratch is easy, only *1 file and 1 directory* are required. Create an empty directory to start:
+Создать проект Nuxt.js с нуля очень просто, требуется всего 1 файл и 1 каталог. Создайте пустой каталог:
 
 ```bash
 $ mkdir <project-name>
@@ -59,14 +46,12 @@ $ cd <project-name>
 ```
 
 <div class="Alert Alert--nuxt-green">
-
-<b>Info:</b> replace <code>&lt;project-name&gt;</nom-du-projet></code> with a name for the project.
-
+<b>Информация:</b> замените <code>&lt;project-name&gt;</nom-du-projet></code> на имя вашего проекта.
 </div>
 
-### The package.json
+### package.json
 
-Every project needs a `package.json` file to start `nuxt`. Copy this json into your package.json and save before running npm install (below):
+Для запуска `nuxt` каждый проект нуждается в файле `package.json`. Скопируйте этот **json** в ваш **package.json** и сохраните его. После этого запустите `npm install`:
 
 ```json
 {
@@ -77,27 +62,27 @@ Every project needs a `package.json` file to start `nuxt`. Copy this json into y
 }
 ```
 
-`scripts` will launch Nuxt.js via `npm run dev`.
+`scripts` запустит Nuxt.js командой `npm run dev`.
 
-### Installing `nuxt`
+### Установка `nuxt`
 
-With the `package.json` created, add `nuxt` to the project via npm:
+После создания `package.json`, добавьте в проект `nuxt` через npm:
 
 ```bash
 $ npm install --save nuxt
 ```
 
-### The `pages` directory
+### Каталог `pages`
 
-Nuxt.js transforms every `*.vue` file inside a `pages` directory as a route for the application.
+Nuxt.js преобразует каждый `*.vue` файл внутри каталога `pages` в маршрут для приложения.
 
-Create the `pages` directory:
+Создание `pages` страниц каталога:
 
 ```bash
 $ mkdir pages
 ```
 
-then create the first page in `pages/index.vue`:
+затем создайте первую страницу в `pages/index.vue`:
 
 ```html
 <template>
@@ -105,18 +90,16 @@ then create the first page in `pages/index.vue`:
 </template>
 ```
 
-and launch the project with:
+и запустите проект командой:
 
 ```bash
 $ npm run dev
 ```
 
-The application is now running on http://localhost:3000.
+Теперь приложение должно запуститься по адресу http://localhost:3000.
 
 <div class="Alert">
-
-Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.
-
+Nuxt.js будет следить за изменением файлов внутри каталога страниц `pages`, поэтому нет необходимости перезапускать приложение при добавлении новых страниц.
 </div>
 
-To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
+Узнать больше о структуре каталогов проекта: [Документация. Структура папок](https://ru.nuxtjs.org/guide/directory-structure/).
