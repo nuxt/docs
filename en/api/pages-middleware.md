@@ -60,4 +60,4 @@ export default {
 </script>
 ```
 
-To learn more about the middleware, see the [middleware guide](/guide/routing#middleware).
+To learn more about the middleware, see the [middleware guide](/guide/routing/#middleware).
