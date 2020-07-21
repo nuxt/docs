@@ -1,27 +1,27 @@
 ---
-title: Plugins
-description: Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root Vue.js Application. This is especially helpful when using Vue libraries, external modules or your own plugins.
+title: Плагины
+description: Nuxt.js позволяет вам задавать JavaScript-плагины, которые будут запущены перед созданием корневого приложения Vue.js. Это может быть особенно полезно при работе с библиотеками для Vue, внешними модулями или вашими плагинами.
 ---
 
-> Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root Vue.js Application. This is especially helpful when using Vue libraries, external modules or your own plugins.
+> Nuxt.js позволяет вам задавать JavaScript-плагины, которые будут запущены перед созданием корневого приложения Vue.js. Это может быть особенно полезно при работе с библиотеками для Vue, внешними модулями или вашими плагинами.
 
 <div class="Alert">
 
-It is important to know that in any Vue [instance lifecycle](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram), only `beforeCreate` and `created` hooks are called **both, from client-side and server-side**. All other hooks are called only from the client-side.
+Важно знать, что в [жизненном цикле](https://ru.vuejs.org/v2/guide/instance.html#%D0%A5%D1%83%D0%BA%D0%B8-%D0%B6%D0%B8%D0%B7%D0%BD%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D1%86%D0%B8%D0%BA%D0%BB%D0%B0-%D1%8D%D0%BA%D0%B7%D0%B5%D0%BC%D0%BF%D0%BB%D1%8F%D1%80%D0%B0) экземпляра Vue только хуки `beforeCreate` и `created` вызываются **как на сервере, так и на клиенте**. Все остальные хуки вызываются только на клиенте.
 
 </div>
 
-## External Packages
+## Внешние пакеты
 
-We may want to use external packages/modules in our application (one great example is [axios](https://github.com/mzabriskie/axios)) for making HTTP request for both server and client.
+Использование внешних пакетов или модулей в приложении может понадобиться для совершения HTTP-запросов как на сервере, так и на клиенте (отличным примером будет библиотека [axios](https://github.com/mzabriskie/axios)).
 
-First, we should install it via npm:
+Для начала установим библиотеку с помощью npm:
 
 ```bash
 npm install --save axios
 ```
 
-Then we can use it directly in our page components:
+После чего мы можем использовать её напрямую в компонентах страниц:
 
 ```html
 <template>
@@ -40,14 +40,14 @@ export default {
 </script>
 ```
 
-## Vue Plugins
+## Плагины для Vue
 
-If we want to use Vue plugins, like [v-tooltip](https://akryum.github.io/v-tooltip) to display tooltips in our application, we need to setup the plugin before launching the app.
-First we install the plugin
+При использовании плагинов для Vue, как, например, [v-tooltip](https://akryum.github.io/v-tooltip) для отображения подсказок в приложении, может потребоваться инициализировать плагин перед запуском приложения.
+Для начала установим библиотеку с помощью npm:
 ```bash
 npm install --save v-tooltip
 ```
-We create the file `plugins/vue-tooltips.js`:
+Затем создаём файл `plugins/vue-tooltips.js`:
 
 ```js
 import Vue from 'vue'
@@ -56,7 +56,7 @@ import VTooltip from 'v-tooltip'
 Vue.use(VTooltip)
 ```
 
-Then we add the file path inside the `plugins` key of our `nuxt.config.js`:
+Затем добавляем путь файла к ключу `plugins` в файле настроек `nuxt.config.js`:
 
 ```js
 export default {
@@ -64,11 +64,11 @@ export default {
 }
 ```
 
-To learn more about the `plugins` configuration key, check out the [plugins api](/api/configuration-plugins).
+Чтобы узнать больше о конфигурационном ключе `plugins`, посмотрите документацию по [plugins api](/api/configuration-plugins).
 
-### ES6 plugins
+### Плагины ES6
 
-If the plugin is located in `node_modules` and exports an ES6 module, you may need to add it to the `transpile` build option:
+Если плагин располагается в папке `node_modules` и экспортирует модуль ES6, то, возможно, вам понадобиться добавить его в опцию сборки `transpile`:
 
 ```js
 module.exports = {
@@ -77,24 +77,22 @@ module.exports = {
   }
 }
 ```
-You can refer to the [configuration build](/api/configuration-build/#transpile) docs for more build options.
+Обращайтесь к документации по [конфигурации build](/api/configuration-build/#transpile) для информации о настройках сборки.
 
-## Inject in $root & context
+## Инъекция $root & context
 
-Sometimes you want to make functions or values available across the app.
-You can inject those variables into Vue instances (client side), the context (server side) and even in the Vuex store.
-It is a convention to prefix those functions with a `$`.
+Иногда вам может потребоваться сделать какие-то функции или значения доступными во всём приложении. Вы можете добавить эти переменные в экземпляр Vue (на клиентской стороне), в контекст (на серверной стороне) и даже в хранилище Vuex. Действует соглашение: начинать подобные функции с `$`.
 
-Nuxt.js provides you with an `inject(key, value)` method so you can easily inject variables. It is given as the second parameter when exporting a function. The `$` will be prepended automatically to the key.
+Nuxt.js предоставляет вам метод `inject(key, value)` для легкого добавления переменных. Этот метод передаётся в качестве второго аргумента, если вы экспортируете функцию при создании плагина. Префикс `$` будет добавлен автоматически к переданному ключу.
 
 `plugins/hello.js`:
 
 ```js
 export default (context, inject) => {
   const hello = (msg) => console.log(`Hello ${msg}!`)
-  // Inject $hello(msg) in Vue, context and store.
+  // Добавляет $hello(msg) в экземпляр Vue, контекст и хранилище.
   inject('hello', hello)
-  // For Nuxt <= 2.12, also add 👇
+  // Для Nuxt версий <= 2.12 также добавьте 👇
   context.$hello = hello
 }
 ```
@@ -107,7 +105,7 @@ export default {
 }
 ```
 
-Now `$hello(msg)` can be used from `context`, via `this` in Vue instances and via `this` in store `actions`/`mutations`.
+Теперь функция `$hello(msg)` может быть использована через `context`, через `this` в экземплярах Vue, и через `this` в `actions`/`mutations` хранилища.
 
 `example-component.vue`:
 
@@ -115,7 +113,7 @@ Now `$hello(msg)` can be used from `context`, via `this` in Vue instances and vi
 export default {
   mounted () {
     this.$hello('mounted')
-    // will console.log 'Hello mounted!'
+    // Выведет в консоль 'Hello mounted!'
   },
   asyncData ({ $hello }) {
     $hello('asyncData')
@@ -146,40 +144,39 @@ export const actions = {
 }
 ```
 
-## Client or server side only
+## Исполнение только на клиентской или серверной стороне
 
 <div class="Alert">
 
-Be ware, do not use Vue plugins inside exported functions. exported functions called before each request,
-so calling `Vue.use(...)`, `Vue.mixin(...)`, `Vue.component(...)`, cause your app crash after too many requests.
+Внимание, не используйте плагины Vue в экспортированных функциях. Если ваш файл экспортирует функцию, то она будет вызвана перед каждым запросом, поэтому вызовы `Vue.use(...)`, `Vue.mixin(...)`, `Vue.component(...)` сломают ваше приложение после определенного количества запросов.
 
 </div>
 
-Some plugins might work **only in the browser** because they lack SSR support.
+Некоторые плагины работают **только в браузере**, так как у них нет поддержки SSR.
 
-### Name conventional plugin
+### Соглашение об именовании плагинов
 
-If plugin is assumed to be run only in client or server side, `.client.js` or `.server.js` can be applied as extension of plugin file, the file will be automatically included in corresponding side.
+Если плагин планируется запускать только на клиенте или на сервере, то к названию файла могут быть добавлены суффиксы `.client.js` или `.server.js`, и файл автоматически будет запускаться только на нужной стороне.
 
-Example:
+Пример:
 
 `nuxt.config.js`:
 
 ```js
 export default {
   plugins: [
-    '~/plugins/foo.client.js', // only in client side
-    '~/plugins/bar.server.js', // only in server side
-    '~/plugins/baz.js' // both client & server
+    '~/plugins/foo.client.js', // отработает только на клиенте
+    '~/plugins/bar.server.js', // отработает только на сервере
+    '~/plugins/baz.js' // отработает и на клиенте, и на сервере
   ]
 }
 ```
 
-### Object syntax
+### Объектный синтаксис
 
-You can also use the object syntax with the `mode` property (`'client'` or `'server'`) in `plugins`.
+Вы так же можете использовать объектный синтаксис с указанием свойства `mode` (`'client'` или `'server'`) в конфигурации `plugins`.
 
-Example:
+Пример:
 
 `nuxt.config.js`:
 
@@ -187,16 +184,16 @@ Example:
 export default {
   plugins: [
     { src: '~/plugins/both-sides.js' },
-    { src: '~/plugins/client-only.js', mode: 'client' }, // only on client side
-    { src: '~/plugins/server-only.js', mode: 'server' } // only on server side
+    { src: '~/plugins/client-only.js', mode: 'client' }, // отработает только на клиенте
+    { src: '~/plugins/server-only.js', mode: 'server' } // отработает только на сервере
   ]
 }
 ```
 
-### Using process flags
+### Использование флагов процесса
 
-In case you need to import some libraries in a plugin only on *server-side*, you can check if the `process.server` variable is set to `true`.
+В случае если вам нужно импортировать какие-то библиотеки в плагине только на серверной стороне, то вы можете проверить, что флаг `process.server` установлен в `true`.
 
-Also, if you need to know if you are inside a static app (via `nuxt generate` or `nuxt export`), you can check if `process.static` is set to `true`. This is only the case during and after the generation.
+Также, если вам нужно знать, находитесь ли вы внутри статичного приложения (создаваемого `nuxt generate` или `nuxt export`), то в таком случае флаг `process.static` будет установлен в `true`. Этот флаг будет установлен только во время и после генерации.
 
-You can also combine both options to hit the spot when a page is being server-rendered by `nuxt build && nuxt export` or `nuxt generate` before being saved (`process.static && process.server`).
+Вы также можете совместить обе опции, чтобы попасть в момент, когда страница создается на сервере с помощью `nuxt build && nuxt export` или `nuxt generate`, но ещё не сохранена (`process.static && process.server`).
