@@ -46,11 +46,11 @@ Ces clés sont disponibles à la fois côté client et côté serveur.
 Les options d'instance de la racine Vue qui incluent tous vos plugins. Par exemple, lorsque vous utilisez `i18n`, vous 
 pouvez accéder à `$i18n` via `context.app.i18n`.
 
-### `store` ([*Vuex Store*](https://vuex.vuejs.org/en/api.html#vuexstore-instance-properties))
+### `store` ([*Vuex Store*](https://vuex.vuejs.org/api/#vuex-store-instance-properties))
 
 L'instance du store de Vuex. **Disponible uniquement si [vuex store](/guide/vuex-store) est défini**.
 
-### `route` ([*Vue Router Route*](https://router.vuejs.org/en/api/route-object.html))
+### `route` ([*Vue Router Route*](https://router.vuejs.org/api/#the-route-object))
 
 L'instance du routage de Vue.
 
@@ -109,7 +109,7 @@ asynchrone) est appelé avec `{ Components, nuxtState }`, voir [l'exemple](https
 
 Ces clés sont disponibles uniquement côté client.
 
-### `from` ([*Vue Router Route*](https://router.vuejs.org/en/api/route-object.html))
+### `from` ([*Vue Router Route*](https://router.vuejs.org/api/#the-route-object))
 
 Le chemin de départ.
 

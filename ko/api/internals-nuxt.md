@@ -22,4 +22,4 @@ nuxt.hook('ready', async (nuxt) => {
 `ready`  | (nuxt)                 | Nuxt가 작동 준비되었을 때 (`ModuleContainer`와 `Renderer`가 준비됨).
 `error`  | (error)                | 후크를 호출하는 도중 처리되지 않은 오류가 발생할 때
 `close`  | (nuxt)                 | Nuxt instance가 정상적으로 닫힐 때
-`listen` | (server, {host, port}) | Nuxt **내부의** 서버가 리스닝을 시작할 때. (`nuxt start`나 `nuxt dev`를 사용시).
+`listen` | (server, {host, port}) | Nuxt **내부의** 서버가 리스닝을 시작할 때 (`nuxt start`나 `nuxt dev`를 사용시)`

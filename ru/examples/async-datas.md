@@ -58,7 +58,7 @@ List of all the available keys in `context`:
 | `isClient` | Boolean | Client & Server | Boolean to let you know if you're actually renderer from the client-side |
 | `isServer` | Boolean | Client & Server | Boolean to let you know if you're actually renderer from the server-side |
 | `isDev` | Boolean | Client & Server | Boolean to let you know if you're in dev mode, can be useful for caching some data in production |
-| `route` | [vue-router route](https://router.vuejs.org/en/api/route-object.html) | Client & Server | `vue-router` route instance [see documentation](https://router.vuejs.org/en/api/route-object.html) |
+| `route` | [vue-router route](https://router.vuejs.org/api/#the-route-object) | Client & Server | `vue-router` route instance [see documentation](https://router.vuejs.org/api/#the-route-object) |
 | `store` | [vuex store](http://vuex.vuejs.org/en/api.html#vuexstore-instance-properties) | Client & Server | `Vuex.Store` instance. **Available only if `store: true` is set in `nuxt.config.js`** |
 | `params` | Object | Client & Server | Alias of route.params |
 | `query` | Object | Client & Server | Alias of route.query |
