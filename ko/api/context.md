@@ -41,11 +41,11 @@ function (context) {
 
 모든 플러그인이 포함된 루트 Vue 인스턴스 옵션입니다. 예를 들어 `i18n`을 사용할 때 `context.app.i18n`을 통해 `$i18n`에 액세스할 수 있습니다.
 
-### `store` ([*Vuex Store*](https://vuex.vuejs.org/en/api.html#vuexstore-instance-properties))
+### `store` ([*Vuex Store*](https://vuex.vuejs.org/api/#vuex-store-instance-properties))
 
 Vuex Store 인스턴스 **[vuex store](/guide/vuex-store)가 세팅되었을 때 사용 가능합니다**.
 
-### `route` ([*Vue Router Route*](https://router.vuejs.org/en/api/route-object.html))
+### `route` ([*Vue Router Route*](https://router.vuejs.org/api/#the-route-object))
 
 Vue 라우터 라우트 인스턴스.
 
@@ -97,7 +97,7 @@ Node.js 서버의 리스폰스. Nuxt가 미들웨어로 사용된다면, 리스�
 
 아래의 키들은 클라이언트 사이드에서 사용 가능합니다.
 
-### `from` ([*Vue Router Route*](https://router.vuejs.org/en/api/route-object.html))
+### `from` ([*Vue Router Route*](https://router.vuejs.org/api/#the-route-object))
 
 라우트 이동 출발지(from).
 

@@ -279,7 +279,7 @@ export default function (moduleOptions) {
 
       // Настройка созданных загрузчиков
       // Для внутренностей Nuxt смотрите исходный код:
-      // https://github.com/nuxt/nuxt.js/tree/dev/packages/builder/src/webpack/base.js
+      // https://github.com/nuxt/nuxt.js/blob/dev/packages/webpack/src/config/base.js
       const barLoader = config.module.rules.find(rule => rule.loader === 'bar-loader')
   })
 }
