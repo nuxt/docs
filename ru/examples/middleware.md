@@ -1,6 +1,6 @@
 ---
-title: Middleware
-description: Middleware example with Nuxt.js
+title: Промежуточной обработки (middleware)
+description: Пример промежуточного обработчика (middleware) с Nuxt.js
 github: middleware
 documentation: /guide/routing#middleware
 ---
