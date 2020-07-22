@@ -1,7 +1,7 @@
 ---
-title: Sponsors 
+title: Спонсоры 
 ---
-NuxtJS is an MIT licensed open source project and completely free to use.
-However, the amount of effort needed to maintain and develop new features for the project is not sustainable without proper financial backing.
-If you run a business and are using Nuxt in a revenue-generating product, it makes business sense to sponsor Nuxt development: it ensures the project that your product relies on stays healthy and actively maintained. It can also help your exposure in the Vue/Nuxt community and makes it easier to attract Vue/Nuxt developers.
-If you are an individual user and have enjoyed the productivity of using Nuxt, consider donating as a sign of appreciation.
+NuxtJS - это проект с открытым исходным кодом, лицензированный MIT и полностью бесплатный для использования.
+Тем не менее, объем усилий, необходимых для поддержания и разработки новых функций для проекта, не является устойчивым без надлежащей финансовой поддержки.
+Если вы управляете бизнесом и используете Nuxt в продукте, приносящем доход, имеет смысл спонсировать разработку Nuxt: это гарантирует, что проект, на который опирается ваш продукт, остается здоровым и активно поддерживается. Это также может помочь вам разобраться в сообществе Vue/Nuxt и упростить привлечение разработчиков Vue/Nuxt.
+Если вы являетесь индивидуальным пользователем и наслаждались продуктивностью использования Nuxt, рассмотрите возможность пожертвования в знак признательности.

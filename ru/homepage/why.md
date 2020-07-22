@@ -1,4 +1,4 @@
 ---
-title: Why Nuxt?
+title: Почему Nuxt?
 ---
-Why NUXT<span class="text-nuxt-lightgreen">JS</span>
+Почему NUXT<span class="text-nuxt-lightgreen">JS</span>
