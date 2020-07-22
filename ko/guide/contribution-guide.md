@@ -11,9 +11,7 @@ description: Contribution은 모두 환영합니다!
 
 Contributor와 Maintainer의 원활한 작업을 위해서, 우리는 [CMTY](https://cmty.nuxtjs.org/)를 사용합니다.
 
-쉽게 버그를 복제하기 위해 [CodeSandBox](https://template.nuxtjs.org/)나 복제본 repository를 포함했는지 확인해주세요.
-
-버그가 더 잘 복제되어 있을 수록, 저희는 그 버그를 더 빨리 고칠 수 있습니다!
+많은 노력 없이 쉽게 버그를 재현할 수 있는 repository나 [CodeSandBox](https://template.nuxtjs.org/)를 포함했는지 확인해주세요. 버그가 더 잘 재현될 수록, 그 버그를 더 빨리 고칠 수 있습니다!
 
 ## 풀 리퀘스트
 
@@ -88,7 +86,7 @@ yarn nuxt test/fixtures/your-fixture-app
 ### Linting
 
 이미 아실수도 있겠지만, 우리는 코드 표준을 시행하기 위해 ESLint를 사용하고 있습니다. 실행하기 전에 `yarn lint`을 실행해주세요.
-코드 스타일이 올바른지 확인해주세요. 그렇지 않다면, 당신은 코드 스타일을 고치기 위해 대부분의 경우 "yarn lint --fix" 또는 "npm run lint -- --pix"(타자 없음)를 사용할 수 있습니다. 다만 오류가 남아 있으면 수동으로 수정해야 합니다.
+코드 스타일이 올바른지 확인해주세요. 그렇지 않다면, 당신은 코드 스타일을 고치기 위해 대부분의 경우 `yarn lint --fix` 또는 `npm run lint -- --pix`(타자 없음)를 사용할 수 있습니다. 다만 오류가 남아 있으면 수동으로 수정해야 합니다.
 
 ### 문서화
 

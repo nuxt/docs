@@ -32,8 +32,6 @@ NuxtJS는 당신의 Vue.js 프로젝트의 추죽으로, 유연하면서도 확�
 
 ## 어떻게 작동하나요?
 
-![Vue with Webpack and Babel](https://i.imgur.com/avEUftE.png)
-
 Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능들을 포함합니다:
 
 - [Vue 2](https://vuejs.org/)
@@ -42,7 +40,7 @@ Nuxt.js는 훌륭한 웹 애플리케이션을 만들기 위해 아래의 기능
 - [Vue Server Renderer](https://ssr.vuejs.org/en/) ([`mode: 'spa'`](/api/configuration-mode)를 사용하는 경우에는 제외)
 - [vue-meta](https://github.com/nuxt/vue-meta)
 
-총 용량이 **57kB min+gzip** 밖에 되지 않습니다. (53kB  Vuex 포함).
+총 용량이 **57kB min+gzip** 밖에 되지 않습니다. (60kB  Vuex 포함).
 
 <div class="Alert">
 
@@ -115,9 +113,28 @@ nuxt.js에서 가장 큰 혁신은 아마 `nuxt generate` 명령어가 될 것�
 3. `npm run generate` 실행
 4. `dist` 디렉토리 배포
 
-우리는 이제 **정적 생성 웹 어플리케이션**를 생성했습니다. :)
+우리는 이제 자동화 된 **정적 생성 웹 어플리케이션**를 생성했습니다. :)
 
-우리는 제품의 재고가 있거나 없는 경우 항상 웹앱을 `nuxt generate`로 재생성하고 CDN에 호스팅하는 방식의 e-commerce 웹 애플리케이션을 생각해볼 수 있습니다. 만약 사용자가 그동안 웹 앱을 탐색한다면, e-commerce API에 API를 호출하는 것으로 항상 최신 정보로 업데이트 될 것입니다. 서버의 다중 인스턴스와 캐싱을 더 이상 고민할 필요가 없습니다!
+v2.13부터 사용가능한 새로운 완전 정적 모듈은 빌드 시 html과 정적 에셋을 생성합니다. 모든 것이 이미 생성되어있기 때문에 SEO이 잘될 뿐만 아니라 정적 호스팅 제공업체를 통해 무료로 호스팅할 수도 있습니다.
+
+
+
+Nuxt v2.13에는 링크 태그를 크롤링하고 이 링크를 기반으로 동적 경로를 생성하는 크롤러가 설치되어 더 이상 동적 링크를 수동으로 생성할 필요가 없습니다.
+
+정적 타겟은 API에 대한 호출을 static 폴더의 payload.js 파일에 저장하여 작동합니다. 이 페이로드들은 더 나은 성능과 오프라인 지원을 위해 캐시되며 클라이언트 사이드 탐색에서 API가 더 이상 호출되지 않으므로(asyncData 및 fetch를 사용하여 호출될 때) 외부에 API를 공개하지 않아도 됩니다.
+
+사이트가 생성되면 html은 모든 컨텐츠와 함께 생성되며 클라이언트 사이드 탐색에서 API 데이터의 페이로드 파일을 사용하여 이 페이지들이 재구성됩니다. 콘텐츠와 코드를 분리하면 전체 사이트를 다시 빌드할 필요 없이 콘텐츠를 쉽게 다시 생성할 수 있습니다. 즉, 일단 사이트가 구축되면 콘텐츠만 변경하고 싶을 때 간단하게 `nuxt export`를 호출하여 콘텐츠만 다시 생성할 수 있고, 콘텐츠가 웹팩을 거칠 필요가 없으므로 콘텐츠 재생성이 빠르게 진행됩니다. 
+
+v2.13 이상의 Nuxt를 사용하여 정적 사이트를 생성하려면 nuxt.config 파일의 `target`을 `static`으로 설정해야 합니다. `target`의 기본값은 `server`입니다.
+
+`nuxt.config.js`
+```js
+export default {
+  target: 'static'
+}
+```
+
+새로운 정적 타켓에 대해 자세히 알고 싶다면 [이 아티클](/blog/going-full-static)을 확인하세요.
 
 <div class="Alert">
 
