@@ -1,5 +1,5 @@
 ---
-title: The Intuitive<br><span class="text-nuxt-lightgreen">Vue</span> Framework<br>
-newsletter_cta: 'Get NuxtJS updates to your inbox each month 💌'
+title: Интуитивный<br><span class="text-nuxt-lightgreen">Vue</span> фреймворк<br>
+newsletter_cta: 'Подписаться на ежемесячную рассылку NuxtJS 💌'
 ---
-Build your next Vue.js application with confidence using NuxtJS. An <span title="Under MIT license">open source</span> framework making web development simple and powerful.
+Создайте ваше следующее Vue.js приложение при помощи NuxtJS. Фреймворка с открытым исходным кодом, делающим веб-разработку простой и гибкой.
