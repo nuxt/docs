@@ -1,4 +1,4 @@
 ---
-title: Welcome figure - video
+title: Краткий обзор - видео
 ---
-Video produced by <a href="https://www.vuemastery.com" target="_blank" rel="noopener">Vue Mastery</a>, download their free <a href="https://www.vuemastery.com/nuxt-cheat-sheet/" target="_blank" rel="noopener">Nuxt Cheat Sheet</a>.
+Видео предоставлено <a href="https://www.vuemastery.com" target="_blank" rel="noopener">Vue Mastery</a>, загрузите их бесплатно на <a href="https://www.vuemastery.com/nuxt-cheat-sheet/" target="_blank" rel="noopener">Nuxt Cheat Sheet</a>.
