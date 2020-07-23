@@ -1,4 +1,4 @@
 ---
-title: Nuxt<span class="text-nuxt-lightgreen">JS</span> Newsletter
+title: Nuxt<span class="text-nuxt-lightgreen">JS</span> Новостная рассылка
 ---
-Get the latest Nuxt news to your inbox, curated by the core team and contributors.
+Получайте на свой почтовый ящик последние новости о Nuxt, специально отобранные основной командой и участниками проекта.
