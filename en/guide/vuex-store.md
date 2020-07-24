@@ -59,7 +59,7 @@ export const mutations = {
       done: false
     })
   },
-  remove (state, { todo }) {
+  remove (state, todo) {
     state.list.splice(state.list.indexOf(todo), 1)
   },
   toggle (state, todo) {
