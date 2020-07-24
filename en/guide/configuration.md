@@ -72,6 +72,12 @@ This option lets you define the workspace of your Nuxt.js application.
 
 [Documentation about `rootDir` integration](/api/configuration-rootdir)
 
+### rootComponents
+
+This option lets you define components which created under nuxt root instance, between all layouts.
+
+[Documentation about `rootDir` integration](/api/configuration-rootcomponents)
+
 ### router
 
 With the `router` option you overwrite the default Nuxt.js configuration of Vue Router.
