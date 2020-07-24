@@ -113,6 +113,16 @@ npm run generate
 npm run deploy
 ```
 
+## Correct way to specify path for static assets in project
+
+Correct way to use assets from static folder:
+`~static/images/exampleImage.png`
+Wrong way of using assets from static folder:
+`/images/exampleImage.png`
+
+##### Explanation:
+Normally you would use /images/ path for assets in project but since router.base doesn't overrite path for static assets you have to you this other approach.
+
 ## Build server deployment
 
 You can take deployment one step further and rather than having to manually compile and deploy the files from your local install, you can make use of a build server to monitor your GitHub repository for new commits and then checkout, compile and deploy everything for you automatically.
