@@ -20,7 +20,8 @@ function (context) {
     isDev,
     isHMR,
     redirect,
-    error
+    error,
+    $config
   } = context
   // Server-side
   if (process.server) {
@@ -76,6 +77,10 @@ Use this method to redirect the user to another route, the status code is used o
 ### `error` (*Function*)
 
 Use this method to show the error page: `error(params)`. The `params` should have the properties `statusCode` and `message`.
+
+### `$config` (*Object*)
+
+Nuxt 2.13+ only. The [Runtime Config](/guide/runtime-config) object.
 
 ## Server-side keys
 
