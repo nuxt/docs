@@ -68,10 +68,14 @@ module.exports = {
 }
 
 ```
-
 **Remember to remove the references to the pkg object inside the config.**
 
-Thats it!
+For an Azure App Service deployment, make sure you set the following two environment variables (application settings) in App Service &rsaquo; Settings &rsaquo; Configuration &rsaquo; Application settings.
+```
+HOST: '0.0.0.0'
+NODE_ENV: 'production'
+```
+
 
 ## How to set Node version on Web App in DevOps
 
