@@ -71,7 +71,7 @@ Boolean to let you know if the method/middleware is called from webpack hot modu
 
 ### `redirect` (*Function*)
 
-Use this method to redirect the user to another route, the status code is used on the server-side, defaults to `302`. `redirect([status,] path [, query])`.
+Use this method to redirect the user to another route, the status code is used on the server-side, defaults to `302`. `redirect([status,] path [, query])`. `query` is an object: `redirect('/info', {foo: 1, bar: 2})` will redirect to `/info?foo=1&bar=2`.
 
 ### `error` (*Function*)
 
