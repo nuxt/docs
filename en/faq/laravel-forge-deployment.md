@@ -8,7 +8,7 @@ description: How to deploy Nuxt.js app with Laravel Forge?
 Before starting to describe the process of deploying a Nuxt app with Laravel Forge, I will assume that you have already:
 
 * Deployed a server with Forge using your cloud service provider of choice. This server must be running Node v8 or later (see below for upgrade)
-* You rgithub account is linked with Forge
+* Your github account is linked with Forge
 * Created a Nuxt app and linked it to a github repository under a master branch. We will call this repository `nuxt-forge-client` 
 * Setup a domain that we will call `nuxt-forge.com`. Please make sure to replace any reference to this domain by your own domain. Please make sure your domain is pointing to your server IP provisioned with Forge.
 
