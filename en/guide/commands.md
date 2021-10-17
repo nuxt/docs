@@ -161,6 +161,16 @@ npm run generate --fail-on-error
 yarn generate --fail-on-error
 ```
 
+When called `--fail-on-error` with a number the command returns a non-zero status after the number of error occurred.
+
+```bash
+npm run generate --fail-on-error=10
+
+// OR
+
+yarn generate --fail-on-error=10
+```
+
 <div class="Alert Alert-blue">
 
 As of Nuxt v2.13 there is a crawler installed that will now crawl your link tags and generate your routes when using the command `nuxt build && nuxt export` based on those links. 

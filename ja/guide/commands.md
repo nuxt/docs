@@ -116,6 +116,15 @@ npm run generate --fail-on-error
 yarn generate --fail-on-error
 ```
 
+数値とともに `--fail-on-error` が呼ばれると、指定した数のエラーが発生した後、0以外のステータスコードを返して終了します。
+
+```bash
+npm run generate --fail-on-error=10
+
+// OR
+
+yarn generate --fail-on-error=10
+```
 
 プロジェクトで [動的なルーティング](/guide/routing#dynamic-routes) を使っている場合は、Nuxt.js に動的なルーティングを生成させるために [generate 設定](/api/configuration-generate) に目を通してください。
 
